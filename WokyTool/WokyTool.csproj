@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{413F8D20-4233-420E-9E05-5B588F4635AC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WokyTool</RootNamespace>
+    <AssemblyName>WokyTool</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LINQtoCSV">
+      <HintPath>..\packages\LINQtoCSV.1.5.0.0\lib\net35\LINQtoCSV.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqToExcel">
+      <HintPath>..\packages\LinqToExcel.1.10.1\lib\LinqToExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion">
+      <HintPath>..\packages\LinqToExcel.1.10.1\lib\Remotion.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq">
+      <HintPath>..\packages\LinqToExcel.1.10.1\lib\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Interfaces">
+      <HintPath>..\packages\LinqToExcel.1.10.1\lib\Remotion.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\共用.cs" />
+    <Compile Include="Common\函式.cs" />
+    <Compile Include="Common\可配送.cs" />
+    <Compile Include="Common\常數.cs" />
+    <Compile Include="Common\列舉.cs" />
+    <Compile Include="Common\字串.cs" />
+    <Compile Include="Common\可格式化_Excel.cs" />
+    <Compile Include="DataExport\回單號結構_GoHappy.cs" />
+    <Compile Include="DataExport\全速配匯出結構.cs" />
+    <Compile Include="DataExport\回單號結構_Momo.cs" />
+    <Compile Include="DataExport\回單號結構_Momo第三方_分組.cs" />
+    <Compile Include="DataExport\回單號結構_Momo第三方_進度.cs" />
+    <Compile Include="DataExport\回單號結構_創業家兄弟.cs" />
+    <Compile Include="DataExport\回單號結構_東森.cs" />
+    <Compile Include="DataExport\回單號結構_森森.cs" />
+    <Compile Include="DataExport\宅配通匯出結構.cs" />
+    <Compile Include="DataForm\幣值總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataForm\幣值總覽視窗.Designer.cs">
+      <DependentUpon>幣值總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm\進貨總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataForm\進貨總覽視窗.Designer.cs">
+      <DependentUpon>進貨總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm\雜支總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataForm\雜支總覽視窗.Designer.cs">
+      <DependentUpon>雜支總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataImport\全速配匯入結構.cs" />
+    <Compile Include="DataImport\出貨匯入結構_Momo.cs" />
+    <Compile Include="DataImport\出貨匯入結構_Momo第三方.cs" />
+    <Compile Include="DataImport\出貨匯入結構_PCHome.cs" />
+    <Compile Include="DataImport\出貨匯入結構_創業家兄弟.cs" />
+    <Compile Include="DataImport\出貨匯入結構_東森.cs" />
+    <Compile Include="DataImport\出貨匯入結構_森森.cs" />
+    <Compile Include="DataImport\商品匯入結構.cs" />
+    <Compile Include="DataImport\宅配通匯入結構.cs" />
+    <Compile Include="DataImport\月結帳匯入結構_Momo.cs" />
+    <Compile Include="DataImport\物品匯入結構.cs" />
+    <Compile Include="DataImport\出貨匯入結構_GoHappy.cs" />
+    <Compile Include="DataImport\進貨匯入結構.cs" />
+    <Compile Include="DataImport\雜支匯入結構.cs" />
+    <Compile Include="DataMgr\幣值管理器.cs" />
+    <Compile Include="DataMgr\商品大類管理器.cs" />
+    <Compile Include="DataMgr\商品小類管理器.cs" />
+    <Compile Include="DataMgr\商品管理器.cs" />
+    <Compile Include="DataMgr\月結帳管理器.cs" />
+    <Compile Include="DataMgr\物品品牌管理器.cs" />
+    <Compile Include="DataMgr\物品管理器.cs" />
+    <Compile Include="DataMgr\物品大類管理器.cs" />
+    <Compile Include="DataMgr\物品小類管理器.cs" />
+    <Compile Include="DataMgr\廠商管理器.cs" />
+    <Compile Include="DataMgr\編碼管理器.cs" />
+    <Compile Include="DataMgr\進貨管理器.cs" />
+    <Compile Include="DataMgr\配送管理器.cs" />
+    <Compile Include="DataMgr\雜支管理器.cs" />
+    <Compile Include="Data\出貨資料.cs" />
+    <Compile Include="Data\合併可配送.cs" />
+    <Compile Include="Data\幣值資料.cs" />
+    <Compile Include="Data\商品大類資料.cs" />
+    <Compile Include="Data\商品小類資料.cs" />
+    <Compile Include="Data\支出資料.cs" />
+    <Compile Include="Data\月結帳資料.cs" />
+    <Compile Include="Data\物品品牌資料.cs" />
+    <Compile Include="Data\物品資料.cs" />
+    <Compile Include="Data\物品大類資料.cs" />
+    <Compile Include="Data\物品小類資料.cs" />
+    <Compile Include="Data\廠商資料.cs" />
+    <Compile Include="Data\商品資料.cs" />
+    <Compile Include="Data\編碼資料.cs" />
+    <Compile Include="Data\進貨資料.cs" />
+    <Compile Include="Data\雜支資料.cs" />
+    <Compile Include="ImportForm\出貨匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportForm\出貨匯入視窗.Designer.cs">
+      <DependentUpon>出貨匯入視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportForm\進貨匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportForm\進貨匯入視窗.Designer.cs">
+      <DependentUpon>進貨匯入視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportForm\雜支匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportForm\雜支匯入視窗.Designer.cs">
+      <DependentUpon>雜支匯入視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForm\待處理配送總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForm\待處理配送總覽視窗.Designer.cs">
+      <DependentUpon>待處理配送總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="主視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="主視窗.Designer.cs">
+      <DependentUpon>主視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ImportForm\商品匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportForm\商品匯入視窗.Designer.cs">
+      <DependentUpon>商品匯入視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm\商品大類總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataForm\商品大類總覽視窗.Designer.cs">
+      <DependentUpon>商品大類總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm\商品小類總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataForm\商品小類總覽視窗.Designer.cs">
+      <DependentUpon>商品小類總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm\商品總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataForm\商品總覽視窗.Designer.cs">
+      <DependentUpon>商品總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm\廠商總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataForm\廠商總覽視窗.Designer.cs">
+      <DependentUpon>廠商總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm\支出總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataForm\支出總覽視窗.Designer.cs">
+      <DependentUpon>支出總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportForm\月結帳匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportForm\月結帳匯入視窗.Designer.cs">
+      <DependentUpon>月結帳匯入視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm\月結帳總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataForm\月結帳總覽視窗.Designer.cs">
+      <DependentUpon>月結帳總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportForm\物品匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportForm\物品匯入視窗.Designer.cs">
+      <DependentUpon>物品匯入視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm\物品品牌總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataForm\物品品牌總覽視窗.Designer.cs">
+      <DependentUpon>物品品牌總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm\物品大類總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataForm\物品大類總覽視窗.Designer.cs">
+      <DependentUpon>物品大類總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm\物品小類總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataForm\物品小類總覽視窗.Designer.cs">
+      <DependentUpon>物品小類總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm\物品總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataForm\物品總覽視窗.Designer.cs">
+      <DependentUpon>物品總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataForm\編碼總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataForm\編碼總覽視窗.Designer.cs">
+      <DependentUpon>編碼總覽視窗.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DataForm\幣值總覽視窗.resx">
+      <DependentUpon>幣值總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataForm\進貨總覽視窗.resx">
+      <DependentUpon>進貨總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataForm\雜支總覽視窗.resx">
+      <DependentUpon>雜支總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportForm\出貨匯入視窗.resx">
+      <DependentUpon>出貨匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportForm\進貨匯入視窗.resx">
+      <DependentUpon>進貨匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportForm\雜支匯入視窗.resx">
+      <DependentUpon>雜支匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForm\待處理配送總覽視窗.resx">
+      <DependentUpon>待處理配送總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="主視窗.resx">
+      <DependentUpon>主視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportForm\商品匯入視窗.resx">
+      <DependentUpon>商品匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataForm\商品大類總覽視窗.resx">
+      <DependentUpon>商品大類總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataForm\商品小類總覽視窗.resx">
+      <DependentUpon>商品小類總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataForm\商品總覽視窗.resx">
+      <DependentUpon>商品總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataForm\廠商總覽視窗.resx">
+      <DependentUpon>廠商總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataForm\支出總覽視窗.resx">
+      <DependentUpon>支出總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportForm\月結帳匯入視窗.resx">
+      <DependentUpon>月結帳匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataForm\月結帳總覽視窗.resx">
+      <DependentUpon>月結帳總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportForm\物品匯入視窗.resx">
+      <DependentUpon>物品匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataForm\物品品牌總覽視窗.resx">
+      <DependentUpon>物品品牌總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataForm\物品大類總覽視窗.resx">
+      <DependentUpon>物品大類總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataForm\物品小類總覽視窗.resx">
+      <DependentUpon>物品小類總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataForm\物品總覽視窗.resx">
+      <DependentUpon>物品總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataForm\編碼總覽視窗.resx">
+      <DependentUpon>編碼總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\WokyTool.Common.列舉+代收類型.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Common.列舉+指配時段類型.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Common.列舉+配送公司類型.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Common.可配送.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.出貨資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.商品大類資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.商品小類資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.商品資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.幣值資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.廠商資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.支出資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.月結帳資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.物品品牌資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.物品大類資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.物品小類資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.物品資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.編碼資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.進貨資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.雜支資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.DataImport.商品匯入結構.datasource" />
+    <None Include="Properties\DataSources\WokyTool.DataImport.物品匯入結構.datasource" />
+    <None Include="Properties\DataSources\WokyTool.DataImport.進貨匯入結構.datasource" />
+    <None Include="Properties\DataSources\WokyTool.DataImport.雜支匯入結構.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
