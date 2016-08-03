@@ -340,9 +340,10 @@ namespace WokyTool.ImportForm
         private void ImportShow(string Title_)
         {
             this.Text = Title_;
-            //@@int 廠商編號_ = 廠商管理器.Instance.Get(廠商名稱).編號;
-            int 廠商編號_ = 廠商管理器.Instance.Get("Momo").編號;
+            int 廠商編號_ = 廠商管理器.Instance.Get(廠商名稱).編號;
             this.商品編號DataGridViewTextBoxColumn.DataSource = 商品管理器.Instance.Map.Values.Where(value => value.廠商編號 == 廠商編號_ || value.編號 <= 0).ToList();
+
+            this.資料筆數.Text = _Source.Count.ToString();
         }
 
         // GoHappy匯入
