@@ -51,6 +51,7 @@ namespace WokyTool.DataImport
 
         public string 配送狀態 { get; set; }
         public string 配送訊息 { get; set; }
+        public string 約定配送日 { get; set; }
         public string 訂單類別 { get; set; }
         public DateTime 預計出貨日 { get; set; }
         public string 品號 { get; set; }
@@ -111,6 +112,7 @@ namespace WokyTool.DataImport
             {
                 配送狀態 = 已確認指定配送日;
                 配送訊息 = 預計出貨日.ToString("yyyy/MM/dd");
+                約定配送日 = 配送訊息;
                 _IsIgnore = true;
                 return;
             }
