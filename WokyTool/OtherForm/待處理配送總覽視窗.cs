@@ -43,7 +43,10 @@ namespace WokyTool.OtherForm
         // 初始化目前顯示資料
         private void InitData()
         {
-            _Source = 配送管理器.Instance.List.ToList();
+            _Source = 配送管理器.Instance.List
+                            .OrderBy(x => x.配送公司)
+                            .ThenBy(x => x.配送商品)
+                            .ToList();
 
             _Binding.DataSource = _Source;
             this.dataGridView1.DataSource = _Binding;
