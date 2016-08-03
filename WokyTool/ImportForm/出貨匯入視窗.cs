@@ -28,7 +28,7 @@ namespace WokyTool.ImportForm
 
         private 列舉.進貨處理進度類型 _處理進度;
         private System.Windows.Forms.DataGridViewCellEventHandler _錯誤修正檢查;
-        private string 廠商名稱;
+        private string 廠商類型;
 
         // Momo第三方專用
         private static char[] UserSeparators = new char[] { '\n', '/', '\r' };
@@ -182,19 +182,19 @@ namespace WokyTool.ImportForm
 
             UpdateState(列舉.進貨處理進度類型.分組完成);
 
-            switch (廠商名稱)
+            switch (廠商類型)
             {
                 case "Momo第三方":
                     {
                         {
                             var Items_ = _Source.Select(Value => new 回單號結構_Momo第三方_進度((出貨匯入結構_Momo第三方)Value));
-                            string Title_ = String.Format("{0}進度回單_{1}", 廠商名稱, 共用.NowYMDDec);
+                            string Title_ = String.Format("{0}進度回單_{1}", 廠商類型, 共用.NowYMDDec);
                             函式.ExportExcel<回單號結構_Momo第三方_進度>(Title_, Items_);
                         }
 
                         {
                             var Items_ = _Source.Select(Value => new 回單號結構_Momo第三方_分組((出貨匯入結構_Momo第三方)Value));
-                            string Title_ = String.Format("{0}分組回單_{1}", 廠商名稱, 共用.NowYMDDec);
+                            string Title_ = String.Format("{0}分組回單_{1}", 廠商類型, 共用.NowYMDDec);
                             函式.ExportExcel<回單號結構_Momo第三方_分組>(Title_, Items_);
                         }
                         break;
@@ -206,7 +206,7 @@ namespace WokyTool.ImportForm
 
         private void 配送ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            switch (廠商名稱)
+            switch (廠商類型)
             {
                 case "Momo第三方":
                     {
@@ -233,33 +233,33 @@ namespace WokyTool.ImportForm
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            switch (廠商名稱)
+            switch (廠商類型)
             {
                 case "GoHappy":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_GoHappy((出貨匯入結構_GoHappy)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商名稱, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
                         函式.ExportCSV<回單號結構_GoHappy>(Title_, Items_);
                         break;
                     }
                 case "東森":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_東森((出貨匯入結構_東森)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商名稱, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
                         函式.ExportCSV<回單號結構_東森>(Title_, Items_);
                         break;
                     }
                 case "森森":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_森森((出貨匯入結構_森森)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商名稱, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
                         函式.ExportCSV<回單號結構_森森>(Title_, Items_);
                         break;
                     }
                  case "創業家兄弟":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_創業家兄弟((出貨匯入結構_創業家兄弟)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商名稱, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
                         函式.ExportCSV<回單號結構_創業家兄弟>(Title_, Items_);
                         break;
                     }
@@ -271,7 +271,7 @@ namespace WokyTool.ImportForm
                  case "Momo":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_Momo((出貨匯入結構_Momo)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商名稱, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
                         函式.ExportExcel<回單號結構_Momo>(Title_, Items_);
                         break;
                     }
@@ -280,7 +280,7 @@ namespace WokyTool.ImportForm
                         break;
                     }
                 default:
-                    MessageBox.Show("匯出ToolStripMenuItem_Click unspport " + 廠商名稱, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("匯出ToolStripMenuItem_Click unspport " + 廠商類型, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
          
@@ -337,10 +337,10 @@ namespace WokyTool.ImportForm
         }
 
         // 匯入資料呈現
-        private void ImportShow(string Title_)
+        private void ImportShow(string 廠商名稱_)
         {
-            this.Text = Title_;
-            int 廠商編號_ = 廠商管理器.Instance.Get(廠商名稱).編號;
+            this.Text = String.Format("出貨匯入視窗_{0}", this.廠商類型);;
+            int 廠商編號_ = 廠商管理器.Instance.Get(廠商名稱_).編號;
             this.商品編號DataGridViewTextBoxColumn.DataSource = 商品管理器.Instance.Map.Values.Where(value => value.廠商編號 == 廠商編號_ || value.編號 <= 0).ToList();
 
             this.資料筆數.Text = _Source.Count.ToString();
@@ -349,76 +349,79 @@ namespace WokyTool.ImportForm
         // GoHappy匯入
         private void goHappyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商名稱 = "GoHappy";
+            廠商類型 = "GoHappy";
 
             if (Import<出貨匯入結構_GoHappy>() == false)
                 return;
 
-            ImportShow("出貨匯入視窗_GoHappy");
+            ImportShow(廠商類型);
         }
 
         private void 東森ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商名稱 = "東森";
+            廠商類型 = "東森";
 
             if (Import<出貨匯入結構_東森>() == false)
                 return;
 
-            ImportShow("出貨匯入視窗_東森");
+            ImportShow(廠商類型);
         }
 
         private void 森森ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商名稱 = "森森";
+            廠商類型 = "森森";
 
             if (Import<出貨匯入結構_森森>() == false)
                 return;
 
-            ImportShow("出貨匯入視窗_森森");
+            ImportShow(廠商類型);
         }
 
         private void 創業家兄弟ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商名稱 = "創業家兄弟";
+            廠商類型 = "創業家兄弟";
 
             if (Import<出貨匯入結構_創業家兄弟>() == false)
                 return;
 
-            ImportShow("出貨匯入視窗_創業家兄弟");
+            ImportShow(廠商類型);
         }
 
         private void pCHomeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商名稱 = "PCHome";
+            廠商類型 = "PCHome";
 
             if (Import<出貨匯入結構_PCHome>() == false)
                 return;
 
-            ImportShow("出貨匯入視窗_PCHome");
+            ImportShow(廠商類型);
         }
 
         private void momoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商名稱 = "Momo";
+            廠商類型 = "Momo";
 
             if (Import<出貨匯入結構_Momo>() == false)
                 return;
 
-            ImportShow("出貨匯入視窗_Momo");
+            ImportShow(廠商類型);
         }
 
         private void momo第三方ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商名稱 = "Momo第三方";
+            廠商類型 = "Momo第三方";
 
             if (Import<出貨匯入結構_Momo第三方>() == false)
                 return;
 
-            ImportShow("出貨匯入視窗_Momo第三方");
+            ImportShow("Momo");
         }
 
         private bool momo第三方配送()
         {
+            // 進行排序
+            _DeilverSource.Sort((x, y) => { return x.配送商品.CompareTo(y.配送商品); });
+
             // 取得匯入檔案
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "pdf files (.pdf)|*.pdf";
@@ -534,8 +537,12 @@ namespace WokyTool.ImportForm
                 PdfContentByte contentByte = Output_.DirectContent;
                 contentByte.SetFontAndSize(MyFont, 12);
 
+                // 計算加入的訊息  (排序)產品
+                int Index_ = _DeilverSource.IndexOf(Item_) + 1;
+                String AddData_ = String.Format("({0}){1}", Index_, Item_.配送商品);
+
                 contentByte.BeginText();
-                contentByte.ShowTextAligned(0, Item_.配送商品, 290, WritePosY_, 0);
+                contentByte.ShowTextAligned(0, AddData_, 290, WritePosY_, 0);
                 contentByte.EndText();
 
                 contentByte.AddTemplate(importedPage, 0, 0);
