@@ -22,7 +22,10 @@ namespace WokyTool.DataExport
             App_.Cells[1, 1] = "項次+燈號";
             App_.Cells[1, 2] = "配送狀態\n(說明參考Desc)";
             App_.Cells[1, 3] = "配送訊息";
+
             App_.Cells[1, 4] = "約定配送日";
+            App_.get_Range("D1").EntireColumn.NumberFormat = "YYYY/MM/DD";
+
             App_.Cells[1, 5] = "宅單備註";
             App_.Cells[1, 6] = "訂單編號";
             App_.Cells[1, 7] = "收件人姓名";

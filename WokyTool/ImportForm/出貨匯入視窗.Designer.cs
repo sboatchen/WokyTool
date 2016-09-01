@@ -43,8 +43,12 @@
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.測試ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.群組DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.訂單編號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.指配時段類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.代收類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.配送公司類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.資料筆數 = new System.Windows.Forms.Label();
+            this.群組DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.電話DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,22 +61,17 @@
             this.重要備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.指配日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.指配時段DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.指配時段類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.代收方式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.代收類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.配送公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.配送公司類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.配送單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.出貨資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.資料筆數 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段類型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收類型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司類型BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.出貨資料BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -213,17 +212,37 @@
             this.dataGridView1.Size = new System.Drawing.Size(1087, 455);
             this.dataGridView1.TabIndex = 1;
             // 
-            // 群組DataGridViewTextBoxColumn
-            // 
-            this.群組DataGridViewTextBoxColumn.DataPropertyName = "群組";
-            this.群組DataGridViewTextBoxColumn.HeaderText = "群組";
-            this.群組DataGridViewTextBoxColumn.Name = "群組DataGridViewTextBoxColumn";
-            // 
             // 訂單編號
             // 
             this.訂單編號.DataPropertyName = "訂單編號";
             this.訂單編號.HeaderText = "訂單編號";
             this.訂單編號.Name = "訂單編號";
+            // 
+            // 指配時段類型BindingSource
+            // 
+            this.指配時段類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.指配時段類型);
+            // 
+            // 代收類型BindingSource
+            // 
+            this.代收類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.代收類型);
+            // 
+            // 配送公司類型BindingSource
+            // 
+            this.配送公司類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.配送公司類型);
+            // 
+            // 資料筆數
+            // 
+            this.資料筆數.AutoSize = true;
+            this.資料筆數.Location = new System.Drawing.Point(965, 9);
+            this.資料筆數.Name = "資料筆數";
+            this.資料筆數.Size = new System.Drawing.Size(0, 12);
+            this.資料筆數.TabIndex = 3;
+            // 
+            // 群組DataGridViewTextBoxColumn
+            // 
+            this.群組DataGridViewTextBoxColumn.DataPropertyName = "群組";
+            this.群組DataGridViewTextBoxColumn.HeaderText = "群組";
+            this.群組DataGridViewTextBoxColumn.Name = "群組DataGridViewTextBoxColumn";
             // 
             // 姓名DataGridViewTextBoxColumn
             // 
@@ -303,10 +322,6 @@
             this.指配時段DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.指配時段DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // 指配時段類型BindingSource
-            // 
-            this.指配時段類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.指配時段類型);
-            // 
             // 代收方式DataGridViewTextBoxColumn
             // 
             this.代收方式DataGridViewTextBoxColumn.DataPropertyName = "代收方式";
@@ -315,10 +330,6 @@
             this.代收方式DataGridViewTextBoxColumn.Name = "代收方式DataGridViewTextBoxColumn";
             this.代收方式DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.代收方式DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // 代收類型BindingSource
-            // 
-            this.代收類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.代收類型);
             // 
             // 代收金額DataGridViewTextBoxColumn
             // 
@@ -335,10 +346,6 @@
             this.配送公司DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.配送公司DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // 配送公司類型BindingSource
-            // 
-            this.配送公司類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.配送公司類型);
-            // 
             // 配送單號DataGridViewTextBoxColumn
             // 
             this.配送單號DataGridViewTextBoxColumn.DataPropertyName = "配送單號";
@@ -349,31 +356,12 @@
             // 
             this.出貨資料BindingSource.DataSource = typeof(WokyTool.Data.出貨資料);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(938, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 12);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "資料筆數:";
-            // 
-            // 資料筆數
-            // 
-            this.資料筆數.AutoSize = true;
-            this.資料筆數.Location = new System.Drawing.Point(1000, 6);
-            this.資料筆數.Name = "資料筆數";
-            this.資料筆數.Size = new System.Drawing.Size(11, 12);
-            this.資料筆數.TabIndex = 3;
-            this.資料筆數.Text = "0";
-            // 
             // 出貨匯入視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1087, 479);
             this.Controls.Add(this.資料筆數);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -382,10 +370,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段類型BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收類型BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司類型BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.出貨資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -430,7 +418,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 代收金額DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 配送公司DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 配送單號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label 資料筆數;
     }
 }
