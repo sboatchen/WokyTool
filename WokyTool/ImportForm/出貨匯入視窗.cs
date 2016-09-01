@@ -339,11 +339,14 @@ namespace WokyTool.ImportForm
         // 匯入資料呈現
         private void ImportShow(string 廠商名稱_)
         {
-            this.Text = String.Format("出貨匯入視窗_{0}", this.廠商類型);;
+            this.Text = String.Format("出貨匯入視窗_{0}", this.廠商類型);
             int 廠商編號_ = 廠商管理器.Instance.Get(廠商名稱_).編號;
             this.商品編號DataGridViewTextBoxColumn.DataSource = 商品管理器.Instance.Map.Values.Where(value => value.廠商編號 == 廠商編號_ || value.編號 <= 0).ToList();
 
-            this.資料筆數.Text = _Source.Count.ToString();
+            // 顯示資料數
+            int 總筆數_ = _Source.Count;
+            int 忽略筆數_ = _Source.Where(Value => Value.IsIgnore() == true).Count();
+            this.資料筆數.Text = String.Format("處理:{0} / 忽略:{1}", 總筆數_ - 忽略筆數_, 忽略筆數_);
         }
 
         // GoHappy匯入

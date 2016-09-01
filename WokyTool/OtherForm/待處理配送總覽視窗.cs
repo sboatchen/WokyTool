@@ -114,38 +114,13 @@ namespace WokyTool.OtherForm
                                 .Select(Value => new 宅配通匯出結構(Value))
                                 .ToList();
 
-                //@@ 修改參考回單號結構_Momo
-                int x = 1;
+                // 不加會錯
                 {
-                    ((Range)App.Cells[1, 1]).EntireColumn.ColumnWidth = 8.38f;
-                    ((Range)App.Cells[1, 2]).EntireColumn.ColumnWidth = 9.0f;
-                    ((Range)App.Cells[1, 3]).EntireColumn.ColumnWidth = 4.25f;
-                    ((Range)App.Cells[1, 4]).EntireColumn.ColumnWidth = 9.5f;
-                    ((Range)App.Cells[1, 5]).EntireColumn.ColumnWidth = 4.25f;
-                    ((Range)App.Cells[1, 6]).EntireColumn.ColumnWidth = 4.88f;
-                    ((Range)App.Cells[1, 7]).EntireColumn.ColumnWidth = 11.0f;
-                    ((Range)App.Cells[1, 8]).EntireColumn.ColumnWidth = 10.75f;
-                    ((Range)App.Cells[1, 9]).EntireColumn.ColumnWidth = 7.38f;
-                    ((Range)App.Cells[1, 10]).EntireColumn.ColumnWidth = 13.75f;
-                    ((Range)App.Cells[1, 11]).EntireColumn.ColumnWidth = 4.75f;
-                    ((Range)App.Cells[1, 12]).EntireColumn.ColumnWidth = 21.25f;
-                    ((Range)App.Cells[1, 13]).EntireColumn.ColumnWidth = 9.25f;
-                    ((Range)App.Cells[1, 14]).EntireColumn.ColumnWidth = 16.75f;
-                    ((Range)App.Cells[1, 15]).EntireColumn.ColumnWidth = 7.5f;
-                    ((Range)App.Cells[1, 16]).EntireColumn.ColumnWidth = 40.5f;
-                    ((Range)App.Cells[1, 17]).EntireColumn.ColumnWidth = 4.25f;
-                    ((Range)App.Cells[1, 18]).EntireColumn.ColumnWidth = 8.5f;
-                    ((Range)App.Cells[1, 19]).EntireColumn.ColumnWidth = 5.5f;
-                    ((Range)App.Cells[1, 20]).EntireColumn.ColumnWidth = 4.25f;
-                    ((Range)App.Cells[1, 21]).EntireColumn.ColumnWidth = 5.75f;
-                    ((Range)App.Cells[1, 22]).EntireColumn.ColumnWidth = 5.75f;
-                    ((Range)App.Cells[1, 23]).EntireColumn.ColumnWidth = 4.25f;
-                    ((Range)App.Cells[1, 24]).EntireColumn.ColumnWidth = 4.25f;
-                    ((Range)App.Cells[1, 25]).EntireColumn.ColumnWidth = 4.25f;
-                    ((Range)App.Cells[1, 26]).EntireColumn.ColumnWidth = 12.25f;
-                    ((Range)App.Cells[1, 27]).EntireColumn.ColumnWidth = 48.25f;
-
+                    //@@((Range)App.Cells[1, 27]).EntireColumn.ColumnWidth = 48.25f;
+                    App.Cells[1, 1] = 1;
                 }
+
+                int x = 1;
                 foreach (var Item in _Export2)
                 {
                     App.Cells[x, 13] = Item.姓名;
