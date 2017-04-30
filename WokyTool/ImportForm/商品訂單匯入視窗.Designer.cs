@@ -38,12 +38,14 @@
             this.pCHomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.momoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.momo第三方ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.博客來ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.分組ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.配送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.樣板ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.goHappyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.東森ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.博客來ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.測試ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.寄庫出貨 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -68,17 +70,15 @@
             this.配送公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.配送公司類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.配送單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.出貨資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.資料筆數 = new System.Windows.Forms.Label();
-            this.博客來ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.博客來ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.商品訂單資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段類型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收類型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司類型BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.出貨資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.商品訂單資料BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -160,6 +160,13 @@
             this.momo第三方ToolStripMenuItem.Text = "Momo(第三方)";
             this.momo第三方ToolStripMenuItem.Click += new System.EventHandler(this.momo第三方ToolStripMenuItem_Click);
             // 
+            // 博客來ToolStripMenuItem
+            // 
+            this.博客來ToolStripMenuItem.Name = "博客來ToolStripMenuItem";
+            this.博客來ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.博客來ToolStripMenuItem.Text = "博客來";
+            this.博客來ToolStripMenuItem.Click += new System.EventHandler(this.博客來ToolStripMenuItem_Click);
+            // 
             // 分組ToolStripMenuItem
             // 
             this.分組ToolStripMenuItem.Name = "分組ToolStripMenuItem";
@@ -194,16 +201,23 @@
             // goHappyToolStripMenuItem1
             // 
             this.goHappyToolStripMenuItem1.Name = "goHappyToolStripMenuItem1";
-            this.goHappyToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.goHappyToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.goHappyToolStripMenuItem1.Text = "GoHappy";
             this.goHappyToolStripMenuItem1.Click += new System.EventHandler(this.goHappyToolStripMenuItem1_Click);
             // 
             // 東森ToolStripMenuItem1
             // 
             this.東森ToolStripMenuItem1.Name = "東森ToolStripMenuItem1";
-            this.東森ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.東森ToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.東森ToolStripMenuItem1.Text = "東森";
             this.東森ToolStripMenuItem1.Click += new System.EventHandler(this.東森ToolStripMenuItem1_Click);
+            // 
+            // 博客來ToolStripMenuItem1
+            // 
+            this.博客來ToolStripMenuItem1.Name = "博客來ToolStripMenuItem1";
+            this.博客來ToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
+            this.博客來ToolStripMenuItem1.Text = "博客來";
+            this.博客來ToolStripMenuItem1.Click += new System.EventHandler(this.博客來ToolStripMenuItem1_Click);
             // 
             // 測試ToolStripMenuItem
             // 
@@ -237,7 +251,7 @@
             this.代收金額DataGridViewTextBoxColumn,
             this.配送公司DataGridViewTextBoxColumn,
             this.配送單號DataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.出貨資料BindingSource;
+            this.dataGridView1.DataSource = this.商品訂單資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
@@ -383,10 +397,6 @@
             this.配送單號DataGridViewTextBoxColumn.HeaderText = "配送單號";
             this.配送單號DataGridViewTextBoxColumn.Name = "配送單號DataGridViewTextBoxColumn";
             // 
-            // 出貨資料BindingSource
-            // 
-            this.出貨資料BindingSource.DataSource = typeof(WokyTool.Data.出貨資料);
-            // 
             // 資料筆數
             // 
             this.資料筆數.AutoSize = true;
@@ -395,19 +405,9 @@
             this.資料筆數.Size = new System.Drawing.Size(0, 12);
             this.資料筆數.TabIndex = 3;
             // 
-            // 博客來ToolStripMenuItem
+            // 商品訂單資料BindingSource
             // 
-            this.博客來ToolStripMenuItem.Name = "博客來ToolStripMenuItem";
-            this.博客來ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.博客來ToolStripMenuItem.Text = "博客來";
-            this.博客來ToolStripMenuItem.Click += new System.EventHandler(this.博客來ToolStripMenuItem_Click);
-            // 
-            // 博客來ToolStripMenuItem1
-            // 
-            this.博客來ToolStripMenuItem1.Name = "博客來ToolStripMenuItem1";
-            this.博客來ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.博客來ToolStripMenuItem1.Text = "博客來";
-            this.博客來ToolStripMenuItem1.Click += new System.EventHandler(this.博客來ToolStripMenuItem1_Click);
+            this.商品訂單資料BindingSource.DataSource = typeof(WokyTool.Data.商品訂單資料);
             // 
             // 商品訂單匯入視窗
             // 
@@ -427,7 +427,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.指配時段類型BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收類型BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司類型BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.出貨資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.商品訂單資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,7 +440,6 @@
         private System.Windows.Forms.ToolStripMenuItem goHappyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 分組ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 配送ToolStripMenuItem;
-        private System.Windows.Forms.BindingSource 出貨資料BindingSource;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 商品資料BindingSource;
         private System.Windows.Forms.BindingSource 代收類型BindingSource;
@@ -478,5 +477,6 @@
         private System.Windows.Forms.ToolStripMenuItem goHappyToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 博客來ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 博客來ToolStripMenuItem1;
+        private System.Windows.Forms.BindingSource 商品訂單資料BindingSource;
     }
 }

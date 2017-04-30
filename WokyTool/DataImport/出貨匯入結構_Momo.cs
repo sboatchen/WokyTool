@@ -16,7 +16,7 @@ namespace WokyTool.DataImport
      * 商品序號 = 品號 + 單名編號
      */
 
-    class 出貨匯入結構_Momo : 出貨資料
+    class 出貨匯入結構_Momo : 商品訂單資料
     {
         private static string 已配送 = "已配送";
         private static string 已確認指定配送日 = "已確認指定配送日";

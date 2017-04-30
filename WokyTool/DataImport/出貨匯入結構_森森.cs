@@ -15,7 +15,7 @@ namespace WokyTool.DataImport
      * 無用_要求配送日,無用_要求配送時間 不確定是否使用
      */
 
-    class 出貨匯入結構_森森 : 出貨資料
+    class 出貨匯入結構_森森 : 商品訂單資料
     {
         private static string 一般訂單 = "一般訂單";
 

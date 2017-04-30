@@ -15,7 +15,7 @@ namespace WokyTool.DataImport
      * 預購日/指定配達日 不確定是否使用
      */
 
-    class 出貨匯入結構_PCHome : 出貨資料
+    class 出貨匯入結構_PCHome : 商品訂單資料
     {
         private static string 尚未 = "尚未";
 

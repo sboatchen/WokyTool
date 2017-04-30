@@ -9,7 +9,7 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.DataImport
 {
-    class 出貨匯入結構_博客來 : 出貨資料
+    class 出貨匯入結構_博客來 : 商品訂單資料
     {
         /***** 資訊格式
         訂單編號

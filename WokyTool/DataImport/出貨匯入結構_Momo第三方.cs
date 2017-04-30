@@ -14,7 +14,7 @@ namespace WokyTool.DataImport
      *              2日外的 將配送狀態改為 已確認指定配送日 並將配送訊息 寫上預計出貨日
      * 商品序號 = 品號 + 單名編號
      */
-    class 出貨匯入結構_Momo第三方 : 出貨資料
+    class 出貨匯入結構_Momo第三方 : 商品訂單資料
     {
         private static string 可出貨 = "可出貨";
         private static string 已確認指定配送日 = "已確認指定配送日";

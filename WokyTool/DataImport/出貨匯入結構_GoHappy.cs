@@ -16,7 +16,7 @@ namespace WokyTool.DataImport
      * 商品序號 = 品號 + 單名編號
      */
 
-    class 出貨匯入結構_GoHappy : 出貨資料
+    class 出貨匯入結構_GoHappy : 商品訂單資料
     {
         private static string 出貨處理中 = "出貨處理中";
         private static string NULL_STRING = "'null";

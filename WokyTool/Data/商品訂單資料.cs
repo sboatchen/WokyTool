@@ -10,7 +10,7 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.Data
 {
-    public class 出貨資料 : 訂單資料
+    public class 商品訂單資料 : 訂單資料
     {
         public 商品資料 商品;
         [CsvColumn(Name = "商品編號")]

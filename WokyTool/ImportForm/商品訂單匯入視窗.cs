@@ -23,7 +23,7 @@ namespace WokyTool.ImportForm
 {
     public partial class 商品訂單匯入視窗 : Form
     {
-        private List<出貨資料> _Source;
+        private List<商品訂單資料> _Source;
         private List<可配送> _DeilverSource;
 
         private 列舉.訂單處理進度類型 _處理進度;
@@ -288,7 +288,7 @@ namespace WokyTool.ImportForm
         }
 
         // 通用匯入格式
-        private bool Import<T>() where T : 出貨資料
+        private bool Import<T>() where T : 商品訂單資料
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Excel files|*.*";
@@ -299,7 +299,7 @@ namespace WokyTool.ImportForm
                 {
                     var Excel_ = new ExcelQueryFactory(openFileDialog1.FileName);
 
-                    _Source = new List<出貨資料>();
+                    _Source = new List<商品訂單資料>();
                     foreach (var Item_ in Excel_.Worksheet<T>())
                     {
                         if (Item_.訂單編號 == null)

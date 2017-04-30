@@ -13,7 +13,7 @@ namespace WokyTool.DataImport
      * 時段資料不使用
      */
 
-    class 出貨匯入結構_創業家兄弟 : 出貨資料
+    class 出貨匯入結構_創業家兄弟 : 商品訂單資料
     {
         /* 可讀入資訊 */
 
