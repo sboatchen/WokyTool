@@ -263,9 +263,9 @@
             // 
             this.button21.Location = new System.Drawing.Point(23, 308);
             this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 23);
+            this.button21.Size = new System.Drawing.Size(90, 23);
             this.button21.TabIndex = 20;
-            this.button21.Text = "出貨匯入";
+            this.button21.Text = "平台訂單匯入";
             this.button21.UseVisualStyleBackColor = true;
             this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
@@ -281,7 +281,7 @@
             // 
             // button23
             // 
-            this.button23.Location = new System.Drawing.Point(119, 337);
+            this.button23.Location = new System.Drawing.Point(23, 366);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(75, 23);
             this.button23.TabIndex = 22;

@@ -1,6 +1,6 @@
 ﻿namespace WokyTool.ImportForm
 {
-    partial class 出貨匯入視窗
+    partial class 商品訂單匯入視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -42,6 +42,7 @@
             this.配送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.樣板ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.goHappyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.東森ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.測試ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -69,7 +70,8 @@
             this.配送單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.出貨資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.資料筆數 = new System.Windows.Forms.Label();
-            this.goHappyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.博客來ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.博客來ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).BeginInit();
@@ -103,7 +105,8 @@
             this.創業家兄弟ToolStripMenuItem,
             this.pCHomeToolStripMenuItem,
             this.momoToolStripMenuItem,
-            this.momo第三方ToolStripMenuItem});
+            this.momo第三方ToolStripMenuItem,
+            this.博客來ToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
             this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "匯入";
@@ -182,10 +185,18 @@
             // 
             this.樣板ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.goHappyToolStripMenuItem1,
-            this.東森ToolStripMenuItem1});
+            this.東森ToolStripMenuItem1,
+            this.博客來ToolStripMenuItem1});
             this.樣板ToolStripMenuItem.Name = "樣板ToolStripMenuItem";
             this.樣板ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.樣板ToolStripMenuItem.Text = "樣板";
+            // 
+            // goHappyToolStripMenuItem1
+            // 
+            this.goHappyToolStripMenuItem1.Name = "goHappyToolStripMenuItem1";
+            this.goHappyToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.goHappyToolStripMenuItem1.Text = "GoHappy";
+            this.goHappyToolStripMenuItem1.Click += new System.EventHandler(this.goHappyToolStripMenuItem1_Click);
             // 
             // 東森ToolStripMenuItem1
             // 
@@ -384,14 +395,21 @@
             this.資料筆數.Size = new System.Drawing.Size(0, 12);
             this.資料筆數.TabIndex = 3;
             // 
-            // goHappyToolStripMenuItem1
+            // 博客來ToolStripMenuItem
             // 
-            this.goHappyToolStripMenuItem1.Name = "goHappyToolStripMenuItem1";
-            this.goHappyToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.goHappyToolStripMenuItem1.Text = "GoHappy";
-            this.goHappyToolStripMenuItem1.Click += new System.EventHandler(this.goHappyToolStripMenuItem1_Click);
+            this.博客來ToolStripMenuItem.Name = "博客來ToolStripMenuItem";
+            this.博客來ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.博客來ToolStripMenuItem.Text = "博客來";
+            this.博客來ToolStripMenuItem.Click += new System.EventHandler(this.博客來ToolStripMenuItem_Click);
             // 
-            // 出貨匯入視窗
+            // 博客來ToolStripMenuItem1
+            // 
+            this.博客來ToolStripMenuItem1.Name = "博客來ToolStripMenuItem1";
+            this.博客來ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.博客來ToolStripMenuItem1.Text = "博客來";
+            this.博客來ToolStripMenuItem1.Click += new System.EventHandler(this.博客來ToolStripMenuItem1_Click);
+            // 
+            // 商品訂單匯入視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -400,8 +418,8 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "出貨匯入視窗";
-            this.Text = "出貨匯入視窗";
+            this.Name = "商品訂單匯入視窗";
+            this.Text = "商品訂單匯入視窗";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -458,5 +476,7 @@
         private System.Windows.Forms.ToolStripMenuItem 樣板ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 東森ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem goHappyToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 博客來ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 博客來ToolStripMenuItem1;
     }
 }

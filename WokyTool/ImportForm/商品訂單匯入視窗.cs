@@ -21,7 +21,7 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.ImportForm
 {
-    public partial class 出貨匯入視窗 : Form
+    public partial class 商品訂單匯入視窗 : Form
     {
         private List<出貨資料> _Source;
         private List<可配送> _DeilverSource;
@@ -41,7 +41,7 @@ namespace WokyTool.ImportForm
         );
         private static iTextSharp.text.Font MyFont = new iTextSharp.text.Font(MyBaseFont, 12);
 
-        public 出貨匯入視窗()
+        public 商品訂單匯入視窗()
         {
             InitializeComponent();
 
@@ -340,7 +340,7 @@ namespace WokyTool.ImportForm
         // 匯入資料呈現
         private void ImportShow(string 廠商名稱_)
         {
-            this.Text = String.Format("出貨匯入視窗_{0}", this.廠商類型);
+            this.Text = String.Format("商品訂單匯入視窗_{0}", this.廠商類型);
             int 廠商編號_ = 廠商管理器.Instance.Get(廠商名稱_).編號;
             this.商品編號DataGridViewTextBoxColumn.DataSource = 商品管理器.Instance.Map.Values.Where(value => value.廠商編號 == 廠商編號_ || value.編號 <= 0).ToList();
 
@@ -419,6 +419,16 @@ namespace WokyTool.ImportForm
                 return;
 
             ImportShow("Momo");
+        }
+
+        private void 博客來ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "博客來";
+
+            if (Import<出貨匯入結構_博客來>() == false)
+                return;
+
+            ImportShow("博客來");
         }
 
         private bool momo第三方配送()
@@ -585,6 +595,11 @@ namespace WokyTool.ImportForm
         private void goHappyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             函式.GetFile("GoHappy匯入樣板", "Template/OrderImport/GoHappy匯入樣板.xlsx");
+        }
+
+        private void 博客來ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("博客來匯入樣板", "Template/OrderImport/博客來匯入樣板.xlsx");
         }
     }
 }

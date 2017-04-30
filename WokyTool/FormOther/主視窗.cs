@@ -273,7 +273,7 @@ namespace WokyTool
 
         private void button21_Click(object sender, EventArgs e)
         {
-            var i = new 出貨匯入視窗();
+            var i = new 商品訂單匯入視窗();
             i.Show();
             i.BringToFront();
         }
