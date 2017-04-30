@@ -18,30 +18,80 @@ namespace WokyTool.ImportForm
 {
     public partial class 進貨匯入視窗 : Form
     {
+        private bool _IsImport = false;
+
         private List<進貨匯入結構> _Source;
         private BindingSource _Binding;
+        private 列舉.進貨類型 _Type;
 
-        public 進貨匯入視窗(ExcelQueryFactory Data)
+        public 進貨匯入視窗(列舉.進貨類型 Type_)
         {
             InitializeComponent();
 
-            _Source = Data.Worksheet<進貨匯入結構>()
-                            .ToList();
+            _Type = Type_;
 
-            foreach (var Item_ in _Source)
-                Item_.Init();
+            this.Text = _Type.ToString() + "匯入視窗";
 
-            _Binding = new BindingSource();
-            _Binding.DataSource = _Source;
-            this.dataGridView1.DataSource = _Binding;
-
+            //this.類型.DataSource = Enum.GetValues(typeof(列舉.進貨類型));
             this.廠商編號DataGridViewTextBoxColumn.DataSource = 廠商管理器.Instance.Binding;
             this.物品編號DataGridViewTextBoxColumn.DataSource = 物品管理器.Instance.Binding;
             this.幣值編號DataGridViewTextBoxColumn.DataSource = 幣值管理器.Instance.Binding;
 
+            //this.類型.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
             this.廠商編號DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
             this.物品編號DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
             this.幣值編號DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
+
+            UpdateState(_IsImport);
+        }
+
+        private void UpdateState(bool IsImport_)
+        {
+            _IsImport = IsImport_;
+
+            if (_IsImport)
+            {
+                匯入ToolStripMenuItem.Enabled = false;
+                新增ToolStripMenuItem.Enabled = true;
+                刪除ToolStripMenuItem.Enabled = true;
+                列錯ToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                匯入ToolStripMenuItem.Enabled = true;
+                新增ToolStripMenuItem.Enabled = false;
+                刪除ToolStripMenuItem.Enabled = false;
+                列錯ToolStripMenuItem.Enabled = false;
+            }
+        }
+
+        private void 匯入ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Excel files|*.*";
+
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    var Excel_ = new ExcelQueryFactory(openFileDialog1.FileName);
+
+                    _Source = Excel_.Worksheet<進貨匯入結構>().ToList();
+                    foreach (var Item_ in _Source)
+                        Item_.Init(_Type);
+
+                    _Binding = new BindingSource();
+                    _Binding.DataSource = _Source;
+                    this.dataGridView1.DataSource = _Binding;
+
+                    UpdateState(true);
+                }
+                catch (Exception Error_)
+                {
+                    MessageBox.Show("開啟檔案失敗" + Error_.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
         }
 
         private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,6 +132,9 @@ namespace WokyTool.ImportForm
 
         private void 進貨匯入視窗_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (_Source == null)
+                return;
+
             // 檢查匯入資料的正確性
             foreach (var Data in _Source)
             {
@@ -105,7 +158,7 @@ namespace WokyTool.ImportForm
             {
                 foreach (var Item_ in _Source)
                 {
-                    進貨管理器.Instance.Add(Item_.ToData());
+                    進貨管理器.Instance.Add(Item_.Import());
                 }
             }
         }
@@ -146,6 +199,11 @@ namespace WokyTool.ImportForm
                     e.CellStyle.ForeColor = Color.Black;
                 }
             }
+        }
+
+        private void 樣板ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("進貨匯入範本", "Template/OtherImport/進貨匯入範本.xlsx");
         }
     }
 }

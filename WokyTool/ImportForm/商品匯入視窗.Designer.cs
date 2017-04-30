@@ -34,11 +34,12 @@
             this.刪除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.列錯ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.商品匯入結構BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.商品大類資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.商品小類資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.廠商資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.商品匯入結構BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.公司資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.大類名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.大類編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -59,17 +60,20 @@
             this.需求名稱5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.需求編號5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.數量5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.公司名稱 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.公司編號 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.廠商名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.廠商編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.品號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.價格DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.商品匯入結構BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品大類資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品小類資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.商品匯入結構BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.公司資料BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -132,6 +136,8 @@
             this.需求名稱5DataGridViewTextBoxColumn,
             this.需求編號5DataGridViewTextBoxColumn,
             this.數量5DataGridViewTextBoxColumn,
+            this.公司名稱,
+            this.公司編號,
             this.廠商名稱DataGridViewTextBoxColumn,
             this.廠商編號DataGridViewTextBoxColumn,
             this.品號DataGridViewTextBoxColumn,
@@ -144,10 +150,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1289, 493);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
-            // 
-            // 商品匯入結構BindingSource
-            // 
-            this.商品匯入結構BindingSource.DataSource = typeof(WokyTool.DataImport.商品匯入結構);
             // 
             // 商品大類資料BindingSource
             // 
@@ -164,6 +166,14 @@
             // 廠商資料BindingSource
             // 
             this.廠商資料BindingSource.DataSource = typeof(WokyTool.Data.廠商資料);
+            // 
+            // 商品匯入結構BindingSource
+            // 
+            this.商品匯入結構BindingSource.DataSource = typeof(WokyTool.DataImport.商品匯入結構);
+            // 
+            // 公司資料BindingSource
+            // 
+            this.公司資料BindingSource.DataSource = typeof(WokyTool.Data.公司資料);
             // 
             // 名稱DataGridViewTextBoxColumn
             // 
@@ -320,6 +330,21 @@
             this.數量5DataGridViewTextBoxColumn.HeaderText = "數量5";
             this.數量5DataGridViewTextBoxColumn.Name = "數量5DataGridViewTextBoxColumn";
             // 
+            // 公司名稱
+            // 
+            this.公司名稱.DataPropertyName = "公司名稱";
+            this.公司名稱.HeaderText = "公司名稱";
+            this.公司名稱.Name = "公司名稱";
+            // 
+            // 公司編號
+            // 
+            this.公司編號.DataPropertyName = "公司編號";
+            this.公司編號.DataSource = this.公司資料BindingSource;
+            this.公司編號.DisplayMember = "名稱";
+            this.公司編號.HeaderText = "公司編號";
+            this.公司編號.Name = "公司編號";
+            this.公司編號.ValueMember = "編號";
+            // 
             // 廠商名稱DataGridViewTextBoxColumn
             // 
             this.廠商名稱DataGridViewTextBoxColumn.DataPropertyName = "廠商名稱";
@@ -363,11 +388,12 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.商品匯入結構BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品大類資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品小類資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.商品匯入結構BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.公司資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,16 +406,18 @@
         private System.Windows.Forms.ToolStripMenuItem 刪除ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 列錯ToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource 商品大類資料BindingSource;
+        private System.Windows.Forms.BindingSource 商品小類資料BindingSource;
+        private System.Windows.Forms.BindingSource 物品資料BindingSource;
+        private System.Windows.Forms.BindingSource 廠商資料BindingSource;
+        private System.Windows.Forms.BindingSource 商品匯入結構BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 大類名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 大類編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 商品大類資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 小類名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 小類編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 商品小類資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 需求名稱1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 需求編號1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 物品資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 需求名稱2DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 需求編號2DataGridViewTextBoxColumn;
@@ -403,11 +431,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 需求名稱5DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 需求編號5DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量5DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 公司名稱;
+        private System.Windows.Forms.DataGridViewComboBoxColumn 公司編號;
+        private System.Windows.Forms.BindingSource 公司資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 廠商名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 廠商編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 廠商資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 品號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 價格DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 商品匯入結構BindingSource;
     }
 }

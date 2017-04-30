@@ -19,10 +19,10 @@ namespace WokyTool.DataMgr
 
         // 資料Map
         public Dictionary<int, 進貨資料> Map { get; private set; }
-        // Binding
-        public BindingSource Binding { get; private set; }
         // 資料是否異動
         public bool IsDirty { get; set; }
+
+        public 監測綁定廣播<進貨資料> Binding { get; private set; }
 
         // 獨體
         private static readonly 進貨管理器 _Instance = new 進貨管理器();
@@ -39,9 +39,6 @@ namespace WokyTool.DataMgr
         {
             InitData();
 
-            Binding = new BindingSource();
-            Binding.DataSource = Map.Values;
-
             IsDirty = false;
         }
 
@@ -51,16 +48,14 @@ namespace WokyTool.DataMgr
             if (File.Exists(FILE_PATH))
             {
                 CsvContext SetReader_ = new CsvContext();
-                Map = SetReader_.Read<進貨資料>(FILE_PATH, 共用.ReaderDefine)
+                Map = SetReader_.Read<進貨資料_暫時>(FILE_PATH, 共用.ReaderDefine)
+                                    .Select(Data => 進貨資料_唯讀.New(Data))
                                     .ToDictionary(Data => Data.編號);
 
                 Map[-1] = 進貨資料.ERROR;
                 Map[0] = 進貨資料.NULL;
 
-                foreach (var Item_ in Map.Values)
-                {
-                    Item_.Import();
-                }
+                Binding = new 監測綁定廣播<進貨資料>(Map.Select(x => x.Value).Where(x => x.編號 > 0));
             }
             else
             {
@@ -108,18 +103,15 @@ namespace WokyTool.DataMgr
             }
 
             Map[Item_.編號] = Item_;
-            
-            Binding.Add(Item_);
-            IsDirty = true;
+            Binding.SetDirty();
 
-            // 庫存異動
-            Item_.StockAdd();
+            IsDirty = true;
         }
 
         // 新增資料
-        public void Add()
+        /*public void Add()
         {
-            進貨資料 Item_ = 進貨資料.New();
+            進貨資料 Item_ = 進貨資料_暫時.New();
 
             if (Map.ContainsKey(Item_.編號))
             {
@@ -128,24 +120,24 @@ namespace WokyTool.DataMgr
             }
 
             Map[Item_.編號] = Item_;
+            Binding.SetDirty();
 
-            Binding.Add(Item_);
             IsDirty = true;
 
             // 該物件尚未進行庫存的異動，等到存檔時處理
-        }
+        }*/
 
         // 刪除資料
         public void Delete(進貨資料 Item_)
         {
             if (Map.ContainsKey(Item_.編號))
             {
-                // 庫存異動
-                Item_.StockDel();
+                // 物件刪除
+                Item_.Delete();
 
                 Map.Remove(Item_.編號);
+                Binding.SetDirty();
 
-                Binding.Remove(Item_);
                 IsDirty = true;
             }
             else
@@ -160,11 +152,12 @@ namespace WokyTool.DataMgr
             進貨資料 Item_;
             if (Map.TryGetValue(ID_, out Item_))
             {
-                // 庫存異動
-                Item_.StockDel();
+                // 物件刪除
+                Item_.Delete();
 
                 Map.Remove(ID_);
-                Binding.Remove(Item_);
+                Binding.SetDirty();
+
                 IsDirty = true;
             }
             else
@@ -182,18 +175,10 @@ namespace WokyTool.DataMgr
                 if (Map.TryGetValue(ID_, out Item_))
                 {
                     Map.Remove(ID_);
-                    Binding.Remove(Item_);
+                    Binding.SetDirty();
+
                     IsDirty = true;
                 }
-            }
-        }
-
-        // 資料新增存檔
-        public void AddDone()
-        {
-            foreach (var Item_ in Map.Values)
-            {
-                Item_.Save();
             }
         }
     }

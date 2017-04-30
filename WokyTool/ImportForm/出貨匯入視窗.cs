@@ -26,7 +26,7 @@ namespace WokyTool.ImportForm
         private List<出貨資料> _Source;
         private List<可配送> _DeilverSource;
 
-        private 列舉.進貨處理進度類型 _處理進度;
+        private 列舉.訂單處理進度類型 _處理進度;
         private System.Windows.Forms.DataGridViewCellEventHandler _錯誤修正檢查;
         private string 廠商類型;
 
@@ -34,11 +34,12 @@ namespace WokyTool.ImportForm
         private static char[] UserSeparators = new char[] { '\n', '/', '\r' };
 
         private static string FontPath = Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\..\Fonts\kaiu.ttf";
-        private static BaseFont MyFont = BaseFont.CreateFont(
+        private static BaseFont MyBaseFont = BaseFont.CreateFont(
             FontPath,
             BaseFont.IDENTITY_H, //橫式中文
             BaseFont.NOT_EMBEDDED
         );
+        private static iTextSharp.text.Font MyFont = new iTextSharp.text.Font(MyBaseFont, 12);
 
         public 出貨匯入視窗()
         {
@@ -55,12 +56,12 @@ namespace WokyTool.ImportForm
             this.代收方式DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.代收類型));
             this.配送公司DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.配送公司類型));
 
-            UpdateState(列舉.進貨處理進度類型.新建);
+            UpdateState(列舉.訂單處理進度類型.新建);
 
             this.Activated += new System.EventHandler(this.onEventActivated);
         }
 
-        private void UpdateState(列舉.進貨處理進度類型 處理進度_)
+        private void UpdateState(列舉.訂單處理進度類型 處理進度_)
         {
             if( _處理進度 == 處理進度_)
                 return;
@@ -68,38 +69,38 @@ namespace WokyTool.ImportForm
 
             switch (_處理進度)
             {
-                case 列舉.進貨處理進度類型.新建:
+                case 列舉.訂單處理進度類型.新建:
                     匯入ToolStripMenuItem.Enabled = true;
                     分組ToolStripMenuItem.Enabled = false;
                     配送ToolStripMenuItem.Enabled = false;
                     匯出ToolStripMenuItem.Enabled = false;
                     break;
-                case 列舉.進貨處理進度類型.匯入錯誤:
+                case 列舉.訂單處理進度類型.匯入錯誤:
                     匯入ToolStripMenuItem.Enabled = false;
                     分組ToolStripMenuItem.Enabled = false;
                     配送ToolStripMenuItem.Enabled = false;
                     匯出ToolStripMenuItem.Enabled = false;
                     break;
-                case 列舉.進貨處理進度類型.匯入正確:
+                case 列舉.訂單處理進度類型.匯入正確:
                     匯入ToolStripMenuItem.Enabled = false;
                     分組ToolStripMenuItem.Enabled = true;
                     配送ToolStripMenuItem.Enabled = false;
                     匯出ToolStripMenuItem.Enabled = false;
                     break;
-                case 列舉.進貨處理進度類型.分組完成:
+                case 列舉.訂單處理進度類型.分組完成:
                     匯入ToolStripMenuItem.Enabled = false;
                     分組ToolStripMenuItem.Enabled = false;
                     配送ToolStripMenuItem.Enabled = true;
                     匯出ToolStripMenuItem.Enabled = false;
                     this.dataGridView1.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.BlockEvent);
                     break;
-                case 列舉.進貨處理進度類型.要求配送:
+                case 列舉.訂單處理進度類型.要求配送:
                     匯入ToolStripMenuItem.Enabled = false;
                     分組ToolStripMenuItem.Enabled = false;
                     配送ToolStripMenuItem.Enabled = false;
                     匯出ToolStripMenuItem.Enabled = false;
                     break;
-                case 列舉.進貨處理進度類型.配送完成:
+                case 列舉.訂單處理進度類型.配送完成:
                     匯入ToolStripMenuItem.Enabled = false;
                     分組ToolStripMenuItem.Enabled = false;
                     配送ToolStripMenuItem.Enabled = false;
@@ -115,10 +116,10 @@ namespace WokyTool.ImportForm
         private void CheckImportValue(object sender, DataGridViewCellEventArgs e)
         {
             if (_Source.Where(Value => Value.IsLegal() == false).Count() > 0)
-                UpdateState(列舉.進貨處理進度類型.匯入錯誤);
+                UpdateState(列舉.訂單處理進度類型.匯入錯誤);
             else
             {
-                UpdateState(列舉.進貨處理進度類型.匯入正確);
+                UpdateState(列舉.訂單處理進度類型.匯入正確);
                 this.dataGridView1.CellValueChanged -= _錯誤修正檢查;
             }
         }
@@ -150,10 +151,10 @@ namespace WokyTool.ImportForm
             this.dataGridView1.Refresh();
 
             // 如果已經配送，檢查是否已全部配送完成
-            if (_處理進度 == 列舉.進貨處理進度類型.要求配送)
+            if (_處理進度 == 列舉.訂單處理進度類型.要求配送)
             {
                 if(_Source.Where(Value => Value.IsDilivered()).Count() == _Source.Count)
-                    UpdateState(列舉.進貨處理進度類型.配送完成);
+                    UpdateState(列舉.訂單處理進度類型.配送完成);
             }
         }
 
@@ -171,7 +172,7 @@ namespace WokyTool.ImportForm
                     return;
                 }
 
-                合併可配送 CombineItem_ = new 合併可配送();
+                合併訂單資料 CombineItem_ = new 合併訂單資料();
                 foreach (var Item in Group_)
                 {
                     if (CombineItem_.Add(Item) == false)
@@ -180,7 +181,7 @@ namespace WokyTool.ImportForm
                 _DeilverSource.Add(CombineItem_);
             }
 
-            UpdateState(列舉.進貨處理進度類型.分組完成);
+            UpdateState(列舉.訂單處理進度類型.分組完成);
 
             switch (廠商類型)
             {
@@ -225,7 +226,7 @@ namespace WokyTool.ImportForm
                             配送管理器.Instance.Add(Item_);
                         }
 
-                        UpdateState(列舉.進貨處理進度類型.要求配送);
+                        UpdateState(列舉.訂單處理進度類型.要求配送);
                         break;
                     }
             }
@@ -316,12 +317,12 @@ namespace WokyTool.ImportForm
 
                     if (_Source.Where(Value => Value.IsLegal() == false).Count() > 0)
                     {
-                        UpdateState(列舉.進貨處理進度類型.匯入錯誤);
+                        UpdateState(列舉.訂單處理進度類型.匯入錯誤);
                         this.dataGridView1.CellValueChanged += _錯誤修正檢查;
                     }
                     else
                     {
-                        UpdateState(列舉.進貨處理進度類型.匯入正確);
+                        UpdateState(列舉.訂單處理進度類型.匯入正確);
                         this.dataGridView1.CellValueChanged -= _錯誤修正檢查;
                     }
 
@@ -529,16 +530,30 @@ namespace WokyTool.ImportForm
             var Item_ = _DeilverSource.Where(Value => Value.IsReceiptMatch(發票號碼_)).FirstOrDefault();
             if (Item_ != null)
             {
-                Item_.配送單號 = 宅配單號_;
-                //@@Item_.姓名 = 名字_;
+                //@Item_.姓名 = 名字_;
                 //@@Item_.電話 = 電話_;
                 //@@Item_.手機 = 手機_;
                 //@@Item_.地址 = 地址_;
+                Item_.SetDiliver(宅配單號_);
 
-                // 設定組成
+                // 拷貝舊資料
                 var importedPage = Output_.GetImportedPage(File_, PageIndex_);
                 PdfContentByte contentByte = Output_.DirectContent;
-                contentByte.SetFontAndSize(MyFont, 12);
+                contentByte.AddTemplate(importedPage, 0, 0);
+
+                // 計算加入的訊息  (排序)產品
+                int Index_ = _DeilverSource.IndexOf(Item_) + 1;
+                Phrase myText = new Phrase(String.Format("({0}){1}", Index_, Item_.配送商品), MyFont);
+                
+                // 塞入資訊
+                ColumnText ct = new ColumnText(Output_.DirectContent);
+                ct.SetSimpleColumn(myText, 290, WritePosY_+20, 520, WritePosY_-100, 15, Element.ALIGN_TOP);
+                ct.Go();
+
+                // 設定組成
+                /*var importedPage = Output_.GetImportedPage(File_, PageIndex_);
+                PdfContentByte contentByte = Output_.DirectContent;
+                contentByte.SetFontAndSize(MyBaseFont, 12);
 
                 // 計算加入的訊息  (排序)產品
                 int Index_ = _DeilverSource.IndexOf(Item_) + 1;
@@ -548,7 +563,7 @@ namespace WokyTool.ImportForm
                 contentByte.ShowTextAligned(0, AddData_, 290, WritePosY_, 0);
                 contentByte.EndText();
 
-                contentByte.AddTemplate(importedPage, 0, 0);
+                contentByte.AddTemplate(importedPage, 0, 0);*/
             }
         }
 
@@ -560,6 +575,16 @@ namespace WokyTool.ImportForm
                 Item_.配送單號 = String.Format("測試配送單號{0:00}", Number);
                 Number++;
             }
+        }
+
+        private void 東森ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("東森匯入樣板", "Template/OrderImport/東森匯入樣板.xlsx");
+        }
+
+        private void goHappyToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("GoHappy匯入樣板", "Template/OrderImport/GoHappy匯入樣板.xlsx");
         }
     }
 }

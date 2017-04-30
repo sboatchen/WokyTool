@@ -37,6 +37,7 @@ namespace WokyTool
 
             this.大類編號DataGridViewTextBoxColumn.DataSource = 商品大類管理器.Instance.Binding;
             this.小類編號DataGridViewTextBoxColumn.DataSource = 商品小類管理器.Instance.Binding;
+            this.公司編號.DataSource = 公司管理器.Instance.Binding;
             this.廠商編號DataGridViewTextBoxColumn.DataSource = 廠商管理器.Instance.Binding;
             this.需求編號1DataGridViewTextBoxColumn.DataSource = 物品管理器.Instance.Binding;
             this.需求編號2DataGridViewTextBoxColumn.DataSource = 物品管理器.Instance.Binding;
@@ -44,8 +45,11 @@ namespace WokyTool
             this.需求編號4DataGridViewTextBoxColumn.DataSource = 物品管理器.Instance.Binding;
             this.需求編號5DataGridViewTextBoxColumn.DataSource = 物品管理器.Instance.Binding;
 
+
+            //@@ 測試 看是匯入的視窗 還是總覽視窗 那些需要隱藏combobox
             this.大類編號DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
             this.小類編號DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
+            this.公司編號.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
             this.廠商編號DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
             this.需求編號1DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
             this.需求編號2DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
@@ -125,6 +129,7 @@ namespace WokyTool
             bool IsCheck_ =
                 this.dataGridView1.Columns[e.ColumnIndex].Name == "大類編號DataGridViewTextBoxColumn" ||
                 this.dataGridView1.Columns[e.ColumnIndex].Name == "小類編號DataGridViewTextBoxColumn" ||
+                this.dataGridView1.Columns[e.ColumnIndex].Name == "公司編號" ||
                 this.dataGridView1.Columns[e.ColumnIndex].Name == "廠商編號DataGridViewTextBoxColumn" ||
                 this.dataGridView1.Columns[e.ColumnIndex].Name == "需求編號1DataGridViewTextBoxColumn" ||
                 this.dataGridView1.Columns[e.ColumnIndex].Name == "需求編號2DataGridViewTextBoxColumn" ||

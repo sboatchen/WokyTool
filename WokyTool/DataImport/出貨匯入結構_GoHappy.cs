@@ -13,6 +13,7 @@ namespace WokyTool.DataImport
 {
     /*
      * 訂單狀態為 "出貨處理中" 才處理
+     * 商品序號 = 品號 + 單名編號
      */
 
     class 出貨匯入結構_GoHappy : 出貨資料
@@ -49,8 +50,14 @@ namespace WokyTool.DataImport
 
         /* 自用資訊 */
 
+        public string 品號 { get; set; }
+        public string 單名編號 { get; set; }
         public string 出貨單號 { get; set; }
         public string 訂單狀態 { get; set; }
+        public DateTime 應出貨日期 { get; set; }
+
+        // 是否為不處理的資料
+        private bool _IsIgnore = false;
 
         // 共用廠商快取
         protected static 廠商資料 _共用廠商快取 = null;
@@ -73,12 +80,36 @@ namespace WokyTool.DataImport
         // 是否合法
         //override public bool IsLegal();
 
+        // 是否需要配送
+        override public bool IsIgnore()
+        {
+            return _IsIgnore;
+        }
+
         // 初始化
         override public void Init()
         {
             群組 = 0;
 
+            // 兩日以上的單子不處理
+            if (應出貨日期.CompareTo(共用.A5YMD) > 0)
+            {
+                _IsIgnore = true;
+                return;
+            }
+
             廠商 = 共用廠商快取;
+
+            // 商品序號 = 品號 + 單名編號
+            if (單名編號 != null && 單名編號.Length > 0)
+            {
+                商品序號 = string.Format("{0}@{1}", 品號, 單名編號);
+            }
+            else
+            {
+                商品序號 = 品號;
+            }
+
             商品 = 商品管理器.Instance.Get(廠商.編號, 商品序號);
 
             指配日期 = new DateTime(0);

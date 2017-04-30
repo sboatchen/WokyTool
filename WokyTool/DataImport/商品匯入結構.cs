@@ -19,6 +19,7 @@ namespace WokyTool.DataImport
         public string 大類名稱 { get; set; }
         public string 小類名稱 { get; set; }
 
+        public string 公司名稱 { get; set; }
         public string 廠商名稱 { get; set; }
 
         public string 需求名稱1 { get; set; }
@@ -60,6 +61,19 @@ namespace WokyTool.DataImport
             set
             {
                 小類 = 商品小類管理器.Instance.Get(value);
+            }
+        }
+
+        public 公司資料 公司;
+        public int 公司編號
+        {
+            get
+            {
+                return 公司.編號;
+            }
+            set
+            {
+                公司 = 公司管理器.Instance.Get(value);
             }
         }
 
@@ -147,6 +161,7 @@ namespace WokyTool.DataImport
             大類 = 商品大類管理器.Instance.Get(大類名稱);
             小類 = 商品小類管理器.Instance.Get(小類名稱);
 
+            公司 = 公司管理器.Instance.Get(公司名稱);
             廠商 = 廠商管理器.Instance.Get(廠商名稱);
 
             需求1 = 物品管理器.Instance.GetBySName(需求名稱1);
@@ -165,6 +180,8 @@ namespace WokyTool.DataImport
 
                 大類名稱 = 字串.空,
                 小類名稱 = 字串.空,
+
+                公司名稱 = 字串.空,
                 廠商名稱 = 字串.空,
 
                 需求名稱1 = 字串.空,
@@ -183,6 +200,7 @@ namespace WokyTool.DataImport
 
                 大類 = 商品大類資料.NULL,
                 小類 = 商品小類資料.NULL,
+                公司 = 公司資料.NULL,
                 廠商 = 廠商資料.NULL,
 
                 需求1 = 物品資料.NULL,
@@ -202,7 +220,9 @@ namespace WokyTool.DataImport
         // 資料是否合法
         public bool IsLegal()
         {
-            bool IsError_ = 廠商編號 == -1 ||
+            //@@ 這邊要調整 至少要有需求1
+            bool IsError_ = 公司編號 == -1 ||
+                            廠商編號 == -1 ||
                             大類編號 == -1 ||
                             小類編號 == -1 ||
                             需求編號1 == -1 || (需求編號1 == 0 && 數量1 > 0 ) || (需求編號1 > 0 && 數量1 == 0 ) ||
@@ -224,6 +244,7 @@ namespace WokyTool.DataImport
                 小類 = this.小類,
                 品號 = this.品號,
                 名稱 = this.名稱,
+                公司 = this.公司,
                 廠商 = this.廠商,
                 需求1 = this.需求1,
                 需求2 = this.需求2,
@@ -244,6 +265,11 @@ namespace WokyTool.DataImport
             商品匯入錯誤結構 Result_ = new 商品匯入錯誤結構();
 
             Result_.名稱 = 名稱;
+
+            if (公司編號 != -1)
+                Result_.公司 = 字串.正確;
+            else
+                Result_.公司 = 公司名稱;
 
             if (廠商編號 != -1)
                 Result_.廠商 = 字串.正確;
@@ -323,6 +349,8 @@ namespace WokyTool.DataImport
     {
         [CsvColumn(Name = "名稱")]
         public string 名稱 { get; set; }
+        [CsvColumn(Name = "公司")]
+        public string 公司 { get; set; }
         [CsvColumn(Name = "廠商")]
         public string 廠商 { get; set; }
         [CsvColumn(Name = "大類")]

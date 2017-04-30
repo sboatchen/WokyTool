@@ -7,6 +7,7 @@ using LINQtoCSV;
 using WokyTool.DataMgr;
 using Newtonsoft.Json;
 using WokyTool.Common;
+using System.Windows.Forms;
 
 namespace WokyTool.Data
 {
@@ -31,7 +32,7 @@ namespace WokyTool.Data
             }
         }
 
-        public 物品小類資料 小類;
+        public 物品小類資料 小類;       //@@ 測試如何在介面上直接綁定 物品小類資料 而非 小類編號
         [CsvColumn(Name = "小類編號")]
         public int 小類編號
         {
@@ -61,6 +62,10 @@ namespace WokyTool.Data
 
         [CsvColumn(Name = "條碼")]
         public string 條碼 { get; set; }
+        [CsvColumn(Name = "原廠編號")]
+        public string 原廠編號 { get; set; }
+        [CsvColumn(Name = "代理編號")]
+        public string 代理編號 { get; set; }
 
         [CsvColumn(Name = "名稱")]
         public string 名稱 { get; set; }
@@ -69,8 +74,14 @@ namespace WokyTool.Data
 
         [CsvColumn(Name = "體積")]
         public int 體積 { get; set; }
-        [CsvColumn(Name = "數量")]
-        public int 數量 { get; set; }
+        
+        [CsvColumn(Name = "內庫數量")]
+        public int 內庫數量 { get; set; }
+        [CsvColumn(Name = "外庫數量")]
+        public int 外庫數量 { get; set; }
+
+        public int 庫存總量 { get { return 內庫數量 + 外庫數量; } }
+
         [CsvColumn(Name = "庫存總成本")]
         public int 庫存總成本 { get; set; }
         [CsvColumn(Name = "最後進貨成本")]
@@ -80,10 +91,10 @@ namespace WokyTool.Data
         {
             get
             {
-                if (數量 == 0)
+                if (庫存總量 == 0)
                     return 最後進貨成本;
                 else
-                    return 庫存總成本 / 數量;
+                    return 庫存總成本 / 庫存總量;
             }
         }
 
@@ -92,18 +103,22 @@ namespace WokyTool.Data
             return new 物品資料
             {
                 編號 = 編碼管理器.Instance.Get(列舉.編碼類型.物品),
-                開啟 = false,
+                開啟 = true,
 
                 大類 = 物品大類資料.NULL,
                 小類 = 物品小類資料.NULL,
                 品牌 = 物品品牌資料.NULL,
 
                 條碼 = 字串.空,
+                原廠編號 = 字串.空,
+                代理編號 = 字串.空,
+
                 名稱 = 字串.空,
                 縮寫 = 字串.空,
 
                 體積 = 0,
-                數量 = 0,
+                內庫數量 = 0,
+                外庫數量 = 0,
                 庫存總成本 = 0,
                 最後進貨成本 = 0,
             };
@@ -152,6 +167,32 @@ namespace WokyTool.Data
         public override string ToString()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
+
+        // 物品販賣
+        public bool Sell(bool 寄庫出貨_, int 數量_)
+        {
+            if (數量_ <= 0)
+            {
+                MessageBox.Show("物品資料::Sell 總數量參數不合法，請通知苦逼程式,", 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            //@@ should not direct control flag
+            物品管理器.Instance.IsDirty = true;
+
+            if (寄庫出貨_)
+            {
+                外庫數量 -= 數量_;
+            }
+            else
+            {
+                內庫數量 -= 數量_;
+                if (內庫數量 < 0)
+                    MessageBox.Show(this.名稱 + " 庫存數量不足", 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            return true;
         }
     }
 }

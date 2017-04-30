@@ -34,10 +34,10 @@
             this.刪除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.列錯ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.物品匯入結構BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.物品大類資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.物品小類資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.物品品牌資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.物品匯入結構BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.大類名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.大類編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -47,16 +47,18 @@
             this.品牌編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.縮寫DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.條碼DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.原廠編號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.代理編號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.體積DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.庫存總成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.最後進貨成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.物品匯入結構BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品大類資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品小類資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品品牌資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.物品匯入結構BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -108,6 +110,8 @@
             this.品牌編號DataGridViewTextBoxColumn,
             this.縮寫DataGridViewTextBoxColumn,
             this.條碼DataGridViewTextBoxColumn,
+            this.原廠編號,
+            this.代理編號,
             this.體積DataGridViewTextBoxColumn,
             this.數量DataGridViewTextBoxColumn,
             this.庫存總成本DataGridViewTextBoxColumn,
@@ -121,10 +125,6 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
-            // 物品匯入結構BindingSource
-            // 
-            this.物品匯入結構BindingSource.DataSource = typeof(WokyTool.DataImport.物品匯入結構);
-            // 
             // 物品大類資料BindingSource
             // 
             this.物品大類資料BindingSource.DataSource = typeof(WokyTool.Data.物品大類資料);
@@ -136,6 +136,10 @@
             // 物品品牌資料BindingSource
             // 
             this.物品品牌資料BindingSource.DataSource = typeof(WokyTool.Data.物品品牌資料);
+            // 
+            // 物品匯入結構BindingSource
+            // 
+            this.物品匯入結構BindingSource.DataSource = typeof(WokyTool.DataImport.物品匯入結構);
             // 
             // 名稱DataGridViewTextBoxColumn
             // 
@@ -206,6 +210,18 @@
             this.條碼DataGridViewTextBoxColumn.HeaderText = "條碼";
             this.條碼DataGridViewTextBoxColumn.Name = "條碼DataGridViewTextBoxColumn";
             // 
+            // 原廠編號
+            // 
+            this.原廠編號.DataPropertyName = "原廠編號";
+            this.原廠編號.HeaderText = "原廠編號";
+            this.原廠編號.Name = "原廠編號";
+            // 
+            // 代理編號
+            // 
+            this.代理編號.DataPropertyName = "代理編號";
+            this.代理編號.HeaderText = "代理編號";
+            this.代理編號.Name = "代理編號";
+            // 
             // 體積DataGridViewTextBoxColumn
             // 
             this.體積DataGridViewTextBoxColumn.DataPropertyName = "體積";
@@ -244,10 +260,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.物品匯入結構BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品大類資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品小類資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品品牌資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.物品匯入結構BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,22 +276,24 @@
         private System.Windows.Forms.ToolStripMenuItem 刪除ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 列錯ToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource 物品大類資料BindingSource;
+        private System.Windows.Forms.BindingSource 物品小類資料BindingSource;
+        private System.Windows.Forms.BindingSource 物品品牌資料BindingSource;
+        private System.Windows.Forms.BindingSource 物品匯入結構BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 大類名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 大類編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 物品大類資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 小類名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 小類編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 物品小類資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 品牌名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 品牌編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 物品品牌資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 縮寫DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 條碼DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 原廠編號;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 代理編號;
         private System.Windows.Forms.DataGridViewTextBoxColumn 體積DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 庫存總成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 最後進貨成本DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 物品匯入結構BindingSource;
     }
 }

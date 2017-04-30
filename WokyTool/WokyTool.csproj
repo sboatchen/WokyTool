@@ -72,13 +72,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\MyString.cs" />
     <Compile Include="Common\共用.cs" />
     <Compile Include="Common\函式.cs" />
+    <Compile Include="Common\監測綁定.cs" />
+    <Compile Include="Common\可運作.cs" />
     <Compile Include="Common\可配送.cs" />
+    <Compile Include="Common\子視窗.cs" />
     <Compile Include="Common\常數.cs" />
     <Compile Include="Common\列舉.cs" />
     <Compile Include="Common\字串.cs" />
     <Compile Include="Common\可格式化_Excel.cs" />
+    <Compile Include="Common\父視窗.cs" />
+    <Compile Include="DataExport\商品庫存匯出結構.cs" />
     <Compile Include="DataExport\回單號結構_GoHappy.cs" />
     <Compile Include="DataExport\全速配匯出結構.cs" />
     <Compile Include="DataExport\回單號結構_Momo.cs" />
@@ -87,23 +93,67 @@
     <Compile Include="DataExport\回單號結構_創業家兄弟.cs" />
     <Compile Include="DataExport\回單號結構_東森.cs" />
     <Compile Include="DataExport\回單號結構_森森.cs" />
+    <Compile Include="DataExport\回單號結構_通用.cs" />
     <Compile Include="DataExport\宅配通匯出結構.cs" />
-    <Compile Include="DataForm\幣值總覽視窗.cs">
+    <Compile Include="DataExport\物品庫存匯出結構.cs" />
+    <Compile Include="DataExport\物品總覽匯出結構.cs" />
+    <Compile Include="DataExport\進貨匯出結構.cs" />
+    <Compile Include="Data\物品訂單資料.cs" />
+    <Compile Include="DataImport\物品更新匯入結構.cs" />
+    <Compile Include="DataMgr\入庫管理器.cs" />
+    <Compile Include="DataMgr\公司管理器.cs" />
+    <Compile Include="DataRecord\入庫紀錄資料.cs" />
+    <Compile Include="Data\入庫資料.cs" />
+    <Compile Include="Data\公司資料.cs" />
+    <Compile Include="Data\訂單資料.cs" />
+    <Compile Include="Data\進貨資料_唯讀.cs" />
+    <Compile Include="Data\進貨資料_暫時.cs" />
+    <Compile Include="FormOther\商品篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataForm\幣值總覽視窗.Designer.cs">
+    <Compile Include="FormOther\商品篩選視窗.Designer.cs">
+      <DependentUpon>商品篩選視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOther\測試視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOther\測試視窗.Designer.cs">
+      <DependentUpon>測試視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOther\物品篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOther\物品篩選視窗.Designer.cs">
+      <DependentUpon>物品篩選視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOverview\入庫總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOverview\入庫總覽視窗.Designer.cs">
+      <DependentUpon>入庫總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOverview\公司總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOverview\公司總覽視窗.Designer.cs">
+      <DependentUpon>公司總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOverview\幣值總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOverview\幣值總覽視窗.Designer.cs">
       <DependentUpon>幣值總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataForm\進貨總覽視窗.cs">
+    <Compile Include="FormOverview\進貨總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataForm\進貨總覽視窗.Designer.cs">
+    <Compile Include="FormOverview\進貨總覽視窗.Designer.cs">
       <DependentUpon>進貨總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataForm\雜支總覽視窗.cs">
+    <Compile Include="FormOverview\雜支總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataForm\雜支總覽視窗.Designer.cs">
+    <Compile Include="FormOverview\雜支總覽視窗.Designer.cs">
       <DependentUpon>雜支總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="DataImport\全速配匯入結構.cs" />
@@ -135,7 +185,7 @@
     <Compile Include="DataMgr\配送管理器.cs" />
     <Compile Include="DataMgr\雜支管理器.cs" />
     <Compile Include="Data\出貨資料.cs" />
-    <Compile Include="Data\合併可配送.cs" />
+    <Compile Include="Data\合併訂單資料.cs" />
     <Compile Include="Data\幣值資料.cs" />
     <Compile Include="Data\商品大類資料.cs" />
     <Compile Include="Data\商品小類資料.cs" />
@@ -156,6 +206,19 @@
     <Compile Include="ImportForm\出貨匯入視窗.Designer.cs">
       <DependentUpon>出貨匯入視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImportForm\物品定單資料.cs" />
+    <Compile Include="ImportForm\物品更新匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportForm\物品更新匯入視窗.Designer.cs">
+      <DependentUpon>物品更新匯入視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportForm\物品訂單匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportForm\物品訂單匯入視窗.Designer.cs">
+      <DependentUpon>物品訂單匯入視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImportForm\進貨匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,16 +231,22 @@
     <Compile Include="ImportForm\雜支匯入視窗.Designer.cs">
       <DependentUpon>雜支匯入視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="OtherForm\待處理配送總覽視窗.cs">
+    <Compile Include="FormOther\待處理配送總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OtherForm\待處理配送總覽視窗.Designer.cs">
+    <Compile Include="FormOther\待處理配送總覽視窗.Designer.cs">
       <DependentUpon>待處理配送總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="主視窗.cs">
+    <Compile Include="FormOther\新增商品視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="主視窗.Designer.cs">
+    <Compile Include="FormOther\新增商品視窗.Designer.cs">
+      <DependentUpon>新增商品視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOther\主視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOther\主視窗.Designer.cs">
       <DependentUpon>主視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -188,34 +257,34 @@
     <Compile Include="ImportForm\商品匯入視窗.Designer.cs">
       <DependentUpon>商品匯入視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataForm\商品大類總覽視窗.cs">
+    <Compile Include="FormOverview\商品大類總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataForm\商品大類總覽視窗.Designer.cs">
+    <Compile Include="FormOverview\商品大類總覽視窗.Designer.cs">
       <DependentUpon>商品大類總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataForm\商品小類總覽視窗.cs">
+    <Compile Include="FormOverview\商品小類總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataForm\商品小類總覽視窗.Designer.cs">
+    <Compile Include="FormOverview\商品小類總覽視窗.Designer.cs">
       <DependentUpon>商品小類總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataForm\商品總覽視窗.cs">
+    <Compile Include="FormOverview\商品總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataForm\商品總覽視窗.Designer.cs">
+    <Compile Include="FormOverview\商品總覽視窗.Designer.cs">
       <DependentUpon>商品總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataForm\廠商總覽視窗.cs">
+    <Compile Include="FormOverview\廠商總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataForm\廠商總覽視窗.Designer.cs">
+    <Compile Include="FormOverview\廠商總覽視窗.Designer.cs">
       <DependentUpon>廠商總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataForm\支出總覽視窗.cs">
+    <Compile Include="FormOverview\支出總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataForm\支出總覽視窗.Designer.cs">
+    <Compile Include="FormOverview\支出總覽視窗.Designer.cs">
       <DependentUpon>支出總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="ImportForm\月結帳匯入視窗.cs">
@@ -224,10 +293,10 @@
     <Compile Include="ImportForm\月結帳匯入視窗.Designer.cs">
       <DependentUpon>月結帳匯入視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataForm\月結帳總覽視窗.cs">
+    <Compile Include="FormOverview\月結帳總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataForm\月結帳總覽視窗.Designer.cs">
+    <Compile Include="FormOverview\月結帳總覽視窗.Designer.cs">
       <DependentUpon>月結帳總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="ImportForm\物品匯入視窗.cs">
@@ -236,47 +305,68 @@
     <Compile Include="ImportForm\物品匯入視窗.Designer.cs">
       <DependentUpon>物品匯入視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataForm\物品品牌總覽視窗.cs">
+    <Compile Include="FormOverview\物品品牌總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataForm\物品品牌總覽視窗.Designer.cs">
+    <Compile Include="FormOverview\物品品牌總覽視窗.Designer.cs">
       <DependentUpon>物品品牌總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataForm\物品大類總覽視窗.cs">
+    <Compile Include="FormOverview\物品大類總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataForm\物品大類總覽視窗.Designer.cs">
+    <Compile Include="FormOverview\物品大類總覽視窗.Designer.cs">
       <DependentUpon>物品大類總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataForm\物品小類總覽視窗.cs">
+    <Compile Include="FormOverview\物品小類總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataForm\物品小類總覽視窗.Designer.cs">
+    <Compile Include="FormOverview\物品小類總覽視窗.Designer.cs">
       <DependentUpon>物品小類總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataForm\物品總覽視窗.cs">
+    <Compile Include="FormOverview\物品總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataForm\物品總覽視窗.Designer.cs">
+    <Compile Include="FormOverview\物品總覽視窗.Designer.cs">
       <DependentUpon>物品總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataForm\編碼總覽視窗.cs">
+    <Compile Include="FormOverview\編碼總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataForm\編碼總覽視窗.Designer.cs">
+    <Compile Include="FormOverview\編碼總覽視窗.Designer.cs">
       <DependentUpon>編碼總覽視窗.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DataForm\幣值總覽視窗.resx">
+    <EmbeddedResource Include="FormOther\商品篩選視窗.resx">
+      <DependentUpon>商品篩選視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOther\測試視窗.resx">
+      <DependentUpon>測試視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOther\物品篩選視窗.resx">
+      <DependentUpon>物品篩選視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOverview\入庫總覽視窗.resx">
+      <DependentUpon>入庫總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOverview\公司總覽視窗.resx">
+      <DependentUpon>公司總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOverview\幣值總覽視窗.resx">
       <DependentUpon>幣值總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataForm\進貨總覽視窗.resx">
+    <EmbeddedResource Include="FormOverview\進貨總覽視窗.resx">
       <DependentUpon>進貨總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataForm\雜支總覽視窗.resx">
+    <EmbeddedResource Include="FormOverview\雜支總覽視窗.resx">
       <DependentUpon>雜支總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportForm\出貨匯入視窗.resx">
       <DependentUpon>出貨匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportForm\物品更新匯入視窗.resx">
+      <DependentUpon>物品更新匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportForm\物品訂單匯入視窗.resx">
+      <DependentUpon>物品訂單匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportForm\進貨匯入視窗.resx">
       <DependentUpon>進貨匯入視窗.cs</DependentUpon>
@@ -284,8 +374,11 @@
     <EmbeddedResource Include="ImportForm\雜支匯入視窗.resx">
       <DependentUpon>雜支匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OtherForm\待處理配送總覽視窗.resx">
+    <EmbeddedResource Include="FormOther\待處理配送總覽視窗.resx">
       <DependentUpon>待處理配送總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOther\新增商品視窗.resx">
+      <DependentUpon>新增商品視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -296,56 +389,59 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="主視窗.resx">
+    <EmbeddedResource Include="FormOther\主視窗.resx">
       <DependentUpon>主視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportForm\商品匯入視窗.resx">
       <DependentUpon>商品匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataForm\商品大類總覽視窗.resx">
+    <EmbeddedResource Include="FormOverview\商品大類總覽視窗.resx">
       <DependentUpon>商品大類總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataForm\商品小類總覽視窗.resx">
+    <EmbeddedResource Include="FormOverview\商品小類總覽視窗.resx">
       <DependentUpon>商品小類總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataForm\商品總覽視窗.resx">
+    <EmbeddedResource Include="FormOverview\商品總覽視窗.resx">
       <DependentUpon>商品總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataForm\廠商總覽視窗.resx">
+    <EmbeddedResource Include="FormOverview\廠商總覽視窗.resx">
       <DependentUpon>廠商總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataForm\支出總覽視窗.resx">
+    <EmbeddedResource Include="FormOverview\支出總覽視窗.resx">
       <DependentUpon>支出總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportForm\月結帳匯入視窗.resx">
       <DependentUpon>月結帳匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataForm\月結帳總覽視窗.resx">
+    <EmbeddedResource Include="FormOverview\月結帳總覽視窗.resx">
       <DependentUpon>月結帳總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportForm\物品匯入視窗.resx">
       <DependentUpon>物品匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataForm\物品品牌總覽視窗.resx">
+    <EmbeddedResource Include="FormOverview\物品品牌總覽視窗.resx">
       <DependentUpon>物品品牌總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataForm\物品大類總覽視窗.resx">
+    <EmbeddedResource Include="FormOverview\物品大類總覽視窗.resx">
       <DependentUpon>物品大類總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataForm\物品小類總覽視窗.resx">
+    <EmbeddedResource Include="FormOverview\物品小類總覽視窗.resx">
       <DependentUpon>物品小類總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataForm\物品總覽視窗.resx">
+    <EmbeddedResource Include="FormOverview\物品總覽視窗.resx">
       <DependentUpon>物品總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataForm\編碼總覽視窗.resx">
+    <EmbeddedResource Include="FormOverview\編碼總覽視窗.resx">
       <DependentUpon>編碼總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WokyTool.Common.列舉+代收類型.datasource" />
     <None Include="Properties\DataSources\WokyTool.Common.列舉+指配時段類型.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Common.列舉+進貨類型.datasource" />
     <None Include="Properties\DataSources\WokyTool.Common.列舉+配送公司類型.datasource" />
     <None Include="Properties\DataSources\WokyTool.Common.可配送.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.入庫資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.公司資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.出貨資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.商品大類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.商品小類資料.datasource" />
@@ -357,12 +453,14 @@
     <None Include="Properties\DataSources\WokyTool.Data.物品品牌資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.物品大類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.物品小類資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.物品訂單資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.物品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.編碼資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.進貨資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.雜支資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.商品匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.物品匯入結構.datasource" />
+    <None Include="Properties\DataSources\WokyTool.DataImport.物品更新匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.進貨匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.雜支匯入結構.datasource" />
     <None Include="Properties\Settings.settings">

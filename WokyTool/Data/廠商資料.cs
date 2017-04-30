@@ -25,7 +25,7 @@ namespace WokyTool.Data
             return new 廠商資料
             {
                 編號 = 編碼管理器.Instance.Get(列舉.編碼類型.廠商),
-                開啟 = false,
+                開啟 = true,
                 名稱 = 字串.空,
             };
         }

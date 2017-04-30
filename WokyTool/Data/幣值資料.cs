@@ -10,7 +10,7 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.Data
 {
-    class 幣值資料
+    public class 幣值資料
     {
         [CsvColumn(Name = "編號")]
         public int 編號 { get; set; }

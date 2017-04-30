@@ -109,6 +109,35 @@ namespace WokyTool.DataMgr
                 return Item_;
         }
 
+        // 取得資料 - 匯入資料時用，找不到時不會報錯
+        public 物品品牌資料 Get(string Name, WokyTool.Common.列舉.搜尋失敗處理類型 Type)
+        {
+            if (Name == null || Name.Length == 0)
+                return 物品品牌資料.NULL;
+
+            物品品牌資料 Item_ = Map.Values
+                                   .Where(Value => Value.名稱 == Name)
+                                   .FirstOrDefault();
+
+            if (Item_ != null)
+                return Item_;
+
+            switch (Type)
+            {
+                case WokyTool.Common.列舉.搜尋失敗處理類型.無:
+                    return 物品品牌資料.ERROR;
+                case WokyTool.Common.列舉.搜尋失敗處理類型.找不到時新增:
+                    {
+                        物品品牌資料 New_ = 物品品牌資料.New(Name);
+                        Add(New_);
+                        return New_;
+                    }
+                default:
+                    MessageBox.Show("物品大類資料.Get.Swith不支援,請通知苦逼程式", 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return 物品品牌資料.ERROR;
+            }
+        }
+
         // 新增資料
         public void Add(物品品牌資料 Item_)
         {

@@ -81,14 +81,14 @@ namespace WokyTool.DataMgr
         public int Get(列舉.編碼類型 eType)
         {
             編碼資料 Item_;
-            if (Map.TryGetValue(eType, out Item_))
+            if (Map.TryGetValue(eType, out Item_) == false)
             {
-                IsDirty = true;
-                return Item_.下個值++;
+                Item_ = new 編碼資料(eType);
+                Map.Add(eType, Item_);
             }
 
-            MessageBox.Show("編碼管理器::Get fail " + eType.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return 0;
+            IsDirty = true;
+            return Item_.下個值++;
         }
     }
 }

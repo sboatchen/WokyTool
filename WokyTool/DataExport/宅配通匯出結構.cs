@@ -8,7 +8,7 @@ using WokyTool.DataImport;
 
 namespace WokyTool.DataExport
 {
-    class 宅配通匯出結構
+    class 宅配通匯出結構 : 可格式化_Excel
     {
         public string 姓名 { get; set; }
         public string 地址 { get; set; }
@@ -94,6 +94,31 @@ namespace WokyTool.DataExport
         public void CleanDeliveryNO()
         {
             _資料來源.SetDiliver(null);
+        }
+
+        // 設定title，回傳下筆資料的輸入行位置
+        public int SetExcelTitle(Microsoft.Office.Interop.Excel.Application App_)
+        {
+            // 不加會錯
+            App_.Cells[1, 1] = 1;
+
+            return 1;
+        }
+
+        // 設定資料
+        public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
+        {
+            App_.Cells[Row_, 13] = 姓名;
+            App_.Cells[Row_, 14] = 電話;
+            App_.Cells[Row_, 16] = 地址;
+            App_.Cells[Row_, 18] = 指配日期;
+            App_.Cells[Row_, 19] = 指配時段;
+            App_.Cells[Row_, 20] = 代收方式;
+            App_.Cells[Row_, 21] = 代收金額;
+            App_.Cells[Row_, 26] = 備註;
+            App_.Cells[Row_, 27] = 商品;
+
+            return Row_ + 1;
         }
     }
 }

@@ -28,7 +28,7 @@ namespace WokyTool.DataExport
         [CsvColumn(Name = "商品名稱", FieldIndex = 8)]
         public string 無用_商品名稱 { get; set; }
         [CsvColumn(Name = "顏色", FieldIndex = 9)]
-        public string 無用_顏色 { get; set; }
+        public string 顏色 { get; set; }
         [CsvColumn(Name = "款式", FieldIndex = 10)]
         public string 款式 { get; set; }
         [CsvColumn(Name = "廠商料號", FieldIndex = 11)]
@@ -86,7 +86,7 @@ namespace WokyTool.DataExport
             無用_銷售編號 = From_.無用_銷售編號;
             平台商品編號 = From_.平台商品編號;
             無用_商品名稱 = From_.無用_商品名稱;
-            無用_顏色 = From_.無用_顏色;
+            顏色 = From_.顏色;
             款式 = From_.款式;
             無用_廠商料號 = From_.無用_廠商料號;
             訂單類別 = From_.訂單類別;
@@ -112,7 +112,7 @@ namespace WokyTool.DataExport
             switch (From_.配送公司)
             { 
                 case 列舉.配送公司類型.全速配:
-                    配送公司 = 字串.新竹貨運;
+                    配送公司 = 字串.新竹物流;
                     break;
                 case 列舉.配送公司類型.宅配通:
                     配送公司 = 字串.宅配通;

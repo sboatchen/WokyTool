@@ -13,6 +13,7 @@ namespace WokyTool.Common
         {
             無 = 0,
 
+            公司,
             廠商,
 
             物品大類,
@@ -29,6 +30,9 @@ namespace WokyTool.Common
             支出,
 
             幣值,
+
+            入庫,
+            入庫紀錄,
         };
 
         // 配送指定時段類型
@@ -59,7 +63,7 @@ namespace WokyTool.Common
             宅配通,
         };
 
-        public enum 進貨處理進度類型
+        public enum 訂單處理進度類型
         {
             無 = 0,
             
@@ -70,5 +74,30 @@ namespace WokyTool.Common
             要求配送,
             配送完成,
         };
+
+        public enum 搜尋失敗處理類型
+        {
+            無 = 0,
+            找不到時新增,
+        };
+
+        public enum 進貨類型
+        {
+            一般 = 0,
+            退貨重進,
+            庫存調整,
+        };
+
+        public static bool IsAutoPrice(this 進貨類型 進貨類型_)
+        {
+            switch (進貨類型_)
+            {
+                case 進貨類型.退貨重進:
+                case 進貨類型.庫存調整:
+                    return true;
+                default:
+                    return false;
+            }
+        }
     }
 }

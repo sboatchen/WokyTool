@@ -30,14 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.匯入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.新增ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.刪除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.列錯ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.樣板ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.進貨匯入結構BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.進貨類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.廠商資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.幣值資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.進貨匯入結構BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.時間DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.廠商名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.廠商編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -50,23 +53,33 @@
             this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.進貨匯入結構BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.進貨類型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.幣值資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.進貨匯入結構BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.匯入ToolStripMenuItem,
             this.新增ToolStripMenuItem,
             this.刪除ToolStripMenuItem,
-            this.列錯ToolStripMenuItem});
+            this.列錯ToolStripMenuItem,
+            this.樣板ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(974, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 匯入ToolStripMenuItem
+            // 
+            this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
+            this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.匯入ToolStripMenuItem.Text = "匯入";
+            this.匯入ToolStripMenuItem.Click += new System.EventHandler(this.匯入ToolStripMenuItem_Click);
             // 
             // 新增ToolStripMenuItem
             // 
@@ -88,6 +101,13 @@
             this.列錯ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.列錯ToolStripMenuItem.Text = "列錯";
             this.列錯ToolStripMenuItem.Click += new System.EventHandler(this.列錯ToolStripMenuItem_Click);
+            // 
+            // 樣板ToolStripMenuItem
+            // 
+            this.樣板ToolStripMenuItem.Name = "樣板ToolStripMenuItem";
+            this.樣板ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.樣板ToolStripMenuItem.Text = "樣板";
+            this.樣板ToolStripMenuItem.Click += new System.EventHandler(this.樣板ToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -115,9 +135,9 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
-            // 進貨匯入結構BindingSource
+            // 進貨類型BindingSource
             // 
-            this.進貨匯入結構BindingSource.DataSource = typeof(WokyTool.DataImport.進貨匯入結構);
+            this.進貨類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.進貨類型);
             // 
             // 廠商資料BindingSource
             // 
@@ -130,6 +150,10 @@
             // 幣值資料BindingSource
             // 
             this.幣值資料BindingSource.DataSource = typeof(WokyTool.Data.幣值資料);
+            // 
+            // 進貨匯入結構BindingSource
+            // 
+            this.進貨匯入結構BindingSource.DataSource = typeof(WokyTool.DataImport.進貨匯入結構);
             // 
             // 時間DataGridViewTextBoxColumn
             // 
@@ -179,7 +203,7 @@
             // 
             // 單價DataGridViewTextBoxColumn
             // 
-            this.單價DataGridViewTextBoxColumn.DataPropertyName = "單價";
+            this.單價DataGridViewTextBoxColumn.DataPropertyName = "單價呈現";
             this.單價DataGridViewTextBoxColumn.HeaderText = "單價";
             this.單價DataGridViewTextBoxColumn.Name = "單價DataGridViewTextBoxColumn";
             // 
@@ -220,10 +244,11 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.進貨匯入結構BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.進貨類型BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.幣值資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.進貨匯入結構BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,19 +261,22 @@
         private System.Windows.Forms.ToolStripMenuItem 刪除ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 列錯ToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource 廠商資料BindingSource;
+        private System.Windows.Forms.BindingSource 物品資料BindingSource;
+        private System.Windows.Forms.BindingSource 幣值資料BindingSource;
+        private System.Windows.Forms.BindingSource 進貨匯入結構BindingSource;
+        private System.Windows.Forms.BindingSource 進貨類型BindingSource;
+        private System.Windows.Forms.ToolStripMenuItem 樣板ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 匯入ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn 時間DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 廠商名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 廠商編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 廠商資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 物品名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 物品編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 物品資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 單價DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 幣值DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 幣值編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 幣值資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 進貨匯入結構BindingSource;
     }
 }

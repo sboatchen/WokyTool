@@ -19,6 +19,7 @@ namespace WokyTool.Common
         public static String NowYMDDec;
 
         public static DateTime TomorrowYMD;
+        public static DateTime A5YMD;
 
         public static void Init()
         {
@@ -52,6 +53,7 @@ namespace WokyTool.Common
             NowYMDDec = String.Format("{0}{1:00}{2:00}", NowYMD.Year, NowYMD.Month, NowYMD.Day);
 
             TomorrowYMD = NowYMD.AddDays(1);
+            A5YMD = NowYMD.AddDays(5);
         }
 
 

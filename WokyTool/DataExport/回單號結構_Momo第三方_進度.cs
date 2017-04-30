@@ -17,7 +17,8 @@ namespace WokyTool.DataExport
             _Data = Data_;
         }
 
-        public void TitleToExcelCell(Microsoft.Office.Interop.Excel.Application App_)
+        // 設定title，回傳下筆資料的輸入行位置
+        public int SetExcelTitle(Microsoft.Office.Interop.Excel.Application App_)
         {
             App_.Cells[1, 1] = "項次+燈號";
             App_.Cells[1, 2] = "配送狀態\n(說明參考Desc)";
@@ -49,9 +50,12 @@ namespace WokyTool.DataExport
             App_.Cells[1, 25] = "發票日期";
             App_.Cells[1, 26] = "個人識別碼";
             App_.Cells[1, 27] = "群組變價商品";
+
+            return 2;
         }
 
-        public void ToExcelCell(Microsoft.Office.Interop.Excel.Application App_, int Row_)
+        // 設定資料
+        public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
         {
             App_.Cells[Row_, 1] = _Data.無用_項次;
             App_.Cells[Row_, 2] = _Data.配送狀態;
@@ -80,6 +84,8 @@ namespace WokyTool.DataExport
             App_.Cells[Row_, 25] = _Data.無用_發票日期;
             App_.Cells[Row_, 26] = _Data.無用_個人識別碼;
             App_.Cells[Row_, 27] = _Data.無用_群組變價商品;
+
+            return Row_ + 1;
         }
     }
 }

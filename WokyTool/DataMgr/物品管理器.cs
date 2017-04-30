@@ -97,7 +97,7 @@ namespace WokyTool.DataMgr
         public 物品資料 Get(string Name)
         {
             物品資料 Item_ = Map.Values
-                                   .Where(Value => Value.名稱 == Name)
+                                   .Where(Value => Value.名稱.Equals(Name))   //@@ 全面改用Equals
                                    .FirstOrDefault();
 
             if (Item_ == null)
@@ -113,7 +113,7 @@ namespace WokyTool.DataMgr
                 return 物品資料.NULL;
 
             物品資料 Item_ = Map.Values
-                                .Where(Value => Value.縮寫 == Name)
+                                .Where(Value => Value.縮寫.Equals(Name))
                                 .FirstOrDefault();
 
             if (Item_ == null)

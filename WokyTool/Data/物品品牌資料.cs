@@ -20,13 +20,13 @@ namespace WokyTool.Data
         [CsvColumn(Name = "名稱")]
         public string 名稱 { get; set; }
 
-        public static 物品品牌資料 New()
+        public static 物品品牌資料 New(string 名稱_ = "")
         {
             return new 物品品牌資料
             {
                 編號 = 編碼管理器.Instance.Get(列舉.編碼類型.物品品牌),
-                開啟 = false,
-                名稱 = 字串.空,
+                開啟 = true,
+                名稱 = 名稱_,
             };
         }
 

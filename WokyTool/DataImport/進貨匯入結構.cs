@@ -5,26 +5,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataMgr;
 
 namespace WokyTool.DataImport
 {
-    class 進貨匯入結構
+    public class 進貨匯入結構
     {
         public DateTime 時間 { get; set; }
-
+       
+        public string 類型名稱 { get; set; }    // 依需求將各種類型切成不同的匯入視窗，所以該欄位已無用處
         public string 廠商名稱 { get; set; }
         public string 物品名稱 { get; set; }
 
         public int 數量 { get; set; }
         public double 單價 { get; set; }
+
         public string 幣值 { get; set; }
 
         public string 備註 { get; set; }
 
         /**************************************************/
+
+        public 列舉.進貨類型 類型 { get; set; }
 
         [JsonIgnore]
         public 廠商資料 廠商;
@@ -68,9 +73,57 @@ namespace WokyTool.DataImport
             }
         }
 
+        public string 單價呈現
+        {
+            get
+            {
+                if (類型.IsAutoPrice())
+                    return 字串.自動填寫;
+                else
+                    return Convert.ToString(單價);
+            }
+            set
+            {
+                if (類型.IsAutoPrice())
+                {
+                    MessageBox.Show("該類型單價自動設定", 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    double x;
+                    if (Double.TryParse(value, out x))
+                        單價 = x;
+                    else
+                        MessageBox.Show("輸入異常", 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         // 資料初始化
         public void Init()
         {
+            if (類型名稱 == null || 類型名稱.Length == 0)
+                類型 = 列舉.進貨類型.一般;
+            else
+            {
+                try
+                {
+                    類型 = (列舉.進貨類型)Enum.Parse(typeof(列舉.進貨類型), 類型名稱);
+                }
+                catch (ArgumentException)
+                {
+                    MessageBox.Show("列舉資料異常(" + 類型名稱 + "),改用一般進貨", 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    類型 = 列舉.進貨類型.一般;
+                }
+            }
+
+            Init(類型);
+        }
+
+        public void Init(列舉.進貨類型 Type_)
+        {
+            類型 = Type_;
             廠商 = 廠商管理器.Instance.Get(廠商名稱);
             物品 = 物品管理器.Instance.GetBySName(物品名稱);
             _幣值 = 幣值管理器.Instance.Get(幣值);
@@ -84,6 +137,7 @@ namespace WokyTool.DataImport
             return new 進貨匯入結構
             {
                 時間 = DateTime.Now,
+                類型 = 列舉.進貨類型.一般,
                 廠商名稱 = 字串.空,
                 廠商 = 廠商資料.NULL,
                 物品名稱 = 字串.空,
@@ -108,20 +162,11 @@ namespace WokyTool.DataImport
             return 廠商編號 >= 0 && 物品編號 > 0 && 數量 != 0 && 幣值編號 >= 0;
         }
 
-        public 進貨資料 ToData()
+        public 進貨資料 Import()
         {
-            return new 進貨資料
-            {
-                編號 = 編碼管理器.Instance.Get(列舉.編碼類型.支出),
-                時間 = this.時間,
-                廠商 = this.廠商,
-                物品 = this.物品,
-                數量 = this.數量,
-                單價 = this.單價,
-                幣值 = this._幣值,
-                匯率 = this._幣值.數值,
-                備註 = this.備註,
-            };
+            進貨資料_暫時 Temp_ = 進貨資料_暫時.New(this);
+
+            return Temp_.Save();
         }
 
         public 進貨匯入錯誤結構 ToError()
@@ -154,7 +199,7 @@ namespace WokyTool.DataImport
         }
     }
 
-    class 進貨匯入錯誤結構
+    public class 進貨匯入錯誤結構
     {
         [CsvColumn(Name = "廠商名稱")]
         public string 廠商名稱 { get; set; }

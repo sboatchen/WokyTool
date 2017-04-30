@@ -9,7 +9,8 @@ using WokyTool.Common;
 
 namespace WokyTool.Data
 {
-    class 支出資料
+    //@@ 改道DataRecord
+    public class 支出資料
     {
         [CsvColumn(Name = "結算時間", FieldIndex = 1)]
         public DateTime 結算時間 { get; set; }

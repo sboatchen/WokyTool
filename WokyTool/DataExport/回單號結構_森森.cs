@@ -112,7 +112,7 @@ namespace WokyTool.DataExport
             switch (From_.配送公司)
             { 
                 case 列舉.配送公司類型.全速配:
-                    配送公司 = 字串.新竹貨運;
+                    配送公司 = 字串.新竹物流;
                     break;
                 case 列舉.配送公司類型.宅配通:
                     配送公司 = 字串.宅配通;

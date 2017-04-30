@@ -52,6 +52,7 @@ namespace WokyTool.DataImport
         public string 訂單類別 { get; set; }
         public string 平台商品編號 { get; set; }
         public string 款式 { get; set; }
+        public string 顏色 { get; set; }
 
          /* 無用資訊 */
 
@@ -61,7 +62,6 @@ namespace WokyTool.DataImport
         public string 無用_通路別 { get; set; }
         public string 無用_銷售編號 { get; set; }
         public string 無用_商品名稱 { get; set; }
-        public string 無用_顏色 { get; set; }
         public string 無用_廠商料號 { get; set; }
         public string 無用_售價 { get; set; }
         public string 無用_成本 { get; set; }
@@ -113,15 +113,8 @@ namespace WokyTool.DataImport
             配送公司 = 列舉.配送公司類型.無;
             配送單號 = null;
 
-            // 商品序號 = 平台商品編號 + 款式
-            if (款式 != null && 款式 != "共同")
-            {
-                商品序號 = string.Format("{0}@{1}", 平台商品編號, 款式);
-            }
-            else
-            {
-                商品序號 = 平台商品編號;
-            }
+            // 商品序號 = 平台商品編號 + 款式 + 顏色
+            商品序號 = string.Format("{0}@{1}@{2}", 平台商品編號, 款式, 顏色);
 
             商品 = 商品管理器.Instance.Get(廠商.編號, 商品序號);
 

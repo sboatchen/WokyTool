@@ -13,14 +13,16 @@ namespace WokyTool.DataImport
 {
     class 物品匯入結構
     {
-        public string 條碼 { get; set; }
-
         public string 大類名稱 { get; set; }
         public string 小類名稱 { get; set; }
         public string 品牌名稱 { get; set; }
 
         public string 名稱 { get; set; }
         public string 縮寫 { get; set; }
+
+        public string 條碼 { get; set; }
+        public string 原廠編號 { get; set; }
+        public string 代理編號 { get; set; }
 
         public int 體積 { get; set; }
         public int 數量 { get; set; }
@@ -85,6 +87,8 @@ namespace WokyTool.DataImport
                 縮寫 = 字串.空,
 
                 條碼 = 字串.空,
+                原廠編號 = 字串.空,
+                代理編號 = 字串.空,
 
                 大類名稱 = 字串.空,
                 小類名稱 = 字串.空,
@@ -123,10 +127,12 @@ namespace WokyTool.DataImport
                 小類 = this.小類,
                 品牌 = this.品牌,
                 條碼 = this.條碼,
+                原廠編號 = this.原廠編號,
+                代理編號 = this.代理編號,
                 名稱 = this.名稱,
                 縮寫 = this.縮寫,
                 體積 = this.體積,
-                數量 = this.數量,
+                內庫數量 = this.數量,
                 最後進貨成本 = this.最後進貨成本,
             };
         }
