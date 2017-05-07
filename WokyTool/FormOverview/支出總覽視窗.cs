@@ -17,6 +17,7 @@ namespace WokyTool
 {
     public partial class 支出總覽視窗 : Form
     {
+        //@@ binding
         private IEnumerable<支出資料> _A = 雜支管理器.Instance.Map
                                                             .Where(Pair => Pair.Value.編號 > 0)
                                                             .Select(Pair => Pair.Value.ToOutlay());

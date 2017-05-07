@@ -45,7 +45,7 @@
             this.廠商資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.品名 = new System.Windows.Forms.ComboBox();
             this.商品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.篩選 = new System.Windows.Forms.Button();
             this.品號 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.商品大類資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品小類資料BindingSource)).BeginInit();
@@ -184,15 +184,15 @@
             // 
             this.商品資料BindingSource.DataSource = typeof(WokyTool.Data.商品資料);
             // 
-            // button1
+            // 篩選
             // 
-            this.button1.Location = new System.Drawing.Point(156, 142);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "篩選";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.篩選.Location = new System.Drawing.Point(156, 142);
+            this.篩選.Name = "篩選";
+            this.篩選.Size = new System.Drawing.Size(105, 23);
+            this.篩選.TabIndex = 12;
+            this.篩選.Text = "篩選";
+            this.篩選.UseVisualStyleBackColor = true;
+            this.篩選.Click += new System.EventHandler(this.button1_Click);
             // 
             // 品號
             // 
@@ -207,7 +207,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(410, 177);
             this.Controls.Add(this.品號);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.篩選);
             this.Controls.Add(this.品名);
             this.Controls.Add(this.廠商);
             this.Controls.Add(this.公司);
@@ -245,7 +245,7 @@
         private System.Windows.Forms.ComboBox 公司;
         private System.Windows.Forms.ComboBox 廠商;
         private System.Windows.Forms.ComboBox 品名;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button 篩選;
         private System.Windows.Forms.BindingSource 商品大類資料BindingSource;
         private System.Windows.Forms.BindingSource 商品小類資料BindingSource;
         private System.Windows.Forms.BindingSource 廠商資料BindingSource;

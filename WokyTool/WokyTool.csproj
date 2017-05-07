@@ -145,12 +145,6 @@
     <Compile Include="FormOverview\幣值總覽視窗.Designer.cs">
       <DependentUpon>幣值總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormOverview\訂單總覽介面.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOverview\訂單總覽介面.Designer.cs">
-      <DependentUpon>訂單總覽介面.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormOverview\進貨總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -358,9 +352,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOverview\幣值總覽視窗.resx">
       <DependentUpon>幣值總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOverview\訂單總覽介面.resx">
-      <DependentUpon>訂單總覽介面.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOverview\進貨總覽視窗.resx">
       <DependentUpon>進貨總覽視窗.cs</DependentUpon>
