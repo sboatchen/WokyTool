@@ -107,6 +107,7 @@
     <Compile Include="Data\入庫資料.cs" />
     <Compile Include="Data\公司資料.cs" />
     <Compile Include="Data\訂單資料.cs" />
+    <Compile Include="Data\訊息資料.cs" />
     <Compile Include="Data\進貨資料_唯讀.cs" />
     <Compile Include="Data\進貨資料_暫時.cs" />
     <Compile Include="FormOther\商品篩選視窗.cs">
@@ -126,6 +127,12 @@
     </Compile>
     <Compile Include="FormOther\物品篩選視窗.Designer.cs">
       <DependentUpon>物品篩選視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOther\訊息列印視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOther\訊息列印視窗.Designer.cs">
+      <DependentUpon>訊息列印視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOverview\入庫總覽視窗.cs">
       <SubType>Form</SubType>
@@ -344,6 +351,9 @@
     <EmbeddedResource Include="FormOther\物品篩選視窗.resx">
       <DependentUpon>物品篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOther\訊息列印視窗.resx">
+      <DependentUpon>訊息列印視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOverview\入庫總覽視窗.resx">
       <DependentUpon>入庫總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -457,6 +467,7 @@
     <None Include="Properties\DataSources\WokyTool.Data.物品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.編碼資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.訂單資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.訊息資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.進貨資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.雜支資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.商品匯入結構.datasource" />

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.Data;
+using WokyTool.FormOther;
 
 namespace WokyTool.DataMgr
 {
@@ -160,16 +161,29 @@ namespace WokyTool.DataMgr
         // 刪除資料
         public void Delete(物品資料 Item_)
         {
-            if (Map.ContainsKey(Item_.編號))
-            {
-                Map.Remove(Item_.編號);
-
-                SetDirty();
-            }
-            else
+            // 確認物件
+            if (Map.ContainsKey(Item_.編號) == false)
             {
                 MessageBox.Show("物品管理器 Delete fail, 編號 = " + Item_.編號.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            // 檢查是否有其他資料綁定
+            List<訊息資料> RelatedItem_ = 商品管理器.Instance.Map.Select(X => X.Value)
+                                    .Where(X => (X.需求1 == Item_ || X.需求2 == Item_ || X.需求3 == Item_ || X.需求4 == Item_ || X.需求5 == Item_))
+                                    .Select(X => new 訊息資料("商品", String.Format("{0}:{1}", X.編號, X.名稱)))
+                                    .ToList();
+            if (RelatedItem_.Count > 0)
+            {
+                var i = new 訊息列印視窗("物品刪除錯誤", RelatedItem_);
+                i.Show();
+                i.BringToFront();
+                return;
+            }
+
+            // 確認刪除
+            Map.Remove(Item_.編號);
+            SetDirty();
         }
 
         // 刪除資料
@@ -178,9 +192,7 @@ namespace WokyTool.DataMgr
             物品資料 Item_;
             if (Map.TryGetValue(ID_, out Item_))
             {
-                Map.Remove(ID_);
-
-                SetDirty();
+                Delete(Item_);
             }
             else
             {
