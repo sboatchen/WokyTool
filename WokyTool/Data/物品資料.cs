@@ -179,7 +179,7 @@ namespace WokyTool.Data
             }
 
             //@@ should not direct control flag
-            物品管理器.Instance.IsDirty = true;
+            物品管理器.Instance.SetDirty();
 
             if (寄庫出貨_)
             {

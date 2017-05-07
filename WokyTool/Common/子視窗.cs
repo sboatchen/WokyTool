@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace WokyTool.Common
 {
-    public interface 子視窗
+    public interface 子視窗<T>
     {
-        void SetParentForm(父視窗 Parent_);
+        bool IsVisible();
 
         void Show();
         void BringToFront();
         void Close();
+
+        IEnumerable<T> Filt(IEnumerable<T> Query_);
     }
 }

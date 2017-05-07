@@ -384,8 +384,8 @@ namespace WokyTool.Data
             do
             {
                 //@@ should not direct control flag
-                物品管理器.Instance.IsDirty = true;
-                商品管理器.Instance.IsDirty = true;
+                物品管理器.Instance.SetDirty();
+                商品管理器.Instance.SetDirty();
 
                 if (寄庫出貨_)
                 {

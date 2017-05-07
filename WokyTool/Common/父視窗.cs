@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace WokyTool.Common
 {
-    public interface 父視窗
+    public interface 父視窗<T>
     {
-        void onChildClosing(子視窗 Child_);
+        void onChildClosing(子視窗<T> Child_);
 
-        void onUpdateDataSource(Object DataSource_);
+        void onClickFilter(子視窗<T> Child_);
     }
 }

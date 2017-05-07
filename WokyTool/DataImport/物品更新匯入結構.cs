@@ -191,7 +191,7 @@ namespace WokyTool.DataImport
                 {
                     Synchronize(更新目標物品);
                     //@@
-                    物品管理器.Instance.IsDirty = true;
+                    物品管理器.Instance.SetDirty();
                     break;
                 }
                 default:

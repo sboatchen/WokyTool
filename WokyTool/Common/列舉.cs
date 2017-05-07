@@ -99,5 +99,37 @@ namespace WokyTool.Common
                     return false;
             }
         }
+
+        public enum 監測類型
+        {
+            主動通知_值 = 0,
+            主動通知_公式,
+            被動通知_值,
+            被動通知_公式,
+        };
+
+        public static bool IsActive(this 監測類型 監測類型_)
+        {
+            switch (監測類型_)
+            {
+                case 監測類型.主動通知_值:
+                case 監測類型.主動通知_公式:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        public static bool IsReturnValue(this 監測類型 監測類型_)
+        {
+            switch (監測類型_)
+            {
+                case 監測類型.主動通知_值:
+                case 監測類型.被動通知_值:
+                    return true;
+                default:
+                    return false;
+            }
+        }
     }
 }

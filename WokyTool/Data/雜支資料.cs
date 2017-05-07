@@ -10,7 +10,7 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.Data
 {
-    class 雜支資料
+    public class 雜支資料
     {
         //@@ 是否同進貨資料 鎖死廠商,數量,單價....
 

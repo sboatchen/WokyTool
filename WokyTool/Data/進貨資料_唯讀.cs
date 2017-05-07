@@ -222,7 +222,7 @@ namespace WokyTool.Data
             物品.內庫數量 -= 數量;
             物品.庫存總成本 -= 總金額;
 
-            物品管理器.Instance.IsDirty = true;
+            物品管理器.Instance.SetDirty();
         }
     }
 }
