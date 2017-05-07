@@ -23,17 +23,17 @@ namespace WokyTool.FormOther
             InitializeComponent();
 
             Binding = new 監測綁定廣播<MyString>(data.Values.Where(X => X.Contains('a')));
-            Listener = new 監測綁定更新<MyString>(Binding, 資料更新);
+            Listener = new 監測綁定更新<MyString>(Binding, 列舉.監測類型.被動通知_公式, 資料更新);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             data.Add(this.textBox1.Text, new MyString(this.textBox1.Text));
             Binding.SetDirty();
-            Listener.Update();
+            Listener.Refresh();
         }
 
-        public void 資料更新<MyString>(List<MyString> Data_)
+        public void 資料更新<MyString>(IEnumerable<MyString> Data_)
         {
             StringBuilder sb = new StringBuilder();
             foreach (MyString a in Data_)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataMgr;
 
@@ -16,37 +17,63 @@ namespace WokyTool.DataForm
     {
         protected bool _HasNewItem_ = false;
 
+        protected 監測綁定更新<廠商資料> _廠商資料Listener;
+        protected 監測綁定更新<幣值資料> _幣值資料Listener;
+        protected 監測綁定更新<雜支資料> _雜支資料Listener;
+
         public 雜支總覽視窗()
         {
             InitializeComponent();
 
-            this.dataGridView1.DataSource = 雜支管理器.Instance.Binding;
+            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 廠商資料更新);
+            _廠商資料Listener.Refresh(true);
 
-            this.廠商編號DataGridViewTextBoxColumn.DataSource = 廠商管理器.Instance.Binding;
-            this.幣值編號DataGridViewTextBoxColumn.DataSource = 幣值管理器.Instance.Binding;
+            _幣值資料Listener = new 監測綁定更新<幣值資料>(幣值管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 幣值資料更新);
+            _幣值資料Listener.Refresh(true);
+
+            _雜支資料Listener = new 監測綁定更新<雜支資料>(雜支管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 雜支資料更新);
+            _雜支資料Listener.Refresh(true);
 
             // 註冊事件
             this.Activated += new System.EventHandler(this.onEventActivated);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.onEventCellValueChanged);
         }
 
+        public void 廠商資料更新(IEnumerable<廠商資料> Data_)
+        {
+            this.廠商編號DataGridViewTextBoxColumn.DataSource = Data_;
+        }
+
+        public void 幣值資料更新(IEnumerable<幣值資料> Data_)
+        {
+            this.幣值編號DataGridViewTextBoxColumn.DataSource = Data_;
+        }
+
+        public void 雜支資料更新(IEnumerable<雜支資料> Data_)
+        {
+            this.dataGridView1.DataSource = Data_;
+            this.dataGridView1.Refresh();
+        }
+
         // 註冊事件:資料異動
         private void onEventCellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             // 資料有異動，記錄須進行更新
-            雜支管理器.Instance.IsDirty = true;
+            雜支管理器.Instance.SetDirty();
         }
 
         // 註冊事件:取得Focus
         private void onEventActivated(object sender, EventArgs e)
         {
-            this.dataGridView1.Refresh();
+            _廠商資料Listener.Refresh();
+            _幣值資料Listener.Refresh();
+            _雜支資料Listener.Refresh();
         }
 
         private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             雜支管理器.Instance.Add();
-            this.dataGridView1.Refresh();
+            _雜支資料Listener.Refresh();
 
             _HasNewItem_ = true;
         }
@@ -56,7 +83,7 @@ namespace WokyTool.DataForm
             if (this.dataGridView1.SelectedRows.Count != 0)
             {
                 雜支管理器.Instance.Delete((雜支資料)this.dataGridView1.SelectedRows[0].DataBoundItem);
-                this.dataGridView1.Refresh();
+                _雜支資料Listener.Refresh();
             }
         }
 
