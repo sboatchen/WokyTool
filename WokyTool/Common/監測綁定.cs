@@ -76,6 +76,14 @@ namespace WokyTool.Common
                 return BroadCaster.Query;
             }
         }
+
+        public List<T> Data
+        {
+            get
+            {
+                return BroadCaster.Data;
+            }
+        }
     }
 
     public class 監測綁定廣播<T>

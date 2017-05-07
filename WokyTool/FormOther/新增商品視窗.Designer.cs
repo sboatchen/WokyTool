@@ -450,6 +450,7 @@
             this.Controls.Add(this.成本);
             this.Name = "新增商品視窗";
             this.Text = "新增商品視窗";
+            this.Activated += new System.EventHandler(this.新增商品視窗_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品小類資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品大類資料BindingSource)).EndInit();

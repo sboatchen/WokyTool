@@ -35,8 +35,8 @@ namespace WokyTool.ImportForm
             this.代收方式DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
             this.配送公司DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
 
-            this.廠商.DataSource = 廠商管理器.Instance.Map.Values.ToList();
-            this.物品.DataSource = 物品管理器.Instance.Map.Values.ToList();
+            this.廠商.DataSource = 廠商管理器.Instance.Map.Values.ToList();    //@@ using binding
+            this.物品.DataSource = 物品管理器.Instance.Map.Values.ToList();    //@@ using binding
             this.指配時段DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.指配時段類型));
             this.代收方式DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.代收類型));
             this.配送公司DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.配送公司類型));
