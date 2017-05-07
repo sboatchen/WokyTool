@@ -20,8 +20,8 @@ namespace WokyTool.DataMgr
         // 資料Map
         public Dictionary<int, 進貨資料> Map { get; private set; }
         // 資料是否異動
-        public bool IsDirty { get; set; }
-
+        public bool IsDirty { get; private set; }
+        // 資料綁定廣播
         public 監測綁定廣播<進貨資料> Binding { get; private set; }
 
         // 獨體
@@ -39,6 +39,8 @@ namespace WokyTool.DataMgr
         {
             InitData();
 
+            Binding = new 監測綁定廣播<進貨資料>(Map.Select(x => x.Value));
+
             IsDirty = false;
         }
 
@@ -54,8 +56,6 @@ namespace WokyTool.DataMgr
 
                 Map[-1] = 進貨資料.ERROR;
                 Map[0] = 進貨資料.NULL;
-
-                Binding = new 監測綁定廣播<進貨資料>(Map.Select(x => x.Value).Where(x => x.編號 > 0));
             }
             else
             {
@@ -67,6 +67,12 @@ namespace WokyTool.DataMgr
         public override string ToString()
         {
             return JsonConvert.SerializeObject(Map.Values, Formatting.Indented);
+        }
+
+        public void SetDirty()
+        {
+            IsDirty = true;
+            Binding.SetDirty();
         }
 
         // 儲存檔案
@@ -103,9 +109,8 @@ namespace WokyTool.DataMgr
             }
 
             Map[Item_.編號] = Item_;
-            Binding.SetDirty();
 
-            IsDirty = true;
+            SetDirty();
         }
 
         // 新增資料
@@ -136,9 +141,8 @@ namespace WokyTool.DataMgr
                 Item_.Delete();
 
                 Map.Remove(Item_.編號);
-                Binding.SetDirty();
 
-                IsDirty = true;
+                SetDirty();
             }
             else
             {
@@ -156,9 +160,8 @@ namespace WokyTool.DataMgr
                 Item_.Delete();
 
                 Map.Remove(ID_);
-                Binding.SetDirty();
 
-                IsDirty = true;
+                SetDirty();
             }
             else
             {
@@ -175,9 +178,8 @@ namespace WokyTool.DataMgr
                 if (Map.TryGetValue(ID_, out Item_))
                 {
                     Map.Remove(ID_);
-                    Binding.SetDirty();
 
-                    IsDirty = true;
+                    SetDirty();
                 }
             }
         }

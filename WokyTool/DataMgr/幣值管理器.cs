@@ -19,10 +19,10 @@ namespace WokyTool.DataMgr
 
         // 資料Map
         public Dictionary<int, 幣值資料> Map { get; private set; }
-        // Binding
-        public BindingSource Binding { get; private set; }
         // 資料是否異動
-        public bool IsDirty { get; set; }
+        public bool IsDirty { get; private set; }
+        // 資料綁定廣播
+        public 監測綁定廣播<幣值資料> Binding { get; private set; }
 
         // 獨體
         private static readonly 幣值管理器 _Instance = new 幣值管理器();
@@ -39,8 +39,7 @@ namespace WokyTool.DataMgr
         {
             InitData();
 
-            Binding = new BindingSource();
-            Binding.DataSource = Map.Values;
+            Binding = new 監測綁定廣播<幣值資料>(Map.Select(x => x.Value));
 
             IsDirty = false;
         }
@@ -67,6 +66,12 @@ namespace WokyTool.DataMgr
         public override string ToString()
         {
             return JsonConvert.SerializeObject(Map.Values, Formatting.Indented);
+        }
+
+        public void SetDirty()
+        {
+            IsDirty = true;
+            Binding.SetDirty();
         }
 
         // 儲存檔案
@@ -119,9 +124,8 @@ namespace WokyTool.DataMgr
             }
 
             Map[Item_.編號] = Item_;
-            
-            Binding.Add(Item_);
-            IsDirty = true;
+
+            SetDirty();
         }
 
         // 新增資料
@@ -137,8 +141,7 @@ namespace WokyTool.DataMgr
 
             Map[Item_.編號] = Item_;
 
-            Binding.Add(Item_);
-            IsDirty = true;
+            SetDirty();
         }
 
         // 刪除資料
@@ -148,8 +151,7 @@ namespace WokyTool.DataMgr
             {
                 Map.Remove(Item_.編號);
 
-                Binding.Remove(Item_);
-                IsDirty = true;
+                SetDirty();
             }
             else
             {
@@ -164,8 +166,8 @@ namespace WokyTool.DataMgr
             if (Map.TryGetValue(ID_, out Item_))
             {
                 Map.Remove(ID_);
-                Binding.Remove(Item_);
-                IsDirty = true;
+
+                SetDirty();
             }
             else
             {

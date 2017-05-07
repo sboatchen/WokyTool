@@ -19,10 +19,10 @@ namespace WokyTool.DataMgr
 
         // 資料Map
         public Dictionary<列舉.編碼類型, 編碼資料> Map { get; private set; }
-        // Binding
-        public BindingSource Binding { get; private set; }
         // 資料是否異動
-        public bool IsDirty { get; set; }
+        public bool IsDirty { get; private set; }
+        // 資料綁定廣播
+        public 監測綁定廣播<編碼資料> Binding { get; private set; }
 
         // 獨體
         private static readonly 編碼管理器 _Instance = new 編碼管理器();
@@ -39,8 +39,7 @@ namespace WokyTool.DataMgr
         {
             InitData();
 
-            Binding = new BindingSource();
-            Binding.DataSource = Map.Values;
+            Binding = new 監測綁定廣播<編碼資料>(Map.Select(x => x.Value));
 
             IsDirty = false;
         }
@@ -66,6 +65,12 @@ namespace WokyTool.DataMgr
             return JsonConvert.SerializeObject(Map.Values, Formatting.Indented);
         }
 
+        public void SetDirty()
+        {
+            IsDirty = true;
+            Binding.SetDirty();
+        }
+
         // 儲存檔案
         public void SaveData()
         {
@@ -88,7 +93,11 @@ namespace WokyTool.DataMgr
             }
 
             IsDirty = true;
-            return Item_.下個值++;
+
+            int Value_ = Item_.下個值++;
+            SetDirty();
+
+            return Value_;
         }
     }
 }
