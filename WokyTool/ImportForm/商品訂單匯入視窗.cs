@@ -236,6 +236,13 @@ namespace WokyTool.ImportForm
         {
             switch (廠商類型)
             {
+                case "PayEasy":
+                    {
+                        var Items_ = _Source.Select(Value => new 回單號結構_PayEasy((出貨匯入結構_PayEasy)Value));
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        函式.ExportCSV<回單號結構_PayEasy>(Title_, Items_);
+                        break;
+                    }
                 case "GoHappy":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_GoHappy((出貨匯入結構_GoHappy)Value));
@@ -431,6 +438,16 @@ namespace WokyTool.ImportForm
             ImportShow("博客來");
         }
 
+        private void payEasyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "PayEasy";
+
+            if (Import<出貨匯入結構_PayEasy>() == false)
+                return;
+
+            ImportShow("PayEasy");
+        }
+
         private bool momo第三方配送()
         {
             // 進行排序
@@ -600,6 +617,11 @@ namespace WokyTool.ImportForm
         private void 博客來ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             函式.GetFile("博客來匯入樣板", "Template/OrderImport/博客來匯入樣板.xlsx");
+        }
+        
+        private void payEasyToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("PayEasy匯入樣板", "Template/OrderImport/PayEasy匯入樣板.xlsx");
         }
     }
 }
