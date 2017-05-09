@@ -43,7 +43,7 @@ namespace WokyTool.DataExport
                     case 列舉.配送公司類型.宅配通:
                         return 宅配通編號;
                     default:
-                        MessageBox.Show("回單號結構_PayEasy_GoHappy can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("回單號結構_PayEasy can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return 字串.空;
                 }
             }

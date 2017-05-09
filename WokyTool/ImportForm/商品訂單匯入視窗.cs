@@ -245,7 +245,7 @@ namespace WokyTool.ImportForm
                     }
                 case "GoHappy":
                     {
-                        var Items_ = _Source.Select(Value => new 回單號結構_GoHappy((出貨匯入結構_GoHappy)Value));
+                        var Items_ = _Source.Where(Value => Value.IsIgnore() == false).Select(Value => new 回單號結構_GoHappy((出貨匯入結構_GoHappy)Value));
                         string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
                         函式.ExportCSV<回單號結構_GoHappy>(Title_, Items_);
                         break;
