@@ -236,6 +236,20 @@ namespace WokyTool.ImportForm
         {
             switch (廠商類型)
             {
+                case "神坊":
+                    {
+                        var Items_ = _Source.Select(Value => new 回單號結構_神坊((出貨匯入結構_神坊)Value));
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        函式.ExportExcel<回單號結構_神坊>(Title_, Items_);
+                        break;
+                    }
+                case "citiesocial":
+                    {
+                        var Items_ = _Source.Select(Value => new 回單號結構_citiesocial((出貨匯入結構_citiesocial)Value));
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        函式.ExportExcel<回單號結構_citiesocial>(Title_, Items_);
+                        break;
+                    }
                 case "PayEasy":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_PayEasy((出貨匯入結構_PayEasy)Value));
@@ -448,6 +462,26 @@ namespace WokyTool.ImportForm
             ImportShow("PayEasy");
         }
 
+        private void 神坊ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "神坊";
+
+            if (Import<出貨匯入結構_神坊>() == false)
+                return;
+
+            ImportShow("神坊");
+        }
+
+        private void citiesocialToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "citiesocial";
+
+            if (Import<出貨匯入結構_citiesocial>() == false)
+                return;
+
+            ImportShow("citiesocial");
+        }
+
         private bool momo第三方配送()
         {
             // 進行排序
@@ -622,6 +656,16 @@ namespace WokyTool.ImportForm
         private void payEasyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             函式.GetFile("PayEasy匯入樣板", "Template/OrderImport/PayEasy匯入樣板.xlsx");
+        }
+
+        private void 神坊ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("神坊匯入樣板", "Template/OrderImport/神坊匯入樣板.xlsx");
+        }
+
+        private void citiesocialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("citiesocial匯入樣板", "Template/OrderImport/citiesocial匯入樣板.xlsx");
         }
     }
 }

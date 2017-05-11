@@ -91,7 +91,7 @@ namespace WokyTool.DataImport
         {
             群組 = 0;
 
-            // 兩日以上的單子不處理
+            // 五日以上的單子不處理
             if (應出貨日期.CompareTo(共用.A5YMD) > 0)
             {
                 _IsIgnore = true;
