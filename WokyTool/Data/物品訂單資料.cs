@@ -28,6 +28,14 @@ namespace WokyTool.Data
 
         /* 其他欄位 */
 
+        override public int 總體積
+        {
+            get
+            {
+                return 物品.體積 * 數量;
+            }
+        }
+
         public string 廠商名稱 { get; set; }
         public string 物品名稱 { get; set; }
 
@@ -74,8 +82,6 @@ namespace WokyTool.Data
             Dictionary<String, int> 物品列表_ = new Dictionary<String, int>();
             GetItemMap(物品列表_);
             配送商品 = 函式.GetCombineItemString(物品列表_);
-
-            總體積 = 物品.體積 * 數量;
 
             // 配送公司
             if (配送公司 != 列舉.配送公司類型.無)

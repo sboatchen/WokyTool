@@ -58,7 +58,7 @@ namespace WokyTool.Data
 
         public string 姓名 { get; set; }
         public string 廠商 { get; set; }
-        public int 總體積 { get; set; }
+        public int 總體積 { get; protected set; }
 
         // 準備配送
         public void PrepareDiliver()

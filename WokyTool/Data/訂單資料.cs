@@ -85,7 +85,7 @@ namespace WokyTool.Data
 
         public int 群組 { get; set; }
         public string 重要備註 { get; set; }
-        public int 總體積 { get; set; }
+        abstract public int 總體積 { get; }
 
         //public bool 寄庫出貨 { get; set; }
 

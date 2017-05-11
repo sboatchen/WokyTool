@@ -85,6 +85,7 @@
     <Compile Include="Common\可格式化_Excel.cs" />
     <Compile Include="Common\父視窗.cs" />
     <Compile Include="DataExport\商品庫存匯出結構.cs" />
+    <Compile Include="DataExport\回單號結構_citiesocial.cs" />
     <Compile Include="DataExport\回單號結構_GoHappy.cs" />
     <Compile Include="DataExport\全速配匯出結構.cs" />
     <Compile Include="DataExport\回單號結構_Momo.cs" />
@@ -94,13 +95,16 @@
     <Compile Include="DataExport\回單號結構_創業家兄弟.cs" />
     <Compile Include="DataExport\回單號結構_東森.cs" />
     <Compile Include="DataExport\回單號結構_森森.cs" />
+    <Compile Include="DataExport\回單號結構_神坊.cs" />
     <Compile Include="DataExport\回單號結構_通用.cs" />
     <Compile Include="DataExport\宅配通匯出結構.cs" />
     <Compile Include="DataExport\物品庫存匯出結構.cs" />
     <Compile Include="DataExport\物品總覽匯出結構.cs" />
     <Compile Include="DataExport\進貨匯出結構.cs" />
+    <Compile Include="DataImport\出貨匯入結構_citiesocial.cs" />
     <Compile Include="DataImport\出貨匯入結構_PayEasy.cs" />
     <Compile Include="DataImport\出貨匯入結構_博客來.cs" />
+    <Compile Include="DataImport\出貨匯入結構_神坊.cs" />
     <Compile Include="Data\物品訂單資料.cs" />
     <Compile Include="DataImport\物品更新匯入結構.cs" />
     <Compile Include="DataMgr\入庫管理器.cs" />
