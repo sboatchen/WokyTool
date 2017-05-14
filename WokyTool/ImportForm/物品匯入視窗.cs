@@ -23,6 +23,10 @@ namespace WokyTool
         private List<物品匯入結構> _Source;
         private BindingSource _Binding;
 
+        protected 監測綁定更新<物品大類資料> _物品大類資料Listener;
+        protected 監測綁定更新<物品小類資料> _物品小類資料Listener;
+        protected 監測綁定更新<物品品牌資料> _物品品牌資料Listener;
+
         public 物品匯入視窗(ExcelQueryFactory Data)
         {
             InitializeComponent();
@@ -37,13 +41,44 @@ namespace WokyTool
             _Binding.DataSource = _Source;
             this.dataGridView1.DataSource = _Binding;
 
-            this.大類編號DataGridViewTextBoxColumn.DataSource = 物品大類管理器.Instance.Binding;
-            this.小類編號DataGridViewTextBoxColumn.DataSource = 物品小類管理器.Instance.Binding;
-            this.品牌編號DataGridViewTextBoxColumn.DataSource = 物品品牌管理器.Instance.Binding;
+            _物品大類資料Listener = new 監測綁定更新<物品大類資料>(物品大類管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 物品大類資料更新);
+            _物品大類資料Listener.Refresh(true);
+
+            _物品小類資料Listener = new 監測綁定更新<物品小類資料>(物品小類管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 物品小類資料更新);
+            _物品小類資料Listener.Refresh(true);
+
+            _物品品牌資料Listener = new 監測綁定更新<物品品牌資料>(物品品牌管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 物品品牌資料更新);
+            _物品品牌資料Listener.Refresh(true);
 
             this.大類編號DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
             this.小類編號DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
             this.品牌編號DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
+
+            // 註冊事件
+            this.Activated += new System.EventHandler(this.onEventActivated);
+        }
+
+        public void 物品大類資料更新(IEnumerable<物品大類資料> Data_)
+        {
+            this.大類編號DataGridViewTextBoxColumn.DataSource = Data_;
+        }
+
+        public void 物品小類資料更新(IEnumerable<物品小類資料> Data_)
+        {
+            this.小類編號DataGridViewTextBoxColumn.DataSource = Data_;
+        }
+
+        public void 物品品牌資料更新(IEnumerable<物品品牌資料> Data_)
+        {
+            this.品牌編號DataGridViewTextBoxColumn.DataSource = Data_;
+        }
+
+        // 註冊事件:取得Focus
+        private void onEventActivated(object sender, EventArgs e)
+        {
+            _物品大類資料Listener.Refresh();
+            _物品小類資料Listener.Refresh();
+            _物品品牌資料Listener.Refresh();
         }
 
         private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)

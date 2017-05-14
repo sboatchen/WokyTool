@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
+using WokyTool.Data;
 using WokyTool.DataImport;
 using WokyTool.DataMgr;
 
@@ -20,6 +21,12 @@ namespace WokyTool
     {
         private List<商品匯入結構> _Source;
         private BindingSource _Binding;
+
+        protected 監測綁定更新<商品大類資料> _商品大類資料Listener;
+        protected 監測綁定更新<商品小類資料> _商品小類資料Listener;
+        protected 監測綁定更新<公司資料> _公司資料Listener;
+        protected 監測綁定更新<廠商資料> _廠商資料Listener;
+        protected 監測綁定更新<物品資料> _物品資料Listener;
 
         public 商品匯入視窗(ExcelQueryFactory Data)
         {
@@ -35,16 +42,20 @@ namespace WokyTool
             _Binding.DataSource = _Source;
             this.dataGridView1.DataSource = _Binding;
 
-            this.大類編號DataGridViewTextBoxColumn.DataSource = 商品大類管理器.Instance.Binding;
-            this.小類編號DataGridViewTextBoxColumn.DataSource = 商品小類管理器.Instance.Binding;
-            this.公司編號.DataSource = 公司管理器.Instance.Binding;
-            this.廠商編號DataGridViewTextBoxColumn.DataSource = 廠商管理器.Instance.Binding;
-            this.需求編號1DataGridViewTextBoxColumn.DataSource = 物品管理器.Instance.Binding;
-            this.需求編號2DataGridViewTextBoxColumn.DataSource = 物品管理器.Instance.Binding;
-            this.需求編號3DataGridViewTextBoxColumn.DataSource = 物品管理器.Instance.Binding;
-            this.需求編號4DataGridViewTextBoxColumn.DataSource = 物品管理器.Instance.Binding;
-            this.需求編號5DataGridViewTextBoxColumn.DataSource = 物品管理器.Instance.Binding;
+            _商品大類資料Listener = new 監測綁定更新<商品大類資料>(商品大類管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 商品大類資料更新);
+            _商品大類資料Listener.Refresh(true);
 
+            _商品小類資料Listener = new 監測綁定更新<商品小類資料>(商品小類管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 商品小類資料更新);
+            _商品小類資料Listener.Refresh(true);
+
+            _公司資料Listener = new 監測綁定更新<公司資料>(公司管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 公司資料更新);
+            _公司資料Listener.Refresh(true);
+
+            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 廠商資料更新);
+            _廠商資料Listener.Refresh(true);
+
+            _物品資料Listener = new 監測綁定更新<物品資料>(物品管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 物品資料更新);
+            _物品資料Listener.Refresh(true);
 
             //@@ 測試 看是匯入的視窗 還是總覽視窗 那些需要隱藏combobox
             this.大類編號DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
@@ -56,6 +67,48 @@ namespace WokyTool
             this.需求編號3DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
             this.需求編號4DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
             this.需求編號5DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
+
+            // 註冊事件
+            this.Activated += new System.EventHandler(this.onEventActivated);
+        }
+
+        public void 商品大類資料更新(IEnumerable<商品大類資料> Data_)
+        {
+            this.大類編號DataGridViewTextBoxColumn.DataSource = Data_;
+        }
+
+        public void 商品小類資料更新(IEnumerable<商品小類資料> Data_)
+        {
+            this.小類編號DataGridViewTextBoxColumn.DataSource = Data_;
+        }
+
+        public void 公司資料更新(IEnumerable<公司資料> Data_)
+        {
+            this.公司編號.DataSource = Data_;
+        }
+
+        public void 廠商資料更新(IEnumerable<廠商資料> Data_)
+        {
+            this.廠商編號DataGridViewTextBoxColumn.DataSource = Data_;
+        }
+
+        public void 物品資料更新(IEnumerable<物品資料> Data_)
+        {
+            this.需求編號1DataGridViewTextBoxColumn.DataSource = Data_;
+            this.需求編號2DataGridViewTextBoxColumn.DataSource = Data_;
+            this.需求編號3DataGridViewTextBoxColumn.DataSource = Data_;
+            this.需求編號4DataGridViewTextBoxColumn.DataSource = Data_;
+            this.需求編號5DataGridViewTextBoxColumn.DataSource = Data_;
+        }
+
+        // 註冊事件:取得Focus
+        private void onEventActivated(object sender, EventArgs e)
+        {
+            _商品大類資料Listener.Refresh();
+            _商品小類資料Listener.Refresh();
+            _公司資料Listener.Refresh();
+            _廠商資料Listener.Refresh();
+            _物品資料Listener.Refresh();
         }
 
         private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)

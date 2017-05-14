@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
+using WokyTool.Data;
 using WokyTool.DataImport;
 using WokyTool.DataMgr;
 
@@ -24,6 +25,10 @@ namespace WokyTool.ImportForm
         private BindingSource _Binding;
         private 列舉.進貨類型 _Type;
 
+        protected 監測綁定更新<廠商資料> _廠商資料Listener;
+        protected 監測綁定更新<物品資料> _物品資料Listener;
+        protected 監測綁定更新<幣值資料> _幣值資料Listener;
+
         public 進貨匯入視窗(列舉.進貨類型 Type_)
         {
             InitializeComponent();
@@ -32,10 +37,14 @@ namespace WokyTool.ImportForm
 
             this.Text = _Type.ToString() + "匯入視窗";
 
-            //this.類型.DataSource = Enum.GetValues(typeof(列舉.進貨類型));
-            this.廠商編號DataGridViewTextBoxColumn.DataSource = 廠商管理器.Instance.Binding;
-            this.物品編號DataGridViewTextBoxColumn.DataSource = 物品管理器.Instance.Binding;
-            this.幣值編號DataGridViewTextBoxColumn.DataSource = 幣值管理器.Instance.Binding;
+            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 廠商資料更新);
+            _廠商資料Listener.Refresh(true);
+
+            _物品資料Listener = new 監測綁定更新<物品資料>(物品管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 物品資料更新);
+            _物品資料Listener.Refresh(true);
+
+            _幣值資料Listener = new 監測綁定更新<幣值資料>(幣值管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 幣值資料更新);
+            _幣值資料Listener.Refresh(true);
 
             //this.類型.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
             this.廠商編號DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
@@ -43,6 +52,31 @@ namespace WokyTool.ImportForm
             this.幣值編號DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
 
             UpdateState(_IsImport);
+
+            this.Activated += new System.EventHandler(this.onEventActivated);
+        }
+
+        public void 廠商資料更新(IEnumerable<廠商資料> Data_)
+        {
+            this.廠商編號DataGridViewTextBoxColumn.DataSource = Data_;
+        }
+
+        public void 物品資料更新(IEnumerable<物品資料> Data_)
+        {
+            this.物品編號DataGridViewTextBoxColumn.DataSource = Data_;
+        }
+
+        public void 幣值資料更新(IEnumerable<幣值資料> Data_)
+        {
+            this.幣值編號DataGridViewTextBoxColumn.DataSource = Data_;
+        }
+
+        // 註冊事件:取得Focus
+        private void onEventActivated(object sender, EventArgs e)
+        {
+            _廠商資料Listener.Refresh();
+            _物品資料Listener.Refresh();
+            _幣值資料Listener.Refresh();
         }
 
         private void UpdateState(bool IsImport_)
