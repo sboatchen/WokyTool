@@ -36,8 +36,8 @@
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.結算ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.銷售資料編輯BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.銷售狀態類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.銷售資料編輯BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.狀態DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.廠商DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,9 +46,9 @@
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.售價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.利潤 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.建立日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.結單日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.利潤 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.電話DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,8 +64,8 @@
             this.配送單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.銷售資料編輯BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.銷售狀態類型BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.銷售資料編輯BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -132,9 +132,9 @@
             this.數量DataGridViewTextBoxColumn,
             this.成本DataGridViewTextBoxColumn,
             this.售價DataGridViewTextBoxColumn,
+            this.利潤,
             this.建立日期DataGridViewTextBoxColumn,
             this.結單日期DataGridViewTextBoxColumn,
-            this.利潤,
             this.姓名DataGridViewTextBoxColumn,
             this.地址DataGridViewTextBoxColumn,
             this.電話DataGridViewTextBoxColumn,
@@ -156,13 +156,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(966, 463);
             this.dataGridView1.TabIndex = 1;
             // 
-            // 銷售資料編輯BindingSource
-            // 
-            this.銷售資料編輯BindingSource.DataSource = typeof(WokyTool.Data.銷售資料_編輯);
-            // 
             // 銷售狀態類型BindingSource
             // 
             this.銷售狀態類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.銷售狀態類型);
+            // 
+            // 銷售資料編輯BindingSource
+            // 
+            this.銷售資料編輯BindingSource.DataSource = typeof(WokyTool.Data.銷售資料_編輯);
             // 
             // 編號DataGridViewTextBoxColumn
             // 
@@ -221,6 +221,13 @@
             this.售價DataGridViewTextBoxColumn.HeaderText = "售價";
             this.售價DataGridViewTextBoxColumn.Name = "售價DataGridViewTextBoxColumn";
             // 
+            // 利潤
+            // 
+            this.利潤.DataPropertyName = "利潤";
+            this.利潤.HeaderText = "利潤";
+            this.利潤.Name = "利潤";
+            this.利潤.ReadOnly = true;
+            // 
             // 建立日期DataGridViewTextBoxColumn
             // 
             this.建立日期DataGridViewTextBoxColumn.DataPropertyName = "建立日期";
@@ -234,13 +241,6 @@
             this.結單日期DataGridViewTextBoxColumn.HeaderText = "結單日期";
             this.結單日期DataGridViewTextBoxColumn.Name = "結單日期DataGridViewTextBoxColumn";
             this.結單日期DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 利潤
-            // 
-            this.利潤.DataPropertyName = "利潤";
-            this.利潤.HeaderText = "利潤";
-            this.利潤.Name = "利潤";
-            this.利潤.ReadOnly = true;
             // 
             // 姓名DataGridViewTextBoxColumn
             // 
@@ -347,8 +347,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.銷售資料編輯BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.銷售狀態類型BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.銷售資料編輯BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,18 +364,18 @@
         private System.Windows.Forms.ToolStripMenuItem 結算ToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 銷售資料編輯BindingSource;
+        private System.Windows.Forms.BindingSource 銷售狀態類型BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 狀態DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 銷售狀態類型BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 廠商DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 公司DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 商品DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 售價DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 利潤;
         private System.Windows.Forms.DataGridViewTextBoxColumn 建立日期DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 結單日期DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 利潤;
         private System.Windows.Forms.DataGridViewTextBoxColumn 姓名DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 地址DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 電話DataGridViewTextBoxColumn;

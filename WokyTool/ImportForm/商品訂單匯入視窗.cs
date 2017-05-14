@@ -633,7 +633,7 @@ namespace WokyTool.ImportForm
             int Number = 1;
             foreach(var Item_ in _DeilverSource)
             {
-                Item_.配送單號 = String.Format("測試配送單號{0:00}", Number);
+                Item_.SetDiliver(String.Format("測試配送單號{0:00}", Number));
                 Number++;
             }
         }

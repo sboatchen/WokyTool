@@ -97,7 +97,7 @@ namespace WokyTool.Data
             else
             {
                 狀態 = value;
-                if (狀態.IsAllowPrice() == false)
+                if (狀態 == 列舉.銷售狀態類型.退貨)
                     售價 = 0;
                 if (狀態.IsClose())
                     結單日期 = DateTime.Now;

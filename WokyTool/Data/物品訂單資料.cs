@@ -106,8 +106,8 @@ namespace WokyTool.Data
             // 庫存處理
             物品.Sell(false, 數量);
 
-            //@@ 填寫收入資料
-            int 成本_ = 物品.成本;
+            // 轉入銷售資料
+            銷售管理器.Instance.Add(銷售資料.New(this));
         }
 
         // 取出內容物
