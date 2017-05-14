@@ -10,7 +10,7 @@ using WokyTool.DataImport;
 
 namespace WokyTool.DataExport
 {
-    class 回單號結構_GoHappy
+    class 回單號結構_GoHappy : 可格式化_Csv
     {
         private static string 全速配編號 = "4";
         private static string 宅配通編號 = "3";

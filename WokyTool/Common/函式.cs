@@ -39,7 +39,7 @@ namespace WokyTool.Common
         }
 
         // 通用匯出格式   //@@ 檢查是否有其他可以共用
-        public static void ExportCSV<T>(String FileName_, IEnumerable<T> Items_)
+        public static void ExportCSV<T>(String FileName_, IEnumerable<T> Items_) where T : 可格式化_Csv
         {
             // 開啟存檔位置
             SaveFileDialog dlg = new SaveFileDialog();

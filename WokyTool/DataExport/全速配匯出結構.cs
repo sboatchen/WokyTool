@@ -9,7 +9,7 @@ using WokyTool.DataImport;
 
 namespace WokyTool.DataExport
 {
-    class 全速配匯出結構
+    class 全速配匯出結構 : 可格式化_Csv
     {
         [CsvColumn(Name = "序號", FieldIndex = 1)]
         public int 序號 { get; set; }

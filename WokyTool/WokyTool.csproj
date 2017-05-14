@@ -75,6 +75,7 @@
     <Compile Include="Common\MyString.cs" />
     <Compile Include="Common\共用.cs" />
     <Compile Include="Common\函式.cs" />
+    <Compile Include="Common\可格式化_Csv.cs" />
     <Compile Include="Common\監測綁定.cs" />
     <Compile Include="Common\可運作.cs" />
     <Compile Include="Common\可配送.cs" />
