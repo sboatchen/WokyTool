@@ -114,7 +114,7 @@ namespace WokyTool.DataImport
         // 資料是否合法
         public bool IsLegal()
         {
-            return 大類編號 != -1 && 小類編號 != -1 && 品牌編號 != -1;
+            return 大類編號 != 常數.錯誤資料編碼 && 小類編號 != 常數.錯誤資料編碼 && 品牌編號 != 常數.錯誤資料編碼;
         }
         
         public 物品資料 ToData()
@@ -143,17 +143,17 @@ namespace WokyTool.DataImport
 
             Result_.名稱 = 名稱;
 
-            if(大類編號 != -1)
+            if(大類編號 != 常數.錯誤資料編碼)
                 Result_.大類 = 字串.正確;
             else
                 Result_.大類 = 大類名稱;
 
-             if(小類編號 != -1)
+             if(小類編號 != 常數.錯誤資料編碼)
                 Result_.小類 = 字串.正確;
             else
                 Result_.小類 = 小類名稱;
 
-             if(品牌編號 != -1)
+             if(品牌編號 != 常數.錯誤資料編碼)
                 Result_.品牌 = 字串.正確;
             else
                 Result_.品牌 = 品牌名稱;

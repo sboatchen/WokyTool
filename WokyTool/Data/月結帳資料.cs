@@ -175,7 +175,7 @@ namespace WokyTool.Data
 
          public bool IsLegal()
          {
-             return 廠商編號 != -1 && 商品編號 != -1 && 數量 != 0;
+             return 廠商編號 != 常數.錯誤資料編碼 && 商品編號 != 常數.錯誤資料編碼 && 數量 != 0;
          }
     } 
 }

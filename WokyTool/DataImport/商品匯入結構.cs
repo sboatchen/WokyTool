@@ -266,22 +266,22 @@ namespace WokyTool.DataImport
 
             Result_.名稱 = 名稱;
 
-            if (公司編號 != -1)
+            if (公司編號 != 常數.錯誤資料編碼)
                 Result_.公司 = 字串.正確;
             else
                 Result_.公司 = 公司名稱;
 
-            if (廠商編號 != -1)
+            if (廠商編號 != 常數.錯誤資料編碼)
                 Result_.廠商 = 字串.正確;
             else
                 Result_.廠商 = 廠商名稱;
 
-            if (大類編號 != -1)
+            if (大類編號 != 常數.錯誤資料編碼)
                 Result_.大類 = 字串.正確;
             else
                 Result_.大類 = 大類名稱;
 
-            if (小類編號 != -1)
+            if (小類編號 != 常數.錯誤資料編碼)
                 Result_.小類 = 字串.正確;
             else
                 Result_.小類 = 小類名稱;
