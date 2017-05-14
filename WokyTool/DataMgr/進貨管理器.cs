@@ -54,8 +54,8 @@ namespace WokyTool.DataMgr
                                     .Select(Data => 進貨資料_唯讀.New(Data))
                                     .ToDictionary(Data => Data.編號);
 
-                Map[-1] = 進貨資料.ERROR;
-                Map[0] = 進貨資料.NULL;
+                Map[常數.錯誤資料編碼] = 進貨資料.ERROR;
+                Map[常數.空白資料編碼] = 進貨資料.NULL;
             }
             else
             {

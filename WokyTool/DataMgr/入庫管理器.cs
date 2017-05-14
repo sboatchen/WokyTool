@@ -53,18 +53,17 @@ namespace WokyTool.DataMgr
                 Map = SetReader_.Read<入庫資料>(FILE_PATH, 共用.ReaderDefine)
                                   .ToDictionary(Data => Data.編號);
 
-                Map[-1] = 入庫資料.ERROR;
-                Map[0] = 入庫資料.NULL;
+                Map[常數.錯誤資料編碼] = 入庫資料.ERROR;
+                Map[常數.空白資料編碼] = 入庫資料.NULL;
             }
             else
             {
                 //@@ 暫時處理
                 Map = new Dictionary<int, 入庫資料>();
-                Map[-1] = 入庫資料.ERROR;
-                Map[0] = 入庫資料.NULL;
+                Map[常數.錯誤資料編碼] = 入庫資料.ERROR;
+                Map[常數.空白資料編碼] = 入庫資料.NULL;
 
-                //@@ 暫時註解調，避免新版本找不到
-                //MessageBox.Show("入庫管理器::InitData fail, can't find file " + Directory.GetCurrentDirectory(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("入庫管理器::InitData fail, can't find file " + Directory.GetCurrentDirectory(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //System.Environment.Exit(0);
             }
         }

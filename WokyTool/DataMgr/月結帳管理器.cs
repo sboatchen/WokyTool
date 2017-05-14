@@ -53,8 +53,8 @@ namespace WokyTool.DataMgr
                 Map = SetReader_.Read<月結帳資料>(FILE_PATH, 共用.ReaderDefine)
                                   .ToDictionary(Data => Data.編號);
 
-                Map[-1] = 月結帳資料.ERROR;
-                Map[0] = 月結帳資料.NULL;
+                Map[常數.錯誤資料編碼] = 月結帳資料.ERROR;
+                Map[常數.空白資料編碼] = 月結帳資料.NULL;
             }
             else
             {

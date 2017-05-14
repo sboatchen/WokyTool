@@ -53,8 +53,8 @@ namespace WokyTool.DataMgr
                 Map = SetReader_.Read<幣值資料>(FILE_PATH, 共用.ReaderDefine)
                                   .ToDictionary(Data => Data.編號);
 
-                Map[-1] = 幣值資料.ERROR;
-                Map[0] = 幣值資料.DEFAULT;
+                Map[常數.錯誤資料編碼] = 幣值資料.ERROR;
+                Map[常數.空白資料編碼] = 幣值資料.DEFAULT;
             }
             else
             {
