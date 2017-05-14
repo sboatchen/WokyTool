@@ -107,7 +107,7 @@ namespace WokyTool.Data
         private static readonly 雜支資料 _NULL = new 雜支資料
         {
             IsNew = false,
-            編號 = 0,
+            編號 = 常數.空白資料編碼,
             時間 = new DateTime(0),
             廠商 = 廠商資料.NULL,
             物品名稱 = 字串.無,
@@ -128,7 +128,7 @@ namespace WokyTool.Data
         private static 雜支資料 _ERROR = new 雜支資料
         {
             IsNew = false,
-            編號 = -1,
+            編號 = 常數.錯誤資料編碼,
             時間 = new DateTime(0),
             廠商 = 廠商資料.ERROR,
             物品名稱 = 字串.錯誤,

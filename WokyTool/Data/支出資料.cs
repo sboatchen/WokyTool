@@ -51,7 +51,7 @@ namespace WokyTool.Data
                 結算時間 = DateTime.Now,
 
                 建立時間 = DateTime.Now,
-                編號 = 0,
+                編號 = 常數.空白資料編碼,
                 類型 = 字串.空,
 
                 廠商 = 字串.空,
@@ -73,7 +73,7 @@ namespace WokyTool.Data
         {
             結算時間 = new DateTime(0),
             建立時間 = new DateTime(0),
-            編號 = 0,
+            編號 = 常數.空白資料編碼,
             類型 = 字串.無,
             廠商 = 字串.無,
             物品 = 字串.無,
@@ -97,7 +97,7 @@ namespace WokyTool.Data
         {
             結算時間 = new DateTime(0),
             建立時間 = new DateTime(0),
-            編號 = 0,
+            編號 = 常數.空白資料編碼,
             類型 = 字串.錯誤,
             廠商 = 字串.錯誤,
             物品 = 字串.錯誤,

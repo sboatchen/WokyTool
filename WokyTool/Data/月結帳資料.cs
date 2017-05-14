@@ -134,7 +134,7 @@ namespace WokyTool.Data
 
          private static readonly 月結帳資料 _NULL = new 月結帳資料
          {
-            編號 = 0,
+            編號 = 常數.空白資料編碼,
             時間 = new DateTime(),
             廠商 = 廠商資料.NULL,
             商品 = 商品資料.NULL,
@@ -152,7 +152,7 @@ namespace WokyTool.Data
 
          private static 月結帳資料 _ERROR = new 月結帳資料
          {
-            編號 = -1,
+            編號 = 常數.錯誤資料編碼,
             時間 = new DateTime(),
             廠商 = 廠商資料.ERROR,
             商品 = 商品資料.ERROR,
