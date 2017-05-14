@@ -106,6 +106,7 @@
     <Compile Include="DataImport\出貨匯入結構_PayEasy.cs" />
     <Compile Include="DataImport\出貨匯入結構_博客來.cs" />
     <Compile Include="DataImport\出貨匯入結構_神坊.cs" />
+    <Compile Include="DataMgr\銷售管理器.cs" />
     <Compile Include="Data\銷售資料.cs" />
     <Compile Include="Data\銷售資料_編輯.cs" />
     <Compile Include="Data\物品訂單資料.cs" />
@@ -166,6 +167,12 @@
     </Compile>
     <Compile Include="FormOverview\進貨總覽視窗.Designer.cs">
       <DependentUpon>進貨總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOverview\銷售總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOverview\銷售總覽視窗.Designer.cs">
+      <DependentUpon>銷售總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOverview\雜支總覽視窗.cs">
       <SubType>Form</SubType>
@@ -375,6 +382,9 @@
     <EmbeddedResource Include="FormOverview\進貨總覽視窗.resx">
       <DependentUpon>進貨總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOverview\銷售總覽視窗.resx">
+      <DependentUpon>銷售總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOverview\雜支總覽視窗.resx">
       <DependentUpon>雜支總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -458,6 +468,7 @@
     <None Include="Properties\DataSources\WokyTool.Common.列舉+指配時段類型.datasource" />
     <None Include="Properties\DataSources\WokyTool.Common.列舉+進貨類型.datasource" />
     <None Include="Properties\DataSources\WokyTool.Common.列舉+配送公司類型.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Common.列舉+銷售狀態類型.datasource" />
     <None Include="Properties\DataSources\WokyTool.Common.可配送.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.入庫資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.公司資料.datasource" />
@@ -478,6 +489,7 @@
     <None Include="Properties\DataSources\WokyTool.Data.訂單資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.訊息資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.進貨資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.銷售資料_編輯.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.雜支資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.商品匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.物品匯入結構.datasource" />

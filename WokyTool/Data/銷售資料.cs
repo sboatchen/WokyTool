@@ -152,6 +152,45 @@ namespace WokyTool.Data
             };
         }
 
+        public static 銷售資料 New(物品訂單資料 From_)
+        {
+            return new 銷售資料
+            {
+                編號 = 編碼管理器.Instance.Get(列舉.編碼類型.銷售),
+                狀態 = 列舉.銷售狀態類型.出貨,
+                建立日期 = DateTime.Now,
+                結單日期 = new DateTime(0),
+
+                姓名 = From_.姓名,
+                地址 = From_.地址,
+                電話 = From_.電話,
+                手機 = From_.手機,
+
+                廠商 = From_.廠商.名稱,
+                //@@公司 = From_.商品.公司.名稱,
+                訂單編號 = From_.訂單編號,
+
+                寄庫出貨 = false,
+                備註 = From_.重要備註 + From_.備註,
+
+                指配日期 = From_.指配日期,
+                指配時段 = From_.指配時段.ToString(),
+
+                代收方式 = From_.代收方式.ToString(),
+                代收金額 = From_.代收金額,
+
+                配送公司 = From_.配送公司.ToString(),
+                配送單號 = From_.配送單號,
+
+                商品名稱 = From_.物品.名稱,
+                商品類型 = 字串.物品,
+                商品編號 = From_.物品.編號,
+
+                數量 = From_.數量,
+                成本 = From_.物品.成本,
+                售價 = 0
+            };
+        }
 
         private static readonly 銷售資料 _NULL = new 銷售資料
         {

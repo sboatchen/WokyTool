@@ -45,7 +45,6 @@ namespace WokyTool
 
         public void 物品資料更新(IEnumerable<物品資料> Data_)
         {
-            List<物品資料> xxx = Data_.ToList();
             if (_子視窗 != null && _子視窗.IsVisible() == true)
                 this.dataGridView1.DataSource = _子視窗.Filt(Data_).ToList();
             else
