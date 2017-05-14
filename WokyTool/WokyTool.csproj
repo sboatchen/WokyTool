@@ -106,6 +106,8 @@
     <Compile Include="DataImport\出貨匯入結構_PayEasy.cs" />
     <Compile Include="DataImport\出貨匯入結構_博客來.cs" />
     <Compile Include="DataImport\出貨匯入結構_神坊.cs" />
+    <Compile Include="Data\銷售資料.cs" />
+    <Compile Include="Data\銷售資料_編輯.cs" />
     <Compile Include="Data\物品訂單資料.cs" />
     <Compile Include="DataImport\物品更新匯入結構.cs" />
     <Compile Include="DataMgr\入庫管理器.cs" />

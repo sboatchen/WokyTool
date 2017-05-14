@@ -33,6 +33,8 @@ namespace WokyTool.Common
 
             入庫,
             入庫紀錄,
+
+            銷售,
         };
 
         // 配送指定時段類型
@@ -126,6 +128,39 @@ namespace WokyTool.Common
             {
                 case 監測類型.主動通知_值:
                 case 監測類型.被動通知_值:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        // 銷售狀態類型
+        public enum 銷售狀態類型
+        {
+            出貨 = 0,
+            結單,
+
+            退貨,
+            退貨結單,
+        };
+
+        public static bool IsClose(this 銷售狀態類型 銷售狀態類型_)
+        {
+            switch (銷售狀態類型_)
+            {
+                case 銷售狀態類型.結單:
+                case 銷售狀態類型.退貨結單:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
+        public static bool IsAllowPrice(this 銷售狀態類型 銷售狀態類型_)
+        {
+            switch (銷售狀態類型_)
+            {
+                case 銷售狀態類型.出貨:
                     return true;
                 default:
                     return false;

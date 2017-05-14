@@ -32,5 +32,8 @@ namespace WokyTool.Common
         public static string 新竹貨運 = "新竹貨運";
         public static string 新竹物流 = "新竹物流";
         public static string 宅配通 = "宅配通";
+
+        public static string 商品 = "商品";
+        public static string 物品 = "物品";
     }
 }
