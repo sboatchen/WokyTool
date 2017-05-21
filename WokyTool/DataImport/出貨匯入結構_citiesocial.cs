@@ -11,6 +11,8 @@ namespace WokyTool.DataImport
 {
     class 出貨匯入結構_citiesocial : 商品訂單資料
     {
+        protected static string 預購訂單檢查 = "【預購】"; 
+
         /***** 資訊格式
         訂單編號
         群組          無
@@ -39,12 +41,16 @@ namespace WokyTool.DataImport
         public string address_2 { get; set; }
         public string city { get; set; }
         public string post_code { get; set; }
+        public string item_name { get; set; }
 
         /* 平台回單複製用欄位 */
-        public string 無用_商品名稱 { get; set; }
+        //public string 無用_商品名稱 { get; set; }
 
         // 共用廠商快取
         protected static readonly 廠商資料 _共用廠商快取 = 廠商管理器.Instance.Get("citiesocial");
+
+        // 是否為不處理的資料
+        private bool _IsIgnore = false;
 
         // 是否為需處理物件
         //override public bool IsRead();
@@ -52,10 +58,19 @@ namespace WokyTool.DataImport
         // 是否合法
         //override public bool IsLegal();
 
+        // 是否需要配送
+        override public bool IsIgnore()
+        {
+            return _IsIgnore;
+        }
+
         // 初始化
         override public void Init()
         {
             群組 = 0;
+
+            if (item_name.Contains(預購訂單檢查))
+                _IsIgnore = true;
 
             廠商 = _共用廠商快取;
             地址 = address_1 + address_2 + city + post_code;
