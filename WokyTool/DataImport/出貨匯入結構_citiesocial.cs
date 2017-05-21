@@ -11,7 +11,7 @@ namespace WokyTool.DataImport
 {
     class 出貨匯入結構_citiesocial : 商品訂單資料
     {
-        protected static string 預購訂單檢查 = "【預購】"; 
+        protected static string 預購訂單檢查 = "【預購】";
 
         /***** 資訊格式
         訂單編號
@@ -25,7 +25,7 @@ namespace WokyTool.DataImport
         電話          
         手機         無     
           
-        指配日期     
+        指配日期     無
         指配時段     無
           
         代收方式     無
@@ -41,7 +41,7 @@ namespace WokyTool.DataImport
         public string address_2 { get; set; }
         public string city { get; set; }
         public string post_code { get; set; }
-        public string item_name { get; set; }
+        public DateTime promise_date { get; set; }
 
         /* 平台回單複製用欄位 */
         //public string 無用_商品名稱 { get; set; }
@@ -69,7 +69,8 @@ namespace WokyTool.DataImport
         {
             群組 = 0;
 
-            if (item_name.Contains(預購訂單檢查))
+            // 五日以上的單子不處理
+            if (promise_date.CompareTo(共用.A5YMD) > 0)
                 _IsIgnore = true;
 
             廠商 = _共用廠商快取;
