@@ -24,7 +24,7 @@ namespace WokyTool.DataExport
         [CsvColumn(Name = "收件人電話(日)", FieldIndex = 6)]
         public string 電話 { get; set; }
         [CsvColumn(Name = "收件人電話(夜)", FieldIndex = 7)]
-        public string 無用3 { get; set; }
+        public string 電話2 { get; set; }
         [CsvColumn(Name = "收件人行動電話", FieldIndex = 8)]
         public string 手機 { get; set; }
         [CsvColumn(Name = "購物車備註", FieldIndex = 9)]
@@ -55,7 +55,12 @@ namespace WokyTool.DataExport
             姓名 = From_.配送姓名;
             地址 = From_.配送地址;
             電話 = From_.配送電話;
-            手機 = From_.配送手機;
+
+            if (From_.配送手機.Length >= 15)    // 手機欄位無法放太長的字串 過長的改放到電話2
+                電話2 = From_.配送手機;
+            else
+                手機 = From_.配送手機;
+
             備註 = From_.配送備註;
             商品 = From_.配送商品;
             數量_無用 = 1;
