@@ -224,7 +224,7 @@ namespace WokyTool.ImportForm
             }
             else if (this.dataGridView1.Columns[e.ColumnIndex].Name == "數量DataGridViewTextBoxColumn")
             {
-                if ((int)e.Value == 0)
+                if (_Type != 列舉.進貨類型.庫存調整 && (int)e.Value == 0)
                 {
                     e.CellStyle.ForeColor = Color.Red;
                 }

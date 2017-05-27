@@ -159,6 +159,8 @@ namespace WokyTool.DataImport
         // 資料是否合法
         public bool IsLegal()
         {
+            if (類型 == 列舉.進貨類型.庫存調整)
+                return 廠商編號 >= 0 && 物品編號 > 0 && 幣值編號 >= 0;
             return 廠商編號 >= 0 && 物品編號 > 0 && 數量 != 0 && 幣值編號 >= 0;
         }
 
@@ -183,7 +185,7 @@ namespace WokyTool.DataImport
             else
                 Result_.物品名稱 = 物品名稱;
 
-            if (數量 != 0)
+            if (類型 != 列舉.進貨類型.庫存調整 || 數量 != 0)
                 Result_.數量 = 數量.ToString() + 字串.正確;
             else
                 Result_.數量 = 數量.ToString();
