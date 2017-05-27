@@ -15,7 +15,7 @@ namespace WokyTool.DataImport
         訂單編號
         群組          無
         
-        商品序號
+        商品序號    無
         數量
           
         姓名
@@ -35,7 +35,7 @@ namespace WokyTool.DataImport
         備註         無
         *********/
         /* 平台特殊欄位 */
-        //public string 顏色 { get; set; }
+        public string 商品名稱 { get; set; }
 
         /* 平台回單複製用欄位 */
         //public string 無用_XX { get; set; }
@@ -55,6 +55,8 @@ namespace WokyTool.DataImport
         {
             群組 = 0;
 
+            
+
             廠商 = _共用廠商快取;
 
             指配日期 = new DateTime(0);
@@ -66,7 +68,11 @@ namespace WokyTool.DataImport
             配送公司 = 列舉.配送公司類型.無;
             配送單號 = null;
 
-            商品 = 商品管理器.Instance.Get(廠商.編號, 商品序號);
+            商品 = 商品管理器.Instance.GetByName(廠商.編號, 商品名稱);
+            if (商品.編號 > 常數.空白資料編碼)
+                商品序號 = 商品.品號;
+            else
+                商品序號 = "(錯誤)" + 商品名稱;   // for 介面呈現用
         }
 
         // 準備配送

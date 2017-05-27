@@ -115,6 +115,23 @@ namespace WokyTool.DataMgr
                 return Item_;
         }
 
+        // 取得資料 - 匯入資料時用，找不到時不會報錯
+        public 商品資料 GetByName(int 廠商編號, string 商品名稱)
+        {
+            if (商品名稱 == null || 商品名稱.Length == 0)
+                return 商品資料.NULL;
+
+            商品資料 Item_ = Map.Values
+                                   .Where(Value => Value.廠商編號 == 廠商編號)
+                                   .Where(Value => Value.名稱 == 商品名稱)
+                                   .FirstOrDefault();
+
+            if (Item_ == null)
+                return 商品資料.ERROR;
+            else
+                return Item_;
+        }
+
         // 新增資料
         public void Add(商品資料 Item_)
         {
