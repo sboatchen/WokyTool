@@ -98,6 +98,7 @@
     <Compile Include="DataExport\回單號結構_森森.cs" />
     <Compile Include="DataExport\回單號結構_神坊.cs" />
     <Compile Include="DataExport\回單號結構_通用.cs" />
+    <Compile Include="DataExport\回單號結構_遠傳.cs" />
     <Compile Include="DataExport\宅配通匯出結構.cs" />
     <Compile Include="DataExport\物品庫存匯出結構.cs" />
     <Compile Include="DataExport\物品總覽匯出結構.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="DataImport\出貨匯入結構_PayEasy.cs" />
     <Compile Include="DataImport\出貨匯入結構_博客來.cs" />
     <Compile Include="DataImport\出貨匯入結構_神坊.cs" />
+    <Compile Include="DataImport\出貨匯入結構_遠傳.cs" />
     <Compile Include="DataMgr\銷售管理器.cs" />
     <Compile Include="Data\銷售資料.cs" />
     <Compile Include="Data\銷售資料_編輯.cs" />

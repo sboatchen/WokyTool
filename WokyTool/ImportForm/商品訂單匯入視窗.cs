@@ -236,6 +236,13 @@ namespace WokyTool.ImportForm
         {
             switch (廠商類型)
             {
+                case "遠傳":
+                    {
+                        var Items_ = _Source.Select(Value => new 回單號結構_遠傳((出貨匯入結構_遠傳)Value));
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        函式.ExportExcel<回單號結構_遠傳>(Title_, Items_);
+                        break;
+                    }
                 case "神坊":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_神坊((出貨匯入結構_神坊)Value));
@@ -482,6 +489,16 @@ namespace WokyTool.ImportForm
             ImportShow("citiesocial");
         }
 
+        private void 遠傳ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "遠傳";
+
+            if (Import<出貨匯入結構_遠傳>() == false)
+                return;
+
+            ImportShow("遠傳");
+        }
+
         private bool momo第三方配送()
         {
             // 進行排序
@@ -666,6 +683,11 @@ namespace WokyTool.ImportForm
         private void citiesocialToolStripMenuItem_Click(object sender, EventArgs e)
         {
             函式.GetFile("citiesocial匯入樣板", "Template/OrderImport/citiesocial匯入樣板.xlsx");
+        }
+        
+        private void 遠傳ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("遠傳匯入樣板", "Template/OrderImport/遠傳匯入樣板.xlsx");
         }
     }
 }
