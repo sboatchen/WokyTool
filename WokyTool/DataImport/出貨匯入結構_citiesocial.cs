@@ -11,8 +11,6 @@ namespace WokyTool.DataImport
 {
     class 出貨匯入結構_citiesocial : 商品訂單資料
     {
-        protected static string 預購訂單檢查 = "【預購】";
-
         /***** 資訊格式
         訂單編號
         群組          無

@@ -56,7 +56,7 @@ namespace WokyTool.DataExport
             地址 = From_.配送地址;
             電話 = From_.配送電話;
 
-            if (From_.配送手機.Length >= 15)    // 手機欄位無法放太長的字串 過長的改放到電話2
+            if (From_.配送手機 != null && From_.配送手機.Length >= 15)    // 手機欄位無法放太長的字串 過長的改放到電話2
                 電話2 = From_.配送手機;
             else
                 手機 = From_.配送手機;
