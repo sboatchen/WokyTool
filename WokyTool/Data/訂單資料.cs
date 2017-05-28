@@ -34,7 +34,7 @@ namespace WokyTool.Data
             }
         }
         [CsvColumn(Name = "訂單編號")]
-        public string 訂單編號 { get; set; }
+        virtual public string 訂單編號 { get; set; }
 
         [CsvColumn(Name = "數量")]
         public int 數量 { get; set; }

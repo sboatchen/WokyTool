@@ -231,11 +231,18 @@ namespace WokyTool.ImportForm
                     }
             }
         }
-
+        
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             switch (廠商類型)
             {
+                case "ibon mart":
+                    {
+                        var Items_ = _Source.Select(Value => new 回單號結構_ibonMart((出貨匯入結構_ibonMart)Value));
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        函式.ExportCSV<回單號結構_ibonMart>(Title_, Items_);
+                        break;
+                    }
                 case "myfone":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_myfone((出貨匯入結構_myfone)Value));
@@ -516,6 +523,17 @@ namespace WokyTool.ImportForm
             ImportShow("myfone");
         }
 
+
+        private void ibonMartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "ibon mart";
+
+            if (Import<出貨匯入結構_ibonMart>() == false)
+                return;
+
+            ImportShow("ibon mart");
+        }
+
         private bool momo第三方配送()
         {
             // 進行排序
@@ -710,6 +728,11 @@ namespace WokyTool.ImportForm
         private void myfoneToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             函式.GetFile("myfone匯入樣板", "Template/OrderImport/myfone匯入樣板.xlsx");
+        }
+
+        private void ibonMartToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("ibon mart匯入樣板", "Template/OrderImport/ibon mart匯入樣板.xlsx");
         }
     }
 }

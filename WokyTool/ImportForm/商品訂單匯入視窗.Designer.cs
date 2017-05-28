@@ -43,6 +43,7 @@
             this.神坊ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.citiesocialToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.遠傳ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.myfoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.分組ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.配送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +55,7 @@
             this.神坊ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.citiesocialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.遠傳ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.myfoneToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.測試ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.寄庫出貨 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -80,8 +82,8 @@
             this.配送單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品訂單資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.資料筆數 = new System.Windows.Forms.Label();
-            this.myfoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.myfoneToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ibonMartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ibonMartToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).BeginInit();
@@ -121,7 +123,8 @@
             this.神坊ToolStripMenuItem,
             this.citiesocialToolStripMenuItem1,
             this.遠傳ToolStripMenuItem,
-            this.myfoneToolStripMenuItem});
+            this.myfoneToolStripMenuItem,
+            this.ibonMartToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
             this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "匯入";
@@ -210,6 +213,13 @@
             this.遠傳ToolStripMenuItem.Text = "遠傳";
             this.遠傳ToolStripMenuItem.Click += new System.EventHandler(this.遠傳ToolStripMenuItem_Click);
             // 
+            // myfoneToolStripMenuItem
+            // 
+            this.myfoneToolStripMenuItem.Name = "myfoneToolStripMenuItem";
+            this.myfoneToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.myfoneToolStripMenuItem.Text = "myfone";
+            this.myfoneToolStripMenuItem.Click += new System.EventHandler(this.myfoneToolStripMenuItem_Click);
+            // 
             // 分組ToolStripMenuItem
             // 
             this.分組ToolStripMenuItem.Name = "分組ToolStripMenuItem";
@@ -241,7 +251,8 @@
             this.神坊ToolStripMenuItem1,
             this.citiesocialToolStripMenuItem,
             this.遠傳ToolStripMenuItem1,
-            this.myfoneToolStripMenuItem1});
+            this.myfoneToolStripMenuItem1,
+            this.ibonMartToolStripMenuItem1});
             this.樣板ToolStripMenuItem.Name = "樣板ToolStripMenuItem";
             this.樣板ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.樣板ToolStripMenuItem.Text = "樣板";
@@ -294,6 +305,13 @@
             this.遠傳ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.遠傳ToolStripMenuItem1.Text = "遠傳";
             this.遠傳ToolStripMenuItem1.Click += new System.EventHandler(this.遠傳ToolStripMenuItem1_Click);
+            // 
+            // myfoneToolStripMenuItem1
+            // 
+            this.myfoneToolStripMenuItem1.Name = "myfoneToolStripMenuItem1";
+            this.myfoneToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.myfoneToolStripMenuItem1.Text = "myfone";
+            this.myfoneToolStripMenuItem1.Click += new System.EventHandler(this.myfoneToolStripMenuItem1_Click);
             // 
             // 測試ToolStripMenuItem
             // 
@@ -485,19 +503,19 @@
             this.資料筆數.Size = new System.Drawing.Size(0, 12);
             this.資料筆數.TabIndex = 3;
             // 
-            // myfoneToolStripMenuItem
+            // ibonMartToolStripMenuItem
             // 
-            this.myfoneToolStripMenuItem.Name = "myfoneToolStripMenuItem";
-            this.myfoneToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.myfoneToolStripMenuItem.Text = "myfone";
-            this.myfoneToolStripMenuItem.Click += new System.EventHandler(this.myfoneToolStripMenuItem_Click);
+            this.ibonMartToolStripMenuItem.Name = "ibonMartToolStripMenuItem";
+            this.ibonMartToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.ibonMartToolStripMenuItem.Text = "ibon mart";
+            this.ibonMartToolStripMenuItem.Click += new System.EventHandler(this.ibonMartToolStripMenuItem_Click);
             // 
-            // myfoneToolStripMenuItem1
+            // ibonMartToolStripMenuItem1
             // 
-            this.myfoneToolStripMenuItem1.Name = "myfoneToolStripMenuItem1";
-            this.myfoneToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.myfoneToolStripMenuItem1.Text = "myfone";
-            this.myfoneToolStripMenuItem1.Click += new System.EventHandler(this.myfoneToolStripMenuItem1_Click);
+            this.ibonMartToolStripMenuItem1.Name = "ibonMartToolStripMenuItem1";
+            this.ibonMartToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.ibonMartToolStripMenuItem1.Text = "ibon mart";
+            this.ibonMartToolStripMenuItem1.Click += new System.EventHandler(this.ibonMartToolStripMenuItem1_Click);
             // 
             // 商品訂單匯入視窗
             // 
@@ -578,5 +596,7 @@
         private System.Windows.Forms.ToolStripMenuItem 遠傳ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem myfoneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem myfoneToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ibonMartToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ibonMartToolStripMenuItem1;
     }
 }
