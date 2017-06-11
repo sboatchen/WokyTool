@@ -207,7 +207,7 @@ namespace WokyTool.Data
         // 紀錄
         override public 進貨資料 Save()
         {
-            if (物品 == null || _數量 == 0)
+            if (物品 == null)
             {
                 MessageBox.Show(string.Format("資料編號{0} 不合法 不予處理", _編號), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return this;

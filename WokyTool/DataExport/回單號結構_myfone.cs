@@ -64,7 +64,7 @@ namespace WokyTool.DataExport
 
         [CsvColumn(Name = "數量", FieldIndex = 12)]
         public int 數量 { get { return _Data.數量; } }
-        [CsvColumn(Name = "無用_單位成本", FieldIndex = 13)]
+        [CsvColumn(Name = "單位成本", FieldIndex = 13)]
         public int 無用_單位成本 { get { return _Data.無用_單位成本; } }
         [CsvColumn(Name = "成本小計", FieldIndex = 14)]
         public int 成本小計 { get { return _Data.無用_成本小計; } }
