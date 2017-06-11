@@ -61,8 +61,14 @@
             this.測試ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.寄庫出貨 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.群組DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.訂單編號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.指配時段類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.代收類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.配送公司類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.資料筆數 = new System.Windows.Forms.Label();
+            this.遠傳加購ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.遠傳加購ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.群組DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.電話DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,23 +81,19 @@
             this.重要備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.指配日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.指配時段DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.指配時段類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.代收方式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.代收類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.配送公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.配送公司類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.配送單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品訂單資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.資料筆數 = new System.Windows.Forms.Label();
-            this.遠傳加購ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.遠傳加購ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.金石堂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.金石堂ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段類型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收類型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司類型BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品訂單資料BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -127,7 +129,8 @@
             this.遠傳ToolStripMenuItem,
             this.遠傳加購ToolStripMenuItem,
             this.myfoneToolStripMenuItem,
-            this.ibonMartToolStripMenuItem});
+            this.ibonMartToolStripMenuItem,
+            this.金石堂ToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
             this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "匯入";
@@ -263,7 +266,8 @@
             this.遠傳ToolStripMenuItem1,
             this.遠傳加購ToolStripMenuItem1,
             this.myfoneToolStripMenuItem1,
-            this.ibonMartToolStripMenuItem1});
+            this.ibonMartToolStripMenuItem1,
+            this.金石堂ToolStripMenuItem1});
             this.樣板ToolStripMenuItem.Name = "樣板ToolStripMenuItem";
             this.樣板ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.樣板ToolStripMenuItem.Text = "樣板";
@@ -271,63 +275,63 @@
             // goHappyToolStripMenuItem1
             // 
             this.goHappyToolStripMenuItem1.Name = "goHappyToolStripMenuItem1";
-            this.goHappyToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
+            this.goHappyToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.goHappyToolStripMenuItem1.Text = "GoHappy";
             this.goHappyToolStripMenuItem1.Click += new System.EventHandler(this.goHappyToolStripMenuItem1_Click);
             // 
             // 東森ToolStripMenuItem1
             // 
             this.東森ToolStripMenuItem1.Name = "東森ToolStripMenuItem1";
-            this.東森ToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
+            this.東森ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.東森ToolStripMenuItem1.Text = "東森";
             this.東森ToolStripMenuItem1.Click += new System.EventHandler(this.東森ToolStripMenuItem1_Click);
             // 
             // 博客來ToolStripMenuItem1
             // 
             this.博客來ToolStripMenuItem1.Name = "博客來ToolStripMenuItem1";
-            this.博客來ToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
+            this.博客來ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.博客來ToolStripMenuItem1.Text = "博客來";
             this.博客來ToolStripMenuItem1.Click += new System.EventHandler(this.博客來ToolStripMenuItem1_Click);
             // 
             // payEasyToolStripMenuItem1
             // 
             this.payEasyToolStripMenuItem1.Name = "payEasyToolStripMenuItem1";
-            this.payEasyToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
+            this.payEasyToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.payEasyToolStripMenuItem1.Text = "PayEasy";
             this.payEasyToolStripMenuItem1.Click += new System.EventHandler(this.payEasyToolStripMenuItem1_Click);
             // 
             // 神坊ToolStripMenuItem1
             // 
             this.神坊ToolStripMenuItem1.Name = "神坊ToolStripMenuItem1";
-            this.神坊ToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
+            this.神坊ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.神坊ToolStripMenuItem1.Text = "神坊";
             this.神坊ToolStripMenuItem1.Click += new System.EventHandler(this.神坊ToolStripMenuItem1_Click);
             // 
             // citiesocialToolStripMenuItem
             // 
             this.citiesocialToolStripMenuItem.Name = "citiesocialToolStripMenuItem";
-            this.citiesocialToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.citiesocialToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.citiesocialToolStripMenuItem.Text = "citiesocial";
             this.citiesocialToolStripMenuItem.Click += new System.EventHandler(this.citiesocialToolStripMenuItem_Click);
             // 
             // 遠傳ToolStripMenuItem1
             // 
             this.遠傳ToolStripMenuItem1.Name = "遠傳ToolStripMenuItem1";
-            this.遠傳ToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
+            this.遠傳ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.遠傳ToolStripMenuItem1.Text = "遠傳";
             this.遠傳ToolStripMenuItem1.Click += new System.EventHandler(this.遠傳ToolStripMenuItem1_Click);
             // 
             // myfoneToolStripMenuItem1
             // 
             this.myfoneToolStripMenuItem1.Name = "myfoneToolStripMenuItem1";
-            this.myfoneToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
+            this.myfoneToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.myfoneToolStripMenuItem1.Text = "myfone";
             this.myfoneToolStripMenuItem1.Click += new System.EventHandler(this.myfoneToolStripMenuItem1_Click);
             // 
             // ibonMartToolStripMenuItem1
             // 
             this.ibonMartToolStripMenuItem1.Name = "ibonMartToolStripMenuItem1";
-            this.ibonMartToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
+            this.ibonMartToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.ibonMartToolStripMenuItem1.Text = "ibon mart";
             this.ibonMartToolStripMenuItem1.Click += new System.EventHandler(this.ibonMartToolStripMenuItem1_Click);
             // 
@@ -377,17 +381,51 @@
             this.寄庫出貨.HeaderText = "寄庫出貨";
             this.寄庫出貨.Name = "寄庫出貨";
             // 
-            // 群組DataGridViewTextBoxColumn
-            // 
-            this.群組DataGridViewTextBoxColumn.DataPropertyName = "群組";
-            this.群組DataGridViewTextBoxColumn.HeaderText = "群組";
-            this.群組DataGridViewTextBoxColumn.Name = "群組DataGridViewTextBoxColumn";
-            // 
             // 訂單編號
             // 
             this.訂單編號.DataPropertyName = "訂單編號";
             this.訂單編號.HeaderText = "訂單編號";
             this.訂單編號.Name = "訂單編號";
+            // 
+            // 指配時段類型BindingSource
+            // 
+            this.指配時段類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.指配時段類型);
+            // 
+            // 代收類型BindingSource
+            // 
+            this.代收類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.代收類型);
+            // 
+            // 配送公司類型BindingSource
+            // 
+            this.配送公司類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.配送公司類型);
+            // 
+            // 資料筆數
+            // 
+            this.資料筆數.AutoSize = true;
+            this.資料筆數.Location = new System.Drawing.Point(965, 9);
+            this.資料筆數.Name = "資料筆數";
+            this.資料筆數.Size = new System.Drawing.Size(0, 12);
+            this.資料筆數.TabIndex = 3;
+            // 
+            // 遠傳加購ToolStripMenuItem
+            // 
+            this.遠傳加購ToolStripMenuItem.Name = "遠傳加購ToolStripMenuItem";
+            this.遠傳加購ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.遠傳加購ToolStripMenuItem.Text = "遠傳加購";
+            this.遠傳加購ToolStripMenuItem.Click += new System.EventHandler(this.遠傳加購ToolStripMenuItem_Click);
+            // 
+            // 遠傳加購ToolStripMenuItem1
+            // 
+            this.遠傳加購ToolStripMenuItem1.Name = "遠傳加購ToolStripMenuItem1";
+            this.遠傳加購ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.遠傳加購ToolStripMenuItem1.Text = "遠傳加購";
+            this.遠傳加購ToolStripMenuItem1.Click += new System.EventHandler(this.遠傳加購ToolStripMenuItem1_Click);
+            // 
+            // 群組DataGridViewTextBoxColumn
+            // 
+            this.群組DataGridViewTextBoxColumn.DataPropertyName = "群組";
+            this.群組DataGridViewTextBoxColumn.HeaderText = "群組";
+            this.群組DataGridViewTextBoxColumn.Name = "群組DataGridViewTextBoxColumn";
             // 
             // 姓名DataGridViewTextBoxColumn
             // 
@@ -467,10 +505,6 @@
             this.指配時段DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.指配時段DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // 指配時段類型BindingSource
-            // 
-            this.指配時段類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.指配時段類型);
-            // 
             // 代收方式DataGridViewTextBoxColumn
             // 
             this.代收方式DataGridViewTextBoxColumn.DataPropertyName = "代收方式";
@@ -479,10 +513,6 @@
             this.代收方式DataGridViewTextBoxColumn.Name = "代收方式DataGridViewTextBoxColumn";
             this.代收方式DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.代收方式DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // 代收類型BindingSource
-            // 
-            this.代收類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.代收類型);
             // 
             // 代收金額DataGridViewTextBoxColumn
             // 
@@ -499,10 +529,6 @@
             this.配送公司DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.配送公司DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // 配送公司類型BindingSource
-            // 
-            this.配送公司類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.配送公司類型);
-            // 
             // 配送單號DataGridViewTextBoxColumn
             // 
             this.配送單號DataGridViewTextBoxColumn.DataPropertyName = "配送單號";
@@ -513,27 +539,19 @@
             // 
             this.商品訂單資料BindingSource.DataSource = typeof(WokyTool.Data.商品訂單資料);
             // 
-            // 資料筆數
+            // 金石堂ToolStripMenuItem
             // 
-            this.資料筆數.AutoSize = true;
-            this.資料筆數.Location = new System.Drawing.Point(965, 9);
-            this.資料筆數.Name = "資料筆數";
-            this.資料筆數.Size = new System.Drawing.Size(0, 12);
-            this.資料筆數.TabIndex = 3;
+            this.金石堂ToolStripMenuItem.Name = "金石堂ToolStripMenuItem";
+            this.金石堂ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.金石堂ToolStripMenuItem.Text = "金石堂";
+            this.金石堂ToolStripMenuItem.Click += new System.EventHandler(this.金石堂ToolStripMenuItem_Click);
             // 
-            // 遠傳加購ToolStripMenuItem
+            // 金石堂ToolStripMenuItem1
             // 
-            this.遠傳加購ToolStripMenuItem.Name = "遠傳加購ToolStripMenuItem";
-            this.遠傳加購ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.遠傳加購ToolStripMenuItem.Text = "遠傳加購";
-            this.遠傳加購ToolStripMenuItem.Click += new System.EventHandler(this.遠傳加購ToolStripMenuItem_Click);
-            // 
-            // 遠傳加購ToolStripMenuItem1
-            // 
-            this.遠傳加購ToolStripMenuItem1.Name = "遠傳加購ToolStripMenuItem1";
-            this.遠傳加購ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.遠傳加購ToolStripMenuItem1.Text = "遠傳加購";
-            this.遠傳加購ToolStripMenuItem1.Click += new System.EventHandler(this.遠傳加購ToolStripMenuItem1_Click);
+            this.金石堂ToolStripMenuItem1.Name = "金石堂ToolStripMenuItem1";
+            this.金石堂ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.金石堂ToolStripMenuItem1.Text = "金石堂";
+            this.金石堂ToolStripMenuItem1.Click += new System.EventHandler(this.金石堂ToolStripMenuItem1_Click);
             // 
             // 商品訂單匯入視窗
             // 
@@ -549,10 +567,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段類型BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收類型BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司類型BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品訂單資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -618,5 +636,7 @@
         private System.Windows.Forms.ToolStripMenuItem ibonMartToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 遠傳加購ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 遠傳加購ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 金石堂ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 金石堂ToolStripMenuItem1;
     }
 }

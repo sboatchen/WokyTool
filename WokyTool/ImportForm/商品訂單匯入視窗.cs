@@ -330,7 +330,7 @@ namespace WokyTool.ImportForm
                         break;
                     }
                 default:
-                    MessageBox.Show("匯出ToolStripMenuItem_Click unspport " + 廠商類型, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(廠商類型 + "不支援匯出功能" + 廠商類型, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
          
@@ -551,6 +551,16 @@ namespace WokyTool.ImportForm
             ImportShow("ibon mart");
         }
 
+        private void 金石堂ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "金石堂";
+
+            if (Import<出貨匯入結構_金石堂>() == false)
+                return;
+
+            ImportShow("金石堂");
+        }
+
         private bool momo第三方配送()
         {
             // 進行排序
@@ -755,6 +765,11 @@ namespace WokyTool.ImportForm
         private void 遠傳加購ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             函式.GetFile("遠傳加購匯入樣板", "Template/OrderImport/遠傳加購匯入樣板.xlsx");
+        }
+
+        private void 金石堂ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("金石堂匯入樣板", "Template/OrderImport/金石堂匯入樣板.xlsx");
         }
     }
 }
