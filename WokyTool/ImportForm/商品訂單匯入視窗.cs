@@ -257,6 +257,13 @@ namespace WokyTool.ImportForm
                         函式.ExportExcel<回單號結構_遠傳>(Title_, Items_);
                         break;
                     }
+                case "遠傳加購":
+                    {
+                        var Items_ = _Source.Select(Value => new 回單號結構_遠傳加購((出貨匯入結構_遠傳加購)Value));
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        函式.ExportExcel<回單號結構_遠傳加購>(Title_, Items_);
+                        break;
+                    }
                 case "神坊":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_神坊((出貨匯入結構_神坊)Value));
@@ -513,6 +520,16 @@ namespace WokyTool.ImportForm
             ImportShow("遠傳");
         }
 
+        private void 遠傳加購ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "遠傳加購";
+
+            if (Import<出貨匯入結構_遠傳加購>() == false)
+                return;
+
+            ImportShow("遠傳加購");
+        }
+
         private void myfoneToolStripMenuItem_Click(object sender, EventArgs e)
         {
             廠商類型 = "myfone";
@@ -733,6 +750,11 @@ namespace WokyTool.ImportForm
         private void ibonMartToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             函式.GetFile("ibon mart匯入樣板", "Template/OrderImport/ibon mart匯入樣板.xlsx");
+        }
+
+        private void 遠傳加購ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("遠傳加購匯入樣板", "Template/OrderImport/遠傳加購匯入樣板.xlsx");
         }
     }
 }
