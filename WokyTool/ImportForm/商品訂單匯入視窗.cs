@@ -561,6 +561,16 @@ namespace WokyTool.ImportForm
             ImportShow("金石堂");
         }
 
+        private void aSAPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "ASAP";
+
+            if (Import<出貨匯入結構_ASAP>() == false)
+                return;
+
+            ImportShow("ASAP");
+        }
+
         private bool momo第三方配送()
         {
             // 進行排序
@@ -770,6 +780,11 @@ namespace WokyTool.ImportForm
         private void 金石堂ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             函式.GetFile("金石堂匯入樣板", "Template/OrderImport/金石堂匯入樣板.xlsx");
+        }
+
+        private void aSAPToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("ASAP匯入樣板", "Template/OrderImport/ASAP匯入樣板.xlsx");
         }
     }
 }

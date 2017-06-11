@@ -106,6 +106,7 @@
     <Compile Include="DataExport\物品庫存匯出結構.cs" />
     <Compile Include="DataExport\物品總覽匯出結構.cs" />
     <Compile Include="DataExport\進貨匯出結構.cs" />
+    <Compile Include="DataImport\出貨匯入結構_ASAP.cs" />
     <Compile Include="DataImport\出貨匯入結構_citiesocial.cs" />
     <Compile Include="DataImport\出貨匯入結構_ibonMart.cs" />
     <Compile Include="DataImport\出貨匯入結構_Momo摩天.cs" />
