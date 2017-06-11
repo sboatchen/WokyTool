@@ -70,6 +70,8 @@
             this.遠傳加購ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.金石堂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.金石堂ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aSAPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aSAPToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.群組DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,8 +90,8 @@
             this.配送公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.配送單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品訂單資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aSAPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aSAPToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.百利市ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.百利市ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段類型BindingSource)).BeginInit();
@@ -133,7 +135,8 @@
             this.myfoneToolStripMenuItem,
             this.ibonMartToolStripMenuItem,
             this.金石堂ToolStripMenuItem,
-            this.aSAPToolStripMenuItem});
+            this.aSAPToolStripMenuItem,
+            this.百利市ToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
             this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "匯入";
@@ -271,7 +274,8 @@
             this.myfoneToolStripMenuItem1,
             this.ibonMartToolStripMenuItem1,
             this.金石堂ToolStripMenuItem1,
-            this.aSAPToolStripMenuItem1});
+            this.aSAPToolStripMenuItem1,
+            this.百利市ToolStripMenuItem1});
             this.樣板ToolStripMenuItem.Name = "樣板ToolStripMenuItem";
             this.樣板ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.樣板ToolStripMenuItem.Text = "樣板";
@@ -439,6 +443,20 @@
             this.金石堂ToolStripMenuItem1.Text = "金石堂";
             this.金石堂ToolStripMenuItem1.Click += new System.EventHandler(this.金石堂ToolStripMenuItem1_Click);
             // 
+            // aSAPToolStripMenuItem
+            // 
+            this.aSAPToolStripMenuItem.Name = "aSAPToolStripMenuItem";
+            this.aSAPToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.aSAPToolStripMenuItem.Text = "ASAP";
+            this.aSAPToolStripMenuItem.Click += new System.EventHandler(this.aSAPToolStripMenuItem_Click);
+            // 
+            // aSAPToolStripMenuItem1
+            // 
+            this.aSAPToolStripMenuItem1.Name = "aSAPToolStripMenuItem1";
+            this.aSAPToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aSAPToolStripMenuItem1.Text = "ASAP";
+            this.aSAPToolStripMenuItem1.Click += new System.EventHandler(this.aSAPToolStripMenuItem1_Click);
+            // 
             // 群組DataGridViewTextBoxColumn
             // 
             this.群組DataGridViewTextBoxColumn.DataPropertyName = "群組";
@@ -557,19 +575,19 @@
             // 
             this.商品訂單資料BindingSource.DataSource = typeof(WokyTool.Data.商品訂單資料);
             // 
-            // aSAPToolStripMenuItem
+            // 百利市ToolStripMenuItem
             // 
-            this.aSAPToolStripMenuItem.Name = "aSAPToolStripMenuItem";
-            this.aSAPToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.aSAPToolStripMenuItem.Text = "ASAP";
-            this.aSAPToolStripMenuItem.Click += new System.EventHandler(this.aSAPToolStripMenuItem_Click);
+            this.百利市ToolStripMenuItem.Name = "百利市ToolStripMenuItem";
+            this.百利市ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.百利市ToolStripMenuItem.Text = "百利市";
+            this.百利市ToolStripMenuItem.Click += new System.EventHandler(this.百利市ToolStripMenuItem_Click);
             // 
-            // aSAPToolStripMenuItem1
+            // 百利市ToolStripMenuItem1
             // 
-            this.aSAPToolStripMenuItem1.Name = "aSAPToolStripMenuItem1";
-            this.aSAPToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.aSAPToolStripMenuItem1.Text = "ASAP";
-            this.aSAPToolStripMenuItem1.Click += new System.EventHandler(this.aSAPToolStripMenuItem1_Click);
+            this.百利市ToolStripMenuItem1.Name = "百利市ToolStripMenuItem1";
+            this.百利市ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.百利市ToolStripMenuItem1.Text = "百利市";
+            this.百利市ToolStripMenuItem1.Click += new System.EventHandler(this.百利市ToolStripMenuItem1_Click);
             // 
             // 商品訂單匯入視窗
             // 
@@ -658,5 +676,7 @@
         private System.Windows.Forms.ToolStripMenuItem 金石堂ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aSAPToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aSAPToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 百利市ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 百利市ToolStripMenuItem1;
     }
 }

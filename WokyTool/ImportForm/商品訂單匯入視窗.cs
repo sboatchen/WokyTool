@@ -236,6 +236,13 @@ namespace WokyTool.ImportForm
         {
             switch (廠商類型)
             {
+                case "百利市":
+                    {
+                        var Items_ = _Source.Select(Value => new 回單號結構_百利市((出貨匯入結構_百利市)Value));
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        函式.ExportExcel<回單號結構_百利市>(Title_, Items_);
+                        break;
+                    }
                 case "ibon mart":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_ibonMart((出貨匯入結構_ibonMart)Value));
@@ -571,6 +578,16 @@ namespace WokyTool.ImportForm
             ImportShow("ASAP");
         }
 
+        private void 百利市ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "百利市";
+
+            if (Import<出貨匯入結構_百利市>() == false)
+                return;
+
+            ImportShow("百利市");
+        }
+
         private bool momo第三方配送()
         {
             // 進行排序
@@ -785,6 +802,11 @@ namespace WokyTool.ImportForm
         private void aSAPToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             函式.GetFile("ASAP匯入樣板", "Template/OrderImport/ASAP匯入樣板.xlsx");
+        }
+        
+        private void 百利市ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("百利市匯入樣板", "Template/OrderImport/百利市匯入樣板.xlsx");
         }
     }
 }
