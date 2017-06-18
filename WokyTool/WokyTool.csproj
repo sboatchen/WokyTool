@@ -95,6 +95,8 @@
     <Compile Include="DataExport\回單號結構_Momo第三方_進度.cs" />
     <Compile Include="DataExport\回單號結構_myfone.cs" />
     <Compile Include="DataExport\回單號結構_PayEasy.cs" />
+    <Compile Include="DataExport\回單號結構_PC商店街.cs" />
+    <Compile Include="DataExport\回單號結構_PC專櫃.cs" />
     <Compile Include="DataExport\回單號結構_創業家兄弟.cs" />
     <Compile Include="DataExport\回單號結構_東森.cs" />
     <Compile Include="DataExport\回單號結構_森森.cs" />
@@ -113,6 +115,9 @@
     <Compile Include="DataImport\出貨匯入結構_Momo摩天.cs" />
     <Compile Include="DataImport\出貨匯入結構_myfone.cs" />
     <Compile Include="DataImport\出貨匯入結構_PayEasy.cs" />
+    <Compile Include="DataImport\出貨匯入結構_PC商店街.cs" />
+    <Compile Include="DataImport\出貨匯入結構_PC專櫃.cs" />
+    <Compile Include="DataImport\出貨匯入結構_PC購物中心.cs" />
     <Compile Include="DataImport\出貨匯入結構_博客來.cs" />
     <Compile Include="DataImport\出貨匯入結構_百利市.cs" />
     <Compile Include="DataImport\出貨匯入結構_神坊.cs" />

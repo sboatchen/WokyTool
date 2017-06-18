@@ -243,6 +243,20 @@ namespace WokyTool.ImportForm
                         函式.ExportExcel<回單號結構_百利市>(Title_, Items_);
                         break;
                     }
+                case "PC商店街":
+                    {
+                        var Items_ = _Source.Select(Value => new 回單號結構_PC商店街((出貨匯入結構_PC商店街)Value));
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        函式.ExportCSV<回單號結構_PC商店街>(Title_, Items_);
+                        break;
+                    }
+                case "PC專櫃":
+                    {
+                        var Items_ = _Source.Select(Value => new 回單號結構_PC專櫃((出貨匯入結構_PC專櫃)Value));
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        函式.ExportCSV<回單號結構_PC專櫃>(Title_, Items_);
+                        break;
+                    }
                 case "ibon mart":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_ibonMart((出貨匯入結構_ibonMart)Value));
@@ -588,6 +602,36 @@ namespace WokyTool.ImportForm
             ImportShow("百利市");
         }
 
+        private void pCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "PC商店街";
+
+            if (Import<出貨匯入結構_PC商店街>() == false)
+                return;
+
+            ImportShow("PC商店街");
+        }
+
+        private void pCToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "PC專櫃";
+
+            if (Import<出貨匯入結構_PC專櫃>() == false)
+                return;
+
+            ImportShow("PC專櫃");
+        }
+
+        private void pC購物中心ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "PC購物中心";
+
+            if (Import<出貨匯入結構_PC購物中心>() == false)
+                return;
+
+            ImportShow("PC購物中心");
+        }
+
         private bool momo第三方配送()
         {
             // 進行排序
@@ -807,6 +851,21 @@ namespace WokyTool.ImportForm
         private void 百利市ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             函式.GetFile("百利市匯入樣板", "Template/OrderImport/百利市匯入樣板.xlsx");
+        }
+
+        private void pC專櫃ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("PC專櫃匯入樣板", "Template/OrderImport/PC專櫃匯入樣板.xlsx");
+        }
+
+        private void pC商店街ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("PC商店街匯入樣板", "Template/OrderImport/PC商店街匯入樣板.xlsx");
+        }
+
+        private void pC購物中心ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("PC購物中心匯入樣板", "Template/OrderImport/PC購物中心匯入樣板.xlsx");
         }
     }
 }

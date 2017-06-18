@@ -12,12 +12,6 @@ namespace WokyTool.DataExport
 {
     class 回單號結構_citiesocial : 可格式化_Excel
     {
-        private static string 全速配編號 = "5";
-        private static string 宅配通編號 = "2";
-
-        //retailer_id	purchase_order	carrier	tracking_numbers	vendor_sku	quantity	vendor_invoice_number	vendor_shipping_cost	vendor_handling_cost	carrier_invoice_number	carrier_shipping_cost
-
-
         protected 出貨匯入結構_citiesocial _Data;
 
         public 回單號結構_citiesocial(出貨匯入結構_citiesocial Data_)

@@ -43,8 +43,12 @@
             this.神坊ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.citiesocialToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.遠傳ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.遠傳加購ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myfoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ibonMartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.金石堂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aSAPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.百利市ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.分組ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.配送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,8 +60,12 @@
             this.神坊ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.citiesocialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.遠傳ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.遠傳加購ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.myfoneToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ibonMartToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.金石堂ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aSAPToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.百利市ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.測試ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.寄庫出貨 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -66,12 +74,10 @@
             this.代收類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.配送公司類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.資料筆數 = new System.Windows.Forms.Label();
-            this.遠傳加購ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.遠傳加購ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.金石堂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.金石堂ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.aSAPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aSAPToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pCToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pC專櫃ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pC商店街ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.群組DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,8 +96,8 @@
             this.配送公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.配送單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品訂單資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.百利市ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.百利市ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pC購物中心ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pC購物中心ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段類型BindingSource)).BeginInit();
@@ -124,6 +130,9 @@
             this.森森ToolStripMenuItem,
             this.創業家兄弟ToolStripMenuItem,
             this.pCHomeToolStripMenuItem,
+            this.pCToolStripMenuItem,
+            this.pCToolStripMenuItem1,
+            this.pC購物中心ToolStripMenuItem,
             this.momoToolStripMenuItem,
             this.momo第三方ToolStripMenuItem,
             this.博客來ToolStripMenuItem,
@@ -225,6 +234,13 @@
             this.遠傳ToolStripMenuItem.Text = "遠傳";
             this.遠傳ToolStripMenuItem.Click += new System.EventHandler(this.遠傳ToolStripMenuItem_Click);
             // 
+            // 遠傳加購ToolStripMenuItem
+            // 
+            this.遠傳加購ToolStripMenuItem.Name = "遠傳加購ToolStripMenuItem";
+            this.遠傳加購ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.遠傳加購ToolStripMenuItem.Text = "遠傳加購";
+            this.遠傳加購ToolStripMenuItem.Click += new System.EventHandler(this.遠傳加購ToolStripMenuItem_Click);
+            // 
             // myfoneToolStripMenuItem
             // 
             this.myfoneToolStripMenuItem.Name = "myfoneToolStripMenuItem";
@@ -238,6 +254,27 @@
             this.ibonMartToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.ibonMartToolStripMenuItem.Text = "ibon mart";
             this.ibonMartToolStripMenuItem.Click += new System.EventHandler(this.ibonMartToolStripMenuItem_Click);
+            // 
+            // 金石堂ToolStripMenuItem
+            // 
+            this.金石堂ToolStripMenuItem.Name = "金石堂ToolStripMenuItem";
+            this.金石堂ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.金石堂ToolStripMenuItem.Text = "金石堂";
+            this.金石堂ToolStripMenuItem.Click += new System.EventHandler(this.金石堂ToolStripMenuItem_Click);
+            // 
+            // aSAPToolStripMenuItem
+            // 
+            this.aSAPToolStripMenuItem.Name = "aSAPToolStripMenuItem";
+            this.aSAPToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.aSAPToolStripMenuItem.Text = "ASAP";
+            this.aSAPToolStripMenuItem.Click += new System.EventHandler(this.aSAPToolStripMenuItem_Click);
+            // 
+            // 百利市ToolStripMenuItem
+            // 
+            this.百利市ToolStripMenuItem.Name = "百利市ToolStripMenuItem";
+            this.百利市ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.百利市ToolStripMenuItem.Text = "百利市";
+            this.百利市ToolStripMenuItem.Click += new System.EventHandler(this.百利市ToolStripMenuItem_Click);
             // 
             // 分組ToolStripMenuItem
             // 
@@ -265,6 +302,9 @@
             this.樣板ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.goHappyToolStripMenuItem1,
             this.東森ToolStripMenuItem1,
+            this.pC專櫃ToolStripMenuItem,
+            this.pC商店街ToolStripMenuItem,
+            this.pC購物中心ToolStripMenuItem1,
             this.博客來ToolStripMenuItem1,
             this.payEasyToolStripMenuItem1,
             this.神坊ToolStripMenuItem1,
@@ -283,65 +323,93 @@
             // goHappyToolStripMenuItem1
             // 
             this.goHappyToolStripMenuItem1.Name = "goHappyToolStripMenuItem1";
-            this.goHappyToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.goHappyToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.goHappyToolStripMenuItem1.Text = "GoHappy";
             this.goHappyToolStripMenuItem1.Click += new System.EventHandler(this.goHappyToolStripMenuItem1_Click);
             // 
             // 東森ToolStripMenuItem1
             // 
             this.東森ToolStripMenuItem1.Name = "東森ToolStripMenuItem1";
-            this.東森ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.東森ToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.東森ToolStripMenuItem1.Text = "東森";
             this.東森ToolStripMenuItem1.Click += new System.EventHandler(this.東森ToolStripMenuItem1_Click);
             // 
             // 博客來ToolStripMenuItem1
             // 
             this.博客來ToolStripMenuItem1.Name = "博客來ToolStripMenuItem1";
-            this.博客來ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.博客來ToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.博客來ToolStripMenuItem1.Text = "博客來";
             this.博客來ToolStripMenuItem1.Click += new System.EventHandler(this.博客來ToolStripMenuItem1_Click);
             // 
             // payEasyToolStripMenuItem1
             // 
             this.payEasyToolStripMenuItem1.Name = "payEasyToolStripMenuItem1";
-            this.payEasyToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.payEasyToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.payEasyToolStripMenuItem1.Text = "PayEasy";
             this.payEasyToolStripMenuItem1.Click += new System.EventHandler(this.payEasyToolStripMenuItem1_Click);
             // 
             // 神坊ToolStripMenuItem1
             // 
             this.神坊ToolStripMenuItem1.Name = "神坊ToolStripMenuItem1";
-            this.神坊ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.神坊ToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.神坊ToolStripMenuItem1.Text = "神坊";
             this.神坊ToolStripMenuItem1.Click += new System.EventHandler(this.神坊ToolStripMenuItem1_Click);
             // 
             // citiesocialToolStripMenuItem
             // 
             this.citiesocialToolStripMenuItem.Name = "citiesocialToolStripMenuItem";
-            this.citiesocialToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.citiesocialToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.citiesocialToolStripMenuItem.Text = "citiesocial";
             this.citiesocialToolStripMenuItem.Click += new System.EventHandler(this.citiesocialToolStripMenuItem_Click);
             // 
             // 遠傳ToolStripMenuItem1
             // 
             this.遠傳ToolStripMenuItem1.Name = "遠傳ToolStripMenuItem1";
-            this.遠傳ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.遠傳ToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.遠傳ToolStripMenuItem1.Text = "遠傳";
             this.遠傳ToolStripMenuItem1.Click += new System.EventHandler(this.遠傳ToolStripMenuItem1_Click);
+            // 
+            // 遠傳加購ToolStripMenuItem1
+            // 
+            this.遠傳加購ToolStripMenuItem1.Name = "遠傳加購ToolStripMenuItem1";
+            this.遠傳加購ToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
+            this.遠傳加購ToolStripMenuItem1.Text = "遠傳加購";
+            this.遠傳加購ToolStripMenuItem1.Click += new System.EventHandler(this.遠傳加購ToolStripMenuItem1_Click);
             // 
             // myfoneToolStripMenuItem1
             // 
             this.myfoneToolStripMenuItem1.Name = "myfoneToolStripMenuItem1";
-            this.myfoneToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.myfoneToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.myfoneToolStripMenuItem1.Text = "myfone";
             this.myfoneToolStripMenuItem1.Click += new System.EventHandler(this.myfoneToolStripMenuItem1_Click);
             // 
             // ibonMartToolStripMenuItem1
             // 
             this.ibonMartToolStripMenuItem1.Name = "ibonMartToolStripMenuItem1";
-            this.ibonMartToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.ibonMartToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.ibonMartToolStripMenuItem1.Text = "ibon mart";
             this.ibonMartToolStripMenuItem1.Click += new System.EventHandler(this.ibonMartToolStripMenuItem1_Click);
+            // 
+            // 金石堂ToolStripMenuItem1
+            // 
+            this.金石堂ToolStripMenuItem1.Name = "金石堂ToolStripMenuItem1";
+            this.金石堂ToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
+            this.金石堂ToolStripMenuItem1.Text = "金石堂";
+            this.金石堂ToolStripMenuItem1.Click += new System.EventHandler(this.金石堂ToolStripMenuItem1_Click);
+            // 
+            // aSAPToolStripMenuItem1
+            // 
+            this.aSAPToolStripMenuItem1.Name = "aSAPToolStripMenuItem1";
+            this.aSAPToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
+            this.aSAPToolStripMenuItem1.Text = "ASAP";
+            this.aSAPToolStripMenuItem1.Click += new System.EventHandler(this.aSAPToolStripMenuItem1_Click);
+            // 
+            // 百利市ToolStripMenuItem1
+            // 
+            this.百利市ToolStripMenuItem1.Name = "百利市ToolStripMenuItem1";
+            this.百利市ToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
+            this.百利市ToolStripMenuItem1.Text = "百利市";
+            this.百利市ToolStripMenuItem1.Click += new System.EventHandler(this.百利市ToolStripMenuItem1_Click);
             // 
             // 測試ToolStripMenuItem
             // 
@@ -415,47 +483,33 @@
             this.資料筆數.Size = new System.Drawing.Size(0, 12);
             this.資料筆數.TabIndex = 3;
             // 
-            // 遠傳加購ToolStripMenuItem
+            // pCToolStripMenuItem
             // 
-            this.遠傳加購ToolStripMenuItem.Name = "遠傳加購ToolStripMenuItem";
-            this.遠傳加購ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.遠傳加購ToolStripMenuItem.Text = "遠傳加購";
-            this.遠傳加購ToolStripMenuItem.Click += new System.EventHandler(this.遠傳加購ToolStripMenuItem_Click);
+            this.pCToolStripMenuItem.Name = "pCToolStripMenuItem";
+            this.pCToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.pCToolStripMenuItem.Text = "PC商店街";
+            this.pCToolStripMenuItem.Click += new System.EventHandler(this.pCToolStripMenuItem_Click);
             // 
-            // 遠傳加購ToolStripMenuItem1
+            // pCToolStripMenuItem1
             // 
-            this.遠傳加購ToolStripMenuItem1.Name = "遠傳加購ToolStripMenuItem1";
-            this.遠傳加購ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.遠傳加購ToolStripMenuItem1.Text = "遠傳加購";
-            this.遠傳加購ToolStripMenuItem1.Click += new System.EventHandler(this.遠傳加購ToolStripMenuItem1_Click);
+            this.pCToolStripMenuItem1.Name = "pCToolStripMenuItem1";
+            this.pCToolStripMenuItem1.Size = new System.Drawing.Size(157, 22);
+            this.pCToolStripMenuItem1.Text = "PC專櫃";
+            this.pCToolStripMenuItem1.Click += new System.EventHandler(this.pCToolStripMenuItem1_Click);
             // 
-            // 金石堂ToolStripMenuItem
+            // pC專櫃ToolStripMenuItem
             // 
-            this.金石堂ToolStripMenuItem.Name = "金石堂ToolStripMenuItem";
-            this.金石堂ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.金石堂ToolStripMenuItem.Text = "金石堂";
-            this.金石堂ToolStripMenuItem.Click += new System.EventHandler(this.金石堂ToolStripMenuItem_Click);
+            this.pC專櫃ToolStripMenuItem.Name = "pC專櫃ToolStripMenuItem";
+            this.pC專櫃ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.pC專櫃ToolStripMenuItem.Text = "PC專櫃";
+            this.pC專櫃ToolStripMenuItem.Click += new System.EventHandler(this.pC專櫃ToolStripMenuItem_Click);
             // 
-            // 金石堂ToolStripMenuItem1
+            // pC商店街ToolStripMenuItem
             // 
-            this.金石堂ToolStripMenuItem1.Name = "金石堂ToolStripMenuItem1";
-            this.金石堂ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.金石堂ToolStripMenuItem1.Text = "金石堂";
-            this.金石堂ToolStripMenuItem1.Click += new System.EventHandler(this.金石堂ToolStripMenuItem1_Click);
-            // 
-            // aSAPToolStripMenuItem
-            // 
-            this.aSAPToolStripMenuItem.Name = "aSAPToolStripMenuItem";
-            this.aSAPToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.aSAPToolStripMenuItem.Text = "ASAP";
-            this.aSAPToolStripMenuItem.Click += new System.EventHandler(this.aSAPToolStripMenuItem_Click);
-            // 
-            // aSAPToolStripMenuItem1
-            // 
-            this.aSAPToolStripMenuItem1.Name = "aSAPToolStripMenuItem1";
-            this.aSAPToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.aSAPToolStripMenuItem1.Text = "ASAP";
-            this.aSAPToolStripMenuItem1.Click += new System.EventHandler(this.aSAPToolStripMenuItem1_Click);
+            this.pC商店街ToolStripMenuItem.Name = "pC商店街ToolStripMenuItem";
+            this.pC商店街ToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.pC商店街ToolStripMenuItem.Text = "PC商店街";
+            this.pC商店街ToolStripMenuItem.Click += new System.EventHandler(this.pC商店街ToolStripMenuItem_Click);
             // 
             // 群組DataGridViewTextBoxColumn
             // 
@@ -575,19 +629,19 @@
             // 
             this.商品訂單資料BindingSource.DataSource = typeof(WokyTool.Data.商品訂單資料);
             // 
-            // 百利市ToolStripMenuItem
+            // pC購物中心ToolStripMenuItem
             // 
-            this.百利市ToolStripMenuItem.Name = "百利市ToolStripMenuItem";
-            this.百利市ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.百利市ToolStripMenuItem.Text = "百利市";
-            this.百利市ToolStripMenuItem.Click += new System.EventHandler(this.百利市ToolStripMenuItem_Click);
+            this.pC購物中心ToolStripMenuItem.Name = "pC購物中心ToolStripMenuItem";
+            this.pC購物中心ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.pC購物中心ToolStripMenuItem.Text = "PC購物中心";
+            this.pC購物中心ToolStripMenuItem.Click += new System.EventHandler(this.pC購物中心ToolStripMenuItem_Click);
             // 
-            // 百利市ToolStripMenuItem1
+            // pC購物中心ToolStripMenuItem1
             // 
-            this.百利市ToolStripMenuItem1.Name = "百利市ToolStripMenuItem1";
-            this.百利市ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.百利市ToolStripMenuItem1.Text = "百利市";
-            this.百利市ToolStripMenuItem1.Click += new System.EventHandler(this.百利市ToolStripMenuItem1_Click);
+            this.pC購物中心ToolStripMenuItem1.Name = "pC購物中心ToolStripMenuItem1";
+            this.pC購物中心ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.pC購物中心ToolStripMenuItem1.Text = "PC購物中心";
+            this.pC購物中心ToolStripMenuItem1.Click += new System.EventHandler(this.pC購物中心ToolStripMenuItem1_Click);
             // 
             // 商品訂單匯入視窗
             // 
@@ -678,5 +732,11 @@
         private System.Windows.Forms.ToolStripMenuItem aSAPToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 百利市ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 百利市ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pCToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pC專櫃ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pC商店街ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pC購物中心ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pC購物中心ToolStripMenuItem1;
     }
 }
