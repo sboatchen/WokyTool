@@ -31,28 +31,7 @@ namespace WokyTool
         private void 主視窗_FormClosing(object sender, FormClosingEventArgs e)
         {
             //@@ 改到統一的關閉街口
-            編碼管理器.Instance.SaveData();
-            幣值管理器.Instance.SaveData();
-
-            公司管理器.Instance.SaveData();
-            廠商管理器.Instance.SaveData();
-
-            物品大類管理器.Instance.SaveData();
-            物品小類管理器.Instance.SaveData();
-            物品品牌管理器.Instance.SaveData();
-            物品管理器.Instance.SaveData();
-
-            商品大類管理器.Instance.SaveData();
-            商品小類管理器.Instance.SaveData();
-            商品管理器.Instance.SaveData();
-
-            //月結帳管理器.Instance.SaveData();
-
-            進貨管理器.Instance.SaveData();
-            雜支管理器.Instance.SaveData();
-
-            入庫管理器.Instance.SaveData();
-            銷售管理器.Instance.SaveData();
+            函式.SaveAll();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -341,6 +320,11 @@ namespace WokyTool
             var i = new 銷售總覽視窗();
             i.Show();
             i.BringToFront();
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            函式.SaveAll();
         }
     }
 }

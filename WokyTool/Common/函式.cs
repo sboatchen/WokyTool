@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WokyTool.DataMgr;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WokyTool.Common
@@ -183,6 +184,32 @@ namespace WokyTool.Common
 
             // 寫入資料
             System.IO.File.Copy(Resource_, dlg.FileName);
+        }
+
+        public static void SaveAll()
+        {
+            編碼管理器.Instance.SaveData();
+            幣值管理器.Instance.SaveData();
+
+            公司管理器.Instance.SaveData();
+            廠商管理器.Instance.SaveData();
+
+            物品大類管理器.Instance.SaveData();
+            物品小類管理器.Instance.SaveData();
+            物品品牌管理器.Instance.SaveData();
+            物品管理器.Instance.SaveData();
+
+            商品大類管理器.Instance.SaveData();
+            商品小類管理器.Instance.SaveData();
+            商品管理器.Instance.SaveData();
+
+            //月結帳管理器.Instance.SaveData();
+
+            進貨管理器.Instance.SaveData();
+            雜支管理器.Instance.SaveData();
+
+            入庫管理器.Instance.SaveData();
+            銷售管理器.Instance.SaveData();
         }
     }
 }

@@ -194,6 +194,9 @@ namespace WokyTool.ImportForm
                 {
                     進貨管理器.Instance.Add(Item_.Import());
                 }
+
+                //@@ 應小胖需求，強制存檔
+                函式.SaveAll();
             }
         }
 
