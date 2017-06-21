@@ -107,8 +107,13 @@ namespace WokyTool
                                     Value => Value.品牌.名稱,
                                     Value => new 物品庫存匯出結構(Value));
 
+            通用匯出結構 總結_ = new 通用匯出結構("總結");
+
+            int 總庫存成本_ = _物品資料Listener.Query.Select(Value => Value.庫存總成本).Sum();
+            總結_.Add("總庫存成本", 總庫存成本_.ToString());
+
             string Title_ = String.Format("物品庫存_{0}", 共用.NowYMDDec);
-            函式.ExportExcel<物品庫存匯出結構>(Title_, ItemGroup_);
+            函式.ExportExcel<物品庫存匯出結構>(Title_, ItemGroup_, 總結_);
         }
 
         private void 總覽ToolStripMenuItem_Click(object sender, EventArgs e)

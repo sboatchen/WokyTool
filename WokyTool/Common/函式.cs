@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WokyTool.DataExport;
 using WokyTool.DataMgr;
 using Excel = Microsoft.Office.Interop.Excel;
 
@@ -58,7 +59,7 @@ namespace WokyTool.Common
         }
 
         // 通用匯出格式   //@@ 檢查是否有其他可以共用
-        public static void ExportExcel<T>(String FileName_, IEnumerable<T> Items_) where T : 可格式化_Excel
+        public static void ExportExcel<T>(String FileName_, IEnumerable<T> Items_, 通用匯出結構 Info_ = null) where T : 可格式化_Excel
         {
             // 開啟存檔位置
             SaveFileDialog dlg = new SaveFileDialog();
@@ -78,6 +79,18 @@ namespace WokyTool.Common
 
                 // 開啟工作簿
                 Excel.Workbook Wbook = App.Workbooks.Add();
+
+                // 取得分頁
+                var xlSheets = Wbook.Sheets as Excel.Sheets;
+                Excel.Worksheet NowSheet = Wbook.Worksheets["Sheet1"];
+
+                // 填入額外資訊
+                if (Info_ != null)
+                {
+                    NowSheet.Name = Info_.Name;
+                    Info_.SetExcelTitle(App);
+                    NowSheet = xlSheets.Add();
+                }
 
                 int x = 1;
                 bool IsFirst_ = true;
@@ -108,7 +121,7 @@ namespace WokyTool.Common
         }
 
         // 通用匯出格式
-        public static void ExportExcel<T>(String FileName_, IEnumerable<IGrouping<String, T>> ItemGroup_) where T : 可格式化_Excel
+        public static void ExportExcel<T>(String FileName_, IEnumerable<IGrouping<String, T>> ItemGroup_, 通用匯出結構 Info_ = null) where T : 可格式化_Excel
         {
             // 開啟存檔位置
             SaveFileDialog dlg = new SaveFileDialog();
@@ -131,12 +144,25 @@ namespace WokyTool.Common
 
                 // 取得分頁
                 var xlSheets = Wbook.Sheets as Excel.Sheets;
+                Excel.Worksheet NowSheet = Wbook.Worksheets["Sheet1"];
 
+                // 填入額外資訊
+                if (Info_ != null)
+                {
+                    NowSheet.Name = Info_.Name;
+                    Info_.SetExcelTitle(App);
+                    NowSheet = xlSheets.Add();
+                }
+
+                bool IsNotStart_ = false;
                 foreach (var Pair_ in ItemGroup_)
                 {
                     // 建立新分頁
-                    var xlNewSheet = (Excel.Worksheet)xlSheets.Add();
-                    xlNewSheet.Name = Pair_.Key;
+                    if (IsNotStart_)
+                        NowSheet = xlSheets.Add();
+                    IsNotStart_ = true;
+
+                    NowSheet.Name = Pair_.Key;
 
                     int x = 1;
                     bool IsFirst_ = true;

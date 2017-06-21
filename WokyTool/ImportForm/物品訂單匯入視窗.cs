@@ -255,5 +255,15 @@ namespace WokyTool.ImportForm
         {
             函式.GetFile("通用匯入範本", "Template/OrderImport/通用匯入範本.xlsx");
         }
+
+        private void 測試ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int Number = 1;
+            foreach (var Item_ in _DeilverSource)
+            {
+                Item_.SetDiliver(String.Format("測試配送單號{0:00}", Number));
+                Number++;
+            }
+        }
     }
 }
