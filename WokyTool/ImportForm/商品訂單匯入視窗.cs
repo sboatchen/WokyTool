@@ -247,7 +247,7 @@ namespace WokyTool.ImportForm
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_百利市((出貨匯入結構_百利市)Value));
                         string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
-                        函式.ExportExcel<回單號結構_百利市>(Title_, Items_);
+                        函式.ExportExcel<回單號結構_百利市>(Title_, Items_, null, Microsoft.Office.Interop.Excel.XlFileFormat.xlOpenXMLWorkbook);
                         break;
                     }
                 case "PC商店街":

@@ -32,8 +32,6 @@ namespace WokyTool.DataExport
             App_.Cells[1, 4] = "物流公司";
             App_.Cells[1, 5] = "運單號";
             App_.Cells[1, 6] = "出貨時間";
-            // 出貨時間格式應該為年月日時分秒。例如：2015.12.30 12：00：00，例如：2015.12.30，則默認是2015.12.30 0：00:00
-            //App_.get_Range("F1").EntireColumn.NumberFormat = "YYYY.MM.DD hh:mm:ss";
             App_.Cells[1, 7] = "是否客約";
             App_.Cells[1, 8] = "客約送貨時間";
 
@@ -61,6 +59,8 @@ namespace WokyTool.DataExport
             }
             
             App_.Cells[Row_, 5] = _Data.配送單號;
+
+            // 出貨時間格式應該為年月日時分秒。例如：2015.12.30 12：00：00，例如：2015.12.30，則默認是2015.12.30 0：00:00
             App_.Cells[Row_, 6] = 共用.NowYMD.ToString("yyyy.MM.dd") + " 0:00:00";
 
             return Row_ + 1;

@@ -59,13 +59,24 @@ namespace WokyTool.Common
         }
 
         // 通用匯出格式   //@@ 檢查是否有其他可以共用
-        public static void ExportExcel<T>(String FileName_, IEnumerable<T> Items_, 通用匯出結構 Info_ = null) where T : 可格式化_Excel
+        public static void ExportExcel<T>(String FileName_, IEnumerable<T> Items_, 通用匯出結構 Info_ = null, Excel.XlFileFormat Format_ = Excel.XlFileFormat.xlWorkbookNormal) where T : 可格式化_Excel
         {
             // 開啟存檔位置
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.FileName = FileName_;
-            dlg.DefaultExt = ".xls";                // Default file extension
-            dlg.Filter = "xls files (.xls)|*.xls";  // Filter files by extension
+
+            switch (Format_)
+            {
+                case Excel.XlFileFormat.xlOpenXMLWorkbook:
+                    dlg.DefaultExt = ".xlsx";
+                    dlg.Filter = "xlsx files (.xlsx)|*.xlsx";
+                    break;
+                default:
+                    dlg.DefaultExt = ".xls";                // Default file extension
+                    dlg.Filter = "xls files (.xls)|*.xls";  // Filter files by extension
+                    break;
+            }
+
             if (dlg.ShowDialog() != DialogResult.OK)
                 return;
 
@@ -106,7 +117,7 @@ namespace WokyTool.Common
                 }
 
                 // This works.
-                Wbook.SaveAs(dlg.FileName, Excel.XlFileFormat.xlWorkbookNormal);
+                Wbook.SaveAs(dlg.FileName, Format_);
 
                 //關閉工作簿
                 Wbook.Close();
@@ -121,13 +132,24 @@ namespace WokyTool.Common
         }
 
         // 通用匯出格式
-        public static void ExportExcel<T>(String FileName_, IEnumerable<IGrouping<String, T>> ItemGroup_, 通用匯出結構 Info_ = null) where T : 可格式化_Excel
+        public static void ExportExcel<T>(String FileName_, IEnumerable<IGrouping<String, T>> ItemGroup_, 通用匯出結構 Info_ = null, Excel.XlFileFormat Format_ = Excel.XlFileFormat.xlWorkbookNormal) where T : 可格式化_Excel
         {
             // 開啟存檔位置
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.FileName = FileName_;
-            dlg.DefaultExt = ".xls";                // Default file extension
-            dlg.Filter = "xls files (.xls)|*.xls";  // Filter files by extension
+
+            switch (Format_)
+            {
+                case Excel.XlFileFormat.xlOpenXMLWorkbook:
+                    dlg.DefaultExt = ".xlsx";
+                    dlg.Filter = "xlsx files (.xlsx)|*.xlsx";
+                    break;
+                default:
+                    dlg.DefaultExt = ".xls";                // Default file extension
+                    dlg.Filter = "xls files (.xls)|*.xls";  // Filter files by extension
+                    break;
+            }
+
             if (dlg.ShowDialog() != DialogResult.OK)
                 return;
 
@@ -179,7 +201,7 @@ namespace WokyTool.Common
                 }
 
                 // This works.
-                Wbook.SaveAs(dlg.FileName, Excel.XlFileFormat.xlWorkbookNormal);
+                Wbook.SaveAs(dlg.FileName, Format_);
 
                 //關閉工作簿
                 Wbook.Close();
