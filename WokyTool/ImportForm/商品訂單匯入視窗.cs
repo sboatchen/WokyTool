@@ -236,6 +236,13 @@ namespace WokyTool.ImportForm
         {
             switch (廠商類型)
             {
+                case "uDesign":
+                    {
+                        var Items_ = _Source.Select(Value => new 回單號結構_uDesign((出貨匯入結構_uDesign)Value));
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        函式.ExportExcel<回單號結構_uDesign>(Title_, Items_);
+                        break;
+                    }
                 case "百利市":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_百利市((出貨匯入結構_百利市)Value));
@@ -659,6 +666,16 @@ namespace WokyTool.ImportForm
             ImportShow("愛料理");
         }
 
+        private void uDesignToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "uDesign";
+
+            if (Import<出貨匯入結構_uDesign>() == false)
+                return;
+
+            ImportShow("uDesign");
+        }
+
         private bool momo第三方配送()
         {
             // 進行排序
@@ -913,6 +930,11 @@ namespace WokyTool.ImportForm
         private void momo摩天ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             函式.GetFile("Momo摩天匯入樣板", "Template/OrderImport/Momo摩天匯入樣板.xlsx");
+        }
+        
+        private void uDesignToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("uDesign匯入樣板", "Template/OrderImport/uDesign匯入樣板.xlsx");
         }
     }
 }
