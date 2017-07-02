@@ -240,7 +240,17 @@ namespace WokyTool.ImportForm
 
         private void 樣板ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            函式.GetFile("進貨匯入範本", "Template/OtherImport/進貨匯入範本.xlsx");
+            switch(_Type){
+                case 列舉.進貨類型.一般:
+                    函式.GetFile("進貨匯入範本", "Template/OtherImport/進貨匯入範本.xlsx");
+                    break;
+                case 列舉.進貨類型.退貨重進:
+                    函式.GetFile("退貨重進匯入範本", "Template/OtherImport/進貨匯入範本.xlsx");
+                    break;
+                case 列舉.進貨類型.庫存調整:
+                    函式.GetFile("庫存調整匯入範本", "Template/OtherImport/進貨匯入範本.xlsx");
+                    break;
+            }
         }
     }
 }

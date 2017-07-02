@@ -379,7 +379,7 @@ namespace WokyTool.ImportForm
                             continue;
 
                         Item_.Init();
-                        _Source.Add(Item_);
+                        _Source.AddRange(Item_.ToList());
                     }
                     _Source.Sort();
 
@@ -632,6 +632,16 @@ namespace WokyTool.ImportForm
             ImportShow("PC購物中心");
         }
 
+        private void 愛料理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "愛料理";
+
+            if (Import<出貨匯入結構_愛料理>() == false)
+                return;
+
+            ImportShow("愛料理");
+        }
+
         private bool momo第三方配送()
         {
             // 進行排序
@@ -644,17 +654,21 @@ namespace WokyTool.ImportForm
                 return false;
 
             // 寫入資料
+            PdfReader reader = null;
+            FileStream fs = null;
+            Document document = null;
+            PdfWriter writer = null;
             try
             {
                 // 開啟匯入檔案
-                PdfReader reader = new PdfReader(dlg.FileName);
+                reader = new PdfReader(dlg.FileName);
 
                 // 開啟寫入檔案
                 string OutputName = dlg.FileName.Replace(".pdf", "2.pdf");
                 iTextSharp.text.Rectangle size = reader.GetPageSizeWithRotation(1);
-                Document document = new Document(size);
-                FileStream fs = new FileStream(OutputName, FileMode.Create, FileAccess.Write);
-                PdfWriter writer = PdfWriter.GetInstance(document, fs);
+                document = new Document(size);
+                fs = new FileStream(OutputName, FileMode.Create, FileAccess.Write);
+                writer = PdfWriter.GetInstance(document, fs);
                 document.Open();
                 
                 // 發票號碼過濾器
@@ -692,15 +706,21 @@ namespace WokyTool.ImportForm
                                        70);
                 }
 
-                document.Close();
                 writer.Close();
-
+                document.Close();
                 fs.Close();
                 reader.Close();
             }
             catch (Exception theException)
             {
                 MessageBox.Show("momo第三方配送失敗，請通知苦逼程式," + theException.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                if (document != null)
+                    document.Close();
+                if (fs != null)
+                    fs.Close();
+                if (reader != null)
+                    reader.Close();
             }
 
             return true;
@@ -866,6 +886,11 @@ namespace WokyTool.ImportForm
         private void pC購物中心ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             函式.GetFile("PC購物中心匯入樣板", "Template/OrderImport/PC購物中心匯入樣板.xlsx");
+        }
+
+        private void 愛料理ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("愛料理匯入樣板", "Template/OrderImport/愛料理匯入樣板.xlsx");
         }
     }
 }

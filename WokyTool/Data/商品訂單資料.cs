@@ -52,6 +52,12 @@ namespace WokyTool.Data
             ;
         }
 
+        // 取得物件列表
+        virtual public IEnumerable<商品訂單資料> ToList()
+        {
+            yield return this;
+        }
+
         // 準備配送
         override public void PrepareDiliver()
         {
