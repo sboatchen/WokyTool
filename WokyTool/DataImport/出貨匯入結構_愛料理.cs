@@ -144,37 +144,6 @@ namespace WokyTool.DataImport
 
         // 是否已經配送
         //override public bool IsDilivered();
-
-        /*public IEnumerable<商品訂單資料> Split()
-        {
-            String[] dataList_ = 購買內容.Split(SEPERATOR, StringSplitOptions.RemoveEmptyEntries);
-            foreach(String data_ in dataList_)
-            {
-                int X_ = data_.LastIndexOf('X');
-                if(X_ == -1)
-                {
-
-                }
-
-                data_ = data_.Trim();
-
-                yield return item;
-            }
-
-
-                    private static IEnumerable<TSource> ExceptByIterator<TSource, TKey>(
-        this IEnumerable<TSource> first, IEnumerable<TSource> second,
-        Func<TSource, TKey> keySelector, IEqualityComparer<TKey> keyComparer)
-        {
-            var keys = new HashSet<TKey>(second.Select(keySelector), keyComparer);
-
-            foreach (TSource item in first)
-            {
-                if (keys.Add(keySelector(item)))
-                    yield return item;
-            }
-        }
-        }*/
     }
 }
 

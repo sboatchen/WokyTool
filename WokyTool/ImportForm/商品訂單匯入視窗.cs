@@ -346,6 +346,13 @@ namespace WokyTool.ImportForm
                         函式.ExportExcel<回單號結構_Momo>(Title_, Items_);
                         break;
                     }
+                 case "Momo摩天":
+                    {
+                        var Items_ = _Source.Select(Value => new 回單號結構_Momo摩天((出貨匯入結構_Momo摩天)Value));
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        函式.ExportExcel<回單號結構_Momo摩天>(Title_, Items_);
+                        break;
+                    }
                 case "Momo第三方":
                     {
                         break;
@@ -488,7 +495,17 @@ namespace WokyTool.ImportForm
             if (Import<出貨匯入結構_Momo第三方>() == false)
                 return;
 
-            ImportShow("Momo");
+            ImportShow("Momo第三方");
+        }
+
+        private void momo摩天ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            廠商類型 = "Momo摩天";
+
+            if (Import<出貨匯入結構_Momo摩天>() == false)
+                return;
+
+            ImportShow("Momo摩天");
         }
 
         private void 博客來ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -891,6 +908,11 @@ namespace WokyTool.ImportForm
         private void 愛料理ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             函式.GetFile("愛料理匯入樣板", "Template/OrderImport/愛料理匯入樣板.xlsx");
+        }
+
+        private void momo摩天ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("Momo摩天匯入樣板", "Template/OrderImport/Momo摩天匯入樣板.xlsx");
         }
     }
 }
