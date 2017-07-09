@@ -87,6 +87,7 @@
     <Compile Include="Common\父視窗.cs" />
     <Compile Include="DataExport\回單號結構_Momo摩天.cs" />
     <Compile Include="DataExport\回單號結構_uDesign.cs" />
+    <Compile Include="DataExport\回單號結構_博客來.cs" />
     <Compile Include="DataImport\出貨匯入結構_uDesign.cs" />
     <Compile Include="DataImport\出貨匯入結構_愛料理.cs" />
     <Compile Include="DataExport\商品庫存匯出結構.cs" />

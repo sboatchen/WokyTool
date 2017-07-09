@@ -236,6 +236,13 @@ namespace WokyTool.ImportForm
         {
             switch (廠商類型)
             {
+                case "博客來":
+                    {
+                        var Items_ = _Source.Select(Value => new 回單號結構_博客來((出貨匯入結構_博客來)Value));
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        函式.ExportCSV<回單號結構_博客來>(Title_, Items_);
+                        break;
+                    }
                 case "uDesign":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_uDesign((出貨匯入結構_uDesign)Value));
@@ -502,7 +509,7 @@ namespace WokyTool.ImportForm
             if (Import<出貨匯入結構_Momo第三方>() == false)
                 return;
 
-            ImportShow("Momo第三方");
+            ImportShow("Momo");
         }
 
         private void momo摩天ToolStripMenuItem_Click(object sender, EventArgs e)

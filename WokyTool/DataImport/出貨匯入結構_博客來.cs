@@ -15,13 +15,13 @@ namespace WokyTool.DataImport
         訂單編號
         群組          無
         
-        商品序號    無
+        商品序號
         數量
           
         姓名
         地址
         電話
-        手機
+        手機          無
           
         指配日期     無
         指配時段     無
@@ -35,10 +35,17 @@ namespace WokyTool.DataImport
         備註         無
         *********/
         /* 平台特殊欄位 */
+        public string 序號 { get; set; }
+        public string 重新拋回 { get; set; }
+        public string 轉單日期 { get; set; }
         public string 商品名稱 { get; set; }
-
-        /* 平台回單複製用欄位 */
-        //public string 無用_XX { get; set; }
+        public string 貨號 { get; set; }
+        public string 進貨價 { get; set; }
+        public string 進貨折扣 { get; set; }
+        public string 應付金額 { get; set; }
+        public string 發票聯式 { get; set; }
+        public string 預計配送日 { get; set; }
+        public string 上市日期 { get; set; }
 
         // 共用廠商快取
         protected static readonly 廠商資料 _共用廠商快取 = 廠商管理器.Instance.Get("博客來");
@@ -55,8 +62,6 @@ namespace WokyTool.DataImport
         {
             群組 = 0;
 
-            
-
             廠商 = _共用廠商快取;
 
             指配日期 = new DateTime(0);
@@ -68,11 +73,7 @@ namespace WokyTool.DataImport
             配送公司 = 列舉.配送公司類型.無;
             配送單號 = null;
 
-            商品 = 商品管理器.Instance.GetByName(廠商.編號, 商品名稱);
-            if (商品.編號 > 常數.空白資料編碼)
-                商品序號 = 商品.品號;
-            else
-                商品序號 = 字串.標頭_錯誤 + 商品名稱;   // for 介面呈現用
+            商品 = 商品管理器.Instance.Get(廠商.編號, 商品序號);
         }
 
         // 準備配送
