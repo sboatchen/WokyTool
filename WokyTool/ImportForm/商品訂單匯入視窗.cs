@@ -711,7 +711,7 @@ namespace WokyTool.ImportForm
                 fs = new FileStream(OutputName, FileMode.Create, FileAccess.Write);
                 writer = PdfWriter.GetInstance(document, fs);
                 document.Open();
-                
+
                 // 發票號碼過濾器
                 RenderFilter[] IDfilter1_ = { new RegionTextRenderFilter(new iTextSharp.text.Rectangle(50, 450, 150, 550)) };
                 RenderFilter[] IDfilter2_ = { new RegionTextRenderFilter(new iTextSharp.text.Rectangle(50, 50, 150, 150)) };
@@ -736,7 +736,7 @@ namespace WokyTool.ImportForm
                                         new FilteredTextRenderListener(new LocationTextExtractionStrategy(), Nofilter1_),
                                         new FilteredTextRenderListener(new LocationTextExtractionStrategy(), Userfilter1_),
                                         writer,
-                                        500);
+                                        465);
 
                     momo第三方配送_設定(reader,
                                        i,
@@ -744,18 +744,17 @@ namespace WokyTool.ImportForm
                                        new FilteredTextRenderListener(new LocationTextExtractionStrategy(), Nofilter2_),
                                        new FilteredTextRenderListener(new LocationTextExtractionStrategy(), Userfilter2_),
                                        writer,
-                                       70);
+                                       35);
                 }
-
-                writer.Close();
-                document.Close();
-                fs.Close();
-                reader.Close();
             }
             catch (Exception theException)
             {
                 MessageBox.Show("momo第三方配送失敗，請通知苦逼程式," + theException.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+            }
+            finally
+            {
+                /*if (writer != null)
+                    writer.Close();*/
                 if (document != null)
                     document.Close();
                 if (fs != null)
