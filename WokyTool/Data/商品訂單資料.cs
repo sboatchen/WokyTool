@@ -100,7 +100,7 @@ namespace WokyTool.Data
             配送單號 = 配送單號_;
 
             // 庫存處理
-            商品.Sell(寄庫出貨, 數量);
+            //!!商品.Sell(寄庫出貨, 數量);
 
             // 轉入銷售資料
             銷售管理器.Instance.Add(銷售資料.New(this));

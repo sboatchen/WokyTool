@@ -51,6 +51,8 @@ namespace WokyTool
                 this.dataGridView1.DataSource = Data_.ToList();
 
             this.dataGridView1.Refresh();
+
+            this.上層.DataSource = Data_.ToList();
         }
 
         public void 物品大類資料更新(IEnumerable<物品大類資料> Data_)
@@ -161,6 +163,16 @@ namespace WokyTool
                 _子視窗.Close();
                 _子視窗 = null;
             }
+        }
+
+        private void 盤點ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Item_ = _物品資料Listener.Query
+                               .Where(Value => Value.編號 > 0)
+                               .Select(Value => new 盤點匯出結構(Value));
+
+            string Title_ = String.Format("盤點匯出_{0}", 共用.NowYMDDec);
+            函式.ExportCSV<盤點匯出結構>(Title_, Item_);
         }
     }
 }

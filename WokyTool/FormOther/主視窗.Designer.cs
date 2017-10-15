@@ -59,6 +59,7 @@
             this.button29 = new System.Windows.Forms.Button();
             this.button30 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
+            this.盤點出貨 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -371,11 +372,22 @@
             this.button31.UseVisualStyleBackColor = true;
             this.button31.Click += new System.EventHandler(this.button31_Click);
             // 
+            // 盤點出貨
+            // 
+            this.盤點出貨.Location = new System.Drawing.Point(468, 308);
+            this.盤點出貨.Name = "盤點出貨";
+            this.盤點出貨.Size = new System.Drawing.Size(81, 23);
+            this.盤點出貨.TabIndex = 31;
+            this.盤點出貨.Text = "盤點出貨";
+            this.盤點出貨.UseVisualStyleBackColor = true;
+            this.盤點出貨.Click += new System.EventHandler(this.盤點出貨_Click);
+            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 468);
+            this.Controls.Add(this.盤點出貨);
             this.Controls.Add(this.button31);
             this.Controls.Add(this.button30);
             this.Controls.Add(this.button29);
@@ -447,6 +459,7 @@
         private System.Windows.Forms.Button button29;
         private System.Windows.Forms.Button button30;
         private System.Windows.Forms.Button button31;
+        private System.Windows.Forms.Button 盤點出貨;
 
 
     }
