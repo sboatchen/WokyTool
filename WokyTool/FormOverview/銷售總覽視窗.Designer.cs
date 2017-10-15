@@ -36,17 +36,16 @@
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.結算ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.銷售狀態類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.銷售資料編輯BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.利潤 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.狀態DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.銷售狀態類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.廠商DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.售價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.利潤 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.建立日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.結單日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +61,7 @@
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.配送公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.配送單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.銷售資料編輯BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.銷售狀態類型BindingSource)).BeginInit();
@@ -156,13 +156,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(966, 463);
             this.dataGridView1.TabIndex = 1;
             // 
-            // 銷售狀態類型BindingSource
+            // 利潤
             // 
-            this.銷售狀態類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.銷售狀態類型);
-            // 
-            // 銷售資料編輯BindingSource
-            // 
-            this.銷售資料編輯BindingSource.DataSource = typeof(WokyTool.Data.銷售資料_編輯);
+            this.利潤.DataPropertyName = "利潤";
+            this.利潤.HeaderText = "利潤";
+            this.利潤.Name = "利潤";
+            this.利潤.ReadOnly = true;
             // 
             // 編號DataGridViewTextBoxColumn
             // 
@@ -179,6 +178,10 @@
             this.狀態DataGridViewTextBoxColumn.Name = "狀態DataGridViewTextBoxColumn";
             this.狀態DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.狀態DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // 銷售狀態類型BindingSource
+            // 
+            this.銷售狀態類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.銷售狀態類型);
             // 
             // 廠商DataGridViewTextBoxColumn
             // 
@@ -220,13 +223,6 @@
             this.售價DataGridViewTextBoxColumn.DataPropertyName = "售價";
             this.售價DataGridViewTextBoxColumn.HeaderText = "售價";
             this.售價DataGridViewTextBoxColumn.Name = "售價DataGridViewTextBoxColumn";
-            // 
-            // 利潤
-            // 
-            this.利潤.DataPropertyName = "利潤";
-            this.利潤.HeaderText = "利潤";
-            this.利潤.Name = "利潤";
-            this.利潤.ReadOnly = true;
             // 
             // 建立日期DataGridViewTextBoxColumn
             // 
@@ -332,6 +328,10 @@
             this.配送單號DataGridViewTextBoxColumn.HeaderText = "配送單號";
             this.配送單號DataGridViewTextBoxColumn.Name = "配送單號DataGridViewTextBoxColumn";
             this.配送單號DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 銷售資料編輯BindingSource
+            // 
+            this.銷售資料編輯BindingSource.DataSource = typeof(WokyTool.Data.銷售資料_編輯);
             // 
             // 銷售總覽視窗
             // 

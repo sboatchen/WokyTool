@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.Data;
+using WokyTool.DataExport;
 using WokyTool.DataMgr;
+using WokyTool.FormOther;
 
 namespace WokyTool.FormOverview
 {
@@ -17,6 +19,12 @@ namespace WokyTool.FormOverview
     {
         protected 子視窗<銷售資料_編輯> _子視窗 = null;
         protected 監測綁定更新<銷售資料_編輯> _Listener;
+
+        protected List<銷售資料_編輯> _Source;
+        
+        protected 銷售篩選視窗 _時段選擇視窗 = null;
+        protected DateTime _StartTime = DateTime.Now;
+        protected DateTime _EndTime = DateTime.Now;
 
         public 銷售總覽視窗()
         {
@@ -36,9 +44,11 @@ namespace WokyTool.FormOverview
         {
             List<銷售資料_編輯> xxx = Data_.ToList();
             if (_子視窗 != null && _子視窗.IsVisible() == true)
-                this.dataGridView1.DataSource = _子視窗.Filt(Data_).ToList();
+                _Source = _子視窗.Filt(Data_).ToList();
             else
-                this.dataGridView1.DataSource = Data_.ToList();
+                _Source = Data_.ToList();
+
+            this.dataGridView1.DataSource = _Source;
 
             this.dataGridView1.Refresh();
         }
@@ -68,7 +78,13 @@ namespace WokyTool.FormOverview
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("尚未實作", 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (_子視窗 == null)
+            {
+                _子視窗 = new 銷售篩選視窗(this);
+            }
+
+            _子視窗.Show();
+            _子視窗.BringToFront();
         }
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,7 +94,21 @@ namespace WokyTool.FormOverview
 
         private void 結算ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("尚未實作", 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            var ItemGroup_ = _Source
+                                .GroupBy(
+                                    Value => Value.廠商,
+                                    Value => new 銷售匯出結構(Value));
+
+           /* 通用匯出結構 總結_ = new 通用匯出結構("總結");
+
+            int 總庫存成本_ = _物品資料Listener.Query.Select(Value => Value.庫存總成本).Sum();
+            總結_.Add("總庫存成本", 總庫存成本_.ToString());
+
+            string Title_ = String.Format("物品庫存_{0}", 共用.NowYMDDec);
+            函式.ExportExcel<物品庫存匯出結構>(Title_, ItemGroup_, 總結_);*/
+
+            string Title_ = String.Format("銷售結算_{0}", 共用.NowYMDDec);
+            函式.ExportExcel<銷售匯出結構>(Title_, ItemGroup_);
         }
 
         public void onChildClosing(子視窗<銷售資料_編輯> Child_)

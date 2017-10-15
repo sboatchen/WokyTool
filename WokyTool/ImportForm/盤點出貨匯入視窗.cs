@@ -24,7 +24,7 @@ namespace WokyTool.ImportForm
         {
             InitializeComponent();
 
-            IEnumerable<盤點資料> origin_ = 資料讀寫.ImportCSV<盤點資料>(資料讀寫.CSV無標頭讀取格式);
+            IEnumerable<盤點資料> origin_ = null;//@@ 資料讀寫.ImportCSV<盤點資料>(資料讀寫.CSV無標頭讀取格式);
             if (origin_ == null) 
             {
                 this.Close();
@@ -128,8 +128,8 @@ namespace WokyTool.ImportForm
                 History_.Add(HistoryItem_);
             }
 
-            資料讀寫.
-            IEnumerable<盤點資料> origin_ = 資料讀寫.ImportCSV<盤點資料>(資料讀寫.CSV無標頭讀取格式);
+            
+            //@@IEnumerable<盤點資料> origin_ = 資料讀寫.ImportCSV<盤點資料>(資料讀寫.CSV無標頭讀取格式);
 
             //@@ 應小胖需求，強制存檔
             函式.SaveAll();
