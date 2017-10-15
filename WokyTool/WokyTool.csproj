@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Log.cs" />
     <Compile Include="Common\MyString.cs" />
     <Compile Include="Common\共用.cs" />
     <Compile Include="Common\函式.cs" />
@@ -85,9 +86,12 @@
     <Compile Include="Common\字串.cs" />
     <Compile Include="Common\可格式化_Excel.cs" />
     <Compile Include="Common\父視窗.cs" />
+    <Compile Include="Common\資料讀寫.cs" />
+    <Compile Include="Common\資料讀寫參數.cs" />
     <Compile Include="DataExport\回單號結構_Momo摩天.cs" />
     <Compile Include="DataExport\回單號結構_uDesign.cs" />
     <Compile Include="DataExport\回單號結構_博客來.cs" />
+    <Compile Include="DataExport\盤點匯出結構.cs" />
     <Compile Include="DataImport\出貨匯入結構_uDesign.cs" />
     <Compile Include="DataImport\出貨匯入結構_愛料理.cs" />
     <Compile Include="DataExport\商品庫存匯出結構.cs" />
@@ -131,6 +135,8 @@
     <Compile Include="DataImport\出貨匯入結構_遠傳加購.cs" />
     <Compile Include="DataImport\出貨匯入結構_金石堂.cs" />
     <Compile Include="DataMgr\銷售管理器.cs" />
+    <Compile Include="Data\盤點歷史資料.cs" />
+    <Compile Include="Data\盤點資料.cs" />
     <Compile Include="Data\銷售資料.cs" />
     <Compile Include="Data\銷售資料_編輯.cs" />
     <Compile Include="Data\物品訂單資料.cs" />
@@ -161,6 +167,12 @@
     </Compile>
     <Compile Include="FormOther\物品篩選視窗.Designer.cs">
       <DependentUpon>物品篩選視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImportForm\盤點出貨匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportForm\盤點出貨匯入視窗.Designer.cs">
+      <DependentUpon>盤點出貨匯入視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOther\訊息列印視窗.cs">
       <SubType>Form</SubType>
@@ -391,6 +403,9 @@
     <EmbeddedResource Include="FormOther\物品篩選視窗.resx">
       <DependentUpon>物品篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ImportForm\盤點出貨匯入視窗.resx">
+      <DependentUpon>盤點出貨匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOther\訊息列印視窗.resx">
       <DependentUpon>訊息列印視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -509,6 +524,7 @@
     <None Include="Properties\DataSources\WokyTool.Data.物品小類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.物品訂單資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.物品資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Data.盤點資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.編碼資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.訂單資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.訊息資料.datasource" />

@@ -35,6 +35,7 @@ namespace WokyTool.Common
             入庫紀錄,
 
             銷售,
+            盤點,
         };
 
         // 配送指定時段類型
@@ -166,5 +167,24 @@ namespace WokyTool.Common
                     return false;
             }
         }
+
+        // 盤點類型
+        public enum 盤點類型
+        {
+            無 = -1,
+
+            出貨 = 0,
+            進貨 = 1,
+        };
+
+        // 檔案格式類型
+        public enum 檔案格式類型
+        {
+            無 = 0,
+
+            CSV,
+            EXCEL,
+            PDF,
+        };
     }
 }

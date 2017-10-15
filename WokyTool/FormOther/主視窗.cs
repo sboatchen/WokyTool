@@ -326,5 +326,10 @@ namespace WokyTool
         {
             函式.SaveAll();
         }
+
+        private void 盤點出貨_Click(object sender, EventArgs e)
+        {
+            var i = new 盤點出貨匯入視窗();
+        }
     }
 }
