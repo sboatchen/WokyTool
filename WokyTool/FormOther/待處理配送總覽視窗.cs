@@ -218,5 +218,31 @@ namespace WokyTool.OtherForm
                 Item_.SetDiliver(String.Format("宅配回單測試{0}", i++));
             }
         }
+
+        private void 統計ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dictionary<String, 撿貨統計結構> sum = new Dictionary<String, 撿貨統計結構>();
+            撿貨統計結構 Temp_ = null;
+            foreach(可配送 Data_ in _Source)
+            {
+                foreach (var ItemPair_ in Data_.配送物品清單)
+                {
+                    if (sum.TryGetValue(ItemPair_.Key, out Temp_))
+                    {
+                        Temp_.數量 += ItemPair_.Value;
+                    }
+                    else
+                    {
+                        Temp_ = new 撿貨統計結構(ItemPair_.Key, ItemPair_.Value);
+                        sum.Add(ItemPair_.Key, Temp_);
+                    }
+                }
+            }
+
+            List<撿貨統計結構> Result_ = sum.Values.OrderBy(Value => Value.物品名稱).ToList();
+
+            string Title_ = String.Format("撿貨統計匯出_{0}", 共用.NowYMDDec);
+            函式.ExportExcel<撿貨統計結構>(Title_, Result_);
+        }
     }
 }

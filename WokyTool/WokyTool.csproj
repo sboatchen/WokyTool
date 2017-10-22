@@ -91,6 +91,7 @@
     <Compile Include="DataExport\回單號結構_Momo摩天.cs" />
     <Compile Include="DataExport\回單號結構_uDesign.cs" />
     <Compile Include="DataExport\回單號結構_博客來.cs" />
+    <Compile Include="DataExport\撿貨統計結構.cs" />
     <Compile Include="DataExport\盤點匯出結構.cs" />
     <Compile Include="DataExport\銷售匯出結構.cs" />
     <Compile Include="DataImport\出貨匯入結構_uDesign.cs" />

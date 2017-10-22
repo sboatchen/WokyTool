@@ -58,36 +58,6 @@ namespace WokyTool.Data
             yield return this;
         }
 
-        // 準備配送
-        override public void PrepareDiliver()
-        {
-            if (IsIgnore())
-                return;
-
-            if (重要備註 == null || 重要備註.Length == 0)
-                配送姓名 = 姓名;
-            else
-                配送姓名 = string.Format("{0}({1})", 姓名, 重要備註);
-
-            if (備註 == null || 備註.Length == 0)
-                配送備註 = 廠商.名稱;
-            else
-                配送備註 = string.Format("{0}({1})", 廠商.名稱, 備註);
-
-
-            Dictionary<String, int> 物品列表_ = new Dictionary<String, int>();
-            GetItemMap(物品列表_);
-            配送商品 = 函式.GetCombineItemString(物品列表_);
-
-            // 配送公司
-            if (配送公司 != 列舉.配送公司類型.無)
-                return;
-            if (總體積 >= 常數.宅配通配送最小體積)
-                配送公司 = 列舉.配送公司類型.宅配通;
-            else
-                配送公司 = 列舉.配送公司類型.全速配;
-        }
-
         // 完成配送
         override public void SetDiliver(string 配送單號_)
         {
@@ -107,7 +77,7 @@ namespace WokyTool.Data
         }
 
         // 取出內容物
-        override public void GetItemMap(Dictionary<String, int> 物品列表_)
+        override public void AppendItemDetail(Dictionary<String, int> 物品列表_)
         {
             if (商品 != null)
                  商品.GetCombine(物品列表_, 數量);

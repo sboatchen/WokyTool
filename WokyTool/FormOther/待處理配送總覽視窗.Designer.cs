@@ -39,7 +39,7 @@
             this.宅配通ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.測試用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.可配送BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.配送單號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.配送公司類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.指配時段類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.代收類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -50,17 +50,18 @@
             this.貨運商品DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.配送公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.配送單號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.指配日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.指配時段DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.代收方式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.可配送BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.統計ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.可配送BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司類型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段類型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收類型BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.可配送BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -87,7 +88,8 @@
             // 
             this.匯出ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.全速配ToolStripMenuItem1,
-            this.宅配通ToolStripMenuItem1});
+            this.宅配通ToolStripMenuItem1,
+            this.統計ToolStripMenuItem});
             this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
             this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯出ToolStripMenuItem.Text = "匯出";
@@ -95,14 +97,14 @@
             // 全速配ToolStripMenuItem1
             // 
             this.全速配ToolStripMenuItem1.Name = "全速配ToolStripMenuItem1";
-            this.全速配ToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.全速配ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.全速配ToolStripMenuItem1.Text = "全速配";
             this.全速配ToolStripMenuItem1.Click += new System.EventHandler(this.全速配ToolStripMenuItem1_Click);
             // 
             // 宅配通ToolStripMenuItem1
             // 
             this.宅配通ToolStripMenuItem1.Name = "宅配通ToolStripMenuItem1";
-            this.宅配通ToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.宅配通ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.宅配通ToolStripMenuItem1.Text = "宅配通";
             this.宅配通ToolStripMenuItem1.Click += new System.EventHandler(this.宅配通ToolStripMenuItem1_Click);
             // 
@@ -163,9 +165,11 @@
             this.dataGridView1.Size = new System.Drawing.Size(1142, 435);
             this.dataGridView1.TabIndex = 1;
             // 
-            // 可配送BindingSource
+            // 配送單號
             // 
-            this.可配送BindingSource.DataSource = typeof(WokyTool.Common.可配送);
+            this.配送單號.DataPropertyName = "配送單號";
+            this.配送單號.HeaderText = "配送單號";
+            this.配送單號.Name = "配送單號";
             // 
             // 配送公司類型BindingSource
             // 
@@ -224,12 +228,6 @@
             this.配送公司DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.配送公司DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // 配送單號
-            // 
-            this.配送單號.DataPropertyName = "配送單號";
-            this.配送單號.HeaderText = "配送單號";
-            this.配送單號.Name = "配送單號";
-            // 
             // 指配日期DataGridViewTextBoxColumn
             // 
             this.指配日期DataGridViewTextBoxColumn.DataPropertyName = "指配日期";
@@ -260,6 +258,17 @@
             this.代收金額DataGridViewTextBoxColumn.HeaderText = "代收金額";
             this.代收金額DataGridViewTextBoxColumn.Name = "代收金額DataGridViewTextBoxColumn";
             // 
+            // 可配送BindingSource
+            // 
+            this.可配送BindingSource.DataSource = typeof(WokyTool.Common.可配送);
+            // 
+            // 統計ToolStripMenuItem
+            // 
+            this.統計ToolStripMenuItem.Name = "統計ToolStripMenuItem";
+            this.統計ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.統計ToolStripMenuItem.Text = "統計";
+            this.統計ToolStripMenuItem.Click += new System.EventHandler(this.統計ToolStripMenuItem_Click);
+            // 
             // 待處理配送總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -273,10 +282,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.可配送BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司類型BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段類型BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收類型BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.可配送BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,5 +319,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn 代收方式DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 代收類型BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 代收金額DataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem 統計ToolStripMenuItem;
     }
 }

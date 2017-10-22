@@ -13,6 +13,7 @@ namespace WokyTool.Common
         string 配送手機 { get; set; }
         string 配送地址 { get; set; }
 
+        Dictionary<String, int> 配送物品清單 { get; set; }
         string 配送商品 { get; set; }
         string 配送備註 { get; set; }
 

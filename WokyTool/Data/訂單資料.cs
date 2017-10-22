@@ -78,6 +78,7 @@ namespace WokyTool.Data
             set { 地址 = value; }
         }
 
+        public Dictionary<String, int> 配送物品清單 { get; set; }
         public string 配送商品 { get; set; }
         public string 配送備註 { get; set; }
 
@@ -128,14 +129,42 @@ namespace WokyTool.Data
 
         // 初始化
         abstract public void Init();
-
+        
         // 準備配送
-        abstract public void PrepareDiliver();
+        virtual public void PrepareDiliver()
+        {
+            if (IsIgnore())
+                return;
+
+            if (重要備註 == null || 重要備註.Length == 0)
+                配送姓名 = 姓名;
+            else
+                配送姓名 = string.Format("{0}({1})", 姓名, 重要備註);
+
+            if (備註 == null || 備註.Length == 0)
+                配送備註 = 廠商.名稱;
+            else
+                配送備註 = string.Format("{0}({1})", 廠商.名稱, 備註);
+
+            配送物品清單 = new Dictionary<String, int>();
+            AppendItemDetail(配送物品清單);
+
+            配送商品 = 函式.GetCombineItemString(配送物品清單);
+
+            // 配送公司
+            if (配送公司 != 列舉.配送公司類型.無)
+                return;
+            if (總體積 >= 常數.宅配通配送最小體積)
+                配送公司 = 列舉.配送公司類型.宅配通;
+            else
+                配送公司 = 列舉.配送公司類型.全速配;
+        }
+
 
         // 完成配送
         abstract public void SetDiliver(string 配送單號_);
 
         // 取出內容物
-        abstract public void GetItemMap(Dictionary<String, int> 物品列表_);
+        abstract public void AppendItemDetail(Dictionary<String, int> 物品列表_);
     }
 }
