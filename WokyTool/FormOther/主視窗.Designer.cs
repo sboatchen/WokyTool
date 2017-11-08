@@ -60,6 +60,10 @@
             this.button30 = new System.Windows.Forms.Button();
             this.button31 = new System.Windows.Forms.Button();
             this.盤點出貨 = new System.Windows.Forms.Button();
+            this.button32 = new System.Windows.Forms.Button();
+            this.button33 = new System.Windows.Forms.Button();
+            this.button34 = new System.Windows.Forms.Button();
+            this.button35 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -324,11 +328,11 @@
             // 
             // button27
             // 
-            this.button27.Location = new System.Drawing.Point(616, 13);
+            this.button27.Location = new System.Drawing.Point(464, 14);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(75, 23);
             this.button27.TabIndex = 26;
-            this.button27.Text = "測試用";
+            this.button27.Text = "測試1";
             this.button27.UseVisualStyleBackColor = true;
             this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
@@ -382,11 +386,55 @@
             this.盤點出貨.UseVisualStyleBackColor = true;
             this.盤點出貨.Click += new System.EventHandler(this.盤點出貨_Click);
             // 
+            // button32
+            // 
+            this.button32.Location = new System.Drawing.Point(119, 337);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(90, 23);
+            this.button32.TabIndex = 32;
+            this.button32.Text = "工廠出貨訂單";
+            this.button32.UseVisualStyleBackColor = true;
+            this.button32.Click += new System.EventHandler(this.button32_Click);
+            // 
+            // button33
+            // 
+            this.button33.Location = new System.Drawing.Point(545, 14);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(75, 23);
+            this.button33.TabIndex = 33;
+            this.button33.Text = "測試2";
+            this.button33.UseVisualStyleBackColor = true;
+            this.button33.Click += new System.EventHandler(this.button33_Click);
+            // 
+            // button34
+            // 
+            this.button34.Location = new System.Drawing.Point(626, 14);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(75, 23);
+            this.button34.TabIndex = 34;
+            this.button34.Text = "測試3";
+            this.button34.UseVisualStyleBackColor = true;
+            this.button34.Click += new System.EventHandler(this.button34_Click);
+            // 
+            // button35
+            // 
+            this.button35.Location = new System.Drawing.Point(229, 337);
+            this.button35.Name = "button35";
+            this.button35.Size = new System.Drawing.Size(104, 23);
+            this.button35.TabIndex = 35;
+            this.button35.Text = "工廠出貨訂單2";
+            this.button35.UseVisualStyleBackColor = true;
+            this.button35.Click += new System.EventHandler(this.button35_Click);
+            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 468);
+            this.Controls.Add(this.button35);
+            this.Controls.Add(this.button34);
+            this.Controls.Add(this.button33);
+            this.Controls.Add(this.button32);
             this.Controls.Add(this.盤點出貨);
             this.Controls.Add(this.button31);
             this.Controls.Add(this.button30);
@@ -460,6 +508,10 @@
         private System.Windows.Forms.Button button30;
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button 盤點出貨;
+        private System.Windows.Forms.Button button32;
+        private System.Windows.Forms.Button button33;
+        private System.Windows.Forms.Button button34;
+        private System.Windows.Forms.Button button35;
 
 
     }

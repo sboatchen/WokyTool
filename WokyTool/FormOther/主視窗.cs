@@ -1,5 +1,6 @@
 ﻿using LINQtoCSV;
 using LinqToExcel;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -308,13 +309,6 @@ namespace WokyTool
             i.BringToFront();
         }
 
-        private void button27_Click(object sender, EventArgs e)
-        {
-            var i = new 測試視窗();
-            i.Show();
-            i.BringToFront();
-        }
-
         private void button30_Click(object sender, EventArgs e)
         {
             var i = new 銷售總覽視窗();
@@ -330,6 +324,143 @@ namespace WokyTool
         private void 盤點出貨_Click(object sender, EventArgs e)
         {
             var i = new 盤點出貨匯入視窗();
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            var i = new 工廠出貨視窗();
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void button35_Click(object sender, EventArgs e)
+        {
+            var i = new 工廠出貨視窗2();
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            // 開啟存檔位置
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.FileName = "測試1";
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return;
+
+            Microsoft.Office.Interop.Excel.Application App = null;
+            Microsoft.Office.Interop.Excel.Workbook Wbook = null;
+            // 寫入資料
+            try
+            {
+                App = new Microsoft.Office.Interop.Excel.Application();
+                Wbook = App.Workbooks.Add();
+
+                var xlSheets = Wbook.Sheets as Microsoft.Office.Interop.Excel.Sheets;
+                Microsoft.Office.Interop.Excel.Worksheet NowSheet = Wbook.Worksheets["Sheet1"];
+
+                NowSheet.Name = "測試1";
+                App.Cells[1, 1] = "測試成功";
+
+                // This works.
+                Wbook.SaveAs(dlg.FileName);
+
+                //關閉工作簿
+                Wbook.Close();
+
+                //離開程序
+                App.Quit();
+            }
+            catch (Exception theException)
+            {
+                MessageBox.Show("匯出失敗，請通知苦逼程式," + theException.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (Wbook != null)
+                    Wbook.Close();
+                if (App != null)
+                    App.Quit();
+            }
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            // 開啟存檔位置
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.FileName = "測試2";
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return;
+
+            Microsoft.Office.Interop.Excel.Application App = null;
+            Microsoft.Office.Interop.Excel.Workbook Wbook = null;
+            // 寫入資料
+            try
+            {
+                App = new Microsoft.Office.Interop.Excel.Application();
+                Wbook = App.Workbooks.Add();
+
+                var xlSheets = Wbook.Sheets as Microsoft.Office.Interop.Excel.Sheets;
+                Microsoft.Office.Interop.Excel.Worksheet NowSheet = xlSheets.get_Item(1);
+
+                NowSheet.Name = "測試2";
+                App.Cells[1, 1] = "測試成功";
+
+                // This works.
+                Wbook.SaveAs(dlg.FileName);
+
+                //關閉工作簿
+                Wbook.Close();
+
+                //離開程序
+                App.Quit();
+            }
+            catch (Exception theException)
+            {
+                MessageBox.Show("匯出失敗，請通知苦逼程式," + theException.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (Wbook != null)
+                    Wbook.Close();
+                if (App != null)
+                    App.Quit();
+            }
+        }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            // 開啟存檔位置
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.FileName = "測試3";
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return;
+
+            Microsoft.Office.Interop.Excel.Application App = null;
+            Microsoft.Office.Interop.Excel.Workbook Wbook = null;
+            // 寫入資料
+            try
+            {
+                App = new Microsoft.Office.Interop.Excel.Application();
+                Wbook = App.Workbooks.Add();
+
+                var xlSheets = Wbook.Sheets as Microsoft.Office.Interop.Excel.Sheets;
+                Microsoft.Office.Interop.Excel.Worksheet NowSheet = Wbook.ActiveSheet;
+
+                NowSheet.Name = "測試3";
+                App.Cells[1, 1] = "測試成功";
+
+                // This works.
+                Wbook.SaveAs(dlg.FileName);
+
+                //關閉工作簿
+                Wbook.Close();
+
+                //離開程序
+                App.Quit();
+            }
+            catch (Exception theException)
+            {
+                MessageBox.Show("匯出失敗，請通知苦逼程式," + theException.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (Wbook != null)
+                    Wbook.Close();
+                if (App != null)
+                    App.Quit();
+            }
         }
     }
 }

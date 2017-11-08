@@ -1,4 +1,5 @@
 ﻿using LINQtoCSV;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,23 +10,31 @@ using WokyTool.Common;
 using WokyTool.DataMgr;
 namespace WokyTool.Data
 {
+    [JsonObject(MemberSerialization.OptIn)]
     public abstract class 訂單資料 : 可配送, IComparable<訂單資料>
     {
+        [JsonProperty]
         [CsvColumn(Name = "姓名")]
         public string 姓名 { get; set; }
+        [JsonProperty]
         [CsvColumn(Name = "地址")]
         public string 地址 { get; set; }
+        [JsonProperty]
         [CsvColumn(Name = "電話")]
         public string 電話 { get; set; }
+        [JsonProperty]
         [CsvColumn(Name = "手機")]
         public string 手機 { get; set; }
 
         public 廠商資料 廠商;
+        [JsonProperty]
         [CsvColumn(Name = "廠商編號")]
         public int 廠商編號
         {
             get
             {
+                if (廠商 == null)
+                    return 常數.錯誤資料編碼;
                 return 廠商.編號;
             }
             set
@@ -33,27 +42,37 @@ namespace WokyTool.Data
                 廠商 = 廠商管理器.Instance.Get(value);
             }
         }
+
+        [JsonProperty]
         [CsvColumn(Name = "訂單編號")]
         virtual public string 訂單編號 { get; set; }
 
+        [JsonProperty]
         [CsvColumn(Name = "數量")]
         public int 數量 { get; set; }
 
+        [JsonProperty]
         [CsvColumn(Name = "備註")]
         public string 備註 { get; set; }
 
+        [JsonProperty]
         [CsvColumn(Name = "指配日期")]
         public DateTime 指配日期 { get; set; }
+        [JsonProperty]
         [CsvColumn(Name = "指配時段")]
         public WokyTool.Common.列舉.指配時段類型 指配時段 { get; set; }
 
+        [JsonProperty]
         [CsvColumn(Name = "代收方式")]
         public WokyTool.Common.列舉.代收類型 代收方式 { get; set; }
+        [JsonProperty]
         [CsvColumn(Name = "代收金額")]
         public int 代收金額 { get; set; }
 
+        [JsonProperty]
         [CsvColumn(Name = "配送公司")]
         virtual public WokyTool.Common.列舉.配送公司類型 配送公司 { get; set; }
+        [JsonProperty]
         [CsvColumn(Name = "配送單號")]
         public string 配送單號 { get; set; }
 

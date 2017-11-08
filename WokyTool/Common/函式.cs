@@ -1,4 +1,5 @@
 ﻿using LINQtoCSV;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -58,6 +59,60 @@ namespace WokyTool.Common
             sw.Close();
         }
 
+        public static void ExportExcel<T>(String FileName_, T Items_, Excel.XlFileFormat Format_ = Excel.XlFileFormat.xlWorkbookNormal) where T : 可樣板化_Excel
+        {
+            // 開啟存檔位置
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.FileName = FileName_;
+
+            switch (Format_)
+            {
+                case Excel.XlFileFormat.xlOpenXMLWorkbook:
+                    dlg.DefaultExt = ".xlsx";
+                    dlg.Filter = "xlsx files (.xlsx)|*.xlsx";
+                    break;
+                default:
+                    dlg.DefaultExt = ".xls";                // Default file extension
+                    dlg.Filter = "xls files (.xls)|*.xls";  // Filter files by extension
+                    break;
+            }
+
+            if (dlg.ShowDialog() != DialogResult.OK)
+                return;
+
+            // 寫入資料
+            try
+            {
+                // 開啟程序
+                Excel.Application App = new Excel.Application();
+                // App.Visible = true;
+                // App.UserControl = true;
+
+                // 開啟工作簿
+                Excel.Workbook Wbook = App.Workbooks.Open(Items_.GetTemplate());
+
+                // 取得分頁
+                var xlSheets = Wbook.Sheets as Excel.Sheets;
+                Excel.Worksheet NowSheet = Wbook.ActiveSheet;
+
+                // 填入資訊
+                Items_.SetData(App);
+
+                // This works.
+                Wbook.SaveAs(dlg.FileName, Format_);
+
+                //關閉工作簿
+                Wbook.Close();
+
+                //離開程序
+                App.Quit();
+            }
+            catch (Exception theException)
+            {
+                MessageBox.Show("匯出失敗，請通知苦逼程式," + theException.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         // 通用匯出格式   //@@ 檢查是否有其他可以共用
         public static void ExportExcel<T>(String FileName_, IEnumerable<T> Items_, 通用匯出結構 Info_ = null, Excel.XlFileFormat Format_ = Excel.XlFileFormat.xlWorkbookNormal) where T : 可格式化_Excel
         {
@@ -93,7 +148,7 @@ namespace WokyTool.Common
 
                 // 取得分頁
                 var xlSheets = Wbook.Sheets as Excel.Sheets;
-                Excel.Worksheet NowSheet = Wbook.Worksheets["Sheet1"];
+                Excel.Worksheet NowSheet = Wbook.ActiveSheet;
 
                 // 填入額外資訊
                 if (Info_ != null)
@@ -166,7 +221,7 @@ namespace WokyTool.Common
 
                 // 取得分頁
                 var xlSheets = Wbook.Sheets as Excel.Sheets;
-                Excel.Worksheet NowSheet = Wbook.Worksheets["Sheet1"];
+                Excel.Worksheet NowSheet = Wbook.ActiveSheet;
 
                 // 填入額外資訊
                 if (Info_ != null)

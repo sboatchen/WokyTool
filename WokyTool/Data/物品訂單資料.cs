@@ -1,4 +1,5 @@
 ﻿using LINQtoCSV;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.Data
 {
+    [JsonObject(MemberSerialization.OptIn)]
     public class 物品訂單資料 : 訂單資料
     {
         public 物品資料 物品;
@@ -18,6 +20,8 @@ namespace WokyTool.Data
         {
             get
             {
+                if (物品 == null)
+                    return 常數.錯誤資料編碼;
                 return 物品.編號;
             }
             set
@@ -26,13 +30,39 @@ namespace WokyTool.Data
             }
         }
 
+        [JsonProperty]
+        public string 物品顯示名稱
+        {
+            get
+            {
+                if (物品 == null)
+                    return 字串.空;
+                return 物品.名稱;
+            }
+        }
+
         /* 其他欄位 */
 
+        [JsonProperty]
         override public int 總體積
         {
             get
             {
+                if (物品 == null)
+                    return 0;
                 return 物品.體積 * 數量;
+            }
+        }
+
+        [JsonProperty]
+        public int 單價 { get; set; }
+
+        [JsonProperty]
+        public int 總金額
+        {
+            get
+            {
+                return 單價 * 數量;
             }
         }
 
@@ -42,10 +72,9 @@ namespace WokyTool.Data
         // 是否合法
         override public bool IsLegal()
         {
-            return IsIgnore() || (物品 != null && 物品.編號 > 0);
+            return IsIgnore() || (物品 != null && 物品.編號 > 0 && 數量 > 0);
         }
-
-
+        
         // 初始化
         override public void Init()
         {
@@ -91,6 +120,11 @@ namespace WokyTool.Data
                 物品列表_[物品.縮寫] += 數量;
             else
                 物品列表_[物品.縮寫] = 數量;
+        }
+
+        public override string ToString()
+        {
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
     }
 }

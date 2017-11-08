@@ -77,6 +77,7 @@
     <Compile Include="Common\共用.cs" />
     <Compile Include="Common\函式.cs" />
     <Compile Include="Common\可格式化_Csv.cs" />
+    <Compile Include="Common\可樣板化_Excel.cs" />
     <Compile Include="Common\監測綁定.cs" />
     <Compile Include="Common\可運作.cs" />
     <Compile Include="Common\可配送.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="DataExport\回單號結構_Momo摩天.cs" />
     <Compile Include="DataExport\回單號結構_uDesign.cs" />
     <Compile Include="DataExport\回單號結構_博客來.cs" />
+    <Compile Include="DataExport\工廠出貨匯出結構.cs" />
     <Compile Include="DataExport\撿貨統計結構.cs" />
     <Compile Include="DataExport\盤點匯出結構.cs" />
     <Compile Include="DataExport\銷售匯出結構.cs" />
@@ -157,6 +159,18 @@
     </Compile>
     <Compile Include="FormOther\商品篩選視窗.Designer.cs">
       <DependentUpon>商品篩選視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOther\工廠出貨視窗2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOther\工廠出貨視窗2.Designer.cs">
+      <DependentUpon>工廠出貨視窗2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOther\工廠出貨視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOther\工廠出貨視窗.Designer.cs">
+      <DependentUpon>工廠出貨視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOther\銷售篩選視窗.cs">
       <SubType>Form</SubType>
@@ -404,6 +418,12 @@
     </Compile>
     <EmbeddedResource Include="FormOther\商品篩選視窗.resx">
       <DependentUpon>商品篩選視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOther\工廠出貨視窗2.resx">
+      <DependentUpon>工廠出貨視窗2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOther\工廠出貨視窗.resx">
+      <DependentUpon>工廠出貨視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOther\銷售篩選視窗.resx">
       <DependentUpon>銷售篩選視窗.cs</DependentUpon>
