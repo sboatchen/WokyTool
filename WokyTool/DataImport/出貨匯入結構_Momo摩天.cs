@@ -15,7 +15,7 @@ namespace WokyTool.DataImport
         訂單編號
         群組          無
         
-        商品序號
+        商品序號       無
         數量
           
         姓名          
@@ -41,6 +41,7 @@ namespace WokyTool.DataImport
         public string 付款日 { get; set; }
         public string 最晚出貨日 { get; set; }
         public string 商店品號 { get; set; }
+        public string 廠商商品編號 { get; set; }
         public string 商品名稱 { get; set; }
         public string 單品規格 { get; set; }
         public int 成交價 { get; set; }
@@ -51,7 +52,7 @@ namespace WokyTool.DataImport
         public string 訂購人姓名 { get; set; }
         public string 電話2 { get; set; }
         public string 行動電話2 { get; set; }
-
+        
         // 共用廠商快取
         protected static readonly 廠商資料 _共用廠商快取 = 廠商管理器.Instance.Get("Momo摩天");
         protected static readonly string 已配送 = "已配送";
@@ -77,6 +78,16 @@ namespace WokyTool.DataImport
             代收金額 = 0;
 
             配送單號 = null;
+
+            // 商品序號 = 廠商商品編號 + 單品規格
+            if (單品規格 != null && 單品規格.Length > 0)
+            {
+                商品序號 = string.Format("{0}@{1}", 廠商商品編號, 單品規格);
+            }
+            else
+            {
+                商品序號 = 廠商商品編號;
+            }
 
             商品 = 商品管理器.Instance.Get(廠商.編號, 商品序號);
         }

@@ -81,7 +81,7 @@ namespace WokyTool.DataExport
             App_.Cells[Row_, 12] = _Data.手機;
             App_.Cells[Row_, 13] = _Data.地址;
             App_.Cells[Row_, 14] = _Data.商店品號;
-            App_.Cells[Row_, 15] = _Data.商品序號;
+            App_.Cells[Row_, 15] = _Data.廠商商品編號;
             App_.Cells[Row_, 16] = _Data.商品名稱;
             App_.Cells[Row_, 17] = _Data.單品規格;
             App_.Cells[Row_, 18] = _Data.數量;
