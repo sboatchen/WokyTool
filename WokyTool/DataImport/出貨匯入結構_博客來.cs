@@ -37,6 +37,7 @@ namespace WokyTool.DataImport
         /* 平台特殊欄位 */
         public string 序號 { get; set; }
         public string 重新拋回 { get; set; }
+        public string 出貨方式 { get; set; }
         public string 轉單日期 { get; set; }
         public string 商品名稱 { get; set; }
         public string 貨號 { get; set; }
@@ -74,6 +75,8 @@ namespace WokyTool.DataImport
             配送單號 = null;
 
             商品 = 商品管理器.Instance.Get(廠商.編號, 商品序號);
+
+            出貨方式 = "廠商宅配出貨";
         }
 
         // 準備配送

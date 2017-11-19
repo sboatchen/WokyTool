@@ -66,6 +66,8 @@ namespace WokyTool.DataImport
         public string 無用_售價 { get; set; }
         public string 無用_成本 { get; set; }
         public DateTime 無用_出貨指示日 { get; set; }
+        public string 無用_重出貨 { get; set; }
+        public string 無用_超取入庫日 { get; set; }
         public string 無用_要求配送日 { get; set; }
         public string 無用_要求配送時間 { get; set; }
         public string 無用_電子發票號碼 { get; set; }
@@ -88,10 +90,10 @@ namespace WokyTool.DataImport
             }
         }
 
-        // 是否為需處理物件
-        override public bool IsRead()
+        // 是否忽略配送
+        override public bool IsIgnore()
         {
-            return 訂單類別.CompareTo(一般訂單) == 0;
+            return 訂單類別.CompareTo(一般訂單) != 0;
         }
 
         // 是否合法

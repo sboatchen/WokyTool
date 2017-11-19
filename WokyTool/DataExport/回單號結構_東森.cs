@@ -78,25 +78,29 @@ namespace WokyTool.DataExport
         public string 配送單號 { get { return _Data.配送單號; } }
         [CsvColumn(Name = "出貨指示日", FieldIndex = 22)]
         public string 無用_出貨指示日 { get { return _Data.無用_出貨指示日.ToShortDateString(); } }
-        [CsvColumn(Name = "要求配送日", FieldIndex = 23)]
+        [CsvColumn(Name = "重出貨", FieldIndex = 23)]
+        public string 無用_重出貨 { get { return _Data.無用_重出貨; } }
+        [CsvColumn(Name = "超取入庫日", FieldIndex = 24)]
+        public string 無用_超取入庫日 { get { return _Data.無用_超取入庫日; } }
+        [CsvColumn(Name = "要求配送日", FieldIndex = 25)]
         public string 無用_要求配送日 { get { return _Data.無用_要求配送日; } }
-        [CsvColumn(Name = "要求配送時間", FieldIndex = 24)]
+        [CsvColumn(Name = "要求配送時間", FieldIndex = 26)]
         public string 無用_要求配送時間 { get { return _Data.無用_要求配送時間; } }
-        [CsvColumn(Name = "備註", FieldIndex = 25)]
+        [CsvColumn(Name = "備註", FieldIndex = 27)]
         public string 備註 { get { return _Data.備註; } }
-        [CsvColumn(Name = "電子發票號碼", FieldIndex = 26)]
+        [CsvColumn(Name = "電子發票號碼", FieldIndex = 28)]
         public string 無用_電子發票號碼 { get { return _Data.無用_電子發票號碼; } }
-        [CsvColumn(Name = "識別碼", FieldIndex = 27)]
+        [CsvColumn(Name = "識別碼", FieldIndex = 29)]
         public string 無用_識別碼 { get { return _Data.無用_識別碼; } }
-        [CsvColumn(Name = "電子發票日期", FieldIndex = 28)]
+        [CsvColumn(Name = "電子發票日期", FieldIndex = 30)]
         public string 無用_電子發票日期 { get { return _Data.無用_電子發票日期.ToShortDateString(); } }
-        [CsvColumn(Name = "贈品", FieldIndex = 29)]
+        [CsvColumn(Name = "贈品", FieldIndex = 31)]
         public string 無用_贈品 { get { return _Data.無用_贈品; } }
-        [CsvColumn(Name = "廠商配送訊息", FieldIndex = 30)]
+        [CsvColumn(Name = "廠商配送訊息", FieldIndex = 32)]
         public string 無用_廠商配送訊息 { get { return _Data.無用_廠商配送訊息; } }
-        [CsvColumn(Name = "預計入庫日期", FieldIndex = 31)]
+        [CsvColumn(Name = "預計入庫日期", FieldIndex = 33)]
         public string 無用_預計入庫日期 { get { return _Data.無用_預計入庫日期.ToShortDateString(); } }
-        [CsvColumn(Name = "商品編號 ", FieldIndex = 32)]
+        [CsvColumn(Name = "商品編號 ", FieldIndex = 34)]
         public string 無用_商品編號 { get { return _Data.無用_商品編號; } }
     }
 }
