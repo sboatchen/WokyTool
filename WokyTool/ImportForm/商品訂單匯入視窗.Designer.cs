@@ -41,6 +41,7 @@
             this.pC購物中心ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.momoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.momo第三方ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.momo摩天ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.博客來ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.payEasyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.神坊ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +54,7 @@
             this.aSAPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.百利市ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.愛料理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uDesignToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.分組ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.配送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +64,7 @@
             this.pC專櫃ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pC商店街ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pC購物中心ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.momo摩天ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.博客來ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.payEasyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.神坊ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,17 +77,12 @@
             this.aSAPToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.百利市ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.愛料理ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.uDesignToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.測試ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.寄庫出貨 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.訂單編號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.指配時段類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.代收類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.配送公司類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.資料筆數 = new System.Windows.Forms.Label();
-            this.momo摩天ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.momo摩天ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.群組DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.訂單編號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.電話DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,19 +95,22 @@
             this.重要備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.指配日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.指配時段DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.指配時段類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.代收方式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.代收類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.配送公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.配送公司類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.配送單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品訂單資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uDesignToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uDesignToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.資料筆數 = new System.Windows.Forms.Label();
+            this.momo第三方ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段類型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收類型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司類型BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品訂單資料BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -229,6 +230,13 @@
             this.momo第三方ToolStripMenuItem.Text = "Momo(第三方)";
             this.momo第三方ToolStripMenuItem.Click += new System.EventHandler(this.momo第三方ToolStripMenuItem_Click);
             // 
+            // momo摩天ToolStripMenuItem
+            // 
+            this.momo摩天ToolStripMenuItem.Name = "momo摩天ToolStripMenuItem";
+            this.momo摩天ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.momo摩天ToolStripMenuItem.Text = "Momo摩天";
+            this.momo摩天ToolStripMenuItem.Click += new System.EventHandler(this.momo摩天ToolStripMenuItem_Click);
+            // 
             // 博客來ToolStripMenuItem
             // 
             this.博客來ToolStripMenuItem.Name = "博客來ToolStripMenuItem";
@@ -313,6 +321,13 @@
             this.愛料理ToolStripMenuItem.Text = "愛料理";
             this.愛料理ToolStripMenuItem.Click += new System.EventHandler(this.愛料理ToolStripMenuItem_Click);
             // 
+            // uDesignToolStripMenuItem
+            // 
+            this.uDesignToolStripMenuItem.Name = "uDesignToolStripMenuItem";
+            this.uDesignToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.uDesignToolStripMenuItem.Text = "uDesign";
+            this.uDesignToolStripMenuItem.Click += new System.EventHandler(this.uDesignToolStripMenuItem_Click);
+            // 
             // 分組ToolStripMenuItem
             // 
             this.分組ToolStripMenuItem.Name = "分組ToolStripMenuItem";
@@ -342,6 +357,7 @@
             this.pC專櫃ToolStripMenuItem,
             this.pC商店街ToolStripMenuItem,
             this.pC購物中心ToolStripMenuItem1,
+            this.momo第三方ToolStripMenuItem1,
             this.momo摩天ToolStripMenuItem1,
             this.博客來ToolStripMenuItem1,
             this.payEasyToolStripMenuItem1,
@@ -394,6 +410,13 @@
             this.pC購物中心ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.pC購物中心ToolStripMenuItem1.Text = "PC購物中心";
             this.pC購物中心ToolStripMenuItem1.Click += new System.EventHandler(this.pC購物中心ToolStripMenuItem1_Click);
+            // 
+            // momo摩天ToolStripMenuItem1
+            // 
+            this.momo摩天ToolStripMenuItem1.Name = "momo摩天ToolStripMenuItem1";
+            this.momo摩天ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.momo摩天ToolStripMenuItem1.Text = "Momo摩天";
+            this.momo摩天ToolStripMenuItem1.Click += new System.EventHandler(this.momo摩天ToolStripMenuItem1_Click);
             // 
             // 博客來ToolStripMenuItem1
             // 
@@ -479,6 +502,13 @@
             this.愛料理ToolStripMenuItem1.Text = "愛料理";
             this.愛料理ToolStripMenuItem1.Click += new System.EventHandler(this.愛料理ToolStripMenuItem1_Click);
             // 
+            // uDesignToolStripMenuItem1
+            // 
+            this.uDesignToolStripMenuItem1.Name = "uDesignToolStripMenuItem1";
+            this.uDesignToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.uDesignToolStripMenuItem1.Text = "uDesign";
+            this.uDesignToolStripMenuItem1.Click += new System.EventHandler(this.uDesignToolStripMenuItem1_Click);
+            // 
             // 測試ToolStripMenuItem
             // 
             this.測試ToolStripMenuItem.Name = "測試ToolStripMenuItem";
@@ -525,51 +555,17 @@
             this.寄庫出貨.HeaderText = "寄庫出貨";
             this.寄庫出貨.Name = "寄庫出貨";
             // 
-            // 訂單編號
-            // 
-            this.訂單編號.DataPropertyName = "訂單編號";
-            this.訂單編號.HeaderText = "訂單編號";
-            this.訂單編號.Name = "訂單編號";
-            // 
-            // 指配時段類型BindingSource
-            // 
-            this.指配時段類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.指配時段類型);
-            // 
-            // 代收類型BindingSource
-            // 
-            this.代收類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.代收類型);
-            // 
-            // 配送公司類型BindingSource
-            // 
-            this.配送公司類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.配送公司類型);
-            // 
-            // 資料筆數
-            // 
-            this.資料筆數.AutoSize = true;
-            this.資料筆數.Location = new System.Drawing.Point(965, 9);
-            this.資料筆數.Name = "資料筆數";
-            this.資料筆數.Size = new System.Drawing.Size(0, 12);
-            this.資料筆數.TabIndex = 3;
-            // 
-            // momo摩天ToolStripMenuItem
-            // 
-            this.momo摩天ToolStripMenuItem.Name = "momo摩天ToolStripMenuItem";
-            this.momo摩天ToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.momo摩天ToolStripMenuItem.Text = "Momo摩天";
-            this.momo摩天ToolStripMenuItem.Click += new System.EventHandler(this.momo摩天ToolStripMenuItem_Click);
-            // 
-            // momo摩天ToolStripMenuItem1
-            // 
-            this.momo摩天ToolStripMenuItem1.Name = "momo摩天ToolStripMenuItem1";
-            this.momo摩天ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.momo摩天ToolStripMenuItem1.Text = "Momo摩天";
-            this.momo摩天ToolStripMenuItem1.Click += new System.EventHandler(this.momo摩天ToolStripMenuItem1_Click);
-            // 
             // 群組DataGridViewTextBoxColumn
             // 
             this.群組DataGridViewTextBoxColumn.DataPropertyName = "群組";
             this.群組DataGridViewTextBoxColumn.HeaderText = "群組";
             this.群組DataGridViewTextBoxColumn.Name = "群組DataGridViewTextBoxColumn";
+            // 
+            // 訂單編號
+            // 
+            this.訂單編號.DataPropertyName = "訂單編號";
+            this.訂單編號.HeaderText = "訂單編號";
+            this.訂單編號.Name = "訂單編號";
             // 
             // 姓名DataGridViewTextBoxColumn
             // 
@@ -649,6 +645,10 @@
             this.指配時段DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.指配時段DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // 指配時段類型BindingSource
+            // 
+            this.指配時段類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.指配時段類型);
+            // 
             // 代收方式DataGridViewTextBoxColumn
             // 
             this.代收方式DataGridViewTextBoxColumn.DataPropertyName = "代收方式";
@@ -657,6 +657,10 @@
             this.代收方式DataGridViewTextBoxColumn.Name = "代收方式DataGridViewTextBoxColumn";
             this.代收方式DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.代收方式DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // 代收類型BindingSource
+            // 
+            this.代收類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.代收類型);
             // 
             // 代收金額DataGridViewTextBoxColumn
             // 
@@ -673,6 +677,10 @@
             this.配送公司DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.配送公司DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // 配送公司類型BindingSource
+            // 
+            this.配送公司類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.配送公司類型);
+            // 
             // 配送單號DataGridViewTextBoxColumn
             // 
             this.配送單號DataGridViewTextBoxColumn.DataPropertyName = "配送單號";
@@ -683,19 +691,20 @@
             // 
             this.商品訂單資料BindingSource.DataSource = typeof(WokyTool.Data.商品訂單資料);
             // 
-            // uDesignToolStripMenuItem
+            // 資料筆數
             // 
-            this.uDesignToolStripMenuItem.Name = "uDesignToolStripMenuItem";
-            this.uDesignToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.uDesignToolStripMenuItem.Text = "uDesign";
-            this.uDesignToolStripMenuItem.Click += new System.EventHandler(this.uDesignToolStripMenuItem_Click);
+            this.資料筆數.AutoSize = true;
+            this.資料筆數.Location = new System.Drawing.Point(965, 9);
+            this.資料筆數.Name = "資料筆數";
+            this.資料筆數.Size = new System.Drawing.Size(0, 12);
+            this.資料筆數.TabIndex = 3;
             // 
-            // uDesignToolStripMenuItem1
+            // momo第三方ToolStripMenuItem1
             // 
-            this.uDesignToolStripMenuItem1.Name = "uDesignToolStripMenuItem1";
-            this.uDesignToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.uDesignToolStripMenuItem1.Text = "uDesign";
-            this.uDesignToolStripMenuItem1.Click += new System.EventHandler(this.uDesignToolStripMenuItem1_Click);
+            this.momo第三方ToolStripMenuItem1.Name = "momo第三方ToolStripMenuItem1";
+            this.momo第三方ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.momo第三方ToolStripMenuItem1.Text = "Momo第三方";
+            this.momo第三方ToolStripMenuItem1.Click += new System.EventHandler(this.momo第三方ToolStripMenuItem1_Click);
             // 
             // 商品訂單匯入視窗
             // 
@@ -711,10 +720,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段類型BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收類型BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司類型BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品訂單資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -798,5 +807,6 @@
         private System.Windows.Forms.ToolStripMenuItem momo摩天ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem uDesignToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uDesignToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem momo第三方ToolStripMenuItem1;
     }
 }

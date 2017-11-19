@@ -942,5 +942,10 @@ namespace WokyTool.ImportForm
         {
             函式.GetFile("uDesign匯入樣板", "Template/OrderImport/uDesign匯入樣板.xlsx");
         }
+
+        private void momo第三方ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            函式.GetFile("Momo第三方匯入樣板", "Template/OrderImport/Momo第三方匯入樣板.xlsx");
+        }
     }
 }
