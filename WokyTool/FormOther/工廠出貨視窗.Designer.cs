@@ -33,20 +33,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.物品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.單價 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.物品訂單資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.姓名 = new System.Windows.Forms.TextBox();
             this.手機 = new System.Windows.Forms.TextBox();
             this.電話 = new System.Windows.Forms.TextBox();
             this.地址 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.物品訂單資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.物品編號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.物品顯示名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.單價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品訂單資料BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,62 +85,6 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "手機";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.物品名稱DataGridViewTextBoxColumn,
-            this.數量DataGridViewTextBoxColumn,
-            this.單價,
-            this.備註DataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.物品訂單資料BindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 75);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(694, 396);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
-            // 
-            // 物品名稱DataGridViewTextBoxColumn
-            // 
-            this.物品名稱DataGridViewTextBoxColumn.DataPropertyName = "物品編號";
-            this.物品名稱DataGridViewTextBoxColumn.DataSource = this.物品資料BindingSource;
-            this.物品名稱DataGridViewTextBoxColumn.DisplayMember = "名稱";
-            this.物品名稱DataGridViewTextBoxColumn.HeaderText = "物品名稱";
-            this.物品名稱DataGridViewTextBoxColumn.Name = "物品名稱DataGridViewTextBoxColumn";
-            this.物品名稱DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.物品名稱DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.物品名稱DataGridViewTextBoxColumn.ValueMember = "編號";
-            this.物品名稱DataGridViewTextBoxColumn.Width = 300;
-            // 
-            // 物品資料BindingSource
-            // 
-            this.物品資料BindingSource.DataSource = typeof(WokyTool.Data.物品資料);
-            // 
-            // 數量DataGridViewTextBoxColumn
-            // 
-            this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
-            this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
-            this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
-            // 
-            // 單價
-            // 
-            this.單價.DataPropertyName = "單價";
-            this.單價.HeaderText = "單價";
-            this.單價.Name = "單價";
-            // 
-            // 備註DataGridViewTextBoxColumn
-            // 
-            this.備註DataGridViewTextBoxColumn.DataPropertyName = "備註";
-            this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
-            this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
-            this.備註DataGridViewTextBoxColumn.Width = 150;
-            // 
-            // 物品訂單資料BindingSource
-            // 
-            this.物品訂單資料BindingSource.DataSource = typeof(WokyTool.Data.物品訂單資料);
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(313, 486);
@@ -180,25 +123,79 @@
             this.地址.Size = new System.Drawing.Size(207, 22);
             this.地址.TabIndex = 9;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.物品編號,
+            this.物品顯示名稱DataGridViewTextBoxColumn,
+            this.數量DataGridViewTextBoxColumn,
+            this.單價DataGridViewTextBoxColumn,
+            this.備註DataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.物品訂單資料BindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(15, 85);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(696, 375);
+            this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // 物品訂單資料BindingSource
+            // 
+            this.物品訂單資料BindingSource.DataSource = typeof(WokyTool.Data.物品訂單資料);
+            // 
+            // 物品編號
+            // 
+            this.物品編號.DataPropertyName = "物品編號";
+            this.物品編號.HeaderText = "物品編號";
+            this.物品編號.Name = "物品編號";
+            // 
+            // 物品顯示名稱DataGridViewTextBoxColumn
+            // 
+            this.物品顯示名稱DataGridViewTextBoxColumn.DataPropertyName = "物品顯示名稱";
+            this.物品顯示名稱DataGridViewTextBoxColumn.HeaderText = "物品";
+            this.物品顯示名稱DataGridViewTextBoxColumn.Name = "物品顯示名稱DataGridViewTextBoxColumn";
+            this.物品顯示名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.物品顯示名稱DataGridViewTextBoxColumn.Width = 250;
+            // 
+            // 數量DataGridViewTextBoxColumn
+            // 
+            this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
+            this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
+            this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
+            // 
+            // 單價DataGridViewTextBoxColumn
+            // 
+            this.單價DataGridViewTextBoxColumn.DataPropertyName = "單價";
+            this.單價DataGridViewTextBoxColumn.HeaderText = "單價";
+            this.單價DataGridViewTextBoxColumn.Name = "單價DataGridViewTextBoxColumn";
+            // 
+            // 備註DataGridViewTextBoxColumn
+            // 
+            this.備註DataGridViewTextBoxColumn.DataPropertyName = "備註";
+            this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
+            this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
+            // 
             // 工廠出貨視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 521);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.地址);
             this.Controls.Add(this.電話);
             this.Controls.Add(this.手機);
             this.Controls.Add(this.姓名);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "工廠出貨視窗";
             this.Text = "工廠出貨視窗";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.工廠出貨視窗_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品訂單資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -211,17 +208,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource 物品訂單資料BindingSource;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox 姓名;
         private System.Windows.Forms.TextBox 手機;
         private System.Windows.Forms.TextBox 電話;
         private System.Windows.Forms.TextBox 地址;
-        private System.Windows.Forms.BindingSource 物品資料BindingSource;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 物品名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource 物品訂單資料BindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 物品編號;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 物品顯示名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 單價;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 單價DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
     }
 }

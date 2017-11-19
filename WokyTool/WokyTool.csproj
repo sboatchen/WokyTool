@@ -78,6 +78,8 @@
     <Compile Include="Common\函式.cs" />
     <Compile Include="Common\可格式化_Csv.cs" />
     <Compile Include="Common\可樣板化_Excel.cs" />
+    <Compile Include="Common\可選擇子視窗.cs" />
+    <Compile Include="Common\可選擇父視窗.cs" />
     <Compile Include="Common\監測綁定.cs" />
     <Compile Include="Common\可運作.cs" />
     <Compile Include="Common\可配送.cs" />
@@ -160,17 +162,17 @@
     <Compile Include="FormOther\商品篩選視窗.Designer.cs">
       <DependentUpon>商品篩選視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormOther\工廠出貨視窗2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOther\工廠出貨視窗2.Designer.cs">
-      <DependentUpon>工廠出貨視窗2.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormOther\工廠出貨視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormOther\工廠出貨視窗.Designer.cs">
       <DependentUpon>工廠出貨視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOther\物品選擇視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOther\物品選擇視窗.Designer.cs">
+      <DependentUpon>物品選擇視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOther\銷售篩選視窗.cs">
       <SubType>Form</SubType>
@@ -419,11 +421,11 @@
     <EmbeddedResource Include="FormOther\商品篩選視窗.resx">
       <DependentUpon>商品篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormOther\工廠出貨視窗2.resx">
-      <DependentUpon>工廠出貨視窗2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormOther\工廠出貨視窗.resx">
       <DependentUpon>工廠出貨視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOther\物品選擇視窗.resx">
+      <DependentUpon>物品選擇視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOther\銷售篩選視窗.resx">
       <DependentUpon>銷售篩選視窗.cs</DependentUpon>

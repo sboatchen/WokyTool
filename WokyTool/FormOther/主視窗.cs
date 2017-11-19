@@ -333,13 +333,6 @@ namespace WokyTool
             i.BringToFront();
         }
 
-        private void button35_Click(object sender, EventArgs e)
-        {
-            var i = new 工廠出貨視窗2();
-            i.Show();
-            i.BringToFront();
-        }
-
         private void button27_Click(object sender, EventArgs e)
         {
             // 開啟存檔位置

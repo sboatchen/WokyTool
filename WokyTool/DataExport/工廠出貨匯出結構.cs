@@ -28,8 +28,16 @@ namespace WokyTool.DataExport
         // 設定資料
         public void SetData(Microsoft.Office.Interop.Excel.Application App_)
         {
+            if(_Data.Count <= 0)
+                return;
+
             App_.Cells[1, 2] = 共用.NowYMD;
             //App_.Cells[2,2] = "1235"; // 單號
+            App_.Cells[3, 2] = _Data[0].姓名;
+            if (_Data[0].手機.Length > 0)
+                App_.Cells[4, 2] = _Data[0].手機;
+            else
+                App_.Cells[4, 2] = _Data[0].電話;
 
             int Row_ = 8;
             int Total_ = 0;

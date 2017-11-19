@@ -14,28 +14,22 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.FormOther
 {
-    public partial class 工廠出貨視窗 : Form
+    public partial class 工廠出貨視窗 : Form, 可選擇父視窗<物品資料>
     {
+        protected 可選擇子視窗<物品資料> _子視窗 = null;
         protected List<物品訂單資料> _Source;
 
-        protected 監測綁定更新<物品資料> _物品資料Listener;
+        protected DataGridViewCell _NowCell;
+        
 
         public 工廠出貨視窗()
         {
             InitializeComponent();
 
-            _物品資料Listener = new 監測綁定更新<物品資料>(物品管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 物品資料更新);
-            _物品資料Listener.Refresh(true);
-
             _Source = new List<物品訂單資料>();
             BindingSource Binding_ = new BindingSource();
             Binding_.DataSource = _Source;
             this.dataGridView1.DataSource = Binding_;
-        }
-
-        private void 物品資料更新(IEnumerable<物品資料> Data_)
-        {
-            this.物品名稱DataGridViewTextBoxColumn.DataSource = Data_;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -99,9 +93,48 @@ namespace WokyTool.FormOther
             配送管理器.Instance.Add(CombineItem_);
         }
 
-        private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Console.WriteLine("1");
+            if (e.ColumnIndex != 1)
+                return;
+
+            _NowCell = this.dataGridView1.Rows[e.RowIndex].Cells[0];
+            int ID_ = (int)_NowCell.Value;
+            物品資料 Item_ = 物品管理器.Instance.Get(ID_);
+
+            if (_子視窗 == null)
+            {
+                _子視窗 = new WokyTool.FormOther.物品選擇視窗(this);
+            }
+
+            _子視窗.Show();
+            _子視窗.BringToFront();
+            _子視窗.SetDefaultSelect(Item_);
+        }
+
+        public void onChildClosing(子視窗<物品資料> Child_)
+        {
+            // do nothing
+        }
+
+        public void onClickFilter(子視窗<物品資料> Child_)
+        {
+            // remove
+        }
+
+        private void 工廠出貨視窗_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (_子視窗 != null)
+            {
+                _子視窗.Close();
+                _子視窗 = null;
+            }
+        }
+
+        public void onSelect(物品資料 Item_) 
+        {
+            if (_NowCell != null)
+                _NowCell.Value = Item_.編號;
         }
     }
 }
