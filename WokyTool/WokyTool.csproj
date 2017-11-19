@@ -91,6 +91,7 @@
     <Compile Include="Common\父視窗.cs" />
     <Compile Include="Common\資料讀寫.cs" />
     <Compile Include="Common\資料讀寫參數.cs" />
+    <Compile Include="Common\顏色處理.cs" />
     <Compile Include="DataExport\回單號結構_Momo摩天.cs" />
     <Compile Include="DataExport\回單號結構_uDesign.cs" />
     <Compile Include="DataExport\回單號結構_博客來.cs" />

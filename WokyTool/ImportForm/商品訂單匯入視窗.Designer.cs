@@ -64,6 +64,7 @@
             this.pC專櫃ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pC商店街ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pC購物中心ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.momo第三方ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.momo摩天ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.博客來ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.payEasyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -104,7 +105,6 @@
             this.配送單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品訂單資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.資料筆數 = new System.Windows.Forms.Label();
-            this.momo第三方ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).BeginInit();
@@ -379,133 +379,140 @@
             // goHappyToolStripMenuItem1
             // 
             this.goHappyToolStripMenuItem1.Name = "goHappyToolStripMenuItem1";
-            this.goHappyToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.goHappyToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.goHappyToolStripMenuItem1.Text = "GoHappy";
             this.goHappyToolStripMenuItem1.Click += new System.EventHandler(this.goHappyToolStripMenuItem1_Click);
             // 
             // 東森ToolStripMenuItem1
             // 
             this.東森ToolStripMenuItem1.Name = "東森ToolStripMenuItem1";
-            this.東森ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.東森ToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.東森ToolStripMenuItem1.Text = "東森";
             this.東森ToolStripMenuItem1.Click += new System.EventHandler(this.東森ToolStripMenuItem1_Click);
             // 
             // pC專櫃ToolStripMenuItem
             // 
             this.pC專櫃ToolStripMenuItem.Name = "pC專櫃ToolStripMenuItem";
-            this.pC專櫃ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pC專櫃ToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.pC專櫃ToolStripMenuItem.Text = "PC專櫃";
             this.pC專櫃ToolStripMenuItem.Click += new System.EventHandler(this.pC專櫃ToolStripMenuItem_Click);
             // 
             // pC商店街ToolStripMenuItem
             // 
             this.pC商店街ToolStripMenuItem.Name = "pC商店街ToolStripMenuItem";
-            this.pC商店街ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pC商店街ToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.pC商店街ToolStripMenuItem.Text = "PC商店街";
             this.pC商店街ToolStripMenuItem.Click += new System.EventHandler(this.pC商店街ToolStripMenuItem_Click);
             // 
             // pC購物中心ToolStripMenuItem1
             // 
             this.pC購物中心ToolStripMenuItem1.Name = "pC購物中心ToolStripMenuItem1";
-            this.pC購物中心ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.pC購物中心ToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.pC購物中心ToolStripMenuItem1.Text = "PC購物中心";
             this.pC購物中心ToolStripMenuItem1.Click += new System.EventHandler(this.pC購物中心ToolStripMenuItem1_Click);
+            // 
+            // momo第三方ToolStripMenuItem1
+            // 
+            this.momo第三方ToolStripMenuItem1.Name = "momo第三方ToolStripMenuItem1";
+            this.momo第三方ToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
+            this.momo第三方ToolStripMenuItem1.Text = "Momo第三方";
+            this.momo第三方ToolStripMenuItem1.Click += new System.EventHandler(this.momo第三方ToolStripMenuItem1_Click);
             // 
             // momo摩天ToolStripMenuItem1
             // 
             this.momo摩天ToolStripMenuItem1.Name = "momo摩天ToolStripMenuItem1";
-            this.momo摩天ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.momo摩天ToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.momo摩天ToolStripMenuItem1.Text = "Momo摩天";
             this.momo摩天ToolStripMenuItem1.Click += new System.EventHandler(this.momo摩天ToolStripMenuItem1_Click);
             // 
             // 博客來ToolStripMenuItem1
             // 
             this.博客來ToolStripMenuItem1.Name = "博客來ToolStripMenuItem1";
-            this.博客來ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.博客來ToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.博客來ToolStripMenuItem1.Text = "博客來";
             this.博客來ToolStripMenuItem1.Click += new System.EventHandler(this.博客來ToolStripMenuItem1_Click);
             // 
             // payEasyToolStripMenuItem1
             // 
             this.payEasyToolStripMenuItem1.Name = "payEasyToolStripMenuItem1";
-            this.payEasyToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.payEasyToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.payEasyToolStripMenuItem1.Text = "PayEasy";
             this.payEasyToolStripMenuItem1.Click += new System.EventHandler(this.payEasyToolStripMenuItem1_Click);
             // 
             // 神坊ToolStripMenuItem1
             // 
             this.神坊ToolStripMenuItem1.Name = "神坊ToolStripMenuItem1";
-            this.神坊ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.神坊ToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.神坊ToolStripMenuItem1.Text = "神坊";
             this.神坊ToolStripMenuItem1.Click += new System.EventHandler(this.神坊ToolStripMenuItem1_Click);
             // 
             // citiesocialToolStripMenuItem
             // 
             this.citiesocialToolStripMenuItem.Name = "citiesocialToolStripMenuItem";
-            this.citiesocialToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.citiesocialToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.citiesocialToolStripMenuItem.Text = "citiesocial";
             this.citiesocialToolStripMenuItem.Click += new System.EventHandler(this.citiesocialToolStripMenuItem_Click);
             // 
             // 遠傳ToolStripMenuItem1
             // 
             this.遠傳ToolStripMenuItem1.Name = "遠傳ToolStripMenuItem1";
-            this.遠傳ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.遠傳ToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.遠傳ToolStripMenuItem1.Text = "遠傳";
             this.遠傳ToolStripMenuItem1.Click += new System.EventHandler(this.遠傳ToolStripMenuItem1_Click);
             // 
             // 遠傳加購ToolStripMenuItem1
             // 
             this.遠傳加購ToolStripMenuItem1.Name = "遠傳加購ToolStripMenuItem1";
-            this.遠傳加購ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.遠傳加購ToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.遠傳加購ToolStripMenuItem1.Text = "遠傳加購";
             this.遠傳加購ToolStripMenuItem1.Click += new System.EventHandler(this.遠傳加購ToolStripMenuItem1_Click);
             // 
             // myfoneToolStripMenuItem1
             // 
             this.myfoneToolStripMenuItem1.Name = "myfoneToolStripMenuItem1";
-            this.myfoneToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.myfoneToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.myfoneToolStripMenuItem1.Text = "myfone";
             this.myfoneToolStripMenuItem1.Click += new System.EventHandler(this.myfoneToolStripMenuItem1_Click);
             // 
             // ibonMartToolStripMenuItem1
             // 
             this.ibonMartToolStripMenuItem1.Name = "ibonMartToolStripMenuItem1";
-            this.ibonMartToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.ibonMartToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.ibonMartToolStripMenuItem1.Text = "ibon mart";
             this.ibonMartToolStripMenuItem1.Click += new System.EventHandler(this.ibonMartToolStripMenuItem1_Click);
             // 
             // 金石堂ToolStripMenuItem1
             // 
             this.金石堂ToolStripMenuItem1.Name = "金石堂ToolStripMenuItem1";
-            this.金石堂ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.金石堂ToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.金石堂ToolStripMenuItem1.Text = "金石堂";
             this.金石堂ToolStripMenuItem1.Click += new System.EventHandler(this.金石堂ToolStripMenuItem1_Click);
             // 
             // aSAPToolStripMenuItem1
             // 
             this.aSAPToolStripMenuItem1.Name = "aSAPToolStripMenuItem1";
-            this.aSAPToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.aSAPToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.aSAPToolStripMenuItem1.Text = "ASAP";
             this.aSAPToolStripMenuItem1.Click += new System.EventHandler(this.aSAPToolStripMenuItem1_Click);
             // 
             // 百利市ToolStripMenuItem1
             // 
             this.百利市ToolStripMenuItem1.Name = "百利市ToolStripMenuItem1";
-            this.百利市ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.百利市ToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.百利市ToolStripMenuItem1.Text = "百利市";
             this.百利市ToolStripMenuItem1.Click += new System.EventHandler(this.百利市ToolStripMenuItem1_Click);
             // 
             // 愛料理ToolStripMenuItem1
             // 
             this.愛料理ToolStripMenuItem1.Name = "愛料理ToolStripMenuItem1";
-            this.愛料理ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.愛料理ToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.愛料理ToolStripMenuItem1.Text = "愛料理";
             this.愛料理ToolStripMenuItem1.Click += new System.EventHandler(this.愛料理ToolStripMenuItem1_Click);
             // 
             // uDesignToolStripMenuItem1
             // 
             this.uDesignToolStripMenuItem1.Name = "uDesignToolStripMenuItem1";
-            this.uDesignToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.uDesignToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.uDesignToolStripMenuItem1.Text = "uDesign";
             this.uDesignToolStripMenuItem1.Click += new System.EventHandler(this.uDesignToolStripMenuItem1_Click);
             // 
@@ -548,6 +555,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1087, 455);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
             // 寄庫出貨
             // 
@@ -698,13 +706,6 @@
             this.資料筆數.Name = "資料筆數";
             this.資料筆數.Size = new System.Drawing.Size(0, 12);
             this.資料筆數.TabIndex = 3;
-            // 
-            // momo第三方ToolStripMenuItem1
-            // 
-            this.momo第三方ToolStripMenuItem1.Name = "momo第三方ToolStripMenuItem1";
-            this.momo第三方ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.momo第三方ToolStripMenuItem1.Text = "Momo第三方";
-            this.momo第三方ToolStripMenuItem1.Click += new System.EventHandler(this.momo第三方ToolStripMenuItem1_Click);
             // 
             // 商品訂單匯入視窗
             // 

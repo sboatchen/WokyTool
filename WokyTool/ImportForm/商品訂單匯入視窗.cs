@@ -402,9 +402,33 @@ namespace WokyTool.ImportForm
                         Item_.Init();
                         _Source.AddRange(Item_.ToList());
                     }
+
+                    _Source = _Source.Where(Value => Value.IsIgnore() == false).ToList();
                     _Source.Sort();
 
-                    this.dataGridView1.DataSource = _Source.Where(Value => Value.IsIgnore() == false).ToList();
+                    // pre group
+                    商品訂單資料 NowCheck_ = null;
+                    int NowGroup_ = 1001;
+                    foreach(var Item_ in _Source){
+                        if (NowCheck_ == null)
+                        {
+                            NowCheck_ = Item_;
+                            continue;
+                        }
+
+                        if (NowCheck_.CompareTo(Item_) == 0)
+                        {
+                            NowCheck_.群組 = NowGroup_;
+                            Item_.群組 = NowGroup_;
+                        }
+                        else 
+                        {
+                            NowCheck_ = Item_;
+                            NowGroup_++;
+                        }
+                    }
+
+                    this.dataGridView1.DataSource = _Source;
 
                     if (_Source.Where(Value => Value.IsLegal() == false).Count() > 0)
                     {
@@ -946,6 +970,15 @@ namespace WokyTool.ImportForm
         private void momo第三方ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             函式.GetFile("Momo第三方匯入樣板", "Template/OrderImport/Momo第三方匯入樣板.xlsx");
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow Myrow in dataGridView1.Rows)
+            {
+                int value = Convert.ToInt32(Myrow.Cells[1].Value);
+                Myrow.DefaultCellStyle.BackColor = 顏色處理.GetRandomColor(value);
+            }
         }
     }
 }
