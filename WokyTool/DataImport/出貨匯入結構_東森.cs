@@ -18,6 +18,7 @@ namespace WokyTool.DataImport
     class 出貨匯入結構_東森 : 商品訂單資料
     {
         private static string 一般訂單 = "一般訂單";
+        private static string 員購訂單 = "員購訂單";
 
         /* 可讀入資訊 */
 
@@ -93,7 +94,8 @@ namespace WokyTool.DataImport
         // 是否忽略配送
         override public bool IsIgnore()
         {
-            return 訂單類別.CompareTo(一般訂單) != 0;
+            return  (訂單類別.CompareTo(一般訂單) != 0) && 
+                    (訂單類別.CompareTo(員購訂單) != 0);
         }
 
         // 是否合法

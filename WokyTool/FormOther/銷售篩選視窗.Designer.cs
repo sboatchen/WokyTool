@@ -28,11 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.幣值資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.幣值資料BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -69,7 +74,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(107, 82);
+            this.button1.Location = new System.Drawing.Point(107, 116);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -77,11 +82,37 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "廠商";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.幣值資料BindingSource;
+            this.comboBox1.DisplayMember = "名稱";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(59, 87);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 20);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.ValueMember = "名稱";
+            // 
+            // 幣值資料BindingSource
+            // 
+            this.幣值資料BindingSource.DataSource = typeof(WokyTool.Data.幣值資料);
+            // 
             // 銷售篩選視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 117);
+            this.ClientSize = new System.Drawing.Size(284, 151);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label2);
@@ -90,6 +121,7 @@
             this.Name = "銷售篩選視窗";
             this.Text = "銷售篩選視窗";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.銷售篩選視窗_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.幣值資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +134,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource 幣值資料BindingSource;
     }
 }

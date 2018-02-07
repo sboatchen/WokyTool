@@ -89,7 +89,13 @@ namespace WokyTool.FormOverview
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("尚未實作", 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            var ItemGroup_ = _Source
+                                .GroupBy(
+                                    Value => Value.廠商,
+                                    Value => new 銷售匯出結構(Value));
+
+            string Title_ = String.Format("銷售匯出_{0}", 共用.NowYMDDec);
+            函式.ExportExcel<銷售匯出結構>(Title_, ItemGroup_);
         }
 
         private void 結算ToolStripMenuItem_Click(object sender, EventArgs e)

@@ -62,7 +62,6 @@
             this.盤點出貨 = new System.Windows.Forms.Button();
             this.button32 = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
-            this.button34 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -327,7 +326,7 @@
             // 
             // button27
             // 
-            this.button27.Location = new System.Drawing.Point(464, 14);
+            this.button27.Location = new System.Drawing.Point(616, 12);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(75, 23);
             this.button27.TabIndex = 26;
@@ -397,30 +396,19 @@
             // 
             // button33
             // 
-            this.button33.Location = new System.Drawing.Point(545, 14);
+            this.button33.Location = new System.Drawing.Point(325, 102);
             this.button33.Name = "button33";
             this.button33.Size = new System.Drawing.Size(75, 23);
             this.button33.TabIndex = 33;
-            this.button33.Text = "測試2";
+            this.button33.Text = "條碼更新";
             this.button33.UseVisualStyleBackColor = true;
             this.button33.Click += new System.EventHandler(this.button33_Click);
-            // 
-            // button34
-            // 
-            this.button34.Location = new System.Drawing.Point(626, 14);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(75, 23);
-            this.button34.TabIndex = 34;
-            this.button34.Text = "測試3";
-            this.button34.UseVisualStyleBackColor = true;
-            this.button34.Click += new System.EventHandler(this.button34_Click);
             // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 468);
-            this.Controls.Add(this.button34);
             this.Controls.Add(this.button33);
             this.Controls.Add(this.button32);
             this.Controls.Add(this.盤點出貨);
@@ -498,7 +486,6 @@
         private System.Windows.Forms.Button 盤點出貨;
         private System.Windows.Forms.Button button32;
         private System.Windows.Forms.Button button33;
-        private System.Windows.Forms.Button button34;
 
 
     }

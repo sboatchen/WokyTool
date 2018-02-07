@@ -19,19 +19,19 @@ namespace WokyTool.Data
         public DateTime 時間 { get; set; }
 
         [CsvColumn(FieldIndex = 2)]
-        public string 物品編號字串 { get; set; }
+        public string 物品條碼字串 { get; set; }
 
         public 物品資料 物品 = 物品資料.NULL;
         [JsonProperty]
-        public int 物品編號
+        public string 物品條碼
         {
             get
             {
-                return 物品.編號;
+                return 物品.條碼;
             }
             set
             {
-                物品 = 物品管理器.Instance.Get(value);
+                物品 = 物品管理器.Instance.GetByCode(value);
             }
         }
 
@@ -69,11 +69,11 @@ namespace WokyTool.Data
 
             try
             {
-                物品編號 = Int32.Parse(物品編號字串);
+                物品條碼 = 物品條碼字串;
             }
             catch
             {
-                MessageBox.Show("盤點資料::Init 編號讀取錯誤," + 物品編號字串, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("盤點資料::Init 編號讀取錯誤," + 物品條碼字串, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

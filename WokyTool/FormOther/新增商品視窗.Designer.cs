@@ -160,7 +160,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(339, 197);
+            this.label7.Location = new System.Drawing.Point(470, 197);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 8;
@@ -249,7 +249,7 @@
             this.需求1.FormattingEnabled = true;
             this.需求1.Location = new System.Drawing.Point(47, 194);
             this.需求1.Name = "需求1";
-            this.需求1.Size = new System.Drawing.Size(288, 20);
+            this.需求1.Size = new System.Drawing.Size(417, 20);
             this.需求1.TabIndex = 24;
             this.需求1.ValueMember = "編號";
             this.需求1.DropDown += new System.EventHandler(this.需求1_DropDown);
@@ -266,7 +266,7 @@
             this.需求2.FormattingEnabled = true;
             this.需求2.Location = new System.Drawing.Point(47, 223);
             this.需求2.Name = "需求2";
-            this.需求2.Size = new System.Drawing.Size(288, 20);
+            this.需求2.Size = new System.Drawing.Size(417, 20);
             this.需求2.TabIndex = 26;
             this.需求2.ValueMember = "編號";
             this.需求2.DropDown += new System.EventHandler(this.需求2_DropDown);
@@ -279,7 +279,7 @@
             this.需求3.FormattingEnabled = true;
             this.需求3.Location = new System.Drawing.Point(47, 251);
             this.需求3.Name = "需求3";
-            this.需求3.Size = new System.Drawing.Size(288, 20);
+            this.需求3.Size = new System.Drawing.Size(417, 20);
             this.需求3.TabIndex = 28;
             this.需求3.ValueMember = "編號";
             this.需求3.DropDown += new System.EventHandler(this.需求3_DropDown);
@@ -292,7 +292,7 @@
             this.需求4.FormattingEnabled = true;
             this.需求4.Location = new System.Drawing.Point(47, 278);
             this.需求4.Name = "需求4";
-            this.需求4.Size = new System.Drawing.Size(288, 20);
+            this.需求4.Size = new System.Drawing.Size(417, 20);
             this.需求4.TabIndex = 30;
             this.需求4.ValueMember = "編號";
             this.需求4.DropDown += new System.EventHandler(this.需求4_DropDown);
@@ -305,7 +305,7 @@
             this.需求5.FormattingEnabled = true;
             this.需求5.Location = new System.Drawing.Point(47, 307);
             this.需求5.Name = "需求5";
-            this.需求5.Size = new System.Drawing.Size(288, 20);
+            this.需求5.Size = new System.Drawing.Size(417, 20);
             this.需求5.TabIndex = 32;
             this.需求5.ValueMember = "編號";
             this.需求5.DropDown += new System.EventHandler(this.需求5_DropDown);
@@ -323,7 +323,7 @@
             // 
             // 數量1
             // 
-            this.數量1.Location = new System.Drawing.Point(374, 195);
+            this.數量1.Location = new System.Drawing.Point(505, 195);
             this.數量1.Name = "數量1";
             this.數量1.Size = new System.Drawing.Size(62, 22);
             this.數量1.TabIndex = 34;
@@ -331,7 +331,7 @@
             // 
             // 數量5
             // 
-            this.數量5.Location = new System.Drawing.Point(374, 307);
+            this.數量5.Location = new System.Drawing.Point(505, 307);
             this.數量5.Name = "數量5";
             this.數量5.Size = new System.Drawing.Size(62, 22);
             this.數量5.TabIndex = 35;
@@ -339,7 +339,7 @@
             // 
             // 數量4
             // 
-            this.數量4.Location = new System.Drawing.Point(374, 279);
+            this.數量4.Location = new System.Drawing.Point(505, 279);
             this.數量4.Name = "數量4";
             this.數量4.Size = new System.Drawing.Size(62, 22);
             this.數量4.TabIndex = 36;
@@ -347,7 +347,7 @@
             // 
             // 數量3
             // 
-            this.數量3.Location = new System.Drawing.Point(374, 251);
+            this.數量3.Location = new System.Drawing.Point(505, 251);
             this.數量3.Name = "數量3";
             this.數量3.Size = new System.Drawing.Size(62, 22);
             this.數量3.TabIndex = 37;
@@ -355,7 +355,7 @@
             // 
             // 數量2
             // 
-            this.數量2.Location = new System.Drawing.Point(374, 223);
+            this.數量2.Location = new System.Drawing.Point(505, 223);
             this.數量2.Name = "數量2";
             this.數量2.Size = new System.Drawing.Size(62, 22);
             this.數量2.TabIndex = 38;
@@ -416,7 +416,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 431);
+            this.ClientSize = new System.Drawing.Size(580, 431);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.公司);
             this.Controls.Add(this.label1);

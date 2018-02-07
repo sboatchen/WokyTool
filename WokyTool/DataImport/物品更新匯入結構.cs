@@ -11,14 +11,6 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.DataImport
 {
-    public enum 更新狀態
-    {
-        錯誤,
-        新增,
-        相同,
-        更新,
-    };
-
     [JsonObject(MemberSerialization.OptIn)]
     class 物品更新匯入結構 : 可格式化_Excel
     {
@@ -42,7 +34,7 @@ namespace WokyTool.DataImport
         public int 最後進貨成本 { get; set; }
 
         [JsonProperty]
-        public 更新狀態 狀態 { get; set; }
+        public 列舉.更新狀態 狀態 { get; set; }
         [JsonProperty]
         public string 更新訊息 { get; set; }
         [JsonProperty]
@@ -80,7 +72,7 @@ namespace WokyTool.DataImport
 
             // 檢查為更新或相同的資料
             {
-                狀態 = 更新狀態.相同;
+                狀態 = 列舉.更新狀態.相同;
 
                 StringBuilder sb_ = new StringBuilder();
 
@@ -97,7 +89,7 @@ namespace WokyTool.DataImport
 
                 if (sb_.Length > 0)
                 {
-                    狀態 = 更新狀態.更新;
+                    狀態 = 列舉.更新狀態.更新;
                     更新訊息 = sb_.ToString();
 
                     int 內庫數量差異 = 數量 - 更新目標物品.內庫數量;
@@ -115,7 +107,7 @@ namespace WokyTool.DataImport
         {
             if (名稱 == null || 名稱.Length == 0 || 縮寫 == null || 縮寫.Length == 0)
             {
-                狀態 = 更新狀態.錯誤;
+                狀態 = 列舉.更新狀態.錯誤;
                 更新訊息 = 字串.名稱不合法;
                 
                 return true;
@@ -135,7 +127,7 @@ namespace WokyTool.DataImport
                     return false;
             }
 
-            狀態 = 更新狀態.新增;
+            狀態 = 列舉.更新狀態.新增;
             總成本異動 = 數量 * 最後進貨成本;
             return true;
         }
@@ -175,19 +167,19 @@ namespace WokyTool.DataImport
         {
             switch(狀態)
             {
-                case 更新狀態.錯誤:
+                case 列舉.更新狀態.錯誤:
                     MessageBox.Show(ToString(), 字串.匯入異常, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
-                case 更新狀態.新增:
+                case 列舉.更新狀態.新增:
                 {
                     更新目標物品 = 物品資料.New();
                     Synchronize(更新目標物品);
                     物品管理器.Instance.Add(更新目標物品);
                     break;
                 }
-                case 更新狀態.相同:
+                case 列舉.更新狀態.相同:
                     break;
-                case 更新狀態.更新:
+                case 列舉.更新狀態.更新:
                 {
                     Synchronize(更新目標物品);
                     //@@

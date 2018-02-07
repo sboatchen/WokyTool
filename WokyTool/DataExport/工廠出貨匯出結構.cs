@@ -32,12 +32,18 @@ namespace WokyTool.DataExport
                 return;
 
             App_.Cells[1, 2] = 共用.NowYMD;
-            //App_.Cells[2,2] = "1235"; // 單號
-            App_.Cells[3, 2] = _Data[0].姓名;
-            if (_Data[0].手機.Length > 0)
-                App_.Cells[4, 2] = _Data[0].手機;
+            App_.Cells[2, 2] = _Data[0].姓名;
+            if (_Data[0].電話.CompareTo(_Data[0].手機) != 0 )
+            {
+                App_.Cells[3, 2] = _Data[0].電話;
+                App_.Cells[3, 3] = _Data[0].手機;
+            }
             else
-                App_.Cells[4, 2] = _Data[0].電話;
+            {
+                App_.Cells[3, 2] = _Data[0].電話;
+            }
+
+            App_.Cells[4, 2] = _Data[0].地址;
 
             int Row_ = 8;
             int Total_ = 0;
@@ -55,6 +61,7 @@ namespace WokyTool.DataExport
                 App_.Cells[Row_, 5] = Item_.數量;
                 App_.Cells[Row_, 6] = Item_.單價;
                 App_.Cells[Row_, 7] = Item_.總金額;
+                App_.Cells[Row_, 8] = Item_.備註;
                 Total_ += Item_.總金額;
 
                 Row_++;

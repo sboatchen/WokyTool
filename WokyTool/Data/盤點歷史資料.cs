@@ -39,7 +39,7 @@ namespace WokyTool.Data
             {
                 編號 = 編碼管理器.Instance.Get(列舉.編碼類型.盤點),
                 時間 = From_.時間,
-                物品編號 = From_.物品編號,
+                物品編號 = From_.物品.編號,
                 數量 = From_.數量,
                 類型 = From_.類型,
             };

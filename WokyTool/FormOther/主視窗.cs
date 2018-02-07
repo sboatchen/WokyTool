@@ -324,6 +324,8 @@ namespace WokyTool
         private void 盤點出貨_Click(object sender, EventArgs e)
         {
             var i = new 盤點出貨匯入視窗();
+            i.Show();
+            i.BringToFront();
         }
 
         private void button32_Click(object sender, EventArgs e)
@@ -334,6 +336,26 @@ namespace WokyTool
         }
 
         private void button27_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Excel files|*.*";
+
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                出貨匯入結構_夠麻吉.Read(openFileDialog1.FileName);
+            }
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            var i = new 條碼更新匯入視窗();
+            i.Show();
+            i.BringToFront();
+        }
+
+
+
+        /*private void button27_Click(object sender, EventArgs e)
         {
             // 開啟存檔位置
             SaveFileDialog dlg = new SaveFileDialog();
@@ -454,6 +476,6 @@ namespace WokyTool
                 if (App != null)
                     App.Quit();
             }
-        }
+        }*/
     }
 }

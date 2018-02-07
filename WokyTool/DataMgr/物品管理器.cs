@@ -130,6 +130,22 @@ namespace WokyTool.DataMgr
                 return Item_;
         }
 
+        // 取得資料 - 匯入資料時用，找不到時不會報錯
+        public 物品資料 GetByCode(string Code)
+        {
+            if (Code == null || Code.Length == 0)
+                return 物品資料.NULL;
+
+            物品資料 Item_ = Map.Values
+                                .Where(Value => Value.條碼.Equals(Code))
+                                .FirstOrDefault();
+
+            if (Item_ == null)
+                return 物品資料.ERROR;
+            else
+                return Item_;
+        }
+
         // 新增資料
         public void Add(物品資料 Item_)
         {

@@ -33,12 +33,12 @@
             this.新增ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.刪除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.盤點資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.時間DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.物品編號字串DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.物品編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.盤點資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).BeginInit();
@@ -89,6 +89,14 @@
             this.dataGridView1.Size = new System.Drawing.Size(645, 412);
             this.dataGridView1.TabIndex = 1;
             // 
+            // 物品資料BindingSource
+            // 
+            this.物品資料BindingSource.DataSource = typeof(WokyTool.Data.物品資料);
+            // 
+            // 盤點資料BindingSource
+            // 
+            this.盤點資料BindingSource.DataSource = typeof(WokyTool.Data.盤點資料);
+            // 
             // 時間DataGridViewTextBoxColumn
             // 
             this.時間DataGridViewTextBoxColumn.DataPropertyName = "時間";
@@ -97,8 +105,8 @@
             // 
             // 物品編號字串DataGridViewTextBoxColumn
             // 
-            this.物品編號字串DataGridViewTextBoxColumn.DataPropertyName = "物品編號字串";
-            this.物品編號字串DataGridViewTextBoxColumn.HeaderText = "物品編號";
+            this.物品編號字串DataGridViewTextBoxColumn.DataPropertyName = "物品條碼字串";
+            this.物品編號字串DataGridViewTextBoxColumn.HeaderText = "物品條碼";
             this.物品編號字串DataGridViewTextBoxColumn.Name = "物品編號字串DataGridViewTextBoxColumn";
             // 
             // 物品編號DataGridViewTextBoxColumn
@@ -113,19 +121,11 @@
             this.物品編號DataGridViewTextBoxColumn.ValueMember = "編號";
             this.物品編號DataGridViewTextBoxColumn.Width = 300;
             // 
-            // 物品資料BindingSource
-            // 
-            this.物品資料BindingSource.DataSource = typeof(WokyTool.Data.物品資料);
-            // 
             // 數量DataGridViewTextBoxColumn
             // 
             this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
             this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
             this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
-            // 
-            // 盤點資料BindingSource
-            // 
-            this.盤點資料BindingSource.DataSource = typeof(WokyTool.Data.盤點資料);
             // 
             // 盤點出貨匯入視窗
             // 
@@ -155,11 +155,11 @@
         private System.Windows.Forms.ToolStripMenuItem 刪除ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewComboBoxColumn 物品;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource 物品資料BindingSource;
+        private System.Windows.Forms.BindingSource 盤點資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 時間DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 物品編號字串DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 物品編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 物品資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 盤點資料BindingSource;
     }
 }

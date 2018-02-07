@@ -27,7 +27,7 @@ namespace WokyTool.DataExport
         {
             get
             {
-                return String.Format("{0:0000000000000}", _Data.編號);
+                return String.Format("{0:0000000000000}", _Data.條碼);
             }
         }
 

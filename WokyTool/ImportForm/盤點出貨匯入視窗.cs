@@ -24,7 +24,12 @@ namespace WokyTool.ImportForm
         {
             InitializeComponent();
 
-            IEnumerable<盤點資料> origin_ = null;//@@ 資料讀寫.ImportCSV<盤點資料>(資料讀寫.CSV無標頭讀取格式);
+            資料讀寫參數CSV Param_ = new 資料讀寫參數CSV()
+            {
+                檔案格式 = 列舉.檔案格式類型.CSV,
+                CSV描述 = 資料讀寫參數CSV.無標頭讀取格式
+            };
+            IEnumerable<盤點資料> origin_ = 資料讀寫.ImportCSV<盤點資料>(Param_);
             if (origin_ == null) 
             {
                 this.Close();
@@ -127,9 +132,6 @@ namespace WokyTool.ImportForm
                 Item_.物品.Sell(false, Item_.數量);
                 History_.Add(HistoryItem_);
             }
-
-            
-            //@@IEnumerable<盤點資料> origin_ = 資料讀寫.ImportCSV<盤點資料>(資料讀寫.CSV無標頭讀取格式);
 
             //@@ 應小胖需求，強制存檔
             函式.SaveAll();

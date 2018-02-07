@@ -148,7 +148,7 @@ namespace WokyTool.Data
 
                 數量 = From_.數量,
                 成本 = From_.商品.成本,
-                售價 = 0
+                售價 = From_.單價,
             };
         }
 
@@ -188,7 +188,7 @@ namespace WokyTool.Data
 
                 數量 = From_.數量,
                 成本 = From_.物品.成本,
-                售價 = 0
+                售價 = From_.單價,
             };
         }
 

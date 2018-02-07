@@ -20,6 +20,18 @@ namespace WokyTool.Data
         [CsvColumn(Name = "名稱")]
         public string 名稱 { get; set; }
 
+        [CsvColumn(Name = "聯絡人")]
+        public string 聯絡人 { get; set; }
+
+        [CsvColumn(Name = "電話")]
+        public string 電話 { get; set; }
+
+        [CsvColumn(Name = "手機")]
+        public string 手機 { get; set; }
+
+        [CsvColumn(Name = "出貨地址")]
+        public string 出貨地址 { get; set; }
+
         public static 廠商資料 New()
         {
             return new 廠商資料
@@ -27,6 +39,10 @@ namespace WokyTool.Data
                 編號 = 編碼管理器.Instance.Get(列舉.編碼類型.廠商),
                 開啟 = true,
                 名稱 = 字串.空,
+                聯絡人 = 字串.空,
+                電話 = 字串.空,
+                手機 = 字串.空,
+                出貨地址 = 字串.空,
             };
         }
 
@@ -35,6 +51,10 @@ namespace WokyTool.Data
             編號 = 常數.空白資料編碼,
             開啟 = false,
             名稱 = 字串.無,
+            聯絡人 = 字串.無,
+            電話 = 字串.無,
+            手機 = 字串.無,
+            出貨地址 = 字串.無,
         };
         public static 廠商資料 NULL
         {
@@ -49,6 +69,10 @@ namespace WokyTool.Data
             編號 = 常數.錯誤資料編碼,
             開啟 = false,
             名稱 = 字串.錯誤,
+            聯絡人 = 字串.無,
+            電話 = 字串.無,
+            手機 = 字串.無,
+            出貨地址 = 字串.無,
         };
         public static 廠商資料 ERROR
         {

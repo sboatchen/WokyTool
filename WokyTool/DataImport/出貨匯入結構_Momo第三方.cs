@@ -74,6 +74,7 @@ namespace WokyTool.DataImport
         public string 無用_發票日期 { get; set; }
         public string 無用_個人識別碼 { get; set; }
         public string 無用_群組變價商品 { get; set; }
+        public string 無用_付款方式 { get; set; }
 
         // 是否為不處理的資料
         private bool _IsIgnore;

@@ -54,25 +54,13 @@ namespace WokyTool.Data
             }
         }
 
-        [JsonProperty]
-        public int 單價 { get; set; }
-
-        [JsonProperty]
-        public int 總金額
-        {
-            get
-            {
-                return 單價 * 數量;
-            }
-        }
-
         public string 廠商名稱 { get; set; }
         public string 物品名稱 { get; set; }
 
         // 是否合法
         override public bool IsLegal()
         {
-            return IsIgnore() || (物品 != null && 物品.編號 > 0 && 數量 > 0);
+            return IsIgnore() || (物品 != null && 物品.編號 > 0 && 數量 != 0);
         }
         
         // 初始化
@@ -125,6 +113,14 @@ namespace WokyTool.Data
         public override string ToString()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
+
+        public 列舉.銷售狀態類型 getType()
+        {
+            if (數量 > 0)
+                return 列舉.銷售狀態類型.出貨;
+            else
+                return 列舉.銷售狀態類型.退貨;
         }
     }
 }

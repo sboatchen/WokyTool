@@ -20,7 +20,8 @@ namespace WokyTool.FormOther
         protected List<物品訂單資料> _Source;
 
         protected DataGridViewCell _NowCell;
-        
+
+        protected 監測綁定更新<廠商資料> _廠商資料Listener;
 
         public 工廠出貨視窗()
         {
@@ -30,10 +31,22 @@ namespace WokyTool.FormOther
             BindingSource Binding_ = new BindingSource();
             Binding_.DataSource = _Source;
             this.dataGridView1.DataSource = Binding_;
+
+            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 廠商資料更新);
+            _廠商資料Listener.Refresh(true);
+        }
+
+        public void 廠商資料更新(IEnumerable<廠商資料> Data_)
+        {
+            this.廠商comboBox.DataSource = Data_;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            廠商資料 廠商_ = (廠商資料)this.廠商comboBox.SelectedItem;
+            if(廠商_ == null)
+                廠商_ = 廠商資料.NULL;
+
             String Name_ = this.姓名.Text;
             if (Name_.Length == 0)
             {
@@ -66,7 +79,7 @@ namespace WokyTool.FormOther
                 Item_.地址 = Address_;
                 Item_.電話 = HomePhone_;
                 Item_.手機 = CellPhone_;
-                Item_.廠商 = 廠商資料.NULL;
+                Item_.廠商 = 廠商_;
 
                 if (Item_.IsLegal() == false)
                 {
@@ -86,11 +99,16 @@ namespace WokyTool.FormOther
             合併訂單資料 CombineItem_ = new 合併訂單資料();
             foreach (物品訂單資料 Item_ in _Source)
             {
+                if (Item_.getType() != 列舉.銷售狀態類型.出貨)    //@@ 目前只有先不處理 後續要思考怎麼處理
+                    continue;
+
                 if (CombineItem_.Add(Item_) == false)
                     return;
             }
             CombineItem_.PrepareDiliver();
             配送管理器.Instance.Add(CombineItem_);
+
+            this.Close();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -135,6 +153,18 @@ namespace WokyTool.FormOther
         {
             if (_NowCell != null)
                 _NowCell.Value = Item_.編號;
+        }
+
+        private void 廠商comboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            廠商資料 Data_ = (廠商資料)this.廠商comboBox.SelectedItem;
+            if (Data_ == null || Data_.編號 <= 常數.空白資料編碼)
+                return;
+
+            this.姓名.Text = Data_.聯絡人;
+            this.地址.Text = Data_.出貨地址;
+            this.電話.Text = Data_.電話;
+            this.手機.Text = Data_.手機;
         }
     }
 }

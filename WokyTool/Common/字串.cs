@@ -23,6 +23,7 @@ namespace WokyTool.Common
         public static string 匯入錯誤 = "資料有錯，是否放棄";
         public static string 名稱不合法 = "名稱不合法";
         public static string 匯入異常 = "匯入異常";
+        public static string 物件不存在 = "物件不存在";
 
         public static string 結算確認 = "結算確認";
         public static string 結算支出內容 = "是否結算目前支出";

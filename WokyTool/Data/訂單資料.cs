@@ -52,6 +52,19 @@ namespace WokyTool.Data
         public int 數量 { get; set; }
 
         [JsonProperty]
+        [CsvColumn(Name = "單價")]
+        public int 單價 { get; set; }
+
+        [JsonProperty]
+        public int 總金額
+        {
+            get
+            {
+                return 單價 * 數量;
+            }
+        }
+
+        [JsonProperty]
         [CsvColumn(Name = "備註")]
         public string 備註 { get; set; }
 

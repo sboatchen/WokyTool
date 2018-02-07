@@ -39,20 +39,24 @@
             this.電話 = new System.Windows.Forms.TextBox();
             this.地址 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.物品訂單資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.物品編號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.物品顯示名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.單價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.物品訂單資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.廠商comboBox = new System.Windows.Forms.ComboBox();
+            this.廠商資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品訂單資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 10);
+            this.label1.Location = new System.Drawing.Point(13, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
@@ -61,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 38);
+            this.label2.Location = new System.Drawing.Point(12, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 1;
@@ -70,7 +74,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(311, 10);
+            this.label3.Location = new System.Drawing.Point(311, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 2;
@@ -79,7 +83,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(311, 36);
+            this.label4.Location = new System.Drawing.Point(311, 59);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 3;
@@ -97,28 +101,28 @@
             // 
             // 姓名
             // 
-            this.姓名.Location = new System.Drawing.Point(57, 10);
+            this.姓名.Location = new System.Drawing.Point(57, 33);
             this.姓名.Name = "姓名";
             this.姓名.Size = new System.Drawing.Size(207, 22);
             this.姓名.TabIndex = 6;
             // 
             // 手機
             // 
-            this.手機.Location = new System.Drawing.Point(357, 36);
+            this.手機.Location = new System.Drawing.Point(357, 59);
             this.手機.Name = "手機";
             this.手機.Size = new System.Drawing.Size(207, 22);
             this.手機.TabIndex = 7;
             // 
             // 電話
             // 
-            this.電話.Location = new System.Drawing.Point(357, 7);
+            this.電話.Location = new System.Drawing.Point(357, 30);
             this.電話.Name = "電話";
             this.電話.Size = new System.Drawing.Size(207, 22);
             this.電話.TabIndex = 8;
             // 
             // 地址
             // 
-            this.地址.Location = new System.Drawing.Point(57, 38);
+            this.地址.Location = new System.Drawing.Point(57, 61);
             this.地址.Name = "地址";
             this.地址.Size = new System.Drawing.Size(207, 22);
             this.地址.TabIndex = 9;
@@ -134,16 +138,12 @@
             this.單價DataGridViewTextBoxColumn,
             this.備註DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.物品訂單資料BindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 85);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 105);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(696, 375);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // 物品訂單資料BindingSource
-            // 
-            this.物品訂單資料BindingSource.DataSource = typeof(WokyTool.Data.物品訂單資料);
             // 
             // 物品編號
             // 
@@ -177,11 +177,41 @@
             this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
             this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
             // 
+            // 物品訂單資料BindingSource
+            // 
+            this.物品訂單資料BindingSource.DataSource = typeof(WokyTool.Data.物品訂單資料);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "廠商";
+            // 
+            // 廠商comboBox
+            // 
+            this.廠商comboBox.DataSource = this.廠商資料BindingSource;
+            this.廠商comboBox.DisplayMember = "名稱";
+            this.廠商comboBox.FormattingEnabled = true;
+            this.廠商comboBox.Location = new System.Drawing.Point(57, 8);
+            this.廠商comboBox.Name = "廠商comboBox";
+            this.廠商comboBox.Size = new System.Drawing.Size(207, 20);
+            this.廠商comboBox.TabIndex = 12;
+            this.廠商comboBox.SelectionChangeCommitted += new System.EventHandler(this.廠商comboBox_SelectionChangeCommitted);
+            // 
+            // 廠商資料BindingSource
+            // 
+            this.廠商資料BindingSource.DataSource = typeof(WokyTool.Data.廠商資料);
+            // 
             // 工廠出貨視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 521);
+            this.Controls.Add(this.廠商comboBox);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.地址);
             this.Controls.Add(this.電話);
@@ -197,6 +227,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.工廠出貨視窗_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品訂單資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +251,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 單價DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox 廠商comboBox;
+        private System.Windows.Forms.BindingSource 廠商資料BindingSource;
     }
 }

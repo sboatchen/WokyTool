@@ -186,5 +186,13 @@ namespace WokyTool.Common
             EXCEL,
             PDF,
         };
+
+        public enum 更新狀態
+        {
+            錯誤,
+            新增,
+            相同,
+            更新,
+        };
     }
 }
