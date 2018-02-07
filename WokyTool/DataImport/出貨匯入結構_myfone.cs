@@ -47,6 +47,7 @@ namespace WokyTool.DataImport
         public string 無用_贈品資訊 { get; set; }
         public int 無用_單位成本 { get; set; }
         public int 無用_成本小計 { get; set; }
+        public string 無用_購買人email { get; set; }
         public string 無用_發票號碼 { get; set; }
 
         // 共用廠商快取

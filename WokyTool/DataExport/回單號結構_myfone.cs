@@ -69,18 +69,20 @@ namespace WokyTool.DataExport
         [CsvColumn(Name = "成本小計", FieldIndex = 14)]
         public int 成本小計 { get { return _Data.無用_成本小計; } }
 
-        [CsvColumn(Name = "收件人", FieldIndex = 15)]
+        [CsvColumn(Name = "購買人email", FieldIndex = 15)]
+        public string 購買人email { get { return _Data.無用_購買人email; } }
+        [CsvColumn(Name = "收件人", FieldIndex = 16)]
         public string 收件人 { get { return _Data.姓名; } }
-        [CsvColumn(Name = "聯絡電話", FieldIndex = 16)]
+        [CsvColumn(Name = "聯絡電話", FieldIndex = 17)]
         public string 聯絡電話 { get { return _Data.電話; } }
-        [CsvColumn(Name = "行動電話", FieldIndex = 17)]
+        [CsvColumn(Name = "行動電話", FieldIndex = 18)]
         public string 行動電話 { get { return _Data.手機; } }
-        [CsvColumn(Name = "送貨地址", FieldIndex = 18)]
+        [CsvColumn(Name = "送貨地址", FieldIndex = 19)]
         public string 送貨地址 { get { return _Data.地址; } }
 
-        [CsvColumn(Name = "發票號碼", FieldIndex = 19)]
+        [CsvColumn(Name = "發票號碼", FieldIndex = 20)]
         public string 發票號碼 { get { return _Data.無用_發票號碼; } }
-        [CsvColumn(Name = "出貨單備註", FieldIndex = 20)]
+        [CsvColumn(Name = "出貨單備註", FieldIndex = 21)]
         public string 出貨單備註 { get { return _Data.備註; } }
     }
 }
