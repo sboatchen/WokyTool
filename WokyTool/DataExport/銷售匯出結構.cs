@@ -30,6 +30,12 @@ namespace WokyTool.DataExport
             App_.Cells[1, 8] = "利潤";
             App_.Cells[1, 9] = "總利潤";
 
+            App_.Cells[1, 10] = "姓名";
+            App_.Cells[1, 11] = "地址";
+            App_.Cells[1, 12] = "電話";
+            App_.Cells[1, 13] = "配送公司";
+            App_.Cells[1, 14] = "配送單號";
+
             return 2;
         }
 
@@ -45,6 +51,12 @@ namespace WokyTool.DataExport
             App_.Cells[Row_, 7] = _Data.售價;
             App_.Cells[Row_, 8] = _Data.利潤;
             App_.Cells[Row_, 9] = _Data.總利潤;
+
+            App_.Cells[Row_, 10] = _Data.姓名;
+            App_.Cells[Row_, 11] = _Data.地址;
+            App_.Cells[Row_, 12] = _Data.電話;
+            App_.Cells[Row_, 13] = _Data.配送公司;
+            App_.Cells[Row_, 14] = _Data.配送單號;
 
             return Row_ + 1;
         }
