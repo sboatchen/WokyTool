@@ -408,7 +408,7 @@ namespace WokyTool.ImportForm
 
                     // pre group
                     商品訂單資料 NowCheck_ = null;
-                    int NowGroup_ = 1001;
+                    int NowGroup_ = 1;
                     foreach(var Item_ in _Source){
                         if (NowCheck_ == null)
                         {

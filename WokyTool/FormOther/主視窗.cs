@@ -353,6 +353,13 @@ namespace WokyTool
             i.BringToFront();
         }
 
+        private void button34_Click(object sender, EventArgs e)
+        {
+            var i = new 修改商品視窗(null);
+            i.Show();
+            i.BringToFront();
+        }
+
 
 
         /*private void button27_Click(object sender, EventArgs e)

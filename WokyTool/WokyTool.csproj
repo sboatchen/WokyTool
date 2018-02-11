@@ -172,6 +172,12 @@
     <Compile Include="FormOther\工廠出貨視窗.Designer.cs">
       <DependentUpon>工廠出貨視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOther\修改商品視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOther\修改商品視窗.Designer.cs">
+      <DependentUpon>修改商品視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOther\物品選擇視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -433,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOther\工廠出貨視窗.resx">
       <DependentUpon>工廠出貨視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOther\修改商品視窗.resx">
+      <DependentUpon>修改商品視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOther\物品選擇視窗.resx">
       <DependentUpon>物品選擇視窗.cs</DependentUpon>
