@@ -90,6 +90,8 @@ namespace WokyTool.DataForm
             _NewList.Add(Item_);
 
             _進貨資料Listener.Refresh(true);
+
+            this.dataGridView1.FirstDisplayedScrollingRowIndex = this.dataGridView1.RowCount - 1;
         }
 
         private void 刪除ToolStripMenuItem_Click(object sender, EventArgs e)

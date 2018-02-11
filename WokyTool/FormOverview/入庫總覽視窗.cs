@@ -64,6 +64,8 @@ namespace WokyTool.FormOverview
         {
             入庫管理器.Instance.Add();
             _入庫資料Listener.Refresh();
+
+            this.dataGridView1.FirstDisplayedScrollingRowIndex = this.dataGridView1.RowCount - 1;
         }
 
         private void 刪除ToolStripMenuItem_Click(object sender, EventArgs e)

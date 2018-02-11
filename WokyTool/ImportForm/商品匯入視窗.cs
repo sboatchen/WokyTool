@@ -115,6 +115,8 @@ namespace WokyTool
         {
             _Source.Add(商品匯入結構.New());
             _Binding.ResetBindings(true);
+
+            this.dataGridView1.FirstDisplayedScrollingRowIndex = this.dataGridView1.RowCount - 1;
         }
 
         private void 刪除ToolStripMenuItem_Click(object sender, EventArgs e)
