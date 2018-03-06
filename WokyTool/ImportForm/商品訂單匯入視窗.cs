@@ -409,6 +409,7 @@ namespace WokyTool.ImportForm
                     // pre group
                     商品訂單資料 NowCheck_ = null;
                     int NowGroup_ = 1;
+                    int NextGroup_ = 1;
                     foreach(var Item_ in _Source){
                         if (NowCheck_ == null)
                         {
@@ -420,11 +421,12 @@ namespace WokyTool.ImportForm
                         {
                             NowCheck_.群組 = NowGroup_;
                             Item_.群組 = NowGroup_;
+                            NextGroup_ = NowGroup_ + 1;
                         }
                         else 
                         {
                             NowCheck_ = Item_;
-                            NowGroup_++;
+                            NowGroup_ = NextGroup_;
                         }
                     }
 

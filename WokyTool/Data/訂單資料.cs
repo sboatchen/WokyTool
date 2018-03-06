@@ -150,13 +150,13 @@ namespace WokyTool.Data
         virtual public bool IsReceiptMatch(string 發票號碼_) { return false; }
 
         // IComparable
-        virtual public int CompareTo(訂單資料 Other)
+        virtual public int CompareTo(訂單資料 Other_)
         {
             // A null value means that this object is greater.
-            if (Other == null)
+            if (Other_ == null)
                 return 1;
 
-            return 地址.CompareTo(Other.地址);
+            return String.Compare(this.地址, Other_.地址);
         }
 
         // 初始化

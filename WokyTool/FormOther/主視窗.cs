@@ -1,5 +1,6 @@
 ﻿using LINQtoCSV;
 using LinqToExcel;
+using log4net;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
@@ -337,13 +338,14 @@ namespace WokyTool
 
         private void button27_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            ILog x = LogManager.GetLogger("wombat");
+            /*OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Excel files|*.*";
 
             if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 出貨匯入結構_夠麻吉.Read(openFileDialog1.FileName);
-            }
+            }*/
         }
 
         private void button33_Click(object sender, EventArgs e)

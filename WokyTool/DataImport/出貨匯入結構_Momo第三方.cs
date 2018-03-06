@@ -79,6 +79,8 @@ namespace WokyTool.DataImport
         // 是否為不處理的資料
         private bool _IsIgnore;
 
+        public string 併單比較用訂單編號 { get; set; }
+
         // 共用廠商快取
         protected static 廠商資料 _共用廠商快取 = null;
         protected static 廠商資料 共用廠商快取
@@ -143,6 +145,8 @@ namespace WokyTool.DataImport
             }
 
             商品 = 商品管理器.Instance.Get(廠商.編號, 商品序號);
+
+            併單比較用訂單編號 = 訂單編號.Substring(0, 14);
         }
 
         // 準備配送
@@ -158,6 +162,34 @@ namespace WokyTool.DataImport
         override public bool IsReceiptMatch(string 發票號碼_)
         {
             return 發票號碼 == 發票號碼_;
+        }
+
+        // IComparable
+        override public int CompareTo(訂單資料 Other)
+        {
+            // A null value means that this object is greater.
+            if (Other == null)
+                return 1;
+
+            出貨匯入結構_Momo第三方 Other_ = (出貨匯入結構_Momo第三方)Other;
+
+            int Value_ = String.Compare(this.併單比較用訂單編號, Other_.併單比較用訂單編號);
+            if (Value_ != 0)
+                return Value_;
+
+            Value_ = String.Compare(this.姓名, Other_.姓名);
+            if (Value_ != 0)
+                return Value_;
+
+            Value_ = String.Compare(this.地址, Other_.地址);
+            if (Value_ != 0)
+                return Value_;
+
+            Value_ = String.Compare(this.無用_出貨地址, Other_.無用_出貨地址);
+            if (Value_ != 0)
+                return Value_;
+
+            return String.Compare(this.無用_回收地址, Other_.無用_回收地址);
         }
     }
 }
