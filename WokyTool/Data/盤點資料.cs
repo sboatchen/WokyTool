@@ -23,15 +23,15 @@ namespace WokyTool.Data
 
         public 物品資料 物品 = 物品資料.NULL;
         [JsonProperty]
-        public string 物品條碼
+        public int 物品編號
         {
             get
             {
-                return 物品.條碼;
+                return 物品.編號;
             }
             set
             {
-                物品 = 物品管理器.Instance.GetByCode(value);
+                物品 = 物品管理器.Instance.Get(value);
             }
         }
 
@@ -69,7 +69,7 @@ namespace WokyTool.Data
 
             try
             {
-                物品條碼 = 物品條碼字串;
+                物品 = 物品管理器.Instance.GetByCode(物品條碼字串);
             }
             catch
             {

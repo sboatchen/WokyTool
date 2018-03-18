@@ -170,7 +170,7 @@ namespace WokyTool
         private void 盤點ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var Item_ = _物品資料Listener.Query
-                               .Where(Value => Value.編號 > 0)
+                               .Where(Value => (Value.編號 > 0) && (String.IsNullOrEmpty(Value.條碼) == false))
                                .Select(Value => new 盤點匯出結構(Value));
 
             string Title_ = String.Format("盤點匯出_{0}", 共用.NowYMDDec);

@@ -137,7 +137,7 @@ namespace WokyTool.DataMgr
                 return 物品資料.NULL;
 
             物品資料 Item_ = Map.Values
-                                .Where(Value => Value.條碼.Equals(Code))
+                                .Where(Value => Code.Equals(Value.條碼))
                                 .FirstOrDefault();
 
             if (Item_ == null)

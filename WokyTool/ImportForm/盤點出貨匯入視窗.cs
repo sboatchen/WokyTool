@@ -48,7 +48,7 @@ namespace WokyTool.ImportForm
 
             _物品資料Listener = new 監測綁定更新<物品資料>(物品管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 物品資料更新);
             _物品資料Listener.Refresh(true);
-            this.物品編號DataGridViewTextBoxColumn.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn1.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
 
             _Binding = new BindingSource();
             _Binding.DataSource = _Source;
@@ -62,7 +62,7 @@ namespace WokyTool.ImportForm
 
         public void 物品資料更新(IEnumerable<物品資料> Data_)
         {
-            this.物品編號DataGridViewTextBoxColumn.DataSource = Data_;
+            this.dataGridViewTextBoxColumn1.DataSource = Data_;
         }
 
         // 註冊事件:取得Focus
