@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Log.cs" />
+    <Compile Include="Common\MyData.cs" />
     <Compile Include="Common\MyString.cs" />
     <Compile Include="Common\共用.cs" />
     <Compile Include="Common\函式.cs" />
@@ -160,6 +161,10 @@
     <Compile Include="Data\訊息資料.cs" />
     <Compile Include="Data\進貨資料_唯讀.cs" />
     <Compile Include="Data\進貨資料_暫時.cs" />
+    <Compile Include="動態匯入\動態匯入檔案設定.cs" />
+    <Compile Include="動態匯入_月結帳\動態匯入檔案設定_月結帳.cs" />
+    <Compile Include="動態匯入_月結帳\動態匯入檔案設定管理器_月結帳.cs" />
+    <Compile Include="動態匯入\動態匯入資料設定.cs" />
     <Compile Include="FormOther\商品篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -434,6 +439,12 @@
     <Compile Include="FormOverview\編碼總覽視窗.Designer.cs">
       <DependentUpon>編碼總覽視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="動態匯入_月結帳\動態匯入檔案設定視窗_月結帳.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="動態匯入_月結帳\動態匯入檔案設定視窗_月結帳.Designer.cs">
+      <DependentUpon>動態匯入檔案設定視窗_月結帳.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormOther\商品篩選視窗.resx">
       <DependentUpon>商品篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -557,9 +568,14 @@
     <EmbeddedResource Include="FormOverview\編碼總覽視窗.resx">
       <DependentUpon>編碼總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="動態匯入_月結帳\動態匯入檔案設定視窗_月結帳.resx">
+      <DependentUpon>動態匯入檔案設定視窗_月結帳.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WokyTool.Common.列舉+代收類型.datasource" />
     <None Include="Properties\DataSources\WokyTool.Common.列舉+指配時段類型.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Common.列舉+檔案格式類型.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Common.列舉+資料格式類型.datasource" />
     <None Include="Properties\DataSources\WokyTool.Common.列舉+進貨類型.datasource" />
     <None Include="Properties\DataSources\WokyTool.Common.列舉+配送公司類型.datasource" />
     <None Include="Properties\DataSources\WokyTool.Common.列舉+銷售狀態類型.datasource" />
@@ -592,6 +608,8 @@
     <None Include="Properties\DataSources\WokyTool.DataImport.物品更新匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.進貨匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.雜支匯入結構.datasource" />
+    <None Include="Properties\DataSources\WokyTool.動態匯入.動態匯入資料設定.datasource" />
+    <None Include="Properties\DataSources\WokyTool.動態匯入_月結帳.動態匯入檔案設定_月結帳.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

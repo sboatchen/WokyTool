@@ -180,11 +180,13 @@ namespace WokyTool.Common
         // 檔案格式類型
         public enum 檔案格式類型
         {
+            錯誤 = -1,
             無 = 0,
 
-            CSV,
-            EXCEL,
-            PDF,
+            CSV = 1,
+            EXCEL = 2,
+            PDF = 3,
+            JSON = 4,
         };
 
         public enum 更新狀態
@@ -193,6 +195,16 @@ namespace WokyTool.Common
             新增,
             相同,
             更新,
+        };
+
+        public enum 資料格式類型
+        {
+            錯誤 = -1,
+            無 = 0,
+
+            整數 = 1,
+            浮點數 = 2,
+            文字 = 3,
         };
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.DataExport;
 using WokyTool.DataMgr;
+using WokyTool.動態匯入_月結帳;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WokyTool.Common
@@ -313,6 +314,8 @@ namespace WokyTool.Common
 
             入庫管理器.Instance.SaveData();
             銷售管理器.Instance.SaveData();
+
+            動態匯入檔案設定管理器_月結帳.Instance.SaveData();
         }
     }
 }
