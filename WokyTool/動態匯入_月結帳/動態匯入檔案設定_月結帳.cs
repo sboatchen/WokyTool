@@ -14,13 +14,6 @@ namespace WokyTool.動態匯入_月結帳
     [JsonObject(MemberSerialization.OptIn)]
     public class 動態匯入檔案設定_月結帳 : 動態匯入檔案設定
     {
-        public enum 動態匯入需求欄位_月結帳
-        {
-            識別碼 = 1,
-            單價 = 2,
-            數量 = 4,
-        };
-
         public 公司資料 公司;
         [JsonProperty]
         public int 公司編號
@@ -51,24 +44,42 @@ namespace WokyTool.動態匯入_月結帳
 
         /********************************/
 
-        protected int _合法遮罩 = -1;
-        public override int 合法遮罩
+        public enum 動態匯入需求欄位_月結帳
         {
-            get {
-                if(_合法遮罩 == -1)
-                {
-                    _合法遮罩 = 0;
-                    foreach (動態匯入需求欄位_月結帳 x in Enum.GetValues(typeof(動態匯入需求欄位_月結帳)))
-                    {
-                        _合法遮罩 |= (int)x; 
-                    }
-                }
+            識別碼 = 1,
+            單價 = 2,
+            數量 = 4,
+        };
 
+        protected static List<string> _需求欄位列表 = new List<string>();
+        protected static int _合法遮罩 = 0;
+
+        static 動態匯入檔案設定_月結帳()
+        {
+            foreach (動態匯入需求欄位_月結帳 x in Enum.GetValues(typeof(動態匯入需求欄位_月結帳)))
+            {
+                _需求欄位列表.Add(x.ToString());
+                _合法遮罩 |= (int)x; 
+            }
+        }
+
+        public static List<string> 需求欄位列表
+        {
+            get
+            {
+                return _需求欄位列表;
+            }
+        }
+
+        public static int 合法遮罩
+        {
+            get
+            {
                 return _合法遮罩;
             }
         }
 
-        public override int get遮罩(string name)
+        public static int get遮罩(string name)
         {
             foreach (動態匯入需求欄位_月結帳 x in Enum.GetValues(typeof(動態匯入需求欄位_月結帳)))
             {
@@ -155,6 +166,25 @@ namespace WokyTool.動態匯入_月結帳
 
             if (廠商編號 <= 常數.空白資料編碼)
                 return "動態匯入檔案設定_月結帳:廠商不合法:" + 廠商編號;
+
+            if (合法遮罩 == 0)
+                return null;
+
+            if (資料List == null)
+                return "動態匯入檔案設定:沒欄位資料";
+
+            int 目前遮罩_ = 0;
+            foreach (動態匯入資料設定 資料 in 資料List)
+            {
+                int 遮罩_ = get遮罩(資料.名稱);
+                if ((遮罩_ & 目前遮罩_) > 0)
+                    return "動態匯入檔案設定:遮罩重複" + 遮罩_;
+
+                目前遮罩_ |= 遮罩_;
+            }
+
+            if(合法遮罩 != 目前遮罩_)
+                return "動態匯入檔案設定:遮罩不吻合" + 目前遮罩_;
 
             return null;
         }

@@ -51,8 +51,8 @@
             this.設定 = new System.Windows.Forms.DataGridView();
             this.列索引DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.可合併儲存格DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.格式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.欄位格式 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.欄位名稱 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.動態匯入資料設定BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.儲存 = new System.Windows.Forms.Button();
             this.動態匯入檔案設定月結帳BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -61,6 +61,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.刪除 = new System.Windows.Forms.Button();
             this.新增 = new System.Windows.Forms.Button();
+            this.名稱範例 = new System.Windows.Forms.ComboBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.開始位置)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.標頭位置)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.結束位置)).BeginInit();
@@ -227,10 +229,10 @@
             this.設定.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.列索引DataGridViewTextBoxColumn,
             this.可合併儲存格DataGridViewCheckBoxColumn,
-            this.格式DataGridViewTextBoxColumn,
-            this.名稱DataGridViewTextBoxColumn});
+            this.欄位格式,
+            this.欄位名稱});
             this.設定.DataSource = this.動態匯入資料設定BindingSource;
-            this.設定.Location = new System.Drawing.Point(12, 223);
+            this.設定.Location = new System.Drawing.Point(11, 220);
             this.設定.Name = "設定";
             this.設定.RowTemplate.Height = 24;
             this.設定.Size = new System.Drawing.Size(544, 197);
@@ -248,21 +250,22 @@
             this.可合併儲存格DataGridViewCheckBoxColumn.HeaderText = "可合併儲存格";
             this.可合併儲存格DataGridViewCheckBoxColumn.Name = "可合併儲存格DataGridViewCheckBoxColumn";
             // 
-            // 格式DataGridViewTextBoxColumn
+            // 欄位格式
             // 
-            this.格式DataGridViewTextBoxColumn.DataPropertyName = "格式";
-            this.格式DataGridViewTextBoxColumn.DataSource = this.資料格式類型BindingSource;
-            this.格式DataGridViewTextBoxColumn.HeaderText = "格式";
-            this.格式DataGridViewTextBoxColumn.Name = "格式DataGridViewTextBoxColumn";
-            this.格式DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.格式DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.欄位格式.DataPropertyName = "格式";
+            this.欄位格式.DataSource = this.資料格式類型BindingSource;
+            this.欄位格式.HeaderText = "格式";
+            this.欄位格式.Name = "欄位格式";
+            this.欄位格式.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.欄位格式.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // 名稱DataGridViewTextBoxColumn
+            // 欄位名稱
             // 
-            this.名稱DataGridViewTextBoxColumn.DataPropertyName = "名稱";
-            this.名稱DataGridViewTextBoxColumn.HeaderText = "名稱";
-            this.名稱DataGridViewTextBoxColumn.Name = "名稱DataGridViewTextBoxColumn";
-            this.名稱DataGridViewTextBoxColumn.Width = 200;
+            this.欄位名稱.DataPropertyName = "名稱";
+            this.欄位名稱.HeaderText = "名稱";
+            this.欄位名稱.Name = "欄位名稱";
+            this.欄位名稱.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.欄位名稱.Width = 200;
             // 
             // 動態匯入資料設定BindingSource
             // 
@@ -270,7 +273,7 @@
             // 
             // 儲存
             // 
-            this.儲存.Location = new System.Drawing.Point(193, 426);
+            this.儲存.Location = new System.Drawing.Point(193, 424);
             this.儲存.Name = "儲存";
             this.儲存.Size = new System.Drawing.Size(75, 23);
             this.儲存.TabIndex = 17;
@@ -313,7 +316,7 @@
             // 
             // 刪除
             // 
-            this.刪除.Location = new System.Drawing.Point(294, 426);
+            this.刪除.Location = new System.Drawing.Point(279, 424);
             this.刪除.Name = "刪除";
             this.刪除.Size = new System.Drawing.Size(75, 23);
             this.刪除.TabIndex = 21;
@@ -331,11 +334,29 @@
             this.新增.UseVisualStyleBackColor = true;
             this.新增.Click += new System.EventHandler(this.新增_Click);
             // 
+            // 名稱範例
+            // 
+            this.名稱範例.DataSource = this.廠商資料BindingSource;
+            this.名稱範例.DisplayMember = "名稱";
+            this.名稱範例.FormattingEnabled = true;
+            this.名稱範例.Location = new System.Drawing.Point(362, 194);
+            this.名稱範例.Name = "名稱範例";
+            this.名稱範例.Size = new System.Drawing.Size(193, 20);
+            this.名稱範例.TabIndex = 23;
+            this.名稱範例.ValueMember = "編號";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // 動態匯入檔案設定視窗_月結帳
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 459);
+            this.ClientSize = new System.Drawing.Size(567, 455);
+            this.Controls.Add(this.名稱範例);
             this.Controls.Add(this.新增);
             this.Controls.Add(this.刪除);
             this.Controls.Add(this.label10);
@@ -397,10 +418,6 @@
         private System.Windows.Forms.BindingSource 公司資料BindingSource;
         private System.Windows.Forms.BindingSource 廠商資料BindingSource;
         private System.Windows.Forms.DataGridView 設定;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 列索引DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn 可合併儲存格DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 格式DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 動態匯入資料設定BindingSource;
         private System.Windows.Forms.Button 儲存;
         private System.Windows.Forms.BindingSource 動態匯入檔案設定月結帳BindingSource;
@@ -409,5 +426,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button 刪除;
         private System.Windows.Forms.Button 新增;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 列索引DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn 可合併儲存格DataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn 欄位格式;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 欄位名稱;
+        private System.Windows.Forms.ComboBox 名稱範例;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

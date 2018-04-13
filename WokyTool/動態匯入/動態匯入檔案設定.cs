@@ -39,16 +39,6 @@ namespace WokyTool.動態匯入
             資料List = new List<動態匯入資料設定>();
         }
 
-        public virtual int 合法遮罩 
-        {
-            get { return 0;  }
-        }
-
-        public virtual int get遮罩(string name)
-        {
-            return 0;
-        }
-
         // 如果不合法 回傳例外
         public override string 檢查合法()
         {
@@ -66,25 +56,6 @@ namespace WokyTool.動態匯入
 
             if (String.IsNullOrEmpty(名稱))
                 return "動態匯入檔案設定:名稱不合法";
-
-            if (合法遮罩 == 0)
-                return null;
-
-            if (資料List == null)
-                return "動態匯入檔案設定:沒欄位資料";
-
-            int 目前遮罩_ = 0;
-            foreach (動態匯入資料設定 資料 in 資料List)
-            {
-                int 遮罩_ = get遮罩(資料.名稱);
-                if ((遮罩_ & 目前遮罩_) > 0)
-                    return "動態匯入檔案設定:遮罩重複" + 遮罩_;
-
-                目前遮罩_ |= 遮罩_;
-            }
-
-            if(合法遮罩 != 目前遮罩_)
-                return "動態匯入檔案設定:遮罩不吻合" + 目前遮罩_;
 
             return null;
         }
