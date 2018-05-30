@@ -11,24 +11,26 @@ using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataMgr;
 
-namespace WokyTool.動態匯入_月結帳
+namespace WokyTool.月結帳
 {
-    public partial class 動態匯入檔案設定視窗_月結帳 : Form
+    public partial class 月結帳匯入設定視窗 : Form
     {
-        protected 監測綁定更新<動態匯入檔案設定_月結帳> _動態匯入檔案設定_月結帳Listener;
+        protected 監測綁定更新<月結帳匯入檔案設定> _月結帳匯入檔案設定Listener;
         protected 監測綁定更新<公司資料> _公司資料Listener;
         protected 監測綁定更新<廠商資料> _廠商資料Listener;
 
-        protected 動態匯入檔案設定_月結帳 _目前資料;
-        protected 動態匯入檔案設定_月結帳 _修改中資料;
+        protected 月結帳匯入檔案設定 _目前資料;
+        protected 月結帳匯入檔案設定 _修改中資料;
         protected BindingSource _設定Binding = new BindingSource();
 
-        public 動態匯入檔案設定視窗_月結帳()
+        private bool _isAfterSave = false;
+
+        public 月結帳匯入設定視窗()
         {
             InitializeComponent();
 
-            _動態匯入檔案設定_月結帳Listener = new 監測綁定更新<動態匯入檔案設定_月結帳>(動態匯入檔案設定管理器_月結帳.Instance.Binding, 列舉.監測類型.被動通知_值, 設定資料更新);
-            _動態匯入檔案設定_月結帳Listener.Refresh(true);
+            _月結帳匯入檔案設定Listener = new 監測綁定更新<月結帳匯入檔案設定>(月結帳匯入檔案設定管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 設定資料更新);
+            _月結帳匯入檔案設定Listener.Refresh(true);
 
             _公司資料Listener = new 監測綁定更新<公司資料>(公司管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 公司資料更新);
             _公司資料Listener.Refresh(true);
@@ -38,11 +40,14 @@ namespace WokyTool.動態匯入_月結帳
 
             格式.DataSource = Enum.GetValues(typeof(列舉.檔案格式類型));
             欄位格式.DataSource = Enum.GetValues(typeof(列舉.資料格式類型));
-            名稱範例.DataSource = 動態匯入檔案設定_月結帳.需求欄位列表;
+            名稱範例.DataSource = Enum.GetValues(typeof(月結帳匯入檔案設定.動態匯入需求欄位_月結帳));
+            商品識別.DataSource = Enum.GetValues(typeof(列舉.商品識別類型));
             this.設定.DataSource = _設定Binding;
+
+            updateSetting();
         }
 
-        private void 設定資料更新(IEnumerable<動態匯入檔案設定_月結帳> Data_)
+        private void 設定資料更新(IEnumerable<月結帳匯入檔案設定> Data_)
         {
             清單.DataSource = Data_;
         }
@@ -59,30 +64,43 @@ namespace WokyTool.動態匯入_月結帳
 
         private void 儲存_Click(object sender, EventArgs e)
         {
-            string Error_ = _修改中資料.檢查合法();
-            if(String.IsNullOrEmpty(Error_) == false)
+            _修改中資料.名稱 = this.名稱.Text;
+            _修改中資料.格式 = (列舉.檔案格式類型)this.格式.SelectedItem;
+            _修改中資料.開始位置 = (int)this.開始位置.Value;
+            _修改中資料.結束位置 = (int)this.結束位置.Value;
+            _修改中資料.標頭位置 = (int)this.標頭位置.Value;
+            _修改中資料.公司 = (公司資料)this.公司.SelectedItem;
+            _修改中資料.廠商 = (廠商資料)this.廠商.SelectedItem;
+            _修改中資料.商品識別 = (列舉.商品識別類型)this.商品識別.SelectedItem;
+
+            try
             {
-                MessageBox.Show(Error_, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _修改中資料.檢查合法();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (_目前資料 != null)
-                動態匯入檔案設定管理器_月結帳.Instance.Delete(_目前資料);
+                月結帳匯入檔案設定管理器.Instance.Delete(_目前資料);
 
-            動態匯入檔案設定管理器_月結帳.Instance.Add(_修改中資料);
+            月結帳匯入檔案設定管理器.Instance.Add(_修改中資料);
 
             _目前資料 = _修改中資料;
-            _修改中資料 = (動態匯入檔案設定_月結帳)_目前資料.拷貝();
+            _修改中資料 = (月結帳匯入檔案設定)_目前資料.拷貝();
 
-            _動態匯入檔案設定_月結帳Listener.Refresh(true);
+            _isAfterSave = true;
+            _月結帳匯入檔案設定Listener.Refresh(true);
 
-            updateSetting();
+            MessageBox.Show(字串.設定成功, 字串.確認, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void 新增_Click(object sender, EventArgs e)
         {
             _目前資料 = null;
-            _修改中資料 = 動態匯入檔案設定_月結帳.New();
+            _修改中資料 = 月結帳匯入檔案設定.New();
 
             updateSetting();
         }
@@ -91,8 +109,8 @@ namespace WokyTool.動態匯入_月結帳
         {
             if (_目前資料 != null)
             {
-                動態匯入檔案設定管理器_月結帳.Instance.Delete(_目前資料);
-                _動態匯入檔案設定_月結帳Listener.Refresh(true);
+                月結帳匯入檔案設定管理器.Instance.Delete(_目前資料);
+                _月結帳匯入檔案設定Listener.Refresh(true);
             }
 
             _目前資料 = null;
@@ -103,8 +121,15 @@ namespace WokyTool.動態匯入_月結帳
 
         private void 清單_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _目前資料 = (動態匯入檔案設定_月結帳)this.清單.SelectedItem;
-            _修改中資料 = (動態匯入檔案設定_月結帳)_目前資料.拷貝();
+            if (_isAfterSave) 
+            {
+                _isAfterSave = false;
+                this.清單.SelectedItem = _目前資料;
+                return;
+            }
+
+            _目前資料 = (月結帳匯入檔案設定)this.清單.SelectedItem;
+            _修改中資料 = (月結帳匯入檔案設定)_目前資料.拷貝();
 
             updateSetting();
         }
@@ -129,6 +154,7 @@ namespace WokyTool.動態匯入_月結帳
                 this.標頭位置.Value = _修改中資料.標頭位置;
                 this.公司.SelectedItem = _修改中資料.公司;
                 this.廠商.SelectedItem = _修改中資料.廠商;
+                this.商品識別.SelectedItem = _修改中資料.商品識別;
                 this._設定Binding.DataSource = _修改中資料.資料List;
             }
             else 
@@ -149,6 +175,7 @@ namespace WokyTool.動態匯入_月結帳
                 this.標頭位置.Value = 0;
                 this.公司.SelectedItem = null;
                 this.廠商.SelectedItem = null;
+                this.商品識別.SelectedItem = null;
                 this._設定Binding.DataSource = null;
             }
         }

@@ -1,6 +1,6 @@
-﻿namespace WokyTool.動態匯入_月結帳
+﻿namespace WokyTool.月結帳
 {
-    partial class 動態匯入檔案設定視窗_月結帳
+    partial class 月結帳匯入設定視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -63,6 +63,9 @@
             this.新增 = new System.Windows.Forms.Button();
             this.名稱範例 = new System.Windows.Forms.ComboBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.商品識別 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.商品識別類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.開始位置)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.標頭位置)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.結束位置)).BeginInit();
@@ -73,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.設定)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.動態匯入資料設定BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.動態匯入檔案設定月結帳BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.商品識別類型BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -157,6 +161,11 @@
             // 標頭位置
             // 
             this.標頭位置.Location = new System.Drawing.Point(430, 122);
+            this.標頭位置.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             this.標頭位置.Name = "標頭位置";
             this.標頭位置.Size = new System.Drawing.Size(104, 22);
             this.標頭位置.TabIndex = 10;
@@ -197,7 +206,6 @@
             this.公司.Name = "公司";
             this.公司.Size = new System.Drawing.Size(104, 20);
             this.公司.TabIndex = 14;
-            this.公司.ValueMember = "編號";
             // 
             // 公司資料BindingSource
             // 
@@ -212,7 +220,6 @@
             this.廠商.Name = "廠商";
             this.廠商.Size = new System.Drawing.Size(104, 20);
             this.廠商.TabIndex = 15;
-            this.廠商.ValueMember = "編號";
             // 
             // 廠商資料BindingSource
             // 
@@ -283,7 +290,7 @@
             // 
             // 動態匯入檔案設定月結帳BindingSource
             // 
-            this.動態匯入檔案設定月結帳BindingSource.DataSource = typeof(WokyTool.動態匯入_月結帳.動態匯入檔案設定_月結帳);
+            this.動態匯入檔案設定月結帳BindingSource.DataSource = typeof(WokyTool.月結帳.月結帳匯入檔案設定);
             // 
             // 清單
             // 
@@ -351,11 +358,35 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // 動態匯入檔案設定視窗_月結帳
+            // 商品識別
+            // 
+            this.商品識別.DataSource = this.商品識別類型BindingSource;
+            this.商品識別.FormattingEnabled = true;
+            this.商品識別.Location = new System.Drawing.Point(250, 90);
+            this.商品識別.Name = "商品識別";
+            this.商品識別.Size = new System.Drawing.Size(104, 20);
+            this.商品識別.TabIndex = 24;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(191, 90);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 12);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "商品識別";
+            // 
+            // 商品識別類型BindingSource
+            // 
+            this.商品識別類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.商品識別類型);
+            // 
+            // 月結帳匯入設定視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 455);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.商品識別);
             this.Controls.Add(this.名稱範例);
             this.Controls.Add(this.新增);
             this.Controls.Add(this.刪除);
@@ -379,7 +410,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "動態匯入檔案設定視窗_月結帳";
+            this.Name = "月結帳匯入設定視窗";
             this.Text = "月結帳設定視窗";
             ((System.ComponentModel.ISupportInitialize)(this.開始位置)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.標頭位置)).EndInit();
@@ -391,6 +422,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.設定)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.動態匯入資料設定BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.動態匯入檔案設定月結帳BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.商品識別類型BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,5 +464,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 欄位名稱;
         private System.Windows.Forms.ComboBox 名稱範例;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ComboBox 商品識別;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.BindingSource 商品識別類型BindingSource;
     }
 }

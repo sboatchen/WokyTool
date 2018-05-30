@@ -32,6 +32,53 @@ namespace WokyTool.動態匯入
         [JsonProperty]
         public List<動態匯入資料設定> 資料List { get; set; }
 
+        private Dictionary<int, 動態匯入資料設定> _欄位位置對應表 = null;
+        public Dictionary<int, 動態匯入資料設定> 欄位位置對應表
+        {
+            get
+            {
+                if (_欄位位置對應表 == null)
+                {
+                    _欄位位置對應表 = new Dictionary<int, 動態匯入資料設定>();
+                    foreach (動態匯入資料設定 Item_ in 資料List)
+                    {
+                        if (_欄位位置對應表.ContainsKey(Item_.列索引))
+                            throw new Exception("列索引重複");
+
+                        _欄位位置對應表.Add(Item_.列索引, Item_);
+                    }
+                }
+
+                return _欄位位置對應表;
+            }
+        
+        }
+
+        private Dictionary<string, 動態匯入資料設定> _名稱映射對應表 = null;
+        public Dictionary<string, 動態匯入資料設定> 名稱映射對應表
+        {
+            get
+            {
+                if (_名稱映射對應表 == null)
+                {
+                    _名稱映射對應表 = new Dictionary<string, 動態匯入資料設定>();
+                    foreach (動態匯入資料設定 Item_ in 資料List)
+                    {
+                        if (String.IsNullOrEmpty(Item_.名稱))
+                            continue;
+
+                        if (_名稱映射對應表.ContainsKey(Item_.名稱))
+                            throw new Exception("名稱重複");
+
+                        _名稱映射對應表.Add(Item_.名稱, Item_);
+                    }
+                }
+
+                return _名稱映射對應表;
+            }
+
+        }
+
         /********************************/
 
         public 動態匯入檔案設定()
@@ -40,24 +87,35 @@ namespace WokyTool.動態匯入
         }
 
         // 如果不合法 回傳例外
-        public override string 檢查合法()
+        public override void 檢查合法()
         {
             if (格式 <= 列舉.檔案格式類型.無)
-                return "動態匯入檔案設定:格式不合法" + 格式;
+                throw new Exception("動態匯入檔案設定:格式不合法:" + 格式);
 
             if (開始位置 < 0)
-                return "動態匯入檔案設定:開始位置不合法" + 開始位置;
+                throw new Exception("動態匯入檔案設定:開始位置不合法:" + 開始位置);
 
             if (結束位置 < 0)
-                return "動態匯入檔案設定:結束位置不合法" + 結束位置;
+                throw new Exception("動態匯入檔案設定:結束位置不合法:" + 結束位置);
 
             if (標頭位置 < -1 || 標頭位置 >= 開始位置)
-                return "動態匯入檔案設定:標頭位置不合法" + 標頭位置;
+                throw new Exception("動態匯入檔案設定:標頭位置不合法:" + 標頭位置);
 
             if (String.IsNullOrEmpty(名稱))
-                return "動態匯入檔案設定:名稱不合法";
+                throw new Exception( "動態匯入檔案設定:名稱不合法");
 
-            return null;
+            foreach (動態匯入資料設定 資料 in 資料List)
+            {
+                資料.檢查合法();
+            }
+
+            // 重建此表
+            _欄位位置對應表 = null;
+            var x = 欄位位置對應表;
+
+            // 重建此表
+            _名稱映射對應表 = null;
+            var y = 名稱映射對應表;
         }
     }
 }

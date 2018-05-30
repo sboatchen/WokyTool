@@ -79,15 +79,16 @@ namespace WokyTool.動態匯入
         }
 
         // 如果不合法 回傳例外
-        public override string 檢查合法()
+        public override void 檢查合法()
         {
             if (列索引 < 0)
-                return "動態匯入資料設定:列索引不合法:" + 列索引;
+                throw new Exception("動態匯入資料設定:列索引不合法:" + 列索引);
 
-            if(格式 <= 列舉.資料格式類型.無)
-                return "動態匯入資料設定:格式不合法" + 格式;
+            if (格式 <= 列舉.資料格式類型.無)
+                throw new Exception("動態匯入資料設定:格式不合法" + 格式);
 
-            return null;
+            //if (String.IsNullOrEmpty(名稱))
+            //    throw new Exception(動態匯入資料設定:名稱不合法";
         }
     }
 }

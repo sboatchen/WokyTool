@@ -14,6 +14,7 @@ namespace WokyTool.Common
         public static string 無 = "無";
         public static string 正確 = "(OK)";
         public static string 自動填寫 = "自動填寫";
+        public static string 確認 = "確認";
 
         public static string 雜支 = "雜支";
         public static string 進貨 = "進貨";
@@ -38,5 +39,7 @@ namespace WokyTool.Common
         public static string 物品 = "物品";
 
         public static string 標頭_錯誤 = "(錯誤)";
+
+        public static string 設定成功 = "設定成功";
     }
 }

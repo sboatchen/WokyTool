@@ -247,8 +247,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 時間DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 物品名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 支出資料BindingSource;
         private System.Windows.Forms.ToolStripMenuItem 略過ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 結算ToolStripMenuItem;

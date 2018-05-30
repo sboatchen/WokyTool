@@ -19,10 +19,8 @@ namespace WokyTool.Common
             throw new Exception("Not support copy");
         }
 
-        // 如果不合法 回傳訊息
-        public virtual string 檢查合法()
+        public virtual void 檢查合法()
         {
-            return null;
         }
     }
 }

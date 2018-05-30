@@ -8,23 +8,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 
-namespace WokyTool.動態匯入_月結帳
+namespace WokyTool.月結帳
 {
-    public class 動態匯入檔案設定管理器_月結帳   //@@ singleton parent class
+    public class 月結帳匯入檔案設定管理器   //@@ singleton parent class
     {
         // 檔案位置
         private static string FILE_PATH = "Set/月結帳設定.json";
 
         // 資料Map
-        public Dictionary<string, 動態匯入檔案設定_月結帳> Map { get; private set; }
+        public Dictionary<string, 月結帳匯入檔案設定> Map { get; private set; }
         // 資料是否異動
         public bool IsDirty { get; private set; }
         // 資料綁定廣播
-        public 監測綁定廣播<動態匯入檔案設定_月結帳> Binding { get; private set; }
+        public 監測綁定廣播<月結帳匯入檔案設定> Binding { get; private set; }
 
         // 獨體
-        private static readonly 動態匯入檔案設定管理器_月結帳 _Instance = new 動態匯入檔案設定管理器_月結帳();
-        public static 動態匯入檔案設定管理器_月結帳 Instance
+        private static readonly 月結帳匯入檔案設定管理器 _Instance = new 月結帳匯入檔案設定管理器();
+        public static 月結帳匯入檔案設定管理器 Instance
         {
             get
             {
@@ -33,11 +33,11 @@ namespace WokyTool.動態匯入_月結帳
         }
 
         // 建構子
-        private 動態匯入檔案設定管理器_月結帳()
+        private 月結帳匯入檔案設定管理器()
         {
             InitData();
 
-            Binding = new 監測綁定廣播<動態匯入檔案設定_月結帳>(Map.Select(x => x.Value));
+            Binding = new 監測綁定廣播<月結帳匯入檔案設定>(Map.Select(x => x.Value));
 
             IsDirty = false;
         }
@@ -49,13 +49,13 @@ namespace WokyTool.動態匯入_月結帳
             {
                 string json = File.ReadAllText(FILE_PATH);
                 if (String.IsNullOrEmpty(json))
-                    Map = new Dictionary<string, 動態匯入檔案設定_月結帳>();
+                    Map = new Dictionary<string, 月結帳匯入檔案設定>();
                 else
-                    Map = JsonConvert.DeserializeObject<Dictionary<string, 動態匯入檔案設定_月結帳>>(json);
+                    Map = JsonConvert.DeserializeObject<Dictionary<string, 月結帳匯入檔案設定>>(json);
             }
             else
             {
-                MessageBox.Show("動態匯入檔案設定管理器_月結帳::InitData fail, can't find file" + Directory.GetCurrentDirectory() + FILE_PATH, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("月結帳匯入檔案設定管理器::InitData fail, can't find file" + Directory.GetCurrentDirectory() + FILE_PATH, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -75,24 +75,24 @@ namespace WokyTool.動態匯入_月結帳
         }
 
         // 取得資料
-        public 動態匯入檔案設定_月結帳 Get(string Name_)
+        public 月結帳匯入檔案設定 Get(string Name_)
         {
-            動態匯入檔案設定_月結帳 Item_;
+            月結帳匯入檔案設定 Item_;
             if (Map.TryGetValue(Name_, out Item_))
             {
                 return Item_;
             }
 
-            MessageBox.Show("動態匯入檔案設定管理器_月結帳: Get fail " + Name_, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            return 動態匯入檔案設定_月結帳.ERROR;
+            MessageBox.Show("月結帳匯入檔案設定管理器: Get fail " + Name_, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return 月結帳匯入檔案設定.ERROR;
         }
 
         // 新增資料
-        public void Add(動態匯入檔案設定_月結帳 Item_)
+        public void Add(月結帳匯入檔案設定 Item_)
         {
             if (Map.ContainsKey(Item_.名稱))
             {
-                MessageBox.Show("動態匯入檔案設定管理器_月結帳: Add fial, already have " + Item_.名稱, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("月結帳匯入檔案設定管理器: Add fial, already have " + Item_.名稱, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -102,12 +102,12 @@ namespace WokyTool.動態匯入_月結帳
         }
 
         // 刪除資料
-        public void Delete(動態匯入檔案設定_月結帳 Item_)
+        public void Delete(月結帳匯入檔案設定 Item_)
         {
             // 確認物件
             if (Map.ContainsKey(Item_.名稱) == false)
             {
-                MessageBox.Show("動態匯入檔案設定管理器_月結帳: Delete fail, 名稱 = " + Item_.名稱, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("月結帳匯入檔案設定管理器: Delete fail, 名稱 = " + Item_.名稱, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -132,10 +132,10 @@ namespace WokyTool.動態匯入_月結帳
         // 刪除資料
         public void Delete(string Name_)
         {
-            動態匯入檔案設定_月結帳 Item_;
+            月結帳匯入檔案設定 Item_;
             if (Map.TryGetValue(Name_, out Item_) == false)
             {
-                MessageBox.Show("動態匯入檔案設定管理器_月結帳: Delete fail, 名稱 = " + Name_, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("月結帳匯入檔案設定管理器: Delete fail, 名稱 = " + Name_, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             

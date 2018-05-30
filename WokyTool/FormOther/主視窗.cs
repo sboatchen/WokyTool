@@ -2,12 +2,15 @@
 using LinqToExcel;
 using log4net;
 using Microsoft.Office.Interop.Excel;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +23,9 @@ using WokyTool.FormOther;
 using WokyTool.FormOverview;
 using WokyTool.ImportForm;
 using WokyTool.OtherForm;
+using WokyTool.動態匯入;
+using WokyTool.月結帳;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WokyTool
 {
@@ -125,38 +131,6 @@ namespace WokyTool
                 {
                     var Excel_ = new ExcelQueryFactory(openFileDialog1.FileName);
                     var i = new 商品匯入視窗(Excel_);
-                    i.Show();
-                    i.BringToFront();
-
-                }
-                catch (Exception Error_)
-                {
-                    MessageBox.Show("開啟檔案失敗" + Error_.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            var i = new 月結帳總覽視窗();
-            i.Show();
-            i.BringToFront();
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "Excel files|*.*";
-
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                try
-                {
-                    var Excel_ = new ExcelQueryFactory(openFileDialog1.FileName);
-                    var Query_ = Excel_.Worksheet<月結帳匯入結構_Momo>()
-                                        .Select(Value => Value.ToData());
-
-                    var i = new 月結帳匯入視窗(Query_);
                     i.Show();
                     i.BringToFront();
 
@@ -336,18 +310,6 @@ namespace WokyTool
             i.BringToFront();
         }
 
-        private void button27_Click(object sender, EventArgs e)
-        {
-            ILog x = LogManager.GetLogger("wombat");
-            /*OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "Excel files|*.*";
-
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                出貨匯入結構_夠麻吉.Read(openFileDialog1.FileName);
-            }*/
-        }
-
         private void button33_Click(object sender, EventArgs e)
         {
             var i = new 條碼更新匯入視窗();
@@ -362,7 +324,33 @@ namespace WokyTool
             i.BringToFront();
         }
 
+        private void button35_Click(object sender, EventArgs e)
+        {
+            var i = new 月結帳匯入設定視窗();
+            i.Show();
+            i.BringToFront();
+        }
 
+        private void button27_Click(object sender, EventArgs e)
+        {
+            var i = new 月結帳匯入視窗();
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            var i = new 月結帳匯入視窗();
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            var i = new 月結帳總覽視窗();
+            i.Show();
+            i.BringToFront();
+        }
 
         /*private void button27_Click(object sender, EventArgs e)
         {
