@@ -97,17 +97,16 @@ namespace WokyTool.通用
         }
 
         // 取得資料
-        //public T Get(int ID_)
-        //{
-        //    T Item_;
-        //    if (Map.TryGetValue(ID_, out Item_))
-        //    {
-        //        return Item_;
-        //    }
+        public T Get(int ID_)
+        {
+            T Item_;
+            if (Map.TryGetValue(ID_, out Item_))
+            {
+                return Item_;
+            }
 
-        //    MessageBox.Show(this.GetType() + ":取得失敗 " + ID_, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    return 錯誤資料;
-        //}
+            return 錯誤資料;
+        }
 
         // 新增資料
         //public void Add(T Item_)
@@ -199,11 +198,15 @@ namespace WokyTool.通用
                 Item_.FinishEdit();
 
                 if(Item_.編號 <= 常數.空白資料編碼)
+                {
+                    Item_.檢查合法();
                     Item_.編號 = 編碼管理器.Instance.Get(編碼類型);
+                }
 
                 Map[Item_.編號] = Item_;
             }
 
+            BindingVersion++;
             SetDataDirty();
         }
 

@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -73,7 +74,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Log.cs" />
-    <Compile Include="Common\MyData.cs" />
+    <Compile Include="客戶\控制\子客戶資料管理器.cs" />
+    <Compile Include="客戶\視窗\子客戶詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="客戶\視窗\子客戶詳細視窗.Designer.cs">
+      <DependentUpon>子客戶詳細視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="客戶\視窗\子客戶總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="客戶\視窗\子客戶總覽視窗.Designer.cs">
+      <DependentUpon>子客戶總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="客戶\資料\子客戶資料.cs" />
+    <Compile Include="聯絡人\視窗\聯絡人總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="聯絡人\視窗\聯絡人總覽視窗.Designer.cs">
+      <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="通用\控制\資料儲存管理器.cs" />
+    <Compile Include="通用\資料\MyData.cs" />
     <Compile Include="Common\MyString.cs" />
     <Compile Include="Common\共用.cs" />
     <Compile Include="Common\函式.cs" />
@@ -164,9 +186,13 @@
     <Compile Include="Data\進貨資料_唯讀.cs" />
     <Compile Include="Data\進貨資料_暫時.cs" />
     <Compile Include="Data\非平台訂單資料.cs" />
+    <Compile Include="通用\控制\資料管理器.cs" />
+    <Compile Include="通用\資料\MyKeepableData.cs" />
     <Compile Include="動態匯入\動態匯入檔案結構.cs" />
-    <Compile Include="動態匯入\動態匯入檔案設定.cs" />
+    <Compile Include="動態匯入\檔案匯入設定資料.cs" />
     <Compile Include="動態匯入\動態匯入資料結構.cs" />
+    <Compile Include="客戶\資料\客戶資料.cs" />
+    <Compile Include="平台訂單\資料\平台訂單匯入檔案設定.cs" />
     <Compile Include="月結帳\控制\月結帳資料管理器.cs" />
     <Compile Include="月結帳\視窗\月結帳總覽視窗.cs">
       <SubType>Form</SubType>
@@ -174,9 +200,9 @@
     <Compile Include="月結帳\視窗\月結帳總覽視窗.Designer.cs">
       <DependentUpon>月結帳總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="月結帳\資料\月結帳匯入檔案設定.cs" />
-    <Compile Include="月結帳\控制\月結帳匯入檔案設定管理器.cs" />
-    <Compile Include="動態匯入\動態匯入資料設定.cs" />
+    <Compile Include="月結帳\資料\月結帳匯入設定資料.cs" />
+    <Compile Include="月結帳\控制\月結帳匯入設定管理器.cs" />
+    <Compile Include="動態匯入\欄位匯入設定資料.cs" />
     <Compile Include="FormOther\商品篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -450,7 +476,10 @@
     </Compile>
     <Compile Include="月結帳\控制\月結帳資料產生器.cs" />
     <Compile Include="月結帳\資料\月結帳資料.cs" />
-    <Compile Include="月結帳\資料\月結帳資料匯出結構.cs" />
+    <Compile Include="月結帳\控制\月結帳資料匯出結構.cs" />
+    <Compile Include="聯絡人\控制\聯絡人資料管理器.cs" />
+    <Compile Include="聯絡人\資料\聯絡人資料.cs" />
+    <Compile Include="通用\資料\可儲存類型.cs" />
     <EmbeddedResource Include="FormOther\商品篩選視窗.resx">
       <DependentUpon>商品篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -568,14 +597,24 @@
     <EmbeddedResource Include="FormOverview\編碼總覽視窗.resx">
       <DependentUpon>編碼總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="客戶\視窗\子客戶詳細視窗.resx">
+      <DependentUpon>子客戶詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客戶\視窗\子客戶總覽視窗.resx">
+      <DependentUpon>子客戶總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="月結帳\視窗\月結帳匯入設定視窗.resx">
       <DependentUpon>月結帳匯入設定視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="月結帳\視窗\月結帳匯入視窗.resx">
       <DependentUpon>月結帳匯入視窗.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="月結帳\視窗\月結帳總覽視窗.resx">
       <DependentUpon>月結帳總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="聯絡人\視窗\聯絡人總覽視窗.resx">
+      <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WokyTool.Common.列舉+代收類型.datasource" />
@@ -596,7 +635,6 @@
     <None Include="Properties\DataSources\WokyTool.Data.幣值資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.廠商資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.支出資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.月結帳資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.物品品牌資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.物品大類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.物品小類資料.datasource" />
@@ -615,7 +653,8 @@
     <None Include="Properties\DataSources\WokyTool.DataImport.物品更新匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.進貨匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.雜支匯入結構.datasource" />
-    <None Include="Properties\DataSources\WokyTool.動態匯入.動態匯入資料設定.datasource" />
+    <None Include="Properties\DataSources\WokyTool.客戶.子客戶資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.聯絡人.聯絡人資料.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -629,7 +668,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="平台訂單\控制\" />
+    <Folder Include="平台訂單\視窗\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

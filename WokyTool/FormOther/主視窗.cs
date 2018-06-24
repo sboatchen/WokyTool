@@ -26,6 +26,8 @@ using WokyTool.OtherForm;
 using WokyTool.動態匯入;
 using WokyTool.月結帳;
 using Excel = Microsoft.Office.Interop.Excel;
+using WokyTool.聯絡人;
+using WokyTool.客戶;
 
 namespace WokyTool
 {
@@ -333,9 +335,14 @@ namespace WokyTool
 
         private void button27_Click(object sender, EventArgs e)
         {
-            var i = new 月結帳匯入視窗();
+            var i = new 子客戶總覽視窗();
             i.Show();
             i.BringToFront();
+        }
+
+        private void button38_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -355,6 +362,13 @@ namespace WokyTool
         private void button36_Click(object sender, EventArgs e)
         {
             非平台訂單資料管理器.Instance.Get(1);
+        }
+
+        private void button37_Click(object sender, EventArgs e)
+        {
+            var i = new 聯絡人總覽視窗();
+            i.Show();
+            i.BringToFront();
         }
 
         /*private void button27_Click(object sender, EventArgs e)

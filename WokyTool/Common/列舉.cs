@@ -41,6 +41,7 @@ namespace WokyTool.Common
             訂單,
 
             客戶,
+            子客戶,
             聯絡人,
         };
 
