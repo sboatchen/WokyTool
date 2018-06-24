@@ -49,26 +49,28 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.篩選ToolStripMenuItem,
             this.匯出ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1148, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1345, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // 篩選ToolStripMenuItem
             // 
             this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
-            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
             this.篩選ToolStripMenuItem.Text = "篩選";
             this.篩選ToolStripMenuItem.Click += new System.EventHandler(this.篩選ToolStripMenuItem_Click);
             // 
             // 匯出ToolStripMenuItem
             // 
             this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
-            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
             this.匯出ToolStripMenuItem.Text = "匯出";
             this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
             // 
@@ -89,11 +91,12 @@
             this.總金額});
             this.dataGridView1.DataSource = this.月結帳資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 27);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1148, 538);
+            this.dataGridView1.Size = new System.Drawing.Size(1345, 675);
             this.dataGridView1.TabIndex = 1;
             // 
             // 月結帳資料BindingSource
@@ -127,7 +130,7 @@
             this.商品名稱DataGridViewTextBoxColumn.HeaderText = "商品名稱";
             this.商品名稱DataGridViewTextBoxColumn.Name = "商品名稱DataGridViewTextBoxColumn";
             this.商品名稱DataGridViewTextBoxColumn.ReadOnly = true;
-            this.商品名稱DataGridViewTextBoxColumn.Width = 400;
+            this.商品名稱DataGridViewTextBoxColumn.Width = 600;
             // 
             // 數量DataGridViewTextBoxColumn
             // 
@@ -159,14 +162,17 @@
             // 
             // 月結帳總覽視窗
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 562);
+            this.ClientSize = new System.Drawing.Size(1345, 702);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "月結帳總覽視窗";
             this.Text = "月結帳總覽視窗";
+            this.Activated += new System.EventHandler(this.月結帳總覽視窗_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.月結帳總覽視窗_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

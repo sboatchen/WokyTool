@@ -53,9 +53,9 @@
             this.可合併儲存格DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.欄位格式 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.欄位名稱 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.動態匯入資料設定BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.欄位匯入設定資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.儲存 = new System.Windows.Forms.Button();
-            this.動態匯入檔案設定月結帳BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.檔案匯入設定資料月結帳BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.清單 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -74,8 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.資料格式類型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.設定)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.動態匯入資料設定BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.動態匯入檔案設定月結帳BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.欄位匯入設定資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.檔案匯入設定資料月結帳BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品識別類型BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -238,7 +238,7 @@
             this.可合併儲存格DataGridViewCheckBoxColumn,
             this.欄位格式,
             this.欄位名稱});
-            this.設定.DataSource = this.動態匯入資料設定BindingSource;
+            this.設定.DataSource = this.欄位匯入設定資料BindingSource;
             this.設定.Location = new System.Drawing.Point(11, 220);
             this.設定.Name = "設定";
             this.設定.RowTemplate.Height = 24;
@@ -273,10 +273,7 @@
             this.欄位名稱.Name = "欄位名稱";
             this.欄位名稱.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.欄位名稱.Width = 200;
-            // 
-            // 動態匯入資料設定BindingSource
-            // 
-            this.動態匯入資料設定BindingSource.DataSource = typeof(WokyTool.動態匯入.動態匯入資料設定);
+
             // 
             // 儲存
             // 
@@ -287,14 +284,11 @@
             this.儲存.Text = "儲存";
             this.儲存.UseVisualStyleBackColor = true;
             this.儲存.Click += new System.EventHandler(this.儲存_Click);
-            // 
-            // 動態匯入檔案設定月結帳BindingSource
-            // 
-            this.動態匯入檔案設定月結帳BindingSource.DataSource = typeof(WokyTool.月結帳.月結帳匯入檔案設定);
+
             // 
             // 清單
             // 
-            this.清單.DataSource = this.動態匯入檔案設定月結帳BindingSource;
+            this.清單.DataSource = this.檔案匯入設定資料月結帳BindingSource;
             this.清單.DisplayMember = "名稱";
             this.清單.FormattingEnabled = true;
             this.清單.Location = new System.Drawing.Point(70, 12);
@@ -420,8 +414,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.資料格式類型BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.設定)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.動態匯入資料設定BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.動態匯入檔案設定月結帳BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.欄位匯入設定資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.檔案匯入設定資料月結帳BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品識別類型BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -450,9 +444,9 @@
         private System.Windows.Forms.BindingSource 公司資料BindingSource;
         private System.Windows.Forms.BindingSource 廠商資料BindingSource;
         private System.Windows.Forms.DataGridView 設定;
-        private System.Windows.Forms.BindingSource 動態匯入資料設定BindingSource;
+        private System.Windows.Forms.BindingSource 欄位匯入設定資料BindingSource;
         private System.Windows.Forms.Button 儲存;
-        private System.Windows.Forms.BindingSource 動態匯入檔案設定月結帳BindingSource;
+        private System.Windows.Forms.BindingSource 檔案匯入設定資料月結帳BindingSource;
         private System.Windows.Forms.ComboBox 清單;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;

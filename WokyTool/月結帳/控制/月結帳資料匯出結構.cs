@@ -7,7 +7,7 @@ using WokyTool.Common;
 
 namespace WokyTool.月結帳
 {
-    public class 月結帳資料匯出結構 : 可格式化_Excel
+    public class 月結帳資料匯出結構 : 可格式化_Excel //@@ 轉成動態
     {
         protected 月結帳資料 _Data;
 

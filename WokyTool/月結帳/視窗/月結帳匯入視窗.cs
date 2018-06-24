@@ -16,10 +16,10 @@ namespace WokyTool.月結帳
 {
     public partial class 月結帳匯入視窗 : Form
     {
-        protected 監測綁定更新<月結帳匯入檔案設定> _月結帳匯入檔案設定Listener;
+        protected 監測綁定更新<月結帳匯入設定資料> _月結帳匯入設定資料Listener;
         protected 監測綁定更新<商品資料> _商品資料Listener;
 
-        protected 月結帳匯入檔案設定 _目前設定 = null;
+        protected 月結帳匯入設定資料 _目前設定 = null;
         private bool _是否允許匯入 = true;
         protected List<月結帳資料> _資料;
         protected BindingSource _資料Binding = new BindingSource();
@@ -28,8 +28,8 @@ namespace WokyTool.月結帳
         {
             InitializeComponent();
 
-            _月結帳匯入檔案設定Listener = new 監測綁定更新<月結帳匯入檔案設定>(月結帳匯入檔案設定管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 設定資料更新);
-            _月結帳匯入檔案設定Listener.Refresh(true);
+            //_月結帳匯入設定資料Listener = new 監測綁定更新<月結帳匯入設定資料>(月結帳匯入設定資料管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 設定資料更新);
+            _月結帳匯入設定資料Listener.Refresh(true);
 
             _商品資料Listener = new 監測綁定更新<商品資料>(商品管理器.Instance.Binding, 列舉.監測類型.被動通知_公式, 商品資料更新);
             _商品資料Listener.Refresh(true);
@@ -44,14 +44,14 @@ namespace WokyTool.月結帳
             this.商品DataGridViewTextBoxColumn.DataSource = Data_.Where(Value => Value.廠商 == _目前設定.廠商 || Value.編號 == 常數.錯誤資料編碼).ToList(); ;
         }
 
-        private void 設定資料更新(IEnumerable<月結帳匯入檔案設定> Data_)
+        private void 設定資料更新(IEnumerable<月結帳匯入設定資料> Data_)
         {
             清單.DataSource = Data_;
         }
 
         private void 清單_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _目前設定 = (月結帳匯入檔案設定)this.清單.SelectedItem;
+            _目前設定 = (月結帳匯入設定資料)this.清單.SelectedItem;
 
             this.匯入.Enabled = _是否允許匯入;
         }
@@ -73,8 +73,8 @@ namespace WokyTool.月結帳
             動態匯入檔案結構 xx = new 動態匯入檔案結構(_目前設定);
             xx.ReadExcel(openFileDialog1.FileName);
 
-            月結帳資料產生器 產生器_ = new 月結帳資料產生器(_目前設定);
-            _資料 = 產生器_.Create(xx);
+            月結帳資料產生器 產生器_ = new 月結帳資料產生器(xx);
+            _資料 = 產生器_.Create();
             if (_資料 == null)
                 return;
 
@@ -92,7 +92,7 @@ namespace WokyTool.月結帳
 
             foreach (月結帳資料 月結帳資料_ in _資料)
             {
-                月結帳資料管理器.Instance.Add(月結帳資料_);
+                //月結帳資料管理器.Instance.Add(月結帳資料_);
             }
         }
 

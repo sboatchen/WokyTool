@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.清單 = new System.Windows.Forms.ComboBox();
-            this.動態匯入檔案設定月結帳BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.檔案匯入設定資料月結帳BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.匯入 = new System.Windows.Forms.Button();
             this.資料呈現 = new System.Windows.Forms.DataGridView();
             this.商品識別 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +41,7 @@
             this.含稅單價 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.月結帳資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.儲存 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.動態匯入檔案設定月結帳BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.檔案匯入設定資料月結帳BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.資料呈現)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.月結帳資料BindingSource)).BeginInit();
@@ -49,7 +49,7 @@
             // 
             // 清單
             // 
-            this.清單.DataSource = this.動態匯入檔案設定月結帳BindingSource;
+            this.清單.DataSource = this.檔案匯入設定資料月結帳BindingSource;
             this.清單.DisplayMember = "名稱";
             this.清單.FormattingEnabled = true;
             this.清單.Location = new System.Drawing.Point(13, 13);
@@ -58,9 +58,9 @@
             this.清單.TabIndex = 0;
             this.清單.SelectedIndexChanged += new System.EventHandler(this.清單_SelectedIndexChanged);
             // 
-            // 動態匯入檔案設定月結帳BindingSource
+            // 檔案匯入設定資料月結帳BindingSource
             // 
-            this.動態匯入檔案設定月結帳BindingSource.DataSource = typeof(WokyTool.月結帳.月結帳匯入檔案設定);
+            this.檔案匯入設定資料月結帳BindingSource.DataSource = typeof(WokyTool.月結帳.月結帳匯入設定資料);
             // 
             // 匯入
             // 
@@ -154,7 +154,7 @@
             this.Controls.Add(this.清單);
             this.Name = "月結帳匯入視窗";
             this.Text = "月結帳匯入視窗";
-            ((System.ComponentModel.ISupportInitialize)(this.動態匯入檔案設定月結帳BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.檔案匯入設定資料月結帳BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.資料呈現)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.月結帳資料BindingSource)).EndInit();
@@ -165,7 +165,7 @@
         #endregion
 
         private System.Windows.Forms.ComboBox 清單;
-        private System.Windows.Forms.BindingSource 動態匯入檔案設定月結帳BindingSource;
+        private System.Windows.Forms.BindingSource 檔案匯入設定資料月結帳BindingSource;
         private System.Windows.Forms.Button 匯入;
         private System.Windows.Forms.DataGridView 資料呈現;
         private System.Windows.Forms.BindingSource 月結帳資料BindingSource;

@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 using WokyTool.動態匯入;
 
 namespace WokyTool.月結帳
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 月結帳資料 : MyData
+    public class 月結帳資料 : MyKeepableData
     {
         [JsonProperty]
-        public int 編號 { get; set; }
+        public override int 編號 { get; set; }
 
         public 公司資料 公司;
         [JsonProperty]
@@ -97,23 +98,6 @@ namespace WokyTool.月結帳
 
         /********************************/
 
-        /*
-        public static 月結帳資料 New()   //@@ 拔掉所有的New
-        {
-            return new 月結帳資料
-            {
-                編號 = 編碼管理器.Instance.Get(列舉.編碼類型.物品),
-                公司 = 公司資料.NULL,
-                廠商 = 廠商資料.NULL,
-                商品識別 = 字串.無,
-                商品 = 商品資料.NULL,
-                數量 = 0,
-                單價 = 0,
-                含稅單價 = 0,
-            };
-        }
-        */
-
         private static readonly 月結帳資料 _NULL = new 月結帳資料
         {
             編號 = 常數.空白資料編碼,
@@ -152,9 +136,56 @@ namespace WokyTool.月結帳
             }
         }
 
+        /********************************/
+
         public override object 拷貝()
         {
-            throw new Exception("Not support copy");
+            月結帳資料 Data_ = new 月結帳資料
+            {
+                編號 = this.編號,
+                公司 = this.公司,
+                廠商 = this.廠商,
+                商品識別 = this.商品識別,
+                商品 = this.商品,
+                數量 = this.數量,
+                單價 = this.單價,
+                含稅單價 = this.含稅單價,
+            };
+
+            return Data_;
+        }
+
+        public override void 覆蓋(object Item_)
+        {
+            月結帳資料 Data_ = Item_ as 月結帳資料;
+            if (Data_ == null)
+                throw new Exception("月結帳資料:覆蓋失敗:" + this.GetType());
+
+            編號 = Data_.編號;
+            公司 = Data_.公司;
+            廠商 = Data_.廠商;
+            商品識別 = Data_.商品識別;
+            商品 = Data_.商品;
+            數量 = Data_.數量;
+            單價 = Data_.單價;
+            含稅單價 = Data_.含稅單價;
+        }
+
+        public override Boolean 是否一致(object Item_)
+        {
+            月結帳資料 Data_ = Item_ as 月結帳資料;
+            if (Data_ == null)
+                throw new Exception("月結帳資料:比較失敗:" + this.GetType());
+
+            return
+                編號 == Data_.編號 &&
+                公司 == Data_.公司 &&
+                廠商 == Data_.廠商 &&
+                商品識別 == Data_.商品識別 &&
+                商品 == Data_.商品 &&
+                數量 == Data_.數量 &&
+                單價 == Data_.單價 &&
+                含稅單價 == Data_.含稅單價;
         }
 
         public override void 檢查合法()
