@@ -317,6 +317,9 @@ namespace WokyTool.Common
 
             月結帳匯入檔案設定管理器.Instance.SaveData();
             月結帳資料管理器.Instance.SaveData();
+
+            平台訂單資料管理器.Instance.SaveData();
+            非平台訂單資料管理器.Instance.SaveData();
         }
     }
 }

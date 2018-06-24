@@ -16,6 +16,7 @@ namespace WokyTool.Data
     {
         public 物品資料 物品;
         [CsvColumn(Name = "物品編號")]
+        [JsonProperty]
         public int 物品編號
         {
             get
@@ -30,7 +31,6 @@ namespace WokyTool.Data
             }
         }
 
-        [JsonProperty]
         public string 物品顯示名稱
         {
             get
@@ -43,7 +43,6 @@ namespace WokyTool.Data
 
         /* 其他欄位 */
 
-        [JsonProperty]
         override public int 總體積
         {
             get

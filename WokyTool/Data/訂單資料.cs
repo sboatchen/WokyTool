@@ -14,6 +14,9 @@ namespace WokyTool.Data
     public abstract class 訂單資料 : 可配送, IComparable<訂單資料>
     {
         [JsonProperty]
+        [CsvColumn(Name = "流水號")]
+        public int 流水號 { get; set; }
+        [JsonProperty]
         [CsvColumn(Name = "姓名")]
         public string 姓名 { get; set; }
         [JsonProperty]
@@ -191,7 +194,6 @@ namespace WokyTool.Data
             else
                 配送公司 = 列舉.配送公司類型.全速配;
         }
-
 
         // 完成配送
         abstract public void SetDiliver(string 配送單號_);

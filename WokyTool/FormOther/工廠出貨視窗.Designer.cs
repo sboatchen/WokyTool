@@ -48,6 +48,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.廠商comboBox = new System.Windows.Forms.ComboBox();
             this.廠商資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.列印單價 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品訂單資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).BeginInit();
@@ -91,7 +92,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(313, 486);
+            this.button1.Location = new System.Drawing.Point(303, 508);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
@@ -138,7 +139,7 @@
             this.單價DataGridViewTextBoxColumn,
             this.備註DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.物品訂單資料BindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 105);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 121);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(696, 375);
@@ -205,11 +206,22 @@
             // 
             this.廠商資料BindingSource.DataSource = typeof(WokyTool.Data.廠商資料);
             // 
+            // 列印單價
+            // 
+            this.列印單價.AutoSize = true;
+            this.列印單價.Location = new System.Drawing.Point(15, 90);
+            this.列印單價.Name = "列印單價";
+            this.列印單價.Size = new System.Drawing.Size(72, 16);
+            this.列印單價.TabIndex = 13;
+            this.列印單價.Text = "列印單價";
+            this.列印單價.UseVisualStyleBackColor = true;
+            // 
             // 工廠出貨視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 521);
+            this.ClientSize = new System.Drawing.Size(723, 545);
+            this.Controls.Add(this.列印單價);
             this.Controls.Add(this.廠商comboBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView1);
@@ -254,5 +266,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox 廠商comboBox;
         private System.Windows.Forms.BindingSource 廠商資料BindingSource;
+        private System.Windows.Forms.CheckBox 列印單價;
     }
 }

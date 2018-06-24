@@ -145,7 +145,9 @@
     <Compile Include="DataImport\出貨匯入結構_遠傳加購.cs" />
     <Compile Include="DataImport\出貨匯入結構_金石堂.cs" />
     <Compile Include="DataImport\條碼更新匯入結構.cs" />
+    <Compile Include="DataMgr\平台訂單資料管理器.cs" />
     <Compile Include="DataMgr\銷售管理器.cs" />
+    <Compile Include="DataMgr\非平台訂單資料管理器.cs" />
     <Compile Include="Data\盤點歷史資料.cs" />
     <Compile Include="Data\盤點資料.cs" />
     <Compile Include="Data\銷售資料.cs" />
@@ -161,6 +163,7 @@
     <Compile Include="Data\訊息資料.cs" />
     <Compile Include="Data\進貨資料_唯讀.cs" />
     <Compile Include="Data\進貨資料_暫時.cs" />
+    <Compile Include="Data\非平台訂單資料.cs" />
     <Compile Include="動態匯入\動態匯入檔案結構.cs" />
     <Compile Include="動態匯入\動態匯入檔案設定.cs" />
     <Compile Include="動態匯入\動態匯入資料結構.cs" />

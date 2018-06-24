@@ -64,6 +64,7 @@
             this.button35 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.button36 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -426,11 +427,22 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
+            // button36
+            // 
+            this.button36.Location = new System.Drawing.Point(227, 337);
+            this.button36.Name = "button36";
+            this.button36.Size = new System.Drawing.Size(90, 23);
+            this.button36.TabIndex = 38;
+            this.button36.Text = "工廠訂單紀錄";
+            this.button36.UseVisualStyleBackColor = true;
+            this.button36.Click += new System.EventHandler(this.button36_Click);
+            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 468);
+            this.Controls.Add(this.button36);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button35);
@@ -468,7 +480,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "主視窗";
-            this.Text = "V 1.0.4";
+            this.Text = "V 1.2.1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.主視窗_FormClosing);
             this.ResumeLayout(false);
 
@@ -512,6 +524,7 @@
         private System.Windows.Forms.Button button35;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button36;
 
 
     }

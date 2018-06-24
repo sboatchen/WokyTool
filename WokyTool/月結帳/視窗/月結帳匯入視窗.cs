@@ -67,11 +67,17 @@ namespace WokyTool.月結帳
             _是否允許匯入 = false;
             this.匯入.Enabled = false;
 
+            // 更新商品列表
+            _商品資料Listener.Refresh(true);
+
             動態匯入檔案結構 xx = new 動態匯入檔案結構(_目前設定);
             xx.ReadExcel(openFileDialog1.FileName);
 
             月結帳資料產生器 產生器_ = new 月結帳資料產生器(_目前設定);
             _資料 = 產生器_.Create(xx);
+            if (_資料 == null)
+                return;
+
             _資料Binding.DataSource = _資料;
 
             this.儲存.Enabled = true;

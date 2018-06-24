@@ -36,6 +36,8 @@ namespace WokyTool.Common
 
             銷售,
             盤點,
+
+            訂單,
         };
 
         // 配送指定時段類型

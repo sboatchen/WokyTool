@@ -102,6 +102,9 @@ namespace WokyTool.Data
         [CsvColumn(Name = "最後進貨成本")]
         [JsonProperty]
         public int 最後進貨成本 { get; set; }
+        [CsvColumn(Name = "成本備註")]
+        [JsonProperty]
+        public String 成本備註 { get; set; }
 
         /*public 物品資料 上層 = 物品資料.NULL;
         [CsvColumn(Name = "上層編號")]

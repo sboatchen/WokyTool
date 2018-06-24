@@ -352,6 +352,11 @@ namespace WokyTool
             i.BringToFront();
         }
 
+        private void button36_Click(object sender, EventArgs e)
+        {
+            非平台訂單資料管理器.Instance.Get(1);
+        }
+
         /*private void button27_Click(object sender, EventArgs e)
         {
             // 開啟存檔位置

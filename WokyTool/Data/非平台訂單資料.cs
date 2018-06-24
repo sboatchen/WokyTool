@@ -9,9 +9,13 @@ using WokyTool.Common;
 
 namespace WokyTool.Data
 {
-    public class 合併訂單資料 : 可配送
+    [JsonObject(MemberSerialization.OptIn)]
+    public class 非平台訂單資料: 可配送
     {
-        public List<商品訂單資料> Child { get; set; }
+        [JsonProperty]
+        public int 流水號 { get; set; }
+        [JsonProperty]
+        public List<物品訂單資料> Child{ get; set; }
 
         public string 配送姓名 { get; set; }
         public string 配送電話 { get; set; }
@@ -62,9 +66,32 @@ namespace WokyTool.Data
         public string 廠商 { get; set; }
         public int 總體積 { get; protected set; }
 
-        public 合併訂單資料()
+        public 非平台訂單資料()
         {
-            Child = new List<商品訂單資料>();
+            Child = new List<物品訂單資料>();
+        }
+
+        public void Init()
+        {
+            if (Child.Count == 0)
+                return;
+
+            物品訂單資料 First_ = Child[0];
+
+            姓名 = First_.姓名;
+            廠商 = First_.廠商.名稱;
+
+            配送電話 = First_.電話;
+            配送手機 = First_.手機;
+            配送地址 = First_.地址;
+
+            指配日期 = First_.指配日期;
+            指配時段 = First_.指配時段;
+            代收方式 = First_.代收方式;
+            代收金額 = First_.代收金額;
+
+            _配送公司 = First_.配送公司;
+            _配送單號 = First_.配送單號;
         }
 
         // 準備配送
@@ -155,7 +182,7 @@ namespace WokyTool.Data
             return 配送單號 != null && 配送單號.Length != 0;
         }
 
-        public bool Add(商品訂單資料 Child_)
+        public bool Add(物品訂單資料 Child_)
         {
             if (true == Child_.IsDilivered())
             {
@@ -253,6 +280,32 @@ namespace WokyTool.Data
                 return false; 
             else
                 return Child[0].IsReceiptMatch(發票號碼_);
+        }
+
+        /********************************/
+
+        private static readonly 非平台訂單資料 _NULL = new 非平台訂單資料
+        {
+            流水號 = 常數.空白資料編碼
+        };
+        public static 非平台訂單資料 NULL
+        {
+            get
+            {
+                return _NULL;
+            }
+        }
+
+        private static 非平台訂單資料 _ERROR = new 非平台訂單資料
+        {
+            流水號 = 常數.錯誤資料編碼,
+        };
+        public static 非平台訂單資料 ERROR
+        {
+            get
+            {
+                return _ERROR;
+            }
         }
     }
 }

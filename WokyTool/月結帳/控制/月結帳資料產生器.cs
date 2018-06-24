@@ -8,6 +8,7 @@ using WokyTool.Data;
 using WokyTool.DataMgr;
 using WokyTool.動態匯入;
 using WokyTool.月結帳;
+using System.Windows.Forms;
 
 public delegate void 設定商品委派(動態匯入資料結構 動態資料_, 月結帳資料 月結帳資料_);
 public delegate void 設定金額委派(動態匯入資料結構 動態資料_, 月結帳資料 月結帳資料_);
@@ -125,44 +126,58 @@ namespace WokyTool.月結帳
 
         public void 設定單價(動態匯入資料結構 動態資料_, 月結帳資料 月結帳資料_)
         {
-            月結帳資料_.單價 = Convert.ToDecimal((double)動態資料_.資料[_單價索引]);
+            //月結帳資料_.單價 = Convert.ToDecimal((double)動態資料_.資料[_單價索引]);
+            月結帳資料_.單價 = Convert.ToDecimal(動態資料_.資料[_單價索引].ToString());
             月結帳資料_.含稅單價 = 月結帳資料_.單價 * 1.05m;
-            月結帳資料_.數量 = Convert.ToInt32((double)動態資料_.資料[_數量索引]);
+            //月結帳資料_.數量 = Convert.ToInt32((double)動態資料_.資料[_數量索引]);
+            月結帳資料_.數量 = Convert.ToInt32(動態資料_.資料[_數量索引].ToString());
         }
 
         public void 設定含稅單價(動態匯入資料結構 動態資料_, 月結帳資料 月結帳資料_)
         {
-            月結帳資料_.含稅單價 = Convert.ToDecimal((double)動態資料_.資料[_含稅單價索引]);
+            //月結帳資料_.含稅單價 = Convert.ToDecimal((double)動態資料_.資料[_含稅單價索引]);
+            月結帳資料_.含稅單價 = Convert.ToDecimal(動態資料_.資料[_含稅單價索引].ToString());
             月結帳資料_.單價 = 月結帳資料_.含稅單價 / 1.05m;
-            月結帳資料_.數量 = Convert.ToInt32((double)動態資料_.資料[_數量索引]);
+            //月結帳資料_.數量 = Convert.ToInt32((double)動態資料_.資料[_數量索引]);
+            月結帳資料_.數量 = Convert.ToInt32(動態資料_.資料[_數量索引].ToString());
         }
 
         public void 設定總價(動態匯入資料結構 動態資料_, 月結帳資料 月結帳資料_)
         {
-            月結帳資料_.數量 = Convert.ToInt32((double)動態資料_.資料[_數量索引]);
+            //月結帳資料_.數量 = Convert.ToInt32((double)動態資料_.資料[_數量索引]);
+            月結帳資料_.數量 = Convert.ToInt32(動態資料_.資料[_數量索引].ToString());
 
             if (月結帳資料_.數量 == 0)
                 月結帳資料_.單價 = 0;
             else
-                月結帳資料_.單價 = Convert.ToDecimal((double)動態資料_.資料[_總價索引]) / 月結帳資料_.數量;
+            {
+                //月結帳資料_.單價 = Convert.ToDecimal((double)動態資料_.資料[_總價索引]) / 月結帳資料_.數量;
+                月結帳資料_.單價 = Convert.ToDecimal(動態資料_.資料[_總價索引].ToString()) / 月結帳資料_.數量;
+            }
+
             月結帳資料_.含稅單價 = 月結帳資料_.單價 * 1.05m;
         }
 
         public void 設定含稅總價(動態匯入資料結構 動態資料_, 月結帳資料 月結帳資料_)
         {
-            月結帳資料_.數量 = Convert.ToInt32((double)動態資料_.資料[_數量索引]);
+            //月結帳資料_.數量 = Convert.ToInt32((double)動態資料_.資料[_數量索引]);
+            月結帳資料_.數量 = Convert.ToInt32(動態資料_.資料[_數量索引].ToString());
 
             if (月結帳資料_.數量 == 0)
                 月結帳資料_.含稅單價 = 0;
             else
-                月結帳資料_.含稅單價 = Convert.ToDecimal((double)動態資料_.資料[_含稅總價索引]) / 月結帳資料_.數量;
-            
+            {
+                //月結帳資料_.含稅單價 = Convert.ToDecimal((double)動態資料_.資料[_含稅總價索引]) / 月結帳資料_.數量;
+                月結帳資料_.含稅單價 = Convert.ToDecimal(動態資料_.資料[_含稅總價索引].ToString()) / 月結帳資料_.數量;
+            }
+
             月結帳資料_.單價 = 月結帳資料_.含稅單價 / 1.05m;
         }
 
         public void 設定數量(動態匯入資料結構 動態資料_, 月結帳資料 月結帳資料_)
         {
-            月結帳資料_.數量 = Convert.ToInt32((double)動態資料_.資料[_數量索引]);
+            //月結帳資料_.數量 = Convert.ToInt32((double)動態資料_.資料[_數量索引]);
+            月結帳資料_.數量 = Convert.ToInt32(動態資料_.資料[_數量索引].ToString());
         }
 
         public List<月結帳資料> Create(動態匯入檔案結構 檔案_)
@@ -173,23 +188,32 @@ namespace WokyTool.月結帳
             公司資料 公司_ = _設定.公司;
             廠商資料 廠商_ = _設定.廠商;
 
-            List<月結帳資料> Result_ = new List<月結帳資料>();
-            foreach (var 動態資料_ in 檔案_.內容)
+            try
             {
-                var 月結帳資料_ = new 月結帳資料
+                List<月結帳資料> Result_ = new List<月結帳資料>();
+                foreach (var 動態資料_ in 檔案_.內容)
                 {
-                    公司 = 公司_,
-                    廠商 = 廠商_,
-                };
+                    var 月結帳資料_ = new 月結帳資料
+                    {
+                        公司 = 公司_,
+                        廠商 = 廠商_,
+                    };
 
-                設定商品(動態資料_, 月結帳資料_);
-                設定金額(動態資料_, 月結帳資料_);
-                設定數量(動態資料_, 月結帳資料_);
+                    設定商品(動態資料_, 月結帳資料_);
+                    設定金額(動態資料_, 月結帳資料_);
+                    設定數量(動態資料_, 月結帳資料_);
 
-                Result_.Add(月結帳資料_);
+                    Result_.Add(月結帳資料_);
+                }
+
+                return Result_;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return Result_;
+            return null;
         }
     }
 }

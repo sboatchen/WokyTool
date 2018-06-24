@@ -221,7 +221,7 @@ namespace WokyTool.ImportForm
                     return;
                 }
 
-                合併訂單資料 CombineItem_ = new 合併訂單資料();
+                非平台訂單資料 CombineItem_ = new 非平台訂單資料();
                 foreach (var Item in Group_)
                 {
                     if (CombineItem_.Add(Item) == false)

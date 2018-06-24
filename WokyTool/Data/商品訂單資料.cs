@@ -82,5 +82,31 @@ namespace WokyTool.Data
             if (商品 != null)
                  商品.GetCombine(物品列表_, 數量);
         }
+
+        /********************************/
+
+        private static readonly 商品訂單資料 _NULL = new 商品訂單資料
+        {
+            流水號 = 常數.空白資料編碼
+        };
+        public static 商品訂單資料 NULL
+        {
+            get
+            {
+                return _NULL;
+            }
+        }
+
+        private static 商品訂單資料 _ERROR = new 商品訂單資料
+        {
+            流水號 = 常數.錯誤資料編碼,
+        };
+        public static 商品訂單資料 ERROR
+        {
+            get
+            {
+                return _ERROR;
+            }
+        }
     }
 }

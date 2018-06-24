@@ -90,13 +90,8 @@ namespace WokyTool.FormOther
                 Console.WriteLine(Item_.ToString());
             }
 
-            // 匯出銷售單
-            工廠出貨匯出結構 ExportFormat_ = new 工廠出貨匯出結構(_Source);
-            string Title_ = String.Format("工廠出貨_{0}_{1}", Name_, 共用.NowYMDDec);
-            函式.ExportExcel<工廠出貨匯出結構>(Title_, ExportFormat_);
-
-            // 轉至出貨系統
-            合併訂單資料 CombineItem_ = new 合併訂單資料();
+            // 組合訂單
+            非平台訂單資料 CombineItem_ = new 非平台訂單資料();
             foreach (物品訂單資料 Item_ in _Source)
             {
                 if (Item_.getType() != 列舉.銷售狀態類型.出貨)    //@@ 目前只有先不處理 後續要思考怎麼處理
@@ -106,6 +101,17 @@ namespace WokyTool.FormOther
                     return;
             }
             CombineItem_.PrepareDiliver();
+
+            非平台訂單資料管理器.Instance.Add(CombineItem_);
+
+            bool 是否列印單價_ = this.列印單價.Checked;
+
+            // 匯出銷售單
+            工廠出貨匯出結構 ExportFormat_ = new 工廠出貨匯出結構(_Source, 是否列印單價_);
+            string Title_ = String.Format("工廠出貨_{0}_{1}", Name_, 共用.NowYMDDec);
+            函式.ExportExcel<工廠出貨匯出結構>(Title_, ExportFormat_);
+
+            // 轉至出貨系統
             配送管理器.Instance.Add(CombineItem_);
 
             this.Close();
