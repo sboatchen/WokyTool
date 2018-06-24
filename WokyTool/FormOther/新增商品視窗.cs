@@ -87,7 +87,7 @@ namespace WokyTool.OtherForm
             }
             else
             {
-                this.參考.DataSource = Data_.Where(Value => Value.名稱.Contains(this.參考.Text)).ToList();
+                this.參考.DataSource = Data_.Where(Value => (Value.名稱 != null) && Value.名稱.Contains(this.參考.Text)).ToList();
             }
         }
 

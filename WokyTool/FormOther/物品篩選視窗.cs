@@ -109,10 +109,10 @@ namespace WokyTool.FormOther
                 Source_ = Source_.Where(Value => (Value.代理編號 != null) && (Value.代理編號.Contains(this.代理編號.Text)));
 
             if (this.名稱.Text.Length != 0)
-                Source_ = Source_.Where(Value => Value.名稱.Contains(this.名稱.Text));
+                Source_ = Source_.Where(Value => (Value.名稱 != null) && Value.名稱.Contains(this.名稱.Text));
 
             if (this.縮寫.Text.Length != 0)
-                Source_ = Source_.Where(Value => Value.縮寫.Contains(this.縮寫.Text));
+                Source_ = Source_.Where(Value => (Value.縮寫 != null) && Value.縮寫.Contains(this.縮寫.Text));
 
             return Source_;
         }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WokyTool.DataExport;
 using WokyTool.DataMgr;
 using WokyTool.月結帳;
+using WokyTool.通用;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WokyTool.Common
@@ -315,11 +316,10 @@ namespace WokyTool.Common
             入庫管理器.Instance.SaveData();
             銷售管理器.Instance.SaveData();
 
-            月結帳匯入檔案設定管理器.Instance.SaveData();
-            月結帳資料管理器.Instance.SaveData();
-
             平台訂單資料管理器.Instance.SaveData();
             非平台訂單資料管理器.Instance.SaveData();
+
+            資料儲存管理器.獨體.儲存();
         }
     }
 }
