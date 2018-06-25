@@ -335,14 +335,16 @@ namespace WokyTool
 
         private void button27_Click(object sender, EventArgs e)
         {
-            var i = new 子客戶總覽視窗();
+            var i = new 客戶總覽視窗();
             i.Show();
             i.BringToFront();
         }
 
         private void button38_Click(object sender, EventArgs e)
         {
-
+            var i = new 子客戶總覽視窗();
+            i.Show();
+            i.BringToFront();
         }
 
         private void button12_Click(object sender, EventArgs e)

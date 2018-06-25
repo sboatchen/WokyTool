@@ -34,9 +34,9 @@
             this.名稱 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.頁索引元件1 = new WokyTool.通用.頁索引元件();
+            this.聯絡人資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.聯絡人資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.電話DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.手機DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,6 +93,10 @@
             this.頁索引元件1.Size = new System.Drawing.Size(234, 34);
             this.頁索引元件1.TabIndex = 7;
             // 
+            // 聯絡人資料BindingSource
+            // 
+            this.聯絡人資料BindingSource.DataSource = typeof(WokyTool.聯絡人.聯絡人資料);
+            // 
             // 編號DataGridViewTextBoxColumn
             // 
             this.編號DataGridViewTextBoxColumn.DataPropertyName = "編號";
@@ -109,10 +113,6 @@
             this.姓名DataGridViewTextBoxColumn.Name = "姓名DataGridViewTextBoxColumn";
             this.姓名DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.姓名DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // 聯絡人資料BindingSource
-            // 
-            this.聯絡人資料BindingSource.DataSource = typeof(WokyTool.聯絡人.聯絡人資料);
             // 
             // 電話DataGridViewTextBoxColumn
             // 
@@ -134,6 +134,7 @@
             this.地址DataGridViewTextBoxColumn.HeaderText = "地址";
             this.地址DataGridViewTextBoxColumn.Name = "地址DataGridViewTextBoxColumn";
             this.地址DataGridViewTextBoxColumn.ReadOnly = true;
+            this.地址DataGridViewTextBoxColumn.Width = 150;
             // 
             // 子客戶詳細視窗
             // 
@@ -163,11 +164,11 @@
         private System.Windows.Forms.TextBox 名稱;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 聯絡人資料BindingSource;
+        private 通用.頁索引元件 頁索引元件1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 姓名DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 電話DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 手機DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 地址DataGridViewTextBoxColumn;
-        private 通用.頁索引元件 頁索引元件1;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WokyTool.Common;
 using WokyTool.通用;
 using WokyTool.聯絡人;
 
@@ -33,7 +34,13 @@ namespace WokyTool.客戶
 
         private void 子客戶詳細視窗_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //儲存修改();
+            儲存修改();
+
+            if (子客戶資料管理器.獨體.IsEditing())
+            {
+                var result = MessageBox.Show(字串.儲存確認內容, 字串.儲存確認, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                子客戶資料管理器.獨體.UpdateEdit(result == DialogResult.Yes);
+            }
 
             this.Hide();
             e.Cancel = true;
@@ -47,8 +54,7 @@ namespace WokyTool.客戶
                 this.姓名DataGridViewTextBoxColumn.DataSource = 聯絡人資料管理器.獨體.BList;
             }
 
-            //目前資料 = null;
-            //嘗試更新資料();
+            this.頁索引元件1.刷新();
         }
 
         /********************************/

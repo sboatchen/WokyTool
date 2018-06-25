@@ -39,5 +39,10 @@ namespace WokyTool.客戶
             _子客戶詳細視窗.設定索引(this.子客戶資料BindingSource.Position);
             _子客戶詳細視窗.Show();
         }
+
+        private void 子客戶總覽視窗_Activated(object sender, EventArgs e)
+        {
+            this.子客戶資料BindingSource.ResetBindings(false);
+        }
     }
 }

@@ -89,5 +89,11 @@ namespace WokyTool.通用
 
             this.Refresh();
         }
+
+        public void 刷新()
+        {
+            目前資料 = null;
+            嘗試更新資料();
+        }
     }
 }

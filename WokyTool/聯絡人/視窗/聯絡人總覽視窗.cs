@@ -28,5 +28,10 @@ namespace WokyTool.聯絡人
             var result = MessageBox.Show(字串.儲存確認內容, 字串.儲存確認, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             聯絡人資料管理器.獨體.UpdateEdit(result == DialogResult.Yes);
         }
+
+        private void 聯絡人總覽視窗_Activated(object sender, EventArgs e)
+        {
+            this.聯絡人資料BindingSource.ResetBindings(false);
+        }
     }
 }
