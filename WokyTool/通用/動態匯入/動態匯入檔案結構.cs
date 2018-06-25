@@ -6,10 +6,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
-using WokyTool.通用;
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace WokyTool.動態匯入
+namespace WokyTool.通用
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class 動態匯入檔案結構 : MyData

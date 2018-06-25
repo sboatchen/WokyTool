@@ -88,7 +88,14 @@
       <DependentUpon>子客戶總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
-    <Compile Include="通用\視窗\唯讀資料列選取插件.cs" />
+    <Compile Include="通用\介面\可更新儲存介面.cs" />
+    <Compile Include="通用\視窗元件\頁索引元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="通用\視窗元件\頁索引元件.Designer.cs">
+      <DependentUpon>頁索引元件.cs</DependentUpon>
+    </Compile>
+    <Compile Include="通用\視窗處理\唯讀資料列選取插件.cs" />
     <Compile Include="聯絡人\視窗\聯絡人總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,9 +103,6 @@
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="通用\控制\資料儲存管理器.cs" />
-    <Compile Include="通用\視窗\頁資料樣板視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="通用\資料\MyData.cs" />
     <Compile Include="Common\MyString.cs" />
     <Compile Include="Common\共用.cs" />
@@ -192,9 +196,9 @@
     <Compile Include="Data\非平台訂單資料.cs" />
     <Compile Include="通用\控制\資料管理器.cs" />
     <Compile Include="通用\資料\MyKeepableData.cs" />
-    <Compile Include="動態匯入\動態匯入檔案結構.cs" />
-    <Compile Include="動態匯入\檔案匯入設定資料.cs" />
-    <Compile Include="動態匯入\動態匯入資料結構.cs" />
+    <Compile Include="通用\動態匯入\動態匯入檔案結構.cs" />
+    <Compile Include="通用\動態匯入\檔案匯入設定資料.cs" />
+    <Compile Include="通用\動態匯入\動態匯入資料結構.cs" />
     <Compile Include="客戶\資料\客戶資料.cs" />
     <Compile Include="平台訂單\資料\平台訂單匯入檔案設定.cs" />
     <Compile Include="月結帳\控制\月結帳資料管理器.cs" />
@@ -206,7 +210,7 @@
     </Compile>
     <Compile Include="月結帳\資料\月結帳匯入設定資料.cs" />
     <Compile Include="月結帳\控制\月結帳匯入設定管理器.cs" />
-    <Compile Include="動態匯入\欄位匯入設定資料.cs" />
+    <Compile Include="通用\動態匯入\欄位匯入設定資料.cs" />
     <Compile Include="FormOther\商品篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -619,6 +623,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="聯絡人\視窗\聯絡人總覽視窗.resx">
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="通用\視窗元件\頁索引元件.resx">
+      <DependentUpon>頁索引元件.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WokyTool.Common.列舉+代收類型.datasource" />

@@ -5,9 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System;
-using WokyTool.通用;
 
-namespace WokyTool.動態匯入
+namespace WokyTool.通用
 {
     [JsonObject(MemberSerialization.OptIn)]
     public abstract class 檔案匯入設定資料 : MyKeepableData

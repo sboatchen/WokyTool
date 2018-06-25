@@ -23,7 +23,7 @@ using WokyTool.FormOther;
 using WokyTool.FormOverview;
 using WokyTool.ImportForm;
 using WokyTool.OtherForm;
-using WokyTool.動態匯入;
+using WokyTool.通用;
 using WokyTool.月結帳;
 using Excel = Microsoft.Office.Interop.Excel;
 using WokyTool.聯絡人;

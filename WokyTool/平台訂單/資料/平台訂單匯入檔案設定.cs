@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataMgr;
-using WokyTool.動態匯入;
+using WokyTool.通用;
 
 namespace WokyTool.月結帳
 {

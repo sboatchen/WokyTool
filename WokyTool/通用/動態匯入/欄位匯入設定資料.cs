@@ -5,9 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
-using WokyTool.通用;
 
-namespace WokyTool.動態匯入
+namespace WokyTool.通用
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class 欄位匯入設定資料 : MyKeepableData
