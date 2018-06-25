@@ -33,15 +33,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.名稱 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.頁索引元件1 = new WokyTool.通用.頁索引元件();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.聯絡人資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.電話DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.手機DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.索引 = new System.Windows.Forms.Label();
-            this.下一個 = new System.Windows.Forms.Button();
-            this.上一個 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.聯絡人資料BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -88,6 +86,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(597, 150);
             this.dataGridView1.TabIndex = 3;
             // 
+            // 頁索引元件1
+            // 
+            this.頁索引元件1.Location = new System.Drawing.Point(190, 234);
+            this.頁索引元件1.Name = "頁索引元件1";
+            this.頁索引元件1.Size = new System.Drawing.Size(234, 34);
+            this.頁索引元件1.TabIndex = 7;
+            // 
             // 編號DataGridViewTextBoxColumn
             // 
             this.編號DataGridViewTextBoxColumn.DataPropertyName = "編號";
@@ -130,43 +135,12 @@
             this.地址DataGridViewTextBoxColumn.Name = "地址DataGridViewTextBoxColumn";
             this.地址DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 索引
-            // 
-            this.索引.AutoSize = true;
-            this.索引.Location = new System.Drawing.Point(264, 236);
-            this.索引.Name = "索引";
-            this.索引.Size = new System.Drawing.Size(41, 12);
-            this.索引.TabIndex = 4;
-            this.索引.Text = "?? of ??";
-            // 
-            // 下一個
-            // 
-            this.下一個.Location = new System.Drawing.Point(324, 231);
-            this.下一個.Name = "下一個";
-            this.下一個.Size = new System.Drawing.Size(75, 23);
-            this.下一個.TabIndex = 5;
-            this.下一個.Text = "Next";
-            this.下一個.UseVisualStyleBackColor = true;
-            this.下一個.Click += new System.EventHandler(this.下一個_Click);
-            // 
-            // 上一個
-            // 
-            this.上一個.Location = new System.Drawing.Point(166, 231);
-            this.上一個.Name = "上一個";
-            this.上一個.Size = new System.Drawing.Size(75, 23);
-            this.上一個.TabIndex = 6;
-            this.上一個.Text = "Before";
-            this.上一個.UseVisualStyleBackColor = true;
-            this.上一個.Click += new System.EventHandler(this.上一個_Click);
-            // 
             // 子客戶詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 385);
-            this.Controls.Add(this.上一個);
-            this.Controls.Add(this.下一個);
-            this.Controls.Add(this.索引);
+            this.ClientSize = new System.Drawing.Size(624, 278);
+            this.Controls.Add(this.頁索引元件1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.名稱);
             this.Controls.Add(this.label2);
@@ -189,13 +163,11 @@
         private System.Windows.Forms.TextBox 名稱;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 聯絡人資料BindingSource;
-        private System.Windows.Forms.Label 索引;
-        private System.Windows.Forms.Button 下一個;
-        private System.Windows.Forms.Button 上一個;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 姓名DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 電話DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 手機DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 地址DataGridViewTextBoxColumn;
+        private 通用.頁索引元件 頁索引元件1;
     }
 }

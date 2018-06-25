@@ -113,13 +113,7 @@ namespace WokyTool.客戶
             if (Data_ == null)
                 throw new Exception("子客戶資料:比較失敗:" + this.GetType());
 
-            if (編號 != Data_.編號)
-                return false;
-
-            if (名稱 != Data_.名稱)
-                return false;
-
-            if (聯絡人數量 != Data_.聯絡人數量)
+            if (編號 != Data_.編號 || 名稱 != Data_.名稱 || 聯絡人數量 != Data_.聯絡人數量)
                 return false;
 
             for (int i = 0; i < 聯絡人數量; i++)
@@ -137,28 +131,8 @@ namespace WokyTool.客戶
                 throw new Exception("子客戶資料:名稱不合法:" + this.ToString());
 
             // 考慮使用者可能先建 客戶資料 再建 聯絡人資料
-            //if(聯絡人編號列 == null || 聯絡人編號列.Count() == 0)
+            //if(聯絡人數量 == 0)
             //    throw new Exception("子客戶資料:聯絡人數量為0:" + this.ToString());
-        }
-
-        public void 更新聯絡人資料(IEnumerable<聯絡人資料> 聯絡人資料列_)
-        {
-            if (聯絡人資料列_ == null || 聯絡人資料列_.Count() == 0)
-            {
-                聯絡人編號列 = null;
-            }
-            else
-            {
-                if (聯絡人編號列 == null)
-                    聯絡人編號列 = new List<int>();
-                else
-                    聯絡人編號列.Clear();
-
-                foreach (聯絡人資料 聯絡人資料_ in 聯絡人資料列_)
-                {
-                    聯絡人編號列.Add(聯絡人資料_.編號);
-                }
-            }
         }
     }
 }
