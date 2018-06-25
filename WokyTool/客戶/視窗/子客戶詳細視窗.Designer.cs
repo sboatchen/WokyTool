@@ -87,8 +87,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(597, 150);
             this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
-            this.dataGridView1.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridView1_RowsRemoved);
             // 
             // 編號DataGridViewTextBoxColumn
             // 
@@ -177,7 +175,6 @@
             this.Text = "子客戶詳細視窗";
             this.Activated += new System.EventHandler(this.子客戶詳細視窗_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.子客戶詳細視窗_FormClosing);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.子客戶詳細視窗_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.聯絡人資料BindingSource)).EndInit();
             this.ResumeLayout(false);

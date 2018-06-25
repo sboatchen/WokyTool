@@ -88,6 +88,7 @@
       <DependentUpon>子客戶總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
+    <Compile Include="通用\視窗\唯讀資料列選取插件.cs" />
     <Compile Include="聯絡人\視窗\聯絡人總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +96,9 @@
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="通用\控制\資料儲存管理器.cs" />
+    <Compile Include="通用\視窗\頁資料樣板視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="通用\資料\MyData.cs" />
     <Compile Include="Common\MyString.cs" />
     <Compile Include="Common\共用.cs" />
