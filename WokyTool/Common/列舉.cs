@@ -223,5 +223,14 @@ namespace WokyTool.Common
             商品編號_顏色 = 2,
             商品名稱 = 3,
         };
+
+
+        public enum 視窗類型
+        {
+            無 = 0,
+
+            客戶,
+            子客戶,
+        };
     }
 }

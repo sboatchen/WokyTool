@@ -8,13 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
+using WokyTool.通用;
 
 namespace WokyTool.客戶
 {
     public partial class 子客戶總覽視窗 : Form
     {
-        private 子客戶詳細視窗 _子客戶詳細視窗 = null;
-
         public 子客戶總覽視窗()
         {
             InitializeComponent();
@@ -33,11 +32,8 @@ namespace WokyTool.客戶
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (_子客戶詳細視窗 == null)
-                _子客戶詳細視窗 = new 子客戶詳細視窗();
-
-            _子客戶詳細視窗.設定索引(this.子客戶資料BindingSource.Position);
-            _子客戶詳細視窗.Show();
+            int 索引_ = this.子客戶資料BindingSource.Position;
+            視窗管理器.獨體.顯現(列舉.視窗類型.子客戶, 索引_);
         }
 
         private void 子客戶總覽視窗_Activated(object sender, EventArgs e)

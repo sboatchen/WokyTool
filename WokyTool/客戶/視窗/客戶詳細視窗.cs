@@ -13,7 +13,7 @@ using WokyTool.聯絡人;
 
 namespace WokyTool.客戶
 {
-    public partial class 客戶詳細視窗 : Form, 可更新儲存介面
+    public partial class 客戶詳細視窗 : Form, 頁索引上層介面
     {
         private int _子客戶資料版本;
         private int _聯絡人資料版本;
@@ -57,7 +57,7 @@ namespace WokyTool.客戶
 
         private void 客戶詳細視窗_FormClosing(object sender, FormClosingEventArgs e)
         {
-            儲存修改();
+            索引切換_異動儲存();
 
             if (客戶資料管理器.獨體.IsEditing())
             {
@@ -76,7 +76,7 @@ namespace WokyTool.客戶
 
         /********************************/
 
-        public void 更新資料()
+        public void 索引切換_更新呈現()
         {
             客戶資料 目前資料_ = (客戶資料)(this.頁索引元件1.目前資料);
 
@@ -86,7 +86,7 @@ namespace WokyTool.客戶
             _聯絡人唯讀資料列選取插件.綁定(目前資料_.聯絡人編號列);
         }
 
-        public void 儲存修改()
+        public void 索引切換_異動儲存()
         {
             客戶資料 目前資料_ = (客戶資料)(this.頁索引元件1.目前資料);
 

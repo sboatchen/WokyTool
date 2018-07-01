@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
-    public interface 可更新儲存介面
+    public interface 頁索引上層介面
     {
-        void 更新資料();
-        void 儲存修改();
+        void 索引切換_異動儲存();
+        void 索引切換_更新呈現();
     }
 }
