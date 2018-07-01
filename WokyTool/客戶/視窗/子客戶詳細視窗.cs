@@ -29,7 +29,7 @@ namespace WokyTool.客戶
 
             _聯絡人資料版本 = 聯絡人資料管理器.獨體.BindingVersion;
 
-            _資料列選取插件 = new 資料列選取插件<聯絡人資料>(聯絡人資料管理器.獨體, this.dataGridView1, 1);
+            _資料列選取插件 = new 資料列選取插件<聯絡人資料>(聯絡人資料管理器.獨體, this.聯絡人資料BindingSource, this.dataGridView1, 1);
         }
 
         /********************************/

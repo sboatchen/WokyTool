@@ -26,11 +26,14 @@ namespace WokyTool.通用
 
         private bool _是否修改資料;
         private List<T> _資料列;
+
+        private System.Windows.Forms.BindingSource _資料BindingSource;
         private BindingList<T> _綁定資料;
 
-        public 資料列選取插件(資料管理器<T> 資料管理器_, System.Windows.Forms.DataGridView DataGridView_, int 欄位_)
+        public 資料列選取插件(資料管理器<T> 資料管理器_, System.Windows.Forms.BindingSource 資料BindingSource_, System.Windows.Forms.DataGridView DataGridView_, int 欄位_)
         {
             _資料管理器 = 資料管理器_;
+            _資料BindingSource = 資料BindingSource_;
             _DataGridView = DataGridView_;
             _欄位 = 欄位_;
 
@@ -39,7 +42,7 @@ namespace WokyTool.通用
             _資料列 = new List<T>();
 
             _綁定資料 = new BindingList<T>(_資料列);
-            _DataGridView.DataSource = _綁定資料;
+            _資料BindingSource.DataSource = _綁定資料;
 
             _DataGridView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView_EditingControlShowing);
             //_DataGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridView_RowsRemoved);

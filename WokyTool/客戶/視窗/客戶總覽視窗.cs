@@ -22,8 +22,8 @@ namespace WokyTool.客戶
         }
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int 索引_ = this.客戶資料BindingSource.Position;
-            視窗管理器.獨體.顯現(列舉.視窗類型.客戶, 索引_);
+            int 編號_ = ((客戶資料)(this.客戶資料BindingSource.Current)).編號;
+            視窗管理器.獨體.顯現(列舉.視窗類型.客戶, 編號_);
         }
     }
 }

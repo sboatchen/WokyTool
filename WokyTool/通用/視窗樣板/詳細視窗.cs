@@ -88,9 +88,9 @@ namespace WokyTool.通用
             this.BringToFront();
         }
 
-        public void 顯現(int Pos_)
+        public void 顯現(int 編號_)
         {
-            this._頁索引元件.設定索引(Pos_);
+            this._頁索引元件.設定編號(編號_);
             this.Show();
             this.BringToFront();
         }

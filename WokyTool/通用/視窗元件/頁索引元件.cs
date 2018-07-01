@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WokyTool.通用
 {
-    public partial class  頁索引元件 : UserControl
+    public partial class 頁索引元件 : UserControl
     {
         protected System.Windows.Forms.BindingSource 資料BindingSource;
         protected 頁索引上層介面 _綁定介面;
@@ -62,11 +62,19 @@ namespace WokyTool.通用
             嘗試更新資料();
         }
 
-        public void 設定索引(int 位置_)
+        public void 設定編號(int 編號_)
         {
             是否合法();
 
-            this.資料BindingSource.Position = 位置_;
+            for(int i = 0 ; i < this.資料BindingSource.Count; i++)
+            {
+                MyKeepableData Item_ = (MyKeepableData)(this.資料BindingSource[i]);
+                if(Item_.編號 == 編號_)
+                {
+                    this.資料BindingSource.Position = i;
+                    break;
+                }
+            }
 
             if(this.Visible)
                 嘗試更新資料();

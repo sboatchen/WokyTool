@@ -34,14 +34,14 @@ namespace WokyTool.客戶
             _子客戶資料版本 = 子客戶資料管理器.獨體.BindingVersion;
             _聯絡人資料版本 = 聯絡人資料管理器.獨體.BindingVersion;
 
-            _子客戶資料列選取插件 = new 資料列選取插件<子客戶資料>(子客戶資料管理器.獨體, this.dataGridView1, 1);
-            _聯絡人資料列選取插件 = new 資料列選取插件<聯絡人資料>(聯絡人資料管理器.獨體, this.dataGridView2, 1);
+            _子客戶資料列選取插件 = new 資料列選取插件<子客戶資料>(子客戶資料管理器.獨體, this.子客戶資料BindingSource, this.dataGridView1, 1);
+            _聯絡人資料列選取插件 = new 資料列選取插件<聯絡人資料>(聯絡人資料管理器.獨體, this.聯絡人資料BindingSource, this.dataGridView2, 1);
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int 索引_ = this.子客戶資料BindingSource.Position;
-            視窗管理器.獨體.顯現(列舉.視窗類型.子客戶, 索引_);
+            int 編號_ = ((子客戶資料)(this.子客戶資料BindingSource.Current)).編號;
+            視窗管理器.獨體.顯現(列舉.視窗類型.子客戶, 編號_);
         }
 
         /********************************/
