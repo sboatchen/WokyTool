@@ -106,8 +106,6 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "聯絡人總覽視窗";
             this.Text = "聯絡人總覽視窗";
-            this.Activated += new System.EventHandler(this.聯絡人總覽視窗_Activated);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.聯絡人總覽視窗_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.聯絡人資料BindingSource)).EndInit();
             this.ResumeLayout(false);

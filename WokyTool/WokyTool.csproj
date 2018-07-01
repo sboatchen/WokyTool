@@ -101,23 +101,32 @@
       <DependentUpon>客戶詳細視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
-    <Compile Include="通用\介面\可更新儲存介面.cs" />
-    <Compile Include="通用\介面\可重複視窗介面.cs" />
+    <Compile Include="通用\視窗元件\頁索引上層介面.cs" />
+    <Compile Include="通用\視窗樣板\總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="通用\視窗樣板\視窗樣板.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="通用\視窗樣板\通用視窗介面.cs" />
     <Compile Include="通用\視窗元件\頁索引元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="通用\視窗元件\頁索引元件.Designer.cs">
       <DependentUpon>頁索引元件.cs</DependentUpon>
     </Compile>
-    <Compile Include="通用\視窗管理器.cs" />
-    <Compile Include="通用\視窗處理\唯讀資料列選取插件.cs" />
+    <Compile Include="通用\視窗樣板\視窗管理器.cs" />
+    <Compile Include="通用\視窗插件\資料列選取插件.cs" />
     <Compile Include="聯絡人\視窗\聯絡人總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="聯絡人\視窗\聯絡人總覽視窗.Designer.cs">
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="通用\控制\資料儲存管理器.cs" />
+    <Compile Include="通用\資料管理\資料儲存管理器.cs" />
+    <Compile Include="通用\視窗樣板\詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="通用\資料\MyData.cs" />
     <Compile Include="Common\MyString.cs" />
     <Compile Include="Common\共用.cs" />
@@ -209,7 +218,7 @@
     <Compile Include="Data\進貨資料_唯讀.cs" />
     <Compile Include="Data\進貨資料_暫時.cs" />
     <Compile Include="Data\非平台訂單資料.cs" />
-    <Compile Include="通用\控制\資料管理器.cs" />
+    <Compile Include="通用\資料管理\資料管理器.cs" />
     <Compile Include="通用\資料\MyKeepableData.cs" />
     <Compile Include="通用\動態匯入\動態匯入檔案結構.cs" />
     <Compile Include="通用\動態匯入\檔案匯入設定資料.cs" />
@@ -502,7 +511,7 @@
     <Compile Include="月結帳\控制\月結帳資料匯出結構.cs" />
     <Compile Include="聯絡人\控制\聯絡人資料管理器.cs" />
     <Compile Include="聯絡人\資料\聯絡人資料.cs" />
-    <Compile Include="通用\資料\可儲存類型.cs" />
+    <Compile Include="通用\資料管理\可儲存類型.cs" />
     <EmbeddedResource Include="FormOther\商品篩選視窗.resx">
       <DependentUpon>商品篩選視窗.cs</DependentUpon>
     </EmbeddedResource>

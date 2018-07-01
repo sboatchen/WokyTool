@@ -96,8 +96,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "客戶總覽視窗";
             this.Text = "客戶總覽視窗";
-            this.Activated += new System.EventHandler(this.客戶總覽視窗_Activated);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.客戶總覽視窗_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.客戶資料BindingSource)).EndInit();
             this.ResumeLayout(false);

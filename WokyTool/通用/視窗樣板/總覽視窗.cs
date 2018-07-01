@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,19 +8,22 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public abstract class 詳細視窗<T> : Form, 通用視窗介面, 頁索引上層介面 where T : MyKeepableData
+    public abstract class 總覽視窗<T> : Form, 通用視窗介面 where T : MyKeepableData
     {
-        protected 頁索引元件 _頁索引元件;
+        protected System.Windows.Forms.BindingSource 資料BindingSource;
+
+        protected int _資料版本;
+
         protected 資料管理器<T> _資料管理器;
 
         protected bool _是否準備關閉 = false;
 
-        public void 初始化(頁索引元件 頁索引元件_, 資料管理器<T> 資料管理器_)
+        public void 初始化(System.Windows.Forms.BindingSource 資料BindingSource_, 資料管理器<T> 資料管理器_)
         {
-            this._頁索引元件 = 頁索引元件_;
+            this.資料BindingSource = 資料BindingSource_;
             this._資料管理器 = 資料管理器_;
 
-            this._頁索引元件.初始化<T>(資料管理器_.BList, this);
+            this.資料BindingSource.DataSource = 資料管理器_.BList;
 
             this.Activated += new System.EventHandler(this._視窗激活);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);
@@ -29,12 +31,9 @@ namespace WokyTool.通用
 
         private void _視窗激活(object sender, EventArgs e)
         {
-            if (_是否準備關閉)
-                return;
-
             視窗激活();
 
-            this._頁索引元件.刷新();
+            this.資料BindingSource.ResetBindings(false);
         }
 
         protected virtual void 視窗激活()
@@ -43,40 +42,18 @@ namespace WokyTool.通用
 
         private void _視窗關閉(object sender, FormClosingEventArgs e)
         {
-            _是否準備關閉 = true;
-
             視窗關閉();
-
-            索引切換_異動儲存();
 
             if (_資料管理器.IsEditing())
             {
                 var result = MessageBox.Show(字串.儲存確認內容, 字串.儲存確認, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 _資料管理器.UpdateEdit(result == DialogResult.Yes);
             }
-
-            this.Hide();
-            
-            if(e != null)
-                e.Cancel = true;
-
-            _是否準備關閉 = false;
         }
 
         protected virtual void 視窗關閉()
         {
  
-        }
-
-        /********************************/
-        // 頁索引上層介面
-
-        public virtual void 索引切換_異動儲存()
-        { 
-        }
-
-        public virtual void 索引切換_更新呈現()
-        { 
         }
 
         /********************************/
@@ -90,7 +67,6 @@ namespace WokyTool.通用
 
         public void 顯現(int Pos_)
         {
-            this._頁索引元件.設定索引(Pos_);
             this.Show();
             this.BringToFront();
         }

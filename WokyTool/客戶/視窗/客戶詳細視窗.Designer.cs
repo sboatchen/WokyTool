@@ -211,8 +211,6 @@
             this.Controls.Add(this.label1);
             this.Name = "客戶詳細視窗";
             this.Text = "客戶詳細視窗";
-            this.Activated += new System.EventHandler(this.客戶詳細視窗_Activated);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.客戶詳細視窗_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.子客戶資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

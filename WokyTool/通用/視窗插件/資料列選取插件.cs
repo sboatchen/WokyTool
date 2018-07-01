@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace WokyTool.通用
 {
-    public class 唯讀資料列選取插件<T> where T : MyKeepableData
+    public class 資料列選取插件<T> where T : MyKeepableData
     {
         private 資料管理器<T> _資料管理器;
         private System.Windows.Forms.DataGridView _DataGridView;
@@ -28,7 +28,7 @@ namespace WokyTool.通用
         private List<T> _資料列;
         private BindingList<T> _綁定資料;
 
-        public 唯讀資料列選取插件(資料管理器<T> 資料管理器_, System.Windows.Forms.DataGridView DataGridView_, int 欄位_)
+        public 資料列選取插件(資料管理器<T> 資料管理器_, System.Windows.Forms.DataGridView DataGridView_, int 欄位_)
         {
             _資料管理器 = 資料管理器_;
             _DataGridView = DataGridView_;
@@ -107,8 +107,6 @@ namespace WokyTool.通用
         {
             if (_DataGridView.CurrentCell.ColumnIndex == _欄位 && e.Control is ComboBox)
             {
-                _是否修改資料 = true;
-
                 ComboBox comboBox = e.Control as ComboBox;
                 comboBox.SelectedIndexChanged -= LastColumnComboSelectionChanged;
                 comboBox.SelectedIndexChanged += LastColumnComboSelectionChanged;
@@ -121,9 +119,14 @@ namespace WokyTool.通用
             if (資料_ == null)
                 return;
 
+            //@@ combobox 目前會預設選之前的那一個
             int index = _DataGridView.CurrentCell.RowIndex;
+            //if( _資料列[index] == 資料_)
+            //    return;
+
             _資料列[index] = 資料_;
 
+            _是否修改資料 = true;
             _DataGridView.Invalidate();
         }
     }

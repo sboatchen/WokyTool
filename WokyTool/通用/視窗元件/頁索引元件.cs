@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace WokyTool.通用
 {
-    public partial class 頁索引元件 : UserControl
+    public partial class  頁索引元件 : UserControl
     {
         protected System.Windows.Forms.BindingSource 資料BindingSource;
-        protected 可更新儲存介面 _綁定介面;
+        protected 頁索引上層介面 _綁定介面;
 
         public object 目前資料 { get; protected set; }
 
@@ -22,12 +22,11 @@ namespace WokyTool.通用
             InitializeComponent();
 
             this.資料BindingSource = new System.Windows.Forms.BindingSource();
-            //this.資料BindingSource.DataSource = 資料管理器_.BList;
 
             目前資料 = null;
         }
 
-        public void 初始化<T>(BindingList<T> 資料_, 可更新儲存介面 綁定介面_) where T : MyKeepableData
+        public void 初始化<T>(BindingList<T> 資料_, 頁索引上層介面 綁定介面_) where T : MyKeepableData
         {
             this.資料BindingSource.DataSource = 資料_;
             this._綁定介面 = 綁定介面_;
@@ -69,7 +68,8 @@ namespace WokyTool.通用
 
             this.資料BindingSource.Position = 位置_;
 
-            嘗試更新資料();
+            if(this.Visible)
+                嘗試更新資料();
         }
 
         public void 嘗試更新資料()
@@ -80,18 +80,21 @@ namespace WokyTool.通用
             if (Now_ == 目前資料)
                 return;
 
-            _綁定介面.儲存修改();
+            if (目前資料 != null)
+                _綁定介面.索引切換_異動儲存();
 
             目前資料 = Now_;
             索引.Text = String.Format("{0} of {1}", 資料BindingSource.Position + 1, 資料BindingSource.Count);
 
-            _綁定介面.更新資料();
+            _綁定介面.索引切換_更新呈現();
 
-            this.Refresh();
+            //this.Refresh();
         }
 
         public void 刷新()
         {
+            this.資料BindingSource.ResetBindings(false);
+
             目前資料 = null;
             嘗試更新資料();
         }
