@@ -16,6 +16,7 @@ namespace WokyTool.通用
     public class 物品大類詳細視窗樣板 : 詳細視窗<物品大類資料> { }
     public class 物品小類詳細視窗樣板 : 詳細視窗<物品小類資料> { }
     public class 物品品牌詳細視窗樣板 : 詳細視窗<物品品牌資料> { }
+    public class 物品詳細視窗樣板 : 詳細視窗<物品資料> { }
 
     /********************************/
 
@@ -26,4 +27,5 @@ namespace WokyTool.通用
     public class 物品大類總覽視窗樣板 : 總覽視窗<物品大類資料> { }
     public class 物品小類總覽視窗樣板 : 總覽視窗<物品小類資料> { }
     public class 物品品牌總覽視窗樣板 : 總覽視窗<物品品牌資料> { }
+    public class 物品總覽視窗樣板 : 總覽視窗<物品資料> { }
 }
