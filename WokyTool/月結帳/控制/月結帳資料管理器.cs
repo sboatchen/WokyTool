@@ -22,6 +22,14 @@ namespace WokyTool.月結帳
             } 
         }
 
+        public override 月結帳資料 空白資料
+        {
+            get
+            {
+                return 月結帳資料.NULL;
+            }
+        }
+
         public override 月結帳資料 錯誤資料
         {
             get 

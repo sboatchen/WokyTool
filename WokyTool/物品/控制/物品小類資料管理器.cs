@@ -22,6 +22,14 @@ namespace WokyTool.物品
             } 
         }
 
+        public override 物品小類資料 空白資料
+        {
+            get
+            {
+                return 物品小類資料.NULL;
+            }
+        }
+
         public override 物品小類資料 錯誤資料
         {
             get 

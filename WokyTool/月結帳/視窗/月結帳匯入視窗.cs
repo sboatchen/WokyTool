@@ -41,7 +41,7 @@ namespace WokyTool.月結帳
 
         private void 商品資料更新(IEnumerable<商品資料> Data_)
         {
-            this.商品DataGridViewTextBoxColumn.DataSource = Data_.Where(Value => Value.廠商 == _目前設定.廠商 || Value.編號 == 常數.錯誤資料編碼).ToList(); ;
+            this.商品DataGridViewTextBoxColumn.DataSource = Data_.Where(Value => Value.廠商 == _目前設定.廠商 || Value.編號 == 常數.T錯誤資料編碼).ToList(); ;
         }
 
         private void 設定資料更新(IEnumerable<月結帳匯入設定資料> Data_)

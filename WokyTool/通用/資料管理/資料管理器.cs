@@ -25,6 +25,7 @@ namespace WokyTool.通用
         public int BindingVersion { get; private set; }
 
         public abstract string 檔案路徑 { get; }
+        public abstract T 空白資料 { get; }
         public abstract T 錯誤資料 { get; }
         public abstract 列舉.編碼類型 編碼類型 { get; }
 
@@ -54,7 +55,13 @@ namespace WokyTool.通用
                 Map = new Dictionary<int, T>();
             }
 
-            BList = new BindingList<T>(Map.Values.ToList());
+            BList = new BindingList<T>();
+            BList.Add(空白資料);
+            BList.Add(錯誤資料);
+            foreach (T Item_ in Map.Values)
+            {
+                BList.Add(Item_);
+            }
         }
 
         public void SetDataDirty()
@@ -74,6 +81,12 @@ namespace WokyTool.通用
         // 取得資料
         public T Get(int ID_)
         {
+            if (ID_ == 常數.T空白資料編碼)
+                return 空白資料;
+
+            if (ID_ == 常數.T錯誤資料編碼)
+                return 錯誤資料;
+
             T Item_;
             if (Map.TryGetValue(ID_, out Item_))
             {
@@ -141,7 +154,7 @@ namespace WokyTool.通用
 
         public Boolean IsEditing()
         {
-            if (BList.Count != Map.Count)
+            if (BList.Count != (Map.Count + 2))
                 return true;
 
             foreach (var Item_ in BList)
@@ -170,9 +183,15 @@ namespace WokyTool.通用
             Map = new Dictionary<int, T>();
             foreach (var Item_ in BList)
             {
+                if (Item_.編號 < 常數.T新建資料編碼)
+                {
+                    Item_.CancelEdit();
+                    continue;
+                }
+
                 Item_.FinishEdit();
 
-                if(Item_.編號 <= 常數.空白資料編碼)
+                if(Item_.編號 == 常數.T新建資料編碼)
                 {
                     Item_.檢查合法();
                     Item_.編號 = 編碼管理器.Instance.Get(編碼類型);
@@ -188,7 +207,8 @@ namespace WokyTool.通用
         protected void CancelEdit()
         {
             BList.Clear();
-
+            BList.Add(空白資料);
+            BList.Add(錯誤資料);
             foreach (var Item_ in Map.Values)
             {
                 Item_.CancelEdit();

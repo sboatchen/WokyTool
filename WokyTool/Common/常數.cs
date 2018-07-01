@@ -18,5 +18,10 @@ namespace WokyTool.Common
         public static int 新資料編碼 = -2;
         public static int 錯誤資料編碼 = -1;
         public static int 空白資料編碼 = 0;
+
+        //@@
+        public static int T新建資料編碼 = 0;
+        public static int T空白資料編碼 = -1;
+        public static int T錯誤資料編碼 = -2;
     }
 }

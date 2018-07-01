@@ -81,7 +81,7 @@ namespace WokyTool.月結帳
         private static readonly 平台訂單匯入檔案設定 _NULL = new 平台訂單匯入檔案設定
         {
             格式 = 列舉.檔案格式類型.無,
-            名稱 = 字串.空,
+            名稱 = 字串.無,
             公司 = 公司資料.NULL,
             廠商 = 廠商資料.NULL,
             商品識別 = 列舉.商品識別類型.無,

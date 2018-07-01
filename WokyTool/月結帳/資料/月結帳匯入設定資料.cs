@@ -65,7 +65,7 @@ namespace WokyTool.月結帳
 
         private static readonly 月結帳匯入設定資料 _NULL = new 月結帳匯入設定資料
         {
-            編號 = 常數.空白資料編碼,
+            編號 = 常數.T空白資料編碼,
             格式 = 列舉.檔案格式類型.無,
             名稱 = 字串.空,
             公司 = 公司資料.NULL,
@@ -82,7 +82,7 @@ namespace WokyTool.月結帳
 
         private static 月結帳匯入設定資料 _ERROR = new 月結帳匯入設定資料
         {
-            編號 = 常數.錯誤資料編碼,
+            編號 = 常數.T錯誤資料編碼,
             格式 = 列舉.檔案格式類型.錯誤,
             名稱 = 字串.錯誤,
             公司 = 公司資料.ERROR,
@@ -169,10 +169,10 @@ namespace WokyTool.月結帳
         {
             base.檢查合法();
 
-            if (公司編號 <= 常數.空白資料編碼)
+            if (公司編號 <= 常數.T新建資料編碼)
                 throw new Exception("月結帳匯入設定資料:公司不合法:" + 公司編號);
 
-            if (廠商編號 <= 常數.空白資料編碼)
+            if (廠商編號 <= 常數.T新建資料編碼)
                 throw new Exception("月結帳匯入設定資料:廠商不合法:" + 廠商編號);
 
             if(商品識別 <= 列舉.商品識別類型.無)

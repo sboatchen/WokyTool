@@ -336,7 +336,7 @@ namespace WokyTool
 
         private void button27_Click(object sender, EventArgs e)
         {
-            var i = new 客戶總覽視窗();
+            var i = new 物品.物品總覽視窗();
             i.Show();
             i.BringToFront();
         }
@@ -562,6 +562,53 @@ namespace WokyTool
             }
             物品品牌資料管理器.獨體.BList = new BindingList<物品.物品品牌資料>(物品品牌資料管理器.獨體.Map.Values.ToList());
             物品品牌資料管理器.獨體.SetDataDirty();
+
+            Console.WriteLine("物品資料轉換");
+            物品資料管理器.獨體.Map.Clear();
+            foreach (var Item_ in 物品管理器.Instance.Map.Values)
+            {
+                if (Item_.編號 <= 0)
+                    continue;
+
+                WokyTool.物品.物品資料 New_ = new 物品.物品資料
+                {
+                    編號 = Item_.編號,
+
+                    大類編號 = 編號轉換(Item_.大類編號),
+                    小類編號 = 編號轉換(Item_.小類編號),
+                    品牌編號 = 編號轉換(Item_.品牌編號),
+
+                    條碼 = Item_.條碼,
+                    原廠編號 = Item_.原廠編號,
+                    代理編號 = Item_.代理編號,
+
+                    名稱 = Item_.名稱,
+                    縮寫 = Item_.縮寫,
+
+                    體積 = Item_.體積,
+                    顏色 = Item_.顏色,
+
+                    內庫數量 = Item_.內庫數量,
+                    外庫數量 = Item_.外庫數量,
+                    庫存總成本 = Item_.庫存總成本,
+                    最後進貨成本 = Item_.最後進貨成本,
+                    成本備註 = Item_.成本備註,
+                };
+
+                物品資料管理器.獨體.Map.Add(New_.編號, New_);
+            }
+            物品資料管理器.獨體.BList = new BindingList<物品.物品資料>(物品資料管理器.獨體.Map.Values.ToList());
+            物品資料管理器.獨體.SetDataDirty();
+        }
+
+        private int 編號轉換(int Old_)
+        {
+            if(Old_ == -1)
+                return 常數.T錯誤資料編碼;
+            if(Old_ == 0)
+                return 常數.T空白資料編碼;
+
+            return Old_;
         }
     }
 }

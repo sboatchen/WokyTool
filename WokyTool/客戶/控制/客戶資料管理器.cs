@@ -18,6 +18,14 @@ namespace WokyTool.客戶
             } 
         }
 
+        public override 客戶資料 空白資料
+        {
+            get
+            {
+                return 客戶資料.NULL;
+            }
+        }
+
         public override 客戶資料 錯誤資料
         {
             get 
