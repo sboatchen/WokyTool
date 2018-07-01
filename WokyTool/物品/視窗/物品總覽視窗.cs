@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WokyTool.Common;
 using WokyTool.通用;
 
 namespace WokyTool.物品
@@ -71,6 +72,12 @@ namespace WokyTool.物品
                 _物品品牌資料版本 = 物品品牌資料管理器.獨體.BindingVersion;
                 this.物品品牌資料BindingSource.DataSource = 物品品牌資料管理器.獨體.唯讀BList;
             }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int 編號_ = ((物品資料)(this.物品資料BindingSource.Current)).編號;
+            視窗管理器.獨體.顯現(列舉.編碼類型.物品, 編號_);
         }
     }
 }

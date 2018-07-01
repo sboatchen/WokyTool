@@ -45,5 +45,13 @@ namespace WokyTool.通用
         {
             return _副本 != null && this.是否一致(_副本) == false;
         }
+
+        public void showEditDetail()
+        {
+            Console.WriteLine(this.ToString());
+            Console.WriteLine("---------");
+            if(_副本 != null)
+                Console.WriteLine(_副本.ToString());
+        }
     }
 }

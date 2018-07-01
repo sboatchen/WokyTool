@@ -170,6 +170,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1266, 429);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // 編號DataGridViewTextBoxColumn
             // 

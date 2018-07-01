@@ -171,8 +171,11 @@ namespace WokyTool.通用
 
             foreach (var Item_ in 可編輯BList)
             {
-                if(Item_.isEditing())
+                if (Item_.isEditing())
+                {
+                    Item_.showEditDetail();
                     return true;
+                }
             }
 
             return false;

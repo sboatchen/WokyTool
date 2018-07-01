@@ -129,6 +129,12 @@
     <Compile Include="物品\視窗\物品總覽視窗.Designer.cs">
       <DependentUpon>物品總覽視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="物品\視窗\物品詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="物品\視窗\物品詳細視窗.Designer.cs">
+      <DependentUpon>物品詳細視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="物品\資料\物品品牌資料.cs" />
     <Compile Include="物品\資料\物品小類資料.cs" />
     <Compile Include="物品\資料\物品大類資料.cs" />
@@ -667,6 +673,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品總覽視窗.resx">
       <DependentUpon>物品總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="物品\視窗\物品詳細視窗.resx">
+      <DependentUpon>物品詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="聯絡人\視窗\聯絡人總覽視窗.resx">
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>

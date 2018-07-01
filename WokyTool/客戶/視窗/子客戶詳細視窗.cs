@@ -29,7 +29,7 @@ namespace WokyTool.客戶
         }
 
         /********************************/
-        // 詳細視窗樣板_子客戶
+        // 子客戶詳細視窗樣板
 
         protected override void 視窗激活()
         {
