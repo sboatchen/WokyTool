@@ -20,6 +20,11 @@ namespace WokyTool.物品
 
         /********************************/
 
+        public 物品品牌資料 Self
+        {
+            get { return this; }
+        }
+
         private static readonly 物品品牌資料 _NULL = new 物品品牌資料
         {
             編號 = 常數.T空白資料編碼,

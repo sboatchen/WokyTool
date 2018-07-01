@@ -17,14 +17,11 @@ namespace WokyTool.物品
         [JsonProperty]
         public override int 編號 { get; set; }
 
-        public 物品大類資料 大類;
         [JsonProperty]
         public int 大類編號
         {
             get
             {
-                if (大類 == null)
-                    return 常數.T錯誤資料編碼;
                 return 大類.編號;
             }
             set
@@ -33,14 +30,29 @@ namespace WokyTool.物品
             }
         }
 
-        public 物品小類資料 小類;
+        protected 物品大類資料 _大類;
+        public 物品大類資料 大類
+        {
+            get
+            {
+                if (_大類 == null)
+                    _大類 = 物品大類資料.NULL;
+                else if (物品大類資料管理器.獨體.唯讀BList.Contains(_大類) == false)
+                    _大類 = 物品大類資料.ERROR;
+
+                return _大類;
+            }
+            set
+            {
+                _大類 = value;
+            }
+        }
+
         [JsonProperty]
         public int 小類編號
         {
             get
             {
-                if (小類 == null)
-                    return 常數.T錯誤資料編碼;
                 return 小類.編號;
             }
             set
@@ -49,19 +61,52 @@ namespace WokyTool.物品
             }
         }
 
-        public 物品品牌資料 品牌;
+        protected 物品小類資料 _小類;
+        public 物品小類資料 小類
+        {
+            get
+            {
+                if (_小類 == null)
+                    _小類 = 物品小類資料.NULL;
+                else if (物品小類資料管理器.獨體.唯讀BList.Contains(_小類) == false)
+                    _小類 = 物品小類資料.ERROR;
+
+                return _小類;
+            }
+            set
+            {
+                _小類 = value;
+            }
+        }
+
         [JsonProperty]
         public int 品牌編號
         {
             get
             {
-                if (品牌 == null)
-                    return 常數.T錯誤資料編碼;
                 return 品牌.編號;
             }
             set
             {
                 品牌 = 物品品牌資料管理器.獨體.Get(value);
+            }
+        }
+
+        protected 物品品牌資料 _品牌;
+        public 物品品牌資料 品牌
+        {
+            get
+            {
+                if (_品牌 == null)
+                    _品牌 = 物品品牌資料.NULL;
+                else if (物品品牌資料管理器.獨體.唯讀BList.Contains(_品牌) == false)
+                    _品牌 = 物品品牌資料.ERROR;
+
+                return _品牌;
+            }
+            set
+            {
+                _品牌 = value;
             }
         }
 
@@ -127,6 +172,11 @@ namespace WokyTool.物品
         */
 
         /********************************/
+
+        public 物品資料 Self
+        {
+            get { return this; }
+        }
 
         private static readonly 物品資料 _NULL = new 物品資料
         {

@@ -21,7 +21,7 @@ namespace WokyTool.通用
             this._頁索引元件 = 頁索引元件_;
             this._資料管理器 = 資料管理器_;
 
-            this._頁索引元件.初始化<T>(資料管理器_.BList, this);
+            this._頁索引元件.初始化<T>(資料管理器_.可編輯BList, this);
 
             this.Activated += new System.EventHandler(this._視窗激活);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);

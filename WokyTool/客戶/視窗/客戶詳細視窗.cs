@@ -15,8 +15,8 @@ namespace WokyTool.客戶
 {
     public partial class 客戶詳細視窗 : 客戶詳細視窗樣板
     {
-        private int _子客戶資料版本;
-        private int _聯絡人資料版本;
+        private int _子客戶資料版本 = -1;
+        private int _聯絡人資料版本 = -1;
 
         private 資料列選取插件<子客戶資料> _子客戶資料列選取插件;
         private 資料列選取插件<聯絡人資料> _聯絡人資料列選取插件;
@@ -27,12 +27,6 @@ namespace WokyTool.客戶
             InitializeComponent();
 
             this.初始化(this.頁索引元件1, 客戶資料管理器.獨體);
-
-            this.名稱DataGridViewTextBoxColumn.DataSource = 子客戶資料管理器.獨體.BList;
-            this.姓名DataGridViewTextBoxColumn.DataSource = 聯絡人資料管理器.獨體.BList;
-
-            _子客戶資料版本 = 子客戶資料管理器.獨體.BindingVersion;
-            _聯絡人資料版本 = 聯絡人資料管理器.獨體.BindingVersion;
 
             _子客戶資料列選取插件 = new 資料列選取插件<子客戶資料>(子客戶資料管理器.獨體, this.子客戶資料BindingSource, this.dataGridView1, 1);
             _聯絡人資料列選取插件 = new 資料列選取插件<聯絡人資料>(聯絡人資料管理器.獨體, this.聯絡人資料BindingSource, this.dataGridView2, 1);
@@ -52,13 +46,13 @@ namespace WokyTool.客戶
             if (_子客戶資料版本 != 子客戶資料管理器.獨體.BindingVersion)
             {
                 _子客戶資料版本 = 子客戶資料管理器.獨體.BindingVersion;
-                this.名稱DataGridViewTextBoxColumn.DataSource = 子客戶資料管理器.獨體.BList;
+                this.子客戶資料BindingSource.DataSource = 子客戶資料管理器.獨體.唯讀BList;
             }
 
             if (_聯絡人資料版本 != 聯絡人資料管理器.獨體.BindingVersion)
             {
                 _聯絡人資料版本 = 聯絡人資料管理器.獨體.BindingVersion;
-                this.姓名DataGridViewTextBoxColumn.DataSource = 聯絡人資料管理器.獨體.BList;
+                this.聯絡人資料BindingSource.DataSource = 聯絡人資料管理器.獨體.唯讀BList;
             }
         }
 

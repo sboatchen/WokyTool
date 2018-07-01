@@ -48,6 +48,11 @@ namespace WokyTool.客戶
 
         /********************************/
 
+        public 客戶資料 Self
+        {
+            get { return this; }
+        }
+
         private static readonly 客戶資料 _NULL = new 客戶資料
         {
             編號 = 常數.T空白資料編碼,

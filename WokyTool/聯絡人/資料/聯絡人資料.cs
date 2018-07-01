@@ -65,6 +65,11 @@ namespace WokyTool.聯絡人
 
         /********************************/
 
+        public 聯絡人資料 Self
+        {
+            get { return this; }
+        }
+
         public override object 拷貝()
         {
             聯絡人資料 Data_ = new 聯絡人資料

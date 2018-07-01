@@ -20,9 +20,12 @@ namespace WokyTool.通用
         public bool IsDataDirty { get; private set; }
 
         // 資料BindingList
-        public BindingList<T> BList { get; /*@@private*/ set; }
+        public BindingList<T> 可編輯BList { get; private set; }
         // 資料BindingList 版本
         public int BindingVersion { get; private set; }
+
+        // 資料BindingList
+        public BindingList<T> 唯讀BList { get; private set; }
 
         public abstract string 檔案路徑 { get; }
         public abstract T 空白資料 { get; }
@@ -55,12 +58,21 @@ namespace WokyTool.通用
                 Map = new Dictionary<int, T>();
             }
 
-            BList = new BindingList<T>();
-            BList.Add(空白資料);
-            BList.Add(錯誤資料);
+            可編輯BList = new BindingList<T>();
+            可編輯BList.Add(空白資料);
+            可編輯BList.Add(錯誤資料);
+
+            唯讀BList = new BindingList<T>();
+            唯讀BList.AllowEdit = false;
+            唯讀BList.AllowNew = false;
+            唯讀BList.AllowRemove = false;
+            唯讀BList.Add(空白資料);
+            唯讀BList.Add(錯誤資料);
+
             foreach (T Item_ in Map.Values)
             {
-                BList.Add(Item_);
+                可編輯BList.Add(Item_);
+                唯讀BList.Add(Item_);
             }
         }
 
@@ -154,10 +166,10 @@ namespace WokyTool.通用
 
         public Boolean IsEditing()
         {
-            if (BList.Count != (Map.Count + 2))
+            if (可編輯BList.Count != (Map.Count + 2))
                 return true;
 
-            foreach (var Item_ in BList)
+            foreach (var Item_ in 可編輯BList)
             {
                 if(Item_.isEditing())
                     return true;
@@ -180,12 +192,14 @@ namespace WokyTool.通用
 
         protected void SaveEdit()
         {
-            Map = new Dictionary<int, T>();
-            foreach (var Item_ in BList)
+            唯讀BList.Clear();
+            Map.Clear();
+            foreach (var Item_ in 可編輯BList)
             {
                 if (Item_.編號 < 常數.T新建資料編碼)
                 {
                     Item_.CancelEdit();
+                    唯讀BList.Add(Item_);
                     continue;
                 }
 
@@ -198,6 +212,7 @@ namespace WokyTool.通用
                 }
 
                 Map[Item_.編號] = Item_;
+                唯讀BList.Add(Item_);
             }
 
             BindingVersion++;
@@ -206,13 +221,13 @@ namespace WokyTool.通用
 
         protected void CancelEdit()
         {
-            BList.Clear();
-            BList.Add(空白資料);
-            BList.Add(錯誤資料);
+            可編輯BList.Clear();
+            可編輯BList.Add(空白資料);
+            可編輯BList.Add(錯誤資料);
             foreach (var Item_ in Map.Values)
             {
                 Item_.CancelEdit();
-                BList.Add(Item_);
+                可編輯BList.Add(Item_);
             }
         }
     }

@@ -23,7 +23,7 @@ namespace WokyTool.通用
             this.資料BindingSource = 資料BindingSource_;
             this._資料管理器 = 資料管理器_;
 
-            this.資料BindingSource.DataSource = 資料管理器_.BList;
+            this.資料BindingSource.DataSource = 資料管理器_.可編輯BList;
 
             this.Activated += new System.EventHandler(this._視窗激活);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);

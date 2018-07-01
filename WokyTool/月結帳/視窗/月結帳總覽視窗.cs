@@ -19,7 +19,7 @@ namespace WokyTool.月結帳
         {
             InitializeComponent();
 
-            this.月結帳資料BindingSource.DataSource = 月結帳資料管理器.獨體.BList;
+            this.月結帳資料BindingSource.DataSource = 月結帳資料管理器.獨體.可編輯BList;
             this._BindingVersion = 月結帳資料管理器.獨體.BindingVersion;
         }
 
@@ -42,7 +42,7 @@ namespace WokyTool.月結帳
             // 沒有更改內容，直接刷新資料
             if (月結帳資料管理器.獨體.IsEditing() == false)
             {
-                this.月結帳資料BindingSource.DataSource = 月結帳資料管理器.獨體.BList;
+                this.月結帳資料BindingSource.DataSource = 月結帳資料管理器.獨體.唯讀BList;
                 this.dataGridView1.Refresh();
                 return;
             }

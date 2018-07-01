@@ -524,7 +524,6 @@ namespace WokyTool
 
                 物品大類資料管理器.獨體.Map.Add(New_.編號, New_);
             }
-            物品大類資料管理器.獨體.BList = new BindingList<物品.物品大類資料>(物品大類資料管理器.獨體.Map.Values.ToList());
             物品大類資料管理器.獨體.SetDataDirty();
 
             Console.WriteLine("物品小類資料轉換");
@@ -542,7 +541,6 @@ namespace WokyTool
 
                 物品小類資料管理器.獨體.Map.Add(New_.編號, New_);
             }
-            物品小類資料管理器.獨體.BList = new BindingList<物品.物品小類資料>(物品小類資料管理器.獨體.Map.Values.ToList());
             物品小類資料管理器.獨體.SetDataDirty();
 
             Console.WriteLine("物品品牌資料轉換");
@@ -560,7 +558,6 @@ namespace WokyTool
 
                 物品品牌資料管理器.獨體.Map.Add(New_.編號, New_);
             }
-            物品品牌資料管理器.獨體.BList = new BindingList<物品.物品品牌資料>(物品品牌資料管理器.獨體.Map.Values.ToList());
             物品品牌資料管理器.獨體.SetDataDirty();
 
             Console.WriteLine("物品資料轉換");
@@ -597,7 +594,6 @@ namespace WokyTool
 
                 物品資料管理器.獨體.Map.Add(New_.編號, New_);
             }
-            物品資料管理器.獨體.BList = new BindingList<物品.物品資料>(物品資料管理器.獨體.Map.Values.ToList());
             物品資料管理器.獨體.SetDataDirty();
         }
 

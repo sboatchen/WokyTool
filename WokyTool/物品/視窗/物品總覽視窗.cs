@@ -57,19 +57,19 @@ namespace WokyTool.物品
             if (_物品大類資料版本 != 物品大類資料管理器.獨體.BindingVersion)
             {
                 _物品大類資料版本 = 物品大類資料管理器.獨體.BindingVersion;
-                this.物品大類資料BindingSource.DataSource = 物品大類資料管理器.獨體.BList;
+                this.物品大類資料BindingSource.DataSource = 物品大類資料管理器.獨體.唯讀BList;
             }
 
             if (_物品小類資料版本 != 物品小類資料管理器.獨體.BindingVersion)
             {
                 _物品小類資料版本 = 物品小類資料管理器.獨體.BindingVersion;
-                this.物品小類資料BindingSource.DataSource = 物品小類資料管理器.獨體.BList;
+                this.物品小類資料BindingSource.DataSource = 物品小類資料管理器.獨體.唯讀BList;
             }
 
             if (_物品品牌資料版本 != 物品品牌資料管理器.獨體.BindingVersion)
             {
                 _物品品牌資料版本 = 物品品牌資料管理器.獨體.BindingVersion;
-                this.物品品牌資料BindingSource.DataSource = 物品品牌資料管理器.獨體.BList;
+                this.物品品牌資料BindingSource.DataSource = 物品品牌資料管理器.獨體.唯讀BList;
             }
         }
     }
