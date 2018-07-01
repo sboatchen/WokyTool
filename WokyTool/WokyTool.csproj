@@ -101,6 +101,31 @@
       <DependentUpon>客戶詳細視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
+    <Compile Include="物品\控制\物品品牌資料管理器.cs" />
+    <Compile Include="物品\控制\物品小類資料管理器.cs" />
+    <Compile Include="物品\控制\物品大類資料管理器.cs" />
+    <Compile Include="物品\視窗\物品品牌總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="物品\視窗\物品品牌總覽視窗.Designer.cs">
+      <DependentUpon>物品品牌總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="物品\視窗\物品大類總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="物品\視窗\物品大類總覽視窗.Designer.cs">
+      <DependentUpon>物品大類總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="物品\視窗\物品小類總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="物品\視窗\物品小類總覽視窗.Designer.cs">
+      <DependentUpon>物品小類總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="物品\資料\物品品牌資料.cs" />
+    <Compile Include="物品\資料\物品小類資料.cs" />
+    <Compile Include="物品\資料\物品大類資料.cs" />
+    <Compile Include="物品\資料\物品資料.cs" />
     <Compile Include="通用\視窗元件\頁索引上層介面.cs" />
     <Compile Include="通用\視窗樣板\總覽視窗.cs">
       <SubType>Form</SubType>
@@ -464,24 +489,6 @@
     <Compile Include="ImportForm\物品匯入視窗.Designer.cs">
       <DependentUpon>物品匯入視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormOverview\物品品牌總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOverview\物品品牌總覽視窗.Designer.cs">
-      <DependentUpon>物品品牌總覽視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormOverview\物品大類總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOverview\物品大類總覽視窗.Designer.cs">
-      <DependentUpon>物品大類總覽視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormOverview\物品小類總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOverview\物品小類總覽視窗.Designer.cs">
-      <DependentUpon>物品小類總覽視窗.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormOverview\物品總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -614,15 +621,6 @@
     <EmbeddedResource Include="ImportForm\物品匯入視窗.resx">
       <DependentUpon>物品匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormOverview\物品品牌總覽視窗.resx">
-      <DependentUpon>物品品牌總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOverview\物品大類總覽視窗.resx">
-      <DependentUpon>物品大類總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOverview\物品小類總覽視窗.resx">
-      <DependentUpon>物品小類總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormOverview\物品總覽視窗.resx">
       <DependentUpon>物品總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -650,6 +648,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="月結帳\視窗\月結帳總覽視窗.resx">
       <DependentUpon>月結帳總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="物品\視窗\物品品牌總覽視窗.resx">
+      <DependentUpon>物品品牌總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="物品\視窗\物品大類總覽視窗.resx">
+      <DependentUpon>物品大類總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="物品\視窗\物品小類總覽視窗.resx">
+      <DependentUpon>物品小類總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="聯絡人\視窗\聯絡人總覽視窗.resx">
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
@@ -696,6 +703,9 @@
     <None Include="Properties\DataSources\WokyTool.DataImport.雜支匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.子客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.客戶資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.物品.物品品牌資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.物品.物品大類資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.物品.物品小類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.聯絡人.聯絡人資料.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

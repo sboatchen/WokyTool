@@ -15,12 +15,12 @@ namespace WokyTool.通用
     public abstract class 資料管理器<T> : 可儲存類型 where T : MyKeepableData
     {
         // 資料Map
-        public Dictionary<int, T> Map { get; private set; }
+        public Dictionary<int, T> Map { get; /*@@private*/ set; }
         // 資料是否異動
         public bool IsDataDirty { get; private set; }
 
         // 資料BindingList
-        public BindingList<T> BList { get; private set; }
+        public BindingList<T> BList { get; /*@@private*/ set; }
         // 資料BindingList 版本
         public int BindingVersion { get; private set; }
 

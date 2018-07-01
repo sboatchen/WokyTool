@@ -109,7 +109,7 @@ namespace WokyTool.聯絡人
         public override void 檢查合法()
         {
             if (String.IsNullOrEmpty(姓名))
-                throw new Exception("聯絡人資料:公司不合法:" + this.ToString());
+                throw new Exception("聯絡人資料:姓名不合法:" + this.ToString());
 
             if (String.IsNullOrEmpty(電話) && String.IsNullOrEmpty(手機))
                 throw new Exception("聯絡人資料:電話/手機不合法:" + this.ToString());

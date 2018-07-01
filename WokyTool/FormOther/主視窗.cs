@@ -28,6 +28,7 @@ using WokyTool.月結帳;
 using Excel = Microsoft.Office.Interop.Excel;
 using WokyTool.聯絡人;
 using WokyTool.客戶;
+using WokyTool.物品;
 
 namespace WokyTool
 {
@@ -340,12 +341,7 @@ namespace WokyTool
             i.BringToFront();
         }
 
-        private void button38_Click(object sender, EventArgs e)
-        {
-            var i = new 子客戶總覽視窗();
-            i.Show();
-            i.BringToFront();
-        }
+        
 
         private void button12_Click(object sender, EventArgs e)
         {
@@ -369,6 +365,20 @@ namespace WokyTool
         private void button37_Click(object sender, EventArgs e)
         {
             var i = new 聯絡人總覽視窗();
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void button39_Click(object sender, EventArgs e)
+        {
+            var i = new 客戶總覽視窗();
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void button40_Click(object sender, EventArgs e)
+        {
+            var i = new 子客戶總覽視窗();
             i.Show();
             i.BringToFront();
         }
@@ -495,5 +505,63 @@ namespace WokyTool
                     App.Quit();
             }
         }*/
+
+
+        private void button38_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("物品大類資料轉換");
+            物品大類資料管理器.獨體.Map.Clear();
+            foreach (var Item_ in 物品大類管理器.Instance.Map.Values)
+            {
+                if (Item_.編號 <= 0)
+                    continue;
+
+                WokyTool.物品.物品大類資料 New_ = new 物品.物品大類資料
+                {
+                    編號 = Item_.編號,
+                    名稱 = Item_.名稱,
+                };
+
+                物品大類資料管理器.獨體.Map.Add(New_.編號, New_);
+            }
+            物品大類資料管理器.獨體.BList = new BindingList<物品.物品大類資料>(物品大類資料管理器.獨體.Map.Values.ToList());
+            物品大類資料管理器.獨體.SetDataDirty();
+
+            Console.WriteLine("物品小類資料轉換");
+            物品小類資料管理器.獨體.Map.Clear();
+            foreach (var Item_ in 物品小類管理器.Instance.Map.Values)
+            {
+                if (Item_.編號 <= 0)
+                    continue;
+
+                WokyTool.物品.物品小類資料 New_ = new 物品.物品小類資料
+                {
+                    編號 = Item_.編號,
+                    名稱 = Item_.名稱,
+                };
+
+                物品小類資料管理器.獨體.Map.Add(New_.編號, New_);
+            }
+            物品小類資料管理器.獨體.BList = new BindingList<物品.物品小類資料>(物品小類資料管理器.獨體.Map.Values.ToList());
+            物品小類資料管理器.獨體.SetDataDirty();
+
+            Console.WriteLine("物品品牌資料轉換");
+            物品品牌資料管理器.獨體.Map.Clear();
+            foreach (var Item_ in 物品品牌管理器.Instance.Map.Values)
+            {
+                if (Item_.編號 <= 0)
+                    continue;
+
+                WokyTool.物品.物品品牌資料 New_ = new 物品.物品品牌資料
+                {
+                    編號 = Item_.編號,
+                    名稱 = Item_.名稱,
+                };
+
+                物品品牌資料管理器.獨體.Map.Add(New_.編號, New_);
+            }
+            物品品牌資料管理器.獨體.BList = new BindingList<物品.物品品牌資料>(物品品牌資料管理器.獨體.Map.Values.ToList());
+            物品品牌資料管理器.獨體.SetDataDirty();
+        }
     }
 }
