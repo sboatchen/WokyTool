@@ -46,13 +46,13 @@ namespace WokyTool.客戶
             if (_子客戶資料版本 != 子客戶資料管理器.獨體.BindingVersion)
             {
                 _子客戶資料版本 = 子客戶資料管理器.獨體.BindingVersion;
-                this.子客戶資料BindingSource.DataSource = 子客戶資料管理器.獨體.唯讀BList;
+                this.名稱DataGridViewTextBoxColumn.DataSource = 子客戶資料管理器.獨體.唯讀BList;    // this.聯絡人資料BindingSource 用在 dataGridView1 資料來源
             }
 
             if (_聯絡人資料版本 != 聯絡人資料管理器.獨體.BindingVersion)
             {
                 _聯絡人資料版本 = 聯絡人資料管理器.獨體.BindingVersion;
-                this.聯絡人資料BindingSource.DataSource = 聯絡人資料管理器.獨體.唯讀BList;
+                this.姓名DataGridViewTextBoxColumn.DataSource = 聯絡人資料管理器.獨體.唯讀BList;    // this.聯絡人資料BindingSource 用在 dataGridView1 資料來源
             }
         }
 
