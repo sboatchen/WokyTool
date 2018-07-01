@@ -76,6 +76,7 @@ namespace WokyTool.通用
                 }
             }
 
+            目前資料 = null;
             if(this.Visible)
                 嘗試更新資料();
         }
