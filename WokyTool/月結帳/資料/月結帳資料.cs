@@ -12,7 +12,7 @@ using WokyTool.通用;
 namespace WokyTool.月結帳
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 月結帳資料 : MyKeepableData
+    public class 月結帳資料 : MyKeepableData<月結帳資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }
@@ -137,7 +137,7 @@ namespace WokyTool.月結帳
 
         /********************************/
 
-        public override object 拷貝()
+        public override 月結帳資料 拷貝()
         {
             月結帳資料 Data_ = new 月結帳資料
             {
@@ -154,12 +154,8 @@ namespace WokyTool.月結帳
             return Data_;
         }
 
-        public override void 覆蓋(object Item_)
+        public override void 覆蓋(月結帳資料 Data_)
         {
-            月結帳資料 Data_ = Item_ as 月結帳資料;
-            if (Data_ == null)
-                throw new Exception("月結帳資料:覆蓋失敗:" + this.GetType());
-
             編號 = Data_.編號;
             公司 = Data_.公司;
             廠商 = Data_.廠商;
@@ -170,12 +166,8 @@ namespace WokyTool.月結帳
             含稅單價 = Data_.含稅單價;
         }
 
-        public override Boolean 是否一致(object Item_)
+        public override Boolean 是否一致(月結帳資料 Data_)
         {
-            月結帳資料 Data_ = Item_ as 月結帳資料;
-            if (Data_ == null)
-                throw new Exception("月結帳資料:比較失敗:" + this.GetType());
-
             return
                 編號 == Data_.編號 &&
                 公司 == Data_.公司 &&

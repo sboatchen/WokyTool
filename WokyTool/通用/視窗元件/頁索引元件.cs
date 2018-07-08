@@ -26,7 +26,7 @@ namespace WokyTool.通用
             目前資料 = null;
         }
 
-        public void 初始化<T>(BindingList<T> 資料_, 頁索引上層介面 綁定介面_) where T : MyKeepableData
+        public void 初始化<T>(BindingList<T> 資料_, 頁索引上層介面 綁定介面_) where T : MyKeepableData<T>
         {
             this.資料BindingSource.DataSource = 資料_;
             this._綁定介面 = 綁定介面_;
@@ -68,7 +68,7 @@ namespace WokyTool.通用
 
             for(int i = 0 ; i < this.資料BindingSource.Count; i++)
             {
-                MyKeepableData Item_ = (MyKeepableData)(this.資料BindingSource[i]);
+                可編號介面 Item_ = (可編號介面)(this.資料BindingSource[i]);
                 if(Item_.編號 == 編號_)
                 {
                     this.資料BindingSource.Position = i;

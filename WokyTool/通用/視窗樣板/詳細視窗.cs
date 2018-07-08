@@ -16,7 +16,7 @@ namespace WokyTool.通用
 
         protected bool _是否準備關閉 = false;
 
-        public void 初始化<T>(頁索引元件 頁索引元件_, 資料管理器介面 資料管理器_) where T : MyKeepableData
+        public void 初始化<T>(頁索引元件 頁索引元件_, 資料管理器介面 資料管理器_) where T : MyKeepableData<T>
         {
             this._頁索引元件 = 頁索引元件_;
             this._資料管理器 = 資料管理器_;

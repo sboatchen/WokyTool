@@ -12,7 +12,7 @@ using WokyTool.通用;
 namespace WokyTool.月結帳
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 平台訂單匯入檔案設定 : 檔案匯入設定資料
+    public class 平台訂單匯入檔案設定 : 檔案匯入設定資料<平台訂單匯入檔案設定>
     {
         [JsonProperty]
         public override int 編號 { get; set; }
@@ -111,8 +111,8 @@ namespace WokyTool.月結帳
         }
 
         /********************************/
-        
-        public override object 拷貝()
+
+        public override 平台訂單匯入檔案設定 拷貝()
         {
             //聯絡人資料 Data_ = new 聯絡人資料
             //{
@@ -127,12 +127,8 @@ namespace WokyTool.月結帳
             return null;
         }
 
-        public override void 覆蓋(object Item_)
+        public override void 覆蓋(平台訂單匯入檔案設定 Data_)
         {
-            //聯絡人資料 Data_ = Item_ as 聯絡人資料;
-            //if (Data_ == null)
-            //    throw new Exception("聯絡人資料:覆蓋失敗:" + this.GetType());
-
             //編號 = Data_.編號;
             //姓名 = Data_.姓名;
             //電話 = Data_.電話;
@@ -140,12 +136,8 @@ namespace WokyTool.月結帳
             //地址 = Data_.地址;
         }
 
-        public override Boolean 是否一致(object Item_)
+        public override Boolean 是否一致(平台訂單匯入檔案設定 Data_)
         {
-            //聯絡人資料 Data_ = Item_ as 聯絡人資料;
-            //if (Data_ == null)
-            //    throw new Exception("聯絡人資料:比較失敗:" + this.GetType());
-
             //return
             //    編號 == Data_.編號 &&
             //    姓名 == Data_.姓名 &&

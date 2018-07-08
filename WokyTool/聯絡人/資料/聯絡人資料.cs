@@ -12,7 +12,7 @@ using WokyTool.通用;
 namespace WokyTool.聯絡人
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 聯絡人資料 : MyKeepableData
+    public class 聯絡人資料 : MyKeepableData<聯絡人資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }
@@ -70,7 +70,7 @@ namespace WokyTool.聯絡人
             get { return this; }
         }
 
-        public override object 拷貝()
+        public override 聯絡人資料 拷貝()
         {
             聯絡人資料 Data_ = new 聯絡人資料
             {  
@@ -84,12 +84,8 @@ namespace WokyTool.聯絡人
             return Data_;
         }
 
-        public override void 覆蓋(object Item_)
+        public override void 覆蓋(聯絡人資料 Data_)
         {
-            聯絡人資料 Data_ = Item_ as 聯絡人資料;
-            if (Data_ == null)
-                throw new Exception("聯絡人資料:覆蓋失敗:" + this.GetType());
-
             編號 = Data_.編號;
             姓名 = Data_.姓名;
             電話 = Data_.電話;
@@ -97,12 +93,8 @@ namespace WokyTool.聯絡人
             地址 = Data_.地址;
         }
 
-        public override Boolean 是否一致(object Item_)
+        public override Boolean 是否一致(聯絡人資料 Data_)
         {
-            聯絡人資料 Data_ = Item_ as 聯絡人資料;
-            if (Data_ == null)
-                throw new Exception("聯絡人資料:比較失敗:" + this.GetType());
-
             return
                 編號 == Data_.編號 &&
                 姓名 == Data_.姓名 &&

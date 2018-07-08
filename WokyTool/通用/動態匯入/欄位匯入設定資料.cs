@@ -9,7 +9,7 @@ using WokyTool.Common;
 namespace WokyTool.通用
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 欄位匯入設定資料 : MyKeepableData
+    public class 欄位匯入設定資料 : MyKeepableData<欄位匯入設定資料>
     {
         // >= 0
         [JsonProperty]
@@ -64,7 +64,7 @@ namespace WokyTool.通用
 
         /********************************/
 
-        public override object 拷貝()
+        public override 欄位匯入設定資料 拷貝()
         {
             return new 欄位匯入設定資料
             {
@@ -75,24 +75,16 @@ namespace WokyTool.通用
             };
         }
 
-        public override void 覆蓋(object Item_)
+        public override void 覆蓋(欄位匯入設定資料 Data_)
         {
-            欄位匯入設定資料 Data_ = Item_ as 欄位匯入設定資料;
-            if (Data_ == null)
-                throw new Exception("欄位匯入設定資料:覆蓋失敗:" + this.GetType());
-
             列索引 = Data_.列索引;
             可合併儲存格 = Data_.可合併儲存格;
             格式 = Data_.格式;
             名稱 = Data_.名稱;
         }
 
-        public override Boolean 是否一致(object Item_)
+        public override Boolean 是否一致(欄位匯入設定資料 Data_)
         {
-            欄位匯入設定資料 Data_ = Item_ as 欄位匯入設定資料;
-            if (Data_ == null)
-                throw new Exception("欄位匯入設定資料:比較失敗:" + this.GetType());
-
             return
                 列索引 == Data_.列索引 &&
                 可合併儲存格 == Data_.可合併儲存格 &&

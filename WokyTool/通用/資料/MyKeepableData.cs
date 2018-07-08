@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
-    public abstract class MyKeepableData : MyData, IEditableObject
+    public abstract class MyKeepableData<T> : MyData, IEditableObject, 可比較複寫介面<T>, 可編號介面
     {
-        private object _副本;
+        private T _副本;
 
         public abstract int 編號 { get; set; }
 
-        public abstract object 拷貝();
-        public abstract void 覆蓋(object Item_);
-        public abstract Boolean 是否一致(object Item_);
+        public abstract T 拷貝();
+        public abstract void 覆蓋(T Item_);
+        public abstract Boolean 是否一致(T Item_);
+
+        public Boolean 篩選(T Item_) { return true; }
 
         // IEditableObject
         public void BeginEdit()
@@ -38,7 +40,7 @@ namespace WokyTool.通用
 
         public void FinishEdit()
         {
-            _副本 = null;
+            _副本 = default(T);
         }
 
         public bool isEditing()

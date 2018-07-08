@@ -10,7 +10,7 @@ using WokyTool.通用;
 namespace WokyTool.物品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 物品小類資料 : MyKeepableData
+    public class 物品小類資料 : MyKeepableData<物品小類資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }
@@ -53,7 +53,7 @@ namespace WokyTool.物品
 
         /********************************/
 
-        public override object 拷貝()
+        public override 物品小類資料 拷貝()
         {
             物品小類資料 Data_ = new 物品小類資料
             {
@@ -64,22 +64,14 @@ namespace WokyTool.物品
             return Data_;
         }
 
-        public override void 覆蓋(object Item_)
+        public override void 覆蓋(物品小類資料 Data_)
         {
-            物品小類資料 Data_ = Item_ as 物品小類資料;
-            if (Data_ == null)
-                throw new Exception("物品小類資料:覆蓋失敗:" + this.GetType());
-
             編號 = Data_.編號;
             名稱 = Data_.名稱;
         }
 
-        public override Boolean 是否一致(object Item_)
+        public override Boolean 是否一致(物品小類資料 Data_)
         {
-            物品小類資料 Data_ = Item_ as 物品小類資料;
-            if (Data_ == null)
-                throw new Exception("物品小類資料:比較失敗:" + this.GetType());
-
             return
                 編號 == Data_.編號 &&
                 名稱 == Data_.名稱;

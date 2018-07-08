@@ -12,7 +12,7 @@ using WokyTool.通用;
 namespace WokyTool.物品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 物品資料 : MyKeepableData
+    public class 物品資料 : MyKeepableData<物品資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }
@@ -246,7 +246,7 @@ namespace WokyTool.物品
 
         /********************************/
 
-        public override object 拷貝()
+        public override 物品資料 拷貝()
         {
             物品資料 Data_ = new 物品資料
             {  
@@ -277,12 +277,8 @@ namespace WokyTool.物品
             return Data_;
         }
 
-        public override void 覆蓋(object Item_)
+        public override void 覆蓋(物品資料 Data_)
         {
-            物品資料 Data_ = Item_ as 物品資料;
-            if (Data_ == null)
-                throw new Exception("物品資料:覆蓋失敗:" + this.GetType());
-
             編號 = Data_.編號;
 
             大類 = Data_.大類;
@@ -307,12 +303,8 @@ namespace WokyTool.物品
             成本備註 = Data_.成本備註;
         }
 
-        public override Boolean 是否一致(object Item_)
+        public override Boolean 是否一致(物品資料 Data_)
         {
-            物品資料 Data_ = Item_ as 物品資料;
-            if (Data_ == null)
-                throw new Exception("物品資料:比較失敗:" + this.GetType());
-
             return
                 編號 == Data_.編號 &&
 
@@ -355,6 +347,38 @@ namespace WokyTool.物品
             if (String.IsNullOrEmpty(縮寫))
                 throw new Exception("物品資料:縮寫不合法:" + this.ToString());
         }
+
+        /*
+        public override Boolean 篩選(物品資料 Item_)
+        {
+            物品資料 Data_ = Item_ as 物品資料;
+            if (Data_ == null)
+                throw new Exception("物品資料:比較失敗:" + this.GetType());
+
+            return
+                編號 == Data_.編號 &&
+
+                大類 == Data_.大類 &&
+                小類 == Data_.小類 &&
+                品牌 == Data_.品牌 &&
+
+                條碼 == Data_.條碼 &&
+                原廠編號 == Data_.原廠編號 &&
+                代理編號 == Data_.代理編號 &&
+
+                名稱 == Data_.名稱 &&
+                縮寫 == Data_.縮寫 &&
+
+                體積 == Data_.體積 &&
+                顏色 == Data_.顏色 &&
+
+                內庫數量 == Data_.內庫數量 &&
+                外庫數量 == Data_.外庫數量 &&
+                庫存總成本 == Data_.庫存總成本 &&
+
+                最後進貨成本 == Data_.最後進貨成本 &&
+                成本備註 == Data_.成本備註;
+        }*/
 
         /********************************/
 

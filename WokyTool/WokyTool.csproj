@@ -159,6 +159,8 @@
     <Compile Include="物品\視窗\物品詳細視窗.Designer.cs">
       <DependentUpon>物品詳細視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="通用\動態匯入\檔案匯入設定資料介面.cs" />
+    <Compile Include="通用\資料\可比較複寫介面.cs" />
     <Compile Include="物品\資料\物品品牌資料.cs" />
     <Compile Include="物品\資料\物品小類資料.cs" />
     <Compile Include="物品\資料\物品大類資料.cs" />
@@ -186,6 +188,7 @@
     <Compile Include="聯絡人\視窗\聯絡人總覽視窗.Designer.cs">
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="通用\資料\可編號介面.cs" />
     <Compile Include="通用\資料管理\資料儲存管理器.cs" />
     <Compile Include="通用\視窗樣板\詳細視窗.cs">
       <SubType>Form</SubType>
@@ -556,7 +559,7 @@
     <Compile Include="月結帳\控制\月結帳資料匯出結構.cs" />
     <Compile Include="聯絡人\控制\聯絡人資料管理器.cs" />
     <Compile Include="聯絡人\資料\聯絡人資料.cs" />
-    <Compile Include="通用\資料管理\可儲存類型.cs" />
+    <Compile Include="通用\資料管理\可儲存介面.cs" />
     <Compile Include="通用\資料管理\資料管理器介面.cs" />
     <EmbeddedResource Include="FormOther\商品篩選視窗.resx">
       <DependentUpon>商品篩選視窗.cs</DependentUpon>

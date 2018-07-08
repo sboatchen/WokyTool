@@ -14,14 +14,14 @@ namespace WokyTool.通用
     public class 動態匯入檔案結構 : MyData
     {
         [JsonProperty]
-        public 檔案匯入設定資料 設定{ get; set; }
+        public 檔案匯入設定資料介面 設定 { get; set; }
         [JsonProperty]
         public List<動態匯入資料結構> 內容 { get; set; }
 
         // 讀取到的標頭設定
         public Dictionary<string, 欄位匯入設定資料> 標頭映射對應表 { get; set; }
 
-        public 動態匯入檔案結構(檔案匯入設定資料 設定_)
+        public 動態匯入檔案結構(檔案匯入設定資料介面 設定_)
         {
             設定 = 設定_;
             內容 = new List<動態匯入資料結構>();

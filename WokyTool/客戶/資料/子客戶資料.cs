@@ -11,7 +11,7 @@ using WokyTool.聯絡人;
 namespace WokyTool.客戶
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 子客戶資料 : MyKeepableData
+    public class 子客戶資料 : MyKeepableData<子客戶資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }
@@ -69,7 +69,7 @@ namespace WokyTool.客戶
 
         /********************************/
 
-        public override object 拷貝()
+        public override 子客戶資料 拷貝()
         {
             子客戶資料 Data_ = new 子客戶資料
             {
@@ -89,12 +89,8 @@ namespace WokyTool.客戶
             return Data_;
         }
 
-        public override void 覆蓋(object Item_)
+        public override void 覆蓋(子客戶資料 Data_)
         {
-            子客戶資料 Data_ = Item_ as 子客戶資料;
-            if (Data_ == null)
-                throw new Exception("子客戶資料:覆蓋失敗:" + this.GetType());
-
             編號 = Data_.編號;
             名稱 = Data_.名稱;
 
@@ -112,12 +108,8 @@ namespace WokyTool.客戶
             }
         }
 
-        public override Boolean 是否一致(object Item_)
+        public override Boolean 是否一致(子客戶資料 Data_)
         {
-            子客戶資料 Data_ = Item_ as 子客戶資料;
-            if (Data_ == null)
-                throw new Exception("子客戶資料:比較失敗:" + this.GetType());
-
             if (編號 != Data_.編號 || 名稱 != Data_.名稱 || 聯絡人數量 != Data_.聯絡人數量)
                 return false;
 

@@ -12,7 +12,7 @@ using WokyTool.通用;
 namespace WokyTool.月結帳
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 月結帳匯入設定資料 : 檔案匯入設定資料
+    public class 月結帳匯入設定資料 : 檔案匯入設定資料<月結帳匯入設定資料>
     {
         public 公司資料 公司;
         [JsonProperty]
@@ -99,7 +99,7 @@ namespace WokyTool.月結帳
 
         /********************************/
 
-        public override object 拷貝()
+        public override 月結帳匯入設定資料 拷貝()
         {
             月結帳匯入設定資料 New_ = new 月結帳匯入設定資料
             {
@@ -122,12 +122,8 @@ namespace WokyTool.月結帳
             return New_;
         }
 
-        public override void 覆蓋(object Item_)
+        public override void 覆蓋(月結帳匯入設定資料 Data_)
         {
-            月結帳匯入設定資料 Data_ = Item_ as 月結帳匯入設定資料;
-            if (Data_ == null)
-                throw new Exception("月結帳匯入設定資料:覆蓋失敗:" + this.GetType());
-
             編號 = Data_.編號;
             格式 = Data_.格式;
             開始位置 = Data_.開始位置;
@@ -145,12 +141,8 @@ namespace WokyTool.月結帳
             }
         }
 
-        public override Boolean 是否一致(object Item_)
+        public override Boolean 是否一致(月結帳匯入設定資料 Data_)
         {
-            月結帳匯入設定資料 Data_ = Item_ as 月結帳匯入設定資料;
-            if (Data_ == null) 
-                throw new Exception("月結帳匯入設定資料:比較失敗:" + this.GetType());
-
             // hard to compare 資料List, ingore it.
             return
                 編號 == Data_.編號 &&

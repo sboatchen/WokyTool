@@ -18,7 +18,7 @@ namespace WokyTool.通用
 
         protected bool _是否準備關閉 = false;
 
-        public void 初始化<T>(System.Windows.Forms.BindingSource 資料BindingSource_, 資料管理器<T> 資料管理器_) where T : MyKeepableData
+        public void 初始化<T>(System.Windows.Forms.BindingSource 資料BindingSource_, 資料管理器<T> 資料管理器_) where T : MyKeepableData<T>
         {
             this.資料BindingSource = 資料BindingSource_;
             this._資料管理器 = 資料管理器_;

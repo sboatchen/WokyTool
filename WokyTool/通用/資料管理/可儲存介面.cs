@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
-    public interface 可儲存類型
+    public interface 可儲存介面
     {
         void 儲存();
     }
