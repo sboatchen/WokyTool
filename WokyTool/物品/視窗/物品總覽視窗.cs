@@ -27,7 +27,7 @@ namespace WokyTool.物品
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            視窗管理器.獨體.顯現(列舉.編碼類型.物品, 列舉.視窗類型.篩選);
         }
 
         private void 總表ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,7 +77,7 @@ namespace WokyTool.物品
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int 編號_ = ((物品資料)(this.物品資料BindingSource.Current)).編號;
-            視窗管理器.獨體.顯現(列舉.編碼類型.物品, 編號_);
+            視窗管理器.獨體.顯現(列舉.編碼類型.物品, 列舉.視窗類型.詳細, 編號_);
         }
     }
 }

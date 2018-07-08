@@ -40,9 +40,9 @@ namespace WokyTool.物品{
             目前資料_.名稱 = this.名稱.Text;
             目前資料_.縮寫 = this.縮寫.Text;
 
-            目前資料_.大類 = (物品大類資料)(this.物品大類選取元件1.SelectedValue);
-            目前資料_.小類 = (物品小類資料)(this.物品小類選取元件1.SelectedValue);
-            目前資料_.品牌 = (物品品牌資料)(this.物品品牌選取元件1.SelectedValue);
+            目前資料_.大類 = (物品大類資料)(this.物品大類選取元件1.SelectedItem);
+            目前資料_.小類 = (物品小類資料)(this.物品小類選取元件1.SelectedItem);
+            目前資料_.品牌 = (物品品牌資料)(this.物品品牌選取元件1.SelectedItem);
 
             目前資料_.條碼 = this.條碼.Text;
             目前資料_.原廠編號 = this.原廠編號.Text;
@@ -66,9 +66,9 @@ namespace WokyTool.物品{
             this.名稱.Text = 目前資料_.名稱;
             this.縮寫.Text = 目前資料_.縮寫;
 
-            this.物品大類選取元件1.SelectedValue = 目前資料_.大類;
-            this.物品小類選取元件1.SelectedValue = 目前資料_.小類;
-            this.物品品牌選取元件1.SelectedValue = 目前資料_.品牌;
+            this.物品大類選取元件1.SelectedItem = 目前資料_.大類;
+            this.物品小類選取元件1.SelectedItem = 目前資料_.小類;
+            this.物品品牌選取元件1.SelectedItem = 目前資料_.品牌;
 
             this.條碼.Text = 目前資料_.條碼;
             this.原廠編號.Text = 目前資料_.原廠編號;

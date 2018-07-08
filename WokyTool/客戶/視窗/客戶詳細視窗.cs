@@ -35,7 +35,7 @@ namespace WokyTool.客戶
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int 編號_ = ((子客戶資料)(this.子客戶資料BindingSource.Current)).編號;
-            視窗管理器.獨體.顯現(列舉.編碼類型.子客戶, 編號_);
+            視窗管理器.獨體.顯現(列舉.編碼類型.子客戶, 列舉.視窗類型.詳細, 編號_);
         }
 
         /********************************/

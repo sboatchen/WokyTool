@@ -141,17 +141,17 @@
     <Compile Include="物品\視窗\物品小類總覽視窗.Designer.cs">
       <DependentUpon>物品小類總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\物品篩選視窗2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="物品\視窗\物品篩選視窗2.Designer.cs">
-      <DependentUpon>物品篩選視窗2.cs</DependentUpon>
-    </Compile>
     <Compile Include="物品\視窗\物品總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="物品\視窗\物品總覽視窗.Designer.cs">
       <DependentUpon>物品總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="物品\視窗\物品篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="物品\視窗\物品篩選視窗.Designer.cs">
+      <DependentUpon>物品篩選視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="物品\視窗\物品詳細視窗.cs">
       <SubType>Form</SubType>
@@ -159,6 +159,7 @@
     <Compile Include="物品\視窗\物品詳細視窗.Designer.cs">
       <DependentUpon>物品詳細視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="物品\資料\物品資料篩選設定.cs" />
     <Compile Include="通用\動態匯入\檔案匯入設定資料介面.cs" />
     <Compile Include="通用\資料\可比較複寫介面.cs" />
     <Compile Include="物品\資料\物品品牌資料.cs" />
@@ -188,6 +189,7 @@
     <Compile Include="聯絡人\視窗\聯絡人總覽視窗.Designer.cs">
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="通用\資料\可篩選介面.cs" />
     <Compile Include="通用\資料\可編號介面.cs" />
     <Compile Include="通用\資料管理\資料儲存管理器.cs" />
     <Compile Include="通用\視窗樣板\詳細視窗.cs">
@@ -709,11 +711,11 @@
     <EmbeddedResource Include="物品\視窗\物品小類總覽視窗.resx">
       <DependentUpon>物品小類總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\物品篩選視窗2.resx">
-      <DependentUpon>物品篩選視窗2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品總覽視窗.resx">
       <DependentUpon>物品總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="物品\視窗\物品篩選視窗.resx">
+      <DependentUpon>物品篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品詳細視窗.resx">
       <DependentUpon>物品詳細視窗.cs</DependentUpon>
@@ -765,7 +767,6 @@
     <None Include="Properties\DataSources\WokyTool.客戶.客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品品牌資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品大類資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.物品.物品大類資料1.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品小類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.聯絡人.聯絡人資料.datasource" />

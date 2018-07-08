@@ -17,8 +17,6 @@ namespace WokyTool.通用
         public abstract void 覆蓋(T Item_);
         public abstract Boolean 是否一致(T Item_);
 
-        public Boolean 篩選(T Item_) { return true; }
-
         // IEditableObject
         public void BeginEdit()
         {

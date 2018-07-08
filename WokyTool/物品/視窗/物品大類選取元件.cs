@@ -20,17 +20,17 @@ namespace WokyTool.物品
             InitializeComponent();
         }
 
-        public object SelectedValue
+        public object SelectedItem
         {
             get
             {
-                return this.comboBox1.SelectedValue;
+                return this.comboBox1.SelectedItem;
             }
 
             set
             {
-                if (this.comboBox1.SelectedValue != value)
-                    this.comboBox1.SelectedValue = value;
+                if (this.comboBox1.SelectedItem != value)
+                    this.comboBox1.SelectedItem = value;
             }
         }
 

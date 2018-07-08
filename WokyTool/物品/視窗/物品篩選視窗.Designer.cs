@@ -1,6 +1,6 @@
 ﻿namespace WokyTool.物品
 {
-    partial class 物品詳細視窗
+    partial class 物品篩選視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -45,7 +45,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.頁索引元件1 = new WokyTool.通用.頁索引元件();
             this.名稱 = new System.Windows.Forms.TextBox();
             this.原廠編號 = new System.Windows.Forms.TextBox();
             this.顏色 = new System.Windows.Forms.TextBox();
@@ -60,9 +59,10 @@
             this.成本 = new System.Windows.Forms.NumericUpDown();
             this.外庫數量 = new System.Windows.Forms.NumericUpDown();
             this.內庫數量 = new System.Windows.Forms.NumericUpDown();
-            this.物品大類選取元件1 = new WokyTool.物品.物品大類選取元件();
-            this.物品小類選取元件1 = new WokyTool.物品.物品小類選取元件();
+            this.篩選 = new System.Windows.Forms.Button();
             this.物品品牌選取元件1 = new WokyTool.物品.物品品牌選取元件();
+            this.物品小類選取元件1 = new WokyTool.物品.物品小類選取元件();
+            this.物品大類選取元件1 = new WokyTool.物品.物品大類選取元件();
             ((System.ComponentModel.ISupportInitialize)(this.庫存總量)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.體積)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.庫存總成本)).BeginInit();
@@ -225,13 +225,6 @@
             this.label18.TabIndex = 17;
             this.label18.Text = "最後進貨成本";
             // 
-            // 頁索引元件1
-            // 
-            this.頁索引元件1.Location = new System.Drawing.Point(154, 372);
-            this.頁索引元件1.Name = "頁索引元件1";
-            this.頁索引元件1.Size = new System.Drawing.Size(234, 34);
-            this.頁索引元件1.TabIndex = 18;
-            // 
             // 名稱
             // 
             this.名稱.Location = new System.Drawing.Point(64, 10);
@@ -250,6 +243,7 @@
             // 
             this.顏色.Location = new System.Drawing.Point(107, 196);
             this.顏色.Name = "顏色";
+            this.顏色.ReadOnly = true;
             this.顏色.Size = new System.Drawing.Size(167, 22);
             this.顏色.TabIndex = 33;
             // 
@@ -278,6 +272,7 @@
             // 
             this.成本備註.Location = new System.Drawing.Point(107, 322);
             this.成本備註.Name = "成本備註";
+            this.成本備註.ReadOnly = true;
             this.成本備註.Size = new System.Drawing.Size(167, 22);
             this.成本備註.TabIndex = 42;
             // 
@@ -303,6 +298,7 @@
             // 
             this.體積.Location = new System.Drawing.Point(107, 171);
             this.體積.Name = "體積";
+            this.體積.ReadOnly = true;
             this.體積.Size = new System.Drawing.Size(167, 22);
             this.體積.TabIndex = 46;
             // 
@@ -320,6 +316,7 @@
             0,
             -2147483648});
             this.庫存總成本.Name = "庫存總成本";
+            this.庫存總成本.ReadOnly = true;
             this.庫存總成本.Size = new System.Drawing.Size(167, 22);
             this.庫存總成本.TabIndex = 47;
             // 
@@ -337,6 +334,7 @@
             0,
             -2147483648});
             this.最後進貨成本.Name = "最後進貨成本";
+            this.最後進貨成本.ReadOnly = true;
             this.最後進貨成本.Size = new System.Drawing.Size(167, 22);
             this.最後進貨成本.TabIndex = 48;
             // 
@@ -372,6 +370,7 @@
             0,
             -2147483648});
             this.外庫數量.Name = "外庫數量";
+            this.外庫數量.ReadOnly = true;
             this.外庫數量.Size = new System.Drawing.Size(167, 22);
             this.外庫數量.TabIndex = 50;
             // 
@@ -389,24 +388,19 @@
             0,
             -2147483648});
             this.內庫數量.Name = "內庫數量";
+            this.內庫數量.ReadOnly = true;
             this.內庫數量.Size = new System.Drawing.Size(167, 22);
             this.內庫數量.TabIndex = 51;
             // 
-            // 物品大類選取元件1
+            // 篩選
             // 
-            this.物品大類選取元件1.Location = new System.Drawing.Point(107, 94);
-            this.物品大類選取元件1.Name = "物品大類選取元件1";
-            this.物品大類選取元件1.SelectedItem = null;
-            this.物品大類選取元件1.Size = new System.Drawing.Size(172, 25);
-            this.物品大類選取元件1.TabIndex = 52;
-            // 
-            // 物品小類選取元件1
-            // 
-            this.物品小類選取元件1.Location = new System.Drawing.Point(107, 121);
-            this.物品小類選取元件1.Name = "物品小類選取元件1";
-            this.物品小類選取元件1.SelectedItem = null;
-            this.物品小類選取元件1.Size = new System.Drawing.Size(172, 25);
-            this.物品小類選取元件1.TabIndex = 53;
+            this.篩選.Location = new System.Drawing.Point(238, 371);
+            this.篩選.Name = "篩選";
+            this.篩選.Size = new System.Drawing.Size(75, 23);
+            this.篩選.TabIndex = 55;
+            this.篩選.Text = "篩選";
+            this.篩選.UseVisualStyleBackColor = true;
+            this.篩選.Click += new System.EventHandler(this.篩選_Click);
             // 
             // 物品品牌選取元件1
             // 
@@ -416,11 +410,28 @@
             this.物品品牌選取元件1.Size = new System.Drawing.Size(172, 25);
             this.物品品牌選取元件1.TabIndex = 54;
             // 
-            // 物品詳細視窗
+            // 物品小類選取元件1
+            // 
+            this.物品小類選取元件1.Location = new System.Drawing.Point(107, 121);
+            this.物品小類選取元件1.Name = "物品小類選取元件1";
+            this.物品小類選取元件1.SelectedItem = null;
+            this.物品小類選取元件1.Size = new System.Drawing.Size(172, 25);
+            this.物品小類選取元件1.TabIndex = 53;
+            // 
+            // 物品大類選取元件1
+            // 
+            this.物品大類選取元件1.Location = new System.Drawing.Point(107, 94);
+            this.物品大類選取元件1.Name = "物品大類選取元件1";
+            this.物品大類選取元件1.SelectedItem = null;
+            this.物品大類選取元件1.Size = new System.Drawing.Size(172, 25);
+            this.物品大類選取元件1.TabIndex = 52;
+            // 
+            // 物品篩選視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 418);
+            this.Controls.Add(this.篩選);
             this.Controls.Add(this.物品品牌選取元件1);
             this.Controls.Add(this.物品小類選取元件1);
             this.Controls.Add(this.物品大類選取元件1);
@@ -438,7 +449,6 @@
             this.Controls.Add(this.顏色);
             this.Controls.Add(this.原廠編號);
             this.Controls.Add(this.名稱);
-            this.Controls.Add(this.頁索引元件1);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label15);
@@ -456,8 +466,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "物品詳細視窗";
-            this.Text = "物品詳細視窗";
+            this.Name = "物品篩選視窗";
+            this.Text = "物品篩選視窗";
             ((System.ComponentModel.ISupportInitialize)(this.庫存總量)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.體積)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.庫存總成本)).EndInit();
@@ -489,7 +499,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private 通用.頁索引元件 頁索引元件1;
         private System.Windows.Forms.TextBox 名稱;
         private System.Windows.Forms.TextBox 原廠編號;
         private System.Windows.Forms.TextBox 顏色;
@@ -507,5 +516,6 @@
         private 物品大類選取元件 物品大類選取元件1;
         private 物品小類選取元件 物品小類選取元件1;
         private 物品品牌選取元件 物品品牌選取元件1;
+        private System.Windows.Forms.Button 篩選;
     }
 }
