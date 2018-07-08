@@ -8,17 +8,17 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public abstract class 總覽視窗<T> : Form, 通用視窗介面 where T : MyKeepableData
+    public class 總覽視窗 : Form, 通用視窗介面
     {
         protected System.Windows.Forms.BindingSource 資料BindingSource;
 
         protected int _資料版本;
 
-        protected 資料管理器<T> _資料管理器;
+        protected 資料管理器介面 _資料管理器;
 
         protected bool _是否準備關閉 = false;
 
-        public void 初始化(System.Windows.Forms.BindingSource 資料BindingSource_, 資料管理器<T> 資料管理器_)
+        public void 初始化<T>(System.Windows.Forms.BindingSource 資料BindingSource_, 資料管理器<T> 資料管理器_) where T : MyKeepableData
         {
             this.資料BindingSource = 資料BindingSource_;
             this._資料管理器 = 資料管理器_;

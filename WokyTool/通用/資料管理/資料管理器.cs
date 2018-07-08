@@ -12,7 +12,7 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.通用
 {
-    public abstract class 資料管理器<T> : 可儲存類型 where T : MyKeepableData
+    public abstract class 資料管理器<T> : 可儲存類型, 資料管理器介面 where T : MyKeepableData
     {
         // 資料Map
         public Dictionary<int, T> Map { get; /*@@private*/ set; }
@@ -231,6 +231,15 @@ namespace WokyTool.通用
             {
                 Item_.CancelEdit();
                 可編輯BList.Add(Item_);
+            }
+        }
+
+        // 資料BindingList
+        public object 物件_可編輯BList
+        {
+            get
+            {
+                return 可編輯BList;
             }
         }
     }

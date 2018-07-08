@@ -11,13 +11,13 @@ using WokyTool.通用;
 
 namespace WokyTool.物品
 {
-    public partial class 物品大類總覽視窗 : 物品大類總覽視窗樣板
+    public partial class 物品大類總覽視窗 : 總覽視窗
     {
         public 物品大類總覽視窗()
         {
             InitializeComponent();
 
-            this.初始化(this.物品大類資料BindingSource, 物品大類資料管理器.獨體);
+            this.初始化<物品大類資料>(this.物品大類資料BindingSource, 物品大類資料管理器.獨體);
         }
     }
 }

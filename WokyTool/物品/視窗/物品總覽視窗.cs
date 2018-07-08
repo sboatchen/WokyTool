@@ -12,7 +12,7 @@ using WokyTool.通用;
 
 namespace WokyTool.物品
 {
-    public partial class 物品總覽視窗 : 物品總覽視窗樣板
+    public partial class 物品總覽視窗 : 總覽視窗
     {
         private int _物品大類資料版本 = -1;
         private int _物品小類資料版本 = -1;
@@ -22,7 +22,7 @@ namespace WokyTool.物品
         {
             InitializeComponent();
 
-            this.初始化(this.物品資料BindingSource, 物品資料管理器.獨體);
+            this.初始化<物品資料>(this.物品資料BindingSource, 物品資料管理器.獨體);
         }
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace WokyTool.物品
 
         private void 自訂ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("功能尚未實作", 字串.確認, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         /********************************/

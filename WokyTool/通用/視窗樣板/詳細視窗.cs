@@ -9,19 +9,19 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public abstract class 詳細視窗<T> : Form, 通用視窗介面, 頁索引上層介面 where T : MyKeepableData
+    public class 詳細視窗 : Form, 通用視窗介面, 頁索引上層介面
     {
         protected 頁索引元件 _頁索引元件;
-        protected 資料管理器<T> _資料管理器;
+        protected 資料管理器介面 _資料管理器;
 
         protected bool _是否準備關閉 = false;
 
-        public void 初始化(頁索引元件 頁索引元件_, 資料管理器<T> 資料管理器_)
+        public void 初始化<T>(頁索引元件 頁索引元件_, 資料管理器介面 資料管理器_) where T : MyKeepableData
         {
             this._頁索引元件 = 頁索引元件_;
             this._資料管理器 = 資料管理器_;
 
-            this._頁索引元件.初始化<T>(資料管理器_.可編輯BList, this);
+            this._頁索引元件.初始化<T>((BindingList<T>)(資料管理器_.物件_可編輯BList), this);
 
             this.Activated += new System.EventHandler(this._視窗激活);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);

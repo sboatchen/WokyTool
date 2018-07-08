@@ -12,13 +12,13 @@ using WokyTool.通用;
 
 namespace WokyTool.客戶
 {
-    public partial class 子客戶總覽視窗 : 子客戶總覽視窗樣板
+    public partial class 子客戶總覽視窗 : 總覽視窗
     {
         public 子客戶總覽視窗()
         {
             InitializeComponent();
 
-            this.初始化(this.子客戶資料BindingSource, 子客戶資料管理器.獨體);
+            this.初始化<子客戶資料>(this.子客戶資料BindingSource, 子客戶資料管理器.獨體);
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
