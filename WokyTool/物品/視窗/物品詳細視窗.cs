@@ -9,19 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.通用;
 
-namespace WokyTool.物品
-{
-    public partial class 物品詳細視窗 : 物品詳細視窗樣板
+namespace WokyTool.物品{
+
+    public partial class 物品詳細視窗 : 詳細視窗
     {
-        private int _物品品牌資料版本 = -1;
-        private int _物品大類資料版本 = -1;
-        private int _物品小類資料版本 = -1;
-        
         public 物品詳細視窗()
         {
             InitializeComponent();
 
-            this.初始化(this.頁索引元件1, 物品資料管理器.獨體);
+            this.初始化<物品資料>(this.頁索引元件1, 物品資料管理器.獨體);
         }
 
         /********************************/
@@ -29,23 +25,9 @@ namespace WokyTool.物品
 
         protected override void 視窗激活()
         {
-            if (_物品品牌資料版本 != 物品品牌資料管理器.獨體.BindingVersion)
-            {
-                _物品品牌資料版本 = 物品品牌資料管理器.獨體.BindingVersion;
-                this.物品品牌資料BindingSource.DataSource = 物品品牌資料管理器.獨體.唯讀BList;
-            }
-
-            if (_物品大類資料版本 != 物品大類資料管理器.獨體.BindingVersion)
-            {
-                _物品大類資料版本 = 物品大類資料管理器.獨體.BindingVersion;
-                this.物品大類資料BindingSource.DataSource = 物品大類資料管理器.獨體.唯讀BList;
-            }
-
-            if (_物品小類資料版本 != 物品小類資料管理器.獨體.BindingVersion)
-            {
-                _物品小類資料版本 = 物品小類資料管理器.獨體.BindingVersion;
-                this.物品小類資料BindingSource.DataSource = 物品小類資料管理器.獨體.唯讀BList;
-            }
+            this.物品品牌選取元件1.視窗激活();
+            this.物品大類選取元件1.視窗激活();
+            this.物品小類選取元件1.視窗激活();
         }
 
         /********************************/
@@ -58,9 +40,9 @@ namespace WokyTool.物品
             目前資料_.名稱 = this.名稱.Text;
             目前資料_.縮寫 = this.縮寫.Text;
 
-            目前資料_.大類 = (物品大類資料)(this.大類.SelectedValue);
-            目前資料_.小類 = (物品小類資料)(this.小類.SelectedValue);
-            目前資料_.品牌 = (物品品牌資料)(this.品牌.SelectedValue);
+            目前資料_.大類 = (物品大類資料)(this.物品大類選取元件1.SelectedValue);
+            目前資料_.小類 = (物品小類資料)(this.物品小類選取元件1.SelectedValue);
+            目前資料_.品牌 = (物品品牌資料)(this.物品品牌選取元件1.SelectedValue);
 
             目前資料_.條碼 = this.條碼.Text;
             目前資料_.原廠編號 = this.原廠編號.Text;
@@ -84,9 +66,9 @@ namespace WokyTool.物品
             this.名稱.Text = 目前資料_.名稱;
             this.縮寫.Text = 目前資料_.縮寫;
 
-            this.大類.SelectedValue = 目前資料_.大類;
-            this.小類.SelectedValue = 目前資料_.小類;
-            this.品牌.SelectedValue = 目前資料_.品牌;
+            this.物品大類選取元件1.SelectedValue = 目前資料_.大類;
+            this.物品小類選取元件1.SelectedValue = 目前資料_.小類;
+            this.物品品牌選取元件1.SelectedValue = 目前資料_.品牌;
 
             this.條碼.Text = 目前資料_.條碼;
             this.原廠編號.Text = 目前資料_.原廠編號;

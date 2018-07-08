@@ -47,11 +47,8 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.頁索引元件1 = new WokyTool.通用.頁索引元件();
-            this.品牌 = new System.Windows.Forms.ComboBox();
             this.物品品牌資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.小類 = new System.Windows.Forms.ComboBox();
             this.物品小類資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.大類 = new System.Windows.Forms.ComboBox();
             this.物品大類資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.名稱 = new System.Windows.Forms.TextBox();
             this.原廠編號 = new System.Windows.Forms.TextBox();
@@ -67,6 +64,9 @@
             this.成本 = new System.Windows.Forms.NumericUpDown();
             this.外庫數量 = new System.Windows.Forms.NumericUpDown();
             this.內庫數量 = new System.Windows.Forms.NumericUpDown();
+            this.物品大類選取元件1 = new WokyTool.物品.物品大類選取元件();
+            this.物品小類選取元件1 = new WokyTool.物品.物品小類選取元件();
+            this.物品品牌選取元件1 = new WokyTool.物品.物品品牌選取元件();
             ((System.ComponentModel.ISupportInitialize)(this.物品品牌資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品小類資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品大類資料BindingSource)).BeginInit();
@@ -239,46 +239,13 @@
             this.頁索引元件1.Size = new System.Drawing.Size(234, 34);
             this.頁索引元件1.TabIndex = 18;
             // 
-            // 品牌
-            // 
-            this.品牌.DataSource = this.物品品牌資料BindingSource;
-            this.品牌.DisplayMember = "名稱";
-            this.品牌.FormattingEnabled = true;
-            this.品牌.Location = new System.Drawing.Point(107, 67);
-            this.品牌.Name = "品牌";
-            this.品牌.Size = new System.Drawing.Size(167, 20);
-            this.品牌.TabIndex = 19;
-            this.品牌.ValueMember = "Self";
-            // 
             // 物品品牌資料BindingSource
             // 
             this.物品品牌資料BindingSource.DataSource = typeof(WokyTool.物品.物品品牌資料);
             // 
-            // 小類
-            // 
-            this.小類.DataSource = this.物品小類資料BindingSource;
-            this.小類.DisplayMember = "名稱";
-            this.小類.FormattingEnabled = true;
-            this.小類.Location = new System.Drawing.Point(107, 124);
-            this.小類.Name = "小類";
-            this.小類.Size = new System.Drawing.Size(167, 20);
-            this.小類.TabIndex = 21;
-            this.小類.ValueMember = "Self";
-            // 
             // 物品小類資料BindingSource
             // 
             this.物品小類資料BindingSource.DataSource = typeof(WokyTool.物品.物品小類資料);
-            // 
-            // 大類
-            // 
-            this.大類.DataSource = this.物品大類資料BindingSource;
-            this.大類.DisplayMember = "名稱";
-            this.大類.FormattingEnabled = true;
-            this.大類.Location = new System.Drawing.Point(107, 94);
-            this.大類.Name = "大類";
-            this.大類.Size = new System.Drawing.Size(167, 20);
-            this.大類.TabIndex = 22;
-            this.大類.ValueMember = "Self";
             // 
             // 物品大類資料BindingSource
             // 
@@ -444,11 +411,38 @@
             this.內庫數量.Size = new System.Drawing.Size(167, 22);
             this.內庫數量.TabIndex = 51;
             // 
+            // 物品大類選取元件1
+            // 
+            this.物品大類選取元件1.Location = new System.Drawing.Point(107, 94);
+            this.物品大類選取元件1.Name = "物品大類選取元件1";
+            this.物品大類選取元件1.SelectedValue = null;
+            this.物品大類選取元件1.Size = new System.Drawing.Size(172, 25);
+            this.物品大類選取元件1.TabIndex = 52;
+            // 
+            // 物品小類選取元件1
+            // 
+            this.物品小類選取元件1.Location = new System.Drawing.Point(107, 121);
+            this.物品小類選取元件1.Name = "物品小類選取元件1";
+            this.物品小類選取元件1.SelectedValue = null;
+            this.物品小類選取元件1.Size = new System.Drawing.Size(172, 25);
+            this.物品小類選取元件1.TabIndex = 53;
+            // 
+            // 物品品牌選取元件1
+            // 
+            this.物品品牌選取元件1.Location = new System.Drawing.Point(107, 67);
+            this.物品品牌選取元件1.Name = "物品品牌選取元件1";
+            this.物品品牌選取元件1.SelectedValue = null;
+            this.物品品牌選取元件1.Size = new System.Drawing.Size(172, 25);
+            this.物品品牌選取元件1.TabIndex = 54;
+            // 
             // 物品詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(560, 418);
+            this.Controls.Add(this.物品品牌選取元件1);
+            this.Controls.Add(this.物品小類選取元件1);
+            this.Controls.Add(this.物品大類選取元件1);
             this.Controls.Add(this.內庫數量);
             this.Controls.Add(this.外庫數量);
             this.Controls.Add(this.成本);
@@ -463,9 +457,6 @@
             this.Controls.Add(this.顏色);
             this.Controls.Add(this.原廠編號);
             this.Controls.Add(this.名稱);
-            this.Controls.Add(this.大類);
-            this.Controls.Add(this.小類);
-            this.Controls.Add(this.品牌);
             this.Controls.Add(this.頁索引元件1);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
@@ -521,9 +512,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private 通用.頁索引元件 頁索引元件1;
-        private System.Windows.Forms.ComboBox 品牌;
-        private System.Windows.Forms.ComboBox 小類;
-        private System.Windows.Forms.ComboBox 大類;
         private System.Windows.Forms.TextBox 名稱;
         private System.Windows.Forms.TextBox 原廠編號;
         private System.Windows.Forms.TextBox 顏色;
@@ -541,5 +529,8 @@
         private System.Windows.Forms.NumericUpDown 成本;
         private System.Windows.Forms.NumericUpDown 外庫數量;
         private System.Windows.Forms.NumericUpDown 內庫數量;
+        private 物品大類選取元件 物品大類選取元件1;
+        private 物品小類選取元件 物品小類選取元件1;
+        private 物品品牌選取元件 物品品牌選取元件1;
     }
 }
