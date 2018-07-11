@@ -275,11 +275,12 @@ namespace WokyTool.通用
         protected void CancelEdit()
         {
             可編輯BList.Clear();
-            可編輯BList.Add(空白資料);
-            可編輯BList.Add(錯誤資料);
 
             if (篩選介面 == null)
             {
+                可編輯BList.Add(空白資料);
+                可編輯BList.Add(錯誤資料);
+
                 foreach (T Item_ in Map.Values)
                 {
                     可編輯BList.Add(Item_);
@@ -302,13 +303,14 @@ namespace WokyTool.通用
             可編輯BList.ListChanged -= _可編輯BList資料增減事件;
 
             可編輯BList.Clear();
-            可編輯BList.Add(空白資料);
-            可編輯BList.Add(錯誤資料);
 
             if (篩選介面 == null)
             {
                 可編輯BList.AllowNew = true;
                 可編輯BList.AllowRemove = true;
+
+                可編輯BList.Add(空白資料);
+                可編輯BList.Add(錯誤資料);
 
                 foreach (T Item_ in Map.Values)
                 {
