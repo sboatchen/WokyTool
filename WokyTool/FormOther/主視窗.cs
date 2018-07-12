@@ -73,6 +73,11 @@ namespace WokyTool
             i.BringToFront();
         }
 
+        private void button41_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();  //@@ 搬進去

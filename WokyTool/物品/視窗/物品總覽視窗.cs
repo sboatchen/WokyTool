@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
+using WokyTool.DataExport;
 using WokyTool.通用;
 
 namespace WokyTool.物品
@@ -32,21 +34,49 @@ namespace WokyTool.物品
 
         private void 總表ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //@@ TODO
+            var ItemGroup_ = 物品資料管理器.獨體.可編輯BList
+                                .Where(Value => Value.編號 > 0)
+                                .GroupBy(
+                                    Value => Value.品牌.名稱,
+                                    Value => new 物品總覽匯出結構(Value));
 
+            string Title_ = String.Format("物品總覽_{0}", 共用.NowYMDDec);
+            函式.ExportExcel<物品總覽匯出結構>(Title_, ItemGroup_);
         }
 
         private void 庫存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //@@ TODO
+            var ItemGroup_ = 物品資料管理器.獨體.可編輯BList
+                                .Where(Value => Value.編號 > 0)
+                                .GroupBy(
+                                    Value => Value.品牌.名稱,
+                                    Value => new 物品庫存匯出結構(Value));
 
+            通用匯出結構 總結_ = new 通用匯出結構("總結");
+
+            decimal 總庫存成本_ = 物品資料管理器.獨體.可編輯BList.Select(Value => Value.庫存總成本).Sum();
+            總結_.Add("總庫存成本", 總庫存成本_.ToString());
+
+            string Title_ = String.Format("物品庫存_{0}", 共用.NowYMDDec);
+            函式.ExportExcel<物品庫存匯出結構>(Title_, ItemGroup_, 總結_);
         }
 
         private void 盤點ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //@@ TODO
+            var Item_ = 物品資料管理器.獨體.可編輯BList
+                               .Where(Value => (Value.編號 > 0) && (String.IsNullOrEmpty(Value.條碼) == false))
+                               .Select(Value => new 物品盤點匯出結構(Value));
 
+            string Title_ = String.Format("盤點匯出_{0}", 共用.NowYMDDec);
+            函式.ExportCSV<物品盤點匯出結構>(Title_, Item_);
         }
 
         private void 自訂ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //@@ TODO
             MessageBox.Show("功能尚未實作", 字串.確認, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
