@@ -405,12 +405,6 @@
     <Compile Include="FormOverview\入庫總覽視窗.Designer.cs">
       <DependentUpon>入庫總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormOverview\公司總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOverview\公司總覽視窗.Designer.cs">
-      <DependentUpon>公司總覽視窗.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormOverview\幣值總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -622,9 +616,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOverview\入庫總覽視窗.resx">
       <DependentUpon>入庫總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOverview\公司總覽視窗.resx">
-      <DependentUpon>公司總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOverview\幣值總覽視窗.resx">
       <DependentUpon>幣值總覽視窗.cs</DependentUpon>

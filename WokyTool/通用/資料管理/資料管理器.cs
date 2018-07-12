@@ -78,8 +78,6 @@ namespace WokyTool.通用
             }
 
             可編輯BList = new BindingList<T>();
-            可編輯BList.Add(空白資料);
-            可編輯BList.Add(錯誤資料);
 
             唯讀BList = new BindingList<T>();
             唯讀BList.AllowEdit = false;

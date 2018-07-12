@@ -29,6 +29,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 using WokyTool.聯絡人;
 using WokyTool.客戶;
 using WokyTool.物品;
+using WokyTool.公司;
 
 namespace WokyTool
 {
@@ -109,14 +110,14 @@ namespace WokyTool
 
         private void button7_Click(object sender, EventArgs e)
         {
-            var i = new 商品大類總覽視窗();
+            var i = new 商品.商品大類總覽視窗();
             i.Show();
             i.BringToFront();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            var i = new 商品小類總覽視窗();
+            var i = new 商品.商品小類總覽視窗();
             i.Show();
             i.BringToFront();
         }
@@ -514,6 +515,49 @@ namespace WokyTool
 
         private void button38_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("公司資料轉換");
+            公司資料管理器.獨體.Map.Clear();
+            foreach (var Item_ in 公司管理器.Instance.Map.Values)
+            {
+                if (Item_.編號 <= 0)
+                    continue;
+
+                WokyTool.公司.公司資料 New_ = new 公司.公司資料
+                {
+                    編號 = Item_.編號,
+                    名稱 = Item_.名稱,
+                };
+
+                公司資料管理器.獨體.Map.Add(New_.編號, New_);
+            }
+            公司資料管理器.獨體.SetDataDirty();
+
+            Console.WriteLine("客戶資料轉換");
+            客戶資料管理器.獨體.Map.Clear();
+            foreach (var Item_ in 廠商管理器.Instance.Map.Values)
+            {
+                if (Item_.編號 <= 0)
+                    continue;
+
+                if (String.IsNullOrEmpty(Item_.聯絡人) == false)
+                    continue;
+
+                if (Item_.名稱.CompareTo("沃廚") == 0)
+                    continue;
+
+                if (Item_.名稱.CompareTo("洋承") == 0)
+                    continue;
+
+                WokyTool.客戶.客戶資料 New_ = new 客戶.客戶資料
+                {
+                    編號 = Item_.編號,
+                    名稱 = Item_.名稱,
+                };
+
+                客戶資料管理器.獨體.Map.Add(New_.編號, New_);
+            }
+            客戶資料管理器.獨體.SetDataDirty();
+
             Console.WriteLine("物品大類資料轉換");
             物品大類資料管理器.獨體.Map.Clear();
             foreach (var Item_ in 物品大類管理器.Instance.Map.Values)
@@ -600,6 +644,10 @@ namespace WokyTool
                 物品資料管理器.獨體.Map.Add(New_.編號, New_);
             }
             物品資料管理器.獨體.SetDataDirty();
+
+
+
+            Console.WriteLine("轉換完畢");
         }
 
         private int 編號轉換(int Old_)
