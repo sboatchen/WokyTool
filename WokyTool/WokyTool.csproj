@@ -74,6 +74,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Log.cs" />
+    <Compile Include="商品\控制\商品大類資料管理器.cs" />
+    <Compile Include="商品\控制\商品小類資料管理器.cs" />
+    <Compile Include="商品\資料\商品大類資料.cs" />
+    <Compile Include="商品\資料\商品小類資料.cs" />
     <Compile Include="客戶\控制\子客戶資料管理器.cs" />
     <Compile Include="客戶\控制\客戶資料管理器.cs" />
     <Compile Include="客戶\視窗\子客戶詳細視窗.cs">
@@ -765,6 +769,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="商品\視窗\" />
     <Folder Include="平台訂單\控制\" />
     <Folder Include="平台訂單\視窗\" />
   </ItemGroup>
