@@ -62,16 +62,12 @@ namespace WokyTool
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var i = new 物品大類總覽視窗();
-            i.Show();
-            i.BringToFront();
+            視窗管理器.獨體.顯現(列舉.編碼類型.物品大類, 列舉.視窗類型.總覽);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var i = new 物品小類總覽視窗();
-            i.Show();
-            i.BringToFront();
+            視窗管理器.獨體.顯現(列舉.編碼類型.物品小類, 列舉.視窗類型.總覽);
         }
 
         private void button41_Click(object sender, EventArgs e)
@@ -103,23 +99,17 @@ namespace WokyTool
 
         private void button6_Click(object sender, EventArgs e)
         {
-            var i = new 物品總覽視窗();
-            i.Show();
-            i.BringToFront();
+            視窗管理器.獨體.顯現(列舉.編碼類型.物品, 列舉.視窗類型.總覽);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            var i = new 商品.商品大類總覽視窗();
-            i.Show();
-            i.BringToFront();
+            視窗管理器.獨體.顯現(列舉.編碼類型.商品大類, 列舉.視窗類型.總覽);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            var i = new 商品.商品小類總覽視窗();
-            i.Show();
-            i.BringToFront();
+            視窗管理器.獨體.顯現(列舉.編碼類型.商品小類, 列舉.視窗類型.總覽);
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -153,9 +143,7 @@ namespace WokyTool
 
         private void button13_Click(object sender, EventArgs e)
         {
-            var i = new 物品品牌總覽視窗();
-            i.Show();
-            i.BringToFront();
+            視窗管理器.獨體.顯現(列舉.編碼類型.物品品牌, 列舉.視窗類型.總覽);
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -259,9 +247,7 @@ namespace WokyTool
 
         private void button24_Click(object sender, EventArgs e)
         {
-            var i = new 公司總覽視窗();
-            i.Show();
-            i.BringToFront();
+            視窗管理器.獨體.顯現(列舉.編碼類型.公司, 列舉.視窗類型.總覽);
         }
 
         private void button25_Click(object sender, EventArgs e)
@@ -370,23 +356,17 @@ namespace WokyTool
 
         private void button37_Click(object sender, EventArgs e)
         {
-            var i = new 聯絡人總覽視窗();
-            i.Show();
-            i.BringToFront();
+            視窗管理器.獨體.顯現(列舉.編碼類型.聯絡人, 列舉.視窗類型.總覽);
         }
 
         private void button39_Click(object sender, EventArgs e)
         {
-            var i = new 客戶總覽視窗();
-            i.Show();
-            i.BringToFront();
+            視窗管理器.獨體.顯現(列舉.編碼類型.客戶, 列舉.視窗類型.總覽);
         }
 
         private void button40_Click(object sender, EventArgs e)
         {
-            var i = new 子客戶總覽視窗();
-            i.Show();
-            i.BringToFront();
+            視窗管理器.獨體.顯現(列舉.編碼類型.子客戶, 列舉.視窗類型.總覽);
         }
 
         /*private void button27_Click(object sender, EventArgs e)
