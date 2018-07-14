@@ -36,6 +36,9 @@
             this.庫存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.盤點ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.物品ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.條碼ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.物品大類資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.物品品牌資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.物品小類資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -59,9 +62,6 @@
             this.最後進貨成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.成本備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.物品ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.條碼ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.物品大類資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品品牌資料BindingSource)).BeginInit();
@@ -127,6 +127,29 @@
             this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.自訂ToolStripMenuItem.Text = "自訂";
             this.自訂ToolStripMenuItem.Click += new System.EventHandler(this.自訂ToolStripMenuItem_Click);
+            // 
+            // 更新ToolStripMenuItem
+            // 
+            this.更新ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.物品ToolStripMenuItem,
+            this.條碼ToolStripMenuItem});
+            this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
+            this.更新ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.更新ToolStripMenuItem.Text = "更新";
+            // 
+            // 物品ToolStripMenuItem
+            // 
+            this.物品ToolStripMenuItem.Name = "物品ToolStripMenuItem";
+            this.物品ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.物品ToolStripMenuItem.Text = "物品";
+            this.物品ToolStripMenuItem.Click += new System.EventHandler(this.物品ToolStripMenuItem_Click);
+            // 
+            // 條碼ToolStripMenuItem
+            // 
+            this.條碼ToolStripMenuItem.Name = "條碼ToolStripMenuItem";
+            this.條碼ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.條碼ToolStripMenuItem.Text = "條碼";
+            this.條碼ToolStripMenuItem.Click += new System.EventHandler(this.條碼ToolStripMenuItem_Click);
             // 
             // 物品大類資料BindingSource
             // 
@@ -300,28 +323,6 @@
             this.成本備註DataGridViewTextBoxColumn.DataPropertyName = "成本備註";
             this.成本備註DataGridViewTextBoxColumn.HeaderText = "成本備註";
             this.成本備註DataGridViewTextBoxColumn.Name = "成本備註DataGridViewTextBoxColumn";
-            // 
-            // 更新ToolStripMenuItem
-            // 
-            this.更新ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.物品ToolStripMenuItem,
-            this.條碼ToolStripMenuItem});
-            this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
-            this.更新ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.更新ToolStripMenuItem.Text = "更新";
-            // 
-            // 物品ToolStripMenuItem
-            // 
-            this.物品ToolStripMenuItem.Name = "物品ToolStripMenuItem";
-            this.物品ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.物品ToolStripMenuItem.Text = "物品";
-            // 
-            // 條碼ToolStripMenuItem
-            // 
-            this.條碼ToolStripMenuItem.Name = "條碼ToolStripMenuItem";
-            this.條碼ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.條碼ToolStripMenuItem.Text = "條碼";
-            this.條碼ToolStripMenuItem.Click += new System.EventHandler(this.條碼ToolStripMenuItem_Click);
             // 
             // 物品總覽視窗
             // 

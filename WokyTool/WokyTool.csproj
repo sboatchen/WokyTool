@@ -325,7 +325,7 @@
     <Compile Include="Data\銷售資料.cs" />
     <Compile Include="Data\銷售資料_編輯.cs" />
     <Compile Include="Data\物品訂單資料.cs" />
-    <Compile Include="DataImport\物品更新匯入結構.cs" />
+    <Compile Include="廢棄\物品更新匯入結構.cs" />
     <Compile Include="DataMgr\入庫管理器.cs" />
     <Compile Include="DataMgr\公司管理器.cs" />
     <Compile Include="DataRecord\入庫紀錄資料.cs" />
@@ -440,7 +440,7 @@
     <Compile Include="DataImport\出貨匯入結構_森森.cs" />
     <Compile Include="DataImport\商品匯入結構.cs" />
     <Compile Include="DataImport\宅配通匯入結構.cs" />
-    <Compile Include="DataImport\物品匯入結構.cs" />
+    <Compile Include="廢棄\物品匯入結構.cs" />
     <Compile Include="DataImport\出貨匯入結構_GoHappy.cs" />
     <Compile Include="DataImport\進貨匯入結構.cs" />
     <Compile Include="DataImport\雜支匯入結構.cs" />
@@ -478,10 +478,10 @@
     <Compile Include="ImportForm\商品訂單匯入視窗.Designer.cs">
       <DependentUpon>商品訂單匯入視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImportForm\物品更新匯入視窗.cs">
+    <Compile Include="廢棄\物品更新匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImportForm\物品更新匯入視窗.Designer.cs">
+    <Compile Include="廢棄\物品更新匯入視窗.Designer.cs">
       <DependentUpon>物品更新匯入視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="ImportForm\物品訂單匯入視窗.cs">
@@ -558,10 +558,10 @@
     <Compile Include="FormOverview\支出總覽視窗.Designer.cs">
       <DependentUpon>支出總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImportForm\物品匯入視窗.cs">
+    <Compile Include="廢棄\物品匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ImportForm\物品匯入視窗.Designer.cs">
+    <Compile Include="廢棄\物品匯入視窗.Designer.cs">
       <DependentUpon>物品匯入視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOverview\編碼總覽視窗.cs">
@@ -631,7 +631,7 @@
     <EmbeddedResource Include="ImportForm\商品訂單匯入視窗.resx">
       <DependentUpon>商品訂單匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImportForm\物品更新匯入視窗.resx">
+    <EmbeddedResource Include="廢棄\物品更新匯入視窗.resx">
       <DependentUpon>物品更新匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportForm\物品訂單匯入視窗.resx">
@@ -679,7 +679,7 @@
     <EmbeddedResource Include="FormOverview\支出總覽視窗.resx">
       <DependentUpon>支出總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImportForm\物品匯入視窗.resx">
+    <EmbeddedResource Include="廢棄\物品匯入視窗.resx">
       <DependentUpon>物品匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOverview\編碼總覽視窗.resx">

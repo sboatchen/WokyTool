@@ -80,6 +80,12 @@ namespace WokyTool.物品
             MessageBox.Show("功能尚未實作", 字串.確認, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        private void 物品ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //@@ TODO
+            MessageBox.Show("功能尚未實作", 字串.確認, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
         private void 條碼ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var i = new 物品條碼更新匯入視窗();
