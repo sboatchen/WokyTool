@@ -34,11 +34,11 @@
             this.樣板ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.更新狀態BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.縮寫DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.目標物品DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.條碼DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.狀態DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.更新狀態BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.更新訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.物品條碼更新資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
@@ -82,6 +82,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -97,10 +99,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(843, 432);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // 更新狀態BindingSource
-            // 
-            this.更新狀態BindingSource.DataSource = typeof(WokyTool.Common.列舉.更新狀態);
             // 
             // 縮寫DataGridViewTextBoxColumn
             // 
@@ -131,6 +129,10 @@
             this.狀態DataGridViewTextBoxColumn.ReadOnly = true;
             this.狀態DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.狀態DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // 更新狀態BindingSource
+            // 
+            this.更新狀態BindingSource.DataSource = typeof(WokyTool.Common.列舉.更新狀態);
             // 
             // 更新訊息DataGridViewTextBoxColumn
             // 

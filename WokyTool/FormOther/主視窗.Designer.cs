@@ -59,7 +59,6 @@
             this.button31 = new System.Windows.Forms.Button();
             this.盤點出貨 = new System.Windows.Forms.Button();
             this.button32 = new System.Windows.Forms.Button();
-            this.button33 = new System.Windows.Forms.Button();
             this.button34 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
@@ -381,16 +380,6 @@
             this.button32.UseVisualStyleBackColor = true;
             this.button32.Click += new System.EventHandler(this.button32_Click);
             // 
-            // button33
-            // 
-            this.button33.Location = new System.Drawing.Point(325, 239);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(75, 23);
-            this.button33.TabIndex = 33;
-            this.button33.Text = "條碼更新";
-            this.button33.UseVisualStyleBackColor = true;
-            this.button33.Click += new System.EventHandler(this.button33_Click);
-            // 
             // button34
             // 
             this.button34.Location = new System.Drawing.Point(325, 299);
@@ -495,7 +484,6 @@
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button35);
             this.Controls.Add(this.button34);
-            this.Controls.Add(this.button33);
             this.Controls.Add(this.button32);
             this.Controls.Add(this.盤點出貨);
             this.Controls.Add(this.button31);
@@ -567,7 +555,6 @@
         private System.Windows.Forms.Button button31;
         private System.Windows.Forms.Button 盤點出貨;
         private System.Windows.Forms.Button button32;
-        private System.Windows.Forms.Button button33;
         private System.Windows.Forms.Button button34;
         private System.Windows.Forms.Button button35;
         private System.Windows.Forms.Button button11;

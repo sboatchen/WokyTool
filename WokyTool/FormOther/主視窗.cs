@@ -305,13 +305,6 @@ namespace WokyTool
             i.BringToFront();
         }
 
-        private void button33_Click(object sender, EventArgs e)
-        {
-            var i = new 條碼更新匯入視窗();
-            i.Show();
-            i.BringToFront();
-        }
-
         private void button34_Click(object sender, EventArgs e)
         {
             var i = new 修改商品視窗(null);

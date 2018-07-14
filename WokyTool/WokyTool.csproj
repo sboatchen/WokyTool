@@ -317,7 +317,6 @@
     <Compile Include="DataImport\出貨匯入結構_遠傳.cs" />
     <Compile Include="DataImport\出貨匯入結構_遠傳加購.cs" />
     <Compile Include="DataImport\出貨匯入結構_金石堂.cs" />
-    <Compile Include="DataImport\條碼更新匯入結構.cs" />
     <Compile Include="DataMgr\平台訂單資料管理器.cs" />
     <Compile Include="DataMgr\銷售管理器.cs" />
     <Compile Include="DataMgr\非平台訂單資料管理器.cs" />
@@ -389,12 +388,6 @@
     </Compile>
     <Compile Include="FormOther\測試視窗.Designer.cs">
       <DependentUpon>測試視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ImportForm\條碼更新匯入視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ImportForm\條碼更新匯入視窗.Designer.cs">
-      <DependentUpon>條碼更新匯入視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="ImportForm\盤點出貨匯入視窗.cs">
       <SubType>Form</SubType>
@@ -613,9 +606,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOther\測試視窗.resx">
       <DependentUpon>測試視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ImportForm\條碼更新匯入視窗.resx">
-      <DependentUpon>條碼更新匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportForm\盤點出貨匯入視窗.resx">
       <DependentUpon>盤點出貨匯入視窗.cs</DependentUpon>

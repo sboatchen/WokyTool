@@ -65,7 +65,7 @@ namespace WokyTool.物品
             }
             catch (Exception Error_)
             {
-                var result = MessageBox.Show(字串.匯入錯誤, 字串.匯入確認, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var result = MessageBox.Show(Error_.ToString(), 字串.匯入錯誤, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.No)
                 {
