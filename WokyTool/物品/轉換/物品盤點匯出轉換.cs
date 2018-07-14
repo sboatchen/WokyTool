@@ -11,13 +11,13 @@ using WokyTool.Data;
 
 namespace WokyTool.物品
 {
-    public class 物品盤點匯出結構 : 可格式化_Csv
+    public class 物品盤點匯出轉換 : 可格式化_Csv
     {
         protected 物品資料 _Data;
 
         //條碼號, 商品描述, 0
 
-        public 物品盤點匯出結構(物品資料 Data_)
+        public 物品盤點匯出轉換(物品資料 Data_)
         {
             _Data = Data_;
         }

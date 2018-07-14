@@ -39,10 +39,10 @@ namespace WokyTool.物品
                                 .Where(Value => Value.編號 > 0)
                                 .GroupBy(
                                     Value => Value.品牌.名稱,
-                                    Value => new 物品總覽匯出結構(Value));
+                                    Value => new 物品總覽匯出轉換(Value));
 
             string Title_ = String.Format("物品總覽_{0}", 共用.NowYMDDec);
-            函式.ExportExcel<物品總覽匯出結構>(Title_, ItemGroup_);
+            函式.ExportExcel<物品總覽匯出轉換>(Title_, ItemGroup_);
         }
 
         private void 庫存ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace WokyTool.物品
                                 .Where(Value => Value.編號 > 0)
                                 .GroupBy(
                                     Value => Value.品牌.名稱,
-                                    Value => new 物品庫存匯出結構(Value));
+                                    Value => new 物品庫存匯出轉換(Value));
 
             通用匯出結構 總結_ = new 通用匯出結構("總結");
 
@@ -60,7 +60,7 @@ namespace WokyTool.物品
             總結_.Add("總庫存成本", 總庫存成本_.ToString());
 
             string Title_ = String.Format("物品庫存_{0}", 共用.NowYMDDec);
-            函式.ExportExcel<物品庫存匯出結構>(Title_, ItemGroup_, 總結_);
+            函式.ExportExcel<物品庫存匯出轉換>(Title_, ItemGroup_, 總結_);
         }
 
         private void 盤點ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,16 +68,23 @@ namespace WokyTool.物品
             //@@ TODO
             var Item_ = 物品資料管理器.獨體.可編輯BList
                                .Where(Value => (Value.編號 > 0) && (String.IsNullOrEmpty(Value.條碼) == false))
-                               .Select(Value => new 物品盤點匯出結構(Value));
+                               .Select(Value => new 物品盤點匯出轉換(Value));
 
             string Title_ = String.Format("盤點匯出_{0}", 共用.NowYMDDec);
-            函式.ExportCSV<物品盤點匯出結構>(Title_, Item_);
+            函式.ExportCSV<物品盤點匯出轉換>(Title_, Item_);
         }
 
         private void 自訂ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //@@ TODO
             MessageBox.Show("功能尚未實作", 字串.確認, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void 條碼ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var i = new 物品條碼更新匯入視窗();
+            i.Show();
+            i.BringToFront();
         }
 
         /********************************/
