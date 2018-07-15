@@ -89,12 +89,19 @@
     </Compile>
     <Compile Include="公司\資料\公司資料.cs" />
     <Compile Include="商品\控制\商品大類資料管理器.cs" />
+    <Compile Include="商品\控制\商品資料管理器.cs" />
     <Compile Include="商品\控制\商品小類資料管理器.cs" />
     <Compile Include="商品\視窗\商品大類總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="商品\視窗\商品大類總覽視窗.Designer.cs">
       <DependentUpon>商品大類總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\視窗\商品總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\視窗\商品總覽視窗.Designer.cs">
+      <DependentUpon>商品總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="商品\視窗元件\商品大類選取元件.cs">
       <SubType>UserControl</SubType>
@@ -631,6 +638,9 @@
     <EmbeddedResource Include="ImportForm\商品訂單匯入視窗.resx">
       <DependentUpon>商品訂單匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="商品\視窗\商品總覽視窗.resx">
+      <DependentUpon>商品總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="廢棄\物品更新匯入視窗.resx">
       <DependentUpon>物品更新匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -794,7 +804,6 @@
     <None Include="Properties\DataSources\WokyTool.Data.銷售資料_編輯.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.雜支資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.商品匯入結構.datasource" />
-    <None Include="Properties\DataSources\WokyTool.DataImport.條碼更新匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.物品匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.物品更新匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.進貨匯入結構.datasource" />
@@ -802,6 +811,7 @@
     <None Include="Properties\DataSources\WokyTool.公司.公司資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品大類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品小類資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.商品.商品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.子客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品品牌資料.datasource" />

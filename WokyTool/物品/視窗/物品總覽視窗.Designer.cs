@@ -204,6 +204,7 @@
             this.編號DataGridViewTextBoxColumn.DataPropertyName = "編號";
             this.編號DataGridViewTextBoxColumn.HeaderText = "編號";
             this.編號DataGridViewTextBoxColumn.Name = "編號DataGridViewTextBoxColumn";
+            this.編號DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 品牌DataGridViewTextBoxColumn
             // 
@@ -360,6 +361,9 @@
         private System.Windows.Forms.BindingSource 物品小類資料BindingSource;
         private System.Windows.Forms.BindingSource 物品品牌資料BindingSource;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem 更新ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 物品ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 條碼ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 品牌DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 大類DataGridViewTextBoxColumn;
@@ -378,8 +382,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 最後進貨成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本備註DataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripMenuItem 更新ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 物品ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 條碼ToolStripMenuItem;
     }
 }

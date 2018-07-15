@@ -61,6 +61,7 @@
             this.編號DataGridViewTextBoxColumn.DataPropertyName = "編號";
             this.編號DataGridViewTextBoxColumn.HeaderText = "編號";
             this.編號DataGridViewTextBoxColumn.Name = "編號DataGridViewTextBoxColumn";
+            this.編號DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 名稱DataGridViewTextBoxColumn
             // 
@@ -86,8 +87,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource 商品大類資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 商品大類資料BindingSource;
     }
 }
