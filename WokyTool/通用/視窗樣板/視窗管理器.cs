@@ -63,6 +63,8 @@ namespace WokyTool.通用
             詳細視窗設定Map.Add(列舉.編碼類型.子客戶, typeof(子客戶詳細視窗));
             詳細視窗設定Map.Add(列舉.編碼類型.物品, typeof(物品詳細視窗));
 
+            詳細視窗設定Map.Add(列舉.編碼類型.商品, typeof(商品詳細視窗));
+
             /********************************/
 
             篩選視窗設定Map = new Dictionary<列舉.編碼類型, Type>();
