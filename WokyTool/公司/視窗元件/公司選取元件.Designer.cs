@@ -48,7 +48,7 @@
             // 
             // 公司資料BindingSource
             // 
-            this.公司資料BindingSource.DataSource = typeof(WokyTool.公司.公司資料);
+            this.公司資料BindingSource.DataSource = typeof(公司資料);
             // 
             // 公司選取元件
             // 
