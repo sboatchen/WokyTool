@@ -71,6 +71,7 @@ namespace WokyTool.通用
             篩選視窗Map = new Dictionary<列舉.編碼類型, 通用視窗介面>();
 
             篩選視窗設定Map.Add(列舉.編碼類型.物品, typeof(物品篩選視窗));
+            篩選視窗設定Map.Add(列舉.編碼類型.商品, typeof(商品篩選視窗));
         }
 
         private 通用視窗介面 取得總覽視窗(列舉.編碼類型 類型_)

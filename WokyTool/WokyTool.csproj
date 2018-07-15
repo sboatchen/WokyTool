@@ -81,10 +81,10 @@
     <Compile Include="公司\視窗\公司總覽視窗.Designer.cs">
       <DependentUpon>公司總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="公司\視窗\公司選取元件.cs">
+    <Compile Include="公司\視窗元件\公司選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="公司\視窗\公司選取元件.Designer.cs">
+    <Compile Include="公司\視窗元件\公司選取元件.Designer.cs">
       <DependentUpon>公司選取元件.cs</DependentUpon>
     </Compile>
     <Compile Include="公司\資料\公司資料.cs" />
@@ -102,6 +102,18 @@
     </Compile>
     <Compile Include="商品\視窗\商品總覽視窗.Designer.cs">
       <DependentUpon>商品總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\視窗\商品篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\視窗\商品篩選視窗.Designer.cs">
+      <DependentUpon>商品篩選視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\視窗\商品詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\視窗\商品詳細視窗.Designer.cs">
+      <DependentUpon>商品詳細視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="商品\視窗元件\商品大類選取元件.cs">
       <SubType>UserControl</SubType>
@@ -124,6 +136,7 @@
     <Compile Include="商品\資料\商品大類資料.cs" />
     <Compile Include="商品\資料\商品小類資料.cs" />
     <Compile Include="商品\資料\商品資料.cs" />
+    <Compile Include="商品\資料\商品資料篩選設定.cs" />
     <Compile Include="客戶\控制\子客戶資料管理器.cs" />
     <Compile Include="客戶\控制\客戶資料管理器.cs" />
     <Compile Include="客戶\視窗\子客戶詳細視窗.cs">
@@ -150,6 +163,12 @@
     <Compile Include="客戶\視窗\客戶詳細視窗.Designer.cs">
       <DependentUpon>客戶詳細視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="客戶\視窗元件\客戶選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="客戶\視窗元件\客戶選取元件.Designer.cs">
+      <DependentUpon>客戶選取元件.cs</DependentUpon>
+    </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
     <Compile Include="物品\控制\物品資料管理器.cs" />
     <Compile Include="物品\控制\物品品牌資料管理器.cs" />
@@ -166,6 +185,12 @@
     </Compile>
     <Compile Include="物品\視窗\物品大類總覽視窗.Designer.cs">
       <DependentUpon>物品大類總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="物品\視窗元件\物品選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="物品\視窗元件\物品選取元件.Designer.cs">
+      <DependentUpon>物品選取元件.cs</DependentUpon>
     </Compile>
     <Compile Include="物品\視窗元件\物品小類選取元件.cs">
       <SubType>UserControl</SubType>
@@ -623,6 +648,15 @@
     <EmbeddedResource Include="商品\視窗\商品總覽視窗.resx">
       <DependentUpon>商品總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="商品\視窗\商品篩選視窗.resx">
+      <DependentUpon>商品篩選視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品\視窗\商品詳細視窗.resx">
+      <DependentUpon>商品詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客戶\視窗元件\客戶選取元件.resx">
+      <DependentUpon>客戶選取元件.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="廢棄\物品更新匯入視窗.resx">
       <DependentUpon>物品更新匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -671,7 +705,7 @@
     <EmbeddedResource Include="公司\視窗\公司總覽視窗.resx">
       <DependentUpon>公司總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="公司\視窗\公司選取元件.resx">
+    <EmbeddedResource Include="公司\視窗元件\公司選取元件.resx">
       <DependentUpon>公司選取元件.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="商品\視窗\商品大類總覽視窗.resx">
@@ -716,6 +750,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品條碼更新匯入視窗.resx">
       <DependentUpon>物品條碼更新匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="物品\視窗元件\物品選取元件.resx">
+      <DependentUpon>物品選取元件.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗元件\物品小類選取元件.resx">
       <DependentUpon>物品小類選取元件.cs</DependentUpon>
