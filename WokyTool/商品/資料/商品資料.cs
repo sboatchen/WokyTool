@@ -27,7 +27,7 @@ namespace WokyTool.商品
             }
             set
             {
-                大類 = 商品大類資料管理器.獨體.Get(value);
+                _大類 = 商品大類資料管理器.獨體.Get(value);
             }
         }
 
@@ -58,7 +58,7 @@ namespace WokyTool.商品
             }
             set
             {
-                小類 = 商品小類資料管理器.獨體.Get(value);
+                _小類 = 商品小類資料管理器.獨體.Get(value);
             }
         }
 
@@ -89,7 +89,7 @@ namespace WokyTool.商品
             }
             set
             {
-                公司 = 公司資料管理器.獨體.Get(value);
+                _公司 = 公司資料管理器.獨體.Get(value);
             }
         }
 
@@ -120,7 +120,7 @@ namespace WokyTool.商品
             }
             set
             {
-                客戶 = 客戶資料管理器.獨體.Get(value);
+                _客戶 = 客戶資料管理器.獨體.Get(value);
             }
         }
 
@@ -552,7 +552,7 @@ namespace WokyTool.商品
             if (String.IsNullOrEmpty(名稱))
                 throw new Exception("商品資料:名稱不合法:" + this.ToString());
 
-            if(數量1 < 0 || 數量2 < 0 || 數量3 < 0 || 數量4 < 0 || 數量5 < 0)
+            if (數量1 < 0 || 數量2 < 0 || 數量3 < 0 || 數量4 < 0 || 數量5 < 0)
                 throw new Exception("商品資料:數量不合法:" + this.ToString());
         }
 

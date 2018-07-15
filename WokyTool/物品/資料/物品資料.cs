@@ -26,7 +26,7 @@ namespace WokyTool.物品
             }
             set
             {
-                大類 = 物品大類資料管理器.獨體.Get(value);
+                _大類 = 物品大類資料管理器.獨體.Get(value);
             }
         }
 
@@ -57,7 +57,7 @@ namespace WokyTool.物品
             }
             set
             {
-                小類 = 物品小類資料管理器.獨體.Get(value);
+                _小類 = 物品小類資料管理器.獨體.Get(value);
             }
         }
 
@@ -88,7 +88,7 @@ namespace WokyTool.物品
             }
             set
             {
-                品牌 = 物品品牌資料管理器.獨體.Get(value);
+                _品牌 = 物品品牌資料管理器.獨體.Get(value);
             }
         }
 

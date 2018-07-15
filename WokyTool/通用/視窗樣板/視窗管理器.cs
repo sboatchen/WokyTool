@@ -8,6 +8,7 @@ using WokyTool.Common;
 using WokyTool.公司;
 using WokyTool.物品;
 using WokyTool.客戶;
+using WokyTool.商品;
 using WokyTool.聯絡人;
 
 namespace WokyTool.通用
@@ -51,6 +52,7 @@ namespace WokyTool.通用
 
             總覽視窗設定Map.Add(列舉.編碼類型.商品大類, typeof(商品大類總覽視窗));
             總覽視窗設定Map.Add(列舉.編碼類型.商品小類, typeof(商品小類總覽視窗));
+            總覽視窗設定Map.Add(列舉.編碼類型.商品, typeof(商品總覽視窗));
 
             /********************************/
 

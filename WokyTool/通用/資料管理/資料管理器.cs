@@ -334,5 +334,26 @@ namespace WokyTool.通用
             可編輯BList.ListChanged += _可編輯BList資料增減事件;
             _是否增減資料 = false;
         }
+
+        public void 資料搬移()  //@@ temp
+        {
+            IsDataDirty = true;
+
+            可編輯BList.ListChanged -= _可編輯BList資料增減事件;
+
+            可編輯BList.Clear();
+            唯讀BList.Clear();
+
+            唯讀BList.Add(空白資料);
+            唯讀BList.Add(錯誤資料);
+
+            foreach (T Item_ in Map.Values)
+            {
+                可編輯BList.Add(Item_);
+                唯讀BList.Add(Item_);
+            }
+
+            可編輯BList.ListChanged += _可編輯BList資料增減事件;
+        }
     }
 }

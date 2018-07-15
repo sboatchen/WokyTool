@@ -535,24 +535,6 @@
     <Compile Include="ImportForm\商品匯入視窗.Designer.cs">
       <DependentUpon>商品匯入視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormOverview\商品大類總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOverview\商品大類總覽視窗.Designer.cs">
-      <DependentUpon>商品大類總覽視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormOverview\商品小類總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOverview\商品小類總覽視窗.Designer.cs">
-      <DependentUpon>商品小類總覽視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormOverview\商品總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOverview\商品總覽視窗.Designer.cs">
-      <DependentUpon>商品總覽視窗.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormOverview\廠商總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -673,15 +655,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImportForm\商品匯入視窗.resx">
       <DependentUpon>商品匯入視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOverview\商品大類總覽視窗.resx">
-      <DependentUpon>商品大類總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOverview\商品小類總覽視窗.resx">
-      <DependentUpon>商品小類總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOverview\商品總覽視窗.resx">
-      <DependentUpon>商品總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOverview\廠商總覽視窗.resx">
       <DependentUpon>廠商總覽視窗.cs</DependentUpon>

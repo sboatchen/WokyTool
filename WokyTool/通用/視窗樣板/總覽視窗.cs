@@ -31,6 +31,9 @@ namespace WokyTool.通用
 
         private void _視窗激活(object sender, EventArgs e)
         {
+            if (_是否準備關閉)
+                return;
+
             視窗激活();
 
             this.資料BindingSource.ResetBindings(false);
@@ -42,6 +45,8 @@ namespace WokyTool.通用
 
         private void _視窗關閉(object sender, FormClosingEventArgs e)
         {
+            _是否準備關閉 = true;
+
             視窗關閉();
 
             if (_資料管理器.IsEditing())
@@ -49,6 +54,13 @@ namespace WokyTool.通用
                 var result = MessageBox.Show(字串.儲存確認內容, 字串.儲存確認, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 _資料管理器.UpdateEdit(result == DialogResult.Yes);
             }
+
+            this.Hide();
+
+            if (e != null)
+                e.Cancel = true;
+
+            _是否準備關閉 = false;
         }
 
         protected virtual void 視窗關閉()
