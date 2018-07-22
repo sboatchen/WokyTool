@@ -8,51 +8,54 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.通用;
+using WokyTool.Common;
 
 namespace WokyTool.客戶
 {
-    public partial class 客戶選取元件 : UserControl, 選取元件介面
+    public partial class 客戶選取元件 : 抽象選取元件
     {
-        private int _資料版本 = -1;
+        protected override ComboBox 下拉選單
+        {
+            get
+            {
+                return this.comboBox1;
+            } 
+        }
+
+        protected override BindingSource 綁定資源
+        {
+            get
+            {
+                return this.客戶資料BindingSource;
+            }
+        }
+
+        protected override 資料管理器介面 資料管理器
+        {
+            get
+            {
+                return 客戶資料管理器.獨體;
+            }
+        }
+
+        protected override object 篩選(String Name_)
+        {
+            return 客戶資料管理器.獨體.唯讀BList.Where(Value => Value.名稱.Contains(Name_)).ToList();
+        }
 
         public 客戶選取元件()
         {
             InitializeComponent();
+            初始化();
         }
 
-        public object SelectedItem
+        private void Detail_Click(object sender, EventArgs e)
         {
-            get
-            {
-                return this.comboBox1.SelectedItem;
-            }
+            if (SelectedItem == null)
+                return;
 
-            set
-            {
-                if (this.comboBox1.SelectedItem != value)
-                    this.comboBox1.SelectedItem = value;
-            }
-        }
-
-        public void 視窗激活()
-        {
-            if (_資料版本 != 客戶資料管理器.獨體.BindingVersion)
-            {
-                _資料版本 = 客戶資料管理器.獨體.BindingVersion;
-                this.客戶資料BindingSource.DataSource = 客戶資料管理器.獨體.唯讀BList;
-            }
-        }
-
-        private void comboBox1_DropDown(object sender, EventArgs e)
-        {
-            if (this.comboBox1.SelectedValue != null)
-            {
-                this.客戶資料BindingSource.DataSource = 客戶資料管理器.獨體.唯讀BList;
-            }
-            else
-            {
-                this.客戶資料BindingSource.DataSource = 客戶資料管理器.獨體.唯讀BList.Where(Value => Value.名稱.Contains(this.comboBox1.Text)).ToList();
-            }
+            int 編號_ = ((客戶資料)SelectedItem).編號;
+            視窗管理器.獨體.顯現(列舉.編碼類型.客戶, 列舉.視窗類型.詳細, 編號_);
         }
     }
 }

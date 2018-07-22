@@ -201,7 +201,7 @@
             this.客戶選取元件1.Location = new System.Drawing.Point(571, 76);
             this.客戶選取元件1.Name = "客戶選取元件1";
             this.客戶選取元件1.SelectedItem = null;
-            this.客戶選取元件1.Size = new System.Drawing.Size(172, 25);
+            this.客戶選取元件1.Size = new System.Drawing.Size(190, 25);
             this.客戶選取元件1.TabIndex = 55;
             // 
             // 物品選取元件1
@@ -209,7 +209,7 @@
             this.物品選取元件1.Location = new System.Drawing.Point(64, 113);
             this.物品選取元件1.Name = "物品選取元件1";
             this.物品選取元件1.SelectedItem = null;
-            this.物品選取元件1.Size = new System.Drawing.Size(407, 25);
+            this.物品選取元件1.Size = new System.Drawing.Size(420, 25);
             this.物品選取元件1.TabIndex = 56;
             // 
             // 物品選取元件2
@@ -217,7 +217,7 @@
             this.物品選取元件2.Location = new System.Drawing.Point(64, 143);
             this.物品選取元件2.Name = "物品選取元件2";
             this.物品選取元件2.SelectedItem = null;
-            this.物品選取元件2.Size = new System.Drawing.Size(407, 25);
+            this.物品選取元件2.Size = new System.Drawing.Size(420, 25);
             this.物品選取元件2.TabIndex = 57;
             // 
             // 物品選取元件3
@@ -225,7 +225,7 @@
             this.物品選取元件3.Location = new System.Drawing.Point(64, 172);
             this.物品選取元件3.Name = "物品選取元件3";
             this.物品選取元件3.SelectedItem = null;
-            this.物品選取元件3.Size = new System.Drawing.Size(407, 25);
+            this.物品選取元件3.Size = new System.Drawing.Size(420, 25);
             this.物品選取元件3.TabIndex = 58;
             // 
             // 物品選取元件4
@@ -233,7 +233,7 @@
             this.物品選取元件4.Location = new System.Drawing.Point(64, 202);
             this.物品選取元件4.Name = "物品選取元件4";
             this.物品選取元件4.SelectedItem = null;
-            this.物品選取元件4.Size = new System.Drawing.Size(407, 25);
+            this.物品選取元件4.Size = new System.Drawing.Size(420, 25);
             this.物品選取元件4.TabIndex = 59;
             // 
             // 物品選取元件5
@@ -241,7 +241,7 @@
             this.物品選取元件5.Location = new System.Drawing.Point(64, 233);
             this.物品選取元件5.Name = "物品選取元件5";
             this.物品選取元件5.SelectedItem = null;
-            this.物品選取元件5.Size = new System.Drawing.Size(407, 25);
+            this.物品選取元件5.Size = new System.Drawing.Size(420, 25);
             this.物品選取元件5.TabIndex = 60;
             // 
             // 數量2
@@ -427,7 +427,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 418);
+            this.ClientSize = new System.Drawing.Size(759, 418);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.利潤);
             this.Controls.Add(this.label13);

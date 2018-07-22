@@ -183,7 +183,7 @@
             this.客戶選取元件1.Location = new System.Drawing.Point(571, 76);
             this.客戶選取元件1.Name = "客戶選取元件1";
             this.客戶選取元件1.SelectedItem = null;
-            this.客戶選取元件1.Size = new System.Drawing.Size(172, 25);
+            this.客戶選取元件1.Size = new System.Drawing.Size(182, 25);
             this.客戶選取元件1.TabIndex = 55;
             // 
             // 物品選取元件1
@@ -191,7 +191,7 @@
             this.物品選取元件1.Location = new System.Drawing.Point(64, 113);
             this.物品選取元件1.Name = "物品選取元件1";
             this.物品選取元件1.SelectedItem = null;
-            this.物品選取元件1.Size = new System.Drawing.Size(407, 25);
+            this.物品選取元件1.Size = new System.Drawing.Size(420, 25);
             this.物品選取元件1.TabIndex = 56;
             // 
             // label3

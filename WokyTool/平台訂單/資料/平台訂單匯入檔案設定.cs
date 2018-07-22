@@ -9,7 +9,7 @@ using WokyTool.Data;
 using WokyTool.DataMgr;
 using WokyTool.通用;
 
-namespace WokyTool.月結帳
+namespace WokyTool.平台訂單
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class 平台訂單匯入檔案設定 : 檔案匯入設定資料<平台訂單匯入檔案設定>

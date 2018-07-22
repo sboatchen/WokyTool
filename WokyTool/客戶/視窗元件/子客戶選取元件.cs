@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.通用;
+using WokyTool.Common;
 
-namespace WokyTool.物品
+namespace WokyTool.客戶
 {
-    public partial class 物品小類選取元件 : 抽象選取元件
+    public partial class 子客戶選取元件 : 抽象選取元件
     {
         protected override ComboBox 下拉選單
         {
@@ -25,7 +26,7 @@ namespace WokyTool.物品
         {
             get
             {
-                return this.物品小類資料BindingSource;
+                return this.子客戶資料BindingSource;
             }
         }
 
@@ -33,19 +34,28 @@ namespace WokyTool.物品
         {
             get
             {
-                return 物品小類資料管理器.獨體;
+                return 子客戶資料管理器.獨體;
             }
         }
 
         protected override object 篩選(String Name_)
         {
-            return 物品小類資料管理器.獨體.唯讀BList.Where(Value => Value.名稱.Contains(Name_)).ToList();
+            return 子客戶資料管理器.獨體.唯讀BList.Where(Value => Value.名稱.Contains(Name_)).ToList();
         }
 
-        public 物品小類選取元件()
+        public 子客戶選取元件()
         {
             InitializeComponent();
             初始化();
+        }
+
+        private void Detail_Click(object sender, EventArgs e)
+        {
+            if (SelectedItem == null)
+                return;
+
+            int 編號_ = ((子客戶資料)SelectedItem).編號;
+            視窗管理器.獨體.顯現(列舉.編碼類型.子客戶, 列舉.視窗類型.詳細, 編號_);
         }
     }
 }

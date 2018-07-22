@@ -164,6 +164,12 @@
     <Compile Include="客戶\視窗\客戶詳細視窗.Designer.cs">
       <DependentUpon>客戶詳細視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="客戶\視窗元件\子客戶選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="客戶\視窗元件\子客戶選取元件.Designer.cs">
+      <DependentUpon>子客戶選取元件.cs</DependentUpon>
+    </Compile>
     <Compile Include="客戶\視窗元件\客戶選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -171,6 +177,12 @@
       <DependentUpon>客戶選取元件.cs</DependentUpon>
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
+    <Compile Include="月結帳\視窗\月結帳匯入設定總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="月結帳\視窗\月結帳匯入設定總覽視窗.Designer.cs">
+      <DependentUpon>月結帳匯入設定總覽視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="物品\控制\物品資料管理器.cs" />
     <Compile Include="物品\控制\物品品牌資料管理器.cs" />
     <Compile Include="物品\控制\物品小類資料管理器.cs" />
@@ -245,9 +257,18 @@
     <Compile Include="物品\資料\物品組成資料.cs" />
     <Compile Include="物品\資料\物品資料篩選設定.cs" />
     <Compile Include="物品\轉換\物品條碼更新匯出轉換.cs" />
+    <Compile Include="聯絡人\視窗元件\聯絡人選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="聯絡人\視窗元件\聯絡人選取元件.Designer.cs">
+      <DependentUpon>聯絡人選取元件.cs</DependentUpon>
+    </Compile>
     <Compile Include="通用\其他\時間.cs" />
     <Compile Include="通用\其他\檔案.cs" />
     <Compile Include="通用\動態匯入\檔案匯入設定資料介面.cs" />
+    <Compile Include="通用\視窗插件\抽象選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="通用\資料\MyUpdateData.cs" />
     <Compile Include="通用\資料\可比較複寫介面.cs" />
     <Compile Include="物品\資料\物品品牌資料.cs" />
@@ -379,13 +400,6 @@
     <Compile Include="通用\動態匯入\動態匯入資料結構.cs" />
     <Compile Include="客戶\資料\客戶資料.cs" />
     <Compile Include="平台訂單\資料\平台訂單匯入檔案設定.cs" />
-    <Compile Include="月結帳\控制\月結帳資料管理器.cs" />
-    <Compile Include="月結帳\視窗\月結帳總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="月結帳\視窗\月結帳總覽視窗.Designer.cs">
-      <DependentUpon>月結帳總覽視窗.cs</DependentUpon>
-    </Compile>
     <Compile Include="月結帳\資料\月結帳匯入設定資料.cs" />
     <Compile Include="月結帳\控制\月結帳匯入設定管理器.cs" />
     <Compile Include="通用\動態匯入\欄位匯入設定資料.cs" />
@@ -576,21 +590,6 @@
     <Compile Include="FormOverview\編碼總覽視窗.Designer.cs">
       <DependentUpon>編碼總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="月結帳\視窗\月結帳匯入設定視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="月結帳\視窗\月結帳匯入設定視窗.Designer.cs">
-      <DependentUpon>月結帳匯入設定視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="月結帳\視窗\月結帳匯入視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="月結帳\視窗\月結帳匯入視窗.Designer.cs">
-      <DependentUpon>月結帳匯入視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="月結帳\控制\月結帳資料產生器.cs" />
-    <Compile Include="月結帳\資料\月結帳資料.cs" />
-    <Compile Include="月結帳\控制\月結帳資料匯出結構.cs" />
     <Compile Include="聯絡人\控制\聯絡人資料管理器.cs" />
     <Compile Include="聯絡人\資料\聯絡人資料.cs" />
     <Compile Include="通用\資料管理\可儲存介面.cs" />
@@ -642,6 +641,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="商品\視窗\商品詳細視窗.resx">
       <DependentUpon>商品詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="客戶\視窗元件\子客戶選取元件.resx">
+      <DependentUpon>子客戶選取元件.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="客戶\視窗元件\客戶選取元件.resx">
       <DependentUpon>客戶選取元件.cs</DependentUpon>
@@ -718,15 +720,8 @@
     <EmbeddedResource Include="客戶\視窗\客戶詳細視窗.resx">
       <DependentUpon>客戶詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="月結帳\視窗\月結帳匯入設定視窗.resx">
-      <DependentUpon>月結帳匯入設定視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="月結帳\視窗\月結帳匯入視窗.resx">
-      <DependentUpon>月結帳匯入視窗.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="月結帳\視窗\月結帳總覽視窗.resx">
-      <DependentUpon>月結帳總覽視窗.cs</DependentUpon>
+    <EmbeddedResource Include="月結帳\視窗\月結帳匯入設定總覽視窗.resx">
+      <DependentUpon>月結帳匯入設定總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品品牌總覽視窗.resx">
       <DependentUpon>物品品牌總覽視窗.cs</DependentUpon>
@@ -763,6 +758,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="聯絡人\視窗\聯絡人總覽視窗.resx">
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="聯絡人\視窗元件\聯絡人選取元件.resx">
+      <DependentUpon>聯絡人選取元件.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="通用\視窗元件\頁索引元件.resx">
       <DependentUpon>頁索引元件.cs</DependentUpon>
@@ -810,6 +808,7 @@
     <None Include="Properties\DataSources\WokyTool.商品.商品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.子客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.客戶資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.月結帳.月結帳匯入設定資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品品牌資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品大類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品小類資料.datasource" />

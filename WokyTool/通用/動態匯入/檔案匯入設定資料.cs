@@ -15,6 +15,9 @@ namespace WokyTool.通用
         public override int 編號 { get; set; }
 
         [JsonProperty]
+        public string 名稱 { get; set; }
+
+        [JsonProperty]
         public 列舉.檔案格式類型 格式 { get; set; }
       
         // >= 0
@@ -28,9 +31,6 @@ namespace WokyTool.通用
         // -1 代表無標頭
         [JsonProperty]
         public int 標頭位置{ get; set; }
-
-        [JsonProperty]
-        public string 名稱 { get; set; }
 
         [JsonProperty]
         public List<欄位匯入設定資料> 資料List { get; set; }

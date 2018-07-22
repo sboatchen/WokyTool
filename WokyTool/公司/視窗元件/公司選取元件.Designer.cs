@@ -44,11 +44,10 @@
             this.comboBox1.Size = new System.Drawing.Size(167, 20);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.ValueMember = "Self";
-            this.comboBox1.DropDown += new System.EventHandler(this.comboBox1_DropDown);
             // 
             // 公司資料BindingSource
             // 
-            this.公司資料BindingSource.DataSource = typeof(公司資料);
+            this.公司資料BindingSource.DataSource = typeof(WokyTool.公司.公司資料);
             // 
             // 公司選取元件
             // 
@@ -56,7 +55,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.comboBox1);
             this.Name = "公司選取元件";
-            this.Size = new System.Drawing.Size(172, 25);
+            this.Size = new System.Drawing.Size(173, 25);
             ((System.ComponentModel.ISupportInitialize)(this.公司資料BindingSource)).EndInit();
             this.ResumeLayout(false);
 

@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.通用;
 
-namespace WokyTool.物品
+namespace WokyTool.聯絡人
 {
-    public partial class 物品小類選取元件 : 抽象選取元件
+    public partial class 聯絡人選取元件 : 抽象選取元件
     {
         protected override ComboBox 下拉選單
         {
@@ -25,7 +25,7 @@ namespace WokyTool.物品
         {
             get
             {
-                return this.物品小類資料BindingSource;
+                return this.聯絡人資料BindingSource;
             }
         }
 
@@ -33,16 +33,16 @@ namespace WokyTool.物品
         {
             get
             {
-                return 物品小類資料管理器.獨體;
+                return 聯絡人資料管理器.獨體;
             }
         }
 
         protected override object 篩選(String Name_)
         {
-            return 物品小類資料管理器.獨體.唯讀BList.Where(Value => Value.名稱.Contains(Name_)).ToList();
+            return 聯絡人資料管理器.獨體.唯讀BList.Where(Value => Value.姓名.Contains(Name_)).ToList();
         }
 
-        public 物品小類選取元件()
+        public 聯絡人選取元件()
         {
             InitializeComponent();
             初始化();

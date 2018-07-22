@@ -66,33 +66,33 @@ namespace WokyTool.商品
 
         protected override void 視窗激活()
         {
-            if (_商品大類資料版本 != 商品大類資料管理器.獨體.BindingVersion)
+            if (_商品大類資料版本 != 商品大類資料管理器.獨體.唯讀資料版本)
             {
-                _商品大類資料版本 = 商品大類資料管理器.獨體.BindingVersion;
+                _商品大類資料版本 = 商品大類資料管理器.獨體.唯讀資料版本;
                 this.商品大類資料BindingSource.DataSource = 商品大類資料管理器.獨體.唯讀BList;
             }
 
-            if (_商品小類資料版本 != 商品小類資料管理器.獨體.BindingVersion)
+            if (_商品小類資料版本 != 商品小類資料管理器.獨體.唯讀資料版本)
             {
-                _商品小類資料版本 = 商品小類資料管理器.獨體.BindingVersion;
+                _商品小類資料版本 = 商品小類資料管理器.獨體.唯讀資料版本;
                 this.商品小類資料BindingSource.DataSource = 商品小類資料管理器.獨體.唯讀BList;
             }
 
-            if (_公司資料版本 != 公司資料管理器.獨體.BindingVersion)
+            if (_公司資料版本 != 公司資料管理器.獨體.唯讀資料版本)
             {
-                _公司資料版本 = 公司資料管理器.獨體.BindingVersion;
+                _公司資料版本 = 公司資料管理器.獨體.唯讀資料版本;
                 this.公司資料BindingSource.DataSource = 公司資料管理器.獨體.唯讀BList;
             }
 
-            if (_客戶資料版本 != 客戶資料管理器.獨體.BindingVersion)
+            if (_客戶資料版本 != 客戶資料管理器.獨體.唯讀資料版本)
             {
-                _客戶資料版本 = 客戶資料管理器.獨體.BindingVersion;
+                _客戶資料版本 = 客戶資料管理器.獨體.唯讀資料版本;
                 this.客戶資料BindingSource.DataSource = 客戶資料管理器.獨體.唯讀BList;
             }
 
-            if (_物品資料版本 != 物品資料管理器.獨體.BindingVersion)
+            if (_物品資料版本 != 物品資料管理器.獨體.唯讀資料版本)
             {
-                _物品資料版本 = 物品資料管理器.獨體.BindingVersion;
+                _物品資料版本 = 物品資料管理器.獨體.唯讀資料版本;
                 this.物品資料BindingSource.DataSource = 物品資料管理器.獨體.唯讀BList;
             }
         }
