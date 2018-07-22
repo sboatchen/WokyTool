@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.DataImport
 {
@@ -109,7 +110,7 @@ namespace WokyTool.DataImport
             群組 = 0;
 
             // 兩日以上的單子不處理
-            if (預計出貨日.CompareTo(共用.TomorrowYMD) > 0)
+            if (預計出貨日.CompareTo(時間.明天) > 0)
             {
                 配送狀態 = 已確認指定配送日;
                 配送訊息 = 預計出貨日.ToString("yyyy/MM/dd");
@@ -135,7 +136,7 @@ namespace WokyTool.DataImport
 
             廠商 = 共用廠商快取;
 
-            指配日期 = new DateTime(0);
+            指配日期 = 時間.NULL;
             指配時段 = 列舉.指配時段類型.無;
 
             代收方式 = 列舉.代收類型.無;

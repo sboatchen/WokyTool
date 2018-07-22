@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.Data
 {
@@ -70,7 +71,7 @@ namespace WokyTool.Data
             廠商 = 廠商管理器.Instance.Get(廠商名稱);
             物品 = 物品管理器.Instance.Get(物品名稱);
 
-            指配日期 = new DateTime(0);
+            指配日期 = 時間.NULL;
             指配時段 = 列舉.指配時段類型.無;
 
             代收方式 = 列舉.代收類型.無;

@@ -45,7 +45,7 @@ namespace WokyTool.商品
                                     Value => Value.客戶.名稱,
                                     Value => new 商品總覽匯出轉換(Value));
 
-            string Title_ = String.Format("商品總覽_{0}", 共用.NowYMDDec);
+            string Title_ = String.Format("商品總覽_{0}", 時間.目前日期);
             函式.ExportExcel<商品總覽匯出轉換>(Title_, ItemGroup_);
         }
 

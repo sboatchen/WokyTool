@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
+using WokyTool.通用;
 
 namespace WokyTool.Data
 {
@@ -71,8 +72,8 @@ namespace WokyTool.Data
 
         private static readonly 支出資料 _NULL = new 支出資料
         {
-            結算時間 = new DateTime(0),
-            建立時間 = new DateTime(0),
+            結算時間 = 時間.NULL,
+            建立時間 = 時間.NULL,
             編號 = 常數.空白資料編碼,
             類型 = 字串.無,
             廠商 = 字串.無,
@@ -95,8 +96,8 @@ namespace WokyTool.Data
 
         private static 支出資料 _ERROR = new 支出資料
         {
-            結算時間 = new DateTime(0),
-            建立時間 = new DateTime(0),
+            結算時間 = 時間.NULL,
+            建立時間 = 時間.NULL,
             編號 = 常數.空白資料編碼,
             類型 = 字串.錯誤,
             廠商 = 字串.錯誤,

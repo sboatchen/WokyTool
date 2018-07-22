@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.DataImport
 {
@@ -77,7 +78,7 @@ namespace WokyTool.DataImport
             廠商 = 共用廠商快取;
             商品 = 商品資料.NULL;
 
-            指配日期 = new DateTime(0);
+            指配日期 = 時間.NULL;
             指配時段 = 列舉.指配時段類型.無;
 
             代收方式 = 列舉.代收類型.無;

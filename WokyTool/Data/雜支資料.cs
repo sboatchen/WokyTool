@@ -108,7 +108,7 @@ namespace WokyTool.Data
         {
             IsNew = false,
             編號 = 常數.空白資料編碼,
-            時間 = new DateTime(0),
+            時間 = 通用.時間.NULL,
             廠商 = 廠商資料.NULL,
             物品名稱 = 字串.無,
             數量 = 0,
@@ -129,7 +129,7 @@ namespace WokyTool.Data
         {
             IsNew = false,
             編號 = 常數.錯誤資料編碼,
-            時間 = new DateTime(0),
+            時間 = 通用.時間.NULL,
             廠商 = 廠商資料.ERROR,
             物品名稱 = 字串.錯誤,
             數量 = 0,

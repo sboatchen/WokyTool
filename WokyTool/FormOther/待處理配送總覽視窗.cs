@@ -14,6 +14,7 @@ using WokyTool.Common;
 using WokyTool.DataExport;
 using WokyTool.DataImport;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 using Excel = Microsoft.Office.Interop.Excel;
 using Range = Microsoft.Office.Interop.Excel.Range;
 
@@ -72,7 +73,7 @@ namespace WokyTool.OtherForm
                                .Select(Value => new 全速配匯出結構(x++, Value))
                                .ToList();
 
-            string Title_ = String.Format("全速配匯出_{0}", 共用.NowYMDDec);
+            string Title_ = String.Format("全速配匯出_{0}", 時間.目前日期);
             函式.ExportCSV<全速配匯出結構>(Title_, _Export1);
 
             // 如果有資料匯出，則鎖定不再允許匯出，並開放匯入
@@ -90,7 +91,7 @@ namespace WokyTool.OtherForm
                                 .Select(Value => new 宅配通匯出結構(Value))
                                 .ToList();
 
-            string Title_ = String.Format("宅配通匯出_{0}", 共用.NowYMDDec);
+            string Title_ = String.Format("宅配通匯出_{0}", 時間.目前日期);
             函式.ExportExcel<宅配通匯出結構>(Title_, _Export2);
 
             // 如果有資料匯出，則鎖定不再允許匯出，並開放匯入
@@ -241,7 +242,7 @@ namespace WokyTool.OtherForm
 
             List<撿貨統計結構> Result_ = sum.Values.OrderBy(Value => Value.物品名稱).ToList();
 
-            string Title_ = String.Format("撿貨統計匯出_{0}", 共用.NowYMDDec);
+            string Title_ = String.Format("撿貨統計匯出_{0}", 時間.目前日期);
             函式.ExportExcel<撿貨統計結構>(Title_, Result_);
         }
     }

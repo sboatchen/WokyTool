@@ -12,6 +12,7 @@ using WokyTool.Data;
 using WokyTool.DataExport;
 using WokyTool.DataMgr;
 using WokyTool.FormOther;
+using WokyTool.通用;
 
 namespace WokyTool.FormOverview
 {
@@ -94,7 +95,7 @@ namespace WokyTool.FormOverview
                                     Value => Value.廠商,
                                     Value => new 銷售匯出結構(Value));
 
-            string Title_ = String.Format("銷售匯出_{0}", 共用.NowYMDDec);
+            string Title_ = String.Format("銷售匯出_{0}", 時間.目前日期);
             函式.ExportExcel<銷售匯出結構>(Title_, ItemGroup_);
         }
 
@@ -110,10 +111,10 @@ namespace WokyTool.FormOverview
             int 總庫存成本_ = _物品資料Listener.Query.Select(Value => Value.庫存總成本).Sum();
             總結_.Add("總庫存成本", 總庫存成本_.ToString());
 
-            string Title_ = String.Format("物品庫存_{0}", 共用.NowYMDDec);
+            string Title_ = String.Format("物品庫存_{0}", 時間.目前日期);
             函式.ExportExcel<物品庫存匯出結構>(Title_, ItemGroup_, 總結_);*/
 
-            string Title_ = String.Format("銷售結算_{0}", 共用.NowYMDDec);
+            string Title_ = String.Format("銷售結算_{0}", 時間.目前日期);
             函式.ExportExcel<銷售匯出結構>(Title_, ItemGroup_);
         }
 

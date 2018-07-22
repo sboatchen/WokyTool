@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.Data
 {
@@ -85,7 +86,7 @@ namespace WokyTool.Data
         private static readonly 入庫資料 _NULL = new 入庫資料
         {
             編號 = 常數.空白資料編碼,
-            時間 = new DateTime(0),
+            時間 = 通用.時間.NULL,
             _運作 = true,
             商品 = 商品資料.NULL,
             數量 = 0,
@@ -95,7 +96,7 @@ namespace WokyTool.Data
         private static 入庫資料 _ERROR = new 入庫資料
         {
             編號 = 常數.錯誤資料編碼,
-            時間 = new DateTime(0),
+            時間 = 通用.時間.NULL,
             _運作 = true,
             商品 = 商品資料.ERROR,
             數量 = 0,

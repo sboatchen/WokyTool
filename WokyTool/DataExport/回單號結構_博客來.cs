@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataImport;
+using WokyTool.通用;
 
 namespace WokyTool.DataExport
 {
@@ -50,7 +51,7 @@ namespace WokyTool.DataExport
         public string 姓名 { get { return _Data.姓名; } }
 
         [CsvColumn(Name = "配送日期(yyyy/mm/dd)", FieldIndex = 10)]
-        public string 配送日期 { get { return 共用.NowYMD.ToString("yyyy/MM/dd"); } }
+        public string 配送日期 { get { return 時間.目前日期_斜線; } }
 
         [CsvColumn(Name = "貨運廠商(請填代碼)", FieldIndex = 11)]
         public string 配送公司

@@ -41,7 +41,7 @@ namespace WokyTool.物品
                                     Value => Value.品牌.名稱,
                                     Value => new 物品總覽匯出轉換(Value));
 
-            string Title_ = String.Format("物品總覽_{0}", 共用.NowYMDDec);
+            string Title_ = String.Format("物品總覽_{0}", 時間.目前日期);
             函式.ExportExcel<物品總覽匯出轉換>(Title_, ItemGroup_);
         }
 
@@ -59,7 +59,7 @@ namespace WokyTool.物品
             decimal 總庫存成本_ = 物品資料管理器.獨體.可編輯BList.Select(Value => Value.庫存總成本).Sum();
             總結_.Add("總庫存成本", 總庫存成本_.ToString());
 
-            string Title_ = String.Format("物品庫存_{0}", 共用.NowYMDDec);
+            string Title_ = String.Format("物品庫存_{0}", 時間.目前日期);
             函式.ExportExcel<物品庫存匯出轉換>(Title_, ItemGroup_, 總結_);
         }
 
@@ -70,7 +70,7 @@ namespace WokyTool.物品
                                .Where(Value => (Value.編號 > 0) && (String.IsNullOrEmpty(Value.條碼) == false))
                                .Select(Value => new 物品盤點匯出轉換(Value));
 
-            string Title_ = String.Format("盤點匯出_{0}", 共用.NowYMDDec);
+            string Title_ = String.Format("盤點匯出_{0}", 時間.目前日期);
             函式.ExportCSV<物品盤點匯出轉換>(Title_, Item_);
         }
 

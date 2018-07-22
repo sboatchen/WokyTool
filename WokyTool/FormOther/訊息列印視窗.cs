@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.Data;
+using WokyTool.通用;
 
 namespace WokyTool.FormOther
 {
@@ -28,7 +29,7 @@ namespace WokyTool.FormOther
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string Title_ = String.Format("訊息_{0}_{1}", this.Text, 共用.NowYMDDec);
+            string Title_ = String.Format("訊息_{0}_{1}", this.Text, 時間.目前日期);
             函式.ExportExcel<訊息資料>(Title_, _Data);
         }
     }

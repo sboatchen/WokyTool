@@ -14,13 +14,6 @@ namespace WokyTool.Common
         public static CsvFileDescription OutputDefine;
         public static CsvFileDescription OutputAppendDefine;
 
-        // 現在的年月日
-        public static DateTime NowYMD;
-        public static String NowYMDDec;
-
-        public static DateTime TomorrowYMD;
-        public static DateTime A5YMD;
-
         public static void Init()
         {
             // 初始化讀檔設定
@@ -48,12 +41,6 @@ namespace WokyTool.Common
                 FirstLineHasColumnNames = false,
                 EnforceCsvColumnAttribute = true
             };
-
-            NowYMD = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0, 0);
-            NowYMDDec = String.Format("{0}{1:00}{2:00}", NowYMD.Year, NowYMD.Month, NowYMD.Day);
-
-            TomorrowYMD = NowYMD.AddDays(1);
-            A5YMD = NowYMD.AddDays(5);
         }
 
 

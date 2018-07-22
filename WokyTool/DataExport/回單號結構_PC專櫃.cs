@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataImport;
+using WokyTool.通用;
 
 namespace WokyTool.DataExport
 {
@@ -36,7 +37,7 @@ namespace WokyTool.DataExport
         {
             get
             {
-                return 共用.NowYMD.ToString("yyyy/MM/dd");
+                return 時間.目前日期_斜線;
             }
         }
 

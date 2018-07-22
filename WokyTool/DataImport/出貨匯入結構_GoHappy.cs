@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.DataImport
 {
@@ -92,7 +93,7 @@ namespace WokyTool.DataImport
             群組 = 0;
 
             // 五日以上的單子不處理
-            if (應出貨日期.CompareTo(共用.A5YMD) > 0)
+            if (應出貨日期.CompareTo(時間.五天後) > 0)
             {
                 _IsIgnore = true;
                 return;
@@ -112,7 +113,7 @@ namespace WokyTool.DataImport
 
             商品 = 商品管理器.Instance.Get(廠商.編號, 商品序號);
 
-            指配日期 = new DateTime(0);
+            指配日期 = 時間.NULL;
             指配時段 = 列舉.指配時段類型.無;
 
             代收方式 = 列舉.代收類型.無;

@@ -11,6 +11,7 @@ using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataExport;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.DataForm
 {
@@ -132,7 +133,7 @@ namespace WokyTool.DataForm
                                 .Select(Value => new 進貨匯出結構(Value))
                                 .ToList();
 
-            string Title_ = String.Format("進貨匯出_{0}", 共用.NowYMDDec);
+            string Title_ = String.Format("進貨匯出_{0}", 時間.目前日期);
             函式.ExportExcel<進貨匯出結構>(Title_, _Export);
 
         }

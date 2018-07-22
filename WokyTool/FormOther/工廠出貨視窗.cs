@@ -11,6 +11,7 @@ using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataExport;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.FormOther
 {
@@ -108,7 +109,7 @@ namespace WokyTool.FormOther
 
             // 匯出銷售單
             工廠出貨匯出結構 ExportFormat_ = new 工廠出貨匯出結構(_Source, 是否列印單價_);
-            string Title_ = String.Format("工廠出貨_{0}_{1}", Name_, 共用.NowYMDDec);
+            string Title_ = String.Format("工廠出貨_{0}_{1}", Name_, 時間.目前日期);
             函式.ExportExcel<工廠出貨匯出結構>(Title_, ExportFormat_);
 
             // 轉至出貨系統

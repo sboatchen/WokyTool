@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.Data
 {
@@ -119,7 +120,7 @@ namespace WokyTool.Data
                 編號 = 編碼管理器.Instance.Get(列舉.編碼類型.銷售),
                 狀態 = 列舉.銷售狀態類型.出貨,
                 建立日期 = DateTime.Now,
-                結單日期 = new DateTime(0),
+                結單日期 = 時間.NULL,
 
                 姓名 = From_.姓名,
                 地址 = From_.地址,
@@ -159,7 +160,7 @@ namespace WokyTool.Data
                 編號 = 編碼管理器.Instance.Get(列舉.編碼類型.銷售),
                 狀態 = 列舉.銷售狀態類型.出貨,
                 建立日期 = DateTime.Now,
-                結單日期 = new DateTime(0),
+                結單日期 = 時間.NULL,
 
                 姓名 = From_.姓名,
                 地址 = From_.地址,
@@ -196,8 +197,8 @@ namespace WokyTool.Data
         {
             編號 = 常數.空白資料編碼,
             狀態 = 列舉.銷售狀態類型.結單,
-            建立日期 = new DateTime(0),
-            結單日期 = new DateTime(0),
+            建立日期 = 時間.NULL,
+            結單日期 = 時間.NULL,
 
             姓名 = 字串.無,
             地址 = 字串.無,
@@ -211,7 +212,7 @@ namespace WokyTool.Data
             寄庫出貨 = false,
             備註 = 字串.無,
 
-            指配日期 = new DateTime(0),
+            指配日期 = 時間.NULL,
             指配時段 = 字串.無,
 
             代收方式 = 字串.無,
@@ -240,8 +241,8 @@ namespace WokyTool.Data
         {
             編號 = 常數.錯誤資料編碼,
             狀態 = 列舉.銷售狀態類型.結單,
-            建立日期 = new DateTime(0),
-            結單日期 = new DateTime(0),
+            建立日期 = 時間.NULL,
+            結單日期 = 時間.NULL,
 
             姓名 = 字串.錯誤,
             地址 = 字串.錯誤,
@@ -255,7 +256,7 @@ namespace WokyTool.Data
             寄庫出貨 = false,
             備註 = 字串.錯誤,
 
-            指配日期 = new DateTime(0),
+            指配日期 = 時間.NULL,
             指配時段 = 字串.錯誤,
 
             代收方式 = 字串.錯誤,

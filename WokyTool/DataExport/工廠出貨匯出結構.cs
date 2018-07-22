@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.Data;
+using WokyTool.通用;
 
 namespace WokyTool.DataExport
 {
@@ -37,7 +38,7 @@ namespace WokyTool.DataExport
                 return;
 
             App_.Cells[1, 2] = _Data[0].流水號;
-            App_.Cells[2, 2] = 共用.NowYMD;
+            App_.Cells[2, 2] = 時間.目前日期;
             App_.Cells[3, 2] = _Data[0].姓名;
             App_.Cells[4, 2] = _Data[0].電話;
             App_.Cells[5, 2] = _Data[0].手機;

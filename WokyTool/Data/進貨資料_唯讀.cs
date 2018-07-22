@@ -176,7 +176,7 @@ namespace WokyTool.Data
         public static readonly 進貨資料 _NULL = new 進貨資料_唯讀
         {
             _編號 = 常數.空白資料編碼,
-            _時間 = new DateTime(0),
+            _時間 = 通用.時間.NULL,
             _類型 = 列舉.進貨類型.一般,
 
             廠商 = 廠商資料.NULL,
@@ -194,7 +194,7 @@ namespace WokyTool.Data
         public static 進貨資料 _ERROR = new 進貨資料_唯讀
         {
             _編號 = 常數.錯誤資料編碼,
-            _時間 = new DateTime(0),
+            _時間 = 通用.時間.NULL,
             _類型 = 列舉.進貨類型.一般,
 
             廠商 = 廠商資料.ERROR,

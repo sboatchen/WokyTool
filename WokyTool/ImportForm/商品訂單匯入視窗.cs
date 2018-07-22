@@ -18,6 +18,7 @@ using WokyTool.Data;
 using WokyTool.DataExport;
 using WokyTool.DataImport;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.ImportForm
 {
@@ -189,13 +190,13 @@ namespace WokyTool.ImportForm
                     {
                         {
                             var Items_ = _Source.Select(Value => new 回單號結構_Momo第三方_進度((出貨匯入結構_Momo第三方)Value));
-                            string Title_ = String.Format("{0}進度回單_{1}", 廠商類型, 共用.NowYMDDec);
+                            string Title_ = String.Format("{0}進度回單_{1}", 廠商類型, 時間.目前日期);
                             函式.ExportExcel<回單號結構_Momo第三方_進度>(Title_, Items_);
                         }
 
                         {
                             var Items_ = _Source.Select(Value => new 回單號結構_Momo第三方_分組((出貨匯入結構_Momo第三方)Value));
-                            string Title_ = String.Format("{0}分組回單_{1}", 廠商類型, 共用.NowYMDDec);
+                            string Title_ = String.Format("{0}分組回單_{1}", 廠商類型, 時間.目前日期);
                             函式.ExportExcel<回單號結構_Momo第三方_分組>(Title_, Items_);
                         }
                         break;
@@ -239,112 +240,112 @@ namespace WokyTool.ImportForm
                 case "博客來":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_博客來((出貨匯入結構_博客來)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportCSV<回單號結構_博客來>(Title_, Items_);
                         break;
                     }
                 case "uDesign":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_uDesign((出貨匯入結構_uDesign)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportExcel<回單號結構_uDesign>(Title_, Items_);
                         break;
                     }
                 case "百利市":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_百利市((出貨匯入結構_百利市)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportExcel<回單號結構_百利市>(Title_, Items_, null, Microsoft.Office.Interop.Excel.XlFileFormat.xlOpenXMLWorkbook);
                         break;
                     }
                 case "PC商店街":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_PC商店街((出貨匯入結構_PC商店街)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportCSV<回單號結構_PC商店街>(Title_, Items_);
                         break;
                     }
                 case "PC專櫃":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_PC專櫃((出貨匯入結構_PC專櫃)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportCSV<回單號結構_PC專櫃>(Title_, Items_);
                         break;
                     }
                 case "ibon mart":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_ibonMart((出貨匯入結構_ibonMart)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportCSV<回單號結構_ibonMart>(Title_, Items_);
                         break;
                     }
                 case "myfone":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_myfone((出貨匯入結構_myfone)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportCSV<回單號結構_myfone>(Title_, Items_);
                         break;
                     }
                 case "遠傳":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_遠傳((出貨匯入結構_遠傳)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportExcel<回單號結構_遠傳>(Title_, Items_);
                         break;
                     }
                 case "遠傳加購":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_遠傳加購((出貨匯入結構_遠傳加購)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportExcel<回單號結構_遠傳加購>(Title_, Items_);
                         break;
                     }
                 case "神坊":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_神坊((出貨匯入結構_神坊)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportExcel<回單號結構_神坊>(Title_, Items_);
                         break;
                     }
                 case "citiesocial":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_citiesocial((出貨匯入結構_citiesocial)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportExcel<回單號結構_citiesocial>(Title_, Items_);
                         break;
                     }
                 case "PayEasy":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_PayEasy((出貨匯入結構_PayEasy)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportCSV<回單號結構_PayEasy>(Title_, Items_);
                         break;
                     }
                 case "GoHappy":
                     {
                         var Items_ = _Source.Where(Value => Value.IsIgnore() == false).Select(Value => new 回單號結構_GoHappy((出貨匯入結構_GoHappy)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportCSV<回單號結構_GoHappy>(Title_, Items_);
                         break;
                     }
                 case "東森":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_東森((出貨匯入結構_東森)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportCSV<回單號結構_東森>(Title_, Items_);
                         break;
                     }
                 case "森森":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_森森((出貨匯入結構_森森)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportCSV<回單號結構_森森>(Title_, Items_);
                         break;
                     }
                  case "創業家兄弟":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_創業家兄弟((出貨匯入結構_創業家兄弟)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportCSV<回單號結構_創業家兄弟>(Title_, Items_);
                         break;
                     }
@@ -356,14 +357,14 @@ namespace WokyTool.ImportForm
                  case "Momo":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_Momo((出貨匯入結構_Momo)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportExcel<回單號結構_Momo>(Title_, Items_);
                         break;
                     }
                  case "Momo摩天":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_Momo摩天((出貨匯入結構_Momo摩天)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 共用.NowYMDDec);
+                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportExcel<回單號結構_Momo摩天>(Title_, Items_);
                         break;
                     }

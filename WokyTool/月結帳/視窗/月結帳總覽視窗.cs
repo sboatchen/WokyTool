@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
+using WokyTool.通用;
 
 namespace WokyTool.月結帳
 {
@@ -65,7 +66,7 @@ namespace WokyTool.月結帳
                                     Value => Value.廠商名稱,
                                     Value => new 月結帳資料匯出結構(Value));
 
-            string Title_ = String.Format("月結帳匯出_{0}", 共用.NowYMDDec);
+            string Title_ = String.Format("月結帳匯出_{0}", 時間.目前日期);
             函式.ExportExcel<月結帳資料匯出結構>(Title_, ItemGroup_);
         }
     }

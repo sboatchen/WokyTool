@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
+using WokyTool.通用;
 
 namespace WokyTool.物品
 {
@@ -46,7 +47,7 @@ namespace WokyTool.物品
                                     Value => Value.狀態.ToString(),
                                     Value => new 物品條碼更新匯出轉換(Value));
 
-            string Title_ = String.Format("物品條碼更新_{0}", 共用.NowYMDDec);
+            string Title_ = String.Format("物品條碼更新_{0}", 時間.目前日期);
             函式.ExportExcel<物品條碼更新匯出轉換>(Title_, ItemGroup_);
         }
 

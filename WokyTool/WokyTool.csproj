@@ -245,6 +245,8 @@
     <Compile Include="物品\資料\物品組成資料.cs" />
     <Compile Include="物品\資料\物品資料篩選設定.cs" />
     <Compile Include="物品\轉換\物品條碼更新匯出轉換.cs" />
+    <Compile Include="通用\其他\時間.cs" />
+    <Compile Include="通用\其他\檔案.cs" />
     <Compile Include="通用\動態匯入\檔案匯入設定資料介面.cs" />
     <Compile Include="通用\資料\MyUpdateData.cs" />
     <Compile Include="通用\資料\可比較複寫介面.cs" />

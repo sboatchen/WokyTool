@@ -12,6 +12,7 @@ using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataExport;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.ImportForm
 {
@@ -247,7 +248,7 @@ namespace WokyTool.ImportForm
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var Items_ = _Source.Select(Value => new 回單號結構_通用((物品訂單資料)Value));
-            string Title_ = String.Format("通用回單_{0}", 共用.NowYMDDec);
+            string Title_ = String.Format("通用回單_{0}", 時間.目前日期);
             函式.ExportExcel<回單號結構_通用>(Title_, Items_);
         }
 

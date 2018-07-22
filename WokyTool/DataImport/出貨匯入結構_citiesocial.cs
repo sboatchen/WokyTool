@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.DataImport
 {
@@ -68,7 +69,7 @@ namespace WokyTool.DataImport
             群組 = 0;
 
             // 五日以上的單子不處理
-            if (promise_date.CompareTo(共用.A5YMD) > 0)
+            if (promise_date.CompareTo(時間.五天後) > 0)
                 _IsIgnore = true;
 
             廠商 = _共用廠商快取;

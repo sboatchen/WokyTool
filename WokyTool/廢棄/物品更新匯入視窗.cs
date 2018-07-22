@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataImport;
+using WokyTool.通用;
 
 namespace WokyTool.ImportForm
 {
@@ -35,7 +36,7 @@ namespace WokyTool.ImportForm
 
         private void 匯出檔案ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string Title_ = String.Format("物品更新匯出_{0}", 共用.NowYMDDec);
+            string Title_ = String.Format("物品更新匯出_{0}", 時間.目前日期);
             函式.ExportExcel<物品更新匯入結構>(Title_, _Source);
         }
 
