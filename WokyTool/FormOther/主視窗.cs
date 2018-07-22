@@ -118,28 +118,6 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編碼類型.商品, 列舉.視窗類型.總覽);
         }
 
-        private void button10_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "Excel files|*.*";
-
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                try
-                {
-                    var Excel_ = new ExcelQueryFactory(openFileDialog1.FileName);
-                    var i = new 商品匯入視窗(Excel_);
-                    i.Show();
-                    i.BringToFront();
-
-                }
-                catch (Exception Error_)
-                {
-                    MessageBox.Show("開啟檔案失敗" + Error_.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void button13_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編碼類型.物品品牌, 列舉.視窗類型.總覽);
@@ -230,13 +208,6 @@ namespace WokyTool
             i.BringToFront();
         }
 
-        private void button22_Click(object sender, EventArgs e)
-        {
-            var i = new 新增商品視窗();
-            i.Show();
-            i.BringToFront();
-        }
-
         private void button23_Click(object sender, EventArgs e)
         {
             var i = new 入庫總覽視窗();
@@ -300,13 +271,6 @@ namespace WokyTool
         private void button32_Click(object sender, EventArgs e)
         {
             var i = new 工廠出貨視窗();
-            i.Show();
-            i.BringToFront();
-        }
-
-        private void button34_Click(object sender, EventArgs e)
-        {
-            var i = new 修改商品視窗(null);
             i.Show();
             i.BringToFront();
         }

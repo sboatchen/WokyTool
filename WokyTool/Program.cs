@@ -12,12 +12,14 @@ namespace WokyTool
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(String[] param)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
             Common.共用.Init();
+
+            //@@Console.WriteLine(param[0]);
 
             Application.Run(new 主視窗());
         }
