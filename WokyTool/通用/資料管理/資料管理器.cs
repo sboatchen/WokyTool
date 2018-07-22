@@ -112,6 +112,7 @@ namespace WokyTool.通用
         {
             if (IsDataDirty)
             {
+                檔案.備份(檔案路徑, true);
                 File.WriteAllText(檔案路徑, JsonConvert.SerializeObject(Map, Formatting.Indented));
             }
         }

@@ -69,7 +69,7 @@ namespace WokyTool.通用
         {
             get
             {
-                return DateTime.Now.ToString("yyyyMMdd_HHmmss");
+                return DateTime.Now.ToString("yyyyMMddHHmmss");
             }
         }
 
