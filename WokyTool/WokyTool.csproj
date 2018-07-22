@@ -91,6 +91,7 @@
     <Compile Include="商品\控制\商品大類資料管理器.cs" />
     <Compile Include="商品\控制\商品資料管理器.cs" />
     <Compile Include="商品\控制\商品小類資料管理器.cs" />
+    <Compile Include="商品\轉換\商品總覽匯出轉換.cs" />
     <Compile Include="商品\視窗\商品大類總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +242,7 @@
       <DependentUpon>物品詳細視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="物品\資料\物品條碼更新資料.cs" />
+    <Compile Include="物品\資料\物品組成資料.cs" />
     <Compile Include="物品\資料\物品資料篩選設定.cs" />
     <Compile Include="物品\轉換\物品條碼更新匯出轉換.cs" />
     <Compile Include="通用\動態匯入\檔案匯入設定資料介面.cs" />

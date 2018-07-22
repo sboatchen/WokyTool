@@ -40,14 +40,13 @@ namespace WokyTool.商品
         private void 總表ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //@@ TODO
-            //var ItemGroup_ = 商品資料管理器.獨體.可編輯BList
-            //                    .Where(Value => Value.編號 > 0)
-            //                    .GroupBy(
-            //                        Value => Value.品牌.名稱,
-            //                        Value => new 商品總覽匯出轉換(Value));
+            var ItemGroup_ = 商品資料管理器.獨體.可編輯BList
+                                .GroupBy(
+                                    Value => Value.客戶.名稱,
+                                    Value => new 商品總覽匯出轉換(Value));
 
-            //string Title_ = String.Format("商品總覽_{0}", 共用.NowYMDDec);
-            //函式.ExportExcel<商品總覽匯出轉換>(Title_, ItemGroup_);
+            string Title_ = String.Format("商品總覽_{0}", 共用.NowYMDDec);
+            函式.ExportExcel<商品總覽匯出轉換>(Title_, ItemGroup_);
         }
 
         private void 自訂ToolStripMenuItem_Click(object sender, EventArgs e)
