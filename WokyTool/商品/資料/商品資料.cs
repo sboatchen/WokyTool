@@ -519,31 +519,31 @@ namespace WokyTool.商品
 
         public override void 檢查合法()
         {
-            if (大類編號 <= 常數.T新建資料編碼)
+            if (大類.編號是否合法() == false)
                 throw new Exception("月結帳資料:大類編號不合法:" + 大類編號);
 
-            if (小類編號 <= 常數.T新建資料編碼)
+            if (小類.編號是否合法() == false)
                 throw new Exception("月結帳資料:小類編號不合法:" + 小類編號);
 
-            if (公司編號 <= 常數.T新建資料編碼)
+            if (公司.編號是否合法() == false)
                 throw new Exception("月結帳資料:公司編號不合法:" + 公司編號);
 
-            if (客戶編號 <= 常數.T新建資料編碼)
+            if (客戶.編號是否合法() == false)
                 throw new Exception("月結帳資料:客戶編號不合法:" + 客戶編號);
 
-            if (需求編號1 <= 常數.T新建資料編碼)
+            if (需求1.編號是否合法() == false)
                 throw new Exception("月結帳資料:需求編號1不合法:" + 需求編號1);
 
-            if (需求編號2 <= 常數.T新建資料編碼)
+            if (需求2.編號是否合法() == false)
                 throw new Exception("月結帳資料:需求編號2不合法:" + 需求編號2);
 
-            if (需求編號3 <= 常數.T新建資料編碼)
+            if (需求3.編號是否合法() == false)
                 throw new Exception("月結帳資料:需求編號3不合法:" + 需求編號3);
 
-            if (需求編號4 <= 常數.T新建資料編碼)
+            if (需求4.編號是否合法() == false)
                 throw new Exception("月結帳資料:需求編號4不合法:" + 需求編號4);
 
-            if (需求編號5 <= 常數.T新建資料編碼)
+            if (需求5.編號是否合法() == false)
                 throw new Exception("月結帳資料:需求編號5不合法:" + 需求編號5);
 
             if (String.IsNullOrEmpty(品號))

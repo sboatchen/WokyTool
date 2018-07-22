@@ -64,8 +64,11 @@ namespace WokyTool.物品
         // 取得資料
         public 物品資料 Get(string Name)
         {
+            if (String.IsNullOrEmpty(Name))
+                return 物品資料.NULL;
+
             物品資料 Item_ = Map.Values
-                                   .Where(Value => Value.名稱.Equals(Name))
+                                   .Where(Value => Name.Equals(Value.名稱))
                                    .FirstOrDefault();
 
             if (Item_ == null)
@@ -77,11 +80,11 @@ namespace WokyTool.物品
         // 取得資料
         public 物品資料 GetBySName(string Name)
         {
-            if (Name == null || Name.Length == 0)
+            if (String.IsNullOrEmpty(Name))
                 return 物品資料.NULL;
 
             物品資料 Item_ = Map.Values
-                                .Where(Value => Value.縮寫.Equals(Name))
+                                .Where(Value => Name.Equals(Value.縮寫))
                                 .FirstOrDefault();
 
             if (Item_ == null)
@@ -93,7 +96,7 @@ namespace WokyTool.物品
         // 取得資料
         public 物品資料 GetByCode(string Code)
         {
-            if (Code == null || Code.Length == 0)
+            if (String.IsNullOrEmpty(Code))
                 return 物品資料.NULL;
 
             物品資料 Item_ = Map.Values
