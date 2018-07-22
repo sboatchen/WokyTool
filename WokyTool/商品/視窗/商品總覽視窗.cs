@@ -29,7 +29,7 @@ namespace WokyTool.商品
         {
             InitializeComponent();
 
-            this.初始化<商品資料>(this.商品資料BindingSource, 商品資料管理器.獨體);
+            this.初始化(this.商品資料BindingSource, 商品資料管理器.獨體);
         }
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)

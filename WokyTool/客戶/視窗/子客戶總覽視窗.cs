@@ -18,7 +18,7 @@ namespace WokyTool.客戶
         {
             InitializeComponent();
 
-            this.初始化<子客戶資料>(this.子客戶資料BindingSource, 子客戶資料管理器.獨體);
+            this.初始化(this.子客戶資料BindingSource, 子客戶資料管理器.獨體);
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)

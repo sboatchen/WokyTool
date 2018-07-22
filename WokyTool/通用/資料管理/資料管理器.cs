@@ -350,6 +350,7 @@ namespace WokyTool.通用
             }
 
             可編輯BList.RaiseListChangedEvents = true;
+            編輯資料版本++;
             是否減少資料 = false;
         }
 

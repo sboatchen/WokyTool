@@ -17,7 +17,7 @@ namespace WokyTool.商品
         {
             InitializeComponent();
 
-            this.初始化<商品大類資料>(this.商品大類資料BindingSource, 商品大類資料管理器.獨體);
+            this.初始化(this.商品大類資料BindingSource, 商品大類資料管理器.獨體);
         }
     }
 }

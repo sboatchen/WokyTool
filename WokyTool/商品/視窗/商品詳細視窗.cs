@@ -20,7 +20,7 @@ namespace WokyTool.商品{
         {
             InitializeComponent();
 
-            this.初始化<商品資料>(this.頁索引元件1, 商品資料管理器.獨體);
+            this.初始化(this.頁索引元件1, 商品資料管理器.獨體);
         }
 
         /********************************/

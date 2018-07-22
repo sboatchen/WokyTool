@@ -24,7 +24,7 @@ namespace WokyTool.物品
         {
             InitializeComponent();
 
-            this.初始化<物品資料>(this.物品資料BindingSource, 物品資料管理器.獨體);
+            this.初始化(this.物品資料BindingSource, 物品資料管理器.獨體);
         }
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)

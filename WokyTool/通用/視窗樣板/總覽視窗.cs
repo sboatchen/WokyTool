@@ -18,12 +18,10 @@ namespace WokyTool.通用
 
         protected bool _是否準備關閉 = false;
 
-        public void 初始化<T>(System.Windows.Forms.BindingSource 資料BindingSource_, 資料管理器<T> 資料管理器_) where T : MyKeepableData<T>
+        public void 初始化(System.Windows.Forms.BindingSource 資料BindingSource_, 資料管理器介面 資料管理器_)
         {
             this.資料BindingSource = 資料BindingSource_;
             this._資料管理器 = 資料管理器_;
-
-            this.資料BindingSource.DataSource = 資料管理器_.可編輯BList;
 
             this.Activated += new System.EventHandler(this._視窗激活);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);
@@ -36,7 +34,12 @@ namespace WokyTool.通用
 
             視窗激活();
 
-            this.資料BindingSource.ResetBindings(false);
+            if (_資料版本 != _資料管理器.編輯資料版本)
+            {
+                _資料版本 = _資料管理器.編輯資料版本;
+                this.資料BindingSource.DataSource = _資料管理器.物件_可編輯BList;
+                this.資料BindingSource.ResetBindings(false);
+            }
         }
 
         protected virtual void 視窗激活()

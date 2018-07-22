@@ -18,7 +18,7 @@ namespace WokyTool.聯絡人
         {
             InitializeComponent();
 
-            this.初始化<聯絡人資料>(this.聯絡人資料BindingSource, 聯絡人資料管理器.獨體);
+            this.初始化(this.聯絡人資料BindingSource, 聯絡人資料管理器.獨體);
         }
     }
 }

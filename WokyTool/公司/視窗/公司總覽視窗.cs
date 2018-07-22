@@ -17,7 +17,7 @@ namespace WokyTool.公司
         {
             InitializeComponent();
 
-            this.初始化<公司資料>(this.公司資料BindingSource, 公司資料管理器.獨體);
+            this.初始化(this.公司資料BindingSource, 公司資料管理器.獨體);
         }
     }
 }

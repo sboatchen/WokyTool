@@ -23,7 +23,7 @@ namespace WokyTool.客戶
         {
             InitializeComponent();
 
-            this.初始化<子客戶資料>(this.頁索引元件1, 子客戶資料管理器.獨體);
+            this.初始化(this.頁索引元件1, 子客戶資料管理器.獨體);
 
             _資料列選取插件 = new 資料列選取插件<聯絡人資料>(聯絡人資料管理器.獨體, this.聯絡人資料BindingSource, this.dataGridView1, 1);
         }
