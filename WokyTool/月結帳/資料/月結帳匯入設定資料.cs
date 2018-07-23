@@ -202,48 +202,48 @@ namespace WokyTool.月結帳
         // 如果不合法 回傳例外
         public override void 檢查合法()
         {
-            //base.檢查合法();
+            base.檢查合法();
 
-            //if (公司.編號是否合法() == false)
-            //    throw new Exception("月結帳匯入設定資料:公司不合法:" + 公司編號);
+            if (公司.編號是否合法() == false)
+                throw new Exception("月結帳匯入設定資料:公司不合法:" + 公司編號);
 
-            //if (客戶.編號是否合法() == false)
-            //    throw new Exception("月結帳匯入設定資料:客戶不合法:" + 客戶編號);
+            if (客戶.編號是否合法() == false)
+                throw new Exception("月結帳匯入設定資料:客戶不合法:" + 客戶編號);
 
-            //if(商品識別 <= 列舉.商品識別類型.無)
-            //    throw new Exception("月結帳匯入設定資料:商品識別不合法:" + 商品識別);
+            if (商品識別 <= 列舉.商品識別類型.無)
+                throw new Exception("月結帳匯入設定資料:商品識別不合法:" + 商品識別);
 
-            //if (資料List.Count == 0)
-            //    throw new Exception("檔案匯入設定資料:沒欄位資料");
+            if (資料List.Count == 0)
+                throw new Exception("檔案匯入設定資料:沒欄位資料");
 
-            //switch (商品識別)
-            //{
-            //    case 列舉.商品識別類型.商品編號:
-            //        if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.商品編號.ToString()) == false)
-            //            throw new Exception("檔案匯入設定資料:未設定商品編號欄位");
-            //        break;
-            //    case 列舉.商品識別類型.商品編號_顏色:
-            //        if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.商品編號.ToString()) == false)
-            //            throw new Exception("檔案匯入設定資料:未設定商品編號欄位");
-            //        if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.顏色.ToString()) == false)
-            //            throw new Exception("檔案匯入設定資料:未設定顏色欄位");
-            //        break;
-            //    case 列舉.商品識別類型.商品名稱:
-            //        if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.商品名稱.ToString()) == false)
-            //            throw new Exception("檔案匯入設定資料:未設定商品名稱欄位");
-            //        break;
-            //    default:
-            //        throw new Exception("檔案匯入設定資料:未知的商品識別類型:" + 商品識別);
-            //}
+            switch (商品識別)
+            {
+                case 列舉.商品識別類型.商品編號:
+                    if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.商品編號.ToString()) == false)
+                        throw new Exception("檔案匯入設定資料:未設定商品編號欄位");
+                    break;
+                case 列舉.商品識別類型.商品編號_顏色:
+                    if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.商品編號.ToString()) == false)
+                        throw new Exception("檔案匯入設定資料:未設定商品編號欄位");
+                    if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.顏色.ToString()) == false)
+                        throw new Exception("檔案匯入設定資料:未設定顏色欄位");
+                    break;
+                case 列舉.商品識別類型.商品名稱:
+                    if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.商品名稱.ToString()) == false)
+                        throw new Exception("檔案匯入設定資料:未設定商品名稱欄位");
+                    break;
+                default:
+                    throw new Exception("檔案匯入設定資料:未知的商品識別類型:" + 商品識別);
+            }
 
-            //if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.單價.ToString()) == false
-            //    && 名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.含稅單價.ToString()) == false
-            //    && 名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.總價.ToString()) == false
-            //    && 名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.含稅總價.ToString()) == false)
-            //    throw new Exception("檔案匯入設定資料:未設定單價欄位");
+            if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.單價.ToString()) == false
+                && 名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.含稅單價.ToString()) == false
+                && 名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.總價.ToString()) == false
+                && 名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.含稅總價.ToString()) == false)
+                throw new Exception("檔案匯入設定資料:未設定單價欄位");
 
-            //if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.數量.ToString()) == false)
-            //    throw new Exception("檔案匯入設定資料:未設定數量欄位");
+            if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.數量.ToString()) == false)
+                throw new Exception("檔案匯入設定資料:未設定數量欄位");
         }
     }
 }

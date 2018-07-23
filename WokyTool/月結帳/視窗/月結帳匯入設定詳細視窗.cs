@@ -16,6 +16,9 @@ namespace WokyTool.月結帳
 {
     public partial class 月結帳匯入設定詳細視窗  : 詳細視窗
     {
+        protected BindingList<欄位匯入設定資料> _BindingList = new BindingList<欄位匯入設定資料>();
+        protected Boolean _isBingindChange = false;
+
         public 月結帳匯入設定詳細視窗()
         {
             InitializeComponent();
@@ -26,6 +29,8 @@ namespace WokyTool.月結帳
             this.商品識別類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.商品識別類型));
             this.匯入需求欄位BindingSource.DataSource = Enum.GetValues(typeof(月結帳列舉.匯入需求欄位));
             this.資料格式類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.資料格式類型));
+
+            this.欄位匯入設定資料BindingSource.DataSource = _BindingList;
         }
 
         /********************************/
@@ -56,8 +61,11 @@ namespace WokyTool.月結帳
             目前資料_.結束位置 = (int)(this.結束位置.Value);
             目前資料_.標頭位置 = (int)(this.標頭位置.Value);
 
-            目前資料_.資料List.Clear();
-            目前資料_.資料List.AddRange((BindingList <欄位匯入設定資料>)this.欄位匯入設定資料BindingSource.DataSource);
+            if (_isBingindChange)
+            {
+                目前資料_.資料List.Clear();
+                目前資料_.資料List.AddRange(_BindingList);
+            }
         }
 
         public override void 索引切換_更新呈現()
@@ -76,12 +84,23 @@ namespace WokyTool.月結帳
             this.結束位置.Value = 目前資料_.結束位置;
             this.標頭位置.Value = 目前資料_.標頭位置;
 
-            this.欄位匯入設定資料BindingSource.DataSource = new BindingList<欄位匯入設定資料>(目前資料_.資料List);
+            _BindingList.RaiseListChangedEvents = false;
+
+            _BindingList.Clear();
+            foreach(欄位匯入設定資料 Item_ in 目前資料_.資料List)
+            {
+                _BindingList.Add(Item_);
+            }
+
+            _BindingList.RaiseListChangedEvents = true;
+
+            this.欄位匯入設定資料BindingSource.ResetBindings(false);
+            this._isBingindChange = false;
         }
 
         private void dataGridView1_CurrentCellChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("yo");
+            _isBingindChange = true;
         }
     }
 }

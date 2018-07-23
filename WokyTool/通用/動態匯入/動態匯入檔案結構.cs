@@ -61,7 +61,7 @@ namespace WokyTool.通用
             {
                 欄位匯入設定資料 欄位設定_ = 設定.取得欄位匯入設定資料(cCnt);
 
-                if(設定.標頭位置 != -1)
+                if(設定.標頭位置 != 0)
                 {
                     var cell = range.Cells[設定.標頭位置, cCnt] as Excel.Range;
                     String 名稱_ = cell.Value2;

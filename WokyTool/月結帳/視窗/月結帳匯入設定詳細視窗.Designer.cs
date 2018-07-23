@@ -101,11 +101,6 @@
             0,
             0,
             0});
-            this.標頭位置.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
             this.標頭位置.Name = "標頭位置";
             this.標頭位置.Size = new System.Drawing.Size(167, 22);
             this.標頭位置.TabIndex = 80;
