@@ -347,19 +347,19 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(254, 570);
+            this.button11.Location = new System.Drawing.Point(254, 197);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(105, 23);
+            this.button11.Size = new System.Drawing.Size(100, 23);
             this.button11.TabIndex = 36;
-            this.button11.Text = "月報表總覽";
+            this.button11.Text = "月報表";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(134, 570);
+            this.button12.Location = new System.Drawing.Point(139, 197);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(105, 23);
+            this.button12.Size = new System.Drawing.Size(100, 23);
             this.button12.TabIndex = 37;
             this.button12.Text = "月報表匯入";
             this.button12.UseVisualStyleBackColor = true;

@@ -15,7 +15,7 @@ using WokyTool.物品;
 
 namespace WokyTool.商品{
 
-    public partial class 商品篩選視窗 : Form, 通用視窗介面
+    public partial class 商品篩選視窗 : 篩選視窗
     {
         protected 商品資料篩選設定 _商品資料篩選設定 = new 商品資料篩選設定();
 
@@ -23,11 +23,10 @@ namespace WokyTool.商品{
         {
             InitializeComponent();
 
-            this.Activated += new System.EventHandler(this._視窗激活);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);
+            this.初始化();
         }
 
-        private void _視窗激活(object sender, EventArgs e)
+        protected override void 視窗激活()
         {
             this.商品大類選取元件1.視窗激活();
             this.商品小類選取元件1.視窗激活();
@@ -41,14 +40,6 @@ namespace WokyTool.商品{
             this.公司選取元件1.SelectedItem = _商品資料篩選設定.公司;
             this.客戶選取元件1.SelectedItem = _商品資料篩選設定.客戶;
             this.物品選取元件1.SelectedItem = _商品資料篩選設定.物品;
-        }
-
-        private void _視窗關閉(object sender, FormClosingEventArgs e)
-        {
-            this.Hide();
-
-            if (e != null)
-                e.Cancel = true;
         }
 
         private void 篩選_Click(object sender, EventArgs e)
@@ -68,31 +59,6 @@ namespace WokyTool.商品{
                 商品資料管理器.獨體.篩選介面 = _商品資料篩選設定;
             else
                 商品資料管理器.獨體.篩選介面 = null;
-        }
-
-        /********************************/
-        // 通用視窗介面
-
-        public void 顯現()
-        {
-            this.Show();
-            this.BringToFront();
-        }
-
-        public void 顯現(int Pos_)
-        {
-            this.Show();
-            this.BringToFront();
-        }
-
-        public void 隱藏()
-        {
-            _視窗關閉(null, null);
-        }
-
-        public bool 是否顯現()
-        {
-            return this.Visible;
         }
     }
 }

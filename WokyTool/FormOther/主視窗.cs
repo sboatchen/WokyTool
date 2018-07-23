@@ -280,27 +280,16 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編碼類型.月結帳設定, 列舉.視窗類型.總覽);
         }
 
-        // test
-        private void button27_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine(時間.目前日期);
-            Console.WriteLine(時間.目前時間);
-        }
-
-        
-
         private void button12_Click(object sender, EventArgs e)
         {
-            //var i = new 月結帳匯入視窗();
-            //i.Show();
-            //i.BringToFront();
+            var i = new 月結帳匯入視窗();
+            i.Show();
+            i.BringToFront();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            //var i = new 月結帳總覽視窗();
-            //i.Show();
-            //i.BringToFront();
+            視窗管理器.獨體.顯現(列舉.編碼類型.月結帳, 列舉.視窗類型.總覽);
         }
 
         private void button36_Click(object sender, EventArgs e)
@@ -663,6 +652,14 @@ namespace WokyTool
                 return 常數.T空白資料編碼;
 
             return Old_;
+        }
+
+        // test
+        private void button27_Click(object sender, EventArgs e)
+        {
+            var i = new 月結帳匯入視窗();
+            i.Show();
+            i.BringToFront();
         }
     }
 }

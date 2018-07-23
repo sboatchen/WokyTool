@@ -31,14 +31,14 @@ namespace WokyTool.Common
             商品,
 
             月結帳設定,
-
+            月結帳,
 
 
 
 
             廠商,
 
-            月結帳,
+            
 
             支出,
 

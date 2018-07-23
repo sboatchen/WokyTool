@@ -61,8 +61,13 @@ namespace WokyTool.商品
             MessageBox.Show("功能尚未實作", 字串.確認, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int 編號_ = ((商品資料)(this.商品資料BindingSource.Current)).編號;
+            視窗管理器.獨體.顯現(列舉.編碼類型.商品, 列舉.視窗類型.詳細, 編號_);
+        }
+
         /********************************/
-        // 詳細視窗樣板_子客戶
 
         protected override void 視窗激活()
         {
@@ -95,12 +100,6 @@ namespace WokyTool.商品
                 _物品資料版本 = 物品資料管理器.獨體.唯讀資料版本;
                 this.物品資料BindingSource.DataSource = 物品資料管理器.獨體.唯讀BList;
             }
-        }
-
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int 編號_ = ((商品資料)(this.商品資料BindingSource.Current)).編號;
-            視窗管理器.獨體.顯現(列舉.編碼類型.商品, 列舉.視窗類型.詳細, 編號_);
         }
     }
 }

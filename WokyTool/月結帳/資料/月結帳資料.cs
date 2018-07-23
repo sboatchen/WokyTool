@@ -266,6 +266,12 @@ namespace WokyTool.月結帳
 
             if (商品.編號是否合法() == false)
                 throw new Exception("月結帳資料:商品不合法:" + 商品編號);
+
+            if (商品.公司 != 公司)
+                throw new Exception("月結帳資料:公司不一致:" + 商品.公司.名稱 + "," + 公司.名稱);
+
+            if (商品.客戶 != 客戶)
+                throw new Exception("月結帳資料:客戶不一致:" + 商品.客戶.名稱 + "," + 客戶.名稱);
         }
     }
 }
