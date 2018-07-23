@@ -16,7 +16,7 @@ namespace WokyTool.通用
 
         protected 資料管理器介面 _資料管理器;
 
-        protected bool _是否準備關閉 = false;
+        protected bool _是否關閉 = false;
 
         public void 初始化(System.Windows.Forms.BindingSource 資料BindingSource_, 資料管理器介面 資料管理器_)
         {
@@ -29,7 +29,7 @@ namespace WokyTool.通用
 
         private void _視窗激活(object sender, EventArgs e)
         {
-            if (_是否準備關閉)
+            if (_是否關閉)
                 return;
 
             視窗激活();
@@ -48,7 +48,7 @@ namespace WokyTool.通用
 
         private void _視窗關閉(object sender, FormClosingEventArgs e)
         {
-            _是否準備關閉 = true;
+            _是否關閉 = true;
 
             視窗關閉();
 
@@ -62,8 +62,6 @@ namespace WokyTool.通用
 
             if (e != null)
                 e.Cancel = true;
-
-            _是否準備關閉 = false;
         }
 
         protected virtual void 視窗關閉()
@@ -76,12 +74,16 @@ namespace WokyTool.通用
 
         public void 顯現()
         {
+            this._是否關閉 = false;
+
             this.Show();
             this.BringToFront();
         }
 
         public void 顯現(int Pos_)
         {
+            this._是否關閉 = false;
+
             this.Show();
             this.BringToFront();
         }

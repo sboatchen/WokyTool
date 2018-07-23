@@ -11,8 +11,8 @@ namespace WokyTool.Common
         // ID管理器用Key
         public enum 編碼類型
         {
-            錯誤 = 常數.T錯誤資料編碼,
-            無 = 常數.T空白資料編碼,
+            錯誤 = 常數.列舉錯誤編碼,
+            無 = 常數.列舉空白編碼,
 
             聯絡人,
 
@@ -56,8 +56,8 @@ namespace WokyTool.Common
         // 配送指定時段類型
         public enum 指配時段類型
         {
-            錯誤 = 常數.T錯誤資料編碼,
-            無 = 常數.T空白資料編碼,
+            錯誤 = 常數.列舉錯誤編碼,
+            無 = 常數.列舉空白編碼,
 
             上午,
             下午,
@@ -67,8 +67,8 @@ namespace WokyTool.Common
         // 配送代收款方式
         public enum 代收類型
         {
-            錯誤 = 常數.T錯誤資料編碼,
-            無 = 常數.T空白資料編碼,
+            錯誤 = 常數.列舉錯誤編碼,
+            無 = 常數.列舉空白編碼,
 
             現金,
             刷卡,
@@ -77,8 +77,8 @@ namespace WokyTool.Common
         // 配送公司類型
         public enum 配送公司類型
         {
-            錯誤 = 常數.T錯誤資料編碼,
-            無 = 常數.T空白資料編碼,
+            錯誤 = 常數.列舉錯誤編碼,
+            無 = 常數.列舉空白編碼,
 
             全速配,
             宅配通,
@@ -86,8 +86,8 @@ namespace WokyTool.Common
 
         public enum 訂單處理進度類型
         {
-            錯誤 = 常數.T錯誤資料編碼,
-            無 = 常數.T空白資料編碼,
+            錯誤 = 常數.列舉錯誤編碼,
+            無 = 常數.列舉空白編碼,
             
             新建,
             匯入錯誤,
@@ -99,7 +99,7 @@ namespace WokyTool.Common
 
         public enum 搜尋失敗處理類型
         {
-            無 = 常數.T空白資料編碼,
+            無 = 常數.列舉空白編碼,
             找不到時新增,
         };
 
@@ -199,8 +199,8 @@ namespace WokyTool.Common
         // 檔案格式類型
         public enum 檔案格式類型
         {
-            錯誤 = 常數.T錯誤資料編碼,
-            無 = 常數.T空白資料編碼,
+            錯誤 = 常數.列舉錯誤編碼,
+            無 = 常數.列舉空白編碼,
 
             CSV = 1,
             EXCEL = 2,
@@ -210,7 +210,7 @@ namespace WokyTool.Common
 
         public enum 更新狀態
         {
-            錯誤 = 常數.T錯誤資料編碼,
+            錯誤 = 常數.列舉錯誤編碼,
 
             新增,
             相同,
@@ -219,8 +219,8 @@ namespace WokyTool.Common
 
         public enum 資料格式類型
         {
-            錯誤 = 常數.T錯誤資料編碼,
-            無 = 常數.T空白資料編碼,
+            錯誤 = 常數.列舉錯誤編碼,
+            無 = 常數.列舉空白編碼,
 
             整數 = 1,
             金額 = 2,
@@ -229,8 +229,8 @@ namespace WokyTool.Common
 
         public enum 商品識別類型
         {
-            錯誤 = 常數.T錯誤資料編碼,
-            無 = 常數.T空白資料編碼,
+            錯誤 = 常數.列舉錯誤編碼,
+            無 = 常數.列舉空白編碼,
 
             商品編號 = 1,
             商品編號_顏色 = 2,
@@ -239,8 +239,8 @@ namespace WokyTool.Common
 
         public enum 視窗類型
         {
-            錯誤 = 常數.T錯誤資料編碼,
-            無 = 常數.T空白資料編碼,
+            錯誤 = 常數.列舉錯誤編碼,
+            無 = 常數.列舉空白編碼,
 
             總覽 = 1,
             詳細 = 2,

@@ -277,9 +277,7 @@ namespace WokyTool
 
         private void button35_Click(object sender, EventArgs e)
         {
-            var i = new 月結帳匯入設定視窗();
-            i.Show();
-            i.BringToFront();
+            視窗管理器.獨體.顯現(列舉.編碼類型.月結帳設定, 列舉.視窗類型.總覽);
         }
 
         // test
@@ -293,16 +291,16 @@ namespace WokyTool
 
         private void button12_Click(object sender, EventArgs e)
         {
-            var i = new 月結帳匯入視窗();
-            i.Show();
-            i.BringToFront();
+            //var i = new 月結帳匯入視窗();
+            //i.Show();
+            //i.BringToFront();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            var i = new 月結帳總覽視窗();
-            i.Show();
-            i.BringToFront();
+            //var i = new 月結帳總覽視窗();
+            //i.Show();
+            //i.BringToFront();
         }
 
         private void button36_Click(object sender, EventArgs e)
@@ -652,7 +650,7 @@ namespace WokyTool
                 };
                 商品資料管理器.獨體.Map.Add(New_.編號, New_);
             }
-            商品資料管理器.獨體.SetDataDirty();
+            商品資料管理器.獨體.資料搬移();
 
             Console.WriteLine("轉換完畢");
         }

@@ -337,11 +337,11 @@
             // 
             // button35
             // 
-            this.button35.Location = new System.Drawing.Point(23, 570);
+            this.button35.Location = new System.Drawing.Point(23, 197);
             this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(105, 23);
+            this.button35.Size = new System.Drawing.Size(100, 23);
             this.button35.TabIndex = 35;
-            this.button35.Text = "月報表匯入設定";
+            this.button35.Text = "月報表設定";
             this.button35.UseVisualStyleBackColor = true;
             this.button35.Click += new System.EventHandler(this.button35_Click);
             // 

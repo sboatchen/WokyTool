@@ -16,8 +16,8 @@ namespace WokyTool.月結帳
         public override string 檔案路徑 
         {
             get 
-            { 
-                return "設定/月結帳匯入設定.json"; 
+            {
+                return "匯入設定/月結帳匯入設定.json"; 
             } 
         }
 
@@ -40,8 +40,8 @@ namespace WokyTool.月結帳
         public override 列舉.編碼類型 編碼類型 
         { 
             get 
-            { 
-                return 列舉.編碼類型.月結帳; 
+            {
+                return 列舉.編碼類型.月結帳設定; 
             } 
         }
 
