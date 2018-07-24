@@ -9,7 +9,7 @@ namespace WokyTool.通用
 {
     public class 檔案
     {
-        public static void 備份(string 原始檔案路徑_, bool 是否忽略缺少原始檔案_)
+        public static void 設定備份(string 原始檔案路徑_, bool 是否忽略缺少原始檔案_)
         {
             if (File.Exists(原始檔案路徑_) == false)
             {
@@ -22,8 +22,9 @@ namespace WokyTool.通用
             string 原始檔案名稱_ = Path.GetFileNameWithoutExtension(原始檔案路徑_);
             string 原始檔案副檔名_ = Path.GetExtension(原始檔案路徑_);
 
+            //@@ 加入使用者名稱
             string 備份檔案_ = String.Format("{0}_{1}{2}", 原始檔案名稱_, 時間.目前時間, 原始檔案副檔名_);
-            string 備份路徑_ = System.IO.Path.Combine("備份", 原始路徑_);
+            string 備份路徑_ = System.IO.Path.Combine("備份", 時間.目前日期, 原始路徑_);
             string 備份檔案路徑_ = System.IO.Path.Combine(備份路徑_, 備份檔案_);
 
             // 檢查備份路徑是否存在
@@ -41,9 +42,44 @@ namespace WokyTool.通用
             File.Copy(原始檔案路徑_, 備份檔案路徑_);
         }
 
-        public static void 備份(string 原始檔案路徑_)
+        public static void 設定備份(string 原始檔案路徑_)
         {
-            備份(原始檔案路徑_, false);
+            設定備份(原始檔案路徑_, false);
+        }
+
+        public static void 匯入備份(string 原始檔案路徑_, string 備份資料夾名_, string 備份檔名_)
+        {
+            if (File.Exists(原始檔案路徑_) == false)
+                throw new Exception("備份失敗,找不到原始檔案:" + 原始檔案路徑_);
+
+            string 原始檔案名稱_ = Path.GetFileNameWithoutExtension(原始檔案路徑_);
+            string 原始檔案副檔名_ = Path.GetExtension(原始檔案路徑_);
+
+            //@@ 加入使用者名稱
+            string 備份檔案_ = String.Format("{0}_{1}{2}", Path.GetFileNameWithoutExtension(備份檔名_), 時間.目前時間, 原始檔案副檔名_);
+            string 備份路徑_ = System.IO.Path.Combine("備份", 時間.目前日期, "匯入", 備份資料夾名_);
+            string 備份檔案路徑_ = System.IO.Path.Combine(備份路徑_, 備份檔案_);
+
+            // 檢查備份路徑是否存在
+            if (Directory.Exists(備份路徑_) == false)
+            {
+                Directory.CreateDirectory(備份路徑_);
+            }
+
+            // 檢查備份檔案是否存在
+            if (File.Exists(備份檔案路徑_))
+            {
+                throw new Exception("備份失敗,檔案已存在:" + 備份檔案路徑_);
+            }
+
+            File.Copy(原始檔案路徑_, 備份檔案路徑_);
+        }
+
+        public static void 匯入備份(string 原始檔案路徑_, string 備份檔名_)
+        {
+            string 備份資料夾名_ = Path.GetFileNameWithoutExtension(備份檔名_);
+
+            匯入備份(原始檔案路徑_, 備份資料夾名_, 備份檔名_);
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WokyTool.Common;
 
 namespace WokyTool.通用
 {
@@ -70,15 +71,20 @@ namespace WokyTool.通用
         {
             是否合法();
 
+            bool 是否找到_ = false;
             for(int i = 0 ; i < this.資料BindingSource.Count; i++)
             {
                 可編號介面 Item_ = (可編號介面)(this.資料BindingSource[i]);
                 if(Item_.編號 == 編號_)
                 {
                     this.資料BindingSource.Position = i;
+                    是否找到_ = true;
                     break;
                 }
             }
+
+            if (是否找到_ == false)
+                MessageBox.Show(字串.指定詳細視窗索引失敗, 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             目前資料 = null;
             if(this.Visible)

@@ -36,6 +36,9 @@ namespace WokyTool.通用
                     BList_.Add(Item_);
                 }
 
+                // 備份
+                檔案.匯入備份(openFileDialog1.FileName, typeof(T).Name);
+
                 return BList_;
             }
             catch (Exception Error_)

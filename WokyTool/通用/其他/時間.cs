@@ -69,6 +69,14 @@ namespace WokyTool.通用
         {
             get
             {
+                return DateTime.Now.ToString("HHmmss");
+            }
+        }
+
+        public static string 目前完整時間
+        {
+            get
+            {
                 return DateTime.Now.ToString("yyyyMMddHHmmss");
             }
         }

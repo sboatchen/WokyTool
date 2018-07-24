@@ -133,7 +133,7 @@ namespace WokyTool.通用
             if (資料是否異動)
             {
                 // 備份舊資料
-                檔案.備份(檔案路徑, true);
+                檔案.設定備份(檔案路徑, true);
 
                 // 更新資料
                 File.WriteAllText(檔案路徑, JsonConvert.SerializeObject(Map, Formatting.Indented));

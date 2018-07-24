@@ -47,5 +47,7 @@ namespace WokyTool.Common
 
         public static string 資料異動 = "資料異動";
         public static string 資料異動內容 = "資料已修改，請重新開啟視窗檢視新資料，當前修改將不予處理";
+
+        public static string 指定詳細視窗索引失敗 = "找不到目標資料，請確認目前沒有進行篩選";
     }
 }
