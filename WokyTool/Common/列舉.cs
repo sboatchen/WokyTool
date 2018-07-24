@@ -245,6 +245,7 @@ namespace WokyTool.Common
             總覽 = 1,
             詳細 = 2,
             篩選 = 3,
+            匯入 = 4,
         };
     }
 }

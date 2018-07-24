@@ -296,6 +296,12 @@
     <Compile Include="通用\視窗插件\抽象選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="通用\視窗樣板\匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="通用\視窗樣板\匯入視窗.Designer.cs">
+      <DependentUpon>匯入視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="通用\視窗樣板\篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -876,6 +882,7 @@
   <ItemGroup>
     <Folder Include="平台訂單\控制\" />
     <Folder Include="平台訂單\視窗\" />
+    <Folder Include="月結帳\轉換\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

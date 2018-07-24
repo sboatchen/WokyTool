@@ -25,6 +25,9 @@ namespace WokyTool.通用
         private Dictionary<列舉.編碼類型, Type> 篩選視窗設定Map { get; set; }
         private Dictionary<列舉.編碼類型, 篩選視窗> 篩選視窗Map { get; set; }
 
+        private Dictionary<列舉.編碼類型, Type> 匯入視窗設定Map { get; set; }
+        //private Dictionary<列舉.編碼類型, 匯入視窗> 匯入視窗Map { get; set; } no need cache
+
         // 獨體
         private static readonly 視窗管理器 _獨體 = new 視窗管理器();
         public static 視窗管理器 獨體
@@ -79,6 +82,12 @@ namespace WokyTool.通用
 
             篩選視窗設定Map.Add(列舉.編碼類型.物品, typeof(物品篩選視窗));
             篩選視窗設定Map.Add(列舉.編碼類型.商品, typeof(商品篩選視窗));
+
+             /********************************/
+
+            匯入視窗設定Map = new Dictionary<列舉.編碼類型, Type>();
+
+            匯入視窗設定Map.Add(列舉.編碼類型.月結帳, typeof(月結帳匯入視窗));
         }
 
         private 通用視窗介面 取得總覽視窗(列舉.編碼類型 類型_)
@@ -129,6 +138,18 @@ namespace WokyTool.通用
             return 視窗_;
         }
 
+        private 通用視窗介面 取得匯入視窗(列舉.編碼類型 類型_)
+        {
+            匯入視窗 視窗_ = null;
+            Type Type_ = null;
+            if (匯入視窗設定Map.TryGetValue(類型_, out Type_) == false)
+                throw new Exception("視窗管理器:取得匯入視窗實體失敗, " + 類型_);
+
+            視窗_ = (匯入視窗)(Activator.CreateInstance(Type_));
+
+            return 視窗_;
+        }
+
         private 通用視窗介面 取得視窗(列舉.編碼類型 編碼類型_, 列舉.視窗類型 視窗類型_)
         {
             switch (視窗類型_)
@@ -139,6 +160,8 @@ namespace WokyTool.通用
                     return 取得詳細視窗(編碼類型_);
                 case 列舉.視窗類型.篩選:
                     return 取得篩選視窗(編碼類型_);
+                case 列舉.視窗類型.匯入:
+                    return 取得匯入視窗(編碼類型_);
                 default:
                     throw new Exception("視窗管理器::取得視窗 為支援的視窗類型 " + 視窗類型_);
             }
