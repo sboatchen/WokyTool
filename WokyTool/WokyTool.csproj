@@ -210,6 +210,7 @@
     </Compile>
     <Compile Include="月結帳\資料\月結帳列舉.cs" />
     <Compile Include="月結帳\資料\月結帳資料.cs" />
+    <Compile Include="月結帳\轉換\月結帳匯入轉換.cs" />
     <Compile Include="物品\控制\物品資料管理器.cs" />
     <Compile Include="物品\控制\物品品牌資料管理器.cs" />
     <Compile Include="物品\控制\物品小類資料管理器.cs" />
@@ -293,6 +294,7 @@
     <Compile Include="通用\其他\時間.cs" />
     <Compile Include="通用\其他\檔案.cs" />
     <Compile Include="通用\動態匯入\檔案匯入設定資料介面.cs" />
+    <Compile Include="通用\動態匯入\檔案匯入轉換介面.cs" />
     <Compile Include="通用\視窗插件\抽象選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -308,7 +310,7 @@
     <Compile Include="通用\視窗樣板\篩選視窗.Designer.cs">
       <DependentUpon>篩選視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="通用\資料\MyUpdateData.cs" />
+    <Compile Include="通用\靜態匯入\靜態匯入資料.cs" />
     <Compile Include="通用\資料\可比較複寫介面.cs" />
     <Compile Include="物品\資料\物品品牌資料.cs" />
     <Compile Include="物品\資料\物品小類資料.cs" />
@@ -882,7 +884,6 @@
   <ItemGroup>
     <Folder Include="平台訂單\控制\" />
     <Folder Include="平台訂單\視窗\" />
-    <Folder Include="月結帳\轉換\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

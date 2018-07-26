@@ -14,15 +14,20 @@ namespace WokyTool.通用
         public 動態匯入檔案結構 檔案結構 { get; set; }
 
         [JsonProperty]
-        public List<object> 資料 { get; set; }
+        public Dictionary<String, object> 資料 { get; set; }
 
         public 動態匯入資料結構(動態匯入檔案結構 檔案結構_)
         {
             檔案結構 = 檔案結構_;
-            資料 = new List<object>();
+            資料 = new Dictionary<String, object>();
+        }
 
-            // 設定資料皆從1開始，所以讀入的時候需塞入空白資料
-            資料.Add(null);
+        public T Get<T>(String Key_)
+        {
+            object Data_;
+            if(資料.TryGetValue(Key_, out Data_))
+                return (T)Data_;
+            return default(T);
         }
     }
 }

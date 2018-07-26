@@ -18,14 +18,10 @@ namespace WokyTool.通用
         [JsonProperty]
         public List<動態匯入資料結構> 內容 { get; set; }
 
-        // 讀取到的標頭設定
-        public Dictionary<string, 欄位匯入設定資料> 標頭映射對應表 { get; set; }
-
         public 動態匯入檔案結構(檔案匯入設定資料介面 設定_)
         {
             設定 = 設定_;
             內容 = new List<動態匯入資料結構>();
-            標頭映射對應表 = new Dictionary<string, 欄位匯入設定資料>();
         }
 
         public void ReadExcel(String FileName_)
@@ -60,38 +56,41 @@ namespace WokyTool.通用
             for (int cCnt = 1; cCnt <= cl; cCnt++)
             {
                 欄位匯入設定資料 欄位設定_ = 設定.取得欄位匯入設定資料(cCnt);
+                if (欄位匯入設定資料.ERROR == 欄位設定_)
+                    continue;
 
-                if(設定.標頭位置 != 0)
-                {
-                    var cell = range.Cells[設定.標頭位置, cCnt] as Excel.Range;
-                    String 名稱_ = cell.Value2;
-                    欄位匯入設定資料 標頭設定_ = new 欄位匯入設定資料
-                    {
-                        列索引 = cCnt,
-                        名稱 = 名稱_,
-                    };
-                    標頭映射對應表.Add(名稱_, 標頭設定_);
-                }
+                //if(設定.標頭位置 != 0)
+                //{
+                //    var cell = range.Cells[設定.標頭位置, cCnt] as Excel.Range;
+                //    String 名稱_ = cell.Value2;
+                //    欄位匯入設定資料 標頭設定_ = new 欄位匯入設定資料
+                //    {
+                //        列索引 = cCnt,
+                //        名稱 = 名稱_,
+                //    };
+                //    標頭映射對應表.Add(名稱_, 標頭設定_);
+                //}
 
-                dynamic 上層資料_ = null;
+                object 上層資料_ = null;
                 for (int rCnt = StartRow_, 資料列_ = 0; rCnt <= EndRow_; rCnt++, 資料列_++)
                 {
                     var cell = range.Cells[rCnt, cCnt] as Excel.Range;
-                    var value = cell.Value2;
+
+                    object value = 轉型資料(cell.Value2, 欄位設定_.格式);
 
                     if (value != null)
                     {
-                        內容[資料列_].資料.Add(value);
+                        內容[資料列_].資料.Add(欄位設定_.名稱, value);
                         上層資料_ = value;
                     }
                     else if (欄位設定_.可合併儲存格 == true && cell.MergeArea != null && 上層資料_ != null)
                     {
-                        內容[資料列_].資料.Add(value);
+                        內容[資料列_].資料.Add(欄位設定_.名稱, 上層資料_);
                     }
                     else
                     {
                         上層資料_ = null;
-                        內容[資料列_].資料.Add(null);
+                        內容[資料列_].資料.Add(欄位設定_.名稱, null);
                     }
                 }
             }
@@ -104,36 +103,22 @@ namespace WokyTool.通用
             Marshal.ReleaseComObject(xlApp);
         }
 
-        public 欄位匯入設定資料 取得欄位匯入設定資料(String Name_)
+        private object 轉型資料(object dynamic, 列舉.資料格式類型 資料格式類型)
         {
-           欄位匯入設定資料 Item_;
-            if (設定.名稱映射對應表.TryGetValue(Name_, out Item_))
+            if (dynamic == null)
+                return null;
+
+            switch (資料格式類型)
             {
-                return Item_;
+                case 列舉.資料格式類型.文字:
+                    return dynamic.ToString();
+                case 列舉.資料格式類型.金額:
+                    return Convert.ToDecimal(dynamic.ToString());
+                case 列舉.資料格式類型.整數:
+                    return Convert.ToInt32(dynamic.ToString());
+                default:
+                    throw new Exception("轉型資料 不支援的格式 " + 資料格式類型);
             }
-
-            if (標頭映射對應表.TryGetValue(Name_, out Item_))
-            {
-                return Item_;
-            }
-
-            return 欄位匯入設定資料.ERROR;
-        }
-
-        public int 取得欄位位置(String Name_)
-        {
-            欄位匯入設定資料 Item_;
-            if (設定.名稱映射對應表.TryGetValue(Name_, out Item_))
-            {
-                return Item_.列索引;
-            }
-
-            if (標頭映射對應表.TryGetValue(Name_, out Item_))
-            {
-                return Item_.列索引;
-            }
-
-            return -1;
         }
     }
 }

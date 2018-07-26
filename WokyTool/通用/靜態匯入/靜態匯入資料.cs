@@ -10,13 +10,13 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public abstract class MyUpdateData: MyData
+    public abstract class 靜態匯入資料 : MyData
     {
         virtual public void 初始化(){;}
 
         abstract public void 更新();
 
-        static public BindingList<T> 匯入Excel<T>() where T : MyUpdateData
+        static public BindingList<T> 匯入Excel<T>() where T : 靜態匯入資料
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "Excel files|*.*";

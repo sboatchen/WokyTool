@@ -10,7 +10,7 @@ using WokyTool.通用;
 namespace WokyTool.物品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 物品條碼更新資料 : MyUpdateData
+    public class 物品條碼更新資料 : 靜態匯入資料
     {
         [JsonProperty]
         public string 縮寫 { get; set; }

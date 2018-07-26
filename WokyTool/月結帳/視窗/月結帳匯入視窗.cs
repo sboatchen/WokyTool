@@ -7,111 +7,84 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WokyTool.Common;
-using WokyTool.Data;
-using WokyTool.DataMgr;
+using WokyTool.公司;
+using WokyTool.客戶;
+using WokyTool.商品;
 using WokyTool.通用;
 
 namespace WokyTool.月結帳
 {
-    public partial class 月結帳匯入視窗 : Form
+    public partial class 月結帳匯入視窗 : 匯入視窗
     {
-        protected 監測綁定更新<月結帳匯入設定資料> _月結帳匯入設定資料Listener;
-        protected 監測綁定更新<商品資料> _商品資料Listener;
+        private int _公司資料版本 = -1;
+        private int _客戶資料版本 = -1;
+        private int _商品資料版本 = -1;
+        private int _月結帳匯入設定資料版本 = -1;
 
-        protected 月結帳匯入設定資料 _目前設定 = null;
-        private bool _是否允許匯入 = true;
-        protected List<月結帳資料> _資料;
-        protected BindingSource _資料Binding = new BindingSource();
+        protected BindingSource 月結帳匯入設定資料BindingSource = new BindingSource();
+        protected BindingList<月結帳資料> _BList = null;
 
         public 月結帳匯入視窗()
         {
             InitializeComponent();
 
-            //_月結帳匯入設定資料Listener = new 監測綁定更新<月結帳匯入設定資料>(月結帳匯入設定資料管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 設定資料更新);
-            _月結帳匯入設定資料Listener.Refresh(true);
+            this.初始化();
 
-            _商品資料Listener = new 監測綁定更新<商品資料>(商品管理器.Instance.Binding, 列舉.監測類型.被動通知_公式, 商品資料更新);
-            _商品資料Listener.Refresh(true);
-
-            this.資料呈現.DataSource = _資料Binding;
-
-            this.儲存.Enabled = false;
+            this.設定.ComboBox.DataSource = this.月結帳匯入設定資料BindingSource;
+            this.設定.ComboBox.DisplayMember = "名稱";
+            this.設定.ComboBox.ValueMember = "Self";
+            this.設定.ComboBox.FormattingEnabled = true;
+            this.設定.ComboBox.TabIndex = 10;
+            this.設定.ComboBox.BindingContext = this.BindingContext;  // 這行很重要
         }
 
-        private void 商品資料更新(IEnumerable<商品資料> Data_)
+        private void 設定_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.商品DataGridViewTextBoxColumn.DataSource = Data_.Where(Value => Value.廠商 == _目前設定.廠商 || Value.編號 == 常數.T錯誤資料編碼).ToList(); ;
-        }
-
-        private void 設定資料更新(IEnumerable<月結帳匯入設定資料> Data_)
-        {
-            清單.DataSource = Data_;
-        }
-
-        private void 清單_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            _目前設定 = (月結帳匯入設定資料)this.清單.SelectedItem;
-
-            this.匯入.Enabled = _是否允許匯入;
-        }
-
-        private void 匯入_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "Excel files|*.*";
-
-            if (openFileDialog1.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+            月結帳匯入設定資料 資料_ = (月結帳匯入設定資料)((ToolStripComboBox)sender).SelectedItem;
+            if (資料_ == null)
                 return;
 
-            _是否允許匯入 = false;
-            this.匯入.Enabled = false;
-
-            // 更新商品列表
-            _商品資料Listener.Refresh(true);
-
-            動態匯入檔案結構 xx = new 動態匯入檔案結構(_目前設定);
-            xx.ReadExcel(openFileDialog1.FileName);
-
-            月結帳資料產生器 產生器_ = new 月結帳資料產生器(xx);
-            _資料 = 產生器_.Create();
-            if (_資料 == null)
+            _BList = 資料_.匯入Excel();
+            if (_BList == null)
                 return;
 
-            _資料Binding.DataSource = _資料;
-
-            this.儲存.Enabled = true;
+            this.設定.Enabled = false;
+            this.月結帳資料BindingSource.DataSource = _BList;
         }
 
-        private void 儲存_Click(object sender, EventArgs e)
+        //private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)//
+        //{
+        //    int 編號_ = ((月結帳資料)(this.月結帳資料BindingSource.Current)).編號;
+        //    視窗管理器.獨體.顯現(列舉.編碼類型.月結帳, 列舉.視窗類型.詳細, 編號_);
+        //}
+
+        /********************************/
+
+        protected override void 視窗激活()
         {
-            if (檢查資料是否合法() == false)
-                return;
-
-            this.儲存.Enabled = false;
-
-            foreach (月結帳資料 月結帳資料_ in _資料)
+            if (_公司資料版本 != 公司資料管理器.獨體.唯讀資料版本)
             {
-                //月結帳資料管理器.Instance.Add(月結帳資料_);
-            }
-        }
-
-        private bool 檢查資料是否合法()
-        {
-            try
-            {
-                foreach (月結帳資料 月結帳資料_ in _資料)
-                {
-                    月結帳資料_.檢查合法();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                _公司資料版本 = 公司資料管理器.獨體.唯讀資料版本;
+                this.公司資料BindingSource.DataSource = 公司資料管理器.獨體.唯讀BList;
             }
 
-            return true;
+            if (_客戶資料版本 != 客戶資料管理器.獨體.唯讀資料版本)
+            {
+                _客戶資料版本 = 客戶資料管理器.獨體.唯讀資料版本;
+                this.客戶資料BindingSource.DataSource = 客戶資料管理器.獨體.唯讀BList;
+            }
+
+            if (_商品資料版本 != 商品資料管理器.獨體.唯讀資料版本)
+            {
+                _商品資料版本 = 商品資料管理器.獨體.唯讀資料版本;
+                this.商品資料BindingSource.DataSource = 商品資料管理器.獨體.唯讀BList;
+            }
+
+            if (_月結帳匯入設定資料版本 != 月結帳匯入設定資料管理器.獨體.唯讀資料版本)
+            {
+                _月結帳匯入設定資料版本 = 月結帳匯入設定資料管理器.獨體.唯讀資料版本;
+                this.月結帳匯入設定資料BindingSource.DataSource = 月結帳匯入設定資料管理器.獨體.唯讀BList;   // 這邊不呈現 無/錯誤 所以不選唯讀BList??
+            }
         }
     }
 }

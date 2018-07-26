@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -244,6 +245,11 @@ namespace WokyTool.月結帳
 
             if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.數量.ToString()) == false)
                 throw new Exception("檔案匯入設定資料:未設定數量欄位");
+        }
+
+        public BindingList<月結帳資料> 匯入Excel()
+        {
+            return 匯入Excel<月結帳資料>(new 月結帳匯入轉換());
         }
     }
 }

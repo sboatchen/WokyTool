@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace WokyTool.通用
 {
@@ -165,6 +167,37 @@ namespace WokyTool.通用
             }
 
             return Defualt_;
+        }
+
+        public int 取得欄位位置(String Name_)
+        {
+            欄位匯入設定資料 Item_;
+            if (名稱映射對應表.TryGetValue(Name_, out Item_))
+            {
+                return Item_.列索引;
+            }
+
+            return -1;
+        }
+
+        public BindingList<T2> 匯入Excel<T2>(檔案匯入轉換介面<T2> 轉換介面_) where T2: MyData
+        {
+            if (格式 != 列舉.檔案格式類型.EXCEL)
+                throw new Exception("檔案匯入設定資料<T>:_匯入Excel 檔案格式不匹配");
+
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Excel files|*.*";
+
+            if (openFileDialog1.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+                return null;
+
+            // 備份
+            檔案.匯入備份(openFileDialog1.FileName, typeof(T).Name, this.名稱);
+
+            動態匯入檔案結構 動態匯入檔案結構_ = new 動態匯入檔案結構(this);
+            動態匯入檔案結構_.ReadExcel(openFileDialog1.FileName);
+
+            return 轉換介面_.轉換綁定陣列(動態匯入檔案結構_);
         }
     }
 }

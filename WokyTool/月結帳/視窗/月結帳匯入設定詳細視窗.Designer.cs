@@ -102,6 +102,7 @@
             0,
             0});
             this.標頭位置.Name = "標頭位置";
+            this.標頭位置.ReadOnly = true;
             this.標頭位置.Size = new System.Drawing.Size(167, 22);
             this.標頭位置.TabIndex = 80;
             // 

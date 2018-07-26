@@ -30,20 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.檔案格式類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.公司資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.客戶資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.商品識別類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.月結帳匯入設定資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.格式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.檔案格式類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.公司資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.客戶DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.客戶資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.開始位置DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.結束位置DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.標頭位置DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.商品識別類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.月結帳匯入設定資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.檔案格式類型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.公司資料BindingSource)).BeginInit();
@@ -75,6 +75,26 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
+            // 檔案格式類型BindingSource
+            // 
+            this.檔案格式類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.檔案格式類型);
+            // 
+            // 公司資料BindingSource
+            // 
+            this.公司資料BindingSource.DataSource = typeof(WokyTool.公司.公司資料);
+            // 
+            // 客戶資料BindingSource
+            // 
+            this.客戶資料BindingSource.DataSource = typeof(WokyTool.客戶.客戶資料);
+            // 
+            // 商品識別類型BindingSource
+            // 
+            this.商品識別類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.商品識別類型);
+            // 
+            // 月結帳匯入設定資料BindingSource
+            // 
+            this.月結帳匯入設定資料BindingSource.DataSource = typeof(WokyTool.月結帳.月結帳匯入設定資料);
+            // 
             // 編號DataGridViewTextBoxColumn
             // 
             this.編號DataGridViewTextBoxColumn.DataPropertyName = "編號";
@@ -97,10 +117,6 @@
             this.格式DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.格式DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // 檔案格式類型BindingSource
-            // 
-            this.檔案格式類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.檔案格式類型);
-            // 
             // 公司DataGridViewTextBoxColumn
             // 
             this.公司DataGridViewTextBoxColumn.DataPropertyName = "公司";
@@ -112,10 +128,6 @@
             this.公司DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.公司DataGridViewTextBoxColumn.ValueMember = "Self";
             // 
-            // 公司資料BindingSource
-            // 
-            this.公司資料BindingSource.DataSource = typeof(WokyTool.公司.公司資料);
-            // 
             // 客戶DataGridViewTextBoxColumn
             // 
             this.客戶DataGridViewTextBoxColumn.DataPropertyName = "客戶";
@@ -126,10 +138,6 @@
             this.客戶DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.客戶DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.客戶DataGridViewTextBoxColumn.ValueMember = "Self";
-            // 
-            // 客戶資料BindingSource
-            // 
-            this.客戶資料BindingSource.DataSource = typeof(WokyTool.客戶.客戶資料);
             // 
             // 開始位置DataGridViewTextBoxColumn
             // 
@@ -148,6 +156,7 @@
             this.標頭位置DataGridViewTextBoxColumn.DataPropertyName = "標頭位置";
             this.標頭位置DataGridViewTextBoxColumn.HeaderText = "標頭位置";
             this.標頭位置DataGridViewTextBoxColumn.Name = "標頭位置DataGridViewTextBoxColumn";
+            this.標頭位置DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 商品識別DataGridViewTextBoxColumn
             // 
@@ -157,14 +166,6 @@
             this.商品識別DataGridViewTextBoxColumn.Name = "商品識別DataGridViewTextBoxColumn";
             this.商品識別DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.商品識別DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // 商品識別類型BindingSource
-            // 
-            this.商品識別類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.商品識別類型);
-            // 
-            // 月結帳匯入設定資料BindingSource
-            // 
-            this.月結帳匯入設定資料BindingSource.DataSource = typeof(WokyTool.月結帳.月結帳匯入設定資料);
             // 
             // 月結帳匯入設定總覽視窗
             // 
@@ -188,18 +189,18 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 月結帳匯入設定資料BindingSource;
+        private System.Windows.Forms.BindingSource 檔案格式類型BindingSource;
+        private System.Windows.Forms.BindingSource 公司資料BindingSource;
+        private System.Windows.Forms.BindingSource 客戶資料BindingSource;
+        private System.Windows.Forms.BindingSource 商品識別類型BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 格式DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 檔案格式類型BindingSource;
         private System.Windows.Forms.DataGridViewComboBoxColumn 公司DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 公司資料BindingSource;
         private System.Windows.Forms.DataGridViewComboBoxColumn 客戶DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 客戶資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 開始位置DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 結束位置DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 標頭位置DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 商品識別DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 商品識別類型BindingSource;
     }
 }
