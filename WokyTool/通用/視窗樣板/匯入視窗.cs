@@ -47,7 +47,7 @@ namespace WokyTool.通用
         {
             _是否關閉 = true;
 
-            if (_資料管理器.IsEditing() == false)
+            if (_資料管理器.是否正在編輯() == false)
                 return;
 
             try
@@ -70,7 +70,7 @@ namespace WokyTool.通用
             }
 
             var result2 = MessageBox.Show(字串.匯入內容, 字串.匯入確認, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            _資料管理器.UpdateEdit(result2 == DialogResult.Yes);
+            _資料管理器.完成編輯(result2 == DialogResult.Yes);
 
             視窗關閉();
         }

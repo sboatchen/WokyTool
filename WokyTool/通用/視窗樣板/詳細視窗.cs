@@ -62,10 +62,10 @@ namespace WokyTool.通用
 
             索引切換_異動儲存();
 
-            if (_資料管理器.IsEditing())
+            if (_資料管理器.是否正在編輯())
             {
                 var result = MessageBox.Show(字串.儲存確認內容, 字串.儲存確認, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                _資料管理器.UpdateEdit(result == DialogResult.Yes);
+                _資料管理器.完成編輯(result == DialogResult.Yes);
             }
 
             if (!(e is 視窗關閉事件))

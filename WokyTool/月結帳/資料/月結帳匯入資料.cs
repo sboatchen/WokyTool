@@ -13,11 +13,8 @@ using WokyTool.通用;
 namespace WokyTool.月結帳
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 月結帳匯入資料 : MyKeepableData<月結帳匯入資料>
+    public class 月結帳匯入資料 : MyData
     {
-        [JsonProperty]
-        public override int 編號 { get; set; }
-
         [JsonProperty]
         public int 公司編號
         {
@@ -161,8 +158,6 @@ namespace WokyTool.月結帳
 
         private static readonly 月結帳匯入資料 _NULL = new 月結帳匯入資料
         {
-            編號 = 常數.T空白資料編碼,
-
             公司 = 公司資料.NULL,
             客戶 = 客戶資料.NULL,
 
@@ -183,8 +178,6 @@ namespace WokyTool.月結帳
 
         private static 月結帳匯入資料 _ERROR = new 月結帳匯入資料
         {
-            編號 = 常數.T錯誤資料編碼,
-
             公司 = 公司資料.ERROR,
             客戶 = 客戶資料.ERROR,
 
@@ -204,57 +197,6 @@ namespace WokyTool.月結帳
         }
 
         /********************************/
-
-        public override 月結帳匯入資料 拷貝()
-        {
-            月結帳匯入資料 Data_ = new 月結帳匯入資料
-            {
-                編號 = this.編號,
-
-                公司 = this.公司,
-                客戶 = this.客戶,
-
-                商品識別 = this.商品識別,
-                商品 = this.商品,
-
-                數量 = this.數量,
-                單價 = this.單價,
-                含稅單價 = this.含稅單價,
-            };
-
-            return Data_;
-        }
-
-        public override void 覆蓋(月結帳匯入資料 Data_)
-        {
-            編號 = Data_.編號;
-
-            公司 = Data_.公司;
-            客戶 = Data_.客戶;
-
-            商品識別 = Data_.商品識別;
-            商品 = Data_.商品;
-
-            數量 = Data_.數量;
-            單價 = Data_.單價;
-            含稅單價 = Data_.含稅單價;
-        }
-
-        public override Boolean 是否一致(月結帳匯入資料 Data_)
-        {
-            return
-                編號 == Data_.編號 &&
-
-                公司 == Data_.公司 &&
-                客戶 == Data_.客戶 &&
-
-                商品識別 == Data_.商品識別 &&
-                商品 == Data_.商品 &&
-
-                數量 == Data_.數量 &&
-                單價 == Data_.單價 &&
-                含稅單價 == Data_.含稅單價;
-        }
 
         public override void 檢查合法()
         {
@@ -280,8 +222,6 @@ namespace WokyTool.月結帳
         {
             月結帳資料 Data_ = new 月結帳資料
             {
-                編號 = this.編號,
-
                 公司 = this.公司,
                 客戶 = this.客戶,
 

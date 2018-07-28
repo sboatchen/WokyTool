@@ -166,7 +166,7 @@ namespace WokyTool.通用
             return 錯誤資料;
         }
 
-        public Boolean IsEditing()
+        public Boolean 是否正在編輯()
         {
             //if (可編輯BList.Count != (Map.Count + 2))
             if (是否減少資料)
@@ -174,9 +174,9 @@ namespace WokyTool.通用
 
             foreach (var Item_ in 可編輯BList)
             {
-                if (Item_.isEditing())
+                if (Item_.是否正在編輯())
                 {
-                    Item_.showEditDetail();
+                    Item_.顯示編輯明細();
                     return true;
                 }
             }
@@ -184,10 +184,10 @@ namespace WokyTool.通用
             return false;
         }
 
-        public void UpdateEdit(bool IsSave_)
+        public void 完成編輯(bool IsSave_)
         {
             // ignore for speed up
-            //if (IsEditing() == false)
+            //if (是否正在編輯() == false)
             //    return;
 
             可編輯BList.RaiseListChangedEvents = false;
@@ -196,19 +196,19 @@ namespace WokyTool.通用
             if (IsSave_)
             {
                 if (篩選介面 == null)
-                    SaveEdit();
+                    儲存編輯();
                 else
-                    SaveEditWithFilter();
+                    儲存編輯_過濾();
             }
             else
-                CancelEdit();
+                取消編輯();
 
             可編輯BList.RaiseListChangedEvents = true;
             唯讀BList.RaiseListChangedEvents = true;
             是否減少資料 = false;
         }
 
-        protected void SaveEdit()
+        protected void 儲存編輯()
         {
             Map.Clear();
             
@@ -218,7 +218,7 @@ namespace WokyTool.通用
 
             foreach (var Item_ in 可編輯BList)
             {
-                Item_.FinishEdit();
+                Item_.完成編輯();
 
                 if (Item_.編號 == 常數.T新建資料編碼)
                 {
@@ -235,12 +235,12 @@ namespace WokyTool.通用
             資料是否異動 = true;
         }
 
-        protected void SaveEditWithFilter()
+        protected void 儲存編輯_過濾()
         {
             //@@ 目前套用Filter 不支援新增刪除
             foreach (T Item_ in Map.Values)
             {
-                Item_.FinishEdit();
+                Item_.完成編輯();
             }
 
             編輯資料版本++;
@@ -248,7 +248,7 @@ namespace WokyTool.通用
             資料是否異動 = true;
         }
 
-        protected void CancelEdit()
+        protected void 取消編輯()
         {
             if (篩選介面 == null)
             {
@@ -294,7 +294,7 @@ namespace WokyTool.通用
 
                 foreach (T Item_ in Map.Values)
                 {
-                    //Item_.CancelEdit();
+                    //Item_.取消編輯();
 
                     if (篩選介面.篩選(Item_))
                         可編輯BList.Add(Item_);
@@ -313,7 +313,7 @@ namespace WokyTool.通用
 
             foreach (T Item_ in Enumerator_)
             {
-                Item_.FinishEdit();
+                Item_.完成編輯();
 
                 if (Item_.編號 == 常數.T新建資料編碼)
                 {

@@ -37,17 +37,17 @@ namespace WokyTool.通用
         {
         }
 
-        public void FinishEdit()
+        public void 完成編輯()
         {
             _副本 = default(T);
         }
 
-        public bool isEditing()
+        public bool 是否正在編輯()
         {
             return _副本 != null && this.是否一致(_副本) == false;
         }
 
-        public void showEditDetail()
+        public void 顯示編輯明細()
         {
             Console.WriteLine(this.ToString());
             Console.WriteLine("---------");

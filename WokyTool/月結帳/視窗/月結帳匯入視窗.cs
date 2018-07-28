@@ -48,7 +48,7 @@ namespace WokyTool.月結帳
                 return;
 
             _月結帳匯入管理器.新增(資料_.匯入Excel());
-            if (_月結帳匯入管理器.IsEditing() == false)
+            if (_月結帳匯入管理器.是否正在編輯() == false)
                 return;
 
             this.設定.Enabled = false;

@@ -15,8 +15,8 @@ namespace WokyTool.通用
         int 編輯資料版本 { get; set; }
         int 唯讀資料版本 { get; set; }
 
-        Boolean IsEditing();
-        void UpdateEdit(bool IsSave_);
+        Boolean 是否正在編輯();
+        void 完成編輯(bool IsSave_);
 
         void 檢查合法();
     }

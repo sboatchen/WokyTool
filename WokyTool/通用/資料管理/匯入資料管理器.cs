@@ -57,12 +57,12 @@ namespace WokyTool.通用
             可編輯BList.RaiseListChangedEvents = true;
         }
 
-        public Boolean IsEditing()
+        public Boolean 是否正在編輯()
         {
             return 可編輯BList.Count > 0;
         }
 
-        public void UpdateEdit(bool IsSave_)
+        public void 完成編輯(bool IsSave_)
         {
             if (!IsSave_)
                 return;
