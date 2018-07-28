@@ -91,6 +91,24 @@ namespace WokyTool.通用
                 嘗試更新資料();
         }
 
+        public void 設定位置(int 位置_)
+        {
+            是否合法();
+
+            if (位置_ > this.資料BindingSource.Count || 位置_ < 0)
+            {
+                MessageBox.Show(字串.指定詳細視窗索引失敗, 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                this.資料BindingSource.Position = 位置_;
+            }
+
+            目前資料 = null;
+            if (this.Visible)
+                嘗試更新資料();
+        }
+
         public void 嘗試更新資料()
         {
             是否合法();

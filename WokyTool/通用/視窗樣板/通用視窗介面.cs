@@ -12,6 +12,7 @@ namespace WokyTool.通用
         void 顯現(int 編號_);
 
         void 隱藏();
+        void 關閉();
 
         bool 是否顯現();
     }

@@ -13,7 +13,7 @@ using WokyTool.通用;
 namespace WokyTool.月結帳
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 月結帳資料 : MyKeepableData<月結帳資料>
+    public class 月結帳匯入資料 : MyKeepableData<月結帳匯入資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }
@@ -79,6 +79,9 @@ namespace WokyTool.月結帳
                 _客戶 = value;
             }
         }
+
+        [JsonProperty]
+        public string 商品識別 { get; set; }
 
         [JsonProperty]
         public int 商品編號
@@ -151,25 +154,26 @@ namespace WokyTool.月結帳
 
         /********************************/
 
-        public 月結帳資料 Self
+        public 月結帳匯入資料 Self
         {
             get { return this; }
         }
 
-        private static readonly 月結帳資料 _NULL = new 月結帳資料
+        private static readonly 月結帳匯入資料 _NULL = new 月結帳匯入資料
         {
             編號 = 常數.T空白資料編碼,
 
             公司 = 公司資料.NULL,
             客戶 = 客戶資料.NULL,
 
+            商品識別 = 字串.無,
             商品 = 商品資料.NULL,
 
             數量 = 0,
             單價 = 0,
             含稅單價 = 0,
         };
-        public static 月結帳資料 NULL
+        public static 月結帳匯入資料 NULL
         {
             get
             {
@@ -177,20 +181,21 @@ namespace WokyTool.月結帳
             }
         }
 
-        private static 月結帳資料 _ERROR = new 月結帳資料
+        private static 月結帳匯入資料 _ERROR = new 月結帳匯入資料
         {
             編號 = 常數.T錯誤資料編碼,
 
             公司 = 公司資料.ERROR,
             客戶 = 客戶資料.ERROR,
 
+            商品識別 = 字串.錯誤,
             商品 = 商品資料.ERROR,
 
             數量 = 0,
             單價 = 0,
             含稅單價 = 0,
         };
-        public static 月結帳資料 ERROR
+        public static 月結帳匯入資料 ERROR
         {
             get
             {
@@ -200,7 +205,78 @@ namespace WokyTool.月結帳
 
         /********************************/
 
-        public override 月結帳資料 拷貝()
+        public override 月結帳匯入資料 拷貝()
+        {
+            月結帳匯入資料 Data_ = new 月結帳匯入資料
+            {
+                編號 = this.編號,
+
+                公司 = this.公司,
+                客戶 = this.客戶,
+
+                商品識別 = this.商品識別,
+                商品 = this.商品,
+
+                數量 = this.數量,
+                單價 = this.單價,
+                含稅單價 = this.含稅單價,
+            };
+
+            return Data_;
+        }
+
+        public override void 覆蓋(月結帳匯入資料 Data_)
+        {
+            編號 = Data_.編號;
+
+            公司 = Data_.公司;
+            客戶 = Data_.客戶;
+
+            商品識別 = Data_.商品識別;
+            商品 = Data_.商品;
+
+            數量 = Data_.數量;
+            單價 = Data_.單價;
+            含稅單價 = Data_.含稅單價;
+        }
+
+        public override Boolean 是否一致(月結帳匯入資料 Data_)
+        {
+            return
+                編號 == Data_.編號 &&
+
+                公司 == Data_.公司 &&
+                客戶 == Data_.客戶 &&
+
+                商品識別 == Data_.商品識別 &&
+                商品 == Data_.商品 &&
+
+                數量 == Data_.數量 &&
+                單價 == Data_.單價 &&
+                含稅單價 == Data_.含稅單價;
+        }
+
+        public override void 檢查合法()
+        {
+            if (公司.編號是否合法() == false)
+                throw new Exception("月結帳匯入資料:公司編號不合法:" + 公司編號);
+
+            if (客戶.編號是否合法() == false)
+                throw new Exception("月結帳匯入資料:客戶編號不合法:" + 客戶編號);
+
+            if (商品.編號是否合法() == false)
+                throw new Exception("月結帳匯入資料:商品不合法:" + 商品編號);
+
+            if (商品.公司 != 公司)
+                throw new Exception("月結帳匯入資料:公司不一致:" + 商品.公司.名稱 + "," + 公司.名稱);
+
+            if (商品.客戶 != 客戶)
+                throw new Exception("月結帳匯入資料:客戶不一致:" + 商品.客戶.名稱 + "," + 客戶.名稱);
+        }
+
+        /********************************/
+
+        public 月結帳資料 匯入()
         {
             月結帳資料 Data_ = new 月結帳資料
             {
@@ -217,53 +293,6 @@ namespace WokyTool.月結帳
             };
 
             return Data_;
-        }
-
-        public override void 覆蓋(月結帳資料 Data_)
-        {
-            編號 = Data_.編號;
-
-            公司 = Data_.公司;
-            客戶 = Data_.客戶;
-
-            商品 = Data_.商品;
-
-            數量 = Data_.數量;
-            單價 = Data_.單價;
-            含稅單價 = Data_.含稅單價;
-        }
-
-        public override Boolean 是否一致(月結帳資料 Data_)
-        {
-            return
-                編號 == Data_.編號 &&
-
-                公司 == Data_.公司 &&
-                客戶 == Data_.客戶 &&
-
-                商品 == Data_.商品 &&
-
-                數量 == Data_.數量 &&
-                單價 == Data_.單價 &&
-                含稅單價 == Data_.含稅單價;
-        }
-
-        public override void 檢查合法()
-        {
-            if (公司.編號是否合法() == false)
-                throw new Exception("月結帳資料:公司編號不合法:" + 公司編號);
-
-            if (客戶.編號是否合法() == false)
-                throw new Exception("月結帳資料:客戶編號不合法:" + 客戶編號);
-
-            if (商品.編號是否合法() == false)
-                throw new Exception("月結帳資料:商品不合法:" + 商品編號);
-
-            if (商品.公司 != 公司)
-                throw new Exception("月結帳資料:公司不一致:" + 商品.公司.名稱 + "," + 公司.名稱);
-
-            if (商品.客戶 != 客戶)
-                throw new Exception("月結帳資料:客戶不一致:" + 商品.客戶.名稱 + "," + 客戶.名稱);
         }
     }
 }

@@ -9,7 +9,7 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public partial class 篩選視窗 : Form, 通用視窗介面
+    public class 篩選視窗 : Form, 通用視窗介面
     {
         protected bool _是否關閉 = false;
 
@@ -35,12 +35,13 @@ namespace WokyTool.通用
         {
             _是否關閉 = true;
 
-            視窗關閉();
-
-            this.Hide();
-
-            if (e != null)
+            if (!(e is 視窗關閉事件))
+            {
                 e.Cancel = true;
+                this.Hide();
+            }
+
+            視窗關閉();
         }
 
         protected virtual void 視窗關閉()
@@ -69,7 +70,12 @@ namespace WokyTool.通用
 
         public void 隱藏()
         {
-            _視窗關閉(null, null);
+            _視窗關閉(null, new 視窗隱藏事件());
+        }
+
+        public void 關閉()
+        {
+            _視窗關閉(null, new 視窗關閉事件());
         }
 
         public bool 是否顯現()

@@ -247,9 +247,9 @@ namespace WokyTool.月結帳
                 throw new Exception("檔案匯入設定資料:未設定數量欄位");
         }
 
-        public BindingList<月結帳資料> 匯入Excel()
+        public IEnumerable<月結帳匯入資料> 匯入Excel()
         {
-            return 匯入Excel<月結帳資料>(new 月結帳匯入轉換());
+            return 匯入Excel<月結帳匯入資料>(new 月結帳匯入轉換());
         }
     }
 }

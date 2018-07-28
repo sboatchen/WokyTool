@@ -14,24 +14,24 @@ using WokyTool.通用;
 
 namespace WokyTool.月結帳
 {
-    public partial class 月結帳詳細視窗 : 詳細視窗
+    public partial class 月結帳匯入詳細視窗 : 匯入詳細視窗
     {
-        public 月結帳詳細視窗()
+        public 月結帳匯入詳細視窗(資料管理器介面 資料管理器_)
         {
             InitializeComponent();
 
-            this.初始化(this.頁索引元件1, 月結帳資料管理器.獨體);
+            this.初始化(this.頁索引元件1, 資料管理器_);
         }
 
         /********************************/
-        // 月結帳詳細視窗樣板
+        // 月結帳匯入詳細視窗樣板
 
         protected override void 視窗激活()
         {
             this.公司選取元件1.視窗激活();
             this.客戶選取元件1.視窗激活();
 
-            this.商品選取元件1.視窗激活();    //@@ 商品列表 應在根據 公司 客戶 進行篩檢
+            this.商品選取元件1.視窗激活();
         }
 
         /********************************/
@@ -39,7 +39,7 @@ namespace WokyTool.月結帳
 
         public override void 索引切換_異動儲存()
         {
-            月結帳資料 目前資料_ = (月結帳資料)(this.頁索引元件1.目前資料);
+            月結帳匯入資料 目前資料_ = (月結帳匯入資料)(this.頁索引元件1.目前資料);
 
             目前資料_.商品 = (商品資料)(this.商品選取元件1.SelectedItem);
 
@@ -47,15 +47,15 @@ namespace WokyTool.月結帳
             目前資料_.客戶 = (客戶資料)(this.客戶選取元件1.SelectedItem);
 
             目前資料_.數量 = (int)(this.數量.Value);
-            目前資料_.單價 = this.單價.Value;
-            目前資料_.含稅單價 = this.含稅單價.Value;
+            目前資料_.單價 = (decimal)(this.單價.Value);
         }
 
         public override void 索引切換_更新呈現()
         {
-            月結帳資料 目前資料_ = (月結帳資料)(this.頁索引元件1.目前資料);
+            月結帳匯入資料 目前資料_ = (月結帳匯入資料)(this.頁索引元件1.目前資料);
 
             this.商品選取元件1.SelectedItem = 目前資料_.商品;
+            this.商品識別.Text = 目前資料_.商品識別;
 
             this.公司選取元件1.SelectedItem = 目前資料_.公司;
             this.客戶選取元件1.SelectedItem = 目前資料_.客戶;

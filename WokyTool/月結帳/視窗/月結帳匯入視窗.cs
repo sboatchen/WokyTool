@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WokyTool.Common;
 using WokyTool.公司;
 using WokyTool.客戶;
 using WokyTool.商品;
@@ -22,13 +23,15 @@ namespace WokyTool.月結帳
         private int _月結帳匯入設定資料版本 = -1;
 
         protected BindingSource 月結帳匯入設定資料BindingSource = new BindingSource();
-        protected BindingList<月結帳資料> _BList = null;
+        protected 月結帳匯入管理器 _月結帳匯入管理器 = new 月結帳匯入管理器();
+
+        protected 月結帳匯入詳細視窗 _月結帳匯入詳細視窗 = null;
 
         public 月結帳匯入視窗()
         {
             InitializeComponent();
 
-            this.初始化();
+            this.初始化(月結帳匯入資料BindingSource, _月結帳匯入管理器);
 
             this.設定.ComboBox.DataSource = this.月結帳匯入設定資料BindingSource;
             this.設定.ComboBox.DisplayMember = "名稱";
@@ -44,19 +47,22 @@ namespace WokyTool.月結帳
             if (資料_ == null)
                 return;
 
-            _BList = 資料_.匯入Excel();
-            if (_BList == null)
+            _月結帳匯入管理器.新增(資料_.匯入Excel());
+            if (_月結帳匯入管理器.IsEditing() == false)
                 return;
 
             this.設定.Enabled = false;
-            this.月結帳資料BindingSource.DataSource = _BList;
+
+            this.OnActivated(null);
         }
 
-        //private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)//
-        //{
-        //    int 編號_ = ((月結帳資料)(this.月結帳資料BindingSource.Current)).編號;
-        //    視窗管理器.獨體.顯現(列舉.編碼類型.月結帳, 列舉.視窗類型.詳細, 編號_);
-        //}
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)//
+        {
+            if (_月結帳匯入詳細視窗 == null)
+                _月結帳匯入詳細視窗 = new 月結帳匯入詳細視窗(_月結帳匯入管理器);
+
+            _月結帳匯入詳細視窗.顯現(this.月結帳匯入資料BindingSource.Position);
+        }
 
         /********************************/
 
@@ -85,6 +91,12 @@ namespace WokyTool.月結帳
                 _月結帳匯入設定資料版本 = 月結帳匯入設定資料管理器.獨體.唯讀資料版本;
                 this.月結帳匯入設定資料BindingSource.DataSource = 月結帳匯入設定資料管理器.獨體.唯讀BList;   // 這邊不呈現 無/錯誤 所以不選唯讀BList??
             }
+        }
+
+        protected override void 視窗關閉()
+        {
+            if (_月結帳匯入詳細視窗 != null)
+                _月結帳匯入詳細視窗.關閉();
         }
     }
 }

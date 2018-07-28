@@ -47,20 +47,18 @@ namespace WokyTool.通用
             if (_是否關閉)
                 return;
 
-            視窗去活();
-
             索引切換_異動儲存();
+
+            視窗去活();
         }
 
         protected virtual void 視窗去活()
         {
         }
 
-        private void _視窗關閉(object sender, FormClosingEventArgs e)
+        protected void _視窗關閉(object sender, FormClosingEventArgs e)
         {
             _是否關閉 = true;
-
-            視窗關閉();
 
             索引切換_異動儲存();
 
@@ -70,10 +68,13 @@ namespace WokyTool.通用
                 _資料管理器.UpdateEdit(result == DialogResult.Yes);
             }
 
-            this.Hide();
-            
-            if(e != null)
+            if (!(e is 視窗關閉事件))
+            {
                 e.Cancel = true;
+                this.Hide();
+            }
+
+            視窗關閉();
         }
 
         protected virtual void 視窗關閉()
@@ -114,7 +115,12 @@ namespace WokyTool.通用
 
         public void 隱藏()
         {
-            _視窗關閉(null, null);
+            _視窗關閉(null, new 視窗隱藏事件());
+        }
+
+        public void 關閉()
+        {
+            _視窗關閉(null, new 視窗關閉事件());
         }
 
         public bool 是否顯現()

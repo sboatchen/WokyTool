@@ -12,11 +12,12 @@ namespace WokyTool.通用
         object 物件_可編輯BList { get; }
         object 物件_唯讀BList { get; }
 
-        int 編輯資料版本 { get; }
-        int 唯讀資料版本 { get; }
+        int 編輯資料版本 { get; set; }
+        int 唯讀資料版本 { get; set; }
 
         Boolean IsEditing();
-
         void UpdateEdit(bool IsSave_);
+
+        void 檢查合法();
     }
 }

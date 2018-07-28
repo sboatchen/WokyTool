@@ -9,19 +9,22 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public class 匯入視窗 : Form, 通用視窗介面
+    public class 匯入詳細視窗 : Form, 通用視窗介面, 頁索引上層介面
     {
-        protected bool _是否關閉 = false;
-        protected 資料管理器介面 _資料管理器 = null;
-        protected BindingSource 資料BindingSource = null;
-        protected int _資料版本;
+        protected 頁索引元件 _頁索引元件;
+        protected 資料管理器介面 _資料管理器;
 
-        public void 初始化(BindingSource 資料BindingSource_, 資料管理器介面 資料管理器_)
+        protected bool _是否關閉 = false;
+
+        public void 初始化(頁索引元件 頁索引元件_, 資料管理器介面 資料管理器_)
         {
+            this._頁索引元件 = 頁索引元件_;
             this._資料管理器 = 資料管理器_;
-            this.資料BindingSource = 資料BindingSource_;
+
+            this._頁索引元件.初始化(資料管理器_, this);
 
             this.Activated += new System.EventHandler(this._視窗激活);
+            this.Deactivate += new System.EventHandler(this._視窗去活);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);
         }
 
@@ -31,15 +34,26 @@ namespace WokyTool.通用
                 return;
 
             視窗激活();
-            if (_資料版本 != _資料管理器.編輯資料版本)
-            {
-                _資料版本 = _資料管理器.編輯資料版本;
-                this.資料BindingSource.DataSource = _資料管理器.物件_可編輯BList;
-                this.資料BindingSource.ResetBindings(false);
-            }
+
+            this._頁索引元件.視窗激活();
         }
 
         protected virtual void 視窗激活()
+        {
+        }
+
+        private void _視窗去活(object sender, EventArgs e)
+        {
+            if (_是否關閉)
+                return;
+
+            索引切換_異動儲存();
+            _資料管理器.編輯資料版本++;
+
+            視窗去活();
+        }
+
+        protected virtual void 視窗去活()
         {
         }
 
@@ -47,37 +61,32 @@ namespace WokyTool.通用
         {
             _是否關閉 = true;
 
-            if (_資料管理器.IsEditing() == false)
-                return;
+            索引切換_異動儲存();
+            _資料管理器.編輯資料版本++;
 
-            try
+            if (!(e is 視窗關閉事件))
             {
-                _資料管理器.檢查合法();
-            }
-            catch (Exception ex)
-            {
-                var result = MessageBox.Show(ex.Message, 字串.匯入錯誤, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
-                {
-                    視窗關閉();
-                    return;
-                }
-
-                // 放棄關閉 繼續編輯
                 e.Cancel = true;
-                _是否關閉 = false;
-                return;
+                this.Hide();
             }
-
-            var result2 = MessageBox.Show(字串.匯入內容, 字串.匯入確認, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            _資料管理器.UpdateEdit(result2 == DialogResult.Yes);
 
             視窗關閉();
         }
 
         protected virtual void 視窗關閉()
         {
+ 
+        }
 
+        /********************************/
+        // 頁索引上層介面
+
+        public virtual void 索引切換_異動儲存()
+        { 
+        }
+
+        public virtual void 索引切換_更新呈現()
+        { 
         }
 
         /********************************/
@@ -91,9 +100,10 @@ namespace WokyTool.通用
             this.BringToFront();
         }
 
-        public void 顯現(int Pos_)
+        public void 顯現(int 編號_)
         {
             this._是否關閉 = false;
+            this._頁索引元件.設定位置(編號_);
 
             this.Show();
             this.BringToFront();
@@ -115,4 +125,3 @@ namespace WokyTool.通用
         }
     }
 }
-

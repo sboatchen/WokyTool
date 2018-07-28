@@ -308,6 +308,7 @@
             // 
             // 庫存總成本
             // 
+            this.庫存總成本.DecimalPlaces = 2;
             this.庫存總成本.Location = new System.Drawing.Point(107, 267);
             this.庫存總成本.Maximum = new decimal(new int[] {
             99999999,
@@ -325,6 +326,7 @@
             // 
             // 最後進貨成本
             // 
+            this.最後進貨成本.DecimalPlaces = 2;
             this.最後進貨成本.Location = new System.Drawing.Point(107, 295);
             this.最後進貨成本.Maximum = new decimal(new int[] {
             99999999,
@@ -342,6 +344,7 @@
             // 
             // 成本
             // 
+            this.成本.DecimalPlaces = 2;
             this.成本.Location = new System.Drawing.Point(381, 295);
             this.成本.Maximum = new decimal(new int[] {
             99999999,

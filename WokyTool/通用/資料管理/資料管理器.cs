@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -16,18 +17,18 @@ namespace WokyTool.通用
     {
         // 資料Map
         public Dictionary<int, T> Map { get; /*@@private*/ set; }
-        public bool 資料是否異動 { get; private set; }
+        public bool 資料是否異動 { get; protected set; }
 
         // 資料BindingList
-        public BindingList<T> 可編輯BList { get; private set; }
+        public BindingList<T> 可編輯BList { get; protected set; }
         public object 物件_可編輯BList { get{ return 可編輯BList; } }
 
         // 資料BindingList
-        public BindingList<T> 唯讀BList { get; private set; }
+        public BindingList<T> 唯讀BList { get; protected set; }
         public object 物件_唯讀BList { get { return 唯讀BList; } }
 
-        public int 編輯資料版本 { get; private set; }
-        public int 唯讀資料版本 { get; private set; }
+        public int 編輯資料版本 { get; set; }
+        public int 唯讀資料版本 { get; set; }
 
         public abstract string 檔案路徑 { get; }
         public abstract T 空白資料 { get; }
@@ -67,30 +68,7 @@ namespace WokyTool.通用
         // 建構子
         protected 資料管理器()
         {
-            InitData();
-
-            資料是否異動 = false;
-            編輯資料版本 = 1;
-            唯讀資料版本 = 1;
-
-            資料儲存管理器.獨體.註冊(編碼類型, this);
-        }
-
-        // 初始化資料
-        private void InitData()
-        {
-            if (File.Exists(檔案路徑))
-            {
-                string json = File.ReadAllText(檔案路徑);
-                if (String.IsNullOrEmpty(json))
-                    Map = new Dictionary<int, T>();
-                else
-                    Map = JsonConvert.DeserializeObject<Dictionary<int, T>>(json);
-            }
-            else
-            {
-                Map = new Dictionary<int, T>();
-            }
+            初始化資料();
 
             可編輯BList = new BindingList<T>();
             可編輯BList.RaiseListChangedEvents = false;
@@ -112,6 +90,28 @@ namespace WokyTool.通用
 
             可編輯BList.RaiseListChangedEvents = true;
             唯讀BList.RaiseListChangedEvents = true;
+
+            資料是否異動 = false;
+            編輯資料版本 = 1;
+            唯讀資料版本 = 1;
+
+            資料儲存管理器.獨體.註冊(編碼類型, this);
+        }
+
+        protected void 初始化資料()
+        {
+            if (File.Exists(檔案路徑))
+            {
+                string json = File.ReadAllText(檔案路徑);
+                if (String.IsNullOrEmpty(json))
+                    Map = new Dictionary<int, T>();
+                else
+                    Map = JsonConvert.DeserializeObject<Dictionary<int, T>>(json);
+            }
+            else
+            {
+                Map = new Dictionary<int, T>();
+            }
         }
 
         public void 可編輯BList資料增減(object sender, ListChangedEventArgs e)
@@ -140,6 +140,14 @@ namespace WokyTool.通用
             }
         }
 
+        public void 檢查合法()
+        {
+            foreach (T Item in Map.Values)
+            {
+                Item.檢查合法();
+            }
+        }
+
         // 取得資料
         public T Get(int ID_)
         {
@@ -157,62 +165,6 @@ namespace WokyTool.通用
 
             return 錯誤資料;
         }
-
-        // 新增資料
-        //public void Add(T Item_)
-        //{
-        //    if (Item_.編號 > 常數.空白資料編碼)
-        //        throw new Exception(this.GetType() + ":資料已有編號 " + Item_.ToString());
-
-        //    Item_.編號 = 編碼管理器.Instance.Get(編碼類型);
-        //    Map[Item_.編號] = Item_;
-
-        //    SetDataDirty();
-        //    SetBindingDirty();
-        //}
-
-        // 刪除資料
-        //public void Delete(T Item_)
-        //{
-        //    // 確認物件
-        //    if (Map.ContainsKey(Item_.編號) == false)
-        //    {
-        //        MessageBox.Show(this.GetType() + ":刪除失敗 " + Item_.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return;
-        //    }
-
-        //    //@@ 檢查是否有其他資料綁定
-        //    /*List<訊息資料> RelatedItem_ = 商品管理器.Instance.Map.Select(X => X.Value)
-        //                            .Where(X => (X.需求1 == Item_ || X.需求2 == Item_ || X.需求3 == Item_ || X.需求4 == Item_ || X.需求5 == Item_))
-        //                            .Select(X => new 訊息資料("商品", String.Format("{0}:{1}", X.編號, X.名稱)))
-        //                            .ToList();
-        //    if (RelatedItem_.Count > 0)
-        //    {
-        //        var i = new 訊息列印視窗("物品刪除錯誤", RelatedItem_);
-        //        i.Show();
-        //        i.BringToFront();
-        //        return;
-        //    }*/
-
-        //    // 確認刪除
-        //    Map.Remove(Item_.編號);
-
-        //    SetDataDirty();
-        //    SetBindingDirty();
-        //}
-
-        // 刪除資料
-        //public void Delete(int 編號_)
-        //{
-        //    T Item_;
-        //    if (Map.TryGetValue(編號_, out Item_) == false)
-        //    {
-        //        MessageBox.Show(this.GetType() + ":刪除失敗, 編號 = " + 編號_, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return;
-        //    }
-
-        //    Delete(Item_);
-        //}
 
         public Boolean IsEditing()
         {
@@ -352,6 +304,37 @@ namespace WokyTool.通用
             可編輯BList.RaiseListChangedEvents = true;
             編輯資料版本++;
             是否減少資料 = false;
+        }
+
+        public void 新增(IEnumerable<T> Enumerator_)
+        {
+            可編輯BList.RaiseListChangedEvents = false;
+            唯讀BList.RaiseListChangedEvents = false;
+
+            foreach (T Item_ in Enumerator_)
+            {
+                Item_.FinishEdit();
+
+                if (Item_.編號 == 常數.T新建資料編碼)
+                {
+                    Item_.檢查合法();
+                    Item_.編號 = 編碼管理器.Instance.Get(編碼類型);
+                }
+
+                Map[Item_.編號] = Item_;
+
+                if (篩選介面 == null || 篩選介面.篩選(Item_))
+                    可編輯BList.Add(Item_);
+
+                唯讀BList.Add(Item_);
+            }
+
+            編輯資料版本++;
+            唯讀資料版本++;
+            資料是否異動 = true;
+
+            可編輯BList.RaiseListChangedEvents = true;
+            唯讀BList.RaiseListChangedEvents = true;
         }
 
         public void 資料搬移()  //@@ temp

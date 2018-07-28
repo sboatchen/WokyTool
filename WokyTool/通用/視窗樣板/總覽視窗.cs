@@ -10,7 +10,7 @@ namespace WokyTool.通用
 {
     public class 總覽視窗 : Form, 通用視窗介面
     {
-        protected System.Windows.Forms.BindingSource 資料BindingSource;
+        protected BindingSource 資料BindingSource;
 
         protected int _資料版本;
 
@@ -18,7 +18,7 @@ namespace WokyTool.通用
 
         protected bool _是否關閉 = false;
 
-        public void 初始化(System.Windows.Forms.BindingSource 資料BindingSource_, 資料管理器介面 資料管理器_)
+        public void 初始化(BindingSource 資料BindingSource_, 資料管理器介面 資料管理器_)
         {
             this.資料BindingSource = 資料BindingSource_;
             this._資料管理器 = 資料管理器_;
@@ -50,18 +50,19 @@ namespace WokyTool.通用
         {
             _是否關閉 = true;
 
-            視窗關閉();
-
             if (_資料管理器.IsEditing())
             {
                 var result = MessageBox.Show(字串.儲存確認內容, 字串.儲存確認, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 _資料管理器.UpdateEdit(result == DialogResult.Yes);
             }
 
-            this.Hide();
-
-            if (e != null)
+            if (!(e is 視窗關閉事件))
+            {
                 e.Cancel = true;
+                this.Hide();
+            }
+
+            視窗關閉();
         }
 
         protected virtual void 視窗關閉()
@@ -90,7 +91,12 @@ namespace WokyTool.通用
 
         public void 隱藏()
         {
-            _視窗關閉(null, null);
+            _視窗關閉(null, new 視窗隱藏事件());
+        }
+
+        public void 關閉()
+        {
+            _視窗關閉(null, new 視窗關閉事件());
         }
 
         public bool 是否顯現()
