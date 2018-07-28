@@ -37,13 +37,13 @@ namespace WokyTool.月結帳
         private void 總覽ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //@@ TODO
-            //var ItemGroup_ = 月結帳資料管理器.獨體.可編輯BList
-            //                    .GroupBy(
-            //                        Value => Value.客戶.名稱,
-            //                        Value => new 月結帳總覽匯出轉換(Value));
+            var ItemGroup_ = 月結帳資料管理器.獨體.可編輯BList
+                                .GroupBy(
+                                    Value => Value.客戶.名稱,
+                                    Value => new 月結帳總覽匯出轉換(Value));
 
-            //string Title_ = String.Format("月結帳總覽_{0}", 時間.目前日期);
-            //函式.ExportExcel<月結帳總覽匯出轉換>(Title_, ItemGroup_);
+            string Title_ = String.Format("月結帳總覽_{0}", 時間.目前日期);
+            函式.ExportExcel<月結帳總覽匯出轉換>(Title_, ItemGroup_);
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

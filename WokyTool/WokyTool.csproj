@@ -218,6 +218,7 @@
     <Compile Include="月結帳\資料\月結帳列舉.cs" />
     <Compile Include="月結帳\資料\月結帳匯入資料.cs" />
     <Compile Include="月結帳\資料\月結帳資料.cs" />
+    <Compile Include="月結帳\轉換\月結帳總覽匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳匯入轉換.cs" />
     <Compile Include="物品\控制\物品資料管理器.cs" />
     <Compile Include="物品\控制\物品品牌資料管理器.cs" />
