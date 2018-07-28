@@ -1,6 +1,6 @@
-﻿namespace WokyTool.月結帳
+﻿namespace WokyTool.平台訂單
 {
-    partial class 月結帳匯入設定詳細視窗
+    partial class 平台訂單匯入設定詳細視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -289,7 +289,7 @@
             // 
             // 匯入需求欄位BindingSource
             // 
-            this.匯入需求欄位BindingSource.DataSource = typeof(WokyTool.月結帳.月結帳列舉.匯入需求欄位);
+            this.匯入需求欄位BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單列舉.匯入需求欄位);
             // 
             // label1
             // 
@@ -316,7 +316,7 @@
             this.客戶選取元件1.Size = new System.Drawing.Size(186, 25);
             this.客戶選取元件1.TabIndex = 97;
             // 
-            // 月結帳匯入設定詳細視窗
+            // 平台訂單匯入設定詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -341,8 +341,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.商品識別_Label);
-            this.Name = "月結帳匯入設定詳細視窗";
-            this.Text = "月結帳匯入設定詳細視窗";
+            this.Name = "平台訂單匯入設定詳細視窗";
+            this.Text = "平台訂單匯入設定詳細視窗";
             ((System.ComponentModel.ISupportInitialize)(this.開始位置)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.結束位置)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.標頭位置)).EndInit();

@@ -661,5 +661,10 @@ namespace WokyTool
             i.Show();
             i.BringToFront();
         }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編碼類型.平台訂單設定, 列舉.視窗類型.總覽);
+        }
     }
 }

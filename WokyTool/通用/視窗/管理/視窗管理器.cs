@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.公司;
 using WokyTool.月結帳;
+using WokyTool.平台訂單;
 using WokyTool.物品;
 using WokyTool.客戶;
 using WokyTool.商品;
@@ -61,6 +62,8 @@ namespace WokyTool.通用
             總覽視窗設定Map.Add(列舉.編碼類型.月結帳設定, typeof(月結帳匯入設定總覽視窗));
             總覽視窗設定Map.Add(列舉.編碼類型.月結帳, typeof(月結帳總覽視窗));
 
+            總覽視窗設定Map.Add(列舉.編碼類型.平台訂單設定, typeof(平台訂單匯入設定總覽視窗));
+
             /********************************/
 
             詳細視窗設定Map = new Dictionary<列舉.編碼類型, Type>();
@@ -74,6 +77,8 @@ namespace WokyTool.通用
 
             詳細視窗設定Map.Add(列舉.編碼類型.月結帳設定, typeof(月結帳匯入設定詳細視窗));
             詳細視窗設定Map.Add(列舉.編碼類型.月結帳, typeof(月結帳詳細視窗));
+
+            詳細視窗設定Map.Add(列舉.編碼類型.平台訂單設定, typeof(平台訂單匯入設定詳細視窗));
 
             /********************************/
 

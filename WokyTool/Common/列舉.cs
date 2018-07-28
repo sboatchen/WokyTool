@@ -33,6 +33,8 @@ namespace WokyTool.Common
             月結帳設定,
             月結帳,
 
+            平台訂單設定,
+
 
 
 

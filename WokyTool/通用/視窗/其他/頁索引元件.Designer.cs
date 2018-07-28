@@ -55,10 +55,7 @@
             // 
             // 索引
             // 
-            this.索引.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.索引.AutoSize = true;
+            this.索引.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.索引.Font = new System.Drawing.Font("PMingLiU", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.索引.Location = new System.Drawing.Point(72, 10);
             this.索引.Name = "索引";
@@ -67,17 +64,16 @@
             this.索引.Text = "索引索引索引";
             this.索引.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // PageBar
+            // 頁索引元件
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.索引);
             this.Controls.Add(this.下一頁);
             this.Controls.Add(this.上一頁);
-            this.Name = "PageBar";
+            this.Name = "頁索引元件";
             this.Size = new System.Drawing.Size(234, 34);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

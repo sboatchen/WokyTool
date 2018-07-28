@@ -86,6 +86,7 @@ namespace WokyTool.通用
 
         public 檔案匯入設定資料()
         {
+            標頭位置 = -1;
             資料List = new List<欄位匯入設定資料>();
         }
 
