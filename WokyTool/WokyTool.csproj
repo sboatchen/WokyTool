@@ -177,6 +177,9 @@
       <DependentUpon>客戶選取元件.cs</DependentUpon>
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
+    <Compile Include="平台訂單\資料\平台訂單列舉.cs" />
+    <Compile Include="平台訂單\資料\平台訂單匯入資料.cs" />
+    <Compile Include="平台訂單\資料\平台訂單資料.cs" />
     <Compile Include="月結帳\控制\月結帳匯入管理器.cs" />
     <Compile Include="月結帳\控制\月結帳資料管理器.cs" />
     <Compile Include="月結帳\視窗\月結帳匯入視窗.cs">
@@ -455,7 +458,7 @@
     <Compile Include="通用\動態匯入\檔案匯入設定資料.cs" />
     <Compile Include="通用\動態匯入\動態匯入資料結構.cs" />
     <Compile Include="客戶\資料\客戶資料.cs" />
-    <Compile Include="平台訂單\資料\平台訂單匯入檔案設定.cs" />
+    <Compile Include="平台訂單\資料\平台訂單匯入設定資料.cs" />
     <Compile Include="月結帳\資料\月結帳匯入設定資料.cs" />
     <Compile Include="月結帳\控制\月結帳匯入設定管理器.cs" />
     <Compile Include="通用\動態匯入\欄位匯入設定資料.cs" />
@@ -909,6 +912,7 @@
   <ItemGroup>
     <Folder Include="平台訂單\控制\" />
     <Folder Include="平台訂單\視窗\" />
+    <Folder Include="平台訂單\轉換\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -81,11 +81,11 @@ namespace WokyTool.Data
         }
 
         // 完成配送
-        override public void SetDiliver(string 配送單號_)
+        override public void 完成配送(string 配送單號_)
         {
-            if(IsDilivered())
+            if(是否已配送())
             {
-                MessageBox.Show("出貨匯入結構_通用::SetDiliver fail, already exit, call programmer ", 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("出貨匯入結構_通用::完成配送 fail, already exit, call programmer ", 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

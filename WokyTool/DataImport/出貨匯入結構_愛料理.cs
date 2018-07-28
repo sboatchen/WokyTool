@@ -138,13 +138,13 @@ namespace WokyTool.DataImport
         }
 
         // 準備配送
-        //override public void PrepareDiliver();
+        //override public void 準備配送();
 
         // 完成配送
-        //override public void SetDiliver(string 配送單號_);
+        //override public void 完成配送(string 配送單號_);
 
         // 是否已經配送
-        //override public bool IsDilivered();
+        //override public bool 是否已配送();
     }
 }
 

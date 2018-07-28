@@ -101,7 +101,7 @@ namespace WokyTool.FormOther
                 if (CombineItem_.Add(Item_) == false)
                     return;
             }
-            CombineItem_.PrepareDiliver();
+            CombineItem_.準備配送();
 
             非平台訂單資料管理器.Instance.Add(CombineItem_);
 

@@ -86,14 +86,14 @@ namespace WokyTool.DataExport
             if (Import_.姓名.CompareTo(this.姓名) != 0)
                 return false;
 
-            _資料來源.SetDiliver(Import_.配送單號);
+            _資料來源.完成配送(Import_.配送單號);
             return true;
         }
 
         // 清除配送單號 - 匯入失敗用
         public void CleanDeliveryNO()
         {
-            _資料來源.SetDiliver(null);
+            _資料來源.完成配送(null);
         }
 
         // 設定title，回傳下筆資料的輸入行位置

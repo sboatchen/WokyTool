@@ -58,7 +58,7 @@ namespace WokyTool.Data
             {
                 _配送單號 = value;
                 foreach (var Item in Child)
-                    Item.SetDiliver(value);
+                    Item.完成配送(value);
             }
         }
 
@@ -95,7 +95,7 @@ namespace WokyTool.Data
         }
 
         // 準備配送
-        public void PrepareDiliver()
+        public void 準備配送()
         {
             {
                 StringBuilder sb = new StringBuilder(姓名);
@@ -165,11 +165,11 @@ namespace WokyTool.Data
         }
 
         // 完成配送
-        public void SetDiliver(string 配送單號_)
+        public void 完成配送(string 配送單號_)
         {
-            if (IsDilivered())
+            if (是否已配送())
             {
-                MessageBox.Show("合併可配送::SetDiliver fail, already exit, call programmer ", 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("合併可配送::完成配送 fail, already exit, call programmer ", 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -177,14 +177,14 @@ namespace WokyTool.Data
         }
 
         // 是否已經配送
-        public bool IsDilivered()
+        public bool 是否已配送()
         {
             return 配送單號 != null && 配送單號.Length != 0;
         }
 
         public bool Add(物品訂單資料 Child_)
         {
-            if (true == Child_.IsDilivered())
+            if (true == Child_.是否已配送())
             {
                 MessageBox.Show("合併可配送::Add fail, 已配送 " + Child_.姓名, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;

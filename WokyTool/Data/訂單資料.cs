@@ -144,7 +144,7 @@ namespace WokyTool.Data
         }
 
         // 是否已經配送
-        virtual public bool IsDilivered()
+        virtual public bool 是否已配送()
         {
             return IsIgnore() || (配送單號 != null && 配送單號.Length != 0);
         }
@@ -166,7 +166,7 @@ namespace WokyTool.Data
         abstract public void Init();
         
         // 準備配送
-        virtual public void PrepareDiliver()
+        virtual public void 準備配送()
         {
             if (IsIgnore())
                 return;
@@ -196,7 +196,7 @@ namespace WokyTool.Data
         }
 
         // 完成配送
-        abstract public void SetDiliver(string 配送單號_);
+        abstract public void 完成配送(string 配送單號_);
 
         // 取出內容物
         abstract public void AppendItemDetail(Dictionary<String, int> 物品列表_);

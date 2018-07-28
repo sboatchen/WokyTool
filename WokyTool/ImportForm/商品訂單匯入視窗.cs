@@ -154,7 +154,7 @@ namespace WokyTool.ImportForm
             // 如果已經配送，檢查是否已全部配送完成
             if (_處理進度 == 列舉.訂單處理進度類型.要求配送)
             {
-                if(_Source.Where(Value => Value.IsDilivered()).Count() == _Source.Count)
+                if(_Source.Where(Value => Value.是否已配送()).Count() == _Source.Count)
                     UpdateState(列舉.訂單處理進度類型.配送完成);
             }
         }
@@ -214,7 +214,7 @@ namespace WokyTool.ImportForm
                     {
                         foreach (var Item_ in _DeilverSource)
                         {
-                            Item_.PrepareDiliver();
+                            Item_.準備配送();
                         }
                         momo第三方配送();
                         break;
@@ -223,7 +223,7 @@ namespace WokyTool.ImportForm
                     {
                         foreach (var Item_ in _DeilverSource)
                         {
-                            Item_.PrepareDiliver();
+                            Item_.準備配送();
                             配送管理器.Instance.Add(Item_);
                         }
 
@@ -832,7 +832,7 @@ namespace WokyTool.ImportForm
                 //@@Item_.電話 = 電話_;
                 //@@Item_.手機 = 手機_;
                 //@@Item_.地址 = 地址_;
-                Item_.SetDiliver(宅配單號_);
+                Item_.完成配送(宅配單號_);
 
                 // 拷貝舊資料
                 var importedPage = Output_.GetImportedPage(File_, PageIndex_);
@@ -870,7 +870,7 @@ namespace WokyTool.ImportForm
             int Number = 1;
             foreach(var Item_ in _DeilverSource)
             {
-                Item_.SetDiliver(String.Format("測試配送單號{0:00}", Number));
+                Item_.完成配送(String.Format("測試配送單號{0:00}", Number));
                 Number++;
             }
         }

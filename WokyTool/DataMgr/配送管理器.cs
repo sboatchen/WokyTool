@@ -38,7 +38,7 @@ namespace WokyTool.DataMgr
         // 移除已配送完成的資料
         public void RemoveDeliverd()
         {
-            List = List.Where(Value => Value.IsDilivered() == false).ToList();
+            List = List.Where(Value => Value.是否已配送() == false).ToList();
         }
 
     }

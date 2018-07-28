@@ -216,7 +216,7 @@ namespace WokyTool.OtherForm
             int i = 1;
             foreach(var Item_ in _Source)
             {
-                Item_.SetDiliver(String.Format("宅配回單測試{0}", i++));
+                Item_.完成配送(String.Format("宅配回單測試{0}", i++));
             }
         }
 
