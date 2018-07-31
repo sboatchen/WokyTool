@@ -60,7 +60,7 @@
             // 
             // 利潤
             // 
-            this.利潤.DecimalPlaces = 2;
+            this.利潤.DecimalPlaces = 3;
             this.利潤.Location = new System.Drawing.Point(297, 151);
             this.利潤.Maximum = new decimal(new int[] {
             99999999,
@@ -79,7 +79,7 @@
             // 
             // 成本
             // 
-            this.成本.DecimalPlaces = 2;
+            this.成本.DecimalPlaces = 3;
             this.成本.Location = new System.Drawing.Point(64, 150);
             this.成本.Maximum = new decimal(new int[] {
             99999999,
@@ -107,7 +107,7 @@
             // 
             // 含稅單價
             // 
-            this.含稅單價.DecimalPlaces = 2;
+            this.含稅單價.DecimalPlaces = 3;
             this.含稅單價.Location = new System.Drawing.Point(297, 122);
             this.含稅單價.Maximum = new decimal(new int[] {
             99999999,
@@ -125,7 +125,7 @@
             // 
             // 單價
             // 
-            this.單價.DecimalPlaces = 2;
+            this.單價.DecimalPlaces = 3;
             this.單價.Location = new System.Drawing.Point(64, 122);
             this.單價.Maximum = new decimal(new int[] {
             99999999,
@@ -263,7 +263,7 @@
             // 
             // 總利潤
             // 
-            this.總利潤.DecimalPlaces = 2;
+            this.總利潤.DecimalPlaces = 3;
             this.總利潤.Location = new System.Drawing.Point(297, 210);
             this.總利潤.Maximum = new decimal(new int[] {
             99999999,
@@ -282,7 +282,7 @@
             // 
             // 總金額
             // 
-            this.總金額.DecimalPlaces = 2;
+            this.總金額.DecimalPlaces = 3;
             this.總金額.Location = new System.Drawing.Point(64, 210);
             this.總金額.Maximum = new decimal(new int[] {
             99999999,

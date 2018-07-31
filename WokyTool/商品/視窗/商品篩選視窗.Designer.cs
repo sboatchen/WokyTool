@@ -223,6 +223,7 @@
             // 
             // 售價
             // 
+            this.售價.DecimalPlaces = 3;
             this.售價.Location = new System.Drawing.Point(571, 158);
             this.售價.Maximum = new decimal(new int[] {
             99999999,
@@ -262,6 +263,7 @@
             // 
             // 成本
             // 
+            this.成本.DecimalPlaces = 3;
             this.成本.Location = new System.Drawing.Point(64, 158);
             this.成本.Maximum = new decimal(new int[] {
             99999999,
@@ -289,6 +291,7 @@
             // 
             // 利潤
             // 
+            this.利潤.DecimalPlaces = 3;
             this.利潤.Location = new System.Drawing.Point(64, 189);
             this.利潤.Maximum = new decimal(new int[] {
             99999999,
