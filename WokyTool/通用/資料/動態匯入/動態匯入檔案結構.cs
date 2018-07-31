@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using WokyTool.Common;
 using Excel = Microsoft.Office.Interop.Excel;
 
@@ -34,6 +35,9 @@ namespace WokyTool.通用
             int rw = 0;
             int cl = 0;
 
+            int cCnt = 0;
+            int rCnt = 0;
+
             xlApp = new Excel.Application();
             xlWorkBook = xlApp.Workbooks.Open(FileName_, 0, true, 5, "", "", true, Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
             xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
@@ -47,52 +51,61 @@ namespace WokyTool.通用
             int EndRow_ = rw - 設定.結束位置;
 
             // 初始化資料物件
-            for (int rCnt = StartRow_; rCnt <= EndRow_; rCnt++)
+            for (rCnt = StartRow_; rCnt <= EndRow_; rCnt++)
             {
                 內容.Add(new 動態匯入資料結構(this));
             }
 
             // 讀取內容
-            for (int cCnt = 1; cCnt <= cl; cCnt++)
+            dynamic dValue_ = null;
+            try
             {
-                欄位匯入設定資料 欄位設定_ = 設定.取得欄位匯入設定資料(cCnt);
-                if (欄位匯入設定資料.ERROR == 欄位設定_)
-                    continue;
-
-                //if(設定.標頭位置 != 0)
-                //{
-                //    var cell = range.Cells[設定.標頭位置, cCnt] as Excel.Range;
-                //    String 名稱_ = cell.Value2;
-                //    欄位匯入設定資料 標頭設定_ = new 欄位匯入設定資料
-                //    {
-                //        列索引 = cCnt,
-                //        名稱 = 名稱_,
-                //    };
-                //    標頭映射對應表.Add(名稱_, 標頭設定_);
-                //}
-
-                object 上層資料_ = null;
-                for (int rCnt = StartRow_, 資料列_ = 0; rCnt <= EndRow_; rCnt++, 資料列_++)
+                for (cCnt = 1; cCnt <= cl; cCnt++)
                 {
-                    var cell = range.Cells[rCnt, cCnt] as Excel.Range;
+                    欄位匯入設定資料 欄位設定_ = 設定.取得欄位匯入設定資料(cCnt);
+                    if (欄位匯入設定資料.ERROR == 欄位設定_)
+                        continue;
 
-                    object value = 轉型資料(cell.Value2, 欄位設定_.格式);
+                    //if(設定.標頭位置 != 0)
+                    //{
+                    //    var cell = range.Cells[設定.標頭位置, cCnt] as Excel.Range;
+                    //    String 名稱_ = cell.Value2;
+                    //    欄位匯入設定資料 標頭設定_ = new 欄位匯入設定資料
+                    //    {
+                    //        列索引 = cCnt,
+                    //        名稱 = 名稱_,
+                    //    };
+                    //    標頭映射對應表.Add(名稱_, 標頭設定_);
+                    //}
 
-                    if (value != null)
+                    object 上層資料_ = null;
+                    int 資料列_ = 0;
+                    for (rCnt = StartRow_; rCnt <= EndRow_; rCnt++, 資料列_++)
                     {
-                        內容[資料列_].資料.Add(欄位設定_.名稱, value);
-                        上層資料_ = value;
-                    }
-                    else if (欄位設定_.可合併儲存格 == true && cell.MergeArea != null && 上層資料_ != null)
-                    {
-                        內容[資料列_].資料.Add(欄位設定_.名稱, 上層資料_);
-                    }
-                    else
-                    {
-                        上層資料_ = null;
-                        內容[資料列_].資料.Add(欄位設定_.名稱, null);
+                        var cell = range.Cells[rCnt, cCnt] as Excel.Range;
+                        dValue_ = cell.Value2;
+                        object value = 轉型資料(dValue_, 欄位設定_.格式);
+
+                        if (value != null)
+                        {
+                            內容[資料列_].資料.Add(欄位設定_.名稱, value);
+                            上層資料_ = value;
+                        }
+                        else if (欄位設定_.可合併儲存格 == true && cell.MergeArea != null && 上層資料_ != null)
+                        {
+                            內容[資料列_].資料.Add(欄位設定_.名稱, 上層資料_);
+                        }
+                        else
+                        {
+                            上層資料_ = null;
+                            內容[資料列_].資料.Add(欄位設定_.名稱, null);
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("失敗位置:" + rCnt + "," + cCnt + " " + dValue_, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             xlWorkBook.Close(false, null, null);

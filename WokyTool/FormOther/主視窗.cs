@@ -31,6 +31,7 @@ using WokyTool.客戶;
 using WokyTool.物品;
 using WokyTool.公司;
 using WokyTool.商品;
+using WokyTool.平台訂單;
 
 namespace WokyTool
 {
@@ -665,6 +666,13 @@ namespace WokyTool
         private void button5_Click_1(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編碼類型.平台訂單設定, 列舉.視窗類型.總覽);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            var i = new 平台訂單匯入視窗();
+            i.Show();
+            i.BringToFront();
         }
     }
 }

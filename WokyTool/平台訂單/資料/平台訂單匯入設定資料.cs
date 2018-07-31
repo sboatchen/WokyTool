@@ -205,7 +205,8 @@ namespace WokyTool.平台訂單
 
         public override void 檢查合法()
         {
-            base.檢查合法();
+            //@@@@@@@@@@@@@@@@@@@
+            /*base.檢查合法();
 
             if (公司.編號是否合法() == false)
                 throw new Exception("平台訂單匯入設定資料:公司不合法:" + 公司編號);
@@ -240,13 +241,13 @@ namespace WokyTool.平台訂單
             }
 
             if (名稱映射對應表.ContainsKey(平台訂單列舉.匯入需求欄位.數量.ToString()) == false)
-                throw new Exception("平台訂單匯入設定資料:未設定數量欄位");
+                throw new Exception("平台訂單匯入設定資料:未設定數量欄位");*/
         }
 
-        public IEnumerable<平台訂單匯入資料> 匯入Excel()
+        public IEnumerable<平台訂單匯入資料_PayEasy> 匯入Excel()
         {
-            return null;
-            //return 匯入Excel<平台訂單匯入資料>(new 平台訂單匯入轉換());
+            //@@
+            return 匯入Excel<平台訂單匯入資料_PayEasy>(new 平台訂單匯入轉換_PayEasy());
         }
     }
 }

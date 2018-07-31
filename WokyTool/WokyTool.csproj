@@ -178,6 +178,7 @@
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
     <Compile Include="平台訂單\控制\平台訂單匯入設定管理器.cs" />
+    <Compile Include="平台訂單\控制\平台訂單匯入管理器.cs" />
     <Compile Include="平台訂單\視窗\平台訂單匯入設定總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,9 +191,17 @@
     <Compile Include="平台訂單\視窗\平台訂單匯入設定詳細視窗.Designer.cs">
       <DependentUpon>平台訂單匯入設定詳細視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="平台訂單\視窗\平台訂單匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="平台訂單\視窗\平台訂單匯入視窗.Designer.cs">
+      <DependentUpon>平台訂單匯入視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="平台訂單\資料\客制\平台訂單匯入資料_PayEasy.cs" />
     <Compile Include="平台訂單\資料\平台訂單列舉.cs" />
     <Compile Include="平台訂單\資料\平台訂單匯入資料.cs" />
     <Compile Include="平台訂單\資料\平台訂單資料.cs" />
+    <Compile Include="平台訂單\轉換\客制\平台訂單匯入轉換_PayEasy.cs" />
     <Compile Include="月結帳\控制\月結帳匯入管理器.cs" />
     <Compile Include="月結帳\控制\月結帳資料管理器.cs" />
     <Compile Include="月結帳\視窗\月結帳匯入視窗.cs">
@@ -322,6 +331,8 @@
     <Compile Include="聯絡人\視窗\元件\聯絡人選取元件.Designer.cs">
       <DependentUpon>聯絡人選取元件.cs</DependentUpon>
     </Compile>
+    <Compile Include="通用\其他\可下訂介面.cs" />
+    <Compile Include="通用\其他\可配送介面.cs" />
     <Compile Include="通用\其他\時間.cs" />
     <Compile Include="通用\其他\檔案.cs" />
     <Compile Include="通用\資料\動態匯入\檔案匯入設定資料介面.cs" />
@@ -726,6 +737,9 @@
     <EmbeddedResource Include="平台訂單\視窗\平台訂單匯入設定詳細視窗.resx">
       <DependentUpon>平台訂單匯入設定詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="平台訂單\視窗\平台訂單匯入視窗.resx">
+      <DependentUpon>平台訂單匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="廢棄\物品更新匯入視窗.resx">
       <DependentUpon>物品更新匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -905,6 +919,7 @@
     <None Include="Properties\DataSources\WokyTool.客戶.子客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.平台訂單.平台訂單匯入設定資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.平台訂單.平台訂單匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳列舉+匯入需求欄位.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳匯入設定資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳匯入資料.datasource" />
@@ -929,9 +944,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="平台訂單\轉換\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
