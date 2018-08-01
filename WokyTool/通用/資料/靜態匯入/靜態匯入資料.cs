@@ -37,7 +37,7 @@ namespace WokyTool.通用
                 }
 
                 // 備份
-                檔案.匯入備份(openFileDialog1.FileName, typeof(T).Name);
+                檔案.備份匯入檔案(openFileDialog1.FileName, typeof(T).Name);
 
                 return BList_;
             }

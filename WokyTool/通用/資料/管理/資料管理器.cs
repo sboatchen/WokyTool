@@ -98,7 +98,7 @@ namespace WokyTool.通用
             資料儲存管理器.獨體.註冊(編碼類型, this);
         }
 
-        protected void 初始化資料()
+        protected virtual void 初始化資料()
         {
             if (File.Exists(檔案路徑))
             {
@@ -128,12 +128,12 @@ namespace WokyTool.通用
         }
 
         // 儲存檔案
-        public void 儲存()
+        public virtual void 儲存()
         {
             if (資料是否異動)
             {
                 // 備份舊資料
-                檔案.設定備份(檔案路徑, true);
+                檔案.備份資料檔案(檔案路徑, true);
 
                 // 更新資料
                 File.WriteAllText(檔案路徑, JsonConvert.SerializeObject(Map, Formatting.Indented));

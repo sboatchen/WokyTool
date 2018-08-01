@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +10,7 @@ namespace WokyTool.通用
 {
     public class 檔案
     {
-        public static void 設定備份(string 原始檔案路徑_, bool 是否忽略缺少原始檔案_)
+        public static void 備份資料檔案(string 原始檔案路徑_, bool 是否忽略缺少原始檔案_)
         {
             if (File.Exists(原始檔案路徑_) == false)
             {
@@ -42,12 +43,12 @@ namespace WokyTool.通用
             File.Copy(原始檔案路徑_, 備份檔案路徑_);
         }
 
-        public static void 設定備份(string 原始檔案路徑_)
+        public static void 備份資料檔案(string 原始檔案路徑_)
         {
-            設定備份(原始檔案路徑_, false);
+            備份資料檔案(原始檔案路徑_, false);
         }
 
-        public static void 匯入備份(string 原始檔案路徑_, string 備份資料夾名_, string 備份檔名_)
+        public static void 備份匯入檔案(string 原始檔案路徑_, string 備份資料夾名_, string 備份檔名_)
         {
             if (File.Exists(原始檔案路徑_) == false)
                 throw new Exception("備份失敗,找不到原始檔案:" + 原始檔案路徑_);
@@ -75,11 +76,52 @@ namespace WokyTool.通用
             File.Copy(原始檔案路徑_, 備份檔案路徑_);
         }
 
-        public static void 匯入備份(string 原始檔案路徑_, string 備份檔名_)
+        public static void 備份匯入檔案(string 原始檔案路徑_, string 備份檔名_)
         {
             string 備份資料夾名_ = Path.GetFileNameWithoutExtension(備份檔名_);
 
-            匯入備份(原始檔案路徑_, 備份資料夾名_, 備份檔名_);
+            備份匯入檔案(原始檔案路徑_, 備份資料夾名_, 備份檔名_);
+        }
+
+        public static void 寫入加密檔案(string 目標檔案路徑_, string 資料_)
+        {
+            string password = @"ApTx4869";
+            UnicodeEncoding UE = new UnicodeEncoding();
+            byte[] key = UE.GetBytes(password);
+
+            using (FileStream fsCrypt = new FileStream(目標檔案路徑_, FileMode.OpenOrCreate, FileAccess.Write))
+            {
+                RijndaelManaged RMCrypto = new RijndaelManaged();
+
+                using (CryptoStream cs = new CryptoStream(fsCrypt, RMCrypto.CreateEncryptor(key, key), CryptoStreamMode.Write))
+                {
+
+                    // convert string to stream
+                    byte[] byteArray = Encoding.UTF8.GetBytes(資料_);
+
+                    cs.Write(byteArray, 0, byteArray.Length);
+                }
+            }
+        }
+
+        public static string 讀出加密檔案(string 目標檔案路徑_)
+        {
+            string password = @"ApTx4869";
+            UnicodeEncoding UE = new UnicodeEncoding();
+            byte[] key = UE.GetBytes(password);
+
+            using (FileStream fsCrypt = new FileStream(目標檔案路徑_, FileMode.Open, FileAccess.Read))
+            {
+                RijndaelManaged RMCrypto = new RijndaelManaged();
+
+                using( CryptoStream cs = new CryptoStream(fsCrypt, RMCrypto.CreateDecryptor(key, key), CryptoStreamMode.Read))
+                {
+                    using (StreamReader sr = new StreamReader(cs))
+                    {
+                        return sr.ReadToEnd();
+                    }
+                }
+            }
         }
     }
 }
