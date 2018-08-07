@@ -105,15 +105,21 @@ namespace WokyTool.通用
             }
             catch (Exception ex)
             {
-                MessageBox.Show("失敗位置:" + rCnt + "," + cCnt + " " + dValue_, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                訊息管理器.獨體.Error("失敗位置:" + rCnt + "," + cCnt + " " + dValue_);
+                throw ex;
             }
+            finally
+            {
+                if (xlWorkBook != null)
+                    xlWorkBook.Close(false, null, null);
 
-            xlWorkBook.Close(false, null, null);
-            xlApp.Quit();
+                if (xlApp != null)
+                    xlApp.Quit();
 
-            Marshal.ReleaseComObject(xlWorkSheet);
-            Marshal.ReleaseComObject(xlWorkBook);
-            Marshal.ReleaseComObject(xlApp);
+                Marshal.ReleaseComObject(xlWorkSheet);
+                Marshal.ReleaseComObject(xlWorkBook);
+                Marshal.ReleaseComObject(xlApp);
+            }
         }
 
         private object 轉型資料(object dynamic, 列舉.資料格式類型 資料格式類型)

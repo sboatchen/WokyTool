@@ -65,7 +65,7 @@ namespace WokyTool.商品
         public 商品資料 Get(int 客戶編號, string 品號)
         {
             if (String.IsNullOrEmpty(品號))
-                return 商品資料.NULL;
+                return 空白資料;
 
             商品資料 Item_ = Map.Values
                                    .Where(Value => Value.客戶編號 == 客戶編號)
@@ -73,7 +73,7 @@ namespace WokyTool.商品
                                    .FirstOrDefault();
 
             if (Item_ == null)
-                return 商品資料.ERROR;
+                return 錯誤資料;
             else
                 return Item_;
         }
@@ -82,7 +82,7 @@ namespace WokyTool.商品
         public 商品資料 GetByName(int 客戶編號, string 商品名稱)
         {
             if (String.IsNullOrEmpty(商品名稱))
-                return 商品資料.NULL;
+                return 空白資料;
 
             商品資料 Item_ = Map.Values
                                    .Where(Value => Value.客戶編號 == 客戶編號)
@@ -90,7 +90,7 @@ namespace WokyTool.商品
                                    .FirstOrDefault();
 
             if (Item_ == null)
-                return 商品資料.ERROR;
+                return 錯誤資料;
             else
                 return Item_;
         }

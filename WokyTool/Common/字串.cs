@@ -15,6 +15,7 @@ namespace WokyTool.Common
         public static string 正確 = "(OK)";
         public static string 自動填寫 = "自動填寫";
         public static string 確認 = "確認";
+        public static string 保密字串 = "*******";
 
         public static string 雜支 = "雜支";
         public static string 進貨 = "進貨";
@@ -49,5 +50,10 @@ namespace WokyTool.Common
         public static string 資料異動內容 = "資料已修改，請重新開啟視窗檢視新資料，當前修改將不予處理";
 
         public static string 指定詳細視窗索引失敗 = "找不到目標資料，請確認目前沒有進行篩選";
+
+        public static string 密碼不可無空白 = "密碼不可無空白";
+        public static string 密碼輸入不一致 = "密碼輸入不一致";
+
+        public static string 功能尚未實作 = "功能尚未實作";
     }
 }

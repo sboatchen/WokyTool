@@ -1,4 +1,5 @@
 ﻿using LinqToExcel;
+using LinqToExcel.Query;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,10 +25,12 @@ namespace WokyTool.通用
             if (openFileDialog1.ShowDialog() != System.Windows.Forms.DialogResult.OK)
                 return null;
 
+            ExcelQueryFactory Excel_ = null;
+
             try
             {
-                var Excel_ = new ExcelQueryFactory(openFileDialog1.FileName);
-                var Source_ = Excel_.Worksheet<T>();
+                Excel_ = new ExcelQueryFactory(openFileDialog1.FileName);
+                ExcelQueryable<T> Source_ = Excel_.Worksheet<T>();
                 BindingList<T> BList_ = new BindingList<T>();
 
                 foreach (var Item_ in Source_)
@@ -41,11 +44,15 @@ namespace WokyTool.通用
 
                 return BList_;
             }
-            catch (Exception Error_)
+            catch (Exception ex)
             {
-                MessageBox.Show("開啟檔案失敗" + Error_.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                訊息管理器.獨體.Error("開啟檔案失敗", ex);
                 return null;
+            }
+            finally
+            {
+                if (Excel_ != null)
+                    Excel_.Dispose();
             }
         }
     }

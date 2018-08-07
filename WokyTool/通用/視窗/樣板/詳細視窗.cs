@@ -64,8 +64,8 @@ namespace WokyTool.通用
 
             if (_資料管理器.是否正在編輯())
             {
-                var result = MessageBox.Show(字串.儲存確認內容, 字串.儲存確認, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                _資料管理器.完成編輯(result == DialogResult.Yes);
+                bool Result_ = 訊息管理器.獨體.Check(字串.儲存確認, 字串.儲存確認內容);
+                _資料管理器.完成編輯(Result_);
             }
 
             if (!(e is 視窗關閉事件))

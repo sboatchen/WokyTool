@@ -84,7 +84,7 @@ namespace WokyTool.通用
             }
 
             if (是否找到_ == false)
-                MessageBox.Show(字串.指定詳細視窗索引失敗, 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                訊息管理器.獨體.Notify(字串.指定詳細視窗索引失敗);
 
             目前資料 = null;
             if(this.Visible)
@@ -97,7 +97,7 @@ namespace WokyTool.通用
 
             if (位置_ > this.資料BindingSource.Count || 位置_ < 0)
             {
-                MessageBox.Show(字串.指定詳細視窗索引失敗, 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                訊息管理器.獨體.Notify(字串.指定詳細視窗索引失敗);
             }
             else
             {

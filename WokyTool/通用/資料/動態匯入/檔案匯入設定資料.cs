@@ -204,7 +204,7 @@ namespace WokyTool.通用
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                訊息管理器.獨體.Notify(ex);
                 return null;
             }
         }

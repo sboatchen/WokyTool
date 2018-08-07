@@ -56,21 +56,22 @@ namespace WokyTool.通用
             }
             catch (Exception ex)
             {
-                var result = MessageBox.Show(ex.Message, 字串.匯入錯誤, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                if (訊息管理器.獨體.Check(字串.匯入錯誤, ex) == true)
                 {
                     視窗關閉();
-                    return;
+                }
+                // 放棄關閉 繼續編輯
+                else 
+                {
+                    e.Cancel = true;
+                    _是否關閉 = false;
                 }
 
-                // 放棄關閉 繼續編輯
-                e.Cancel = true;
-                _是否關閉 = false;
                 return;
             }
 
-            var result2 = MessageBox.Show(字串.匯入內容, 字串.匯入確認, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            _資料管理器.完成編輯(result2 == DialogResult.Yes);
+            bool Result_ = 訊息管理器.獨體.Check(字串.匯入確認, 字串.匯入內容);
+            _資料管理器.完成編輯(Result_);
 
             視窗關閉();
         }

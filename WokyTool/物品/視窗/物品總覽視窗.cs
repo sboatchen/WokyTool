@@ -77,13 +77,13 @@ namespace WokyTool.物品
         private void 自訂ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //@@ TODO
-            MessageBox.Show("功能尚未實作", 字串.確認, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            訊息管理器.獨體.Notify(字串.功能尚未實作);
         }
 
         private void 物品ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //@@ TODO
-            MessageBox.Show("功能尚未實作", 字串.確認, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            訊息管理器.獨體.Notify(字串.功能尚未實作);
         }
 
         private void 條碼ToolStripMenuItem_Click(object sender, EventArgs e)

@@ -65,7 +65,7 @@ namespace WokyTool.物品
         public 物品資料 Get(string Name)
         {
             if (String.IsNullOrEmpty(Name))
-                return 物品資料.NULL;
+                return 空白資料;
 
             物品資料 Item_ = Map.Values
                                    .Where(Value => Name.Equals(Value.名稱))
@@ -81,7 +81,7 @@ namespace WokyTool.物品
         public 物品資料 GetBySName(string Name)
         {
             if (String.IsNullOrEmpty(Name))
-                return 物品資料.NULL;
+                return 空白資料;
 
             物品資料 Item_ = Map.Values
                                 .Where(Value => Name.Equals(Value.縮寫))
@@ -97,7 +97,7 @@ namespace WokyTool.物品
         public 物品資料 GetByCode(string Code)
         {
             if (String.IsNullOrEmpty(Code))
-                return 物品資料.NULL;
+                return 空白資料;
 
             物品資料 Item_ = Map.Values
                                 .Where(Value => Code.Equals(Value.條碼))

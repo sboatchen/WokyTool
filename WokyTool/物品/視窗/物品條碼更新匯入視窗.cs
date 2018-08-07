@@ -66,9 +66,7 @@ namespace WokyTool.物品
             }
             catch (Exception Error_)
             {
-                var result = MessageBox.Show(Error_.ToString(), 字串.匯入錯誤, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.No)
+                if (訊息管理器.獨體.Check(字串.匯入錯誤, Error_) == false)
                 {
                     e.Cancel = true;
                 }
@@ -76,8 +74,7 @@ namespace WokyTool.物品
                 return;
             }
 
-            var Result_ = MessageBox.Show(字串.匯入內容, 字串.匯入確認, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (Result_ == DialogResult.No)
+            if (訊息管理器.獨體.Check(字串.匯入確認, 字串.匯入內容) == false)
                 return;
 
             foreach (var Data in _BList)
