@@ -27,8 +27,11 @@ namespace WokyTool.通用
         public BindingList<T> 唯讀BList { get; protected set; }
         public object 物件_唯讀BList { get { return 唯讀BList; } }
 
-        public int 編輯資料版本 { get; set; }
-        public int 唯讀資料版本 { get; set; }
+        public int 編輯資料版本 { get; protected set; }
+        public int 唯讀資料版本 { get; protected set; }
+
+        public virtual bool 資料是否加密 { get { return false; } }
+        public virtual bool 資料是否備份 { get { return true; } }
 
         public abstract string 檔案路徑 { get; }
         public abstract T 空白資料 { get; }
@@ -98,11 +101,11 @@ namespace WokyTool.通用
             資料儲存管理器.獨體.註冊(編碼類型, this);
         }
 
-        protected virtual void 初始化資料()
+        protected void 初始化資料()
         {
             if (File.Exists(檔案路徑))
             {
-                string json = File.ReadAllText(檔案路徑);
+                string json = 檔案.讀出檔案(檔案路徑, 資料是否加密);
                 if (String.IsNullOrEmpty(json))
                     Map = new Dictionary<int, T>();
                 else
@@ -128,15 +131,16 @@ namespace WokyTool.通用
         }
 
         // 儲存檔案
-        public virtual void 儲存()
+        public void 儲存()
         {
             if (資料是否異動)
             {
                 // 備份舊資料
-                檔案.備份資料檔案(檔案路徑, true);
+                if (資料是否備份)
+                    檔案.備份資料檔案(檔案路徑, true);
 
                 // 更新資料
-                File.WriteAllText(檔案路徑, JsonConvert.SerializeObject(Map, Formatting.Indented));
+                檔案.寫入檔案(檔案路徑, JsonConvert.SerializeObject(Map, Formatting.Indented), 資料是否加密);
             }
         }
 
@@ -164,6 +168,11 @@ namespace WokyTool.通用
             }
 
             return 錯誤資料;
+        }
+
+        public void 資料編輯中()
+        {
+            編輯資料版本++;
         }
 
         public Boolean 是否正在編輯()

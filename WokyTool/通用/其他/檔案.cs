@@ -104,6 +104,14 @@ namespace WokyTool.通用
             }
         }
 
+        public static void 寫入檔案(string 目標檔案路徑_, string 資料_, bool 是否加密)
+        {
+            if (是否加密)
+                寫入加密檔案(目標檔案路徑_, 資料_);
+            else
+                File.WriteAllText(目標檔案路徑_, 資料_);
+        }
+
         public static string 讀出加密檔案(string 目標檔案路徑_)
         {
             string password = @"ApTx4869";
@@ -122,6 +130,14 @@ namespace WokyTool.通用
                     }
                 }
             }
+        }
+
+        public static string 讀出檔案(string 目標檔案路徑_, bool 是否加密)
+        {
+            if (是否加密)
+                return 讀出加密檔案(目標檔案路徑_);
+            else
+                return File.ReadAllText(目標檔案路徑_);
         }
     }
 }

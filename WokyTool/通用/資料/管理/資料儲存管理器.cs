@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using WokyTool.Common;
 
 namespace WokyTool.通用
@@ -24,6 +25,13 @@ namespace WokyTool.通用
         private 資料儲存管理器()
         {
             資料管理器Map = new Dictionary<列舉.編碼類型, 可儲存介面>();
+
+            Application.ApplicationExit += new EventHandler(this.程式關閉);
+        }
+
+        private void 程式關閉(object sender, EventArgs e)
+        {
+            儲存();
         }
 
         public void 註冊(列舉.編碼類型 類型_, 可儲存介面 資料_)

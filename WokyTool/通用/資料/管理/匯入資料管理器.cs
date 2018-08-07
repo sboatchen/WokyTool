@@ -19,19 +19,21 @@ namespace WokyTool.通用
         public BindingList<T> 可編輯BList { get; set; }
         public object 物件_可編輯BList { get{ return 可編輯BList; } }
 
-        public object 物件_唯讀BList { get { throw new Exception("目前不支援 物件_唯讀BList"); } }
+        public object 物件_唯讀BList 
+        {
+            get 
+            {
+                throw new Exception("目前不支援 物件_唯讀BList"); 
+            } 
+        }
 
-        public int 編輯資料版本 { get; set; }
+        public int 編輯資料版本 { get; protected set; }
         public int 唯讀資料版本 
         {
             get 
             { 
                 throw new Exception("目前不支援 唯讀資料版本"); 
-            } 
-            set 
-            { 
-                throw new Exception("目前不支援 唯讀資料版本"); 
-            } 
+            }
         }
 
         // 建構子
@@ -55,6 +57,11 @@ namespace WokyTool.通用
 
             編輯資料版本++;
             可編輯BList.RaiseListChangedEvents = true;
+        }
+
+        public void 資料編輯中()
+        {
+            編輯資料版本++;
         }
 
         public Boolean 是否正在編輯()
