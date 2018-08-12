@@ -19,7 +19,7 @@ namespace WokyTool.商品
 {
     public partial class 商品總覽視窗 : 總覽視窗
     {
-        private int _商品大類資料版本 = -1; //@@ 嘗試建立 下拉選單選取元件(選取元件介面) 統一處理; 視窗介面 新增 綁定(編碼類型, BindingSource)
+        private int _商品大類資料版本 = -1; //@@ 嘗試建立 下拉選單選取元件(選取元件介面) 統一處理; 視窗介面 新增 綁定(編號類型, BindingSource)
         private int _商品小類資料版本 = -1;
         private int _公司資料版本 = -1;
         private int _客戶資料版本 = -1;

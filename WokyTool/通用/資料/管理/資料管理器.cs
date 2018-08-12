@@ -36,7 +36,7 @@ namespace WokyTool.通用
         public abstract string 檔案路徑 { get; }
         public abstract T 空白資料 { get; }
         public abstract T 錯誤資料 { get; }
-        public abstract 列舉.編號 編碼類型 { get; }
+        public abstract 列舉.編號 編號類型 { get; }
 
         protected 可篩選介面<T> _篩選介面 = null;
         public 可篩選介面<T> 篩選介面
@@ -98,7 +98,7 @@ namespace WokyTool.通用
             編輯資料版本 = 1;
             唯讀資料版本 = 1;
 
-            資料儲存管理器.獨體.註冊(編碼類型, this);
+            資料儲存管理器.獨體.註冊(編號類型, this);
         }
 
         protected void 初始化資料()
@@ -232,7 +232,7 @@ namespace WokyTool.通用
                 if (Item_.編號 == 常數.T新建資料編碼)
                 {
                     Item_.檢查合法();
-                    Item_.編號 = 編碼管理器.Instance.Get(編碼類型);
+                    Item_.編號 = 編碼管理器.Instance.Get(編號類型);
                 }
 
                 Map[Item_.編號] = Item_;
@@ -327,7 +327,7 @@ namespace WokyTool.通用
                 if (Item_.編號 == 常數.T新建資料編碼)
                 {
                     Item_.檢查合法();
-                    Item_.編號 = 編碼管理器.Instance.Get(編碼類型);
+                    Item_.編號 = 編碼管理器.Instance.Get(編號類型);
                 }
 
                 Map[Item_.編號] = Item_;

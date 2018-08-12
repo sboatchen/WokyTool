@@ -38,7 +38,7 @@ namespace WokyTool.客戶
             } 
         }
 
-        public override 列舉.編號 編碼類型 
+        public override 列舉.編號 編號類型
         { 
             get 
             { 
