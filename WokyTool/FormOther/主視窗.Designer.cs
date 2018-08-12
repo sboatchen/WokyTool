@@ -65,15 +65,16 @@
             this.button40 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(23, 13);
+            this.button1.Location = new System.Drawing.Point(23, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "編碼總覽";
+            this.button1.Text = "編號";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -209,7 +210,7 @@
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(119, 13);
+            this.button19.Location = new System.Drawing.Point(119, 303);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(75, 23);
             this.button19.TabIndex = 18;
@@ -437,11 +438,22 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(139, 12);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(100, 23);
+            this.button22.TabIndex = 45;
+            this.button22.Text = "使用者";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 751);
+            this.Controls.Add(this.button22);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button40);
@@ -525,6 +537,7 @@
         private System.Windows.Forms.Button button40;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button22;
 
 
     }

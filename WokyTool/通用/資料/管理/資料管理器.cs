@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataMgr;
+using WokyTool.編號;
 
 namespace WokyTool.通用
 {
@@ -119,7 +120,7 @@ namespace WokyTool.通用
 
         public void 可編輯BList資料增減(object sender, ListChangedEventArgs e)
         {
-            Console.WriteLine(e.ListChangedType.ToString());
+            訊息管理器.獨體.Info(e.ListChangedType.ToString());
             if (e.ListChangedType == ListChangedType.ItemDeleted)
             {
                 _增減資料數量--;
@@ -232,7 +233,7 @@ namespace WokyTool.通用
                 if (Item_.編號 == 常數.T新建資料編碼)
                 {
                     Item_.檢查合法();
-                    Item_.編號 = 編碼管理器.Instance.Get(編號類型);
+                    Item_.編號 = 編號資料管理器.獨體.下個值(編號類型);
                 }
 
                 Map[Item_.編號] = Item_;
@@ -277,6 +278,8 @@ namespace WokyTool.通用
                     Item_.CancelEdit();
                 }
             }
+
+            編輯資料版本++;
         }
 
         protected void 更新篩選條件()
@@ -327,7 +330,7 @@ namespace WokyTool.通用
                 if (Item_.編號 == 常數.T新建資料編碼)
                 {
                     Item_.檢查合法();
-                    Item_.編號 = 編碼管理器.Instance.Get(編號類型);
+                    Item_.編號 = 編號資料管理器.獨體.下個值(編號類型);
                 }
 
                 Map[Item_.編號] = Item_;

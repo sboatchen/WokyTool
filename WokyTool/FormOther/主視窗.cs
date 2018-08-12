@@ -33,6 +33,7 @@ using WokyTool.公司;
 using WokyTool.商品;
 using WokyTool.平台訂單;
 using WokyTool.使用者;
+using WokyTool.編號;
 
 namespace WokyTool
 {
@@ -436,7 +437,22 @@ namespace WokyTool
 
         private void button38_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("公司資料轉換");
+            訊息管理器.獨體.Info("編號資料轉換");
+            編號資料管理器.獨體.Map.Clear();
+            foreach (var Item_ in 編碼管理器.Instance.Map.Values)
+            {
+                編號.編號資料 New_ = new 編號.編號資料
+                {
+                    類型 = Item_.類型,
+                    下個值 = Item_.下個值,
+                };
+
+                編號資料管理器.獨體.Map.Add(New_.編號, New_);
+            }
+            編號資料管理器.獨體.Map = 編號資料管理器.獨體.Map.Values.OrderBy(Value => Value.編號).ToDictionary(Value => Value.編號);
+            編號資料管理器.獨體.資料搬移();
+
+            訊息管理器.獨體.Info("公司資料轉換");
             公司資料管理器.獨體.Map.Clear();
             foreach (var Item_ in 公司管理器.Instance.Map.Values)
             {
@@ -453,7 +469,7 @@ namespace WokyTool
             }
             公司資料管理器.獨體.資料搬移();
 
-            Console.WriteLine("客戶資料轉換");
+            訊息管理器.獨體.Info("客戶資料轉換");
             客戶資料管理器.獨體.Map.Clear();
             foreach (var Item_ in 廠商管理器.Instance.Map.Values)
             {
@@ -479,7 +495,7 @@ namespace WokyTool
             }
             客戶資料管理器.獨體.資料搬移();
 
-            Console.WriteLine("物品大類資料轉換");
+            訊息管理器.獨體.Info("物品大類資料轉換");
             物品大類資料管理器.獨體.Map.Clear();
             foreach (var Item_ in 物品大類管理器.Instance.Map.Values)
             {
@@ -496,7 +512,7 @@ namespace WokyTool
             }
             物品大類資料管理器.獨體.資料搬移();
 
-            Console.WriteLine("物品小類資料轉換");
+            訊息管理器.獨體.Info("物品小類資料轉換");
             物品小類資料管理器.獨體.Map.Clear();
             foreach (var Item_ in 物品小類管理器.Instance.Map.Values)
             {
@@ -513,7 +529,7 @@ namespace WokyTool
             }
             物品小類資料管理器.獨體.資料搬移();
 
-            Console.WriteLine("物品品牌資料轉換");
+            訊息管理器.獨體.Info("物品品牌資料轉換");
             物品品牌資料管理器.獨體.Map.Clear();
             foreach (var Item_ in 物品品牌管理器.Instance.Map.Values)
             {
@@ -530,7 +546,7 @@ namespace WokyTool
             }
             物品品牌資料管理器.獨體.資料搬移();
 
-            Console.WriteLine("物品資料轉換");
+            訊息管理器.獨體.Info("物品資料轉換");
             物品資料管理器.獨體.Map.Clear();
             foreach (var Item_ in 物品管理器.Instance.Map.Values)
             {
@@ -566,7 +582,7 @@ namespace WokyTool
             }
             物品資料管理器.獨體.資料搬移();
 
-            Console.WriteLine("商品大類資料轉換");
+            訊息管理器.獨體.Info("商品大類資料轉換");
             商品大類資料管理器.獨體.Map.Clear();
             foreach (var Item_ in 商品大類管理器.Instance.Map.Values)
             {
@@ -583,7 +599,7 @@ namespace WokyTool
             }
             商品大類資料管理器.獨體.資料搬移();
 
-            Console.WriteLine("商品小類資料轉換");
+            訊息管理器.獨體.Info("商品小類資料轉換");
             商品小類資料管理器.獨體.Map.Clear();
             foreach (var Item_ in 商品小類管理器.Instance.Map.Values)
             {
@@ -600,7 +616,7 @@ namespace WokyTool
             }
             商品小類資料管理器.獨體.資料搬移();
 
-            Console.WriteLine("商品資料轉換");
+            訊息管理器.獨體.Info("商品資料轉換");
             商品資料管理器.獨體.Map.Clear();
             foreach (var Item_ in 商品管理器.Instance.Map.Values)
             {
@@ -639,7 +655,7 @@ namespace WokyTool
             }
             商品資料管理器.獨體.資料搬移();
 
-            Console.WriteLine("轉換完畢");
+            訊息管理器.獨體.Info("轉換完畢");
         }
 
         private int 編號轉換(int Old_)
@@ -655,8 +671,8 @@ namespace WokyTool
         // test
         private void button27_Click(object sender, EventArgs e)
         {
-            Exception ex = new Exception("My Tste123345");
-            throw ex;
+            int y = 0;
+            int x = 99 / y;
         }
 
         private void button5_Click_1(object sender, EventArgs e)

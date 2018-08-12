@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
+using WokyTool.通用;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WokyTool.DataImport
@@ -36,14 +37,14 @@ namespace WokyTool.DataImport
                         Console.Write(NowSheet.Cells[i, j].value);
                         Console.Write(",");
                     }
-                    Console.WriteLine("");
+                    訊息管理器.獨體.Info("");
                 }*/
 
 
                 Range xlRange = NowSheet.UsedRange;
                 foreach (Range c in xlRange.Cells)
                 {
-                    Console.WriteLine("Address: " + c.Row + c.Column + " - Value: " + c.Value + ";" + c.MergeCells);
+                    訊息管理器.獨體.Info("Address: " + c.Row + c.Column + " - Value: " + c.Value + ";" + c.MergeCells);
                 }
 
 

@@ -12,6 +12,7 @@ using WokyTool.使用者;
 using WokyTool.物品;
 using WokyTool.客戶;
 using WokyTool.商品;
+using WokyTool.編號;
 using WokyTool.聯絡人;
 
 namespace WokyTool.通用
@@ -45,6 +46,9 @@ namespace WokyTool.通用
             總覽視窗設定Map = new Dictionary<列舉.編號, Type>();
             總覽視窗Map = new Dictionary<列舉.編號, 總覽視窗>();
 
+            總覽視窗設定Map.Add(列舉.編號.編號, typeof(編號總覽視窗));
+            總覽視窗設定Map.Add(列舉.編號.使用者, typeof(使用者總覽視窗));
+
             總覽視窗設定Map.Add(列舉.編號.公司, typeof(公司總覽視窗));
 
             總覽視窗設定Map.Add(列舉.編號.客戶, typeof(客戶總覽視窗));
@@ -64,8 +68,6 @@ namespace WokyTool.通用
             總覽視窗設定Map.Add(列舉.編號.月結帳, typeof(月結帳總覽視窗));
 
             總覽視窗設定Map.Add(列舉.編號.平台訂單設定, typeof(平台訂單匯入設定總覽視窗));
-
-            總覽視窗設定Map.Add(列舉.編號.使用者, typeof(使用者總覽視窗));
 
             /********************************/
 
