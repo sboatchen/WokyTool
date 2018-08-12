@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.Data
 {
@@ -279,7 +280,7 @@ namespace WokyTool.Data
         public static 商品資料 New()
         {
             商品資料 New_ = new 商品資料();
-            New_.編號 = 編碼管理器.Instance.Get(列舉.編碼類型.商品);
+            New_.編號 = 編碼管理器.Instance.Get(列舉.編號.商品);
 
             return New_;
         }

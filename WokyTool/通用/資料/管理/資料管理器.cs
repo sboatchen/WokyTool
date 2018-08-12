@@ -36,7 +36,7 @@ namespace WokyTool.通用
         public abstract string 檔案路徑 { get; }
         public abstract T 空白資料 { get; }
         public abstract T 錯誤資料 { get; }
-        public abstract 列舉.編碼類型 編碼類型 { get; }
+        public abstract 列舉.編號 編碼類型 { get; }
 
         protected 可篩選介面<T> _篩選介面 = null;
         public 可篩選介面<T> 篩選介面

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.DataImport
 {
@@ -62,9 +63,9 @@ namespace WokyTool.DataImport
         public void Init()
         {
             // 取得連結資料
-            大類 = 物品大類管理器.Instance.Get(大類名稱, 列舉.搜尋失敗處理類型.找不到時新增);
-            小類 = 物品小類管理器.Instance.Get(小類名稱, 列舉.搜尋失敗處理類型.找不到時新增);
-            品牌 = 物品品牌管理器.Instance.Get(品牌名稱, 列舉.搜尋失敗處理類型.找不到時新增);
+            大類 = 物品大類管理器.Instance.Get(大類名稱, 舊列舉.搜尋失敗處理類型.找不到時新增);
+            小類 = 物品小類管理器.Instance.Get(小類名稱, 舊列舉.搜尋失敗處理類型.找不到時新增);
+            品牌 = 物品品牌管理器.Instance.Get(品牌名稱, 舊列舉.搜尋失敗處理類型.找不到時新增);
 
             // 檢查為錯誤或新的資料，否則則取得對應的更新物件
             if (GetUpdateItem() == true)
@@ -248,7 +249,7 @@ namespace WokyTool.DataImport
     {
         return new 物品資料
         {
-            編號 = 編碼管理器.Instance.Get(列舉.編碼類型.物品),
+            編號 = 編碼管理器.Instance.Get(列舉.編號類型.物品),
             開啟 = true,
             大類 = this.大類,
             小類 = this.小類,

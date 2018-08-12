@@ -115,7 +115,7 @@ namespace WokyTool.DataMgr
         }
 
         // 取得資料 - 匯入資料時用，找不到時不會報錯
-        public 物品小類資料 Get(string Name, WokyTool.Common.列舉.搜尋失敗處理類型 Type)
+        public 物品小類資料 Get(string Name, WokyTool.Common.舊列舉.搜尋失敗處理類型 Type)
         {
             if (Name == null || Name.Length == 0)
                 return 物品小類資料.NULL;
@@ -129,9 +129,9 @@ namespace WokyTool.DataMgr
 
             switch (Type)
             {
-                case WokyTool.Common.列舉.搜尋失敗處理類型.無:
+                case WokyTool.Common.舊列舉.搜尋失敗處理類型.無:
                     return 物品小類資料.ERROR;
-                case WokyTool.Common.列舉.搜尋失敗處理類型.找不到時新增:
+                case WokyTool.Common.舊列舉.搜尋失敗處理類型.找不到時新增:
                     {
                         物品小類資料 New_ = 物品小類資料.New(Name);
                         Add(New_);

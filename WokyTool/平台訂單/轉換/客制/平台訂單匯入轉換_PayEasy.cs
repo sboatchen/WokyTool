@@ -8,7 +8,6 @@ using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.公司;
 using WokyTool.平台訂單;
-using WokyTool.平台訂單;
 using WokyTool.客戶;
 using WokyTool.商品;
 using WokyTool.通用;

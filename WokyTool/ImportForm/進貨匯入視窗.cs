@@ -23,13 +23,13 @@ namespace WokyTool.ImportForm
 
         private List<進貨匯入結構> _Source;
         private BindingSource _Binding;
-        private 列舉.進貨類型 _Type;
+        private 舊列舉.進貨類型 _Type;
 
         protected 監測綁定更新<廠商資料> _廠商資料Listener;
         protected 監測綁定更新<物品資料> _物品資料Listener;
         protected 監測綁定更新<幣值資料> _幣值資料Listener;
 
-        public 進貨匯入視窗(列舉.進貨類型 Type_)
+        public 進貨匯入視窗(舊列舉.進貨類型 Type_)
         {
             InitializeComponent();
 
@@ -37,13 +37,13 @@ namespace WokyTool.ImportForm
 
             this.Text = _Type.ToString() + "匯入視窗";
 
-            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 廠商資料更新);
+            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 廠商資料更新);
             _廠商資料Listener.Refresh(true);
 
-            _物品資料Listener = new 監測綁定更新<物品資料>(物品管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 物品資料更新);
+            _物品資料Listener = new 監測綁定更新<物品資料>(物品管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 物品資料更新);
             _物品資料Listener.Refresh(true);
 
-            _幣值資料Listener = new 監測綁定更新<幣值資料>(幣值管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 幣值資料更新);
+            _幣值資料Listener = new 監測綁定更新<幣值資料>(幣值管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 幣值資料更新);
             _幣值資料Listener.Refresh(true);
 
             //this.類型.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
@@ -229,7 +229,7 @@ namespace WokyTool.ImportForm
             }
             else if (this.dataGridView1.Columns[e.ColumnIndex].Name == "數量DataGridViewTextBoxColumn")
             {
-                if (_Type != 列舉.進貨類型.庫存調整 && (int)e.Value == 0)
+                if (_Type != 舊列舉.進貨類型.庫存調整 && (int)e.Value == 0)
                 {
                     e.CellStyle.ForeColor = Color.Red;
                 }
@@ -243,13 +243,13 @@ namespace WokyTool.ImportForm
         private void 樣板ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             switch(_Type){
-                case 列舉.進貨類型.一般:
+                case 舊列舉.進貨類型.一般:
                     函式.GetFile("進貨匯入範本", "Template/OtherImport/進貨匯入範本.xlsx");
                     break;
-                case 列舉.進貨類型.退貨重進:
+                case 舊列舉.進貨類型.退貨重進:
                     函式.GetFile("退貨重進匯入範本", "Template/OtherImport/進貨匯入範本.xlsx");
                     break;
-                case 列舉.進貨類型.庫存調整:
+                case 舊列舉.進貨類型.庫存調整:
                     函式.GetFile("庫存調整匯入範本", "Template/OtherImport/進貨匯入範本.xlsx");
                     break;
             }

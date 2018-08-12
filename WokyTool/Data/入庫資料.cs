@@ -78,7 +78,7 @@ namespace WokyTool.Data
         public static 入庫資料 New()
         {
             入庫資料 New_ = new 入庫資料();
-            New_.編號 = 編碼管理器.Instance.Get(列舉.編碼類型.入庫);
+            New_.編號 = 編碼管理器.Instance.Get(列舉.編號.入庫);
 
             return New_;
         }

@@ -10,6 +10,7 @@ using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataImport;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.Data
 {
@@ -46,9 +47,9 @@ namespace WokyTool.Data
             }
         }
 
-        protected 列舉.進貨類型 _類型;
+        protected 舊列舉.進貨類型 _類型;
         [CsvColumn(Name = "進貨類型")]
-        override public 列舉.進貨類型 類型
+        override public 舊列舉.進貨類型 類型
         {
             get
             {
@@ -190,7 +191,7 @@ namespace WokyTool.Data
                 _IsNew = true,
                 _編號 = 常數.新資料編碼,
                 _時間 = DateTime.Now,
-                _類型 = 列舉.進貨類型.一般,
+                _類型 = 舊列舉.進貨類型.一般,
 
                 廠商 = 廠商資料.NULL,
                 物品 = 物品資料.NULL,
@@ -223,7 +224,7 @@ namespace WokyTool.Data
             }
 
             // 庫存調整 輸入的數量為改變後的值，因此在操作上會在儲存前轉成差異值
-            if (類型 == 列舉.進貨類型.庫存調整)
+            if (類型 == 舊列舉.進貨類型.庫存調整)
             {
                 數量 = 數量 - 物品.內庫數量;
                 物品.內庫數量 += 數量;
@@ -236,7 +237,7 @@ namespace WokyTool.Data
 
             物品管理器.Instance.SetDirty();
 
-            編號 = 編碼管理器.Instance.Get(列舉.編碼類型.支出);
+            編號 = 編碼管理器.Instance.Get(列舉.編號.支出);
             return 進貨資料_唯讀.New(this);
         }
 

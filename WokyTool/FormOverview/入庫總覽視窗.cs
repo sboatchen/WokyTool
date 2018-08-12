@@ -22,10 +22,10 @@ namespace WokyTool.FormOverview
         {
             InitializeComponent();
 
-            _入庫資料Listener = new 監測綁定更新<入庫資料>(入庫管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 入庫資料更新);
+            _入庫資料Listener = new 監測綁定更新<入庫資料>(入庫管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 入庫資料更新);
             _入庫資料Listener.Refresh(true);
 
-            _商品資料Listener = new 監測綁定更新<商品資料>(商品管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 商品資料更新);
+            _商品資料Listener = new 監測綁定更新<商品資料>(商品管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 商品資料更新);
             _商品資料Listener.Refresh(true);
 
             this.商品.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;

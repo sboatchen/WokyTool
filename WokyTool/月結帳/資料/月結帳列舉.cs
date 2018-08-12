@@ -10,7 +10,7 @@ namespace WokyTool.月結帳
     {
         public enum 匯入需求欄位
         {
-            訂單標號,
+            訂單編號,
 
             商品編號,
             商品名稱,

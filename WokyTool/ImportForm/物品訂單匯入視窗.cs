@@ -21,7 +21,7 @@ namespace WokyTool.ImportForm
         private List<物品訂單資料> _Source;
         private List<可配送> _DeilverSource;
 
-        private 列舉.訂單處理進度類型 _處理進度;
+        private 舊列舉.訂單處理進度類型 _處理進度;
         private System.Windows.Forms.DataGridViewCellEventHandler _錯誤修正檢查;
 
         public 物品訂單匯入視窗()
@@ -38,16 +38,16 @@ namespace WokyTool.ImportForm
 
             this.廠商.DataSource = 廠商管理器.Instance.Map.Values.ToList();    //@@ using binding
             this.物品.DataSource = 物品管理器.Instance.Map.Values.ToList();    //@@ using binding
-            this.指配時段DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.指配時段類型));
-            this.代收方式DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.代收類型));
-            this.配送公司DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.配送公司類型));
+            this.指配時段DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.指配時段));
+            this.代收方式DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.代收方式));
+            this.配送公司DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.配送公司));
 
-            UpdateState(列舉.訂單處理進度類型.新建);
+            UpdateState(舊列舉.訂單處理進度類型.新建);
 
             this.Activated += new System.EventHandler(this.onEventActivated);
         }
 
-        private void UpdateState(列舉.訂單處理進度類型 處理進度_)
+        private void UpdateState(舊列舉.訂單處理進度類型 處理進度_)
         {
             if (_處理進度 == 處理進度_)
                 return;
@@ -55,38 +55,38 @@ namespace WokyTool.ImportForm
 
             switch (_處理進度)
             {
-                case 列舉.訂單處理進度類型.新建:
+                case 舊列舉.訂單處理進度類型.新建:
                     匯入ToolStripMenuItem.Enabled = true;
                     分組ToolStripMenuItem.Enabled = false;
                     配送ToolStripMenuItem.Enabled = false;
                     匯出ToolStripMenuItem.Enabled = false;
                     break;
-                case 列舉.訂單處理進度類型.匯入錯誤:
+                case 舊列舉.訂單處理進度類型.匯入錯誤:
                     匯入ToolStripMenuItem.Enabled = false;
                     分組ToolStripMenuItem.Enabled = false;
                     配送ToolStripMenuItem.Enabled = false;
                     匯出ToolStripMenuItem.Enabled = false;
                     break;
-                case 列舉.訂單處理進度類型.匯入正確:
+                case 舊列舉.訂單處理進度類型.匯入正確:
                     匯入ToolStripMenuItem.Enabled = false;
                     分組ToolStripMenuItem.Enabled = true;
                     配送ToolStripMenuItem.Enabled = false;
                     匯出ToolStripMenuItem.Enabled = false;
                     break;
-                case 列舉.訂單處理進度類型.分組完成:
+                case 舊列舉.訂單處理進度類型.分組完成:
                     匯入ToolStripMenuItem.Enabled = false;
                     分組ToolStripMenuItem.Enabled = false;
                     配送ToolStripMenuItem.Enabled = true;
                     匯出ToolStripMenuItem.Enabled = false;
                     this.dataGridView1.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.BlockEvent);
                     break;
-                case 列舉.訂單處理進度類型.要求配送:
+                case 舊列舉.訂單處理進度類型.要求配送:
                     匯入ToolStripMenuItem.Enabled = false;
                     分組ToolStripMenuItem.Enabled = false;
                     配送ToolStripMenuItem.Enabled = false;
                     匯出ToolStripMenuItem.Enabled = false;
                     break;
-                case 列舉.訂單處理進度類型.配送完成:
+                case 舊列舉.訂單處理進度類型.配送完成:
                     匯入ToolStripMenuItem.Enabled = false;
                     分組ToolStripMenuItem.Enabled = false;
                     配送ToolStripMenuItem.Enabled = false;
@@ -102,10 +102,10 @@ namespace WokyTool.ImportForm
         private void CheckImportValue(object sender, DataGridViewCellEventArgs e)
         {
             if (_Source.Where(Value => Value.IsLegal() == false).Count() > 0)
-                UpdateState(列舉.訂單處理進度類型.匯入錯誤);
+                UpdateState(舊列舉.訂單處理進度類型.匯入錯誤);
             else
             {
-                UpdateState(列舉.訂單處理進度類型.匯入正確);
+                UpdateState(舊列舉.訂單處理進度類型.匯入正確);
                 this.dataGridView1.CellValueChanged -= _錯誤修正檢查;
             }
         }
@@ -137,10 +137,10 @@ namespace WokyTool.ImportForm
             this.dataGridView1.Refresh();
 
             // 如果已經配送，檢查是否已全部配送完成
-            if (_處理進度 == 列舉.訂單處理進度類型.要求配送)
+            if (_處理進度 == 舊列舉.訂單處理進度類型.要求配送)
             {
                 if (_Source.Where(Value => Value.是否已配送()).Count() == _Source.Count)
-                    UpdateState(列舉.訂單處理進度類型.配送完成);
+                    UpdateState(舊列舉.訂單處理進度類型.配送完成);
             }
         }
 
@@ -179,12 +179,12 @@ namespace WokyTool.ImportForm
 
                     if (_Source.Where(Value => Value.IsLegal() == false).Count() > 0)
                     {
-                        UpdateState(列舉.訂單處理進度類型.匯入錯誤);
+                        UpdateState(舊列舉.訂單處理進度類型.匯入錯誤);
                         this.dataGridView1.CellValueChanged += _錯誤修正檢查;
                     }
                     else
                     {
-                        UpdateState(列舉.訂單處理進度類型.匯入正確);
+                        UpdateState(舊列舉.訂單處理進度類型.匯入正確);
                         this.dataGridView1.CellValueChanged -= _錯誤修正檢查;
                     }
 
@@ -231,7 +231,7 @@ namespace WokyTool.ImportForm
                 _DeilverSource.Add(CombineItem_);
             }
 
-            UpdateState(列舉.訂單處理進度類型.分組完成);
+            UpdateState(舊列舉.訂單處理進度類型.分組完成);
         }
 
         private void 配送ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -242,7 +242,7 @@ namespace WokyTool.ImportForm
                 配送管理器.Instance.Add(Item_);
             }
 
-            UpdateState(列舉.訂單處理進度類型.要求配送);
+            UpdateState(舊列舉.訂單處理進度類型.要求配送);
         }
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)

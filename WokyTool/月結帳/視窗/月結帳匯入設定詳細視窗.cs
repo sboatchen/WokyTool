@@ -25,10 +25,10 @@ namespace WokyTool.月結帳
 
             this.初始化(this.頁索引元件1, 月結帳匯入設定資料管理器.獨體);
 
-            this.檔案格式類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.檔案格式類型));
-            this.商品識別類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.商品識別類型));
+            this.檔案格式類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.檔案格式));
+            this.商品識別類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.商品識別));
             this.匯入需求欄位BindingSource.DataSource = Enum.GetValues(typeof(月結帳列舉.匯入需求欄位));
-            this.資料格式類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.資料格式類型));
+            this.資料格式類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.資料格式));
 
             this.欄位匯入設定資料BindingSource.DataSource = _BindingList;
         }
@@ -54,8 +54,8 @@ namespace WokyTool.月結帳
             目前資料_.公司 = (公司資料)(this.公司選取元件1.SelectedItem);
             目前資料_.客戶 = (客戶資料)(this.客戶選取元件1.SelectedItem);
 
-            目前資料_.格式 = (列舉.檔案格式類型)(this.格式.SelectedItem);
-            目前資料_.商品識別 = (列舉.商品識別類型)(this.商品識別.SelectedItem);
+            目前資料_.格式 = (列舉.檔案格式)(this.格式.SelectedItem);
+            目前資料_.商品識別 = (列舉.商品識別)(this.商品識別.SelectedItem);
             
             目前資料_.開始位置 = (int)(this.開始位置.Value);
             目前資料_.結束位置 = (int)(this.結束位置.Value);

@@ -40,9 +40,9 @@ namespace WokyTool.平台訂單
             this.設定.ComboBox.TabIndex = 10;
             this.設定.ComboBox.BindingContext = this.BindingContext;  // 這行很重要
 
-            this.指配時段DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.指配時段類型));
-            this.代收方式DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.代收類型));
-            this.配送公司DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.配送公司類型));
+            this.指配時段DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.指配時段));
+            this.代收方式DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.代收方式));
+            this.配送公司DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.配送公司));
         }
 
         private void 設定_SelectedIndexChanged(object sender, EventArgs e)

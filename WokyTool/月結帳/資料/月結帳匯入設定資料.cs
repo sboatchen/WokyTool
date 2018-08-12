@@ -78,7 +78,7 @@ namespace WokyTool.月結帳
         }
 
         [JsonProperty]
-        public 列舉.商品識別類型 商品識別 { get; set; }
+        public 列舉.商品識別 商品識別 { get; set; }
 
         /********************************/
 
@@ -90,14 +90,14 @@ namespace WokyTool.月結帳
         private static readonly 月結帳匯入設定資料 _NULL = new 月結帳匯入設定資料
         {
             編號 = 常數.T空白資料編碼,
-            格式 = 列舉.檔案格式類型.無,
+            格式 = 列舉.檔案格式.無,
             名稱 = 字串.無,
             開始位置 = 0,
             結束位置 = 0,
             標頭位置 = 0,
             公司 = 公司資料.NULL,
             客戶 = 客戶資料.NULL,
-            商品識別 = 列舉.商品識別類型.無,
+            商品識別 = 列舉.商品識別.無,
         };
         public static 月結帳匯入設定資料 NULL
         {
@@ -110,14 +110,14 @@ namespace WokyTool.月結帳
         private static 月結帳匯入設定資料 _ERROR = new 月結帳匯入設定資料
         {
             編號 = 常數.T錯誤資料編碼,
-            格式 = 列舉.檔案格式類型.錯誤,
+            格式 = 列舉.檔案格式.錯誤,
             名稱 = 字串.錯誤,
             開始位置 = 0,
             結束位置 = 0,
             標頭位置 = 0,
             公司 = 公司資料.ERROR,
             客戶 = 客戶資料.ERROR,
-            商品識別 = 列舉.商品識別類型.錯誤,
+            商品識別 = 列舉.商品識別.錯誤,
         };
         public static 月結帳匯入設定資料 ERROR
         {
@@ -211,7 +211,7 @@ namespace WokyTool.月結帳
             if (客戶.編號是否合法() == false)
                 throw new Exception("月結帳匯入設定資料:客戶不合法:" + 客戶編號);
 
-            if (商品識別 <= 列舉.商品識別類型.無)
+            if (商品識別 <= 列舉.商品識別.無)
                 throw new Exception("月結帳匯入設定資料:商品識別不合法:" + 商品識別);
 
             if (資料List.Count == 0)
@@ -219,17 +219,17 @@ namespace WokyTool.月結帳
 
             switch (商品識別)
             {
-                case 列舉.商品識別類型.商品編號:
+                case 列舉.商品識別.商品編號:
                     if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.商品編號.ToString()) == false)
                         throw new Exception("月結帳匯入設定資料:未設定商品編號欄位");
                     break;
-                case 列舉.商品識別類型.商品編號_顏色:
+                case 列舉.商品識別.商品編號_顏色:
                     if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.商品編號.ToString()) == false)
                         throw new Exception("月結帳匯入設定資料:未設定商品編號欄位");
                     if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.顏色.ToString()) == false)
                         throw new Exception("月結帳匯入設定資料:未設定顏色欄位");
                     break;
-                case 列舉.商品識別類型.商品名稱:
+                case 列舉.商品識別.商品名稱:
                     if (名稱映射對應表.ContainsKey(月結帳列舉.匯入需求欄位.商品名稱.ToString()) == false)
                         throw new Exception("月結帳匯入設定資料:未設定商品名稱欄位");
                     break;

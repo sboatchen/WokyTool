@@ -32,6 +32,7 @@ using WokyTool.物品;
 using WokyTool.公司;
 using WokyTool.商品;
 using WokyTool.平台訂單;
+using WokyTool.使用者;
 
 namespace WokyTool
 {
@@ -44,15 +45,11 @@ namespace WokyTool
 
         private void 主視窗_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //@@ 改到統一的關閉街口
-            函式.SaveAll();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var i = new 編碼總覽視窗();
-            i.Show();
-            i.BringToFront();
+            視窗管理器.獨體.顯現(列舉.編號.編號, 列舉.視窗.總覽);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -64,12 +61,12 @@ namespace WokyTool
 
         private void button3_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編碼類型.物品大類, 列舉.視窗類型.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.物品大類, 列舉.視窗.總覽);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編碼類型.物品小類, 列舉.視窗類型.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.物品小類, 列舉.視窗.總覽);
         }
 
         private void button41_Click(object sender, EventArgs e)
@@ -101,27 +98,27 @@ namespace WokyTool
 
         private void button6_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編碼類型.物品, 列舉.視窗類型.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.物品, 列舉.視窗.總覽);
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編碼類型.商品大類, 列舉.視窗類型.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.商品大類, 列舉.視窗.總覽);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編碼類型.商品小類, 列舉.視窗類型.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.商品小類, 列舉.視窗.總覽);
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編碼類型.商品, 列舉.視窗類型.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.商品, 列舉.視窗.總覽);
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編碼類型.物品品牌, 列舉.視窗類型.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.物品品牌, 列舉.視窗.總覽);
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -133,21 +130,21 @@ namespace WokyTool
 
         private void button15_Click(object sender, EventArgs e)
         {
-            var i = new 進貨匯入視窗(列舉.進貨類型.一般);
+            var i = new 進貨匯入視窗(舊列舉.進貨類型.一般);
             i.Show();
             i.BringToFront();
         }
 
         private void button28_Click(object sender, EventArgs e)
         {
-            var i = new 進貨匯入視窗(列舉.進貨類型.退貨重進);
+            var i = new 進貨匯入視窗(舊列舉.進貨類型.退貨重進);
             i.Show();
             i.BringToFront();
         }
 
         private void button29_Click(object sender, EventArgs e)
         {
-            var i = new 進貨匯入視窗(列舉.進貨類型.庫存調整);
+            var i = new 進貨匯入視窗(舊列舉.進貨類型.庫存調整);
             i.Show();
             i.BringToFront();
         }
@@ -218,7 +215,7 @@ namespace WokyTool
 
         private void button24_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編碼類型.公司, 列舉.視窗類型.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.公司, 列舉.視窗.總覽);
         }
 
         private void button25_Click(object sender, EventArgs e)
@@ -278,7 +275,7 @@ namespace WokyTool
 
         private void button35_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編碼類型.月結帳設定, 列舉.視窗類型.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.月結帳設定, 列舉.視窗.總覽);
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -290,7 +287,7 @@ namespace WokyTool
 
         private void button11_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編碼類型.月結帳, 列舉.視窗類型.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.月結帳, 列舉.視窗.總覽);
         }
 
         private void button36_Click(object sender, EventArgs e)
@@ -300,17 +297,17 @@ namespace WokyTool
 
         private void button37_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編碼類型.聯絡人, 列舉.視窗類型.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.聯絡人, 列舉.視窗.總覽);
         }
 
         private void button39_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編碼類型.客戶, 列舉.視窗類型.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.客戶, 列舉.視窗.總覽);
         }
 
         private void button40_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編碼類型.子客戶, 列舉.視窗類型.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.子客戶, 列舉.視窗.總覽);
         }
 
         /*private void button27_Click(object sender, EventArgs e)
@@ -658,14 +655,13 @@ namespace WokyTool
         // test
         private void button27_Click(object sender, EventArgs e)
         {
-            var i = new 月結帳匯入視窗();
-            i.Show();
-            i.BringToFront();
+            Exception ex = new Exception("My Tste123345");
+            throw ex;
         }
 
         private void button5_Click_1(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編碼類型.平台訂單設定, 列舉.視窗類型.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.平台訂單設定, 列舉.視窗.總覽);
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -673,6 +669,11 @@ namespace WokyTool
             var i = new 平台訂單匯入視窗();
             i.Show();
             i.BringToFront();
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.使用者, 列舉.視窗.總覽);
         }
     }
 }

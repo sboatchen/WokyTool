@@ -19,7 +19,7 @@ namespace WokyTool.通用
         public bool 可合併儲存格 { get; set; }
 
         [JsonProperty]
-        public 列舉.資料格式類型 格式 { get; set; }
+        public 列舉.資料格式 格式 { get; set; }
 
         [JsonProperty]
         public string 名稱 { get; set; }
@@ -36,7 +36,7 @@ namespace WokyTool.通用
         {
             列索引 = -1,
             可合併儲存格 = false,
-            格式 = 列舉.資料格式類型.無,
+            格式 = 列舉.資料格式.無,
             名稱 = 字串.空
         };
         public static 欄位匯入設定資料 NULL
@@ -51,7 +51,7 @@ namespace WokyTool.通用
         {
             列索引 = -1,
             可合併儲存格 = false,
-            格式 = 列舉.資料格式類型.錯誤,
+            格式 = 列舉.資料格式.錯誤,
             名稱 = 字串.錯誤
         };
         public static 欄位匯入設定資料 ERROR
@@ -98,7 +98,7 @@ namespace WokyTool.通用
             if (列索引 < 0)
                 throw new Exception("欄位匯入設定資料:列索引不合法:" + 列索引);
 
-            if (格式 <= 列舉.資料格式類型.無)
+            if (格式 <= 列舉.資料格式.無)
                 throw new Exception("欄位匯入設定資料:格式不合法" + 格式);
 
             //if (String.IsNullOrEmpty(名稱))

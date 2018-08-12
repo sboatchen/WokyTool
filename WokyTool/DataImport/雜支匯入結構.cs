@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.DataImport
 {
@@ -96,7 +97,7 @@ namespace WokyTool.DataImport
         {
             return new 雜支資料
             {
-                編號 = 編碼管理器.Instance.Get(列舉.編碼類型.支出),
+                編號 = 編碼管理器.Instance.Get(列舉.編號.支出),
                 時間 = this.時間,
                 廠商 = this.廠商,
                 物品名稱 = this.物品名稱,

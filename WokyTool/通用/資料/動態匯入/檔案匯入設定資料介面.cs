@@ -11,7 +11,7 @@ namespace WokyTool.通用
     {
         int 編號 { get; set; }
 
-        列舉.檔案格式類型 格式 { get; set; }
+        列舉.檔案格式 格式 { get; set; }
 
         int 開始位置 { get; set; }
 

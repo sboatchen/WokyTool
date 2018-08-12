@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataImport;
+using WokyTool.通用;
 
 namespace WokyTool.DataExport
 {
@@ -44,10 +45,10 @@ namespace WokyTool.DataExport
            
             switch (_Data.配送公司)
             {
-                case 列舉.配送公司類型.全速配:
+                case 列舉.配送公司.全速配:
                     App_.Cells[Row_, 3] = 字串.新竹物流;
                     break;
-                case 列舉.配送公司類型.宅配通:
+                case 列舉.配送公司.宅配通:
                     App_.Cells[Row_, 3] = 字串.宅配通;
                     break;
                 default:

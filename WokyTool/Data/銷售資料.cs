@@ -17,7 +17,7 @@ namespace WokyTool.Data
         [CsvColumn(Name = "編號")]
         public int 編號 { get; set; }
         [CsvColumn(Name = "銷售狀態類型")]
-        public 列舉.銷售狀態類型 狀態 { get; set; }
+        public 舊列舉.銷售狀態類型 狀態 { get; set; }
         [CsvColumn(Name = "建立日期")]
         public DateTime 建立日期 { get; set; }
         [CsvColumn(Name = "結單日期")]
@@ -89,7 +89,7 @@ namespace WokyTool.Data
             }
         }
 
-        public void Set狀態(列舉.銷售狀態類型 value)
+        public void Set狀態(舊列舉.銷售狀態類型 value)
         {
             if (狀態.IsClose())
             {
@@ -98,7 +98,7 @@ namespace WokyTool.Data
             else
             {
                 狀態 = value;
-                if (狀態 == 列舉.銷售狀態類型.退貨)
+                if (狀態 == 舊列舉.銷售狀態類型.退貨)
                     售價 = 0;
                 if (狀態.IsClose())
                     結單日期 = DateTime.Now;
@@ -117,8 +117,8 @@ namespace WokyTool.Data
         {
             return new 銷售資料
             {
-                編號 = 編碼管理器.Instance.Get(列舉.編碼類型.銷售),
-                狀態 = 列舉.銷售狀態類型.出貨,
+                編號 = 編碼管理器.Instance.Get(列舉.編號.銷售),
+                狀態 = 舊列舉.銷售狀態類型.出貨,
                 建立日期 = DateTime.Now,
                 結單日期 = 時間.NULL,
 
@@ -157,8 +157,8 @@ namespace WokyTool.Data
         {
             return new 銷售資料
             {
-                編號 = 編碼管理器.Instance.Get(列舉.編碼類型.銷售),
-                狀態 = 列舉.銷售狀態類型.出貨,
+                編號 = 編碼管理器.Instance.Get(列舉.編號.銷售),
+                狀態 = 舊列舉.銷售狀態類型.出貨,
                 建立日期 = DateTime.Now,
                 結單日期 = 時間.NULL,
 
@@ -196,7 +196,7 @@ namespace WokyTool.Data
         private static readonly 銷售資料 _NULL = new 銷售資料
         {
             編號 = 常數.空白資料編碼,
-            狀態 = 列舉.銷售狀態類型.結單,
+            狀態 = 舊列舉.銷售狀態類型.結單,
             建立日期 = 時間.NULL,
             結單日期 = 時間.NULL,
 
@@ -240,7 +240,7 @@ namespace WokyTool.Data
         private static 銷售資料 _ERROR = new 銷售資料
         {
             編號 = 常數.錯誤資料編碼,
-            狀態 = 列舉.銷售狀態類型.結單,
+            狀態 = 舊列舉.銷售狀態類型.結單,
             建立日期 = 時間.NULL,
             結單日期 = 時間.NULL,
 

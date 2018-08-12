@@ -169,7 +169,7 @@ namespace WokyTool.平台訂單
         public string 備註 { get; set; }
 
         [JsonProperty]
-        public 列舉.配送公司類型 配送公司 { get; set; }
+        public 列舉.配送公司 配送公司 { get; set; }
 
         [JsonProperty]
         public string 配送單號 { get; set; }
@@ -198,10 +198,10 @@ namespace WokyTool.平台訂單
         public DateTime 指配日期 { get; set; }     // 指配日期.Ticks == 0 代表不指定
 
         [JsonProperty]
-        public 列舉.指配時段類型 指配時段 { get; set; }
+        public 列舉.指配時段 指配時段 { get; set; }
 
         [JsonProperty]
-        public 列舉.代收類型 代收方式 { get; set; }
+        public 列舉.代收方式 代收方式 { get; set; }
 
         [JsonProperty]
         public decimal 代收金額 { get; set; }
@@ -373,12 +373,12 @@ namespace WokyTool.平台訂單
                 配送備註 = string.Format("{0}({1})", 客戶.名稱, 備註);
 
             // 配送公司
-            if (配送公司 == 列舉.配送公司類型.無)
+            if (配送公司 == 列舉.配送公司.無)
             {
                 if (總體積 >= 常數.宅配通配送最小體積)
-                    配送公司 = 列舉.配送公司類型.宅配通;
+                    配送公司 = 列舉.配送公司.宅配通;
                 else
-                    配送公司 = 列舉.配送公司類型.全速配;
+                    配送公司 = 列舉.配送公司.全速配;
             }
         }
 

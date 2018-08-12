@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.Data
 {
@@ -24,7 +25,7 @@ namespace WokyTool.Data
         {
             return new 物品品牌資料
             {
-                編號 = 編碼管理器.Instance.Get(列舉.編碼類型.物品品牌),
+                編號 = 編碼管理器.Instance.Get(列舉.編號.物品品牌),
                 開啟 = true,
                 名稱 = 名稱_,
             };

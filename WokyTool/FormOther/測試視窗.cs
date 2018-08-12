@@ -23,7 +23,7 @@ namespace WokyTool.FormOther
             InitializeComponent();
 
             Binding = new 監測綁定廣播<MyString>(data.Values.Where(X => X.Contains('a')));
-            Listener = new 監測綁定更新<MyString>(Binding, 列舉.監測類型.被動通知_公式, 資料更新);
+            Listener = new 監測綁定更新<MyString>(Binding, 舊列舉.監測類型.被動通知_公式, 資料更新);
         }
 
         private void button1_Click(object sender, EventArgs e)

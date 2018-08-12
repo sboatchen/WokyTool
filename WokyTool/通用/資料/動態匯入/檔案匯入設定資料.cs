@@ -20,7 +20,7 @@ namespace WokyTool.通用
         public string 名稱 { get; set; }
 
         [JsonProperty]
-        public 列舉.檔案格式類型 格式 { get; set; }
+        public 列舉.檔案格式 格式 { get; set; }
       
         // >= 0
         [JsonProperty]
@@ -97,7 +97,7 @@ namespace WokyTool.通用
         // 如果不合法 回傳例外
         public override void 檢查合法()
         {
-            if (格式 <= 列舉.檔案格式類型.無)
+            if (格式 <= 列舉.檔案格式.無)
                 throw new Exception("檔案匯入設定資料:格式不合法:" + 格式);
 
             if (開始位置 < 0)
@@ -183,7 +183,7 @@ namespace WokyTool.通用
 
         public IEnumerable<T2> 匯入Excel<T2>(檔案匯入轉換介面<T2> 轉換介面_) where T2 : MyData
         {
-            if (格式 != 列舉.檔案格式類型.EXCEL)
+            if (格式 != 列舉.檔案格式.EXCEL)
                 throw new Exception("檔案匯入設定資料<T>:_匯入Excel 檔案格式不匹配");
 
             OpenFileDialog openFileDialog1 = new OpenFileDialog();

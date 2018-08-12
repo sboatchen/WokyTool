@@ -29,7 +29,7 @@ namespace WokyTool.DataImport
 
         /**************************************************/
 
-        public 列舉.進貨類型 類型 { get; set; }
+        public 舊列舉.進貨類型 類型 { get; set; }
 
         [JsonIgnore]
         public 廠商資料 廠商;
@@ -104,24 +104,24 @@ namespace WokyTool.DataImport
         public void Init()
         {
             if (類型名稱 == null || 類型名稱.Length == 0)
-                類型 = 列舉.進貨類型.一般;
+                類型 = 舊列舉.進貨類型.一般;
             else
             {
                 try
                 {
-                    類型 = (列舉.進貨類型)Enum.Parse(typeof(列舉.進貨類型), 類型名稱);
+                    類型 = (舊列舉.進貨類型)Enum.Parse(typeof(舊列舉.進貨類型), 類型名稱);
                 }
                 catch (ArgumentException)
                 {
                     MessageBox.Show("列舉資料異常(" + 類型名稱 + "),改用一般進貨", 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    類型 = 列舉.進貨類型.一般;
+                    類型 = 舊列舉.進貨類型.一般;
                 }
             }
 
             Init(類型);
         }
 
-        public void Init(列舉.進貨類型 Type_)
+        public void Init(舊列舉.進貨類型 Type_)
         {
             類型 = Type_;
             廠商 = 廠商管理器.Instance.Get(廠商名稱);
@@ -137,7 +137,7 @@ namespace WokyTool.DataImport
             return new 進貨匯入結構
             {
                 時間 = DateTime.Now,
-                類型 = 列舉.進貨類型.一般,
+                類型 = 舊列舉.進貨類型.一般,
                 廠商名稱 = 字串.空,
                 廠商 = 廠商資料.NULL,
                 物品名稱 = 字串.空,
@@ -159,7 +159,7 @@ namespace WokyTool.DataImport
         // 資料是否合法
         public bool IsLegal()
         {
-            if (類型 == 列舉.進貨類型.庫存調整)
+            if (類型 == 舊列舉.進貨類型.庫存調整)
                 return 廠商編號 >= 0 && 物品編號 > 0 && 幣值編號 >= 0;
             return 廠商編號 >= 0 && 物品編號 > 0 && 數量 != 0 && 幣值編號 >= 0;
         }
@@ -185,7 +185,7 @@ namespace WokyTool.DataImport
             else
                 Result_.物品名稱 = 物品名稱;
 
-            if (類型 != 列舉.進貨類型.庫存調整 || 數量 != 0)
+            if (類型 != 舊列舉.進貨類型.庫存調整 || 數量 != 0)
                 Result_.數量 = 數量.ToString() + 字串.正確;
             else
                 Result_.數量 = 數量.ToString();

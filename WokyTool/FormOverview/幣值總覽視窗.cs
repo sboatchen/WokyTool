@@ -21,7 +21,7 @@ namespace WokyTool.DataForm
         {
             InitializeComponent();
 
-            _Listener = new 監測綁定更新<幣值資料>(幣值管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 幣值資料更新);
+            _Listener = new 監測綁定更新<幣值資料>(幣值管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 幣值資料更新);
             _Listener.Refresh(true);
 
             // 註冊事件

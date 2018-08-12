@@ -33,9 +33,9 @@ namespace WokyTool.OtherForm
         {
             InitializeComponent();
 
-            this.指配時段DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.指配時段類型));
-            this.代收方式DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.代收類型));
-            this.配送公司DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.配送公司類型));
+            this.指配時段DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.指配時段));
+            this.代收方式DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.代收方式));
+            this.配送公司DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.配送公司));
 
             // 初始化目前顯示資料
             InitData();
@@ -69,7 +69,7 @@ namespace WokyTool.OtherForm
         private void 全速配ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             int x = 1;
-            _Export1 = _Source.Where(Value => Value.配送公司 == 列舉.配送公司類型.全速配)
+            _Export1 = _Source.Where(Value => Value.配送公司 == 列舉.配送公司.全速配)
                                .Select(Value => new 全速配匯出結構(x++, Value))
                                .ToList();
 
@@ -87,7 +87,7 @@ namespace WokyTool.OtherForm
 
         private void 宅配通ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            _Export2 = _Source.Where(Value => Value.配送公司 == 列舉.配送公司類型.宅配通)
+            _Export2 = _Source.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通)
                                 .Select(Value => new 宅配通匯出結構(Value))
                                 .ToList();
 

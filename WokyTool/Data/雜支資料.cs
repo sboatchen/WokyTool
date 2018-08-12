@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.Data
 {
@@ -92,7 +93,7 @@ namespace WokyTool.Data
             return new 雜支資料
             {
                 IsNew = true,
-                編號 = 編碼管理器.Instance.Get(列舉.編碼類型.支出),
+                編號 = 編碼管理器.Instance.Get(列舉.編號.支出),
                 時間 = DateTime.Now,
                 廠商 = 廠商資料.NULL,
                 物品名稱 = 字串.空,

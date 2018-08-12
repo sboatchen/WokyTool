@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.Data;
+using WokyTool.通用;
 
 namespace WokyTool.DataMgr
 {
@@ -91,7 +92,7 @@ namespace WokyTool.DataMgr
         // 新增資料
         public void Add(商品訂單資料 物品_)
         {
-            物品_.流水號 = 編碼管理器.Instance.Get(列舉.編碼類型.訂單);
+            物品_.流水號 = 編碼管理器.Instance.Get(列舉.編號.訂單);
             Map[物品_.流水號] = 物品_;
 
             SetDirty();

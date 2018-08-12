@@ -18,7 +18,7 @@ namespace WokyTool.Data
         [CsvColumn(Name = "時間")]
         abstract public DateTime 時間 { get; set; }
         [CsvColumn(Name = "進貨類型")]
-        abstract public 列舉.進貨類型 類型{ get; set; }
+        abstract public 舊列舉.進貨類型 類型{ get; set; }
 
         public 廠商資料 廠商 { get; protected set; }
         [CsvColumn(Name = "廠商編號")]

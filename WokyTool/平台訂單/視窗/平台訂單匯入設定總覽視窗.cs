@@ -25,14 +25,14 @@ namespace WokyTool.平台訂單
 
             this.初始化(this.平台訂單匯入設定資料BindingSource, 平台訂單匯入設定資料管理器.獨體);
 
-            this.檔案格式類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.檔案格式類型));
-            this.商品識別類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.商品識別類型));
+            this.檔案格式類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.檔案格式));
+            this.商品識別類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.商品識別));
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int 編號_ = ((平台訂單匯入設定資料)(this.平台訂單匯入設定資料BindingSource.Current)).編號;
-            視窗管理器.獨體.顯現(列舉.編碼類型.平台訂單設定, 列舉.視窗類型.詳細, 編號_);
+            視窗管理器.獨體.顯現(列舉.編號.平台訂單設定, 列舉.視窗.詳細, 編號_);
         }
 
         /********************************/

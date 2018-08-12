@@ -28,18 +28,18 @@ namespace WokyTool.DataForm
         {
             InitializeComponent();
 
-            this.類型.DataSource = Enum.GetValues(typeof(列舉.進貨類型));
+            this.類型.DataSource = Enum.GetValues(typeof(舊列舉.進貨類型));
 
-            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 廠商資料更新);
+            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 廠商資料更新);
             _廠商資料Listener.Refresh(true);
 
-            _物品資料Listener = new 監測綁定更新<物品資料>(物品管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 物品資料更新);
+            _物品資料Listener = new 監測綁定更新<物品資料>(物品管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 物品資料更新);
             _物品資料Listener.Refresh(true);
 
-            _幣值資料Listener = new 監測綁定更新<幣值資料>(幣值管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 幣值資料更新);
+            _幣值資料Listener = new 監測綁定更新<幣值資料>(幣值管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 幣值資料更新);
             _幣值資料Listener.Refresh(true);
 
-            _進貨資料Listener = new 監測綁定更新<進貨資料>(進貨管理器.Instance.Binding, 列舉.監測類型.被動通知_公式, 進貨資料更新);
+            _進貨資料Listener = new 監測綁定更新<進貨資料>(進貨管理器.Instance.Binding, 舊列舉.監測類型.被動通知_公式, 進貨資料更新);
             _進貨資料Listener.Refresh(true);
 
             // 註冊事件

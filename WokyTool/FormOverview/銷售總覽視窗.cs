@@ -31,10 +31,10 @@ namespace WokyTool.FormOverview
         {
             InitializeComponent();
 
-            _Listener = new 監測綁定更新<銷售資料_編輯>(銷售管理器.Instance.Binding, 列舉.監測類型.被動通知_公式, 銷售資料更新);
+            _Listener = new 監測綁定更新<銷售資料_編輯>(銷售管理器.Instance.Binding, 舊列舉.監測類型.被動通知_公式, 銷售資料更新);
             _Listener.Refresh(true);
 
-            this.狀態DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.銷售狀態類型));
+            this.狀態DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(舊列舉.銷售狀態類型));
 
             // 註冊事件
             this.Activated += new System.EventHandler(this.onEventActivated);

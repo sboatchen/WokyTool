@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.Data
 {
@@ -31,13 +32,13 @@ namespace WokyTool.Data
 
         [JsonProperty]
         [CsvColumn(Name = "類型")]
-        public 列舉.盤點類型 類型 { get; set; }
+        public 舊列舉.盤點類型 類型 { get; set; }
 
         public static 盤點歷史資料 New(盤點資料 From_)
         {
             return new 盤點歷史資料
             {
-                編號 = 編碼管理器.Instance.Get(列舉.編碼類型.盤點),
+                編號 = 編碼管理器.Instance.Get(列舉.編號.盤點),
                 時間 = From_.時間,
                 物品編號 = From_.物品.編號,
                 數量 = From_.數量,

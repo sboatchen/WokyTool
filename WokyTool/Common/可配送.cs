@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WokyTool.通用;
 
 namespace WokyTool.Common
 {
@@ -17,12 +18,12 @@ namespace WokyTool.Common
         string 配送備註 { get; set; }
 
         DateTime 指配日期 { get; set; }     // 指配日期.Ticks == 0 代表不指定
-        列舉.指配時段類型 指配時段 { get; set; }
+        列舉.指配時段 指配時段 { get; set; }
 
-        列舉.代收類型 代收方式 { get; set; }
+        列舉.代收方式 代收方式 { get; set; }
         int 代收金額 { get; set; }
 
-        列舉.配送公司類型 配送公司 { get; set; }
+        列舉.配送公司 配送公司 { get; set; }
         string 配送單號 { get; set; }
 
         // 準備配送

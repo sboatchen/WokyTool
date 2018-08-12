@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.Data
 {
@@ -23,7 +24,7 @@ namespace WokyTool.Data
         {
             return new 幣值資料
             {
-                編號 = 編碼管理器.Instance.Get(列舉.編碼類型.幣值),
+                編號 = 編碼管理器.Instance.Get(列舉.編號.幣值),
                 名稱 = 字串.空,
                 數值 = 0,
             };

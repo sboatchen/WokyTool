@@ -25,13 +25,13 @@ namespace WokyTool.DataForm
         {
             InitializeComponent();
 
-            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 廠商資料更新);
+            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 廠商資料更新);
             _廠商資料Listener.Refresh(true);
 
-            _幣值資料Listener = new 監測綁定更新<幣值資料>(幣值管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 幣值資料更新);
+            _幣值資料Listener = new 監測綁定更新<幣值資料>(幣值管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 幣值資料更新);
             _幣值資料Listener.Refresh(true);
 
-            _雜支資料Listener = new 監測綁定更新<雜支資料>(雜支管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 雜支資料更新);
+            _雜支資料Listener = new 監測綁定更新<雜支資料>(雜支管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 雜支資料更新);
             _雜支資料Listener.Refresh(true);
 
             // 註冊事件

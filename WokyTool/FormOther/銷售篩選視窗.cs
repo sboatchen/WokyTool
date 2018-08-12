@@ -26,7 +26,7 @@ namespace WokyTool.FormOther
             this._父視窗 = Parent_;
             this.button1.Enabled = (Parent_ != null);
 
-            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 廠商資料更新);
+            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 廠商資料更新);
             _廠商資料Listener.Refresh(true);
         }
 

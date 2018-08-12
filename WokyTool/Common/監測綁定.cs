@@ -16,8 +16,8 @@ namespace WokyTool.Common
         public int UpdateUID { get; protected set; }
         public 監測綁定廣播<T> BroadCaster { get; protected set; }
 
-        public 列舉.監測類型 _Type;
-        public 列舉.監測類型 Type
+        public 舊列舉.監測類型 _Type;
+        public 舊列舉.監測類型 Type
         {
             get
             {
@@ -36,7 +36,7 @@ namespace WokyTool.Common
             }
         }
 
-        public 監測綁定更新(監測綁定廣播<T> BroadCaster_, 列舉.監測類型 Type_, BindingUpdate<T> Call_)
+        public 監測綁定更新(監測綁定廣播<T> BroadCaster_, 舊列舉.監測類型 Type_, BindingUpdate<T> Call_)
         {
             Call = Call_;
             UpdateUID = 0;

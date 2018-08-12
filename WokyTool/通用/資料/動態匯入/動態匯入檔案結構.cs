@@ -122,18 +122,18 @@ namespace WokyTool.通用
             }
         }
 
-        private object 轉型資料(object dynamic, 列舉.資料格式類型 資料格式類型)
+        private object 轉型資料(object dynamic, 列舉.資料格式 資料格式類型)
         {
             if (dynamic == null)
                 return null;
 
             switch (資料格式類型)
             {
-                case 列舉.資料格式類型.文字:
+                case 列舉.資料格式.文字:
                     return dynamic.ToString();
-                case 列舉.資料格式類型.金額:
+                case 列舉.資料格式.金額:
                     return Convert.ToDecimal(dynamic.ToString());
-                case 列舉.資料格式類型.整數:
+                case 列舉.資料格式.整數:
                     return Convert.ToInt32(dynamic.ToString());
                 default:
                     throw new Exception("轉型資料 不支援的格式 " + 資料格式類型);

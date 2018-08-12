@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.DataImport;
+using WokyTool.通用;
 
 namespace WokyTool.DataExport
 {
@@ -47,13 +48,13 @@ namespace WokyTool.DataExport
 
             switch (From_.指配時段)
             {
-                case 列舉.指配時段類型.上午:
+                case 列舉.指配時段.上午:
                     指配時段 = "1";
                     break;
-                case 列舉.指配時段類型.下午:
+                case 列舉.指配時段.下午:
                     指配時段 = "2";
                     break;
-                case 列舉.指配時段類型.晚上:
+                case 列舉.指配時段.晚上:
                     指配時段 = "3";
                     break;
                 default:
@@ -68,10 +69,10 @@ namespace WokyTool.DataExport
 
             switch (From_.代收方式)
             {
-                case 列舉.代收類型.現金:
+                case 列舉.代收方式.現金:
                     代收方式 = "1";
                     break;
-                case 列舉.代收類型.刷卡:
+                case 列舉.代收方式.刷卡:
                     代收方式 = "2";
                     break;
                 default:

@@ -33,7 +33,7 @@ namespace WokyTool.FormOther
             Binding_.DataSource = _Source;
             this.dataGridView1.DataSource = Binding_;
 
-            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 廠商資料更新);
+            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 廠商資料更新);
             _廠商資料Listener.Refresh(true);
         }
 
@@ -95,7 +95,7 @@ namespace WokyTool.FormOther
             非平台訂單資料 CombineItem_ = new 非平台訂單資料();
             foreach (物品訂單資料 Item_ in _Source)
             {
-                if (Item_.getType() != 列舉.銷售狀態類型.出貨)    //@@ 目前只有先不處理 後續要思考怎麼處理
+                if (Item_.getType() != 舊列舉.銷售狀態類型.出貨)    //@@ 目前只有先不處理 後續要思考怎麼處理
                     continue;
 
                 if (CombineItem_.Add(Item_) == false)

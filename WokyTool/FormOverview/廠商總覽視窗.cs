@@ -21,7 +21,7 @@ namespace WokyTool
         {
             InitializeComponent();
 
-            _Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 廠商資料更新);
+            _Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 廠商資料更新);
             _Listener.Refresh(true);
 
             // 註冊事件

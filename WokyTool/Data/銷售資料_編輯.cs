@@ -17,7 +17,7 @@ namespace WokyTool.Data
         }
 
         public int 編號 { get{ return _Data.編號; } }
-        public 列舉.銷售狀態類型 狀態 
+        public 舊列舉.銷售狀態類型 狀態 
         {
             get{ return _Data.狀態; }
             set { _Data.Set狀態(value); } 

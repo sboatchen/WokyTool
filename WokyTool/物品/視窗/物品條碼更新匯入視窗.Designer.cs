@@ -1,4 +1,5 @@
-﻿namespace WokyTool.物品
+﻿using WokyTool.通用;
+namespace WokyTool.物品
 {
     partial class 物品條碼更新匯入視窗
     {
@@ -132,7 +133,7 @@
             // 
             // 更新狀態BindingSource
             // 
-            this.更新狀態BindingSource.DataSource = typeof(WokyTool.Common.列舉.更新狀態);
+            this.更新狀態BindingSource.DataSource = typeof(列舉.更新狀態);
             // 
             // 更新訊息DataGridViewTextBoxColumn
             // 

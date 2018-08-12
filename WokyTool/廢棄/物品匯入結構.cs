@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.DataImport
 {
@@ -121,7 +122,7 @@ namespace WokyTool.DataImport
         {
             return new 物品資料
             {
-                編號 = 編碼管理器.Instance.Get(列舉.編碼類型.物品),
+                編號 = 編碼管理器.Instance.Get(列舉.編號.物品),
                 開啟 = true,
                 大類 = this.大類,
                 小類 = this.小類,

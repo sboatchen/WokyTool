@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
+using WokyTool.通用;
 
 namespace WokyTool.Data
 {
@@ -23,13 +24,13 @@ namespace WokyTool.Data
         public string 配送備註 { get; set; }
 
         public DateTime 指配日期 { get; set; }
-        public WokyTool.Common.列舉.指配時段類型 指配時段 { get; set; }
+        public 列舉.指配時段 指配時段 { get; set; }
 
-        public WokyTool.Common.列舉.代收類型 代收方式 { get; set; }
+        public 列舉.代收方式 代收方式 { get; set; }
         public int 代收金額 { get; set; }
 
-        protected WokyTool.Common.列舉.配送公司類型 _配送公司;
-        public WokyTool.Common.列舉.配送公司類型 配送公司
+        protected 列舉.配送公司 _配送公司;
+        public 列舉.配送公司 配送公司
         {
             get
             {
@@ -129,12 +130,12 @@ namespace WokyTool.Data
             配送商品 = 函式.GetCombineItemString(配送物品清單);
             
             // 配送公司
-            if (配送公司 != 列舉.配送公司類型.無)
+            if (配送公司 != 列舉.配送公司.無)
                 return;
             if (總體積 >= 常數.宅配通配送最小體積)
-                配送公司 = 列舉.配送公司類型.宅配通;
+                配送公司 = 列舉.配送公司.宅配通;
             else
-                配送公司 = 列舉.配送公司類型.全速配;
+                配送公司 = 列舉.配送公司.全速配;
         }
 
         // 完成配送

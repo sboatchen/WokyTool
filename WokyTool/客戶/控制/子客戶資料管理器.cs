@@ -38,11 +38,11 @@ namespace WokyTool.客戶
             } 
         }
 
-        public override 列舉.編碼類型 編碼類型 
+        public override 列舉.編號 編碼類型 
         { 
             get 
             { 
-                return 列舉.編碼類型.子客戶; 
+                return 列舉.編號.子客戶; 
             } 
         }
 

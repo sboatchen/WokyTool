@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.Data;
+using WokyTool.通用;
 
 namespace WokyTool.DataMgr
 {
@@ -18,7 +19,7 @@ namespace WokyTool.DataMgr
         private static string FILE_PATH = "Set/UID.csv";
 
         // 資料Map
-        public Dictionary<列舉.編碼類型, 編碼資料> Map { get; private set; }
+        public Dictionary<列舉.編號, 編碼資料> Map { get; private set; }
         // 資料是否異動
         public bool IsDirty { get; private set; }
         // 資料綁定廣播
@@ -83,7 +84,7 @@ namespace WokyTool.DataMgr
         }
 
         // 取得下個唯一識別碼,並進行更新
-        public int Get(列舉.編碼類型 eType)
+        public int Get(列舉.編號 eType)
         {
             編碼資料 Item_;
             if (Map.TryGetValue(eType, out Item_) == false)

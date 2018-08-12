@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WokyTool.通用;
 
 namespace WokyTool.Common
 {
@@ -16,14 +17,14 @@ namespace WokyTool.Common
         [JsonProperty]
         public String 檔名 = null;
         [JsonProperty]
-        public 列舉.檔案格式類型 檔案格式 = 列舉.檔案格式類型.無;
+        public 列舉.檔案格式 檔案格式 = 列舉.檔案格式.無;
 
         //public static XlFileFormat xls格式 = XlFileFormat.xlWorkbookNormal;
         //public static XlFileFormat xlsx格式 = XlFileFormat.xlOpenXMLWorkbook;
 
         public virtual bool InitRead()
         {
-            if (檔案格式 == 列舉.檔案格式類型.無)
+            if (檔案格式 == 列舉.檔案格式.無)
                 return false;
 
             if (檔名 == null || 檔名.Length == 0)

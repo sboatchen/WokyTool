@@ -31,7 +31,7 @@ namespace WokyTool.通用
         string 訂單內容 { get; set; }
         string 備註 { get; set; }
 
-        列舉.配送公司類型 配送公司 { get; set; }
+        列舉.配送公司 配送公司 { get; set; }
         string 配送單號 { get; set; }
     }
 }

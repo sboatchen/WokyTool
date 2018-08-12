@@ -11,6 +11,7 @@ using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataImport;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.ImportForm
 {
@@ -26,7 +27,7 @@ namespace WokyTool.ImportForm
 
             資料讀寫參數CSV Param_ = new 資料讀寫參數CSV()
             {
-                檔案格式 = 列舉.檔案格式類型.CSV,
+                檔案格式 = 列舉.檔案格式.CSV,
                 CSV描述 = 資料讀寫參數CSV.無標頭讀取格式
             };
             IEnumerable<盤點資料> origin_ = 資料讀寫.ImportCSV<盤點資料>(Param_);
@@ -39,14 +40,14 @@ namespace WokyTool.ImportForm
             _Source = origin_.ToList();
             foreach (var item in _Source)
             {
-                if (item.Init(列舉.盤點類型.出貨) == false)
+                if (item.Init(舊列舉.盤點類型.出貨) == false)
                 {
                     this.Close();
                     return;
                 }
             }
 
-            _物品資料Listener = new 監測綁定更新<物品資料>(物品管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 物品資料更新);
+            _物品資料Listener = new 監測綁定更新<物品資料>(物品管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 物品資料更新);
             _物品資料Listener.Refresh(true);
             this.dataGridViewTextBoxColumn1.DisplayStyle = DataGridViewComboBoxDisplayStyle.Nothing;
 
@@ -88,7 +89,7 @@ namespace WokyTool.ImportForm
         private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             盤點資料 New_ = 盤點資料.New();
-            New_.類型 = 列舉.盤點類型.出貨;
+            New_.類型 = 舊列舉.盤點類型.出貨;
 
             _Source.Add(New_);
             _Binding.ResetBindings(true);

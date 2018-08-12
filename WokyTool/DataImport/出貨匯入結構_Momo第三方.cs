@@ -42,10 +42,10 @@ namespace WokyTool.DataImport
         //public int 商品編號 { get; set; }
 
         //public DateTime 指配日期 { get; set; }
-        //public WokyTool.Common.列舉.指配時段類型 指配時段 { get; set; }
-        //public WokyTool.Common.列舉.代收類型 代收方式 { get; set; }
+        //public 列舉.指配時段類型 指配時段 { get; set; }
+        //public 列舉.代收方式類型 代收方式 { get; set; }
         //public int 代收金額 { get; set; }
-        //public WokyTool.Common.列舉.配送公司類型 配送公司 { get; set; }
+        //public 列舉.配送公司類型 配送公司 { get; set; }
         //public string 配送單號 { get; protected set; }
 
         /* 自用資訊 */
@@ -127,12 +127,12 @@ namespace WokyTool.DataImport
             廠商 = 共用廠商快取;
 
             指配日期 = 時間.NULL;
-            指配時段 = 列舉.指配時段類型.無;
+            指配時段 = 列舉.指配時段.無;
 
-            代收方式 = 列舉.代收類型.無;
+            代收方式 = 列舉.代收方式.無;
             代收金額 = 0;
 
-            配送公司 = 列舉.配送公司類型.宅配通;
+            配送公司 = 列舉.配送公司.宅配通;
             配送單號 = null;
 
             // 商品序號 = 品號 + 單名編號

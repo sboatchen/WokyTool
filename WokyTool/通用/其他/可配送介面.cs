@@ -18,12 +18,12 @@ namespace WokyTool.通用
         string 配送備註 { get; set; }
 
         DateTime 指配日期 { get; set; }     // 指配日期.Ticks == 0 代表不指定
-        列舉.指配時段類型 指配時段 { get; set; }
+        列舉.指配時段 指配時段 { get; set; }
 
-        列舉.代收類型 代收方式 { get; set; }
+        列舉.代收方式 代收方式 { get; set; }
         decimal 代收金額 { get; set; }
 
-        列舉.配送公司類型 配送公司 { get; set; }
+        列舉.配送公司 配送公司 { get; set; }
         string 配送單號 { get; set; }
 
         void 準備配送();

@@ -48,9 +48,9 @@ namespace WokyTool.DataExport
             {
                 switch (_Data.配送公司)
                 {
-                    case 列舉.配送公司類型.全速配:
+                    case 列舉.配送公司.全速配:
                         return 全速配編號;
-                    case 列舉.配送公司類型.宅配通:
+                    case 列舉.配送公司.宅配通:
                         return 宅配通編號;
                     default:
                         MessageBox.Show("回單號結構_PC專櫃 can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);

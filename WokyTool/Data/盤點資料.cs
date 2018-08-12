@@ -43,7 +43,7 @@ namespace WokyTool.Data
         public int 數量 { get; set; }
     
         [CsvColumn(FieldIndex = 5)]
-        public 列舉.盤點類型 類型 { get; set; }
+        public 舊列舉.盤點類型 類型 { get; set; }
 
         public static 盤點資料 New()
         {
@@ -55,11 +55,11 @@ namespace WokyTool.Data
                 無用 = 字串.空,
 
                 數量 = 0,
-                類型 = 列舉.盤點類型.無,
+                類型 = 舊列舉.盤點類型.無,
             };
         }
 
-        public bool Init(列舉.盤點類型 類型)
+        public bool Init(舊列舉.盤點類型 類型)
         {
             if (this.類型 != 類型)
             {

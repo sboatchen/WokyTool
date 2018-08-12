@@ -72,9 +72,9 @@ namespace WokyTool.Data
             物品 = 物品管理器.Instance.Get(物品名稱);
 
             指配日期 = 時間.NULL;
-            指配時段 = 列舉.指配時段類型.無;
+            指配時段 = 列舉.指配時段.無;
 
-            代收方式 = 列舉.代收類型.無;
+            代收方式 = 列舉.代收方式.無;
             代收金額 = 0;
 
             配送單號 = null;
@@ -115,12 +115,12 @@ namespace WokyTool.Data
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
-        public 列舉.銷售狀態類型 getType()
+        public 舊列舉.銷售狀態類型 getType()
         {
             if (數量 > 0)
-                return 列舉.銷售狀態類型.出貨;
+                return 舊列舉.銷售狀態類型.出貨;
             else
-                return 列舉.銷售狀態類型.退貨;
+                return 舊列舉.銷售狀態類型.退貨;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace WokyTool.FormOther
 
             this._父視窗 = Parent_;
 
-            _物品資料Listener = new 監測綁定更新<物品資料>(物品管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 物品資料更新);
+            _物品資料Listener = new 監測綁定更新<物品資料>(物品管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 物品資料更新);
             _物品資料Listener.Refresh(true);
 
             // 註冊事件

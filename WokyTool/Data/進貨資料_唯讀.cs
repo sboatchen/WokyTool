@@ -40,8 +40,8 @@ namespace WokyTool.Data
             }
         }
 
-        protected 列舉.進貨類型 _類型;
-        override public 列舉.進貨類型 類型
+        protected 舊列舉.進貨類型 _類型;
+        override public 舊列舉.進貨類型 類型
         {
             get
             {
@@ -177,7 +177,7 @@ namespace WokyTool.Data
         {
             _編號 = 常數.空白資料編碼,
             _時間 = 通用.時間.NULL,
-            _類型 = 列舉.進貨類型.一般,
+            _類型 = 舊列舉.進貨類型.一般,
 
             廠商 = 廠商資料.NULL,
             物品 = 物品資料.NULL,
@@ -195,7 +195,7 @@ namespace WokyTool.Data
         {
             _編號 = 常數.錯誤資料編碼,
             _時間 = 通用.時間.NULL,
-            _類型 = 列舉.進貨類型.一般,
+            _類型 = 舊列舉.進貨類型.一般,
 
             廠商 = 廠商資料.ERROR,
             物品 = 物品資料.ERROR,

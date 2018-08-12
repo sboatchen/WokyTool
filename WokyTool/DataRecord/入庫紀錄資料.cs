@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.DataMgr;
+using WokyTool.通用;
 
 namespace WokyTool.DataRecord
 {
@@ -37,7 +38,7 @@ namespace WokyTool.DataRecord
         public static 入庫紀錄資料 New()
         {
             入庫紀錄資料 New_ = new 入庫紀錄資料();
-            New_.編號 = 編碼管理器.Instance.Get(列舉.編碼類型.入庫紀錄);
+            New_.編號 = 編碼管理器.Instance.Get(列舉.編號.入庫紀錄);
 
             return New_;
         }

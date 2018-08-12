@@ -31,7 +31,7 @@ namespace WokyTool.月結帳
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編碼類型.月結帳, 列舉.視窗類型.篩選);
+            視窗管理器.獨體.顯現(列舉.編號.月結帳, 列舉.視窗.篩選);
         }
 
         private void 總覽ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace WokyTool.月結帳
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int 編號_ = ((月結帳資料)(this.月結帳資料BindingSource.Current)).編號;
-            視窗管理器.獨體.顯現(列舉.編碼類型.月結帳, 列舉.視窗類型.詳細, 編號_);
+            視窗管理器.獨體.顯現(列舉.編號.月結帳, 列舉.視窗.詳細, 編號_);
         }
 
         /********************************/

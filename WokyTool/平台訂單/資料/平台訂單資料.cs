@@ -168,7 +168,7 @@ namespace WokyTool.平台訂單
 
 
         [JsonProperty]
-        public 列舉.配送公司類型 配送公司 { get; set; }
+        public 列舉.配送公司 配送公司 { get; set; }
 
         [JsonProperty]
         public string 配送單號 { get; set; }
@@ -203,7 +203,7 @@ namespace WokyTool.平台訂單
             訂單內容 = 字串.無,
             備註 = 字串.無,
 
-            配送公司 = 列舉.配送公司類型.無,
+            配送公司 = 列舉.配送公司.無,
             配送單號 = 字串.無,
         };
         public static 平台訂單資料 NULL
@@ -237,7 +237,7 @@ namespace WokyTool.平台訂單
             訂單內容 = 字串.錯誤,
             備註 = 字串.錯誤,
 
-            配送公司 = 列舉.配送公司類型.錯誤,
+            配送公司 = 列舉.配送公司.錯誤,
             配送單號 = 字串.錯誤,
         };
         public static 平台訂單資料 ERROR
@@ -369,7 +369,7 @@ namespace WokyTool.平台訂單
             if (String.IsNullOrEmpty(訂單內容))
                 throw new Exception("平台訂單資料:訂單內容不合法:" + this.ToString());
 
-            if ((int)配送公司 <= 常數.列舉空白編碼)
+            if (列舉.編號是否合法((int)配送公司) == false)
                 throw new Exception("平台訂單資料:配送公司不合法:" + this.ToString());
 
             if (String.IsNullOrEmpty(配送單號))

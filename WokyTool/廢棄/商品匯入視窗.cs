@@ -42,19 +42,19 @@ namespace WokyTool
             _Binding.DataSource = _Source;
             this.dataGridView1.DataSource = _Binding;
 
-            _商品大類資料Listener = new 監測綁定更新<商品大類資料>(商品大類管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 商品大類資料更新);
+            _商品大類資料Listener = new 監測綁定更新<商品大類資料>(商品大類管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 商品大類資料更新);
             _商品大類資料Listener.Refresh(true);
 
-            _商品小類資料Listener = new 監測綁定更新<商品小類資料>(商品小類管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 商品小類資料更新);
+            _商品小類資料Listener = new 監測綁定更新<商品小類資料>(商品小類管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 商品小類資料更新);
             _商品小類資料Listener.Refresh(true);
 
-            _公司資料Listener = new 監測綁定更新<公司資料>(公司管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 公司資料更新);
+            _公司資料Listener = new 監測綁定更新<公司資料>(公司管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 公司資料更新);
             _公司資料Listener.Refresh(true);
 
-            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 廠商資料更新);
+            _廠商資料Listener = new 監測綁定更新<廠商資料>(廠商管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 廠商資料更新);
             _廠商資料Listener.Refresh(true);
 
-            _物品資料Listener = new 監測綁定更新<物品資料>(物品管理器.Instance.Binding, 列舉.監測類型.被動通知_值, 物品資料更新);
+            _物品資料Listener = new 監測綁定更新<物品資料>(物品管理器.Instance.Binding, 舊列舉.監測類型.被動通知_值, 物品資料更新);
             _物品資料Listener.Refresh(true);
 
             //@@ 測試 看是匯入的視窗 還是總覽視窗 那些需要隱藏combobox

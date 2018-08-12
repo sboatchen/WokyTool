@@ -8,6 +8,7 @@ using WokyTool.DataMgr;
 using Newtonsoft.Json;
 using WokyTool.Common;
 using System.Windows.Forms;
+using WokyTool.通用;
 
 namespace WokyTool.Data
 {
@@ -143,7 +144,7 @@ namespace WokyTool.Data
         {
             return new 物品資料
             {
-                編號 = 編碼管理器.Instance.Get(列舉.編碼類型.物品),
+                編號 = 編碼管理器.Instance.Get(列舉.編號.物品),
                 開啟 = true,
 
                 大類 = 物品大類資料.NULL,
