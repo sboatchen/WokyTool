@@ -74,6 +74,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Log.cs" />
+    <Compile Include="使用者\控制\使用者資料管理器.cs" />
+    <Compile Include="使用者\視窗\使用者總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="使用者\視窗\使用者總覽視窗.Designer.cs">
+      <DependentUpon>使用者總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="使用者\視窗\密碼修改視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="使用者\視窗\密碼修改視窗.Designer.cs">
+      <DependentUpon>密碼修改視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="使用者\視窗\登入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="使用者\視窗\登入視窗.Designer.cs">
+      <DependentUpon>登入視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="使用者\資料\使用者資料.cs" />
     <Compile Include="公司\控制\公司資料管理器.cs" />
     <Compile Include="公司\視窗\公司總覽視窗.cs">
       <SubType>Form</SubType>
@@ -325,16 +345,32 @@
     <Compile Include="物品\資料\物品組成資料.cs" />
     <Compile Include="物品\資料\物品資料篩選設定.cs" />
     <Compile Include="物品\轉換\物品條碼更新匯出轉換.cs" />
+    <Compile Include="編號\控制\編號資料管理器.cs" />
+    <Compile Include="編號\視窗\編號總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="編號\視窗\編號總覽視窗.Designer.cs">
+      <DependentUpon>編號總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="編號\資料\編號資料.cs" />
     <Compile Include="聯絡人\視窗\元件\聯絡人選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="聯絡人\視窗\元件\聯絡人選取元件.Designer.cs">
       <DependentUpon>聯絡人選取元件.cs</DependentUpon>
     </Compile>
+    <Compile Include="通用\其他\列舉.cs" />
     <Compile Include="通用\其他\可下訂介面.cs" />
     <Compile Include="通用\其他\可配送介面.cs" />
     <Compile Include="通用\其他\時間.cs" />
     <Compile Include="通用\其他\檔案.cs" />
+    <Compile Include="通用\視窗\樣板\鎖定視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="通用\視窗\樣板\鎖定視窗.Designer.cs">
+      <DependentUpon>鎖定視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="通用\訊息\訊息管理器.cs" />
     <Compile Include="通用\資料\動態匯入\檔案匯入設定資料介面.cs" />
     <Compile Include="通用\資料\動態匯入\檔案匯入轉換介面.cs" />
     <Compile Include="通用\視窗\事件\視窗隱藏事件.cs" />
@@ -400,7 +436,7 @@
     <Compile Include="Common\可配送.cs" />
     <Compile Include="Common\子視窗.cs" />
     <Compile Include="Common\常數.cs" />
-    <Compile Include="Common\列舉.cs" />
+    <Compile Include="Common\舊列舉.cs" />
     <Compile Include="Common\字串.cs" />
     <Compile Include="Common\可格式化_Excel.cs" />
     <Compile Include="Common\父視窗.cs" />
@@ -716,6 +752,15 @@
     <EmbeddedResource Include="ImportForm\商品訂單匯入視窗.resx">
       <DependentUpon>商品訂單匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="使用者\視窗\使用者總覽視窗.resx">
+      <DependentUpon>使用者總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="使用者\視窗\密碼修改視窗.resx">
+      <DependentUpon>密碼修改視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="使用者\視窗\登入視窗.resx">
+      <DependentUpon>登入視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="商品\視窗\商品總覽視窗.resx">
       <DependentUpon>商品總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -866,6 +911,9 @@
     <EmbeddedResource Include="物品\視窗\物品詳細視窗.resx">
       <DependentUpon>物品詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="編號\視窗\編號總覽視窗.resx">
+      <DependentUpon>編號總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="聯絡人\視窗\聯絡人總覽視窗.resx">
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -876,16 +924,9 @@
       <DependentUpon>頁索引元件.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\WokyTool.Common.列舉+代收類型.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Common.列舉+商品識別類型.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Common.列舉+指配時段類型.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Common.列舉+更新狀態.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Common.列舉+檔案格式類型.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Common.列舉+資料格式類型.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Common.列舉+進貨類型.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Common.列舉+配送公司類型.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Common.列舉+銷售狀態類型.datasource" />
     <None Include="Properties\DataSources\WokyTool.Common.可配送.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Common.舊列舉+進貨類型.datasource" />
+    <None Include="Properties\DataSources\WokyTool.Common.舊列舉+銷售狀態類型.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.入庫資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.公司資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.Data.商品大類資料.datasource" />
@@ -912,6 +953,7 @@
     <None Include="Properties\DataSources\WokyTool.DataImport.物品更新匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.進貨匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.雜支匯入結構.datasource" />
+    <None Include="Properties\DataSources\WokyTool.使用者.使用者資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.公司.公司資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品大類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品小類資料.datasource" />
@@ -929,7 +971,15 @@
     <None Include="Properties\DataSources\WokyTool.物品.物品小類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品條碼更新資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.編號.編號資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.聯絡人.聯絡人資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.通用.列舉+代收方式.datasource" />
+    <None Include="Properties\DataSources\WokyTool.通用.列舉+商品識別.datasource" />
+    <None Include="Properties\DataSources\WokyTool.通用.列舉+指配時段.datasource" />
+    <None Include="Properties\DataSources\WokyTool.通用.列舉+更新狀態.datasource" />
+    <None Include="Properties\DataSources\WokyTool.通用.列舉+檔案格式.datasource" />
+    <None Include="Properties\DataSources\WokyTool.通用.列舉+資料格式.datasource" />
+    <None Include="Properties\DataSources\WokyTool.通用.列舉+配送公司.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.欄位匯入設定資料.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

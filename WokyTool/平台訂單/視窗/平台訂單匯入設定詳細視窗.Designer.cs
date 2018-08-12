@@ -1,4 +1,5 @@
-﻿namespace WokyTool.平台訂單
+﻿using WokyTool.通用;
+namespace WokyTool.平台訂單
 {
     partial class 平台訂單匯入設定詳細視窗
     {
@@ -208,7 +209,7 @@
             // 
             // 檔案格式類型BindingSource
             // 
-            this.檔案格式類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.檔案格式類型);
+            this.檔案格式類型BindingSource.DataSource = typeof(列舉.檔案格式);
             // 
             // 商品識別
             // 
@@ -221,7 +222,7 @@
             // 
             // 商品識別類型BindingSource
             // 
-            this.商品識別類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.商品識別類型);
+            this.商品識別類型BindingSource.DataSource = typeof(列舉.商品識別);
             // 
             // dataGridView1
             // 
@@ -265,7 +266,7 @@
             // 
             // 資料格式類型BindingSource
             // 
-            this.資料格式類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.資料格式類型);
+            this.資料格式類型BindingSource.DataSource = typeof(列舉.資料格式);
             // 
             // 名稱DataGridViewTextBoxColumn
             // 
@@ -276,7 +277,7 @@
             // 
             // 欄位匯入設定資料BindingSource
             // 
-            this.欄位匯入設定資料BindingSource.DataSource = typeof(WokyTool.通用.欄位匯入設定資料);
+            this.欄位匯入設定資料BindingSource.DataSource = typeof(欄位匯入設定資料);
             // 
             // 欄位參考
             // 
@@ -289,7 +290,7 @@
             // 
             // 匯入需求欄位BindingSource
             // 
-            this.匯入需求欄位BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單列舉.匯入需求欄位);
+            this.匯入需求欄位BindingSource.DataSource = typeof(平台訂單列舉.匯入需求欄位);
             // 
             // label1
             // 

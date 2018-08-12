@@ -1,4 +1,5 @@
-﻿namespace WokyTool.平台訂單
+﻿using WokyTool.通用;
+namespace WokyTool.平台訂單
 {
     partial class 平台訂單匯入視窗
     {
@@ -150,15 +151,15 @@
             // 
             // 代收類型BindingSource
             // 
-            this.代收類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.代收類型);
+            this.代收類型BindingSource.DataSource = typeof(列舉.代收方式);
             // 
             // 指配時段類型BindingSource
             // 
-            this.指配時段類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.指配時段類型);
+            this.指配時段類型BindingSource.DataSource = typeof(列舉.指配時段);
             // 
             // 配送公司類型BindingSource
             // 
-            this.配送公司類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.配送公司類型);
+            this.配送公司類型BindingSource.DataSource = typeof(列舉.配送公司);
             // 
             // 群組DataGridViewTextBoxColumn
             // 

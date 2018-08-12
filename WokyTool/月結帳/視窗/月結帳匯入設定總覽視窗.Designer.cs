@@ -1,4 +1,5 @@
-﻿namespace WokyTool.月結帳
+﻿using WokyTool.通用;
+namespace WokyTool.月結帳
 {
     partial class 月結帳匯入設定總覽視窗
     {
@@ -77,7 +78,7 @@
             // 
             // 檔案格式類型BindingSource
             // 
-            this.檔案格式類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.檔案格式類型);
+            this.檔案格式類型BindingSource.DataSource = typeof(列舉.檔案格式);
             // 
             // 公司資料BindingSource
             // 
@@ -89,7 +90,7 @@
             // 
             // 商品識別類型BindingSource
             // 
-            this.商品識別類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.商品識別類型);
+            this.商品識別類型BindingSource.DataSource = typeof(列舉.商品識別);
             // 
             // 月結帳匯入設定資料BindingSource
             // 

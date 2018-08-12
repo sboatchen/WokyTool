@@ -181,7 +181,7 @@
             // 
             // 銷售狀態類型BindingSource
             // 
-            this.銷售狀態類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.銷售狀態類型);
+            this.銷售狀態類型BindingSource.DataSource = typeof(WokyTool.Common.舊列舉.銷售狀態類型);
             // 
             // 廠商DataGridViewTextBoxColumn
             // 

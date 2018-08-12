@@ -128,7 +128,7 @@
             // 
             // 進貨類型BindingSource
             // 
-            this.進貨類型BindingSource.DataSource = typeof(WokyTool.Common.列舉.進貨類型);
+            this.進貨類型BindingSource.DataSource = typeof(WokyTool.Common.舊列舉.進貨類型);
             // 
             // 時間DataGridViewTextBoxColumn
             // 
