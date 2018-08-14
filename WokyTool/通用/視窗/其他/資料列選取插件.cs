@@ -71,6 +71,21 @@ namespace WokyTool.通用
             _綁定資料.ResetBindings();
         }
 
+        public bool ReadOnly
+        {
+            get
+            {
+                return _綁定資料.AllowNew == false;
+            }
+
+            set
+            {
+                _綁定資料.AllowNew = !value;
+                _綁定資料.AllowEdit = !value;
+                _綁定資料.AllowRemove = !value;
+            }
+        }
+
         /********************************/
 
         private void Update()

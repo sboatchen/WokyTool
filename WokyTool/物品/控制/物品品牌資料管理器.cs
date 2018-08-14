@@ -46,6 +46,14 @@ namespace WokyTool.物品
             } 
         }
 
+        public override bool 是否可編輯
+        {
+            get
+            {
+                return 系統參數.是否允許修改基本資料;
+            }
+        }
+
         // 獨體
         private static readonly 物品品牌資料管理器 _獨體 = new 物品品牌資料管理器();
         public static 物品品牌資料管理器 獨體

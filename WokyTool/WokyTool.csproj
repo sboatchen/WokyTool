@@ -364,6 +364,7 @@
     <Compile Include="通用\其他\可配送介面.cs" />
     <Compile Include="通用\其他\時間.cs" />
     <Compile Include="通用\其他\檔案.cs" />
+    <Compile Include="通用\其他\系統參數.cs" />
     <Compile Include="通用\視窗\樣板\鎖定視窗.cs">
       <SubType>Form</SubType>
     </Compile>

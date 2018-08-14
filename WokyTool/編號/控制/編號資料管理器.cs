@@ -46,6 +46,14 @@ namespace WokyTool.編號
             } 
         }
 
+        public override bool 是否可編輯
+        {
+            get
+            {
+                return 系統參數.是否允許修改基本資料;
+            }
+        }
+
         // 獨體
         private static readonly 編號資料管理器 _獨體 = new 編號資料管理器();
         public static 編號資料管理器 獨體

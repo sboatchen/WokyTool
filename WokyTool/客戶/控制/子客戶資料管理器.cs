@@ -46,6 +46,14 @@ namespace WokyTool.客戶
             } 
         }
 
+        public override bool 是否可編輯
+        {
+            get
+            {
+                return 系統參數.是否允許修改基本資料;
+            }
+        }
+
         // 獨體
         private static readonly 子客戶資料管理器 _獨體 = new 子客戶資料管理器();
         public static 子客戶資料管理器 獨體

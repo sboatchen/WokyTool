@@ -46,6 +46,14 @@ namespace WokyTool.聯絡人
             } 
         }
 
+        public override bool 是否可編輯
+        {
+            get
+            {
+                return 系統參數.是否允許修改基本資料;
+            }
+        }
+
         // 獨體
         private static readonly 聯絡人資料管理器 _獨體 = new 聯絡人資料管理器();
         public static 聯絡人資料管理器 獨體

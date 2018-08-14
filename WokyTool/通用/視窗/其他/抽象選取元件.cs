@@ -54,6 +54,22 @@ namespace WokyTool.通用
             }
         }
 
+        public bool ReadOnly 
+        {
+            get
+            {
+                return this.下拉選單.DropDownStyle == ComboBoxStyle.Simple;
+            }
+
+            set
+            {
+                if(value == true)
+                    this.下拉選單.DropDownStyle = ComboBoxStyle.Simple;
+                else
+                    this.下拉選單.DropDownStyle = ComboBoxStyle.DropDown;
+            }
+        }
+
         public void 初始化()
         {
             this.下拉選單.DropDown += new System.EventHandler(this.開啟選單);

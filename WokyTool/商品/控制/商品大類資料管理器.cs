@@ -46,6 +46,14 @@ namespace WokyTool.商品
             } 
         }
 
+        public override bool 是否可編輯
+        {
+            get
+            {
+                return 系統參數.是否允許修改基本資料;
+            }
+        }
+
         // 獨體
         private static readonly 商品大類資料管理器 _獨體 = new 商品大類資料管理器();
         public static 商品大類資料管理器 獨體

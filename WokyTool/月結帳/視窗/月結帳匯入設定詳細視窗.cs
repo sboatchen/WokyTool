@@ -31,6 +31,33 @@ namespace WokyTool.月結帳
             this.資料格式類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.資料格式));
 
             this.欄位匯入設定資料BindingSource.DataSource = _BindingList;
+
+            //@@ 待優化
+            bool 是否唯讀_ = 月結帳匯入設定資料管理器.獨體.是否可編輯 == false;
+
+            this.名稱.ReadOnly = 是否唯讀_;
+
+            this.公司選取元件1.ReadOnly = 是否唯讀_;
+            this.客戶選取元件1.ReadOnly = 是否唯讀_;
+
+            if (是否唯讀_)
+            {
+                this.格式.DropDownStyle = ComboBoxStyle.Simple;
+                this.商品識別.DropDownStyle = ComboBoxStyle.Simple;
+            }
+            else
+            {
+                this.格式.DropDownStyle = ComboBoxStyle.DropDown;
+                this.商品識別.DropDownStyle = ComboBoxStyle.DropDown;
+            }
+
+            this.開始位置.ReadOnly = 是否唯讀_;
+            this.結束位置.ReadOnly = 是否唯讀_;
+            this.標頭位置.ReadOnly = 是否唯讀_;
+
+            this._BindingList.AllowNew = !是否唯讀_;
+            this._BindingList.AllowEdit = !是否唯讀_;
+            this._BindingList.AllowRemove = !是否唯讀_;
         }
 
         /********************************/

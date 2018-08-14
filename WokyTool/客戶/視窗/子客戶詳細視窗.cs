@@ -26,6 +26,12 @@ namespace WokyTool.客戶
             this.初始化(this.頁索引元件1, 子客戶資料管理器.獨體);
 
             _資料列選取插件 = new 資料列選取插件<聯絡人資料>(聯絡人資料管理器.獨體, this.聯絡人資料BindingSource, this.dataGridView1, 1);
+
+            bool 是否唯讀_ = 子客戶資料管理器.獨體.是否可編輯 == false;
+
+            this.名稱.ReadOnly = 是否唯讀_;
+            
+            this._資料列選取插件.ReadOnly = 是否唯讀_;
         }
 
         /********************************/

@@ -19,6 +19,8 @@ namespace WokyTool.通用
         public BindingList<T> 可編輯BList { get; set; }
         public object 物件_可編輯BList { get{ return 可編輯BList; } }
 
+        public virtual bool 是否可編輯 { get { return false; } }
+
         public object 物件_唯讀BList 
         {
             get 
@@ -40,6 +42,10 @@ namespace WokyTool.通用
         protected 匯入資料管理器()
         {
             可編輯BList = new BindingList<T>();
+            可編輯BList.AllowEdit = 是否可編輯;
+            可編輯BList.AllowNew = 是否可編輯;
+            可編輯BList.AllowRemove = 是否可編輯;
+
             編輯資料版本 = 1;
         }
 
@@ -64,7 +70,7 @@ namespace WokyTool.通用
             編輯資料版本++;
         }
 
-        public Boolean 是否正在編輯()
+        public bool 是否正在編輯()
         {
             return 可編輯BList.Count > 0;
         }

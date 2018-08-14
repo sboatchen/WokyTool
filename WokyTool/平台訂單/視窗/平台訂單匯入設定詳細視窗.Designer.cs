@@ -209,7 +209,7 @@ namespace WokyTool.平台訂單
             // 
             // 檔案格式類型BindingSource
             // 
-            this.檔案格式類型BindingSource.DataSource = typeof(列舉.檔案格式);
+            this.檔案格式類型BindingSource.DataSource = typeof(WokyTool.通用.列舉.檔案格式);
             // 
             // 商品識別
             // 
@@ -222,7 +222,7 @@ namespace WokyTool.平台訂單
             // 
             // 商品識別類型BindingSource
             // 
-            this.商品識別類型BindingSource.DataSource = typeof(列舉.商品識別);
+            this.商品識別類型BindingSource.DataSource = typeof(WokyTool.通用.列舉.商品識別);
             // 
             // dataGridView1
             // 
@@ -266,7 +266,7 @@ namespace WokyTool.平台訂單
             // 
             // 資料格式類型BindingSource
             // 
-            this.資料格式類型BindingSource.DataSource = typeof(列舉.資料格式);
+            this.資料格式類型BindingSource.DataSource = typeof(WokyTool.通用.列舉.資料格式);
             // 
             // 名稱DataGridViewTextBoxColumn
             // 
@@ -277,7 +277,7 @@ namespace WokyTool.平台訂單
             // 
             // 欄位匯入設定資料BindingSource
             // 
-            this.欄位匯入設定資料BindingSource.DataSource = typeof(欄位匯入設定資料);
+            this.欄位匯入設定資料BindingSource.DataSource = typeof(WokyTool.通用.欄位匯入設定資料);
             // 
             // 欄位參考
             // 
@@ -290,7 +290,7 @@ namespace WokyTool.平台訂單
             // 
             // 匯入需求欄位BindingSource
             // 
-            this.匯入需求欄位BindingSource.DataSource = typeof(平台訂單列舉.匯入需求欄位);
+            this.匯入需求欄位BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單列舉.匯入需求欄位);
             // 
             // label1
             // 
@@ -305,6 +305,7 @@ namespace WokyTool.平台訂單
             // 
             this.公司選取元件1.Location = new System.Drawing.Point(106, 138);
             this.公司選取元件1.Name = "公司選取元件1";
+            this.公司選取元件1.ReadOnly = false;
             this.公司選取元件1.SelectedItem = null;
             this.公司選取元件1.Size = new System.Drawing.Size(175, 25);
             this.公司選取元件1.TabIndex = 96;
@@ -313,6 +314,7 @@ namespace WokyTool.平台訂單
             // 
             this.客戶選取元件1.Location = new System.Drawing.Point(106, 166);
             this.客戶選取元件1.Name = "客戶選取元件1";
+            this.客戶選取元件1.ReadOnly = false;
             this.客戶選取元件1.SelectedItem = null;
             this.客戶選取元件1.Size = new System.Drawing.Size(186, 25);
             this.客戶選取元件1.TabIndex = 97;

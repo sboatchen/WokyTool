@@ -31,6 +31,7 @@ namespace WokyTool.通用
         public int 編輯資料版本 { get; protected set; }
         public int 唯讀資料版本 { get; protected set; }
 
+        public virtual bool 是否可編輯 { get { return false; } }
         public virtual bool 資料是否加密 { get { return false; } }
         public virtual bool 資料是否備份 { get { return true; } }
 
@@ -75,6 +76,9 @@ namespace WokyTool.通用
             初始化資料();
 
             可編輯BList = new BindingList<T>();
+            可編輯BList.AllowEdit = 是否可編輯;
+            可編輯BList.AllowNew = 是否可編輯;
+            可編輯BList.AllowRemove = 是否可編輯;
             可編輯BList.RaiseListChangedEvents = false;
             可編輯BList.ListChanged += new ListChangedEventHandler(this.可編輯BList資料增減);
 
@@ -176,7 +180,7 @@ namespace WokyTool.通用
             編輯資料版本++;
         }
 
-        public Boolean 是否正在編輯()
+        public bool 是否正在編輯()
         {
             //if (可編輯BList.Count != (Map.Count + 2))
             if (是否減少資料)
@@ -290,8 +294,9 @@ namespace WokyTool.通用
 
             if (篩選介面 == null)
             {
-                可編輯BList.AllowNew = true;
-                可編輯BList.AllowRemove = true;
+                可編輯BList.AllowEdit = 是否可編輯;
+                可編輯BList.AllowNew = 是否可編輯;
+                可編輯BList.AllowRemove = 是否可編輯;
 
                 foreach (T Item_ in Map.Values)
                 {
@@ -302,6 +307,7 @@ namespace WokyTool.通用
             {
                 //@@ 目前套用Filter 不支援新增刪除
                 可編輯BList.AllowNew = false;
+                可編輯BList.AllowNew = 是否可編輯;
                 可編輯BList.AllowRemove = false;
 
                 foreach (T Item_ in Map.Values)

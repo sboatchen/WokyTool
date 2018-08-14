@@ -18,6 +18,30 @@ namespace WokyTool.物品{
             InitializeComponent();
 
             this.初始化(this.頁索引元件1, 物品資料管理器.獨體);
+
+            bool 是否唯讀_ = 物品資料管理器.獨體.是否可編輯 == false;
+
+            this.名稱.ReadOnly = 是否唯讀_;
+            this.縮寫.ReadOnly = 是否唯讀_;
+
+            this.物品大類選取元件1.ReadOnly = 是否唯讀_;
+            this.物品小類選取元件1.ReadOnly = 是否唯讀_;
+            this.物品品牌選取元件1.ReadOnly = 是否唯讀_;
+
+            this.條碼.ReadOnly = 是否唯讀_;
+            this.原廠編號.ReadOnly = 是否唯讀_;
+            this.代理編號.ReadOnly = 是否唯讀_;
+
+            this.體積.ReadOnly = 是否唯讀_;
+            this.顏色.ReadOnly = 是否唯讀_;
+
+            this.內庫數量.ReadOnly = 是否唯讀_;
+            this.外庫數量.ReadOnly = 是否唯讀_;
+
+            this.庫存總成本.ReadOnly = 是否唯讀_;
+            this.最後進貨成本.ReadOnly = 是否唯讀_;
+
+            this.成本備註.ReadOnly = 是否唯讀_;
         }
 
         /********************************/
