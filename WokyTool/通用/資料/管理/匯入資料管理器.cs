@@ -41,10 +41,13 @@ namespace WokyTool.通用
         // 建構子
         protected 匯入資料管理器()
         {
+            if (是否可編輯 == false)
+                throw new Exception("該資料缺少權限進行編輯" + this.GetType().ToString()); 
+
             可編輯BList = new BindingList<T>();
-            可編輯BList.AllowEdit = 是否可編輯;
-            可編輯BList.AllowNew = 是否可編輯;
-            可編輯BList.AllowRemove = 是否可編輯;
+            可編輯BList.AllowEdit = true;
+            可編輯BList.AllowNew = true;
+            可編輯BList.AllowRemove = true;
 
             編輯資料版本 = 1;
         }

@@ -54,19 +54,19 @@ namespace WokyTool.通用
             }
         }
 
-        protected int _增減資料數量 = 0;
-        protected bool 是否減少資料
+        protected int _編輯中增減資料數量 = 0;
+        protected bool 是否編輯中減少資料
         {
             get
             {
-                return _增減資料數量 < 0; // 當BindingList == 0 時，系統預設加的資料不會進行刪除
+                return _編輯中增減資料數量 < 0; // 當BindingList == 0 時，系統預設加的資料不會進行刪除
             }
             set
             {
                 if (value != false)
-                    throw new Exception("是否減少資料不可自行設定為true");
+                    throw new Exception("是否編輯中減少資料不可自行設定為true");
 
-                _增減資料數量 = 0;
+                _編輯中增減資料數量 = 0;
             }
         }
 
@@ -127,11 +127,11 @@ namespace WokyTool.通用
             訊息管理器.獨體.Info(e.ListChangedType.ToString());
             if (e.ListChangedType == ListChangedType.ItemDeleted)
             {
-                _增減資料數量--;
+                _編輯中增減資料數量--;
             }
             else if (e.ListChangedType == ListChangedType.ItemAdded)
             {
-                _增減資料數量++;
+                _編輯中增減資料數量++;
             }
         }
 
@@ -175,6 +175,13 @@ namespace WokyTool.通用
             return 錯誤資料;
         }
 
+        public void 資料異動()
+        {
+            編輯資料版本++;
+            唯讀資料版本++;
+            資料是否異動 = true;
+        }
+
         public void 資料編輯中()
         {
             編輯資料版本++;
@@ -183,7 +190,7 @@ namespace WokyTool.通用
         public bool 是否正在編輯()
         {
             //if (可編輯BList.Count != (Map.Count + 2))
-            if (是否減少資料)
+            if (是否編輯中減少資料)
                 return true;
 
             foreach (var Item_ in 可編輯BList)
@@ -219,7 +226,7 @@ namespace WokyTool.通用
 
             可編輯BList.RaiseListChangedEvents = true;
             唯讀BList.RaiseListChangedEvents = true;
-            是否減少資料 = false;
+            是否編輯中減少資料 = false;
         }
 
         protected void 儲存編輯()
@@ -244,9 +251,7 @@ namespace WokyTool.通用
                 唯讀BList.Add(Item_);
             }
 
-            編輯資料版本++;
-            唯讀資料版本++;
-            資料是否異動 = true;
+            資料異動();
         }
 
         protected void 儲存編輯_過濾()
@@ -257,9 +262,7 @@ namespace WokyTool.通用
                 Item_.完成編輯();
             }
 
-            編輯資料版本++;
-            唯讀資料版本++;
-            資料是否異動 = true;
+            資料異動();
         }
 
         protected void 取消編輯()
@@ -321,7 +324,7 @@ namespace WokyTool.通用
 
             可編輯BList.RaiseListChangedEvents = true;
             編輯資料版本++;
-            是否減少資料 = false;
+            是否編輯中減少資料 = false;
         }
 
         public void 新增(IEnumerable<T> Enumerator_)
@@ -347,12 +350,10 @@ namespace WokyTool.通用
                 唯讀BList.Add(Item_);
             }
 
-            編輯資料版本++;
-            唯讀資料版本++;
-            資料是否異動 = true;
-
             可編輯BList.RaiseListChangedEvents = true;
             唯讀BList.RaiseListChangedEvents = true;
+
+            資料異動();
         }
 
         public void 資料搬移()  //@@ temp
@@ -374,8 +375,9 @@ namespace WokyTool.通用
 
             可編輯BList.RaiseListChangedEvents = true;
             唯讀BList.RaiseListChangedEvents = true;
-            是否減少資料 = false;
-            資料是否異動 = true;
+            是否編輯中減少資料 = false;
+
+            資料異動();
         }
     }
 }

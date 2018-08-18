@@ -333,13 +333,13 @@ namespace WokyTool.物品
         public override void 檢查合法()
         {
             if (大類.編號是否合法() == false)
-                throw new Exception("月結帳資料:大類編號不合法:" + 大類編號);
+                throw new Exception("物品資料:大類編號不合法:" + 大類編號);
 
             if (小類.編號是否合法() == false)
-                throw new Exception("月結帳資料:小類編號不合法:" + 小類編號);
+                throw new Exception("物品資料:小類編號不合法:" + 小類編號);
 
             if (品牌.編號是否合法() == false)
-                throw new Exception("月結帳資料:品牌編號不合法:" + 品牌編號);
+                throw new Exception("物品資料:品牌編號不合法:" + 品牌編號);
 
             if (String.IsNullOrEmpty(名稱))
                 throw new Exception("物品資料:名稱不合法:" + this.ToString());
