@@ -151,9 +151,11 @@ namespace WokyTool.通用
 
         public void 檢查合法()
         {
+            // 檢查到第一個錯誤 即回傳
             foreach (T Item in Map.Values)
             {
-                Item.檢查合法();
+                if (Item.是否正在編輯())
+                    Item.檢查合法();
             }
         }
 
@@ -180,11 +182,6 @@ namespace WokyTool.通用
             編輯資料版本++;
             唯讀資料版本++;
             資料是否異動 = true;
-        }
-
-        public void 資料編輯中()
-        {
-            編輯資料版本++;
         }
 
         public bool 是否正在編輯()
@@ -214,19 +211,26 @@ namespace WokyTool.通用
             可編輯BList.RaiseListChangedEvents = false;
             唯讀BList.RaiseListChangedEvents = false;
 
-            if (IsSave_)
+            try
             {
-                if (篩選介面 == null)
-                    儲存編輯();
-                else
-                    儲存編輯_過濾();
-            }
-            else
-                取消編輯();
+                if (IsSave_)
+                {
+                    檢查合法();
 
-            可編輯BList.RaiseListChangedEvents = true;
-            唯讀BList.RaiseListChangedEvents = true;
-            是否編輯中減少資料 = false;
+                    if (篩選介面 == null)
+                        儲存編輯();
+                    else
+                        儲存編輯_過濾();
+                }
+                else
+                    取消編輯();
+            }
+            finally
+            {
+                可編輯BList.RaiseListChangedEvents = true;
+                唯讀BList.RaiseListChangedEvents = true;
+                是否編輯中減少資料 = false;
+            }
         }
 
         protected void 儲存編輯()
@@ -243,7 +247,6 @@ namespace WokyTool.通用
 
                 if (Item_.編號 == 常數.T新建資料編碼)
                 {
-                    Item_.檢查合法();
                     Item_.編號 = 編號資料管理器.獨體.下個值(編號類型);
                 }
 
@@ -257,7 +260,7 @@ namespace WokyTool.通用
         protected void 儲存編輯_過濾()
         {
             //@@ 目前套用Filter 不支援新增刪除
-            foreach (T Item_ in Map.Values)
+            foreach (T Item_ in 可編輯BList)
             {
                 Item_.完成編輯();
             }

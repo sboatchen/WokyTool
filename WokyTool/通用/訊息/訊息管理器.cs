@@ -139,6 +139,11 @@ namespace WokyTool.通用
             MessageBox.Show(message.ToString(), 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        public void Notify(String title, object message)
+        {
+            MessageBox.Show(message.ToString(), title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public bool Check(String title, object message)
         {
             var result = MessageBox.Show(message.ToString(), title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);

@@ -53,7 +53,18 @@ namespace WokyTool.通用
             if (_資料管理器.是否正在編輯())
             {
                 bool Result_ = 訊息管理器.獨體.Check(字串.儲存確認, 字串.儲存確認內容);
-                _資料管理器.完成編輯(Result_);
+
+                try
+                {
+                    _資料管理器.完成編輯(Result_);
+                }
+                catch (Exception ex)
+                {
+                    訊息管理器.獨體.Notify(字串.儲存失敗, ex.Message);
+                    e.Cancel = true;
+                    _是否關閉 = false;
+                    return;
+                }
             }
 
             if (!(e is 視窗關閉事件))

@@ -45,6 +45,7 @@ namespace WokyTool.Common
 
         public static string 儲存確認 = "儲存確認";
         public static string 儲存確認內容 = "是否儲存目前修改";
+        public static string 儲存失敗 = "儲存失敗";
 
         public static string 資料異動 = "資料異動";
         public static string 資料異動內容 = "資料已修改，請重新開啟視窗檢視新資料，當前修改將不予處理";

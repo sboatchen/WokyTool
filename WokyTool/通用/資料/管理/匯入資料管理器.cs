@@ -13,7 +13,7 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.通用
 {
-    public abstract class 匯入資料管理器<T> : 資料管理器介面 where T : MyData
+    public abstract class 匯入資料管理器<T> : 資料管理器介面 where T : 可匯入資料
     {
         // 資料BindingList
         public BindingList<T> 可編輯BList { get; set; }
@@ -52,6 +52,29 @@ namespace WokyTool.通用
             編輯資料版本 = 1;
         }
 
+        public void 檢查合法()
+        {
+            // 全部檢查過一遍 更新錯誤訊息
+            Exception FirstException_ = null;
+            foreach (T Item in 可編輯BList)
+            {
+                try
+                {
+                    Item.檢查合法();
+                    Item.錯誤訊息 = null;
+                }
+                catch (Exception ex)
+                {
+                    Item.錯誤訊息 = ex.Message;
+                    if (FirstException_ == null)
+                        FirstException_ = ex;
+                }
+            }
+
+            if (FirstException_ != null)
+                throw FirstException_;
+        }
+
         public void 新增(IEnumerable<T> Enumerator_)
         {
             if (Enumerator_ == null)
@@ -68,7 +91,7 @@ namespace WokyTool.通用
             可編輯BList.RaiseListChangedEvents = true;
         }
 
-        public void 資料編輯中()
+        public void 資料異動()
         {
             編輯資料版本++;
         }
@@ -85,22 +108,22 @@ namespace WokyTool.通用
 
             可編輯BList.RaiseListChangedEvents = false;
 
-            匯入();
+            try
+            {
+                檢查合法();
 
-            可編輯BList.Clear();
+                匯入();
 
-            編輯資料版本++;
-            可編輯BList.RaiseListChangedEvents = true;
+                可編輯BList.Clear();
+                編輯資料版本++;
+            }
+            finally
+            {
+                編輯資料版本++;
+                可編輯BList.RaiseListChangedEvents = true;
+            }
         }
 
         protected abstract void 匯入();
-
-        public void 檢查合法()
-        {
-            foreach (T Item in 可編輯BList)
-            {
-                Item.檢查合法();
-            }
-        }
     }
 }

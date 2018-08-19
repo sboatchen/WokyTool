@@ -34,6 +34,9 @@ namespace WokyTool.通用
             if (_資料版本 != _資料管理器.編輯資料版本)
             {
                 _資料版本 = _資料管理器.編輯資料版本;
+
+                更新資料合法性();
+
                 this.資料BindingSource.DataSource = _資料管理器.物件_可編輯BList;
                 this.資料BindingSource.ResetBindings(false);
             }
@@ -43,35 +46,38 @@ namespace WokyTool.通用
         {
         }
 
-        private void _視窗關閉(object sender, FormClosingEventArgs e)
+        protected void 更新資料合法性()
         {
-            _是否關閉 = true;
-
-            if (_資料管理器.是否正在編輯() == false)
-                return;
-
             try
             {
                 _資料管理器.檢查合法();
             }
             catch (Exception ex)
             {
-                if (訊息管理器.獨體.Check(字串.匯入錯誤, ex) == true)
+                ;
+            }
+        }
+
+        private void _視窗關閉(object sender, FormClosingEventArgs e)
+        {
+            _是否關閉 = true;
+
+            if (_資料管理器.是否正在編輯())
+            {
+                bool Result_ = 訊息管理器.獨體.Check(字串.儲存確認, 字串.儲存確認內容);
+
+                try
                 {
-                    視窗關閉();
+                    _資料管理器.完成編輯(Result_);
                 }
-                // 放棄關閉 繼續編輯
-                else 
+                catch (Exception ex)
                 {
+                    訊息管理器.獨體.Notify(字串.儲存失敗, ex.Message);
                     e.Cancel = true;
                     _是否關閉 = false;
+                    return;
                 }
-
-                return;
             }
-
-            bool Result_ = 訊息管理器.獨體.Check(字串.匯入確認, 字串.匯入內容);
-            _資料管理器.完成編輯(Result_);
 
             視窗關閉();
         }

@@ -19,8 +19,8 @@ namespace WokyTool.通用
         bool 是否正在編輯();
         void 完成編輯(bool IsSave_);
 
-        void 資料編輯中();
+        void 資料異動();
 
-        void 檢查合法();
+        void 檢查合法();    // will throw exception
     }
 }
