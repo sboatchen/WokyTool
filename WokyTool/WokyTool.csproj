@@ -172,7 +172,7 @@
     <Compile Include="商品\資料\商品小類資料.cs" />
     <Compile Include="商品\資料\商品資料.cs" />
     <Compile Include="商品\資料\商品資料篩選設定.cs" />
-    <Compile Include="商品\轉換\商品新增匯出轉換.cs" />
+    <Compile Include="商品\轉換\商品新增錯誤匯出轉換.cs" />
     <Compile Include="客戶\控制\子客戶資料管理器.cs" />
     <Compile Include="客戶\控制\客戶資料管理器.cs" />
     <Compile Include="客戶\視窗\子客戶詳細視窗.cs">
@@ -278,8 +278,10 @@
     <Compile Include="月結帳\資料\月結帳列舉.cs" />
     <Compile Include="月結帳\資料\月結帳匯入資料.cs" />
     <Compile Include="月結帳\資料\月結帳資料.cs" />
+    <Compile Include="月結帳\轉換\月結帳新增錯誤匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳總覽匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳匯入轉換.cs" />
+    <Compile Include="物品\控制\物品條碼更新匯入管理器.cs" />
     <Compile Include="物品\控制\物品資料管理器.cs" />
     <Compile Include="物品\控制\物品品牌資料管理器.cs" />
     <Compile Include="物品\控制\物品小類資料管理器.cs" />
@@ -356,10 +358,10 @@
     <Compile Include="物品\視窗\物品詳細視窗.Designer.cs">
       <DependentUpon>物品詳細視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\資料\物品條碼更新資料.cs" />
+    <Compile Include="物品\資料\物品條碼更新匯入資料.cs" />
     <Compile Include="物品\資料\物品組成資料.cs" />
     <Compile Include="物品\資料\物品資料篩選設定.cs" />
-    <Compile Include="物品\轉換\物品條碼更新匯出轉換.cs" />
+    <Compile Include="物品\轉換\物品條碼更新錯誤匯出轉換.cs" />
     <Compile Include="編號\控制\編號資料管理器.cs" />
     <Compile Include="編號\視窗\編號總覽視窗.cs">
       <SubType>Form</SubType>
@@ -993,7 +995,7 @@
     <None Include="Properties\DataSources\WokyTool.物品.物品品牌資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品大類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品小類資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.物品.物品條碼更新資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.物品.物品條碼更新匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.編號.編號資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.聯絡人.聯絡人資料.datasource" />

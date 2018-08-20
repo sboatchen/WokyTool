@@ -35,7 +35,14 @@ namespace WokyTool.通用
             {
                 _資料版本 = _資料管理器.編輯資料版本;
 
-                更新資料合法性();
+                try
+                {
+                    _資料管理器.檢查合法();
+                }
+                catch
+                {
+                    ;
+                }
 
                 this.資料BindingSource.DataSource = _資料管理器.物件_可編輯BList;
                 this.資料BindingSource.ResetBindings(false);
@@ -56,6 +63,9 @@ namespace WokyTool.通用
             {
                 ;
             }
+
+            _資料管理器.資料異動();
+            this.OnActivated(null);
         }
 
         private void _視窗關閉(object sender, FormClosingEventArgs e)

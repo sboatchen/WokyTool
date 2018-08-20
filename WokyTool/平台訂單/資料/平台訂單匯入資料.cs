@@ -14,7 +14,7 @@ using WokyTool.通用;
 namespace WokyTool.平台訂單
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 平台訂單匯入資料 : MyData, 可下訂介面, 可配送介面, IComparable<平台訂單匯入資料>
+    public class 平台訂單匯入資料 : 可匯入資料, 可下訂介面, 可配送介面, IComparable<平台訂單匯入資料>
     {
         /* 可下訂介面 */
 

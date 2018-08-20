@@ -13,74 +13,64 @@ using WokyTool.通用;
 
 namespace WokyTool.物品
 {
-    public partial class 物品條碼更新匯入視窗 : Form
+    public partial class 物品條碼更新匯入視窗 : 匯入視窗
     {
-        protected BindingList<物品條碼更新資料> _BList = null;
+        protected int _物品資料版本 = -1; 
+
+        protected 物品條碼更新匯入管理器 _匯入管理器 = new 物品條碼更新匯入管理器();
 
         public 物品條碼更新匯入視窗()
         {
             InitializeComponent();
 
             this.更新狀態BindingSource.DataSource = Enum.GetValues(typeof(列舉.更新狀態));
-            this.匯出ToolStripMenuItem.Enabled = false;
-        }
 
-        private void 匯入ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            _BList = 物品條碼更新資料.匯入Excel<物品條碼更新資料>();
-            if (_BList == null)
-                return;
-
-            this.匯入ToolStripMenuItem.Enabled = false;
-            this.物品條碼更新資料BindingSource.DataSource = _BList;
+            this.初始化(物品條碼更新匯入資料BindingSource, _匯入管理器);
         }
 
         private void 樣板ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            函式.GetFile("條碼更新範本", "樣板/設定/條碼更新範本.xlsx");
+            函式.GetFile("物品條碼更新匯入範本", "樣板/設定/物品條碼更新匯入範本.xlsx");
+        }
+
+        private void 匯入ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _匯入管理器.新增(物品條碼更新匯入資料.匯入Excel<物品條碼更新匯入資料>());
+            if (_匯入管理器.是否正在編輯() == false)
+                return;
+
+            this.匯入ToolStripMenuItem.Enabled = false;
+
+            this.OnActivated(null);
+        }
+
+        private void 檢查ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            更新資料合法性();
         }
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var ItemGroup_ = _BList
-                                .GroupBy(
-                                    Value => Value.狀態.ToString(),
-                                    Value => new 物品條碼更新匯出轉換(Value));
+            var Items_ = _匯入管理器.可編輯BList.Where(Value => Value.錯誤訊息 != null)
+                                .Select(Value => new 物品條碼更新錯誤匯出轉換(Value));
 
-            string Title_ = String.Format("物品條碼更新_{0}", 時間.目前日期);
-            函式.ExportExcel<物品條碼更新匯出轉換>(Title_, ItemGroup_);
+            string Title_ = String.Format("物品條碼更新錯誤匯出_{0}", 時間.目前日期);
+            函式.ExportExcel<物品條碼更新錯誤匯出轉換>(Title_, Items_);
         }
 
-        private void 物品條碼更新匯入視窗_FormClosing(object sender, FormClosingEventArgs e)
+        /********************************/
+
+        protected override void 視窗激活()
         {
-            if (_BList == null)
-                return;
-
-            try
+            if (_物品資料版本 != 物品資料管理器.獨體.唯讀資料版本)
             {
-                foreach (var Data in _BList)
-                {
-                    Data.檢查合法();
-                }
-
+                _物品資料版本 = 物品資料管理器.獨體.唯讀資料版本;
+                this.物品資料BindingSource.DataSource = 物品資料管理器.獨體.唯讀BList;
             }
-            catch (Exception Error_)
-            {
-                if (訊息管理器.獨體.Check(字串.匯入錯誤, Error_) == false)
-                {
-                    e.Cancel = true;
-                }
+        }
 
-                return;
-            }
-
-            if (訊息管理器.獨體.Check(字串.匯入確認, 字串.匯入內容) == false)
-                return;
-
-            foreach (var Data in _BList)
-            {
-                Data.更新();
-            }
+        protected override void 視窗關閉()
+        {
         }
     }
 }
