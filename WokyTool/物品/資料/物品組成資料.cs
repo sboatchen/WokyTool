@@ -26,7 +26,7 @@ namespace WokyTool.物品
 
         public void append(物品資料 物品資料_, int 數量_)
         {
-            if (物品資料_.編號是否合法() == false || 數量_ == 0)
+            if (物品資料_.編號是否有值() == false || 數量_ == 0)
                 return;
 
             if (數量_ < 0)

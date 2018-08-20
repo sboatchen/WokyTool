@@ -72,7 +72,7 @@ namespace WokyTool.物品
         // 取得資料
         public 物品資料 Get(string Name)
         {
-            if (String.IsNullOrEmpty(Name))
+            if (String.IsNullOrEmpty(Name) || 字串.無.Equals(Name))
                 return 空白資料;
 
             物品資料 Item_ = Map.Values
@@ -88,7 +88,7 @@ namespace WokyTool.物品
         // 取得資料
         public 物品資料 GetBySName(string Name)
         {
-            if (String.IsNullOrEmpty(Name))
+            if (String.IsNullOrEmpty(Name) || 字串.無.Equals(Name))
                 return 空白資料;
 
             物品資料 Item_ = Map.Values

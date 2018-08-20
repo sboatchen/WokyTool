@@ -89,6 +89,8 @@ namespace WokyTool.通用
 
             編輯資料版本++;
             可編輯BList.RaiseListChangedEvents = true;
+
+            檢查合法();
         }
 
         public void 資料異動()
@@ -106,22 +108,16 @@ namespace WokyTool.通用
             if (!IsSave_)
                 return;
 
+            檢查合法();
+
             可編輯BList.RaiseListChangedEvents = false;
 
-            try
-            {
-                檢查合法();
+            匯入();
 
-                匯入();
+            可編輯BList.Clear();
+            編輯資料版本++;
 
-                可編輯BList.Clear();
-                編輯資料版本++;
-            }
-            finally
-            {
-                編輯資料版本++;
-                可編輯BList.RaiseListChangedEvents = true;
-            }
+            可編輯BList.RaiseListChangedEvents = true;
         }
 
         protected abstract void 匯入();

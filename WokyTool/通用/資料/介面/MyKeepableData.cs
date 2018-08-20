@@ -60,5 +60,10 @@ namespace WokyTool.通用
         {
             return 編號 != 常數.T新建資料編碼 && 編號 != 常數.T錯誤資料編碼;
         }
+
+        public bool 編號是否有值()
+        {
+            return 編號 > 常數.T新建資料編碼;
+        }
     }
 }

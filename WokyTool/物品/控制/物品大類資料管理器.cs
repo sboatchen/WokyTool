@@ -68,5 +68,21 @@ namespace WokyTool.物品
         private 物品大類資料管理器()
         {
         }
+
+        // 取得資料
+        public 物品大類資料 Get(string Name)
+        {
+            if (String.IsNullOrEmpty(Name) || 字串.無.Equals(Name))
+                return 空白資料;
+
+            物品大類資料 Item_ = Map.Values
+                                   .Where(Value => Name.Equals(Value.名稱))
+                                   .FirstOrDefault();
+
+            if (Item_ == null)
+                return 錯誤資料;
+            else
+                return Item_;
+        }
     }
 }
