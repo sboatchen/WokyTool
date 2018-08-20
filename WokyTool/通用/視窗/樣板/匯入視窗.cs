@@ -52,7 +52,7 @@ namespace WokyTool.通用
             {
                 _資料管理器.檢查合法();
             }
-            catch (Exception ex)
+            catch
             {
                 ;
             }

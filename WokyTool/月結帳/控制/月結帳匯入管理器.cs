@@ -20,7 +20,24 @@ namespace WokyTool.月結帳
 
         protected override void 匯入()
         {
-            月結帳資料管理器.獨體.新增(可編輯BList.Select(Value => Value.匯入()));
+            月結帳資料管理器.獨體.新增(可編輯BList.Select(Value => 建立資料(Value)));
+        }
+
+        protected 月結帳資料 建立資料(月結帳匯入資料 匯入資料_)
+        {
+            月結帳資料 Data_ = new 月結帳資料
+            {
+                公司 = 匯入資料_.公司,
+                客戶 = 匯入資料_.客戶,
+
+                商品 = 匯入資料_.商品,
+
+                數量 = 匯入資料_.數量,
+                單價 = 匯入資料_.單價,
+                含稅單價 = 匯入資料_.含稅單價,
+            };
+
+            return Data_;
         }
     }
 }
