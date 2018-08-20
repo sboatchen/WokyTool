@@ -111,6 +111,20 @@
     <Compile Include="商品\控制\商品大類資料管理器.cs" />
     <Compile Include="商品\控制\商品資料管理器.cs" />
     <Compile Include="商品\控制\商品小類資料管理器.cs" />
+    <Compile Include="商品\控制\商品新增匯入管理器.cs" />
+    <Compile Include="商品\視窗\商品新增匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\視窗\商品新增匯入視窗.Designer.cs">
+      <DependentUpon>商品新增匯入視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\視窗\商品新增匯入詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\視窗\商品新增匯入詳細視窗.Designer.cs">
+      <DependentUpon>商品新增匯入詳細視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\資料\商品新增匯入資料.cs" />
     <Compile Include="商品\轉換\商品總覽匯出轉換.cs" />
     <Compile Include="商品\視窗\商品大類總覽視窗.cs">
       <SubType>Form</SubType>
@@ -158,6 +172,7 @@
     <Compile Include="商品\資料\商品小類資料.cs" />
     <Compile Include="商品\資料\商品資料.cs" />
     <Compile Include="商品\資料\商品資料篩選設定.cs" />
+    <Compile Include="商品\轉換\商品新增匯出轉換.cs" />
     <Compile Include="客戶\控制\子客戶資料管理器.cs" />
     <Compile Include="客戶\控制\客戶資料管理器.cs" />
     <Compile Include="客戶\視窗\子客戶詳細視窗.cs">
@@ -372,6 +387,7 @@
       <DependentUpon>鎖定視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="通用\訊息\訊息管理器.cs" />
+    <Compile Include="通用\資料\介面\可匯入資料.cs" />
     <Compile Include="通用\資料\動態匯入\檔案匯入設定資料介面.cs" />
     <Compile Include="通用\資料\動態匯入\檔案匯入轉換介面.cs" />
     <Compile Include="通用\視窗\事件\視窗隱藏事件.cs" />
@@ -389,7 +405,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="通用\資料\管理\匯入資料管理器.cs" />
-    <Compile Include="通用\資料\靜態匯入\靜態匯入資料.cs" />
+    <Compile Include="通用\資料\介面\靜態匯入資料.cs" />
     <Compile Include="通用\資料\介面\可比較複寫介面.cs" />
     <Compile Include="物品\資料\物品品牌資料.cs" />
     <Compile Include="物品\資料\物品小類資料.cs" />
@@ -768,8 +784,14 @@
     <EmbeddedResource Include="商品\視窗\商品篩選視窗.resx">
       <DependentUpon>商品篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="商品\視窗\商品新增匯入詳細視窗.resx">
+      <DependentUpon>商品新增匯入詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="商品\視窗\商品詳細視窗.resx">
       <DependentUpon>商品詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品\視窗\商品新增匯入視窗.resx">
+      <DependentUpon>商品新增匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="客戶\視窗\元件\子客戶選取元件.resx">
       <DependentUpon>子客戶選取元件.cs</DependentUpon>
@@ -958,6 +980,7 @@
     <None Include="Properties\DataSources\WokyTool.公司.公司資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品大類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品小類資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.商品.商品新增匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.子客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.客戶資料.datasource" />

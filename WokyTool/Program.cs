@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
+using WokyTool.使用者;
 using WokyTool.通用;
 
 namespace WokyTool
@@ -24,6 +25,9 @@ namespace WokyTool
             Common.共用.Init();
 
             //@@Console.WriteLine(param[0]);
+
+            //@@ 暫時
+            使用者資料管理器.獨體.登入("root", "Aptx4869");
 
             Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
