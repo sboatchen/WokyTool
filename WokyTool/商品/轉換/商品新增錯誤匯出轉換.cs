@@ -7,11 +7,11 @@ using WokyTool.Common;
 
 namespace WokyTool.商品
 {
-    class 商品新增匯出轉換 : 可格式化_Excel
+    class 商品新增錯誤匯出轉換 : 可格式化_Excel
     {
         protected 商品新增匯入資料 _Data;
 
-        public 商品新增匯出轉換(商品新增匯入資料 Data_)
+        public 商品新增錯誤匯出轉換(商品新增匯入資料 Data_)
         {
             _Data = Data_;
         }

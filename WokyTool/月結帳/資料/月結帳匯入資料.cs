@@ -13,21 +13,8 @@ using WokyTool.通用;
 namespace WokyTool.月結帳
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 月結帳匯入資料 : MyData
+    public class 月結帳匯入資料 : 可匯入資料
     {
-        [JsonProperty]
-        public int 公司編號
-        {
-            get
-            {
-                return 公司.編號;
-            }
-            set
-            {
-                _公司 = 公司資料管理器.獨體.Get(value);
-            }
-        }
-
         protected 公司資料 _公司;
         public 公司資料 公司
         {
@@ -43,19 +30,6 @@ namespace WokyTool.月結帳
             set
             {
                 _公司 = value;
-            }
-        }
-
-        [JsonProperty]
-        public int 客戶編號
-        {
-            get
-            {
-                return 客戶.編號;
-            }
-            set
-            {
-                _客戶 = 客戶資料管理器.獨體.Get(value);
             }
         }
 
@@ -79,19 +53,6 @@ namespace WokyTool.月結帳
 
         [JsonProperty]
         public string 商品識別 { get; set; }
-
-        [JsonProperty]
-        public int 商品編號
-        {
-            get
-            {
-                return 商品.編號;
-            }
-            set
-            {
-                _商品 = 商品資料管理器.獨體.Get(value);
-            }
-        }
 
         protected 商品資料 _商品;
         public 商品資料 商品
@@ -201,13 +162,13 @@ namespace WokyTool.月結帳
         public override void 檢查合法()
         {
             if (公司.編號是否合法() == false)
-                throw new Exception("月結帳匯入資料:公司編號不合法:" + 公司編號);
+                throw new Exception("月結帳匯入資料:公司不合法");
 
             if (客戶.編號是否合法() == false)
-                throw new Exception("月結帳匯入資料:客戶編號不合法:" + 客戶編號);
+                throw new Exception("月結帳匯入資料:客戶不合法");
 
             if (商品.編號是否合法() == false)
-                throw new Exception("月結帳匯入資料:商品不合法:" + 商品編號);
+                throw new Exception("月結帳匯入資料:商品不合法");
 
             if (商品.公司 != 公司)
                 throw new Exception("月結帳匯入資料:公司不一致:" + 商品.公司.名稱 + "," + 公司.名稱);

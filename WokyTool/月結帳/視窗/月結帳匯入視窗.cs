@@ -17,12 +17,10 @@ namespace WokyTool.月結帳
 {
     public partial class 月結帳匯入視窗 : 匯入視窗
     {
-        private int _公司資料版本 = -1;
-        private int _客戶資料版本 = -1;
-        private int _商品資料版本 = -1;
         private int _月結帳匯入設定資料版本 = -1;
 
         protected BindingSource 月結帳匯入設定資料BindingSource = new BindingSource();
+
         protected 月結帳匯入管理器 _月結帳匯入管理器 = new 月結帳匯入管理器();
 
         protected 月結帳匯入詳細視窗 _月結帳匯入詳細視窗 = null;
@@ -56,6 +54,20 @@ namespace WokyTool.月結帳
             this.OnActivated(null);
         }
 
+        private void 檢查ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            更新資料合法性();
+        }
+
+        private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Items_ = _月結帳匯入管理器.可編輯BList.Where(Value => Value.錯誤訊息 != null)
+                                .Select(Value => new 月結帳新增錯誤匯出轉換(Value));
+
+            string Title_ = String.Format("月結帳新增錯誤匯出_{0}", 時間.目前日期);
+            函式.ExportExcel<月結帳新增錯誤匯出轉換>(Title_, Items_);
+        }
+
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)//
         {
             if (_月結帳匯入詳細視窗 == null)
@@ -68,28 +80,11 @@ namespace WokyTool.月結帳
 
         protected override void 視窗激活()
         {
-            if (_公司資料版本 != 公司資料管理器.獨體.唯讀資料版本)
-            {
-                _公司資料版本 = 公司資料管理器.獨體.唯讀資料版本;
-                this.公司資料BindingSource.DataSource = 公司資料管理器.獨體.唯讀BList;
-            }
 
-            if (_客戶資料版本 != 客戶資料管理器.獨體.唯讀資料版本)
+            if (_月結帳匯入設定資料版本 != 月結帳匯入設定資料管理器.獨體.編輯資料版本)
             {
-                _客戶資料版本 = 客戶資料管理器.獨體.唯讀資料版本;
-                this.客戶資料BindingSource.DataSource = 客戶資料管理器.獨體.唯讀BList;
-            }
-
-            if (_商品資料版本 != 商品資料管理器.獨體.唯讀資料版本)
-            {
-                _商品資料版本 = 商品資料管理器.獨體.唯讀資料版本;
-                this.商品資料BindingSource.DataSource = 商品資料管理器.獨體.唯讀BList;
-            }
-
-            if (_月結帳匯入設定資料版本 != 月結帳匯入設定資料管理器.獨體.唯讀資料版本)
-            {
-                _月結帳匯入設定資料版本 = 月結帳匯入設定資料管理器.獨體.唯讀資料版本;
-                this.月結帳匯入設定資料BindingSource.DataSource = 月結帳匯入設定資料管理器.獨體.唯讀BList;   // 這邊不呈現 無/錯誤 所以不選唯讀BList??
+                _月結帳匯入設定資料版本 = 月結帳匯入設定資料管理器.獨體.編輯資料版本;
+                this.月結帳匯入設定資料BindingSource.DataSource = 月結帳匯入設定資料管理器.獨體.可編輯BList;   // 這邊不呈現 無/錯誤 所以不選唯讀BList
             }
         }
 
