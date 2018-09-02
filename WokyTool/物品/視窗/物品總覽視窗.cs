@@ -25,6 +25,8 @@ namespace WokyTool.物品
             InitializeComponent();
 
             this.初始化(this.物品資料BindingSource, 物品資料管理器.獨體);
+
+            this.更新ToolStripMenuItem.Enabled = 物品資料管理器.獨體.是否可編輯;
         }
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)

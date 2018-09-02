@@ -24,15 +24,16 @@ namespace WokyTool
 
             Common.共用.Init();
 
-            //@@Console.WriteLine(param[0]);
-
-            //@@ 暫時
-            使用者資料管理器.獨體.登入("root", "Aptx4869");
-
             Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
 
-            Application.Run(new 主視窗());
+            using (var 登入視窗_ = new 登入視窗())
+            {
+                if (登入視窗_.ShowDialog() == DialogResult.OK)
+                {
+                    Application.Run(new 主視窗());
+                }
+            }
         }
 
         static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)

@@ -492,7 +492,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "主視窗";
-            this.Text = "V 1.2.0";
+            this.Text = "V 2.0.1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.主視窗_FormClosing);
             this.ResumeLayout(false);
 

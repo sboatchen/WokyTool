@@ -30,6 +30,8 @@ namespace WokyTool.商品
             InitializeComponent();
 
             this.初始化(this.商品資料BindingSource, 商品資料管理器.獨體);
+
+            this.更新ToolStripMenuItem.Enabled = 商品資料管理器.獨體.是否可編輯;
         }
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
