@@ -69,7 +69,7 @@ namespace WokyTool.使用者
         {
             get
             {
-                return 系統參數.是否允許修改基本資料;
+                return 系統參數.修改基本資料;
             }
         }
 
@@ -87,8 +87,9 @@ namespace WokyTool.使用者
                         編號 = -99,
                         名稱 = "root",
                         密碼 = "Aptx4869",
-                        是否允許修改基本資料 = true,
-                        是否允許匯入訂單 = false,
+                        修改基本資料 = true,
+                        修改設定資料 = true,
+                        匯入訂單 = true,
                     };
                 }
 
@@ -154,8 +155,8 @@ namespace WokyTool.使用者
                 throw new Exception("密碼錯誤");
             }
 
-            系統參數.是否允許修改基本資料 = 使用者.是否允許修改基本資料;
-            系統參數.是否允許匯入訂單 = 使用者.是否允許匯入訂單;
+            系統參數.修改基本資料 = 使用者.修改基本資料;
+            系統參數.匯入訂單 = 使用者.匯入訂單;
 
             可編輯BList.AllowEdit = 是否可編輯;
             可編輯BList.AllowNew = 是否可編輯;

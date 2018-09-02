@@ -46,7 +46,7 @@ namespace WokyTool.客戶
         {
             get
             {
-                return 系統參數.是否允許修改基本資料;
+                return 系統參數.修改設定資料;
             }
         }
 

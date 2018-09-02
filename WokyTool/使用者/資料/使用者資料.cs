@@ -22,10 +22,13 @@ namespace WokyTool.使用者
         public string 密碼 { get; set; }
 
         [JsonProperty]
-        public bool 是否允許修改基本資料 { get; set; }
+        public bool 修改基本資料 { get; set; }
 
         [JsonProperty]
-        public bool 是否允許匯入訂單 { get; set; }
+        public bool 修改設定資料 { get; set; }
+
+        [JsonProperty]
+        public bool 匯入訂單 { get; set; }
 
         public string 顯示密碼
         {
@@ -51,8 +54,9 @@ namespace WokyTool.使用者
             名稱 = 字串.無,
             密碼 = 字串.無,
 
-            是否允許修改基本資料 = false,
-            是否允許匯入訂單 = false,
+            修改基本資料 = false,
+            修改設定資料 = false,
+            匯入訂單 = false,
         };
         public static 使用者資料 NULL
         {
@@ -69,8 +73,9 @@ namespace WokyTool.使用者
             名稱 = 字串.錯誤,
             密碼 = 字串.無,
 
-            是否允許修改基本資料 = false,
-            是否允許匯入訂單 = false,
+            修改基本資料 = false,
+            修改設定資料 = false,
+            匯入訂單 = false,
         };
         public static 使用者資料 ERROR
         {
@@ -91,8 +96,9 @@ namespace WokyTool.使用者
                 名稱 = this.名稱,
                 密碼 = this.密碼,
 
-                是否允許修改基本資料 = this.是否允許修改基本資料,
-                是否允許匯入訂單 = this.是否允許匯入訂單,
+                修改基本資料 = this.修改基本資料,
+                修改設定資料 = this.修改設定資料,
+                匯入訂單 = this.匯入訂單,
             };
 
             return Data_;
@@ -105,8 +111,9 @@ namespace WokyTool.使用者
             名稱 = Data_.名稱;
             密碼 = Data_.密碼;
 
-            是否允許修改基本資料 = Data_.是否允許修改基本資料;
-            是否允許匯入訂單 = Data_.是否允許匯入訂單;
+            修改基本資料 = Data_.修改基本資料;
+            修改設定資料 = Data_.修改設定資料;
+            匯入訂單 = Data_.匯入訂單;
         }
 
         public override Boolean 是否一致(使用者資料 Data_)
@@ -117,8 +124,9 @@ namespace WokyTool.使用者
                 名稱 == Data_.名稱 &&
                 密碼 == Data_.密碼 &&
 
-                是否允許修改基本資料 == Data_.是否允許修改基本資料 &&
-                是否允許匯入訂單 == Data_.是否允許匯入訂單;
+                修改基本資料 == Data_.修改基本資料 &&
+                修改設定資料 == Data_.修改設定資料 &&
+                匯入訂單 == Data_.匯入訂單;
         }
 
         public override void 檢查合法()

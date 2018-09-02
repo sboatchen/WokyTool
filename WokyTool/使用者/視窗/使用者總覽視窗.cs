@@ -25,7 +25,7 @@ namespace WokyTool.使用者
             使用者資料 目前使用者資料_ = (使用者資料)this.使用者資料BindingSource.Current;
 
             // 缺乏權限者 只允許修改自己的資料
-            if (使用者資料管理器.獨體.使用者.是否允許修改基本資料 == false && 目前使用者資料_ != 使用者資料管理器.獨體.使用者)
+            if (系統參數.修改基本資料 == false && 目前使用者資料_ != 使用者資料管理器.獨體.使用者)
                 return;
 
             密碼修改視窗 密碼修改視窗_ = new 密碼修改視窗((使用者資料)this.使用者資料BindingSource.Current);

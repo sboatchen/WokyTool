@@ -30,12 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.使用者資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.顯示密碼 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.是否允許修改基本資料DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.是否允許匯入訂單DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.修改基本資料DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.修改設定資料 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.匯入訂單DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.使用者資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.使用者資料BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -48,20 +49,17 @@
             this.編號DataGridViewTextBoxColumn,
             this.名稱DataGridViewTextBoxColumn,
             this.顯示密碼,
-            this.是否允許修改基本資料DataGridViewCheckBoxColumn,
-            this.是否允許匯入訂單DataGridViewCheckBoxColumn});
+            this.修改基本資料DataGridViewCheckBoxColumn,
+            this.修改設定資料,
+            this.匯入訂單DataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.使用者資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(543, 343);
+            this.dataGridView1.Size = new System.Drawing.Size(643, 342);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // 使用者資料BindingSource
-            // 
-            this.使用者資料BindingSource.DataSource = typeof(WokyTool.使用者.使用者資料);
             // 
             // 編號DataGridViewTextBoxColumn
             // 
@@ -83,23 +81,33 @@
             this.顯示密碼.Name = "顯示密碼";
             this.顯示密碼.ReadOnly = true;
             // 
-            // 是否允許修改基本資料DataGridViewCheckBoxColumn
+            // 修改基本資料DataGridViewCheckBoxColumn
             // 
-            this.是否允許修改基本資料DataGridViewCheckBoxColumn.DataPropertyName = "是否允許修改基本資料";
-            this.是否允許修改基本資料DataGridViewCheckBoxColumn.HeaderText = "修改基本資料";
-            this.是否允許修改基本資料DataGridViewCheckBoxColumn.Name = "是否允許修改基本資料DataGridViewCheckBoxColumn";
+            this.修改基本資料DataGridViewCheckBoxColumn.DataPropertyName = "修改基本資料";
+            this.修改基本資料DataGridViewCheckBoxColumn.HeaderText = "修改基本資料";
+            this.修改基本資料DataGridViewCheckBoxColumn.Name = "修改基本資料DataGridViewCheckBoxColumn";
             // 
-            // 是否允許匯入訂單DataGridViewCheckBoxColumn
+            // 修改設定資料
             // 
-            this.是否允許匯入訂單DataGridViewCheckBoxColumn.DataPropertyName = "是否允許匯入訂單";
-            this.是否允許匯入訂單DataGridViewCheckBoxColumn.HeaderText = "匯入訂單";
-            this.是否允許匯入訂單DataGridViewCheckBoxColumn.Name = "是否允許匯入訂單DataGridViewCheckBoxColumn";
+            this.修改設定資料.DataPropertyName = "修改設定資料";
+            this.修改設定資料.HeaderText = "修改設定資料";
+            this.修改設定資料.Name = "修改設定資料";
+            // 
+            // 匯入訂單DataGridViewCheckBoxColumn
+            // 
+            this.匯入訂單DataGridViewCheckBoxColumn.DataPropertyName = "匯入訂單";
+            this.匯入訂單DataGridViewCheckBoxColumn.HeaderText = "匯入訂單";
+            this.匯入訂單DataGridViewCheckBoxColumn.Name = "匯入訂單DataGridViewCheckBoxColumn";
+            // 
+            // 使用者資料BindingSource
+            // 
+            this.使用者資料BindingSource.DataSource = typeof(WokyTool.使用者.使用者資料);
             // 
             // 使用者總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 343);
+            this.ClientSize = new System.Drawing.Size(643, 342);
             this.Controls.Add(this.dataGridView1);
             this.Name = "使用者總覽視窗";
             this.Text = "使用者總覽視窗";
@@ -116,7 +124,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 顯示密碼;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn 是否允許修改基本資料DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn 是否允許匯入訂單DataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn 修改基本資料DataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn 修改設定資料;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn 匯入訂單DataGridViewCheckBoxColumn;
     }
 }
