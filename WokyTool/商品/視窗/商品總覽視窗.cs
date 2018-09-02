@@ -55,7 +55,7 @@ namespace WokyTool.商品
             訊息管理器.獨體.Notify(字串.功能尚未實作);
         }
 
-        private void 新增商品ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var i = new 商品新增匯入視窗();
             i.Show();

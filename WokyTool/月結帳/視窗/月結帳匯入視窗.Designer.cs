@@ -203,7 +203,6 @@
         private System.Windows.Forms.ToolStripMenuItem 匯入ToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox 設定;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 月結帳匯入資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 商品識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;

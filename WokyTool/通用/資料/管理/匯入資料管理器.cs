@@ -84,6 +84,9 @@ namespace WokyTool.通用
 
             foreach (T Item_ in Enumerator_)
             {
+                if (Item_ == null)
+                    continue;
+
                 可編輯BList.Add(Item_);
             }
 

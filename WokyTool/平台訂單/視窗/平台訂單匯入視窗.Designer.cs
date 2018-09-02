@@ -346,7 +346,6 @@ namespace WokyTool.平台訂單
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 公司資料BindingSource;
         private System.Windows.Forms.BindingSource 客戶資料BindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 商品識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 商品資料BindingSource;
         private System.Windows.Forms.BindingSource 平台訂單匯入資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 群組DataGridViewTextBoxColumn;

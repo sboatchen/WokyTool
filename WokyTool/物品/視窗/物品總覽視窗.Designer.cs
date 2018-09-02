@@ -141,7 +141,7 @@
             // 
             this.物品ToolStripMenuItem.Name = "物品ToolStripMenuItem";
             this.物品ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.物品ToolStripMenuItem.Text = "物品";
+            this.物品ToolStripMenuItem.Text = "新增";
             this.物品ToolStripMenuItem.Click += new System.EventHandler(this.物品ToolStripMenuItem_Click);
             // 
             // 條碼ToolStripMenuItem

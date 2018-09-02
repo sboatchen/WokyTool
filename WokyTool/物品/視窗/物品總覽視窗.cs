@@ -82,8 +82,9 @@ namespace WokyTool.物品
 
         private void 物品ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //@@ TODO
-            訊息管理器.獨體.Notify(字串.功能尚未實作);
+            var i = new 物品新增匯入視窗();
+            i.Show();
+            i.BringToFront();
         }
 
         private void 條碼ToolStripMenuItem_Click(object sender, EventArgs e)

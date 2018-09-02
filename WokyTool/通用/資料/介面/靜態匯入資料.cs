@@ -22,35 +22,37 @@ namespace WokyTool.通用
 
             if (openFileDialog1.ShowDialog() != System.Windows.Forms.DialogResult.OK)
                 yield return null;
-
-            ExcelQueryFactory Excel_ = null;
-            ExcelQueryable<T> Source_ = null;
-            try
+            else
             {
-                // 備份
-                檔案.備份匯入檔案(openFileDialog1.FileName, typeof(T).Name);
+                ExcelQueryFactory Excel_ = null;
+                ExcelQueryable<T> Source_ = null;
+                try
+                {
+                    // 備份
+                    檔案.備份匯入檔案(openFileDialog1.FileName, typeof(T).Name);
 
-                Excel_ = new ExcelQueryFactory(openFileDialog1.FileName);
-                Source_ = Excel_.Worksheet<T>();
-            }
-            catch (Exception ex)
-            {
-                訊息管理器.獨體.Error("開啟檔案失敗", ex);
-                
+                    Excel_ = new ExcelQueryFactory(openFileDialog1.FileName);
+                    Source_ = Excel_.Worksheet<T>();
+                }
+                catch (Exception ex)
+                {
+                    訊息管理器.獨體.Error("開啟檔案失敗", ex);
+
+                    if (Excel_ != null)
+                        Excel_.Dispose();
+
+                    throw ex;
+                }
+
+                foreach (var Item_ in Source_)
+                {
+                    Item_.初始化();
+                    yield return Item_;
+                }
+
                 if (Excel_ != null)
                     Excel_.Dispose();
-
-                throw ex;
             }
-            
-            foreach (var Item_ in Source_)
-            {
-                Item_.初始化();
-                yield return Item_;
-            }
-            
-            if (Excel_ != null)
-                Excel_.Dispose();
         }
     }
 }

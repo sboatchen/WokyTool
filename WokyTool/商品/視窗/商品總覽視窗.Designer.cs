@@ -370,8 +370,8 @@
             // 
             this.商品ToolStripMenuItem.Name = "商品ToolStripMenuItem";
             this.商品ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.商品ToolStripMenuItem.Text = "新增商品";
-            this.商品ToolStripMenuItem.Click += new System.EventHandler(this.新增商品ToolStripMenuItem_Click);
+            this.商品ToolStripMenuItem.Text = "新增";
+            this.商品ToolStripMenuItem.Click += new System.EventHandler(this.新增ToolStripMenuItem_Click);
             // 
             // 商品總覽視窗
             // 
