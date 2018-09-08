@@ -14,9 +14,6 @@ namespace WokyTool.平台訂單
     [JsonObject(MemberSerialization.OptIn)]
     public class 平台訂單匯入設定資料 : 檔案匯入設定資料<平台訂單匯入設定資料>
     {
-        //@@ 
-        public int 測試用 { get; set; }
-
         [JsonProperty]
         public int 公司編號
         {
@@ -79,10 +76,6 @@ namespace WokyTool.平台訂單
             }
         }
 
-
-        [JsonProperty]
-        public 列舉.商品識別 商品識別 { get; set; }
-
         /********************************/
 
         public 平台訂單匯入設定資料 Self
@@ -100,7 +93,6 @@ namespace WokyTool.平台訂單
             標頭位置 = 0,
             公司 = 公司資料.NULL,
             客戶 = 客戶資料.NULL,
-            商品識別 = 列舉.商品識別.無,
         };
         public static 平台訂單匯入設定資料 NULL
         {
@@ -120,7 +112,6 @@ namespace WokyTool.平台訂單
             標頭位置 = 0,
             公司 = 公司資料.ERROR,
             客戶 = 客戶資料.ERROR,
-            商品識別 = 列舉.商品識別.錯誤,
         };
         public static 平台訂單匯入設定資料 ERROR
         {
@@ -144,7 +135,6 @@ namespace WokyTool.平台訂單
                 標頭位置 = this.標頭位置,
                 公司 = this.公司,
                 客戶 = this.客戶,
-                商品識別 = this.商品識別,
             };
 
             foreach (欄位匯入設定資料 Item_ in this.資料List)
@@ -165,7 +155,6 @@ namespace WokyTool.平台訂單
             標頭位置 = Data_.標頭位置;
             公司 = Data_.公司;
             客戶 = Data_.客戶;
-            商品識別 = Data_.商品識別;
 
             資料List.Clear();
             foreach (欄位匯入設定資料 Child_ in Data_.資料List)
@@ -184,8 +173,7 @@ namespace WokyTool.平台訂單
                 結束位置 == Data_.結束位置 &&
                 標頭位置 == Data_.標頭位置 &&
                 公司 == Data_.公司 &&
-                客戶 == Data_.客戶 &&
-                商品識別 == Data_.商品識別;
+                客戶 == Data_.客戶;
 
             if (Flag_ == false)
                 return false;
@@ -205,8 +193,7 @@ namespace WokyTool.平台訂單
 
         public override void 檢查合法()
         {
-            //@@@@@@@@@@@@@@@@@@@
-            /*base.檢查合法();
+            base.檢查合法();
 
             if (公司.編號是否合法() == false)
                 throw new Exception("平台訂單匯入設定資料:公司不合法:" + 公司編號);
@@ -214,34 +201,11 @@ namespace WokyTool.平台訂單
             if (客戶.編號是否合法() == false)
                 throw new Exception("平台訂單匯入設定資料:客戶不合法:" + 客戶編號);
 
-            if (商品識別 <= 列舉.商品識別類型.無)
-                throw new Exception("平台訂單匯入設定資料:商品識別不合法:" + 商品識別);
-
             if (資料List.Count == 0)
                 throw new Exception("檔案匯入設定資料:沒欄位資料");
 
-            switch (商品識別)
-            {
-                case 列舉.商品識別類型.商品編號:
-                    if (名稱映射對應表.ContainsKey(平台訂單列舉.匯入需求欄位.商品編號.ToString()) == false)
-                        throw new Exception("平台訂單匯入設定資料:未設定商品編號欄位");
-                    break;
-                case 列舉.商品識別類型.商品編號_顏色:
-                    if (名稱映射對應表.ContainsKey(平台訂單列舉.匯入需求欄位.商品編號.ToString()) == false)
-                        throw new Exception("平台訂單匯入設定資料:未設定商品編號欄位");
-                    if (名稱映射對應表.ContainsKey(平台訂單列舉.匯入需求欄位.顏色.ToString()) == false)
-                        throw new Exception("平台訂單匯入設定資料:未設定顏色欄位");
-                    break;
-                case 列舉.商品識別類型.商品名稱:
-                    if (名稱映射對應表.ContainsKey(平台訂單列舉.匯入需求欄位.商品名稱.ToString()) == false)
-                        throw new Exception("平台訂單匯入設定資料:未設定商品名稱欄位");
-                    break;
-                default:
-                    throw new Exception("平台訂單匯入設定資料:未知的商品識別類型:" + 商品識別);
-            }
-
             if (名稱映射對應表.ContainsKey(平台訂單列舉.匯入需求欄位.數量.ToString()) == false)
-                throw new Exception("平台訂單匯入設定資料:未設定數量欄位");*/
+                throw new Exception("平台訂單匯入設定資料:未設定數量欄位");
         }
 
         public IEnumerable<平台訂單匯入資料_PayEasy> 匯入Excel()

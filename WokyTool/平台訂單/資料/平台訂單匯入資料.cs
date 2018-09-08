@@ -81,9 +81,6 @@ namespace WokyTool.平台訂單
         }
 
         [JsonProperty]
-        public string 商品識別 { get; set; }
-
-        [JsonProperty]
         public int 商品編號
         {
             get

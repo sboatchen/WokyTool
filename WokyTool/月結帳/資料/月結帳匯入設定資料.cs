@@ -211,7 +211,7 @@ namespace WokyTool.月結帳
             if (客戶.編號是否合法() == false)
                 throw new Exception("月結帳匯入設定資料:客戶不合法:" + 客戶編號);
 
-            if (商品識別 <= 列舉.商品識別.無)
+            if (列舉.是否有值((int)商品識別) == false)
                 throw new Exception("月結帳匯入設定資料:商品識別不合法:" + 商品識別);
 
             if (資料List.Count == 0)

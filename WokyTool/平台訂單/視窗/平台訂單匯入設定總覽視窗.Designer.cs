@@ -31,11 +31,10 @@ namespace WokyTool.平台訂單
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.檔案格式類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.公司資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.客戶資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.商品識別類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.平台訂單匯入設定資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.檔案格式BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.格式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -44,13 +43,11 @@ namespace WokyTool.平台訂單
             this.開始位置DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.結束位置DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.標頭位置DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.商品識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.檔案格式類型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.公司資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.客戶資料BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.商品識別類型BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單匯入設定資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.檔案格式BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -65,8 +62,7 @@ namespace WokyTool.平台訂單
             this.客戶DataGridViewTextBoxColumn,
             this.開始位置DataGridViewTextBoxColumn,
             this.結束位置DataGridViewTextBoxColumn,
-            this.標頭位置DataGridViewTextBoxColumn,
-            this.商品識別DataGridViewTextBoxColumn});
+            this.標頭位置DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.平台訂單匯入設定資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -76,10 +72,6 @@ namespace WokyTool.平台訂單
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // 檔案格式類型BindingSource
-            // 
-            this.檔案格式類型BindingSource.DataSource = typeof(列舉.檔案格式);
-            // 
             // 公司資料BindingSource
             // 
             this.公司資料BindingSource.DataSource = typeof(WokyTool.公司.公司資料);
@@ -88,13 +80,13 @@ namespace WokyTool.平台訂單
             // 
             this.客戶資料BindingSource.DataSource = typeof(WokyTool.客戶.客戶資料);
             // 
-            // 商品識別類型BindingSource
-            // 
-            this.商品識別類型BindingSource.DataSource = typeof(列舉.商品識別);
-            // 
             // 平台訂單匯入設定資料BindingSource
             // 
             this.平台訂單匯入設定資料BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單匯入設定資料);
+            // 
+            // 檔案格式BindingSource
+            // 
+            this.檔案格式BindingSource.DataSource = typeof(WokyTool.通用.列舉.檔案格式);
             // 
             // 編號DataGridViewTextBoxColumn
             // 
@@ -112,7 +104,7 @@ namespace WokyTool.平台訂單
             // 格式DataGridViewTextBoxColumn
             // 
             this.格式DataGridViewTextBoxColumn.DataPropertyName = "格式";
-            this.格式DataGridViewTextBoxColumn.DataSource = this.檔案格式類型BindingSource;
+            this.格式DataGridViewTextBoxColumn.DataSource = this.檔案格式BindingSource;
             this.格式DataGridViewTextBoxColumn.HeaderText = "格式";
             this.格式DataGridViewTextBoxColumn.Name = "格式DataGridViewTextBoxColumn";
             this.格式DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -159,15 +151,6 @@ namespace WokyTool.平台訂單
             this.標頭位置DataGridViewTextBoxColumn.Name = "標頭位置DataGridViewTextBoxColumn";
             this.標頭位置DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 商品識別DataGridViewTextBoxColumn
-            // 
-            this.商品識別DataGridViewTextBoxColumn.DataPropertyName = "商品識別";
-            this.商品識別DataGridViewTextBoxColumn.DataSource = this.商品識別類型BindingSource;
-            this.商品識別DataGridViewTextBoxColumn.HeaderText = "商品識別";
-            this.商品識別DataGridViewTextBoxColumn.Name = "商品識別DataGridViewTextBoxColumn";
-            this.商品識別DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.商品識別DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // 平台訂單匯入設定總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -177,11 +160,10 @@ namespace WokyTool.平台訂單
             this.Name = "平台訂單匯入設定總覽視窗";
             this.Text = "平台訂單匯入設定總覽視窗";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.檔案格式類型BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.公司資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.客戶資料BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.商品識別類型BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單匯入設定資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.檔案格式BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,18 +172,16 @@ namespace WokyTool.平台訂單
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 平台訂單匯入設定資料BindingSource;
-        private System.Windows.Forms.BindingSource 檔案格式類型BindingSource;
         private System.Windows.Forms.BindingSource 公司資料BindingSource;
         private System.Windows.Forms.BindingSource 客戶資料BindingSource;
-        private System.Windows.Forms.BindingSource 商品識別類型BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 格式DataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource 檔案格式BindingSource;
         private System.Windows.Forms.DataGridViewComboBoxColumn 公司DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 客戶DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 開始位置DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 結束位置DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 標頭位置DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 商品識別DataGridViewTextBoxColumn;
     }
 }

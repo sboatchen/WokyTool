@@ -369,7 +369,7 @@ namespace WokyTool.平台訂單
             if (String.IsNullOrEmpty(訂單內容))
                 throw new Exception("平台訂單資料:訂單內容不合法:" + this.ToString());
 
-            if (列舉.編號是否合法((int)配送公司) == false)
+            if (列舉.是否有值((int)配送公司) == false)
                 throw new Exception("平台訂單資料:配送公司不合法:" + this.ToString());
 
             if (String.IsNullOrEmpty(配送單號))

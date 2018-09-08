@@ -98,7 +98,7 @@ namespace WokyTool.通用
             if (列索引 < 0)
                 throw new Exception("欄位匯入設定資料:列索引不合法:" + 列索引);
 
-            if (格式 <= 列舉.資料格式.無)
+            if (列舉.是否有值((int)格式) == false)
                 throw new Exception("欄位匯入設定資料:格式不合法" + 格式);
 
             //if (String.IsNullOrEmpty(名稱))

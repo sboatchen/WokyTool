@@ -25,10 +25,9 @@ namespace WokyTool.平台訂單
 
             this.初始化(this.頁索引元件1, 平台訂單匯入設定資料管理器.獨體);
 
-            this.檔案格式類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.檔案格式));
-            this.商品識別類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.商品識別));
+            this.檔案格式BindingSource.DataSource = Enum.GetValues(typeof(列舉.檔案格式));
             this.匯入需求欄位BindingSource.DataSource = Enum.GetValues(typeof(平台訂單列舉.匯入需求欄位));
-            this.資料格式類型BindingSource.DataSource = Enum.GetValues(typeof(列舉.資料格式));
+            this.資料格式BindingSource.DataSource = Enum.GetValues(typeof(列舉.資料格式));
 
             this.欄位匯入設定資料BindingSource.DataSource = _BindingList;
 
@@ -42,12 +41,10 @@ namespace WokyTool.平台訂單
             if (是否唯讀_)
             {
                 this.格式.DropDownStyle = ComboBoxStyle.Simple;
-                this.商品識別.DropDownStyle = ComboBoxStyle.Simple;
             }
             else
             {
                 this.格式.DropDownStyle = ComboBoxStyle.DropDown;
-                this.商品識別.DropDownStyle = ComboBoxStyle.DropDown;
             }
 
             this.開始位置.ReadOnly = 是否唯讀_;
@@ -81,7 +78,6 @@ namespace WokyTool.平台訂單
             目前資料_.客戶 = (客戶資料)(this.客戶選取元件1.SelectedItem);
 
             目前資料_.格式 = (列舉.檔案格式)(this.格式.SelectedItem);
-            目前資料_.商品識別 = (列舉.商品識別)(this.商品識別.SelectedItem);
             
             目前資料_.開始位置 = (int)(this.開始位置.Value);
             目前資料_.結束位置 = (int)(this.結束位置.Value);
@@ -104,7 +100,6 @@ namespace WokyTool.平台訂單
             this.客戶選取元件1.SelectedItem = 目前資料_.客戶;
 
             this.格式.SelectedItem = 目前資料_.格式;
-            this.商品識別.SelectedItem = 目前資料_.商品識別;
 
             this.開始位置.Value = 目前資料_.開始位置;
             this.結束位置.Value = 目前資料_.結束位置;

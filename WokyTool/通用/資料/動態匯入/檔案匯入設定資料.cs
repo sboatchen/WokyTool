@@ -97,7 +97,7 @@ namespace WokyTool.通用
         // 如果不合法 回傳例外
         public override void 檢查合法()
         {
-            if (格式 <= 列舉.檔案格式.無)
+            if (列舉.是否有值((int)格式) == false)
                 throw new Exception("檔案匯入設定資料:格式不合法:" + 格式);
 
             if (開始位置 < 0)

@@ -99,7 +99,7 @@ namespace WokyTool.編號
 
         public override void 檢查合法()
         {
-            if (列舉.編號是否合法(編號) == false)
+            if (列舉.是否有值(編號) == false)
                 throw new Exception("編號資料:類型不合法:" + this.ToString());
 
             if (下個值 <= 常數.T新建資料編碼)
