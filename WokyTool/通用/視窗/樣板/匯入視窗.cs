@@ -59,9 +59,9 @@ namespace WokyTool.通用
             {
                 _資料管理器.檢查合法();
             }
-            catch
+            catch(Exception ex)
             {
-                ;
+                訊息管理器.獨體.Notify(ex.Message);
             }
 
             _資料管理器.資料異動();

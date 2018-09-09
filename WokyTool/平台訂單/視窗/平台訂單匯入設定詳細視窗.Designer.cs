@@ -45,24 +45,24 @@ namespace WokyTool.平台訂單
             this.格式 = new System.Windows.Forms.ComboBox();
             this.檔案格式BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.欄位匯入設定資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.列索引DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.可合併儲存格DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.格式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.資料格式BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.欄位匯入設定資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.欄位參考 = new System.Windows.Forms.ComboBox();
             this.匯入需求欄位BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.公司選取元件1 = new WokyTool.公司.公司選取元件();
             this.客戶選取元件1 = new WokyTool.客戶.客戶選取元件();
-            this.列索引DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.可合併儲存格DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.格式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.開始位置)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.結束位置)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.標頭位置)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.檔案格式BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.欄位匯入設定資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.資料格式BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.欄位匯入設定資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.匯入需求欄位BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,7 +117,7 @@ namespace WokyTool.平台訂單
             // 
             // 頁索引元件1
             // 
-            this.頁索引元件1.Location = new System.Drawing.Point(159, 425);
+            this.頁索引元件1.Location = new System.Drawing.Point(160, 659);
             this.頁索引元件1.Name = "頁索引元件1";
             this.頁索引元件1.Size = new System.Drawing.Size(234, 34);
             this.頁索引元件1.TabIndex = 72;
@@ -211,17 +211,45 @@ namespace WokyTool.平台訂單
             this.dataGridView1.Location = new System.Drawing.Point(9, 202);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(539, 217);
+            this.dataGridView1.Size = new System.Drawing.Size(539, 438);
             this.dataGridView1.TabIndex = 93;
             this.dataGridView1.CurrentCellChanged += new System.EventHandler(this.dataGridView1_CurrentCellChanged);
             // 
-            // 欄位匯入設定資料BindingSource
+            // 列索引DataGridViewTextBoxColumn
             // 
-            this.欄位匯入設定資料BindingSource.DataSource = typeof(WokyTool.通用.欄位匯入設定資料);
+            this.列索引DataGridViewTextBoxColumn.DataPropertyName = "列索引";
+            this.列索引DataGridViewTextBoxColumn.HeaderText = "列索引";
+            this.列索引DataGridViewTextBoxColumn.Name = "列索引DataGridViewTextBoxColumn";
+            // 
+            // 可合併儲存格DataGridViewCheckBoxColumn
+            // 
+            this.可合併儲存格DataGridViewCheckBoxColumn.DataPropertyName = "可合併儲存格";
+            this.可合併儲存格DataGridViewCheckBoxColumn.HeaderText = "可合併儲存格";
+            this.可合併儲存格DataGridViewCheckBoxColumn.Name = "可合併儲存格DataGridViewCheckBoxColumn";
+            // 
+            // 格式DataGridViewTextBoxColumn
+            // 
+            this.格式DataGridViewTextBoxColumn.DataPropertyName = "格式";
+            this.格式DataGridViewTextBoxColumn.DataSource = this.資料格式BindingSource;
+            this.格式DataGridViewTextBoxColumn.HeaderText = "格式";
+            this.格式DataGridViewTextBoxColumn.Name = "格式DataGridViewTextBoxColumn";
+            this.格式DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.格式DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // 資料格式BindingSource
             // 
             this.資料格式BindingSource.DataSource = typeof(WokyTool.通用.列舉.資料格式);
+            // 
+            // 名稱DataGridViewTextBoxColumn
+            // 
+            this.名稱DataGridViewTextBoxColumn.DataPropertyName = "名稱";
+            this.名稱DataGridViewTextBoxColumn.HeaderText = "名稱";
+            this.名稱DataGridViewTextBoxColumn.Name = "名稱DataGridViewTextBoxColumn";
+            this.名稱DataGridViewTextBoxColumn.Width = 190;
+            // 
+            // 欄位匯入設定資料BindingSource
+            // 
+            this.欄位匯入設定資料BindingSource.DataSource = typeof(WokyTool.通用.欄位匯入設定資料);
             // 
             // 欄位參考
             // 
@@ -263,39 +291,11 @@ namespace WokyTool.平台訂單
             this.客戶選取元件1.Size = new System.Drawing.Size(186, 25);
             this.客戶選取元件1.TabIndex = 97;
             // 
-            // 列索引DataGridViewTextBoxColumn
-            // 
-            this.列索引DataGridViewTextBoxColumn.DataPropertyName = "列索引";
-            this.列索引DataGridViewTextBoxColumn.HeaderText = "列索引";
-            this.列索引DataGridViewTextBoxColumn.Name = "列索引DataGridViewTextBoxColumn";
-            // 
-            // 可合併儲存格DataGridViewCheckBoxColumn
-            // 
-            this.可合併儲存格DataGridViewCheckBoxColumn.DataPropertyName = "可合併儲存格";
-            this.可合併儲存格DataGridViewCheckBoxColumn.HeaderText = "可合併儲存格";
-            this.可合併儲存格DataGridViewCheckBoxColumn.Name = "可合併儲存格DataGridViewCheckBoxColumn";
-            // 
-            // 格式DataGridViewTextBoxColumn
-            // 
-            this.格式DataGridViewTextBoxColumn.DataPropertyName = "格式";
-            this.格式DataGridViewTextBoxColumn.DataSource = this.資料格式BindingSource;
-            this.格式DataGridViewTextBoxColumn.HeaderText = "格式";
-            this.格式DataGridViewTextBoxColumn.Name = "格式DataGridViewTextBoxColumn";
-            this.格式DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.格式DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // 名稱DataGridViewTextBoxColumn
-            // 
-            this.名稱DataGridViewTextBoxColumn.DataPropertyName = "名稱";
-            this.名稱DataGridViewTextBoxColumn.HeaderText = "名稱";
-            this.名稱DataGridViewTextBoxColumn.Name = "名稱DataGridViewTextBoxColumn";
-            this.名稱DataGridViewTextBoxColumn.Width = 190;
-            // 
             // 平台訂單匯入設定詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 465);
+            this.ClientSize = new System.Drawing.Size(560, 705);
             this.Controls.Add(this.客戶選取元件1);
             this.Controls.Add(this.公司選取元件1);
             this.Controls.Add(this.label1);
@@ -321,8 +321,8 @@ namespace WokyTool.平台訂單
             ((System.ComponentModel.ISupportInitialize)(this.標頭位置)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.檔案格式BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.欄位匯入設定資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.資料格式BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.欄位匯入設定資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.匯入需求欄位BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

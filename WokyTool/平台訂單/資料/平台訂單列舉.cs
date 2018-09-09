@@ -11,6 +11,8 @@ namespace WokyTool.平台訂單
         public enum 匯入需求欄位
         {
             商品編號,
+            商品子編號,
+
             商品名稱,
             顏色,
 

@@ -93,7 +93,14 @@ namespace WokyTool.通用
             編輯資料版本++;
             可編輯BList.RaiseListChangedEvents = true;
 
-            檢查合法();
+            try
+            {
+                檢查合法();
+            }
+            catch (Exception ex)
+            {
+                訊息管理器.獨體.Notify(ex.Message);
+            }
         }
 
         public void 資料異動()
