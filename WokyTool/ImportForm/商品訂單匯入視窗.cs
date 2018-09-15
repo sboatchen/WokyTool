@@ -237,13 +237,6 @@ namespace WokyTool.ImportForm
         {
             switch (廠商類型)
             {
-                case "博客來":
-                    {
-                        var Items_ = _Source.Select(Value => new 回單號結構_博客來((出貨匯入結構_博客來)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        函式.ExportCSV<回單號結構_博客來>(Title_, Items_);
-                        break;
-                    }
                 case "uDesign":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_uDesign((出貨匯入結構_uDesign)Value));
@@ -531,12 +524,6 @@ namespace WokyTool.ImportForm
 
         private void 博客來ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商類型 = "博客來";
-
-            if (Import<出貨匯入結構_博客來>() == false)
-                return;
-
-            ImportShow("博客來");
         }
 
         private void payEasyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -861,7 +848,6 @@ namespace WokyTool.ImportForm
 
         private void 博客來ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            函式.GetFile("博客來匯入樣板", "Template/OrderImport/博客來匯入樣板.xlsx");
         }
         
         private void payEasyToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -896,7 +882,6 @@ namespace WokyTool.ImportForm
 
         private void 遠傳加購ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            函式.GetFile("遠傳加購匯入樣板", "Template/OrderImport/遠傳加購匯入樣板.xlsx");
         }
 
         private void 金石堂ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -936,7 +921,6 @@ namespace WokyTool.ImportForm
 
         private void momo摩天ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            函式.GetFile("Momo摩天匯入樣板", "Template/OrderImport/Momo摩天匯入樣板.xlsx");
         }
         
         private void uDesignToolStripMenuItem1_Click(object sender, EventArgs e)

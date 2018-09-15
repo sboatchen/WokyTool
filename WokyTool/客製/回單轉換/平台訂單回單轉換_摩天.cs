@@ -61,7 +61,6 @@ namespace WokyTool.客製
                 App_.Cells[Row_, Pair_.Key] = Pair_.Value;
             }
 
-            
             App_.Cells[Row_, 3] = "已配送";
            
              switch (_Data.配送公司)
