@@ -212,6 +212,8 @@
       <DependentUpon>客戶選取元件.cs</DependentUpon>
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
+    <Compile Include="平台訂單\客製\平台訂單自定義介面.cs" />
+    <Compile Include="平台訂單\客製\平台訂單自定義工廠.cs" />
     <Compile Include="平台訂單\控制\平台訂單新增資料管理器.cs" />
     <Compile Include="平台訂單\控制\平台訂單匯入設定管理器.cs" />
     <Compile Include="平台訂單\控制\平台訂單匯入管理器.cs" />
@@ -242,8 +244,8 @@
     <Compile Include="平台訂單\資料\平台訂單列舉.cs" />
     <Compile Include="平台訂單\資料\平台訂單匯入資料.cs" />
     <Compile Include="平台訂單\資料\平台訂單新增資料.cs" />
-    <Compile Include="平台訂單\轉換\客制\平台訂單匯入轉換_摩天.cs" />
-    <Compile Include="平台訂單\轉換\客制\平台訂單匯入轉換_PayEasy.cs" />
+    <Compile Include="平台訂單\客製\平台訂單自定義_摩天.cs" />
+    <Compile Include="平台訂單\客製\平台訂單自定義_PayEasy.cs" />
     <Compile Include="平台訂單\轉換\平台訂單新增錯誤匯出轉換.cs" />
     <Compile Include="月結帳\控制\月結帳匯入管理器.cs" />
     <Compile Include="月結帳\控制\月結帳資料管理器.cs" />
@@ -401,7 +403,6 @@
     </Compile>
     <Compile Include="通用\其他\列舉.cs" />
     <Compile Include="通用\其他\可下訂介面.cs" />
-    <Compile Include="通用\其他\可配送介面.cs" />
     <Compile Include="通用\其他\時間.cs" />
     <Compile Include="通用\其他\檔案.cs" />
     <Compile Include="通用\其他\系統參數.cs" />
@@ -762,9 +763,8 @@
     <Compile Include="配送\視窗\待配送總覽視窗.Designer.cs">
       <DependentUpon>待配送總覽視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="配送\資料\平台合併訂單配送資料.cs" />
     <Compile Include="配送\資料\平台訂單配送資料.cs" />
-    <Compile Include="配送\轉換\平台訂單配送轉換_通用.cs" />
-    <Compile Include="配送\轉換\平台訂單配送轉換介面.cs" />
     <EmbeddedResource Include="FormOther\商品篩選視窗.resx">
       <DependentUpon>商品篩選視窗.cs</DependentUpon>
     </EmbeddedResource>

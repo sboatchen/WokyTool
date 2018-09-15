@@ -65,8 +65,6 @@ namespace WokyTool.平台訂單
             if (_平台訂單匯入管理器.是否正在編輯() == false)
                 return;
 
-            _平台訂單匯入管理器.ToString();
-
             this.格式.Enabled = false;
             this.檢查ToolStripMenuItem.Enabled = true;
             this.匯出ToolStripMenuItem.Enabled = true;

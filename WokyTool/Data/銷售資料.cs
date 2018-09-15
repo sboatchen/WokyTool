@@ -117,7 +117,7 @@ namespace WokyTool.Data
         {
             return new 銷售資料
             {
-                編號 = 編碼管理器.Instance.Get(列舉.編號.銷售),
+                //編號 = 編碼管理器.Instance.Get(列舉.編號.銷售),
                 狀態 = 舊列舉.銷售狀態類型.出貨,
                 建立日期 = DateTime.Now,
                 結單日期 = 時間.NULL,

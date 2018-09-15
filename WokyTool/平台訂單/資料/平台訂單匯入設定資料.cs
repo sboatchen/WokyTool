@@ -208,10 +208,10 @@ namespace WokyTool.平台訂單
                 throw new Exception("平台訂單匯入設定資料:未設定數量欄位");
         }
 
-        public IEnumerable<平台訂單匯入資料_PayEasy> 匯入Excel()
+        public IEnumerable<平台訂單匯入資料> 匯入Excel()
         {
-            //@@
-            return 匯入Excel<平台訂單匯入資料_PayEasy>(new 平台訂單匯入轉換_PayEasy());
+            平台訂單自定義介面 自定義_ = 平台訂單自定義工廠.獨體.取得自定義(this.客戶);
+            return 匯入Excel<平台訂單匯入資料>(自定義_, true);
         }
     }
 }
