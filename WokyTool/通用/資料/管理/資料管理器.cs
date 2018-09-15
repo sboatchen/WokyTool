@@ -38,7 +38,15 @@ namespace WokyTool.通用
         public abstract string 檔案路徑 { get; }
         public abstract T 空白資料 { get; }
         public abstract T 錯誤資料 { get; }
+
         public abstract 列舉.編號 編號類型 { get; }
+        public virtual int 編號代碼 
+        {
+            get
+            {
+                return (int)編號類型;
+            }
+        }
 
         protected 可篩選介面<T> _篩選介面 = null;
         public 可篩選介面<T> 篩選介面
@@ -247,7 +255,7 @@ namespace WokyTool.通用
 
                 if (Item_.編號 == 常數.T新建資料編碼)
                 {
-                    Item_.編號 = 編號資料管理器.獨體.下個值(編號類型);
+                    Item_.編號 = 編號資料管理器.獨體.下個值(編號代碼);
                 }
 
                 Map[Item_.編號] = Item_;
@@ -342,7 +350,7 @@ namespace WokyTool.通用
                 if (Item_.編號 == 常數.T新建資料編碼)
                 {
                     Item_.檢查合法();
-                    Item_.編號 = 編號資料管理器.獨體.下個值(編號類型);
+                    Item_.編號 = 編號資料管理器.獨體.下個值(編號代碼);
                 }
 
                 Map[Item_.編號] = Item_;
@@ -381,6 +389,20 @@ namespace WokyTool.通用
             是否編輯中減少資料 = false;
 
             資料異動();
+
+            編號資料管理器.獨體.Map.Remove(編號代碼);
+
+            int 下個值_ = 1;
+            if (可編輯BList.Count > 0)
+                下個值_ = 可編輯BList.Max(Value => Value.編號) + 1;
+            
+            編號.編號資料 New_ = new 編號.編號資料
+            {
+                編號 = 編號代碼,
+                下個值 = 下個值_,
+            };
+
+            編號資料管理器.獨體.Map.Add(編號代碼, New_);
         }
     }
 }

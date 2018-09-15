@@ -249,7 +249,7 @@ namespace WokyTool.月結帳
 
         public IEnumerable<月結帳匯入資料> 匯入Excel()
         {
-            return 匯入Excel<月結帳匯入資料>(new 月結帳匯入轉換());
+            return 匯入Excel<月結帳匯入資料>(new 月結帳匯入轉換(), false);
         }
     }
 }

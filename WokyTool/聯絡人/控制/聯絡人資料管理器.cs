@@ -38,12 +38,12 @@ namespace WokyTool.聯絡人
             } 
         }
 
-        public override int 資料編號
-        { 
-            get 
-            { 
-                return 列舉.編號.聯絡人; 
-            } 
+        public override 列舉.編號 編號類型
+        {
+            get
+            {
+                return 列舉.編號.聯絡人;
+            }
         }
 
         public override bool 是否可編輯
