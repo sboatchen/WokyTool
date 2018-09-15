@@ -15,7 +15,7 @@ using WokyTool.通用;
 namespace WokyTool.平台訂單
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 平台訂單新增資料 : MyKeepableData<平台訂單新增資料>, 可配送介面
+    public class 平台訂單歸檔資料 : MyKeepableData<平台訂單歸檔資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }
@@ -171,27 +171,8 @@ namespace WokyTool.平台訂單
         [JsonProperty]
         public decimal 代收金額 { get; set; }
 
-        [JsonProperty]
-        public Dictionary<int, Object> 額外資訊 { get; set; }
-
-        [JsonProperty]
-        public int 配送分組 { get; set; }
-
         /********************************/
         // 暫時性資訊
-
-        private 平台訂單自定義介面 _自定義介面 = null;
-        public 平台訂單自定義介面 自定義介面
-        {
-            get
-            {
-                if (_自定義介面 == null)
-                    _自定義介面 = 平台訂單自定義工廠.獨體.取得自定義(this.客戶);
-                return _自定義介面;
-            }
-        }
-
-        public String 分組識別 { get; private set; }
 
         public 物品組成資料 組成 
         {
@@ -206,15 +187,15 @@ namespace WokyTool.平台訂單
 
         /********************************/
 
-        public 平台訂單新增資料 Self
+        public 平台訂單歸檔資料 Self
         {
             get { return this; }
         }
 
-        private static readonly 平台訂單新增資料 _NULL = new 平台訂單新增資料
+        private static readonly 平台訂單歸檔資料 _NULL = new 平台訂單歸檔資料
         {
             編號 = 常數.T空白資料編碼,
-            處理狀態 = 列舉.訂單處理狀態.新增,
+            處理狀態 = 列舉.訂單處理狀態.歸檔,
 
             公司 = 公司資料.NULL,
             客戶 = 客戶資料.NULL,
@@ -241,12 +222,8 @@ namespace WokyTool.平台訂單
 
             代收方式 = 列舉.代收方式.無,
             代收金額 = 0,
-
-            額外資訊 = null,
-
-            配送分組 = 0,
         };
-        public static 平台訂單新增資料 NULL
+        public static 平台訂單歸檔資料 NULL
         {
             get
             {
@@ -254,7 +231,7 @@ namespace WokyTool.平台訂單
             }
         }
 
-        private static 平台訂單新增資料 _ERROR = new 平台訂單新增資料
+        private static 平台訂單歸檔資料 _ERROR = new 平台訂單歸檔資料
         {
             編號 = 常數.T錯誤資料編碼,
             處理狀態 = 列舉.訂單處理狀態.錯誤,
@@ -284,12 +261,8 @@ namespace WokyTool.平台訂單
 
             代收方式 = 列舉.代收方式.錯誤,
             代收金額 = 0,
-
-            額外資訊 = null,
-
-            配送分組 = 0,
         };
-        public static 平台訂單新增資料 ERROR
+        public static 平台訂單歸檔資料 ERROR
         {
             get
             {
@@ -297,10 +270,12 @@ namespace WokyTool.平台訂單
             }
         }
 
-        public static 平台訂單新增資料 新增(平台訂單匯入資料 Value)
+        public static 平台訂單歸檔資料 新增(平台訂單新增資料 Value)
         {
-            平台訂單新增資料 Data_ = new 平台訂單新增資料
+            平台訂單歸檔資料 Data_ = new 平台訂單歸檔資料
             {
+                處理狀態 = 列舉.訂單處理狀態.歸檔,
+
                 公司 = Value.公司,
                 客戶 = Value.客戶,
 
@@ -325,10 +300,6 @@ namespace WokyTool.平台訂單
 
                 代收方式 = Value.代收方式,
                 代收金額 = Value.代收金額,
-
-                額外資訊 = Value.額外資訊,
-
-                _自定義介面 = Value.自定義介面,
             };
 
             return Data_;
@@ -336,9 +307,9 @@ namespace WokyTool.平台訂單
 
         /********************************/
 
-        public override 平台訂單新增資料 拷貝()
+        public override 平台訂單歸檔資料 拷貝()
         {
-            平台訂單新增資料 Data_ = new 平台訂單新增資料
+            平台訂單歸檔資料 Data_ = new 平台訂單歸檔資料
             {
                 處理狀態 = this.處理狀態,
 
@@ -367,14 +338,12 @@ namespace WokyTool.平台訂單
 
                 代收方式 = this.代收方式,
                 代收金額 = this.代收金額,
-
-                額外資訊 = this.額外資訊,
             };
 
             return Data_;
         }
 
-        public override void 覆蓋(平台訂單新增資料 Data_)
+        public override void 覆蓋(平台訂單歸檔資料 Data_)
         {
             處理狀態 = Data_.處理狀態;
 
@@ -403,11 +372,9 @@ namespace WokyTool.平台訂單
 
             代收方式 = Data_.代收方式;
             代收金額 = Data_.代收金額;
-
-            額外資訊 = Data_.額外資訊;
         }
 
-        public override Boolean 是否一致(平台訂單新增資料 Data_)
+        public override Boolean 是否一致(平台訂單歸檔資料 Data_)
         {
             return
                 處理狀態 == Data_.處理狀態 &&
@@ -442,40 +409,34 @@ namespace WokyTool.平台訂單
         public override void 檢查合法()
         {
             if (列舉.是否合法((int)處理狀態) == false)
-                throw new Exception("平台訂單新增資料:處理狀態不合法:" + 處理狀態);
+                throw new Exception("平台訂單歸檔資料:處理狀態不合法:" + 處理狀態);
 
             if (公司.編號是否合法() == false)
-                throw new Exception("平台訂單新增資料:公司編號不合法:" + 公司編號);
+                throw new Exception("平台訂單歸檔資料:公司編號不合法:" + 公司編號);
 
             if (客戶.編號是否合法() == false)
-                throw new Exception("平台訂單新增資料:客戶編號不合法:" + 客戶編號);
+                throw new Exception("平台訂單歸檔資料:客戶編號不合法:" + 客戶編號);
 
             if (商品.編號是否合法() == false)
-                throw new Exception("平台訂單新增資料:商品不合法:" + 商品編號);
+                throw new Exception("平台訂單歸檔資料:商品不合法:" + 商品編號);
 
             if (商品.公司 != 公司)
-                throw new Exception("平台訂單新增資料:公司不一致:" + 商品.公司.名稱 + "," + 公司.名稱);
+                throw new Exception("平台訂單歸檔資料:公司不一致:" + 商品.公司.名稱 + "," + 公司.名稱);
 
             if (商品.客戶 != 客戶)
-                throw new Exception("平台訂單新增資料:客戶不一致:" + 商品.客戶.名稱 + "," + 客戶.名稱);
+                throw new Exception("平台訂單歸檔資料:客戶不一致:" + 商品.客戶.名稱 + "," + 客戶.名稱);
 
             if (String.IsNullOrEmpty(姓名))
-                throw new Exception("平台訂單新增資料:姓名不合法:" + this.ToString());
+                throw new Exception("平台訂單歸檔資料:姓名不合法:" + this.ToString());
 
             if (String.IsNullOrEmpty(地址))
-                throw new Exception("平台訂單新增資料:地址不合法:" + this.ToString());
+                throw new Exception("平台訂單歸檔資料:地址不合法:" + this.ToString());
 
             if (String.IsNullOrEmpty(電話) && String.IsNullOrEmpty(手機))
-                throw new Exception("平台訂單新增資料:電話與手機不合法:" + this.ToString());
+                throw new Exception("平台訂單歸檔資料:電話與手機不合法:" + this.ToString());
 
             if (String.IsNullOrEmpty(訂單編號))
-                throw new Exception("平台訂單新增資料:訂單編號不合法:" + this.ToString());
-        }
-
-        public void 重新分組()
-        {
-            配送分組 = 0;
-            分組識別 = 自定義介面.取得分組識別(this);
+                throw new Exception("平台訂單歸檔資料:訂單編號不合法:" + this.ToString());
         }
     }
 }

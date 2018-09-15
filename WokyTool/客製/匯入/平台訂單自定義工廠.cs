@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using WokyTool.客戶;
 using WokyTool.通用;
 
-namespace WokyTool.平台訂單
+namespace WokyTool.客製
 {
     public class 平台訂單自定義工廠
     {

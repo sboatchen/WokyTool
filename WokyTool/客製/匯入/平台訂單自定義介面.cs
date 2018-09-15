@@ -13,11 +13,14 @@ using WokyTool.配送;
 using WokyTool.商品;
 using WokyTool.通用;
 
-namespace WokyTool.平台訂單
+namespace WokyTool.客製
 {
     public abstract class 平台訂單自定義介面 : 檔案匯入轉換介面<平台訂單匯入資料>
     {
         public abstract IEnumerable<平台訂單匯入資料> 轉換(動態匯入檔案結構 動態匯入檔案結構_);
+
+        public abstract void 回單(IEnumerable<平台訂單新增資料> 資料_);
+
 
         public virtual String 取得分組識別(平台訂單新增資料 資料_)
         {

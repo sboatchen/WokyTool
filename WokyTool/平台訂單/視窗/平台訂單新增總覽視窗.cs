@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,6 +11,7 @@ using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.公司;
 using WokyTool.客戶;
+using WokyTool.客製;
 using WokyTool.配送;
 using WokyTool.通用;
 
@@ -64,6 +66,8 @@ namespace WokyTool.平台訂單
             }
 
             this.dataGridView1.Refresh();
+
+            訊息管理器.獨體.Notify("已完成系統分組");
         }
 
         private void 配送ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,6 +98,29 @@ namespace WokyTool.平台訂單
             配送管理器.獨體.新增(配送列表_);
 
             訊息管理器.獨體.Notify("已轉入配送系統");
+        }
+
+        private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送).GroupBy(Value => Value.公司.編號 * 1000 + Value.客戶.編號);
+
+            foreach (var Group_ in GroupQueue_)
+            {
+                平台訂單自定義介面 平台訂單自定義介面_ = Group_.First().自定義介面;
+
+                平台訂單自定義介面_.回單(Group_);
+            }
+
+            訊息管理器.獨體.Notify("已完成匯出");
+        }
+
+        private void 歸檔ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單新增資料管理器.獨體.歸檔();
+
+            this.OnActivated(null);
+
+            訊息管理器.獨體.Notify("已完成歸檔");
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

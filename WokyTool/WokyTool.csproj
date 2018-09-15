@@ -212,8 +212,8 @@
       <DependentUpon>客戶選取元件.cs</DependentUpon>
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
-    <Compile Include="平台訂單\客製\平台訂單自定義介面.cs" />
-    <Compile Include="平台訂單\客製\平台訂單自定義工廠.cs" />
+    <Compile Include="客製\匯入\平台訂單自定義介面.cs" />
+    <Compile Include="客製\匯入\平台訂單自定義工廠.cs" />
     <Compile Include="平台訂單\控制\平台訂單新增資料管理器.cs" />
     <Compile Include="平台訂單\控制\平台訂單匯入設定管理器.cs" />
     <Compile Include="平台訂單\控制\平台訂單匯入管理器.cs" />
@@ -243,9 +243,10 @@
     </Compile>
     <Compile Include="平台訂單\資料\平台訂單列舉.cs" />
     <Compile Include="平台訂單\資料\平台訂單匯入資料.cs" />
+    <Compile Include="平台訂單\資料\平台訂單歸檔資料.cs" />
     <Compile Include="平台訂單\資料\平台訂單新增資料.cs" />
-    <Compile Include="平台訂單\客製\平台訂單自定義_摩天.cs" />
-    <Compile Include="平台訂單\客製\平台訂單自定義_PayEasy.cs" />
+    <Compile Include="客製\匯入\平台訂單自定義_摩天.cs" />
+    <Compile Include="客製\匯入\平台訂單自定義_PayEasy.cs" />
     <Compile Include="平台訂單\轉換\平台訂單新增錯誤匯出轉換.cs" />
     <Compile Include="月結帳\控制\月結帳匯入管理器.cs" />
     <Compile Include="月結帳\控制\月結帳資料管理器.cs" />
@@ -488,7 +489,7 @@
     <Compile Include="Common\資料讀寫參數.cs" />
     <Compile Include="Common\資料讀寫參數CSV.cs" />
     <Compile Include="Common\顏色處理.cs" />
-    <Compile Include="DataExport\回單號結構_Momo摩天.cs" />
+    <Compile Include="客製\回單轉換\平台訂單回單轉換_摩天.cs" />
     <Compile Include="DataExport\回單號結構_uDesign.cs" />
     <Compile Include="DataExport\回單號結構_博客來.cs" />
     <Compile Include="DataExport\工廠出貨匯出結構.cs" />
@@ -525,7 +526,6 @@
     <Compile Include="DataImport\出貨匯入結構_ASAP.cs" />
     <Compile Include="DataImport\出貨匯入結構_citiesocial.cs" />
     <Compile Include="DataImport\出貨匯入結構_ibonMart.cs" />
-    <Compile Include="DataImport\出貨匯入結構_Momo摩天.cs" />
     <Compile Include="DataImport\出貨匯入結構_myfone.cs" />
     <Compile Include="DataImport\出貨匯入結構_PayEasy.cs" />
     <Compile Include="DataImport\出貨匯入結構_PC商店街.cs" />

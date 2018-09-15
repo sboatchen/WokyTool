@@ -61,6 +61,8 @@
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.系統分組ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.配送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.歸檔ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.訂單處理狀態BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段BindingSource)).BeginInit();
@@ -287,7 +289,9 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.篩選ToolStripMenuItem,
             this.系統分組ToolStripMenuItem,
-            this.配送ToolStripMenuItem});
+            this.配送ToolStripMenuItem,
+            this.匯出ToolStripMenuItem,
+            this.歸檔ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1447, 24);
@@ -314,6 +318,20 @@
             this.配送ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.配送ToolStripMenuItem.Text = "配送";
             this.配送ToolStripMenuItem.Click += new System.EventHandler(this.配送ToolStripMenuItem_Click);
+            // 
+            // 匯出ToolStripMenuItem
+            // 
+            this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
+            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.匯出ToolStripMenuItem.Text = "匯出";
+            this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
+            // 
+            // 歸檔ToolStripMenuItem
+            // 
+            this.歸檔ToolStripMenuItem.Name = "歸檔ToolStripMenuItem";
+            this.歸檔ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.歸檔ToolStripMenuItem.Text = "歸檔";
+            this.歸檔ToolStripMenuItem.Click += new System.EventHandler(this.歸檔ToolStripMenuItem_Click);
             // 
             // 平台訂單新增總覽視窗
             // 
@@ -374,5 +392,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn 代收方式DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 代收金額DataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem 配送ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 匯出ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 歸檔ToolStripMenuItem;
     }
 }

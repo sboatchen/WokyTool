@@ -13,7 +13,7 @@ using WokyTool.配送;
 using WokyTool.商品;
 using WokyTool.通用;
 
-namespace WokyTool.平台訂單
+namespace WokyTool.客製
 {
     public class 平台訂單自定義_摩天 : 平台訂單自定義介面
     {
@@ -58,6 +58,14 @@ namespace WokyTool.平台訂單
 
                 yield return 平台訂單匯入資料_;
             }
+        }
+
+        public override void 回單(IEnumerable<平台訂單新增資料> 資料_)
+        {
+            var Items_ = 資料_.Select(Value => new 平台訂單回單轉換_摩天(Value));
+
+            String Title_ = String.Format("摩天回單_{0}", 時間.目前日期);
+            函式.ExportExcel<平台訂單回單轉換_摩天>(Title_, Items_);
         }
     }
 }
