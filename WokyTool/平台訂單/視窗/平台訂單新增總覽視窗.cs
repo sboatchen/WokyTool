@@ -44,11 +44,12 @@ namespace WokyTool.平台訂單
             // 清除所有舊的配送分組
             foreach(var Item_ in 平台訂單新增資料管理器.獨體.可編輯BList)
             {
-                Item_.重新分組();
+                if (Item_.處理狀態 == 列舉.訂單處理狀態.新增)
+                    Item_.重新分組();
             }
 
             int StartGroup_ = -1001;
-            var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList.GroupBy(Value => Value.分組識別);
+            var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增).GroupBy(Value => Value.分組識別);
             foreach (var Group_ in GroupQueue_)
             {
                 if (Group_.Count() == 1)
@@ -67,9 +68,9 @@ namespace WokyTool.平台訂單
 
         private void 配送ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList.GroupBy(Value => Value.配送分組);
+            var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增).GroupBy(Value => Value.配送分組);
 
-            List<可配送介面> 配送列表_ = new List<可配送介面>();
+            List<可配送資料> 配送列表_ = new List<可配送資料>();
             foreach (var Group_ in GroupQueue_)
             {
                 if (Group_.Key == 0)
@@ -90,8 +91,9 @@ namespace WokyTool.平台訂單
                 }
             }
 
-            foreach(var x in 配送列表_)
-                Console.WriteLine(x.ToString());
+            配送管理器.獨體.新增(配送列表_);
+
+            訊息管理器.獨體.Notify("已轉入配送系統");
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

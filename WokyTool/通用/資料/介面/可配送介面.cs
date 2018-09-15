@@ -18,7 +18,6 @@ namespace WokyTool.通用
         string 地址 { get; }
 
         物品組成資料 組成 { get; }
-        string 內容 { get; }
 
         DateTime 指配日期 { get; }     // 指配日期.Ticks == 0 代表不指定
         列舉.指配時段 指配時段 { get; }
@@ -28,8 +27,5 @@ namespace WokyTool.通用
 
         列舉.配送公司 配送公司 { get; set; }
         string 配送單號 { get; set; }
-
-        // 是否已經配送
-        bool 是否已配送();
     }
 }

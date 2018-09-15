@@ -402,7 +402,6 @@
       <DependentUpon>聯絡人選取元件.cs</DependentUpon>
     </Compile>
     <Compile Include="通用\其他\列舉.cs" />
-    <Compile Include="通用\其他\可下訂介面.cs" />
     <Compile Include="通用\其他\時間.cs" />
     <Compile Include="通用\其他\檔案.cs" />
     <Compile Include="通用\其他\系統參數.cs" />
@@ -431,6 +430,7 @@
     <Compile Include="通用\視窗\樣板\匯入詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="通用\資料\管理\暫存資料管理器.cs" />
     <Compile Include="通用\資料\管理\匯入資料管理器.cs" />
     <Compile Include="通用\資料\介面\靜態匯入資料.cs" />
     <Compile Include="通用\資料\介面\可比較複寫介面.cs" />
@@ -492,7 +492,7 @@
     <Compile Include="DataExport\回單號結構_uDesign.cs" />
     <Compile Include="DataExport\回單號結構_博客來.cs" />
     <Compile Include="DataExport\工廠出貨匯出結構.cs" />
-    <Compile Include="DataExport\撿貨統計結構.cs" />
+    <Compile Include="配送\轉換\撿貨匯出轉換.cs" />
     <Compile Include="DataExport\銷售匯出結構.cs" />
     <Compile Include="DataImport\出貨匯入結構_uDesign.cs" />
     <Compile Include="DataImport\出貨匯入結構_夠麻吉.cs" />
@@ -500,7 +500,7 @@
     <Compile Include="DataExport\商品庫存匯出結構.cs" />
     <Compile Include="DataExport\回單號結構_citiesocial.cs" />
     <Compile Include="DataExport\回單號結構_GoHappy.cs" />
-    <Compile Include="DataExport\全速配匯出結構.cs" />
+    <Compile Include="配送\資料\全速配匯出結構.cs" />
     <Compile Include="DataExport\回單號結構_ibonMart.cs" />
     <Compile Include="DataExport\回單號結構_Momo.cs" />
     <Compile Include="DataExport\回單號結構_Momo第三方_分組.cs" />
@@ -517,7 +517,7 @@
     <Compile Include="DataExport\回單號結構_通用.cs" />
     <Compile Include="DataExport\回單號結構_遠傳.cs" />
     <Compile Include="DataExport\回單號結構_遠傳加購.cs" />
-    <Compile Include="DataExport\宅配通匯出結構.cs" />
+    <Compile Include="配送\資料\宅配通匯出結構.cs" />
     <Compile Include="DataExport\物品庫存匯出結構.cs" />
     <Compile Include="DataExport\物品總覽匯出結構.cs" />
     <Compile Include="DataExport\通用匯出結構.cs" />
@@ -638,7 +638,7 @@
     <Compile Include="FormOverview\雜支總覽視窗.Designer.cs">
       <DependentUpon>雜支總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataImport\全速配匯入結構.cs" />
+    <Compile Include="配送\資料\全速配匯入資料.cs" />
     <Compile Include="DataImport\出貨匯入結構_Momo.cs" />
     <Compile Include="DataImport\出貨匯入結構_Momo第三方.cs" />
     <Compile Include="DataImport\出貨匯入結構_PCHome.cs" />
@@ -646,7 +646,7 @@
     <Compile Include="DataImport\出貨匯入結構_東森.cs" />
     <Compile Include="DataImport\出貨匯入結構_森森.cs" />
     <Compile Include="廢棄\商品匯入結構.cs" />
-    <Compile Include="DataImport\宅配通匯入結構.cs" />
+    <Compile Include="配送\資料\宅配通匯入資料.cs" />
     <Compile Include="廢棄\物品匯入結構.cs" />
     <Compile Include="DataImport\出貨匯入結構_GoHappy.cs" />
     <Compile Include="DataImport\進貨匯入結構.cs" />
@@ -709,12 +709,6 @@
     <Compile Include="ImportForm\雜支匯入視窗.Designer.cs">
       <DependentUpon>雜支匯入視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormOther\待處理配送總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOther\待處理配送總覽視窗.Designer.cs">
-      <DependentUpon>待處理配送總覽視窗.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormOther\主視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -755,8 +749,9 @@
     </Compile>
     <Compile Include="聯絡人\控制\聯絡人資料管理器.cs" />
     <Compile Include="聯絡人\資料\聯絡人資料.cs" />
-    <Compile Include="通用\其他\可儲存介面.cs" />
+    <Compile Include="通用\資料\介面\可儲存介面.cs" />
     <Compile Include="通用\資料\管理\資料管理器介面.cs" />
+    <Compile Include="配送\控制\配送管理器.cs" />
     <Compile Include="配送\視窗\待配送總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -764,6 +759,7 @@
       <DependentUpon>待配送總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="配送\資料\平台合併訂單配送資料.cs" />
+    <Compile Include="配送\資料\可配送資料.cs" />
     <Compile Include="配送\資料\平台訂單配送資料.cs" />
     <EmbeddedResource Include="FormOther\商品篩選視窗.resx">
       <DependentUpon>商品篩選視窗.cs</DependentUpon>
@@ -857,9 +853,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ImportForm\雜支匯入視窗.resx">
       <DependentUpon>雜支匯入視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOther\待處理配送總覽視窗.resx">
-      <DependentUpon>待處理配送總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -1055,6 +1048,7 @@
     <None Include="Properties\DataSources\WokyTool.通用.列舉+資料格式.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+配送公司.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.欄位匯入設定資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.配送.可配送資料.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

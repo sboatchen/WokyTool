@@ -34,9 +34,6 @@
             this.指配時段BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.代收方式BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.系統分組ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.處理狀態DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.配送分組DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.訂單編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,16 +57,19 @@
             this.代收方式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.平台訂單新增資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.系統分組ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.配送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.訂單處理狀態BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收方式BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.公司資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.客戶資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單新增資料BindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // 訂單處理狀態BindingSource
@@ -123,32 +123,6 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.篩選ToolStripMenuItem,
-            this.系統分組ToolStripMenuItem,
-            this.配送ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1447, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // 篩選ToolStripMenuItem
-            // 
-            this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
-            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.篩選ToolStripMenuItem.Text = "篩選";
-            this.篩選ToolStripMenuItem.Click += new System.EventHandler(this.篩選ToolStripMenuItem_Click);
-            // 
-            // 系統分組ToolStripMenuItem
-            // 
-            this.系統分組ToolStripMenuItem.Name = "系統分組ToolStripMenuItem";
-            this.系統分組ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.系統分組ToolStripMenuItem.Text = "系統分組";
-            this.系統分組ToolStripMenuItem.Click += new System.EventHandler(this.系統分組ToolStripMenuItem_Click);
             // 
             // 處理狀態DataGridViewTextBoxColumn
             // 
@@ -308,6 +282,32 @@
             // 
             this.平台訂單新增資料BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單新增資料);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.篩選ToolStripMenuItem,
+            this.系統分組ToolStripMenuItem,
+            this.配送ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1447, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 篩選ToolStripMenuItem
+            // 
+            this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
+            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.篩選ToolStripMenuItem.Text = "篩選";
+            this.篩選ToolStripMenuItem.Click += new System.EventHandler(this.篩選ToolStripMenuItem_Click);
+            // 
+            // 系統分組ToolStripMenuItem
+            // 
+            this.系統分組ToolStripMenuItem.Name = "系統分組ToolStripMenuItem";
+            this.系統分組ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.系統分組ToolStripMenuItem.Text = "分組";
+            this.系統分組ToolStripMenuItem.Click += new System.EventHandler(this.系統分組ToolStripMenuItem_Click);
+            // 
             // 配送ToolStripMenuItem
             // 
             this.配送ToolStripMenuItem.Name = "配送ToolStripMenuItem";
@@ -330,11 +330,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.指配時段BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收方式BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.公司資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.客戶資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單新增資料BindingSource)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

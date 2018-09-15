@@ -15,9 +15,12 @@ namespace WokyTool.物品
     {
         public Dictionary<物品資料, int> 組合 { get; private set; }
 
+        public int 體積 { get; private set; }
+
         public 物品組成資料()
         {
             組合 = new Dictionary<物品資料, int>();
+            體積 = 0;
         }
 
         public 物品組成資料(商品資料 商品資料_)
@@ -32,6 +35,8 @@ namespace WokyTool.物品
 
             if (數量_ < 0)
                 throw new Exception("物品組成資料::數量小於0" + 數量_);
+
+            體積 += 物品資料_.體積 * 數量_;
 
             int 目前數量_ = 0;
             if (組合.TryGetValue(物品資料_, out 目前數量_))

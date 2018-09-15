@@ -11,6 +11,7 @@ using WokyTool.平台訂單;
 using WokyTool.使用者;
 using WokyTool.物品;
 using WokyTool.客戶;
+using WokyTool.配送;
 using WokyTool.商品;
 using WokyTool.編號;
 using WokyTool.聯絡人;
@@ -69,6 +70,8 @@ namespace WokyTool.通用
 
             總覽視窗設定Map.Add(列舉.編號.平台訂單設定, typeof(平台訂單匯入設定總覽視窗));
             總覽視窗設定Map.Add(列舉.編號.平台訂單新增, typeof(平台訂單新增總覽視窗));
+
+            總覽視窗設定Map.Add(列舉.編號.配送, typeof(待配送總覽視窗));
 
             /********************************/
 

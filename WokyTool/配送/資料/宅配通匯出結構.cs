@@ -7,7 +7,7 @@ using WokyTool.Common;
 using WokyTool.DataImport;
 using WokyTool.通用;
 
-namespace WokyTool.DataExport
+namespace WokyTool.配送
 {
     class 宅配通匯出結構 : 可格式化_Excel
     {
@@ -24,29 +24,30 @@ namespace WokyTool.DataExport
         public string 代收方式 { get; set; }
         public string 代收金額 { get; set; }
 
-        protected 可配送 _資料來源;
+        protected 可配送資料 _可配送資料;
 
-        public 宅配通匯出結構(可配送 From_)
+        public 宅配通匯出結構(可配送資料 可配送資料_)
         {
-            _資料來源 = From_;
-            姓名 = From_.配送姓名;
-            地址 = From_.配送地址;
+            _可配送資料 = 可配送資料_;
+
+            姓名 = 可配送資料_.姓名;
+            地址 = 可配送資料_.地址;
 
             // 優先使用手機資料 沒有才用電話資料
-            if (From_.配送手機 != null && From_.配送手機.Length != 0)
-                電話 = From_.配送手機;
+            if (可配送資料_.手機 != null && 可配送資料_.手機.Length != 0)
+                電話 = 可配送資料_.手機;
             else
-                電話 = From_.配送電話;
+                電話 = 可配送資料_.電話;
 
-            備註 = From_.配送備註;
-            商品 = From_.配送商品;
+            備註 = 可配送資料_.備註;
+            商品 = 可配送資料_.內容;
 
-            if (From_.指配日期.Ticks == 0)
+            if (可配送資料_.指配日期.Ticks == 0)
                 指配日期 = "";
             else
-                指配日期 = From_.指配日期.ToString("yyyy/MM/dd");
+                指配日期 = 可配送資料_.指配日期.ToString("yyyy/MM/dd");
 
-            switch (From_.指配時段)
+            switch (可配送資料_.指配時段)
             {
                 case 列舉.指配時段.上午:
                     指配時段 = "1";
@@ -62,12 +63,12 @@ namespace WokyTool.DataExport
                     break;
             }
 
-            if (From_.代收金額 == 0)
+            if (可配送資料_.代收金額 == 0)
                 代收金額 = "";
             else
-                代收金額 = From_.代收金額.ToString();
+                代收金額 = 可配送資料_.代收金額.ToString();
 
-            switch (From_.代收方式)
+            switch (可配送資料_.代收方式)
             {
                 case 列舉.代收方式.現金:
                     代收方式 = "1";
@@ -81,20 +82,20 @@ namespace WokyTool.DataExport
             }
         }
 
-        // 更新配送單號
-        public bool SetDeliveryNO(宅配通匯入結構 Import_)
+        // 設定配送單號
+        public bool 設定配送單號(宅配通匯入資料 Import_)
         {
             if (Import_.姓名.CompareTo(this.姓名) != 0)
                 return false;
 
-            _資料來源.完成配送(Import_.配送單號);
+            _可配送資料.配送單號 = Import_.配送單號;
             return true;
         }
 
         // 清除配送單號 - 匯入失敗用
-        public void CleanDeliveryNO()
+        public void 清除配送單號()
         {
-            _資料來源.完成配送(null);
+            _可配送資料.配送單號 = null;
         }
 
         // 設定title，回傳下筆資料的輸入行位置

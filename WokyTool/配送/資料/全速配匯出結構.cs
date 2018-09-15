@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.DataImport;
 
-namespace WokyTool.DataExport
+namespace WokyTool.配送
 {
     class 全速配匯出結構 : 可格式化_Csv
     {
@@ -46,46 +46,47 @@ namespace WokyTool.DataExport
         [CsvColumn(Name = "指配日期(yyyyMMdd)", FieldIndex = 17)]
         public string 指配日期 { get; set; }
 
-        protected 可配送 _資料來源;
+        protected 可配送資料 _可配送資料;
 
-        public 全速配匯出結構(int 序號_, 可配送 From_)
+        public 全速配匯出結構(int 序號_, 可配送資料 可配送資料_)
         {
-            _資料來源 = From_;
+            _可配送資料 = 可配送資料_;
+
             序號 = 序號_;
-            姓名 = From_.配送姓名;
-            地址 = From_.配送地址;
-            電話 = From_.配送電話;
+            姓名 = 可配送資料_.姓名;
+            地址 = 可配送資料_.地址;
+            電話 = 可配送資料_.電話;
 
-            if (From_.配送手機 != null && From_.配送手機.Length >= 15)    // 手機欄位無法放太長的字串 過長的改放到電話2
-                電話2 = From_.配送手機;
+            if (可配送資料_.手機 != null && 可配送資料_.手機.Length >= 15)    // 手機欄位無法放太長的字串 過長的改放到電話2
+                電話2 = 可配送資料_.手機;
             else
-                手機 = From_.配送手機;
+                手機 = 可配送資料_.手機;
 
-            備註 = From_.配送備註;
-            商品 = From_.配送商品;
+            備註 = 可配送資料_.備註;
+            商品 = 可配送資料_.內容;
             數量_無用 = 1;
             審件等級_無用 = 3;
 
-            if (From_.指配日期.Ticks == 0)
+            if (可配送資料_.指配日期.Ticks == 0)
                 指配日期 = "";
             else
-                指配日期 = From_.指配日期.ToString("yyyyMMdd");
+                指配日期 = 可配送資料_.指配日期.ToString("yyyyMMdd");
         }
 
-        // 更新配送單號
-        public bool SetDeliveryNO(全速配匯入結構 Import_)
+        // 設定配送單號
+        public bool 設定配送單號(全速配匯入資料 Import_)
         {
             if (Import_.姓名.CompareTo(this.姓名) != 0)
                 return false;
 
-            _資料來源.完成配送(Import_.配送單號);
+            _可配送資料.配送單號 = Import_.配送單號;
             return true;
         }
 
         // 清除配送單號 - 匯入失敗用
-        public void CleanDeliveryNO()
+        public void 清除配送單號()
         {
-            _資料來源.完成配送(null);
+            _可配送資料.配送單號 = null;
         }
     }
 }

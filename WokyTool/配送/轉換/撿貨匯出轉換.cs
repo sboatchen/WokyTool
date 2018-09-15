@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.Data;
 
-namespace WokyTool.DataExport
+namespace WokyTool.配送
 {
-    class 撿貨統計結構: 可格式化_Excel
+    public class 撿貨匯出轉換: 可格式化_Excel
     {
         public string 物品名稱 { get; set; }
         public int 數量 { get; set; }
 
-        public 撿貨統計結構(string 物品名稱_, int 數量_)
+        public 撿貨匯出轉換(string 物品名稱_, int 數量_)
         {
             物品名稱 = 物品名稱_;
             數量 = 數量_;

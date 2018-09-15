@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.公司;
+using WokyTool.物品;
 using WokyTool.客戶;
 using WokyTool.商品;
 using WokyTool.通用;
@@ -13,7 +14,7 @@ using WokyTool.通用;
 namespace WokyTool.平台訂單
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 平台訂單新增資料 : MyKeepableData<平台訂單新增資料>
+    public class 平台訂單新增資料 : MyKeepableData<平台訂單新增資料>, 可配送介面
     {
         [JsonProperty]
         public override int 編號 { get; set; }
@@ -190,6 +191,17 @@ namespace WokyTool.平台訂單
         }
 
         public String 分組識別 { get; private set; }
+
+        public 物品組成資料 組成 
+        {
+            get
+            {
+                物品組成資料 物品組成資料_ = new 物品組成資料();
+                物品組成資料_.append(商品, 數量);
+
+                return 物品組成資料_;
+            }
+        }
 
         /********************************/
 

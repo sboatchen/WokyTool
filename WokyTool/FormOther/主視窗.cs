@@ -22,7 +22,6 @@ using WokyTool.DataMgr;
 using WokyTool.FormOther;
 using WokyTool.FormOverview;
 using WokyTool.ImportForm;
-using WokyTool.OtherForm;
 using WokyTool.通用;
 using WokyTool.月結帳;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -195,9 +194,7 @@ namespace WokyTool
 
         private void button20_Click(object sender, EventArgs e)
         {
-            var i = new 待處理配送總覽視窗();
-            i.Show();
-            i.BringToFront();
+            視窗管理器.獨體.顯現(列舉.編號.配送, 列舉.視窗.總覽);
         }
 
         private void button21_Click(object sender, EventArgs e)
