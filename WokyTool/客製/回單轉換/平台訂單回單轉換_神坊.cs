@@ -7,18 +7,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataImport;
+using WokyTool.平台訂單;
 using WokyTool.通用;
 
-namespace WokyTool.DataExport
+namespace WokyTool.客製
 {
-    class 回單號結構_神坊 : 可格式化_Excel
+    public class 平台訂單回單轉換_神坊 : 可格式化_Excel
     {
         private static string 全速配編號 = "5";
         private static string 宅配通編號 = "2";
 
-        protected 出貨匯入結構_神坊 _Data;
+        protected 平台訂單新增資料 _Data;
 
-        public 回單號結構_神坊(出貨匯入結構_神坊 Data_)
+        public 平台訂單回單轉換_神坊(平台訂單新增資料 Data_)
         {
             _Data = Data_;
         }
@@ -40,7 +41,7 @@ namespace WokyTool.DataExport
         public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
         {
             App_.Cells[Row_, 1] = _Data.訂單編號;
-            App_.Cells[Row_, 2] = _Data.無用_商品名稱;
+            App_.Cells[Row_, 2] = 通用函式.取得字串(_Data.額外資訊, 2);
             App_.Cells[Row_, 3] = _Data.姓名;
 
             switch (_Data.配送公司)
@@ -52,7 +53,7 @@ namespace WokyTool.DataExport
                     App_.Cells[Row_, 4] = 宅配通編號;
                     break;
                 default:
-                    MessageBox.Show("回單號結構_神坊 can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("平台訂單回單轉換_神坊 can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 

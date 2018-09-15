@@ -286,13 +286,6 @@ namespace WokyTool.ImportForm
                         函式.ExportExcel<回單號結構_遠傳>(Title_, Items_);
                         break;
                     }
-                case "神坊":
-                    {
-                        var Items_ = _Source.Select(Value => new 回單號結構_神坊((出貨匯入結構_神坊)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        函式.ExportExcel<回單號結構_神坊>(Title_, Items_);
-                        break;
-                    }
                 case "citiesocial":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_citiesocial((出貨匯入結構_citiesocial)Value));
@@ -538,12 +531,6 @@ namespace WokyTool.ImportForm
 
         private void 神坊ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商類型 = "神坊";
-
-            if (Import<出貨匯入結構_神坊>() == false)
-                return;
-
-            ImportShow("神坊");
         }
 
         private void citiesocialToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -857,7 +844,6 @@ namespace WokyTool.ImportForm
 
         private void 神坊ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            函式.GetFile("神坊匯入樣板", "Template/OrderImport/神坊匯入樣板.xlsx");
         }
 
         private void citiesocialToolStripMenuItem_Click(object sender, EventArgs e)
