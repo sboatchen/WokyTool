@@ -14,13 +14,13 @@ namespace WokyTool.平台訂單
         {
             get
             {
-                return true;
+                return 系統參數.匯入訂單;
             }
         }
 
         protected override void 匯入()
         {
-            //平台訂單資料管理器.獨體.新增(可編輯BList.Select(Value => Value.匯入()));
+            平台訂單新增資料管理器.獨體.新增(可編輯BList.Select(Value => 平台訂單新增資料.新增(Value)));
         }
     }
 }

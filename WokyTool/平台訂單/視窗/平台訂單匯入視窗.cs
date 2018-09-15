@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,6 +65,8 @@ namespace WokyTool.平台訂單
             if (_平台訂單匯入管理器.是否正在編輯() == false)
                 return;
 
+            _平台訂單匯入管理器.ToString();
+
             this.格式.Enabled = false;
             this.檢查ToolStripMenuItem.Enabled = true;
             this.匯出ToolStripMenuItem.Enabled = true;
@@ -87,7 +90,7 @@ namespace WokyTool.平台訂單
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            訊息管理器.獨體.Notify("功能尚未實作");
         }
 
         /********************************/

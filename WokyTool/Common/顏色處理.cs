@@ -40,7 +40,7 @@ namespace WokyTool.Common
 
             if (Value_ == 0)
                 return Color.White;
-            return _RandomColorList[Value_ % _RandomColorList.Count];
+            return _RandomColorList[Math.Abs(Value_) % _RandomColorList.Count];
         }
     }
 }

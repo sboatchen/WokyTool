@@ -66,6 +66,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -448,11 +449,22 @@
             this.button22.UseVisualStyleBackColor = true;
             this.button22.Click += new System.EventHandler(this.button22_Click);
             // 
+            // button25
+            // 
+            this.button25.Location = new System.Drawing.Point(254, 226);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(100, 23);
+            this.button25.TabIndex = 46;
+            this.button25.Text = "平台訂單";
+            this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click_1);
+            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 751);
+            this.Controls.Add(this.button25);
             this.Controls.Add(this.button22);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button5);
@@ -538,6 +550,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button button25;
 
 
     }

@@ -14,7 +14,7 @@ namespace WokyTool.月結帳
         {
             get
             {
-                return true;
+                return 系統參數.匯入月結帳;
             }
         }
 

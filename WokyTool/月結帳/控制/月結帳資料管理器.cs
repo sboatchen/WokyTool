@@ -46,7 +46,7 @@ namespace WokyTool.月結帳
         {
             get
             {
-                return 系統參數.修改設定資料;
+                return 系統參數.匯入月結帳;
             }
         }
 

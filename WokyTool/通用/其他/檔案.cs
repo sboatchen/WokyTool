@@ -106,6 +106,14 @@ namespace WokyTool.通用
 
         public static void 寫入檔案(string 目標檔案路徑_, string 資料_, bool 是否加密)
         {
+            String Path_ = Path.GetDirectoryName(目標檔案路徑_);
+
+            // 檢查備份路徑是否存在
+            if (Directory.Exists(Path_) == false)
+            {
+                Directory.CreateDirectory(Path_);
+            }
+
             if (是否加密)
                 寫入加密檔案(目標檔案路徑_, 資料_);
             else

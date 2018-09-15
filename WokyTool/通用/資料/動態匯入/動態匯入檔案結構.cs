@@ -25,7 +25,7 @@ namespace WokyTool.通用
             內容 = new List<動態匯入資料結構>();
         }
 
-        public void ReadExcel(String FileName_)
+        public void ReadExcel(String FileName_, bool 是否讀入雜值_)
         {
             Excel.Application xlApp;
             Excel.Workbook xlWorkBook;
@@ -60,48 +60,102 @@ namespace WokyTool.通用
             dynamic dValue_ = null;
             try
             {
-                for (cCnt = 1; cCnt <= cl; cCnt++)
+                if (是否讀入雜值_ == true)
                 {
-                    欄位匯入設定資料 欄位設定_ = 設定.取得欄位匯入設定資料(cCnt);
-                    if (欄位匯入設定資料.ERROR == 欄位設定_)
-                        continue;
-
-                    //if(設定.標頭位置 != 0)
-                    //{
-                    //    var cell = range.Cells[設定.標頭位置, cCnt] as Excel.Range;
-                    //    String 名稱_ = cell.Value2;
-                    //    欄位匯入設定資料 標頭設定_ = new 欄位匯入設定資料
-                    //    {
-                    //        列索引 = cCnt,
-                    //        名稱 = 名稱_,
-                    //    };
-                    //    標頭映射對應表.Add(名稱_, 標頭設定_);
-                    //}
-
-                    object 上層資料_ = null;
-                    int 資料列_ = 0;
-                    for (rCnt = StartRow_; rCnt <= EndRow_; rCnt++, 資料列_++)
+                    for (cCnt = 1; cCnt <= cl; cCnt++)
                     {
-                        var cell = range.Cells[rCnt, cCnt] as Excel.Range;
-                        dValue_ = cell.Value2;
-                        object value = 轉型資料(dValue_, 欄位設定_.格式);
+                        欄位匯入設定資料 欄位設定_ = 設定.取得欄位匯入設定資料(cCnt);
+                        if (欄位匯入設定資料.ERROR == 欄位設定_)
+                        {
+                            object 上層資料_ = null;
+                            int 資料列_ = 0;
+                            for (rCnt = StartRow_; rCnt <= EndRow_; rCnt++, 資料列_++)
+                            {
+                                var cell = range.Cells[rCnt, cCnt] as Excel.Range;
+                                dValue_ = cell.Value2;
+                                object value = dValue_.ToString();
 
-                        if (value != null)
-                        {
-                            內容[資料列_].資料.Add(欄位設定_.名稱, value);
-                            上層資料_ = value;
-                        }
-                        else if (欄位設定_.可合併儲存格 == true && cell.MergeArea != null && 上層資料_ != null)
-                        {
-                            內容[資料列_].資料.Add(欄位設定_.名稱, 上層資料_);
+                                if (value != null)
+                                {
+                                    內容[資料列_].詳細.Add(cCnt, value);
+                                    上層資料_ = value;
+                                }
+                                else if (欄位設定_.可合併儲存格 == true && cell.MergeArea != null && 上層資料_ != null)
+                                {
+                                    內容[資料列_].詳細.Add(cCnt, 上層資料_);
+                                }
+                                else
+                                {
+                                    上層資料_ = null;
+                                    內容[資料列_].詳細.Add(cCnt, null);
+                                }
+                            }
                         }
                         else
                         {
-                            上層資料_ = null;
-                            內容[資料列_].資料.Add(欄位設定_.名稱, null);
+                            object 上層資料_ = null;
+                            int 資料列_ = 0;
+                            for (rCnt = StartRow_; rCnt <= EndRow_; rCnt++, 資料列_++)
+                            {
+                                var cell = range.Cells[rCnt, cCnt] as Excel.Range;
+                                dValue_ = cell.Value2;
+                                object value = 轉型資料(dValue_, 欄位設定_.格式);
+
+                                if (value != null)
+                                {
+                                    內容[資料列_].資料.Add(欄位設定_.名稱, value);
+                                    內容[資料列_].詳細.Add(cCnt, value);
+                                    上層資料_ = value;
+                                }
+                                else if (欄位設定_.可合併儲存格 == true && cell.MergeArea != null && 上層資料_ != null)
+                                {
+                                    內容[資料列_].資料.Add(欄位設定_.名稱, 上層資料_);
+                                    內容[資料列_].詳細.Add(cCnt, 上層資料_);
+                                }
+                                else
+                                {
+                                    上層資料_ = null;
+                                    內容[資料列_].資料.Add(欄位設定_.名稱, null);
+                                    內容[資料列_].詳細.Add(cCnt, null);
+                                }
+                            }
                         }
                     }
                 }
+                else 
+                {
+                    for (cCnt = 1; cCnt <= cl; cCnt++)
+                    {
+                        欄位匯入設定資料 欄位設定_ = 設定.取得欄位匯入設定資料(cCnt);
+                        if (欄位匯入設定資料.ERROR == 欄位設定_)
+                            continue;
+
+                        object 上層資料_ = null;
+                        int 資料列_ = 0;
+                        for (rCnt = StartRow_; rCnt <= EndRow_; rCnt++, 資料列_++)
+                        {
+                            var cell = range.Cells[rCnt, cCnt] as Excel.Range;
+                            dValue_ = cell.Value2;
+                            object value = 轉型資料(dValue_, 欄位設定_.格式);
+
+                            if (value != null)
+                            {
+                                內容[資料列_].資料.Add(欄位設定_.名稱, value);
+                                上層資料_ = value;
+                            }
+                            else if (欄位設定_.可合併儲存格 == true && cell.MergeArea != null && 上層資料_ != null)
+                            {
+                                內容[資料列_].資料.Add(欄位設定_.名稱, 上層資料_);
+                            }
+                            else
+                            {
+                                上層資料_ = null;
+                                內容[資料列_].資料.Add(欄位設定_.名稱, null);
+                            }
+                        }
+                    }
+                }
+                
             }
             catch (Exception ex)
             {

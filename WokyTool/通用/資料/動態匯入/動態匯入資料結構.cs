@@ -16,10 +16,14 @@ namespace WokyTool.通用
         [JsonProperty]
         public Dictionary<String, object> 資料 { get; set; }
 
+        [JsonProperty]
+        public Dictionary<int, object> 詳細 { get; set; }
+
         public 動態匯入資料結構(動態匯入檔案結構 檔案結構_)
         {
             檔案結構 = 檔案結構_;
             資料 = new Dictionary<String, object>();
+            詳細 = new Dictionary<int, object>();
         }
 
         public T Get<T>(String Key_)

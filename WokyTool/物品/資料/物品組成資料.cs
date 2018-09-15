@@ -13,10 +13,11 @@ namespace WokyTool.物品
     [JsonObject(MemberSerialization.OptIn)]
     public class 物品組成資料 : MyData
     {
-        protected Dictionary<物品資料, int> _組合 = new Dictionary<物品資料, int>();
+        public Dictionary<物品資料, int> 組合 { get; private set; }
 
         public 物品組成資料()
-        { 
+        {
+            組合 = new Dictionary<物品資料, int>();
         }
 
         public 物品組成資料(商品資料 商品資料_)
@@ -33,13 +34,13 @@ namespace WokyTool.物品
                 throw new Exception("物品組成資料::數量小於0" + 數量_);
 
             int 目前數量_ = 0;
-            if (_組合.TryGetValue(物品資料_, out 目前數量_))
+            if (組合.TryGetValue(物品資料_, out 目前數量_))
             {
                 目前數量_ += 數量_;
             }
             else
             {
-                _組合.Add(物品資料_, 數量_);
+                組合.Add(物品資料_, 數量_);
             }
         }
 
@@ -54,11 +55,11 @@ namespace WokyTool.物品
 
         public string 取得組合字串()
         {
-            if (_組合.Count == 0)
+            if (組合.Count == 0)
                 return 字串.空;
 
             StringBuilder sb = new StringBuilder();
-            foreach (var Pair_ in _組合)
+            foreach (var Pair_ in 組合)
             {
                 if (sb.Length > 0)
                     sb.Append("+");

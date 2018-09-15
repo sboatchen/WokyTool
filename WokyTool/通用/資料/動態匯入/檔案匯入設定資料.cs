@@ -181,7 +181,7 @@ namespace WokyTool.通用
             return -1;
         }
 
-        public IEnumerable<T2> 匯入Excel<T2>(檔案匯入轉換介面<T2> 轉換介面_) where T2 : MyData
+        public IEnumerable<T2> 匯入Excel<T2>(檔案匯入轉換介面<T2> 轉換介面_, bool 是否讀入雜值_) where T2 : MyData
         {
             if (格式 != 列舉.檔案格式.EXCEL)
                 throw new Exception("檔案匯入設定資料<T>:_匯入Excel 檔案格式不匹配");
@@ -199,7 +199,7 @@ namespace WokyTool.通用
 
             try
             {
-                動態匯入檔案結構_.ReadExcel(openFileDialog1.FileName);
+                動態匯入檔案結構_.ReadExcel(openFileDialog1.FileName, 是否讀入雜值_);
                 return 轉換介面_.轉換(動態匯入檔案結構_);
             }
             catch (Exception ex)

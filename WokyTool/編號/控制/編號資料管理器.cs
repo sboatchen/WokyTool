@@ -98,10 +98,5 @@ namespace WokyTool.編號
 
             return Value_;
         }
-
-        public int 下個值(列舉.編號 編號類型_)
-        {
-            return 下個值((int)編號類型_);
-        }
     }
 }

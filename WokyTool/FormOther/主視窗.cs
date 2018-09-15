@@ -437,21 +437,6 @@ namespace WokyTool
 
         private void button38_Click(object sender, EventArgs e)
         {
-            訊息管理器.獨體.Info("編號資料轉換");
-            編號資料管理器.獨體.Map.Clear();
-            foreach (var Item_ in 編碼管理器.Instance.Map.Values)
-            {
-                編號.編號資料 New_ = new 編號.編號資料
-                {
-                    類型 = Item_.類型,
-                    下個值 = Item_.下個值,
-                };
-
-                編號資料管理器.獨體.Map.Add(New_.編號, New_);
-            }
-            編號資料管理器.獨體.Map = 編號資料管理器.獨體.Map.Values.OrderBy(Value => Value.編號).ToDictionary(Value => Value.編號);
-            編號資料管理器.獨體.資料搬移();
-
             訊息管理器.獨體.Info("公司資料轉換");
             公司資料管理器.獨體.Map.Clear();
             foreach (var Item_ in 公司管理器.Instance.Map.Values)
@@ -655,6 +640,18 @@ namespace WokyTool
             }
             商品資料管理器.獨體.資料搬移();
 
+            訊息管理器.獨體.Info("使用者資料轉換");
+            使用者資料管理器.獨體.資料搬移();
+
+            訊息管理器.獨體.Info("月結帳匯入設定資料轉換");
+            月結帳匯入設定資料管理器.獨體.資料搬移();
+
+            訊息管理器.獨體.Info("平台訂單匯入設定資料轉換");
+            平台訂單匯入設定資料管理器.獨體.資料搬移();
+
+            編號資料管理器.獨體.Map = 編號資料管理器.獨體.Map.Values.OrderBy(Value => Value.編號).ToDictionary(Value => Value.編號);
+            編號資料管理器.獨體.資料異動();
+
             訊息管理器.獨體.Info("轉換完畢");
         }
 
@@ -671,8 +668,9 @@ namespace WokyTool
         // test
         private void button27_Click(object sender, EventArgs e)
         {
-            int y = 0;
-            int x = 99 / y;
+            登入視窗 i = new 登入視窗();
+            i.Show();
+            i.BringToFront();
         }
 
         private void button5_Click_1(object sender, EventArgs e)
@@ -690,6 +688,11 @@ namespace WokyTool
         private void button22_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.使用者, 列舉.視窗.總覽);
+        }
+
+        private void button25_Click_1(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.總覽);
         }
     }
 }

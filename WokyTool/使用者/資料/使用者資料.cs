@@ -30,6 +30,9 @@ namespace WokyTool.使用者
         [JsonProperty]
         public bool 匯入訂單 { get; set; }
 
+        [JsonProperty]
+        public bool 匯入月結帳 { get; set; }
+
         public string 顯示密碼
         {
             get 
@@ -57,6 +60,7 @@ namespace WokyTool.使用者
             修改基本資料 = false,
             修改設定資料 = false,
             匯入訂單 = false,
+            匯入月結帳 = false,
         };
         public static 使用者資料 NULL
         {
@@ -76,6 +80,7 @@ namespace WokyTool.使用者
             修改基本資料 = false,
             修改設定資料 = false,
             匯入訂單 = false,
+            匯入月結帳 = false,
         };
         public static 使用者資料 ERROR
         {
@@ -99,6 +104,7 @@ namespace WokyTool.使用者
                 修改基本資料 = this.修改基本資料,
                 修改設定資料 = this.修改設定資料,
                 匯入訂單 = this.匯入訂單,
+                匯入月結帳 = this.匯入月結帳,
             };
 
             return Data_;
@@ -114,6 +120,7 @@ namespace WokyTool.使用者
             修改基本資料 = Data_.修改基本資料;
             修改設定資料 = Data_.修改設定資料;
             匯入訂單 = Data_.匯入訂單;
+            匯入月結帳 = Data_.匯入月結帳;
         }
 
         public override Boolean 是否一致(使用者資料 Data_)
@@ -126,7 +133,8 @@ namespace WokyTool.使用者
 
                 修改基本資料 == Data_.修改基本資料 &&
                 修改設定資料 == Data_.修改設定資料 &&
-                匯入訂單 == Data_.匯入訂單;
+                匯入訂單 == Data_.匯入訂單 &&
+                匯入月結帳 == Data_.匯入月結帳;
         }
 
         public override void 檢查合法()

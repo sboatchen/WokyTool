@@ -5,17 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using WokyTool.通用;
 
-namespace WokyTool.Common
+namespace WokyTool.通用
 {
-    public interface 可配送
+    public interface 可配送介面
     {
-        string 配送姓名 { get; set; }
-        string 配送電話 { get; set; }
-        string 配送手機 { get; set; }
-        string 配送地址 { get; set; }
+        string 姓名 { get; set; }
+        string 電話 { get; set; }
+        string 手機 { get; set; }
+        string 地址 { get; set; }
 
-        string 配送商品 { get; set; }
-        string 配送備註 { get; set; }
+        string 內容 { get; set; }
+        string 備註 { get; set; }
 
         DateTime 指配日期 { get; set; }     // 指配日期.Ticks == 0 代表不指定
         列舉.指配時段 指配時段 { get; set; }
@@ -26,16 +26,11 @@ namespace WokyTool.Common
         列舉.配送公司 配送公司 { get; set; }
         string 配送單號 { get; set; }
 
-        // 準備配送
-        void 準備配送();
         // 完成配送
         void 完成配送(string 配送單號_);
         // 是否已經配送
         bool 是否已配送();
 
-        Dictionary<String, int> 配送物品清單 { get; set; }
-
-        // 發票是否符合
-        bool IsReceiptMatch(string 發票號碼_);
+        Dictionary<String, int> 內容清單 { get; set; }
     }
 }

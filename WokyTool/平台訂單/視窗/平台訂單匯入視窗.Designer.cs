@@ -33,17 +33,19 @@
             this.指配時段BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.代收方式BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.商品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.平台訂單匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.匯入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.格式 = new System.Windows.Forms.ToolStripComboBox();
+            this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.訂單編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.商品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.單價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.含稅單價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.總金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.電話DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,18 +56,14 @@
             this.指配時段DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.代收方式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.額外資訊DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.平台訂單匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收方式BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單匯入資料BindingSource)).BeginInit();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // 配送公司BindingSource
@@ -91,7 +89,6 @@
             this.數量DataGridViewTextBoxColumn,
             this.單價DataGridViewTextBoxColumn,
             this.含稅單價DataGridViewTextBoxColumn,
-            this.總金額DataGridViewTextBoxColumn,
             this.姓名DataGridViewTextBoxColumn,
             this.地址DataGridViewTextBoxColumn,
             this.電話DataGridViewTextBoxColumn,
@@ -102,7 +99,6 @@
             this.指配時段DataGridViewTextBoxColumn,
             this.代收方式DataGridViewTextBoxColumn,
             this.代收金額DataGridViewTextBoxColumn,
-            this.額外資訊DataGridViewTextBoxColumn,
             this.錯誤訊息DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.平台訂單匯入資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -112,6 +108,14 @@
             this.dataGridView1.Size = new System.Drawing.Size(1369, 529);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // 商品資料BindingSource
+            // 
+            this.商品資料BindingSource.DataSource = typeof(WokyTool.商品.商品資料);
+            // 
+            // 平台訂單匯入資料BindingSource
+            // 
+            this.平台訂單匯入資料BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單匯入資料);
             // 
             // menuStrip2
             // 
@@ -139,11 +143,26 @@
             this.格式.Size = new System.Drawing.Size(121, 23);
             this.格式.SelectedIndexChanged += new System.EventHandler(this.格式_SelectedIndexChanged);
             // 
+            // 檢查ToolStripMenuItem
+            // 
+            this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
+            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.檢查ToolStripMenuItem.Text = "檢查";
+            this.檢查ToolStripMenuItem.Click += new System.EventHandler(this.檢查ToolStripMenuItem_Click);
+            // 
+            // 匯出ToolStripMenuItem
+            // 
+            this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
+            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.匯出ToolStripMenuItem.Text = "匯出";
+            this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
+            // 
             // 訂單編號DataGridViewTextBoxColumn
             // 
             this.訂單編號DataGridViewTextBoxColumn.DataPropertyName = "訂單編號";
             this.訂單編號DataGridViewTextBoxColumn.HeaderText = "訂單編號";
             this.訂單編號DataGridViewTextBoxColumn.Name = "訂單編號DataGridViewTextBoxColumn";
+            this.訂單編號DataGridViewTextBoxColumn.Width = 150;
             // 
             // 商品識別DataGridViewTextBoxColumn
             // 
@@ -164,10 +183,6 @@
             this.商品DataGridViewTextBoxColumn.ValueMember = "Self";
             this.商品DataGridViewTextBoxColumn.Width = 200;
             // 
-            // 商品資料BindingSource
-            // 
-            this.商品資料BindingSource.DataSource = typeof(WokyTool.商品.商品資料);
-            // 
             // 數量DataGridViewTextBoxColumn
             // 
             this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
@@ -185,13 +200,6 @@
             this.含稅單價DataGridViewTextBoxColumn.DataPropertyName = "含稅單價";
             this.含稅單價DataGridViewTextBoxColumn.HeaderText = "含稅單價";
             this.含稅單價DataGridViewTextBoxColumn.Name = "含稅單價DataGridViewTextBoxColumn";
-            // 
-            // 總金額DataGridViewTextBoxColumn
-            // 
-            this.總金額DataGridViewTextBoxColumn.DataPropertyName = "總金額";
-            this.總金額DataGridViewTextBoxColumn.HeaderText = "總金額";
-            this.總金額DataGridViewTextBoxColumn.Name = "總金額DataGridViewTextBoxColumn";
-            this.總金額DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 姓名DataGridViewTextBoxColumn
             // 
@@ -262,36 +270,12 @@
             this.代收金額DataGridViewTextBoxColumn.HeaderText = "代收金額";
             this.代收金額DataGridViewTextBoxColumn.Name = "代收金額DataGridViewTextBoxColumn";
             // 
-            // 額外資訊DataGridViewTextBoxColumn
-            // 
-            this.額外資訊DataGridViewTextBoxColumn.DataPropertyName = "額外資訊";
-            this.額外資訊DataGridViewTextBoxColumn.HeaderText = "額外資訊";
-            this.額外資訊DataGridViewTextBoxColumn.Name = "額外資訊DataGridViewTextBoxColumn";
-            // 
             // 錯誤訊息DataGridViewTextBoxColumn
             // 
             this.錯誤訊息DataGridViewTextBoxColumn.DataPropertyName = "錯誤訊息";
             this.錯誤訊息DataGridViewTextBoxColumn.HeaderText = "錯誤訊息";
             this.錯誤訊息DataGridViewTextBoxColumn.Name = "錯誤訊息DataGridViewTextBoxColumn";
             this.錯誤訊息DataGridViewTextBoxColumn.Width = 300;
-            // 
-            // 平台訂單匯入資料BindingSource
-            // 
-            this.平台訂單匯入資料BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單匯入資料);
-            // 
-            // 檢查ToolStripMenuItem
-            // 
-            this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
-            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.檢查ToolStripMenuItem.Text = "檢查";
-            this.檢查ToolStripMenuItem.Click += new System.EventHandler(this.檢查ToolStripMenuItem_Click);
-            // 
-            // 匯出ToolStripMenuItem
-            // 
-            this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
-            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.匯出ToolStripMenuItem.Text = "匯出";
-            this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
             // 
             // 平台訂單匯入視窗
             // 
@@ -306,10 +290,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.指配時段BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收方式BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單匯入資料BindingSource)).EndInit();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,13 +310,14 @@
         private System.Windows.Forms.BindingSource 指配時段BindingSource;
         private System.Windows.Forms.BindingSource 代收方式BindingSource;
         private System.Windows.Forms.BindingSource 平台訂單匯入資料BindingSource;
+        private System.Windows.Forms.ToolStripMenuItem 檢查ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 匯出ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn 訂單編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 商品識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 商品DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 單價DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 含稅單價DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 總金額DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 姓名DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 地址DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 電話DataGridViewTextBoxColumn;
@@ -343,9 +328,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn 指配時段DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 代收方式DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 代收金額DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 額外資訊DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 錯誤訊息DataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripMenuItem 檢查ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 匯出ToolStripMenuItem;
     }
 }

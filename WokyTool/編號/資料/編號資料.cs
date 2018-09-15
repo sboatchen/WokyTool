@@ -13,17 +13,16 @@ namespace WokyTool.編號
     public class 編號資料 : MyKeepableData<編號資料>
     {
         [JsonProperty]
-        public 列舉.編號 類型 { get; set; }
+        public override int 編號{ get; set; }
 
-        public override int 編號
+        [JsonProperty]
+        public int 下個值 { get; set; }
+
+        public 列舉.編號 類型
         {
             get
             {
-                return (int)類型;
-            }
-            set
-            {
-                類型 = (列舉.編號)value;
+                return (列舉.編號)(編號 % 1000);
             }
         }
 
@@ -35,9 +34,6 @@ namespace WokyTool.編號
             }
         }
 
-        [JsonProperty]
-        public int 下個值 { get; set; }
-
         /********************************/
 
         public 編號資料 Self
@@ -47,7 +43,7 @@ namespace WokyTool.編號
 
         private static readonly 編號資料 _NULL = new 編號資料
         {
-            類型 = 列舉.編號.無,
+            編號 = (int)(列舉.編號.無),
             下個值 = 0,
         };
         public static 編號資料 NULL
@@ -60,7 +56,7 @@ namespace WokyTool.編號
 
         private static 編號資料 _ERROR = new 編號資料
         {
-            類型 = 列舉.編號.錯誤,
+            編號 = (int)(列舉.編號.錯誤),
             下個值 = 0,
         };
         public static 編號資料 ERROR
@@ -77,7 +73,7 @@ namespace WokyTool.編號
         {
             編號資料 Data_ = new 編號資料
             {
-                類型 = this.類型,
+                編號 = this.編號,
                 下個值 = this.下個值,
             };
 
@@ -86,14 +82,14 @@ namespace WokyTool.編號
 
         public override void 覆蓋(編號資料 Data_)
         {
-            類型 = Data_.類型;
+            編號 = Data_.編號;
             下個值 = Data_.下個值;
         }
 
         public override Boolean 是否一致(編號資料 Data_)
         {
             return
-                類型 == Data_.類型 &&
+                編號 == Data_.編號 &&
                 下個值 == Data_.下個值;
         }
 

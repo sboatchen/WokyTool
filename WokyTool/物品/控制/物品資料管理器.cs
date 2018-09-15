@@ -38,7 +38,7 @@ namespace WokyTool.物品
             } 
         }
 
-        public override 列舉.編號 編號類型
+        public override int 資料編號
         { 
             get 
             { 
