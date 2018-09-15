@@ -244,13 +244,6 @@ namespace WokyTool.ImportForm
                         函式.ExportExcel<回單號結構_uDesign>(Title_, Items_);
                         break;
                     }
-                case "百利市":
-                    {
-                        var Items_ = _Source.Select(Value => new 回單號結構_百利市((出貨匯入結構_百利市)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        函式.ExportExcel<回單號結構_百利市>(Title_, Items_, null, Microsoft.Office.Interop.Excel.XlFileFormat.xlOpenXMLWorkbook);
-                        break;
-                    }
                 case "PC商店街":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_PC商店街((出貨匯入結構_PC商店街)Value));
@@ -594,12 +587,6 @@ namespace WokyTool.ImportForm
 
         private void 百利市ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商類型 = "百利市";
-
-            if (Import<出貨匯入結構_百利市>() == false)
-                return;
-
-            ImportShow("百利市");
         }
 
         private void pCToolStripMenuItem_Click(object sender, EventArgs e)
@@ -875,7 +862,6 @@ namespace WokyTool.ImportForm
         
         private void 百利市ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            函式.GetFile("百利市匯入樣板", "Template/OrderImport/百利市匯入樣板.xlsx");
         }
 
         private void pC專櫃ToolStripMenuItem_Click(object sender, EventArgs e)
