@@ -138,7 +138,7 @@ namespace WokyTool.配送
             return String.IsNullOrEmpty(配送單號) == false;
         }
 
-        public 平台合併訂單配送資料(List<平台訂單新增資料> 列表_, 平台訂單自定義介面 介面_)
+        public 平台合併訂單配送資料(List<平台訂單新增資料> 列表_)
         {
             this.列表 = 列表_;
             this.主單 = 列表_[0];
@@ -148,7 +148,7 @@ namespace WokyTool.配送
             foreach (平台訂單新增資料 子單_ in 列表_)
             {
                 if (this.主單 != 子單_)
-                    介面_.併單檢查合法(主單, 子單_);
+                    主單.自定義介面.併單檢查合法(主單, 子單_);
 
                 this.組成.append(子單_.商品, 子單_.數量);
 
@@ -157,8 +157,8 @@ namespace WokyTool.配送
 
             this.內容 = this.組成.取得組合字串();
 
-            this.姓名 = 介面_.取得配送姓名(主單);
-            this.備註 = 介面_.取得配送備註(主單);
+            this.姓名 = 主單.自定義介面.取得配送姓名(主單);
+            this.備註 = 主單.自定義介面.取得配送備註(主單);
         }
     }
 }

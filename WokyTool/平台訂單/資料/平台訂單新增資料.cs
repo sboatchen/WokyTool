@@ -175,6 +175,20 @@ namespace WokyTool.平台訂單
         [JsonProperty]
         public int 配送分組 { get; set; }
 
+        /********************************/
+        // 暫時性資訊
+
+        private 平台訂單自定義介面 _自定義介面 = null;
+        public 平台訂單自定義介面 自定義介面
+        {
+            get
+            {
+                if (_自定義介面 == null)
+                    _自定義介面 = 平台訂單自定義工廠.獨體.取得自定義(this.客戶);
+                return _自定義介面;
+            }
+        }
+
         public String 分組識別 { get; private set; }
 
         /********************************/
@@ -300,6 +314,8 @@ namespace WokyTool.平台訂單
                 代收金額 = Value.代收金額,
 
                 額外資訊 = Value.額外資訊,
+
+                _自定義介面 = Value.自定義介面,
             };
 
             return Data_;
@@ -446,7 +462,7 @@ namespace WokyTool.平台訂單
         public void 重新分組()
         {
             配送分組 = 0;
-            分組識別 = 平台訂單自定義工廠.獨體.取得自定義(this.客戶).取得分組識別(this);
+            分組識別 = 自定義介面.取得分組識別(this);
         }
     }
 }

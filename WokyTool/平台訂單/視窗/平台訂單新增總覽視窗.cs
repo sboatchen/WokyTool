@@ -76,19 +76,17 @@ namespace WokyTool.平台訂單
                 {
                     foreach (var Item_ in Group_)
                     {
-                        平台訂單自定義介面 介面_ = 平台訂單自定義工廠.獨體.取得自定義(Item_.客戶);
-                        配送列表_.Add(new 平台訂單配送資料(Item_, 介面_));
+                        配送列表_.Add(new 平台訂單配送資料(Item_));
                     }
                 }
                 else
                 {
                     平台訂單新增資料 主單_ = Group_.First();
-                    平台訂單自定義介面 介面_ = 平台訂單自定義工廠.獨體.取得自定義(主單_.客戶);
 
                     if (Group_.Count() == 1)
-                        配送列表_.Add(new 平台訂單配送資料(主單_, 介面_));
+                        配送列表_.Add(new 平台訂單配送資料(主單_));
                     else
-                        配送列表_.Add(new 平台合併訂單配送資料(Group_.ToList(), 介面_));
+                        配送列表_.Add(new 平台合併訂單配送資料(Group_.ToList()));
                 }
             }
 

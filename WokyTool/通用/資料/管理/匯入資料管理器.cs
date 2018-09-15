@@ -88,6 +88,8 @@ namespace WokyTool.通用
                     continue;
 
                 可編輯BList.Add(Item_);
+
+                //Console.WriteLine(JsonConvert.SerializeObject(Item_, Formatting.Indented));
             }
 
             編輯資料版本++;

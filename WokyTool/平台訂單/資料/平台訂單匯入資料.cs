@@ -160,6 +160,8 @@ namespace WokyTool.平台訂單
         [JsonProperty]
         public String 分組識別 { get; set; }
 
+        public 平台訂單自定義介面 自定義介面 { get; set; }
+
         /********************************/
 
         public 平台訂單匯入資料 Self
