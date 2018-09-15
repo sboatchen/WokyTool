@@ -580,12 +580,6 @@ namespace WokyTool.ImportForm
 
         private void 金石堂ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商類型 = "金石堂";
-
-            if (Import<出貨匯入結構_金石堂>() == false)
-                return;
-
-            ImportShow("金石堂");
         }
 
         private void aSAPToolStripMenuItem_Click(object sender, EventArgs e)
@@ -872,7 +866,6 @@ namespace WokyTool.ImportForm
 
         private void 金石堂ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            函式.GetFile("金石堂匯入樣板", "Template/OrderImport/金石堂匯入樣板.xlsx");
         }
 
         private void aSAPToolStripMenuItem1_Click(object sender, EventArgs e)

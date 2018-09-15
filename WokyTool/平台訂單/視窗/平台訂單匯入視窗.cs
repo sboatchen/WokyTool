@@ -58,7 +58,7 @@ namespace WokyTool.平台訂單
             this._客戶 = 資料_.客戶;
             _商品資料版本 = 商品資料管理器.獨體.唯讀資料版本;
             this.商品資料BindingSource.DataSource = 商品資料管理器.獨體.唯讀BList
-                                                          .Where(Value => Value.客戶 == _客戶 || Value.編號 == 常數.T錯誤資料編碼)
+                                                          .Where(Value => Value.客戶 == _客戶 || Value.編號 == 常數.T錯誤資料編碼 || Value.編號 == 常數.T空白資料編碼)
                                                           .ToList();
 
             _平台訂單匯入管理器.新增(資料_.匯入Excel());
@@ -105,7 +105,7 @@ namespace WokyTool.平台訂單
             {
                 _商品資料版本 = 商品資料管理器.獨體.唯讀資料版本;
                 this.商品資料BindingSource.DataSource = 商品資料管理器.獨體.唯讀BList
-                                                            .Where(Value => Value.客戶 == _客戶 || Value.編號 == 常數.T錯誤資料編碼)
+                                                            .Where(Value => Value.客戶 == _客戶 || Value.編號 == 常數.T錯誤資料編碼 || Value.編號 == 常數.T空白資料編碼)
                                                             .ToList();
             }
         }

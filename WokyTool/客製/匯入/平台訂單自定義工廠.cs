@@ -60,6 +60,9 @@ namespace WokyTool.客製
                 case "神坊":
                     介面_ = new 平台訂單自定義_神坊();
                     break;
+                case "金石堂":
+                    介面_ = new 平台訂單自定義_金石堂();
+                    break;
                 default:
                     訊息管理器.獨體.Error("平台訂單自定義工廠::不支援 " + 客戶_.名稱);
                     return null;

@@ -212,6 +212,7 @@
       <DependentUpon>客戶選取元件.cs</DependentUpon>
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
+    <Compile Include="客製\匯入\平台訂單自定義_金石堂.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_神坊.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_博客來.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_遠傳加購.cs" />
@@ -537,7 +538,6 @@
     <Compile Include="DataImport\出貨匯入結構_PC購物中心.cs" />
     <Compile Include="DataImport\出貨匯入結構_百利市.cs" />
     <Compile Include="DataImport\出貨匯入結構_遠傳.cs" />
-    <Compile Include="DataImport\出貨匯入結構_金石堂.cs" />
     <Compile Include="DataMgr\平台訂單資料管理器.cs" />
     <Compile Include="DataMgr\銷售管理器.cs" />
     <Compile Include="DataMgr\非平台訂單資料管理器.cs" />

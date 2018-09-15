@@ -29,9 +29,10 @@ namespace WokyTool.通用
         public T Get<T>(String Key_)
         {
             object Data_;
-            if(資料.TryGetValue(Key_, out Data_))
-                return (T)Data_;
-            return default(T);
+            資料.TryGetValue(Key_, out Data_);
+            if(Data_ == null)
+                return default(T);
+            return (T)Data_;
         }
     }
 }
