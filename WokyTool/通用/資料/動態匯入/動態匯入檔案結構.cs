@@ -73,7 +73,10 @@ namespace WokyTool.通用
                             {
                                 var cell = range.Cells[rCnt, cCnt] as Excel.Range;
                                 dValue_ = cell.Value2;
-                                object value = dValue_.ToString();
+
+                                object value = null;
+                                if (dValue_ != null)
+                                    value = dValue_.ToString();
 
                                 if (value != null)
                                 {

@@ -7,20 +7,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataImport;
+using WokyTool.平台訂單;
 using WokyTool.通用;
 
-namespace WokyTool.DataExport
+namespace WokyTool.客製
 {
-    class 回單號結構_遠傳加購 : 可格式化_Excel
+    public class 平台訂單回單轉換_遠傳加購 : 可格式化_Excel
     {
         private static string 全速配編號 = "02";
         private static string 宅配通編號 = "03";
 
-        //訂單編號	物流商代碼	貨運單號
+        protected 平台訂單新增資料 _Data;
 
-        protected 出貨匯入結構_遠傳加購 _Data;
-
-        public 回單號結構_遠傳加購(出貨匯入結構_遠傳加購 Data_)
+        public 平台訂單回單轉換_遠傳加購(平台訂單新增資料 Data_)
         {
             _Data = Data_;
         }
@@ -49,7 +48,7 @@ namespace WokyTool.DataExport
                     App_.Cells[Row_, 2] = 宅配通編號;
                     break;
                 default:
-                    MessageBox.Show("回單號結構_遠傳加購 can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("平台訂單回單轉換_遠傳加購 can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
             
