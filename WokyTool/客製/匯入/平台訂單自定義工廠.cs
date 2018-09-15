@@ -66,6 +66,9 @@ namespace WokyTool.客製
                 case "百利市":
                     介面_ = new 平台訂單自定義_百利市();
                     break;
+                case "uDesign":
+                    介面_ = new 平台訂單自定義_uDesign();
+                    break;
                 default:
                     訊息管理器.獨體.Error("平台訂單自定義工廠::不支援 " + 客戶_.名稱);
                     return null;

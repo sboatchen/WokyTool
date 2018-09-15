@@ -237,13 +237,6 @@ namespace WokyTool.ImportForm
         {
             switch (廠商類型)
             {
-                case "uDesign":
-                    {
-                        var Items_ = _Source.Select(Value => new 回單號結構_uDesign((出貨匯入結構_uDesign)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        函式.ExportExcel<回單號結構_uDesign>(Title_, Items_);
-                        break;
-                    }
                 case "PC商店街":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_PC商店街((出貨匯入結構_PC商店街)Value));
@@ -631,12 +624,6 @@ namespace WokyTool.ImportForm
 
         private void uDesignToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商類型 = "uDesign";
-
-            if (Import<出貨匯入結構_uDesign>() == false)
-                return;
-
-            ImportShow("uDesign");
         }
 
         private bool momo第三方配送()
@@ -890,7 +877,6 @@ namespace WokyTool.ImportForm
         
         private void uDesignToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            函式.GetFile("uDesign匯入樣板", "Template/OrderImport/uDesign匯入樣板.xlsx");
         }
 
         private void momo第三方ToolStripMenuItem1_Click(object sender, EventArgs e)

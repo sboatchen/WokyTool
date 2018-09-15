@@ -213,6 +213,7 @@
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_百利市.cs" />
+    <Compile Include="客製\匯入\平台訂單自定義_uDesign.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_金石堂.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_神坊.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_博客來.cs" />
@@ -497,12 +498,11 @@
     <Compile Include="Common\資料讀寫參數CSV.cs" />
     <Compile Include="Common\顏色處理.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_摩天.cs" />
-    <Compile Include="DataExport\回單號結構_uDesign.cs" />
+    <Compile Include="客製\回單轉換\平台訂單回單轉換_uDesign.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_博客來.cs" />
     <Compile Include="DataExport\工廠出貨匯出結構.cs" />
     <Compile Include="配送\轉換\撿貨匯出轉換.cs" />
     <Compile Include="DataExport\銷售匯出結構.cs" />
-    <Compile Include="DataImport\出貨匯入結構_uDesign.cs" />
     <Compile Include="DataImport\出貨匯入結構_夠麻吉.cs" />
     <Compile Include="DataImport\出貨匯入結構_愛料理.cs" />
     <Compile Include="DataExport\商品庫存匯出結構.cs" />

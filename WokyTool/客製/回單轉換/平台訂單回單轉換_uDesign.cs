@@ -7,17 +7,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataImport;
+using WokyTool.平台訂單;
 using WokyTool.通用;
 
-namespace WokyTool.DataExport
+namespace WokyTool.客製
 {
-    class 回單號結構_uDesign : 可格式化_Excel
+    class 平台訂單回單轉換_uDesign : 可格式化_Excel
     {
-        protected 出貨匯入結構_uDesign _Data;
         private static readonly string 全速配編號 = "HCT-新竹貨運";
         private static readonly string 宅配通編號 = "CAN-台灣宅配通";
 
-        public 回單號結構_uDesign(出貨匯入結構_uDesign Data_)
+        protected 平台訂單新增資料 _Data;
+
+        public 平台訂單回單轉換_uDesign(平台訂單新增資料 Data_)
         {
             _Data = Data_;
         }
@@ -89,31 +91,10 @@ namespace WokyTool.DataExport
         // 設定資料
         public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
         {
-            App_.Cells[Row_, 1] = _Data.訂單通知函發送日;
-            App_.Cells[Row_, 2] = _Data.最遲出貨日;
-            App_.Cells[Row_, 3] = _Data.訂單編號;
-            App_.Cells[Row_, 4] = _Data.購物車編號;
-            App_.Cells[Row_, 5] = _Data.訂購日期;
-            App_.Cells[Row_, 6] = _Data.訂購人姓名;
-            App_.Cells[Row_, 7] = _Data.姓名;
-            App_.Cells[Row_, 8] = _Data.電話;
-            App_.Cells[Row_, 9] = _Data.手機;
-            App_.Cells[Row_, 10] = _Data.收件人郵遞區號;
-            App_.Cells[Row_, 11] = _Data.地址;
-            App_.Cells[Row_, 12] = _Data.備註;
-            App_.Cells[Row_, 13] = _Data.購買備註;
-            App_.Cells[Row_, 14] = _Data.商品序號;
-            App_.Cells[Row_, 15] = _Data.廠商料號;
-            App_.Cells[Row_, 16] = _Data.商品型號;
-            App_.Cells[Row_, 17] = _Data.國際條碼;
-            App_.Cells[Row_, 18] = _Data.商品名稱_規格尺寸;
-            App_.Cells[Row_, 19] = _Data.特標語;
-            App_.Cells[Row_, 20] = _Data.數量;
-            App_.Cells[Row_, 21] = _Data.原售價;
-            App_.Cells[Row_, 22] = _Data.原售價_小計;
-            App_.Cells[Row_, 23] = _Data.進貨價;
-            App_.Cells[Row_, 24] = _Data.進貨價_小計;
-            App_.Cells[Row_, 25] = _Data.指交日期;
+            foreach (var Pair_ in _Data.額外資訊)
+            {
+                App_.Cells[Row_, Pair_.Key] = Pair_.Value;
+            }
 
             switch (_Data.配送公司)
             {
@@ -124,7 +105,7 @@ namespace WokyTool.DataExport
                     App_.Cells[Row_, 26] = 宅配通編號;
                     break;
                 default:
-                    MessageBox.Show("回單號結構_uDesign can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("平台訂單回單轉換_uDesign can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
 
