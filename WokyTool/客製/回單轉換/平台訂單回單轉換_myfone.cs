@@ -7,31 +7,32 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataImport;
+using WokyTool.平台訂單;
 using WokyTool.通用;
 
-namespace WokyTool.DataExport
+namespace WokyTool.客製
 {
-    class 回單號結構_myfone : 可格式化_Csv
+    class 平台訂單回單轉換_myfone : 可格式化_Csv
     {
         private static string 全速配編號 = "hct_s";
         private static string 宅配通編號 = "e_can_s";
 
-        protected 出貨匯入結構_myfone _Data;
+        protected 平台訂單新增資料 _Data;
 
-        public 回單號結構_myfone(出貨匯入結構_myfone Data_)
+        public 平台訂單回單轉換_myfone(平台訂單新增資料 Data_)
         {
             _Data = Data_;
         }
 
         [CsvColumn(Name = "訂單日期", FieldIndex = 1)]
-        public string 訂單日期 { get { return _Data.無用_訂單日期; } }
+        public string 訂單日期 { get { return 通用函式.取得字串(_Data.額外資訊, 1); } }
         [CsvColumn(Name = "出貨單編號", FieldIndex = 2)]
-        public string 出貨單編號 { get { return _Data.無用_出貨單編號; } }
+        public string 出貨單編號 { get { return 通用函式.取得字串(_Data.額外資訊, 2); } }
         [CsvColumn(Name = "訂單編號", FieldIndex = 3)]
         public string 訂單編號 { get { return _Data.訂單編號; } }
 
         [CsvColumn(Name = "運送方式", FieldIndex = 4)]
-        public string 運送方式 { get { return _Data.無用_運送方式; } }
+        public string 運送方式 { get { return 通用函式.取得字串(_Data.額外資訊, 4); } }
         [CsvColumn(Name = "物流代碼", FieldIndex = 5)]
         public string 物流代碼
         {
@@ -44,7 +45,7 @@ namespace WokyTool.DataExport
                     case 列舉.配送公司.宅配通:
                         return 宅配通編號;
                     default:
-                        MessageBox.Show("回單號結構_myfone can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("平台訂單回單轉換_myfone can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return 字串.空;
                 }
             }
@@ -53,25 +54,25 @@ namespace WokyTool.DataExport
         public string 配送單號 { get { return _Data.配送單號; } }
 
         [CsvColumn(Name = "商品貨號", FieldIndex = 7)]
-        public string 商品貨號 { get { return _Data.商品序號; } }
+        public string 商品貨號 { get { return 通用函式.取得字串(_Data.額外資訊, 7); } }
         [CsvColumn(Name = "供應商料號", FieldIndex = 8)]
-        public string 供應商料號 { get { return _Data.無用_供應商料號; } }
+        public string 供應商料號 { get { return 通用函式.取得字串(_Data.額外資訊, 8); } }
         [CsvColumn(Name = "商品名稱", FieldIndex = 9)]
-        public string 商品名稱 { get { return _Data.無用_商品名稱; } }
+        public string 商品名稱 { get { return 通用函式.取得字串(_Data.額外資訊, 9); } }
         [CsvColumn(Name = "樣式", FieldIndex = 10)]
-        public string 樣式 { get { return _Data.無用_樣式; } }
+        public string 樣式 { get { return 通用函式.取得字串(_Data.額外資訊, 10); } }
         [CsvColumn(Name = "贈品資訊", FieldIndex = 11)]
-        public string 贈品資訊 { get { return _Data.無用_贈品資訊; } }
+        public string 贈品資訊 { get { return 通用函式.取得字串(_Data.額外資訊, 11); } }
 
         [CsvColumn(Name = "數量", FieldIndex = 12)]
         public int 數量 { get { return _Data.數量; } }
         [CsvColumn(Name = "單位成本", FieldIndex = 13)]
-        public int 無用_單位成本 { get { return _Data.無用_單位成本; } }
+        public string 無用_單位成本 { get { return 通用函式.取得字串(_Data.額外資訊, 13); } }
         [CsvColumn(Name = "成本小計", FieldIndex = 14)]
-        public int 成本小計 { get { return _Data.無用_成本小計; } }
+        public string 成本小計 { get { return 通用函式.取得字串(_Data.額外資訊, 14); } }
 
         [CsvColumn(Name = "購買人email", FieldIndex = 15)]
-        public string 購買人email { get { return _Data.無用_購買人email; } }
+        public string 購買人email { get { return 通用函式.取得字串(_Data.額外資訊, 15); } }
         [CsvColumn(Name = "收件人", FieldIndex = 16)]
         public string 收件人 { get { return _Data.姓名; } }
         [CsvColumn(Name = "聯絡電話", FieldIndex = 17)]
@@ -82,7 +83,7 @@ namespace WokyTool.DataExport
         public string 送貨地址 { get { return _Data.地址; } }
 
         [CsvColumn(Name = "發票號碼", FieldIndex = 20)]
-        public string 發票號碼 { get { return _Data.無用_發票號碼; } }
+        public string 發票號碼 { get { return 通用函式.取得字串(_Data.額外資訊, 20); } }
         [CsvColumn(Name = "出貨單備註", FieldIndex = 21)]
         public string 出貨單備註 { get { return _Data.備註; } }
     }
