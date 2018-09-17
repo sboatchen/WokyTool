@@ -212,6 +212,7 @@
       <DependentUpon>客戶選取元件.cs</DependentUpon>
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
+    <Compile Include="客製\匯入\平台訂單自定義_ibonMart.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_myfone.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_PC專櫃.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_PC購物中心.cs" />
@@ -514,7 +515,7 @@
     <Compile Include="DataExport\回單號結構_citiesocial.cs" />
     <Compile Include="DataExport\回單號結構_GoHappy.cs" />
     <Compile Include="配送\資料\全速配匯出結構.cs" />
-    <Compile Include="DataExport\回單號結構_ibonMart.cs" />
+    <Compile Include="客製\回單轉換\平台訂單回單轉換_ibonMart.cs" />
     <Compile Include="DataExport\回單號結構_Momo.cs" />
     <Compile Include="DataExport\回單號結構_Momo第三方_分組.cs" />
     <Compile Include="DataExport\回單號結構_Momo第三方_進度.cs" />
@@ -536,7 +537,6 @@
     <Compile Include="DataExport\進貨匯出結構.cs" />
     <Compile Include="DataImport\出貨匯入結構_ASAP.cs" />
     <Compile Include="DataImport\出貨匯入結構_citiesocial.cs" />
-    <Compile Include="DataImport\出貨匯入結構_ibonMart.cs" />
     <Compile Include="DataImport\出貨匯入結構_PayEasy.cs" />
     <Compile Include="DataImport\出貨匯入結構_遠傳.cs" />
     <Compile Include="DataMgr\平台訂單資料管理器.cs" />
