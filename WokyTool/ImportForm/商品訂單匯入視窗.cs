@@ -237,20 +237,6 @@ namespace WokyTool.ImportForm
         {
             switch (廠商類型)
             {
-                case "PC商店街":
-                    {
-                        var Items_ = _Source.Select(Value => new 回單號結構_PC商店街((出貨匯入結構_PC商店街)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        函式.ExportCSV<回單號結構_PC商店街>(Title_, Items_);
-                        break;
-                    }
-                case "PC專櫃":
-                    {
-                        var Items_ = _Source.Select(Value => new 回單號結構_PC專櫃((出貨匯入結構_PC專櫃)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        函式.ExportCSV<回單號結構_PC專櫃>(Title_, Items_);
-                        break;
-                    }
                 case "ibon mart":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_ibonMart((出貨匯入結構_ibonMart)Value));
@@ -584,32 +570,14 @@ namespace WokyTool.ImportForm
 
         private void pCToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商類型 = "PC商店街";
-
-            if (Import<出貨匯入結構_PC商店街>() == false)
-                return;
-
-            ImportShow("PC商店街");
         }
 
         private void pCToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            廠商類型 = "PC專櫃";
-
-            if (Import<出貨匯入結構_PC專櫃>() == false)
-                return;
-
-            ImportShow("PC專櫃");
         }
 
         private void pC購物中心ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商類型 = "PC購物中心";
-
-            if (Import<出貨匯入結構_PC購物中心>() == false)
-                return;
-
-            ImportShow("PC購物中心");
         }
 
         private void 愛料理ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -863,7 +831,6 @@ namespace WokyTool.ImportForm
 
         private void pC購物中心ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            函式.GetFile("PC購物中心匯入樣板", "Template/OrderImport/PC購物中心匯入樣板.xlsx");
         }
 
         private void 愛料理ToolStripMenuItem1_Click(object sender, EventArgs e)

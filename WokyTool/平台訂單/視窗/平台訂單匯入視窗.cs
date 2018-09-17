@@ -47,6 +47,7 @@ namespace WokyTool.平台訂單
 
             this.檢查ToolStripMenuItem.Enabled = false;
             this.匯出ToolStripMenuItem.Enabled = false;
+            this.dataGridView1.Enabled = false;
         }
 
         private void 格式_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,6 +69,7 @@ namespace WokyTool.平台訂單
             this.格式.Enabled = false;
             this.檢查ToolStripMenuItem.Enabled = true;
             this.匯出ToolStripMenuItem.Enabled = true;
+            this.dataGridView1.Enabled = true;
 
             this.OnActivated(null);
         }
