@@ -518,7 +518,7 @@
     <Compile Include="DataExport\回單號結構_Momo第三方_分組.cs" />
     <Compile Include="DataExport\回單號結構_Momo第三方_進度.cs" />
     <Compile Include="DataExport\回單號結構_myfone.cs" />
-    <Compile Include="DataExport\回單號結構_PayEasy.cs" />
+    <Compile Include="客製\回單轉換\平台訂單回單轉換_PayEasy.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_PC商店街.cs" />
     <Compile Include="DataExport\回單號結構_創業家兄弟.cs" />
     <Compile Include="DataExport\回單號結構_東森.cs" />

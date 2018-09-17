@@ -90,7 +90,7 @@ namespace WokyTool.平台訂單
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            訊息管理器.獨體.Notify("功能尚未實作");
+            //訊息管理器.獨體.Notify("功能尚未實作");
         }
 
         /********************************/

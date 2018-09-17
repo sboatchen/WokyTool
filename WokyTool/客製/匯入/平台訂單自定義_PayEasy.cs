@@ -25,20 +25,25 @@ namespace WokyTool.客製
 
             foreach (var 動態資料_ in 檔案_.內容)
             {
+                String 商品識別_ = 動態資料_.Get<String>(平台訂單列舉.匯入需求欄位.客戶商品編號.ToString());
+
                 var 平台訂單匯入資料_ = new 平台訂單匯入資料
                 {
                     公司 = 公司_,
                     客戶 = 客戶_,
-                    商品識別 = 動態資料_.Get<String>(平台訂單列舉.匯入需求欄位.客戶商品編號.ToString()),
+                    訂單編號 = 動態資料_.Get<String>(平台訂單列舉.匯入需求欄位.客戶訂單編號.ToString()),
+                    商品識別 = 商品識別_,
                     數量 = 動態資料_.Get<Int32>(平台訂單列舉.匯入需求欄位.數量.ToString()),
                     姓名 = 動態資料_.Get<String>(平台訂單列舉.匯入需求欄位.姓名.ToString()),
                     地址 = 動態資料_.Get<String>(平台訂單列舉.匯入需求欄位.地址.ToString()),
                     電話 = 動態資料_.Get<String>(平台訂單列舉.匯入需求欄位.電話.ToString()),
                     手機 = 動態資料_.Get<String>(平台訂單列舉.匯入需求欄位.手機.ToString()),
                     備註 = 動態資料_.Get<String>(平台訂單列舉.匯入需求欄位.備註.ToString()),
+                    額外資訊 = 動態資料_.詳細,
                 };
 
-                平台訂單匯入資料_.商品 = 商品資料管理器.獨體.Get(客戶_.編號, 平台訂單匯入資料_.商品識別);
+                平台訂單匯入資料_.商品 = 商品資料管理器.獨體.Get(客戶_.編號, 商品識別_);
+                平台訂單匯入資料_.自定義介面 = this;
 
                 yield return 平台訂單匯入資料_;
             }
@@ -46,6 +51,10 @@ namespace WokyTool.客製
 
         public override void 回單(IEnumerable<平台訂單新增資料> 資料_)
         {
+            var Items_ = 資料_.Select(Value => new 平台訂單回單轉換_PayEasy(Value));
+
+            String Title_ = String.Format("PayEasy回單_{0}", 時間.目前日期);
+            函式.ExportCSV<平台訂單回單轉換_PayEasy>(Title_, Items_);
         }
     }
 }

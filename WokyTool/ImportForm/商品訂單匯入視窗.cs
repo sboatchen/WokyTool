@@ -265,13 +265,6 @@ namespace WokyTool.ImportForm
                         函式.ExportExcel<回單號結構_citiesocial>(Title_, Items_);
                         break;
                     }
-                case "PayEasy":
-                    {
-                        var Items_ = _Source.Select(Value => new 回單號結構_PayEasy((出貨匯入結構_PayEasy)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        函式.ExportCSV<回單號結構_PayEasy>(Title_, Items_);
-                        break;
-                    }
                 case "GoHappy":
                     {
                         var Items_ = _Source.Where(Value => Value.IsIgnore() == false).Select(Value => new 回單號結構_GoHappy((出貨匯入結構_GoHappy)Value));

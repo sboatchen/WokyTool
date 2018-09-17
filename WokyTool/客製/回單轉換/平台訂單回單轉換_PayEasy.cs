@@ -7,18 +7,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataImport;
+using WokyTool.平台訂單;
 using WokyTool.通用;
 
-namespace WokyTool.DataExport
+namespace WokyTool.客製
 {
-    class 回單號結構_PayEasy : 可格式化_Csv
+    class 平台訂單回單轉換_PayEasy : 可格式化_Csv
     {
         private static string 全速配編號 = "51";
         private static string 宅配通編號 = "53";
 
-        protected 出貨匯入結構_PayEasy _Data;
+        protected 平台訂單新增資料 _Data;
 
-        public 回單號結構_PayEasy(出貨匯入結構_PayEasy Data_)
+        public 平台訂單回單轉換_PayEasy(平台訂單新增資料 Data_)
         {
             _Data = Data_;
         }
@@ -44,7 +45,7 @@ namespace WokyTool.DataExport
                     case 列舉.配送公司.宅配通:
                         return 宅配通編號;
                     default:
-                        MessageBox.Show("回單號結構_PayEasy can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("平台訂單回單轉換_PayEasy can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return 字串.空;
                 }
             }

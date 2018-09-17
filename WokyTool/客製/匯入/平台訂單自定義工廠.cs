@@ -78,6 +78,9 @@ namespace WokyTool.客製
                 case "PC專櫃":
                     介面_ = new 平台訂單自定義_PC專櫃();
                     break;
+                case "PayEasy":
+                    介面_ = new 平台訂單自定義_PayEasy();
+                    break;
                 default:
                     訊息管理器.獨體.Error("平台訂單自定義工廠::不支援 " + 客戶_.名稱);
                     return null;
