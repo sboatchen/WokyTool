@@ -102,7 +102,9 @@ namespace WokyTool.平台訂單
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送).GroupBy(Value => Value.公司.編號 * 1000 + Value.客戶.編號);
+            var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList
+                                    .Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送 || Value.處理狀態 == 列舉.訂單處理狀態.忽略)
+                                    .GroupBy(Value => Value.公司.編號 * 1000 + Value.客戶.編號);
 
             foreach (var Group_ in GroupQueue_)
             {

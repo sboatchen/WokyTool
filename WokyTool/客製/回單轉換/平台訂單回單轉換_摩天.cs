@@ -72,7 +72,7 @@ namespace WokyTool.客製
                     App_.Cells[Row_, 5] = 字串.宅配通;
                     break;
                 default:
-                    訊息管理器.獨體.Error("平台訂單回單轉換_摩天 can't find 配送公司 " + _Data.配送公司.ToString());
+                    訊息管理器.獨體.Error("平台訂單回單轉換_摩天 不支援配送公司 " + _Data.配送公司.ToString());
                     break;
             }
 

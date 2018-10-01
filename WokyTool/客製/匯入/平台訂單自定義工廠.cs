@@ -46,9 +46,11 @@ namespace WokyTool.客製
                 return 介面_;
             }
 
-            switch (客戶_.名稱)
+            String 名稱_ = 客戶_.名稱.ToLower().Replace(" ", "");
+
+            switch (名稱_)
             {
-                case "Momo摩天":
+                case "momo摩天":
                     介面_ =  new 平台訂單自定義_摩天();
                     break;
                 case "遠傳加購":
@@ -66,26 +68,36 @@ namespace WokyTool.客製
                 case "百利市":
                     介面_ = new 平台訂單自定義_百利市();
                     break;
-                case "uDesign":
+                case "udesign":
                     介面_ = new 平台訂單自定義_uDesign();
                     break;
-                case "PC購物中心":
+                case "pc購物中心":
                     介面_ = new 平台訂單自定義_PC購物中心();
                     break;
-                case "PC商店街":
+                case "pc商店街":
                     介面_ = new 平台訂單自定義_PC商店街();
                     break;
-                case "PC專櫃":
+                case "pc專櫃":
                     介面_ = new 平台訂單自定義_PC專櫃();
                     break;
-                case "PayEasy":
+                case "payeasy":
                     介面_ = new 平台訂單自定義_PayEasy();
                     break;
                 case "myfone":
                     介面_ = new 平台訂單自定義_myfone();
                     break;
-                case "ibon mart":
+                case "ibonmart":
                     介面_ = new 平台訂單自定義_ibonMart();
+                    break;
+                case "gohappy":
+                case "friday":
+                    介面_ = new 平台訂單自定義_Friday();
+                    break;
+                case "東森":
+                    介面_ = new 平台訂單自定義_東森();
+                    break;
+                case "森森":
+                    介面_ = new 平台訂單自定義_森森();
                     break;
                 default:
                     訊息管理器.獨體.Error("平台訂單自定義工廠::不支援 " + 客戶_.名稱);

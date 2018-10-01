@@ -192,6 +192,11 @@ namespace WokyTool.通用
                     return Convert.ToDecimal(dynamic.ToString());
                 case 列舉.資料格式.整數:
                     return Convert.ToInt32(dynamic.ToString());
+                case 列舉.資料格式.日期:
+                    {
+                        double d = Convert.ToDouble(dynamic.ToString());
+                        return DateTime.FromOADate(d);
+                    }
                 default:
                     throw new Exception("轉型資料 不支援的格式 " + 資料格式類型);
             }

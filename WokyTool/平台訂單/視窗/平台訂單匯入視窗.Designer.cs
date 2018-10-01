@@ -40,7 +40,9 @@
             this.格式 = new System.Windows.Forms.ToolStripComboBox();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.訂單處理狀態BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.訂單編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.處理狀態 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.商品識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.商品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單匯入資料BindingSource)).BeginInit();
             this.menuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.訂單處理狀態BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // 配送公司BindingSource
@@ -84,6 +87,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.訂單編號DataGridViewTextBoxColumn,
+            this.處理狀態,
             this.商品識別DataGridViewTextBoxColumn,
             this.商品DataGridViewTextBoxColumn,
             this.數量DataGridViewTextBoxColumn,
@@ -157,12 +161,23 @@
             this.匯出ToolStripMenuItem.Text = "匯出";
             this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
             // 
+            // 訂單處理狀態BindingSource
+            // 
+            this.訂單處理狀態BindingSource.DataSource = typeof(WokyTool.通用.列舉.訂單處理狀態);
+            // 
             // 訂單編號DataGridViewTextBoxColumn
             // 
             this.訂單編號DataGridViewTextBoxColumn.DataPropertyName = "訂單編號";
             this.訂單編號DataGridViewTextBoxColumn.HeaderText = "訂單編號";
             this.訂單編號DataGridViewTextBoxColumn.Name = "訂單編號DataGridViewTextBoxColumn";
             this.訂單編號DataGridViewTextBoxColumn.Width = 150;
+            // 
+            // 處理狀態
+            // 
+            this.處理狀態.DataPropertyName = "處理狀態";
+            this.處理狀態.DataSource = this.訂單處理狀態BindingSource;
+            this.處理狀態.HeaderText = "處理狀態";
+            this.處理狀態.Name = "處理狀態";
             // 
             // 商品識別DataGridViewTextBoxColumn
             // 
@@ -294,6 +309,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單匯入資料BindingSource)).EndInit();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.訂單處理狀態BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,6 +329,8 @@
         private System.Windows.Forms.ToolStripMenuItem 檢查ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 匯出ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn 訂單編號DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn 處理狀態;
+        private System.Windows.Forms.BindingSource 訂單處理狀態BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 商品識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 商品DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;

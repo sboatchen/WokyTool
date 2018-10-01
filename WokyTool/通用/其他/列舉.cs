@@ -139,6 +139,7 @@ namespace WokyTool.通用
             整數 = 1,
             金額 = 2,
             文字 = 3,
+            日期 = 4,
         };
 
         public enum 商品識別

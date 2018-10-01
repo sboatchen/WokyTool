@@ -18,6 +18,12 @@ namespace WokyTool.平台訂單
     public class 平台訂單匯入資料 : 可匯入資料
     {
         [JsonProperty]
+        public DateTime 處理日期 { get; set; }
+
+        [JsonProperty]
+        public 列舉.訂單處理狀態 處理狀態 { get; set; }
+
+        [JsonProperty]
         public int 公司編號
         {
             get

@@ -23,7 +23,6 @@ namespace WokyTool.客製
         private static string 外箱規格格式 = "'0001'";
         private static string 午洋編號 = "'45036257WD'";
         private static string 田和豐編號 = "'54867084WD'";
-        private static string 輸出字串格式 = "'{0}'";
 
         protected 平台訂單新增資料 _Data;
 
@@ -69,7 +68,7 @@ namespace WokyTool.客製
                     case 列舉.配送公司.宅配通:
                         return 宅配通編號;
                     default:
-                        MessageBox.Show("平台訂單回單轉換_ibonMart can't find 託運公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        訊息管理器.獨體.Error("平台訂單回單轉換_ibonMart 不支援配送公司 " + _Data.配送公司.ToString());
                         return 字串.空;
                 }
             }

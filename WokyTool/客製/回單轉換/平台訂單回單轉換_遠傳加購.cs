@@ -48,7 +48,7 @@ namespace WokyTool.客製
                     App_.Cells[Row_, 2] = 宅配通編號;
                     break;
                 default:
-                    MessageBox.Show("平台訂單回單轉換_遠傳加購 can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    訊息管理器.獨體.Error("平台訂單回單轉換_遠傳加購 不支援配送公司 " + _Data.配送公司.ToString());
                     break;
             }
             

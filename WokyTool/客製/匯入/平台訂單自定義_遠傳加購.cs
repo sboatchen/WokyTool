@@ -26,27 +26,37 @@ namespace WokyTool.客製
 
             foreach (var 動態資料_ in 檔案_.內容)
             {
-                String 商品識別_ = null;
-                String 客戶商品編號_ = 動態資料_.Get<String>(平台訂單列舉.匯入需求欄位.客戶商品編號.ToString());
-                String 客戶商品子編號_ = 動態資料_.Get<String>(平台訂單列舉.匯入需求欄位.客戶商品子編號.ToString());
-
                 //  序號與名稱    (P00046618_05)德國HOPE歐普微壓循環氣密系列平底鍋26CM
                 //  規格          無
                 //  商品序號      P00046618_05@無
 
+                String 客戶商品編號_ = 動態資料_.Get<String>(平台訂單列舉.匯入需求欄位.客戶商品編號.ToString());
                 int Start_ = 客戶商品編號_.IndexOf('(');
                 int End_ = 客戶商品編號_.IndexOf(')');
                 if (Start_ == -1 || End_ == -1)
                 {
-                    商品識別_ = 字串.標頭_錯誤 + 客戶商品編號_ + "@" + 客戶商品子編號_;
+                    客戶商品編號_ = 字串.標頭_錯誤 + 客戶商品編號_ ;
                 }
                 else
                 {
-                    商品識別_ = 客戶商品編號_.Substring(Start_ + 1, End_ - Start_ - 1) + "@" + 客戶商品子編號_;
+                    客戶商品編號_ = 客戶商品編號_.Substring(Start_ + 1, End_ - Start_ - 1);
+                }
+
+                String 客戶商品子編號_ = 動態資料_.Get<String>(平台訂單列舉.匯入需求欄位.客戶商品子編號.ToString());
+
+                String 商品識別_ = null;
+                if (String.IsNullOrEmpty(客戶商品子編號_))
+                {
+                    商品識別_ = 客戶商品編號_;
+                }
+                else
+                {
+                    商品識別_ = string.Format("{0}@{1}", 客戶商品編號_, 客戶商品子編號_);
                 }
 
                 var 平台訂單匯入資料_ = new 平台訂單匯入資料
                 {
+                    處理狀態 = 列舉.訂單處理狀態.新增,
                     公司 = 公司_,
                     客戶 = 客戶_,
                     訂單編號 = 動態資料_.Get<String>(平台訂單列舉.匯入需求欄位.客戶訂單編號.ToString()),

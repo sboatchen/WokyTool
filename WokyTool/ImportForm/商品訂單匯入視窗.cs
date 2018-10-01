@@ -251,27 +251,6 @@ namespace WokyTool.ImportForm
                         函式.ExportExcel<回單號結構_citiesocial>(Title_, Items_);
                         break;
                     }
-                case "GoHappy":
-                    {
-                        var Items_ = _Source.Where(Value => Value.IsIgnore() == false).Select(Value => new 回單號結構_GoHappy((出貨匯入結構_GoHappy)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        函式.ExportCSV<回單號結構_GoHappy>(Title_, Items_);
-                        break;
-                    }
-                case "東森":
-                    {
-                        var Items_ = _Source.Select(Value => new 回單號結構_東森((出貨匯入結構_東森)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        函式.ExportCSV<回單號結構_東森>(Title_, Items_);
-                        break;
-                    }
-                case "森森":
-                    {
-                        var Items_ = _Source.Select(Value => new 回單號結構_森森((出貨匯入結構_森森)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        函式.ExportCSV<回單號結構_森森>(Title_, Items_);
-                        break;
-                    }
                  case "創業家兄弟":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_創業家兄弟((出貨匯入結構_創業家兄弟)Value));
@@ -394,32 +373,14 @@ namespace WokyTool.ImportForm
         // GoHappy匯入
         private void goHappyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商類型 = "GoHappy";
-
-            if (Import<出貨匯入結構_GoHappy>() == false)
-                return;
-
-            ImportShow(廠商類型);
         }
 
         private void 東森ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商類型 = "東森";
-
-            if (Import<出貨匯入結構_東森>() == false)
-                return;
-
-            ImportShow(廠商類型);
         }
 
         private void 森森ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商類型 = "森森";
-
-            if (Import<出貨匯入結構_森森>() == false)
-                return;
-
-            ImportShow(廠商類型);
         }
 
         private void 創業家兄弟ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -472,12 +433,6 @@ namespace WokyTool.ImportForm
 
         private void payEasyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商類型 = "PayEasy";
-
-            if (Import<出貨匯入結構_PayEasy>() == false)
-                return;
-
-            ImportShow("PayEasy");
         }
 
         private void 神坊ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -728,12 +683,10 @@ namespace WokyTool.ImportForm
 
         private void 東森ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            函式.GetFile("東森匯入樣板", "Template/OrderImport/東森匯入樣板.xlsx");
         }
 
         private void goHappyToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            函式.GetFile("GoHappy匯入樣板", "Template/OrderImport/GoHappy匯入樣板.xlsx");
         }
 
         private void 博客來ToolStripMenuItem1_Click(object sender, EventArgs e)

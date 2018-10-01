@@ -66,7 +66,7 @@ namespace WokyTool.客製
                     case 列舉.配送公司.宅配通:
                         return 宅配通編號;
                     default:
-                        MessageBox.Show("平台訂單回單轉換_博客來 can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        訊息管理器.獨體.Error("平台訂單回單轉換_博客來 不支援配送公司 " + _Data.配送公司.ToString());
                         return 字串.空;
                 }
             }

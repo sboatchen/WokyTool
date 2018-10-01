@@ -91,7 +91,7 @@ namespace WokyTool.平台訂單
 
             可編輯BList.RaiseListChangedEvents = false;
 
-            var Left_ = 可編輯BList.Where(Value => Value.處理狀態 != 列舉.訂單處理狀態.配送).ToList();
+            var Left_ = 可編輯BList.Where(Value => Value.處理狀態 != 列舉.訂單處理狀態.配送 && Value.處理狀態 != 列舉.訂單處理狀態.忽略).ToList();
 
             Map.Clear();
             可編輯BList.Clear();

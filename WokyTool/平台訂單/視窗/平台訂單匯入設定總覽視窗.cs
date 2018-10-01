@@ -34,6 +34,22 @@ namespace WokyTool.平台訂單
             視窗管理器.獨體.顯現(列舉.編號.平台訂單設定, 列舉.視窗.詳細, 編號_);
         }
 
+        private void 複製ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.平台訂單匯入設定資料BindingSource.Current == null)
+            {
+                訊息管理器.獨體.Notify("請先選擇複製的樣板");
+                return;
+            }
+
+            平台訂單匯入設定資料 Source_ = (平台訂單匯入設定資料)(this.平台訂單匯入設定資料BindingSource.Current);
+            
+            平台訂單匯入設定資料 New_ = Source_.拷貝();
+            New_.編號 = 常數.T新建資料編碼;
+
+            this.平台訂單匯入設定資料BindingSource.Add(New_);
+        }
+
         /********************************/
 
         protected override void 視窗激活()
