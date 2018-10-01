@@ -7,18 +7,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataImport;
+using WokyTool.平台訂單;
 using WokyTool.通用;
 
-namespace WokyTool.DataExport
+namespace WokyTool.客製
 {
-    class 回單號結構_GoHappy : 可格式化_Csv
+    class 平台訂單回單轉換_Friday : 可格式化_Csv
     {
         private static string 全速配編號 = "4";
         private static string 宅配通編號 = "3";
 
-        protected 出貨匯入結構_GoHappy _Data;
+        protected 平台訂單新增資料 _Data;
 
-        public 回單號結構_GoHappy(出貨匯入結構_GoHappy Data_)
+        public 平台訂單回單轉換_Friday(平台訂單新增資料 Data_)
         {
             _Data = Data_;
         }
@@ -37,7 +38,7 @@ namespace WokyTool.DataExport
         {
             get
             {
-                return _Data.出貨單號;
+                return 通用函式.取得字串(_Data.額外資訊, 4);
             }
         }
 
@@ -53,7 +54,8 @@ namespace WokyTool.DataExport
                     case 列舉.配送公司.宅配通:
                         return 宅配通編號;
                     default:
-                        MessageBox.Show("回單號結構_GoHappy can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (_Data.處理狀態 != 列舉.訂單處理狀態.忽略)
+                            訊息管理器.獨體.Error("平台訂單回單轉換_Friday 不支援配送公司 " + _Data.配送公司.ToString());
                         return 字串.空;
                 }
             }
