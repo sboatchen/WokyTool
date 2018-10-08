@@ -258,18 +258,6 @@ namespace WokyTool.ImportForm
                         函式.ExportCSV<回單號結構_創業家兄弟>(Title_, Items_);
                         break;
                     }
-                 case "PCHome":
-                    {
-                        MessageBox.Show("PCHome平台不支援匯出，請手動回單號", 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
-                    }
-                 case "Momo":
-                    {
-                        var Items_ = _Source.Select(Value => new 回單號結構_Momo((出貨匯入結構_Momo)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        函式.ExportExcel<回單號結構_Momo>(Title_, Items_);
-                        break;
-                    }
                 case "Momo第三方":
                     {
                         break;
@@ -405,12 +393,6 @@ namespace WokyTool.ImportForm
 
         private void momoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商類型 = "Momo";
-
-            if (Import<出貨匯入結構_Momo>() == false)
-                return;
-
-            ImportShow(廠商類型);
         }
 
         private void momo第三方ToolStripMenuItem_Click(object sender, EventArgs e)

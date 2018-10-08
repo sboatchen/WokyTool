@@ -21,7 +21,7 @@ namespace WokyTool.平台訂單
         public override int 編號 { get; set; }
 
         [JsonProperty]
-        public DateTime 處理日期 { get; set; }
+        public DateTime 處理時間 { get; set; }
 
         [JsonProperty]
         public 列舉.訂單處理狀態 處理狀態 { get; set; }
@@ -218,7 +218,7 @@ namespace WokyTool.平台訂單
         {
             編號 = 常數.T空白資料編碼,
             處理狀態 = 列舉.訂單處理狀態.新增,
-            處理日期 = new DateTime(),
+            處理時間 = new DateTime(),
 
             公司 = 公司資料.NULL,
             客戶 = 客戶資料.NULL,
@@ -262,7 +262,7 @@ namespace WokyTool.平台訂單
         {
             編號 = 常數.T錯誤資料編碼,
             處理狀態 = 列舉.訂單處理狀態.錯誤,
-            處理日期 = new DateTime(),
+            處理時間 = new DateTime(),
 
             公司 = 公司資料.ERROR,
             客戶 = 客戶資料.ERROR,
@@ -306,7 +306,7 @@ namespace WokyTool.平台訂單
         {
             平台訂單新增資料 Data_ = new 平台訂單新增資料
             {
-                處理日期 = Value.處理日期,
+                處理時間 = Value.處理時間,
                 處理狀態 = Value.處理狀態,
 
                 公司 = Value.公司,
@@ -348,7 +348,7 @@ namespace WokyTool.平台訂單
         {
             平台訂單新增資料 Data_ = new 平台訂單新增資料
             {
-                處理日期 = this.處理日期,
+                處理時間 = this.處理時間,
                 處理狀態 = this.處理狀態,
 
                 公司 = this.公司,
@@ -385,7 +385,7 @@ namespace WokyTool.平台訂單
 
         public override void 覆蓋(平台訂單新增資料 Data_)
         {
-            處理日期 = Data_.處理日期;
+            處理時間 = Data_.處理時間;
             處理狀態 = Data_.處理狀態;
 
             公司 = Data_.公司;
@@ -420,7 +420,7 @@ namespace WokyTool.平台訂單
         public override Boolean 是否一致(平台訂單新增資料 Data_)
         {
             return
-                處理日期 == Data_.處理日期 &&
+                處理時間 == Data_.處理時間 &&
                 處理狀態 == Data_.處理狀態 &&
 
                 公司 == Data_.公司 &&

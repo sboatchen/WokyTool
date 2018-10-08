@@ -7,15 +7,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataImport;
+using WokyTool.平台訂單;
 using WokyTool.通用;
 
-namespace WokyTool.DataExport
+namespace WokyTool.客製
 {
-    class 回單號結構_Momo : 可格式化_Excel
+    public class 平台訂單回單轉換_Momo : 可格式化_Excel
     {
-        protected 出貨匯入結構_Momo _Data;
+        private static string 已配送 = "已配送";
+        private static string 已確認指定配送日 = "已確認指定配送日";
 
-        public 回單號結構_Momo(出貨匯入結構_Momo Data_)
+        protected 平台訂單新增資料 _Data;
+
+        public 平台訂單回單轉換_Momo(平台訂單新增資料 Data_)
         {
             _Data = Data_;
         }
@@ -61,47 +65,40 @@ namespace WokyTool.DataExport
         // 設定資料
         public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
         {
-            App_.Cells[Row_, 1] = _Data.無用_項次;
-            App_.Cells[Row_, 2] = _Data.訂單編號;
-            App_.Cells[Row_, 3] = _Data.配送狀態;
-            App_.Cells[Row_, 4] = _Data.配送訊息;
-            App_.Cells[Row_, 5] = _Data.約定配送日;
+            foreach (var Pair_ in _Data.額外資訊)
+            {
+                if (Pair_.Key > 0)
+                    App_.Cells[Row_, Pair_.Key] = Pair_.Value;
+            }
 
-             switch (_Data.配送公司)
-            { 
+            if (_Data.處理狀態 == 列舉.訂單處理狀態.配送)
+            {
+                 App_.Cells[Row_, 3] = 已配送;
+
+            }
+            else
+            {
+                App_.Cells[Row_, 3] = 已確認指定配送日;
+
+                String 配送訊息_ = _Data.處理時間.ToString("yyyy/MM/dd");
+                App_.Cells[Row_, 4] = 配送訊息_;    // 配送訊息
+                App_.Cells[Row_, 5] = 配送訊息_;    // 約定配送日;
+            }
+
+            switch (_Data.配送公司)
+            {
                 case 列舉.配送公司.全速配:
                     App_.Cells[Row_, 6] = 字串.新竹貨運;
                     break;
                 case 列舉.配送公司.宅配通:
                     App_.Cells[Row_, 6] = 字串.宅配通;
                     break;
-                /*default:  // 有些單子不處理
-                    MessageBox.Show("回單號結構_Momo can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;*/
+                default:
+                    訊息管理器.獨體.Error("回單號結構_Momo 不支援配送公司 " + _Data.配送公司.ToString());
+                    break;
             }
 
             App_.Cells[Row_, 7] = _Data.配送單號;
-            App_.Cells[Row_, 8] = _Data.訂單類別;
-            App_.Cells[Row_, 9] = _Data.備註;
-            App_.Cells[Row_, 10] = _Data.無用_轉單日;
-            App_.Cells[Row_, 11] = _Data.預計出貨日;
-            App_.Cells[Row_, 12] = _Data.姓名;
-            App_.Cells[Row_, 13] = _Data.電話;
-            App_.Cells[Row_, 14] = _Data.手機;
-            App_.Cells[Row_, 15] = _Data.地址;
-            App_.Cells[Row_, 16] = _Data.無用_商品原廠編號;
-            App_.Cells[Row_, 17] = _Data.品號;
-            App_.Cells[Row_, 18] = _Data.無用_品名;
-            App_.Cells[Row_, 19] = _Data.單名編號;
-            App_.Cells[Row_, 20] = _Data.無用_單品詳細;
-            App_.Cells[Row_, 21] = _Data.數量;
-            App_.Cells[Row_, 22] = _Data.無用_進價;
-            App_.Cells[Row_, 23] = _Data.無用_贈品;
-            App_.Cells[Row_, 24] = _Data.無用_訂購人姓名;
-            App_.Cells[Row_, 25] = _Data.無用_發票號碼;
-            App_.Cells[Row_, 26] = _Data.無用_發票日期;
-            App_.Cells[Row_, 27] = _Data.無用_個人識別碼;
-            App_.Cells[Row_, 28] = _Data.無用_群組變價商品;
 
             return Row_ + 1;
         }

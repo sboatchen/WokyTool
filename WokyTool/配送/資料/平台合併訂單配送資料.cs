@@ -57,6 +57,7 @@ namespace WokyTool.配送
                         訂單_.BeginEdit();
                         訂單_.配送單號 = null;
                         訂單_.處理狀態 = 列舉.訂單處理狀態.新增;
+                        訂單_.處理時間 = new DateTime();
                     }
 
                     return;
@@ -79,6 +80,7 @@ namespace WokyTool.配送
                     訂單_.BeginEdit();
                     訂單_.配送單號 = value;
                     訂單_.處理狀態 = 列舉.訂單處理狀態.配送;
+                    訂單_.處理時間 = DateTime.Now;
                 }
             }
         }

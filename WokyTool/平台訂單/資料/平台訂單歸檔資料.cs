@@ -21,6 +21,9 @@ namespace WokyTool.平台訂單
         public override int 編號 { get; set; }
 
         [JsonProperty]
+        public DateTime 處理時間 { get; set; }
+
+        [JsonProperty]
         public 列舉.訂單處理狀態 處理狀態 { get; set; }
 
         [JsonProperty]
@@ -274,6 +277,7 @@ namespace WokyTool.平台訂單
         {
             平台訂單歸檔資料 Data_ = new 平台訂單歸檔資料
             {
+                處理時間 = Value.處理時間,
                 處理狀態 = 列舉.訂單處理狀態.歸檔,
 
                 公司 = Value.公司,

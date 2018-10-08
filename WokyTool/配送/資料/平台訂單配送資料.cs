@@ -46,6 +46,7 @@ namespace WokyTool.配送
                     平台訂單.BeginEdit();
                     平台訂單.配送單號 = null;
                     平台訂單.處理狀態 = 列舉.訂單處理狀態.新增;
+                    平台訂單.處理時間 = new DateTime();
                     return;
                 }
 
@@ -64,6 +65,7 @@ namespace WokyTool.配送
                 平台訂單.BeginEdit();
                 平台訂單.配送單號 = value;
                 平台訂單.處理狀態 = 列舉.訂單處理狀態.配送;
+                平台訂單.處理時間 = DateTime.Now;
             }
         }
 

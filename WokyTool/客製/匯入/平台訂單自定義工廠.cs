@@ -50,7 +50,11 @@ namespace WokyTool.客製
 
             switch (名稱_)
             {
+                case "momo":
+                    介面_ = new 平台訂單自定義_Momo();
+                    break;
                 case "momo摩天":
+                case "摩天":
                     介面_ =  new 平台訂單自定義_摩天();
                     break;
                 case "遠傳加購":

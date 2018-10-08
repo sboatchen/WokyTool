@@ -51,6 +51,17 @@ namespace WokyTool.平台訂單
             this.檢查ToolStripMenuItem.Enabled = false;
             this.匯出ToolStripMenuItem.Enabled = false;
             this.dataGridView1.Enabled = false;
+
+            this.dataGridView1.DataError += new DataGridViewDataErrorEventHandler(this._DataGridView錯誤);
+        }
+
+        private void _DataGridView錯誤(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            訊息管理器.獨體.Error("資料錯誤:" + e.RowIndex + "," + e.ColumnIndex);
+            e.ThrowException = false;
+
+            if (e.ColumnIndex == 3)
+                _平台訂單匯入管理器.可編輯BList[e.RowIndex].商品 = 商品資料.ERROR;
         }
 
         private void 格式_SelectedIndexChanged(object sender, EventArgs e)

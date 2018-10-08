@@ -93,7 +93,8 @@ namespace WokyTool.客製
         {
             foreach (var Pair_ in _Data.額外資訊)
             {
-                App_.Cells[Row_, Pair_.Key] = Pair_.Value;
+                if (Pair_.Key > 0)
+                    App_.Cells[Row_, Pair_.Key] = Pair_.Value;
             }
 
             switch (_Data.配送公司)
