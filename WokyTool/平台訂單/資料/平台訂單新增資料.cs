@@ -180,6 +180,9 @@ namespace WokyTool.平台訂單
         [JsonProperty]
         public int 配送分組 { get; set; }
 
+        [JsonProperty]
+        public String 發票號碼 { get; set; }
+
         /********************************/
         // 暫時性資訊
 
@@ -189,8 +192,12 @@ namespace WokyTool.平台訂單
             get
             {
                 if (_自定義介面 == null)
-                    _自定義介面 = 平台訂單自定義工廠.獨體.取得自定義(this.客戶);
+                    _自定義介面 = 平台訂單自定義工廠.獨體.取得自定義(this.客戶, null); //!! 無法取得Momo三方類型
                 return _自定義介面;
+            }
+            set 
+            {
+                _自定義介面 = value;
             }
         }
 
@@ -249,6 +256,8 @@ namespace WokyTool.平台訂單
             額外資訊 = null,
 
             配送分組 = 0,
+
+            發票號碼 = null,
         };
         public static 平台訂單新增資料 NULL
         {
@@ -293,6 +302,8 @@ namespace WokyTool.平台訂單
             額外資訊 = null,
 
             配送分組 = 0,
+
+            發票號碼 = null,
         };
         public static 平台訂單新增資料 ERROR
         {
@@ -336,7 +347,9 @@ namespace WokyTool.平台訂單
 
                 額外資訊 = Value.額外資訊,
 
-                _自定義介面 = Value.自定義介面,
+                發票號碼 = Value.發票號碼,
+
+                自定義介面 = Value.自定義介面,
             };
 
             return Data_;
@@ -378,6 +391,8 @@ namespace WokyTool.平台訂單
                 代收金額 = this.代收金額,
 
                 額外資訊 = this.額外資訊,
+
+                發票號碼 = this.發票號碼,
             };
 
             return Data_;
@@ -415,6 +430,8 @@ namespace WokyTool.平台訂單
             代收金額 = Data_.代收金額;
 
             額外資訊 = Data_.額外資訊;
+
+            發票號碼 = Data_.發票號碼;
         }
 
         public override Boolean 是否一致(平台訂單新增資料 Data_)
@@ -447,7 +464,9 @@ namespace WokyTool.平台訂單
                 指配時段 == Data_.指配時段 &&
 
                 代收方式 == Data_.代收方式 &&
-                代收金額 == Data_.代收金額;
+                代收金額 == Data_.代收金額 &&
+
+                發票號碼 == Data_.發票號碼;
         }
 
         public override void 檢查合法()

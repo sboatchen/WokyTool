@@ -31,17 +31,6 @@ namespace WokyTool.ImportForm
         private System.Windows.Forms.DataGridViewCellEventHandler _錯誤修正檢查;
         private string 廠商類型;
 
-        // Momo第三方專用
-        private static char[] UserSeparators = new char[] { '\n', '/', '\r' };
-
-        private static string FontPath = Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\..\Fonts\kaiu.ttf";
-        private static BaseFont MyBaseFont = BaseFont.CreateFont(
-            FontPath,
-            BaseFont.IDENTITY_H, //橫式中文
-            BaseFont.NOT_EMBEDDED
-        );
-        private static iTextSharp.text.Font MyFont = new iTextSharp.text.Font(MyBaseFont, 12);
-
         public 商品訂單匯入視窗()
         {
             InitializeComponent();
@@ -161,76 +150,10 @@ namespace WokyTool.ImportForm
 
         private void 分組ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _DeilverSource = _Source.Where(Value => Value.群組 == 0 && Value.IsIgnore() == false).Select(Value => (可配送)Value).ToList();
-
-            var GroupQueue_ = _Source.Where(Value => Value.群組 != 0).GroupBy(Value => Value.群組);
-            foreach (var Group_ in GroupQueue_)
-            {
-                // 不該只有一個
-                if (Group_.Count() == 1)
-                {
-                    MessageBox.Show("Group不合法 " + Group_.Key.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                合併訂單資料 CombineItem_ = new 合併訂單資料();
-                foreach (var Item in Group_)
-                {
-                    if (CombineItem_.Add(Item) == false)
-                        return;
-                }
-                _DeilverSource.Add(CombineItem_);
-            }
-
-            UpdateState(舊列舉.訂單處理進度類型.分組完成);
-
-            switch (廠商類型)
-            {
-                case "Momo第三方":
-                    {
-                        {
-                            var Items_ = _Source.Select(Value => new 回單號結構_Momo第三方_進度((出貨匯入結構_Momo第三方)Value));
-                            string Title_ = String.Format("{0}進度回單_{1}", 廠商類型, 時間.目前日期);
-                            函式.ExportExcel<回單號結構_Momo第三方_進度>(Title_, Items_);
-                        }
-
-                        {
-                            var Items_ = _Source.Select(Value => new 回單號結構_Momo第三方_分組((出貨匯入結構_Momo第三方)Value));
-                            string Title_ = String.Format("{0}分組回單_{1}", 廠商類型, 時間.目前日期);
-                            函式.ExportExcel<回單號結構_Momo第三方_分組>(Title_, Items_);
-                        }
-                        break;
-                    }
-                default:
-                    break;
-            }
         }
 
         private void 配送ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            switch (廠商類型)
-            {
-                case "Momo第三方":
-                    {
-                        foreach (var Item_ in _DeilverSource)
-                        {
-                            Item_.準備配送();
-                        }
-                        momo第三方配送();
-                        break;
-                    }
-                default:
-                    {
-                        foreach (var Item_ in _DeilverSource)
-                        {
-                            Item_.準備配送();
-                            配送管理器.Instance.Add(Item_);
-                        }
-
-                        UpdateState(舊列舉.訂單處理進度類型.要求配送);
-                        break;
-                    }
-            }
         }
         
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -256,10 +179,6 @@ namespace WokyTool.ImportForm
                         var Items_ = _Source.Select(Value => new 回單號結構_創業家兄弟((出貨匯入結構_創業家兄弟)Value));
                         string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
                         函式.ExportCSV<回單號結構_創業家兄弟>(Title_, Items_);
-                        break;
-                    }
-                case "Momo第三方":
-                    {
                         break;
                     }
                 default:
@@ -397,12 +316,6 @@ namespace WokyTool.ImportForm
 
         private void momo第三方ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            廠商類型 = "Momo第三方";
-
-            if (Import<出貨匯入結構_Momo第三方>() == false)
-                return;
-
-            ImportShow("Momo");
         }
 
         private void momo摩天ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -498,169 +411,8 @@ namespace WokyTool.ImportForm
         {
         }
 
-        private bool momo第三方配送()
-        {
-            // 進行排序
-            _DeilverSource.Sort((x, y) => { return x.配送商品.CompareTo(y.配送商品); });
-
-            // 取得匯入檔案
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "pdf files (.pdf)|*.pdf";
-            if (dlg.ShowDialog() != System.Windows.Forms.DialogResult.OK)
-                return false;
-
-            // 寫入資料
-            PdfReader reader = null;
-            FileStream fs = null;
-            Document document = null;
-            PdfWriter writer = null;
-            try
-            {
-                // 開啟匯入檔案
-                reader = new PdfReader(dlg.FileName);
-
-                // 開啟寫入檔案
-                string OutputName = dlg.FileName.Replace(".pdf", "2.pdf");
-                iTextSharp.text.Rectangle size = reader.GetPageSizeWithRotation(1);
-                document = new Document(size);
-                fs = new FileStream(OutputName, FileMode.Create, FileAccess.Write);
-                writer = PdfWriter.GetInstance(document, fs);
-                document.Open();
-
-                // 發票號碼過濾器
-                RenderFilter[] IDfilter1_ = { new RegionTextRenderFilter(new iTextSharp.text.Rectangle(50, 450, 150, 550)) };
-                RenderFilter[] IDfilter2_ = { new RegionTextRenderFilter(new iTextSharp.text.Rectangle(50, 50, 150, 150)) };
-
-                // 宅配單號過濾器
-                RenderFilter[] Nofilter1_ = { new RegionTextRenderFilter(new iTextSharp.text.Rectangle(50, 700, 100, 720)) };
-                RenderFilter[] Nofilter2_ = { new RegionTextRenderFilter(new iTextSharp.text.Rectangle(50, 260, 100, 280)) };
-
-                // 消費者地址/電話/名稱過濾器
-                RenderFilter[] Userfilter1_ = { new RegionTextRenderFilter(new iTextSharp.text.Rectangle(70, 640, 280, 680)) };
-                RenderFilter[] Userfilter2_ = { new RegionTextRenderFilter(new iTextSharp.text.Rectangle(70, 200, 280, 250)) };
-                char[] UserSeparators = new char[] { '\n', '/', '\r' };
-
-                StringBuilder sb = new StringBuilder();
-                for (var i = 1; i <= reader.NumberOfPages; i++)
-                {
-                    document.NewPage();
-
-                    momo第三方配送_設定( reader,
-                                        i,
-                                        new FilteredTextRenderListener(new LocationTextExtractionStrategy(), IDfilter1_),
-                                        new FilteredTextRenderListener(new LocationTextExtractionStrategy(), Nofilter1_),
-                                        new FilteredTextRenderListener(new LocationTextExtractionStrategy(), Userfilter1_),
-                                        writer,
-                                        465);
-
-                    momo第三方配送_設定(reader,
-                                       i,
-                                       new FilteredTextRenderListener(new LocationTextExtractionStrategy(), IDfilter2_),
-                                       new FilteredTextRenderListener(new LocationTextExtractionStrategy(), Nofilter2_),
-                                       new FilteredTextRenderListener(new LocationTextExtractionStrategy(), Userfilter2_),
-                                       writer,
-                                       35);
-                }
-            }
-            catch (Exception theException)
-            {
-                MessageBox.Show("momo第三方配送失敗，請通知苦逼程式," + theException.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                /*if (writer != null)
-                    writer.Close();*/
-                if (document != null)
-                    document.Close();
-                if (fs != null)
-                    fs.Close();
-                if (reader != null)
-                    reader.Close();
-            }
-
-            return true;
-        }
-
-        private void momo第三方配送_設定(PdfReader File_,int PageIndex_, ITextExtractionStrategy IDStrategy_, ITextExtractionStrategy NoStrategy_, ITextExtractionStrategy UserStrategy_, PdfWriter Output_, int WritePosY_)
-        {
-            StringBuilder sb = new StringBuilder();
-
-            // 取得發票號碼
-            sb.AppendLine(PdfTextExtractor.GetTextFromPage(File_, PageIndex_, IDStrategy_));
-            int StartIndex_ = sb.ToString().IndexOf("發票號碼");
-            if (StartIndex_ == -1)
-                return;
-            string 發票號碼_ = sb.ToString().Substring(StartIndex_ + 7, 10);
-            Console.WriteLine("發票號碼:{0}", 發票號碼_);
-            sb.Clear();
-
-            // 取得宅配單號
-            sb.AppendLine(PdfTextExtractor.GetTextFromPage(File_, PageIndex_, NoStrategy_));
-            StartIndex_ = sb.ToString().IndexOf("宅配單號");
-            if (StartIndex_ == -1)
-                return;
-            string 宅配單號_ = sb.ToString().Substring(StartIndex_ + 5, 12);
-            Console.WriteLine("宅配單號:{0}", 宅配單號_);
-            sb.Clear();
-
-            // 取得消費者資料
-            sb.AppendLine(PdfTextExtractor.GetTextFromPage(File_, PageIndex_, UserStrategy_));
-            var UserData_ = sb.ToString().Split(UserSeparators);
-            string 地址_ = UserData_[0];
-            string 電話_ = UserData_[1];
-            string 手機_ = UserData_[2];
-            string 名字_ = UserData_[3];
-            Console.WriteLine("消費者:{0},{1},{2},{3}", 地址_, 電話_, 手機_, 名字_);
-
-            // 取得物件
-            var Item_ = _DeilverSource.Where(Value => Value.IsReceiptMatch(發票號碼_)).FirstOrDefault();
-            if (Item_ != null)
-            {
-                //@Item_.姓名 = 名字_;
-                //@@Item_.電話 = 電話_;
-                //@@Item_.手機 = 手機_;
-                //@@Item_.地址 = 地址_;
-                Item_.完成配送(宅配單號_);
-
-                // 拷貝舊資料
-                var importedPage = Output_.GetImportedPage(File_, PageIndex_);
-                PdfContentByte contentByte = Output_.DirectContent;
-                contentByte.AddTemplate(importedPage, 0, 0);
-
-                // 計算加入的訊息  (排序)產品
-                int Index_ = _DeilverSource.IndexOf(Item_) + 1;
-                Phrase myText = new Phrase(String.Format("({0}){1}", Index_, Item_.配送商品), MyFont);
-                
-                // 塞入資訊
-                ColumnText ct = new ColumnText(Output_.DirectContent);
-                ct.SetSimpleColumn(myText, 290, WritePosY_+20, 520, WritePosY_-100, 15, Element.ALIGN_TOP);
-                ct.Go();
-
-                // 設定組成
-                /*var importedPage = Output_.GetImportedPage(File_, PageIndex_);
-                PdfContentByte contentByte = Output_.DirectContent;
-                contentByte.SetFontAndSize(MyBaseFont, 12);
-
-                // 計算加入的訊息  (排序)產品
-                int Index_ = _DeilverSource.IndexOf(Item_) + 1;
-                String AddData_ = String.Format("({0}){1}", Index_, Item_.配送商品);
-
-                contentByte.BeginText();
-                contentByte.ShowTextAligned(0, AddData_, 290, WritePosY_, 0);
-                contentByte.EndText();
-
-                contentByte.AddTemplate(importedPage, 0, 0);*/
-            }
-        }
-
         private void 測試ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int Number = 1;
-            foreach(var Item_ in _DeilverSource)
-            {
-                Item_.完成配送(String.Format("測試配送單號{0:00}", Number));
-                Number++;
-            }
         }
 
         private void 東森ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -720,12 +472,10 @@ namespace WokyTool.ImportForm
 
         private void pC專櫃ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            函式.GetFile("PC專櫃匯入樣板", "Template/OrderImport/PC專櫃匯入樣板.xlsx");
         }
 
         private void pC商店街ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            函式.GetFile("PC商店街匯入樣板", "Template/OrderImport/PC商店街匯入樣板.xlsx");
         }
 
         private void pC購物中心ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -747,16 +497,10 @@ namespace WokyTool.ImportForm
 
         private void momo第三方ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            函式.GetFile("Momo第三方匯入樣板", "Template/OrderImport/Momo第三方匯入樣板.xlsx");
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            foreach (DataGridViewRow Myrow in dataGridView1.Rows)
-            {
-                int value = Convert.ToInt32(Myrow.Cells[1].Value);
-                Myrow.DefaultCellStyle.BackColor = 顏色處理.GetRandomColor(value);
-            }
         }
     }
 }

@@ -31,20 +31,20 @@ namespace WokyTool.平台訂單
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.格式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.檔案格式BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.公司資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.客戶DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.客戶資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.開始位置DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.結束位置DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.標頭位置DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.平台訂單匯入設定資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.複製ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.格式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.客戶DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.開始位置DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.結束位置DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.標頭位置DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.檔案格式BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.公司資料BindingSource)).BeginInit();
@@ -74,6 +74,39 @@ namespace WokyTool.平台訂單
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
+            // 檔案格式BindingSource
+            // 
+            this.檔案格式BindingSource.DataSource = typeof(WokyTool.通用.列舉.檔案格式);
+            // 
+            // 公司資料BindingSource
+            // 
+            this.公司資料BindingSource.DataSource = typeof(WokyTool.公司.公司資料);
+            // 
+            // 客戶資料BindingSource
+            // 
+            this.客戶資料BindingSource.DataSource = typeof(WokyTool.客戶.客戶資料);
+            // 
+            // 平台訂單匯入設定資料BindingSource
+            // 
+            this.平台訂單匯入設定資料BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單匯入設定資料);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.複製ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(895, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 複製ToolStripMenuItem
+            // 
+            this.複製ToolStripMenuItem.Name = "複製ToolStripMenuItem";
+            this.複製ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.複製ToolStripMenuItem.Text = "複製";
+            this.複製ToolStripMenuItem.Click += new System.EventHandler(this.複製ToolStripMenuItem_Click);
+            // 
             // 編號DataGridViewTextBoxColumn
             // 
             this.編號DataGridViewTextBoxColumn.DataPropertyName = "編號";
@@ -86,6 +119,7 @@ namespace WokyTool.平台訂單
             this.名稱DataGridViewTextBoxColumn.DataPropertyName = "名稱";
             this.名稱DataGridViewTextBoxColumn.HeaderText = "名稱";
             this.名稱DataGridViewTextBoxColumn.Name = "名稱DataGridViewTextBoxColumn";
+            this.名稱DataGridViewTextBoxColumn.Width = 150;
             // 
             // 格式DataGridViewTextBoxColumn
             // 
@@ -95,10 +129,6 @@ namespace WokyTool.平台訂單
             this.格式DataGridViewTextBoxColumn.Name = "格式DataGridViewTextBoxColumn";
             this.格式DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.格式DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // 檔案格式BindingSource
-            // 
-            this.檔案格式BindingSource.DataSource = typeof(WokyTool.通用.列舉.檔案格式);
             // 
             // 公司DataGridViewTextBoxColumn
             // 
@@ -111,10 +141,6 @@ namespace WokyTool.平台訂單
             this.公司DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.公司DataGridViewTextBoxColumn.ValueMember = "Self";
             // 
-            // 公司資料BindingSource
-            // 
-            this.公司資料BindingSource.DataSource = typeof(WokyTool.公司.公司資料);
-            // 
             // 客戶DataGridViewTextBoxColumn
             // 
             this.客戶DataGridViewTextBoxColumn.DataPropertyName = "客戶";
@@ -125,10 +151,6 @@ namespace WokyTool.平台訂單
             this.客戶DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.客戶DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.客戶DataGridViewTextBoxColumn.ValueMember = "Self";
-            // 
-            // 客戶資料BindingSource
-            // 
-            this.客戶資料BindingSource.DataSource = typeof(WokyTool.客戶.客戶資料);
             // 
             // 開始位置DataGridViewTextBoxColumn
             // 
@@ -149,32 +171,11 @@ namespace WokyTool.平台訂單
             this.標頭位置DataGridViewTextBoxColumn.Name = "標頭位置DataGridViewTextBoxColumn";
             this.標頭位置DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 平台訂單匯入設定資料BindingSource
-            // 
-            this.平台訂單匯入設定資料BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單匯入設定資料);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.複製ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(944, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // 複製ToolStripMenuItem
-            // 
-            this.複製ToolStripMenuItem.Name = "複製ToolStripMenuItem";
-            this.複製ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.複製ToolStripMenuItem.Text = "複製";
-            this.複製ToolStripMenuItem.Click += new System.EventHandler(this.複製ToolStripMenuItem_Click);
-            // 
             // 平台訂單匯入設定總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 508);
+            this.ClientSize = new System.Drawing.Size(895, 498);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -198,16 +199,16 @@ namespace WokyTool.平台訂單
         private System.Windows.Forms.BindingSource 平台訂單匯入設定資料BindingSource;
         private System.Windows.Forms.BindingSource 公司資料BindingSource;
         private System.Windows.Forms.BindingSource 客戶資料BindingSource;
+        private System.Windows.Forms.BindingSource 檔案格式BindingSource;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 複製ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 格式DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 檔案格式BindingSource;
         private System.Windows.Forms.DataGridViewComboBoxColumn 公司DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 客戶DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 開始位置DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 結束位置DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 標頭位置DataGridViewTextBoxColumn;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 複製ToolStripMenuItem;
     }
 }

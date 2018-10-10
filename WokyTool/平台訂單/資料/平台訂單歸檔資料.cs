@@ -174,6 +174,9 @@ namespace WokyTool.平台訂單
         [JsonProperty]
         public decimal 代收金額 { get; set; }
 
+        [JsonProperty]
+        public String 發票號碼 { get; set; }
+
         /********************************/
         // 暫時性資訊
 
@@ -225,6 +228,8 @@ namespace WokyTool.平台訂單
 
             代收方式 = 列舉.代收方式.無,
             代收金額 = 0,
+
+            發票號碼 = null,
         };
         public static 平台訂單歸檔資料 NULL
         {
@@ -264,6 +269,8 @@ namespace WokyTool.平台訂單
 
             代收方式 = 列舉.代收方式.錯誤,
             代收金額 = 0,
+
+            發票號碼 = null,
         };
         public static 平台訂單歸檔資料 ERROR
         {
@@ -304,6 +311,8 @@ namespace WokyTool.平台訂單
 
                 代收方式 = Value.代收方式,
                 代收金額 = Value.代收金額,
+
+                發票號碼 = Value.發票號碼,
             };
 
             return Data_;
@@ -342,6 +351,8 @@ namespace WokyTool.平台訂單
 
                 代收方式 = this.代收方式,
                 代收金額 = this.代收金額,
+
+                發票號碼 = this.發票號碼,
             };
 
             return Data_;
@@ -376,6 +387,8 @@ namespace WokyTool.平台訂單
 
             代收方式 = Data_.代收方式;
             代收金額 = Data_.代收金額;
+
+            發票號碼 = Data_.發票號碼;
         }
 
         public override Boolean 是否一致(平台訂單歸檔資料 Data_)
@@ -407,7 +420,9 @@ namespace WokyTool.平台訂單
                 指配時段 == Data_.指配時段 &&
 
                 代收方式 == Data_.代收方式 &&
-                代收金額 == Data_.代收金額;
+                代收金額 == Data_.代收金額 &&
+
+                發票號碼 == Data_.發票號碼;
         }
 
         public override void 檢查合法()

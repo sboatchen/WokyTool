@@ -33,7 +33,7 @@ namespace WokyTool.客製
             _快取自定義 = null;
         }
 
-        public 平台訂單自定義介面 取得自定義(客戶資料 客戶_)
+        public 平台訂單自定義介面 取得自定義(客戶資料 客戶_, String 設定名稱_)
         {
             if (客戶_ == _快取客戶)
                 return _快取自定義;
@@ -51,7 +51,10 @@ namespace WokyTool.客製
             switch (名稱_)
             {
                 case "momo":
-                    介面_ = new 平台訂單自定義_Momo();
+                    if (String.IsNullOrEmpty(設定名稱_) == false && 設定名稱_.ToLower().Contains("momo第三方"))
+                        介面_ = new 平台訂單自定義_Momo第三方();
+                    else
+                        介面_ = new 平台訂單自定義_Momo();
                     break;
                 case "momo摩天":
                 case "摩天":

@@ -74,12 +74,17 @@ namespace WokyTool.平台訂單
             this._客戶 = 資料_.客戶;
             _商品資料版本 = 商品資料管理器.獨體.唯讀資料版本;
             this.商品資料BindingSource.DataSource = 商品資料管理器.獨體.唯讀BList
-                                                          .Where(Value => (Value.客戶 == _客戶 && Value.公司 == _公司) || Value.編號 == 常數.T錯誤資料編碼 || Value.編號 == 常數.T空白資料編碼)
+                                                          .Where(Value => (Value.客戶 == _客戶 && Value.公司 == _公司) || Value.編號 == 常數.T錯誤資料編碼)
                                                           .ToList();
 
             _平台訂單匯入管理器.新增(資料_.匯入Excel());
             if (_平台訂單匯入管理器.是否正在編輯() == false)
                 return;
+
+            if (資料_.名稱.ToLower().Contains("momo第三方"))
+                _平台訂單匯入管理器.平台訂單管理器 = Momo第三方平台訂單新增資料管理器.獨體;
+            else
+                _平台訂單匯入管理器.平台訂單管理器 = 平台訂單新增資料管理器.獨體;
 
             this.格式.Enabled = false;
             this.檢查ToolStripMenuItem.Enabled = true;
@@ -122,7 +127,7 @@ namespace WokyTool.平台訂單
             {
                 _商品資料版本 = 商品資料管理器.獨體.唯讀資料版本;
                 this.商品資料BindingSource.DataSource = 商品資料管理器.獨體.唯讀BList
-                                                            .Where(Value => (Value.客戶 == _客戶 && Value.公司 == _公司) || Value.編號 == 常數.T錯誤資料編碼 || Value.編號 == 常數.T空白資料編碼)
+                                                            .Where(Value => (Value.客戶 == _客戶 && Value.公司 == _公司) || Value.編號 == 常數.T錯誤資料編碼)
                                                             .ToList();
             }
         }

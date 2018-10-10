@@ -1,18 +1,22 @@
-﻿using System;
+﻿using LINQtoCSV;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataImport;
+using WokyTool.平台訂單;
+using WokyTool.通用;
 
-namespace WokyTool.DataExport
+namespace WokyTool.客製
 {
-    class 回單號結構_Momo第三方_分組 : 可格式化_Excel
+    public class 平台訂單回單轉換_Momo第三方_分組 : 可格式化_Excel
     {
-        protected 出貨匯入結構_Momo第三方 _Data;
+        protected 平台訂單新增資料 _Data;
 
-        public 回單號結構_Momo第三方_分組(出貨匯入結構_Momo第三方 Data_)
+        public 平台訂單回單轉換_Momo第三方_分組(平台訂單新增資料 Data_)
         {
             _Data = Data_;
         }
@@ -52,31 +56,13 @@ namespace WokyTool.DataExport
         // 設定資料
         public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
         {
-            App_.Cells[Row_, 1] = _Data.無用_項次;
-            App_.Cells[Row_, 2] = _Data.群組;
-            App_.Cells[Row_, 3] = _Data.訂單編號;
-            App_.Cells[Row_, 4] = _Data.無用_付款方式;
-            App_.Cells[Row_, 5] = _Data.姓名;
-            App_.Cells[Row_, 6] = _Data.地址;
-            App_.Cells[Row_, 7] = _Data.無用_出貨地址;
-            App_.Cells[Row_, 8] = _Data.無用_回收地址;
-            App_.Cells[Row_, 9] = _Data.訂單類別;
-            App_.Cells[Row_, 10] = _Data.備註;
-            App_.Cells[Row_, 11] = _Data.無用_轉單日;
-            App_.Cells[Row_, 12] = _Data.預計出貨日;
-            App_.Cells[Row_, 13] = _Data.無用_商品原廠編號;
-            App_.Cells[Row_, 14] = _Data.品號;
-            App_.Cells[Row_, 15] = _Data.無用_品名;
-            App_.Cells[Row_, 16] = _Data.單名編號;
-            App_.Cells[Row_, 17] = _Data.無用_單品詳細;
-            App_.Cells[Row_, 18] = _Data.數量;
-            App_.Cells[Row_, 19] = _Data.無用_進價;
-            App_.Cells[Row_, 20] = _Data.無用_贈品;
-            App_.Cells[Row_, 21] = _Data.無用_訂購人姓名;
-            App_.Cells[Row_, 22] = _Data.發票號碼;
-            App_.Cells[Row_, 23] = _Data.無用_發票日期;
-            App_.Cells[Row_, 24] = _Data.無用_個人識別碼;
-            App_.Cells[Row_, 25] = _Data.無用_群組變價商品;
+            foreach (var Pair_ in _Data.額外資訊)
+            {
+                if (Pair_.Key > 0)
+                    App_.Cells[Row_, Pair_.Key] = Pair_.Value;
+            }
+
+            App_.Cells[Row_, 2] = _Data.分組識別;
 
             return Row_ + 1;
         }

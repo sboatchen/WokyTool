@@ -50,7 +50,7 @@ namespace WokyTool.平台訂單
                     Item_.重新分組();
             }
 
-            int StartGroup_ = -1001;
+            int StartGroup_ = 1;
             var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增).GroupBy(Value => Value.分組識別);
             foreach (var Group_ in GroupQueue_)
             {
@@ -170,7 +170,7 @@ namespace WokyTool.平台訂單
         //@@ move to parent
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            訊息管理器.獨體.Notify("功能尚未實作");
+            //訊息管理器.獨體.Notify("功能尚未實作");
             //int 編號_ = ((平台訂單新增資料)(this.平台訂單新增資料BindingSource.Current)).編號;
             //視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.詳細, 編號_);
         }

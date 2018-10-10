@@ -71,18 +71,21 @@ namespace WokyTool.客製
                     App_.Cells[Row_, Pair_.Key] = Pair_.Value;
             }
 
-            if (_Data.處理狀態 == 列舉.訂單處理狀態.配送)
+            switch (_Data.處理狀態)
             {
-                 App_.Cells[Row_, 3] = 已配送;
+                case 列舉.訂單處理狀態.配送:
+                    App_.Cells[Row_, 3] = 已配送;
+                    break;
+                case 列舉.訂單處理狀態.忽略:
+                    App_.Cells[Row_, 3] = 已確認指定配送日;
 
-            }
-            else
-            {
-                App_.Cells[Row_, 3] = 已確認指定配送日;
-
-                String 配送訊息_ = _Data.處理時間.ToString("yyyy/MM/dd");
-                App_.Cells[Row_, 4] = 配送訊息_;    // 配送訊息
-                App_.Cells[Row_, 5] = 配送訊息_;    // 約定配送日;
+                    String 配送訊息_ = _Data.處理時間.ToString("yyyy/MM/dd");
+                    App_.Cells[Row_, 4] = 配送訊息_;    // 配送訊息
+                    App_.Cells[Row_, 5] = 配送訊息_;    // 約定配送日;
+                    break;
+                default:
+                    訊息管理器.獨體.Error("平台訂單回單轉換_Momo 不支援處理狀態 " + _Data.處理狀態.ToString());
+                    break;
             }
 
             switch (_Data.配送公司)
@@ -94,7 +97,7 @@ namespace WokyTool.客製
                     App_.Cells[Row_, 6] = 字串.宅配通;
                     break;
                 default:
-                    訊息管理器.獨體.Error("回單號結構_Momo 不支援配送公司 " + _Data.配送公司.ToString());
+                    訊息管理器.獨體.Error("平台訂單回單轉換_Momo 不支援配送公司 " + _Data.配送公司.ToString());
                     break;
             }
 

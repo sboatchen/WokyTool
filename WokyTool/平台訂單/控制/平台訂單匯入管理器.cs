@@ -18,9 +18,11 @@ namespace WokyTool.平台訂單
             }
         }
 
+        public 資料管理器<平台訂單新增資料> 平台訂單管理器 { get; set; }
+
         protected override void 匯入()
         {
-            平台訂單新增資料管理器.獨體.新增(可編輯BList.Select(Value => 平台訂單新增資料.新增(Value)));
+            平台訂單管理器.新增(可編輯BList.Select(Value => 平台訂單新增資料.新增(Value)));
         }
     }
 }
