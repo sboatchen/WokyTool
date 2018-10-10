@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WokyTool.平台訂單;
 using WokyTool.客戶;
 using WokyTool.通用;
 
@@ -10,6 +11,8 @@ namespace WokyTool.客製
 {
     public class 平台訂單自定義工廠
     {
+        public static 平台訂單自定義介面 MOMO第三方 = new 平台訂單自定義_Momo第三方();
+
         private Dictionary<客戶資料, 平台訂單自定義介面> _Map;
 
         private 客戶資料 _快取客戶;
@@ -33,7 +36,7 @@ namespace WokyTool.客製
             _快取自定義 = null;
         }
 
-        public 平台訂單自定義介面 取得自定義(客戶資料 客戶_, String 設定名稱_)
+        public 平台訂單自定義介面 取得自定義(客戶資料 客戶_)
         {
             if (客戶_ == _快取客戶)
                 return _快取自定義;
@@ -51,10 +54,7 @@ namespace WokyTool.客製
             switch (名稱_)
             {
                 case "momo":
-                    if (String.IsNullOrEmpty(設定名稱_) == false && 設定名稱_.ToLower().Contains("momo第三方"))
-                        介面_ = new 平台訂單自定義_Momo第三方();
-                    else
-                        介面_ = new 平台訂單自定義_Momo();
+                    介面_ = new 平台訂單自定義_Momo();   //!! 警告 取不到 平台訂單自定義_Momo第三方
                     break;
                 case "momo摩天":
                 case "摩天":
@@ -116,6 +116,14 @@ namespace WokyTool.客製
             _Map.Add(客戶_, 介面_);
 
             return 介面_;
+        }
+
+        public 平台訂單自定義介面 取得自定義(平台訂單匯入設定資料 平台訂單匯入設定資料_)
+        {
+            if(平台訂單匯入設定資料_.名稱.ToLower().Contains("momo第三方"))
+                return MOMO第三方;
+
+            return 取得自定義(平台訂單匯入設定資料_.客戶);
         }
     }
 }

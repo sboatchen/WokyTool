@@ -67,6 +67,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
+            this.button33 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -341,7 +342,7 @@
             // 
             // button35
             // 
-            this.button35.Location = new System.Drawing.Point(23, 273);
+            this.button35.Location = new System.Drawing.Point(23, 294);
             this.button35.Name = "button35";
             this.button35.Size = new System.Drawing.Size(100, 23);
             this.button35.TabIndex = 35;
@@ -351,7 +352,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(254, 273);
+            this.button11.Location = new System.Drawing.Point(254, 294);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(100, 23);
             this.button11.TabIndex = 36;
@@ -361,7 +362,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(139, 273);
+            this.button12.Location = new System.Drawing.Point(139, 294);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(100, 23);
             this.button12.TabIndex = 37;
@@ -459,11 +460,22 @@
             this.button25.UseVisualStyleBackColor = true;
             this.button25.Click += new System.EventHandler(this.button25_Click_1);
             // 
+            // button33
+            // 
+            this.button33.Location = new System.Drawing.Point(254, 242);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(100, 23);
+            this.button33.TabIndex = 47;
+            this.button33.Text = "Momo第三方";
+            this.button33.UseVisualStyleBackColor = true;
+            this.button33.Click += new System.EventHandler(this.button33_Click);
+            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 751);
+            this.Controls.Add(this.button33);
             this.Controls.Add(this.button25);
             this.Controls.Add(this.button22);
             this.Controls.Add(this.button10);
@@ -551,6 +563,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.Button button33;
 
 
     }

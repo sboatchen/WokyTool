@@ -70,9 +70,11 @@ namespace WokyTool.客製
                     App_.Cells[Row_, Pair_.Key] = Pair_.Value;
             }
 
+            // 預計出貨日須為2日內(今天+明天) 才進行出貨處理 並將配送狀態改為 可出貨
+            // 2日外的 將配送狀態改為 已確認指定配送日 並將配送訊息 寫上預計出貨日
             switch (_Data.處理狀態)
             {
-                case 列舉.訂單處理狀態.配送:
+                case 列舉.訂單處理狀態.新增:
                     App_.Cells[Row_, 2] = 可出貨;
                     break;
                 case 列舉.訂單處理狀態.忽略:

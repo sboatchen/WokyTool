@@ -62,7 +62,7 @@ namespace WokyTool.客製
                     App_.Cells[Row_, Pair_.Key] = Pair_.Value;
             }
 
-            App_.Cells[Row_, 2] = _Data.分組識別;
+            App_.Cells[Row_, 2] = _Data.配送分組;
 
             return Row_ + 1;
         }

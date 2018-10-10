@@ -70,6 +70,7 @@ namespace WokyTool.通用
 
             總覽視窗設定Map.Add(列舉.編號.平台訂單設定, typeof(平台訂單匯入設定總覽視窗));
             總覽視窗設定Map.Add(列舉.編號.平台訂單新增, typeof(平台訂單新增總覽視窗));
+            總覽視窗設定Map.Add(列舉.編號.平台訂單新增_Momo三方, typeof(Momo第三方訂單新增總覽視窗));
 
             總覽視窗設定Map.Add(列舉.編號.配送, typeof(待配送總覽視窗));
 
