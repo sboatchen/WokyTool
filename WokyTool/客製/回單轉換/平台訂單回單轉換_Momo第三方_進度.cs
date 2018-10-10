@@ -36,6 +36,9 @@ namespace WokyTool.客製
 
             App_.Cells[1, 5] = "宅單備註";
             App_.Cells[1, 6] = "訂單編號";
+
+            // 這裡少了付款方式
+
             App_.Cells[1, 7] = "收件人姓名";
             App_.Cells[1, 8] = "收件人地址";
             App_.Cells[1, 9] = "貨運公司\n出貨地址";
@@ -66,8 +69,12 @@ namespace WokyTool.客製
         {
             foreach (var Pair_ in _Data.額外資訊)
             {
-                if (Pair_.Key > 0)
+                if (Pair_.Key <= 0)
+                    continue;
+                else if (Pair_.Key <= 6)
                     App_.Cells[Row_, Pair_.Key] = Pair_.Value;
+                else if (Pair_.Key >= 8)
+                    App_.Cells[Row_, Pair_.Key - 1] = Pair_.Value;
             }
 
             // 預計出貨日須為2日內(今天+明天) 才進行出貨處理 並將配送狀態改為 可出貨

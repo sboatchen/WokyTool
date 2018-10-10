@@ -26,6 +26,8 @@ namespace WokyTool.客製
         {
             App_.Cells[1, 1] = "項次+燈號";
             App_.Cells[1, 2] = "併箱編號";
+
+            // 以下同匯入訂單
             App_.Cells[1, 3] = "訂單編號";
             App_.Cells[1, 4] = "付款方式";
             App_.Cells[1, 5] = "收件人姓名";
@@ -58,8 +60,12 @@ namespace WokyTool.客製
         {
             foreach (var Pair_ in _Data.額外資訊)
             {
-                if (Pair_.Key > 0)
+                if (Pair_.Key <= 0)
+                    continue;
+                else if (Pair_.Key == 1)
                     App_.Cells[Row_, Pair_.Key] = Pair_.Value;
+                else if (Pair_.Key >= 6)
+                    App_.Cells[Row_, Pair_.Key - 3] = Pair_.Value;
             }
 
             App_.Cells[Row_, 2] = _Data.配送分組;

@@ -97,10 +97,17 @@ namespace WokyTool.客製
 
         public override void 回單(IEnumerable<平台訂單新增資料> 資料_)
         {
-            /*var Items_ = 資料_.Select(Value => new 平台訂單回單轉換_Momo第三方(Value));
+            {
+                var Items_ = 資料_.Select(Value => new 平台訂單回單轉換_Momo第三方_分組(Value));
+                String Title_ = String.Format("Momo第三方_分組_{0}", 時間.目前日期);
+                函式.ExportExcel<平台訂單回單轉換_Momo第三方_分組>(Title_, Items_);
+            }
 
-            String Title_ = String.Format("Momo第三方回單_{0}", 時間.目前日期);
-            函式.ExportExcel<平台訂單回單轉換_Momo第三方>(Title_, Items_);*/
+            {
+                var Items_ = 資料_.Select(Value => new 平台訂單回單轉換_Momo第三方_進度(Value));
+                String Title_ = String.Format("Momo第三方_進度_{0}", 時間.目前日期);
+                函式.ExportExcel<平台訂單回單轉換_Momo第三方_進度>(Title_, Items_);
+            }
         }
 
     }

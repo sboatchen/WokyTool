@@ -90,17 +90,7 @@ namespace WokyTool.平台訂單
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            {
-                var Items_ = Momo第三方平台訂單新增資料管理器.獨體.可編輯BList.Select(Value => new 平台訂單回單轉換_Momo第三方_分組(Value));
-                String Title_ = String.Format("Momo第三方_分組_{0}", 時間.目前日期);
-                函式.ExportExcel<平台訂單回單轉換_Momo第三方_分組>(Title_, Items_);
-            }
-
-            {
-                var Items_ = Momo第三方平台訂單新增資料管理器.獨體.可編輯BList.Select(Value => new 平台訂單回單轉換_Momo第三方_進度(Value));
-                String Title_ = String.Format("Momo第三方_進度_{0}", 時間.目前日期);
-                函式.ExportExcel<平台訂單回單轉換_Momo第三方_進度>(Title_, Items_);
-            }
+            平台訂單自定義工廠.MOMO第三方.回單(Momo第三方平台訂單新增資料管理器.獨體.可編輯BList);
 
             訊息管理器.獨體.Notify("已完成匯出");
         }
@@ -181,6 +171,8 @@ namespace WokyTool.平台訂單
                 if (reader != null)
                     reader.Close();
             }
+
+            this.dataGridView1.Refresh();
         }
 
         private void momo第三方配送_設定(PdfReader File_, int PageIndex_, ITextExtractionStrategy IDStrategy_, ITextExtractionStrategy NoStrategy_, ITextExtractionStrategy UserStrategy_, PdfWriter Output_, int WritePosY_)
@@ -193,7 +185,7 @@ namespace WokyTool.平台訂單
             if (StartIndex_ == -1)
                 return;
             string 發票號碼_ = sb.ToString().Substring(StartIndex_ + 7, 10);
-            Console.WriteLine("發票號碼:{0}", 發票號碼_);
+            //Console.WriteLine("發票號碼:{0}", 發票號碼_);
             sb.Clear();
 
             // 取得宅配單號
@@ -202,7 +194,7 @@ namespace WokyTool.平台訂單
             if (StartIndex_ == -1)
                 return;
             string 宅配單號_ = sb.ToString().Substring(StartIndex_ + 5, 12);
-            Console.WriteLine("宅配單號:{0}", 宅配單號_);
+            //Console.WriteLine("宅配單號:{0}", 宅配單號_);
             sb.Clear();
 
             // 取得消費者資料
@@ -212,12 +204,23 @@ namespace WokyTool.平台訂單
             string 電話_ = UserData_[1];
             string 手機_ = UserData_[2];
             string 名字_ = UserData_[3];
-            Console.WriteLine("消費者:{0},{1},{2},{3}", 地址_, 電話_, 手機_, 名字_);
+            //Console.WriteLine("消費者:{0},{1},{2},{3}", 地址_, 電話_, 手機_, 名字_);
+
+            // 回填訊息
+            Phrase myText = null;
 
             // 取得物件
-            var Item_ = Momo第三方平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => 發票號碼_.Equals(Value.發票號碼)).FirstOrDefault();
-            if (Item_ != null)
+            var ItemList_ = Momo第三方平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => 發票號碼_.Equals(Value.發票號碼)).ToList();
+            if (ItemList_ == null || ItemList_.Count == 0)
             {
+                訊息管理器.獨體.Warn("找不到匹配的發票 " + 發票號碼_);
+
+                myText = new Phrase("錯誤", MyFont);
+            }
+            else if (ItemList_.Count == 1)
+            {
+                var Item_ = ItemList_[0];
+
                 Item_.BeginEdit();
 
                 Item_.姓名 = 名字_;
@@ -234,14 +237,33 @@ namespace WokyTool.平台訂單
                 PdfContentByte contentByte = Output_.DirectContent;
                 contentByte.AddTemplate(importedPage, 0, 0);
 
-                // 計算加入的訊息  (排序)產品
-                Phrase myText = new Phrase(Item_.組成.取得組合字串(), MyFont);
-
-                // 塞入資訊
-                ColumnText ct = new ColumnText(Output_.DirectContent);
-                ct.SetSimpleColumn(myText, 290, WritePosY_ + 20, 520, WritePosY_ - 100, 15, Element.ALIGN_TOP);
-                ct.Go();
+                myText = new Phrase(Item_.組成.取得組合字串(), MyFont);
             }
+            else // 有複數個 
+            {
+                訊息管理器.獨體.Warn("發票號碼 " + 發票號碼_ + " 有" + ItemList_.Count + "筆資料匹配");
+
+                foreach(var Item_ in ItemList_)
+                {
+                    Item_.BeginEdit();
+
+                    Item_.姓名 = 名字_;
+                    Item_.電話 = 電話_;
+                    Item_.手機 = 手機_;
+                    Item_.地址 = 地址_;
+
+                    Item_.配送單號 = "請協助回填";
+                    Item_.處理狀態 = 列舉.訂單處理狀態.配送;
+                    Item_.處理時間 = DateTime.Now;
+                }
+
+                myText = new Phrase("複數!!", MyFont);
+            }
+
+            // 塞入資訊
+            ColumnText ct = new ColumnText(Output_.DirectContent);
+            ct.SetSimpleColumn(myText, 290, WritePosY_ + 20, 520, WritePosY_ - 100, 15, Element.ALIGN_TOP);
+            ct.Go();
         }
 
         private void 歸檔ToolStripMenuItem_Click(object sender, EventArgs e)
