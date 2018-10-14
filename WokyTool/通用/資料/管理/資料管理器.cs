@@ -97,6 +97,7 @@ namespace WokyTool.通用
             唯讀BList.RaiseListChangedEvents = false;
             唯讀BList.Add(空白資料);
             唯讀BList.Add(錯誤資料);
+            更新唯讀列表特殊資料();
 
             foreach (T Item_ in Map.Values)
             {
@@ -112,6 +113,11 @@ namespace WokyTool.通用
             唯讀資料版本 = 1;
 
             資料儲存管理器.獨體.註冊(編號類型, this);
+        }
+
+        protected virtual void 更新唯讀列表特殊資料()
+        {
+            ;
         }
 
         protected void 初始化資料()
@@ -168,7 +174,7 @@ namespace WokyTool.通用
         }
 
         // 取得資料
-        public T Get(int ID_)
+        public virtual T Get(int ID_)
         {
             if (ID_ == 常數.T空白資料編碼)
                 return 空白資料;
@@ -248,6 +254,7 @@ namespace WokyTool.通用
             唯讀BList.Clear();
             唯讀BList.Add(空白資料);
             唯讀BList.Add(錯誤資料);
+            更新唯讀列表特殊資料();
 
             foreach (var Item_ in 可編輯BList)
             {
@@ -377,6 +384,7 @@ namespace WokyTool.通用
             唯讀BList.Clear();
             唯讀BList.Add(空白資料);
             唯讀BList.Add(錯誤資料);
+            更新唯讀列表特殊資料();
 
             foreach (T Item_ in Map.Values)
             {

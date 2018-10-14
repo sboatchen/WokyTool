@@ -38,6 +38,14 @@ namespace WokyTool.商品
             } 
         }
 
+        public 商品資料 折扣資料
+        {
+            get
+            {
+                return 商品資料.折扣;
+            }
+        }
+
         public override 列舉.編號 編號類型
         { 
             get 
@@ -67,6 +75,33 @@ namespace WokyTool.商品
         // 建構子
         private 商品資料管理器()
         {
+        }
+
+        // 商品特殊資料
+        protected override void 更新唯讀列表特殊資料()
+        {
+            唯讀BList.Add(折扣資料);
+        }
+
+        // 取得資料
+        public override 商品資料 Get(int ID_)
+        {
+            if (ID_ == 常數.T空白資料編碼)
+                return 空白資料;
+
+            if (ID_ == 常數.T錯誤資料編碼)
+                return 錯誤資料;
+
+            if (ID_ == 常數.商品折扣資料編碼)
+                return 折扣資料;
+
+            商品資料 Item_;
+            if (Map.TryGetValue(ID_, out Item_))
+            {
+                return Item_;
+            }
+
+            return 錯誤資料;
         }
 
         // 取得資料

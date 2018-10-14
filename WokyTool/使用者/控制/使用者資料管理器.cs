@@ -84,7 +84,7 @@ namespace WokyTool.使用者
                 {
                     _管理者 = new 使用者資料
                     {
-                        編號 = -99,
+                        編號 = 0,
                         名稱 = "root",
                         密碼 = "Aptx4869",
                         修改基本資料 = true,

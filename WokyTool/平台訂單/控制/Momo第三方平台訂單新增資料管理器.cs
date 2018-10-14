@@ -49,7 +49,7 @@ namespace WokyTool.平台訂單
         { 
             get 
             {
-                return 列舉.編號.平台訂單新增; 
+                return 列舉.編號.平台訂單新增_Momo三方; 
             } 
         }
 

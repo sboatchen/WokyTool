@@ -56,5 +56,7 @@ namespace WokyTool.Common
         public static string 密碼輸入不一致 = "密碼輸入不一致";
 
         public static string 功能尚未實作 = "功能尚未實作";
+
+        public static string 折扣 = "折扣";
     }
 }

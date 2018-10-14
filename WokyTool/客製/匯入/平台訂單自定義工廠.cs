@@ -106,6 +106,15 @@ namespace WokyTool.客製
                 case "森森":
                     介面_ = new 平台訂單自定義_森森();
                     break;
+                case "一休":
+                    介面_ = new 平台訂單自定義_一休();
+                    break;
+                case "手作":
+                    介面_ = new 平台訂單自定義_手作();
+                    break; 
+                case "陳沂":
+                    介面_ = new 平台訂單自定義_陳沂();
+                    break;
                 default:
                     訊息管理器.獨體.Error("平台訂單自定義工廠::不支援 " + 客戶_.名稱);
                     return null;
