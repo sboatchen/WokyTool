@@ -595,7 +595,7 @@ namespace WokyTool.商品
         /********************************/
 
         // 商品販賣
-        public bool Sell(bool 寄庫出貨_, int 數量_)
+        /*public bool Sell(bool 寄庫出貨_, int 數量_)
         {
             //@@
             //if (數量_ <= 0)
@@ -619,6 +619,6 @@ namespace WokyTool.商品
             //}
 
             return true;
-        }
+        }*/
     }
 }
