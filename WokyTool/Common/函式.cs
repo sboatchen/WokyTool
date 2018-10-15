@@ -310,7 +310,6 @@ namespace WokyTool.Common
 
             //月結帳管理器.Instance.SaveData();
 
-            進貨管理器.Instance.SaveData();
             雜支管理器.Instance.SaveData();
 
             入庫管理器.Instance.SaveData();

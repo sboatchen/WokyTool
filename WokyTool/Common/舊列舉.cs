@@ -27,25 +27,6 @@ namespace WokyTool.Common
             找不到時新增,
         };
 
-        public enum 進貨類型
-        {
-            一般 = 0,
-            退貨重進,
-            庫存調整,
-        };
-
-        public static bool IsAutoPrice(this 進貨類型 進貨類型_)
-        {
-            switch (進貨類型_)
-            {
-                case 進貨類型.退貨重進:
-                case 進貨類型.庫存調整:
-                    return true;
-                default:
-                    return false;
-            }
-        }
-
         public enum 監測類型
         {
             主動通知_值 = 0,
