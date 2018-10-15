@@ -17,6 +17,8 @@ namespace WokyTool.進貨
     public class 進貨新增匯入資料 : 靜態匯入資料
     {
         [JsonProperty]
+        public string 類型識別 { get; set; }
+
         public 列舉.進貨 類型 { get; set; }
 
         [JsonProperty]
@@ -83,7 +85,26 @@ namespace WokyTool.進貨
         public override void 初始化() 
         {
             廠商 = 廠商資料管理器.獨體.Get(廠商識別);
-            物品 = 物品資料管理器.獨體.Get(物品識別);
+            物品 = 物品資料管理器.獨體.GetBySName(物品識別);
+
+            類型 = 列舉.進貨.錯誤;
+            try
+            {
+                類型 = (列舉.進貨)Enum.Parse(typeof(列舉.進貨), 類型識別);
+            }
+            catch 
+            {
+                訊息管理器.獨體.Debug("找不到進貨類型: " + 類型識別);
+            }
+
+            switch (類型)
+            {
+                case 列舉.進貨.退貨重進:
+                    單價 = 物品.成本;
+                    break;
+                default:
+                    break;
+            }
         }
 
         public override void 檢查合法()

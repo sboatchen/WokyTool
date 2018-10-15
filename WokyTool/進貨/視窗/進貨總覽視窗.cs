@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WokyTool.Common;
 using WokyTool.物品;
 using WokyTool.通用;
 using WokyTool.廠商;
@@ -30,6 +31,21 @@ namespace WokyTool.進貨
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             訊息管理器.獨體.Notify("尚未實作");
+        }
+
+        private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var Item_ = 進貨資料管理器.獨體.可編輯BList.Select(Value => new 進貨總覽匯出轉換(Value));
+
+            string Title_ = String.Format("進貨總覽_{0}", 時間.目前日期);
+            函式.ExportExcel<進貨總覽匯出轉換>(Title_, Item_);
+        }
+
+        private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var i = new 進貨新增匯入視窗();
+            i.Show();
+            i.BringToFront();
         }
 
         /********************************/

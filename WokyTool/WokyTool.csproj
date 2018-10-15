@@ -546,6 +546,12 @@
     <Compile Include="DataExport\工廠出貨匯出結構.cs" />
     <Compile Include="進貨\控制\進貨新增匯入管理器.cs" />
     <Compile Include="進貨\控制\進貨資料管理器.cs" />
+    <Compile Include="進貨\視窗\進貨新增匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="進貨\視窗\進貨新增匯入視窗.Designer.cs">
+      <DependentUpon>進貨新增匯入視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="進貨\視窗\進貨總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -554,6 +560,8 @@
     </Compile>
     <Compile Include="進貨\資料\進貨新增匯入資料.cs" />
     <Compile Include="進貨\資料\進貨資料.cs" />
+    <Compile Include="進貨\轉換\進貨新增錯誤匯出轉換.cs" />
+    <Compile Include="進貨\轉換\進貨總覽匯出轉換.cs" />
     <Compile Include="配送\轉換\撿貨匯出轉換.cs" />
     <Compile Include="DataExport\銷售匯出結構.cs" />
     <Compile Include="廢棄\出貨匯入結構_夠麻吉.cs" />
@@ -996,6 +1004,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="通用\視窗\其他\頁索引元件.resx">
       <DependentUpon>頁索引元件.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="進貨\視窗\進貨新增匯入視窗.resx">
+      <DependentUpon>進貨新增匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="進貨\視窗\進貨總覽視窗.resx">
       <DependentUpon>進貨總覽視窗.cs</DependentUpon>
