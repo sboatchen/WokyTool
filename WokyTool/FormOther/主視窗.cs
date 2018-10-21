@@ -290,129 +290,6 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編號.子客戶, 列舉.視窗.總覽);
         }
 
-        /*private void button27_Click(object sender, EventArgs e)
-        {
-            // 開啟存檔位置
-            SaveFileDialog dlg = new SaveFileDialog();
-            dlg.FileName = "測試1";
-            if (dlg.ShowDialog() != DialogResult.OK)
-                return;
-
-            Microsoft.Office.Interop.Excel.Application App = null;
-            Microsoft.Office.Interop.Excel.Workbook Wbook = null;
-            // 寫入資料
-            try
-            {
-                App = new Microsoft.Office.Interop.Excel.Application();
-                Wbook = App.Workbooks.Add();
-
-                var xlSheets = Wbook.Sheets as Microsoft.Office.Interop.Excel.Sheets;
-                Microsoft.Office.Interop.Excel.Worksheet NowSheet = Wbook.Worksheets["Sheet1"];
-
-                NowSheet.Name = "測試1";
-                App.Cells[1, 1] = "測試成功";
-
-                // This works.
-                Wbook.SaveAs(dlg.FileName);
-
-                //關閉工作簿
-                Wbook.Close();
-
-                //離開程序
-                App.Quit();
-            }
-            catch (Exception theException)
-            {
-                MessageBox.Show("匯出失敗，請通知苦逼程式," + theException.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (Wbook != null)
-                    Wbook.Close();
-                if (App != null)
-                    App.Quit();
-            }
-        }
-
-        private void button33_Click(object sender, EventArgs e)
-        {
-            // 開啟存檔位置
-            SaveFileDialog dlg = new SaveFileDialog();
-            dlg.FileName = "測試2";
-            if (dlg.ShowDialog() != DialogResult.OK)
-                return;
-
-            Microsoft.Office.Interop.Excel.Application App = null;
-            Microsoft.Office.Interop.Excel.Workbook Wbook = null;
-            // 寫入資料
-            try
-            {
-                App = new Microsoft.Office.Interop.Excel.Application();
-                Wbook = App.Workbooks.Add();
-
-                var xlSheets = Wbook.Sheets as Microsoft.Office.Interop.Excel.Sheets;
-                Microsoft.Office.Interop.Excel.Worksheet NowSheet = xlSheets.get_Item(1);
-
-                NowSheet.Name = "測試2";
-                App.Cells[1, 1] = "測試成功";
-
-                // This works.
-                Wbook.SaveAs(dlg.FileName);
-
-                //關閉工作簿
-                Wbook.Close();
-
-                //離開程序
-                App.Quit();
-            }
-            catch (Exception theException)
-            {
-                MessageBox.Show("匯出失敗，請通知苦逼程式," + theException.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (Wbook != null)
-                    Wbook.Close();
-                if (App != null)
-                    App.Quit();
-            }
-        }
-
-        private void button34_Click(object sender, EventArgs e)
-        {
-            // 開啟存檔位置
-            SaveFileDialog dlg = new SaveFileDialog();
-            dlg.FileName = "測試3";
-            if (dlg.ShowDialog() != DialogResult.OK)
-                return;
-
-            Microsoft.Office.Interop.Excel.Application App = null;
-            Microsoft.Office.Interop.Excel.Workbook Wbook = null;
-            // 寫入資料
-            try
-            {
-                App = new Microsoft.Office.Interop.Excel.Application();
-                Wbook = App.Workbooks.Add();
-
-                var xlSheets = Wbook.Sheets as Microsoft.Office.Interop.Excel.Sheets;
-                Microsoft.Office.Interop.Excel.Worksheet NowSheet = Wbook.ActiveSheet;
-
-                NowSheet.Name = "測試3";
-                App.Cells[1, 1] = "測試成功";
-
-                // This works.
-                Wbook.SaveAs(dlg.FileName);
-
-                //關閉工作簿
-                Wbook.Close();
-
-                //離開程序
-                App.Quit();
-            }
-            catch (Exception theException)
-            {
-                MessageBox.Show("匯出失敗，請通知苦逼程式," + theException.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (Wbook != null)
-                    Wbook.Close();
-                if (App != null)
-                    App.Quit();
-            }
-        }*/
-
 
         private void button38_Click(object sender, EventArgs e)
         {
@@ -674,6 +551,11 @@ namespace WokyTool
         private void button33_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.平台訂單新增_Momo三方, 列舉.視窗.總覽);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

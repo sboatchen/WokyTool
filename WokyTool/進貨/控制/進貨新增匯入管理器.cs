@@ -14,7 +14,7 @@ namespace WokyTool.進貨
         {
             get
             {
-                return 系統參數.修改設定資料;
+                return 系統參數.匯入進貨;
             }
         }
 

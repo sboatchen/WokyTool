@@ -31,6 +31,9 @@ namespace WokyTool.使用者
         public bool 匯入訂單 { get; set; }
 
         [JsonProperty]
+        public bool 匯入進貨 { get; set; }
+
+        [JsonProperty]
         public bool 匯入月結帳 { get; set; }
 
         public string 顯示密碼
