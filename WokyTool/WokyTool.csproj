@@ -243,6 +243,20 @@
     <Compile Include="客製\回單轉換\平台訂單回單轉換_Momo.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_森森.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_東森.cs" />
+    <Compile Include="幣值\控制\幣值資料管理器.cs" />
+    <Compile Include="幣值\視窗\元件\幣值選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="幣值\視窗\元件\幣值選取元件.Designer.cs">
+      <DependentUpon>幣值選取元件.cs</DependentUpon>
+    </Compile>
+    <Compile Include="幣值\視窗\幣值總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="幣值\視窗\幣值總覽視窗.Designer.cs">
+      <DependentUpon>幣值總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="幣值\資料\幣值資料.cs" />
     <Compile Include="平台訂單\控制\Momo第三方平台訂單新增資料管理器.cs" />
     <Compile Include="平台訂單\控制\平台訂單新增資料管理器.cs" />
     <Compile Include="平台訂單\控制\平台訂單匯入設定管理器.cs" />
@@ -841,6 +855,12 @@
     <EmbeddedResource Include="客戶\視窗\元件\客戶選取元件.resx">
       <DependentUpon>客戶選取元件.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="幣值\視窗\元件\幣值選取元件.resx">
+      <DependentUpon>幣值選取元件.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="幣值\視窗\幣值總覽視窗.resx">
+      <DependentUpon>幣值總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="平台訂單\視窗\平台訂單匯入視窗.resx">
       <DependentUpon>平台訂單匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1038,6 +1058,7 @@
     <None Include="Properties\DataSources\WokyTool.商品.商品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.子客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.客戶資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.幣值.幣值資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.平台訂單.平台訂單匯入設定資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.平台訂單.平台訂單匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.平台訂單.平台訂單新增資料.datasource" />
@@ -1052,7 +1073,6 @@
     <None Include="Properties\DataSources\WokyTool.物品.物品新增匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品條碼更新匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.編號.編號資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.聯絡人.聯絡人資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+代收方式.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+商品識別.datasource" />

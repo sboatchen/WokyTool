@@ -14,6 +14,7 @@ using WokyTool.客戶;
 using WokyTool.配送;
 using WokyTool.商品;
 using WokyTool.進貨;
+using WokyTool.幣值;
 using WokyTool.廠商;
 using WokyTool.聯絡人;
 
@@ -75,6 +76,8 @@ namespace WokyTool.通用
             總覽視窗設定Map.Add(列舉.編號.配送, typeof(待配送總覽視窗));
 
             總覽視窗設定Map.Add(列舉.編號.廠商, typeof(廠商總覽視窗));
+            總覽視窗設定Map.Add(列舉.編號.幣值, typeof(幣值總覽視窗));
+
             總覽視窗設定Map.Add(列舉.編號.進貨, typeof(進貨總覽視窗));
 
             /********************************/
