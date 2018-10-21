@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -67,17 +66,10 @@
             this.button22 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
             this.button33 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.以下功能還未處理完 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(23, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "編號";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -171,7 +163,7 @@
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(19, 509);
+            this.button16.Location = new System.Drawing.Point(15, 88);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(75, 23);
             this.button16.TabIndex = 15;
@@ -181,7 +173,7 @@
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(115, 509);
+            this.button17.Location = new System.Drawing.Point(111, 88);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(75, 23);
             this.button17.TabIndex = 16;
@@ -191,7 +183,7 @@
             // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(223, 509);
+            this.button18.Location = new System.Drawing.Point(219, 88);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(75, 23);
             this.button18.TabIndex = 17;
@@ -201,7 +193,7 @@
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(464, 478);
+            this.button19.Location = new System.Drawing.Point(271, 48);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(75, 23);
             this.button19.TabIndex = 18;
@@ -221,7 +213,7 @@
             // 
             // button21
             // 
-            this.button21.Location = new System.Drawing.Point(19, 565);
+            this.button21.Location = new System.Drawing.Point(15, 140);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(90, 23);
             this.button21.TabIndex = 20;
@@ -231,7 +223,7 @@
             // 
             // button23
             // 
-            this.button23.Location = new System.Drawing.Point(19, 623);
+            this.button23.Location = new System.Drawing.Point(15, 198);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(75, 23);
             this.button23.TabIndex = 22;
@@ -251,7 +243,7 @@
             // 
             // button26
             // 
-            this.button26.Location = new System.Drawing.Point(19, 594);
+            this.button26.Location = new System.Drawing.Point(15, 169);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(90, 23);
             this.button26.TabIndex = 25;
@@ -261,7 +253,7 @@
             // 
             // button27
             // 
-            this.button27.Location = new System.Drawing.Point(616, 12);
+            this.button27.Location = new System.Drawing.Point(219, 257);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(75, 23);
             this.button27.TabIndex = 26;
@@ -271,7 +263,7 @@
             // 
             // button28
             // 
-            this.button28.Location = new System.Drawing.Point(208, 479);
+            this.button28.Location = new System.Drawing.Point(15, 49);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(107, 23);
             this.button28.TabIndex = 27;
@@ -281,7 +273,7 @@
             // 
             // button29
             // 
-            this.button29.Location = new System.Drawing.Point(321, 478);
+            this.button29.Location = new System.Drawing.Point(128, 48);
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(107, 23);
             this.button29.TabIndex = 28;
@@ -291,7 +283,7 @@
             // 
             // button30
             // 
-            this.button30.Location = new System.Drawing.Point(19, 652);
+            this.button30.Location = new System.Drawing.Point(15, 227);
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(75, 23);
             this.button30.TabIndex = 29;
@@ -301,7 +293,7 @@
             // 
             // button31
             // 
-            this.button31.Location = new System.Drawing.Point(612, 690);
+            this.button31.Location = new System.Drawing.Point(126, 257);
             this.button31.Name = "button31";
             this.button31.Size = new System.Drawing.Size(75, 23);
             this.button31.TabIndex = 30;
@@ -311,7 +303,7 @@
             // 
             // 盤點出貨
             // 
-            this.盤點出貨.Location = new System.Drawing.Point(464, 565);
+            this.盤點出貨.Location = new System.Drawing.Point(351, 169);
             this.盤點出貨.Name = "盤點出貨";
             this.盤點出貨.Size = new System.Drawing.Size(81, 23);
             this.盤點出貨.TabIndex = 31;
@@ -321,7 +313,7 @@
             // 
             // button32
             // 
-            this.button32.Location = new System.Drawing.Point(115, 594);
+            this.button32.Location = new System.Drawing.Point(111, 169);
             this.button32.Name = "button32";
             this.button32.Size = new System.Drawing.Size(90, 23);
             this.button32.TabIndex = 32;
@@ -361,7 +353,7 @@
             // 
             // button36
             // 
-            this.button36.Location = new System.Drawing.Point(223, 594);
+            this.button36.Location = new System.Drawing.Point(219, 169);
             this.button36.Name = "button36";
             this.button36.Size = new System.Drawing.Size(90, 23);
             this.button36.TabIndex = 38;
@@ -381,7 +373,7 @@
             // 
             // button38
             // 
-            this.button38.Location = new System.Drawing.Point(616, 41);
+            this.button38.Location = new System.Drawing.Point(351, 257);
             this.button38.Name = "button38";
             this.button38.Size = new System.Drawing.Size(75, 23);
             this.button38.TabIndex = 40;
@@ -431,7 +423,7 @@
             // 
             // button22
             // 
-            this.button22.Location = new System.Drawing.Point(139, 12);
+            this.button22.Location = new System.Drawing.Point(23, 12);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(100, 23);
             this.button22.TabIndex = 45;
@@ -459,11 +451,47 @@
             this.button33.UseVisualStyleBackColor = true;
             this.button33.Click += new System.EventHandler(this.button33_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.以下功能還未處理完);
+            this.panel1.Controls.Add(this.button28);
+            this.panel1.Controls.Add(this.button19);
+            this.panel1.Controls.Add(this.button29);
+            this.panel1.Controls.Add(this.button16);
+            this.panel1.Controls.Add(this.button17);
+            this.panel1.Controls.Add(this.button18);
+            this.panel1.Controls.Add(this.button21);
+            this.panel1.Controls.Add(this.button23);
+            this.panel1.Controls.Add(this.button38);
+            this.panel1.Controls.Add(this.button26);
+            this.panel1.Controls.Add(this.button30);
+            this.panel1.Controls.Add(this.button36);
+            this.panel1.Controls.Add(this.盤點出貨);
+            this.panel1.Controls.Add(this.button32);
+            this.panel1.Controls.Add(this.button27);
+            this.panel1.Controls.Add(this.button31);
+            this.panel1.Enabled = false;
+            this.panel1.Location = new System.Drawing.Point(23, 380);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(467, 294);
+            this.panel1.TabIndex = 48;
+            this.panel1.Visible = false;
+            // 
+            // 以下功能還未處理完
+            // 
+            this.以下功能還未處理完.AutoSize = true;
+            this.以下功能還未處理完.Location = new System.Drawing.Point(13, 12);
+            this.以下功能還未處理完.Name = "以下功能還未處理完";
+            this.以下功能還未處理完.Size = new System.Drawing.Size(113, 12);
+            this.以下功能還未處理完.TabIndex = 41;
+            this.以下功能還未處理完.Text = "以下功能還未處理完";
+            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 751);
+            this.ClientSize = new System.Drawing.Size(506, 382);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button33);
             this.Controls.Add(this.button25);
             this.Controls.Add(this.button22);
@@ -471,28 +499,12 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button40);
             this.Controls.Add(this.button39);
-            this.Controls.Add(this.button38);
             this.Controls.Add(this.button37);
-            this.Controls.Add(this.button36);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button35);
-            this.Controls.Add(this.button32);
-            this.Controls.Add(this.盤點出貨);
-            this.Controls.Add(this.button31);
-            this.Controls.Add(this.button30);
-            this.Controls.Add(this.button29);
-            this.Controls.Add(this.button28);
-            this.Controls.Add(this.button27);
-            this.Controls.Add(this.button26);
             this.Controls.Add(this.button24);
-            this.Controls.Add(this.button23);
-            this.Controls.Add(this.button21);
             this.Controls.Add(this.button20);
-            this.Controls.Add(this.button19);
-            this.Controls.Add(this.button18);
-            this.Controls.Add(this.button17);
-            this.Controls.Add(this.button16);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
@@ -502,17 +514,17 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
             this.Name = "主視窗";
-            this.Text = "V 2.0.2";
+            this.Text = "V 2.0.3";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.主視窗_FormClosing);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
@@ -551,6 +563,8 @@
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button33;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label 以下功能還未處理完;
 
 
     }

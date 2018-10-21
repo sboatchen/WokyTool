@@ -32,7 +32,6 @@ using WokyTool.公司;
 using WokyTool.商品;
 using WokyTool.平台訂單;
 using WokyTool.使用者;
-using WokyTool.編號;
 
 namespace WokyTool
 {
@@ -628,9 +627,6 @@ namespace WokyTool
 
             訊息管理器.獨體.Info("平台訂單匯入設定資料轉換");
             平台訂單匯入設定資料管理器.獨體.資料搬移();
-
-            編號資料管理器.獨體.Map = 編號資料管理器.獨體.Map.Values.OrderBy(Value => Value.編號).ToDictionary(Value => Value.編號);
-            編號資料管理器.獨體.資料異動();
 
             訊息管理器.獨體.Info("轉換完畢");
         }

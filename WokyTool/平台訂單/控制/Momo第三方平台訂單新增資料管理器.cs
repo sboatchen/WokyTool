@@ -53,14 +53,6 @@ namespace WokyTool.平台訂單
             } 
         }
 
-        public override int 編號代碼
-        {
-            get
-            {
-                return (int)編號類型 + 系統參數.使用者編號 * 1000;
-            }
-        }
-
         public override bool 是否可編輯
         {
             get

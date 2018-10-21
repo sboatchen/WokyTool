@@ -438,14 +438,6 @@
     <Compile Include="物品\資料\物品資料篩選設定.cs" />
     <Compile Include="物品\轉換\物品新增錯誤匯出轉換.cs" />
     <Compile Include="物品\轉換\物品條碼更新錯誤匯出轉換.cs" />
-    <Compile Include="編號\控制\編號資料管理器.cs" />
-    <Compile Include="編號\視窗\編號總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="編號\視窗\編號總覽視窗.Designer.cs">
-      <DependentUpon>編號總覽視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="編號\資料\編號資料.cs" />
     <Compile Include="聯絡人\視窗\元件\聯絡人選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -992,9 +984,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品詳細視窗.resx">
       <DependentUpon>物品詳細視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="編號\視窗\編號總覽視窗.resx">
-      <DependentUpon>編號總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="聯絡人\視窗\聯絡人總覽視窗.resx">
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
