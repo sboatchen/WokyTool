@@ -71,15 +71,16 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.基本 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button34 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -487,12 +488,10 @@
             this.panel1.Controls.Add(this.button32);
             this.panel1.Controls.Add(this.button27);
             this.panel1.Controls.Add(this.button31);
-            this.panel1.Enabled = false;
             this.panel1.Location = new System.Drawing.Point(508, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(467, 294);
             this.panel1.TabIndex = 48;
-            this.panel1.Visible = false;
             // 
             // 以下功能還未處理完
             // 
@@ -544,6 +543,16 @@
             this.panel3.Size = new System.Drawing.Size(482, 185);
             this.panel3.TabIndex = 50;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(122, 149);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 23);
+            this.button2.TabIndex = 43;
+            this.button2.Text = "幣值";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -587,6 +596,16 @@
             this.panel5.Size = new System.Drawing.Size(482, 71);
             this.panel5.TabIndex = 51;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(122, 38);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "匯入";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -617,31 +636,22 @@
             this.label4.TabIndex = 42;
             this.label4.Text = "月報表";
             // 
-            // button1
+            // button34
             // 
-            this.button1.Location = new System.Drawing.Point(122, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
-            this.button1.TabIndex = 48;
-            this.button1.Text = "匯入";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(122, 149);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 23);
-            this.button2.TabIndex = 43;
-            this.button2.Text = "幣值";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button34.Location = new System.Drawing.Point(19, 569);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(100, 23);
+            this.button34.TabIndex = 49;
+            this.button34.Text = "發票處理";
+            this.button34.UseVisualStyleBackColor = true;
+            this.button34.Click += new System.EventHandler(this.button34_Click);
             // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 553);
+            this.ClientSize = new System.Drawing.Size(992, 604);
+            this.Controls.Add(this.button34);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -721,6 +731,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button34;
 
 
     }

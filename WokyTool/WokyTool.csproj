@@ -352,10 +352,12 @@
     </Compile>
     <Compile Include="月結帳\資料\月結帳列舉.cs" />
     <Compile Include="月結帳\資料\月結帳匯入資料.cs" />
+    <Compile Include="月結帳\轉換\暫存\月結帳總計暫存資料.cs" />
     <Compile Include="月結帳\資料\月結帳資料.cs" />
     <Compile Include="月結帳\轉換\月結帳新增錯誤匯出轉換.cs" />
-    <Compile Include="月結帳\轉換\月結帳總覽匯出轉換.cs" />
+    <Compile Include="月結帳\轉換\月結帳分頁匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳匯入轉換.cs" />
+    <Compile Include="月結帳\轉換\月結帳總計匯出轉換.cs" />
     <Compile Include="物品\控制\物品新增匯入管理器.cs" />
     <Compile Include="物品\控制\物品條碼更新匯入管理器.cs" />
     <Compile Include="物品\控制\物品資料管理器.cs" />
@@ -452,6 +454,17 @@
     <Compile Include="物品\資料\物品資料篩選設定.cs" />
     <Compile Include="物品\轉換\物品新增錯誤匯出轉換.cs" />
     <Compile Include="物品\轉換\物品條碼更新錯誤匯出轉換.cs" />
+    <Compile Include="發票\控制\發票匯入管理器.cs" />
+    <Compile Include="發票\視窗\發票匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="發票\視窗\發票匯入視窗.Designer.cs">
+      <DependentUpon>發票匯入視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="發票\資料\發票匯入資料.cs" />
+    <Compile Include="發票\資料\發票匯入設定資料.cs" />
+    <Compile Include="發票\轉換\發票匯入轉換.cs" />
+    <Compile Include="發票\轉換\發票匯出轉換.cs" />
     <Compile Include="聯絡人\視窗\元件\聯絡人選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -460,8 +473,10 @@
     </Compile>
     <Compile Include="通用\其他\函式.cs" />
     <Compile Include="通用\其他\列舉.cs" />
+    <Compile Include="通用\其他\可序列化_Excel.cs" />
     <Compile Include="通用\其他\時間.cs" />
     <Compile Include="通用\其他\檔案.cs" />
+    <Compile Include="通用\其他\檔案_Excel.cs" />
     <Compile Include="通用\其他\系統參數.cs" />
     <Compile Include="通用\視窗\樣板\鎖定視窗.cs">
       <SubType>Form</SubType>
@@ -1005,6 +1020,9 @@
     <EmbeddedResource Include="物品\視窗\物品詳細視窗.resx">
       <DependentUpon>物品詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="發票\視窗\發票匯入視窗.resx">
+      <DependentUpon>發票匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="聯絡人\視窗\聯絡人總覽視窗.resx">
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1073,6 +1091,7 @@
     <None Include="Properties\DataSources\WokyTool.物品.物品新增匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品條碼更新匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.發票.發票匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.聯絡人.聯絡人資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+代收方式.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+商品識別.datasource" />

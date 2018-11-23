@@ -36,14 +36,27 @@ namespace WokyTool.月結帳
 
         private void 總覽ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //@@ TODO
+            List<可序列化_Excel> List_ = new List<可序列化_Excel>();
+
+            月結帳總計匯出轉換 月結帳總計匯出轉換_ = new 月結帳總計匯出轉換();
+
             var ItemGroup_ = 月結帳資料管理器.獨體.可編輯BList
                                 .GroupBy(
-                                    Value => Value.客戶.名稱,
-                                    Value => new 月結帳總覽匯出轉換(Value));
+                                    Value => Value.公司.名稱 + " - " + Value.客戶.名稱,
+                                    Value => Value);
+
+            foreach (var x in ItemGroup_)
+            {
+                月結帳分頁匯出轉換 月結帳分頁匯出轉換_ = new 月結帳分頁匯出轉換(x.Key, x);
+                List_.Add(月結帳分頁匯出轉換_);
+
+                月結帳總計匯出轉換_.新增(月結帳分頁匯出轉換_);
+            }
+
+            List_.Add(月結帳總計匯出轉換_);
 
             string Title_ = String.Format("月結帳總覽_{0}", 時間.目前日期);
-            函式.ExportExcel<月結帳總覽匯出轉換>(Title_, ItemGroup_);
+            檔案.寫入Excel(Title_, List_);
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

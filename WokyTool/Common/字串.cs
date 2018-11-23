@@ -9,6 +9,7 @@ namespace WokyTool.Common
     public static class 字串 
     {
         public static string 空 = "";
+        public static string 空白 = "空白";
         public static string 錯誤 = "錯誤";
         public static string 警告 = "警告";
         public static string 無 = "無";
@@ -16,6 +17,7 @@ namespace WokyTool.Common
         public static string 自動填寫 = "自動填寫";
         public static string 確認 = "確認";
         public static string 保密字串 = "*******";
+        public static string 未定義 = "未定義";
 
         public static string 雜支 = "雜支";
         public static string 進貨 = "進貨";

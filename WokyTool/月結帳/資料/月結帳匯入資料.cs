@@ -15,6 +15,8 @@ namespace WokyTool.月結帳
     [JsonObject(MemberSerialization.OptIn)]
     public class 月結帳匯入資料 : 可匯入資料
     {
+        public string 訂單編號 { get; set; }
+
         protected 公司資料 _公司;
         public 公司資料 公司
         {
@@ -84,30 +86,6 @@ namespace WokyTool.月結帳
         public decimal 總金額
         {
             get { return 數量 * 含稅單價; }
-        }
-
-        public decimal 成本
-        {
-            get
-            {
-                return 商品.成本;
-            }
-        }
-
-        public decimal 利潤
-        {
-            get
-            {
-                return 含稅單價 - 成本;
-            }
-        }
-
-        public decimal 總利潤
-        {
-            get
-            {
-                return 利潤 * 數量;
-            }
         }
 
         /********************************/

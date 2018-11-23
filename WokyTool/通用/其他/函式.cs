@@ -17,5 +17,31 @@ namespace WokyTool.通用
                 return null;
             return Value_.ToString();
         }
+
+        public static object 轉型資料(object dynamic, 列舉.資料格式 資料格式類型)
+        {
+            if (dynamic == null)
+                return null;
+
+            switch (資料格式類型)
+            {
+                case 列舉.資料格式.文字:
+                    return dynamic.ToString();
+                case 列舉.資料格式.金額:
+                    return Convert.ToDecimal(dynamic.ToString());
+                case 列舉.資料格式.整數:
+                    return Convert.ToInt32(dynamic.ToString());
+                case 列舉.資料格式.日期:
+                    {
+                        double d;
+                        if (double.TryParse(dynamic.ToString(), out d))
+                            return DateTime.FromOADate(d);
+                        else
+                            return DateTime.Parse(dynamic.ToString());
+                    }
+                default:
+                    throw new Exception("轉型資料 不支援的格式 " + 資料格式類型);
+            }
+        }
     }
 }

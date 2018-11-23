@@ -41,6 +41,8 @@ namespace WokyTool.月結帳
         {
             月結帳匯入資料 目前資料_ = (月結帳匯入資料)(this.頁索引元件1.目前資料);
 
+            目前資料_.訂單編號 = this.訂單編號.Text;
+
             目前資料_.商品 = (商品資料)(this.商品選取元件1.SelectedItem);
 
             目前資料_.公司 = (公司資料)(this.公司選取元件1.SelectedItem);
@@ -54,6 +56,8 @@ namespace WokyTool.月結帳
         {
             月結帳匯入資料 目前資料_ = (月結帳匯入資料)(this.頁索引元件1.目前資料);
 
+            this.訂單編號.Text = 目前資料_.訂單編號;
+
             this.商品選取元件1.SelectedItem = 目前資料_.商品;
             this.商品識別.Text = 目前資料_.商品識別;
 
@@ -64,9 +68,6 @@ namespace WokyTool.月結帳
             this.單價.Value = 目前資料_.單價;
             this.含稅單價.Value = 目前資料_.含稅單價;
             this.總金額.Value = 目前資料_.總金額;
-            this.成本.Value = 目前資料_.成本;
-            this.利潤.Value = 目前資料_.利潤;
-            this.總利潤.Value = 目前資料_.總利潤;
         }
     }
 }

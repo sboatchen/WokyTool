@@ -91,6 +91,7 @@ namespace WokyTool.使用者
                         修改設定資料 = true,
                         匯入進貨 = true,
                         匯入訂單 = true,
+                        匯入月結帳 = true,
                     };
                 }
 

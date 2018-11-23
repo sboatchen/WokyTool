@@ -18,6 +18,8 @@ namespace WokyTool.月結帳
         [JsonProperty]
         public override int 編號 { get; set; }
 
+        public string 訂單編號 { get; set; }
+
         [JsonProperty]
         public int 公司編號
         {
@@ -132,6 +134,12 @@ namespace WokyTool.月結帳
                 return 商品.成本;
             }
         }
+
+        public decimal 總成本
+        {
+            get { return 數量 * 成本; }
+        }
+
 
         public decimal 利潤
         {

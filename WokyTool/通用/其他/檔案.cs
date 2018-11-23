@@ -5,10 +5,12 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public class 檔案
+    public partial class 檔案
     {
         public static void 備份資料檔案(string 原始檔案路徑_, bool 是否忽略缺少原始檔案_)
         {

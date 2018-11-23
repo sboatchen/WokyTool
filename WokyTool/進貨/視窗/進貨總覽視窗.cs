@@ -35,10 +35,10 @@ namespace WokyTool.進貨
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Item_ = 進貨資料管理器.獨體.可編輯BList.Select(Value => new 進貨總覽匯出轉換(Value));
+            var Item_ = new 進貨總覽匯出轉換(進貨資料管理器.獨體.可編輯BList);
 
             string Title_ = String.Format("進貨總覽_{0}", 時間.目前日期);
-            函式.ExportExcel<進貨總覽匯出轉換>(Title_, Item_);
+            檔案.寫入Excel(Title_, Item_);
         }
 
         private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)

@@ -102,7 +102,7 @@ namespace WokyTool.通用
                             {
                                 var cell = range.Cells[rCnt, cCnt] as Excel.Range;
                                 dValue_ = cell.Value2;
-                                object value = 轉型資料(dValue_, 欄位設定_.格式);
+                                object value = 通用函式.轉型資料(dValue_, 欄位設定_.格式);
 
                                 if (value != null)
                                 {
@@ -139,7 +139,7 @@ namespace WokyTool.通用
                         {
                             var cell = range.Cells[rCnt, cCnt] as Excel.Range;
                             dValue_ = cell.Value2;
-                            object value = 轉型資料(dValue_, 欄位設定_.格式);
+                            object value = 通用函式.轉型資料(dValue_, 欄位設定_.格式);
 
                             if (value != null)
                             {
@@ -176,32 +176,6 @@ namespace WokyTool.通用
                 Marshal.ReleaseComObject(xlWorkSheet);
                 Marshal.ReleaseComObject(xlWorkBook);
                 Marshal.ReleaseComObject(xlApp);
-            }
-        }
-
-        private object 轉型資料(object dynamic, 列舉.資料格式 資料格式類型)
-        {
-            if (dynamic == null)
-                return null;
-
-            switch (資料格式類型)
-            {
-                case 列舉.資料格式.文字:
-                    return dynamic.ToString();
-                case 列舉.資料格式.金額:
-                    return Convert.ToDecimal(dynamic.ToString());
-                case 列舉.資料格式.整數:
-                    return Convert.ToInt32(dynamic.ToString());
-                case 列舉.資料格式.日期:
-                    {
-                        double d;
-                        if(double.TryParse(dynamic.ToString(), out d))
-                            return DateTime.FromOADate(d);
-                        else
-                            return DateTime.Parse(dynamic.ToString());
-                    }
-                default:
-                    throw new Exception("轉型資料 不支援的格式 " + 資料格式類型);
             }
         }
     }

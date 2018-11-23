@@ -52,6 +52,8 @@ namespace WokyTool.月結帳
         {
             月結帳資料 目前資料_ = (月結帳資料)(this.頁索引元件1.目前資料);
 
+            目前資料_.訂單編號 = this.訂單編號.Text;
+
             目前資料_.商品 = (商品資料)(this.商品選取元件1.SelectedItem);
 
             目前資料_.公司 = (公司資料)(this.公司選取元件1.SelectedItem);
@@ -65,6 +67,8 @@ namespace WokyTool.月結帳
         public override void 索引切換_更新呈現()
         {
             月結帳資料 目前資料_ = (月結帳資料)(this.頁索引元件1.目前資料);
+
+            this.訂單編號.Text = 目前資料_.訂單編號;
 
             this.商品選取元件1.SelectedItem = 目前資料_.商品;
 
