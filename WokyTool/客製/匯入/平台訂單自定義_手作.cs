@@ -101,22 +101,18 @@ namespace WokyTool.客製
 
         public override void 回單(IEnumerable<平台訂單新增資料> 資料_)
         {
-            var Items_ = 資料_.Select(Value => new 平台訂單回單轉換_手作(Value));
+            var Items_ = new 平台訂單回單轉換_手作(資料_);
 
             String Title_ = String.Format("手作回單_{0}", 時間.目前日期);
-            函式.ExportExcel<平台訂單回單轉換_手作>(Title_, Items_);
+            檔案.寫入Excel(Title_, Items_);
 
             // 會計要用的 需列出總金額資料
             var GroupQueue_ = 資料_.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送).GroupBy(Value => Value.配送分組 == 0 ? Value.ToString() : Value.配送分組.ToString());
 
-            List<平台訂單回單轉換_總金額_一休_陳沂_手作> 總金額列表_ = new List<平台訂單回單轉換_總金額_一休_陳沂_手作>();
-            foreach (var Group_ in GroupQueue_)
-            {
-                總金額列表_.Add(new 平台訂單回單轉換_總金額_一休_陳沂_手作(Group_.ToList()));
-            }
+            平台訂單回單轉換_總金額_一休_陳沂_手作 總金額列表_ = new 平台訂單回單轉換_總金額_一休_陳沂_手作(GroupQueue_);
 
             Title_ = String.Format("手作總金額_{0}", 時間.目前日期);
-            函式.ExportExcel<平台訂單回單轉換_總金額_一休_陳沂_手作>(Title_, 總金額列表_);
+            檔案.寫入Excel(Title_, 總金額列表_);
         }
 
     }

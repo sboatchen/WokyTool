@@ -12,20 +12,21 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    public class 平台訂單回單轉換_Momo第三方_進度 : 可格式化_Excel
+    public class 平台訂單回單轉換_Momo第三方_進度 : 可序列化_Excel
     {
         private static string 可出貨 = "可出貨";
         private static string 已確認指定配送日 = "已確認指定配送日";
 
-        protected 平台訂單新增資料 _Data;
+        protected IEnumerable<平台訂單新增資料> _資料列;
 
-        public 平台訂單回單轉換_Momo第三方_進度(平台訂單新增資料 Data_)
+        public String 標頭 { get; set; }
+
+        public 平台訂單回單轉換_Momo第三方_進度(IEnumerable<平台訂單新增資料> 資料列_)
         {
-            _Data = Data_;
+            _資料列 = 資料列_;
         }
 
-        // 設定title，回傳下筆資料的輸入行位置
-        public int SetExcelTitle(Microsoft.Office.Interop.Excel.Application App_)
+        public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
         {
             App_.Cells[1, 1] = "項次+燈號";
             App_.Cells[1, 2] = "配送狀態\n(說明參考Desc)";
@@ -61,42 +62,40 @@ namespace WokyTool.客製
             App_.Cells[1, 26] = "個人識別碼";
             App_.Cells[1, 27] = "群組變價商品";
 
-            return 2;
-        }
-
-        // 設定資料
-        public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
-        {
-            foreach (var Pair_ in _Data.額外資訊)
+            int 目前行數_ = 2;
+            foreach (平台訂單新增資料 資料_ in _資料列)
             {
-                if (Pair_.Key <= 0)
-                    continue;
-                else if (Pair_.Key <= 6)
-                    App_.Cells[Row_, Pair_.Key] = Pair_.Value;
-                else if (Pair_.Key >= 8)
-                    App_.Cells[Row_, Pair_.Key - 1] = Pair_.Value;
+                foreach (var Pair_ in 資料_.額外資訊)
+                {
+                    if (Pair_.Key <= 0)
+                        continue;
+                    else if (Pair_.Key <= 6)
+                        App_.Cells[目前行數_, Pair_.Key] = Pair_.Value;
+                    else if (Pair_.Key >= 8)
+                        App_.Cells[目前行數_, Pair_.Key - 1] = Pair_.Value;
+                }
+
+                // 預計出貨日須為2日內(今天+明天) 才進行出貨處理 並將配送狀態改為 可出貨
+                // 2日外的 將配送狀態改為 已確認指定配送日 並將配送訊息 寫上預計出貨日
+                switch (資料_.處理狀態)
+                {
+                    case 列舉.訂單處理狀態.新增:
+                        App_.Cells[目前行數_, 2] = 可出貨;
+                        break;
+                    case 列舉.訂單處理狀態.忽略:
+                        App_.Cells[目前行數_, 2] = 已確認指定配送日;
+
+                        String 配送訊息_ = 資料_.處理時間.ToString("yyyy/MM/dd");
+                        App_.Cells[目前行數_, 3] = 配送訊息_;    // 配送訊息
+                        App_.Cells[目前行數_, 4] = 配送訊息_;    // 約定配送日;
+                        break;
+                    default:
+                        訊息管理器.獨體.Error("平台訂單回單轉換_Momo第三方_進度 不支援處理狀態 " + 資料_.處理狀態.ToString());
+                        break;
+                }
+
+                目前行數_++;
             }
-
-            // 預計出貨日須為2日內(今天+明天) 才進行出貨處理 並將配送狀態改為 可出貨
-            // 2日外的 將配送狀態改為 已確認指定配送日 並將配送訊息 寫上預計出貨日
-            switch (_Data.處理狀態)
-            {
-                case 列舉.訂單處理狀態.新增:
-                    App_.Cells[Row_, 2] = 可出貨;
-                    break;
-                case 列舉.訂單處理狀態.忽略:
-                    App_.Cells[Row_, 2] = 已確認指定配送日;
-
-                    String 配送訊息_ = _Data.處理時間.ToString("yyyy/MM/dd");
-                    App_.Cells[Row_, 3] = 配送訊息_;    // 配送訊息
-                    App_.Cells[Row_, 4] = 配送訊息_;    // 約定配送日;
-                    break;
-                default:
-                    訊息管理器.獨體.Error("平台訂單回單轉換_Momo第三方_進度 不支援處理狀態 " + _Data.處理狀態.ToString());
-                    break;
-            }
-
-            return Row_ + 1;
         }
     }
 }

@@ -12,17 +12,18 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    public class 平台訂單回單轉換_摩天 : 可格式化_Excel
+    public class 平台訂單回單轉換_摩天 : 可序列化_Excel
     {
-        protected 平台訂單新增資料 _Data;
+        protected IEnumerable<平台訂單新增資料> _資料列;
 
-        public 平台訂單回單轉換_摩天(平台訂單新增資料 Data_)
+        public String 標頭 { get; set; }
+
+        public 平台訂單回單轉換_摩天(IEnumerable<平台訂單新增資料> 資料列_)
         {
-            _Data = Data_;
+            _資料列 = 資料列_;
         }
 
-        // 設定title，回傳下筆資料的輸入行位置
-        public int SetExcelTitle(Microsoft.Office.Interop.Excel.Application App_)
+        public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
         {
             App_.Cells[1, 1] = "項次";
             App_.Cells[1, 2] = "訂單編號";
@@ -50,35 +51,34 @@ namespace WokyTool.客製
             App_.Cells[1, 24] = "電話";
             App_.Cells[1, 25] = "行動電話";
 
-            return 2;
-        }
-
-        // 設定資料
-        public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
-        {
-            foreach (var Pair_ in _Data.額外資訊)
+            int 目前行數_ = 2;
+            foreach (平台訂單新增資料 資料_ in _資料列)
             {
-                App_.Cells[Row_, Pair_.Key] = Pair_.Value;
-            }
+                foreach (var Pair_ in 資料_.額外資訊)
+                {
+                    App_.Cells[目前行數_, Pair_.Key] = Pair_.Value;
+                }
 
-            App_.Cells[Row_, 3] = "已配送";
+                App_.Cells[目前行數_, 3] = "已配送";
            
-             switch (_Data.配送公司)
-            { 
-                case 列舉.配送公司.全速配:
-                    App_.Cells[Row_, 5] = 字串.新竹貨運;
-                    break;
-                case 列舉.配送公司.宅配通:
-                    App_.Cells[Row_, 5] = 字串.宅配通;
-                    break;
-                default:
-                    訊息管理器.獨體.Error("平台訂單回單轉換_摩天 不支援配送公司 " + _Data.配送公司.ToString());
-                    break;
+                 switch (資料_.配送公司)
+                { 
+                    case 列舉.配送公司.全速配:
+                        App_.Cells[目前行數_, 5] = 字串.新竹貨運;
+                        break;
+                    case 列舉.配送公司.宅配通:
+                        App_.Cells[目前行數_, 5] = 字串.宅配通;
+                        break;
+                    default:
+                        訊息管理器.獨體.Error("平台訂單回單轉換_摩天 不支援配送公司 " + 資料_.配送公司.ToString());
+                        break;
+                }
+
+                App_.Cells[目前行數_, 6] = 資料_.配送單號;
+
+
+                目前行數_++;
             }
-
-            App_.Cells[Row_, 6] = _Data.配送單號;
-
-            return Row_ + 1;
         }
     }
 }

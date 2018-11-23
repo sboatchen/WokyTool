@@ -12,20 +12,21 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    class 平台訂單回單轉換_uDesign : 可格式化_Excel
+    public class 平台訂單回單轉換_uDesign : 可序列化_Excel
     {
         private static readonly string 全速配編號 = "HCT-新竹貨運";
         private static readonly string 宅配通編號 = "CAN-台灣宅配通";
 
-        protected 平台訂單新增資料 _Data;
+        protected IEnumerable<平台訂單新增資料> _資料列;
 
-        public 平台訂單回單轉換_uDesign(平台訂單新增資料 Data_)
+        public String 標頭 { get; set; }
+
+        public 平台訂單回單轉換_uDesign(IEnumerable<平台訂單新增資料> 資料列_)
         {
-            _Data = Data_;
+            _資料列 = 資料列_;
         }
 
-        // 設定title，回傳下筆資料的輸入行位置
-        public int SetExcelTitle(Microsoft.Office.Interop.Excel.Application App_)
+        public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
         {
             App_.Cells[1, 1] = "ntitm";
             App_.Cells[1, 2] = "prndldat";
@@ -84,35 +85,33 @@ namespace WokyTool.客製
             App_.Cells[2, 26] = "合作物流";
             App_.Cells[2, 27] = "貨運單號";
             App_.Cells[2, 28] = "貨運公司";
-			
-            return 3;
-        }
 
-        // 設定資料
-        public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
-        {
-            foreach (var Pair_ in _Data.額外資訊)
+            int 目前行數_ = 3;
+            foreach (平台訂單新增資料 資料_ in _資料列)
             {
-                if (Pair_.Key > 0)
-                    App_.Cells[Row_, Pair_.Key] = Pair_.Value;
+                foreach (var Pair_ in 資料_.額外資訊)
+                {
+                    if (Pair_.Key > 0)
+                        App_.Cells[目前行數_, Pair_.Key] = Pair_.Value;
+                }
+
+                switch (資料_.配送公司)
+                {
+                    case 列舉.配送公司.全速配:
+                        App_.Cells[目前行數_, 26] = 全速配編號;
+                        break;
+                    case 列舉.配送公司.宅配通:
+                        App_.Cells[目前行數_, 26] = 宅配通編號;
+                        break;
+                    default:
+                        訊息管理器.獨體.Error("平台訂單回單轉換_uDesign 不支援配送公司 " + 資料_.配送公司.ToString());
+                        break;
+                }
+
+                App_.Cells[目前行數_, 27] = 資料_.配送單號;
+
+                目前行數_++;
             }
-
-            switch (_Data.配送公司)
-            {
-                case 列舉.配送公司.全速配:
-                    App_.Cells[Row_, 26] = 全速配編號;
-                    break;
-                case 列舉.配送公司.宅配通:
-                    App_.Cells[Row_, 26] = 宅配通編號;
-                    break;
-                default:
-                    訊息管理器.獨體.Error("平台訂單回單轉換_uDesign 不支援配送公司 " + _Data.配送公司.ToString());
-                    break;
-            }
-
-            App_.Cells[Row_, 27] = _Data.配送單號;
-
-            return Row_ + 1;
         }
     }
 }

@@ -12,20 +12,21 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    public class 平台訂單回單轉換_Momo : 可格式化_Excel
+    public class 平台訂單回單轉換_Momo : 可序列化_Excel
     {
         private static string 已配送 = "已配送";
         private static string 已確認指定配送日 = "已確認指定配送日";
 
-        protected 平台訂單新增資料 _Data;
+        protected IEnumerable<平台訂單新增資料> _資料列;
 
-        public 平台訂單回單轉換_Momo(平台訂單新增資料 Data_)
+        public String 標頭 { get; set; }
+
+        public 平台訂單回單轉換_Momo(IEnumerable<平台訂單新增資料> 資料列_)
         {
-            _Data = Data_;
+            _資料列 = 資料列_;
         }
 
-        // 設定title，回傳下筆資料的輸入行位置
-        public int SetExcelTitle(Microsoft.Office.Interop.Excel.Application App_)
+        public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
         {
             App_.Cells[1, 1] = "項次+燈號";
             App_.Cells[1, 2] = "訂單編號";
@@ -59,51 +60,49 @@ namespace WokyTool.客製
             App_.Cells[1, 27] = "個人識別碼";
             App_.Cells[1, 28] = "群組變價商品";
 
-            return 2;
-        }
-
-        // 設定資料
-        public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
-        {
-            foreach (var Pair_ in _Data.額外資訊)
+            int 目前行數_ = 2;
+            foreach (平台訂單新增資料 資料_ in _資料列)
             {
-                if (Pair_.Key > 0)
-                    App_.Cells[Row_, Pair_.Key] = Pair_.Value;
+                foreach (var Pair_ in 資料_.額外資訊)
+                {
+                    if (Pair_.Key > 0)
+                        App_.Cells[目前行數_, Pair_.Key] = Pair_.Value;
+                }
+
+                switch (資料_.處理狀態)
+                {
+                    case 列舉.訂單處理狀態.配送:
+                        App_.Cells[目前行數_, 3] = 已配送;
+                        break;
+                    case 列舉.訂單處理狀態.忽略:
+                        App_.Cells[目前行數_, 3] = 已確認指定配送日;
+
+                        String 配送訊息_ = 資料_.處理時間.ToString("yyyy/MM/dd");
+                        App_.Cells[目前行數_, 4] = 配送訊息_;    // 配送訊息
+                        App_.Cells[目前行數_, 5] = 配送訊息_;    // 約定配送日;
+                        break;
+                    default:
+                        訊息管理器.獨體.Error("平台訂單回單轉換_Momo 不支援處理狀態 " + 資料_.處理狀態.ToString());
+                        break;
+                }
+
+                switch (資料_.配送公司)
+                {
+                    case 列舉.配送公司.全速配:
+                        App_.Cells[目前行數_, 6] = 字串.新竹貨運;
+                        break;
+                    case 列舉.配送公司.宅配通:
+                        App_.Cells[目前行數_, 6] = 字串.宅配通;
+                        break;
+                    default:
+                        訊息管理器.獨體.Error("平台訂單回單轉換_Momo 不支援配送公司 " + 資料_.配送公司.ToString());
+                        break;
+                }
+
+                App_.Cells[目前行數_, 7] = 資料_.配送單號;
+
+                目前行數_++;
             }
-
-            switch (_Data.處理狀態)
-            {
-                case 列舉.訂單處理狀態.配送:
-                    App_.Cells[Row_, 3] = 已配送;
-                    break;
-                case 列舉.訂單處理狀態.忽略:
-                    App_.Cells[Row_, 3] = 已確認指定配送日;
-
-                    String 配送訊息_ = _Data.處理時間.ToString("yyyy/MM/dd");
-                    App_.Cells[Row_, 4] = 配送訊息_;    // 配送訊息
-                    App_.Cells[Row_, 5] = 配送訊息_;    // 約定配送日;
-                    break;
-                default:
-                    訊息管理器.獨體.Error("平台訂單回單轉換_Momo 不支援處理狀態 " + _Data.處理狀態.ToString());
-                    break;
-            }
-
-            switch (_Data.配送公司)
-            {
-                case 列舉.配送公司.全速配:
-                    App_.Cells[Row_, 6] = 字串.新竹貨運;
-                    break;
-                case 列舉.配送公司.宅配通:
-                    App_.Cells[Row_, 6] = 字串.宅配通;
-                    break;
-                default:
-                    訊息管理器.獨體.Error("平台訂單回單轉換_Momo 不支援配送公司 " + _Data.配送公司.ToString());
-                    break;
-            }
-
-            App_.Cells[Row_, 7] = _Data.配送單號;
-
-            return Row_ + 1;
         }
     }
 }

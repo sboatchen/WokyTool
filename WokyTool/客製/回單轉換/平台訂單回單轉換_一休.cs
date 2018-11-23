@@ -12,19 +12,18 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    public class 平台訂單回單轉換_一休 : 可格式化_Excel
+    public class 平台訂單回單轉換_一休 : 可序列化_Excel
     {
-        protected 平台訂單新增資料 _Data;
+        protected IEnumerable<平台訂單新增資料> _資料列;
 
-        protected static int _排序 = 1;
+        public String 標頭 { get; set; }
 
-        public 平台訂單回單轉換_一休(平台訂單新增資料 Data_)
+        public 平台訂單回單轉換_一休(IEnumerable<平台訂單新增資料> 資料列_)
         {
-            _Data = Data_;
+            _資料列 = 資料列_;
         }
 
-        // 設定title，回傳下筆資料的輸入行位置
-        public int SetExcelTitle(Microsoft.Office.Interop.Excel.Application App_)
+        public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
         {
             App_.Cells[1, 1] = "排序";
             App_.Cells[1, 2] = "訂單號碼";
@@ -32,34 +31,30 @@ namespace WokyTool.客製
             App_.Cells[1, 4] = "發票號碼";
             App_.Cells[1, 5] = "物流公司";
 
-            _排序 = 1;
-
-            return 2;
-        }
-
-        // 設定資料
-        public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
-        {
-            App_.Cells[Row_, 1] = _排序++;
-            App_.Cells[Row_, 2] = _Data.訂單編號;
-            App_.Cells[Row_, 3] = _Data.配送單號;
-            App_.Cells[Row_, 4] = "";
-
-            switch (_Data.配送公司)
+            int 目前行數_ = 2;
+            foreach (平台訂單新增資料 資料_ in _資料列)
             {
-                case 列舉.配送公司.全速配:
-                    App_.Cells[Row_, 5] = 字串.新竹貨運;
-                    break;
-                case 列舉.配送公司.宅配通:
-                    App_.Cells[Row_, 5] = 字串.宅配通;
-                    break;
-                default:
-                    if (_Data.處理狀態 != 列舉.訂單處理狀態.忽略)
-                        訊息管理器.獨體.Error("平台訂單回單轉換_一休_不支援配送公司 " + _Data.配送公司.ToString());
-                    break;
-            }
+                App_.Cells[目前行數_, 1] = 目前行數_ - 1;
+                App_.Cells[目前行數_, 2] = 資料_.訂單編號;
+                App_.Cells[目前行數_, 3] = 資料_.配送單號;
+                App_.Cells[目前行數_, 4] = "";
 
-            return Row_ + 1;
+                switch (資料_.配送公司)
+                {
+                    case 列舉.配送公司.全速配:
+                        App_.Cells[目前行數_, 5] = 字串.新竹貨運;
+                        break;
+                    case 列舉.配送公司.宅配通:
+                        App_.Cells[目前行數_, 5] = 字串.宅配通;
+                        break;
+                    default:
+                        if (資料_.處理狀態 != 列舉.訂單處理狀態.忽略)
+                            訊息管理器.獨體.Error("平台訂單回單轉換_一休_不支援配送公司 " + 資料_.配送公司.ToString());
+                        break;
+                }
+
+                目前行數_++;
+            }
         }
     }
 }

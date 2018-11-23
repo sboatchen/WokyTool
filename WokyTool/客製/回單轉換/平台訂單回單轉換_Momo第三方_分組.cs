@@ -12,17 +12,18 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    public class 平台訂單回單轉換_Momo第三方_分組 : 可格式化_Excel
+    public class 平台訂單回單轉換_Momo第三方_分組 : 可序列化_Excel
     {
-        protected 平台訂單新增資料 _Data;
+        protected IEnumerable<平台訂單新增資料> _資料列;
 
-        public 平台訂單回單轉換_Momo第三方_分組(平台訂單新增資料 Data_)
+        public String 標頭 { get; set; }
+
+        public 平台訂單回單轉換_Momo第三方_分組(IEnumerable<平台訂單新增資料> 資料列_)
         {
-            _Data = Data_;
+            _資料列 = 資料列_;
         }
 
-        // 設定title，回傳下筆資料的輸入行位置
-        public int SetExcelTitle(Microsoft.Office.Interop.Excel.Application App_)
+        public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
         {
             App_.Cells[1, 1] = "項次+燈號";
             App_.Cells[1, 2] = "併箱編號";
@@ -52,25 +53,23 @@ namespace WokyTool.客製
             App_.Cells[1, 24] = "個人識別碼";
             App_.Cells[1, 25] = "群組變價商品";
 
-            return 2;
-        }
-
-        // 設定資料
-        public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
-        {
-            foreach (var Pair_ in _Data.額外資訊)
+            int 目前行數_ = 2;
+            foreach (平台訂單新增資料 資料_ in _資料列)
             {
-                if (Pair_.Key <= 0)
-                    continue;
-                else if (Pair_.Key == 1)
-                    App_.Cells[Row_, Pair_.Key] = Pair_.Value;
-                else if (Pair_.Key >= 6)
-                    App_.Cells[Row_, Pair_.Key - 3] = Pair_.Value;
+                foreach (var Pair_ in 資料_.額外資訊)
+                {
+                    if (Pair_.Key <= 0)
+                        continue;
+                    else if (Pair_.Key == 1)
+                        App_.Cells[目前行數_, Pair_.Key] = Pair_.Value;
+                    else if (Pair_.Key >= 6)
+                        App_.Cells[目前行數_, Pair_.Key - 3] = Pair_.Value;
+                }
+
+                App_.Cells[目前行數_, 2] = 資料_.配送分組;
+
+                目前行數_++;
             }
-
-            App_.Cells[Row_, 2] = _Data.配送分組;
-
-            return Row_ + 1;
         }
     }
 }

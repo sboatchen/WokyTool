@@ -53,10 +53,10 @@ namespace WokyTool.客製
 
         public override void 回單(IEnumerable<平台訂單新增資料> 資料_)
         {
-            var Items_ = 資料_.Select(Value => new 平台訂單回單轉換_神坊(Value));
+            var Items_ = new 平台訂單回單轉換_神坊(資料_);
 
             String Title_ = String.Format("神坊回單_{0}", 時間.目前日期);
-            函式.ExportExcel<平台訂單回單轉換_神坊>(Title_, Items_);
+            檔案.寫入Excel(Title_, Items_);
         }
     }
 }
