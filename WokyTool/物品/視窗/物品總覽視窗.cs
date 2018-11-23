@@ -41,10 +41,17 @@ namespace WokyTool.物品
                                 .Where(Value => Value.編號 > 0)
                                 .GroupBy(
                                     Value => Value.品牌.名稱,
-                                    Value => new 物品總覽匯出轉換(Value));
+                                    Value => Value);
+
+            List<可序列化_Excel> List_ = new List<可序列化_Excel>();
+            foreach (var x in ItemGroup_)
+            {
+                物品總覽匯出轉換 匯出轉換_ = new 物品總覽匯出轉換(x.Key, x);
+                List_.Add(匯出轉換_);
+            }	
 
             string Title_ = String.Format("物品總覽_{0}", 時間.目前日期);
-            函式.ExportExcel<物品總覽匯出轉換>(Title_, ItemGroup_);
+            檔案.寫入Excel(Title_, List_);
         }
 
         private void 庫存ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -54,15 +61,22 @@ namespace WokyTool.物品
                                 .Where(Value => Value.編號 > 0)
                                 .GroupBy(
                                     Value => Value.品牌.名稱,
-                                    Value => new 物品庫存匯出轉換(Value));
+                                    Value => Value);
 
-            通用匯出結構 總結_ = new 通用匯出結構("總結");
+            List<可序列化_Excel> List_ = new List<可序列化_Excel>();
+            foreach (var x in ItemGroup_)
+            {
+                物品庫存匯出轉換 匯出轉換_ = new 物品庫存匯出轉換(x.Key, x);
+                List_.Add(匯出轉換_);
+            }
 
-            decimal 總庫存成本_ = 物品資料管理器.獨體.可編輯BList.Select(Value => Value.庫存總成本).Sum();
-            總結_.Add("總庫存成本", 總庫存成本_.ToString());
+            //通用匯出結構 總結_ = new 通用匯出結構("總結");
+
+            //decimal 總庫存成本_ = 物品資料管理器.獨體.可編輯BList.Select(Value => Value.庫存總成本).Sum();
+            //總結_.Add("總庫存成本", 總庫存成本_.ToString());
 
             string Title_ = String.Format("物品庫存_{0}", 時間.目前日期);
-            函式.ExportExcel<物品庫存匯出轉換>(Title_, ItemGroup_, 總結_);
+            檔案.寫入Excel(Title_, List_); ;
         }
 
         private void 盤點ToolStripMenuItem_Click(object sender, EventArgs e)

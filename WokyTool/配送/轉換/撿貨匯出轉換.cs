@@ -8,33 +8,30 @@ using WokyTool.Data;
 
 namespace WokyTool.配送
 {
-    public class 撿貨匯出轉換: 可格式化_Excel
+    public class 撿貨匯出轉換 : 可序列化_Excel
     {
-        public string 物品名稱 { get; set; }
-        public int 數量 { get; set; }
+        protected IEnumerable<撿貨資料> _資料列;
 
-        public 撿貨匯出轉換(string 物品名稱_, int 數量_)
+        public String 標頭 { get; set; }
+
+        public 撿貨匯出轉換(IEnumerable<撿貨資料> 資料列_)
         {
-            物品名稱 = 物品名稱_;
-            數量 = 數量_;
+            _資料列 = 資料列_;
         }
 
-        // 設定title，回傳下筆資料的輸入行位置
-        public int SetExcelTitle(Microsoft.Office.Interop.Excel.Application App_)
+        public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
         {
             App_.Cells[1, 1] = "物品名稱";
             App_.Cells[1, 2] = "數量";
 
-            return 2;
-        }
+            int 目前行數_ = 2;
+            foreach (撿貨資料 資料_ in _資料列)
+            {
+                App_.Cells[目前行數_, 1] = 資料_.物品名稱;
+                App_.Cells[目前行數_, 2] = 資料_.數量;
 
-        // 設定資料
-        public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
-        {
-            App_.Cells[Row_, 1] = 物品名稱;
-            App_.Cells[Row_, 2] = 數量;
-
-            return Row_ + 1;
+                目前行數_++;
+            }
         }
     }
 }

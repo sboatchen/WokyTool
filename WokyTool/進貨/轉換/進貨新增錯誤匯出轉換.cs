@@ -11,10 +11,7 @@ namespace WokyTool.進貨
     {
         protected IEnumerable<進貨新增匯入資料> _資料列;
 
-        public String 標頭
-        {
-            get { return "總覽"; }
-        }
+        public String 標頭 { get; set; }
 
         public 進貨新增錯誤匯出轉換(IEnumerable<進貨新增匯入資料> 資料列_)
         {

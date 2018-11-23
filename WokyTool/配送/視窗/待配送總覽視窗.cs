@@ -191,9 +191,10 @@ namespace WokyTool.配送
 
         private void 統計ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Dictionary<物品資料, 撿貨匯出轉換> 組合_ = new Dictionary<物品資料, 撿貨匯出轉換>();
+            // 撿貨匯出轉換
+            Dictionary<物品資料, 撿貨資料> 組合_ = new Dictionary<物品資料, 撿貨資料>();
 
-            撿貨匯出轉換 Temp_ = null;
+            撿貨資料 Temp_ = null;
             foreach (var Item_ in 配送管理器.獨體.可編輯BList)
             {
                 foreach (var ItemPair_ in Item_.組成.組合)
@@ -204,16 +205,16 @@ namespace WokyTool.配送
                     }
                     else
                     {
-                        Temp_ = new 撿貨匯出轉換(ItemPair_.Key.縮寫, ItemPair_.Value);
+                        Temp_ = new 撿貨資料(ItemPair_.Key.縮寫, ItemPair_.Value);
                         組合_.Add(ItemPair_.Key, Temp_);
                     }
                 }
             }
 
-            var Result_ = 組合_.Values.OrderBy(Value => Value.物品名稱);
+            撿貨匯出轉換 Result_ = new 撿貨匯出轉換(組合_.Values.OrderBy(Value => Value.物品名稱));
 
             string Title_ = String.Format("撿貨統計匯出_{0}", 時間.目前日期);
-            函式.ExportExcel<撿貨匯出轉換>(Title_, Result_);
+            檔案.寫入Excel(Title_, Result_);
         }
     }
 }

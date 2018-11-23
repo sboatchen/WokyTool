@@ -11,17 +11,14 @@ namespace WokyTool.發票
     {
         protected List<發票匯入資料> _資料列;
 
+        public String 標頭 { get; set; }
+
         public int 資料數量
         {
             get
             {
                 return _資料列.Count;
             }
-        }
-
-        public String 標頭 
-        {
-            get { return "總覽"; }
         }
 
         public 發票匯出轉換()

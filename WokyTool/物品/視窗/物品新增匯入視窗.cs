@@ -50,11 +50,10 @@ namespace WokyTool.物品
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Items_ = _物品新增匯入管理器.可編輯BList.Where(Value => Value.錯誤訊息 != null)
-                                .Select(Value => new 物品新增錯誤匯出轉換(Value));
+            var Items_ = new 物品新增錯誤匯出轉換(_物品新增匯入管理器.可編輯BList.Where(Value => Value.錯誤訊息 != null));
 
             string Title_ = String.Format("物品新增錯誤匯出_{0}", 時間.目前日期);
-            函式.ExportExcel<物品新增錯誤匯出轉換>(Title_, Items_);
+            檔案.寫入Excel(Title_, Items_);
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)//

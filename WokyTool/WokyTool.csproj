@@ -583,6 +583,7 @@
     <Compile Include="進貨\資料\進貨資料.cs" />
     <Compile Include="進貨\轉換\進貨新增錯誤匯出轉換.cs" />
     <Compile Include="進貨\轉換\進貨總覽匯出轉換.cs" />
+    <Compile Include="配送\資料\撿貨資料.cs" />
     <Compile Include="配送\轉換\撿貨匯出轉換.cs" />
     <Compile Include="DataExport\銷售匯出結構.cs" />
     <Compile Include="廢棄\出貨匯入結構_夠麻吉.cs" />

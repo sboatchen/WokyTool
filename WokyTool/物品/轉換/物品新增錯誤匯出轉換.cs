@@ -7,17 +7,18 @@ using WokyTool.Common;
 
 namespace WokyTool.物品
 {
-    class 物品新增錯誤匯出轉換 : 可格式化_Excel
+    public class 物品新增錯誤匯出轉換 : 可序列化_Excel
     {
-        protected 物品新增匯入資料 _Data;
+        protected IEnumerable<物品新增匯入資料> _資料列;
 
-        public 物品新增錯誤匯出轉換(物品新增匯入資料 Data_)
+        public String 標頭 { get; set; }
+
+        public 物品新增錯誤匯出轉換(IEnumerable<物品新增匯入資料> 資料列_)
         {
-            _Data = Data_;
+            _資料列 = 資料列_;
         }
 
-        // 設定title，回傳下筆資料的輸入行位置
-        public int SetExcelTitle(Microsoft.Office.Interop.Excel.Application App_)
+        public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
         {
             App_.Cells[1, 1] = "大類";
             App_.Cells[1, 2] = "小類";
@@ -28,22 +29,20 @@ namespace WokyTool.物品
 
             App_.Cells[1, 6] = "錯誤訊息";
 
-            return 2;
-        }
+            int 目前行數_ = 2;
+            foreach (物品新增匯入資料 資料_ in _資料列)
+            {
+                App_.Cells[目前行數_, 1] = 資料_.大類識別;
+                App_.Cells[目前行數_, 2] = 資料_.小類識別;
+                App_.Cells[目前行數_, 3] = 資料_.品牌識別;
 
-        // 設定資料
-        public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
-        {
-            App_.Cells[Row_, 1] = _Data.大類識別;
-            App_.Cells[Row_, 2] = _Data.小類識別;
-            App_.Cells[Row_, 3] = _Data.品牌識別;
+                App_.Cells[目前行數_, 4] = 資料_.名稱;
+                App_.Cells[目前行數_, 5] = 資料_.縮寫;
 
-            App_.Cells[Row_, 4] = _Data.名稱;
-            App_.Cells[Row_, 5] = _Data.縮寫;
+                App_.Cells[目前行數_, 6] = 資料_.錯誤訊息;
 
-            App_.Cells[Row_, 6] = _Data.錯誤訊息;
-
-            return Row_ + 1;
+                目前行數_++;
+            }
         }
     }
 }

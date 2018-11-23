@@ -7,35 +7,34 @@ using WokyTool.Common;
 
 namespace WokyTool.平台訂單
 {
-    public class 平台訂單新增錯誤匯出轉換 : 可格式化_Excel
+    public class 平台訂單新增錯誤匯出轉換 : 可序列化_Excel
     {
-        protected 平台訂單匯入資料 _Data;
+        protected IEnumerable<平台訂單匯入資料> _資料列;
 
-        public 平台訂單新增錯誤匯出轉換(平台訂單匯入資料 Data_)
+        public String 標頭 { get; set; }
+
+        public 平台訂單新增錯誤匯出轉換(IEnumerable<平台訂單匯入資料> 資料列_)
         {
-            _Data = Data_;
+            _資料列 = 資料列_;
         }
 
-        // 設定title，回傳下筆資料的輸入行位置
-        public int SetExcelTitle(Microsoft.Office.Interop.Excel.Application App_)
+        public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
         {
             App_.Cells[1, 1] = "訂單編號";
             App_.Cells[1, 2] = "姓名";
             App_.Cells[1, 3] = "商品";
             App_.Cells[1, 4] = "錯誤訊息";
 
-            return 2;
-        }
+            int 目前行數_ = 2;
+            foreach (平台訂單匯入資料 資料_ in _資料列)
+            {
+                App_.Cells[目前行數_, 1] = 資料_.訂單編號;
+                App_.Cells[目前行數_, 2] = 資料_.姓名;
+                App_.Cells[目前行數_, 3] = 資料_.商品識別;
+                App_.Cells[目前行數_, 4] = 資料_.錯誤訊息;
 
-        // 設定資料
-        public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
-        {
-            App_.Cells[Row_, 1] = _Data.訂單編號;
-            App_.Cells[Row_, 2] = _Data.姓名;
-            App_.Cells[Row_, 3] = _Data.商品識別;
-            App_.Cells[Row_, 4] = _Data.錯誤訊息;
-
-            return Row_ + 1;
+                目前行數_++;
+            }
         }
     }
 }
