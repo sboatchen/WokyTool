@@ -188,6 +188,7 @@
             this.label13.Size = new System.Drawing.Size(65, 12);
             this.label13.TabIndex = 12;
             this.label13.Text = "庫存總成本";
+            this.label13.Visible = false;
             // 
             // label14
             // 
@@ -197,6 +198,7 @@
             this.label14.Size = new System.Drawing.Size(53, 12);
             this.label14.TabIndex = 13;
             this.label14.Text = "平均成本";
+            this.label14.Visible = false;
             // 
             // label15
             // 
@@ -323,6 +325,7 @@
             this.庫存總成本.Name = "庫存總成本";
             this.庫存總成本.Size = new System.Drawing.Size(167, 22);
             this.庫存總成本.TabIndex = 47;
+            this.庫存總成本.Visible = false;
             // 
             // 最後進貨成本
             // 
@@ -360,6 +363,7 @@
             this.成本.ReadOnly = true;
             this.成本.Size = new System.Drawing.Size(167, 22);
             this.成本.TabIndex = 49;
+            this.成本.Visible = false;
             // 
             // 外庫數量
             // 
@@ -399,6 +403,7 @@
             // 
             this.物品大類選取元件1.Location = new System.Drawing.Point(107, 94);
             this.物品大類選取元件1.Name = "物品大類選取元件1";
+            this.物品大類選取元件1.ReadOnly = false;
             this.物品大類選取元件1.SelectedItem = null;
             this.物品大類選取元件1.Size = new System.Drawing.Size(172, 25);
             this.物品大類選取元件1.TabIndex = 52;
@@ -407,6 +412,7 @@
             // 
             this.物品小類選取元件1.Location = new System.Drawing.Point(107, 121);
             this.物品小類選取元件1.Name = "物品小類選取元件1";
+            this.物品小類選取元件1.ReadOnly = false;
             this.物品小類選取元件1.SelectedItem = null;
             this.物品小類選取元件1.Size = new System.Drawing.Size(172, 25);
             this.物品小類選取元件1.TabIndex = 53;
@@ -415,6 +421,7 @@
             // 
             this.物品品牌選取元件1.Location = new System.Drawing.Point(107, 67);
             this.物品品牌選取元件1.Name = "物品品牌選取元件1";
+            this.物品品牌選取元件1.ReadOnly = false;
             this.物品品牌選取元件1.SelectedItem = null;
             this.物品品牌選取元件1.Size = new System.Drawing.Size(172, 25);
             this.物品品牌選取元件1.TabIndex = 54;

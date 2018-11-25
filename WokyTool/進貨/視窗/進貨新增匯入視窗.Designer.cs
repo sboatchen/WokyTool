@@ -283,8 +283,6 @@
         private System.Windows.Forms.ToolStripMenuItem 樣板ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 匯出ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 檢查ToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 品號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 進貨BindingSource;
         private System.Windows.Forms.BindingSource 廠商資料BindingSource;
         private System.Windows.Forms.BindingSource 物品資料BindingSource;

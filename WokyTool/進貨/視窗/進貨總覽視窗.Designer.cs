@@ -282,7 +282,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 進貨BindingSource;
         private System.Windows.Forms.BindingSource 廠商資料BindingSource;
         private System.Windows.Forms.BindingSource 物品資料BindingSource;

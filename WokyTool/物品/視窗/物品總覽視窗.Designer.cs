@@ -58,9 +58,7 @@
             this.內庫數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.外庫數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.庫存總量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.庫存總成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.最後進貨成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.成本備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.物品大類資料BindingSource)).BeginInit();
@@ -78,7 +76,7 @@
             this.更新ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1266, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1642, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -140,14 +138,14 @@
             // 物品ToolStripMenuItem
             // 
             this.物品ToolStripMenuItem.Name = "物品ToolStripMenuItem";
-            this.物品ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.物品ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.物品ToolStripMenuItem.Text = "新增";
             this.物品ToolStripMenuItem.Click += new System.EventHandler(this.物品ToolStripMenuItem_Click);
             // 
             // 條碼ToolStripMenuItem
             // 
             this.條碼ToolStripMenuItem.Name = "條碼ToolStripMenuItem";
-            this.條碼ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.條碼ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.條碼ToolStripMenuItem.Text = "條碼";
             this.條碼ToolStripMenuItem.Click += new System.EventHandler(this.條碼ToolStripMenuItem_Click);
             // 
@@ -186,16 +184,14 @@
             this.內庫數量DataGridViewTextBoxColumn,
             this.外庫數量DataGridViewTextBoxColumn,
             this.庫存總量DataGridViewTextBoxColumn,
-            this.庫存總成本DataGridViewTextBoxColumn,
             this.最後進貨成本DataGridViewTextBoxColumn,
-            this.成本DataGridViewTextBoxColumn,
             this.成本備註DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.物品資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1266, 429);
+            this.dataGridView1.Size = new System.Drawing.Size(1642, 487);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -300,24 +296,11 @@
             this.庫存總量DataGridViewTextBoxColumn.Name = "庫存總量DataGridViewTextBoxColumn";
             this.庫存總量DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 庫存總成本DataGridViewTextBoxColumn
-            // 
-            this.庫存總成本DataGridViewTextBoxColumn.DataPropertyName = "庫存總成本";
-            this.庫存總成本DataGridViewTextBoxColumn.HeaderText = "庫存總成本";
-            this.庫存總成本DataGridViewTextBoxColumn.Name = "庫存總成本DataGridViewTextBoxColumn";
-            // 
             // 最後進貨成本DataGridViewTextBoxColumn
             // 
             this.最後進貨成本DataGridViewTextBoxColumn.DataPropertyName = "最後進貨成本";
             this.最後進貨成本DataGridViewTextBoxColumn.HeaderText = "最後進貨成本";
             this.最後進貨成本DataGridViewTextBoxColumn.Name = "最後進貨成本DataGridViewTextBoxColumn";
-            // 
-            // 成本DataGridViewTextBoxColumn
-            // 
-            this.成本DataGridViewTextBoxColumn.DataPropertyName = "成本";
-            this.成本DataGridViewTextBoxColumn.HeaderText = "成本";
-            this.成本DataGridViewTextBoxColumn.Name = "成本DataGridViewTextBoxColumn";
-            this.成本DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 成本備註DataGridViewTextBoxColumn
             // 
@@ -329,7 +312,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1266, 453);
+            this.ClientSize = new System.Drawing.Size(1642, 511);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -378,9 +361,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 內庫數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 外庫數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 庫存總量DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 庫存總成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 最後進貨成本DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本備註DataGridViewTextBoxColumn;
     }
 }

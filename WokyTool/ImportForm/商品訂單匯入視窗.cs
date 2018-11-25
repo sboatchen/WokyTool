@@ -25,7 +25,6 @@ namespace WokyTool.ImportForm
     public partial class 商品訂單匯入視窗 : Form
     {
         private List<商品訂單資料> _Source;
-        private List<可配送> _DeilverSource;
 
         private 舊列舉.訂單處理進度類型 _處理進度;
         private System.Windows.Forms.DataGridViewCellEventHandler _錯誤修正檢查;

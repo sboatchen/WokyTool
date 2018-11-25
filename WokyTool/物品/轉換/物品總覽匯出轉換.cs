@@ -26,7 +26,6 @@ namespace WokyTool.物品
             App_.Cells[1, 3] = "小類";
             App_.Cells[1, 4] = "縮寫";
             App_.Cells[1, 5] = "最後進貨成本";
-            App_.Cells[1, 6] = "成本";
 
             int 目前行數_ = 2;
             foreach (物品資料 資料_ in _資料列)
@@ -36,7 +35,6 @@ namespace WokyTool.物品
                 App_.Cells[目前行數_, 3] = 資料_.小類.名稱;
                 App_.Cells[目前行數_, 4] = 資料_.縮寫;
                 App_.Cells[目前行數_, 5] = 資料_.最後進貨成本;
-                App_.Cells[目前行數_, 6] = 資料_.成本;
 
                 目前行數_++;
             }
