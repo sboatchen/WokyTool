@@ -114,7 +114,7 @@ namespace WokyTool.通用
             ;
         }
 
-        protected void 初始化資料()
+        protected virtual void 初始化資料()
         {
             if (File.Exists(檔案路徑))
             {

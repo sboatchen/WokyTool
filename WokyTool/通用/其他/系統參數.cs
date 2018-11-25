@@ -16,7 +16,10 @@ namespace WokyTool.通用
         public static bool 修改設定資料 { get; set; }
 
         public static bool 匯入訂單 { get; set; }
+
         public static bool 匯入進貨 { get; set; }
+        public static bool 處理庫存 { get; set; }
+
         public static bool 匯入月結帳 { get; set; }
     }
 }

@@ -145,10 +145,10 @@ namespace WokyTool.物品
         {
             get
             {
-                if (庫存總量 == 0)
+                //if (庫存總量 == 0)
                     return 最後進貨成本;
-                else
-                    return 庫存總成本 / 庫存總量;
+                //else
+                //    return 庫存總成本 / 庫存總量;
             }
         }
 

@@ -556,7 +556,7 @@ namespace WokyTool
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            視窗管理器.獨體.顯現(列舉.編號.進貨新增, 列舉.視窗.總覽);
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -9,6 +9,7 @@ using WokyTool.公司;
 using WokyTool.物品;
 using WokyTool.客戶;
 using WokyTool.通用;
+using WokyTool.幣值;
 using WokyTool.廠商;
 
 namespace WokyTool.進貨
@@ -76,6 +77,26 @@ namespace WokyTool.進貨
             }
         }
 
+        [JsonProperty]
+        public string 幣值識別 { get; set; }
+
+        protected 幣值資料 _幣值;
+        public 幣值資料 幣值
+        {
+            get
+            {
+                if (_幣值 == null)
+                    _幣值 = 幣值資料.NULL;
+                else if (幣值資料管理器.獨體.唯讀BList.Contains(_幣值) == false)
+                    _幣值 = 幣值資料.ERROR;
+
+                return _幣值;
+            }
+            set
+            {
+                _幣值 = value;
+            }
+        }
 
         [JsonProperty]
         public string 備註 { get; set; }
@@ -86,6 +107,7 @@ namespace WokyTool.進貨
         {
             廠商 = 廠商資料管理器.獨體.Get(廠商識別);
             物品 = 物品資料管理器.獨體.GetBySName(物品識別);
+            幣值 = 幣值資料管理器.獨體.Get(幣值識別);
 
             類型 = 列舉.進貨.錯誤;
             try
@@ -114,6 +136,9 @@ namespace WokyTool.進貨
 
             if (物品.編號是否合法() == false)
                 throw new Exception("進貨新增匯入資料:物品不合法:" + 物品識別);
+
+            if (幣值.編號是否合法() == false)
+                throw new Exception("進貨新增匯入資料:幣值不合法:" + 幣值識別);
 
             if (列舉.是否合法((int)類型) == false)
                 throw new Exception("進貨新增匯入資料:類型不合法:" + 類型);

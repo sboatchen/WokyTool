@@ -171,7 +171,7 @@
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(6, 38);
+            this.button15.Location = new System.Drawing.Point(122, 38);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(100, 23);
             this.button15.TabIndex = 14;
@@ -598,11 +598,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(122, 38);
+            this.button1.Location = new System.Drawing.Point(6, 38);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 48;
-            this.button1.Text = "匯入";
+            this.button1.Text = "新增";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 

@@ -14,6 +14,7 @@ using WokyTool.進貨;
 using WokyTool.通用;
 using WokyTool.廠商;
 using WokyTool.物品;
+using WokyTool.幣值;
 
 namespace WokyTool.進貨
 {
@@ -24,6 +25,7 @@ namespace WokyTool.進貨
 
         private int _廠商資料版本 = -1;
         private int _物品資料版本 = -1;
+        private int _幣值資料版本 = -1;
 
         public 進貨新增匯入視窗()
         {
@@ -85,6 +87,12 @@ namespace WokyTool.進貨
             {
                 _物品資料版本 = 物品資料管理器.獨體.唯讀資料版本;
                 this.物品資料BindingSource.DataSource = 物品資料管理器.獨體.唯讀BList;
+            }
+
+            if (_幣值資料版本 != 幣值資料管理器.獨體.唯讀資料版本)
+            {
+                _幣值資料版本 = 幣值資料管理器.獨體.唯讀資料版本;
+                this.幣值資料BindingSource.DataSource = 幣值資料管理器.獨體.唯讀BList;
             }
         }
 

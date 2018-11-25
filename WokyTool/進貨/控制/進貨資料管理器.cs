@@ -12,14 +12,22 @@ using WokyTool.通用;
 
 namespace WokyTool.進貨
 {
-    public class 進貨資料管理器 : 資料管理器<進貨資料>
+    public class 進貨資料管理器 : 資料統合管理器<進貨資料, 進貨新增資料>
     {
         public override string 檔案路徑 
         {
             get 
             {
-                return String.Format("進度/進貨/{0}.json", 系統參數.使用者); 
+                return "進度/進貨.json"; 
             } 
+        }
+
+        public override string 讀取路徑
+        {
+            get
+            {
+                return "進度/進貨";
+            }
         }
 
         public override 進貨資料 空白資料
@@ -50,7 +58,7 @@ namespace WokyTool.進貨
         {
             get
             {
-                return 系統參數.匯入進貨;
+                return 系統參數.處理庫存;
             }
         }
 
@@ -67,6 +75,31 @@ namespace WokyTool.進貨
         // 建構子
         private 進貨資料管理器()
         {
+        }
+
+        protected override 進貨資料 轉化讀取資料(進貨新增資料 新增資料_)
+        {
+            return new 進貨資料
+            {
+                狀態 = 列舉.進貨處理狀態.新增,
+                時間 = 新增資料_.時間,
+
+                類型 = 新增資料_.類型,
+
+                廠商 = 新增資料_.廠商,
+
+                物品 = 新增資料_.物品,
+
+                數量 = 新增資料_.數量,
+                單價 = 新增資料_.單價,
+
+                幣值 = 新增資料_.幣值,
+
+                成本 = 0,
+                成本備註 = 新增資料_.物品.成本備註,
+
+                備註 = 新增資料_.備註,
+            };
         }
     }
 }

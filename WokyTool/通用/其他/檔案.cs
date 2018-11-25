@@ -149,5 +149,18 @@ namespace WokyTool.通用
             else
                 return File.ReadAllText(目標檔案路徑_);
         }
+
+        public static void 刪除(string 目標檔案路徑_)
+        {
+            try
+            {
+                File.Delete(目標檔案路徑_);
+            }
+            catch (IOException e)
+            {
+                訊息管理器.獨體.Warn("刪除檔案失敗: " + 目標檔案路徑_ , e);
+                return;
+            }
+        }
     }
 }

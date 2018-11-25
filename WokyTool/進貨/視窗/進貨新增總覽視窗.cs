@@ -1,10 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,19 +15,18 @@ using WokyTool.廠商;
 
 namespace WokyTool.進貨
 {
-    public partial class 進貨總覽視窗 : 總覽視窗
+    public partial class 進貨新增總覽視窗 : 總覽視窗
     {
         private int _廠商資料版本 = -1;
         private int _物品資料版本 = -1;
         private int _幣值資料版本 = -1;
 
-        public 進貨總覽視窗()
+        public 進貨新增總覽視窗()
         {
             InitializeComponent();
 
-            this.初始化(this.進貨資料BindingSource, 進貨資料管理器.獨體);
+            this.初始化(this.進貨新增資料BindingSource, 進貨新增資料管理器.獨體);
 
-            this.進貨處理狀態BindingSource.DataSource = Enum.GetValues(typeof(列舉.進貨處理狀態));
             this.進貨BindingSource.DataSource = Enum.GetValues(typeof(列舉.進貨));
         }
 
@@ -40,7 +37,7 @@ namespace WokyTool.進貨
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Item_ = new 進貨總覽匯出轉換(進貨資料管理器.獨體.可編輯BList);
+            var Item_ = new 進貨新增總覽匯出轉換(進貨新增資料管理器.獨體.可編輯BList);
 
             string Title_ = String.Format("進貨總覽_{0}", 時間.目前日期);
             檔案.寫入Excel(Title_, Item_);
@@ -48,8 +45,9 @@ namespace WokyTool.進貨
 
         private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            進貨資料管理器.獨體.讀取();
-            this.OnActivated(null);
+            var i = new 進貨新增匯入視窗();
+            i.Show();
+            i.BringToFront();
         }
 
         /********************************/

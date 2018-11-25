@@ -38,6 +38,7 @@
             this.修改設定資料 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.匯入訂單DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.匯入進貨 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.處理庫存 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.匯入月結帳 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.使用者資料BindingSource)).BeginInit();
@@ -55,13 +56,14 @@
             this.修改設定資料,
             this.匯入訂單DataGridViewCheckBoxColumn,
             this.匯入進貨,
+            this.處理庫存,
             this.匯入月結帳});
             this.dataGridView1.DataSource = this.使用者資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(844, 334);
+            this.dataGridView1.Size = new System.Drawing.Size(943, 332);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -113,6 +115,12 @@
             this.匯入進貨.HeaderText = "匯入進貨";
             this.匯入進貨.Name = "匯入進貨";
             // 
+            // 處理庫存
+            // 
+            this.處理庫存.DataPropertyName = "處理庫存";
+            this.處理庫存.HeaderText = "處理庫存";
+            this.處理庫存.Name = "處理庫存";
+            // 
             // 匯入月結帳
             // 
             this.匯入月結帳.DataPropertyName = "匯入月結帳";
@@ -123,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 334);
+            this.ClientSize = new System.Drawing.Size(943, 332);
             this.Controls.Add(this.dataGridView1);
             this.Name = "使用者總覽視窗";
             this.Text = "使用者總覽視窗";
@@ -144,6 +152,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn 修改設定資料;
         private System.Windows.Forms.DataGridViewCheckBoxColumn 匯入訂單DataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn 匯入進貨;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn 處理庫存;
         private System.Windows.Forms.DataGridViewCheckBoxColumn 匯入月結帳;
     }
 }

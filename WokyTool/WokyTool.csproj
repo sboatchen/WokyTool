@@ -565,13 +565,21 @@
     <Compile Include="客製\回單轉換\平台訂單回單轉換_uDesign.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_博客來.cs" />
     <Compile Include="DataExport\工廠出貨匯出結構.cs" />
+    <Compile Include="通用\資料\管理\資料統合管理器.cs" />
     <Compile Include="進貨\控制\進貨新增匯入管理器.cs" />
+    <Compile Include="進貨\控制\進貨新增資料管理器.cs" />
     <Compile Include="進貨\控制\進貨資料管理器.cs" />
     <Compile Include="進貨\視窗\進貨新增匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="進貨\視窗\進貨新增匯入視窗.Designer.cs">
       <DependentUpon>進貨新增匯入視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="進貨\視窗\進貨新增總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="進貨\視窗\進貨新增總覽視窗.Designer.cs">
+      <DependentUpon>進貨新增總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="進貨\視窗\進貨總覽視窗.cs">
       <SubType>Form</SubType>
@@ -580,8 +588,10 @@
       <DependentUpon>進貨總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="進貨\資料\進貨新增匯入資料.cs" />
+    <Compile Include="進貨\資料\進貨新增資料.cs" />
     <Compile Include="進貨\資料\進貨資料.cs" />
     <Compile Include="進貨\轉換\進貨新增錯誤匯出轉換.cs" />
+    <Compile Include="進貨\轉換\進貨新增總覽匯出轉換.cs" />
     <Compile Include="進貨\轉換\進貨總覽匯出轉換.cs" />
     <Compile Include="配送\資料\撿貨資料.cs" />
     <Compile Include="配送\轉換\撿貨匯出轉換.cs" />
@@ -1036,6 +1046,9 @@
     <EmbeddedResource Include="進貨\視窗\進貨新增匯入視窗.resx">
       <DependentUpon>進貨新增匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="進貨\視窗\進貨新增總覽視窗.resx">
+      <DependentUpon>進貨新增總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="進貨\視窗\進貨總覽視窗.resx">
       <DependentUpon>進貨總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1102,9 +1115,11 @@
     <None Include="Properties\DataSources\WokyTool.通用.列舉+訂單處理狀態.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+資料格式.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+進貨.datasource" />
+    <None Include="Properties\DataSources\WokyTool.通用.列舉+進貨處理狀態.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+配送公司.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.欄位匯入設定資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.進貨.進貨新增匯入資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.進貨.進貨新增資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.進貨.進貨資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.配送.可配送資料.datasource" />
     <None Include="Properties\Settings.settings">

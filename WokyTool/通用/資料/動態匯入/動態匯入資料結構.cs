@@ -34,5 +34,25 @@ namespace WokyTool.通用
                 return default(T);
             return (T)Data_;
         }
+
+        public String GetFromDetail(int Index_)
+        {
+            object Data_;
+            詳細.TryGetValue(Index_, out Data_);
+            if (Data_ == null)
+                return null;
+
+            return Data_.ToString();
+        }
+
+        public Decimal GetDecimalFromDetail(int Index_)
+        {
+            object Data_;
+            詳細.TryGetValue(Index_, out Data_);
+            if (Data_ == null)
+                return 0;
+
+            return Convert.ToDecimal(Data_.ToString());
+        }
     }
 }
