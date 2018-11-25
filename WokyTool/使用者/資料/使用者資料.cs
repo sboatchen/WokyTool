@@ -34,9 +34,6 @@ namespace WokyTool.使用者
         public bool 匯入進貨 { get; set; }
 
         [JsonProperty]
-        public bool 處理庫存 { get; set; }
-
-        [JsonProperty]
         public bool 匯入月結帳 { get; set; }
 
         public string 顯示密碼
@@ -67,7 +64,6 @@ namespace WokyTool.使用者
             修改設定資料 = false,
             匯入訂單 = false,
             匯入進貨 = false,
-            處理庫存 = false,
             匯入月結帳 = false,
         };
         public static 使用者資料 NULL
@@ -89,7 +85,6 @@ namespace WokyTool.使用者
             修改設定資料 = false,
             匯入訂單 = false,
             匯入進貨 = false,
-            處理庫存 = false,
             匯入月結帳 = false,
         };
         public static 使用者資料 ERROR
@@ -115,7 +110,6 @@ namespace WokyTool.使用者
                 修改設定資料 = this.修改設定資料,
                 匯入訂單 = this.匯入訂單,
                 匯入進貨 = this.匯入進貨,
-                處理庫存 = this.處理庫存,
                 匯入月結帳 = this.匯入月結帳,
             };
 
@@ -133,7 +127,6 @@ namespace WokyTool.使用者
             修改設定資料 = Data_.修改設定資料;
             匯入訂單 = Data_.匯入訂單;
             匯入進貨 = Data_.匯入進貨;
-            處理庫存 = Data_.處理庫存;
             匯入月結帳 = Data_.匯入月結帳;
         }
 
@@ -149,7 +142,6 @@ namespace WokyTool.使用者
                 修改設定資料 == Data_.修改設定資料 &&
                 匯入訂單 == Data_.匯入訂單 &&
                 匯入進貨 == Data_.匯入進貨 &&
-                處理庫存 == Data_.處理庫存 &&
                 匯入月結帳 == Data_.匯入月結帳;
         }
 

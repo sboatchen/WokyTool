@@ -58,7 +58,7 @@ namespace WokyTool.進貨
         {
             get
             {
-                return 系統參數.處理庫存;
+                return 系統參數.修改設定資料;
             }
         }
 
