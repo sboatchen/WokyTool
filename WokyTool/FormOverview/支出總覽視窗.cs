@@ -21,9 +21,9 @@ namespace WokyTool
         private IEnumerable<支出資料> _A = 雜支管理器.Instance.Map
                                                             .Where(Pair => Pair.Value.編號 > 0)
                                                             .Select(Pair => Pair.Value.ToOutlay());
-        private IEnumerable<支出資料> _B = 進貨管理器.Instance.Map
+        /*private IEnumerable<支出資料> _B = 進貨管理器.Instance.Map
                                                             .Where(Pair => Pair.Value.編號 > 0)
-                                                            .Select(Pair => Pair.Value.ToOutlay());
+                                                            .Select(Pair => Pair.Value.ToOutlay());*/
 
         private List<支出資料> _Source;
         private BindingSource _Binding = new BindingSource();
@@ -42,7 +42,7 @@ namespace WokyTool
         // 初始化目前顯示資料
         private void InitData()
         {
-            _Source = _A.Union(_B).ToList();
+            //_Source = _A.Union(_B).ToList();
 
             _Binding.DataSource = _Source;
             this.dataGridView1.DataSource = _Binding;
@@ -68,9 +68,9 @@ namespace WokyTool
         // 更新目前顯示資料
         private void UpdateData()
         {
-            _Source = _A.Union(_B)
+            /*_Source = _A.Union(_B)
                         .Where(Value => ((Value.建立時間 >= _StartTime) && (Value.建立時間 <= _EndTime)))
-                        .ToList();
+                        .ToList();*/
 
             _Binding.DataSource = _Source;
             this.dataGridView1.DataSource = _Binding;
@@ -131,7 +131,7 @@ namespace WokyTool
             // 從來源清掉
             List<int> IDList_ = _Source.Select(Value => Value.編號).ToList();
             雜支管理器.Instance.Bill(IDList_);
-            進貨管理器.Instance.Bill(IDList_);
+            //進貨管理器.Instance.Bill(IDList_);
         }
     }
 }

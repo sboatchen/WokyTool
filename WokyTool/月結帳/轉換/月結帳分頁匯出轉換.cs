@@ -43,8 +43,9 @@ namespace WokyTool.月結帳
             App_.Cells[1, 5] = "含稅單價";
             App_.Cells[1, 6] = "總金額";
             App_.Cells[1, 7] = "成本";
-            App_.Cells[1, 8] = "利潤";
-            App_.Cells[1, 9] = "總利潤";
+            App_.Cells[1, 8] = "總成本";
+            App_.Cells[1, 9] = "利潤";
+            App_.Cells[1, 10] = "總利潤";
 
             int 目前行數_ = 2;
             foreach (月結帳資料 月結帳資料_ in _資料列)
@@ -56,8 +57,9 @@ namespace WokyTool.月結帳
                 App_.Cells[目前行數_, 5] = 月結帳資料_.含稅單價;
                 App_.Cells[目前行數_, 6] = 月結帳資料_.總金額;
                 App_.Cells[目前行數_, 7] = 月結帳資料_.成本;
-                App_.Cells[目前行數_, 8] = 月結帳資料_.利潤;
-                App_.Cells[目前行數_, 9] = 月結帳資料_.總利潤;
+                App_.Cells[目前行數_, 8] = 月結帳資料_.總成本;
+                App_.Cells[目前行數_, 9] = 月結帳資料_.利潤;
+                App_.Cells[目前行數_, 10] = 月結帳資料_.總利潤;
 
                 目前行數_++;
             }

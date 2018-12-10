@@ -124,6 +124,7 @@ namespace WokyTool.通用
             新增 = 1,
             相同,
             更新,
+            刪除,
         };
 
         public enum 資料格式

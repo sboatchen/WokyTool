@@ -522,9 +522,28 @@ namespace WokyTool
         // test
         private void button27_Click(object sender, EventArgs e)
         {
-            登入視窗 i = new 登入視窗();
-            i.Show();
-            i.BringToFront();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+                return;
+
+            Dictionary<int, 月結帳匯入設定資料> Map;
+            if (File.Exists(openFileDialog.FileName))
+            {
+                string json = 檔案.讀出檔案(openFileDialog.FileName, false);
+                if (String.IsNullOrEmpty(json))
+                    Map = new Dictionary<int, 月結帳匯入設定資料>();
+                else
+                    Map = JsonConvert.DeserializeObject<Dictionary<int, 月結帳匯入設定資料>>(json);
+            }
+            else
+            {
+                Map = new Dictionary<int, 月結帳匯入設定資料>();
+            }
+
+            foreach (var x in Map.Values)
+                x.編號 = 常數.T新建資料編碼;
+
+            月結帳匯入設定資料管理器.獨體.新增(Map.Values);
         }
 
         private void button5_Click_1(object sender, EventArgs e)

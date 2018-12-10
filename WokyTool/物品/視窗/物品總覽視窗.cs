@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -106,6 +107,13 @@ namespace WokyTool.物品
         private void 條碼ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var i = new 物品條碼更新匯入視窗();
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void 重新匯入ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var i = new 物品總覽更新匯入視窗();
             i.Show();
             i.BringToFront();
         }

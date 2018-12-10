@@ -400,6 +400,7 @@ namespace WokyTool.通用
             else
                 下個編號 = Map.Max(Value => Value.Key) + 1;
 
+            Map = Map.Values.OrderBy(Value => Value.編號).ToDictionary(Value => Value.編號);
 
             資料異動();
         }

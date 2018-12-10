@@ -60,6 +60,7 @@
             this.庫存總量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.最後進貨成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.成本備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.重新匯入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.物品大類資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品品牌資料BindingSource)).BeginInit();
@@ -130,7 +131,8 @@
             // 
             this.更新ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.物品ToolStripMenuItem,
-            this.條碼ToolStripMenuItem});
+            this.條碼ToolStripMenuItem,
+            this.重新匯入ToolStripMenuItem});
             this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
             this.更新ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.更新ToolStripMenuItem.Text = "更新";
@@ -138,14 +140,14 @@
             // 物品ToolStripMenuItem
             // 
             this.物品ToolStripMenuItem.Name = "物品ToolStripMenuItem";
-            this.物品ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.物品ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.物品ToolStripMenuItem.Text = "新增";
             this.物品ToolStripMenuItem.Click += new System.EventHandler(this.物品ToolStripMenuItem_Click);
             // 
             // 條碼ToolStripMenuItem
             // 
             this.條碼ToolStripMenuItem.Name = "條碼ToolStripMenuItem";
-            this.條碼ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.條碼ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.條碼ToolStripMenuItem.Text = "條碼";
             this.條碼ToolStripMenuItem.Click += new System.EventHandler(this.條碼ToolStripMenuItem_Click);
             // 
@@ -308,6 +310,13 @@
             this.成本備註DataGridViewTextBoxColumn.HeaderText = "成本備註";
             this.成本備註DataGridViewTextBoxColumn.Name = "成本備註DataGridViewTextBoxColumn";
             // 
+            // 重新匯入ToolStripMenuItem
+            // 
+            this.重新匯入ToolStripMenuItem.Name = "重新匯入ToolStripMenuItem";
+            this.重新匯入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.重新匯入ToolStripMenuItem.Text = "重新匯入";
+            this.重新匯入ToolStripMenuItem.Click += new System.EventHandler(this.重新匯入ToolStripMenuItem_Click);
+            // 
             // 物品總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -363,5 +372,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 庫存總量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 最後進貨成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本備註DataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem 重新匯入ToolStripMenuItem;
     }
 }

@@ -312,6 +312,7 @@
       <DependentUpon>廠商總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="廠商\資料\廠商資料.cs" />
+    <Compile Include="月結帳\控制\月結帳會計匯出管理器.cs" />
     <Compile Include="月結帳\控制\月結帳匯入管理器.cs" />
     <Compile Include="月結帳\控制\月結帳資料管理器.cs" />
     <Compile Include="月結帳\視窗\月結帳匯入視窗.cs">
@@ -331,6 +332,12 @@
     </Compile>
     <Compile Include="月結帳\視窗\月結帳匯入設定詳細視窗.Designer.cs">
       <DependentUpon>月結帳匯入設定詳細視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="月結帳\視窗\月結帳會計匯出視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="月結帳\視窗\月結帳會計匯出視窗.Designer.cs">
+      <DependentUpon>月結帳會計匯出視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="月結帳\視窗\月結帳總覽視窗.cs">
       <SubType>Form</SubType>
@@ -352,13 +359,16 @@
     </Compile>
     <Compile Include="月結帳\資料\月結帳列舉.cs" />
     <Compile Include="月結帳\資料\月結帳匯入資料.cs" />
+    <Compile Include="月結帳\資料\月結帳會計資料.cs" />
     <Compile Include="月結帳\轉換\暫存\月結帳總計暫存資料.cs" />
     <Compile Include="月結帳\資料\月結帳資料.cs" />
     <Compile Include="月結帳\轉換\月結帳新增錯誤匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳分頁匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳匯入轉換.cs" />
+    <Compile Include="月結帳\轉換\月結帳會計匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳總計匯出轉換.cs" />
     <Compile Include="物品\控制\物品新增匯入管理器.cs" />
+    <Compile Include="物品\控制\物品總覽更新匯入管理器.cs" />
     <Compile Include="物品\控制\物品條碼更新匯入管理器.cs" />
     <Compile Include="物品\控制\物品資料管理器.cs" />
     <Compile Include="物品\控制\物品品牌資料管理器.cs" />
@@ -418,6 +428,12 @@
     <Compile Include="物品\視窗\物品小類總覽視窗.Designer.cs">
       <DependentUpon>物品小類總覽視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="物品\視窗\物品總覽更新匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="物品\視窗\物品總覽更新匯入視窗.Designer.cs">
+      <DependentUpon>物品總覽更新匯入視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="物品\視窗\物品條碼更新匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -448,6 +464,7 @@
     <Compile Include="物品\視窗\物品詳細視窗.Designer.cs">
       <DependentUpon>物品詳細視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="物品\資料\物品總覽更新匯入資料.cs" />
     <Compile Include="物品\資料\物品條碼更新匯入資料.cs" />
     <Compile Include="物品\資料\物品組成資料.cs" />
     <Compile Include="物品\資料\物品新增匯入資料.cs" />
@@ -980,6 +997,9 @@
     <EmbeddedResource Include="月結帳\視窗\月結帳匯入設定詳細視窗.resx">
       <DependentUpon>月結帳匯入設定詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="月結帳\視窗\月結帳會計匯出視窗.resx">
+      <DependentUpon>月結帳會計匯出視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="月結帳\視窗\月結帳總覽視窗.resx">
       <DependentUpon>月結帳總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -997,6 +1017,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品大類總覽視窗.resx">
       <DependentUpon>物品大類總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="物品\視窗\物品總覽更新匯入視窗.resx">
+      <DependentUpon>物品總覽更新匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品條碼更新匯入視窗.resx">
       <DependentUpon>物品條碼更新匯入視窗.cs</DependentUpon>
@@ -1098,12 +1121,14 @@
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳列舉+匯入需求欄位.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳匯入設定資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳匯入資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.月結帳.月結帳會計資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品品牌資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品大類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品小類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品新增匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品條碼更新匯入資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.物品.物品總覽更新匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.發票.發票匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.聯絡人.聯絡人資料.datasource" />

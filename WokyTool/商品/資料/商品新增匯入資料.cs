@@ -296,8 +296,8 @@ namespace WokyTool.商品
             if (需求5.編號是否合法() == false)
                 throw new Exception("需求編號5不合法");
 
-            if (String.IsNullOrEmpty(品號))
-                throw new Exception("品號不合法");
+            //if (String.IsNullOrEmpty(品號))
+            //    throw new Exception("品號不合法");
 
             if (String.IsNullOrEmpty(名稱))
                 throw new Exception("名稱不合法");
