@@ -26,7 +26,7 @@ namespace WokyTool.通用
             string 原始檔案副檔名_ = Path.GetExtension(原始檔案路徑_);
 
             //@@ 加入使用者名稱
-            string 備份檔案_ = String.Format("{0}_{1}{2}", 原始檔案名稱_, 時間.目前時間, 原始檔案副檔名_);
+            string 備份檔案_ = String.Format("{0}_{1}{2}", 時間.目前時間, 原始檔案名稱_, 原始檔案副檔名_);
             string 備份路徑_ = System.IO.Path.Combine("備份", 時間.目前日期, 原始路徑_);
             string 備份檔案路徑_ = System.IO.Path.Combine(備份路徑_, 備份檔案_);
 
@@ -59,7 +59,7 @@ namespace WokyTool.通用
             string 原始檔案副檔名_ = Path.GetExtension(原始檔案路徑_);
 
             //@@ 加入使用者名稱
-            string 備份檔案_ = String.Format("{0}_{1}{2}", Path.GetFileNameWithoutExtension(備份檔名_), 時間.目前時間, 原始檔案副檔名_);
+            string 備份檔案_ = String.Format("{0}_{1}{2}", 時間.目前時間, Path.GetFileNameWithoutExtension(備份檔名_), 原始檔案副檔名_);
             string 備份路徑_ = System.IO.Path.Combine("備份", 時間.目前日期, "匯入", 備份資料夾名_);
             string 備份檔案路徑_ = System.IO.Path.Combine(備份路徑_, 備份檔案_);
 

@@ -45,8 +45,8 @@ namespace WokyTool.月結帳
 
             目前資料_.商品 = (商品資料)(this.商品選取元件1.SelectedItem);
 
-            目前資料_.公司 = (公司資料)(this.公司選取元件1.SelectedItem);
-            目前資料_.客戶 = (客戶資料)(this.客戶選取元件1.SelectedItem);
+            //目前資料_.公司 = (公司資料)(this.公司選取元件1.SelectedItem);
+            //目前資料_.客戶 = (客戶資料)(this.客戶選取元件1.SelectedItem);
 
             目前資料_.數量 = (int)(this.數量.Value);
             目前資料_.單價 = (decimal)(this.單價.Value);
@@ -61,8 +61,8 @@ namespace WokyTool.月結帳
             this.商品選取元件1.SelectedItem = 目前資料_.商品;
             this.商品識別.Text = 目前資料_.商品識別;
 
-            this.公司選取元件1.SelectedItem = 目前資料_.公司;
-            this.客戶選取元件1.SelectedItem = 目前資料_.客戶;
+            this.公司選取元件1.SelectedItem = 目前資料_.設定.公司;
+            this.客戶選取元件1.SelectedItem = 目前資料_.設定.客戶;
 
             this.數量.Value = 目前資料_.數量;
             this.單價.Value = 目前資料_.單價;

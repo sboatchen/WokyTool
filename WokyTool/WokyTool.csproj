@@ -81,6 +81,12 @@
     <Compile Include="使用者\視窗\使用者總覽視窗.Designer.cs">
       <DependentUpon>使用者總覽視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="使用者\視窗\元件\使用者選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="使用者\視窗\元件\使用者選取元件.Designer.cs">
+      <DependentUpon>使用者選取元件.cs</DependentUpon>
+    </Compile>
     <Compile Include="使用者\視窗\密碼修改視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,9 +318,10 @@
       <DependentUpon>廠商總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="廠商\資料\廠商資料.cs" />
-    <Compile Include="月結帳\控制\月結帳會計匯出管理器.cs" />
+    <Compile Include="月結帳\控制\月結帳會計資料管理器.cs" />
     <Compile Include="月結帳\控制\月結帳匯入管理器.cs" />
     <Compile Include="月結帳\控制\月結帳資料管理器.cs" />
+    <Compile Include="月結帳\暫時\月結帳舊資料.cs" />
     <Compile Include="月結帳\視窗\月結帳匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,11 +340,11 @@
     <Compile Include="月結帳\視窗\月結帳匯入設定詳細視窗.Designer.cs">
       <DependentUpon>月結帳匯入設定詳細視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="月結帳\視窗\月結帳會計匯出視窗.cs">
+    <Compile Include="月結帳\視窗\月結帳會計總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="月結帳\視窗\月結帳會計匯出視窗.Designer.cs">
-      <DependentUpon>月結帳會計匯出視窗.cs</DependentUpon>
+    <Compile Include="月結帳\視窗\月結帳會計總覽視窗.Designer.cs">
+      <DependentUpon>月結帳會計總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="月結帳\視窗\月結帳總覽視窗.cs">
       <SubType>Form</SubType>
@@ -360,6 +367,7 @@
     <Compile Include="月結帳\資料\月結帳列舉.cs" />
     <Compile Include="月結帳\資料\月結帳匯入資料.cs" />
     <Compile Include="月結帳\資料\月結帳會計資料.cs" />
+    <Compile Include="月結帳\資料\月結帳支出資料.cs" />
     <Compile Include="月結帳\轉換\暫存\月結帳總計暫存資料.cs" />
     <Compile Include="月結帳\資料\月結帳資料.cs" />
     <Compile Include="月結帳\轉換\月結帳新增錯誤匯出轉換.cs" />
@@ -871,6 +879,9 @@
     <EmbeddedResource Include="使用者\視窗\使用者總覽視窗.resx">
       <DependentUpon>使用者總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="使用者\視窗\元件\使用者選取元件.resx">
+      <DependentUpon>使用者選取元件.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="使用者\視窗\密碼修改視窗.resx">
       <DependentUpon>密碼修改視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -997,8 +1008,8 @@
     <EmbeddedResource Include="月結帳\視窗\月結帳匯入設定詳細視窗.resx">
       <DependentUpon>月結帳匯入設定詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="月結帳\視窗\月結帳會計匯出視窗.resx">
-      <DependentUpon>月結帳會計匯出視窗.cs</DependentUpon>
+    <EmbeddedResource Include="月結帳\視窗\月結帳會計總覽視窗.resx">
+      <DependentUpon>月結帳會計總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="月結帳\視窗\月結帳總覽視窗.resx">
       <DependentUpon>月結帳總覽視窗.cs</DependentUpon>

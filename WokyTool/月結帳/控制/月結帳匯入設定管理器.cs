@@ -67,5 +67,10 @@ namespace WokyTool.月結帳
         private 月結帳匯入設定資料管理器()
         {
         }
+
+        public 月結帳匯入設定資料 Get(int 公司編號, int 客戶編號)
+        {
+            return Map.Values.Where(Value => Value.公司.編號 == 公司編號 && Value.客戶.編號 == 客戶編號).First();
+        }
     }
 }

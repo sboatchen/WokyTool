@@ -17,39 +17,21 @@ namespace WokyTool.月結帳
     {
         public string 訂單編號 { get; set; }
 
-        protected 公司資料 _公司;
-        public 公司資料 公司
+        protected 月結帳匯入設定資料 _設定;
+        public 月結帳匯入設定資料 設定
         {
             get
             {
-                if (_公司 == null)
-                    _公司 = 公司資料.NULL;
-                else if (公司資料管理器.獨體.唯讀BList.Contains(_公司) == false)
-                    _公司 = 公司資料.ERROR;
+                if (_設定 == null)
+                    _設定 = 月結帳匯入設定資料.NULL;
+                else if (月結帳匯入設定資料管理器.獨體.唯讀BList.Contains(_設定) == false)
+                    _設定 = 月結帳匯入設定資料.ERROR;
 
-                return _公司;
+                return _設定;
             }
             set
             {
-                _公司 = value;
-            }
-        }
-
-        protected 客戶資料 _客戶;
-        public 客戶資料 客戶
-        {
-            get
-            {
-                if (_客戶 == null)
-                    _客戶 = 客戶資料.NULL;
-                else if (客戶資料管理器.獨體.唯讀BList.Contains(_客戶) == false)
-                    _客戶 = 客戶資料.ERROR;
-
-                return _客戶;
-            }
-            set
-            {
-                _客戶 = value;
+                _設定 = value;
             }
         }
 
@@ -97,8 +79,7 @@ namespace WokyTool.月結帳
 
         private static readonly 月結帳匯入資料 _NULL = new 月結帳匯入資料
         {
-            公司 = 公司資料.NULL,
-            客戶 = 客戶資料.NULL,
+            設定 = 月結帳匯入設定資料.NULL,
 
             商品識別 = 字串.無,
             商品 = 商品資料.NULL,
@@ -117,8 +98,7 @@ namespace WokyTool.月結帳
 
         private static 月結帳匯入資料 _ERROR = new 月結帳匯入資料
         {
-            公司 = 公司資料.ERROR,
-            客戶 = 客戶資料.ERROR,
+            設定 = 月結帳匯入設定資料.ERROR,
 
             商品識別 = 字串.錯誤,
             商品 = 商品資料.ERROR,
@@ -139,20 +119,17 @@ namespace WokyTool.月結帳
 
         public override void 檢查合法()
         {
-            if (公司.編號是否合法() == false)
-                throw new Exception("月結帳匯入資料:公司不合法");
-
-            if (客戶.編號是否合法() == false)
-                throw new Exception("月結帳匯入資料:客戶不合法");
+            if (設定.編號是否合法() == false)
+                throw new Exception("月結帳匯入資料:設定不合法");
 
             if (商品.編號是否合法() == false)
                 throw new Exception("月結帳匯入資料:商品不合法");
 
-            if (商品.公司 != 公司)
-                throw new Exception("月結帳匯入資料:公司不一致:" + 商品.公司.名稱 + "," + 公司.名稱);
+            if (商品.公司 != 設定.公司)
+                throw new Exception("月結帳匯入資料:公司不一致:" + 商品.公司.名稱 + "," + 設定.公司.名稱);
 
-            if (商品.客戶 != 客戶)
-                throw new Exception("月結帳匯入資料:客戶不一致:" + 商品.客戶.名稱 + "," + 客戶.名稱);
+            if (商品.客戶 != 設定.客戶)
+                throw new Exception("月結帳匯入資料:客戶不一致:" + 商品.客戶.名稱 + "," + 設定.客戶.名稱);
         }
     }
 }

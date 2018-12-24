@@ -21,64 +21,49 @@ namespace WokyTool.月結帳
         public string 訂單編號 { get; set; }
 
         [JsonProperty]
-        public int 公司編號
+        public int 設定編號
         {
             get
             {
-                return 公司.編號;
+                return 設定.編號;
             }
             set
             {
-                _公司 = 公司資料管理器.獨體.Get(value);
+                _設定 = 月結帳匯入設定資料管理器.獨體.Get(value);
             }
         }
 
-        protected 公司資料 _公司;
+        protected 月結帳匯入設定資料 _設定;
+        public 月結帳匯入設定資料 設定
+        {
+            get
+            {
+                if (_設定 == null)
+                    _設定 = 月結帳匯入設定資料.NULL;
+                else if (月結帳匯入設定資料管理器.獨體.唯讀BList.Contains(_設定) == false)
+                    _設定 = 月結帳匯入設定資料.ERROR;
+
+                return _設定;
+            }
+            set
+            {
+                _設定 = value;
+            }
+        }
+
         public 公司資料 公司
         {
-            get
+            get 
             {
-                if (_公司 == null)
-                    _公司 = 公司資料.NULL;
-                else if (公司資料管理器.獨體.唯讀BList.Contains(_公司) == false)
-                    _公司 = 公司資料.ERROR;
-
-                return _公司;
-            }
-            set
-            {
-                _公司 = value;
+                return 設定.公司;
             }
         }
 
-        [JsonProperty]
-        public int 客戶編號
-        {
-            get
-            {
-                return 客戶.編號;
-            }
-            set
-            {
-                _客戶 = 客戶資料管理器.獨體.Get(value);
-            }
-        }
-
-        protected 客戶資料 _客戶;
         public 客戶資料 客戶
         {
             get
             {
-                if (_客戶 == null)
-                    _客戶 = 客戶資料.NULL;
-                else if (客戶資料管理器.獨體.唯讀BList.Contains(_客戶) == false)
-                    _客戶 = 客戶資料.ERROR;
-
-                return _客戶;
-            }
-            set
-            {
-                _客戶 = value;
+                return 設定.客戶;
             }
         }
 
@@ -168,8 +153,7 @@ namespace WokyTool.月結帳
         {
             編號 = 常數.T空白資料編碼,
 
-            公司 = 公司資料.NULL,
-            客戶 = 客戶資料.NULL,
+            設定 = 月結帳匯入設定資料.NULL,
 
             商品 = 商品資料.NULL,
 
@@ -189,8 +173,7 @@ namespace WokyTool.月結帳
         {
             編號 = 常數.T錯誤資料編碼,
 
-            公司 = 公司資料.ERROR,
-            客戶 = 客戶資料.ERROR,
+            設定 = 月結帳匯入設定資料.ERROR,
 
             商品 = 商品資料.ERROR,
 
@@ -214,8 +197,7 @@ namespace WokyTool.月結帳
             {
                 編號 = this.編號,
 
-                公司 = this.公司,
-                客戶 = this.客戶,
+                設定 = this.設定,
 
                 商品 = this.商品,
 
@@ -231,8 +213,7 @@ namespace WokyTool.月結帳
         {
             編號 = Data_.編號;
 
-            公司 = Data_.公司;
-            客戶 = Data_.客戶;
+            設定 = Data_.設定;
 
             商品 = Data_.商品;
 
@@ -258,11 +239,8 @@ namespace WokyTool.月結帳
 
         public override void 檢查合法()
         {
-            if (公司.編號是否合法() == false)
-                throw new Exception("月結帳資料:公司編號不合法:" + 公司編號);
-
-            if (客戶.編號是否合法() == false)
-                throw new Exception("月結帳資料:客戶編號不合法:" + 客戶編號);
+            if (設定.編號是否合法() == false)
+                throw new Exception("月結帳資料:設定編號不合法:" + 設定編號);
 
             if (商品.編號是否合法() == false)
                 throw new Exception("月結帳資料:商品不合法:" + 商品編號);

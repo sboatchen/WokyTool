@@ -59,6 +59,8 @@ namespace WokyTool.月結帳
             this.label1 = new System.Windows.Forms.Label();
             this.公司選取元件1 = new WokyTool.公司.公司選取元件();
             this.客戶選取元件1 = new WokyTool.客戶.客戶選取元件();
+            this.label2 = new System.Windows.Forms.Label();
+            this.使用者選取元件1 = new WokyTool.使用者.使用者選取元件();
             ((System.ComponentModel.ISupportInitialize)(this.開始位置)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.結束位置)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.標頭位置)).BeginInit();
@@ -121,7 +123,7 @@ namespace WokyTool.月結帳
             // 
             // 頁索引元件1
             // 
-            this.頁索引元件1.Location = new System.Drawing.Point(159, 457);
+            this.頁索引元件1.Location = new System.Drawing.Point(159, 478);
             this.頁索引元件1.Name = "頁索引元件1";
             this.頁索引元件1.Size = new System.Drawing.Size(234, 34);
             this.頁索引元件1.TabIndex = 72;
@@ -209,7 +211,7 @@ namespace WokyTool.月結帳
             // 
             // 檔案格式類型BindingSource
             // 
-            this.檔案格式類型BindingSource.DataSource = typeof(列舉.檔案格式);
+            this.檔案格式類型BindingSource.DataSource = typeof(WokyTool.通用.列舉.檔案格式);
             // 
             // 商品識別
             // 
@@ -222,7 +224,7 @@ namespace WokyTool.月結帳
             // 
             // 商品識別類型BindingSource
             // 
-            this.商品識別類型BindingSource.DataSource = typeof(列舉.商品識別);
+            this.商品識別類型BindingSource.DataSource = typeof(WokyTool.通用.列舉.商品識別);
             // 
             // dataGridView1
             // 
@@ -234,7 +236,7 @@ namespace WokyTool.月結帳
             this.格式DataGridViewTextBoxColumn,
             this.名稱DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.欄位匯入設定資料BindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 234);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 255);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(539, 217);
@@ -266,7 +268,7 @@ namespace WokyTool.月結帳
             // 
             // 資料格式類型BindingSource
             // 
-            this.資料格式類型BindingSource.DataSource = typeof(列舉.資料格式);
+            this.資料格式類型BindingSource.DataSource = typeof(WokyTool.通用.列舉.資料格式);
             // 
             // 名稱DataGridViewTextBoxColumn
             // 
@@ -283,7 +285,7 @@ namespace WokyTool.月結帳
             // 
             this.欄位參考.DataSource = this.匯入需求欄位BindingSource;
             this.欄位參考.FormattingEnabled = true;
-            this.欄位參考.Location = new System.Drawing.Point(380, 208);
+            this.欄位參考.Location = new System.Drawing.Point(380, 229);
             this.欄位參考.Name = "欄位參考";
             this.欄位參考.Size = new System.Drawing.Size(167, 20);
             this.欄位參考.TabIndex = 94;
@@ -295,7 +297,7 @@ namespace WokyTool.月結帳
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(299, 211);
+            this.label1.Location = new System.Drawing.Point(299, 232);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 95;
@@ -305,6 +307,7 @@ namespace WokyTool.月結帳
             // 
             this.公司選取元件1.Location = new System.Drawing.Point(106, 138);
             this.公司選取元件1.Name = "公司選取元件1";
+            this.公司選取元件1.ReadOnly = false;
             this.公司選取元件1.SelectedItem = null;
             this.公司選取元件1.Size = new System.Drawing.Size(175, 25);
             this.公司選取元件1.TabIndex = 96;
@@ -313,15 +316,36 @@ namespace WokyTool.月結帳
             // 
             this.客戶選取元件1.Location = new System.Drawing.Point(106, 166);
             this.客戶選取元件1.Name = "客戶選取元件1";
+            this.客戶選取元件1.ReadOnly = false;
             this.客戶選取元件1.SelectedItem = null;
             this.客戶選取元件1.Size = new System.Drawing.Size(186, 25);
             this.客戶選取元件1.TabIndex = 97;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 198);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.TabIndex = 98;
+            this.label2.Text = "業務";
+            // 
+            // 使用者選取元件1
+            // 
+            this.使用者選取元件1.Location = new System.Drawing.Point(106, 198);
+            this.使用者選取元件1.Name = "使用者選取元件1";
+            this.使用者選取元件1.ReadOnly = false;
+            this.使用者選取元件1.SelectedItem = null;
+            this.使用者選取元件1.Size = new System.Drawing.Size(173, 24);
+            this.使用者選取元件1.TabIndex = 99;
             // 
             // 月結帳匯入設定詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 497);
+            this.ClientSize = new System.Drawing.Size(560, 514);
+            this.Controls.Add(this.使用者選取元件1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.客戶選取元件1);
             this.Controls.Add(this.公司選取元件1);
             this.Controls.Add(this.label1);
@@ -389,5 +413,7 @@ namespace WokyTool.月結帳
         private System.Windows.Forms.DataGridViewCheckBoxColumn 可合併儲存格DataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 格式DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label2;
+        private 使用者.使用者選取元件 使用者選取元件1;
     }
 }

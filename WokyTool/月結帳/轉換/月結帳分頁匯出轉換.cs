@@ -4,34 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
+using WokyTool.通用;
 
 namespace WokyTool.月結帳
 {
     public class 月結帳分頁匯出轉換 : 可序列化_Excel
     {
-        protected IEnumerable<月結帳資料> _資料列;
+        protected 月結帳會計資料 _資料;
 
-        public String 標頭 { get; private set; }
-
-        public 月結帳分頁匯出轉換(String 標頭_, IEnumerable<月結帳資料> 資料列_)
-        {
-            標頭 = 標頭_;
-            _資料列 = 資料列_;
+        public String 標頭 
+        { 
+            get
+            {
+                return _資料.設定.名稱;
+            }
         }
 
-        public decimal 總營業額()
+        public 月結帳分頁匯出轉換(月結帳會計資料 資料_)
         {
-            return _資料列.Sum(Value => Value.總金額);
-        }
-
-        public decimal 總成本()
-        {
-            return _資料列.Sum(Value => Value.總成本);
-        }
-
-        public decimal 總利潤()
-        {
-            return _資料列.Sum(Value => Value.總利潤);
+            _資料 = 資料_;
         }
 
         public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
@@ -47,8 +38,14 @@ namespace WokyTool.月結帳
             App_.Cells[1, 9] = "利潤";
             App_.Cells[1, 10] = "總利潤";
 
+            if (_資料.資料列 == null || _資料.資料列.Count() == 0)
+            {
+                訊息管理器.獨體.Warn(標頭 + " 資料為空");
+                return;
+            }
+
             int 目前行數_ = 2;
-            foreach (月結帳資料 月結帳資料_ in _資料列)
+            foreach (月結帳資料 月結帳資料_ in _資料.資料列)
             {
                 App_.Cells[目前行數_, 1] = 月結帳資料_.訂單編號;
                 App_.Cells[目前行數_, 2] = 月結帳資料_.商品.名稱;

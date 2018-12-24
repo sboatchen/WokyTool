@@ -55,6 +55,8 @@ namespace WokyTool.商品{
 
             _商品資料篩選設定.物品 = (物品資料)(this.物品選取元件1.SelectedItem);
 
+            Console.WriteLine("無意義，單純為了避免combobox咬死");
+
             if (_商品資料篩選設定.是否需篩選() == true)
                 商品資料管理器.獨體.篩選介面 = _商品資料篩選設定;
             else

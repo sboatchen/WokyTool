@@ -589,5 +589,53 @@ namespace WokyTool
             i.Show();
             i.BringToFront();
         }
+
+        private void button41_Click_1(object sender, EventArgs e)
+        {
+            訊息管理器.獨體.Info("月結帳資料轉換");
+            月結帳資料管理器.獨體.Map.Clear();
+
+            Dictionary<int, 月結帳舊資料> Map = null;
+
+            if (File.Exists("進度/月結帳.json"))
+            {
+                string json = 檔案.讀出檔案("進度/月結帳.json", false);
+                if (String.IsNullOrEmpty(json))
+                    Map = new Dictionary<int, 月結帳舊資料>();
+                else
+                    Map = JsonConvert.DeserializeObject<Dictionary<int, 月結帳舊資料>>(json);
+            }
+            else
+            {
+                Map = new Dictionary<int, 月結帳舊資料>();
+            }
+
+            foreach (var Item_ in Map.Values)
+            {
+                if (Item_.編號 <= 0)
+                    continue;
+
+                月結帳匯入設定資料 設定_ = 月結帳匯入設定資料管理器.獨體.Get(Item_.公司.編號, Item_.客戶.編號);
+
+                月結帳資料 New_ = new 月結帳資料
+                {
+                    編號 = Item_.編號,
+                    訂單編號 = Item_.訂單編號,
+                    設定 = 設定_,
+                    商品 = Item_.商品,
+                    數量 = Item_.數量,
+                    單價 = Item_.單價,
+                    含稅單價 = Item_.含稅單價,
+                };
+
+                月結帳資料管理器.獨體.Map.Add(New_.編號, New_);
+            }
+            月結帳資料管理器.獨體.資料搬移();
+        }
+
+        private void button42_Click(object sender, EventArgs e)
+        {
+            資料儲存管理器.獨體.儲存();
+        }
     }
 }

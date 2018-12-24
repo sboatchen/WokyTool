@@ -49,7 +49,7 @@ namespace WokyTool.月結帳
             int 目前行數_ = 2;
             foreach (月結帳會計資料 月結帳會計資料_ in _資料列)
             {
-                App_.Cells[目前行數_, 1] = 月結帳會計資料_.客戶;
+                App_.Cells[目前行數_, 1] = 月結帳會計資料_.設定.名稱;
                 App_.Cells[目前行數_, 2] = Convert.ToInt32(月結帳會計資料_.營業額);
                 App_.Cells[目前行數_, 3] = Convert.ToInt32(月結帳會計資料_.佣金);
                 App_.Cells[目前行數_, 4] = Convert.ToInt32(月結帳會計資料_.作帳應收);
@@ -61,7 +61,7 @@ namespace WokyTool.月結帳
                 App_.Cells[目前行數_, 10] = Convert.ToInt32(月結帳會計資料_.利潤);
                 App_.Cells[目前行數_, 11] = Convert.ToInt32(月結帳會計資料_.進貨成本);
                 App_.Cells[目前行數_, 12] = 月結帳會計資料_.毛利率;
-                App_.Cells[目前行數_, 13] = 月結帳會計資料_.業務;
+                App_.Cells[目前行數_, 13] = 月結帳會計資料_.設定.業務.名稱;
 
                 目前行數_++;
             }

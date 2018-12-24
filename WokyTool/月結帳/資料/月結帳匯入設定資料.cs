@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.公司;
+using WokyTool.使用者;
 using WokyTool.客戶;
 using WokyTool.通用;
 
@@ -78,6 +79,37 @@ namespace WokyTool.月結帳
         }
 
         [JsonProperty]
+        public int 業務編號
+        {
+            get
+            {
+                return 業務.編號;
+            }
+            set
+            {
+                _業務 = 使用者資料管理器.獨體.Get(value);
+            }
+        }
+
+        protected 使用者資料 _業務;
+        public 使用者資料 業務
+        {
+            get
+            {
+                if (_業務 == null)
+                    _業務 = 使用者資料.NULL;
+                else if (使用者資料管理器.獨體.唯讀BList.Contains(_業務) == false)
+                    _業務 = 使用者資料.ERROR;
+
+                return _業務;
+            }
+            set
+            {
+                _業務 = value;
+            }
+        }
+
+        [JsonProperty]
         public 列舉.商品識別 商品識別 { get; set; }
 
         /********************************/
@@ -97,6 +129,7 @@ namespace WokyTool.月結帳
             標頭位置 = 0,
             公司 = 公司資料.NULL,
             客戶 = 客戶資料.NULL,
+            業務 = 使用者資料.NULL,
             商品識別 = 列舉.商品識別.無,
         };
         public static 月結帳匯入設定資料 NULL
@@ -117,6 +150,7 @@ namespace WokyTool.月結帳
             標頭位置 = 0,
             公司 = 公司資料.ERROR,
             客戶 = 客戶資料.ERROR,
+            業務 = 使用者資料.ERROR,
             商品識別 = 列舉.商品識別.錯誤,
         };
         public static 月結帳匯入設定資料 ERROR
@@ -141,6 +175,7 @@ namespace WokyTool.月結帳
                 標頭位置 = this.標頭位置,
                 公司 = this.公司,
                 客戶 = this.客戶,
+                業務 = this.業務,
                 商品識別 = this.商品識別,
             };
 
@@ -162,6 +197,7 @@ namespace WokyTool.月結帳
             標頭位置 = Data_.標頭位置;
             公司 = Data_.公司;
             客戶 = Data_.客戶;
+            業務 = Data_.業務;
             商品識別 = Data_.商品識別;
 
             資料List.Clear();
@@ -182,6 +218,7 @@ namespace WokyTool.月結帳
                 標頭位置 == Data_.標頭位置 &&
                 公司 == Data_.公司 &&
                 客戶 == Data_.客戶 &&
+                業務 == Data_.業務 &&
                 商品識別 == Data_.商品識別;
 
             if (Flag_ == false)

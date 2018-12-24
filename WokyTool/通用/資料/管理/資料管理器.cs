@@ -344,6 +344,32 @@ namespace WokyTool.通用
             是否編輯中減少資料 = false;
         }
 
+        public void 新增(T Item_)
+        {
+            可編輯BList.RaiseListChangedEvents = false;
+            唯讀BList.RaiseListChangedEvents = false;
+
+            Item_.完成編輯();
+
+            if (Item_.編號 == 常數.T新建資料編碼)
+            {
+                Item_.檢查合法();
+                Item_.編號 = 下個編號++;
+            }
+
+            Map[Item_.編號] = Item_;
+
+            if (篩選介面 == null || 篩選介面.篩選(Item_))
+                可編輯BList.Add(Item_);
+
+            唯讀BList.Add(Item_);
+
+            可編輯BList.RaiseListChangedEvents = true;
+            唯讀BList.RaiseListChangedEvents = true;
+
+            資料異動();
+        }
+
         public void 新增(IEnumerable<T> Enumerator_)
         {
             可編輯BList.RaiseListChangedEvents = false;

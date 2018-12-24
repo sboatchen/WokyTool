@@ -46,6 +46,18 @@ namespace WokyTool.通用
             rw = range.Rows.Count;
             cl = range.Columns.Count;
 
+            if(rw >= 5000)
+            {
+                訊息管理器.獨體.Error("偵測到檔案行數超過5000行，請確認");
+                return;
+            }
+
+            if (cl >= 200)
+            {
+                訊息管理器.獨體.Error("偵測到檔案列數超過200列，請確認");
+                return;
+            }
+
             // 計算內容範圍
             int StartRow_ = 設定.開始位置;
             int EndRow_ = rw - 設定.結束位置;

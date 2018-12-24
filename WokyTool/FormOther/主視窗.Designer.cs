@@ -79,8 +79,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.button41 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.button34 = new System.Windows.Forms.Button();
+            this.button42 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -618,6 +620,7 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.button41);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.button35);
             this.panel6.Controls.Add(this.button11);
@@ -626,6 +629,16 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(482, 71);
             this.panel6.TabIndex = 52;
+            // 
+            // button41
+            // 
+            this.button41.Location = new System.Drawing.Point(356, 36);
+            this.button41.Name = "button41";
+            this.button41.Size = new System.Drawing.Size(100, 23);
+            this.button41.TabIndex = 43;
+            this.button41.Text = "舊資料轉換";
+            this.button41.UseVisualStyleBackColor = true;
+            this.button41.Click += new System.EventHandler(this.button41_Click_1);
             // 
             // label4
             // 
@@ -646,11 +659,22 @@
             this.button34.UseVisualStyleBackColor = true;
             this.button34.Click += new System.EventHandler(this.button34_Click);
             // 
+            // button42
+            // 
+            this.button42.Location = new System.Drawing.Point(18, 598);
+            this.button42.Name = "button42";
+            this.button42.Size = new System.Drawing.Size(100, 23);
+            this.button42.TabIndex = 53;
+            this.button42.Text = "存檔";
+            this.button42.UseVisualStyleBackColor = true;
+            this.button42.Click += new System.EventHandler(this.button42_Click);
+            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 604);
+            this.ClientSize = new System.Drawing.Size(506, 651);
+            this.Controls.Add(this.button42);
             this.Controls.Add(this.button34);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -659,7 +683,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "主視窗";
-            this.Text = "V 2.0.7";
+            this.Text = "V 2.0.10";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.主視窗_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -732,6 +756,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button34;
+        private System.Windows.Forms.Button button41;
+        private System.Windows.Forms.Button button42;
 
 
     }

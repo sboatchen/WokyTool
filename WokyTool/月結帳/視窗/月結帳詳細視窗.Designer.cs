@@ -133,7 +133,7 @@
             // 
             this.公司選取元件1.Location = new System.Drawing.Point(64, 91);
             this.公司選取元件1.Name = "公司選取元件1";
-            this.公司選取元件1.ReadOnly = false;
+            this.公司選取元件1.ReadOnly = true;
             this.公司選取元件1.SelectedItem = null;
             this.公司選取元件1.Size = new System.Drawing.Size(172, 25);
             this.公司選取元件1.TabIndex = 89;
@@ -142,7 +142,7 @@
             // 
             this.客戶選取元件1.Location = new System.Drawing.Point(64, 116);
             this.客戶選取元件1.Name = "客戶選取元件1";
-            this.客戶選取元件1.ReadOnly = false;
+            this.客戶選取元件1.ReadOnly = true;
             this.客戶選取元件1.SelectedItem = null;
             this.客戶選取元件1.Size = new System.Drawing.Size(190, 25);
             this.客戶選取元件1.TabIndex = 90;

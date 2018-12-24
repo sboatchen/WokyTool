@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.公司;
+using WokyTool.使用者;
 using WokyTool.客戶;
 using WokyTool.通用;
 
@@ -80,6 +81,7 @@ namespace WokyTool.月結帳
 
             目前資料_.公司 = (公司資料)(this.公司選取元件1.SelectedItem);
             目前資料_.客戶 = (客戶資料)(this.客戶選取元件1.SelectedItem);
+            目前資料_.業務 = (使用者資料)(this.使用者選取元件1.SelectedItem);
 
             目前資料_.格式 = (列舉.檔案格式)(this.格式.SelectedItem);
             目前資料_.商品識別 = (列舉.商品識別)(this.商品識別.SelectedItem);
@@ -103,6 +105,7 @@ namespace WokyTool.月結帳
 
             this.公司選取元件1.SelectedItem = 目前資料_.公司;
             this.客戶選取元件1.SelectedItem = 目前資料_.客戶;
+            this.使用者選取元件1.SelectedItem = 目前資料_.業務;
 
             this.格式.SelectedItem = 目前資料_.格式;
             this.商品識別.SelectedItem = 目前資料_.商品識別;

@@ -56,9 +56,6 @@ namespace WokyTool.月結帳
 
             目前資料_.商品 = (商品資料)(this.商品選取元件1.SelectedItem);
 
-            目前資料_.公司 = (公司資料)(this.公司選取元件1.SelectedItem);
-            目前資料_.客戶 = (客戶資料)(this.客戶選取元件1.SelectedItem);
-
             目前資料_.數量 = (int)(this.數量.Value);
             目前資料_.單價 = this.單價.Value;
             目前資料_.含稅單價 = this.含稅單價.Value;

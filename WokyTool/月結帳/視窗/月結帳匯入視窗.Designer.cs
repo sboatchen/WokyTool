@@ -157,13 +157,13 @@
             this.匯入ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.格式});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
-            this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "匯入";
             // 
             // 格式
             // 
             this.格式.Name = "格式";
-            this.格式.Size = new System.Drawing.Size(121, 23);
+            this.格式.Size = new System.Drawing.Size(200, 23);
             this.格式.SelectedIndexChanged += new System.EventHandler(this.設定_SelectedIndexChanged);
             // 
             // 檢查ToolStripMenuItem
