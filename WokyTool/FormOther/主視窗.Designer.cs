@@ -74,11 +74,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button44 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.button43 = new System.Windows.Forms.Button();
             this.button41 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.button34 = new System.Windows.Forms.Button();
@@ -223,7 +225,7 @@
             // 
             // button20
             // 
-            this.button20.Location = new System.Drawing.Point(356, 36);
+            this.button20.Location = new System.Drawing.Point(357, 36);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(100, 23);
             this.button20.TabIndex = 19;
@@ -567,6 +569,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.button44);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.button5);
             this.panel4.Controls.Add(this.button20);
@@ -575,8 +578,18 @@
             this.panel4.Controls.Add(this.button25);
             this.panel4.Location = new System.Drawing.Point(12, 285);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(482, 99);
+            this.panel4.Size = new System.Drawing.Size(482, 156);
             this.panel4.TabIndex = 50;
+            // 
+            // button44
+            // 
+            this.button44.Location = new System.Drawing.Point(236, 128);
+            this.button44.Name = "button44";
+            this.button44.Size = new System.Drawing.Size(100, 23);
+            this.button44.TabIndex = 48;
+            this.button44.Text = "一般訂單";
+            this.button44.UseVisualStyleBackColor = true;
+            this.button44.Click += new System.EventHandler(this.button44_Click);
             // 
             // label2
             // 
@@ -593,7 +606,7 @@
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.button15);
-            this.panel5.Location = new System.Drawing.Point(12, 396);
+            this.panel5.Location = new System.Drawing.Point(12, 479);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(482, 71);
             this.panel5.TabIndex = 51;
@@ -620,19 +633,31 @@
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.button43);
             this.panel6.Controls.Add(this.button41);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.button35);
             this.panel6.Controls.Add(this.button11);
             this.panel6.Controls.Add(this.button12);
-            this.panel6.Location = new System.Drawing.Point(12, 473);
+            this.panel6.Location = new System.Drawing.Point(12, 556);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(482, 71);
             this.panel6.TabIndex = 52;
             // 
+            // button43
+            // 
+            this.button43.Location = new System.Drawing.Point(357, 36);
+            this.button43.Name = "button43";
+            this.button43.Size = new System.Drawing.Size(100, 23);
+            this.button43.TabIndex = 44;
+            this.button43.Text = "支出";
+            this.button43.UseVisualStyleBackColor = true;
+            this.button43.Click += new System.EventHandler(this.button43_Click);
+            // 
             // button41
             // 
-            this.button41.Location = new System.Drawing.Point(356, 36);
+            this.button41.Enabled = false;
+            this.button41.Location = new System.Drawing.Point(357, 11);
             this.button41.Name = "button41";
             this.button41.Size = new System.Drawing.Size(100, 23);
             this.button41.TabIndex = 43;
@@ -651,7 +676,7 @@
             // 
             // button34
             // 
-            this.button34.Location = new System.Drawing.Point(19, 569);
+            this.button34.Location = new System.Drawing.Point(19, 652);
             this.button34.Name = "button34";
             this.button34.Size = new System.Drawing.Size(100, 23);
             this.button34.TabIndex = 49;
@@ -661,7 +686,7 @@
             // 
             // button42
             // 
-            this.button42.Location = new System.Drawing.Point(18, 598);
+            this.button42.Location = new System.Drawing.Point(18, 681);
             this.button42.Name = "button42";
             this.button42.Size = new System.Drawing.Size(100, 23);
             this.button42.TabIndex = 53;
@@ -673,7 +698,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 651);
+            this.ClientSize = new System.Drawing.Size(506, 724);
             this.Controls.Add(this.button42);
             this.Controls.Add(this.button34);
             this.Controls.Add(this.panel6);
@@ -683,7 +708,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "主視窗";
-            this.Text = "V 2.0.10";
+            this.Text = "V 2.0.14";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.主視窗_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -758,6 +783,8 @@
         private System.Windows.Forms.Button button34;
         private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Button button42;
+        private System.Windows.Forms.Button button43;
+        private System.Windows.Forms.Button button44;
 
 
     }

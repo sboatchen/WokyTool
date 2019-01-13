@@ -13,7 +13,7 @@ namespace WokyTool.廠商
 {
     public partial class 廠商選取元件 : 抽象選取元件
     {
-        protected override ComboBox 下拉選單
+        public override ComboBox 下拉選單
         {
             get
             {
@@ -39,6 +39,8 @@ namespace WokyTool.廠商
 
         protected override object 篩選(String Name_)
         {
+            if (Name_ == null)
+                return 廠商資料管理器.獨體.唯讀BList;
             return 廠商資料管理器.獨體.唯讀BList.Where(Value => Value.名稱.Contains(Name_)).ToList();
         }
 

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
+using WokyTool.一般訂單;
 using WokyTool.公司;
 using WokyTool.月結帳;
 using WokyTool.平台訂單;
@@ -69,10 +70,13 @@ namespace WokyTool.通用
             總覽視窗設定Map.Add(列舉.編號.月結帳設定, typeof(月結帳匯入設定總覽視窗));
             總覽視窗設定Map.Add(列舉.編號.月結帳, typeof(月結帳總覽視窗));
             總覽視窗設定Map.Add(列舉.編號.月結帳會計, typeof(月結帳會計總覽視窗));
+            總覽視窗設定Map.Add(列舉.編號.月結帳支出, typeof(月結帳支出總覽視窗));
 
             總覽視窗設定Map.Add(列舉.編號.平台訂單設定, typeof(平台訂單匯入設定總覽視窗));
             總覽視窗設定Map.Add(列舉.編號.平台訂單新增, typeof(平台訂單新增總覽視窗));
             總覽視窗設定Map.Add(列舉.編號.平台訂單新增_Momo三方, typeof(Momo第三方訂單新增總覽視窗));
+
+            總覽視窗設定Map.Add(列舉.編號.一般訂單新增, typeof(一般訂單新增總覽視窗));
 
             總覽視窗設定Map.Add(列舉.編號.配送, typeof(待配送總覽視窗));
 
@@ -97,6 +101,8 @@ namespace WokyTool.通用
             詳細視窗設定Map.Add(列舉.編號.月結帳, typeof(月結帳詳細視窗));
 
             詳細視窗設定Map.Add(列舉.編號.平台訂單設定, typeof(平台訂單匯入設定詳細視窗));
+
+            詳細視窗設定Map.Add(列舉.編號.一般訂單新增, typeof(一般訂單新增詳細視窗));
 
             /********************************/
 

@@ -13,6 +13,8 @@ namespace WokyTool.發票
 
         public String 標頭 { get; set; }
 
+        public String 樣板 { get { return null; } }
+
         public int 資料數量
         {
             get
@@ -84,8 +86,8 @@ namespace WokyTool.發票
                 總計_ += 資料_.總計;
             }
 
-            int 總金額_ = (int)總計_;
-            int 未稅金額_ = (int)(Decimal.Divide(總計_, (decimal)1.05));
+            int 總金額_ = (int)Math.Round(總計_);
+            int 未稅金額_ = (int)(Math.Round(Decimal.Divide(總計_, (decimal)1.05)));
             int 營業稅_ = 總金額_ - 未稅金額_;
 
             App_.Cells[目前行數_, 11] = 未稅金額_;

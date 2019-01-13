@@ -32,6 +32,8 @@ namespace WokyTool.通用
             if (dlg.ShowDialog() != DialogResult.OK)
                 return;
 
+            訊息管理器.獨體.Debug("寫入檔案 " + 檔名_);
+
             // 寫入資料
             try
             {
@@ -41,7 +43,11 @@ namespace WokyTool.通用
                 // App.UserControl = true;
 
                 // 開啟工作簿
-                Excel.Workbook Wbook = App.Workbooks.Add();
+                Excel.Workbook Wbook = null;
+                if (資料_.樣板 == null)
+                    Wbook = App.Workbooks.Add();
+                else
+                    Wbook = App.Workbooks.Open(資料_.樣板);
 
                 // 取得分頁
                 var xlSheets = Wbook.Sheets as Excel.Sheets;
@@ -97,7 +103,8 @@ namespace WokyTool.通用
                 // App.UserControl = true;
 
                 // 開啟工作簿
-                Excel.Workbook Wbook = App.Workbooks.Add();
+                Excel.Workbook Wbook = null;
+                App.Workbooks.Add();
 
                 // 取得分頁
                 var xlSheets = Wbook.Sheets as Excel.Sheets;

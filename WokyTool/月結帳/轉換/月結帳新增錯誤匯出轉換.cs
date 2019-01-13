@@ -13,6 +13,8 @@ namespace WokyTool.月結帳
 
         public String 標頭 { get; set; }
 
+        public String 樣板 { get { return null; } }
+
         public 月結帳新增錯誤匯出轉換(IEnumerable<月結帳匯入資料> 資料列_)
         {
             _資料列 = 資料列_;

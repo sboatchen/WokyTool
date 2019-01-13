@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.月結帳會計資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,9 +45,10 @@
             this.利潤DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.進貨成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.毛利率DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.月結帳會計資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.月結帳會計資料BindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.月結帳會計資料BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -78,10 +78,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1446, 472);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // 月結帳會計資料BindingSource
-            // 
-            this.月結帳會計資料BindingSource.DataSource = typeof(WokyTool.月結帳.月結帳會計資料);
             // 
             // menuStrip1
             // 
@@ -184,6 +180,10 @@
             this.毛利率DataGridViewTextBoxColumn.Name = "毛利率DataGridViewTextBoxColumn";
             this.毛利率DataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // 月結帳會計資料BindingSource
+            // 
+            this.月結帳會計資料BindingSource.DataSource = typeof(WokyTool.月結帳.月結帳會計資料);
+            // 
             // 月結帳會計總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -193,11 +193,11 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "月結帳會計總覽視窗";
-            this.Text = "月結帳會計匯出視窗";
+            this.Text = "月結帳會計總覽視窗";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.月結帳會計資料BindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.月結帳會計資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

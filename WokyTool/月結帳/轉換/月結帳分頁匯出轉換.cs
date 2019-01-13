@@ -20,6 +20,8 @@ namespace WokyTool.月結帳
             }
         }
 
+        public String 樣板 { get { return null; } }
+
         public 月結帳分頁匯出轉換(月結帳會計資料 資料_)
         {
             _資料 = 資料_;

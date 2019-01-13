@@ -18,19 +18,6 @@ namespace WokyTool.月結帳
         {
             InitializeComponent();
 
-            List<月結帳會計資料> List_ = new List<月結帳會計資料>();
-
-            var ItemGroup_ = 月結帳資料管理器.獨體.可編輯BList
-                                .GroupBy(
-                                    Value => Value.設定,
-                                    Value => Value);
-
-
-            foreach (var x in ItemGroup_)
-            {
-                月結帳會計資料管理器.獨體.更新(x);
-            }
-
             this.初始化(this.月結帳會計資料BindingSource, 月結帳會計資料管理器.獨體);
         }
 
@@ -39,15 +26,18 @@ namespace WokyTool.月結帳
             List<可序列化_Excel> List_ = new List<可序列化_Excel>();
 
             var tempList_ = 月結帳會計資料管理器.獨體.可編輯BList.Where(Value => Value.資料列 != null && Value.資料列.Count() != 0);
-
-            可序列化_Excel 月結帳會計匯出轉換_ = new 月結帳會計匯出轉換(tempList_);
-
             foreach (var x in tempList_)
             {
                 月結帳分頁匯出轉換 月結帳分頁匯出轉換_ = new 月結帳分頁匯出轉換(x);
                 List_.Add(月結帳分頁匯出轉換_);
             }
 
+            // 支出資料
+            可序列化_Excel 月結帳支出匯出轉換_ = new 月結帳支出匯出轉換(月結帳支出資料管理器.獨體.可編輯BList);
+            List_.Add(月結帳支出匯出轉換_);
+
+            // 會計資料
+            可序列化_Excel 月結帳會計匯出轉換_ = new 月結帳會計匯出轉換(tempList_);
             List_.Add(月結帳會計匯出轉換_);
 
             string Title_ = String.Format("月結帳總覽_{0}", 時間.目前日期);
@@ -60,6 +50,7 @@ namespace WokyTool.月結帳
 
         protected override void 視窗激活()
         {
+            月結帳會計資料管理器.獨體.更新();
         }
     }
 }

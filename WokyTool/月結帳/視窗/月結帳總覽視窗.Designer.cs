@@ -32,17 +32,15 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.總覽ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.公司資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.客戶資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.商品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.月結帳資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.訂單編號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.公司資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.客戶DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.客戶資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.商品DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.商品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.單價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.含稅單價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +48,7 @@
             this.成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.利潤DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.總利潤DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.月結帳資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.公司資料BindingSource)).BeginInit();
@@ -78,18 +77,10 @@
             // 
             // 匯出ToolStripMenuItem
             // 
-            this.匯出ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.總覽ToolStripMenuItem});
             this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
             this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.匯出ToolStripMenuItem.Text = "匯出";
-            // 
-            // 總覽ToolStripMenuItem
-            // 
-            this.總覽ToolStripMenuItem.Name = "總覽ToolStripMenuItem";
-            this.總覽ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.總覽ToolStripMenuItem.Text = "總覽";
-            this.總覽ToolStripMenuItem.Click += new System.EventHandler(this.總覽ToolStripMenuItem_Click);
+            this.匯出ToolStripMenuItem.Text = "會計";
+            this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -117,22 +108,6 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // 公司資料BindingSource
-            // 
-            this.公司資料BindingSource.DataSource = typeof(WokyTool.公司.公司資料);
-            // 
-            // 客戶資料BindingSource
-            // 
-            this.客戶資料BindingSource.DataSource = typeof(WokyTool.客戶.客戶資料);
-            // 
-            // 商品資料BindingSource
-            // 
-            this.商品資料BindingSource.DataSource = typeof(WokyTool.商品.商品資料);
-            // 
-            // 月結帳資料BindingSource
-            // 
-            this.月結帳資料BindingSource.DataSource = typeof(WokyTool.月結帳.月結帳資料);
-            // 
             // 編號DataGridViewTextBoxColumn
             // 
             this.編號DataGridViewTextBoxColumn.DataPropertyName = "編號";
@@ -153,9 +128,14 @@
             this.公司DataGridViewTextBoxColumn.DisplayMember = "名稱";
             this.公司DataGridViewTextBoxColumn.HeaderText = "公司";
             this.公司DataGridViewTextBoxColumn.Name = "公司DataGridViewTextBoxColumn";
+            this.公司DataGridViewTextBoxColumn.ReadOnly = true;
             this.公司DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.公司DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.公司DataGridViewTextBoxColumn.ValueMember = "Self";
+            // 
+            // 公司資料BindingSource
+            // 
+            this.公司資料BindingSource.DataSource = typeof(WokyTool.公司.公司資料);
             // 
             // 客戶DataGridViewTextBoxColumn
             // 
@@ -164,9 +144,14 @@
             this.客戶DataGridViewTextBoxColumn.DisplayMember = "名稱";
             this.客戶DataGridViewTextBoxColumn.HeaderText = "客戶";
             this.客戶DataGridViewTextBoxColumn.Name = "客戶DataGridViewTextBoxColumn";
+            this.客戶DataGridViewTextBoxColumn.ReadOnly = true;
             this.客戶DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.客戶DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.客戶DataGridViewTextBoxColumn.ValueMember = "Self";
+            // 
+            // 客戶資料BindingSource
+            // 
+            this.客戶資料BindingSource.DataSource = typeof(WokyTool.客戶.客戶資料);
             // 
             // 商品DataGridViewTextBoxColumn
             // 
@@ -179,6 +164,10 @@
             this.商品DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.商品DataGridViewTextBoxColumn.ValueMember = "Self";
             this.商品DataGridViewTextBoxColumn.Width = 250;
+            // 
+            // 商品資料BindingSource
+            // 
+            this.商品資料BindingSource.DataSource = typeof(WokyTool.商品.商品資料);
             // 
             // 數量DataGridViewTextBoxColumn
             // 
@@ -226,6 +215,10 @@
             this.總利潤DataGridViewTextBoxColumn.Name = "總利潤DataGridViewTextBoxColumn";
             this.總利潤DataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // 月結帳資料BindingSource
+            // 
+            this.月結帳資料BindingSource.DataSource = typeof(WokyTool.月結帳.月結帳資料);
+            // 
             // 月結帳總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -253,7 +246,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 篩選ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 匯出ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 總覽ToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 公司資料BindingSource;
         private System.Windows.Forms.BindingSource 客戶資料BindingSource;

@@ -23,6 +23,8 @@ namespace WokyTool.月結帳
             }
         }
 
+        public String 樣板 { get { return null; } }
+
         protected IEnumerable<月結帳會計資料> _資料列;
 
         public 月結帳會計匯出轉換(IEnumerable<月結帳會計資料> 資料列_)

@@ -65,30 +65,52 @@ namespace WokyTool.月結帳
         {
         }
 
-        public void 更新(IGrouping<月結帳匯入設定資料, 月結帳資料> x)
+        public void 更新()
         {
-            月結帳匯入設定資料 設定_ = x.Key;
-            if (設定_ == null)
-                訊息管理器.獨體.Error("找不到月結帳設定資料");
+            可編輯BList.RaiseListChangedEvents = false;
+            唯讀BList.RaiseListChangedEvents = false;
 
-            月結帳會計資料 Item_ = Map.Values
-                                    .Where(Value => Value.設定 == 設定_)
-                                    .FirstOrDefault();
-
-            if (Item_ != null)
+            foreach (var 資料_ in 可編輯BList)
             {
-                Item_.資料列 = x.Select(Value => Value);
-
-                資料異動();
-            } 
-            else
-            {
-                Item_ = new 月結帳會計資料();
-                Item_.設定 = 設定_;
-                Item_.資料列 = x.Select(Value => Value);
-
-                新增(Item_);
+                資料_.資料列 = null;
             }
+
+            var ItemGroup_ = 月結帳資料管理器.獨體.可編輯BList
+                                .GroupBy(
+                                    Value => Value.設定,
+                                    Value => Value);
+
+            foreach (var x in ItemGroup_)
+            {
+                月結帳匯入設定資料 設定_ = x.Key;
+                if (設定_ == null) 
+                {
+                    訊息管理器.獨體.Error("找不到月結帳設定資料");
+                    continue;
+                }
+
+                月結帳會計資料 Item_ = Map.Values
+                                        .Where(Value => Value.設定 == 設定_)
+                                        .FirstOrDefault();
+
+                if (Item_ != null)
+                {
+                    Item_.資料列 = x.Select(Value => Value);
+                }
+                else
+                {
+                    Item_ = new 月結帳會計資料();
+                    Item_.設定 = 設定_;
+                    Item_.資料列 = x.Select(Value => Value);
+
+                    新增(Item_, false);
+                }
+            }
+
+            可編輯BList.RaiseListChangedEvents = true;
+            唯讀BList.RaiseListChangedEvents = true;
+
+            資料異動();
         }
     }
 }

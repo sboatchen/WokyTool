@@ -14,7 +14,7 @@ namespace WokyTool.客戶
 {
     public partial class 子客戶選取元件 : 抽象選取元件
     {
-        protected override ComboBox 下拉選單
+        public override ComboBox 下拉選單
         {
             get
             {
@@ -38,9 +38,22 @@ namespace WokyTool.客戶
             }
         }
 
+        public 客戶資料 綁定客戶 { get; set; }
+
         protected override object 篩選(String Name_)
         {
-            return 子客戶資料管理器.獨體.唯讀BList.Where(Value => Value.名稱.Contains(Name_)).ToList();
+            if (綁定客戶 == null && Name_ == null)
+                return 子客戶資料管理器.獨體.唯讀BList;
+
+            IEnumerable<子客戶資料> query = 子客戶資料管理器.獨體.唯讀BList;
+
+            if (綁定客戶 != null)
+                query = query.Where(Value => 綁定客戶.子客戶編號列 != null && 綁定客戶.子客戶編號列.Contains(Value.編號));
+
+            if(Name_ != null)
+                query = query.Where(Value => Value.名稱.Contains(Name_));
+
+            return query.ToList();
         }
 
         public 子客戶選取元件()

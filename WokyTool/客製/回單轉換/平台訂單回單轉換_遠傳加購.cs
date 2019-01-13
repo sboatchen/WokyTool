@@ -21,6 +21,8 @@ namespace WokyTool.客製
 
         public String 標頭 { get; set; }
 
+        public String 樣板 { get { return null; } }
+
         public 平台訂單回單轉換_遠傳加購(IEnumerable<平台訂單新增資料> 資料列_)
         {
             _資料列 = 資料列_;

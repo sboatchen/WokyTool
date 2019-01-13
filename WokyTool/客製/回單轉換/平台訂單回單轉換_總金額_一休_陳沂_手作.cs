@@ -18,6 +18,8 @@ namespace WokyTool.客製
 
         public String 標頭 { get; set; }
 
+        public String 樣板 { get { return null; } }
+
         public 平台訂單回單轉換_總金額_一休_陳沂_手作(IEnumerable<IGrouping<string, 平台訂單新增資料>> GroupQueue_)
         {
             _資料列 = new Dictionary<string, decimal>();

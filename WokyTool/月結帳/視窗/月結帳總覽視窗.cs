@@ -31,10 +31,10 @@ namespace WokyTool.月結帳
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編號.月結帳, 列舉.視窗.篩選);
+            //視窗管理器.獨體.顯現(列舉.編號.月結帳, 列舉.視窗.篩選);
         }
 
-        private void 總覽ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.月結帳會計, 列舉.視窗.總覽);
         }

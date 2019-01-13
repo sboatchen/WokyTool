@@ -24,6 +24,8 @@ namespace WokyTool.月結帳
             }
         }
 
+        public String 樣板 { get { return null; } }
+
         protected List<月結帳總計暫存資料> _資料列 = new List<月結帳總計暫存資料>();
 
         public 月結帳總計匯出轉換()

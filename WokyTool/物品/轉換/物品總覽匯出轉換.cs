@@ -13,6 +13,8 @@ namespace WokyTool.物品
 
         public String 標頭 { get; set; }
 
+        public String 樣板 { get { return null; } }
+
         public 物品總覽匯出轉換(String 標頭_, IEnumerable<物品資料> 資料列_)
         {
             標頭 = 標頭_;

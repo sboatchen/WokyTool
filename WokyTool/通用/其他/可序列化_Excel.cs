@@ -10,6 +10,8 @@ namespace WokyTool.Common
     {
         String 標頭{ get; }
 
+        String 樣板 { get; }
+
         void 寫入(Microsoft.Office.Interop.Excel.Application App_);
     }
 }

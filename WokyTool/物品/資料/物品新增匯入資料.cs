@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
-using WokyTool.Data;
-using WokyTool.DataMgr;
 using WokyTool.通用;
 
 namespace WokyTool.物品

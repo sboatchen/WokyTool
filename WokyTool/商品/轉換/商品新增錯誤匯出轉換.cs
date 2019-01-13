@@ -13,6 +13,8 @@ namespace WokyTool.商品
 
         public String 標頭 { get; set; }
 
+        public String 樣板 { get { return null; } }
+
         public 商品新增錯誤匯出轉換(IEnumerable<商品新增匯入資料> 資料列_)
         {
             _資料列 = 資料列_;

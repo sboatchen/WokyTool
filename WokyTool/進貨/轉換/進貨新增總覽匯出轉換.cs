@@ -14,6 +14,8 @@ namespace WokyTool.進貨
 
         public String 標頭 { get; set; }
 
+        public String 樣板 { get { return null; } }
+
         public 進貨新增總覽匯出轉換(IEnumerable<進貨新增資料> 資料列_)
         {
             _資料列 = 資料列_;

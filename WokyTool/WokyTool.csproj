@@ -74,6 +74,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Log.cs" />
+    <Compile Include="一般訂單\控制\一般訂單新增資料管理器.cs" />
+    <Compile Include="一般訂單\視窗\一般訂單新增總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="一般訂單\視窗\一般訂單新增總覽視窗.Designer.cs">
+      <DependentUpon>一般訂單新增總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="一般訂單\視窗\一般訂單新增詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="一般訂單\視窗\一般訂單新增詳細視窗.Designer.cs">
+      <DependentUpon>一般訂單新增詳細視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="一般訂單\資料\一般訂單新增商品資料.cs" />
+    <Compile Include="一般訂單\資料\一般訂單歸檔資料.cs" />
+    <Compile Include="一般訂單\資料\一般訂單新增資料.cs" />
+    <Compile Include="一般訂單\轉換\一般訂單銷售匯出結構.cs" />
     <Compile Include="使用者\控制\使用者資料管理器.cs" />
     <Compile Include="使用者\視窗\使用者總覽視窗.cs">
       <SubType>Form</SubType>
@@ -320,7 +337,9 @@
     <Compile Include="廠商\資料\廠商資料.cs" />
     <Compile Include="月結帳\控制\月結帳會計資料管理器.cs" />
     <Compile Include="月結帳\控制\月結帳匯入管理器.cs" />
+    <Compile Include="月結帳\控制\月結帳支出資料管理器.cs" />
     <Compile Include="月結帳\控制\月結帳資料管理器.cs" />
+    <Compile Include="月結帳\控制\月結帳支出新增匯入管理器.cs" />
     <Compile Include="月結帳\暫時\月結帳舊資料.cs" />
     <Compile Include="月結帳\視窗\月結帳匯入視窗.cs">
       <SubType>Form</SubType>
@@ -346,6 +365,12 @@
     <Compile Include="月結帳\視窗\月結帳會計總覽視窗.Designer.cs">
       <DependentUpon>月結帳會計總覽視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="月結帳\視窗\月結帳支出總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="月結帳\視窗\月結帳支出總覽視窗.Designer.cs">
+      <DependentUpon>月結帳支出總覽視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="月結帳\視窗\月結帳總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -364,17 +389,26 @@
     <Compile Include="月結帳\視窗\月結帳詳細視窗.Designer.cs">
       <DependentUpon>月結帳詳細視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="月結帳\視窗\月結帳支出新增匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="月結帳\視窗\月結帳支出新增匯入視窗.Designer.cs">
+      <DependentUpon>月結帳支出新增匯入視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="月結帳\資料\月結帳列舉.cs" />
     <Compile Include="月結帳\資料\月結帳匯入資料.cs" />
     <Compile Include="月結帳\資料\月結帳會計資料.cs" />
     <Compile Include="月結帳\資料\月結帳支出資料.cs" />
+    <Compile Include="月結帳\資料\月結帳支出新增匯入資料.cs" />
     <Compile Include="月結帳\轉換\暫存\月結帳總計暫存資料.cs" />
     <Compile Include="月結帳\資料\月結帳資料.cs" />
+    <Compile Include="月結帳\轉換\月結帳支出匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳新增錯誤匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳分頁匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳匯入轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳會計匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳總計匯出轉換.cs" />
+    <Compile Include="月結帳\轉換\月結帳支出新增錯誤匯出轉換.cs" />
     <Compile Include="物品\控制\物品新增匯入管理器.cs" />
     <Compile Include="物品\控制\物品總覽更新匯入管理器.cs" />
     <Compile Include="物品\控制\物品條碼更新匯入管理器.cs" />
@@ -618,6 +652,7 @@
     <Compile Include="進貨\轉換\進貨新增錯誤匯出轉換.cs" />
     <Compile Include="進貨\轉換\進貨新增總覽匯出轉換.cs" />
     <Compile Include="進貨\轉換\進貨總覽匯出轉換.cs" />
+    <Compile Include="配送\資料\一般訂單配送資料.cs" />
     <Compile Include="配送\資料\撿貨資料.cs" />
     <Compile Include="配送\轉換\撿貨匯出轉換.cs" />
     <Compile Include="DataExport\銷售匯出結構.cs" />
@@ -876,6 +911,12 @@
     <EmbeddedResource Include="ImportForm\商品訂單匯入視窗.resx">
       <DependentUpon>商品訂單匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="一般訂單\視窗\一般訂單新增總覽視窗.resx">
+      <DependentUpon>一般訂單新增總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="一般訂單\視窗\一般訂單新增詳細視窗.resx">
+      <DependentUpon>一般訂單新增詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="使用者\視窗\使用者總覽視窗.resx">
       <DependentUpon>使用者總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1011,6 +1052,9 @@
     <EmbeddedResource Include="月結帳\視窗\月結帳會計總覽視窗.resx">
       <DependentUpon>月結帳會計總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="月結帳\視窗\月結帳支出總覽視窗.resx">
+      <DependentUpon>月結帳支出總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="月結帳\視窗\月結帳總覽視窗.resx">
       <DependentUpon>月結帳總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1019,6 +1063,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="月結帳\視窗\月結帳詳細視窗.resx">
       <DependentUpon>月結帳詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="月結帳\視窗\月結帳支出新增匯入視窗.resx">
+      <DependentUpon>月結帳支出新增匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品新增匯入視窗.resx">
       <DependentUpon>物品新增匯入視窗.cs</DependentUpon>
@@ -1116,6 +1163,8 @@
     <None Include="Properties\DataSources\WokyTool.DataImport.物品匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.物品更新匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.雜支匯入結構.datasource" />
+    <None Include="Properties\DataSources\WokyTool.一般訂單.一般訂單新增商品資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.一般訂單.一般訂單新增資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.使用者.使用者資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.公司.公司資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品大類資料.datasource" />
@@ -1132,6 +1181,8 @@
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳列舉+匯入需求欄位.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳匯入設定資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳匯入資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.月結帳.月結帳支出新增匯入資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.月結帳.月結帳支出資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳會計資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品品牌資料.datasource" />

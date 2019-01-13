@@ -14,7 +14,7 @@ namespace WokyTool.使用者
 {
     public partial class 使用者選取元件 : 抽象選取元件
     {
-        protected override ComboBox 下拉選單
+        public override ComboBox 下拉選單
         {
             get
             {
@@ -40,6 +40,8 @@ namespace WokyTool.使用者
 
         protected override object 篩選(String Name_)
         {
+            if (Name_ == null)
+                return 使用者資料管理器.獨體.唯讀BList;
             return 使用者資料管理器.獨體.唯讀BList.Where(Value => Value.名稱.Contains(Name_)).ToList();
         }
 

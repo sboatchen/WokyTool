@@ -13,7 +13,7 @@ namespace WokyTool.商品
 {
     public partial class 商品小類選取元件 : 抽象選取元件
     {
-        protected override ComboBox 下拉選單
+        public override ComboBox 下拉選單
         {
             get
             {
@@ -39,6 +39,8 @@ namespace WokyTool.商品
 
         protected override object 篩選(String Name_)
         {
+            if (Name_ == null)
+                return 商品小類資料管理器.獨體.唯讀BList;
             return 商品小類資料管理器.獨體.唯讀BList.Where(Value => Value.名稱.Contains(Name_)).ToList();
         }
 

@@ -11,7 +11,7 @@ namespace WokyTool.通用
     {
         private int _資料版本 = -1;
 
-        protected virtual ComboBox 下拉選單
+        public virtual ComboBox 下拉選單
         {
             get
             {
@@ -89,7 +89,7 @@ namespace WokyTool.通用
         {
             if (this.下拉選單.SelectedValue != null)
             {
-                this.綁定資源.DataSource = 資料管理器.物件_唯讀BList;
+                this.綁定資源.DataSource = 篩選(null);
             }
             else
             {

@@ -260,11 +260,11 @@ namespace WokyTool.商品
             公司 = 公司資料管理器.獨體.Get(公司識別);
             客戶 = 客戶資料管理器.獨體.Get(客戶識別);
 
-            需求1 = 物品資料管理器.獨體.GetBySName(需求識別1);
-            需求2 = 物品資料管理器.獨體.GetBySName(需求識別2);
-            需求3 = 物品資料管理器.獨體.GetBySName(需求識別3);
-            需求4 = 物品資料管理器.獨體.GetBySName(需求識別4);
-            需求5 = 物品資料管理器.獨體.GetBySName(需求識別5);
+            需求1 = 物品資料管理器.獨體.GetByLike(需求識別1);
+            需求2 = 物品資料管理器.獨體.GetByLike(需求識別2);
+            需求3 = 物品資料管理器.獨體.GetByLike(需求識別3);
+            需求4 = 物品資料管理器.獨體.GetByLike(需求識別4);
+            需求5 = 物品資料管理器.獨體.GetByLike(需求識別5);
         }
 
         public override void 檢查合法()
