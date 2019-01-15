@@ -32,8 +32,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.使用者資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.帳號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.顯示密碼 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.修改基本資料DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.修改設定資料 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.匯入訂單DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -49,8 +50,9 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.編號DataGridViewTextBoxColumn,
-            this.名稱DataGridViewTextBoxColumn,
+            this.帳號,
             this.顯示密碼,
+            this.名稱DataGridViewTextBoxColumn,
             this.修改基本資料DataGridViewCheckBoxColumn,
             this.修改設定資料,
             this.匯入訂單DataGridViewCheckBoxColumn,
@@ -61,7 +63,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(844, 333);
+            this.dataGridView1.Size = new System.Drawing.Size(945, 326);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -76,11 +78,11 @@
             this.編號DataGridViewTextBoxColumn.Name = "編號DataGridViewTextBoxColumn";
             this.編號DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 名稱DataGridViewTextBoxColumn
+            // 帳號
             // 
-            this.名稱DataGridViewTextBoxColumn.DataPropertyName = "名稱";
-            this.名稱DataGridViewTextBoxColumn.HeaderText = "名稱";
-            this.名稱DataGridViewTextBoxColumn.Name = "名稱DataGridViewTextBoxColumn";
+            this.帳號.DataPropertyName = "帳號";
+            this.帳號.HeaderText = "帳號";
+            this.帳號.Name = "帳號";
             // 
             // 顯示密碼
             // 
@@ -88,6 +90,12 @@
             this.顯示密碼.HeaderText = "密碼";
             this.顯示密碼.Name = "顯示密碼";
             this.顯示密碼.ReadOnly = true;
+            // 
+            // 名稱DataGridViewTextBoxColumn
+            // 
+            this.名稱DataGridViewTextBoxColumn.DataPropertyName = "名稱";
+            this.名稱DataGridViewTextBoxColumn.HeaderText = "名稱";
+            this.名稱DataGridViewTextBoxColumn.Name = "名稱DataGridViewTextBoxColumn";
             // 
             // 修改基本資料DataGridViewCheckBoxColumn
             // 
@@ -123,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 333);
+            this.ClientSize = new System.Drawing.Size(945, 326);
             this.Controls.Add(this.dataGridView1);
             this.Name = "使用者總覽視窗";
             this.Text = "使用者總覽視窗";
@@ -138,8 +146,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 使用者資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 帳號;
         private System.Windows.Forms.DataGridViewTextBoxColumn 顯示密碼;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn 修改基本資料DataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn 修改設定資料;
         private System.Windows.Forms.DataGridViewCheckBoxColumn 匯入訂單DataGridViewCheckBoxColumn;

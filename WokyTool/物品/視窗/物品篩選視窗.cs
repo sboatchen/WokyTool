@@ -47,6 +47,8 @@ namespace WokyTool.物品
             _物品資料篩選設定.原廠編號 = this.原廠編號.Text;
             _物品資料篩選設定.代理編號 = this.代理編號.Text;
 
+            Console.WriteLine("無意義，單純為了避免combobox咬死");
+
             if (_物品資料篩選設定.是否需篩選() == true)
                 物品資料管理器.獨體.篩選介面 = _物品資料篩選設定;
             else

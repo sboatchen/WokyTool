@@ -76,7 +76,10 @@ namespace WokyTool.發票
                 最大數值_ = -1;
                 輸出_.清除();
 
-                foreach(var Item_ in Group_)
+                var Enumerator_ = Group_.GetEnumerator();
+                Enumerator_.MoveNext();
+                var Item_ = Enumerator_.Current;
+                while (Item_ != null)
                 {
                     // 取得每群的第一個
                     if(目標數值_ == -1)
@@ -85,12 +88,23 @@ namespace WokyTool.發票
                         最大數值_ = 最小數值_ + 49;
                         目標數值_ = 最小數值_;
                     }
+                    else if(目標數值_ > 最大數值_) // 已達最大數值,進行結算
+                    {
+                        string Title_ = String.Format("{0}{1, 0:D4}_{0}{2, 0:D4}", 字軌_, 最小數值_, 最大數值_);  // 檔名為a欄第一個號碼-a欄最後一個號碼, 範例: FX40239300-FX40239349
+
+                        檔案.寫入Excel(Title_, 輸出_);
+
+                        最小數值_ = 最大數值_ + 1;
+                        最大數值_ = 最小數值_ + 49;
+                        目標數值_ = 最小數值_;
+                        輸出_.清除();
+                    }
 
                     // 發票號碼需順號 → 如有跳號(B欄寫上”空白”) A欄需補上號碼
                     // 目標發票號碼小於預定數值
                     while(目標數值_ < Item_.發票數值 && 目標數值_ <= 最大數值_)
                     {
-                        輸出_.新增(發票匯入資料.空白(字軌_ + 目標數值_));
+                        輸出_.新增(發票匯入資料.空白(String.Format("{0}{1, 0:D4}", 字軌_, 目標數值_)));
                         目標數值_++;
                     }
 
@@ -99,19 +113,11 @@ namespace WokyTool.發票
                     {
                         輸出_.新增(Item_);
                         目標數值_++;
-                    }
 
-                    // 已達最大數值,進行結算
-                    if(目標數值_ > 最大數值_)
-                    {
-                        string Title_ = String.Format("{0}{1, 0:D8}_{0}{2, 0:D8}", 字軌_, 最小數值_, 最大數值_);  // 檔名為a欄第一個號碼-a欄最後一個號碼, 範例: FX40239300-FX40239349
-
-                        檔案.寫入Excel(Title_, 輸出_);
-
-                        最小數值_ = 最大數值_ + 1;
-                        最大數值_ = 最小數值_ + 49;
-                        目標數值_ = 最小數值_;
-                        輸出_.清除();
+                        if (Enumerator_.MoveNext())
+                            Item_ = Enumerator_.Current;
+                        else
+                            Item_ = null;
                     }
                 }
 
@@ -124,6 +130,11 @@ namespace WokyTool.發票
             }
 
             訊息管理器.獨體.Notify("處理完畢");
+        }
+
+        private void 補空白()
+        {
+ 
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

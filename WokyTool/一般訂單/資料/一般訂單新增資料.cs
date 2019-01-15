@@ -158,6 +158,9 @@ namespace WokyTool.一般訂單
         public String 發票號碼 { get; set; }
 
         [JsonProperty]
+        public Boolean 列印單價 { get; set; }
+
+        [JsonProperty]
         public List<一般訂單新增商品資料> 清單 { get; set; }
 
         /********************************/
@@ -211,6 +214,8 @@ namespace WokyTool.一般訂單
             代收金額 = 0,
 
             發票號碼 = null,
+
+            列印單價 = true,
         };
         public static 一般訂單新增資料 NULL
         {
@@ -245,6 +250,8 @@ namespace WokyTool.一般訂單
             代收金額 = 0,
 
             發票號碼 = null,
+
+            列印單價 = true,
         };
         public static 一般訂單新增資料 ERROR
         {
@@ -283,6 +290,8 @@ namespace WokyTool.一般訂單
 
                 發票號碼 = this.發票號碼,
 
+                列印單價 = this.列印單價,
+
                 清單 = this.清單,
             };
 
@@ -314,6 +323,8 @@ namespace WokyTool.一般訂單
 
             發票號碼 = Data_.發票號碼;
 
+            列印單價 = Data_.列印單價;
+
             清單 = Data_.清單;
         }
 
@@ -344,6 +355,8 @@ namespace WokyTool.一般訂單
                 代收金額 == Data_.代收金額 &&
 
                 發票號碼 == Data_.發票號碼 &&
+
+                列印單價 == Data_.列印單價 &&
 
                 清單 == Data_.清單;
         }

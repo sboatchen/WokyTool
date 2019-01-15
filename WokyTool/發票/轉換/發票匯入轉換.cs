@@ -49,8 +49,8 @@ namespace WokyTool.發票
 
                 if (String.IsNullOrEmpty(發票匯入資料_.發票號碼) == false)
                 {
-                    發票匯入資料_.發票字軌 = 發票匯入資料_.發票號碼.Substring(0, 2);
-                    發票匯入資料_.發票數值 = Int32.Parse(發票匯入資料_.發票號碼.Substring(2));
+                    發票匯入資料_.發票字軌 = 發票匯入資料_.發票號碼.Substring(0, 6);
+                    發票匯入資料_.發票數值 = Int32.Parse(發票匯入資料_.發票號碼.Substring(6));
                 }
 
                 // 發票狀態已作廢 則後面金額K.L.M欄歸0

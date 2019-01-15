@@ -78,7 +78,7 @@ namespace WokyTool.平台訂單
                 foreach (var Item_ in Group_)
                     Item_.配送分組 = StartGroup_;
                 
-                StartGroup_--;
+                StartGroup_++;
 
                 var x = Group_.ToList();
             }

@@ -42,6 +42,8 @@ namespace WokyTool.一般訂單
             this.電話.ReadOnly = 是否唯讀_;
             this.手機.ReadOnly = 是否唯讀_;
 
+            this.列印單價.Enabled = !是否唯讀_;
+
             this.商品選取元件.ReadOnly = 是否唯讀_;
             this.數量.ReadOnly = 是否唯讀_;
             this.單價.ReadOnly = 是否唯讀_;
@@ -119,6 +121,8 @@ namespace WokyTool.一般訂單
             目前資料_.電話 = this.電話.Text;
             目前資料_.手機 = this.手機.Text;
 
+            目前資料_.列印單價 = this.列印單價.Checked;
+
             if(_清單BList.Count == 0 )
                 目前資料_.清單 = null;
             else
@@ -141,6 +145,8 @@ namespace WokyTool.一般訂單
             this.地址.Text = 目前資料_.地址;
             this.電話.Text = 目前資料_.電話;
             this.手機.Text = 目前資料_.手機;
+
+            this.列印單價.Checked = 目前資料_.列印單價;
 
             _清單BList.RaiseListChangedEvents = false;
 

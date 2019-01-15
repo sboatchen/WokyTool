@@ -16,10 +16,13 @@ namespace WokyTool.使用者
         public override int 編號 { get; set; }
 
         [JsonProperty]
-        public string 名稱 { get; set; }
+        public string 帳號 { get; set; }
 
         [JsonProperty]
         public string 密碼 { get; set; }
+
+        [JsonProperty]
+        public string 名稱 { get; set; }
 
         [JsonProperty]
         public bool 修改基本資料 { get; set; }
@@ -57,8 +60,10 @@ namespace WokyTool.使用者
         {
             編號 = 常數.T空白資料編碼,
 
-            名稱 = 字串.無,
+            帳號 = 字串.無,
             密碼 = 字串.無,
+
+            名稱 = 字串.無,
 
             修改基本資料 = false,
             修改設定資料 = false,
@@ -78,8 +83,10 @@ namespace WokyTool.使用者
         {
             編號 = 常數.T錯誤資料編碼,
 
-            名稱 = 字串.錯誤,
+            帳號 = 字串.錯誤,
             密碼 = 字串.無,
+
+            名稱 = 字串.錯誤,
 
             修改基本資料 = false,
             修改設定資料 = false,
@@ -103,8 +110,10 @@ namespace WokyTool.使用者
             {
                 編號 = this.編號,
 
-                名稱 = this.名稱,
+                帳號 = this.帳號,
                 密碼 = this.密碼,
+
+                名稱 = this.名稱,
 
                 修改基本資料 = this.修改基本資料,
                 修改設定資料 = this.修改設定資料,
@@ -120,8 +129,10 @@ namespace WokyTool.使用者
         {
             編號 = Data_.編號;
 
-            名稱 = Data_.名稱;
+            帳號 = Data_.帳號;
             密碼 = Data_.密碼;
+
+            名稱 = Data_.名稱;
 
             修改基本資料 = Data_.修改基本資料;
             修改設定資料 = Data_.修改設定資料;
@@ -135,8 +146,10 @@ namespace WokyTool.使用者
             return
                 編號 == Data_.編號 &&
 
-                名稱 == Data_.名稱 &&
+                帳號 == Data_.帳號 &&
                 密碼 == Data_.密碼 &&
+
+                名稱 == Data_.名稱 &&
 
                 修改基本資料 == Data_.修改基本資料 &&
                 修改設定資料 == Data_.修改設定資料 &&
@@ -147,11 +160,14 @@ namespace WokyTool.使用者
 
         public override void 檢查合法()
         {
-            if (String.IsNullOrEmpty(名稱))
-                throw new Exception("使用者資料:名稱不合法:" + this.ToString());
+            if (String.IsNullOrEmpty(帳號))
+                throw new Exception("使用者資料:帳號不合法:" + this.ToString());
 
             if (String.IsNullOrEmpty(密碼))
                 throw new Exception("使用者資料:密碼不合法:" + this.ToString());
+
+            if (String.IsNullOrEmpty(名稱))
+                throw new Exception("使用者資料:名稱不合法:" + this.ToString());
         }
     }
 }

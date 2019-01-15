@@ -344,10 +344,13 @@ namespace WokyTool.通用
             是否編輯中減少資料 = false;
         }
 
-        public void 新增(T Item_)
+        public void 新增(T Item_, bool 是否阻斷事件_ = true)
         {
-            可編輯BList.RaiseListChangedEvents = false;
-            唯讀BList.RaiseListChangedEvents = false;
+            if (是否阻斷事件_)
+            {
+                可編輯BList.RaiseListChangedEvents = false;
+                唯讀BList.RaiseListChangedEvents = false;
+            }
 
             Item_.完成編輯();
 
@@ -364,16 +367,22 @@ namespace WokyTool.通用
 
             唯讀BList.Add(Item_);
 
-            可編輯BList.RaiseListChangedEvents = true;
-            唯讀BList.RaiseListChangedEvents = true;
+            if (是否阻斷事件_)
+            {
+                可編輯BList.RaiseListChangedEvents = true;
+                唯讀BList.RaiseListChangedEvents = true;
 
-            資料異動();
+                資料異動();
+            }
         }
 
-        public void 新增(IEnumerable<T> Enumerator_)
+        public void 新增(IEnumerable<T> Enumerator_, bool 是否阻斷事件_ = true)
         {
-            可編輯BList.RaiseListChangedEvents = false;
-            唯讀BList.RaiseListChangedEvents = false;
+            if (是否阻斷事件_)
+            {
+                可編輯BList.RaiseListChangedEvents = false;
+                唯讀BList.RaiseListChangedEvents = false;
+            }
 
             foreach (T Item_ in Enumerator_)
             {
@@ -393,10 +402,13 @@ namespace WokyTool.通用
                 唯讀BList.Add(Item_);
             }
 
-            可編輯BList.RaiseListChangedEvents = true;
-            唯讀BList.RaiseListChangedEvents = true;
+            if (是否阻斷事件_)
+            {
+                可編輯BList.RaiseListChangedEvents = true;
+                唯讀BList.RaiseListChangedEvents = true;
 
-            資料異動();
+                資料異動();
+            }
         }
 
         public void 資料搬移()  //@@ temp

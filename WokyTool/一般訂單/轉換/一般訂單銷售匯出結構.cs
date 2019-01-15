@@ -28,10 +28,10 @@ namespace WokyTool.一般訂單
         {
             get
             {
-                //if (_是否列印單價)
-                return Path.GetFullPath("樣板/一般訂單/一般出貨銷售匯出樣板.xlsx");
-                //else
-                //    return Path.GetFullPath("Template/DataExport/工廠出貨匯出樣板_無售價.xlsx");
+                if (資料.列印單價)
+                    return Path.GetFullPath("樣板/一般訂單/一般出貨銷售匯出樣板.xlsx");
+                else
+                    return Path.GetFullPath("樣板/一般訂單/一般出貨銷售匯出樣板_無售價.xlsx");
             }
         }
 
@@ -51,6 +51,7 @@ namespace WokyTool.一般訂單
 
             int Row_ = 9;
             decimal Total_ = 0;
+            int 備註欄數 = 0;
             foreach (一般訂單新增商品資料 Item_ in 資料.清單)
             {
                 if (Row_ > 9)
@@ -66,24 +67,30 @@ namespace WokyTool.一般訂單
                 App_.Cells[Row_, ++Column_] = Item_.商品名稱;
                 App_.Cells[Row_, ++Column_] = Item_.數量;
 
-                //if (_是否列印單價)
+                if (資料.列印單價)
                 {
-                    App_.Cells[Row_, ++Column_] = Item_.單價;
-                    App_.Cells[Row_, ++Column_] = Item_.總金額;
+                    App_.Cells[Row_, ++Column_] = Item_.單價.ToString("0.###");
+                    App_.Cells[Row_, ++Column_] = Item_.總金額.ToString("0.###");
                 }
 
                 App_.Cells[Row_, ++Column_] = Item_.備註;
+                備註欄數 = Column_;
+
                 Total_ += Item_.總金額;
 
                 Row_++;
             }
 
             // set total
-            //if (_是否列印單價)
+            if (資料.列印單價)
             {
                 Row_ += 1;
-                App_.Cells[Row_, 6] = Total_;
+                App_.Cells[Row_, 6] = Total_.ToString("0.###");
             }
+
+            // 製表人
+            Row_ += 2;
+            App_.Cells[Row_, 備註欄數] = "製表人:" + 系統參數.使用者;
         }
     }
 }

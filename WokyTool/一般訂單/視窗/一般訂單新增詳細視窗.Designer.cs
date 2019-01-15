@@ -49,16 +49,17 @@ namespace WokyTool.一般訂單
             this.地址 = new System.Windows.Forms.TextBox();
             this.新增 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.商品DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.商品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.單價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.一般訂單新增商品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.商品選取元件 = new WokyTool.商品.商品選取元件();
             this.label3 = new System.Windows.Forms.Label();
             this.聯絡人選取元件 = new WokyTool.聯絡人.聯絡人選取元件();
-            this.商品DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.單價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備註 = new System.Windows.Forms.TextBox();
+            this.列印單價 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.單價)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.數量)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -93,7 +94,7 @@ namespace WokyTool.一般訂單
             // 
             // 姓名
             // 
-            this.姓名.Location = new System.Drawing.Point(572, 11);
+            this.姓名.Location = new System.Drawing.Point(351, 16);
             this.姓名.Name = "姓名";
             this.姓名.Size = new System.Drawing.Size(230, 22);
             this.姓名.TabIndex = 35;
@@ -108,7 +109,7 @@ namespace WokyTool.一般訂單
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(525, 14);
+            this.label8.Location = new System.Drawing.Point(304, 19);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 7;
@@ -117,7 +118,7 @@ namespace WokyTool.一般訂單
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 19);
+            this.label7.Location = new System.Drawing.Point(22, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 6;
@@ -126,7 +127,7 @@ namespace WokyTool.一般訂單
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(525, 77);
+            this.label5.Location = new System.Drawing.Point(304, 82);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 4;
@@ -135,7 +136,7 @@ namespace WokyTool.一般訂單
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(525, 46);
+            this.label4.Location = new System.Drawing.Point(304, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 3;
@@ -190,7 +191,7 @@ namespace WokyTool.一般訂單
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(525, 109);
+            this.label14.Location = new System.Drawing.Point(304, 114);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(29, 12);
             this.label14.TabIndex = 80;
@@ -198,21 +199,21 @@ namespace WokyTool.一般訂單
             // 
             // 手機
             // 
-            this.手機.Location = new System.Drawing.Point(572, 109);
+            this.手機.Location = new System.Drawing.Point(351, 114);
             this.手機.Name = "手機";
             this.手機.Size = new System.Drawing.Size(230, 22);
             this.手機.TabIndex = 82;
             // 
             // 電話
             // 
-            this.電話.Location = new System.Drawing.Point(572, 74);
+            this.電話.Location = new System.Drawing.Point(351, 79);
             this.電話.Name = "電話";
             this.電話.Size = new System.Drawing.Size(230, 22);
             this.電話.TabIndex = 83;
             // 
             // 地址
             // 
-            this.地址.Location = new System.Drawing.Point(572, 43);
+            this.地址.Location = new System.Drawing.Point(351, 48);
             this.地址.Name = "地址";
             this.地址.Size = new System.Drawing.Size(230, 22);
             this.地址.TabIndex = 84;
@@ -243,9 +244,40 @@ namespace WokyTool.一般訂單
             this.dataGridView1.Size = new System.Drawing.Size(794, 236);
             this.dataGridView1.TabIndex = 86;
             // 
+            // 商品DataGridViewTextBoxColumn
+            // 
+            this.商品DataGridViewTextBoxColumn.DataPropertyName = "商品";
+            this.商品DataGridViewTextBoxColumn.DataSource = this.商品資料BindingSource;
+            this.商品DataGridViewTextBoxColumn.DisplayMember = "名稱";
+            this.商品DataGridViewTextBoxColumn.HeaderText = "商品";
+            this.商品DataGridViewTextBoxColumn.Name = "商品DataGridViewTextBoxColumn";
+            this.商品DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.商品DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.商品DataGridViewTextBoxColumn.ValueMember = "Self";
+            this.商品DataGridViewTextBoxColumn.Width = 400;
+            // 
             // 商品資料BindingSource
             // 
             this.商品資料BindingSource.DataSource = typeof(WokyTool.商品.商品資料);
+            // 
+            // 數量DataGridViewTextBoxColumn
+            // 
+            this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
+            this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
+            this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
+            // 
+            // 單價DataGridViewTextBoxColumn
+            // 
+            this.單價DataGridViewTextBoxColumn.DataPropertyName = "單價";
+            this.單價DataGridViewTextBoxColumn.HeaderText = "單價";
+            this.單價DataGridViewTextBoxColumn.Name = "單價DataGridViewTextBoxColumn";
+            // 
+            // 備註DataGridViewTextBoxColumn
+            // 
+            this.備註DataGridViewTextBoxColumn.DataPropertyName = "備註";
+            this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
+            this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
+            this.備註DataGridViewTextBoxColumn.Width = 150;
             // 
             // 一般訂單新增商品資料BindingSource
             // 
@@ -281,37 +313,6 @@ namespace WokyTool.一般訂單
             this.聯絡人選取元件.綁定子客戶 = null;
             this.聯絡人選取元件.綁定客戶 = null;
             // 
-            // 商品DataGridViewTextBoxColumn
-            // 
-            this.商品DataGridViewTextBoxColumn.DataPropertyName = "商品";
-            this.商品DataGridViewTextBoxColumn.DataSource = this.商品資料BindingSource;
-            this.商品DataGridViewTextBoxColumn.DisplayMember = "名稱";
-            this.商品DataGridViewTextBoxColumn.HeaderText = "商品";
-            this.商品DataGridViewTextBoxColumn.Name = "商品DataGridViewTextBoxColumn";
-            this.商品DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.商品DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.商品DataGridViewTextBoxColumn.ValueMember = "Self";
-            this.商品DataGridViewTextBoxColumn.Width = 400;
-            // 
-            // 數量DataGridViewTextBoxColumn
-            // 
-            this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
-            this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
-            this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
-            // 
-            // 單價DataGridViewTextBoxColumn
-            // 
-            this.單價DataGridViewTextBoxColumn.DataPropertyName = "單價";
-            this.單價DataGridViewTextBoxColumn.HeaderText = "單價";
-            this.單價DataGridViewTextBoxColumn.Name = "單價DataGridViewTextBoxColumn";
-            // 
-            // 備註DataGridViewTextBoxColumn
-            // 
-            this.備註DataGridViewTextBoxColumn.DataPropertyName = "備註";
-            this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
-            this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
-            this.備註DataGridViewTextBoxColumn.Width = 150;
-            // 
             // 備註
             // 
             this.備註.Location = new System.Drawing.Point(663, 163);
@@ -319,11 +320,22 @@ namespace WokyTool.一般訂單
             this.備註.Size = new System.Drawing.Size(141, 22);
             this.備註.TabIndex = 90;
             // 
+            // 列印單價
+            // 
+            this.列印單價.AutoSize = true;
+            this.列印單價.Location = new System.Drawing.Point(684, 18);
+            this.列印單價.Name = "列印單價";
+            this.列印單價.Size = new System.Drawing.Size(72, 16);
+            this.列印單價.TabIndex = 92;
+            this.列印單價.Text = "列印單價";
+            this.列印單價.UseVisualStyleBackColor = true;
+            // 
             // 一般訂單新增詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 493);
+            this.Controls.Add(this.列印單價);
             this.Controls.Add(this.備註);
             this.Controls.Add(this.聯絡人選取元件);
             this.Controls.Add(this.label3);
@@ -390,5 +402,6 @@ namespace WokyTool.一般訂單
         private System.Windows.Forms.DataGridViewTextBoxColumn 單價DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox 備註;
+        private System.Windows.Forms.CheckBox 列印單價;
     }
 }
