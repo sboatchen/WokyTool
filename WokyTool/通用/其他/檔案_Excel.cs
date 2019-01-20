@@ -104,7 +104,7 @@ namespace WokyTool.通用
 
                 // 開啟工作簿
                 Excel.Workbook Wbook = null;
-                App.Workbooks.Add();
+                Wbook = App.Workbooks.Add();
 
                 // 取得分頁
                 var xlSheets = Wbook.Sheets as Excel.Sheets;
