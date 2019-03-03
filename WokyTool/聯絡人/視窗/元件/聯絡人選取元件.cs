@@ -38,8 +38,33 @@ namespace WokyTool.聯絡人
             }
         }
 
-        public 客戶資料 綁定客戶 { get; set; }
-        public 子客戶資料 綁定子客戶 { get; set; }
+        private 客戶資料 _綁定客戶;
+        public 客戶資料 綁定客戶 
+        {
+            get
+            {
+                return _綁定客戶;
+            }
+            set
+            {
+                _綁定客戶 = value;
+                篩選異動 = true;
+            }
+        }
+
+        private 子客戶資料 _綁定子客戶;
+        public 子客戶資料 綁定子客戶
+        {
+            get
+            {
+                return _綁定子客戶;
+            }
+            set
+            {
+                _綁定子客戶 = value;
+                篩選異動 = true;
+            }
+        }
 
         protected override object 篩選(String Name_)
         {

@@ -17,7 +17,7 @@ namespace WokyTool.配送
         public List<平台訂單新增資料> 列表 { get; protected set; }
         public 平台訂單新增資料 主單 { get; protected set; }
 
-        public override 物品組成資料 組成{ get; protected set; }
+        public override 物品合併資料 合併{ get; protected set; }
 
         [JsonProperty]
         public override decimal 代收金額 { get; protected set; }
@@ -91,14 +91,14 @@ namespace WokyTool.配送
             this.主單 = 列表_[0];
             this.配送參考 = this.主單;
 
-            this.組成 = new 物品組成資料();
+            this.合併 = new 物品合併資料();
 
             foreach (平台訂單新增資料 子單_ in 列表_)
             {
                 if (this.主單 != 子單_)
                     主單.自定義介面.併單檢查合法(主單, 子單_);
 
-                this.組成.新增(子單_.商品, 子單_.數量);
+                this.合併.新增(子單_.商品, 子單_.數量);
 
                 this.代收金額 += 子單_.代收金額;
             }

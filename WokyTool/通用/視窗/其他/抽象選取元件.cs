@@ -40,6 +40,8 @@ namespace WokyTool.通用
             throw new Exception("抽象選取元件:篩選 尚未實作");
         }
 
+        protected Boolean 篩選異動{ get; set; }
+
         public object SelectedItem
         {
             get
@@ -73,6 +75,7 @@ namespace WokyTool.通用
         public void 初始化()
         {
             this.下拉選單.DropDown += new System.EventHandler(this.開啟選單);
+            this.下拉選單.TextChanged += new System.EventHandler(this.篩選文字異動);
         }
 
         public void 視窗激活()
@@ -80,14 +83,29 @@ namespace WokyTool.通用
             if (_資料版本 != 資料管理器.唯讀資料版本)
             {
                 _資料版本 = 資料管理器.唯讀資料版本;
-                this.綁定資源.DataSource = 資料管理器.物件_唯讀BList;
-                this.綁定資源.ResetBindings(false);
+                更新資源();
             }
         }
 
         private void 開啟選單(object sender, EventArgs e)
         {
-            if (this.下拉選單.SelectedValue != null)
+            if (篩選異動)
+            {
+                更新資源();
+            }
+        }
+
+        private void 篩選文字異動(object sender, EventArgs e)
+        {
+            篩選異動 = true;
+        }
+
+        private void 更新資源()
+        {
+            _資料版本 = 資料管理器.唯讀資料版本;
+            篩選異動 = false;
+
+            if (this.下拉選單.SelectedItem != null)
             {
                 this.綁定資源.DataSource = 篩選(null);
             }
@@ -95,6 +113,8 @@ namespace WokyTool.通用
             {
                 this.綁定資源.DataSource = 篩選(this.下拉選單.Text);
             }
+
+            this.綁定資源.ResetBindings(false);
         }
     }
 }

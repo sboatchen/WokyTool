@@ -9,8 +9,6 @@ namespace WokyTool.通用
 {
     public interface 檔案匯入設定資料介面
     {
-        int 編號 { get; set; }
-
         列舉.檔案格式 格式 { get; set; }
 
         int 開始位置 { get; set; }

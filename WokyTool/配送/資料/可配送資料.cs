@@ -16,16 +16,16 @@ namespace WokyTool.配送
     {
         public 可配送介面 配送參考 { get; protected set; }
 
-        public virtual 物品組成資料 組成
+        public virtual 物品合併資料 合併
         {
             get
             {
-                return 配送參考.組成;
+                return 配送參考.合併;
             }
 
             protected set
             {
-                throw new Exception("Not Support 可配送資料::組成");
+                throw new Exception("Not Support 可配送資料::合併");
             }
         }
 
@@ -156,11 +156,11 @@ namespace WokyTool.配送
 
         public void 初始化()
         {
-            if(this.組成 == null)
-                訊息管理器.獨體.Error("缺少組成資料 " + this.ToString());
+            if(this.合併 == null)
+                訊息管理器.獨體.Error("缺少合併資料 " + this.ToString());
 
-            this.內容 = this.組成.取得組合字串();
-            this.體積 = this.組成.體積;
+            this.內容 = this.合併.ToString();
+            this.體積 = this.合併.體積;
 
             // 配送公司
             if (配送公司 != 列舉.配送公司.無)

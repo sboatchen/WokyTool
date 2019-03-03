@@ -17,7 +17,7 @@ namespace WokyTool.通用
         string 手機 { get; }
         string 地址 { get; }
 
-        物品組成資料 組成 { get; }
+        物品合併資料 合併 { get; }
 
         DateTime 指配日期 { get; }     // 指配日期.Ticks == 0 代表不指定
         列舉.指配時段 指配時段 { get; }

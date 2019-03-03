@@ -53,10 +53,10 @@
             this.dataGridView1.DataSource = this.聯絡人資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(734, 348);
+            this.dataGridView1.Size = new System.Drawing.Size(945, 348);
             this.dataGridView1.TabIndex = 0;
             // 
             // 編號DataGridViewTextBoxColumn
@@ -101,9 +101,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 348);
+            this.ClientSize = new System.Drawing.Size(945, 348);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "聯絡人總覽視窗";
             this.Text = "聯絡人總覽視窗";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

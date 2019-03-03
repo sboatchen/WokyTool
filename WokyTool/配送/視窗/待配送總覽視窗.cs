@@ -192,26 +192,26 @@ namespace WokyTool.配送
         private void 統計ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // 撿貨匯出轉換
-            Dictionary<物品資料, 撿貨資料> 組合_ = new Dictionary<物品資料, 撿貨資料>();
+            Dictionary<物品資料, 撿貨資料> Map_ = new Dictionary<物品資料, 撿貨資料>();
 
             撿貨資料 Temp_ = null;
             foreach (var Item_ in 配送管理器.獨體.可編輯BList)
             {
-                foreach (var ItemPair_ in Item_.組成.組合)
+                foreach (var ItemPair_ in Item_.合併.Map)
                 {
-                    if (組合_.TryGetValue(ItemPair_.Key, out Temp_))
+                    if (Map_.TryGetValue(ItemPair_.Key, out Temp_))
                     {
                         Temp_.數量 += ItemPair_.Value;
                     }
                     else
                     {
                         Temp_ = new 撿貨資料(ItemPair_.Key.縮寫, ItemPair_.Value);
-                        組合_.Add(ItemPair_.Key, Temp_);
+                        Map_.Add(ItemPair_.Key, Temp_);
                     }
                 }
             }
 
-            撿貨匯出轉換 Result_ = new 撿貨匯出轉換(組合_.Values.OrderBy(Value => Value.物品名稱));
+            撿貨匯出轉換 Result_ = new 撿貨匯出轉換(Map_.Values.OrderBy(Value => Value.物品名稱));
 
             string Title_ = String.Format("撿貨統計匯出_{0}", 時間.目前日期);
             檔案.寫入Excel(Title_, Result_);

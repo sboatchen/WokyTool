@@ -39,7 +39,19 @@ namespace WokyTool.商品
             }
         }
 
-        public 客戶資料 綁定客戶 { get; set; }
+        private 客戶資料 _綁定客戶;
+        public 客戶資料 綁定客戶
+        {
+            get
+            {
+                return _綁定客戶;
+            }
+            set
+            {
+                _綁定客戶 = value;
+                篩選異動 = true;
+            }
+        }
 
         protected override object 篩選(String Name_)
         {
