@@ -23,6 +23,7 @@ namespace WokyTool.Common
         public const int T新建資料編碼 = 0;
         public const int T空白資料編碼 = -1;
         public const int T錯誤資料編碼 = -2;
+
         public const int 商品折扣資料編碼 = -3;
 
         public const int 空白列舉編碼 = 0;

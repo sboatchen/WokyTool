@@ -11,7 +11,6 @@ namespace WokyTool.Common
     {
         protected static List<Color> _RandomColorList = null;
 
-        // 組合需求物品字串
         public static Color GetRandomColor(int Value_)
         {
             if (_RandomColorList == null)
