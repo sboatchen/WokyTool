@@ -33,7 +33,9 @@ namespace WokyTool.發票
 
         private void 匯入ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _發票匯入管理器.新增(發票匯入設定資料.獨體.匯入Excel<發票匯入資料>(new 發票匯入轉換(), true));
+            通用檔案匯入設定資料 匯入樣板_ = _發票匯入管理器.取得樣板();
+
+            _發票匯入管理器.新增(匯入樣板_.匯入Excel<發票匯入資料>(new 發票匯入轉換(), true));
             if (_發票匯入管理器.是否正在編輯() == false)
                 return;
 

@@ -31,13 +31,9 @@ namespace WokyTool.商品
             App_.Cells[1, 5] = "名稱";
             App_.Cells[1, 6] = "品號";
 
-            App_.Cells[1, 7] = "需求1";
-            App_.Cells[1, 8] = "需求2";
-            App_.Cells[1, 9] = "需求3";
-            App_.Cells[1, 10] = "需求4";
-            App_.Cells[1, 11] = "需求5";
+            App_.Cells[1, 7] = "組成識別";
 
-            App_.Cells[1, 12] = "錯誤訊息";
+            App_.Cells[1, 8] = "錯誤訊息";
 
             int 目前行數_ = 2;
             foreach (商品新增匯入資料 資料_ in _資料列)
@@ -51,13 +47,9 @@ namespace WokyTool.商品
                 App_.Cells[目前行數_, 5] = 資料_.名稱;
                 App_.Cells[目前行數_, 6] = 資料_.品號;
 
-                App_.Cells[目前行數_, 7] = 資料_.需求識別1;
-                App_.Cells[目前行數_, 8] = 資料_.需求識別2;
-                App_.Cells[目前行數_, 9] = 資料_.需求識別3;
-                App_.Cells[目前行數_, 10] = 資料_.需求識別4;
-                App_.Cells[目前行數_, 11] = 資料_.需求識別5;
+                App_.Cells[目前行數_, 7] = 資料_.組成識別;
 
-                App_.Cells[目前行數_, 12] = 資料_.錯誤訊息;
+                App_.Cells[目前行數_, 8] = 資料_.錯誤訊息;
 
                 目前行數_++;
             }

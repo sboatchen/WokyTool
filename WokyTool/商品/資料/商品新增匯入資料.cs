@@ -105,120 +105,9 @@ namespace WokyTool.商品
         public string 名稱 { get; set; }    // 對方使用的產品名稱
 
         [JsonProperty]
-        public string 需求識別1 { get; set; }
+        public string 組成識別 { get; set; }
 
-        protected 物品資料 _需求1;
-        public 物品資料 需求1
-        {
-            get
-            {
-                if (_需求1 == null)
-                    _需求1 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_需求1) == false)
-                    _需求1 = 物品資料.ERROR;
-
-                return _需求1;
-            }
-            set
-            {
-                _需求1 = value;
-            }
-        }
-
-        [JsonProperty]
-        public string 需求識別2 { get; set; }
-
-        protected 物品資料 _需求2;
-        public 物品資料 需求2
-        {
-            get
-            {
-                if (_需求2 == null)
-                    _需求2 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_需求2) == false)
-                    _需求2 = 物品資料.ERROR;
-
-                return _需求2;
-            }
-            set
-            {
-                _需求2 = value;
-            }
-        }
-
-        [JsonProperty]
-        public string 需求識別3 { get; set; }
-
-        protected 物品資料 _需求3;
-        public 物品資料 需求3
-        {
-            get
-            {
-                if (_需求3 == null)
-                    _需求3 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_需求3) == false)
-                    _需求3 = 物品資料.ERROR;
-
-                return _需求3;
-            }
-            set
-            {
-                _需求3 = value;
-            }
-        }
-
-        [JsonProperty]
-        public string 需求識別4 { get; set; }
-
-        protected 物品資料 _需求4;
-        public 物品資料 需求4
-        {
-            get
-            {
-                if (_需求4 == null)
-                    _需求4 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_需求4) == false)
-                    _需求4 = 物品資料.ERROR;
-
-                return _需求4;
-            }
-            set
-            {
-                _需求4 = value;
-            }
-        }
-
-        [JsonProperty]
-        public string 需求識別5 { get; set; }
-
-        protected 物品資料 _需求5;
-        public 物品資料 需求5
-        {
-            get
-            {
-                if (_需求5 == null)
-                    _需求5 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_需求5) == false)
-                    _需求5 = 物品資料.ERROR;
-
-                return _需求5;
-            }
-            set
-            {
-                _需求5 = value;
-            }
-        }
-
-        [JsonProperty]
-        public int 數量1 { get; set; }
-        [JsonProperty]
-        public int 數量2 { get; set; }
-        [JsonProperty]
-        public int 數量3 { get; set; }
-        [JsonProperty]
-        public int 數量4 { get; set; }
-        [JsonProperty]
-        public int 數量5 { get; set; }
+        public List<商品組成匯入資料> 組成 { get; set; }
 
         [JsonProperty]
         public decimal 售價 { get; set; }
@@ -230,7 +119,9 @@ namespace WokyTool.商品
         {
             get
             {
-                return 需求1.成本 * 數量1 + 需求2.成本 * 數量2 + 需求3.成本 * 數量3 + 需求4.成本 * 數量4 + 需求5.成本 * 數量5;
+                if (組成 == null)
+                    return 0;
+                return 組成.Sum(Value => Value.成本);
             }
         }
 
@@ -238,7 +129,9 @@ namespace WokyTool.商品
         {
             get
             {
-                return 需求1.體積 * 數量1 + 需求2.體積 * 數量2 + 需求3.體積 * 數量3 + 需求4.體積 * 數量4 + 需求5.體積 * 數量5;
+                if (組成 == null)
+                    return 0;
+                return 組成.Sum(Value => Value.體積);
             }
         }
 
@@ -260,11 +153,10 @@ namespace WokyTool.商品
             公司 = 公司資料管理器.獨體.Get(公司識別);
             客戶 = 客戶資料管理器.獨體.Get(客戶識別);
 
-            需求1 = 物品資料管理器.獨體.GetByLike(需求識別1);
-            需求2 = 物品資料管理器.獨體.GetByLike(需求識別2);
-            需求3 = 物品資料管理器.獨體.GetByLike(需求識別3);
-            需求4 = 物品資料管理器.獨體.GetByLike(需求識別4);
-            需求5 = 物品資料管理器.獨體.GetByLike(需求識別5);
+            if (String.IsNullOrEmpty(組成識別))
+                return;
+
+            組成 = 組成識別.Split(',', '+').Select(Value => new 商品組成匯入資料(Value)).ToList();
         }
 
         public override void 檢查合法()
@@ -281,29 +173,14 @@ namespace WokyTool.商品
             if (客戶.編號是否合法() == false)
                 throw new Exception("客戶編號不合法");
 
-            if (需求1.編號是否合法() == false)
-                throw new Exception("需求編號1不合法");
-
-            if (需求2.編號是否合法() == false)
-                throw new Exception("需求編號2不合法");
-
-            if (需求3.編號是否合法() == false)
-                throw new Exception("需求編號3不合法");
-
-            if (需求4.編號是否合法() == false)
-                throw new Exception("需求編號4不合法");
-
-            if (需求5.編號是否合法() == false)
-                throw new Exception("需求編號5不合法");
-
-            //if (String.IsNullOrEmpty(品號))
-            //    throw new Exception("品號不合法");
-
             if (String.IsNullOrEmpty(名稱))
                 throw new Exception("名稱不合法");
 
-            if (數量1 < 0 || 數量2 < 0 || 數量3 < 0 || 數量4 < 0 || 數量5 < 0)
-                throw new Exception("數量不合法");
+            if (組成 != null)
+            {
+                foreach (商品組成匯入資料 Item_ in 組成)
+                    Item_.檢查合法();
+            }
         }
     }
 }

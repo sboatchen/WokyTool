@@ -161,24 +161,24 @@ namespace WokyTool.一般訂單
         public Boolean 列印單價 { get; set; }
 
         [JsonProperty]
-        public List<一般訂單新增商品資料> 清單 { get; set; }
+        public List<一般訂單新增物品資料> 清單 { get; set; }
 
         /********************************/
         // 暫時性資訊
 
-        public 物品組成資料 組成
+        public 物品合併資料 合併
         {
             get
             {
-                物品組成資料 物品組成資料_ = new 物品組成資料();
+                物品合併資料 物品合併資料_ = new 物品合併資料();
 
                 if (清單 != null)
                 {
-                    foreach (一般訂單新增商品資料 新增商品 in 清單)
-                        物品組成資料_.新增(新增商品.商品, 新增商品.數量);
+                    foreach (一般訂單新增物品資料 新增物品 in 清單)
+                        物品合併資料_.新增(新增物品.物品, 新增物品.數量);
                 }
 
-                return 物品組成資料_;
+                return 物品合併資料_;
             }
         }
 

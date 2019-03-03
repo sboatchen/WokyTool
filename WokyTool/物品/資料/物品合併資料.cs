@@ -11,19 +11,19 @@ using WokyTool.通用;
 namespace WokyTool.物品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 物品組成資料 : MyData
+    public class 物品合併資料 : MyData
     {
-        public Dictionary<物品資料, int> 組合 { get; private set; }
+        public Dictionary<物品資料, int> Map { get; private set; }
 
         public int 體積 { get; private set; }
 
-        public 物品組成資料()
+        public 物品合併資料()
         {
-            組合 = new Dictionary<物品資料, int>();
+            Map = new Dictionary<物品資料, int>();
             體積 = 0;
         }
 
-        public 物品組成資料(商品資料 商品資料_)
+        public 物品合併資料(商品資料 商品資料_)
         {
             新增(商品資料_);
         }
@@ -34,51 +34,55 @@ namespace WokyTool.物品
                 return;
 
             if (數量_ < 0)
-                throw new Exception("物品組成資料::數量小於0" + 數量_);
+                throw new Exception("物品合併資料::數量小於0" + 數量_);
 
             體積 += 物品資料_.體積 * 數量_;
 
             int 目前數量_ = 0;
-            if (組合.TryGetValue(物品資料_, out 目前數量_))
+            if (Map.TryGetValue(物品資料_, out 目前數量_))
             {
-                組合[物品資料_] = 目前數量_ + 數量_;
+                Map[物品資料_] = 目前數量_ + 數量_;
             }
             else
             {
-                組合.Add(物品資料_, 數量_);
+                Map.Add(物品資料_, 數量_);
             }
         }
 
         public void 新增(商品資料 商品資料_)
         {
-            新增(商品資料_.需求1, 商品資料_.數量1);
-            新增(商品資料_.需求2, 商品資料_.數量2);
-            新增(商品資料_.需求3, 商品資料_.數量3);
-            新增(商品資料_.需求4, 商品資料_.數量1);
-            新增(商品資料_.需求5, 商品資料_.數量5);
+            if (商品資料_.組成 == null)
+                return;
+
+            foreach (var Item_ in 商品資料_.組成)
+            {
+                新增(Item_.物品, Item_.數量);
+            }
         }
 
         public void 新增(商品資料 商品資料_, int 數量_)
         {
-            新增(商品資料_.需求1, 商品資料_.數量1 * 數量_);
-            新增(商品資料_.需求2, 商品資料_.數量2 * 數量_);
-            新增(商品資料_.需求3, 商品資料_.數量3 * 數量_);
-            新增(商品資料_.需求4, 商品資料_.數量1 * 數量_);
-            新增(商品資料_.需求5, 商品資料_.數量5 * 數量_);
+            if (商品資料_.組成 == null)
+                return;
+
+            foreach (var Item_ in 商品資料_.組成)
+            {
+                新增(Item_.物品, Item_.數量 * 數量_);
+            }
         }
 
         public void 清除()
         {
-            組合.Clear();
+            Map.Clear();
         }
 
-        public string 取得組合字串()
+        public override string ToString()
         {
-            if (組合.Count == 0)
+            if (Map.Count == 0)
                 return 字串.空;
 
             StringBuilder sb = new StringBuilder();
-            foreach (var Pair_ in 組合)
+            foreach (var Pair_ in Map)
             {
                 if (sb.Length > 0)
                     sb.Append("+");

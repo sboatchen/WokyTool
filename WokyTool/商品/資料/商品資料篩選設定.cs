@@ -49,8 +49,11 @@ namespace WokyTool.商品
             if (客戶 != null && 客戶 != Data_.客戶)
                 return false;
 
-            if (物品 != null && 物品 != Data_.需求1 && 物品 != Data_.需求2 && 物品 != Data_.需求3 && 物品 != Data_.需求4 && 物品 != Data_.需求5)
-                return false;
+            if (物品 != null)
+            {
+                if (Data_.組成 == null || Data_.組成.Where(Value => Value.物品 == 物品).First() == null)
+                    return false;
+            }
 
             if (string.IsNullOrEmpty(品號) == false)
             {

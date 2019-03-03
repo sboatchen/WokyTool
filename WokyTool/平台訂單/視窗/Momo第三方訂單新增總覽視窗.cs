@@ -110,8 +110,11 @@ namespace WokyTool.平台訂單
             PdfWriter writer = null;
             try
             {
+                PdfReader.unethicalreading = true;
+
                 // 開啟匯入檔案
-                reader = new PdfReader(dlg.FileName);
+                byte[] Password_ = Encoding.UTF8.GetBytes("27723845t");
+                reader = new PdfReader(dlg.FileName, Password_);
 
                 // 開啟寫入檔案
                 string OutputName = dlg.FileName.Replace(".pdf", "2.pdf");
@@ -237,7 +240,7 @@ namespace WokyTool.平台訂單
                 PdfContentByte contentByte = Output_.DirectContent;
                 contentByte.AddTemplate(importedPage, 0, 0);
 
-                myText = new Phrase(Item_.組成.取得組合字串(), MyFont);
+                myText = new Phrase(Item_.合併.ToString(), MyFont);
             }
             else // 有複數個 
             {

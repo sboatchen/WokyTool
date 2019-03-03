@@ -203,14 +203,14 @@ namespace WokyTool.平台訂單
 
         public String 分組識別 { get; private set; }
 
-        public 物品組成資料 組成 
+        public 物品合併資料 合併 
         {
             get
             {
-                物品組成資料 物品組成資料_ = new 物品組成資料();
-                物品組成資料_.新增(商品, 數量);
+                物品合併資料 物品合併資料_ = new 物品合併資料();
+                物品合併資料_.新增(商品, 數量);
 
-                return 物品組成資料_;
+                return 物品合併資料_;
             }
         }
 

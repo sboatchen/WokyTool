@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +12,8 @@ namespace WokyTool.發票
 {
     public class 發票匯入管理器 : 匯入資料管理器<發票匯入資料>
     {
+        private const String 樣板設定檔案路徑 = "樣板/發票/匯入設定.json";
+
         public override bool 是否可編輯
         {
             get
@@ -21,6 +25,18 @@ namespace WokyTool.發票
         protected override void 匯入()
         {
             //發票資料管理器.獨體.新增(可編輯BList.Select(Value => 建立資料(Value)));
+        }
+
+        public 通用檔案匯入設定資料 取得樣板()
+        {
+            if (File.Exists(樣板設定檔案路徑))
+            {
+                string json = 檔案.讀出檔案(樣板設定檔案路徑, false);
+                if (String.IsNullOrEmpty(json) == false)
+                    return JsonConvert.DeserializeObject<通用檔案匯入設定資料>(json);
+            }
+
+            return null;
         }
     }
 }
