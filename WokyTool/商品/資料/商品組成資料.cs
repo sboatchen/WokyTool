@@ -82,6 +82,15 @@ namespace WokyTool.商品
             return 數量 * 物品編號;
         }
 
+        public static 商品組成資料 新增(商品組成匯入資料 Item_)
+        {
+            return new 商品組成資料
+            {
+                物品 = Item_.物品,
+                數量 = Item_.數量,
+            };
+        }
+
         /********************************/
 
         public void 檢查合法()

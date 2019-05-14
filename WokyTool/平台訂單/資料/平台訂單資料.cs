@@ -9,12 +9,13 @@ using WokyTool.公司;
 using WokyTool.物品;
 using WokyTool.客戶;
 using WokyTool.客製;
+using WokyTool.商品;
 using WokyTool.通用;
 
-namespace WokyTool.一般訂單
+namespace WokyTool.平台訂單
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 一般訂單歸檔資料 : MyKeepableData<一般訂單歸檔資料>
+    public class 平台訂單資料 : MyKeepableData<平台訂單資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }
@@ -88,72 +89,41 @@ namespace WokyTool.一般訂單
         }
 
         [JsonProperty]
-        public int 子客戶編號
+        public int 商品編號
         {
             get
             {
-                return 子客戶.編號;
+                return 商品.編號;
             }
             set
             {
-                _子客戶 = 子客戶資料管理器.獨體.Get(value);
+                _商品 = 商品資料管理器.獨體.Get(value);
             }
         }
 
-        protected 子客戶資料 _子客戶;
-        public 子客戶資料 子客戶
+        protected 商品資料 _商品;
+        public 商品資料 商品
         {
             get
             {
-                if (_子客戶 == null)
-                    _子客戶 = 子客戶資料.NULL;
-                else if (子客戶資料管理器.獨體.唯讀BList.Contains(_子客戶) == false)
-                    _子客戶 = 子客戶資料.ERROR;
+                if (_商品 == null)
+                    _商品 = 商品資料.NULL;
+                else if (商品資料管理器.獨體.唯讀BList.Contains(_商品) == false)
+                    _商品 = 商品資料.ERROR;
 
-                return _子客戶;
-            }
-            set
-            {
-                _子客戶 = value;
-            }
-        }
-
-        [JsonProperty]
-        public int 物品編號
-        {
-            get
-            {
-                return 物品.編號;
-            }
-            set
-            {
-                _物品 = 物品資料管理器.獨體.Get(value);
-            }
-        }
-
-        protected 物品資料 _物品;
-        public 物品資料 物品
-        {
-            get
-            {
-                if (_物品 == null)
-                    _物品 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_物品) == false)
-                    _物品 = 物品資料.ERROR;
-
-                return _物品;
+                return _商品;
             }
             private set
             {
-                _物品 = value;
+                _商品 = value;
             }
         }
 
-        public String 物品名稱
+        public String 商品名稱
         {
             get
             {
-                return _物品.名稱;
+                return _商品.名稱;
             }
         }
 
@@ -178,7 +148,10 @@ namespace WokyTool.一般訂單
         [JsonProperty]
         public string 手機 { get; set; }
 
-        
+
+        [JsonProperty]
+        public string 訂單編號 { get; set; }
+
         [JsonProperty]
         public string 備註 { get; set; }
 
@@ -207,26 +180,12 @@ namespace WokyTool.一般訂單
         /********************************/
         // 暫時性資訊
 
-        private String _分組識別 = null;
-        public String 分組識別
-        {
-            get
-            {
-                if (_分組識別 == null)
-                {
-                    _分組識別 = String.Format("{0}_{1}_{2}_{3}", 公司.名稱, 客戶.名稱, 子客戶.名稱, 姓名);
-                }
-
-                return _分組識別;
-            }
-        }
-
         public 物品合併資料 合併 
         {
             get
             {
                 物品合併資料 物品合併資料_ = new 物品合併資料();
-                物品合併資料_.新增(物品, 數量);
+                物品合併資料_.新增(商品, 數量);
 
                 return 物品合併資料_;
             }
@@ -234,22 +193,20 @@ namespace WokyTool.一般訂單
 
         /********************************/
 
-        public 一般訂單歸檔資料 Self
+        public 平台訂單資料 Self
         {
             get { return this; }
         }
 
-        private static readonly 一般訂單歸檔資料 _NULL = new 一般訂單歸檔資料
+        private static readonly 平台訂單資料 _NULL = new 平台訂單資料
         {
             編號 = 常數.T空白資料編碼,
-            處理狀態 = 列舉.訂單處理狀態.歸檔,
-            處理時間 = new DateTime(),
+            處理狀態 = 列舉.訂單處理狀態.完成,
 
             公司 = 公司資料.NULL,
             客戶 = 客戶資料.NULL,
-            子客戶 = 子客戶資料.NULL,
 
-            物品 = 物品資料.NULL,
+            商品 = 商品資料.NULL,
 
             數量 = 0,
             單價 = 0,
@@ -260,6 +217,7 @@ namespace WokyTool.一般訂單
             電話 = 字串.無,
             手機 = 字串.無,
 
+            訂單編號 = 字串.無,
             備註 = 字串.無,
 
             配送公司 = 列舉.配送公司.無,
@@ -273,7 +231,7 @@ namespace WokyTool.一般訂單
 
             發票號碼 = null,
         };
-        public static 一般訂單歸檔資料 NULL
+        public static 平台訂單資料 NULL
         {
             get
             {
@@ -281,17 +239,15 @@ namespace WokyTool.一般訂單
             }
         }
 
-        private static 一般訂單歸檔資料 _ERROR = new 一般訂單歸檔資料
+        private static 平台訂單資料 _ERROR = new 平台訂單資料
         {
             編號 = 常數.T錯誤資料編碼,
             處理狀態 = 列舉.訂單處理狀態.錯誤,
-            處理時間 = new DateTime(),
 
             公司 = 公司資料.ERROR,
             客戶 = 客戶資料.ERROR,
-            子客戶 = 子客戶資料.ERROR,
 
-            物品 = 物品資料.ERROR,
+            商品 = 商品資料.ERROR,
 
             數量 = 0,
             單價 = 0,
@@ -302,6 +258,7 @@ namespace WokyTool.一般訂單
             電話 = 字串.錯誤,
             手機 = 字串.錯誤,
 
+            訂單編號 = 字串.錯誤,
             備註 = 字串.錯誤,
 
             配送公司 = 列舉.配送公司.錯誤,
@@ -315,7 +272,7 @@ namespace WokyTool.一般訂單
 
             發票號碼 = null,
         };
-        public static 一般訂單歸檔資料 ERROR
+        public static 平台訂單資料 ERROR
         {
             get
             {
@@ -323,20 +280,57 @@ namespace WokyTool.一般訂單
             }
         }
 
+        public static 平台訂單資料 新增(平台訂單新增資料 Value)
+        {
+            平台訂單資料 Data_ = new 平台訂單資料
+            {
+                處理時間 = Value.處理時間,
+                處理狀態 = 列舉.訂單處理狀態.完成,
+
+                公司 = Value.公司,
+                客戶 = Value.客戶,
+
+                訂單編號 = Value.訂單編號,
+                商品 = Value.商品,
+
+                數量 = Value.數量,
+                單價 = Value.單價,
+                含稅單價 = Value.含稅單價,
+
+                姓名 = Value.姓名,
+                地址 = Value.地址,
+                電話 = Value.電話,
+                手機 = Value.手機,
+
+                備註 = Value.備註,
+
+                配送公司 = Value.配送公司,
+
+                指配日期 = Value.指配日期,
+                指配時段 = Value.指配時段,
+
+                代收方式 = Value.代收方式,
+                代收金額 = Value.代收金額,
+
+                發票號碼 = Value.發票號碼,
+            };
+
+            return Data_;
+        }
+
         /********************************/
 
-        public override 一般訂單歸檔資料 拷貝()
+        public override 平台訂單資料 拷貝()
         {
-            一般訂單歸檔資料 Data_ = new 一般訂單歸檔資料
+            平台訂單資料 Data_ = new 平台訂單資料
             {
-                處理時間 = this.處理時間,
                 處理狀態 = this.處理狀態,
 
                 公司 = this.公司,
                 客戶 = this.客戶,
-                子客戶 = this.子客戶,
 
-                物品 = this.物品,
+                訂單編號 = this.訂單編號,
+                商品 = this.商品,
 
                 數量 = this.數量,
                 單價 = this.單價,
@@ -364,16 +358,15 @@ namespace WokyTool.一般訂單
             return Data_;
         }
 
-        public override void 覆蓋(一般訂單歸檔資料 Data_)
+        public override void 覆蓋(平台訂單資料 Data_)
         {
-            處理時間 = Data_.處理時間;
             處理狀態 = Data_.處理狀態;
 
             公司 = Data_.公司;
             客戶 = Data_.客戶;
-            子客戶 = Data_.子客戶;
 
-            物品 = Data_.物品;
+            訂單編號 = Data_.訂單編號;
+            商品 = Data_.商品;
 
             數量 = Data_.數量;
             單價 = Data_.單價;
@@ -398,17 +391,16 @@ namespace WokyTool.一般訂單
             發票號碼 = Data_.發票號碼;
         }
 
-        public override Boolean 是否一致(一般訂單歸檔資料 Data_)
+        public override Boolean 是否一致(平台訂單資料 Data_)
         {
             return
-                處理時間 == Data_.處理時間 &&
                 處理狀態 == Data_.處理狀態 &&
 
                 公司 == Data_.公司 &&
                 客戶 == Data_.客戶 &&
-                子客戶 == Data_.子客戶 &&
 
-                物品 == Data_.物品 &&
+                訂單編號 == Data_.訂單編號 &&
+                商品 == Data_.商品 &&
 
                 數量 == Data_.數量 &&
                 單價 == Data_.單價 &&
@@ -436,28 +428,34 @@ namespace WokyTool.一般訂單
         public override void 檢查合法()
         {
             if (列舉.是否合法((int)處理狀態) == false)
-                throw new Exception("一般訂單歸檔資料:處理狀態不合法:" + 處理狀態);
+                throw new Exception("平台訂單資料:處理狀態不合法:" + 處理狀態);
 
             if (公司.編號是否合法() == false)
-                throw new Exception("一般訂單歸檔資料:公司編號不合法:" + 公司編號);
+                throw new Exception("平台訂單資料:公司編號不合法:" + 公司編號);
 
             if (客戶.編號是否合法() == false)
-                throw new Exception("一般訂單歸檔資料:客戶編號不合法:" + 客戶編號);
+                throw new Exception("平台訂單資料:客戶編號不合法:" + 客戶編號);
 
-            if (子客戶.編號是否合法() == false)
-                throw new Exception("一般訂單歸檔資料:子客戶編號不合法:" + 子客戶編號);
+            if (商品.編號是否合法() == false)
+                throw new Exception("平台訂單資料:商品不合法:" + 商品編號);
 
-            if (物品.編號是否合法() == false)
-                throw new Exception("一般訂單歸檔資料:物品不合法:" + 物品編號);
+            if (商品.公司 != 公司)
+                throw new Exception("平台訂單資料:公司不一致:" + 商品.公司.名稱 + "," + 公司.名稱);
+
+            if (商品.客戶 != 客戶)
+                throw new Exception("平台訂單資料:客戶不一致:" + 商品.客戶.名稱 + "," + 客戶.名稱);
 
             if (String.IsNullOrEmpty(姓名))
-                throw new Exception("一般訂單歸檔資料:姓名不合法:" + this.ToString());
+                throw new Exception("平台訂單資料:姓名不合法:" + this.ToString());
 
             if (String.IsNullOrEmpty(地址))
-                throw new Exception("一般訂單歸檔資料:地址不合法:" + this.ToString());
+                throw new Exception("平台訂單資料:地址不合法:" + this.ToString());
 
             if (String.IsNullOrEmpty(電話) && String.IsNullOrEmpty(手機))
-                throw new Exception("一般訂單歸檔資料:電話與手機不合法:" + this.ToString());
+                throw new Exception("平台訂單資料:電話與手機不合法:" + this.ToString());
+
+            if (String.IsNullOrEmpty(訂單編號))
+                throw new Exception("平台訂單資料:訂單編號不合法:" + this.ToString());
         }
     }
 }

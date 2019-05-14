@@ -127,7 +127,7 @@ namespace WokyTool.使用者
                 return 管理者;
 
             使用者資料 Item_ = Map.Values
-                                   .Where(Value => Name.Equals(Value.名稱))
+                                   .Where(Value => Name.Equals(Value.名稱) || Name.Equals(Value.帳號))
                                    .FirstOrDefault();
 
             if (Item_ == null)

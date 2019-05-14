@@ -110,7 +110,7 @@ namespace WokyTool.通用
         {
             String Path_ = Path.GetDirectoryName(目標檔案路徑_);
 
-            // 檢查備份路徑是否存在
+            // 檢查路徑是否存在
             if (Directory.Exists(Path_) == false)
             {
                 Directory.CreateDirectory(Path_);
@@ -160,6 +160,56 @@ namespace WokyTool.通用
             {
                 訊息管理器.獨體.Warn("刪除檔案失敗: " + 目標檔案路徑_ , e);
                 return;
+            }
+        }
+
+        public static void 搬移(string 原始檔案路徑_, string 目標檔案路徑_)
+        {
+            if (File.Exists(原始檔案路徑_) == false)
+                throw new Exception("搬移失敗,找不到原始檔案:" + 原始檔案路徑_);
+
+            // 檢查目標檔案是否存在
+            if (File.Exists(目標檔案路徑_))
+                throw new Exception("搬移失敗,檔案已存在:" + 目標檔案路徑_);
+
+            try
+            {
+                File.Move(原始檔案路徑_, 目標檔案路徑_);
+            }
+            catch (IOException e)
+            {
+                訊息管理器.獨體.Warn("搬移檔案失敗: " + 原始檔案路徑_ , e);
+            }
+        }
+
+        public static void 搬移(string 原始檔案路徑_)
+        {
+            if (File.Exists(原始檔案路徑_) == false)
+                throw new Exception("搬移失敗,找不到原始檔案:" + 原始檔案路徑_);
+
+            string 原始路徑_ = Path.GetDirectoryName(原始檔案路徑_);
+            string 原始檔案名稱_ = Path.GetFileNameWithoutExtension(原始檔案路徑_);
+            string 原始檔案副檔名_ = Path.GetExtension(原始檔案路徑_);
+
+            string 目標檔案_ = String.Format("{0}_{1}{2}", 時間.目前時間, 原始檔案名稱_, 原始檔案副檔名_);
+            string 目標路徑_ = System.IO.Path.Combine("備份", 時間.目前日期, 原始路徑_);
+            string 目標檔案路徑_ = System.IO.Path.Combine(目標路徑_, 目標檔案_);
+
+            // 檢查目標檔案是否存在
+            if (File.Exists(目標檔案路徑_))
+                throw new Exception("搬移失敗,檔案已存在:" + 目標檔案路徑_);
+
+            // 檢查備份路徑是否存在
+            if (Directory.Exists(目標路徑_) == false)
+                Directory.CreateDirectory(目標路徑_);
+
+            try
+            {
+                File.Move(原始檔案路徑_, 目標檔案路徑_);
+            }
+            catch (IOException e)
+            {
+                訊息管理器.獨體.Warn("搬移檔案失敗: " + 原始檔案路徑_, e);
             }
         }
     }

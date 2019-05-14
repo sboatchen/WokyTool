@@ -11,24 +11,23 @@ using WokyTool.Common;
 using WokyTool.公司;
 using WokyTool.物品;
 using WokyTool.客戶;
-using WokyTool.商品;
 using WokyTool.通用;
 using WokyTool.聯絡人;
 
 namespace WokyTool.一般訂單
 {
 
-    public partial class 一般訂單新增詳細視窗 : 詳細視窗
+    public partial class  一般訂單新增詳細視窗 : 詳細視窗
     {
-        private int _商品資料版本 = -1;
-        private BindingList<一般訂單新增商品資料> _清單BList = new BindingList<一般訂單新增商品資料>();
+        private int _物品資料版本 = -1;
+        private BindingList<一般訂單新增物品資料> _清單BList = new BindingList<一般訂單新增物品資料>();
 
         public 一般訂單新增詳細視窗()
         {
             InitializeComponent();
 
             this.初始化(this.頁索引元件1, 一般訂單新增資料管理器.獨體);
-            this.一般訂單新增商品資料BindingSource.DataSource = _清單BList;
+            this.一般訂單新增物品資料BindingSource.DataSource = _清單BList;
 
             bool 是否唯讀_ = 一般訂單新增資料管理器.獨體.是否可編輯 == false;
 
@@ -44,11 +43,9 @@ namespace WokyTool.一般訂單
 
             this.列印單價.Enabled = !是否唯讀_;
 
-            this.商品選取元件.ReadOnly = 是否唯讀_;
+            this.物品選取元件.ReadOnly = 是否唯讀_;
             this.數量.ReadOnly = 是否唯讀_;
             this.單價.ReadOnly = 是否唯讀_;
-
-            this.商品選取元件.綁定客戶 = 客戶資料.NULL;
 
             this.客戶選取元件.下拉選單.SelectedIndexChanged += 客戶選擇改變;
             this.子客戶選取元件.下拉選單.SelectedIndexChanged += 子客戶選擇改變;
@@ -88,7 +85,6 @@ namespace WokyTool.一般訂單
         }
 
         /********************************/
-        // 商品詳細視窗樣板
 
         protected override void 視窗激活()
         {
@@ -96,12 +92,12 @@ namespace WokyTool.一般訂單
             this.客戶選取元件.視窗激活();
             this.子客戶選取元件.視窗激活();
             this.聯絡人選取元件.視窗激活();
-            this.商品選取元件.視窗激活();
+            this.物品選取元件.視窗激活();
 
-            if (_商品資料版本 != 商品資料管理器.獨體.唯讀資料版本)
+            if (_物品資料版本 != 物品資料管理器.獨體.唯讀資料版本)
             {
-                _商品資料版本 = 商品資料管理器.獨體.唯讀資料版本;
-                this.商品資料BindingSource.DataSource = 商品資料管理器.獨體.唯讀BList.Where(Value => Value.客戶 == 客戶資料.NULL).ToList();
+                _物品資料版本 = 物品資料管理器.獨體.唯讀資料版本;
+                this.物品資料BindingSource.DataSource = 物品資料管理器.獨體.唯讀BList;
             }
         }
 
@@ -127,7 +123,7 @@ namespace WokyTool.一般訂單
                 目前資料_.清單 = null;
             else
             {
-                目前資料_.清單 = new List<一般訂單新增商品資料>();
+                目前資料_.清單 = new List<一般訂單新增物品資料>();
                 foreach (var Item_ in _清單BList)
                     目前資料_.清單.Add(Item_);
             }
@@ -163,14 +159,14 @@ namespace WokyTool.一般訂單
 
         private void 新增_Click(object sender, EventArgs e)
         {
-            商品資料 商品_ = (商品資料)(this.商品選取元件.SelectedItem);
-            if(商品_ == null || 商品_.編號是否有值() == false){
-                訊息管理器.獨體.Notify("商品不合法");
+            物品資料 物品_ = (物品資料)(this.物品選取元件.SelectedItem);
+            if(物品_ == null || 物品_.編號是否有值() == false){
+                訊息管理器.獨體.Notify("物品不合法");
                 return;
             }
 
-            一般訂單新增商品資料 newItem_ = new 一般訂單新增商品資料();
-            newItem_.商品 = 商品_;
+            一般訂單新增物品資料 newItem_ = new 一般訂單新增物品資料();
+            newItem_.物品 = 物品_;
             newItem_.數量 = (int)this.數量.Value;
             newItem_.單價 = this.單價.Value;
             newItem_.備註 = this.備註.Text;

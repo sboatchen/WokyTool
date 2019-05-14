@@ -249,9 +249,6 @@ namespace WokyTool
 
         private void button32_Click(object sender, EventArgs e)
         {
-            var i = new 工廠出貨視窗();
-            i.Show();
-            i.BringToFront();
         }
 
         private void button35_Click(object sender, EventArgs e)
@@ -294,217 +291,297 @@ namespace WokyTool
 
         private void button38_Click(object sender, EventArgs e)
         {
-            訊息管理器.獨體.Info("公司資料轉換");
-            公司資料管理器.獨體.Map.Clear();
-            foreach (var Item_ in 公司管理器.Instance.Map.Values)
-            {
-                if (Item_.編號 <= 0)
-                    continue;
+            //訊息管理器.獨體.Info("公司資料轉換");
+            //公司資料管理器.獨體.Map.Clear();
+            //foreach (var Item_ in 公司管理器.Instance.Map.Values)
+            //{
+            //    if (Item_.編號 <= 0)
+            //        continue;
 
-                公司.公司資料 New_ = new 公司.公司資料
-                {
-                    編號 = Item_.編號,
-                    名稱 = Item_.名稱,
-                };
+            //    公司.公司資料 New_ = new 公司.公司資料
+            //    {
+            //        編號 = Item_.編號,
+            //        名稱 = Item_.名稱,
+            //    };
 
-                公司資料管理器.獨體.Map.Add(New_.編號, New_);
-            }
-            公司資料管理器.獨體.資料搬移();
+            //    公司資料管理器.獨體.Map.Add(New_.編號, New_);
+            //}
+            //公司資料管理器.獨體.資料搬移();
 
-            訊息管理器.獨體.Info("客戶資料轉換");
-            客戶資料管理器.獨體.Map.Clear();
-            foreach (var Item_ in 廠商管理器.Instance.Map.Values)
-            {
-                if (Item_.編號 <= 0)
-                    continue;
+            //訊息管理器.獨體.Info("客戶資料轉換");
+            //客戶資料管理器.獨體.Map.Clear();
+            //foreach (var Item_ in 廠商管理器.Instance.Map.Values)
+            //{
+            //    if (Item_.編號 <= 0)
+            //        continue;
 
-                if (String.IsNullOrEmpty(Item_.聯絡人) == false)
-                    continue;
+            //    if (String.IsNullOrEmpty(Item_.聯絡人) == false)
+            //        continue;
 
-                if (Item_.名稱.CompareTo("沃廚") == 0)
-                    continue;
+            //    if (Item_.名稱.CompareTo("沃廚") == 0)
+            //        continue;
 
-                if (Item_.名稱.CompareTo("洋承") == 0)
-                    continue;
+            //    if (Item_.名稱.CompareTo("洋承") == 0)
+            //        continue;
 
-                客戶.客戶資料 New_ = new 客戶.客戶資料
-                {
-                    編號 = Item_.編號,
-                    名稱 = Item_.名稱,
-                };
+            //    客戶.客戶資料 New_ = new 客戶.客戶資料
+            //    {
+            //        編號 = Item_.編號,
+            //        名稱 = Item_.名稱,
+            //    };
 
-                客戶資料管理器.獨體.Map.Add(New_.編號, New_);
-            }
-            客戶資料管理器.獨體.資料搬移();
+            //    客戶資料管理器.獨體.Map.Add(New_.編號, New_);
+            //}
+            //客戶資料管理器.獨體.資料搬移();
 
-            訊息管理器.獨體.Info("物品大類資料轉換");
-            物品大類資料管理器.獨體.Map.Clear();
-            foreach (var Item_ in 物品大類管理器.Instance.Map.Values)
-            {
-                if (Item_.編號 <= 0)
-                    continue;
+            //訊息管理器.獨體.Info("物品大類資料轉換");
+            //物品大類資料管理器.獨體.Map.Clear();
+            //foreach (var Item_ in 物品大類管理器.Instance.Map.Values)
+            //{
+            //    if (Item_.編號 <= 0)
+            //        continue;
 
-                物品.物品大類資料 New_ = new 物品.物品大類資料
-                {
-                    編號 = Item_.編號,
-                    名稱 = Item_.名稱,
-                };
+            //    物品.物品大類資料 New_ = new 物品.物品大類資料
+            //    {
+            //        編號 = Item_.編號,
+            //        名稱 = Item_.名稱,
+            //    };
 
-                物品大類資料管理器.獨體.Map.Add(New_.編號, New_);
-            }
-            物品大類資料管理器.獨體.資料搬移();
+            //    物品大類資料管理器.獨體.Map.Add(New_.編號, New_);
+            //}
+            //物品大類資料管理器.獨體.資料搬移();
 
-            訊息管理器.獨體.Info("物品小類資料轉換");
-            物品小類資料管理器.獨體.Map.Clear();
-            foreach (var Item_ in 物品小類管理器.Instance.Map.Values)
-            {
-                if (Item_.編號 <= 0)
-                    continue;
+            //訊息管理器.獨體.Info("物品小類資料轉換");
+            //物品小類資料管理器.獨體.Map.Clear();
+            //foreach (var Item_ in 物品小類管理器.Instance.Map.Values)
+            //{
+            //    if (Item_.編號 <= 0)
+            //        continue;
 
-                物品.物品小類資料 New_ = new 物品.物品小類資料
-                {
-                    編號 = Item_.編號,
-                    名稱 = Item_.名稱,
-                };
+            //    物品.物品小類資料 New_ = new 物品.物品小類資料
+            //    {
+            //        編號 = Item_.編號,
+            //        名稱 = Item_.名稱,
+            //    };
 
-                物品小類資料管理器.獨體.Map.Add(New_.編號, New_);
-            }
-            物品小類資料管理器.獨體.資料搬移();
+            //    物品小類資料管理器.獨體.Map.Add(New_.編號, New_);
+            //}
+            //物品小類資料管理器.獨體.資料搬移();
 
-            訊息管理器.獨體.Info("物品品牌資料轉換");
-            物品品牌資料管理器.獨體.Map.Clear();
-            foreach (var Item_ in 物品品牌管理器.Instance.Map.Values)
-            {
-                if (Item_.編號 <= 0)
-                    continue;
+            //訊息管理器.獨體.Info("物品品牌資料轉換");
+            //物品品牌資料管理器.獨體.Map.Clear();
+            //foreach (var Item_ in 物品品牌管理器.Instance.Map.Values)
+            //{
+            //    if (Item_.編號 <= 0)
+            //        continue;
 
-                物品.物品品牌資料 New_ = new 物品.物品品牌資料
-                {
-                    編號 = Item_.編號,
-                    名稱 = Item_.名稱,
-                };
+            //    物品.物品品牌資料 New_ = new 物品.物品品牌資料
+            //    {
+            //        編號 = Item_.編號,
+            //        名稱 = Item_.名稱,
+            //    };
 
-                物品品牌資料管理器.獨體.Map.Add(New_.編號, New_);
-            }
-            物品品牌資料管理器.獨體.資料搬移();
+            //    物品品牌資料管理器.獨體.Map.Add(New_.編號, New_);
+            //}
+            //物品品牌資料管理器.獨體.資料搬移();
 
-            訊息管理器.獨體.Info("物品資料轉換");
-            物品資料管理器.獨體.Map.Clear();
-            foreach (var Item_ in 物品管理器.Instance.Map.Values)
-            {
-                if (Item_.編號 <= 0)
-                    continue;
+            //訊息管理器.獨體.Info("物品資料轉換");
+            //物品資料管理器.獨體.Map.Clear();
+            //foreach (var Item_ in 物品管理器.Instance.Map.Values)
+            //{
+            //    if (Item_.編號 <= 0)
+            //        continue;
 
-                物品.物品資料 New_ = new 物品.物品資料
-                {
-                    編號 = Item_.編號,
+            //    物品.物品資料 New_ = new 物品.物品資料
+            //    {
+            //        編號 = Item_.編號,
 
-                    大類編號 = 編號轉換(Item_.大類編號),
-                    小類編號 = 編號轉換(Item_.小類編號),
-                    品牌編號 = 編號轉換(Item_.品牌編號),
+            //        大類編號 = 編號轉換(Item_.大類編號),
+            //        小類編號 = 編號轉換(Item_.小類編號),
+            //        品牌編號 = 編號轉換(Item_.品牌編號),
 
-                    條碼 = Item_.條碼,
-                    原廠編號 = Item_.原廠編號,
-                    代理編號 = Item_.代理編號,
+            //        條碼 = Item_.條碼,
+            //        原廠編號 = Item_.原廠編號,
+            //        代理編號 = Item_.代理編號,
 
-                    名稱 = Item_.名稱,
-                    縮寫 = Item_.縮寫,
+            //        名稱 = Item_.名稱,
+            //        縮寫 = Item_.縮寫,
 
-                    體積 = Item_.體積,
-                    顏色 = Item_.顏色,
+            //        體積 = Item_.體積,
+            //        顏色 = Item_.顏色,
 
-                    內庫數量 = Item_.內庫數量,
-                    外庫數量 = Item_.外庫數量,
-                    庫存總成本 = Item_.庫存總成本,
-                    最後進貨成本 = Item_.最後進貨成本,
-                    成本備註 = Item_.成本備註,
-                };
+            //        內庫數量 = Item_.內庫數量,
+            //        外庫數量 = Item_.外庫數量,
+            //        庫存總成本 = Item_.庫存總成本,
+            //        最後進貨成本 = Item_.最後進貨成本,
+            //        成本備註 = Item_.成本備註,
+            //    };
 
-                物品資料管理器.獨體.Map.Add(New_.編號, New_);
-            }
-            物品資料管理器.獨體.資料搬移();
+            //    物品資料管理器.獨體.Map.Add(New_.編號, New_);
+            //}
+            //物品資料管理器.獨體.資料搬移();
 
-            訊息管理器.獨體.Info("商品大類資料轉換");
-            商品大類資料管理器.獨體.Map.Clear();
-            foreach (var Item_ in 商品大類管理器.Instance.Map.Values)
-            {
-                if (Item_.編號 <= 0)
-                    continue;
+            //訊息管理器.獨體.Info("商品大類資料轉換");
+            //商品大類資料管理器.獨體.Map.Clear();
+            //foreach (var Item_ in 商品大類管理器.Instance.Map.Values)
+            //{
+            //    if (Item_.編號 <= 0)
+            //        continue;
 
-                商品.商品大類資料 New_ = new 商品.商品大類資料
-                {
-                    編號 = Item_.編號,
-                    名稱 = Item_.名稱,
-                };
+            //    商品.商品大類資料 New_ = new 商品.商品大類資料
+            //    {
+            //        編號 = Item_.編號,
+            //        名稱 = Item_.名稱,
+            //    };
 
-                商品大類資料管理器.獨體.Map.Add(New_.編號, New_);
-            }
-            商品大類資料管理器.獨體.資料搬移();
+            //    商品大類資料管理器.獨體.Map.Add(New_.編號, New_);
+            //}
+            //商品大類資料管理器.獨體.資料搬移();
 
-            訊息管理器.獨體.Info("商品小類資料轉換");
-            商品小類資料管理器.獨體.Map.Clear();
-            foreach (var Item_ in 商品小類管理器.Instance.Map.Values)
-            {
-                if (Item_.編號 <= 0)
-                    continue;
+            //訊息管理器.獨體.Info("商品小類資料轉換");
+            //商品小類資料管理器.獨體.Map.Clear();
+            //foreach (var Item_ in 商品小類管理器.Instance.Map.Values)
+            //{
+            //    if (Item_.編號 <= 0)
+            //        continue;
 
-                商品.商品小類資料 New_ = new 商品.商品小類資料
-                {
-                    編號 = Item_.編號,
-                    名稱 = Item_.名稱,
-                };
+            //    商品.商品小類資料 New_ = new 商品.商品小類資料
+            //    {
+            //        編號 = Item_.編號,
+            //        名稱 = Item_.名稱,
+            //    };
 
-                商品小類資料管理器.獨體.Map.Add(New_.編號, New_);
-            }
-            商品小類資料管理器.獨體.資料搬移();
+            //    商品小類資料管理器.獨體.Map.Add(New_.編號, New_);
+            //}
+            //商品小類資料管理器.獨體.資料搬移();
 
-            訊息管理器.獨體.Info("商品資料轉換");
+            //訊息管理器.獨體.Info("商品資料轉換");
+            //商品資料管理器.獨體.Map.Clear();
+            //foreach (var Item_ in 商品管理器.Instance.Map.Values)
+            //{
+            //    if (Item_.編號 <= 0)
+            //        continue;
+
+            //    商品.商品資料 New_ = new 商品.商品資料
+            //    {
+            //        編號 = Item_.編號,
+
+            //        大類編號 = 編號轉換(Item_.大類編號),
+            //        小類編號 = 編號轉換(Item_.小類編號),
+
+            //        公司編號 = 編號轉換(Item_.公司編號),
+            //        客戶編號 = 編號轉換(Item_.廠商編號),
+
+            //        品號 = Item_.品號,
+            //        名稱 = Item_.名稱,
+
+            //        需求編號1 = 編號轉換(Item_.需求編號1),
+            //        需求編號2 = 編號轉換(Item_.需求編號2),
+            //        需求編號3 = 編號轉換(Item_.需求編號3),
+            //        需求編號4 = 編號轉換(Item_.需求編號4),
+            //        需求編號5 = 編號轉換(Item_.需求編號5),
+
+            //        數量1 = Item_.數量1,
+            //        數量2 = Item_.數量2,
+            //        數量3 = Item_.數量3,
+            //        數量4 = Item_.數量4,
+            //        數量5 = Item_.數量5,
+
+            //        寄庫數量 = Item_.寄庫,
+            //        售價 = Item_.價格,
+            //    };
+            //    商品資料管理器.獨體.Map.Add(New_.編號, New_);
+            //}
+            //商品資料管理器.獨體.資料搬移();
+
+            // V2.1.0
             商品資料管理器.獨體.Map.Clear();
-            foreach (var Item_ in 商品管理器.Instance.Map.Values)
+            string json = 檔案.讀出檔案("設定/商品.json", false);
+            Dictionary<int, 舊商品資料> Map = JsonConvert.DeserializeObject<Dictionary<int, 舊商品資料>>(json);
+            foreach (var Item_ in Map.Values)
             {
-                if (Item_.編號 <= 0)
-                    continue;
-
                 商品.商品資料 New_ = new 商品.商品資料
                 {
                     編號 = Item_.編號,
 
-                    大類編號 = 編號轉換(Item_.大類編號),
-                    小類編號 = 編號轉換(Item_.小類編號),
+                    大類 = Item_.大類,
+                    小類 = Item_.小類,
 
-                    公司編號 = 編號轉換(Item_.公司編號),
-                    客戶編號 = 編號轉換(Item_.廠商編號),
+                    公司 = Item_.公司,
+                    客戶 = Item_.客戶,
 
                     品號 = Item_.品號,
                     名稱 = Item_.名稱,
 
-                    需求編號1 = 編號轉換(Item_.需求編號1),
-                    需求編號2 = 編號轉換(Item_.需求編號2),
-                    需求編號3 = 編號轉換(Item_.需求編號3),
-                    需求編號4 = 編號轉換(Item_.需求編號4),
-                    需求編號5 = 編號轉換(Item_.需求編號5),
-
-                    數量1 = Item_.數量1,
-                    數量2 = Item_.數量2,
-                    數量3 = Item_.數量3,
-                    數量4 = Item_.數量4,
-                    數量5 = Item_.數量5,
-
-                    寄庫數量 = Item_.寄庫,
-                    售價 = Item_.價格,
+                    寄庫數量 = Item_.寄庫數量,
+                    售價 = Item_.售價,
                 };
+
+                New_.組成 = new List<商品組成資料>();
+                if (Item_.需求1 != 物品.物品資料.NULL)
+                {
+                    商品組成資料 組成_ = new 商品組成資料
+                    {
+                        物品 = Item_.需求1,
+                        數量 = Item_.數量1,
+                    };
+
+                    New_.組成.Add(組成_);
+                }
+                if (Item_.需求2 != 物品.物品資料.NULL)
+                {
+                    商品組成資料 組成_ = new 商品組成資料
+                    {
+                        物品 = Item_.需求2,
+                        數量 = Item_.數量2,
+                    };
+
+                    New_.組成.Add(組成_);
+                }
+                if (Item_.需求3 != 物品.物品資料.NULL)
+                {
+                    商品組成資料 組成_ = new 商品組成資料
+                    {
+                        物品 = Item_.需求3,
+                        數量 = Item_.數量3,
+                    };
+
+                    New_.組成.Add(組成_);
+                }
+                if (Item_.需求4 != 物品.物品資料.NULL)
+                {
+                    商品組成資料 組成_ = new 商品組成資料
+                    {
+                        物品 = Item_.需求4,
+                        數量 = Item_.數量4,
+                    };
+
+                    New_.組成.Add(組成_);
+                }
+                if (Item_.需求5 != 物品.物品資料.NULL)
+                {
+                    商品組成資料 組成_ = new 商品組成資料
+                    {
+                        物品 = Item_.需求5,
+                        數量 = Item_.數量5,
+                    };
+
+                    New_.組成.Add(組成_);
+                }
+
                 商品資料管理器.獨體.Map.Add(New_.編號, New_);
             }
             商品資料管理器.獨體.資料搬移();
 
-            訊息管理器.獨體.Info("使用者資料轉換");
-            使用者資料管理器.獨體.資料搬移();
 
-            訊息管理器.獨體.Info("月結帳匯入設定資料轉換");
-            月結帳匯入設定資料管理器.獨體.資料搬移();
+            //訊息管理器.獨體.Info("使用者資料轉換");
+            //使用者資料管理器.獨體.資料搬移();
 
-            訊息管理器.獨體.Info("平台訂單匯入設定資料轉換");
-            平台訂單匯入設定資料管理器.獨體.資料搬移();
+            //訊息管理器.獨體.Info("月結帳匯入設定資料轉換");
+            //月結帳匯入設定資料管理器.獨體.資料搬移();
+
+            //訊息管理器.獨體.Info("平台訂單匯入設定資料轉換");
+            //平台訂單匯入設定資料管理器.獨體.資料搬移();
 
             訊息管理器.獨體.Info("轉換完畢");
         }
@@ -646,6 +723,11 @@ namespace WokyTool
         private void button44_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.一般訂單新增, 列舉.視窗.總覽);
+        }
+
+        private void button45_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.一般訂單, 列舉.視窗.總覽);
         }
     }
 }

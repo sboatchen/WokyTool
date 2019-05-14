@@ -22,11 +22,11 @@ namespace WokyTool.一般訂單
             } 
         }
 
-        public string 歸檔檔案路徑
+        public string 完成檔案路徑
         {
             get
             {
-                return String.Format("進度/一般訂單歸檔/{0}_{1}.json", 系統參數.使用者, 時間.目前完整時間);
+                return String.Format("進度/一般訂單待合併/{0}_{1}.json", 系統參數.使用者, 時間.目前完整時間);
             }
         }
 
@@ -75,6 +75,34 @@ namespace WokyTool.一般訂單
         // 建構子
         private 一般訂單新增資料管理器()
         {
+        }
+
+        public void 完成()   //@@
+        {
+            var Item_ = 可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送).SelectMany(Value => 一般訂單資料.新增(Value)).ToList();
+            檔案.寫入檔案(完成檔案路徑, JsonConvert.SerializeObject(Item_, Formatting.Indented), false);
+
+            可編輯BList.RaiseListChangedEvents = false;
+
+            var Left_ = 可編輯BList.Where(Value => Value.處理狀態 != 列舉.訂單處理狀態.配送 && Value.處理狀態 != 列舉.訂單處理狀態.忽略).ToList();
+
+            Map.Clear();
+            可編輯BList.Clear();
+
+            唯讀BList.Clear();
+            唯讀BList.Add(空白資料);
+            唯讀BList.Add(錯誤資料);
+
+            foreach (var x in Left_)
+            {
+                可編輯BList.Add(x);
+                唯讀BList.Add(x);
+                Map[x.編號] = x;
+            }
+
+            資料異動();
+
+            可編輯BList.RaiseListChangedEvents = true;
         }
     }
 }

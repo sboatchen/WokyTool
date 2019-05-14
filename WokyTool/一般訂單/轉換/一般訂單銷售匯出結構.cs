@@ -52,7 +52,7 @@ namespace WokyTool.一般訂單
             int Row_ = 9;
             decimal Total_ = 0;
             int 備註欄數 = 0;
-            foreach (一般訂單新增商品資料 Item_ in 資料.清單)
+            foreach (一般訂單新增物品資料 Item_ in 資料.清單)
             {
                 if (Row_ > 9)
                 {
@@ -63,8 +63,8 @@ namespace WokyTool.一般訂單
                 int Column_ = 0;
 
                 App_.Cells[Row_, ++Column_] = Row_ - 8;
-                App_.Cells[Row_, ++Column_] = Item_.商品編號;
-                App_.Cells[Row_, ++Column_] = Item_.商品名稱;
+                App_.Cells[Row_, ++Column_] = Item_.物品編號;
+                App_.Cells[Row_, ++Column_] = Item_.物品名稱;
                 App_.Cells[Row_, ++Column_] = Item_.數量;
 
                 if (資料.列印單價)

@@ -16,11 +16,15 @@ namespace WokyTool.商品{
 
     public partial class 商品新增匯入詳細視窗 : 匯入詳細視窗
     {
+        private int _物品資料版本 = -1;
+        private BindingList<商品組成匯入資料> _組成BList = new BindingList<商品組成匯入資料>();
+
         public 商品新增匯入詳細視窗(資料管理器介面 資料管理器_)
         {
             InitializeComponent();
 
             this.初始化(this.頁索引元件1, 資料管理器_);
+            this.商品組成匯入資料BindingSource.DataSource = _組成BList;
         }
 
         /********************************/
@@ -34,11 +38,13 @@ namespace WokyTool.商品{
             this.公司選取元件1.視窗激活();
             this.客戶選取元件1.視窗激活();
 
-            this.物品選取元件1.視窗激活();
-            this.物品選取元件2.視窗激活();
-            this.物品選取元件3.視窗激活();
-            this.物品選取元件4.視窗激活();
-            this.物品選取元件5.視窗激活();
+            this.物品選取元件.視窗激活();
+
+            if (_物品資料版本 != 物品資料管理器.獨體.唯讀資料版本)
+            {
+                _物品資料版本 = 物品資料管理器.獨體.唯讀資料版本;
+                this.物品資料BindingSource.DataSource = 物品資料管理器.獨體.唯讀BList;
+            }
         }
 
         /********************************/
@@ -57,17 +63,14 @@ namespace WokyTool.商品{
             目前資料_.公司 = (公司資料)(this.公司選取元件1.SelectedItem);
             目前資料_.客戶 = (客戶資料)(this.客戶選取元件1.SelectedItem);
 
-            目前資料_.需求1 = (物品資料)(this.物品選取元件1.SelectedItem);
-            目前資料_.需求2 = (物品資料)(this.物品選取元件2.SelectedItem);
-            目前資料_.需求3 = (物品資料)(this.物品選取元件3.SelectedItem);
-            目前資料_.需求4 = (物品資料)(this.物品選取元件4.SelectedItem);
-            目前資料_.需求5 = (物品資料)(this.物品選取元件5.SelectedItem);
-
-            目前資料_.數量1 = (int)(this.數量1.Value);
-            目前資料_.數量2 = (int)(this.數量2.Value);
-            目前資料_.數量3 = (int)(this.數量3.Value);
-            目前資料_.數量4 = (int)(this.數量4.Value);
-            目前資料_.數量5 = (int)(this.數量5.Value);
+            if (_組成BList.Count == 0)
+                目前資料_.組成 = null;
+            else
+            {
+                目前資料_.組成 = new List<商品組成匯入資料>();
+                foreach (var Item_ in _組成BList)
+                    目前資料_.組成.Add(Item_);
+            }
 
             目前資料_.售價 = this.售價.Value;
             目前資料_.寄庫數量 = (int)(this.寄庫數量.Value);
@@ -92,26 +95,17 @@ namespace WokyTool.商品{
             this.客戶識別.Text = 目前資料_.客戶識別;
             this.客戶選取元件1.SelectedItem = 目前資料_.客戶;
 
-            this.物品識別1.Text = 目前資料_.需求識別1;
-            this.物品選取元件1.SelectedItem = 目前資料_.需求1;
+            _組成BList.RaiseListChangedEvents = false;
 
-            this.物品識別2.Text = 目前資料_.需求識別2;
-            this.物品選取元件2.SelectedItem = 目前資料_.需求2;
+            _組成BList.Clear();
+            if (目前資料_.組成 != null)
+            {
+                foreach (var Item_ in 目前資料_.組成)
+                    _組成BList.Add(Item_);
+            }
 
-            this.物品識別3.Text = 目前資料_.需求識別3;
-            this.物品選取元件3.SelectedItem = 目前資料_.需求3;
-
-            this.物品識別4.Text = 目前資料_.需求識別4;
-            this.物品選取元件4.SelectedItem = 目前資料_.需求4;
-
-            this.物品識別5.Text = 目前資料_.需求識別5;
-            this.物品選取元件5.SelectedItem = 目前資料_.需求5;
-
-            this.數量1.Value = 目前資料_.數量1;
-            this.數量2.Value = 目前資料_.數量2;
-            this.數量3.Value = 目前資料_.數量3;
-            this.數量4.Value = 目前資料_.數量4;
-            this.數量5.Value = 目前資料_.數量5;
+            _組成BList.RaiseListChangedEvents = true;
+            _組成BList.ResetBindings();
 
             this.成本.Value = 目前資料_.成本;
             this.售價.Value = 目前資料_.售價;

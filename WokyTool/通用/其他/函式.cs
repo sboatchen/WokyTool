@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
-    public class 通用函式
+    public class 通用函式   //@@ rename
     {
         public static String 取得字串(Dictionary<int, Object> Map_, int index_)
         {
@@ -42,6 +42,20 @@ namespace WokyTool.通用
                 default:
                     throw new Exception("轉型資料 不支援的格式 " + 資料格式類型);
             }
+        }
+
+        public static bool 是否一致<T>(List<T> X_, List<T> Y_)
+        {
+             if(X_ == null && Y_ == null)
+                return true;
+
+            if(X_ == null || Y_ == null || X_.Count != Y_.Count)
+                return false;
+
+            int HashX_ = X_.Sum(Value => Value.GetHashCode());
+            int HashY_ = Y_.Sum(Value => Value.GetHashCode());
+
+            return X_ == Y_;
         }
     }
 }

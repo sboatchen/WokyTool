@@ -62,7 +62,7 @@
             this.系統分組ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.配送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.歸檔ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.完成ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.訂單處理狀態BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段BindingSource)).BeginInit();
@@ -291,7 +291,7 @@
             this.系統分組ToolStripMenuItem,
             this.匯出ToolStripMenuItem,
             this.配送ToolStripMenuItem,
-            this.歸檔ToolStripMenuItem});
+            this.完成ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1447, 24);
@@ -326,12 +326,12 @@
             this.匯出ToolStripMenuItem.Text = "匯出";
             this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
             // 
-            // 歸檔ToolStripMenuItem
+            // 完成ToolStripMenuItem
             // 
-            this.歸檔ToolStripMenuItem.Name = "歸檔ToolStripMenuItem";
-            this.歸檔ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.歸檔ToolStripMenuItem.Text = "歸檔";
-            this.歸檔ToolStripMenuItem.Click += new System.EventHandler(this.歸檔ToolStripMenuItem_Click);
+            this.完成ToolStripMenuItem.Name = "完成ToolStripMenuItem";
+            this.完成ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.完成ToolStripMenuItem.Text = "完成";
+            this.完成ToolStripMenuItem.Click += new System.EventHandler(this.完成ToolStripMenuItem_Click);
             // 
             // Momo第三方訂單新增總覽視窗
             // 
@@ -393,6 +393,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 代收金額DataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem 配送ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 匯出ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 歸檔ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 完成ToolStripMenuItem;
     }
 }

@@ -41,17 +41,7 @@
             this.客戶資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.品號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.需求1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.需求2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.需求3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.需求4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.需求5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.數量1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.數量2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.數量3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.數量4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.數量5DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.體積DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.寄庫數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.售價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,16 +77,6 @@
             this.客戶DataGridViewTextBoxColumn,
             this.品號DataGridViewTextBoxColumn,
             this.名稱DataGridViewTextBoxColumn,
-            this.需求1DataGridViewTextBoxColumn,
-            this.需求2DataGridViewTextBoxColumn,
-            this.需求3DataGridViewTextBoxColumn,
-            this.需求4DataGridViewTextBoxColumn,
-            this.需求5DataGridViewTextBoxColumn,
-            this.數量1DataGridViewTextBoxColumn,
-            this.數量2DataGridViewTextBoxColumn,
-            this.數量3DataGridViewTextBoxColumn,
-            this.數量4DataGridViewTextBoxColumn,
-            this.數量5DataGridViewTextBoxColumn,
             this.體積DataGridViewTextBoxColumn,
             this.寄庫數量DataGridViewTextBoxColumn,
             this.售價DataGridViewTextBoxColumn,
@@ -107,7 +87,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1266, 429);
+            this.dataGridView1.Size = new System.Drawing.Size(1244, 432);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -190,94 +170,9 @@
             this.名稱DataGridViewTextBoxColumn.HeaderText = "名稱";
             this.名稱DataGridViewTextBoxColumn.Name = "名稱DataGridViewTextBoxColumn";
             // 
-            // 需求1DataGridViewTextBoxColumn
-            // 
-            this.需求1DataGridViewTextBoxColumn.DataPropertyName = "需求1";
-            this.需求1DataGridViewTextBoxColumn.DataSource = this.物品資料BindingSource;
-            this.需求1DataGridViewTextBoxColumn.DisplayMember = "縮寫";
-            this.需求1DataGridViewTextBoxColumn.HeaderText = "需求1";
-            this.需求1DataGridViewTextBoxColumn.Name = "需求1DataGridViewTextBoxColumn";
-            this.需求1DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.需求1DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.需求1DataGridViewTextBoxColumn.ValueMember = "Self";
-            // 
             // 物品資料BindingSource
             // 
             this.物品資料BindingSource.DataSource = typeof(WokyTool.物品.物品資料);
-            // 
-            // 需求2DataGridViewTextBoxColumn
-            // 
-            this.需求2DataGridViewTextBoxColumn.DataPropertyName = "需求2";
-            this.需求2DataGridViewTextBoxColumn.DataSource = this.物品資料BindingSource;
-            this.需求2DataGridViewTextBoxColumn.DisplayMember = "縮寫";
-            this.需求2DataGridViewTextBoxColumn.HeaderText = "需求2";
-            this.需求2DataGridViewTextBoxColumn.Name = "需求2DataGridViewTextBoxColumn";
-            this.需求2DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.需求2DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.需求2DataGridViewTextBoxColumn.ValueMember = "Self";
-            // 
-            // 需求3DataGridViewTextBoxColumn
-            // 
-            this.需求3DataGridViewTextBoxColumn.DataPropertyName = "需求3";
-            this.需求3DataGridViewTextBoxColumn.DataSource = this.物品資料BindingSource;
-            this.需求3DataGridViewTextBoxColumn.DisplayMember = "縮寫";
-            this.需求3DataGridViewTextBoxColumn.HeaderText = "需求3";
-            this.需求3DataGridViewTextBoxColumn.Name = "需求3DataGridViewTextBoxColumn";
-            this.需求3DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.需求3DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.需求3DataGridViewTextBoxColumn.ValueMember = "Self";
-            // 
-            // 需求4DataGridViewTextBoxColumn
-            // 
-            this.需求4DataGridViewTextBoxColumn.DataPropertyName = "需求4";
-            this.需求4DataGridViewTextBoxColumn.DataSource = this.物品資料BindingSource;
-            this.需求4DataGridViewTextBoxColumn.DisplayMember = "縮寫";
-            this.需求4DataGridViewTextBoxColumn.HeaderText = "需求4";
-            this.需求4DataGridViewTextBoxColumn.Name = "需求4DataGridViewTextBoxColumn";
-            this.需求4DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.需求4DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.需求4DataGridViewTextBoxColumn.ValueMember = "Self";
-            // 
-            // 需求5DataGridViewTextBoxColumn
-            // 
-            this.需求5DataGridViewTextBoxColumn.DataPropertyName = "需求5";
-            this.需求5DataGridViewTextBoxColumn.DataSource = this.物品資料BindingSource;
-            this.需求5DataGridViewTextBoxColumn.DisplayMember = "縮寫";
-            this.需求5DataGridViewTextBoxColumn.HeaderText = "需求5";
-            this.需求5DataGridViewTextBoxColumn.Name = "需求5DataGridViewTextBoxColumn";
-            this.需求5DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.需求5DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.需求5DataGridViewTextBoxColumn.ValueMember = "Self";
-            // 
-            // 數量1DataGridViewTextBoxColumn
-            // 
-            this.數量1DataGridViewTextBoxColumn.DataPropertyName = "數量1";
-            this.數量1DataGridViewTextBoxColumn.HeaderText = "數量1";
-            this.數量1DataGridViewTextBoxColumn.Name = "數量1DataGridViewTextBoxColumn";
-            // 
-            // 數量2DataGridViewTextBoxColumn
-            // 
-            this.數量2DataGridViewTextBoxColumn.DataPropertyName = "數量2";
-            this.數量2DataGridViewTextBoxColumn.HeaderText = "數量2";
-            this.數量2DataGridViewTextBoxColumn.Name = "數量2DataGridViewTextBoxColumn";
-            // 
-            // 數量3DataGridViewTextBoxColumn
-            // 
-            this.數量3DataGridViewTextBoxColumn.DataPropertyName = "數量3";
-            this.數量3DataGridViewTextBoxColumn.HeaderText = "數量3";
-            this.數量3DataGridViewTextBoxColumn.Name = "數量3DataGridViewTextBoxColumn";
-            // 
-            // 數量4DataGridViewTextBoxColumn
-            // 
-            this.數量4DataGridViewTextBoxColumn.DataPropertyName = "數量4";
-            this.數量4DataGridViewTextBoxColumn.HeaderText = "數量4";
-            this.數量4DataGridViewTextBoxColumn.Name = "數量4DataGridViewTextBoxColumn";
-            // 
-            // 數量5DataGridViewTextBoxColumn
-            // 
-            this.數量5DataGridViewTextBoxColumn.DataPropertyName = "數量5";
-            this.數量5DataGridViewTextBoxColumn.HeaderText = "數量5";
-            this.數量5DataGridViewTextBoxColumn.Name = "數量5DataGridViewTextBoxColumn";
             // 
             // 體積DataGridViewTextBoxColumn
             // 
@@ -324,7 +219,7 @@
             this.更新ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1266, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1244, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -369,7 +264,7 @@
             // 商品ToolStripMenuItem
             // 
             this.商品ToolStripMenuItem.Name = "商品ToolStripMenuItem";
-            this.商品ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.商品ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.商品ToolStripMenuItem.Text = "新增";
             this.商品ToolStripMenuItem.Click += new System.EventHandler(this.新增ToolStripMenuItem_Click);
             // 
@@ -377,7 +272,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1266, 453);
+            this.ClientSize = new System.Drawing.Size(1244, 456);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

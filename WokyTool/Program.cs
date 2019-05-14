@@ -26,7 +26,7 @@ namespace WokyTool
 
             Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
-
+            
             using (var 登入視窗_ = new 登入視窗())
             {
                 if (登入視窗_.ShowDialog() == DialogResult.OK)
@@ -34,6 +34,9 @@ namespace WokyTool
                     Application.Run(new 主視窗());
                 }
             }
+
+            //使用者資料管理器.獨體.登入("root", "Aptx4869");
+            //Application.Run(new 主視窗());
         }
 
         static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)

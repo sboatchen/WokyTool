@@ -21,11 +21,11 @@ namespace WokyTool.平台訂單
             } 
         }
 
-        public string 歸檔檔案路徑
+        public string 完成檔案路徑
         {
             get
             {
-                return String.Format("進度/平台訂單歸檔/{0}_{1}.json", 系統參數.使用者, 時間.目前完整時間);
+                return String.Format("進度/平台訂單待合併/{0}_{1}.json", 系統參數.使用者, 時間.目前完整時間);
             }
         }
 
@@ -76,10 +76,10 @@ namespace WokyTool.平台訂單
         {
         }
 
-        public void 歸檔()   //@@
+        public void 完成()   //@@
         {
-            var Item_ = 可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送).Select(Value => 平台訂單歸檔資料.新增(Value)).ToList();
-            檔案.寫入檔案(歸檔檔案路徑, JsonConvert.SerializeObject(Item_, Formatting.Indented), false);
+            var Item_ = 可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送).Select(Value => 平台訂單資料.新增(Value)).ToList();
+            檔案.寫入檔案(完成檔案路徑, JsonConvert.SerializeObject(Item_, Formatting.Indented), false);
 
             可編輯BList.RaiseListChangedEvents = false;
 

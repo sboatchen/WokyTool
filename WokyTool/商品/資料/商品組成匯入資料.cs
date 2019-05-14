@@ -6,12 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.物品;
+using WokyTool.通用;
 
 namespace WokyTool.商品
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class 商品組成匯入資料
-    {
+    { 
         [JsonProperty]
         public int 物品編號
         {
@@ -110,18 +111,6 @@ namespace WokyTool.商品
             }
 
             物品 = 物品資料管理器.獨體.GetByLike(Pair_[0]);
-        }
-
-        public 商品組成資料 商品組成資料
-        {
-            get
-            {
-                return new 商品組成資料
-                {
-                    物品 = this._物品,
-                    數量 = this.數量,
-                };
-            }
         }
 
         /********************************/

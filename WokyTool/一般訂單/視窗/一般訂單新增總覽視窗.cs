@@ -63,13 +63,13 @@ namespace WokyTool.一般訂單
             訊息管理器.獨體.Notify("已完成匯出");
         }
 
-        private void 歸檔ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 完成ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*平台訂單新增資料管理器.獨體.歸檔();
+            一般訂單新增資料管理器.獨體.完成();
 
             this.OnActivated(null);
 
-            訊息管理器.獨體.Notify("已完成歸檔");*/
+            訊息管理器.獨體.Notify("已完成");
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

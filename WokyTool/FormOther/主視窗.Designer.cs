@@ -74,6 +74,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button45 = new System.Windows.Forms.Button();
             this.button44 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -569,6 +570,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.button45);
             this.panel4.Controls.Add(this.button44);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.button5);
@@ -578,8 +580,18 @@
             this.panel4.Controls.Add(this.button25);
             this.panel4.Location = new System.Drawing.Point(12, 285);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(482, 156);
+            this.panel4.Size = new System.Drawing.Size(482, 188);
             this.panel4.TabIndex = 50;
+            // 
+            // button45
+            // 
+            this.button45.Location = new System.Drawing.Point(6, 160);
+            this.button45.Name = "button45";
+            this.button45.Size = new System.Drawing.Size(100, 23);
+            this.button45.TabIndex = 49;
+            this.button45.Text = "總覽";
+            this.button45.UseVisualStyleBackColor = true;
+            this.button45.Click += new System.EventHandler(this.button45_Click);
             // 
             // button44
             // 
@@ -698,7 +710,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 724);
+            this.ClientSize = new System.Drawing.Size(959, 724);
             this.Controls.Add(this.button42);
             this.Controls.Add(this.button34);
             this.Controls.Add(this.panel6);
@@ -708,7 +720,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "主視窗";
-            this.Text = "V 2.0.18";
+            this.Text = "V 2.1.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.主視窗_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -785,6 +797,7 @@
         private System.Windows.Forms.Button button42;
         private System.Windows.Forms.Button button43;
         private System.Windows.Forms.Button button44;
+        private System.Windows.Forms.Button button45;
 
 
     }

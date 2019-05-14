@@ -192,7 +192,7 @@ namespace WokyTool.一般訂單
         private static readonly 一般訂單新增資料 _NULL = new 一般訂單新增資料
         {
             編號 = 常數.T空白資料編碼,
-            處理狀態 = 列舉.訂單處理狀態.歸檔,
+            處理狀態 = 列舉.訂單處理狀態.完成,
 
             公司 = 公司資料.NULL,
             客戶 = 客戶資料.NULL,
