@@ -161,13 +161,13 @@ namespace WokyTool.使用者
         public override void 檢查合法()
         {
             if (String.IsNullOrEmpty(帳號))
-                throw new Exception("使用者資料:帳號不合法:" + this.ToString());
+                throw new Exception("使用者資料:帳號不合法");
 
             if (String.IsNullOrEmpty(密碼))
-                throw new Exception("使用者資料:密碼不合法:" + this.ToString());
+                throw new Exception("使用者資料:密碼不合法");
 
             if (String.IsNullOrEmpty(名稱))
-                throw new Exception("使用者資料:名稱不合法:" + this.ToString());
+                throw new Exception("使用者資料:名稱不合法");
         }
     }
 }

@@ -43,6 +43,8 @@ namespace WokyTool.一般訂單
 
             dateTimePicker1.Value = _一般訂單資料篩選設定.開始時間;
             dateTimePicker2.Value = _一般訂單資料篩選設定.結束時間;
+
+            this.更新ToolStripMenuItem.Enabled = 一般訂單資料管理器.獨體.是否可編輯;
         }
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)

@@ -58,7 +58,7 @@ namespace WokyTool.一般訂單
         {
             get
             {
-                return 系統參數.匯入訂單;
+                return 系統參數.修改設定資料;
             }
         }
 

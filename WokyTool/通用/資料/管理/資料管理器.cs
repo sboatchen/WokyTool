@@ -165,10 +165,10 @@ namespace WokyTool.通用
         public void 檢查合法()
         {
             // 檢查到第一個錯誤 即回傳
-            foreach (T Item in Map.Values)
+            foreach (var Item_ in 可編輯BList)
             {
-                if (Item.是否正在編輯())
-                    Item.檢查合法();
+                if (Item_.是否正在編輯())
+                    Item_.檢查合法();
             }
         }
 

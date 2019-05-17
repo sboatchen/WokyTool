@@ -93,11 +93,13 @@ namespace WokyTool.通用
 
             using (FileStream fsCrypt = new FileStream(目標檔案路徑_, FileMode.OpenOrCreate, FileAccess.Write))
             {
+                // clean file
+                fsCrypt.SetLength(0);
+
                 RijndaelManaged RMCrypto = new RijndaelManaged();
 
                 using (CryptoStream cs = new CryptoStream(fsCrypt, RMCrypto.CreateEncryptor(key, key), CryptoStreamMode.Write))
                 {
-
                     // convert string to stream
                     byte[] byteArray = Encoding.UTF8.GetBytes(資料_);
 
