@@ -38,11 +38,6 @@ namespace WokyTool.一般訂單
             this.配送公司DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.配送公司));
 
             _一般訂單資料篩選設定 = new 一般訂單資料篩選設定();
-            _一般訂單資料篩選設定.開始時間 = 一般訂單資料管理器.獨體.可編輯BList.OrderBy(Value => Value.處理時間).First().處理時間;
-            _一般訂單資料篩選設定.結束時間 = 一般訂單資料管理器.獨體.可編輯BList.OrderBy(Value => Value.處理時間).Last().處理時間;
-
-            dateTimePicker1.Value = _一般訂單資料篩選設定.開始時間;
-            dateTimePicker2.Value = _一般訂單資料篩選設定.結束時間;
 
             this.更新ToolStripMenuItem.Enabled = 一般訂單資料管理器.獨體.是否可編輯;
         }
