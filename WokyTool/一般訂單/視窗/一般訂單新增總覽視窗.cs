@@ -41,9 +41,20 @@ namespace WokyTool.一般訂單
 
         private void 配送ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Queue_ = 一般訂單新增資料管理器.獨體.可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增).Select(Value => new 一般訂單配送資料(Value));
+             var 退貨Queue_ = 一般訂單新增資料管理器.獨體.可編輯BList
+                            .Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增 && Value.是否退貨);
 
-            配送管理器.獨體.新增(Queue_);
+            foreach(var Item_ in 退貨Queue_)
+            {
+                Item_.處理狀態 = 列舉.訂單處理狀態.退貨;
+                Item_.處理時間 = DateTime.Now;
+            }
+
+            var 出貨Queue_ = 一般訂單新增資料管理器.獨體.可編輯BList
+                            .Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增) // 不須再檢查退貨
+                            .Select(Value => new 一般訂單配送資料(Value));
+
+            配送管理器.獨體.新增(出貨Queue_);
 
             訊息管理器.獨體.Notify("已轉入配送系統");
         }

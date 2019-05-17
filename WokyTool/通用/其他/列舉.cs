@@ -173,6 +173,7 @@ namespace WokyTool.通用
             完成 = 2,
             結單 = 3,
             忽略 = 4,
+            退貨 = 5,
         };
 
         public enum 進貨

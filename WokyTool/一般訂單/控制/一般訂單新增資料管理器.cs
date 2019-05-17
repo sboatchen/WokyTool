@@ -79,12 +79,12 @@ namespace WokyTool.一般訂單
 
         public void 完成()   //@@
         {
-            var Item_ = 可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送).SelectMany(Value => 一般訂單資料.新增(Value)).ToList();
+            var Item_ = 可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送 || Value.處理狀態 == 列舉.訂單處理狀態.退貨).SelectMany(Value => 一般訂單資料.新增(Value)).ToList();
             檔案.寫入檔案(完成檔案路徑, JsonConvert.SerializeObject(Item_, Formatting.Indented), false);
 
             可編輯BList.RaiseListChangedEvents = false;
 
-            var Left_ = 可編輯BList.Where(Value => Value.處理狀態 != 列舉.訂單處理狀態.配送 && Value.處理狀態 != 列舉.訂單處理狀態.忽略).ToList();
+            var Left_ = 可編輯BList.Where(Value => Value.處理狀態 != 列舉.訂單處理狀態.配送 && Value.處理狀態 != 列舉.訂單處理狀態.退貨 && Value.處理狀態 != 列舉.訂單處理狀態.忽略).ToList();
 
             Map.Clear();
             可編輯BList.Clear();

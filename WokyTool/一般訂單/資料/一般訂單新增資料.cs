@@ -182,6 +182,33 @@ namespace WokyTool.一般訂單
             }
         }
 
+        public bool 是否退貨
+        {
+            get
+            {
+                bool? Flag_ = null;
+
+                if (null == 清單 || 0 == 清單.Count)
+                    throw new Exception("清單為0:");
+
+                foreach (一般訂單新增物品資料 新增物品 in 清單)
+                {
+                    if (Flag_ == null)
+                    {
+                        Flag_ = 新增物品.數量 < 0;
+                    }
+                    else
+                    {
+                        bool Temp_ = 新增物品.數量 < 0;
+                        if(Flag_ != Temp_)
+                            throw new Exception("數量不皆為正或負");
+                    }
+                }
+
+                return (bool)Flag_;
+            }
+        }
+
         /********************************/
 
         public 一般訂單新增資料 Self
@@ -380,6 +407,9 @@ namespace WokyTool.一般訂單
 
             if (String.IsNullOrEmpty(電話) && String.IsNullOrEmpty(手機))
                 throw new Exception("一般訂單新增資料:電話與手機不合法:" + this.ToString());
+
+            if (null == 清單 || 0 == 清單.Count)
+                throw new Exception("一般訂單新增資料:清單為0:" + this.ToString());
         }
     }
 }

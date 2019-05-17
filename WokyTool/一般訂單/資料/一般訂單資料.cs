@@ -325,7 +325,6 @@ namespace WokyTool.一般訂單
                 一般訂單資料 Data_ = new 一般訂單資料
                 {
                     處理時間 = Value.處理時間,
-                    處理狀態 = 列舉.訂單處理狀態.完成,
 
                     公司 = Value.公司,
                     客戶 = Value.客戶,
@@ -353,6 +352,8 @@ namespace WokyTool.一般訂單
 
                     發票號碼 = Value.發票號碼,
                 };
+
+                Data_.處理狀態 = Value.處理狀態 == 列舉.訂單處理狀態.退貨 ? 列舉.訂單處理狀態.退貨 : 列舉.訂單處理狀態.完成;
 
                 yield return Data_;
 
