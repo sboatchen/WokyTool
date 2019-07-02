@@ -198,14 +198,11 @@ namespace WokyTool.商品
                             continue;
                         if (Temp_.編號 <= 0)
                             continue;
-                        if (Temp_.名稱.ToUpper().Equals("WOKY"))
-                            continue;
-
 
                         if (_品牌 == null)
                             _品牌 = Temp_;
                         else
-                            _品牌 = 物品品牌資料.NULL;
+                            _品牌 = 物品品牌資料.MIX;
                     }
 
                     if(_品牌 == null)

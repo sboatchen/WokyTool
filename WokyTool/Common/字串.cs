@@ -11,6 +11,7 @@ namespace WokyTool.Common
         public static string 空 = "";
         public static string 空白 = "空白";
         public static string 錯誤 = "錯誤";
+        public static string 混和 = "混和";
         public static string 警告 = "警告";
         public static string 無 = "無";
         public static string 正確 = "(OK)";

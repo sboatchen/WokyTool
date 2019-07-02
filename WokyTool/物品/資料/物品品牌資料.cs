@@ -51,6 +51,19 @@ namespace WokyTool.物品
             }
         }
 
+        private static 物品品牌資料 _MIX = new 物品品牌資料
+        {
+            編號 = 常數.品牌混和資料編碼,
+            名稱 = 字串.混和,
+        };
+        public static 物品品牌資料 MIX
+        {
+            get
+            {
+                return _MIX;
+            }
+        }
+
         /********************************/
 
         public override 物品品牌資料 拷貝()

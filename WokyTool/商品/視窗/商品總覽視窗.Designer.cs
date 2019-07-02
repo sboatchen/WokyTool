@@ -313,17 +313,7 @@
         private System.Windows.Forms.BindingSource 客戶資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 品號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 需求1DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 物品資料BindingSource;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 需求2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 需求3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 需求4DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 需求5DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 數量1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 數量2DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 數量3DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 數量4DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 數量5DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 體積DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 寄庫數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 售價DataGridViewTextBoxColumn;
