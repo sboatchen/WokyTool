@@ -75,6 +75,7 @@ namespace WokyTool.通用
         // 建構子
         protected 資料管理器()
         {
+            資料是否異動 = false;
             初始化資料();
 
             可編輯BList = new BindingList<T>();
@@ -102,7 +103,6 @@ namespace WokyTool.通用
             可編輯BList.RaiseListChangedEvents = true;
             唯讀BList.RaiseListChangedEvents = true;
 
-            資料是否異動 = false;
             編輯資料版本 = 1;
             唯讀資料版本 = 1;
 

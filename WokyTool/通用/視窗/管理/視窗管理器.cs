@@ -113,6 +113,8 @@ namespace WokyTool.通用
             篩選視窗設定Map.Add(列舉.編號.物品, typeof(物品篩選視窗));
             篩選視窗設定Map.Add(列舉.編號.商品, typeof(商品篩選視窗));
 
+            篩選視窗設定Map.Add(列舉.編號.月結帳, typeof(月結帳篩選視窗));
+
              /********************************/
 
             匯入視窗設定Map = new Dictionary<列舉.編號, Type>();

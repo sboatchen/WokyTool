@@ -35,8 +35,8 @@ namespace WokyTool
                 }
             }
 
-            //使用者資料管理器.獨體.登入("root", "Aptx4869");
-            //Application.Run(new 主視窗());
+            /*使用者資料管理器.獨體.登入("root", "Aptx4869");
+            Application.Run(new 主視窗());*/
         }
 
         static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)

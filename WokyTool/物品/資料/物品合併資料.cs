@@ -71,6 +71,31 @@ namespace WokyTool.物品
             }
         }
 
+        public void 新增_忽視錯誤(商品資料 商品資料_, int 數量_)
+        {
+            if (商品資料_.組成 == null)
+                return;
+
+            foreach (var Item_ in 商品資料_.組成)
+            {
+                物品資料 物品資料_ = Item_.物品;
+                int 總數量_ = Item_.數量 * 數量_;
+
+                if (物品資料_.編號是否有值() == false || 總數量_ <= 0)
+                    return;
+
+                int 目前數量_ = 0;
+                if (Map.TryGetValue(物品資料_, out 目前數量_))
+                {
+                    Map[物品資料_] = 目前數量_ + 總數量_;
+                }
+                else
+                {
+                    Map.Add(物品資料_, 總數量_);
+                }
+            }
+        }
+
         public void 清除()
         {
             Map.Clear();

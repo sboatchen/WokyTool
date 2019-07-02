@@ -32,9 +32,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.匯出ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.物品統計ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.品牌營業額ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.訂單編號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.商品統計ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.公司資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.客戶DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -61,7 +65,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.篩選ToolStripMenuItem,
-            this.匯出ToolStripMenuItem});
+            this.匯出ToolStripMenuItem,
+            this.匯出ToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1394, 24);
@@ -81,6 +86,30 @@
             this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯出ToolStripMenuItem.Text = "會計";
             this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
+            // 
+            // 匯出ToolStripMenuItem1
+            // 
+            this.匯出ToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.物品統計ToolStripMenuItem,
+            this.品牌營業額ToolStripMenuItem,
+            this.商品統計ToolStripMenuItem});
+            this.匯出ToolStripMenuItem1.Name = "匯出ToolStripMenuItem1";
+            this.匯出ToolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
+            this.匯出ToolStripMenuItem1.Text = "匯出";
+            // 
+            // 物品統計ToolStripMenuItem
+            // 
+            this.物品統計ToolStripMenuItem.Name = "物品統計ToolStripMenuItem";
+            this.物品統計ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.物品統計ToolStripMenuItem.Text = "物品統計";
+            this.物品統計ToolStripMenuItem.Click += new System.EventHandler(this.物品統計ToolStripMenuItem_Click);
+            // 
+            // 品牌營業額ToolStripMenuItem
+            // 
+            this.品牌營業額ToolStripMenuItem.Name = "品牌營業額ToolStripMenuItem";
+            this.品牌營業額ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.品牌營業額ToolStripMenuItem.Text = "品牌營業額";
+            this.品牌營業額ToolStripMenuItem.Click += new System.EventHandler(this.品牌營業額ToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -107,6 +136,20 @@
             this.dataGridView1.Size = new System.Drawing.Size(1394, 472);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
+            // 
+            // 訂單編號
+            // 
+            this.訂單編號.DataPropertyName = "訂單編號";
+            this.訂單編號.HeaderText = "訂單編號";
+            this.訂單編號.Name = "訂單編號";
+            // 
+            // 商品統計ToolStripMenuItem
+            // 
+            this.商品統計ToolStripMenuItem.Name = "商品統計ToolStripMenuItem";
+            this.商品統計ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.商品統計ToolStripMenuItem.Text = "商品統計";
+            this.商品統計ToolStripMenuItem.Click += new System.EventHandler(this.商品統計ToolStripMenuItem_Click);
             // 
             // 編號DataGridViewTextBoxColumn
             // 
@@ -114,12 +157,6 @@
             this.編號DataGridViewTextBoxColumn.HeaderText = "編號";
             this.編號DataGridViewTextBoxColumn.Name = "編號DataGridViewTextBoxColumn";
             this.編號DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 訂單編號
-            // 
-            this.訂單編號.DataPropertyName = "訂單編號";
-            this.訂單編號.HeaderText = "訂單編號";
-            this.訂單編號.Name = "訂單編號";
             // 
             // 公司DataGridViewTextBoxColumn
             // 
@@ -263,5 +300,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 利潤DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 總利潤DataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem 匯出ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 物品統計ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 品牌營業額ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 商品統計ToolStripMenuItem;
     }
 }

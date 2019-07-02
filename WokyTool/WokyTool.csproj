@@ -333,6 +333,18 @@
     <Compile Include="客製\匯入\平台訂單自定義_摩天.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_PayEasy.cs" />
     <Compile Include="平台訂單\轉換\平台訂單新增錯誤匯出轉換.cs" />
+    <Compile Include="月結帳\視窗\月結帳篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="月結帳\視窗\月結帳篩選視窗.Designer.cs">
+      <DependentUpon>月結帳篩選視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="月結帳\資料\月結帳資料篩選設定.cs" />
+    <Compile Include="月結帳\轉換\暫存\月結帳商品統計暫存資料.cs" />
+    <Compile Include="月結帳\轉換\月結帳商品統計匯出轉換.cs" />
+    <Compile Include="月結帳\轉換\月結帳品牌營業額匯出轉換.cs" />
+    <Compile Include="月結帳\轉換\月結帳物品統計匯出轉換.cs" />
+    <Compile Include="月結帳\轉換\月結帳物品統計總覽匯出轉換.cs" />
     <Compile Include="廠商\控制\廠商資料管理器.cs" />
     <Compile Include="廠商\視窗\元件\廠商選取元件.cs">
       <SubType>UserControl</SubType>
@@ -1027,6 +1039,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="客戶\視窗\客戶詳細視窗.resx">
       <DependentUpon>客戶詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="月結帳\視窗\月結帳篩選視窗.resx">
+      <DependentUpon>月結帳篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="月結帳\視窗\月結帳匯入視窗.resx">
       <DependentUpon>月結帳匯入視窗.cs</DependentUpon>

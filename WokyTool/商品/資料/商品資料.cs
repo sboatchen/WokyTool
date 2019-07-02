@@ -184,6 +184,38 @@ namespace WokyTool.商品
             }
         }
 
+        protected 物品品牌資料 _品牌 = null;
+        public 物品品牌資料 品牌
+        {
+            get
+            {
+                if (_品牌 == null)
+                {
+                    foreach(商品組成資料 商品組成資料_ in 組成)
+                    {
+                        物品品牌資料 Temp_ = 商品組成資料_.物品.品牌;
+                        if (_品牌 == Temp_)
+                            continue;
+                        if (Temp_.編號 <= 0)
+                            continue;
+                        if (Temp_.名稱.ToUpper().Equals("WOKY"))
+                            continue;
+
+
+                        if (_品牌 == null)
+                            _品牌 = Temp_;
+                        else
+                            _品牌 = 物品品牌資料.NULL;
+                    }
+
+                    if(_品牌 == null)
+                        _品牌 = 物品品牌資料.NULL;
+                }
+
+                return _品牌;
+            }
+        }
+
         /********************************/
 
         public 商品資料 Self
