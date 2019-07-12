@@ -38,7 +38,7 @@ namespace WokyTool.進貨
 
         private void 樣板ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            函式.GetFile("進貨新增匯入範本", "樣板/進貨/進貨新增匯入範本.xlsx");
+            舊函式.GetFile("進貨新增匯入範本", "樣板/進貨/進貨新增匯入範本.xlsx");
         }
 
         private void 匯入ToolStripMenuItem_Click(object sender, EventArgs e)

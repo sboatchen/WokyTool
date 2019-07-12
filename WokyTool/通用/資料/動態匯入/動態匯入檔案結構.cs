@@ -114,7 +114,7 @@ namespace WokyTool.通用
                             {
                                 var cell = range.Cells[rCnt, cCnt] as Excel.Range;
                                 dValue_ = cell.Value2;
-                                object value = 通用函式.轉型資料(dValue_, 欄位設定_.格式);
+                                object value = 函式.轉型資料(dValue_, 欄位設定_.格式);
 
                                 if (value != null)
                                 {
@@ -151,7 +151,7 @@ namespace WokyTool.通用
                         {
                             var cell = range.Cells[rCnt, cCnt] as Excel.Range;
                             dValue_ = cell.Value2;
-                            object value = 通用函式.轉型資料(dValue_, 欄位設定_.格式);
+                            object value = 函式.轉型資料(dValue_, 欄位設定_.格式);
 
                             if (value != null)
                             {

@@ -59,7 +59,7 @@ namespace WokyTool.配送
                                 .ToList();
 
             string Title_ = String.Format("全速配匯出_{0}", 時間.目前日期);
-            函式.ExportCSV<全速配匯出結構>(Title_, _Export1);
+            舊函式.ExportCSV<全速配匯出結構>(Title_, _Export1);
 
             // 如果有資料匯出，則鎖定不再允許匯出，並開放匯入
             if (_Export1.Count > 0)
@@ -78,7 +78,7 @@ namespace WokyTool.配送
                                 .ToList();
 
             string Title_ = String.Format("宅配通匯出_{0}", 時間.目前日期);
-            函式.ExportExcel<宅配通匯出結構>(Title_, _Export2);
+            舊函式.ExportExcel<宅配通匯出結構>(Title_, _Export2);
 
             // 如果有資料匯出，則鎖定不再允許匯出，並開放匯入
             if (_Export2.Count > 0)

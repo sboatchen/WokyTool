@@ -237,7 +237,7 @@ namespace WokyTool
 
         private void button31_Click(object sender, EventArgs e)
         {
-            函式.SaveAll();
+            舊函式.SaveAll();
         }
 
         private void 盤點出貨_Click(object sender, EventArgs e)

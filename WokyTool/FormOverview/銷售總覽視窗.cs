@@ -96,7 +96,7 @@ namespace WokyTool.FormOverview
                                     Value => new 銷售匯出結構(Value));
 
             string Title_ = String.Format("銷售匯出_{0}", 時間.目前日期);
-            函式.ExportExcel<銷售匯出結構>(Title_, ItemGroup_);
+            舊函式.ExportExcel<銷售匯出結構>(Title_, ItemGroup_);
         }
 
         private void 結算ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -115,7 +115,7 @@ namespace WokyTool.FormOverview
             函式.ExportExcel<物品庫存匯出結構>(Title_, ItemGroup_, 總結_);*/
 
             string Title_ = String.Format("銷售結算_{0}", 時間.目前日期);
-            函式.ExportExcel<銷售匯出結構>(Title_, ItemGroup_);
+            舊函式.ExportExcel<銷售匯出結構>(Title_, ItemGroup_);
         }
 
         public void onChildClosing(子視窗<銷售資料_編輯> Child_)

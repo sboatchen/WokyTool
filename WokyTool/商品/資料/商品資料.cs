@@ -361,7 +361,7 @@ namespace WokyTool.商品
             if (是否相同_ == false)
                 return false;
 
-            return 通用函式.是否一致(組成, Data_.組成);
+            return 函式.是否一致(組成, Data_.組成);
         }
 
         public override void 檢查合法()

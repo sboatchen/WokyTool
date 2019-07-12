@@ -29,7 +29,7 @@ namespace WokyTool.商品
 
         private void 樣板ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            函式.GetFile("商品新增匯入範本", "樣板/設定/商品新增匯入範本.xlsx");
+            舊函式.GetFile("商品新增匯入範本", "樣板/設定/商品新增匯入範本.xlsx");
         }
 
         private void 匯入ToolStripMenuItem_Click(object sender, EventArgs e)

@@ -50,9 +50,9 @@ namespace WokyTool.客製
         }
 
         [CsvColumn(Name = "'訂單編號'", FieldIndex = 2)]
-        public string 訂單編號 { get { return 通用函式.取得字串(_Data.額外資訊, 5); } }
+        public string 訂單編號 { get { return 函式.取得字串(_Data.額外資訊, 5); } }
         [CsvColumn(Name = "'出貨單編號'", FieldIndex = 3)]
-        public string 出貨單編號 { get { return 通用函式.取得字串(_Data.額外資訊, 6); } }
+        public string 出貨單編號 { get { return 函式.取得字串(_Data.額外資訊, 6); } }
 
         [CsvColumn(Name = "'託運單編號'", FieldIndex = 4)]
         public string 託運單編號 { get { return "'" + _Data.配送單號 + "'"; } }
@@ -77,8 +77,8 @@ namespace WokyTool.客製
         public string 外箱規格 { get { return 外箱規格格式; } }
 
         [CsvColumn(Name = "商品品號'", FieldIndex = 7)]
-        public string 商品品號 { get { return 通用函式.取得字串(_Data.額外資訊, 16); } }
+        public string 商品品號 { get { return 函式.取得字串(_Data.額外資訊, 16); } }
         [CsvColumn(Name = "'實際出貨數量'", FieldIndex = 8)]
-        public string 實際出貨數量 { get { return 通用函式.取得字串(_Data.額外資訊, 20); } }
+        public string 實際出貨數量 { get { return 函式.取得字串(_Data.額外資訊, 20); } }
     }
 }

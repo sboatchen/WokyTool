@@ -55,7 +55,7 @@ namespace WokyTool.客製
             var Items_ = 資料_.Select(Value => new 平台訂單回單轉換_PayEasy(Value));
 
             String Title_ = String.Format("PayEasy回單_{0}", 時間.目前日期);
-            函式.ExportCSV<平台訂單回單轉換_PayEasy>(Title_, Items_);
+            舊函式.ExportCSV<平台訂單回單轉換_PayEasy>(Title_, Items_);
         }
     }
 }

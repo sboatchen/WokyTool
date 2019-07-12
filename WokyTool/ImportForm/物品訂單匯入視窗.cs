@@ -249,12 +249,12 @@ namespace WokyTool.ImportForm
         {
             var Items_ = _Source.Select(Value => new 回單號結構_通用((物品訂單資料)Value));
             string Title_ = String.Format("通用回單_{0}", 時間.目前日期);
-            函式.ExportExcel<回單號結構_通用>(Title_, Items_);
+            舊函式.ExportExcel<回單號結構_通用>(Title_, Items_);
         }
 
         private void 樣板ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            函式.GetFile("通用匯入範本", "Template/OrderImport/通用匯入範本.xlsx");
+            舊函式.GetFile("通用匯入範本", "Template/OrderImport/通用匯入範本.xlsx");
         }
 
         private void 測試ToolStripMenuItem_Click(object sender, EventArgs e)

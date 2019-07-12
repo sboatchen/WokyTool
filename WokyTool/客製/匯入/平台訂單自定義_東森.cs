@@ -70,7 +70,7 @@ namespace WokyTool.客製
             var Items_ = 資料_.Select(Value => new 平台訂單回單轉換_東森(Value));
 
             String Title_ = String.Format("東森回單_{0}", 時間.目前日期);
-            函式.ExportCSV<平台訂單回單轉換_東森>(Title_, Items_);
+            舊函式.ExportCSV<平台訂單回單轉換_東森>(Title_, Items_);
         }
     }
 }

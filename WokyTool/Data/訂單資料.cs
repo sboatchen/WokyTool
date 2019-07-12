@@ -185,7 +185,7 @@ namespace WokyTool.Data
             配送物品清單 = new Dictionary<String, int>();
             AppendItemDetail(配送物品清單);
 
-            配送商品 = 函式.GetCombineItemString(配送物品清單);
+            配送商品 = 舊函式.GetCombineItemString(配送物品清單);
 
             // 配送公司
             if (配送公司 != 列舉.配送公司.無)

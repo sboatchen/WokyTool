@@ -32,7 +32,7 @@ namespace WokyTool.月結帳
 
         private void 樣板ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            函式.GetFile("月結帳支出新增匯入範本", "樣板/月結帳/月結帳支出新增匯入範本.xlsx");
+            舊函式.GetFile("月結帳支出新增匯入範本", "樣板/月結帳/月結帳支出新增匯入範本.xlsx");
         }
 
         private void 匯入ToolStripMenuItem_Click(object sender, EventArgs e)

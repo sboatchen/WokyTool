@@ -15,7 +15,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WokyTool.Common
 {
-    public static class 函式
+    public static class 舊函式
     {
         // 組合需求物品字串
         public static String GetCombineItemString(Dictionary<String, int> 物品列表_)

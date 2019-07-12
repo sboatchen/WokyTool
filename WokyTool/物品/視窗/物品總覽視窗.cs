@@ -92,7 +92,7 @@ namespace WokyTool.物品
                                .Select(Value => new 物品盤點匯出轉換(Value));
 
             string Title_ = String.Format("盤點匯出_{0}", 時間.目前日期);
-            函式.ExportCSV<物品盤點匯出轉換>(Title_, Item_);
+            舊函式.ExportCSV<物品盤點匯出轉換>(Title_, Item_);
         }
 
         private void 細節ToolStripMenuItem_Click(object sender, EventArgs e)

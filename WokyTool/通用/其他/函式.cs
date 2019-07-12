@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
-    public class 通用函式   //@@ rename
+    public class 函式
     {
         public static String 取得字串(Dictionary<int, Object> Map_, int index_)
         {

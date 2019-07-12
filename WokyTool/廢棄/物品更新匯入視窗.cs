@@ -37,7 +37,7 @@ namespace WokyTool.ImportForm
         private void 匯出檔案ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string Title_ = String.Format("物品更新匯出_{0}", 時間.目前日期);
-            函式.ExportExcel<物品更新匯入結構>(Title_, _Source);
+            舊函式.ExportExcel<物品更新匯入結構>(Title_, _Source);
         }
 
         private void 更新ToolStripMenuItem_Click(object sender, EventArgs e)

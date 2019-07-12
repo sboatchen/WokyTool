@@ -25,25 +25,25 @@ namespace WokyTool.客製
         }
         
         [CsvColumn(Name = "序號", FieldIndex = 1)]
-        public string 序號 { get { return 通用函式.取得字串(_Data.額外資訊, 1); } }
+        public string 序號 { get { return 函式.取得字串(_Data.額外資訊, 1); } }
 
         [CsvColumn(Name = "重新拋回(是/否)", FieldIndex = 2)]
-        public string 重新拋回 { get { return 通用函式.取得字串(_Data.額外資訊, 2); } }
+        public string 重新拋回 { get { return 函式.取得字串(_Data.額外資訊, 2); } }
 
         [CsvColumn(Name = "出貨方式", FieldIndex = 3)]
-        public string 出貨方式 { get { return 通用函式.取得字串(_Data.額外資訊, 3); } }
+        public string 出貨方式 { get { return 函式.取得字串(_Data.額外資訊, 3); } }
 
         [CsvColumn(Name = "轉單日期", FieldIndex = 4)]
-        public string 轉單日期 { get { return 通用函式.取得字串(_Data.額外資訊, 4); } }
+        public string 轉單日期 { get { return 函式.取得字串(_Data.額外資訊, 4); } }
 
         [CsvColumn(Name = "訂單編號", FieldIndex = 5)]
         public string 訂單編號 { get { return _Data.訂單編號; } }
 
         [CsvColumn(Name = "商品名稱", FieldIndex = 6)]
-        public string 商品名稱 { get { return 通用函式.取得字串(_Data.額外資訊, 6); } }
+        public string 商品名稱 { get { return 函式.取得字串(_Data.額外資訊, 6); } }
 
         [CsvColumn(Name = "貨號", FieldIndex = 7)]
-        public string 貨號 { get { return 通用函式.取得字串(_Data.額外資訊, 7); } }
+        public string 貨號 { get { return 函式.取得字串(_Data.額外資訊, 7); } }
 
         [CsvColumn(Name = "訂購量", FieldIndex = 8)]
         public int 數量 { get { return _Data.數量; } }
@@ -85,24 +85,24 @@ namespace WokyTool.客製
         public string 地址 { get { return _Data.地址; } }
 
         [CsvColumn(Name = "店內碼", FieldIndex = 16)]
-        public string 商品序號 { get { return 通用函式.取得字串(_Data.額外資訊, 16); } }
+        public string 商品序號 { get { return 函式.取得字串(_Data.額外資訊, 16); } }
 
         [CsvColumn(Name = "進貨價", FieldIndex = 17)]
-        public string 進貨價 { get { return 通用函式.取得字串(_Data.額外資訊, 17); } }
+        public string 進貨價 { get { return 函式.取得字串(_Data.額外資訊, 17); } }
 
         [CsvColumn(Name = "進貨折扣", FieldIndex = 18)]
-        public string 進貨折扣 { get { return 通用函式.取得字串(_Data.額外資訊, 18); } }
+        public string 進貨折扣 { get { return 函式.取得字串(_Data.額外資訊, 18); } }
 
         [CsvColumn(Name = "應付金額", FieldIndex = 19)]
-        public string 應付金額 { get { return 通用函式.取得字串(_Data.額外資訊, 19); } }
+        public string 應付金額 { get { return 函式.取得字串(_Data.額外資訊, 19); } }
 
         [CsvColumn(Name = "發票聯式", FieldIndex = 20)]
-        public string 發票聯式 { get { return 通用函式.取得字串(_Data.額外資訊, 20); } }
+        public string 發票聯式 { get { return 函式.取得字串(_Data.額外資訊, 20); } }
 
         [CsvColumn(Name = "預計配送日", FieldIndex = 21)]
-        public string 預計配送日 { get { return 通用函式.取得字串(_Data.額外資訊, 21); } }
+        public string 預計配送日 { get { return 函式.取得字串(_Data.額外資訊, 21); } }
 
         [CsvColumn(Name = "上市日期", FieldIndex = 22)]
-        public string 上市日期 { get { return 通用函式.取得字串(_Data.額外資訊, 22); } }
+        public string 上市日期 { get { return 函式.取得字串(_Data.額外資訊, 22); } }
     }
 }

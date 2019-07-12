@@ -69,7 +69,7 @@ namespace WokyTool.客製
             var Items_ = 資料_.Select(Value => new 平台訂單回單轉換_森森(Value));
 
             String Title_ = String.Format("森森回單_{0}", 時間.目前日期);
-            函式.ExportCSV<平台訂單回單轉換_森森>(Title_, Items_);
+            舊函式.ExportCSV<平台訂單回單轉換_森森>(Title_, Items_);
         }
     }
 }

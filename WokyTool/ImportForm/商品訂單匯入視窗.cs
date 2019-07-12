@@ -163,21 +163,21 @@ namespace WokyTool.ImportForm
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_遠傳((出貨匯入結構_遠傳)Value));
                         string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        函式.ExportExcel<回單號結構_遠傳>(Title_, Items_);
+                        舊函式.ExportExcel<回單號結構_遠傳>(Title_, Items_);
                         break;
                     }
                 case "citiesocial":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_citiesocial((出貨匯入結構_citiesocial)Value));
                         string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        函式.ExportExcel<回單號結構_citiesocial>(Title_, Items_);
+                        舊函式.ExportExcel<回單號結構_citiesocial>(Title_, Items_);
                         break;
                     }
                  case "創業家兄弟":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_創業家兄弟((出貨匯入結構_創業家兄弟)Value));
                         string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        函式.ExportCSV<回單號結構_創業家兄弟>(Title_, Items_);
+                        舊函式.ExportCSV<回單號結構_創業家兄弟>(Title_, Items_);
                         break;
                     }
                 default:
@@ -436,12 +436,12 @@ namespace WokyTool.ImportForm
 
         private void citiesocialToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            函式.GetFile("citiesocial匯入樣板", "Template/OrderImport/citiesocial匯入樣板.xlsx");
+            舊函式.GetFile("citiesocial匯入樣板", "Template/OrderImport/citiesocial匯入樣板.xlsx");
         }
         
         private void 遠傳ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            函式.GetFile("遠傳匯入樣板", "Template/OrderImport/遠傳匯入樣板.xlsx");
+            舊函式.GetFile("遠傳匯入樣板", "Template/OrderImport/遠傳匯入樣板.xlsx");
         }
 
         private void myfoneToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -462,7 +462,7 @@ namespace WokyTool.ImportForm
 
         private void aSAPToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            函式.GetFile("ASAP匯入樣板", "Template/OrderImport/ASAP匯入樣板.xlsx");
+            舊函式.GetFile("ASAP匯入樣板", "Template/OrderImport/ASAP匯入樣板.xlsx");
         }
         
         private void 百利市ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -483,7 +483,7 @@ namespace WokyTool.ImportForm
 
         private void 愛料理ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            函式.GetFile("愛料理匯入樣板", "Template/OrderImport/愛料理匯入樣板.xlsx");
+            舊函式.GetFile("愛料理匯入樣板", "Template/OrderImport/愛料理匯入樣板.xlsx");
         }
 
         private void momo摩天ToolStripMenuItem1_Click(object sender, EventArgs e)

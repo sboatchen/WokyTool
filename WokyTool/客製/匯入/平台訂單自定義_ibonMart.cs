@@ -76,7 +76,7 @@ namespace WokyTool.客製
             var Items_ = 資料_.Select(Value => new 平台訂單回單轉換_ibonMart(Value));
 
             String Title_ = String.Format("ibonMart回單_{0}", 時間.目前日期);
-            函式.ExportCSV<平台訂單回單轉換_ibonMart>(Title_, Items_);
+            舊函式.ExportCSV<平台訂單回單轉換_ibonMart>(Title_, Items_);
         }
     }
 }

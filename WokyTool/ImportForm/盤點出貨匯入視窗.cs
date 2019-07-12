@@ -137,7 +137,7 @@ namespace WokyTool.ImportForm
             }
 
             //@@ 應小胖需求，強制存檔
-            函式.SaveAll();
+            舊函式.SaveAll();
         }
     }
 }

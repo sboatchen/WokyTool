@@ -38,7 +38,7 @@ namespace WokyTool.客製
         {
             get
             {
-                return 通用函式.取得字串(_Data.額外資訊, 4);
+                return 函式.取得字串(_Data.額外資訊, 4);
             }
         }
 

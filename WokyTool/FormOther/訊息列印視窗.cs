@@ -30,7 +30,7 @@ namespace WokyTool.FormOther
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string Title_ = String.Format("訊息_{0}_{1}", this.Text, 時間.目前日期);
-            函式.ExportExcel<訊息資料>(Title_, _Data);
+            舊函式.ExportExcel<訊息資料>(Title_, _Data);
         }
     }
 }
