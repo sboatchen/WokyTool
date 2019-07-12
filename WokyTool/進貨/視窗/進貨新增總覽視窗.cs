@@ -41,6 +41,8 @@ namespace WokyTool.進貨
 
             string Title_ = String.Format("進貨總覽_{0}", 時間.目前日期);
             檔案.寫入Excel(Title_, Item_);
+
+            訊息管理器.獨體.Notify("匯出完成");
         }
 
         private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)

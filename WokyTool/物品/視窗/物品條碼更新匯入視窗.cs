@@ -55,6 +55,8 @@ namespace WokyTool.物品
 
             string Title_ = String.Format("物品條碼更新錯誤匯出_{0}", 時間.目前日期);
             檔案.寫入Excel(Title_, Items_);
+
+            訊息管理器.獨體.Notify("匯出完成");
         }
 
         /********************************/

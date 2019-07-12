@@ -215,6 +215,8 @@ namespace WokyTool.配送
 
             string Title_ = String.Format("撿貨統計匯出_{0}", 時間.目前日期);
             檔案.寫入Excel(Title_, Result_);
+
+            訊息管理器.獨體.Notify("匯出完成");
         }
     }
 }

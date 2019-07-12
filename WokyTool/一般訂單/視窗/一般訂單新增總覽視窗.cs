@@ -67,11 +67,11 @@ namespace WokyTool.一般訂單
 
             foreach (var Item_ in Queue_)
             {
-                string Title_ = String.Format("一般訂單銷售_{0}_{1}", Item_.資料.編號, 時間.目前日期);
+                string Title_ = String.Format("{0}_工廠出貨_{1}_{2}_{3}", Item_.資料.編號, Item_.資料.客戶.名稱, 時間.目前日期, Item_.資料.配送單號);
                 檔案.寫入Excel(Title_, Item_); ;
             }
 
-            訊息管理器.獨體.Notify("已完成匯出");
+            訊息管理器.獨體.Notify("匯出完成");
         }
 
         private void 完成ToolStripMenuItem_Click(object sender, EventArgs e)
