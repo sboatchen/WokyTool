@@ -57,5 +57,19 @@ namespace WokyTool.通用
 
             return X_ == Y_;
         }
+
+        public static bool 是否一致<T, P>(Dictionary<P, List<T>> X_, Dictionary<P, List<T>> Y_)
+        {
+            if (X_ == null && Y_ == null)
+                return true;
+
+            if (X_ == null || Y_ == null || X_.Count != Y_.Count)
+                return false;
+
+            int HashX_ = X_.Values.Sum(Value => Value.GetHashCode());
+            int HashY_ = Y_.Values.Sum(Value => Value.GetHashCode());
+
+            return X_ == Y_;
+        }
     }
 }

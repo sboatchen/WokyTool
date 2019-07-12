@@ -121,6 +121,8 @@ namespace WokyTool.物品
         public string 名稱 { get; set; }
         [JsonProperty]
         public string 縮寫 { get; set; }
+        [JsonProperty]
+        public string 類別 { get; set; }
 
         [JsonProperty]
         public int 體積 { get; set; }
@@ -152,25 +154,6 @@ namespace WokyTool.物品
             }
         }
 
-        /* @@
-        public 物品資料 上層;
-        [JsonProperty]
-        public int 上層編號
-        {
-            get
-            {
-                return 上層.編號;
-            }
-            set
-            {
-                if (value <= 0)
-                    上層 = 物品資料.NULL;
-                else
-                    上層 = 物品資料管理器.Instance.Get(value);
-            }
-        }
-        */
-
         /********************************/
 
         public 物品資料 Self
@@ -192,6 +175,7 @@ namespace WokyTool.物品
 
             名稱 = 字串.無,
             縮寫 = 字串.無,
+            類別 = 字串.無,
 
             體積 = 0,
             顏色 = 字串.無,
@@ -225,6 +209,7 @@ namespace WokyTool.物品
 
             名稱 = 字串.錯誤,
             縮寫 = 字串.錯誤,
+            類別 = 字串.錯誤,
 
             體積 = 0,
             顏色 = 字串.錯誤,
@@ -262,6 +247,7 @@ namespace WokyTool.物品
                 
                 名稱 = this.名稱,
                 縮寫 = this.縮寫,
+                類別 = this.類別,
 
                 體積 = this.體積,
                 顏色 = this.顏色,
@@ -291,6 +277,7 @@ namespace WokyTool.物品
                 
             名稱 = Data_.名稱;
             縮寫 = Data_.縮寫;
+            類別 = Data_.類別;
 
             體積 = Data_.體積;
             顏色 = Data_.顏色;
@@ -318,6 +305,7 @@ namespace WokyTool.物品
 
                 名稱 == Data_.名稱 &&
                 縮寫 == Data_.縮寫 &&
+                類別 == Data_.類別 &&
 
                 體積 == Data_.體積 &&
                 顏色 == Data_.顏色 &&

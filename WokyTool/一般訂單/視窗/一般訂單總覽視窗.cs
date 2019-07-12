@@ -81,13 +81,17 @@ namespace WokyTool.一般訂單
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            _一般訂單資料篩選設定.開始時間 = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day, 0, 0, 0, 0);
-            一般訂單資料管理器.獨體.篩選介面 = _一般訂單資料篩選設定;
-            this.OnActivated(null);
+            on更新日期();
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
+            on更新日期();
+        }
+
+        private void on更新日期()
+        {
+            _一般訂單資料篩選設定.開始時間 = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day, 0, 0, 0, 0);
             _一般訂單資料篩選設定.結束時間 = new DateTime(dateTimePicker2.Value.Year, dateTimePicker2.Value.Month, dateTimePicker2.Value.Day, 23, 59, 59, 0);
             一般訂單資料管理器.獨體.篩選介面 = _一般訂單資料篩選設定;
             this.OnActivated(null);

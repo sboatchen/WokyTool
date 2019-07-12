@@ -10,7 +10,7 @@ namespace WokyTool.通用
 {
     public abstract class MyKeepableData<T> : MyData, IEditableObject, 可比較複寫介面<T>, 可編號介面
     {
-        private T _副本;
+        protected T _副本;
 
         public abstract int 編號 { get; set; }
 
@@ -37,7 +37,7 @@ namespace WokyTool.通用
         {
         }
 
-        public void 完成編輯()
+        public virtual void 完成編輯()
         {
             _副本 = default(T);
         }

@@ -23,6 +23,7 @@ namespace WokyTool.物品{
 
             this.名稱.ReadOnly = 是否唯讀_;
             this.縮寫.ReadOnly = 是否唯讀_;
+            this.類別.ReadOnly = 是否唯讀_;
 
             this.物品大類選取元件1.ReadOnly = 是否唯讀_;
             this.物品小類選取元件1.ReadOnly = 是否唯讀_;
@@ -63,6 +64,7 @@ namespace WokyTool.物品{
 
             目前資料_.名稱 = this.名稱.Text;
             目前資料_.縮寫 = this.縮寫.Text;
+            目前資料_.類別 = this.類別.Text;
 
             目前資料_.大類 = (物品大類資料)(this.物品大類選取元件1.SelectedItem);
             目前資料_.小類 = (物品小類資料)(this.物品小類選取元件1.SelectedItem);
@@ -108,6 +110,7 @@ namespace WokyTool.物品{
 
             this.名稱.Text = 目前資料_.名稱;
             this.縮寫.Text = 目前資料_.縮寫;
+            this.類別.Text = 目前資料_.類別;
 
             this.物品大類選取元件1.SelectedItem = 目前資料_.大類;
             this.物品小類選取元件1.SelectedItem = 目前資料_.小類;

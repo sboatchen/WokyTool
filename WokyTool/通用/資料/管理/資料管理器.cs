@@ -411,6 +411,38 @@ namespace WokyTool.通用
             }
         }
 
+        public void 刪除(T Item_, bool 是否阻斷事件_ = true)
+        {
+            if (是否阻斷事件_)
+            {
+                可編輯BList.RaiseListChangedEvents = false;
+                唯讀BList.RaiseListChangedEvents = false;
+            }
+
+            T Target_;
+            if (Map.TryGetValue(Item_.編號, out Target_) == false)
+            {
+                訊息管理器.獨體.Warn("無法刪除指定物件,找不到 " + Item_.ToString());
+            }
+            else
+            {
+                Map.Remove(Item_.編號);
+
+                if (篩選介面 == null || 篩選介面.篩選(Target_))
+                    可編輯BList.Remove(Target_);
+
+                唯讀BList.Remove(Target_);
+            }
+
+            if (是否阻斷事件_)
+            {
+                可編輯BList.RaiseListChangedEvents = true;
+                唯讀BList.RaiseListChangedEvents = true;
+
+                資料異動();
+            }
+        }
+
         public void 資料搬移()  //@@ temp
         {
             可編輯BList.RaiseListChangedEvents = false;

@@ -53,6 +53,8 @@ namespace WokyTool.物品
 
             string Title_ = String.Format("物品總覽_{0}", 時間.目前日期);
             檔案.寫入Excel(Title_, List_);
+
+            訊息管理器.獨體.Notify("匯出完成");
         }
 
         private void 庫存ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -78,6 +80,8 @@ namespace WokyTool.物品
 
             string Title_ = String.Format("物品庫存_{0}", 時間.目前日期);
             檔案.寫入Excel(Title_, List_); ;
+
+            訊息管理器.獨體.Notify("匯出完成");
         }
 
         private void 盤點ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -89,6 +93,20 @@ namespace WokyTool.物品
 
             string Title_ = String.Format("盤點匯出_{0}", 時間.目前日期);
             函式.ExportCSV<物品盤點匯出轉換>(Title_, Item_);
+        }
+
+        private void 細節ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+
+            物品細節匯出轉換 匯出轉換_ = new 物品細節匯出轉換(物品資料管理器.獨體.可編輯BList);
+
+            string Title_ = String.Format("物品細節_{0}", 時間.目前日期);
+            檔案.寫入Excel(Title_, 匯出轉換_);
+
+            this.Enabled = true;
+
+            訊息管理器.獨體.Notify("匯出完成");
         }
 
         private void 自訂ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -145,6 +163,57 @@ namespace WokyTool.物品
                 _物品品牌資料版本 = 物品品牌資料管理器.獨體.唯讀資料版本;
                 this.物品品牌資料BindingSource.DataSource = 物品品牌資料管理器.獨體.唯讀BList;
             }
+        }
+
+        private void 檢查ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<可序列化_Excel> 所有錯誤_ = new List<可序列化_Excel>();
+
+            List<String> 合法性檢查_ = new List<string>();
+            foreach(var Item_ in 物品資料管理器.獨體.可編輯BList)
+            {
+                try
+                {
+                    Item_.檢查合法();
+                }
+                catch (Exception ex)
+                {
+                    合法性檢查_.Add(Item_.名稱 + ":" + ex.Message);
+                }
+            }
+
+            if (合法性檢查_.Count != 0)
+                所有錯誤_.Add(new 通用轉換("合法性", 合法性檢查_));
+
+            /******************/
+
+            List<String> 名稱重複檢查_ = 物品資料管理器.獨體.可編輯BList
+                                            .GroupBy(Value => Value.名稱)
+                                            .Where(Value => Value.Count() > 1)
+                                            .Select(Value => Value.Key)
+                                            .ToList();
+
+            if (名稱重複檢查_.Count != 0)
+                所有錯誤_.Add(new 通用轉換("名稱重複", 名稱重複檢查_));
+
+            /******************/
+
+            List<String> 縮寫重複檢查_ = 物品資料管理器.獨體.可編輯BList
+                                           .GroupBy(Value => Value.縮寫)
+                                           .Where(Value => Value.Count() > 1)
+                                           .Select(Value => Value.Key)
+                                           .ToList();
+
+            if (縮寫重複檢查_.Count != 0)
+                所有錯誤_.Add(new 通用轉換("縮寫重複", 縮寫重複檢查_));
+
+            if (所有錯誤_.Count > 0)
+            {
+                string Title_ = String.Format("物品錯誤匯出_{0}", 時間.目前日期);
+                檔案.寫入Excel(Title_, 所有錯誤_);
+            }
+
+            訊息管理器.獨體.Notify("處理完畢");
         }
     }
 }

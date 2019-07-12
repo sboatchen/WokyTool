@@ -17,17 +17,15 @@ namespace WokyTool.一般訂單
 
         public Boolean 是否需篩選()
         {
-            return
-                開始時間 != null ||
-                結束時間 != null;
+            return true;
         }
 
         public Boolean 篩選(一般訂單資料 Data_)
         {
-            if (開始時間 != null && Data_.處理時間 < 開始時間)
+            if (Data_.處理時間 < 開始時間)
                 return false;
 
-            if (結束時間 != null && Data_.處理時間 > 結束時間)
+            if (Data_.處理時間 > 結束時間)
                 return false;
 
             return true;
