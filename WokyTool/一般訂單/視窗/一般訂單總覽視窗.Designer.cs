@@ -37,17 +37,22 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.公司資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.客戶資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.子客戶資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.一般訂單資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.處理時間DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.處理狀態DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.公司資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.客戶DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.客戶資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.子客戶DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.子客戶資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.物品DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.商品名稱 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.單價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,11 +67,6 @@
             this.代收方式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.發票號碼DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.一般訂單資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.訂單處理狀態BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段BindingSource)).BeginInit();
@@ -133,7 +133,7 @@
             this.公司DataGridViewTextBoxColumn,
             this.客戶DataGridViewTextBoxColumn,
             this.子客戶DataGridViewTextBoxColumn,
-            this.物品DataGridViewTextBoxColumn,
+            this.商品名稱,
             this.數量DataGridViewTextBoxColumn,
             this.單價DataGridViewTextBoxColumn,
             this.姓名DataGridViewTextBoxColumn,
@@ -155,6 +155,59 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1343, 683);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // 公司資料BindingSource
+            // 
+            this.公司資料BindingSource.DataSource = typeof(WokyTool.公司.公司資料);
+            // 
+            // 客戶資料BindingSource
+            // 
+            this.客戶資料BindingSource.DataSource = typeof(WokyTool.客戶.客戶資料);
+            // 
+            // 子客戶資料BindingSource
+            // 
+            this.子客戶資料BindingSource.DataSource = typeof(WokyTool.客戶.子客戶資料);
+            // 
+            // 物品資料BindingSource
+            // 
+            this.物品資料BindingSource.DataSource = typeof(WokyTool.物品.物品資料);
+            // 
+            // 一般訂單資料BindingSource
+            // 
+            this.一般訂單資料BindingSource.DataSource = typeof(WokyTool.一般訂單.一般訂單資料);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.篩選ToolStripMenuItem,
+            this.更新ToolStripMenuItem,
+            this.匯出ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1343, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 篩選ToolStripMenuItem
+            // 
+            this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
+            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.篩選ToolStripMenuItem.Text = "篩選";
+            this.篩選ToolStripMenuItem.Click += new System.EventHandler(this.篩選ToolStripMenuItem_Click);
+            // 
+            // 更新ToolStripMenuItem
+            // 
+            this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
+            this.更新ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.更新ToolStripMenuItem.Text = "更新";
+            this.更新ToolStripMenuItem.Click += new System.EventHandler(this.更新ToolStripMenuItem_Click);
+            // 
+            // 匯出ToolStripMenuItem
+            // 
+            this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
+            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.匯出ToolStripMenuItem.Text = "匯出";
+            this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
             // 
             // 編號DataGridViewTextBoxColumn
             // 
@@ -189,10 +242,6 @@
             this.公司DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.公司DataGridViewTextBoxColumn.ValueMember = "Self";
             // 
-            // 公司資料BindingSource
-            // 
-            this.公司資料BindingSource.DataSource = typeof(WokyTool.公司.公司資料);
-            // 
             // 客戶DataGridViewTextBoxColumn
             // 
             this.客戶DataGridViewTextBoxColumn.DataPropertyName = "客戶";
@@ -203,10 +252,6 @@
             this.客戶DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.客戶DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.客戶DataGridViewTextBoxColumn.ValueMember = "Self";
-            // 
-            // 客戶資料BindingSource
-            // 
-            this.客戶資料BindingSource.DataSource = typeof(WokyTool.客戶.客戶資料);
             // 
             // 子客戶DataGridViewTextBoxColumn
             // 
@@ -219,26 +264,13 @@
             this.子客戶DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.子客戶DataGridViewTextBoxColumn.ValueMember = "Self";
             // 
-            // 子客戶資料BindingSource
+            // 商品名稱
             // 
-            this.子客戶資料BindingSource.DataSource = typeof(WokyTool.客戶.子客戶資料);
-            // 
-            // 物品DataGridViewTextBoxColumn
-            // 
-            this.物品DataGridViewTextBoxColumn.DataPropertyName = "物品";
-            this.物品DataGridViewTextBoxColumn.DataSource = this.物品資料BindingSource;
-            this.物品DataGridViewTextBoxColumn.DisplayMember = "名稱";
-            this.物品DataGridViewTextBoxColumn.HeaderText = "物品";
-            this.物品DataGridViewTextBoxColumn.Name = "物品DataGridViewTextBoxColumn";
-            this.物品DataGridViewTextBoxColumn.ReadOnly = true;
-            this.物品DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.物品DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.物品DataGridViewTextBoxColumn.ValueMember = "Self";
-            this.物品DataGridViewTextBoxColumn.Width = 200;
-            // 
-            // 物品資料BindingSource
-            // 
-            this.物品資料BindingSource.DataSource = typeof(WokyTool.物品.物品資料);
+            this.商品名稱.DataPropertyName = "商品名稱";
+            this.商品名稱.HeaderText = "商品名稱";
+            this.商品名稱.Name = "商品名稱";
+            this.商品名稱.ReadOnly = true;
+            this.商品名稱.Width = 300;
             // 
             // 數量DataGridViewTextBoxColumn
             // 
@@ -333,43 +365,6 @@
             this.發票號碼DataGridViewTextBoxColumn.HeaderText = "發票號碼";
             this.發票號碼DataGridViewTextBoxColumn.Name = "發票號碼DataGridViewTextBoxColumn";
             // 
-            // 一般訂單資料BindingSource
-            // 
-            this.一般訂單資料BindingSource.DataSource = typeof(WokyTool.一般訂單.一般訂單資料);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.篩選ToolStripMenuItem,
-            this.更新ToolStripMenuItem,
-            this.匯出ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1343, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // 篩選ToolStripMenuItem
-            // 
-            this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
-            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.篩選ToolStripMenuItem.Text = "篩選";
-            this.篩選ToolStripMenuItem.Click += new System.EventHandler(this.篩選ToolStripMenuItem_Click);
-            // 
-            // 更新ToolStripMenuItem
-            // 
-            this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
-            this.更新ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.更新ToolStripMenuItem.Text = "更新";
-            this.更新ToolStripMenuItem.Click += new System.EventHandler(this.更新ToolStripMenuItem_Click);
-            // 
-            // 匯出ToolStripMenuItem
-            // 
-            this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
-            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.匯出ToolStripMenuItem.Text = "匯出";
-            this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
-            // 
             // 一般訂單總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -419,13 +414,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn 物品DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 處理時間DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 處理狀態DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 公司DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 客戶DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 子客戶DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 物品DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 商品名稱;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 單價DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 姓名DataGridViewTextBoxColumn;

@@ -9,6 +9,7 @@ using WokyTool.公司;
 using WokyTool.物品;
 using WokyTool.客戶;
 using WokyTool.客製;
+using WokyTool.商品;
 using WokyTool.通用;
 
 namespace WokyTool.一般訂單
@@ -119,41 +120,41 @@ namespace WokyTool.一般訂單
         }
 
         [JsonProperty]
-        public int 物品編號
+        public int 商品編號
         {
             get
             {
-                return 物品.編號;
+                return 商品.編號;
             }
             set
             {
-                _物品 = 物品資料管理器.獨體.Get(value);
+                _商品 = 商品資料管理器.獨體.Get(value);
             }
         }
 
-        protected 物品資料 _物品;
-        public 物品資料 物品
+        protected 商品資料 _商品;
+        public 商品資料 商品
         {
             get
             {
-                if (_物品 == null)
-                    _物品 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_物品) == false)
-                    _物品 = 物品資料.ERROR;
+                if (_商品 == null)
+                    _商品 = 商品資料.NULL;
+                else if (商品資料管理器.獨體.唯讀BList.Contains(_商品) == false)
+                    _商品 = 商品資料.ERROR;
 
-                return _物品;
+                return _商品;
             }
             private set
             {
-                _物品 = value;
+                _商品 = value;
             }
         }
 
-        public String 物品名稱
+        public String 商品名稱
         {
             get
             {
-                return _物品.名稱;
+                return _商品.名稱;
             }
         }
 
@@ -223,7 +224,7 @@ namespace WokyTool.一般訂單
             get
             {
                 物品合併資料 物品合併資料_ = new 物品合併資料();
-                物品合併資料_.新增(物品, 數量);
+                物品合併資料_.新增(商品, 數量);
 
                 return 物品合併資料_;
             }
@@ -246,7 +247,7 @@ namespace WokyTool.一般訂單
             客戶 = 客戶資料.NULL,
             子客戶 = 子客戶資料.NULL,
 
-            物品 = 物品資料.NULL,
+            商品 = 商品資料.NULL,
 
             數量 = 0,
             單價 = 0,
@@ -287,7 +288,7 @@ namespace WokyTool.一般訂單
             客戶 = 客戶資料.ERROR,
             子客戶 = 子客戶資料.ERROR,
 
-            物品 = 物品資料.ERROR,
+            商品 = 商品資料.ERROR,
 
             數量 = 0,
             單價 = 0,
@@ -320,7 +321,7 @@ namespace WokyTool.一般訂單
 
         public static IEnumerable<一般訂單資料> 新增(一般訂單新增資料 Value)
         {
-            foreach (var 物品資料_ in Value.清單)
+            foreach (var 一般訂單新增商品資料_ in Value.清單)
             {
                 一般訂單資料 Data_ = new 一般訂單資料
                 {
@@ -330,10 +331,10 @@ namespace WokyTool.一般訂單
                     客戶 = Value.客戶,
                     子客戶 = Value.子客戶,
 
-                    物品 = 物品資料_.物品,
+                    商品 = 一般訂單新增商品資料_.商品,
 
-                    數量 = 物品資料_.數量,
-                    單價 = 物品資料_.單價,
+                    數量 = 一般訂單新增商品資料_.數量,
+                    單價 = 一般訂單新增商品資料_.單價,
 
                     姓名 = Value.姓名,
                     地址 = Value.地址,
@@ -373,7 +374,7 @@ namespace WokyTool.一般訂單
                 客戶 = this.客戶,
                 子客戶 = this.子客戶,
 
-                物品 = this.物品,
+                商品 = this.商品,
 
                 數量 = this.數量,
                 單價 = this.單價,
@@ -409,7 +410,7 @@ namespace WokyTool.一般訂單
             客戶 = Data_.客戶;
             子客戶 = Data_.子客戶;
 
-            物品 = Data_.物品;
+            商品 = Data_.商品;
 
             數量 = Data_.數量;
             單價 = Data_.單價;
@@ -443,7 +444,7 @@ namespace WokyTool.一般訂單
                 客戶 == Data_.客戶 &&
                 子客戶 == Data_.子客戶 &&
 
-                物品 == Data_.物品 &&
+                商品 == Data_.商品 &&
 
                 數量 == Data_.數量 &&
                 單價 == Data_.單價 &&
@@ -481,8 +482,8 @@ namespace WokyTool.一般訂單
             if (子客戶.編號是否合法() == false)
                 throw new Exception("一般訂單資料:子客戶編號不合法:" + 子客戶編號);
 
-            if (物品.編號是否合法() == false)
-                throw new Exception("一般訂單資料:物品不合法:" + 物品編號);
+            if (商品.編號是否合法() == false)
+                throw new Exception("一般訂單資料:商品不合法:" + 商品編號);
 
             if (String.IsNullOrEmpty(姓名))
                 throw new Exception("一般訂單資料:姓名不合法:" + this.ToString());

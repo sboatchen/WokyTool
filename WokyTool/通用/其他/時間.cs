@@ -99,10 +99,10 @@ namespace WokyTool.通用
 
             // 計算失效時間
             int 至明天午夜所需時間_ = (int)_明天.Subtract(DateTime.Now).TotalMilliseconds + 10000;  // 避免不精準，取過10秒的點
-            int 快取有效時間_ = Math.Min(30000, 至明天午夜所需時間_);
+            //int 快取有效時間_ = Math.Min(30000, 至明天午夜所需時間_);
 
             TimerCallback callback = new TimerCallback(時間快取失效);
-            Timer timer = new Timer(callback, null, 快取有效時間_, System.Threading.Timeout.Infinite);
+            Timer timer = new Timer(callback, null, 至明天午夜所需時間_, System.Threading.Timeout.Infinite);
         }
 
         private static void 時間快取失效(object obj)

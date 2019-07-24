@@ -51,9 +51,11 @@ namespace WokyTool.通用
 
                 新增(Map_.Values.Select(Value => 轉化讀取資料(Value)));
 
-                檔案.備份資料檔案(FileName_, true);
+                檔案.備份(FileName_, true);
 
-                檔案.刪除(FileName_);
+                檔案.刪除(FileName_);   
+
+                //@@@ 改用 搬移
             }
         }
 

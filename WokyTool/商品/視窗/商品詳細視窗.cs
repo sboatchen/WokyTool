@@ -42,7 +42,9 @@ namespace WokyTool.商品{
 
             this.dataGridView1.ReadOnly = 是否唯讀_;
 
+            this.進價.ReadOnly = 是否唯讀_;
             this.售價.ReadOnly = 是否唯讀_;
+
             this.寄庫數量.ReadOnly = 是否唯讀_;
         }
 
@@ -91,7 +93,10 @@ namespace WokyTool.商品{
                     目前資料_.組成.Add(Item_);
             }
 
+
+            目前資料_.進價 = this.進價.Value;
             目前資料_.售價 = this.售價.Value;
+
             目前資料_.寄庫數量 = (int)(this.寄庫數量.Value);
         }
 
@@ -121,9 +126,11 @@ namespace WokyTool.商品{
             _組成BList.ResetBindings();
 
             this.成本.Value = 目前資料_.成本;
-            this.售價.Value = 目前資料_.售價;
             this.利潤.Value = 目前資料_.利潤;
             this.體積.Value = 目前資料_.體積;
+
+            this.進價.Value = 目前資料_.進價;
+            this.售價.Value = 目前資料_.售價;
 
             this.寄庫數量.Value = 目前資料_.寄庫數量;
         }

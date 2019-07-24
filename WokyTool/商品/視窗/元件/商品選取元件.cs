@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WokyTool.通用;
 using WokyTool.Common;
 using WokyTool.客戶;
+using WokyTool.公司;
 
 namespace WokyTool.商品
 {
@@ -39,6 +40,20 @@ namespace WokyTool.商品
             }
         }
 
+        private 公司資料 _綁定公司;
+        public 公司資料 綁定公司
+        {
+            get
+            {
+                return _綁定公司;
+            }
+            set
+            {
+                _綁定公司 = value;
+                篩選異動 = true;
+            }
+        }
+
         private 客戶資料 _綁定客戶;
         public 客戶資料 綁定客戶
         {
@@ -55,10 +70,13 @@ namespace WokyTool.商品
 
         protected override object 篩選(String Name_)
         {
-            if (綁定客戶 == null && Name_ == null)
+            if (綁定公司 == null && 綁定客戶 == null && Name_ == null)
                 return 商品資料管理器.獨體.唯讀BList;
 
             IEnumerable<商品資料> query = 商品資料管理器.獨體.唯讀BList;
+
+            if (綁定公司 != null)
+                query = query.Where(Value => Value.公司 == 綁定公司);
 
             if (綁定客戶 != null)
                 query = query.Where(Value => Value.客戶 == 綁定客戶);

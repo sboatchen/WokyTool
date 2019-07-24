@@ -106,20 +106,22 @@ namespace WokyTool.物品
             if (Map.Count == 0)
                 return 字串.空;
 
-            StringBuilder sb = new StringBuilder();
+            StringBuilder SB_ = new StringBuilder();
             foreach (var Pair_ in Map)
             {
-                if (sb.Length > 0)
-                    sb.Append("+");
+                if (SB_.Length > 0)
+                    SB_.Append("+");
 
-                sb.Append(Pair_.Key.縮寫);
-                if (Pair_.Value == 1)
-                    continue;
+                if (String.IsNullOrEmpty(Pair_.Key.縮寫))
+                    SB_.Append(Pair_.Key.名稱);
+                else
+                    SB_.Append(Pair_.Key.縮寫);
 
-                sb.Append("*").Append(Pair_.Value);
+                if (Pair_.Value != 0)
+                    SB_.Append("*").Append(Pair_.Value);
             }
 
-            return sb.ToString();
+            return SB_.ToString();
         }
     }
 }

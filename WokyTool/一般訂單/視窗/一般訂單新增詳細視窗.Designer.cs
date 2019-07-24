@@ -53,24 +53,22 @@ namespace WokyTool.一般訂單
             this.備註 = new System.Windows.Forms.TextBox();
             this.列印單價 = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.物品DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.商品選取元件 = new WokyTool.商品.商品選取元件();
+            this.一般訂單新增商品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.商品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.單價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.一般訂單新增物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.物品選取元件 = new WokyTool.物品.物品選取元件();
             ((System.ComponentModel.ISupportInitialize)(this.單價)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.數量)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.一般訂單新增物品資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.一般訂單新增商品資料BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // 單價
             // 
             this.單價.DecimalPlaces = 3;
-            this.單價.Location = new System.Drawing.Point(564, 164);
+            this.單價.Location = new System.Drawing.Point(576, 164);
             this.單價.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -82,7 +80,7 @@ namespace WokyTool.一般訂單
             // 
             // 數量
             // 
-            this.數量.Location = new System.Drawing.Point(458, 164);
+            this.數量.Location = new System.Drawing.Point(470, 164);
             this.數量.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -225,7 +223,7 @@ namespace WokyTool.一般訂單
             // 
             // 新增
             // 
-            this.新增.Location = new System.Drawing.Point(9, 163);
+            this.新增.Location = new System.Drawing.Point(7, 163);
             this.新增.Name = "新增";
             this.新增.Size = new System.Drawing.Size(42, 23);
             this.新增.TabIndex = 85;
@@ -255,7 +253,7 @@ namespace WokyTool.一般訂單
             // 
             // 備註
             // 
-            this.備註.Location = new System.Drawing.Point(663, 163);
+            this.備註.Location = new System.Drawing.Point(675, 163);
             this.備註.Name = "備註";
             this.備註.Size = new System.Drawing.Size(141, 22);
             this.備註.TabIndex = 90;
@@ -275,32 +273,38 @@ namespace WokyTool.一般訂單
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.物品DataGridViewTextBoxColumn,
+            this.商品名稱DataGridViewTextBoxColumn,
             this.數量DataGridViewTextBoxColumn,
             this.單價DataGridViewTextBoxColumn,
             this.備註DataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.一般訂單新增物品資料BindingSource;
+            this.dataGridView1.DataSource = this.一般訂單新增商品資料BindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(9, 193);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(795, 248);
+            this.dataGridView1.Size = new System.Drawing.Size(812, 248);
             this.dataGridView1.TabIndex = 93;
             // 
-            // 物品DataGridViewTextBoxColumn
+            // 商品選取元件
             // 
-            this.物品DataGridViewTextBoxColumn.DataPropertyName = "物品";
-            this.物品DataGridViewTextBoxColumn.DataSource = this.物品資料BindingSource;
-            this.物品DataGridViewTextBoxColumn.DisplayMember = "名稱";
-            this.物品DataGridViewTextBoxColumn.HeaderText = "物品";
-            this.物品DataGridViewTextBoxColumn.Name = "物品DataGridViewTextBoxColumn";
-            this.物品DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.物品DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.物品DataGridViewTextBoxColumn.ValueMember = "Self";
-            this.物品DataGridViewTextBoxColumn.Width = 400;
+            this.商品選取元件.Location = new System.Drawing.Point(50, 164);
+            this.商品選取元件.Name = "商品選取元件";
+            this.商品選取元件.ReadOnly = false;
+            this.商品選取元件.SelectedItem = null;
+            this.商品選取元件.Size = new System.Drawing.Size(419, 27);
+            this.商品選取元件.TabIndex = 94;
+            this.商品選取元件.綁定客戶 = null;
             // 
-            // 物品資料BindingSource
+            // 一般訂單新增商品資料BindingSource
             // 
-            this.物品資料BindingSource.DataSource = typeof(WokyTool.物品.物品資料);
+            this.一般訂單新增商品資料BindingSource.DataSource = typeof(WokyTool.一般訂單.一般訂單新增商品資料);
+            // 
+            // 商品名稱DataGridViewTextBoxColumn
+            // 
+            this.商品名稱DataGridViewTextBoxColumn.DataPropertyName = "商品名稱";
+            this.商品名稱DataGridViewTextBoxColumn.HeaderText = "商品名稱";
+            this.商品名稱DataGridViewTextBoxColumn.Name = "商品名稱DataGridViewTextBoxColumn";
+            this.商品名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.商品名稱DataGridViewTextBoxColumn.Width = 420;
             // 
             // 數量DataGridViewTextBoxColumn
             // 
@@ -319,27 +323,14 @@ namespace WokyTool.一般訂單
             this.備註DataGridViewTextBoxColumn.DataPropertyName = "備註";
             this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
             this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
-            this.備註DataGridViewTextBoxColumn.Width = 150;
-            // 
-            // 一般訂單新增物品資料BindingSource
-            // 
-            this.一般訂單新增物品資料BindingSource.DataSource = typeof(WokyTool.一般訂單.一般訂單新增物品資料);
-            // 
-            // 物品選取元件
-            // 
-            this.物品選取元件.Location = new System.Drawing.Point(52, 165);
-            this.物品選取元件.Name = "物品選取元件";
-            this.物品選取元件.ReadOnly = false;
-            this.物品選取元件.SelectedItem = null;
-            this.物品選取元件.Size = new System.Drawing.Size(404, 24);
-            this.物品選取元件.TabIndex = 94;
+            this.備註DataGridViewTextBoxColumn.Width = 140;
             // 
             // 一般訂單新增詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 493);
-            this.Controls.Add(this.物品選取元件);
+            this.ClientSize = new System.Drawing.Size(832, 493);
+            this.Controls.Add(this.商品選取元件);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.列印單價);
             this.Controls.Add(this.備註);
@@ -368,8 +359,7 @@ namespace WokyTool.一般訂單
             ((System.ComponentModel.ISupportInitialize)(this.單價)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.數量)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.一般訂單新增物品資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.一般訂單新增商品資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,12 +390,11 @@ namespace WokyTool.一般訂單
         private System.Windows.Forms.TextBox 備註;
         private System.Windows.Forms.CheckBox 列印單價;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 物品DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 物品資料BindingSource;
+        private 商品選取元件 商品選取元件;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 商品名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 單價DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 一般訂單新增物品資料BindingSource;
-        private 物品.物品選取元件 物品選取元件;
+        private System.Windows.Forms.BindingSource 一般訂單新增商品資料BindingSource;
     }
 }

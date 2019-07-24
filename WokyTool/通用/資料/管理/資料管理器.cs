@@ -155,7 +155,7 @@ namespace WokyTool.通用
             {
                 // 備份舊資料
                 if (資料是否備份)
-                    檔案.備份資料檔案(檔案路徑, true);
+                    檔案.備份(檔案路徑, true);
 
                 // 更新資料
                 檔案.寫入檔案(檔案路徑, JsonConvert.SerializeObject(Map, Formatting.Indented), 資料是否加密);

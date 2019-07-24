@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.一般訂單;
 using WokyTool.公司;
-using WokyTool.物品;
+using WokyTool.商品;
 using WokyTool.客戶;
 using WokyTool.配送;
 using WokyTool.通用;
+using WokyTool.物品;
 
 namespace WokyTool.一般訂單
 {
@@ -161,7 +162,7 @@ namespace WokyTool.一般訂單
         public Boolean 列印單價 { get; set; }
 
         [JsonProperty]
-        public List<一般訂單新增物品資料> 清單 { get; set; }
+        public List<一般訂單新增商品資料> 清單 { get; set; }
 
         /********************************/
         // 暫時性資訊
@@ -174,8 +175,8 @@ namespace WokyTool.一般訂單
 
                 if (清單 != null)
                 {
-                    foreach (一般訂單新增物品資料 新增物品 in 清單)
-                        物品合併資料_.新增(新增物品.物品, 新增物品.數量);
+                    foreach (一般訂單新增商品資料 新增商品 in 清單)
+                        物品合併資料_.新增(新增商品.商品, 新增商品.數量);
                 }
 
                 return 物品合併資料_;
@@ -191,15 +192,15 @@ namespace WokyTool.一般訂單
                 if (null == 清單 || 0 == 清單.Count)
                     throw new Exception("清單為0:");
 
-                foreach (一般訂單新增物品資料 新增物品 in 清單)
+                foreach (一般訂單新增商品資料 新增商品 in 清單)
                 {
                     if (Flag_ == null)
                     {
-                        Flag_ = 新增物品.數量 < 0;
+                        Flag_ = 新增商品.數量 < 0;
                     }
                     else
                     {
-                        bool Temp_ = 新增物品.數量 < 0;
+                        bool Temp_ = 新增商品.數量 < 0;
                         if(Flag_ != Temp_)
                             throw new Exception("數量不皆為正或負");
                     }

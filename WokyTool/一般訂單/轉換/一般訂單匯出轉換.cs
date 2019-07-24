@@ -33,7 +33,7 @@ namespace WokyTool.一般訂單
             App_.Cells[1, 5] = "客戶";
             App_.Cells[1, 6] = "子客戶";
 
-            App_.Cells[1, 7] = "物品";
+            App_.Cells[1, 7] = "商品";
             App_.Cells[1, 8] = "數量";
             App_.Cells[1, 9] = "單價";
 
@@ -68,7 +68,7 @@ namespace WokyTool.一般訂單
                 App_.Cells[目前行數_, 5] = 資料_.客戶.名稱;
                 App_.Cells[目前行數_, 6] = 資料_.子客戶.名稱;
 
-                App_.Cells[目前行數_, 7] = 資料_.物品.名稱;
+                App_.Cells[目前行數_, 7] = 資料_.商品.名稱;
                 App_.Cells[目前行數_, 8] = 資料_.數量;
                 App_.Cells[目前行數_, 9] = 資料_.單價;
 

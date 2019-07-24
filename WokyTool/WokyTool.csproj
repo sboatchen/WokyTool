@@ -94,7 +94,7 @@
     <Compile Include="一般訂單\視窗\一般訂單新增詳細視窗.Designer.cs">
       <DependentUpon>一般訂單新增詳細視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="一般訂單\資料\一般訂單新增物品資料.cs" />
+    <Compile Include="一般訂單\資料\一般訂單新增商品資料.cs" />
     <Compile Include="一般訂單\資料\一般訂單資料.cs" />
     <Compile Include="一般訂單\資料\一般訂單新增資料.cs" />
     <Compile Include="一般訂單\資料\一般訂單資料篩選設定.cs" />
@@ -1168,7 +1168,7 @@
     <None Include="Properties\DataSources\WokyTool.DataImport.物品匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.物品更新匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.DataImport.雜支匯入結構.datasource" />
-    <None Include="Properties\DataSources\WokyTool.一般訂單.一般訂單新增物品資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.一般訂單.一般訂單新增商品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.一般訂單.一般訂單新增資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.一般訂單.一般訂單資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.使用者.使用者資料.datasource" />

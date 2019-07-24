@@ -12,7 +12,7 @@ namespace WokyTool.通用
 {
     public partial class 檔案
     {
-        public static void 備份資料檔案(string 原始檔案路徑_, bool 是否忽略缺少原始檔案_)
+        public static void 備份(string 原始檔案路徑_, bool 是否忽略缺少原始檔案_)
         {
             if (File.Exists(原始檔案路徑_) == false)
             {
@@ -45,12 +45,12 @@ namespace WokyTool.通用
             File.Copy(原始檔案路徑_, 備份檔案路徑_);
         }
 
-        public static void 備份資料檔案(string 原始檔案路徑_)
+        public static void 備份(string 原始檔案路徑_)
         {
-            備份資料檔案(原始檔案路徑_, false);
+            備份(原始檔案路徑_, false);
         }
 
-        public static void 備份匯入檔案(string 原始檔案路徑_, string 備份資料夾名_, string 備份檔名_)
+        public static void 備份(string 原始檔案路徑_, string 備份資料夾名_, string 備份檔名_)
         {
             if (File.Exists(原始檔案路徑_) == false)
                 throw new Exception("備份失敗,找不到原始檔案:" + 原始檔案路徑_);
@@ -78,11 +78,11 @@ namespace WokyTool.通用
             File.Copy(原始檔案路徑_, 備份檔案路徑_);
         }
 
-        public static void 備份匯入檔案(string 原始檔案路徑_, string 備份檔名_)
+        public static void 備份(string 原始檔案路徑_, string 備份檔名_)
         {
             string 備份資料夾名_ = Path.GetFileNameWithoutExtension(備份檔名_);
 
-            備份匯入檔案(原始檔案路徑_, 備份資料夾名_, 備份檔名_);
+            備份(原始檔案路徑_, 備份資料夾名_, 備份檔名_);
         }
 
         public static void 寫入加密檔案(string 目標檔案路徑_, string 資料_)

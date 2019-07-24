@@ -110,6 +110,8 @@ namespace WokyTool.商品
         public List<商品組成匯入資料> 組成 { get; set; }
 
         [JsonProperty]
+        public decimal 進價 { get; set; }
+        [JsonProperty]
         public decimal 售價 { get; set; }
 
         [JsonProperty]

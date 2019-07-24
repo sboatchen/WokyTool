@@ -150,6 +150,46 @@ namespace WokyTool.商品
         [JsonProperty]
         public List<商品組成資料> 組成 { get; set; }
 
+        private string _組成字串 = null;
+        public string 組成字串 
+        {
+            get
+            {
+                if (_組成字串 == null)
+                    更新組成字串();
+                return _組成字串;
+            }
+        }
+
+        public void 更新組成字串()
+        {
+            if(組成 == null || 組成.Count == 0)
+            {
+                _組成字串 = 字串.空;
+                return;
+            }
+               
+            StringBuilder SB_ = new StringBuilder();
+            foreach (商品組成資料 商品組成資料_ in 組成)
+            {
+                if(SB_.Length != 0)
+                    SB_.Append("+");
+
+                if(String.IsNullOrEmpty(商品組成資料_.物品.縮寫))
+                    SB_.Append(商品組成資料_.物品.名稱);
+                else
+                     SB_.Append(商品組成資料_.物品.縮寫);
+
+                if (商品組成資料_.數量 != 0)
+                    SB_.Append("*").Append(商品組成資料_.數量);
+            }
+
+            _組成字串 = SB_.ToString();
+        }
+
+        [JsonProperty]
+        public decimal 進價 { get; set; }
+
         [JsonProperty]
         public decimal 售價 { get; set; }
 
@@ -234,6 +274,8 @@ namespace WokyTool.商品
             名稱 = 字串.無,
 
             寄庫數量 = 0,
+
+            進價 = 0,
             售價 = 0,
         };
         public static 商品資料 NULL
@@ -258,6 +300,8 @@ namespace WokyTool.商品
             名稱 = 字串.錯誤,
 
             寄庫數量 = 0,
+
+            進價 = 0,
             售價 = 0,
         };
         public static 商品資料 ERROR
@@ -282,6 +326,8 @@ namespace WokyTool.商品
             名稱 = 字串.折扣,
 
             寄庫數量 = 0,
+
+            進價 = 0,
             售價 = 0,
         };
         public static 商品資料 折扣
@@ -310,6 +356,8 @@ namespace WokyTool.商品
                 名稱 = this.名稱,
 
                 寄庫數量 = this.寄庫數量,
+
+                進價 = this.進價,
                 售價 = this.售價,
             };
 
@@ -338,6 +386,8 @@ namespace WokyTool.商品
             組成 = Data_.組成;
 
             寄庫數量 = Data_.寄庫數量;
+
+            進價 = Data_.進價;
             售價 = Data_.售價;
         }
 
@@ -356,6 +406,8 @@ namespace WokyTool.商品
                 名稱 == Data_.名稱 &&
 
                 寄庫數量 == Data_.寄庫數量 &&
+
+                進價 == Data_.進價 &&
                 售價 == Data_.售價;
 
             if (是否相同_ == false)

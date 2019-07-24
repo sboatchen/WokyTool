@@ -154,7 +154,7 @@ namespace WokyTool.通用
                 return null;
 
             // 備份
-            檔案.備份匯入檔案(openFileDialog1.FileName, typeof(T).Name, this.名稱);
+            檔案.備份(openFileDialog1.FileName, @"匯入\" + typeof(T).Name, this.名稱);
 
             動態匯入檔案結構 動態匯入檔案結構_ = new 動態匯入檔案結構(this);
 
