@@ -33,6 +33,7 @@ using WokyTool.商品;
 using WokyTool.平台訂單;
 using WokyTool.使用者;
 using WokyTool.發票;
+using WokyTool.測試;
 
 namespace WokyTool
 {
@@ -728,6 +729,13 @@ namespace WokyTool
         private void button45_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.一般訂單, 列舉.視窗.總覽);
+        }
+
+        private void button46_Click(object sender, EventArgs e)
+        {
+            var i = new 測試主視窗();
+            i.Show();
+            i.BringToFront();
         }
     }
 }

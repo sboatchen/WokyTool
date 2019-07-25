@@ -12,6 +12,37 @@ namespace WokyTool.通用
 {
     public partial class 檔案
     {
+        public static string 取得備份檔名(string 路徑_)
+        {
+            string 檔名_ = Path.GetFileNameWithoutExtension(路徑_);
+            string 副檔名_ = Path.GetExtension(路徑_);
+
+            return String.Format("{0}_{1}_{2}{3}", 時間.目前時間, 系統參數.使用者, 檔名_, 副檔名_);
+        }
+
+        public static string 取得備份資料夾(string 路徑_)
+        {
+            return null;
+        }
+
+        public static string 取得備份資料夾(string 路徑_, string[] 額外資料夾_)
+        {
+            List<string> list_ = new List<string>();
+            list_.Add("備份");
+            list_.Add(時間.目前日期);
+
+            string 資料夾_ = Path.GetDirectoryName(路徑_);
+            Boolean 是否為相對路徑_ = 資料夾_.Contains(':') == false;
+            if (是否為相對路徑_)
+                list_.Add(資料夾_);
+
+            if (null != 額外資料夾_)
+                list_.AddRange(額外資料夾_);
+
+            return System.IO.Path.Combine(list_.ToArray());
+        }
+
+
         public static void 備份(string 原始檔案路徑_, bool 是否忽略缺少原始檔案_)
         {
             if (File.Exists(原始檔案路徑_) == false)

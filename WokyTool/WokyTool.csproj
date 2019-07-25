@@ -433,6 +433,24 @@
     <Compile Include="月結帳\轉換\月結帳會計匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳總計匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳支出新增錯誤匯出轉換.cs" />
+    <Compile Include="測試\視窗\檔案測試視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="測試\視窗\檔案測試視窗.Designer.cs">
+      <DependentUpon>檔案測試視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="測試\視窗\時間測試視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="測試\視窗\時間測試視窗.Designer.cs">
+      <DependentUpon>時間測試視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="測試\視窗\測試主視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="測試\視窗\測試主視窗.Designer.cs">
+      <DependentUpon>測試主視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="物品\控制\物品新增匯入管理器.cs" />
     <Compile Include="物品\控制\物品總覽更新匯入管理器.cs" />
     <Compile Include="物品\控制\物品條碼更新匯入管理器.cs" />
@@ -1071,6 +1089,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="月結帳\視窗\月結帳支出新增匯入視窗.resx">
       <DependentUpon>月結帳支出新增匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="測試\視窗\檔案測試視窗.resx">
+      <DependentUpon>檔案測試視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="測試\視窗\時間測試視窗.resx">
+      <DependentUpon>時間測試視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="測試\視窗\測試主視窗.resx">
+      <DependentUpon>測試主視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品新增匯入視窗.resx">
       <DependentUpon>物品新增匯入視窗.cs</DependentUpon>
