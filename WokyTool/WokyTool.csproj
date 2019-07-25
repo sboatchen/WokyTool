@@ -451,6 +451,8 @@
     <Compile Include="測試\視窗\測試主視窗.Designer.cs">
       <DependentUpon>測試主視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="測試\資料\讀寫測試資料.cs" />
+    <Compile Include="測試\轉換\讀寫測試轉換.cs" />
     <Compile Include="物品\控制\物品新增匯入管理器.cs" />
     <Compile Include="物品\控制\物品總覽更新匯入管理器.cs" />
     <Compile Include="物品\控制\物品條碼更新匯入管理器.cs" />
@@ -574,9 +576,12 @@
     </Compile>
     <Compile Include="通用\其他\函式.cs" />
     <Compile Include="通用\其他\列舉.cs" />
+    <Compile Include="通用\其他\可讀出_CSV.cs" />
+    <Compile Include="通用\其他\可寫入_CSV.cs" />
     <Compile Include="通用\其他\可序列化_Excel.cs" />
     <Compile Include="通用\其他\時間.cs" />
     <Compile Include="通用\其他\檔案.cs" />
+    <Compile Include="通用\其他\檔案_CSV.cs" />
     <Compile Include="通用\其他\檔案_Excel.cs" />
     <Compile Include="通用\其他\系統參數.cs" />
     <Compile Include="通用\視窗\樣板\鎖定視窗.cs">

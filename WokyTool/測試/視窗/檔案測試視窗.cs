@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WokyTool.Common;
 using WokyTool.通用;
 
 namespace WokyTool.測試
@@ -34,7 +35,12 @@ namespace WokyTool.測試
 
                 String 備份資料夾_ = 檔案.取得備份資料夾(路徑_, new String[]{"測試", "123"});
                 Console.WriteLine(備份資料夾_);
+
+                String 檔案後綴測試 = 檔案.增加檔名後綴(路徑_, "a", "b");
+                Console.WriteLine(檔案後綴測試);
             }
+
+            Console.WriteLine("---------");
 
             {
                 String 路徑_ = "設定/公司.json";
@@ -47,6 +53,20 @@ namespace WokyTool.測試
                 Console.WriteLine(備份資料夾_);
             }
 
+        }
+
+        private void CSV_Click(object sender, EventArgs e)
+        {
+            讀寫測試轉換 讀寫測試轉換_ = new 讀寫測試轉換();
+            檔案.寫入("CSV測試", 讀寫測試轉換_);
+
+            List<可寫入_CSV> 讀寫測試轉換s_ = new List<可寫入_CSV>();
+            讀寫測試轉換s_.Add(new 讀寫測試轉換());
+            讀寫測試轉換s_.Add(new 讀寫測試轉換());
+            讀寫測試轉換s_.Add(new 讀寫測試轉換());
+            讀寫測試轉換s_.Add(new 讀寫測試轉換());
+
+            檔案.寫入("CSV測試2", 讀寫測試轉換s_);
         }
     }
 }

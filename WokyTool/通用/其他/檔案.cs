@@ -12,6 +12,23 @@ namespace WokyTool.通用
 {
     public partial class 檔案
     {
+        public static string 增加檔名後綴(string 路徑_, params string[] 後綴s_)
+        {
+            string 副檔名_ = Path.GetExtension(路徑_);
+            int 長度_ = 路徑_.Length - 副檔名_.Length;
+
+            StringBuilder SB_ = new StringBuilder(路徑_.Substring(0, 長度_));
+            foreach (String 後綴_ in 後綴s_)
+            {
+                if (String.IsNullOrEmpty(後綴_) == false)
+                    SB_.Append("_").Append(後綴_);
+            }
+
+            SB_.Append(副檔名_);
+
+            return SB_.ToString();
+        }
+
         public static string 取得備份檔名(string 路徑_)
         {
             string 檔名_ = Path.GetFileNameWithoutExtension(路徑_);
@@ -175,14 +192,34 @@ namespace WokyTool.通用
             }
         }
 
-
-        public static void 寫入加密檔案(string 目標檔案路徑_, string 資料_)
+        public static bool 存檔(string 路徑_, string 資料_)
         {
-            string password = @"ApTx4869";
-            UnicodeEncoding UE = new UnicodeEncoding();
-            byte[] key = UE.GetBytes(password);
+            String 資料夾_ = Path.GetDirectoryName(路徑_);
 
-            using (FileStream fsCrypt = new FileStream(目標檔案路徑_, FileMode.OpenOrCreate, FileAccess.Write))
+            // 檢查資料夾是否存在
+            if (Directory.Exists(資料夾_) == false)
+                Directory.CreateDirectory(資料夾_);
+
+            File.WriteAllText(路徑_, 資料_);
+
+            return true;
+        }
+
+        public static bool 存檔(string 路徑_, string 資料_, string 密碼_)
+        {
+            if (String.IsNullOrEmpty(密碼_))
+                return 存檔(路徑_, 資料_);
+
+            String 資料夾_ = Path.GetDirectoryName(路徑_);
+
+            // 檢查資料夾是否存在
+            if (Directory.Exists(資料夾_) == false)
+                Directory.CreateDirectory(資料夾_);
+
+            UnicodeEncoding UE = new UnicodeEncoding();
+            byte[] key = UE.GetBytes(密碼_);
+
+            using (FileStream fsCrypt = new FileStream(路徑_, FileMode.OpenOrCreate, FileAccess.Write))
             {
                 // clean file
                 fsCrypt.SetLength(0);
@@ -199,21 +236,7 @@ namespace WokyTool.通用
             }
         }
 
-        public static void 寫入檔案(string 目標檔案路徑_, string 資料_, bool 是否加密)
-        {
-            String Path_ = Path.GetDirectoryName(目標檔案路徑_);
 
-            // 檢查路徑是否存在
-            if (Directory.Exists(Path_) == false)
-            {
-                Directory.CreateDirectory(Path_);
-            }
-
-            if (是否加密)
-                寫入加密檔案(目標檔案路徑_, 資料_);
-            else
-                File.WriteAllText(目標檔案路徑_, 資料_);
-        }
 
         public static string 讀出加密檔案(string 目標檔案路徑_)
         {
