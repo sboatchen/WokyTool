@@ -16,6 +16,8 @@ namespace WokyTool.測試
 
         public String 分類 { get; set; }
 
+        public String 密碼 { get; set; }
+
         public 讀寫測試轉換()
         {
             測試編號_++;

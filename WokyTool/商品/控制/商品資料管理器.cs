@@ -81,7 +81,7 @@ namespace WokyTool.商品
         {
             if (File.Exists(檔案路徑))
             {
-                string json = 檔案.讀出檔案(檔案路徑, 資料是否加密);
+                string json = 檔案.讀出(檔案路徑, 資料是否加密);
                 if (String.IsNullOrEmpty(json))
                     Map = new Dictionary<int, 商品資料>();
                 else
@@ -94,7 +94,7 @@ namespace WokyTool.商品
                 Map = new Dictionary<int, 商品資料>();
 
                 // V2.0.X -> V2.1.X
-                string json = 檔案.讀出檔案("設定/商品.json", false);
+                string json = 檔案.讀出("設定/商品.json");
                 Dictionary<int, 舊商品資料> 舊Map_ = JsonConvert.DeserializeObject<Dictionary<int, 舊商品資料>>(json);
                 foreach (var Item_ in 舊Map_.Values)
                 {

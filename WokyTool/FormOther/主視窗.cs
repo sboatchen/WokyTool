@@ -497,7 +497,7 @@ namespace WokyTool
 
             // V2.1.0
             商品資料管理器.獨體.Map.Clear();
-            string json = 檔案.讀出檔案("設定/商品.json", false);
+            string json = 檔案.讀出("設定/商品.json");
             Dictionary<int, 舊商品資料> Map = JsonConvert.DeserializeObject<Dictionary<int, 舊商品資料>>(json);
             foreach (var Item_ in Map.Values)
             {
@@ -607,7 +607,7 @@ namespace WokyTool
             Dictionary<int, 月結帳匯入設定資料> Map;
             if (File.Exists(openFileDialog.FileName))
             {
-                string json = 檔案.讀出檔案(openFileDialog.FileName, false);
+                string json = 檔案.讀出(openFileDialog.FileName);
                 if (String.IsNullOrEmpty(json))
                     Map = new Dictionary<int, 月結帳匯入設定資料>();
                 else
@@ -677,7 +677,7 @@ namespace WokyTool
 
             if (File.Exists("進度/月結帳.json"))
             {
-                string json = 檔案.讀出檔案("進度/月結帳.json", false);
+                string json = 檔案.讀出("進度/月結帳.json");
                 if (String.IsNullOrEmpty(json))
                     Map = new Dictionary<int, 月結帳舊資料>();
                 else

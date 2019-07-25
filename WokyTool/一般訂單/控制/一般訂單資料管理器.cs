@@ -89,7 +89,7 @@ namespace WokyTool.一般訂單
 
             List<一般訂單資料> List = new List<一般訂單資料>();
             foreach(String fileName in files){
-                string json = 檔案.讀出檔案(fileName, 資料是否加密);
+                string json = 檔案.讀出(fileName, 資料是否加密);
                 List<一般訂單資料> temp = JsonConvert.DeserializeObject<List<一般訂單資料>>(json);
                 List.AddRange(temp);
 

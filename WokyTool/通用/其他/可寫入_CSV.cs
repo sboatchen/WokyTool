@@ -9,7 +9,7 @@ namespace WokyTool.Common
     {
         String 分類 { get; }
 
-        String 加密字串 { get; }
+        String 密碼 { get; }
 
         void 寫入(StringBuilder SB_);
     }

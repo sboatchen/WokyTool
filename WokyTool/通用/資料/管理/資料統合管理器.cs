@@ -21,7 +21,7 @@ namespace WokyTool.通用
         {
             if (File.Exists(檔案路徑))
             {
-                string json = 檔案.讀出檔案(檔案路徑, 資料是否加密);
+                string json = 檔案.讀出(檔案路徑, 資料是否加密);
                 if (String.IsNullOrEmpty(json))
                     Map = new Dictionary<int, T>();
                 else
@@ -45,7 +45,7 @@ namespace WokyTool.通用
             {
                 訊息管理器.獨體.Debug("處理檔案:" + FileName_);
 
-                string json = 檔案.讀出檔案(FileName_, false);
+                string json = 檔案.讀出(FileName_);
 
                 Dictionary<int, T2> Map_ = JsonConvert.DeserializeObject<Dictionary<int, T2>>(json);
 

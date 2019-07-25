@@ -31,7 +31,7 @@ namespace WokyTool.發票
         {
             if (File.Exists(樣板設定檔案路徑))
             {
-                string json = 檔案.讀出檔案(樣板設定檔案路徑, false);
+                string json = 檔案.讀出(樣板設定檔案路徑);
                 if (String.IsNullOrEmpty(json) == false)
                     return JsonConvert.DeserializeObject<通用檔案匯入設定資料>(json);
             }

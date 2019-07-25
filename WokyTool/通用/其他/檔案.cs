@@ -192,78 +192,135 @@ namespace WokyTool.通用
             }
         }
 
-        public static bool 存檔(string 路徑_, string 資料_)
+        public static bool 寫入(string 路徑_, string 資料_)
         {
             String 資料夾_ = Path.GetDirectoryName(路徑_);
 
-            // 檢查資料夾是否存在
-            if (Directory.Exists(資料夾_) == false)
-                Directory.CreateDirectory(資料夾_);
+            try
+            {
+                // 檢查資料夾是否存在
+                if (Directory.Exists(資料夾_) == false)
+                    Directory.CreateDirectory(資料夾_);
 
-            File.WriteAllText(路徑_, 資料_);
+                File.WriteAllText(路徑_, 資料_);
 
-            return true;
+                return true;
+            }
+            catch (IOException e)
+            {
+                訊息管理器.獨體.Warn("寫入檔案失敗: " + 路徑_, e);
+                return false;
+            }
         }
 
-        public static bool 存檔(string 路徑_, string 資料_, string 密碼_)
+        public static bool 寫入(string 路徑_, string 資料_, string 密碼_)
         {
             if (String.IsNullOrEmpty(密碼_))
-                return 存檔(路徑_, 資料_);
+                return 寫入(路徑_, 資料_);
 
             String 資料夾_ = Path.GetDirectoryName(路徑_);
 
-            // 檢查資料夾是否存在
-            if (Directory.Exists(資料夾_) == false)
-                Directory.CreateDirectory(資料夾_);
-
-            UnicodeEncoding UE = new UnicodeEncoding();
-            byte[] key = UE.GetBytes(密碼_);
-
-            using (FileStream fsCrypt = new FileStream(路徑_, FileMode.OpenOrCreate, FileAccess.Write))
+            try
             {
-                // clean file
-                fsCrypt.SetLength(0);
+                // 檢查資料夾是否存在
+                if (Directory.Exists(資料夾_) == false)
+                    Directory.CreateDirectory(資料夾_);
 
-                RijndaelManaged RMCrypto = new RijndaelManaged();
+                UnicodeEncoding UE = new UnicodeEncoding();
+                byte[] key = UE.GetBytes(密碼_);
 
-                using (CryptoStream cs = new CryptoStream(fsCrypt, RMCrypto.CreateEncryptor(key, key), CryptoStreamMode.Write))
+                using (FileStream fsCrypt = new FileStream(路徑_, FileMode.OpenOrCreate, FileAccess.Write))
                 {
-                    // convert string to stream
-                    byte[] byteArray = Encoding.UTF8.GetBytes(資料_);
+                    // clean file
+                    fsCrypt.SetLength(0);
 
-                    cs.Write(byteArray, 0, byteArray.Length);
-                }
-            }
-        }
+                    RijndaelManaged RMCrypto = new RijndaelManaged();
 
-
-
-        public static string 讀出加密檔案(string 目標檔案路徑_)
-        {
-            string password = @"ApTx4869";
-            UnicodeEncoding UE = new UnicodeEncoding();
-            byte[] key = UE.GetBytes(password);
-
-            using (FileStream fsCrypt = new FileStream(目標檔案路徑_, FileMode.Open, FileAccess.Read))
-            {
-                RijndaelManaged RMCrypto = new RijndaelManaged();
-
-                using( CryptoStream cs = new CryptoStream(fsCrypt, RMCrypto.CreateDecryptor(key, key), CryptoStreamMode.Read))
-                {
-                    using (StreamReader sr = new StreamReader(cs))
+                    using (CryptoStream cs = new CryptoStream(fsCrypt, RMCrypto.CreateEncryptor(key, key), CryptoStreamMode.Write))
                     {
-                        return sr.ReadToEnd();
+                        // convert string to stream
+                        byte[] byteArray = Encoding.UTF8.GetBytes(資料_);
+
+                        cs.Write(byteArray, 0, byteArray.Length);
                     }
                 }
+
+                return true;
+            }
+            catch (IOException e)
+            {
+                訊息管理器.獨體.Warn("寫入檔案失敗: " + 路徑_, e);
+                return false;
             }
         }
 
-        public static string 讀出檔案(string 目標檔案路徑_, bool 是否加密)
+        public static bool 寫入(string 路徑_, string 資料_, bool 資料是否加密)
         {
-            if (是否加密)
-                return 讀出加密檔案(目標檔案路徑_);
+            if (資料是否加密)
+                return 寫入(路徑_, 資料_, "ApTx4869");
             else
-                return File.ReadAllText(目標檔案路徑_);
+                return 寫入(路徑_, 資料_);
+        }
+
+        public static string 讀出(string 路徑_)
+        {
+            try
+            {
+                // 檢查原始檔案是否存在
+                if (File.Exists(路徑_) == false)
+                    throw new Exception("找不到原始檔案");
+
+                return File.ReadAllText(路徑_);
+
+            }
+            catch (IOException e)
+            {
+                訊息管理器.獨體.Warn("讀出檔案失敗: " + 路徑_, e);
+                return null;
+            }
+        }
+
+        public static string 讀出(string 路徑_, string 密碼_)
+        {
+            try
+            {
+                if (String.IsNullOrEmpty(密碼_))
+                    return 讀出(路徑_);
+
+                // 檢查原始檔案是否存在
+                if (File.Exists(路徑_) == false)
+                    throw new Exception("找不到原始檔案");
+
+                UnicodeEncoding UE = new UnicodeEncoding();
+                byte[] key = UE.GetBytes(密碼_);
+
+                using (FileStream fsCrypt = new FileStream(路徑_, FileMode.Open, FileAccess.Read))
+                {
+                    RijndaelManaged RMCrypto = new RijndaelManaged();
+
+                    using (CryptoStream cs = new CryptoStream(fsCrypt, RMCrypto.CreateDecryptor(key, key), CryptoStreamMode.Read))
+                    {
+                        using (StreamReader sr = new StreamReader(cs))
+                        {
+                            return sr.ReadToEnd();
+                        }
+                    }
+                }
+
+            }
+            catch (IOException e)
+            {
+                訊息管理器.獨體.Warn("讀出檔案失敗: " + 路徑_, e);
+                return null;
+            }
+        }
+
+        public static string 讀出(string 路徑_, bool 資料是否加密)
+        {
+            if (資料是否加密)
+                return 讀出(路徑_, "ApTx4869");
+            else
+                return 讀出(路徑_);
         }
     }
 }

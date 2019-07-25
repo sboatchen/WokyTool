@@ -13,7 +13,5 @@ namespace WokyTool.Common
         String 樣板 { get; }
 
         void 寫入(Microsoft.Office.Interop.Excel.Application App_);
-
-        https://xyz.cinc.biz/2013/10/csharp-create-excel.html
     }
 }

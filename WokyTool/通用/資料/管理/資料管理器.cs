@@ -118,7 +118,7 @@ namespace WokyTool.通用
         {
             if (File.Exists(檔案路徑))
             {
-                string json = 檔案.讀出檔案(檔案路徑, 資料是否加密);
+                string json = 檔案.讀出(檔案路徑, 資料是否加密);
                 if (String.IsNullOrEmpty(json))
                     Map = new Dictionary<int, T>();
                 else
@@ -158,7 +158,7 @@ namespace WokyTool.通用
                     檔案.備份(檔案路徑, true);
 
                 // 更新資料
-                檔案.寫入檔案(檔案路徑, JsonConvert.SerializeObject(Map, Formatting.Indented), 資料是否加密);
+                檔案.寫入(檔案路徑, JsonConvert.SerializeObject(Map, Formatting.Indented), 資料是否加密);
             }
         }
 
