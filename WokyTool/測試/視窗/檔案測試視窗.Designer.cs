@@ -28,25 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.檔名測試 = new System.Windows.Forms.Button();
+            this.路徑測試 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // 檔名測試
+            // 路徑測試
             // 
-            this.檔名測試.Location = new System.Drawing.Point(12, 21);
-            this.檔名測試.Name = "檔名測試";
-            this.檔名測試.Size = new System.Drawing.Size(75, 23);
-            this.檔名測試.TabIndex = 0;
-            this.檔名測試.Text = "檔名測試";
-            this.檔名測試.UseVisualStyleBackColor = true;
-            this.檔名測試.Click += new System.EventHandler(this.檔名測試_Click);
+            this.路徑測試.Location = new System.Drawing.Point(16, 26);
+            this.路徑測試.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.路徑測試.Name = "路徑測試";
+            this.路徑測試.Size = new System.Drawing.Size(100, 29);
+            this.路徑測試.TabIndex = 0;
+            this.路徑測試.Text = "路徑測試";
+            this.路徑測試.UseVisualStyleBackColor = true;
+            this.路徑測試.Click += new System.EventHandler(this.路徑測試_Click);
             // 
             // 檔案測試視窗
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.檔名測試);
+            this.ClientSize = new System.Drawing.Size(379, 326);
+            this.Controls.Add(this.路徑測試);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "檔案測試視窗";
             this.Text = "檔案";
             this.ResumeLayout(false);
@@ -55,6 +57,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button 檔名測試;
+        private System.Windows.Forms.Button 路徑測試;
     }
 }

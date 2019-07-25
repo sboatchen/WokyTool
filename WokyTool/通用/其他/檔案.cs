@@ -20,12 +20,14 @@ namespace WokyTool.通用
             return String.Format("{0}_{1}_{2}{3}", 時間.目前時間, 系統參數.使用者, 檔名_, 副檔名_);
         }
 
-        public static string 取得備份資料夾(string 路徑_)
+        public static string 取得備份檔名(string 路徑_, string 指定檔名_)
         {
-            return null;
+            string 副檔名_ = Path.GetExtension(路徑_);
+
+            return String.Format("{0}_{1}_{2}{3}", 時間.目前時間, 系統參數.使用者, 指定檔名_, 副檔名_);
         }
 
-        public static string 取得備份資料夾(string 路徑_, string[] 額外資料夾_)
+        public static string 取得備份資料夾(string 路徑_, string[] 額外資料夾_ = null)
         {
             List<string> list_ = new List<string>();
             list_.Add("備份");
@@ -36,85 +38,143 @@ namespace WokyTool.通用
             if (是否為相對路徑_)
                 list_.Add(資料夾_);
 
-            if (null != 額外資料夾_)
+            if (null != 額外資料夾_ && 額外資料夾_.Length > 0)
                 list_.AddRange(額外資料夾_);
 
             return System.IO.Path.Combine(list_.ToArray());
         }
 
-
-        public static void 備份(string 原始檔案路徑_, bool 是否忽略缺少原始檔案_)
+        public static bool 刪除(string 路徑_)
         {
-            if (File.Exists(原始檔案路徑_) == false)
+            try
             {
-                if (是否忽略缺少原始檔案_)
-                    return;
-                throw new Exception("備份失敗,找不到原始檔案:" + 原始檔案路徑_);
+                File.Delete(路徑_);
+                return true;
             }
-
-            string 原始路徑_ = Path.GetDirectoryName(原始檔案路徑_);
-            string 原始檔案名稱_ = Path.GetFileNameWithoutExtension(原始檔案路徑_);
-            string 原始檔案副檔名_ = Path.GetExtension(原始檔案路徑_);
-
-            //@@ 加入使用者名稱
-            string 備份檔案_ = String.Format("{0}_{1}{2}", 時間.目前時間, 原始檔案名稱_, 原始檔案副檔名_);
-            string 備份路徑_ = System.IO.Path.Combine("備份", 時間.目前日期, 原始路徑_);
-            string 備份檔案路徑_ = System.IO.Path.Combine(備份路徑_, 備份檔案_);
-
-            // 檢查備份路徑是否存在
-            if (Directory.Exists(備份路徑_) == false)
+            catch (IOException e)
             {
-                Directory.CreateDirectory(備份路徑_);
+                訊息管理器.獨體.Warn("刪除檔案失敗: " + 路徑_, e);
+                return false;
             }
-
-            // 檢查備份檔案是否存在
-            if (File.Exists(備份檔案路徑_))
-            {
-                throw new Exception("備份失敗,檔案已存在:" + 備份檔案路徑_);
-            }
-
-            File.Copy(原始檔案路徑_, 備份檔案路徑_);
         }
 
-        public static void 備份(string 原始檔案路徑_)
+        public static bool 搬移(string 原始路徑_, string 目標路徑_)
         {
-            備份(原始檔案路徑_, false);
-        }
-
-        public static void 備份(string 原始檔案路徑_, string 備份資料夾名_, string 備份檔名_)
-        {
-            if (File.Exists(原始檔案路徑_) == false)
-                throw new Exception("備份失敗,找不到原始檔案:" + 原始檔案路徑_);
-
-            string 原始檔案名稱_ = Path.GetFileNameWithoutExtension(原始檔案路徑_);
-            string 原始檔案副檔名_ = Path.GetExtension(原始檔案路徑_);
-
-            //@@ 加入使用者名稱
-            string 備份檔案_ = String.Format("{0}_{1}{2}", 時間.目前時間, Path.GetFileNameWithoutExtension(備份檔名_), 原始檔案副檔名_);
-            string 備份路徑_ = System.IO.Path.Combine("備份", 時間.目前日期, "匯入", 備份資料夾名_);
-            string 備份檔案路徑_ = System.IO.Path.Combine(備份路徑_, 備份檔案_);
-
-            // 檢查備份路徑是否存在
-            if (Directory.Exists(備份路徑_) == false)
+            try
             {
-                Directory.CreateDirectory(備份路徑_);
-            }
+                // 檢查原始檔案是否存在
+                if (File.Exists(原始路徑_) == false)
+                    throw new Exception("找不到原始檔案");
 
-            // 檢查備份檔案是否存在
-            if (File.Exists(備份檔案路徑_))
+                // 檢查目標檔案是否存在
+                if (File.Exists(目標路徑_))
+                    throw new Exception("目標檔案已存在:" + 目標路徑_);
+
+                File.Move(原始路徑_, 目標路徑_);
+
+                return true;
+            }
+            catch (IOException e)
             {
-                throw new Exception("備份失敗,檔案已存在:" + 備份檔案路徑_);
+                訊息管理器.獨體.Warn("搬移檔案失敗: " + 原始路徑_, e);
+                return false;
             }
-
-            File.Copy(原始檔案路徑_, 備份檔案路徑_);
         }
 
-        public static void 備份(string 原始檔案路徑_, string 備份檔名_)
+        public static bool 搬移(string 原始路徑_)
         {
-            string 備份資料夾名_ = Path.GetFileNameWithoutExtension(備份檔名_);
+            try
+            {
+                // 檢查原始檔案是否存在
+                if (File.Exists(原始路徑_) == false)
+                    throw new Exception("找不到原始檔案");
 
-            備份(原始檔案路徑_, 備份資料夾名_, 備份檔名_);
+                string 目標檔名_ = 取得備份檔名(原始路徑_);
+                string 目標資料夾_ = 取得備份資料夾(原始路徑_);
+                string 目標路徑_ = System.IO.Path.Combine(目標資料夾_, 目標檔名_);
+
+                // 檢查目標資料夾是否存在
+                if (Directory.Exists(目標資料夾_) == false)
+                    Directory.CreateDirectory(目標資料夾_);
+                // 檢查目標檔案是否存在
+                else if (File.Exists(目標路徑_))
+                    throw new Exception("檔案已存在:" + 目標路徑_);
+
+                File.Move(原始路徑_, 目標路徑_);
+
+                return true;
+            }
+            catch (IOException e)
+            {
+                訊息管理器.獨體.Warn("搬移檔案失敗: " + 原始路徑_, e);
+                return false;
+            }
         }
+
+        public static bool 備份(string 原始路徑_, bool 忽略缺少原始檔案錯誤_ = false)
+        {
+            try
+            {
+                // 檢查原始檔案是否存在
+                if (File.Exists(原始路徑_) == false)
+                {
+                    if (忽略缺少原始檔案錯誤_)
+                        return true;
+                    throw new Exception("找不到原始檔案");
+                }
+
+                string 目標檔名_ = 取得備份檔名(原始路徑_);
+                string 目標資料夾_ = 取得備份資料夾(原始路徑_);
+                string 目標路徑_ = System.IO.Path.Combine(目標資料夾_, 目標檔名_);
+
+                // 檢查目標資料夾是否存在
+                if (Directory.Exists(目標資料夾_) == false)
+                    Directory.CreateDirectory(目標資料夾_);
+                // 檢查目標檔案是否存在
+                else if (File.Exists(目標路徑_))
+                    throw new Exception("檔案已存在:" + 目標路徑_);
+
+                File.Copy(原始路徑_, 目標路徑_);
+
+                return true;
+            }
+            catch (IOException e)
+            {
+                訊息管理器.獨體.Warn("備份檔案失敗: " + 原始路徑_, e);
+                return false;
+            }
+        }
+
+        public static bool 備份(string 原始路徑_, string 指定檔名_, params string[] 指定資料夾_)
+        {
+            try
+            {
+                // 檢查原始檔案是否存在
+                if (File.Exists(原始路徑_) == false)
+                    throw new Exception("找不到原始檔案");
+
+                string 目標檔名_ = 取得備份檔名(原始路徑_, 指定檔名_);
+                string 目標資料夾_ = 取得備份資料夾(原始路徑_, 指定資料夾_);
+                string 目標路徑_ = System.IO.Path.Combine(目標資料夾_, 目標檔名_);
+
+                // 檢查目標資料夾是否存在
+                if (Directory.Exists(目標資料夾_) == false)
+                    Directory.CreateDirectory(目標資料夾_);
+                // 檢查目標檔案是否存在
+                else if (File.Exists(目標路徑_))
+                    throw new Exception("檔案已存在:" + 目標路徑_);
+
+                File.Copy(原始路徑_, 目標路徑_);
+
+                return true;
+            }
+            catch (IOException e)
+            {
+                訊息管理器.獨體.Warn("備份檔案失敗: " + 原始路徑_, e);
+                return false;
+            }
+        }
+
 
         public static void 寫入加密檔案(string 目標檔案路徑_, string 資料_)
         {
@@ -181,69 +241,6 @@ namespace WokyTool.通用
                 return 讀出加密檔案(目標檔案路徑_);
             else
                 return File.ReadAllText(目標檔案路徑_);
-        }
-
-        public static void 刪除(string 目標檔案路徑_)
-        {
-            try
-            {
-                File.Delete(目標檔案路徑_);
-            }
-            catch (IOException e)
-            {
-                訊息管理器.獨體.Warn("刪除檔案失敗: " + 目標檔案路徑_ , e);
-                return;
-            }
-        }
-
-        public static void 搬移(string 原始檔案路徑_, string 目標檔案路徑_)
-        {
-            if (File.Exists(原始檔案路徑_) == false)
-                throw new Exception("搬移失敗,找不到原始檔案:" + 原始檔案路徑_);
-
-            // 檢查目標檔案是否存在
-            if (File.Exists(目標檔案路徑_))
-                throw new Exception("搬移失敗,檔案已存在:" + 目標檔案路徑_);
-
-            try
-            {
-                File.Move(原始檔案路徑_, 目標檔案路徑_);
-            }
-            catch (IOException e)
-            {
-                訊息管理器.獨體.Warn("搬移檔案失敗: " + 原始檔案路徑_ , e);
-            }
-        }
-
-        public static void 搬移(string 原始檔案路徑_)
-        {
-            if (File.Exists(原始檔案路徑_) == false)
-                throw new Exception("搬移失敗,找不到原始檔案:" + 原始檔案路徑_);
-
-            string 原始路徑_ = Path.GetDirectoryName(原始檔案路徑_);
-            string 原始檔案名稱_ = Path.GetFileNameWithoutExtension(原始檔案路徑_);
-            string 原始檔案副檔名_ = Path.GetExtension(原始檔案路徑_);
-
-            string 目標檔案_ = String.Format("{0}_{1}{2}", 時間.目前時間, 原始檔案名稱_, 原始檔案副檔名_);
-            string 目標路徑_ = System.IO.Path.Combine("備份", 時間.目前日期, 原始路徑_);
-            string 目標檔案路徑_ = System.IO.Path.Combine(目標路徑_, 目標檔案_);
-
-            // 檢查目標檔案是否存在
-            if (File.Exists(目標檔案路徑_))
-                throw new Exception("搬移失敗,檔案已存在:" + 目標檔案路徑_);
-
-            // 檢查備份路徑是否存在
-            if (Directory.Exists(目標路徑_) == false)
-                Directory.CreateDirectory(目標路徑_);
-
-            try
-            {
-                File.Move(原始檔案路徑_, 目標檔案路徑_);
-            }
-            catch (IOException e)
-            {
-                訊息管理器.獨體.Warn("搬移檔案失敗: " + 原始檔案路徑_, e);
-            }
         }
     }
 }

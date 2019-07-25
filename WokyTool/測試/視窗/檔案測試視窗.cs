@@ -19,12 +19,7 @@ namespace WokyTool.測試
             InitializeComponent();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void 檔名測試_Click(object sender, EventArgs e)
+        private void 路徑測試_Click(object sender, EventArgs e)
         {
             {
                 OpenFileDialog openFileDialog1 = new OpenFileDialog();
