@@ -10,11 +10,18 @@ namespace WokyTool.測試
     public class 讀寫測試轉換 : 可寫入_CSV, 可讀出_CSV<讀寫測試資料>
     {
         private static int 測試編號_ = 0;
-        private static string 分格號_ = ",";
 
         protected IEnumerable<讀寫測試資料> _資料列;
 
         public String 分類 { get; set; }
+
+        public String 分格號 
+        {
+            get 
+            {
+                return ",";  
+            }
+        }
 
         public String 密碼 { get; set; }
 
@@ -43,28 +50,38 @@ namespace WokyTool.測試
 
         public void 寫入(StringBuilder SB_)
         {
-            SB_.Append("字串").Append(分格號_)
-                .Append("整數").Append(分格號_)
-                .Append("浮點數").Append(分格號_)
-                .Append("倍精準浮點數").Append(分格號_)
-                .Append("時間").Append(分格號_)
-                .Append("列舉").Append(分格號_);
-            SB_.AppendLine();
+            SB_.Append("字串").Append(分格號)
+                .Append("整數").Append(分格號)
+                .Append("浮點數").Append(分格號)
+                .Append("倍精準浮點數").Append(分格號)
+                .Append("時間").Append(分格號)
+                .Append("列舉").AppendLine();
 
             foreach (讀寫測試資料 資料_ in _資料列)
             {
-                SB_.Append("\"").Append(資料_.字串).Append("\"").Append(分格號_)
-                    .Append(資料_.整數).Append(分格號_)
-                    .Append(資料_.浮點數).Append(分格號_)
-                    .Append(資料_.倍精準浮點數).Append(分格號_)
-                    .Append(資料_.時間).Append(分格號_)
-                    .Append(資料_.列舉).Append(分格號_);
-                SB_.AppendLine();
+                SB_.Append("\"").Append(資料_.字串).Append("\"").Append(分格號)
+                    .Append(資料_.整數).Append(分格號)
+                    .Append(資料_.浮點數).Append(分格號)
+                    .Append(資料_.倍精準浮點數).Append(分格號)
+                    .Append(資料_.時間).Append(分格號)
+                    .Append(資料_.列舉).AppendLine();
             }
         }
 
         public List<讀寫測試資料> 讀出(String 內容_)
         {
+            IEnumerable<string[]> 資料列_ = this.解析(內容_);
+            foreach (string[] 資料_ in 資料列_)
+            {
+                foreach (string 單位_ in 資料_)
+                {
+                    Console.Write(單位_);
+                    Console.Write(" | ");
+                }
+
+                Console.WriteLine();
+            }
+
             return null;
         }
     }

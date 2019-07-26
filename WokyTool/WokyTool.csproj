@@ -576,13 +576,14 @@
     </Compile>
     <Compile Include="通用\其他\函式.cs" />
     <Compile Include="通用\其他\列舉.cs" />
-    <Compile Include="通用\其他\可讀出_CSV.cs" />
-    <Compile Include="通用\其他\可寫入_CSV.cs" />
+    <Compile Include="通用\檔案\介面\可讀出_CSV.cs" />
+    <Compile Include="通用\檔案\介面\可寫入_CSV.cs" />
     <Compile Include="通用\其他\可序列化_Excel.cs" />
     <Compile Include="通用\其他\時間.cs" />
-    <Compile Include="通用\其他\檔案.cs" />
-    <Compile Include="通用\其他\檔案_CSV.cs" />
-    <Compile Include="通用\其他\檔案_Excel.cs" />
+    <Compile Include="通用\檔案\介面\擴充方法.cs" />
+    <Compile Include="通用\檔案\檔案.cs" />
+    <Compile Include="通用\檔案\檔案_CSV.cs" />
+    <Compile Include="通用\檔案\檔案_Excel.cs" />
     <Compile Include="通用\其他\系統參數.cs" />
     <Compile Include="通用\視窗\樣板\鎖定視窗.cs">
       <SubType>Form</SubType>

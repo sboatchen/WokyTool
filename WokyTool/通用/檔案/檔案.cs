@@ -202,7 +202,7 @@ namespace WokyTool.通用
                 if (Directory.Exists(資料夾_) == false)
                     Directory.CreateDirectory(資料夾_);
 
-                File.WriteAllText(路徑_, 資料_);
+                File.WriteAllText(路徑_, 資料_, Encoding.UTF8);
 
                 return true;
             }
@@ -228,6 +228,8 @@ namespace WokyTool.通用
 
                 UnicodeEncoding UE = new UnicodeEncoding();
                 byte[] key = UE.GetBytes(密碼_);
+                if(key.Length != 16) // 要16個位元
+                    throw new Exception("密碼長度須為16");
 
                 using (FileStream fsCrypt = new FileStream(路徑_, FileMode.OpenOrCreate, FileAccess.Write))
                 {

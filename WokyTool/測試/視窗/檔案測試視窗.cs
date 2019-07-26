@@ -58,15 +58,31 @@ namespace WokyTool.測試
         private void CSV_Click(object sender, EventArgs e)
         {
             讀寫測試轉換 讀寫測試轉換_ = new 讀寫測試轉換();
-            檔案.寫入("CSV測試", 讀寫測試轉換_);
+            檔案.詢問並寫入("CSV測試", 讀寫測試轉換_);
 
             List<可寫入_CSV> 讀寫測試轉換s_ = new List<可寫入_CSV>();
             讀寫測試轉換s_.Add(new 讀寫測試轉換());
             讀寫測試轉換s_.Add(new 讀寫測試轉換());
-            讀寫測試轉換s_.Add(new 讀寫測試轉換());
-            讀寫測試轉換s_.Add(new 讀寫測試轉換());
 
-            檔案.寫入("CSV測試2", 讀寫測試轉換s_);
+            檔案.詢問並寫入("CSV測試2", 讀寫測試轉換s_);
+
+            讀寫測試轉換_.密碼 = "12345678";
+            檔案.詢問並寫入("CSV測試3", 讀寫測試轉換_);
+        }
+
+        private void CSV讀出_Click(object sender, EventArgs e)
+        {
+            讀寫測試轉換 讀寫測試轉換_ = new 讀寫測試轉換();
+
+
+            var 內容_ = 檔案.詢問並讀出(讀寫測試轉換_);
+            /*Console.WriteLine(內容_);
+
+            Console.WriteLine("-------------");
+
+            讀寫測試轉換_.密碼 = "12345678";
+            內容_ = 檔案.詢問並讀出(讀寫測試轉換_);
+            Console.WriteLine(內容_);*/
         }
     }
 }
