@@ -12,7 +12,7 @@ using WokyTool.通用;
 namespace WokyTool.配送
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public abstract class 可配送資料 : MyData, 可配送介面
+    public abstract class 可配送資料 : 基本資料, 可配送介面
     {
         public 可配送介面 配送參考 { get; protected set; }
 

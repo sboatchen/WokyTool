@@ -23,7 +23,7 @@ namespace WokyTool.Data
             get
             {
                 if (物品 == null)
-                    return 常數.錯誤資料編碼;
+                    return 常數.舊的錯誤資料編碼;
                 return 物品.編號;
             }
             set

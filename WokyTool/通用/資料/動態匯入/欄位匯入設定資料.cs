@@ -83,7 +83,7 @@ namespace WokyTool.通用
             名稱 = Data_.名稱;
         }
 
-        public override Boolean 是否一致(欄位匯入設定資料 Data_)
+        public override bool 是否一致(欄位匯入設定資料 Data_)
         {
             return
                 列索引 == Data_.列索引 &&

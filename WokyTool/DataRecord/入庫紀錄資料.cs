@@ -23,7 +23,7 @@ namespace WokyTool.DataRecord
 
         public 入庫紀錄資料()
         {
-            編號 = 常數.新資料編碼;
+            編號 = 常數.舊的新資料編碼;
             時間 = DateTime.Now;
 
             公司 = string.Empty;
@@ -45,7 +45,7 @@ namespace WokyTool.DataRecord
 
         private static readonly 入庫紀錄資料 _NULL = new 入庫紀錄資料
         {
-            編號 = 常數.空白資料編碼,
+            編號 = 常數.舊的空白資料編碼,
             時間 = new DateTime(0),
             公司 = 字串.無,
             廠商 = 字串.無,
@@ -56,7 +56,7 @@ namespace WokyTool.DataRecord
 
         private static 入庫紀錄資料 _ERROR = new 入庫紀錄資料
         {
-            編號 = 常數.錯誤資料編碼,
+            編號 = 常數.舊的錯誤資料編碼,
             時間 = new DateTime(0),
             公司 = 字串.錯誤,
             廠商 = 字串.錯誤,

@@ -38,7 +38,7 @@ namespace WokyTool.Data
             get
             {
                 if (廠商 == null)
-                    return 常數.錯誤資料編碼;
+                    return 常數.舊的錯誤資料編碼;
                 return 廠商.編號;
             }
             set

@@ -7,6 +7,7 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
+    //@@@ 待整理
     public class 列舉
     {
         public static bool 是否合法(int 編號)

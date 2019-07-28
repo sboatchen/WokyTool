@@ -391,7 +391,7 @@ namespace WokyTool.商品
             售價 = Data_.售價;
         }
 
-        public override Boolean 是否一致(商品資料 Data_)
+        public override bool 是否一致(商品資料 Data_)
         {
             Boolean 是否相同_ =
                 編號 == Data_.編號 &&

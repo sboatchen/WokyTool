@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using WokyTool.物品;
 using WokyTool.通用;
 
-namespace WokyTool.通用
+namespace WokyTool.配送
 {
     public interface 可配送介面
     {

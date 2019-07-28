@@ -87,7 +87,7 @@ namespace WokyTool.Data
 
         private static readonly 商品訂單資料 _NULL = new 商品訂單資料
         {
-            流水號 = 常數.空白資料編碼
+            流水號 = 常數.舊的空白資料編碼
         };
         public static 商品訂單資料 NULL
         {
@@ -99,7 +99,7 @@ namespace WokyTool.Data
 
         private static 商品訂單資料 _ERROR = new 商品訂單資料
         {
-            流水號 = 常數.錯誤資料編碼,
+            流水號 = 常數.舊的錯誤資料編碼,
         };
         public static 商品訂單資料 ERROR
         {

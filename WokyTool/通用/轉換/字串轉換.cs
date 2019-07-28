@@ -8,7 +8,7 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public class 通用轉換 : 可寫入介面_EXCEL
+    public class 字串轉換 : 可寫入介面_EXCEL
     {
         public String 分類 { get; set; }
 
@@ -20,7 +20,7 @@ namespace WokyTool.通用
 
         private IEnumerable<String> _資料列;
 
-        public 通用轉換(String 分類_, IEnumerable<String> 資料列_)
+        public 字串轉換(String 分類_, IEnumerable<String> 資料列_)
         {
             分類 = 分類_;
             _資料列 = 資料列_;

@@ -141,7 +141,7 @@ namespace WokyTool.使用者
             匯入月結帳 = Data_.匯入月結帳;
         }
 
-        public override Boolean 是否一致(使用者資料 Data_)
+        public override bool 是否一致(使用者資料 Data_)
         {
             return
                 編號 == Data_.編號 &&

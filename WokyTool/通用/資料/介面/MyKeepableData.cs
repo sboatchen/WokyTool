@@ -8,7 +8,7 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public abstract class MyKeepableData<T> : MyData, IEditableObject, 可比較複寫介面<T>, 可編號介面
+    public abstract class MyKeepableData<T> : 基本資料, IEditableObject, 可編號介面
     {
         protected T _副本;
 
@@ -16,7 +16,7 @@ namespace WokyTool.通用
 
         public abstract T 拷貝();
         public abstract void 覆蓋(T Item_);
-        public abstract Boolean 是否一致(T Item_);
+        public abstract bool 是否一致(T Item_);
 
         // IEditableObject
         public void BeginEdit()

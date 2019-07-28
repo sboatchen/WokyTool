@@ -207,7 +207,7 @@ namespace WokyTool.月結帳
             }
         }
 
-        public override Boolean 是否一致(月結帳匯入設定資料 Data_)
+        public override bool 是否一致(月結帳匯入設定資料 Data_)
         {
             bool Flag_ =
                 編號 == Data_.編號 &&

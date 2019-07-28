@@ -142,7 +142,7 @@ namespace WokyTool.通用
             return -1;
         }
 
-        public IEnumerable<T> 匯入Excel<T>(檔案匯入轉換介面<T> 轉換介面_, bool 是否讀入雜值_) where T : MyData
+        public IEnumerable<T> 匯入Excel<T>(檔案匯入轉換介面<T> 轉換介面_, bool 是否讀入雜值_) where T : 基本資料
         {
             if (格式 != 列舉.檔案格式.EXCEL)
                 throw new Exception("檔案匯入設定資料<T>:_匯入Excel 檔案格式不匹配");

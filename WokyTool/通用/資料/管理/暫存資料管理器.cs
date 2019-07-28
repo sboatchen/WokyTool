@@ -13,7 +13,7 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.通用
 {
-    public abstract class 暫存資料管理器<T> : 資料管理器介面 where T : MyData
+    public abstract class 暫存資料管理器<T> : 資料管理器介面 where T : 基本資料
     {
         // 資料BindingList
         public BindingList<T> 可編輯BList { get; set; }

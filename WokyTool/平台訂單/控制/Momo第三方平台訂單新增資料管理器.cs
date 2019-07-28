@@ -17,7 +17,7 @@ namespace WokyTool.平台訂單
         {
             get 
             {
-                return String.Format("進度/Momo第三方平台訂單新增/{0}.json", 系統參數.使用者); 
+                return String.Format("進度/Momo第三方平台訂單新增/{0}.json", 系統參數.使用者名稱); 
             } 
         }
 
@@ -25,7 +25,7 @@ namespace WokyTool.平台訂單
         {
             get
             {
-                return String.Format("進度/平台訂單待合併/{0}_{1}.json", 系統參數.使用者, 時間.目前完整時間);
+                return String.Format("進度/平台訂單待合併/{0}_{1}.json", 系統參數.使用者名稱, 時間.目前完整時間);
             }
         }
 

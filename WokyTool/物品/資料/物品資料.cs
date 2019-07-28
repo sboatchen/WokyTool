@@ -290,7 +290,7 @@ namespace WokyTool.物品
             成本備註 = Data_.成本備註;
         }
 
-        public override Boolean 是否一致(物品資料 Data_)
+        public override bool 是否一致(物品資料 Data_)
         {
             return
                 編號 == Data_.編號 &&

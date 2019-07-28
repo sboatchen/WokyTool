@@ -34,14 +34,14 @@ namespace WokyTool.通用
             string 檔名_ = Path.GetFileNameWithoutExtension(路徑_);
             string 副檔名_ = Path.GetExtension(路徑_);
 
-            return String.Format("{0}_{1}_{2}{3}", 時間.目前時間, 系統參數.使用者, 檔名_, 副檔名_);
+            return String.Format("{0}_{1}_{2}{3}", 時間.目前時間, 系統參數.使用者名稱, 檔名_, 副檔名_);
         }
 
         public static string 取得備份檔名(string 路徑_, string 指定檔名_)
         {
             string 副檔名_ = Path.GetExtension(路徑_);
 
-            return String.Format("{0}_{1}_{2}{3}", 時間.目前時間, 系統參數.使用者, 指定檔名_, 副檔名_);
+            return String.Format("{0}_{1}_{2}{3}", 時間.目前時間, 系統參數.使用者名稱, 指定檔名_, 副檔名_);
         }
 
         public static string 取得備份資料夾(string 路徑_, string[] 額外資料夾_ = null)

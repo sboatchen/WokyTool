@@ -56,8 +56,8 @@ namespace WokyTool.DataMgr
 
                 //物品資料.NULL.上層 = 物品資料.NULL;
                 //物品資料.ERROR.上層 = 物品資料.NULL;
-                Map[常數.錯誤資料編碼] = 物品資料.ERROR;
-                Map[常數.空白資料編碼] = 物品資料.NULL;
+                Map[常數.舊的錯誤資料編碼] = 物品資料.ERROR;
+                Map[常數.舊的空白資料編碼] = 物品資料.NULL;
             }
             else
             {

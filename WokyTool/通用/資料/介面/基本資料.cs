@@ -13,5 +13,9 @@ namespace WokyTool.通用
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
+
+        public virtual void 檢查合法()
+        {
+        }
     }
 }

@@ -14,14 +14,15 @@ namespace WokyTool.月結帳
     {
         public 公司資料 公司 { get; set; }
         public 客戶資料 客戶 { get; set; }
-        public Boolean 是否需篩選()
+
+        public bool 是否需篩選()
         {
             return
                 公司 != null ||
                 客戶 != null;
         }
 
-        public Boolean 篩選(月結帳資料 Data_)
+        public bool 篩選(月結帳資料 Data_)
         {
             if (公司 != null && 公司 != Data_.公司)
                 return false;

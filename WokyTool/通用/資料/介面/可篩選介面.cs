@@ -8,8 +8,8 @@ namespace WokyTool.通用
 {
     public interface 可篩選介面<T>
     {
-        Boolean 是否需篩選();
+        bool 是否需篩選();
 
-        Boolean 篩選(T Item_);
+        bool 篩選(T Item_);
     }
 }

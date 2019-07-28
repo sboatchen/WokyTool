@@ -239,7 +239,7 @@ namespace WokyTool.月結帳
             資料列 = Data_.資料列;
         }
 
-        public override Boolean 是否一致(月結帳會計資料 Data_)
+        public override bool 是否一致(月結帳會計資料 Data_)
         {
             return
                 編號 == Data_.編號 &&

@@ -54,15 +54,15 @@ namespace WokyTool.DataMgr
                 Map = SetReader_.Read<銷售資料>(FILE_PATH, 共用.ReaderDefine)
                                   .ToDictionary(Data => Data.編號);
 
-                Map[常數.錯誤資料編碼] = 銷售資料.ERROR;
-                Map[常數.空白資料編碼] = 銷售資料.NULL;
+                Map[常數.舊的錯誤資料編碼] = 銷售資料.ERROR;
+                Map[常數.舊的空白資料編碼] = 銷售資料.NULL;
             }
             else
             {
                 //@@ temp
                 Map = new Dictionary<int, 銷售資料>();
-                Map[常數.錯誤資料編碼] = 銷售資料.ERROR;
-                Map[常數.空白資料編碼] = 銷售資料.NULL;
+                Map[常數.舊的錯誤資料編碼] = 銷售資料.ERROR;
+                Map[常數.舊的空白資料編碼] = 銷售資料.NULL;
 
                 MessageBox.Show("銷售管理器::InitData fail, can't find file" + Directory.GetCurrentDirectory(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //System.Environment.Exit(0);

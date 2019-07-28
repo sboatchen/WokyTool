@@ -391,7 +391,7 @@ namespace WokyTool.平台訂單
             發票號碼 = Data_.發票號碼;
         }
 
-        public override Boolean 是否一致(平台訂單資料 Data_)
+        public override bool 是否一致(平台訂單資料 Data_)
         {
             return
                 處理狀態 == Data_.處理狀態 &&

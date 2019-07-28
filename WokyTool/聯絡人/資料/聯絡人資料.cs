@@ -93,7 +93,7 @@ namespace WokyTool.聯絡人
             地址 = Data_.地址;
         }
 
-        public override Boolean 是否一致(聯絡人資料 Data_)
+        public override bool 是否一致(聯絡人資料 Data_)
         {
             return
                 編號 == Data_.編號 &&

@@ -88,7 +88,7 @@ namespace WokyTool.一般訂單
 
             // 製表人
             Row_ += 2;
-            App_.Cells[Row_, 備註欄數] = "製表人:" + 系統參數.使用者;
+            App_.Cells[Row_, 備註欄數] = "製表人:" + 系統參數.使用者名稱;
         }
     }
 }

@@ -356,7 +356,7 @@ namespace WokyTool.一般訂單
             清單 = Data_.清單;
         }
 
-        public override Boolean 是否一致(一般訂單新增資料 Data_)
+        public override bool 是否一致(一般訂單新增資料 Data_)
         {
             return
                 處理狀態 == Data_.處理狀態 &&

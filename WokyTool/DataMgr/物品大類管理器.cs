@@ -53,8 +53,8 @@ namespace WokyTool.DataMgr
                 Map = SetReader_.Read<物品大類資料>(FILE_PATH, 共用.ReaderDefine)
                                   .ToDictionary(Data => Data.編號);
 
-                Map[常數.錯誤資料編碼] = 物品大類資料.ERROR;
-                Map[常數.空白資料編碼] = 物品大類資料.NULL;
+                Map[常數.舊的錯誤資料編碼] = 物品大類資料.ERROR;
+                Map[常數.舊的空白資料編碼] = 物品大類資料.NULL;
             }
             else
             {

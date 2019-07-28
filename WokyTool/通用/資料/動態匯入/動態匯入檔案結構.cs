@@ -12,7 +12,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 namespace WokyTool.通用
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 動態匯入檔案結構 : MyData
+    public class 動態匯入檔案結構 : 基本資料
     {
         [JsonProperty]
         public 檔案匯入設定資料介面 設定 { get; set; }

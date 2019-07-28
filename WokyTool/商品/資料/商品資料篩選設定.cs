@@ -23,7 +23,7 @@ namespace WokyTool.商品
         public string 品號 { get; set; }
         public string 名稱 { get; set; }
 
-        public Boolean 是否需篩選()
+        public bool 是否需篩選()
         {
             return
                 大類 != null ||
@@ -35,7 +35,7 @@ namespace WokyTool.商品
                 string.IsNullOrEmpty(名稱) == false;
         }
 
-        public Boolean 篩選(商品資料 Data_)
+        public bool 篩選(商品資料 Data_)
         {
             if (大類 != null && 大類 != Data_.大類)
                 return false;

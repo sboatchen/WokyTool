@@ -41,7 +41,7 @@ namespace WokyTool.物品
 
         //public decimal 成本  { get; set; }
 
-        public Boolean 是否需篩選()
+        public bool 是否需篩選()
         {
             return
                 大類 != null ||
@@ -54,7 +54,7 @@ namespace WokyTool.物品
                 string.IsNullOrEmpty(縮寫) == false;
         }
 
-        public Boolean 篩選(物品資料 Data_)
+        public bool 篩選(物品資料 Data_)
         {
             if (大類 != null && 大類 != Data_.大類)
                 return false;

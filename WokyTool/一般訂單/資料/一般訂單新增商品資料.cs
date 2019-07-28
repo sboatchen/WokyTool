@@ -139,7 +139,7 @@ namespace WokyTool.一般訂單
             含稅單價 = Data_.含稅單價;
         }
 
-        public override Boolean 是否一致(一般訂單新增商品資料 Data_)
+        public override bool 是否一致(一般訂單新增商品資料 Data_)
         {
             return
                 商品 == Data_.商品 &&

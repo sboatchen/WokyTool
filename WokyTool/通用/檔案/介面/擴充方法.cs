@@ -110,7 +110,7 @@ namespace WokyTool.通用
                 return 內容_;
 
             if (內容_.StartsWith("\""))
-                return 內容_.Substring(1, 內容_.Length - 2);    //@@ 需考慮 有的有""在前後 有的沒有 另外需測試 字串裡面有""的狀況
+                return 內容_.Substring(1, 內容_.Length - 2);    //@@ 需測試 字串裡面有""的狀況
             else
                 return 內容_;
         }

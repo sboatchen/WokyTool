@@ -83,7 +83,7 @@ namespace WokyTool.物品
             名稱 = Data_.名稱;
         }
 
-        public override Boolean 是否一致(物品品牌資料 Data_)
+        public override bool 是否一致(物品品牌資料 Data_)
         {
             return
                 編號 == Data_.編號 &&

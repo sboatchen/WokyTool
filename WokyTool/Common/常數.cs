@@ -15,9 +15,9 @@ namespace WokyTool.Common
         public static int 宅配通配送最小體積 = 5;
 
         //@@ 統一所有使用的地方
-        public static int 新資料編碼 = -2;
-        public static int 錯誤資料編碼 = -1;
-        public static int 空白資料編碼 = 0;
+        public static int 舊的新資料編碼 = -2;
+        public static int 舊的錯誤資料編碼 = -1;
+        public static int 舊的空白資料編碼 = 0;
 
         //@@
         public const int T新建資料編碼 = 0;

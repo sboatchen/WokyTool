@@ -9,6 +9,7 @@ using WokyTool.公司;
 using WokyTool.物品;
 using WokyTool.客戶;
 using WokyTool.客製;
+using WokyTool.配送;
 using WokyTool.商品;
 using WokyTool.通用;
 
@@ -434,7 +435,7 @@ namespace WokyTool.平台訂單
             發票號碼 = Data_.發票號碼;
         }
 
-        public override Boolean 是否一致(平台訂單新增資料 Data_)
+        public override bool 是否一致(平台訂單新增資料 Data_)
         {
             return
                 處理時間 == Data_.處理時間 &&

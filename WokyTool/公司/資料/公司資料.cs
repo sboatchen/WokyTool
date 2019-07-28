@@ -70,7 +70,7 @@ namespace WokyTool.公司
             名稱 = Data_.名稱;
         }
 
-        public override Boolean 是否一致(公司資料 Data_)
+        public override bool 是否一致(公司資料 Data_)
         {
             return
                 編號 == Data_.編號 &&

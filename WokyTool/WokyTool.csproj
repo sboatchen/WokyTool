@@ -597,7 +597,7 @@
     <Compile Include="通用\資料\介面\可初始化介面.cs" />
     <Compile Include="通用\資料\介面\基本資料.cs" />
     <Compile Include="通用\資料\介面\可匯入資料.cs" />
-    <Compile Include="通用\資料\介面\可配送介面.cs" />
+    <Compile Include="配送\介面\可配送介面.cs" />
     <Compile Include="通用\資料\動態匯入\通用檔案匯入設定資料.cs" />
     <Compile Include="通用\資料\動態匯入\檔案匯入設定資料介面.cs" />
     <Compile Include="通用\資料\動態匯入\檔案匯入轉換介面.cs" />
@@ -618,7 +618,6 @@
     <Compile Include="通用\資料\管理\暫存資料管理器.cs" />
     <Compile Include="通用\資料\管理\匯入資料管理器.cs" />
     <Compile Include="通用\資料\介面\靜態匯入資料.cs" />
-    <Compile Include="通用\資料\介面\可比較複寫介面.cs" />
     <Compile Include="物品\資料\物品品牌資料.cs" />
     <Compile Include="物品\資料\物品小類資料.cs" />
     <Compile Include="物品\資料\物品大類資料.cs" />
@@ -652,7 +651,6 @@
     <Compile Include="通用\視窗\樣板\詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="通用\資料\介面\MyData.cs" />
     <Compile Include="Common\MyString.cs" />
     <Compile Include="Common\共用.cs" />
     <Compile Include="Common\函式.cs" />
@@ -678,7 +676,7 @@
     <Compile Include="客製\回單轉換\平台訂單回單轉換_博客來.cs" />
     <Compile Include="DataExport\工廠出貨匯出結構.cs" />
     <Compile Include="通用\資料\管理\資料統合管理器.cs" />
-    <Compile Include="通用\轉換\通用轉換.cs" />
+    <Compile Include="通用\轉換\字串轉換.cs" />
     <Compile Include="進貨\控制\進貨新增匯入管理器.cs" />
     <Compile Include="進貨\控制\進貨新增資料管理器.cs" />
     <Compile Include="進貨\控制\進貨資料管理器.cs" />

@@ -18,7 +18,7 @@ namespace WokyTool.進貨
         {
             get 
             {
-                return String.Format("進度/進貨/{0}.json", 系統參數.使用者); 
+                return String.Format("進度/進貨/{0}.json", 系統參數.使用者名稱); 
             } 
         }
 

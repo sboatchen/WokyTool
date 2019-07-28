@@ -120,7 +120,7 @@ namespace WokyTool.月結帳
             費用 = Data_.費用;
         }
 
-        public override Boolean 是否一致(月結帳支出資料 Data_)
+        public override bool 是否一致(月結帳支出資料 Data_)
         {
             return
                 編號 == Data_.編號 &&

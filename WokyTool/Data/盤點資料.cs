@@ -87,7 +87,7 @@ namespace WokyTool.Data
 
         public bool isLegal()
         {
-            return 物品 != null && 物品.編號 > 常數.空白資料編碼;
+            return 物品 != null && 物品.編號 > 常數.舊的空白資料編碼;
         }
     }
 }

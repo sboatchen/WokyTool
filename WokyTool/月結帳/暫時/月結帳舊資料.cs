@@ -241,7 +241,7 @@ namespace WokyTool.月結帳
             含稅單價 = Data_.含稅單價;
         }
 
-        public override Boolean 是否一致(月結帳舊資料 Data_)
+        public override bool 是否一致(月結帳舊資料 Data_)
         {
             return
                 編號 == Data_.編號 &&

@@ -146,7 +146,7 @@ namespace WokyTool.客戶
             }
         }
 
-        public override Boolean 是否一致(客戶資料 Data_)
+        public override bool 是否一致(客戶資料 Data_)
         {
             if (編號 != Data_.編號 || 名稱 != Data_.名稱 || 子客戶數量 != Data_.子客戶數量 || 聯絡人數量 != Data_.聯絡人數量)
                 return false;

@@ -9,7 +9,7 @@ using WokyTool.Common;
 namespace WokyTool.通用
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 動態匯入資料結構 : MyData
+    public class 動態匯入資料結構 : 基本資料
     {
         public 動態匯入檔案結構 檔案結構 { get; set; }
 

@@ -11,6 +11,7 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
+    //@@@ 待整理
     public abstract class 靜態匯入資料 : 可匯入資料
     {
         virtual public void 初始化(){;}

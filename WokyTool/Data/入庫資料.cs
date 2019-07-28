@@ -67,7 +67,7 @@ namespace WokyTool.Data
 
         public 入庫資料()
         {
-            編號 = 常數.新資料編碼;
+            編號 = 常數.舊的新資料編碼;
             時間 = DateTime.Now;
             _運作 = false;
 
@@ -85,7 +85,7 @@ namespace WokyTool.Data
 
         private static readonly 入庫資料 _NULL = new 入庫資料
         {
-            編號 = 常數.空白資料編碼,
+            編號 = 常數.舊的空白資料編碼,
             時間 = 通用.時間.NULL,
             _運作 = true,
             商品 = 商品資料.NULL,
@@ -95,7 +95,7 @@ namespace WokyTool.Data
 
         private static 入庫資料 _ERROR = new 入庫資料
         {
-            編號 = 常數.錯誤資料編碼,
+            編號 = 常數.舊的錯誤資料編碼,
             時間 = 通用.時間.NULL,
             _運作 = true,
             商品 = 商品資料.ERROR,

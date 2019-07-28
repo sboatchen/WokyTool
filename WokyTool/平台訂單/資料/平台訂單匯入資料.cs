@@ -180,7 +180,6 @@ namespace WokyTool.平台訂單
         }
 
         /********************************/
-        // MyData
 
         public override void 檢查合法()
         {
