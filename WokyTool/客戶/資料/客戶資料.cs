@@ -55,7 +55,7 @@ namespace WokyTool.客戶
 
         private static readonly 客戶資料 _NULL = new 客戶資料
         {
-            編號 = 常數.T空白資料編碼,
+            編號 = 常數.空白資料編碼,
             名稱 = 字串.無,
             子客戶編號列 = null,
             聯絡人編號列 = null,
@@ -70,7 +70,7 @@ namespace WokyTool.客戶
 
         private static 客戶資料 _ERROR = new 客戶資料
         {
-            編號 = 常數.T錯誤資料編碼,
+            編號 = 常數.錯誤資料編碼,
             名稱 = 字串.錯誤,
             子客戶編號列 = null,
             聯絡人編號列 = null,

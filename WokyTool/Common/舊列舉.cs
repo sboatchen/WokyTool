@@ -10,8 +10,8 @@ namespace WokyTool.Common
     {
         public enum 訂單處理進度類型
         {
-            錯誤 = 常數.T錯誤資料編碼,
-            無 = 常數.T空白資料編碼,
+            錯誤 = 常數.錯誤資料編碼,
+            無 = 常數.空白資料編碼,
             
             新建,
             匯入錯誤,
@@ -23,7 +23,7 @@ namespace WokyTool.Common
 
         public enum 搜尋失敗處理類型
         {
-            無 = 常數.T空白資料編碼,
+            無 = 常數.空白資料編碼,
             找不到時新增,
         };
 

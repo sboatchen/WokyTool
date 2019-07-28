@@ -175,10 +175,10 @@ namespace WokyTool.通用
         // 取得資料
         public virtual T Get(int ID_)
         {
-            if (ID_ == 常數.T空白資料編碼)
+            if (ID_ == 常數.空白資料編碼)
                 return 空白資料;
 
-            if (ID_ == 常數.T錯誤資料編碼)
+            if (ID_ == 常數.錯誤資料編碼)
                 return 錯誤資料;
 
             T Item_;
@@ -259,7 +259,7 @@ namespace WokyTool.通用
             {
                 Item_.完成編輯();
 
-                if (Item_.編號 == 常數.T新建資料編碼)
+                if (Item_.編號 == 常數.新建資料編碼)
                 {
                     Item_.編號 = 下個編號++;
                 }
@@ -354,7 +354,7 @@ namespace WokyTool.通用
 
             Item_.完成編輯();
 
-            if (Item_.編號 == 常數.T新建資料編碼)
+            if (Item_.編號 == 常數.新建資料編碼)
             {
                 Item_.檢查合法();
                 Item_.編號 = 下個編號++;
@@ -388,7 +388,7 @@ namespace WokyTool.通用
             {
                 Item_.完成編輯();
 
-                if (Item_.編號 == 常數.T新建資料編碼)
+                if (Item_.編號 == 常數.新建資料編碼)
                 {
                     Item_.檢查合法();
                     Item_.編號 = 下個編號++;

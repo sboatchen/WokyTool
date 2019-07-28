@@ -166,7 +166,7 @@ namespace WokyTool.月結帳
 
         private static readonly 月結帳舊資料 _NULL = new 月結帳舊資料
         {
-            編號 = 常數.T空白資料編碼,
+            編號 = 常數.空白資料編碼,
 
             公司 = 公司資料.NULL,
             客戶 = 客戶資料.NULL,
@@ -187,7 +187,7 @@ namespace WokyTool.月結帳
 
         private static 月結帳舊資料 _ERROR = new 月結帳舊資料
         {
-            編號 = 常數.T錯誤資料編碼,
+            編號 = 常數.錯誤資料編碼,
 
             公司 = 公司資料.ERROR,
             客戶 = 客戶資料.ERROR,

@@ -27,7 +27,7 @@ namespace WokyTool.幣值
 
         private static readonly 幣值資料 _NULL = new 幣值資料
         {
-            編號 = 常數.T空白資料編碼,
+            編號 = 常數.空白資料編碼,
             名稱 = 字串.無,
         };
         public static 幣值資料 NULL
@@ -40,7 +40,7 @@ namespace WokyTool.幣值
 
         private static 幣值資料 _ERROR = new 幣值資料
         {
-            編號 = 常數.T錯誤資料編碼,
+            編號 = 常數.錯誤資料編碼,
             名稱 = 字串.錯誤,
         };
         public static 幣值資料 ERROR

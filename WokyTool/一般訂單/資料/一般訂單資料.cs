@@ -239,7 +239,7 @@ namespace WokyTool.一般訂單
 
         private static readonly 一般訂單資料 _NULL = new 一般訂單資料
         {
-            編號 = 常數.T空白資料編碼,
+            編號 = 常數.空白資料編碼,
             處理狀態 = 列舉.訂單處理狀態.完成,
             處理時間 = new DateTime(),
 
@@ -280,7 +280,7 @@ namespace WokyTool.一般訂單
 
         private static 一般訂單資料 _ERROR = new 一般訂單資料
         {
-            編號 = 常數.T錯誤資料編碼,
+            編號 = 常數.錯誤資料編碼,
             處理狀態 = 列舉.訂單處理狀態.錯誤,
             處理時間 = new DateTime(),
 

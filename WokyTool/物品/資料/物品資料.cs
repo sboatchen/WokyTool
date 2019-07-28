@@ -163,7 +163,7 @@ namespace WokyTool.物品
 
         private static readonly 物品資料 _NULL = new 物品資料
         {
-            編號 = 常數.T空白資料編碼,
+            編號 = 常數.空白資料編碼,
 
             大類 = 物品大類資料.NULL,
             小類 = 物品小類資料.NULL,
@@ -197,7 +197,7 @@ namespace WokyTool.物品
 
         private static 物品資料 _ERROR = new 物品資料
         {
-            編號 = 常數.T錯誤資料編碼,
+            編號 = 常數.錯誤資料編碼,
 
             大類 = 物品大類資料.ERROR,
             小類 = 物品小類資料.ERROR,

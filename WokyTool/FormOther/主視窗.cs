@@ -590,9 +590,9 @@ namespace WokyTool
         private int 編號轉換(int Old_)
         {
             if(Old_ == -1)
-                return 常數.T錯誤資料編碼;
+                return 常數.錯誤資料編碼;
             if(Old_ == 0)
-                return 常數.T空白資料編碼;
+                return 常數.空白資料編碼;
 
             return Old_;
         }
@@ -619,7 +619,7 @@ namespace WokyTool
             }
 
             foreach (var x in Map.Values)
-                x.編號 = 常數.T新建資料編碼;
+                x.編號 = 常數.新建資料編碼;
 
             月結帳匯入設定資料管理器.獨體.新增(Map.Values);
         }

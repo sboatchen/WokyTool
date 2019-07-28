@@ -188,10 +188,10 @@ namespace WokyTool.商品
         // 取得資料
         public override 商品資料 Get(int ID_)
         {
-            if (ID_ == 常數.T空白資料編碼)
+            if (ID_ == 常數.空白資料編碼)
                 return 空白資料;
 
-            if (ID_ == 常數.T錯誤資料編碼)
+            if (ID_ == 常數.錯誤資料編碼)
                 return 錯誤資料;
 
             if (ID_ == 常數.商品折扣資料編碼)

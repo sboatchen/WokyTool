@@ -123,7 +123,7 @@ namespace WokyTool
             sw.Close();
 
             // 寫入歷史
-            StreamWriter sw2 = new StreamWriter(常數.支出歷史檔案路徑, true, Encoding.Default);
+            StreamWriter sw2 = new StreamWriter("History/Outlay.csv", true, Encoding.Default);
             CsvContext cc2 = new CsvContext();
             cc2.Write(_Source, sw2, 共用.OutputAppendDefine);
             sw2.Close();

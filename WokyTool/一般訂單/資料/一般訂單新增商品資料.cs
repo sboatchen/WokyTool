@@ -82,7 +82,7 @@ namespace WokyTool.一般訂單
 
         private static readonly 一般訂單新增商品資料 _NULL = new 一般訂單新增商品資料
         {
-            /*編號 = 常數.T空白資料編碼,*/
+            /*編號 = 常數.空白資料編碼,*/
 
             商品 = 商品資料.NULL,
 
@@ -99,7 +99,7 @@ namespace WokyTool.一般訂單
 
         private static 一般訂單新增商品資料 _ERROR = new 一般訂單新增商品資料
         {
-            /*編號 = 常數.T錯誤資料編碼,*/
+            /*編號 = 常數.錯誤資料編碼,*/
 
             商品 = 商品資料.ERROR,
 

@@ -352,7 +352,7 @@ namespace WokyTool.商品
 
         private static readonly 舊商品資料 _NULL = new 舊商品資料
         {
-            編號 = 常數.T空白資料編碼,
+            編號 = 常數.空白資料編碼,
 
             大類 = 商品大類資料.NULL,
             小類 = 商品小類資料.NULL,
@@ -388,7 +388,7 @@ namespace WokyTool.商品
 
         private static 舊商品資料 _ERROR = new 舊商品資料
         {
-            編號 = 常數.T錯誤資料編碼,
+            編號 = 常數.錯誤資料編碼,
 
             大類 = 商品大類資料.ERROR,
             小類 = 商品小類資料.ERROR,

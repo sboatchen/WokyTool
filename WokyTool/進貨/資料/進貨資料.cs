@@ -191,7 +191,7 @@ namespace WokyTool.進貨
 
         private static readonly 進貨資料 _NULL = new 進貨資料
         {
-            編號 = 常數.T空白資料編碼,
+            編號 = 常數.空白資料編碼,
 
             狀態 = 列舉.進貨處理狀態.忽略,
 
@@ -223,7 +223,7 @@ namespace WokyTool.進貨
 
         private static 進貨資料 _ERROR = new 進貨資料
         {
-            編號 = 常數.T錯誤資料編碼,
+            編號 = 常數.錯誤資料編碼,
 
             狀態 = 列舉.進貨處理狀態.錯誤,
 

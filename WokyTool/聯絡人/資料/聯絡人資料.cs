@@ -33,7 +33,7 @@ namespace WokyTool.聯絡人
 
         private static readonly 聯絡人資料 _NULL = new 聯絡人資料
         {
-            編號 = 常數.T空白資料編碼,
+            編號 = 常數.空白資料編碼,
             姓名 = 字串.無,
             電話 = 字串.無,
             手機 = 字串.無,
@@ -49,7 +49,7 @@ namespace WokyTool.聯絡人
 
         private static 聯絡人資料 _ERROR = new 聯絡人資料
         {
-            編號 = 常數.T錯誤資料編碼,
+            編號 = 常數.錯誤資料編碼,
             姓名 = 字串.錯誤,
             電話 = 字串.錯誤,
             手機 = 字串.錯誤,

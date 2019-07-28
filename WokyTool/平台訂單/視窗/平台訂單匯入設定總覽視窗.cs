@@ -45,7 +45,7 @@ namespace WokyTool.平台訂單
             平台訂單匯入設定資料 Source_ = (平台訂單匯入設定資料)(this.平台訂單匯入設定資料BindingSource.Current);
             
             平台訂單匯入設定資料 New_ = Source_.拷貝();
-            New_.編號 = 常數.T新建資料編碼;
+            New_.編號 = 常數.新建資料編碼;
 
             this.平台訂單匯入設定資料BindingSource.Add(New_);
         }

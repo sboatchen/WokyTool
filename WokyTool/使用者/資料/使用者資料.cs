@@ -58,7 +58,7 @@ namespace WokyTool.使用者
 
         private static readonly 使用者資料 _NULL = new 使用者資料
         {
-            編號 = 常數.T空白資料編碼,
+            編號 = 常數.空白資料編碼,
 
             帳號 = 字串.無,
             密碼 = 字串.無,
@@ -81,7 +81,7 @@ namespace WokyTool.使用者
 
         private static 使用者資料 _ERROR = new 使用者資料
         {
-            編號 = 常數.T錯誤資料編碼,
+            編號 = 常數.錯誤資料編碼,
 
             帳號 = 字串.錯誤,
             密碼 = 字串.無,
