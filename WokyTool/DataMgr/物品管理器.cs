@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.FormOther;
+using WokyTool.通用;
 
 namespace WokyTool.DataMgr
 {

@@ -594,9 +594,9 @@
       <DependentUpon>鎖定視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="通用\訊息\訊息管理器.cs" />
-    <Compile Include="通用\資料\介面\可初始化介面.cs" />
-    <Compile Include="通用\資料\介面\基本資料.cs" />
-    <Compile Include="通用\資料\介面\可匯入資料.cs" />
+    <Compile Include="通用\介面\可初始化介面.cs" />
+    <Compile Include="通用\資料\基本資料.cs" />
+    <Compile Include="通用\資料\可匯入資料.cs" />
     <Compile Include="配送\介面\可配送介面.cs" />
     <Compile Include="通用\資料\動態匯入\通用檔案匯入設定資料.cs" />
     <Compile Include="通用\資料\動態匯入\檔案匯入設定資料介面.cs" />
@@ -617,7 +617,7 @@
     </Compile>
     <Compile Include="通用\資料\管理\暫存資料管理器.cs" />
     <Compile Include="通用\資料\管理\匯入資料管理器.cs" />
-    <Compile Include="通用\資料\介面\靜態匯入資料.cs" />
+    <Compile Include="通用\資料\靜態匯入資料.cs" />
     <Compile Include="物品\資料\物品品牌資料.cs" />
     <Compile Include="物品\資料\物品小類資料.cs" />
     <Compile Include="物品\資料\物品大類資料.cs" />
@@ -645,8 +645,8 @@
     <Compile Include="聯絡人\視窗\聯絡人總覽視窗.Designer.cs">
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="通用\資料\介面\可篩選介面.cs" />
-    <Compile Include="通用\資料\介面\可編號介面.cs" />
+    <Compile Include="通用\介面\可篩選介面.cs" />
+    <Compile Include="通用\介面\可編號介面.cs" />
     <Compile Include="通用\資料\管理\資料儲存管理器.cs" />
     <Compile Include="通用\視窗\樣板\詳細視窗.cs">
       <SubType>Form</SubType>
@@ -662,7 +662,7 @@
     <Compile Include="Common\可運作.cs" />
     <Compile Include="Common\可配送.cs" />
     <Compile Include="Common\子視窗.cs" />
-    <Compile Include="Common\常數.cs" />
+    <Compile Include="通用\其他\常數.cs" />
     <Compile Include="Common\舊列舉.cs" />
     <Compile Include="Common\字串.cs" />
     <Compile Include="Common\可格式化_Excel.cs" />
@@ -748,7 +748,7 @@
     <Compile Include="Data\訊息資料.cs" />
     <Compile Include="Data\非平台訂單資料.cs" />
     <Compile Include="通用\資料\管理\資料管理器.cs" />
-    <Compile Include="通用\資料\介面\MyKeepableData.cs" />
+    <Compile Include="通用\資料\MyKeepableData.cs" />
     <Compile Include="通用\資料\動態匯入\動態匯入檔案結構.cs" />
     <Compile Include="通用\資料\動態匯入\檔案匯入設定資料.cs" />
     <Compile Include="通用\資料\動態匯入\動態匯入資料結構.cs" />
@@ -897,7 +897,7 @@
     </Compile>
     <Compile Include="聯絡人\控制\聯絡人資料管理器.cs" />
     <Compile Include="聯絡人\資料\聯絡人資料.cs" />
-    <Compile Include="通用\資料\介面\可儲存介面.cs" />
+    <Compile Include="通用\介面\可儲存介面.cs" />
     <Compile Include="通用\資料\管理\資料管理器介面.cs" />
     <Compile Include="配送\控制\配送管理器.cs" />
     <Compile Include="配送\視窗\待配送總覽視窗.cs">

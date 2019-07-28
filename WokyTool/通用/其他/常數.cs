@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WokyTool.Common
+namespace WokyTool.通用
 {
     public static class 常數
     {
