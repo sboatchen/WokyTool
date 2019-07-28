@@ -63,6 +63,8 @@ namespace WokyTool.通用
 
         public static bool 刪除(string 路徑_)
         {
+            訊息管理器.獨體.Debug("刪除檔案: " + 路徑_);
+
             try
             {
                 File.Delete(路徑_);
@@ -77,6 +79,8 @@ namespace WokyTool.通用
 
         public static bool 搬移(string 原始路徑_, string 目標路徑_)
         {
+            訊息管理器.獨體.Debug("搬移檔案: " + 原始路徑_);
+
             try
             {
                 // 檢查原始檔案是否存在
@@ -98,8 +102,10 @@ namespace WokyTool.通用
             }
         }
 
-        public static bool 搬移(string 原始路徑_)
+        public static bool 搬移至備份(string 原始路徑_)
         {
+            訊息管理器.獨體.Debug("搬移檔案至備份: " + 原始路徑_);
+
             try
             {
                 // 檢查原始檔案是否存在
@@ -130,6 +136,8 @@ namespace WokyTool.通用
 
         public static bool 備份(string 原始路徑_, bool 忽略缺少原始檔案錯誤_ = false)
         {
+            訊息管理器.獨體.Debug("備份檔案: " + 原始路徑_);
+
             try
             {
                 // 檢查原始檔案是否存在
@@ -164,6 +172,8 @@ namespace WokyTool.通用
 
         public static bool 備份(string 原始路徑_, string 指定檔名_, params string[] 指定資料夾_)
         {
+            訊息管理器.獨體.Debug("備份檔案: " + 原始路徑_);
+
             try
             {
                 // 檢查原始檔案是否存在
@@ -194,6 +204,8 @@ namespace WokyTool.通用
 
         public static bool 寫入(string 路徑_, string 資料_)
         {
+            訊息管理器.獨體.Debug("寫入檔案: " + 路徑_);
+
             String 資料夾_ = Path.GetDirectoryName(路徑_);
 
             try
@@ -217,6 +229,8 @@ namespace WokyTool.通用
         {
             if (String.IsNullOrEmpty(密碼_))
                 return 寫入(路徑_, 資料_);
+
+            訊息管理器.獨體.Debug("寫入加密檔案: " + 路徑_);
 
             String 資料夾_ = Path.GetDirectoryName(路徑_);
 
@@ -266,6 +280,8 @@ namespace WokyTool.通用
 
         public static string 讀出(string 路徑_)
         {
+            //訊息管理器.獨體.Debug("讀出檔案: " + 路徑_);   //@@ 可能發生在使用者管理氣尚未初始化完畢 
+
             try
             {
                 // 檢查原始檔案是否存在
@@ -284,11 +300,13 @@ namespace WokyTool.通用
 
         public static string 讀出(string 路徑_, string 密碼_)
         {
+            if (String.IsNullOrEmpty(密碼_))
+                return 讀出(路徑_);
+
+            //訊息管理器.獨體.Debug("讀出加密檔案: " + 路徑_); //@@ 可能發生在使用者管理氣尚未初始化完畢 
+
             try
             {
-                if (String.IsNullOrEmpty(密碼_))
-                    return 讀出(路徑_);
-
                 // 檢查原始檔案是否存在
                 if (File.Exists(路徑_) == false)
                     throw new Exception("找不到原始檔案");

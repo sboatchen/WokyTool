@@ -93,7 +93,7 @@ namespace WokyTool.一般訂單
                 List<一般訂單資料> temp = JsonConvert.DeserializeObject<List<一般訂單資料>>(json);
                 List.AddRange(temp);
 
-                檔案.搬移(fileName);
+                檔案.搬移至備份(fileName);
             }
 
             this.新增(List);

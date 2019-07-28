@@ -12,7 +12,7 @@ namespace WokyTool.通用
 {
     public partial class 檔案
     {
-        public static void 詢問並寫入(string 預設檔名_, 可寫入_CSV 資料_)
+        public static void 詢問並寫入(string 預設檔名_, 可寫入介面_CSV 轉換_)
         {
             // 開啟存檔位置
             SaveFileDialog SFD_ = new SaveFileDialog();
@@ -23,13 +23,13 @@ namespace WokyTool.通用
                 return;
 
             // 寫入資料
-            StringBuilder SB_ = new StringBuilder();
-            資料_.寫入(SB_);
+            CSVBuilder Builder_ = new CSVBuilder(轉換_.分格號);
+            轉換_.寫入(Builder_);
 
-            寫入(SFD_.FileName, SB_.ToString(), 資料_.密碼);
+            寫入(SFD_.FileName, Builder_.ToString(), 轉換_.密碼);
         }
 
-        public static void 詢問並寫入(string 預設檔名_, List<可寫入_CSV> 資料列_)
+        public static void 詢問並寫入(string 預設檔名_, List<可寫入介面_CSV> 轉換列_)
         {
             // 開啟存檔位置
             SaveFileDialog SFD_ = new SaveFileDialog();
@@ -40,25 +40,25 @@ namespace WokyTool.通用
                 return;
 
             // 寫入資料
-            StringBuilder SB_ = new StringBuilder();
+            CSVBuilder Builder_ = new CSVBuilder();
             int index = 0;
-            foreach (可寫入_CSV 資料_ in 資料列_)
+            foreach (可寫入介面_CSV 轉換_ in 轉換列_)
             {
-                SB_.Clear();
-                資料_.寫入(SB_);
+                Builder_.重置(轉換_.分格號);
+                轉換_.寫入(Builder_);
 
                 String 路徑_;
-                if (String.IsNullOrEmpty(資料_.分類))
+                if (String.IsNullOrEmpty(轉換_.分類))
                     路徑_ = 增加檔名後綴(SFD_.FileName, index.ToString());
                 else
-                    路徑_ = 增加檔名後綴(SFD_.FileName, 資料_.分類);
+                    路徑_ = 增加檔名後綴(SFD_.FileName, 轉換_.分類);
 
-                寫入(路徑_, SB_.ToString(), 資料_.密碼);
+                寫入(路徑_, Builder_.ToString(), 轉換_.密碼);
                 index++;
             }
         }
 
-        public static List<T> 詢問並讀出<T>(可讀出_CSV<T> 轉換_)
+        public static IEnumerable<T> 詢問並讀出<T>(可讀出介面_CSV<T> 轉換_)
         {
             // 開啟存檔位置
             OpenFileDialog OFD_ = new OpenFileDialog();
@@ -66,7 +66,13 @@ namespace WokyTool.通用
             if (OFD_.ShowDialog() != DialogResult.OK)
                 return null;
 
+            // 備份
+            if (false == 備份(OFD_.FileName, typeof(T).Name, "檔案讀出"))
+                return null;
+
             string 內容_ = 讀出(OFD_.FileName, 轉換_.密碼);
+            if (String.IsNullOrEmpty(內容_))
+                return null;
 
             return 轉換_.讀出(內容_);
         }

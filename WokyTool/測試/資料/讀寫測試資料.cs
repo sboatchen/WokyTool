@@ -7,7 +7,7 @@ using WokyTool.通用;
 
 namespace WokyTool.測試
 {
-    public class 讀寫測試資料
+    public class 讀寫測試資料 : 基本資料, 可初始化介面
     {
         public String 字串 { get; set; }
         public int 整數 { get; set; }
@@ -15,5 +15,8 @@ namespace WokyTool.測試
         public double 倍精準浮點數 { get; set; }
         public DateTime 時間 { get; set; }
         public 列舉.編號 列舉 { get; set; }
+        public int 列舉值 { get; set; }
+
+        public void 初始化() { ; }
     }
 }

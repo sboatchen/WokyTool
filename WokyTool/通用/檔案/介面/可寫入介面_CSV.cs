@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
-    public interface 可寫入_CSV
+    public interface 可寫入介面_CSV
     {
         String 分類 { get; }
 
@@ -13,6 +13,6 @@ namespace WokyTool.通用
 
         String 密碼 { get; }
 
-        void 寫入(StringBuilder SB_);
+        void 寫入(CSVBuilder Builder_);
     }
 }

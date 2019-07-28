@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,11 +8,9 @@ using WokyTool.通用;
 
 namespace WokyTool.測試
 {
-    public class 讀寫測試轉換 : 可寫入_CSV, 可讀出_CSV<讀寫測試資料>
+    public class 讀寫測試轉換 : 可寫入介面_CSV, 可讀出介面_CSV<讀寫測試資料>, 可寫入介面_EXCEL, 可讀出介面_EXCEL<讀寫測試資料>
     {
         private static int 測試編號_ = 0;
-
-        protected IEnumerable<讀寫測試資料> _資料列;
 
         public String 分類 { get; set; }
 
@@ -23,7 +22,23 @@ namespace WokyTool.測試
             }
         }
 
+        public int 分頁索引 { get { return 1; } }
+
+        public int 標頭索引 { get { return 1; } }
+
+        public bool 是否有標頭 { get { return true; } }
+
+        public int 資料開始索引 { get { return 2; } }
+
+        public int 資料結尾忽略行數 { get { return 0; } }
+
+        public String 樣板 { get; set; }
+
+        public XlFileFormat 格式 { get; set; }
+
         public String 密碼 { get; set; }
+
+        private IEnumerable<讀寫測試資料> _資料列;
 
         public 讀寫測試轉換()
         {
@@ -48,41 +63,59 @@ namespace WokyTool.測試
             _資料列 = 資料列_;
         }
 
-        public void 寫入(StringBuilder SB_)
+        public void 寫入(CSVBuilder Builder_)
         {
-            SB_.Append("字串").Append(分格號)
-                .Append("整數").Append(分格號)
-                .Append("浮點數").Append(分格號)
-                .Append("倍精準浮點數").Append(分格號)
-                .Append("時間").Append(分格號)
-                .Append("列舉").AppendLine();
+            Builder_.加入標頭("字串", "整數", "浮點數", "倍精準浮點數", "時間", "列舉");
 
             foreach (讀寫測試資料 資料_ in _資料列)
             {
-                SB_.Append("\"").Append(資料_.字串).Append("\"").Append(分格號)
-                    .Append(資料_.整數).Append(分格號)
-                    .Append(資料_.浮點數).Append(分格號)
-                    .Append(資料_.倍精準浮點數).Append(分格號)
-                    .Append(資料_.時間).Append(分格號)
-                    .Append(資料_.列舉).AppendLine();
+                Builder_.加入(資料_.字串, 資料_.整數, 資料_.浮點數, 資料_.倍精準浮點數, 資料_.時間, 資料_.列舉);
             }
         }
 
-        public List<讀寫測試資料> 讀出(String 內容_)
+        public void 寫入(Application App_)
         {
-            IEnumerable<string[]> 資料列_ = this.解析(內容_);
-            foreach (string[] 資料_ in 資料列_)
+            App_.Cells[1, 1] = "字串";
+            App_.Cells[1, 2] = "整數";
+            App_.Cells[1, 3] = "浮點數";
+            App_.Cells[1, 4] = "倍精準浮點數";
+            App_.Cells[1, 5] = "時間";
+            App_.Cells[1, 6] = "列舉";
+
+            int 目前行數_ = 2;
+            foreach (讀寫測試資料 資料_ in _資料列)
             {
-                foreach (string 單位_ in 資料_)
-                {
-                    Console.Write(單位_);
-                    Console.Write(" | ");
-                }
+                App_.Cells[目前行數_, 1] = 資料_.字串;
+                App_.Cells[目前行數_, 2] = 資料_.整數;
+                App_.Cells[目前行數_, 3] = 資料_.浮點數;
+                App_.Cells[目前行數_, 4] = 資料_.倍精準浮點數;
+                App_.Cells[目前行數_, 5] = 資料_.時間;
+                App_.Cells[目前行數_, 6] = 資料_.列舉;
 
-                Console.WriteLine();
+                目前行數_++;
             }
+        }
 
-            return null;
+        public void 讀出標頭(string[] 標頭列_)
+        {
+            foreach (string 標頭_ in 標頭列_)
+                Console.WriteLine(標頭_);
+            Console.WriteLine("-----------");
+        }
+
+        public 讀寫測試資料 讀出資料(string[] 資料列_)
+        {
+            讀寫測試資料 新資料 = new 讀寫測試資料
+            {
+                字串 = 資料列_[0].轉成字串(),
+                整數 = 資料列_[1].轉成整數(),
+                浮點數 = 資料列_[2].轉成浮點數(),
+                倍精準浮點數 = 資料列_[3].轉成倍精準浮點數(),
+                時間 = 資料列_[4].轉成時間(),
+                列舉 = 資料列_[5].轉成列舉<列舉.編號>()
+            };
+
+            return 新資料;
         }
     }
 }
