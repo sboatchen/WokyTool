@@ -36,7 +36,7 @@ namespace WokyTool.通用
                 }
                 catch (Exception ex)
                 {
-                    訊息管理器.獨體.Error("開啟檔案失敗", ex);
+                    訊息管理器.獨體.錯誤("開啟檔案失敗", ex);
 
                     if (Excel_ != null)
                         Excel_.Dispose();

@@ -57,7 +57,7 @@ namespace WokyTool.平台訂單
 
         private void _DataGridView錯誤(object sender, DataGridViewDataErrorEventArgs e)
         {
-            訊息管理器.獨體.Error("資料錯誤:" + e.RowIndex + "," + e.ColumnIndex);
+            訊息管理器.獨體.錯誤("資料錯誤:" + e.RowIndex + "," + e.ColumnIndex);
             e.ThrowException = false;
 
             if (e.ColumnIndex == 3)
@@ -106,12 +106,12 @@ namespace WokyTool.平台訂單
             string 標題_ = String.Format("平台訂單新增錯誤匯出_{0}_{1}_{2}", this._公司.名稱, this._客戶.名稱, 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
-            訊息管理器.獨體.Notify("匯出完成");
+            訊息管理器.獨體.通知("匯出完成");
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //訊息管理器.獨體.Notify("功能尚未實作");
+            //訊息管理器.獨體.通知("功能尚未實作");
         }
 
         /********************************/

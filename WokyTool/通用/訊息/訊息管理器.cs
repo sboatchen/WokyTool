@@ -26,6 +26,13 @@ namespace WokyTool.通用
 
         private 訊息管理器()
         {
+            if (使用者資料管理器.獨體 == null)
+            {
+                MessageBox.Show("訊息管理器初始化失敗", 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
             if (使用者資料管理器.獨體.使用者.編號是否合法())
                 on登入(使用者資料管理器.獨體.使用者);
             else
@@ -46,107 +53,109 @@ namespace WokyTool.通用
             使用者資料管理器.獨體.登入事件管理器 -= on登入;
         }
 
-        public void Error(object message)
+        public void 錯誤(object 內容_)
         {
             if (logger != null)
             {
-                logger.Error(message);
+                logger.Error(內容_);
                 logger.Error(Environment.StackTrace);
             }
 
-            MessageBox.Show(message.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(內容_.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public void Error(Exception exception)
+        public void 錯誤(Exception Ex_)
         {
             if (logger != null)
             {
-                logger.Error(exception.Message, exception);
+                logger.Error(Ex_.Message, Ex_);
             }
 
-            MessageBox.Show(exception.Message, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(Ex_.Message, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public void Error(object message, Exception exception)
+        public void 錯誤(object 內容_, Exception Ex_)
         {
             if (logger != null)
             {
-                logger.Error(message, exception);
+                logger.Error(內容_, Ex_);
             }
 
-            MessageBox.Show(message.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(內容_.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public void Warn(object message)
+        public void 警告(object 內容_)
         {
             if (logger != null)
             {
-                logger.Warn(message);
+                logger.Warn(內容_);
                 logger.Error(Environment.StackTrace);
             }
 
-            MessageBox.Show(message.ToString(), 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(內容_.ToString(), 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public void Warn(Exception exception)
+        public void 警告(Exception Ex_)
         {
             if (logger != null)
             {
-                logger.Warn(exception.Message, exception);
+                logger.Warn(Ex_.Message, Ex_);
+                logger.Warn(Environment.StackTrace);
             }
 
-            MessageBox.Show(exception.Message.ToString(), 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(Ex_.Message.ToString(), 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public void Warn(object message, Exception exception)
+        public void 警告(object 內容_, Exception Ex_)
         {
             if (logger != null)
             {
-                logger.Warn(message, exception);
+                logger.Warn(內容_, Ex_);
+                logger.Warn(Environment.StackTrace);
             }
 
-            MessageBox.Show(message.ToString(), 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(內容_.ToString(), 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public void Debug(object message, bool trace = false)
+        public void 追蹤(object 內容_, bool 是否記錄堆疊_ = false)
         {
             if (logger != null)
             {
-                logger.Debug(message);
+                logger.Debug(內容_);
 
-                if (trace)
+                if (是否記錄堆疊_)
                     logger.Debug(Environment.StackTrace);
             }
 
-            Console.WriteLine(message);
+            Console.WriteLine(內容_);
         }
 
-        public void Info(object message, bool trace = false)
+        public void 訊息(object 內容_, bool 是否記錄堆疊_ = false)
         {
             if (logger != null)
             {
-                logger.Info(message);
+                logger.Info(內容_);
 
-                if (trace)
+                if (是否記錄堆疊_)
                     logger.Info(Environment.StackTrace);
             }
 
-            Console.WriteLine(message);
+            Console.WriteLine(內容_);
         }
 
-        public void Notify(object message)
+        public void 通知(object 內容_)
         {
-            MessageBox.Show(message.ToString(), 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(內容_.ToString(), 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public void Notify(String title, object message)
+        public void 通知(String 標題_, object 內容_)
         {
-            MessageBox.Show(message.ToString(), title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(內容_.ToString(), 標題_, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        public bool Check(String title, object message)
+        public bool 確認(String 標題_, object 內容_)
         {
-            var result = MessageBox.Show(message.ToString(), title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var result = MessageBox.Show(內容_.ToString(), 標題_, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             return result == DialogResult.Yes;
         }
     }

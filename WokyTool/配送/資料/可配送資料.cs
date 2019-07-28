@@ -141,7 +141,7 @@ namespace WokyTool.配送
 
                 if (String.IsNullOrEmpty(配送參考.配送單號) == false)
                 {
-                    訊息管理器.獨體.Warn("資料重複配送 " + this.ToString());
+                    訊息管理器.獨體.警告("資料重複配送 " + this.ToString());
                     return;
                 }
 
@@ -157,7 +157,7 @@ namespace WokyTool.配送
         public void 初始化()
         {
             if(this.合併 == null)
-                訊息管理器.獨體.Error("缺少合併資料 " + this.ToString());
+                訊息管理器.獨體.錯誤("缺少合併資料 " + this.ToString());
 
             this.內容 = this.合併.ToString();
             this.體積 = this.合併.體積;

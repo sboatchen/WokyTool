@@ -29,13 +29,13 @@ namespace WokyTool.使用者
         {
             if (String.IsNullOrEmpty(this.新密碼.Text) || String.IsNullOrEmpty(this.再次確認.Text))
             {
-                訊息管理器.獨體.Notify(字串.密碼不可無空白);
+                訊息管理器.獨體.通知(字串.密碼不可無空白);
                 return;
             }
 
             if (this.新密碼.Text.CompareTo(this.再次確認.Text) != 0)
             {
-                訊息管理器.獨體.Notify(字串.密碼輸入不一致);
+                訊息管理器.獨體.通知(字串.密碼輸入不一致);
                 return;
             }
 

@@ -35,7 +35,7 @@ namespace WokyTool.一般訂單
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            訊息管理器.獨體.Notify("功能尚未實作");
+            訊息管理器.獨體.通知("功能尚未實作");
             //視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.篩選);
         }
 
@@ -56,7 +56,7 @@ namespace WokyTool.一般訂單
 
             配送管理器.獨體.新增(出貨Queue_);
 
-            訊息管理器.獨體.Notify("已轉入配送系統");
+            訊息管理器.獨體.通知("已轉入配送系統");
         }
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace WokyTool.一般訂單
                 檔案.詢問並寫入(標題_, 轉換_); ;
             }
 
-            訊息管理器.獨體.Notify("匯出完成");
+            訊息管理器.獨體.通知("匯出完成");
         }
 
         private void 完成ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace WokyTool.一般訂單
 
             this.OnActivated(null);
 
-            訊息管理器.獨體.Notify("已完成");
+            訊息管理器.獨體.通知("已完成");
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

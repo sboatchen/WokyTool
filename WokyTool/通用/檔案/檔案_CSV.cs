@@ -79,7 +79,7 @@ namespace WokyTool.通用
 
         private static IEnumerable<T> 詢問並讀出_CSV<T>(string 路徑_) where T : 可初始化介面
         {
-            訊息管理器.獨體.Error("尚未實作"); //@@
+            訊息管理器.獨體.錯誤("尚未實作"); //@@
             return null;
         }
     }

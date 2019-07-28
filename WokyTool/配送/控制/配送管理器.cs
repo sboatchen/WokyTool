@@ -43,7 +43,7 @@ namespace WokyTool.配送
         {
             if (IsSave_ == false)
             {
-                訊息管理器.獨體.Warn("配送管理器不支援返回操作");
+                訊息管理器.獨體.警告("配送管理器不支援返回操作");
                 return;
             }
 

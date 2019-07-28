@@ -48,13 +48,13 @@ namespace WokyTool.通用
 
             if(rw >= 5000)
             {
-                訊息管理器.獨體.Error("偵測到檔案行數超過5000行，請確認");
+                訊息管理器.獨體.錯誤("偵測到檔案行數超過5000行，請確認");
                 return;
             }
 
             if (cl >= 200)
             {
-                訊息管理器.獨體.Error("偵測到檔案列數超過200列，請確認");
+                訊息管理器.獨體.錯誤("偵測到檔案列數超過200列，請確認");
                 return;
             }
 
@@ -174,7 +174,7 @@ namespace WokyTool.通用
             }
             catch (Exception ex)
             {
-                訊息管理器.獨體.Error("失敗位置:" + rCnt + "," + cCnt + " " + dValue_);
+                訊息管理器.獨體.錯誤("失敗位置:" + rCnt + "," + cCnt + " " + dValue_);
                 throw ex;
             }
             finally

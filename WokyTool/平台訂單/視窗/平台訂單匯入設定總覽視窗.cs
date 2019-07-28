@@ -38,7 +38,7 @@ namespace WokyTool.平台訂單
         {
             if (this.平台訂單匯入設定資料BindingSource.Current == null)
             {
-                訊息管理器.獨體.Notify("請先選擇複製的樣板");
+                訊息管理器.獨體.通知("請先選擇複製的樣板");
                 return;
             }
 

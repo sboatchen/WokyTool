@@ -55,7 +55,7 @@ namespace WokyTool.客製
                         return 宅配通編號;
                     default:
                         if (_Data.處理狀態 != 列舉.訂單處理狀態.忽略)
-                            訊息管理器.獨體.Error("平台訂單回單轉換_Friday 不支援配送公司 " + _Data.配送公司.ToString());
+                            訊息管理器.獨體.錯誤("平台訂單回單轉換_Friday 不支援配送公司 " + _Data.配送公司.ToString());
                         return 字串.空;
                 }
             }

@@ -35,7 +35,7 @@ namespace WokyTool.進貨
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            訊息管理器.獨體.Notify("尚未實作");
+            訊息管理器.獨體.通知("尚未實作");
         }
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace WokyTool.進貨
             string 標題_ = String.Format("進貨總覽_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
-            訊息管理器.獨體.Notify("匯出完成");
+            訊息管理器.獨體.通知("匯出完成");
         }
 
         private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)

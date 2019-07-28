@@ -91,7 +91,7 @@ namespace WokyTool.月結帳
             String 標題_ = String.Format("物品統計_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換列_);
 
-            訊息管理器.獨體.Notify("已完成匯出");
+            訊息管理器.獨體.通知("已完成匯出");
 
             this.物品統計ToolStripMenuItem.Enabled = true;
         }
@@ -123,7 +123,7 @@ namespace WokyTool.月結帳
             String 標題_ = String.Format("品牌營業額_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
-            訊息管理器.獨體.Notify("已完成匯出");
+            訊息管理器.獨體.通知("已完成匯出");
 
             this.品牌營業額ToolStripMenuItem.Enabled = true;
         }
@@ -160,7 +160,7 @@ namespace WokyTool.月結帳
             String 標題_ = String.Format("商品統計_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
-            訊息管理器.獨體.Notify("已完成匯出");
+            訊息管理器.獨體.通知("已完成匯出");
 
             this.商品統計ToolStripMenuItem.Enabled = true;
         }

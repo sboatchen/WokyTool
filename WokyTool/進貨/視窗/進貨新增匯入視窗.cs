@@ -64,7 +64,7 @@ namespace WokyTool.進貨
             string 標題_ = String.Format("進貨新增錯誤匯出_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
-            訊息管理器.獨體.Notify("匯出完成");
+            訊息管理器.獨體.通知("匯出完成");
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)//

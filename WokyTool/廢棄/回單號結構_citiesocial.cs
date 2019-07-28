@@ -52,7 +52,7 @@ namespace WokyTool.DataExport
                     App_.Cells[Row_, 3] = 字串.宅配通;
                     break;
                 default:
-                    訊息管理器.獨體.Notify("回單號結構_citiesocial can't find 配送公司 " + _Data.配送公司.ToString());
+                    訊息管理器.獨體.通知("回單號結構_citiesocial can't find 配送公司 " + _Data.配送公司.ToString());
                     break;
             }
 

@@ -63,7 +63,7 @@ namespace WokyTool.通用
 
         public static bool 刪除(string 路徑_)
         {
-            訊息管理器.獨體.Debug("刪除檔案: " + 路徑_);
+            訊息管理器.獨體.追蹤("刪除檔案: " + 路徑_);
 
             try
             {
@@ -72,14 +72,14 @@ namespace WokyTool.通用
             }
             catch (IOException e)
             {
-                訊息管理器.獨體.Warn("刪除檔案失敗: " + 路徑_, e);
+                訊息管理器.獨體.警告("刪除檔案失敗: " + 路徑_, e);
                 return false;
             }
         }
 
         public static bool 搬移(string 原始路徑_, string 目標路徑_)
         {
-            訊息管理器.獨體.Debug("搬移檔案: " + 原始路徑_);
+            訊息管理器.獨體.追蹤("搬移檔案: " + 原始路徑_);
 
             try
             {
@@ -97,14 +97,14 @@ namespace WokyTool.通用
             }
             catch (IOException e)
             {
-                訊息管理器.獨體.Warn("搬移檔案失敗: " + 原始路徑_, e);
+                訊息管理器.獨體.警告("搬移檔案失敗: " + 原始路徑_, e);
                 return false;
             }
         }
 
         public static bool 搬移至備份(string 原始路徑_)
         {
-            訊息管理器.獨體.Debug("搬移檔案至備份: " + 原始路徑_);
+            訊息管理器.獨體.追蹤("搬移檔案至備份: " + 原始路徑_);
 
             try
             {
@@ -129,14 +129,14 @@ namespace WokyTool.通用
             }
             catch (IOException e)
             {
-                訊息管理器.獨體.Warn("搬移檔案失敗: " + 原始路徑_, e);
+                訊息管理器.獨體.警告("搬移檔案失敗: " + 原始路徑_, e);
                 return false;
             }
         }
 
         public static bool 備份(string 原始路徑_, bool 忽略缺少原始檔案錯誤_ = false)
         {
-            訊息管理器.獨體.Debug("備份檔案: " + 原始路徑_);
+            訊息管理器.獨體.追蹤("備份檔案: " + 原始路徑_);
 
             try
             {
@@ -165,14 +165,14 @@ namespace WokyTool.通用
             }
             catch (IOException e)
             {
-                訊息管理器.獨體.Warn("備份檔案失敗: " + 原始路徑_, e);
+                訊息管理器.獨體.警告("備份檔案失敗: " + 原始路徑_, e);
                 return false;
             }
         }
 
         public static bool 備份(string 原始路徑_, string 指定檔名_, params string[] 指定資料夾_)
         {
-            訊息管理器.獨體.Debug("備份檔案: " + 原始路徑_);
+            訊息管理器.獨體.追蹤("備份檔案: " + 原始路徑_);
 
             try
             {
@@ -197,14 +197,14 @@ namespace WokyTool.通用
             }
             catch (IOException e)
             {
-                訊息管理器.獨體.Warn("備份檔案失敗: " + 原始路徑_, e);
+                訊息管理器.獨體.警告("備份檔案失敗: " + 原始路徑_, e);
                 return false;
             }
         }
 
         public static bool 寫入(string 路徑_, string 資料_)
         {
-            訊息管理器.獨體.Debug("寫入檔案: " + 路徑_);
+            訊息管理器.獨體.追蹤("寫入檔案: " + 路徑_);
 
             String 資料夾_ = Path.GetDirectoryName(路徑_);
 
@@ -220,7 +220,7 @@ namespace WokyTool.通用
             }
             catch (IOException e)
             {
-                訊息管理器.獨體.Warn("寫入檔案失敗: " + 路徑_, e);
+                訊息管理器.獨體.警告("寫入檔案失敗: " + 路徑_, e);
                 return false;
             }
         }
@@ -230,7 +230,7 @@ namespace WokyTool.通用
             if (String.IsNullOrEmpty(密碼_))
                 return 寫入(路徑_, 資料_);
 
-            訊息管理器.獨體.Debug("寫入加密檔案: " + 路徑_);
+            訊息管理器.獨體.追蹤("寫入加密檔案: " + 路徑_);
 
             String 資料夾_ = Path.GetDirectoryName(路徑_);
 
@@ -265,7 +265,7 @@ namespace WokyTool.通用
             }
             catch (IOException e)
             {
-                訊息管理器.獨體.Warn("寫入檔案失敗: " + 路徑_, e);
+                訊息管理器.獨體.警告("寫入檔案失敗: " + 路徑_, e);
                 return false;
             }
         }
@@ -280,7 +280,7 @@ namespace WokyTool.通用
 
         public static string 讀出(string 路徑_)
         {
-            //訊息管理器.獨體.Debug("讀出檔案: " + 路徑_);   //@@ 可能發生在使用者管理氣尚未初始化完畢 
+            //訊息管理器.獨體.追蹤("讀出檔案: " + 路徑_);   //@@ 可能發生在使用者管理氣尚未初始化完畢 
 
             try
             {
@@ -293,7 +293,7 @@ namespace WokyTool.通用
             }
             catch (IOException e)
             {
-                訊息管理器.獨體.Warn("讀出檔案失敗: " + 路徑_, e);
+                訊息管理器.獨體.警告("讀出檔案失敗: " + 路徑_, e);
                 return null;
             }
         }
@@ -303,7 +303,7 @@ namespace WokyTool.通用
             if (String.IsNullOrEmpty(密碼_))
                 return 讀出(路徑_);
 
-            //訊息管理器.獨體.Debug("讀出加密檔案: " + 路徑_); //@@ 可能發生在使用者管理氣尚未初始化完畢 
+            //訊息管理器.獨體.追蹤("讀出加密檔案: " + 路徑_); //@@ 可能發生在使用者管理氣尚未初始化完畢 
 
             try
             {
@@ -330,7 +330,7 @@ namespace WokyTool.通用
             }
             catch (IOException e)
             {
-                訊息管理器.獨體.Warn("讀出檔案失敗: " + 路徑_, e);
+                訊息管理器.獨體.警告("讀出檔案失敗: " + 路徑_, e);
                 return null;
             }
         }
@@ -366,7 +366,7 @@ namespace WokyTool.通用
                 case ".xls":
                     return 詢問並讀出_EXCEL<T>(OFD_.FileName);
                 default:
-                    訊息管理器.獨體.Error("不支援格式: " + 副檔名_);
+                    訊息管理器.獨體.錯誤("不支援格式: " + 副檔名_);
                     return null;
 
             }

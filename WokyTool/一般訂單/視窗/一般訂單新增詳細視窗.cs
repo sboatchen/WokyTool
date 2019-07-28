@@ -157,7 +157,7 @@ namespace WokyTool.一般訂單
         {
             商品資料 商品_ = (商品資料)(this.商品選取元件.SelectedItem);
             if(商品_ == null || 商品_.編號是否有值() == false){
-                訊息管理器.獨體.Notify("商品不合法");
+                訊息管理器.獨體.通知("商品不合法");
                 return;
             }
 

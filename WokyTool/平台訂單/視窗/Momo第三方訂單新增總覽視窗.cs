@@ -52,7 +52,7 @@ namespace WokyTool.平台訂單
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            訊息管理器.獨體.Notify("功能尚未實作");
+            訊息管理器.獨體.通知("功能尚未實作");
             //視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.篩選);
         }
 
@@ -85,14 +85,14 @@ namespace WokyTool.平台訂單
 
             this.dataGridView1.Refresh();
 
-            訊息管理器.獨體.Notify("已完成系統分組");
+            訊息管理器.獨體.通知("已完成系統分組");
         }
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             平台訂單自定義工廠.MOMO第三方.回單(Momo第三方平台訂單新增資料管理器.獨體.可編輯BList);
 
-            訊息管理器.獨體.Notify("已完成匯出");
+            訊息管理器.獨體.通知("已完成匯出");
         }
 
         private void 配送ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -216,7 +216,7 @@ namespace WokyTool.平台訂單
             var ItemList_ = Momo第三方平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => 發票號碼_.Equals(Value.發票號碼)).ToList();
             if (ItemList_ == null || ItemList_.Count == 0)
             {
-                訊息管理器.獨體.Warn("找不到匹配的發票 " + 發票號碼_);
+                訊息管理器.獨體.警告("找不到匹配的發票 " + 發票號碼_);
 
                 myText = new Phrase("錯誤", MyFont);
             }
@@ -244,7 +244,7 @@ namespace WokyTool.平台訂單
             }
             else // 有複數個 
             {
-                訊息管理器.獨體.Warn("發票號碼 " + 發票號碼_ + " 有" + ItemList_.Count + "筆資料匹配");
+                訊息管理器.獨體.警告("發票號碼 " + 發票號碼_ + " 有" + ItemList_.Count + "筆資料匹配");
 
                 foreach(var Item_ in ItemList_)
                 {
@@ -275,7 +275,7 @@ namespace WokyTool.平台訂單
 
             this.OnActivated(null);
 
-            訊息管理器.獨體.Notify("已完成");
+            訊息管理器.獨體.通知("已完成");
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -290,7 +290,7 @@ namespace WokyTool.平台訂單
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //訊息管理器.獨體.Notify("功能尚未實作");
+            //訊息管理器.獨體.通知("功能尚未實作");
             //int 編號_ = ((平台訂單新增資料)(this.平台訂單新增資料BindingSource.Current)).編號;
             //視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.詳細, 編號_);
         }

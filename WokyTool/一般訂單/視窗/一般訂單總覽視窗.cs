@@ -44,7 +44,7 @@ namespace WokyTool.一般訂單
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            訊息管理器.獨體.Notify("功能尚未實作");
+            訊息管理器.獨體.通知("功能尚未實作");
             //視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.篩選);
         }
 
@@ -54,7 +54,7 @@ namespace WokyTool.一般訂單
 
             一般訂單資料管理器.獨體.合併();
 
-            訊息管理器.獨體.Notify("合併完成");
+            訊息管理器.獨體.通知("合併完成");
 
             this.更新ToolStripMenuItem.Enabled = true;
         }
@@ -74,7 +74,7 @@ namespace WokyTool.一般訂單
             String 標題_ = String.Format("一般訂單_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換列_);
 
-            訊息管理器.獨體.Notify("已完成匯出");
+            訊息管理器.獨體.通知("已完成匯出");
 
             this.匯出ToolStripMenuItem.Enabled = true;
         }

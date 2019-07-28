@@ -47,7 +47,7 @@ namespace WokyTool.配送
                 _Binding.ResetBindings(true);
             }*/
 
-            訊息管理器.獨體.Notify("功能目前不支援");
+            訊息管理器.獨體.通知("功能目前不支援");
         }
 
         private void 全速配ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -97,7 +97,7 @@ namespace WokyTool.配送
             // 檢查資料數是否一致
             if (List_.Count() != _Export1.Count)
             {
-                訊息管理器.獨體.Notify("資料筆數不符合");
+                訊息管理器.獨體.通知("資料筆數不符合");
                 return;
             }
 
@@ -106,7 +106,7 @@ namespace WokyTool.配送
             {
                 if (_Export1[i].設定配送單號(List_[i]) == false)
                 {
-                    訊息管理器.獨體.Notify("資料內容不符合, 筆數: " + i);
+                    訊息管理器.獨體.通知("資料內容不符合, 筆數: " + i);
                     IsRight_ = false;
                     break;
                 }
@@ -140,7 +140,7 @@ namespace WokyTool.配送
             // 檢查資料數是否一致
             if (List_.Count() != _Export2.Count)
             {
-                訊息管理器.獨體.Notify("資料筆數不符合");
+                訊息管理器.獨體.通知("資料筆數不符合");
                 return;
             }
 
@@ -149,7 +149,7 @@ namespace WokyTool.配送
             {
                 if (_Export2[i].設定配送單號(List_[i]) == false)
                 {
-                    訊息管理器.獨體.Notify("資料內容不符合, 筆數: " + i);
+                    訊息管理器.獨體.通知("資料內容不符合, 筆數: " + i);
                     IsRight_ = false;
                     break;
                 }
@@ -216,7 +216,7 @@ namespace WokyTool.配送
             string 標題_ = String.Format("撿貨統計匯出_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
-            訊息管理器.獨體.Notify("匯出完成");
+            訊息管理器.獨體.通知("匯出完成");
         }
     }
 }

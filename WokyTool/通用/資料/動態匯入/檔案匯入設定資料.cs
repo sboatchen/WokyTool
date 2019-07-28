@@ -204,7 +204,7 @@ namespace WokyTool.通用
             }
             catch (Exception ex)
             {
-                訊息管理器.獨體.Notify(ex);
+                訊息管理器.獨體.通知(ex);
                 return null;
             }
         }

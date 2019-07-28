@@ -60,7 +60,7 @@ namespace WokyTool.商品
         private void 自訂ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //@@ TODO
-            訊息管理器.獨體.Notify(字串.功能尚未實作);
+            訊息管理器.獨體.通知(字串.功能尚未實作);
         }
 
         private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)

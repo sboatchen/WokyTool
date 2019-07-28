@@ -54,7 +54,7 @@ namespace WokyTool.物品
             string 標題_ = String.Format("物品總覽_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換列_);
 
-            訊息管理器.獨體.Notify("匯出完成");
+            訊息管理器.獨體.通知("匯出完成");
         }
 
         private void 庫存ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace WokyTool.物品
             string 標題_ = String.Format("物品庫存_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換列_); ;
 
-            訊息管理器.獨體.Notify("匯出完成");
+            訊息管理器.獨體.通知("匯出完成");
         }
 
         private void 盤點ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,13 +106,13 @@ namespace WokyTool.物品
 
             this.Enabled = true;
 
-            訊息管理器.獨體.Notify("匯出完成");
+            訊息管理器.獨體.通知("匯出完成");
         }
 
         private void 自訂ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //@@ TODO
-            訊息管理器.獨體.Notify(字串.功能尚未實作);
+            訊息管理器.獨體.通知(字串.功能尚未實作);
         }
 
         private void 物品ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -213,7 +213,7 @@ namespace WokyTool.物品
                 檔案.詢問並寫入(標題_, 所有錯誤_);
             }
 
-            訊息管理器.獨體.Notify("處理完畢");
+            訊息管理器.獨體.通知("處理完畢");
         }
     }
 }

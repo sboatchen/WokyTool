@@ -41,12 +41,12 @@ namespace WokyTool
 
         static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            訊息管理器.獨體.Error(e.Exception);
+            訊息管理器.獨體.錯誤(e.Exception);
         }
 
         static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            訊息管理器.獨體.Error(e.ExceptionObject as Exception);
+            訊息管理器.獨體.錯誤(e.ExceptionObject as Exception);
         }			
     }
 }

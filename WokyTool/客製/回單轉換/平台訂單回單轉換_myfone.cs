@@ -45,7 +45,7 @@ namespace WokyTool.客製
                     case 列舉.配送公司.宅配通:
                         return 宅配通編號;
                     default:
-                        訊息管理器.獨體.Error("平台訂單回單轉換_myfone 不支援配送公司 " + _Data.配送公司.ToString());
+                        訊息管理器.獨體.錯誤("平台訂單回單轉換_myfone 不支援配送公司 " + _Data.配送公司.ToString());
                         return 字串.空;
                 }
             }

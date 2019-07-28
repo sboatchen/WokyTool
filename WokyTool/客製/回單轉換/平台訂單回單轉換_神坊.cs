@@ -57,7 +57,7 @@ namespace WokyTool.客製
                         App_.Cells[目前行數_, 4] = 宅配通編號;
                         break;
                     default:
-                        訊息管理器.獨體.Error("平台訂單回單轉換_神坊 不支援配送公司 " + 資料_.配送公司.ToString());
+                        訊息管理器.獨體.錯誤("平台訂單回單轉換_神坊 不支援配送公司 " + 資料_.配送公司.ToString());
                         break;
                 }
 

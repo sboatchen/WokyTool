@@ -65,13 +65,13 @@ namespace WokyTool.配送
 
                 if (String.IsNullOrEmpty(主單.配送單號) == false) 
                 {
-                    訊息管理器.獨體.Warn("資料重複配送 " + this.ToString());
+                    訊息管理器.獨體.警告("資料重複配送 " + this.ToString());
                     return;
                 }
 
                 if (主單.處理狀態 != 列舉.訂單處理狀態.新增)
                 {
-                    訊息管理器.獨體.Warn("訂單處理狀態不合法 " + this.ToString());
+                    訊息管理器.獨體.警告("訂單處理狀態不合法 " + this.ToString());
                     return;
                 }
 

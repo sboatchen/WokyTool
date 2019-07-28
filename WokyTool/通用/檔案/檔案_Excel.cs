@@ -31,7 +31,7 @@ namespace WokyTool.通用
                     SFD_.Filter = "xls files (.xls)|*.xls";
                     break;
                 default:
-                    訊息管理器.獨體.Error("不支援輸出格式: " + 轉換_.格式);
+                    訊息管理器.獨體.錯誤("不支援輸出格式: " + 轉換_.格式);
                     return;
             }
 
@@ -73,7 +73,7 @@ namespace WokyTool.通用
             }
             catch (Exception ex)
             {
-                訊息管理器.獨體.Error("寫入檔案失敗: " + SFD_.FileName, ex);
+                訊息管理器.獨體.錯誤("寫入檔案失敗: " + SFD_.FileName, ex);
             }
             finally
             {
@@ -109,7 +109,7 @@ namespace WokyTool.通用
                     SFD_.Filter = "xls files (.xls)|*.xls";
                     break;
                 default:
-                    訊息管理器.獨體.Error("不支援輸出格式: " + 轉換列_[0].格式);
+                    訊息管理器.獨體.錯誤("不支援輸出格式: " + 轉換列_[0].格式);
                     return;
             }
 
@@ -157,7 +157,7 @@ namespace WokyTool.通用
             }
             catch (Exception ex)
             {
-                訊息管理器.獨體.Error("寫入檔案失敗: " + SFD_.FileName, ex);
+                訊息管理器.獨體.錯誤("寫入檔案失敗: " + SFD_.FileName, ex);
             }
             finally
             {
@@ -226,7 +226,7 @@ namespace WokyTool.通用
             }
             catch (Exception ex)
             {
-                訊息管理器.獨體.Error("讀出檔案失敗: " + OFD_.FileName, ex);
+                訊息管理器.獨體.錯誤("讀出檔案失敗: " + OFD_.FileName, ex);
                 return null;
             }
             finally
@@ -259,7 +259,7 @@ namespace WokyTool.通用
             }
             catch (Exception ex)
             {
-                訊息管理器.獨體.Error("讀出檔案失敗: " + 路徑_, ex);
+                訊息管理器.獨體.錯誤("讀出檔案失敗: " + 路徑_, ex);
                 yield break;
             }
             finally

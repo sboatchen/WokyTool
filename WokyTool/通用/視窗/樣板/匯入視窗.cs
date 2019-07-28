@@ -61,7 +61,7 @@ namespace WokyTool.通用
             }
             catch(Exception ex)
             {
-                訊息管理器.獨體.Notify(ex.Message);
+                訊息管理器.獨體.通知(ex.Message);
             }
 
             _資料管理器.資料異動();
@@ -74,7 +74,7 @@ namespace WokyTool.通用
 
             if (_資料管理器.是否正在編輯())
             {
-                bool Result_ = 訊息管理器.獨體.Check(字串.儲存確認, 字串.儲存確認內容);
+                bool Result_ = 訊息管理器.獨體.確認(字串.儲存確認, 字串.儲存確認內容);
 
                 try
                 {
@@ -82,7 +82,7 @@ namespace WokyTool.通用
                 }
                 catch (Exception ex)
                 {
-                    訊息管理器.獨體.Notify(字串.儲存失敗, ex.Message);
+                    訊息管理器.獨體.通知(字串.儲存失敗, ex.Message);
                     e.Cancel = true;
                     _是否關閉 = false;
                     return;

@@ -45,15 +45,15 @@ namespace WokyTool.物品
                         case 列舉.更新狀態.刪除:
                             break;
                         default:
-                            訊息管理器.獨體.Error("無法辨識物品總覽更新資料 " + Data_.ToString());
+                            訊息管理器.獨體.錯誤("無法辨識物品總覽更新資料 " + Data_.ToString());
                             break;
                     }
                 }
             }
             catch (Exception ex)
             {
-                訊息管理器.獨體.Error(ex);
-                訊息管理器.獨體.Error(錯誤快取_.物品名稱);
+                訊息管理器.獨體.錯誤(ex);
+                訊息管理器.獨體.錯誤(錯誤快取_.物品名稱);
                 throw ex;
             }
 

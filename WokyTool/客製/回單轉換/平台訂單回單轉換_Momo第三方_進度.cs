@@ -96,7 +96,7 @@ namespace WokyTool.客製
                         App_.Cells[目前行數_, 4] = 配送訊息_;    // 約定配送日;
                         break;
                     default:
-                        訊息管理器.獨體.Error("平台訂單回單轉換_Momo第三方_進度 不支援處理狀態 " + 資料_.處理狀態.ToString());
+                        訊息管理器.獨體.錯誤("平台訂單回單轉換_Momo第三方_進度 不支援處理狀態 " + 資料_.處理狀態.ToString());
                         break;
                 }
 

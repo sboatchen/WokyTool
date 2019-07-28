@@ -137,7 +137,7 @@ namespace WokyTool.通用
 
         public void 可編輯BList資料增減(object sender, ListChangedEventArgs e)
         {
-            訊息管理器.獨體.Info(e.ListChangedType.ToString());
+            訊息管理器.獨體.訊息(e.ListChangedType.ToString());
             if (e.ListChangedType == ListChangedType.ItemDeleted)
             {
                 _編輯中增減資料數量--;
@@ -422,7 +422,7 @@ namespace WokyTool.通用
             T Target_;
             if (Map.TryGetValue(Item_.編號, out Target_) == false)
             {
-                訊息管理器.獨體.Warn("無法刪除指定物件,找不到 " + Item_.ToString());
+                訊息管理器.獨體.警告("無法刪除指定物件,找不到 " + Item_.ToString());
             }
             else
             {

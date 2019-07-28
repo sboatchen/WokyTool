@@ -74,7 +74,7 @@ namespace WokyTool.客製
 
         public override void 回單(IEnumerable<平台訂單新增資料> 資料_)
         {
-            訊息管理器.獨體.Notify("不須回單");
+            訊息管理器.獨體.通知("不須回單");
         }
     }
 }

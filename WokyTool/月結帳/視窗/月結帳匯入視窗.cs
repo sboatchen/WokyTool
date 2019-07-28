@@ -51,7 +51,7 @@ namespace WokyTool.月結帳
 
         private void _DataGridView錯誤(object sender, DataGridViewDataErrorEventArgs e)
         {
-            訊息管理器.獨體.Error("資料錯誤:" + e.RowIndex + "," + e.ColumnIndex);
+            訊息管理器.獨體.錯誤("資料錯誤:" + e.RowIndex + "," + e.ColumnIndex);
             e.ThrowException = false;
 
             if (e.ColumnIndex == 3)
@@ -95,7 +95,7 @@ namespace WokyTool.月結帳
             string 標題_ = String.Format("月結帳新增錯誤匯出_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
-            訊息管理器.獨體.Notify("匯出完成");
+            訊息管理器.獨體.通知("匯出完成");
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)//

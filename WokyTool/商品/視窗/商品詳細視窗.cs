@@ -140,7 +140,7 @@ namespace WokyTool.商品{
             物品資料 物品_ = (物品資料)(this.物品選取元件.SelectedItem);
             if (物品_ == null || 物品_.編號是否有值() == false)
             {
-                訊息管理器.獨體.Notify("物品不合法");
+                訊息管理器.獨體.通知("物品不合法");
                 return;
             }
 

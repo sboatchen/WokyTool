@@ -49,11 +49,11 @@ namespace WokyTool.通用
 
         public void 顯示編輯明細()
         {
-            訊息管理器.獨體.Info(this.ToString());
-            訊息管理器.獨體.Info("---------");
+            訊息管理器.獨體.訊息(this.ToString());
+            訊息管理器.獨體.訊息("---------");
             if(_副本 != null)
-                訊息管理器.獨體.Info(_副本.ToString());
-            訊息管理器.獨體.Info("---------");
+                訊息管理器.獨體.訊息(_副本.ToString());
+            訊息管理器.獨體.訊息("---------");
         }
 
         public bool 編號是否合法()

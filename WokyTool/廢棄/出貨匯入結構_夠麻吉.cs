@@ -37,14 +37,14 @@ namespace WokyTool.DataImport
                         Console.Write(NowSheet.Cells[i, j].value);
                         Console.Write(",");
                     }
-                    訊息管理器.獨體.Info("");
+                    訊息管理器.獨體.訊息("");
                 }*/
 
 
                 Range xlRange = NowSheet.UsedRange;
                 foreach (Range c in xlRange.Cells)
                 {
-                    訊息管理器.獨體.Info("Address: " + c.Row + c.Column + " - Value: " + c.Value + ";" + c.MergeCells);
+                    訊息管理器.獨體.訊息("Address: " + c.Row + c.Column + " - Value: " + c.Value + ";" + c.MergeCells);
                 }
 
 

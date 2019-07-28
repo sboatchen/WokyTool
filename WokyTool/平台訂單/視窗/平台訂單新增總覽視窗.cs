@@ -37,7 +37,7 @@ namespace WokyTool.平台訂單
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            訊息管理器.獨體.Notify("功能尚未實作");
+            訊息管理器.獨體.通知("功能尚未實作");
             //視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.篩選);
         }
 
@@ -67,7 +67,7 @@ namespace WokyTool.平台訂單
 
             this.dataGridView1.Refresh();
 
-            訊息管理器.獨體.Notify("已完成系統分組");
+            訊息管理器.獨體.通知("已完成系統分組");
         }
 
         private void 配送ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,7 +97,7 @@ namespace WokyTool.平台訂單
 
             配送管理器.獨體.新增(配送列表_);
 
-            訊息管理器.獨體.Notify("已轉入配送系統");
+            訊息管理器.獨體.通知("已轉入配送系統");
         }
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace WokyTool.平台訂單
                 平台訂單自定義介面_.回單(Group_);
             }
 
-            訊息管理器.獨體.Notify("已完成匯出");
+            訊息管理器.獨體.通知("已完成匯出");
         }
 
         private void 完成ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -122,7 +122,7 @@ namespace WokyTool.平台訂單
 
             this.OnActivated(null);
 
-            訊息管理器.獨體.Notify("已完成");
+            訊息管理器.獨體.通知("已完成");
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -170,7 +170,7 @@ namespace WokyTool.平台訂單
         //@@ move to parent
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //訊息管理器.獨體.Notify("功能尚未實作");
+            //訊息管理器.獨體.通知("功能尚未實作");
             //int 編號_ = ((平台訂單新增資料)(this.平台訂單新增資料BindingSource.Current)).編號;
             //視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.詳細, 編號_);
         }

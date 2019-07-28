@@ -49,7 +49,7 @@ namespace WokyTool.DataExport
                     App_.Cells[Row_, 2] = 宅配通編號;
                     break;
                 default:
-                    訊息管理器.獨體.Notify("回單號結構_遠傳 can't find 配送公司 " + _Data.配送公司.ToString());
+                    訊息管理器.獨體.通知("回單號結構_遠傳 can't find 配送公司 " + _Data.配送公司.ToString());
                     break;
             }
             

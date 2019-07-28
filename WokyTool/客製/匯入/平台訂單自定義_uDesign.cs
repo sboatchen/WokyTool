@@ -58,7 +58,7 @@ namespace WokyTool.客製
             String 標題_ = String.Format("uDesign回單_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
-            訊息管理器.獨體.Notify("匯出完成");
+            訊息管理器.獨體.通知("匯出完成");
         }
     }
 }

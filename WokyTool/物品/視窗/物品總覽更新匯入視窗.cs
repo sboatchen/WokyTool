@@ -156,7 +156,7 @@ namespace WokyTool.物品
             }
             catch (Exception ex)
             {
-                訊息管理器.獨體.Error("失敗位置:" + rCnt + " " + dValue_);
+                訊息管理器.獨體.錯誤("失敗位置:" + rCnt + " " + dValue_);
                 throw ex;
             }
             finally

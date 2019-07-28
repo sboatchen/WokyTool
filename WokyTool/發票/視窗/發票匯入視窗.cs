@@ -57,7 +57,7 @@ namespace WokyTool.發票
             }
             catch (Exception ex)
             {
-                訊息管理器.獨體.Notify(ex.Message);
+                訊息管理器.獨體.通知(ex.Message);
                 return;
             }
 
@@ -131,7 +131,7 @@ namespace WokyTool.發票
                 }
             }
 
-            訊息管理器.獨體.Notify("處理完畢");
+            訊息管理器.獨體.通知("處理完畢");
         }
 
         private void 補空白()

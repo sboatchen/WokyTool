@@ -43,7 +43,7 @@ namespace WokyTool.通用
             // 取得資料夾內所有檔案
             foreach (string FileName_ in Directory.GetFiles(讀取路徑))
             {
-                訊息管理器.獨體.Debug("處理檔案:" + FileName_);
+                訊息管理器.獨體.追蹤("處理檔案:" + FileName_);
 
                 string json = 檔案.讀出(FileName_);
 
