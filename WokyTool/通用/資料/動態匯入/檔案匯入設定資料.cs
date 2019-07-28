@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace WokyTool.通用
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public abstract class 檔案匯入設定資料<T> : MyKeepableData<T>, 檔案匯入設定資料介面
+    public abstract class 檔案匯入設定資料<T> : 可記錄資料<T>, 檔案匯入設定資料介面
     {
         [JsonProperty]
         public override int 編號 { get; set; }

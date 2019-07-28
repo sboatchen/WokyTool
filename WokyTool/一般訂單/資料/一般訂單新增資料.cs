@@ -16,7 +16,7 @@ using WokyTool.物品;
 namespace WokyTool.一般訂單
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 一般訂單新增資料 : MyKeepableData<一般訂單新增資料>, 可配送介面
+    public class 一般訂單新增資料 : 可記錄資料<一般訂單新增資料>, 可配送介面
     {
         [JsonProperty]
         public override int 編號 { get; set; }

@@ -13,7 +13,7 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.通用
 {
-    public abstract class 資料管理器<T> : 可儲存介面, 資料管理器介面 where T : MyKeepableData<T>
+    public abstract class 資料管理器<T> : 可儲存介面, 資料管理器介面 where T : 可記錄資料<T>
     {
         // 資料Map
         public Dictionary<int, T> Map { get; /*@@private*/ set; }

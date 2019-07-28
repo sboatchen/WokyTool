@@ -14,7 +14,7 @@ using WokyTool.廠商;
 namespace WokyTool.月結帳
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 月結帳支出資料 : MyKeepableData<月結帳支出資料>
+    public class 月結帳支出資料 : 可記錄資料<月結帳支出資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }

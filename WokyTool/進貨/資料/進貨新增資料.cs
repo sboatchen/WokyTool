@@ -15,7 +15,7 @@ using WokyTool.廠商;
 namespace WokyTool.進貨
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 進貨新增資料 : MyKeepableData<進貨新增資料>
+    public class 進貨新增資料 : 可記錄資料<進貨新增資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }

@@ -12,7 +12,7 @@ using WokyTool.通用;
 namespace WokyTool.聯絡人
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 聯絡人資料 : MyKeepableData<聯絡人資料>
+    public class 聯絡人資料 : 可記錄資料<聯絡人資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }

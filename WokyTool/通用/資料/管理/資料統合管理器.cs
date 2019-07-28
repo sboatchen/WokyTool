@@ -13,7 +13,7 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.通用
 {
-    public abstract class 資料統合管理器<T, T2> : 資料管理器<T> where T : MyKeepableData<T>
+    public abstract class 資料統合管理器<T, T2> : 資料管理器<T> where T : 可記錄資料<T>
     {
         public abstract string 讀取路徑 { get; }
 

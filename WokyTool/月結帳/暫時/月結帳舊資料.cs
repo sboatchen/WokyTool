@@ -13,7 +13,7 @@ using WokyTool.通用;
 namespace WokyTool.月結帳
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 月結帳舊資料 : MyKeepableData<月結帳舊資料>
+    public class 月結帳舊資料 : 可記錄資料<月結帳舊資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }

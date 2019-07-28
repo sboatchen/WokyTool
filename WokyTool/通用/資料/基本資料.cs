@@ -14,6 +14,14 @@ namespace WokyTool.通用
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
 
+        public string ToString(bool 是否縮排_)
+        {
+            if (是否縮排_)
+                return JsonConvert.SerializeObject(this, Formatting.Indented);
+            else
+                return JsonConvert.SerializeObject(this, Formatting.None);
+        }
+
         public virtual void 檢查合法()
         {
         }

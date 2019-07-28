@@ -13,7 +13,7 @@ using WokyTool.通用;
 namespace WokyTool.商品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 商品資料 : MyKeepableData<商品資料>
+    public class 商品資料 : 可記錄資料<商品資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }

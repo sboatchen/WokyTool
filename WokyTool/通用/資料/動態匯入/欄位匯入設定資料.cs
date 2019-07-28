@@ -9,7 +9,7 @@ using WokyTool.Common;
 namespace WokyTool.通用
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 欄位匯入設定資料 : MyKeepableData<欄位匯入設定資料>
+    public class 欄位匯入設定資料 : 可記錄資料<欄位匯入設定資料>
     {
         // >= 0
         [JsonProperty]

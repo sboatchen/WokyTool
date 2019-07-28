@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace WokyTool.通用
 {
-    public class 資料列選取插件<T> where T : MyKeepableData<T>
+    public class 資料列選取插件<T> where T : 可記錄資料<T>
     {
         private 資料管理器<T> _資料管理器;
         private System.Windows.Forms.DataGridView _DataGridView;

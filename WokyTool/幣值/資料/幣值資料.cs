@@ -10,7 +10,7 @@ using WokyTool.通用;
 namespace WokyTool.幣值
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 幣值資料 : MyKeepableData<幣值資料>
+    public class 幣值資料 : 可記錄資料<幣值資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }
