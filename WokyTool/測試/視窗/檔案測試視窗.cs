@@ -115,7 +115,7 @@ namespace WokyTool.測試
                 Console.WriteLine(內容_);
         }
 
-        private void EXCEL快速讀出_Click(object sender, EventArgs e)
+        private void 快速讀出_Click(object sender, EventArgs e)
         {
             var 內容列_ = 檔案.詢問並讀出<讀寫測試資料>();
             foreach (var 內容_ in 內容列_)

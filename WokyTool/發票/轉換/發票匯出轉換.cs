@@ -1,19 +1,24 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WokyTool.Common;
+using WokyTool.通用;
 
 namespace WokyTool.發票
 {
-    public class 發票匯出轉換 : 可序列化_Excel
+    public class 發票匯出轉換 : 可寫入介面_EXCEL
     {
-        protected List<發票匯入資料> _資料列;
-
-        public String 標頭 { get; set; }
+        public String 分類 { get { return null; } }
 
         public String 樣板 { get { return null; } }
+
+        public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
+
+        public String 密碼 { get { return null; } }
+
+        private List<發票匯入資料> _資料列;
 
         public int 資料數量
         {
@@ -38,7 +43,7 @@ namespace WokyTool.發票
             _資料列.Clear();
         }
 
-        public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
+        public void 寫入(Application App_)
         {
             App_.Cells[1, 1] = "發票號碼";
             App_.Cells[1, 2] = "註記欄(不轉入進銷項媒體申報檔)";

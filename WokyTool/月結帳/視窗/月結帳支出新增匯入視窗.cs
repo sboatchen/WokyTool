@@ -53,10 +53,10 @@ namespace WokyTool.月結帳
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Items_ = new 月結帳支出新增錯誤匯出轉換(_月結帳支出新增匯入管理器.可編輯BList.Where(Value => Value.錯誤訊息 != null));
+            var 轉換_ = new 月結帳支出新增錯誤匯出轉換(_月結帳支出新增匯入管理器.可編輯BList.Where(Value => Value.錯誤訊息 != null));
 
-            string Title_ = String.Format("月結帳支出新增錯誤匯出_{0}", 時間.目前日期);
-            檔案.寫入Excel(Title_, Items_);
+            string 標題_ = String.Format("月結帳支出新增錯誤匯出_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.Notify("匯出完成");
         }

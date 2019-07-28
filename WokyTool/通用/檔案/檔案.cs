@@ -342,5 +342,34 @@ namespace WokyTool.通用
             else
                 return 讀出(路徑_);
         }
+
+        public static IEnumerable<T> 詢問並讀出<T>() where T : 可初始化介面
+        {
+            // 開啟存檔位置
+            OpenFileDialog OFD_ = new OpenFileDialog();
+            OFD_.Filter = "Excel files|*.*";
+
+            if (OFD_.ShowDialog() != DialogResult.OK)
+                return null;
+
+            // 備份
+            if (false == 備份(OFD_.FileName, typeof(T).Name, "檔案讀出"))
+                return null;
+
+            // 根據副檔名 採用不同方法處理
+            string 副檔名_ = Path.GetExtension(OFD_.FileName).ToLower();
+            switch (副檔名_)
+            {
+                case ".csv":
+                    return 詢問並讀出_CSV<T>(OFD_.FileName);
+                case ".xlsx":
+                case ".xls":
+                    return 詢問並讀出_EXCEL<T>(OFD_.FileName);
+                default:
+                    訊息管理器.獨體.Error("不支援格式: " + 副檔名_);
+                    return null;
+
+            }
+        }
     }
 }

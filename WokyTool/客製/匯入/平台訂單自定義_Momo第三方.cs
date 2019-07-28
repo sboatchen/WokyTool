@@ -98,15 +98,15 @@ namespace WokyTool.客製
         public override void 回單(IEnumerable<平台訂單新增資料> 資料_)
         {
             {
-                var Items_ = new 平台訂單回單轉換_Momo第三方_分組(資料_);
-                String Title_ = String.Format("Momo第三方_分組_{0}", 時間.目前日期);
-                檔案.寫入Excel(Title_, Items_);
+                var 轉換_ = new 平台訂單回單轉換_Momo第三方_分組(資料_);
+                String 標題_ = String.Format("Momo第三方_分組_{0}", 時間.目前日期);
+                檔案.詢問並寫入(標題_, 轉換_);
             }
 
             {
-                var Items_ = new 平台訂單回單轉換_Momo第三方_進度(資料_);
-                String Title_ = String.Format("Momo第三方_進度_{0}", 時間.目前日期);
-                檔案.寫入Excel(Title_, Items_);
+                var 轉換_ = new 平台訂單回單轉換_Momo第三方_進度(資料_);
+                String 標題_ = String.Format("Momo第三方_進度_{0}", 時間.目前日期);
+                檔案.詢問並寫入(標題_, 轉換_);
             }
 
             訊息管理器.獨體.Notify("匯出完成");

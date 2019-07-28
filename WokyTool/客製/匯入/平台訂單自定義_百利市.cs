@@ -53,10 +53,10 @@ namespace WokyTool.客製
 
         public override void 回單(IEnumerable<平台訂單新增資料> 資料_)
         {
-            var Items_ = new 平台訂單回單轉換_百利市(資料_);
+            var 轉換_ = new 平台訂單回單轉換_百利市(資料_);
 
-            String Title_ = String.Format("百利市回單_{0}", 時間.目前日期);
-            檔案.寫入Excel(Title_, Items_);
+            String 標題_ = String.Format("百利市回單_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.Notify("匯出完成");
         }

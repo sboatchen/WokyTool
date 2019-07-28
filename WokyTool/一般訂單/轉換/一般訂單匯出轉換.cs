@@ -1,28 +1,33 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WokyTool.Common;
 using WokyTool.物品;
+using WokyTool.通用;
 
 namespace WokyTool.一般訂單
 {
-    public class 一般訂單匯出轉換 : 可序列化_Excel
+    public class 一般訂單匯出轉換 : 可寫入介面_EXCEL
     {
-        protected IEnumerable<一般訂單資料> _資料列;
-
-        public String 標頭 { get; set; }
+        public String 分類 { get; set; }
 
         public String 樣板 { get { return null; } }
 
+        public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
+
+        public String 密碼 { get { return null; } }
+
+        private IEnumerable<一般訂單資料> _資料列;
+
         public 一般訂單匯出轉換(IGrouping<客戶.客戶資料,一般訂單資料> Group_)
         {
-            標頭 = Group_.Key.名稱;
+            分類 = Group_.Key.名稱;
             _資料列 = Group_;
         }
 
-        public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
+        public void 寫入(Application App_)
         {
             App_.Cells[1, 1] = "編號";
 

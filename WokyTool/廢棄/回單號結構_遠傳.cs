@@ -1,10 +1,10 @@
 ﻿using LINQtoCSV;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataImport;
 using WokyTool.通用;
@@ -26,7 +26,7 @@ namespace WokyTool.DataExport
         }
 
         // 設定title，回傳下筆資料的輸入行位置
-        public int SetExcelTitle(Microsoft.Office.Interop.Excel.Application App_)
+        public int SetExcelTitle(Application App_)
         {
             App_.Cells[1, 1] = "訂單編號";
             App_.Cells[1, 2] = "物流商代碼";
@@ -36,7 +36,7 @@ namespace WokyTool.DataExport
         }
 
         // 設定資料
-        public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
+        public int SetExcelData(Application App_, int Row_)
         {
             App_.Cells[Row_, 1] = _Data.訂單編號;
 
@@ -49,7 +49,7 @@ namespace WokyTool.DataExport
                     App_.Cells[Row_, 2] = 宅配通編號;
                     break;
                 default:
-                    MessageBox.Show("回單號結構_遠傳 can't find 配送公司 " + _Data.配送公司.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    訊息管理器.獨體.Notify("回單號結構_遠傳 can't find 配送公司 " + _Data.配送公司.ToString());
                     break;
             }
             

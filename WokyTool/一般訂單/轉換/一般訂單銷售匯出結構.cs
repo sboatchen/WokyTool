@@ -12,19 +12,11 @@ using WokyTool.通用;
 
 namespace WokyTool.一般訂單
 {
-    public class 一般訂單銷售匯出結構 : 可序列化_Excel
+    public class 一般訂單銷售匯出結構 : 可寫入介面_EXCEL
     {
-        public 一般訂單新增資料 資料 { get; set; }
+        public String 分類 { get { return "明細"; } }
 
-        public String 標頭 
-        {
-            get
-            {
-                return "明細";
-            }
-        }
-
-        public String 樣板 
+        public String 樣板
         {
             get
             {
@@ -35,12 +27,18 @@ namespace WokyTool.一般訂單
             }
         }
 
+        public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
+
+        public String 密碼 { get { return null; } }
+
+        public 一般訂單新增資料 資料 { get; set; }
+
         public 一般訂單銷售匯出結構(一般訂單新增資料 資料_)
         {
             資料 = 資料_;
         }
 
-        public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
+        public void 寫入(Application App_)
         {
             App_.Cells[1, 2] = 資料.編號;
             App_.Cells[2, 2] = 時間.目前日期_斜線;

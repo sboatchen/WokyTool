@@ -44,15 +44,15 @@ namespace WokyTool.物品
                                     Value => Value.品牌.名稱,
                                     Value => Value);
 
-            List<可序列化_Excel> List_ = new List<可序列化_Excel>();
+            List<可寫入介面_EXCEL> 轉換列_ = new List<可寫入介面_EXCEL>();
             foreach (var x in ItemGroup_)
             {
                 物品總覽匯出轉換 匯出轉換_ = new 物品總覽匯出轉換(x.Key, x);
-                List_.Add(匯出轉換_);
-            }	
+                轉換列_.Add(匯出轉換_);
+            }
 
-            string Title_ = String.Format("物品總覽_{0}", 時間.目前日期);
-            檔案.寫入Excel(Title_, List_);
+            string 標題_ = String.Format("物品總覽_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換列_);
 
             訊息管理器.獨體.Notify("匯出完成");
         }
@@ -66,11 +66,11 @@ namespace WokyTool.物品
                                     Value => Value.品牌.名稱,
                                     Value => Value);
 
-            List<可序列化_Excel> List_ = new List<可序列化_Excel>();
+            List<可寫入介面_EXCEL> 轉換列_ = new List<可寫入介面_EXCEL>();
             foreach (var x in ItemGroup_)
             {
                 物品庫存匯出轉換 匯出轉換_ = new 物品庫存匯出轉換(x.Key, x);
-                List_.Add(匯出轉換_);
+                轉換列_.Add(匯出轉換_);
             }
 
             //通用匯出結構 總結_ = new 通用匯出結構("總結");
@@ -78,8 +78,8 @@ namespace WokyTool.物品
             //decimal 總庫存成本_ = 物品資料管理器.獨體.可編輯BList.Select(Value => Value.庫存總成本).Sum();
             //總結_.Add("總庫存成本", 總庫存成本_.ToString());
 
-            string Title_ = String.Format("物品庫存_{0}", 時間.目前日期);
-            檔案.寫入Excel(Title_, List_); ;
+            string 標題_ = String.Format("物品庫存_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換列_); ;
 
             訊息管理器.獨體.Notify("匯出完成");
         }
@@ -99,10 +99,10 @@ namespace WokyTool.物品
         {
             this.Enabled = false;
 
-            物品細節匯出轉換 匯出轉換_ = new 物品細節匯出轉換(物品資料管理器.獨體.可編輯BList);
+            物品細節匯出轉換 轉換_ = new 物品細節匯出轉換(物品資料管理器.獨體.可編輯BList);
 
-            string Title_ = String.Format("物品細節_{0}", 時間.目前日期);
-            檔案.寫入Excel(Title_, 匯出轉換_);
+            string 標題_ = String.Format("物品細節_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換_);
 
             this.Enabled = true;
 
@@ -167,7 +167,7 @@ namespace WokyTool.物品
 
         private void 檢查ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            List<可序列化_Excel> 所有錯誤_ = new List<可序列化_Excel>();
+            List<可寫入介面_EXCEL> 所有錯誤_ = new List<可寫入介面_EXCEL>();
 
             List<String> 合法性檢查_ = new List<string>();
             foreach(var Item_ in 物品資料管理器.獨體.可編輯BList)
@@ -209,8 +209,8 @@ namespace WokyTool.物品
 
             if (所有錯誤_.Count > 0)
             {
-                string Title_ = String.Format("物品錯誤匯出_{0}", 時間.目前日期);
-                檔案.寫入Excel(Title_, 所有錯誤_);
+                string 標題_ = String.Format("物品錯誤匯出_{0}", 時間.目前日期);
+                檔案.詢問並寫入(標題_, 所有錯誤_);
             }
 
             訊息管理器.獨體.Notify("處理完畢");

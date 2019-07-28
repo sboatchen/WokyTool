@@ -37,10 +37,10 @@ namespace WokyTool.進貨
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Item_ = new 進貨新增總覽匯出轉換(進貨新增資料管理器.獨體.可編輯BList);
+            var 轉換_ = new 進貨新增總覽匯出轉換(進貨新增資料管理器.獨體.可編輯BList);
 
-            string Title_ = String.Format("進貨總覽_{0}", 時間.目前日期);
-            檔案.寫入Excel(Title_, Item_);
+            string 標題_ = String.Format("進貨總覽_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.Notify("匯出完成");
         }

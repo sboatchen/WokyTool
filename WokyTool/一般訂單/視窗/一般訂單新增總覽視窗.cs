@@ -65,10 +65,10 @@ namespace WokyTool.一般訂單
                                     .Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送)
                                     .Select(Value => new 一般訂單銷售匯出結構(Value));
 
-            foreach (var Item_ in Queue_)
+            foreach (var 轉換_ in Queue_)
             {
-                string Title_ = String.Format("{0}_工廠出貨_{1}_{2}_{3}", Item_.資料.編號, Item_.資料.客戶.名稱, 時間.目前日期, Item_.資料.配送單號);
-                檔案.寫入Excel(Title_, Item_); ;
+                string 標題_ = String.Format("{0}_工廠出貨_{1}_{2}_{3}", 轉換_.資料.編號, 轉換_.資料.客戶.名稱, 時間.目前日期, 轉換_.資料.配送單號);
+                檔案.詢問並寫入(標題_, 轉換_); ;
             }
 
             訊息管理器.獨體.Notify("匯出完成");

@@ -57,7 +57,10 @@ namespace WokyTool.通用
 
                 // 取得分頁
                 分頁_ = 工作簿_.Worksheets[1];
-                分頁_.Name = 轉換_.分類;
+
+                if (false == String.IsNullOrEmpty(轉換_.分類))
+                    分頁_.Name = 轉換_.分類;
+
                 ((_Worksheet)分頁_).Activate();
 
                 轉換_.寫入(應用程式_);
@@ -136,7 +139,9 @@ namespace WokyTool.通用
                     else
                         分頁_ = 工作簿_.Sheets.Add();
 
-                    分頁_.Name = 轉換_.分類;
+                    if (false == String.IsNullOrEmpty(轉換_.分類))
+                        分頁_.Name = 轉換_.分類;
+
                     ((_Worksheet)分頁_).Activate();
 
                     轉換_.寫入(應用程式_);
@@ -242,30 +247,19 @@ namespace WokyTool.通用
         }
 
         // 警告 無法轉換列舉(會以double形式讀入，造成轉型失敗)
-        public static IEnumerable<T> 詢問並讀出<T>() where T : 可初始化介面
+        private static IEnumerable<T> 詢問並讀出_EXCEL<T>(string 路徑_) where T : 可初始化介面
         {
-            // 開啟存檔位置
-            OpenFileDialog OFD_ = new OpenFileDialog();
-            OFD_.Filter = "Excel files|*.*";
-
-            if (OFD_.ShowDialog() != DialogResult.OK)
-                yield break;
-
-            // 備份
-            if (false == 備份(OFD_.FileName, typeof(T).Name, "檔案讀出"))
-                yield break;
-
             ExcelQueryFactory 讀取工廠_ = null;
             ExcelQueryable<T> 資料列_ = null;
 
             try
             {
-                讀取工廠_ = new ExcelQueryFactory(OFD_.FileName);
+                讀取工廠_ = new ExcelQueryFactory(路徑_);
                 資料列_ = 讀取工廠_.Worksheet<T>(0);   // 指定第一頁
             }
             catch (Exception ex)
             {
-                訊息管理器.獨體.Error("讀出檔案失敗: " + OFD_.FileName, ex);
+                訊息管理器.獨體.Error("讀出檔案失敗: " + 路徑_, ex);
                 yield break;
             }
             finally

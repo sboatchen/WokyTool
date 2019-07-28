@@ -248,8 +248,8 @@ namespace WokyTool.ImportForm
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var Items_ = _Source.Select(Value => new 回單號結構_通用((物品訂單資料)Value));
-            string Title_ = String.Format("通用回單_{0}", 時間.目前日期);
-            舊函式.ExportExcel<回單號結構_通用>(Title_, Items_);
+            string 標題_ = String.Format("通用回單_{0}", 時間.目前日期);
+            舊函式.ExportExcel<回單號結構_通用>(標題_, Items_);
         }
 
         private void 樣板ToolStripMenuItem_Click(object sender, EventArgs e)

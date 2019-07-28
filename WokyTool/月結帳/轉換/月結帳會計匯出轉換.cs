@@ -4,35 +4,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using WokyTool.Common;
-using WokyTool.DataImport;
-using WokyTool.平台訂單;
 using WokyTool.通用;
 using WokyTool.月結帳;
+using Microsoft.Office.Interop.Excel;
 
 namespace WokyTool.月結帳
 {
-    class 月結帳會計匯出轉換 : 可序列化_Excel
+    class 月結帳會計匯出轉換 : 可寫入介面_EXCEL
     {
-        public String 標頭 
-        {
-            get
-            {
-                return "會計";
-            }
-        }
+        public String 分類 { get { return "會計"; } }
 
         public String 樣板 { get { return null; } }
 
-        protected IEnumerable<月結帳會計資料> _資料列;
+        public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
+
+        public String 密碼 { get { return null; } }
+
+        private IEnumerable<月結帳會計資料> _資料列;
 
         public 月結帳會計匯出轉換(IEnumerable<月結帳會計資料> 資料列_)
         {
             _資料列 = 資料列_;
         }
 
-        public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
+        public void 寫入(Application App_)
         {
             App_.Cells[1, 1] = "客戶";
             App_.Cells[1, 2] = "營業額";

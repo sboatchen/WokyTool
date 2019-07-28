@@ -211,10 +211,10 @@ namespace WokyTool.配送
                 }
             }
 
-            撿貨匯出轉換 Result_ = new 撿貨匯出轉換(Map_.Values.OrderBy(Value => Value.物品名稱));
+            撿貨匯出轉換 轉換_ = new 撿貨匯出轉換(Map_.Values.OrderBy(Value => Value.物品名稱));
 
-            string Title_ = String.Format("撿貨統計匯出_{0}", 時間.目前日期);
-            檔案.寫入Excel(Title_, Result_);
+            string 標題_ = String.Format("撿貨統計匯出_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.Notify("匯出完成");
         }

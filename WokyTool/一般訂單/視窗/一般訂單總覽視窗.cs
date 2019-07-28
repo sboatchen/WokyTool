@@ -65,14 +65,14 @@ namespace WokyTool.一般訂單
 
             var GroupQueue_ = 一般訂單資料管理器.獨體.可編輯BList.GroupBy(Value => Value.客戶);
 
-            List<可序列化_Excel> 資料列_ = new List<可序列化_Excel>();
+            List<可寫入介面_EXCEL> 轉換列_ = new List<可寫入介面_EXCEL>();
             foreach (var Group_ in GroupQueue_)
             {
-                資料列_.Add(new 一般訂單匯出轉換(Group_));
+                轉換列_.Add(new 一般訂單匯出轉換(Group_));
             }
 
-            String Title_ = String.Format("一般訂單_{0}", 時間.目前日期);
-            檔案.寫入Excel(Title_, 資料列_);
+            String 標題_ = String.Format("一般訂單_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換列_);
 
             訊息管理器.獨體.Notify("已完成匯出");
 

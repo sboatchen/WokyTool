@@ -46,15 +46,15 @@ namespace WokyTool.商品
                                    Value => Value.客戶.名稱,
                                    Value => Value);
 
-            List<可序列化_Excel> List_ = new List<可序列化_Excel>();
+            List<可寫入介面_EXCEL> 轉換列_ = new List<可寫入介面_EXCEL>();
             foreach (var x in ItemGroup_)
             {
                 商品總覽匯出轉換 匯出轉換_ = new 商品總覽匯出轉換(x.Key, x);
-                List_.Add(匯出轉換_);
+                轉換列_.Add(匯出轉換_);
             }
 
-            string Title_ = String.Format("商品總覽_{0}", 時間.目前日期);
-            檔案.寫入Excel(Title_, List_);
+            string 標題_ = String.Format("商品總覽_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換列_);
         }
 
         private void 自訂ToolStripMenuItem_Click(object sender, EventArgs e)

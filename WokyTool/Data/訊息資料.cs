@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace WokyTool.Data
         }
 
         // 設定title，回傳下筆資料的輸入行位置
-        public int SetExcelTitle(Microsoft.Office.Interop.Excel.Application App_)
+        public int SetExcelTitle(Application App_)
         {
             App_.Cells[1, 1] = "標題";
             App_.Cells[1, 2] = "訊息";
@@ -28,7 +29,7 @@ namespace WokyTool.Data
         }
 
         // 設定資料
-        public int SetExcelData(Microsoft.Office.Interop.Excel.Application App_, int Row_)
+        public int SetExcelData(Application App_, int Row_)
         {
             App_.Cells[Row_, 1] = 標題;
             App_.Cells[Row_, 2] = 訊息;

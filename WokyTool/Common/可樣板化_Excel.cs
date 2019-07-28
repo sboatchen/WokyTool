@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,6 @@ namespace WokyTool.Common
         string GetTemplate();
 
         // 設定資料
-        void SetData(Microsoft.Office.Interop.Excel.Application App_);
+        void SetData(Application App_);
     }
 }

@@ -4,29 +4,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataImport;
 using WokyTool.平台訂單;
 using WokyTool.通用;
 using WokyTool.月結帳;
+using Microsoft.Office.Interop.Excel;
 
 //@@ 捨棄
 namespace WokyTool.月結帳
 {
-    class 月結帳總計匯出轉換 : 可序列化_Excel
+    public class 月結帳總計匯出轉換 : 可寫入介面_EXCEL
     {
-        public String 標頭 
-        {
-            get
-            {
-                return "總計";
-            }
-        }
+        public String 分類 { get { return "總計"; } }
 
         public String 樣板 { get { return null; } }
 
-        protected List<月結帳總計暫存資料> _資料列 = new List<月結帳總計暫存資料>();
+        public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
+
+        public String 密碼 { get { return null; } }
+
+        private List<月結帳總計暫存資料> _資料列 = new List<月結帳總計暫存資料>();
 
         public 月結帳總計匯出轉換()
         {
@@ -42,7 +40,7 @@ namespace WokyTool.月結帳
         {
             月結帳總計暫存資料 月結帳總計暫存資料_ = new 月結帳總計暫存資料
             {
-                名稱 = 月結帳分頁匯出轉換_.標頭,
+                名稱 = 月結帳分頁匯出轉換_.分類,
                 //營業額 = 月結帳分頁匯出轉換_.總營業額(),
                 //進貨成本 = 月結帳分頁匯出轉換_.總成本(),
                 //利潤 = 月結帳分頁匯出轉換_.總利潤(),
@@ -51,7 +49,7 @@ namespace WokyTool.月結帳
             _資料列.Add(月結帳總計暫存資料_);
         }
 
-        public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
+        public void 寫入(Application App_)
         {
             App_.Cells[1, 1] = "名稱";
             App_.Cells[1, 2] = "營業額";

@@ -32,7 +32,7 @@ namespace WokyTool.DataExport
         }
 
         // 設定資料
-        public void SetData(Microsoft.Office.Interop.Excel.Application App_)
+        public void SetData(Application App_)
         {
             if(_Data.Count <= 0)
                 return;

@@ -162,22 +162,22 @@ namespace WokyTool.ImportForm
                 case "遠傳":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_遠傳((出貨匯入結構_遠傳)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        舊函式.ExportExcel<回單號結構_遠傳>(Title_, Items_);
+                        string 標題_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
+                        舊函式.ExportExcel<回單號結構_遠傳>(標題_, Items_);
                         break;
                     }
                 case "citiesocial":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_citiesocial((出貨匯入結構_citiesocial)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        舊函式.ExportExcel<回單號結構_citiesocial>(Title_, Items_);
+                        string 標題_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
+                        舊函式.ExportExcel<回單號結構_citiesocial>(標題_, Items_);
                         break;
                     }
                  case "創業家兄弟":
                     {
                         var Items_ = _Source.Select(Value => new 回單號結構_創業家兄弟((出貨匯入結構_創業家兄弟)Value));
-                        string Title_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
-                        舊函式.ExportCSV<回單號結構_創業家兄弟>(Title_, Items_);
+                        string 標題_ = String.Format("{0}回單_{1}", 廠商類型, 時間.目前日期);
+                        舊函式.ExportCSV<回單號結構_創業家兄弟>(標題_, Items_);
                         break;
                     }
                 default:

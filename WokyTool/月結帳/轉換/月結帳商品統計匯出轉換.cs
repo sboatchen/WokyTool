@@ -1,33 +1,32 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WokyTool.Common;
 using WokyTool.物品;
+using WokyTool.通用;
 
 namespace WokyTool.月結帳
 {
-    public class 月結帳商品統計匯出轉換 : 可序列化_Excel
+    public class 月結帳商品統計匯出轉換 : 可寫入介面_EXCEL
     {
-        private Dictionary<商品.商品資料, 月結帳商品統計暫存資料> Map_;
-
-        public String 標頭 
-        {
-            get
-            {
-                return "總覽";
-            }
-        }
+        public String 分類 { get { return "總覽"; } }
 
         public String 樣板 { get { return null; } }
+
+        public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
+
+        public String 密碼 { get { return null; } }
+
+        private Dictionary<商品.商品資料, 月結帳商品統計暫存資料> Map_;
 
         public 月結帳商品統計匯出轉換(Dictionary<商品.商品資料, 月結帳商品統計暫存資料> Map_)
         {
             this.Map_ = Map_;
         }
 
-        public void 寫入(Microsoft.Office.Interop.Excel.Application App_)
+        public void 寫入(Application App_)
         {
             App_.Cells[1, 1] = "名稱";
             App_.Cells[1, 2] = "品牌";

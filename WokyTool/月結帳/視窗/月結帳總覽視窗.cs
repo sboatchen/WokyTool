@@ -81,15 +81,15 @@ namespace WokyTool.月結帳
 
             var GroupQueue_ = 物品合併資料_.Map.GroupBy(Value => Value.Key.品牌);
 
-            List<可序列化_Excel> 資料列_ = new List<可序列化_Excel>();
+            List<可寫入介面_EXCEL> 轉換列_ = new List<可寫入介面_EXCEL>();
             foreach (var Group_ in GroupQueue_)
             {
-                資料列_.Add(new 月結帳物品統計匯出轉換(Group_));
+                轉換列_.Add(new 月結帳物品統計匯出轉換(Group_));
             }
-            資料列_.Add(new 月結帳物品統計總覽匯出轉換(GroupQueue_));
+            轉換列_.Add(new 月結帳物品統計總覽匯出轉換(GroupQueue_));
 
-            String Title_ = String.Format("物品統計_{0}", 時間.目前日期);
-            檔案.寫入Excel(Title_, 資料列_);
+            String 標題_ = String.Format("物品統計_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換列_);
 
             訊息管理器.獨體.Notify("已完成匯出");
 
@@ -118,10 +118,10 @@ namespace WokyTool.月結帳
                 }
             }
 
-            可序列化_Excel 可序列化_ = new 月結帳品牌營業額匯出轉換(Map_);
+            可寫入介面_EXCEL 轉換_ = new 月結帳品牌營業額匯出轉換(Map_);
 
-            String Title_ = String.Format("品牌營業額_{0}", 時間.目前日期);
-            檔案.寫入Excel(Title_, 可序列化_);
+            String 標題_ = String.Format("品牌營業額_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.Notify("已完成匯出");
 
@@ -155,10 +155,10 @@ namespace WokyTool.月結帳
                 }
             }
 
-            可序列化_Excel 可序列化_ = new 月結帳商品統計匯出轉換(Map_);
+            可寫入介面_EXCEL 轉換_ = new 月結帳商品統計匯出轉換(Map_);
 
-            String Title_ = String.Format("商品統計_{0}", 時間.目前日期);
-            檔案.寫入Excel(Title_, 可序列化_);
+            String 標題_ = String.Format("商品統計_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.Notify("已完成匯出");
 

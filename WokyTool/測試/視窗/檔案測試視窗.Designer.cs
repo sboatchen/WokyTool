@@ -33,7 +33,7 @@
             this.CSV讀出 = new System.Windows.Forms.Button();
             this.EXCEL寫入 = new System.Windows.Forms.Button();
             this.EXCEL讀出 = new System.Windows.Forms.Button();
-            this.EXCEL快速讀出 = new System.Windows.Forms.Button();
+            this.快速讀出 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // 路徑測試
@@ -86,22 +86,22 @@
             this.EXCEL讀出.UseVisualStyleBackColor = true;
             this.EXCEL讀出.Click += new System.EventHandler(this.EXCEL讀出_Click);
             // 
-            // EXCEL快速讀出
+            // 快速讀出
             // 
-            this.EXCEL快速讀出.Location = new System.Drawing.Point(174, 92);
-            this.EXCEL快速讀出.Name = "EXCEL快速讀出";
-            this.EXCEL快速讀出.Size = new System.Drawing.Size(98, 23);
-            this.EXCEL快速讀出.TabIndex = 5;
-            this.EXCEL快速讀出.Text = "EXCEL快速讀出";
-            this.EXCEL快速讀出.UseVisualStyleBackColor = true;
-            this.EXCEL快速讀出.Click += new System.EventHandler(this.EXCEL快速讀出_Click);
+            this.快速讀出.Location = new System.Drawing.Point(174, 77);
+            this.快速讀出.Name = "快速讀出";
+            this.快速讀出.Size = new System.Drawing.Size(98, 23);
+            this.快速讀出.TabIndex = 5;
+            this.快速讀出.Text = "快速讀出";
+            this.快速讀出.UseVisualStyleBackColor = true;
+            this.快速讀出.Click += new System.EventHandler(this.快速讀出_Click);
             // 
             // 檔案測試視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.EXCEL快速讀出);
+            this.Controls.Add(this.快速讀出);
             this.Controls.Add(this.EXCEL讀出);
             this.Controls.Add(this.EXCEL寫入);
             this.Controls.Add(this.CSV讀出);
@@ -120,6 +120,6 @@
         private System.Windows.Forms.Button CSV讀出;
         private System.Windows.Forms.Button EXCEL寫入;
         private System.Windows.Forms.Button EXCEL讀出;
-        private System.Windows.Forms.Button EXCEL快速讀出;
+        private System.Windows.Forms.Button 快速讀出;
     }
 }

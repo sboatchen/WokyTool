@@ -101,10 +101,10 @@ namespace WokyTool.平台訂單
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var Items_ = new 平台訂單新增錯誤匯出轉換(_平台訂單匯入管理器.可編輯BList.Where(Value => Value.錯誤訊息 != null));
+            var 轉換_ = new 平台訂單新增錯誤匯出轉換(_平台訂單匯入管理器.可編輯BList.Where(Value => Value.錯誤訊息 != null));
 
-            string Title_ = String.Format("平台訂單新增錯誤匯出_{0}_{1}_{2}", this._公司.名稱, this._客戶.名稱, 時間.目前日期);
-            檔案.寫入Excel(Title_, Items_);
+            string 標題_ = String.Format("平台訂單新增錯誤匯出_{0}_{1}_{2}", this._公司.名稱, this._客戶.名稱, 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.Notify("匯出完成");
         }
