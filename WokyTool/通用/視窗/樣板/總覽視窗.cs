@@ -14,11 +14,11 @@ namespace WokyTool.通用
 
         protected int _資料版本;
 
-        protected 資料管理器介面 _資料管理器;
+        protected 可編輯資料列管理介面 _資料管理器;
 
         protected bool _是否關閉 = false;
 
-        public void 初始化(BindingSource 資料BindingSource_, 資料管理器介面 資料管理器_)
+        public void 初始化(BindingSource 資料BindingSource_, 可編輯資料列管理介面 資料管理器_)
         {
             this.資料BindingSource = 資料BindingSource_;
             this._資料管理器 = 資料管理器_;
@@ -34,10 +34,10 @@ namespace WokyTool.通用
 
             視窗激活();
 
-            if (_資料版本 != _資料管理器.編輯資料版本)
+            if (_資料版本 != _資料管理器.可編輯資料列版本)
             {
-                _資料版本 = _資料管理器.編輯資料版本;
-                this.資料BindingSource.DataSource = _資料管理器.物件_可編輯BList;
+                _資料版本 = _資料管理器.可編輯資料列版本;
+                this.資料BindingSource.DataSource = _資料管理器.可編輯資料列;
                 this.資料BindingSource.ResetBindings(false);
             }
         }

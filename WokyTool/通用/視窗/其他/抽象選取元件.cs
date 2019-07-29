@@ -27,7 +27,7 @@ namespace WokyTool.通用
             }
         }
 
-        protected virtual 資料管理器介面 資料管理器
+        protected virtual 可選取資料列管理介面 資料管理器
         {
             get
             {
@@ -80,9 +80,9 @@ namespace WokyTool.通用
 
         public void 視窗激活()
         {
-            if (_資料版本 != 資料管理器.唯讀資料版本)
+            if (_資料版本 != 資料管理器.可選取資料列版本)
             {
-                _資料版本 = 資料管理器.唯讀資料版本;
+                _資料版本 = 資料管理器.可選取資料列版本;
                 更新資源();
             }
         }
@@ -102,7 +102,7 @@ namespace WokyTool.通用
 
         private void 更新資源()
         {
-            _資料版本 = 資料管理器.唯讀資料版本;
+            _資料版本 = 資料管理器.可選取資料列版本;
             篩選異動 = false;
 
             if (this.下拉選單.SelectedItem != null)

@@ -19,7 +19,7 @@ namespace WokyTool.商品{
         private int _物品資料版本 = -1;
         private BindingList<商品組成匯入資料> _組成BList = new BindingList<商品組成匯入資料>();
 
-        public 商品新增匯入詳細視窗(資料管理器介面 資料管理器_)
+        public 商品新增匯入詳細視窗(可編輯資料列管理介面 資料管理器_)
         {
             InitializeComponent();
 
@@ -40,9 +40,9 @@ namespace WokyTool.商品{
 
             this.物品選取元件.視窗激活();
 
-            if (_物品資料版本 != 物品資料管理器.獨體.唯讀資料版本)
+            if (_物品資料版本 != 物品資料管理器.獨體.可選取資料列版本)
             {
-                _物品資料版本 = 物品資料管理器.獨體.唯讀資料版本;
+                _物品資料版本 = 物品資料管理器.獨體.可選取資料列版本;
                 this.物品資料BindingSource.DataSource = 物品資料管理器.獨體.唯讀BList;
             }
         }

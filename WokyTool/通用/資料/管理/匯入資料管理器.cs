@@ -13,30 +13,15 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.通用
 {
-    public abstract class 匯入資料管理器<T> : 資料管理器介面 where T : 可匯入資料
+    public abstract class 匯入資料管理器<T> : 可編輯資料列管理介面 where T : 可匯入資料
     {
         // 資料BindingList
         public BindingList<T> 可編輯BList { get; set; }
-        public object 物件_可編輯BList { get{ return 可編輯BList; } }
+        public object 可編輯資料列 { get{ return 可編輯BList; } }
 
         public virtual bool 是否可編輯 { get { return false; } }
 
-        public object 物件_唯讀BList 
-        {
-            get 
-            {
-                throw new Exception("目前不支援 物件_唯讀BList"); 
-            } 
-        }
-
-        public int 編輯資料版本 { get; protected set; }
-        public int 唯讀資料版本 
-        {
-            get 
-            { 
-                throw new Exception("目前不支援 唯讀資料版本"); 
-            }
-        }
+        public int 可編輯資料列版本 { get; protected set; }
 
         // 建構子
         protected 匯入資料管理器()
@@ -49,7 +34,7 @@ namespace WokyTool.通用
             可編輯BList.AllowNew = true;
             可編輯BList.AllowRemove = true;
 
-            編輯資料版本 = 1;
+            可編輯資料列版本 = 1;
         }
 
         public void 檢查合法()
@@ -92,7 +77,7 @@ namespace WokyTool.通用
                 //Console.WriteLine(JsonConvert.SerializeObject(Item_, Formatting.Indented));
             }
 
-            編輯資料版本++;
+            可編輯資料列版本++;
             可編輯BList.RaiseListChangedEvents = true;
 
             try
@@ -107,7 +92,7 @@ namespace WokyTool.通用
 
         public void 資料異動()
         {
-            編輯資料版本++;
+            可編輯資料列版本++;
         }
 
         public bool 是否正在編輯()
@@ -115,9 +100,9 @@ namespace WokyTool.通用
             return 可編輯BList.Count > 0;
         }
 
-        public void 完成編輯(bool IsSave_)
+        public void 完成編輯(bool 是否存檔_)
         {
-            if (!IsSave_)
+            if (!是否存檔_)
                 return;
 
             檢查合法();
@@ -127,7 +112,7 @@ namespace WokyTool.通用
             匯入();
 
             可編輯BList.Clear();
-            編輯資料版本++;
+            可編輯資料列版本++;
 
             可編輯BList.RaiseListChangedEvents = true;
         }

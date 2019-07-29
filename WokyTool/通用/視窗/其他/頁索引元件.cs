@@ -15,7 +15,7 @@ namespace WokyTool.通用
     {
         protected System.Windows.Forms.BindingSource 資料BindingSource;
         protected 頁索引上層介面 _綁定介面;
-        protected 資料管理器介面 _資料管理器;
+        protected 可編輯資料列管理介面 _資料管理器;
         protected int _資料版本 = -1;
 
         public object 目前資料 { get; protected set; }
@@ -29,12 +29,12 @@ namespace WokyTool.通用
             目前資料 = null;
         }
 
-        public void 初始化(資料管理器介面 資料管理器_, 頁索引上層介面 綁定介面_)
+        public void 初始化(可編輯資料列管理介面 資料管理器_, 頁索引上層介面 綁定介面_)
         {
             this._資料管理器 = 資料管理器_;
             this._綁定介面 = 綁定介面_;
 
-            this.資料BindingSource.DataSource = 資料管理器_.物件_可編輯BList;
+            this.資料BindingSource.DataSource = 資料管理器_.可編輯資料列;
         }
 
         public void 是否合法()
@@ -130,10 +130,10 @@ namespace WokyTool.通用
 
         public void 視窗激活()
         {
-            if (_資料版本 != _資料管理器.編輯資料版本)
+            if (_資料版本 != _資料管理器.可編輯資料列版本)
             {
-                _資料版本 = _資料管理器.編輯資料版本;
-                this.資料BindingSource.DataSource = _資料管理器.物件_可編輯BList;
+                _資料版本 = _資料管理器.可編輯資料列版本;
+                this.資料BindingSource.DataSource = _資料管理器.可編輯資料列;
                 this.資料BindingSource.ResetBindings(false);
             }
 

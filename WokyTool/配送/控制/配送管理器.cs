@@ -39,9 +39,9 @@ namespace WokyTool.配送
             return false;
         }
 
-        public override void 完成編輯(bool IsSave_)
+        public override void 完成編輯(bool 是否存檔_)
         {
-            if (IsSave_ == false)
+            if (是否存檔_ == false)
             {
                 訊息管理器.獨體.警告("配送管理器不支援返回操作");
                 return;
@@ -59,7 +59,7 @@ namespace WokyTool.配送
                 可編輯BList.Add(x);
             }
 
-            編輯資料版本++;
+            可編輯資料列版本++;
 
             可編輯BList.RaiseListChangedEvents = true;
         }

@@ -13,7 +13,7 @@ namespace WokyTool.物品{
 
     public partial class 物品新增匯入詳細視窗 : 匯入詳細視窗
     {
-        public 物品新增匯入詳細視窗(資料管理器介面 資料管理器_)
+        public 物品新增匯入詳細視窗(可編輯資料列管理介面 資料管理器_)
         {
             InitializeComponent();
 

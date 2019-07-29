@@ -13,7 +13,7 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.通用
 {
-    public abstract class 資料管理器<T> : 可儲存介面, 資料管理器介面 where T : 可記錄資料<T>
+    public abstract class 資料管理器<T> : 可儲存介面, 可編輯資料列管理介面, 可選取資料列管理介面 where T : 可記錄資料<T>
     {
         // 資料Map
         public Dictionary<int, T> Map { get; /*@@private*/ set; }
@@ -21,14 +21,14 @@ namespace WokyTool.通用
 
         // 資料BindingList
         public BindingList<T> 可編輯BList { get; protected set; }
-        public object 物件_可編輯BList { get{ return 可編輯BList; } }
+        public object 可編輯資料列 { get{ return 可編輯BList; } }
 
         // 資料BindingList
         public BindingList<T> 唯讀BList { get; protected set; }
-        public object 物件_唯讀BList { get { return 唯讀BList; } }
+        public object 可選取資料列 { get { return 唯讀BList; } }
 
-        public int 編輯資料版本 { get; protected set; }
-        public int 唯讀資料版本 { get; protected set; }
+        public int 可編輯資料列版本 { get; protected set; }
+        public int 可選取資料列版本 { get; protected set; }
 
         public virtual bool 是否可編輯 { get { return false; } }
         public virtual bool 資料是否加密 { get { return false; } }
@@ -103,8 +103,8 @@ namespace WokyTool.通用
             可編輯BList.RaiseListChangedEvents = true;
             唯讀BList.RaiseListChangedEvents = true;
 
-            編輯資料版本 = 1;
-            唯讀資料版本 = 1;
+            可編輯資料列版本 = 1;
+            可選取資料列版本 = 1;
 
             資料儲存管理器.獨體.註冊(編號類型, this);
         }
@@ -192,8 +192,8 @@ namespace WokyTool.通用
 
         public void 資料異動()
         {
-            編輯資料版本++;
-            唯讀資料版本++;
+            可編輯資料列版本++;
+            可選取資料列版本++;
             資料是否異動 = true;
         }
 
@@ -215,7 +215,7 @@ namespace WokyTool.通用
             return false;
         }
 
-        public void 完成編輯(bool IsSave_)
+        public void 完成編輯(bool 是否存檔_)
         {
             // ignore for speed up
             //if (是否正在編輯() == false)
@@ -226,7 +226,7 @@ namespace WokyTool.通用
 
             try
             {
-                if (IsSave_)
+                if (是否存檔_)
                 {
                     檢查合法();
 
@@ -303,7 +303,7 @@ namespace WokyTool.通用
                 }
             }
 
-            編輯資料版本++;
+            可編輯資料列版本++;
         }
 
         protected void 更新篩選條件()
@@ -340,7 +340,7 @@ namespace WokyTool.通用
             }
 
             可編輯BList.RaiseListChangedEvents = true;
-            編輯資料版本++;
+            可編輯資料列版本++;
             是否編輯中減少資料 = false;
         }
 

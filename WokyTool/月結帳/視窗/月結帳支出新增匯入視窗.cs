@@ -65,9 +65,9 @@ namespace WokyTool.月結帳
 
         protected override void 視窗激活()
         {
-            if (_廠商資料版本 != 廠商資料管理器.獨體.唯讀資料版本)
+            if (_廠商資料版本 != 廠商資料管理器.獨體.可選取資料列版本)
             {
-                _廠商資料版本 = 廠商資料管理器.獨體.唯讀資料版本;
+                _廠商資料版本 = 廠商資料管理器.獨體.可選取資料列版本;
                 this.廠商資料BindingSource.DataSource = 廠商資料管理器.獨體.唯讀BList;
             }
         }

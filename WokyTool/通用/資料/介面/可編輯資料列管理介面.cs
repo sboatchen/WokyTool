@@ -6,18 +6,15 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
-    public interface 資料管理器介面
+    public interface 可編輯資料列管理介面
     {
          // 資料BindingList
-        object 物件_可編輯BList { get; }
-        object 物件_唯讀BList { get; }
+        object 可編輯資料列 { get; }
 
-        int 編輯資料版本 { get; }
-        int 唯讀資料版本 { get; }
+        int 可編輯資料列版本 { get; }
 
-        bool 是否可編輯 { get; }
         bool 是否正在編輯();
-        void 完成編輯(bool IsSave_);
+        void 完成編輯(bool 是否存檔_);
 
         void 資料異動();
 

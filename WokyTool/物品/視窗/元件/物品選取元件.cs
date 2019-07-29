@@ -30,7 +30,7 @@ namespace WokyTool.物品
             }
         }
 
-        protected override 資料管理器介面 資料管理器
+        protected override 可選取資料列管理介面 資料管理器
         {
             get
             {

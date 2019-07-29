@@ -12,11 +12,11 @@ namespace WokyTool.通用
     public class 匯入詳細視窗 : Form, 通用視窗介面, 頁索引上層介面
     {
         protected 頁索引元件 _頁索引元件;
-        protected 資料管理器介面 _資料管理器;
+        protected 可編輯資料列管理介面 _資料管理器;
 
         protected bool _是否關閉 = false;
 
-        public void 初始化(頁索引元件 頁索引元件_, 資料管理器介面 資料管理器_)
+        public void 初始化(頁索引元件 頁索引元件_, 可編輯資料列管理介面 資料管理器_)
         {
             this._頁索引元件 = 頁索引元件_;
             this._資料管理器 = 資料管理器_;

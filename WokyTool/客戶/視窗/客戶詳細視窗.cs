@@ -50,15 +50,15 @@ namespace WokyTool.客戶
 
         protected override void 視窗激活()
         {
-            if (_子客戶資料版本 != 子客戶資料管理器.獨體.唯讀資料版本)
+            if (_子客戶資料版本 != 子客戶資料管理器.獨體.可選取資料列版本)
             {
-                _子客戶資料版本 = 子客戶資料管理器.獨體.唯讀資料版本;
+                _子客戶資料版本 = 子客戶資料管理器.獨體.可選取資料列版本;
                 this.名稱DataGridViewTextBoxColumn.DataSource = 子客戶資料管理器.獨體.唯讀BList;    // this.聯絡人資料BindingSource 用在 dataGridView1 資料來源
             }
 
-            if (_聯絡人資料版本 != 聯絡人資料管理器.獨體.唯讀資料版本)
+            if (_聯絡人資料版本 != 聯絡人資料管理器.獨體.可選取資料列版本)
             {
-                _聯絡人資料版本 = 聯絡人資料管理器.獨體.唯讀資料版本;
+                _聯絡人資料版本 = 聯絡人資料管理器.獨體.可選取資料列版本;
                 this.姓名DataGridViewTextBoxColumn.DataSource = 聯絡人資料管理器.獨體.唯讀BList;    // this.聯絡人資料BindingSource 用在 dataGridView1 資料來源
             }
         }

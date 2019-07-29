@@ -16,7 +16,7 @@ namespace WokyTool.月結帳
 {
     public partial class 月結帳匯入詳細視窗 : 匯入詳細視窗
     {
-        public 月結帳匯入詳細視窗(資料管理器介面 資料管理器_)
+        public 月結帳匯入詳細視窗(可編輯資料列管理介面 資料管理器_)
         {
             InitializeComponent();
 
