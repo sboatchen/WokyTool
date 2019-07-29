@@ -433,6 +433,12 @@
     <Compile Include="月結帳\轉換\月結帳會計匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳總計匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳支出新增錯誤匯出轉換.cs" />
+    <Compile Include="測試\視窗\拷貝測試視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="測試\視窗\拷貝測試視窗.Designer.cs">
+      <DependentUpon>拷貝測試視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="測試\視窗\檔案測試視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -450,6 +456,12 @@
     </Compile>
     <Compile Include="測試\視窗\測試主視窗.Designer.cs">
       <DependentUpon>測試主視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="測試\視窗\資料綁定測試視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="測試\視窗\資料綁定測試視窗.Designer.cs">
+      <DependentUpon>資料綁定測試視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="測試\資料\讀寫測試資料.cs" />
     <Compile Include="測試\轉換\讀寫測試轉換.cs" />
@@ -576,6 +588,7 @@
     </Compile>
     <Compile Include="通用\其他\函式.cs" />
     <Compile Include="通用\其他\列舉.cs" />
+    <Compile Include="通用\其他\擴充方法.cs" />
     <Compile Include="通用\檔案\介面\可寫入介面_EXCEL.cs" />
     <Compile Include="通用\檔案\介面\可讀出介面_EXCEL.cs" />
     <Compile Include="通用\檔案\介面\可讀出介面_CSV.cs" />
@@ -1099,6 +1112,9 @@
     <EmbeddedResource Include="月結帳\視窗\月結帳支出新增匯入視窗.resx">
       <DependentUpon>月結帳支出新增匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="測試\視窗\拷貝測試視窗.resx">
+      <DependentUpon>拷貝測試視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="測試\視窗\檔案測試視窗.resx">
       <DependentUpon>檔案測試視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1107,6 +1123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="測試\視窗\測試主視窗.resx">
       <DependentUpon>測試主視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="測試\視窗\資料綁定測試視窗.resx">
+      <DependentUpon>資料綁定測試視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品新增匯入視窗.resx">
       <DependentUpon>物品新增匯入視窗.cs</DependentUpon>
@@ -1229,6 +1248,7 @@
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳支出資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳會計資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.測試.讀寫測試資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品品牌資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品大類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品小類資料.datasource" />

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
+    [Serializable]
     public abstract class 基本資料
     {
         public override string ToString()
@@ -24,6 +25,11 @@ namespace WokyTool.通用
 
         public virtual void 檢查合法()
         {
+        }
+
+        public object 淺複製()
+        {
+            return this.MemberwiseClone();
         }
     }
 }

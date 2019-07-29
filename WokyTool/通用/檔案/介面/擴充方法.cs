@@ -10,7 +10,7 @@ using WokyTool.測試;
 
 namespace WokyTool.通用
 {
-    public static class 擴充方法
+    public static class 擴充方法_檔案
     {
         private static string[] CSV資料切割_ = new string[] { "\r\n", "\r", "\n" };
         private static string CSV欄位切割_ = "{0}(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))";
