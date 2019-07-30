@@ -73,5 +73,57 @@ namespace WokyTool.測試
                 Console.WriteLine("-------------");
             }
         }
+
+        private void 位元組_Click(object sender, EventArgs e)
+        {
+            DateTime 現在時間_ = DateTime.Now;
+
+            讀寫測試資料 讀寫測試資料_ = new 讀寫測試資料
+            {
+                字串 = "1",
+                整數 = 1,
+                浮點數 = 1,
+                倍精準浮點數 = 1,
+                時間 = 現在時間_,
+                列舉 = (列舉.編號)1,
+                整數列 = new int[] { 1, 2, 3, 4 }.ToList(),
+                整數2 = 1,
+            };
+            讀寫測試資料_.書 = new Dictionary<int, string>();
+            讀寫測試資料_.書.Add(1, "1");
+
+            Console.WriteLine(讀寫測試資料_.ToString(false));
+
+            var 第一個資料位元組_ = 讀寫測試資料_.轉成位元組();
+
+            var 轉回來_ = 第一個資料位元組_.轉成物件<讀寫測試資料>();
+
+            Console.WriteLine(轉回來_.ToString(false));
+
+
+            讀寫測試資料_ = new 讀寫測試資料
+            {
+                字串 = "1",
+                整數 = 1,
+                浮點數 = 1,
+                倍精準浮點數 = 1,
+                時間 = 現在時間_,
+                列舉 = (列舉.編號)1,
+                整數列 = new int[] { 1, 2, 3, 4 }.ToList(),
+                整數2 = 1,
+            };
+            讀寫測試資料_.書 = new Dictionary<int, string>();
+            讀寫測試資料_.書.Add(1, "1");
+
+            var 第二個資料位元組_ = 讀寫測試資料_.轉成位元組();
+
+            Console.WriteLine(第一個資料位元組_.是否相等(第二個資料位元組_));
+
+
+            讀寫測試資料_.整數 = 2;
+            var 第三個資料位元組_ = 讀寫測試資料_.轉成位元組();
+
+            Console.WriteLine(第一個資料位元組_.是否相等(第三個資料位元組_));
+        }
     }
 }
