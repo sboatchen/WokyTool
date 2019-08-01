@@ -32,9 +32,10 @@
             this.通用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.時間ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檔案ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.拷貝ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.視窗ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.綁定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.拷貝ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.選擇ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,10 +76,18 @@
             this.檔案ToolStripMenuItem.Text = "檔案";
             this.檔案ToolStripMenuItem.Click += new System.EventHandler(this.檔案ToolStripMenuItem_Click);
             // 
+            // 拷貝ToolStripMenuItem
+            // 
+            this.拷貝ToolStripMenuItem.Name = "拷貝ToolStripMenuItem";
+            this.拷貝ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.拷貝ToolStripMenuItem.Text = "拷貝";
+            this.拷貝ToolStripMenuItem.Click += new System.EventHandler(this.拷貝ToolStripMenuItem_Click);
+            // 
             // 視窗ToolStripMenuItem
             // 
             this.視窗ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.綁定ToolStripMenuItem});
+            this.綁定ToolStripMenuItem,
+            this.選擇ToolStripMenuItem});
             this.視窗ToolStripMenuItem.Name = "視窗ToolStripMenuItem";
             this.視窗ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.視窗ToolStripMenuItem.Text = "視窗";
@@ -90,12 +99,12 @@
             this.綁定ToolStripMenuItem.Text = "綁定";
             this.綁定ToolStripMenuItem.Click += new System.EventHandler(this.綁定ToolStripMenuItem_Click);
             // 
-            // 拷貝ToolStripMenuItem
+            // 選擇ToolStripMenuItem
             // 
-            this.拷貝ToolStripMenuItem.Name = "拷貝ToolStripMenuItem";
-            this.拷貝ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.拷貝ToolStripMenuItem.Text = "拷貝";
-            this.拷貝ToolStripMenuItem.Click += new System.EventHandler(this.拷貝ToolStripMenuItem_Click);
+            this.選擇ToolStripMenuItem.Name = "選擇ToolStripMenuItem";
+            this.選擇ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.選擇ToolStripMenuItem.Text = "選擇";
+            this.選擇ToolStripMenuItem.Click += new System.EventHandler(this.選擇ToolStripMenuItem_Click);
             // 
             // 測試主視窗
             // 
@@ -104,7 +113,7 @@
             this.ClientSize = new System.Drawing.Size(379, 326);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "測試主視窗";
             this.Text = "測試主視窗";
             this.menuStrip1.ResumeLayout(false);
@@ -123,5 +132,6 @@
         private System.Windows.Forms.ToolStripMenuItem 視窗ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 綁定ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 拷貝ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 選擇ToolStripMenuItem;
     }
 }

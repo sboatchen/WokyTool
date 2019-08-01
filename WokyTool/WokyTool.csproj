@@ -471,6 +471,7 @@
     <Compile Include="測試\視窗\資料選擇測試視窗.Designer.cs">
       <DependentUpon>資料選擇測試視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="測試\資料\讀寫測試資料篩選.cs" />
     <Compile Include="測試\資料\讀寫測試資料.cs" />
     <Compile Include="測試\轉換\讀寫測試轉換.cs" />
     <Compile Include="物品\控制\物品新增匯入管理器.cs" />
@@ -1134,6 +1135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="測試\視窗\資料綁定測試視窗.resx">
       <DependentUpon>資料綁定測試視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="測試\視窗\資料選擇測試視窗.resx">
+      <DependentUpon>資料選擇測試視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品新增匯入視窗.resx">
       <DependentUpon>物品新增匯入視窗.cs</DependentUpon>

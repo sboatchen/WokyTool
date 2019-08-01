@@ -32,5 +32,11 @@ namespace WokyTool.月結帳
 
             return true;
         }
+
+
+        public IEnumerable<月結帳資料> 排序(IEnumerable<月結帳資料> 資料列舉_)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

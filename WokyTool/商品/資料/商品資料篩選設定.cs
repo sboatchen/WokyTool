@@ -69,5 +69,11 @@ namespace WokyTool.商品
 
             return true;
         }
+
+
+        public IEnumerable<商品資料> 排序(IEnumerable<商品資料> 資料列舉_)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

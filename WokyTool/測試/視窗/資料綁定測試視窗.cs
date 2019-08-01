@@ -13,18 +13,23 @@ namespace WokyTool.測試
 {
     public partial class 資料綁定測試視窗 : Form
     {
+
+
         IEnumerable<讀寫測試資料> _資料列;
 
-        public 資料綁定測試視窗(IEnumerable<讀寫測試資料> 資料列_)
+        public 資料綁定測試視窗()
         {
             InitializeComponent();
 
-            this._資料列 = 資料列_;
+            this._資料列 = 讀寫測試資料管理器.獨體.資料書.Select(Pair => Pair.Value).OrderBy(Value => Value.整數);
+
+            //資料書.Select(Pair => Pair.Value).OrderBy(Value => Value.整數);
+
             this.讀寫測試資料BindingSource.Filter = "字串 = '字串1'";
             //this.讀寫測試資料BindingSource.DataSource = _資料列.Where(Value => Value.整數 > 50);
 
-            var listBinding = new BindingList<讀寫測試資料>(_資料列.Where(Value => Value.整數 > 50).ToList());
-            this.讀寫測試資料BindingSource.DataSource = listBinding;
+            //var listBinding = new BindingList<讀寫測試資料>(_資料列.Where(Value => Value.整數 > 50).ToList());
+            this.讀寫測試資料BindingSource.DataSource = _資料列;
         }
 
         private void 列印ToolStripMenuItem_Click(object sender, EventArgs e)
