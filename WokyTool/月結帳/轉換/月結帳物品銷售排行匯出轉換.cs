@@ -9,9 +9,9 @@ using WokyTool.通用;
 
 namespace WokyTool.月結帳
 {
-    public class 月結帳品牌營業額匯出轉換 : 可寫入介面_EXCEL
+    public class 月結帳物品銷售排行匯出轉換 : 可寫入介面_EXCEL
     {
-        public String 分類 { get { return "總覽"; } }
+        public String 分類 { get { return "物品銷售數量排行"; } }
 
         public String 樣板 { get { return null; } }
 
@@ -19,22 +19,21 @@ namespace WokyTool.月結帳
 
         public String 密碼 { get { return null; } }
 
-        private Dictionary<物品品牌資料, decimal> _資料書;
+        private 物品合併資料 物品合併資料_;
 
-
-        public 月結帳品牌營業額匯出轉換(Dictionary<物品品牌資料, decimal> 資料書_)
+        public 月結帳物品銷售排行匯出轉換(物品合併資料 物品合併資料_)
         {
-            this._資料書 = 資料書_;
+            this.物品合併資料_ = 物品合併資料_;
         }
 
         public void 寫入(Application App_)
         {
             App_.Cells[1, 1] = "名稱";
-            App_.Cells[1, 2] = "營業額";
+            App_.Cells[1, 2] = "數量";
 
 
             int 目前行數_ = 2;
-            foreach (var 資料_ in _資料書)
+            foreach (var 資料_ in 物品合併資料_.Map.OrderByDescending(Pair => Pair.Value).Take(10))
             {
                 App_.Cells[目前行數_, 1] = 資料_.Key.名稱;
                 App_.Cells[目前行數_, 2] = 資料_.Value;

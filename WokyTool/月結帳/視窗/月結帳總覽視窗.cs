@@ -73,20 +73,23 @@ namespace WokyTool.月結帳
         {
             this.物品統計ToolStripMenuItem.Enabled = false;
 
+            List<可寫入介面_EXCEL> 轉換列_ = new List<可寫入介面_EXCEL>();
+
             物品合併資料 物品合併資料_ = new 物品合併資料();
             foreach (月結帳資料 月結帳資料_ in 月結帳資料管理器.獨體.可編輯BList)
             {
                 物品合併資料_.新增_忽視錯誤(月結帳資料_.商品, 月結帳資料_.數量);
             }
 
+            轉換列_.Add(new 月結帳物品銷售排行匯出轉換(物品合併資料_));
+
             var GroupQueue_ = 物品合併資料_.Map.GroupBy(Value => Value.Key.品牌);
 
-            List<可寫入介面_EXCEL> 轉換列_ = new List<可寫入介面_EXCEL>();
             foreach (var Group_ in GroupQueue_)
             {
                 轉換列_.Add(new 月結帳物品統計匯出轉換(Group_));
             }
-            轉換列_.Add(new 月結帳物品統計總覽匯出轉換(GroupQueue_));
+            轉換列_.Add(new 月結帳物品品牌銷售排行匯出轉換(GroupQueue_));
 
             String 標題_ = String.Format("物品統計_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換列_);
@@ -118,7 +121,7 @@ namespace WokyTool.月結帳
                 }
             }
 
-            可寫入介面_EXCEL 轉換_ = new 月結帳品牌營業額匯出轉換(Map_);
+            可寫入介面_EXCEL 轉換_ = new 月結帳商品品牌營業額匯出轉換(Map_);
 
             String 標題_ = String.Format("品牌營業額_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);

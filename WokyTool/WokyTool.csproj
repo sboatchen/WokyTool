@@ -342,9 +342,10 @@
     <Compile Include="月結帳\資料\月結帳資料篩選設定.cs" />
     <Compile Include="月結帳\轉換\暫存\月結帳商品統計暫存資料.cs" />
     <Compile Include="月結帳\轉換\月結帳商品統計匯出轉換.cs" />
-    <Compile Include="月結帳\轉換\月結帳品牌營業額匯出轉換.cs" />
+    <Compile Include="月結帳\轉換\月結帳商品品牌營業額匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳物品統計匯出轉換.cs" />
-    <Compile Include="月結帳\轉換\月結帳物品統計總覽匯出轉換.cs" />
+    <Compile Include="月結帳\轉換\月結帳物品銷售排行匯出轉換.cs" />
+    <Compile Include="月結帳\轉換\月結帳物品品牌銷售排行匯出轉換.cs" />
     <Compile Include="廠商\控制\廠商資料管理器.cs" />
     <Compile Include="廠商\視窗\元件\廠商選取元件.cs">
       <SubType>UserControl</SubType>
@@ -433,6 +434,7 @@
     <Compile Include="月結帳\轉換\月結帳會計匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳總計匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳支出新增錯誤匯出轉換.cs" />
+    <Compile Include="測試\管理\讀寫測試資料管理器.cs" />
     <Compile Include="測試\視窗\拷貝測試視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -462,6 +464,12 @@
     </Compile>
     <Compile Include="測試\視窗\資料綁定測試視窗.Designer.cs">
       <DependentUpon>資料綁定測試視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="測試\視窗\資料選擇測試視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="測試\視窗\資料選擇測試視窗.Designer.cs">
+      <DependentUpon>資料選擇測試視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="測試\資料\讀寫測試資料.cs" />
     <Compile Include="測試\轉換\讀寫測試轉換.cs" />
