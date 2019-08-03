@@ -13,28 +13,24 @@ namespace WokyTool.測試
 {
     public partial class 資料綁定測試視窗 : Form
     {
-
-
-        IEnumerable<讀寫測試資料> _資料列;
+        private 可篩選列舉資料管理介面 _管理介面;
+        private 讀寫測試資料篩選 _篩選介面;
+        private int _資料版本 = -1;
 
         public 資料綁定測試視窗()
         {
             InitializeComponent();
 
-            this._資料列 = 讀寫測試資料管理器.獨體.資料書.Select(Pair => Pair.Value).OrderBy(Value => Value.整數);
+            _管理介面 = 讀寫測試資料管理器.獨體.編輯;
+            _篩選介面 = (讀寫測試資料篩選)_管理介面.篩選介面;
+            _資料版本 = _管理介面.資料版本;
 
-            //資料書.Select(Pair => Pair.Value).OrderBy(Value => Value.整數);
-
-            this.讀寫測試資料BindingSource.Filter = "字串 = '字串1'";
-            //this.讀寫測試資料BindingSource.DataSource = _資料列.Where(Value => Value.整數 > 50);
-
-            //var listBinding = new BindingList<讀寫測試資料>(_資料列.Where(Value => Value.整數 > 50).ToList());
-            this.讀寫測試資料BindingSource.DataSource = _資料列;
+            this.讀寫測試資料BindingSource.DataSource = _管理介面.資料列舉;
         }
 
         private void 列印ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (var 資料_ in _資料列)
+            foreach (var 資料_ in (IEnumerable<讀寫測試資料>)_管理介面.資料列舉)
             {
                 Console.WriteLine(資料_.ToString(false));
             }
@@ -47,7 +43,7 @@ namespace WokyTool.測試
 
         private void 取消ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (var 資料_ in _資料列)
+            foreach (var 資料_ in (IEnumerable<讀寫測試資料>)_管理介面.資料列舉)
             {
                 Console.WriteLine(資料_.ToString(false));
             }
@@ -55,38 +51,38 @@ namespace WokyTool.測試
 
         private void 執行ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.讀寫測試資料BindingSource.Filter = this.過濾輸入.Text;
+            this.讀寫測試資料BindingSource.Filter = this.最小整數.Text;
             this.讀寫測試資料BindingSource.ResetBindings(false);
         }
 
         private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             var col = dataGridView1.Columns[e.ColumnIndex];
+            this._篩選介面.排序欄位 = col.DataPropertyName;
 
-            System.Reflection.PropertyInfo prop = typeof(讀寫測試資料).GetProperty(col.DataPropertyName);
-            this.讀寫測試資料BindingSource.DataSource = _資料列.OrderBy(Value => prop.GetValue(Value));
+            更新呈現();
+        }
 
-            /*var col = dataGridView1.Columns[e.ColumnIndex];
+        private void 更新呈現()
+        {
 
-            ListSortDirection direction;
-            if (dataGridView1.SortOrder == (SortOrder.Descending | SortOrder.None))
+            if (_資料版本 != _管理介面.資料版本)
             {
-                direction = ListSortDirection.Ascending;
+                _資料版本 = _管理介面.資料版本;
+                this.讀寫測試資料BindingSource.DataSource = _管理介面.資料列舉;
+
+                Console.WriteLine("更新選單");
             }
+        }
+
+        private void 最小整數_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.最小整數.Text))
+                this._篩選介面.最小整數 = -1;
             else
-            {
-                direction = ListSortDirection.Descending;
-            }
+                this._篩選介面.最小整數 = Int32.Parse(this.最小整數.Text);
 
-            // Sort 只能指定單欄位排序
-            dataGridView1.Sort(col, direction);
-
-            // SortGlyphDirection 就是 Header 那個排序的三角符號
-            col.HeaderCell.SortGlyphDirection =
-                direction == ListSortDirection.Ascending ?
-                SortOrder.Ascending : SortOrder.Descending;*/
-
-            //ShowSortInfo();
+            更新呈現();
         }
     }
 }

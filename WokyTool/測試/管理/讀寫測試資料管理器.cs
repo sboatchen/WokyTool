@@ -14,15 +14,49 @@ using WokyTool.通用;
 
 namespace WokyTool.測試
 {
-    public class 讀寫測試資料管理器 /*: 可選取資料列管理介面*/
+    public class 讀寫測試資料管理器 : 可列舉資料管理介面
     {
-        // 資料Map
-        public Dictionary<int, 讀寫測試資料> 資料書 { get; set; }
-        public List<讀寫測試資料> 資料列 { get; set; }
+        protected Dictionary<int, 讀寫測試資料> _資料書 = null;
 
         public int 資料版本 { get; protected set; }
+        
+        public object 資料列舉 
+        {   
+            get 
+            { 
+                return _資料書.Select(Pair => Pair.Value); 
+            } 
+        }
 
-        public 讀寫測試資料篩選 篩選介面 { get; set; }
+        public IEnumerable<讀寫測試資料> 取得清單特殊選項()
+        {
+            yield return 讀寫測試資料.空白資料;
+            yield return 讀寫測試資料.錯誤資料;
+        }
+
+        public 新版可篩選介面<讀寫測試資料> 取得篩選介面()
+        {
+            return new 讀寫測試資料篩選();
+        }
+
+        public 可篩選列舉資料管理介面 清單
+        {
+            get
+            {
+                return new 讀寫測試資料清單管理器(this, 取得篩選介面(), 取得清單特殊選項());
+            }
+        }
+
+        private 讀寫測試資料編輯管理器 _編輯獨體 = null;
+        public 可篩選列舉資料管理介面 編輯
+        {
+            get
+            {
+                if (_編輯獨體 == null)
+                    _編輯獨體 = new 讀寫測試資料編輯管理器(this, 取得篩選介面());
+                return _編輯獨體;
+            }
+        }
 
         private static readonly 讀寫測試資料管理器 _獨體 = new 讀寫測試資料管理器();
         public static 讀寫測試資料管理器 獨體 { get { return _獨體; } }
@@ -30,10 +64,7 @@ namespace WokyTool.測試
         // 建構子
         protected 讀寫測試資料管理器()
         {
-            資料書 = new Dictionary<int, 讀寫測試資料>();
-            資料列 = new List<讀寫測試資料>();
-
-            篩選介面 = new 讀寫測試資料篩選();
+            _資料書 = new Dictionary<int, 讀寫測試資料>();
 
             Random 隨機_ = new Random();
             for (int i = 1; i <= 100; i++)
@@ -48,29 +79,8 @@ namespace WokyTool.測試
                     列舉 = (列舉.編號)(i % 10 + 1),
                 };
 
-                資料書.Add(讀寫測試資料_.整數, 讀寫測試資料_);
-                資料列 = 
+                _資料書.Add(讀寫測試資料_.整數, 讀寫測試資料_);
             }
-        }
-
-        public 讀寫測試資料 空白資料 { get { return 讀寫測試資料.空白資料; } }
-        public 讀寫測試資料 錯誤資料 { get { return 讀寫測試資料.錯誤資料; } }
-
-        private IEnumerable<讀寫測試資料> 取得特殊選取資料()
-        {
-            yield return 錯誤資料;
-            yield return 空白資料;
-        }
-
-        private object _可選取資料列 = null;
-        public object 取得可選取資料列舉(讀寫測試資料篩選 介面_)
-        {
-            return 取得特殊選取資料().Union(介面_.篩選(資料書.Select(Pair => Pair.Value))).ToList();
-        }
-
-        public IEnumerable<讀寫測試資料> 取得編輯資料列舉(讀寫測試資料篩選 介面_)
-        {
-            return 介面_.篩選(資料書.Select(Pair => Pair.Value));
         }
     }
 }

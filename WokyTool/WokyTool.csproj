@@ -434,6 +434,8 @@
     <Compile Include="月結帳\轉換\月結帳會計匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳總計匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳支出新增錯誤匯出轉換.cs" />
+    <Compile Include="測試\管理\讀寫測試資料清單管理器.cs" />
+    <Compile Include="測試\管理\讀寫測試資料編輯管理器.cs" />
     <Compile Include="測試\管理\讀寫測試資料管理器.cs" />
     <Compile Include="測試\視窗\拷貝測試視窗.cs">
       <SubType>Form</SubType>
@@ -595,9 +597,11 @@
     <Compile Include="聯絡人\視窗\元件\聯絡人選取元件.Designer.cs">
       <DependentUpon>聯絡人選取元件.cs</DependentUpon>
     </Compile>
+    <Compile Include="通用\介面\可篩選介面99.cs" />
     <Compile Include="通用\其他\函式.cs" />
     <Compile Include="通用\其他\列舉.cs" />
     <Compile Include="通用\其他\擴充方法.cs" />
+    <Compile Include="通用\可列舉\介面\可篩選列舉資料管理介面.cs" />
     <Compile Include="通用\檔案\介面\可寫入介面_EXCEL.cs" />
     <Compile Include="通用\檔案\介面\可讀出介面_EXCEL.cs" />
     <Compile Include="通用\檔案\介面\可讀出介面_CSV.cs" />
@@ -617,7 +621,9 @@
     </Compile>
     <Compile Include="通用\訊息\訊息管理器.cs" />
     <Compile Include="通用\介面\可初始化介面.cs" />
-    <Compile Include="通用\資料\介面\可選取資料列管理介面.cs" />
+    <Compile Include="通用\可列舉\介面\可列舉資料管理介面.cs" />
+    <Compile Include="通用\資料\介面\可選取資料列管理介面99.cs" />
+    <Compile Include="通用\資料\可記錄資料99.cs" />
     <Compile Include="通用\資料\基本資料.cs" />
     <Compile Include="通用\資料\可匯入資料.cs" />
     <Compile Include="配送\介面\可配送介面.cs" />
@@ -638,9 +644,9 @@
     <Compile Include="通用\視窗\樣板\匯入詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="通用\資料\管理\暫存資料管理器.cs" />
-    <Compile Include="通用\資料\管理\匯入資料管理器.cs" />
-    <Compile Include="通用\資料\靜態匯入資料.cs" />
+    <Compile Include="通用\資料\管理\暫存資料管理器99.cs" />
+    <Compile Include="通用\資料\管理\匯入資料管理器99.cs" />
+    <Compile Include="通用\資料\靜態匯入資料99.cs" />
     <Compile Include="物品\資料\物品品牌資料.cs" />
     <Compile Include="物品\資料\物品小類資料.cs" />
     <Compile Include="物品\資料\物品大類資料.cs" />
@@ -668,9 +674,9 @@
     <Compile Include="聯絡人\視窗\聯絡人總覽視窗.Designer.cs">
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="通用\介面\可篩選介面.cs" />
+    <Compile Include="通用\可列舉\介面\可篩選介面.cs" />
     <Compile Include="通用\介面\可編號介面.cs" />
-    <Compile Include="通用\資料\管理\資料儲存管理器.cs" />
+    <Compile Include="通用\資料\管理\資料儲存管理器99.cs" />
     <Compile Include="通用\視窗\樣板\詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -698,7 +704,7 @@
     <Compile Include="客製\回單轉換\平台訂單回單轉換_uDesign.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_博客來.cs" />
     <Compile Include="DataExport\工廠出貨匯出結構.cs" />
-    <Compile Include="通用\資料\管理\資料統合管理器.cs" />
+    <Compile Include="通用\資料\管理\資料統合管理器99.cs" />
     <Compile Include="通用\檔案\通用\字串轉換.cs" />
     <Compile Include="進貨\控制\進貨新增匯入管理器.cs" />
     <Compile Include="進貨\控制\進貨新增資料管理器.cs" />
@@ -770,7 +776,7 @@
     <Compile Include="Data\訂單資料.cs" />
     <Compile Include="Data\訊息資料.cs" />
     <Compile Include="Data\非平台訂單資料.cs" />
-    <Compile Include="通用\資料\管理\資料管理器.cs" />
+    <Compile Include="通用\資料\管理\資料管理器99.cs" />
     <Compile Include="通用\資料\可記錄資料.cs" />
     <Compile Include="通用\資料\動態匯入\動態匯入檔案結構.cs" />
     <Compile Include="通用\資料\動態匯入\檔案匯入設定資料.cs" />
@@ -921,7 +927,7 @@
     <Compile Include="聯絡人\控制\聯絡人資料管理器.cs" />
     <Compile Include="聯絡人\資料\聯絡人資料.cs" />
     <Compile Include="通用\介面\可儲存介面.cs" />
-    <Compile Include="通用\資料\介面\可編輯資料列管理介面.cs" />
+    <Compile Include="通用\資料\介面\可編輯資料列管理介面99.cs" />
     <Compile Include="配送\控制\配送管理器.cs" />
     <Compile Include="配送\視窗\待配送總覽視窗.cs">
       <SubType>Form</SubType>
@@ -1298,7 +1304,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="通用\可列舉\管理\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

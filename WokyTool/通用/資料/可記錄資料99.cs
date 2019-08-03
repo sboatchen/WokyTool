@@ -9,9 +9,9 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public abstract class 新版可記錄資料<T> : 基本資料/*, IEditableObject, 可編號介面*/
+    public abstract class 可記錄資料<T> : 基本資料, IEditableObject, 可編號介面
     {
-        /*protected T _副本;
+        protected T _副本;
 
         public abstract int 編號 { get; set; }
 
@@ -66,6 +66,6 @@ namespace WokyTool.通用
         public bool 編號是否有值()
         {
             return 編號 > 常數.新建資料編碼;
-        }*/
+        }
     }
 }

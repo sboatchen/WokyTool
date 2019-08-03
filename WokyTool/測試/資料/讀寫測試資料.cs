@@ -13,7 +13,7 @@ namespace WokyTool.測試
 {
     [Serializable]
     [JsonObject(MemberSerialization.OptIn)]
-    public class 讀寫測試資料 : 基本資料, 可初始化介面, IEditableObject
+    public class 讀寫測試資料 : 新版可記錄資料<讀寫測試資料>, 可初始化介面, IEditableObject
     {
         [JsonProperty]
         public string 字串 { get; set; }

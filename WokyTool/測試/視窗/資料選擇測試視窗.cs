@@ -8,68 +8,63 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WokyTool.通用;
 
 namespace WokyTool.測試
 {
     public partial class 資料選擇測試視窗 : Form
     {
-        private bool _條件異動 = false;
+        private 可篩選列舉資料管理介面 _管理介面;
+        private 讀寫測試資料篩選 _篩選介面;
+        private int _資料版本 = -1;
 
         public 資料選擇測試視窗()
         {
+            _管理介面 = 讀寫測試資料管理器.獨體.清單;
+            _篩選介面 = (讀寫測試資料篩選)_管理介面.篩選介面;
+            _資料版本 = _管理介面.資料版本;
+
             InitializeComponent();
 
             this.排序.DataSource = typeof(讀寫測試資料).GetProperties().Select(Value => Value.Name).ToList();
-            this.comboBox1.DataSource = 讀寫測試資料管理器.獨體.取得可選取資料列舉(讀寫測試資料管理器.獨體.篩選介面);
+
+            this.comboBox1.DataSource = _管理介面.資料列舉;
         }
 
         private void 字串_TextChanged(object sender, EventArgs e)
         {
-            讀寫測試資料管理器.獨體.篩選介面.字串 = this.字串.Text;
-            _條件異動 = true;
+            _篩選介面.字串 = this.字串.Text;
 
-            Console.WriteLine("字串: " + 讀寫測試資料管理器.獨體.篩選介面.字串);
+            Console.WriteLine("字串: " + _篩選介面.字串);
         }
 
         private void 整數1_ValueChanged(object sender, EventArgs e)
         {
-            int value = (int)this.整數1.Value;
-            if (value < 0)
-                讀寫測試資料管理器.獨體.篩選介面.最小整數 = null;
-            else
-                讀寫測試資料管理器.獨體.篩選介面.最小整數 = value;
+            _篩選介面.最小整數 = (int)this.整數1.Value;
 
-            _條件異動 = true;
-
-            Console.WriteLine("最小整數: " + 讀寫測試資料管理器.獨體.篩選介面.最小整數);
+            Console.WriteLine("最小整數: " + _篩選介面.最小整數);
         }
 
         private void 整數2_ValueChanged(object sender, EventArgs e)
         {
-            int value = (int)this.整數2.Value;
-            if (value < 0)
-                讀寫測試資料管理器.獨體.篩選介面.最大整數 = null;
-            else
-                讀寫測試資料管理器.獨體.篩選介面.最大整數 = value;
+            _篩選介面.最大整數 = (int)this.整數2.Value;
 
-            _條件異動 = true;
-
-            Console.WriteLine("最大整數: " + 讀寫測試資料管理器.獨體.篩選介面.最大整數);
+            Console.WriteLine("最大整數: " + _篩選介面.最大整數);
         }
 
         private void 排序_TextChanged(object sender, EventArgs e)
         {
-            讀寫測試資料管理器.獨體.篩選介面.排序欄位 = this.排序.Text;
-            _條件異動 = true;
-            Console.WriteLine("排序: " + 讀寫測試資料管理器.獨體.篩選介面.排序欄位);
+            _篩選介面.排序欄位 = this.排序.Text;
+
+            Console.WriteLine("排序: " + _篩選介面.排序欄位);
         }
 
         private void comboBox1_DropDown(object sender, EventArgs e)
         {
-            if (_條件異動)
+            if (_資料版本 != _管理介面.資料版本)
             {
-                _條件異動 = false;
-                this.comboBox1.DataSource = 讀寫測試資料管理器.獨體.取得可選取資料列舉(讀寫測試資料管理器.獨體.篩選介面);
+                _資料版本 = _管理介面.資料版本;
+                this.comboBox1.DataSource = _管理介面.資料列舉;
 
                 Console.WriteLine("更新選單");
             }

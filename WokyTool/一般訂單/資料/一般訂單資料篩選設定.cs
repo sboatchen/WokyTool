@@ -30,11 +30,5 @@ namespace WokyTool.一般訂單
 
             return true;
         }
-
-
-        public IEnumerable<一般訂單資料> 排序(IEnumerable<一般訂單資料> 資料列舉_)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
