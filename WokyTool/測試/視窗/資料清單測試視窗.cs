@@ -12,15 +12,15 @@ using WokyTool.通用;
 
 namespace WokyTool.測試
 {
-    public partial class 資料選擇測試視窗 : Form
+    public partial class 資料清單測試視窗 : Form
     {
         private 可篩選列舉資料管理介面 _管理介面;
         private 讀寫測試資料篩選 _篩選介面;
         private int _資料版本 = -1;
 
-        public 資料選擇測試視窗()
+        public 資料清單測試視窗()
         {
-            _管理介面 = 讀寫測試資料管理器.獨體.清單;
+            _管理介面 = 讀寫測試資料管理器.獨體.資料清單管理器;
             _篩選介面 = (讀寫測試資料篩選)_管理介面.篩選介面;
             _資料版本 = _管理介面.資料版本;
 

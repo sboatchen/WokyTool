@@ -35,7 +35,7 @@
             this.拷貝ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.視窗ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.綁定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.選擇ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.清單ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.合法ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +88,7 @@
             // 
             this.視窗ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.綁定ToolStripMenuItem,
-            this.選擇ToolStripMenuItem});
+            this.清單ToolStripMenuItem});
             this.視窗ToolStripMenuItem.Name = "視窗ToolStripMenuItem";
             this.視窗ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.視窗ToolStripMenuItem.Text = "視窗";
@@ -96,16 +96,16 @@
             // 綁定ToolStripMenuItem
             // 
             this.綁定ToolStripMenuItem.Name = "綁定ToolStripMenuItem";
-            this.綁定ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.綁定ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.綁定ToolStripMenuItem.Text = "綁定";
             this.綁定ToolStripMenuItem.Click += new System.EventHandler(this.綁定ToolStripMenuItem_Click);
             // 
-            // 選擇ToolStripMenuItem
+            // 清單ToolStripMenuItem
             // 
-            this.選擇ToolStripMenuItem.Name = "選擇ToolStripMenuItem";
-            this.選擇ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.選擇ToolStripMenuItem.Text = "選擇";
-            this.選擇ToolStripMenuItem.Click += new System.EventHandler(this.選擇ToolStripMenuItem_Click);
+            this.清單ToolStripMenuItem.Name = "清單ToolStripMenuItem";
+            this.清單ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.清單ToolStripMenuItem.Text = "清單";
+            this.清單ToolStripMenuItem.Click += new System.EventHandler(this.清單ToolStripMenuItem_Click);
             // 
             // 合法ToolStripMenuItem
             // 
@@ -139,7 +139,7 @@
         private System.Windows.Forms.ToolStripMenuItem 視窗ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 綁定ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 拷貝ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 選擇ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 清單ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 合法ToolStripMenuItem;
     }
 }

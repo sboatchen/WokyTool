@@ -39,7 +39,7 @@ namespace WokyTool.測試
             return new 讀寫測試資料篩選();
         }
 
-        public 可篩選列舉資料管理介面 清單
+        public 可篩選列舉資料管理介面 資料清單管理器
         {
             get
             {
@@ -47,14 +47,14 @@ namespace WokyTool.測試
             }
         }
 
-        private 讀寫測試資料編輯管理器 _編輯獨體 = null;
-        public 可篩選列舉資料管理介面 編輯
+        private 讀寫測試資料編輯管理器 _資料編輯管理器獨體 = null;
+        public 可篩選列舉資料管理介面 資料編輯管理器
         {
             get
             {
-                if (_編輯獨體 == null)
-                    _編輯獨體 = new 讀寫測試資料編輯管理器(this, 取得篩選介面());
-                return _編輯獨體;
+                if (_資料編輯管理器獨體 == null)
+                    _資料編輯管理器獨體 = new 讀寫測試資料編輯管理器(this, 取得篩選介面());
+                return _資料編輯管理器獨體;
             }
         }
 

@@ -49,9 +49,9 @@ namespace WokyTool.測試
             i.BringToFront();
         }
 
-        private void 選擇ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 清單ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var i = new 資料選擇測試視窗();
+            var i = new 資料清單測試視窗();
             i.Show();
             i.BringToFront();
         }

@@ -13,7 +13,7 @@ namespace WokyTool.測試
 {
     [Serializable]
     [JsonObject(MemberSerialization.OptIn)]
-    public class 讀寫測試資料 : 新版可記錄資料<讀寫測試資料>, 可初始化介面, IEditableObject
+    public class 讀寫測試資料 : 可編輯資料<讀寫測試資料>, 可初始化介面
     {
         [JsonProperty]
         public string 字串 { get; set; }
@@ -46,9 +46,6 @@ namespace WokyTool.測試
         [JsonProperty]
         public Int32 整數2 { get; set; }
 
-        [NonSerialized()]
-        protected 讀寫測試資料 _副本;
-
         public 讀寫測試資料 Self
         {
             get { return this; }
@@ -72,21 +69,13 @@ namespace WokyTool.測試
 
         public void 初始化() { ; }
 
-        public void BeginEdit()
+        public override void 檢查合法(可處理合法介面 介面_)
         {
-            _副本 = null;
-        }
+            if (整數 < 0)
+                介面_.錯誤(this, "整數不合法");
 
-        // IEditableObject
-        public void CancelEdit()
-        {
-            _副本 = null;
-        }
-
-        // IEditableObject
-        public void EndEdit()
-        {
-            _副本 = null;
+            if (浮點數 < 0)
+                介面_.錯誤(this, "浮點數不合法");
         }
     }
 }

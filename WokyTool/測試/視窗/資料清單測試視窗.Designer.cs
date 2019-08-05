@@ -1,6 +1,6 @@
 ﻿namespace WokyTool.測試
 {
-    partial class 資料選擇測試視窗
+    partial class 資料清單測試視窗
     {
         /// <summary>
         /// Required designer variable.
