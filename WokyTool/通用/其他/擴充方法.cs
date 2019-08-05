@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
@@ -68,6 +69,44 @@ namespace WokyTool.通用
             // Validate buffers are the same length.
             // This also ensures that the count does not exceed the length of either buffer.  
             return b1.Length == b2.Length && memcmp(b1, b2, b1.Length) == 0;
+        }
+
+        public static bool 完全拷貝(this Object 目標_, Object 來源_)
+        {
+            if (目標_.GetType() != 來源_.GetType())
+            {
+                訊息管理器.獨體.錯誤("完全拷貝錯誤, 型態不一致: " + 目標_.GetType() + " to " + 來源_.GetType());
+                return false;
+            }
+
+            var 屬性列舉_ = 目標_.GetType().GetProperties().Where(Value => Value.CanWrite);
+
+            foreach (var 屬性_ in 屬性列舉_)
+            {
+                屬性_.SetValue(目標_, 屬性_.GetValue(來源_));
+            }
+
+            return true;
+        }
+
+        public static bool 模糊拷貝(this Object 目標_, Object 來源_)
+        {
+            var 來源屬性列舉_ = 來源_.GetType().GetProperties().Where(Value => Value.CanRead);
+            var 目標屬性列舉_ = 目標_.GetType().GetProperties().Where(Value => Value.CanWrite);
+
+            foreach (var 來源屬性_ in 來源屬性列舉_)
+            {
+                foreach (var 目標屬性_ in 目標屬性列舉_)
+                {
+                    if (來源屬性_.Name == 目標屬性_.Name && 來源屬性_.PropertyType == 目標屬性_.PropertyType)
+                    {
+                        目標屬性_.SetValue(目標_, 來源屬性_.GetValue(來源_));
+                        break;
+                    }
+                }
+            }
+
+            return true;
         }
     }
 }

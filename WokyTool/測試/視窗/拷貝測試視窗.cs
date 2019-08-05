@@ -125,5 +125,79 @@ namespace WokyTool.測試
 
             Console.WriteLine(第一個資料位元組_.是否相等(第三個資料位元組_));
         }
+
+        private void 完全拷貝_Click(object sender, EventArgs e)
+        {
+            讀寫測試資料 讀寫測試資料_ = new 讀寫測試資料
+            {
+                字串 = "1",
+                整數 = 1,
+                浮點數 = 1,
+                倍精準浮點數 = 1,
+                時間 = DateTime.Now,
+                列舉 = (列舉.編號)1,
+                整數列 = new int[] { 1, 2, 3, 4 }.ToList(),
+                整數2 = 1,
+            };
+            讀寫測試資料_.書 = new Dictionary<int, string>();
+            讀寫測試資料_.書.Add(1, "1");
+
+            Console.WriteLine(讀寫測試資料_.ToString(false));
+
+            讀寫測試資料 讀寫測試資料2_ = new 讀寫測試資料();
+            讀寫測試資料2_.完全拷貝(讀寫測試資料_);
+
+            Console.WriteLine(讀寫測試資料_.ToString(false));
+        }
+
+        private void 編輯測試_Click(object sender, EventArgs e)
+        {
+            讀寫測試資料 讀寫測試資料_ = new 讀寫測試資料
+            {
+                字串 = "1",
+                整數 = 1,
+                浮點數 = 1,
+                倍精準浮點數 = 1,
+                時間 = DateTime.Now,
+                列舉 = (列舉.編號)1,
+                整數列 = new int[] { 1, 2, 3, 4 }.ToList(),
+                整數2 = 1,
+            };
+            讀寫測試資料_.書 = new Dictionary<int, string>();
+            讀寫測試資料_.書.Add(1, "1");
+
+            Console.WriteLine(讀寫測試資料_.ToString(false));
+
+            讀寫測試資料_.BeginEdit();
+
+            讀寫測試資料_.整數 = 2;
+
+            Console.WriteLine("應該為 true :" + 讀寫測試資料_.是否正在編輯());
+
+            讀寫測試資料_.整數 = 1;
+            讀寫測試資料_.字串 = "1";
+
+            Console.WriteLine("應該為 false :" + 讀寫測試資料_.是否正在編輯());
+
+            讀寫測試資料_.書 = new Dictionary<int, string>();
+            讀寫測試資料_.書.Add(1, "1");
+
+            Console.WriteLine("應該為 false :" + 讀寫測試資料_.是否正在編輯());
+
+            讀寫測試資料_.書.Add(2, "2");
+
+            Console.WriteLine("應該為 true :" + 讀寫測試資料_.是否正在編輯());
+
+            讀寫測試資料_.取消編輯();
+
+            Console.WriteLine(讀寫測試資料_.ToString(false));
+
+            讀寫測試資料_.BeginEdit();
+
+            讀寫測試資料_.書 = new Dictionary<int, string>();
+            讀寫測試資料_.書.Add(1, "9999");
+
+            讀寫測試資料_.紀錄編輯(true);
+        }
     }
 }
