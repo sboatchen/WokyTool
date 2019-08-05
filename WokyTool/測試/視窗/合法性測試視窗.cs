@@ -57,11 +57,9 @@ namespace WokyTool.測試
                 資料_.檢查合法(管理器_);
             }
 
-            foreach (var 資料_ in 管理器_.字串列)
-            {
-                Console.WriteLine(資料_);
-            }
-
+            var i = new 錯誤列表視窗(管理器_);
+            i.Show();
+            i.BringToFront();
         }
     }
 }
