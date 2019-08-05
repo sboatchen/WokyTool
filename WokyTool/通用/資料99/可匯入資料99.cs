@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
-    //@@@ 待整理
     [JsonObject(MemberSerialization.OptIn)]
     public abstract class 可匯入資料 : 基本資料
     {
