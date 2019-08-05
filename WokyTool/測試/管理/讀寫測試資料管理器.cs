@@ -14,49 +14,30 @@ using WokyTool.通用;
 
 namespace WokyTool.測試
 {
-    public class 讀寫測試資料管理器 : 可列舉資料管理介面
+    public class 讀寫測試資料管理器 : 資料來源管理器<讀寫測試資料>
     {
-        protected Dictionary<int, 讀寫測試資料> _資料書 = null;
+        protected List<讀寫測試資料> _資料列 = null;
 
-        public int 資料版本 { get; protected set; }
-        
-        public object 資料列舉 
+        public override object 資料列舉 
         {   
             get 
             { 
-                return _資料書.Select(Pair => Pair.Value); 
+                return _資料列; 
             } 
         }
 
-        public IEnumerable<讀寫測試資料> 取得清單特殊選項()
+        protected override IEnumerable<讀寫測試資料> 取得清單特殊選項()
         {
             yield return 讀寫測試資料.空白資料;
             yield return 讀寫測試資料.錯誤資料;
         }
 
-        public 新版可篩選介面<讀寫測試資料> 取得篩選介面()
+        protected override 新版可篩選介面<讀寫測試資料> 取得篩選介面()
         {
             return new 讀寫測試資料篩選();
         }
 
-        public 可篩選列舉資料管理介面 資料清單管理器
-        {
-            get
-            {
-                return new 讀寫測試資料清單管理器(this, 取得篩選介面(), 取得清單特殊選項());
-            }
-        }
-
-        private 讀寫測試資料編輯管理器 _資料編輯管理器獨體 = null;
-        public 可篩選列舉資料管理介面 資料編輯管理器
-        {
-            get
-            {
-                if (_資料編輯管理器獨體 == null)
-                    _資料編輯管理器獨體 = new 讀寫測試資料編輯管理器(this, 取得篩選介面());
-                return _資料編輯管理器獨體;
-            }
-        }
+        public override bool 是否可編輯 { get { return true;  } }
 
         private static readonly 讀寫測試資料管理器 _獨體 = new 讀寫測試資料管理器();
         public static 讀寫測試資料管理器 獨體 { get { return _獨體; } }
@@ -64,7 +45,7 @@ namespace WokyTool.測試
         // 建構子
         protected 讀寫測試資料管理器()
         {
-            _資料書 = new Dictionary<int, 讀寫測試資料>();
+            _資料列 = new List<讀寫測試資料>();
 
             Random 隨機_ = new Random();
             for (int i = 1; i <= 100; i++)
@@ -79,8 +60,21 @@ namespace WokyTool.測試
                     列舉 = (列舉.編號)(i % 10 + 1),
                 };
 
-                _資料書.Add(讀寫測試資料_.整數, 讀寫測試資料_);
+                _資料列.Add(讀寫測試資料_);
             }
+        }
+
+        public override void 更新資料(object 資料列obj_)
+        {
+            IEnumerable<讀寫測試資料> 資料列_ = 資料列obj_ as IEnumerable<讀寫測試資料>;
+            if (資料列_ == null)
+            {
+                訊息管理器.獨體.錯誤("更新資料型別錯誤: " + 資料列obj_.GetType().Name);
+                return;
+            }
+
+            _資料列 = 資料列_.ToList();
+            資料版本++;
         }
     }
 }

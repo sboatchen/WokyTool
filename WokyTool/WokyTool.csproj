@@ -434,8 +434,6 @@
     <Compile Include="月結帳\轉換\月結帳會計匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳總計匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳支出新增錯誤匯出轉換.cs" />
-    <Compile Include="測試\管理\讀寫測試資料清單管理器.cs" />
-    <Compile Include="測試\管理\讀寫測試資料編輯管理器.cs" />
     <Compile Include="測試\管理\讀寫測試資料管理器.cs" />
     <Compile Include="測試\視窗\合法性測試視窗.cs">
       <SubType>Form</SubType>
@@ -607,14 +605,24 @@
     <Compile Include="通用\其他\函式.cs" />
     <Compile Include="通用\其他\列舉.cs" />
     <Compile Include="通用\其他\擴充方法.cs" />
-    <Compile Include="通用\可列舉\介面\可篩選列舉資料管理介面.cs" />
+    <Compile Include="通用\可列舉\介面\可列舉資料來源管理介面.cs" />
+    <Compile Include="通用\可列舉\介面\可清單列舉資料管理介面.cs" />
+    <Compile Include="通用\可列舉\介面\可篩選介面_視窗.cs" />
+    <Compile Include="通用\可列舉\介面\可編輯列舉資料管理介面.cs" />
+    <Compile Include="通用\可列舉\實作\資料來源管理器.cs" />
     <Compile Include="通用\可列舉\實作\資料清單管理器.cs" />
-    <Compile Include="通用\可列舉\實作\資料基本管理器.cs" />
     <Compile Include="通用\可列舉\實作\資料編輯管理器.cs" />
     <Compile Include="通用\合法\介面\可處理合法介面.cs" />
-    <Compile Include="通用\合法\介面\合法性錯誤.cs" />
+    <Compile Include="通用\合法\物件\錯誤資料.cs" />
+    <Compile Include="通用\合法\物件\合法性錯誤.cs" />
     <Compile Include="通用\合法\實作\列表處理合法管理器.cs" />
     <Compile Include="通用\合法\實作\例外處理合法管理器.cs" />
+    <Compile Include="通用\合法\視窗\錯誤列表視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="通用\合法\視窗\錯誤列表視窗.Designer.cs">
+      <DependentUpon>錯誤列表視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="通用\檔案\介面\可寫入介面_EXCEL.cs" />
     <Compile Include="通用\檔案\介面\可讀出介面_EXCEL.cs" />
     <Compile Include="通用\檔案\介面\可讀出介面_CSV.cs" />
@@ -626,6 +634,9 @@
     <Compile Include="通用\檔案\檔案_CSV.cs" />
     <Compile Include="通用\檔案\檔案_EXCEL.cs" />
     <Compile Include="通用\其他\系統參數.cs" />
+    <Compile Include="通用\視窗\樣板\新版總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="通用\視窗\樣板\鎖定視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -675,7 +686,7 @@
     <Compile Include="通用\視窗\樣板\總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="通用\視窗\管理\通用視窗介面.cs" />
+    <Compile Include="通用\視窗\介面\通用視窗介面.cs" />
     <Compile Include="通用\視窗\其他\頁索引元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1217,6 +1228,9 @@
     <EmbeddedResource Include="聯絡人\視窗\元件\聯絡人選取元件.resx">
       <DependentUpon>聯絡人選取元件.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="通用\合法\視窗\錯誤列表視窗.resx">
+      <DependentUpon>錯誤列表視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="通用\視窗\其他\頁索引元件.resx">
       <DependentUpon>頁索引元件.cs</DependentUpon>
     </EmbeddedResource>
@@ -1305,6 +1319,7 @@
     <None Include="Properties\DataSources\WokyTool.通用.列舉+進貨處理狀態.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+配送公司.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.欄位匯入設定資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.通用.錯誤資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.進貨.進貨新增匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.進貨.進貨新增資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.進貨.進貨資料.datasource" />

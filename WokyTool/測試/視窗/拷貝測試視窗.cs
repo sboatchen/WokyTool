@@ -172,21 +172,27 @@ namespace WokyTool.測試
 
             讀寫測試資料_.整數 = 2;
 
-            Console.WriteLine("應該為 true :" + 讀寫測試資料_.是否正在編輯());
+            Console.WriteLine("應該為 true :" + 讀寫測試資料_.是否編輯中);
+
+            讀寫測試資料_.BeginEdit();
 
             讀寫測試資料_.整數 = 1;
             讀寫測試資料_.字串 = "1";
 
-            Console.WriteLine("應該為 false :" + 讀寫測試資料_.是否正在編輯());
+            Console.WriteLine("應該為 false :" + 讀寫測試資料_.是否編輯中);
+
+            讀寫測試資料_.BeginEdit();
 
             讀寫測試資料_.書 = new Dictionary<int, string>();
             讀寫測試資料_.書.Add(1, "1");
 
-            Console.WriteLine("應該為 false :" + 讀寫測試資料_.是否正在編輯());
+            Console.WriteLine("應該為 false :" + 讀寫測試資料_.是否編輯中);
+
+            讀寫測試資料_.BeginEdit();
 
             讀寫測試資料_.書.Add(2, "2");
 
-            Console.WriteLine("應該為 true :" + 讀寫測試資料_.是否正在編輯());
+            Console.WriteLine("應該為 true :" + 讀寫測試資料_.是否編輯中);
 
             讀寫測試資料_.取消編輯();
 

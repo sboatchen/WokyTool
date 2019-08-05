@@ -62,14 +62,23 @@ namespace WokyTool.通用
             _副本 = null;
         }
 
-        public virtual bool 是否正在編輯()
+        public virtual bool 是否編輯中
         {
-            if (_副本 == null)
-                return false;
+            get 
+            {
+                if (_副本 == null)
+                    return false;
 
-            byte[] 位元組_ = this.轉成位元組();
+                byte[] 位元組_ = this.轉成位元組();
 
-            return _副本.是否相等(位元組_) == false;
+                if (_副本.是否相等(位元組_))
+                {
+                    _副本 = null;
+                    return false;
+                }
+                else
+                    return true;
+            }
         }
     }
 }

@@ -11,67 +11,28 @@ using WokyTool.通用;
 
 namespace WokyTool.測試
 {
-    public partial class 資料綁定測試視窗 : Form
+    public partial class 資料綁定測試視窗 : 新版總覽視窗
     {
-        private 可篩選列舉資料管理介面 _管理介面;
-        private 讀寫測試資料篩選 _篩選介面;
-        private int _資料版本 = -1;
+        public override 可編輯列舉資料管理介面 管理介面 { get { return 讀寫測試資料管理器.獨體.資料編輯管理器; } }
+        public override BindingSource 資料BS { get { return this.讀寫測試資料BindingSource; } }
+        public override DataGridView 資料GV { get { return this.dataGridView1; } }
+
+        private 讀寫測試資料篩選 _篩選介面; 
 
         public 資料綁定測試視窗()
         {
             InitializeComponent();
 
-            _管理介面 = 讀寫測試資料管理器.獨體.資料編輯管理器;
-            _篩選介面 = (讀寫測試資料篩選)_管理介面.篩選介面;
-            _資料版本 = _管理介面.資料版本;
+            初始化();
 
-            this.讀寫測試資料BindingSource.DataSource = _管理介面.資料列舉;
+            _篩選介面 = (讀寫測試資料篩選)管理介面.篩選介面;
         }
 
         private void 列印ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (var 資料_ in (IEnumerable<讀寫測試資料>)_管理介面.資料列舉)
+            foreach (var 資料_ in (IEnumerable<讀寫測試資料>)管理介面.資料列舉)
             {
                 Console.WriteLine(資料_.ToString(false));
-            }
-        }
-
-        private void 資料綁定測試視窗_Activated(object sender, EventArgs e)
-        {
-            this.讀寫測試資料BindingSource.ResetBindings(false);
-        }
-
-        private void 取消ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (var 資料_ in (IEnumerable<讀寫測試資料>)_管理介面.資料列舉)
-            {
-                Console.WriteLine(資料_.ToString(false));
-            }
-        }
-
-        private void 執行ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.讀寫測試資料BindingSource.Filter = this.最小整數.Text;
-            this.讀寫測試資料BindingSource.ResetBindings(false);
-        }
-
-        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            var col = dataGridView1.Columns[e.ColumnIndex];
-            this._篩選介面.排序欄位 = col.DataPropertyName;
-
-            更新呈現();
-        }
-
-        private void 更新呈現()
-        {
-
-            if (_資料版本 != _管理介面.資料版本)
-            {
-                _資料版本 = _管理介面.資料版本;
-                this.讀寫測試資料BindingSource.DataSource = _管理介面.資料列舉;
-
-                Console.WriteLine("更新選單");
             }
         }
 
@@ -82,7 +43,7 @@ namespace WokyTool.測試
             else
                 this._篩選介面.最小整數 = Int32.Parse(this.最小整數.Text);
 
-            更新呈現();
+            _視窗激活(null, null);
         }
     }
 }

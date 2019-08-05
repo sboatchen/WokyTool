@@ -14,16 +14,16 @@ using WokyTool.通用;
 
 namespace WokyTool.通用
 {
-    public class 資料清單管理器<T> : 可篩選列舉資料管理介面
+    public class 資料清單管理器<T> : 可清單列舉資料管理介面 where T : 可編輯資料<T>
     {
-        public 可列舉資料管理介面 上層資料介面{ get; protected set; }
-        public IEnumerable<T> 唯讀特殊選項 { get; set; }
+        public 可列舉資料來源管理介面 來源管理介面{ get; protected set; }
+        public IEnumerable<T> 唯讀特殊選項 { get; protected set; }
 
         public int 資料版本 
         {
             get
             {
-                return 上層資料介面.資料版本 + _篩選介面.排序版本 + _篩選介面.篩選版本;
+                return 來源管理介面.資料版本 + _篩選介面.排序版本 + _篩選介面.篩選版本;
             }
         }
 
@@ -35,7 +35,7 @@ namespace WokyTool.通用
             {
                 if (_目前資料列版本 != 資料版本)
                 {
-                    IEnumerable<T> 資料列舉_ = (IEnumerable<T>)上層資料介面.資料列舉;
+                    IEnumerable<T> 資料列舉_ = (IEnumerable<T>)來源管理介面.資料列舉;
 
                     if (_篩選介面.是否排序)
                         資料列舉_ = _篩選介面.排序(資料列舉_);
@@ -51,7 +51,7 @@ namespace WokyTool.通用
             }
         }
 
-        protected 新版可篩選介面<T>  _篩選介面 = null;
+        protected 新版可篩選介面<T> _篩選介面 = null;
         public object 篩選介面
         {
             get
@@ -61,11 +61,19 @@ namespace WokyTool.通用
         }
 
         // 建構子
-        public 資料清單管理器(可列舉資料管理介面 上層資料介面_, 新版可篩選介面<T> 篩選介面_, IEnumerable<T> 唯讀特殊選項_)
+        public 資料清單管理器(可列舉資料來源管理介面 來源管理介面_, 新版可篩選介面<T> 篩選介面_, IEnumerable<T> 唯讀特殊選項_)
         {
-            this.上層資料介面 = 上層資料介面_;
+            this.來源管理介面 = 來源管理介面_;
             this._篩選介面 = 篩選介面_;
             this.唯讀特殊選項 = 唯讀特殊選項_;
+        }
+
+        public void 檢查合法(列表處理合法管理器 管理器_)
+        {
+            foreach (T 資料_ in _目前資料列)
+            {
+                資料_.檢查合法(管理器_);
+            }
         }
     }
 }

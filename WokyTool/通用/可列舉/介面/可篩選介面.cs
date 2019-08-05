@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
-    public interface 新版可篩選介面<T>
+    public interface 新版可篩選介面<T> : 可篩選介面_視窗
     {
-        bool 是否排序 { get; }
-        bool 是否篩選 { get; }
-
         int 排序版本 { get; }
         int 篩選版本 { get; }
 

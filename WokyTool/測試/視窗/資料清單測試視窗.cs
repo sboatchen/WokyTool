@@ -14,7 +14,7 @@ namespace WokyTool.測試
 {
     public partial class 資料清單測試視窗 : Form
     {
-        private 可篩選列舉資料管理介面 _管理介面;
+        private 可清單列舉資料管理介面 _管理介面;
         private 讀寫測試資料篩選 _篩選介面;
         private int _資料版本 = -1;
 

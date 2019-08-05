@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.列印ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.取消ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.過濾ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.最小整數 = new System.Windows.Forms.ToolStripTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -53,7 +52,6 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.列印ToolStripMenuItem,
-            this.取消ToolStripMenuItem,
             this.過濾ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -68,13 +66,6 @@
             this.列印ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.列印ToolStripMenuItem.Text = "列印";
             this.列印ToolStripMenuItem.Click += new System.EventHandler(this.列印ToolStripMenuItem_Click);
-            // 
-            // 取消ToolStripMenuItem
-            // 
-            this.取消ToolStripMenuItem.Name = "取消ToolStripMenuItem";
-            this.取消ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.取消ToolStripMenuItem.Text = "取消";
-            this.取消ToolStripMenuItem.Click += new System.EventHandler(this.取消ToolStripMenuItem_Click);
             // 
             // 過濾ToolStripMenuItem
             // 
@@ -106,12 +97,11 @@
             this.dataGridView1.DataSource = this.讀寫測試資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(896, 359);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_ColumnHeaderMouseClick);
             // 
             // 字串DataGridViewTextBoxColumn
             // 
@@ -167,10 +157,9 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "資料綁定測試視窗";
             this.Text = "資料綁定測試視窗";
-            this.Activated += new System.EventHandler(this.資料綁定測試視窗_Activated);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -193,7 +182,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 列舉值DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 讀寫測試資料BindingSource;
         private System.Windows.Forms.ToolStripMenuItem 列印ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 取消ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 過濾ToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox 最小整數;
     }
