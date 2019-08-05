@@ -55,5 +55,12 @@ namespace WokyTool.測試
             i.Show();
             i.BringToFront();
         }
+
+        private void 合法ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var i = new 合法性測試視窗();
+            i.Show();
+            i.BringToFront();
+        }
     }
 }

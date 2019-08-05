@@ -23,7 +23,11 @@ namespace WokyTool.通用
                 return JsonConvert.SerializeObject(this, Formatting.None);
         }
 
-        public virtual void 檢查合法()
+        public virtual void 檢查合法()  //@@@ remove
+        {
+        }
+
+        public virtual void 檢查合法(可處理合法介面 介面_)
         {
         }
 
