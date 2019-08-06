@@ -621,6 +621,7 @@
     <Compile Include="通用\可列舉\實作\資料清單管理器.cs" />
     <Compile Include="通用\可列舉\實作\資料編輯管理器.cs" />
     <Compile Include="通用\合法\介面\可處理合法介面.cs" />
+    <Compile Include="通用\合法\實作\匯入處理合法管理器.cs" />
     <Compile Include="通用\合法\物件\錯誤資料.cs" />
     <Compile Include="通用\合法\物件\合法性錯誤.cs" />
     <Compile Include="通用\合法\實作\列表處理合法管理器.cs" />

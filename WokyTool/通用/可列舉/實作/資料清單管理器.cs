@@ -68,7 +68,7 @@ namespace WokyTool.通用
             this.唯讀特殊選項 = 唯讀特殊選項_;
         }
 
-        public void 檢查合法(列表處理合法管理器 管理器_)
+        public void 檢查合法(可處理合法介面 管理器_)
         {
             foreach (T 資料_ in _目前資料列)
             {

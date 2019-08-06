@@ -43,6 +43,14 @@ namespace WokyTool.通用
             }
         }
 
+        public virtual 可處理合法介面 新增合法處理介面
+        {
+            get
+            {
+                return new 例外處理合法管理器();
+            }
+        }
+
         // 建構子
         protected 可儲存資料管理器()
         {
@@ -108,7 +116,7 @@ namespace WokyTool.通用
 
         public void 新增(T 資料_)
         {
-            資料_.檢查合法();
+            資料_.檢查合法(新增合法處理介面);
             資料_.紀錄編輯(true);
             資料_.編號 = _下個編號++;
 
@@ -122,9 +130,11 @@ namespace WokyTool.通用
             if (資料列舉_.Count() == 0)
                 return;
 
+            可處理合法介面 新增合法處理介面_ = 新增合法處理介面;
+
             foreach (T 資料_ in 資料列舉_)
             {
-                資料_.檢查合法();
+                資料_.檢查合法(新增合法處理介面_);
                 資料_.紀錄編輯(true);
                 資料_.編號 = _下個編號++;
 

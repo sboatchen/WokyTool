@@ -46,7 +46,7 @@ namespace WokyTool.通用
             }
         }
 
-        public void 檢查合法(列表處理合法管理器 管理器_)
+        public void 檢查合法(可處理合法介面 管理器_)
         {
             IEnumerable<T> 資料列_ = 資料列舉 as IEnumerable<T>;
             if (資料列_ == null)
