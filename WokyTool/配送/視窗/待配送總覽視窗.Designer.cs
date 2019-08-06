@@ -52,6 +52,7 @@ namespace WokyTool.配送
             this.手機DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.內容DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.件數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.指配日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.指配時段DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.代收方式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -161,6 +162,7 @@ namespace WokyTool.配送
             this.手機DataGridViewTextBoxColumn,
             this.地址DataGridViewTextBoxColumn,
             this.內容DataGridViewTextBoxColumn,
+            this.件數,
             this.指配日期DataGridViewTextBoxColumn,
             this.指配時段DataGridViewTextBoxColumn,
             this.代收方式DataGridViewTextBoxColumn,
@@ -232,6 +234,12 @@ namespace WokyTool.配送
             this.內容DataGridViewTextBoxColumn.Name = "內容DataGridViewTextBoxColumn";
             this.內容DataGridViewTextBoxColumn.ReadOnly = true;
             this.內容DataGridViewTextBoxColumn.Width = 200;
+            // 
+            // 件數
+            // 
+            this.件數.DataPropertyName = "件數";
+            this.件數.HeaderText = "件數";
+            this.件數.Name = "件數";
             // 
             // 指配日期DataGridViewTextBoxColumn
             // 
@@ -334,6 +342,7 @@ namespace WokyTool.配送
         private System.Windows.Forms.DataGridViewTextBoxColumn 手機DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 地址DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 內容DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 件數;
         private System.Windows.Forms.DataGridViewTextBoxColumn 指配日期DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 指配時段DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn 代收方式DataGridViewTextBoxColumn;

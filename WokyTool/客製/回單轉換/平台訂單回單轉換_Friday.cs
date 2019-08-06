@@ -23,6 +23,8 @@ namespace WokyTool.客製
 
         public string 密碼 { get { return null; } }
 
+        public Encoding 編碼 { get { return Encoding.Default; } }
+
         private IEnumerable<平台訂單新增資料> _資料列;
 
         public 平台訂單回單轉換_Friday(IEnumerable<平台訂單新增資料> 資料列_)
@@ -54,7 +56,7 @@ namespace WokyTool.客製
                     }   
                 }
 
-                Builder_.加入(資料_.訂單編號, 資料_.內容[3], 資料_.配送單號, 宅配廠商代碼_, 資料_.配送單號);
+                Builder_.加入(資料_.訂單編號, 資料_.內容[3].轉成字串(), 宅配廠商代碼_, 資料_.配送單號);
             }
         }
     }

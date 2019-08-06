@@ -20,6 +20,8 @@ namespace WokyTool.客製
 
         public string 密碼 { get { return null; } }
 
+        public Encoding 編碼 { get { return Encoding.UTF8; } }
+
         private IEnumerable<平台訂單新增資料> _資料列;
 
         public 平台訂單回單轉換_東森(IEnumerable<平台訂單新增資料> 資料列_)

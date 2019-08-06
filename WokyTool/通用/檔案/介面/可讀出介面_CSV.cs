@@ -13,6 +13,8 @@ namespace WokyTool.通用
 
         bool 是否有標頭 { get; }
 
+        Encoding 編碼 { get; }
+
         void 讀出標頭(string[] 標頭列_);
 
         IEnumerable<T> 讀出資料(string[] 資料列_);

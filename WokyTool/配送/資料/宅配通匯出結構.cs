@@ -46,7 +46,7 @@ namespace WokyTool.配送
             if (可配送資料_.指配日期.Ticks == 0)
                 指配日期 = "";
             else
-                指配日期 = 可配送資料_.指配日期.ToString("yyyy/MM/dd");
+                指配日期 = 可配送資料_.指配日期.ToString("yyyyMMdd");
 
             switch (可配送資料_.指配時段)
             {
@@ -111,6 +111,7 @@ namespace WokyTool.配送
         // 設定資料
         public int SetExcelData(Application App_, int Row_)
         {
+            App_.Cells[Row_, 5] = _可配送資料.件數;
             App_.Cells[Row_, 13] = 姓名;
             App_.Cells[Row_, 14] = 電話;
             App_.Cells[Row_, 16] = 地址;

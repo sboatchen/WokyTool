@@ -25,6 +25,8 @@ namespace WokyTool.客製
 
         public string 密碼 { get { return null; } }
 
+        public Encoding 編碼 { get { return Encoding.Default; } }
+
         public 公司資料 公司 { get; set; }
         public 客戶資料 客戶 { get; set; }
 
@@ -52,7 +54,7 @@ namespace WokyTool.客製
                 處理狀態_ = 列舉.訂單處理狀態.忽略;
             }
 
-            string 訂單編號_ = 資料列_[6].轉成字串();
+            string 訂單編號_ = 資料列_[6].轉成字串().Replace("\'", "");
 
             string 姓名_ = 資料列_[18].轉成字串();
             string 手機_ = 資料列_[22].轉成字串();

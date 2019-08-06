@@ -34,6 +34,8 @@
             this.EXCEL寫入 = new System.Windows.Forms.Button();
             this.EXCEL讀出 = new System.Windows.Forms.Button();
             this.快速讀出 = new System.Windows.Forms.Button();
+            this.副檔名 = new System.Windows.Forms.Button();
+            this.讀檔 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // 路徑測試
@@ -96,11 +98,33 @@
             this.快速讀出.UseVisualStyleBackColor = true;
             this.快速讀出.Click += new System.EventHandler(this.快速讀出_Click);
             // 
+            // 副檔名
+            // 
+            this.副檔名.Location = new System.Drawing.Point(12, 133);
+            this.副檔名.Name = "副檔名";
+            this.副檔名.Size = new System.Drawing.Size(75, 23);
+            this.副檔名.TabIndex = 6;
+            this.副檔名.Text = "副檔名";
+            this.副檔名.UseVisualStyleBackColor = true;
+            this.副檔名.Click += new System.EventHandler(this.副檔名_Click);
+            // 
+            // 讀檔
+            // 
+            this.讀檔.Location = new System.Drawing.Point(93, 21);
+            this.讀檔.Name = "讀檔";
+            this.讀檔.Size = new System.Drawing.Size(75, 23);
+            this.讀檔.TabIndex = 7;
+            this.讀檔.Text = "讀檔";
+            this.讀檔.UseVisualStyleBackColor = true;
+            this.讀檔.Click += new System.EventHandler(this.讀檔_Click);
+            // 
             // 檔案測試視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.讀檔);
+            this.Controls.Add(this.副檔名);
             this.Controls.Add(this.快速讀出);
             this.Controls.Add(this.EXCEL讀出);
             this.Controls.Add(this.EXCEL寫入);
@@ -121,5 +145,7 @@
         private System.Windows.Forms.Button EXCEL寫入;
         private System.Windows.Forms.Button EXCEL讀出;
         private System.Windows.Forms.Button 快速讀出;
+        private System.Windows.Forms.Button 副檔名;
+        private System.Windows.Forms.Button 讀檔;
     }
 }

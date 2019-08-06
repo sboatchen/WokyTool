@@ -38,6 +38,8 @@ namespace WokyTool.測試
 
         public string 密碼 { get; set; }
 
+        public Encoding 編碼{ get { return Encoding.UTF8; } }
+
         private IEnumerable<讀寫測試資料> _資料列;
 
         public 讀寫測試轉換()

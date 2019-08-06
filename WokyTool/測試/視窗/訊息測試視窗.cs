@@ -51,7 +51,7 @@ namespace WokyTool.測試
 
         private void 確認_Click(object sender, EventArgs e)
         {
-            訊息管理器.獨體.通知("確認", this.確認.Text);
+            訊息管理器.獨體.確認("確認", this.確認.Text);
         }
     }
 }

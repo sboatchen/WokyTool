@@ -121,5 +121,33 @@ namespace WokyTool.測試
             foreach (var 內容_ in 內容列_)
                 Console.WriteLine(內容_);
         }
+
+        private void 副檔名_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OFD_ = new OpenFileDialog();
+            if (OFD_.ShowDialog() != DialogResult.OK)
+                return;
+
+            Encoding 編碼_ = 檔案.取得檔案編碼(OFD_.FileName);
+
+            //string 內容_ = File.ReadAllText(OFD_.FileName, 編碼_);
+            string 內容_ = 檔案.讀出(OFD_.FileName, 編碼_);
+            訊息管理器.獨體.通知(編碼_.ToString(), 內容_);
+        }
+
+        private void 讀檔_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OFD_ = new OpenFileDialog();
+            if (OFD_.ShowDialog() != DialogResult.OK)
+                return;
+
+            //Encoding.get
+
+            using (var reader = new StreamReader(OFD_.FileName, Encoding.Default))
+            {
+                string 內容_ = reader.ReadToEnd();
+                Console.Write(內容_);
+            }
+        }
     }
 }

@@ -29,6 +29,14 @@ namespace WokyTool.配送
             }
         }
 
+        private int _件數 = 1;
+        [JsonProperty]
+        public int 件數 
+        {
+            get { return _件數; }
+            set { _件數 = value; }
+        }
+
         [JsonProperty]
         public int 體積 { get; protected set; }
 

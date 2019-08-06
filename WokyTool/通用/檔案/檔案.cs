@@ -202,7 +202,7 @@ namespace WokyTool.通用
             }
         }
 
-        public static bool 寫入(string 路徑_, string 資料_)
+        public static bool 寫入(string 路徑_, string 資料_, Encoding 編碼_)
         {
             訊息管理器.獨體.追蹤("寫入檔案: " + 路徑_);
 
@@ -214,7 +214,7 @@ namespace WokyTool.通用
                 if (Directory.Exists(資料夾_) == false)
                     Directory.CreateDirectory(資料夾_);
 
-                File.WriteAllText(路徑_, 資料_, Encoding.UTF8);
+                File.WriteAllText(路徑_, 資料_, 編碼_);
 
                 return true;
             }
@@ -225,10 +225,15 @@ namespace WokyTool.通用
             }
         }
 
-        public static bool 寫入(string 路徑_, string 資料_, string 密碼_)
+        public static bool 寫入(string 路徑_, string 資料_)
+        {
+            return 寫入(路徑_, 資料_, Encoding.UTF8);
+        }
+
+        public static bool 寫入(string 路徑_, string 資料_, string 密碼_, Encoding 編碼_)
         {
             if (String.IsNullOrEmpty(密碼_))
-                return 寫入(路徑_, 資料_);
+                return 寫入(路徑_, 資料_, 編碼_);
 
             訊息管理器.獨體.追蹤("寫入加密檔案: " + 路徑_);
 
@@ -255,7 +260,7 @@ namespace WokyTool.通用
                     using (CryptoStream cs = new CryptoStream(fsCrypt, RMCrypto.CreateEncryptor(key, key), CryptoStreamMode.Write))
                     {
                         // convert string to stream
-                        byte[] byteArray = Encoding.UTF8.GetBytes(資料_);
+                        byte[] byteArray = 編碼_.GetBytes(資料_);
 
                         cs.Write(byteArray, 0, byteArray.Length);
                     }
@@ -270,15 +275,28 @@ namespace WokyTool.通用
             }
         }
 
+        public static bool 寫入(string 路徑_, string 資料_, string 密碼_)
+        {
+            return 寫入(路徑_, 資料_, 密碼_, Encoding.UTF8);
+        }
+
+        public static bool 寫入(string 路徑_, string 資料_, bool 資料是否加密, Encoding 編碼_)
+        {
+            if (資料是否加密)
+                return 寫入(路徑_, 資料_, "ApTx4869", 編碼_);
+            else
+                return 寫入(路徑_, 資料_, 編碼_);
+        }
+
         public static bool 寫入(string 路徑_, string 資料_, bool 資料是否加密)
         {
             if (資料是否加密)
-                return 寫入(路徑_, 資料_, "ApTx4869");
+                return 寫入(路徑_, 資料_, "ApTx4869", Encoding.UTF8);
             else
-                return 寫入(路徑_, 資料_);
+                return 寫入(路徑_, 資料_, Encoding.UTF8);
         }
 
-        public static string 讀出(string 路徑_)
+        public static string 讀出(string 路徑_, Encoding 編碼_)
         {
             //訊息管理器.獨體.追蹤("讀出檔案: " + 路徑_);   //@@ 可能發生在使用者管理氣尚未初始化完畢 
 
@@ -288,7 +306,10 @@ namespace WokyTool.通用
                 if (File.Exists(路徑_) == false)
                     throw new Exception("找不到原始檔案");
 
-                return File.ReadAllText(路徑_);
+                using (var reader = new StreamReader(路徑_, 編碼_))
+                {
+                    return reader.ReadToEnd();
+                }
 
             }
             catch (IOException e)
@@ -298,10 +319,15 @@ namespace WokyTool.通用
             }
         }
 
-        public static string 讀出(string 路徑_, string 密碼_)
+        public static string 讀出(string 路徑_)
+        {
+            return 讀出(路徑_, Encoding.UTF8);
+        }
+
+        public static string 讀出(string 路徑_, string 密碼_, Encoding 編碼_)
         {
             if (String.IsNullOrEmpty(密碼_))
-                return 讀出(路徑_);
+                return 讀出(路徑_, 編碼_);
 
             //訊息管理器.獨體.追蹤("讀出加密檔案: " + 路徑_); //@@ 可能發生在使用者管理氣尚未初始化完畢 
 
@@ -320,7 +346,7 @@ namespace WokyTool.通用
 
                     using (CryptoStream cs = new CryptoStream(fsCrypt, RMCrypto.CreateDecryptor(key, key), CryptoStreamMode.Read))
                     {
-                        using (StreamReader sr = new StreamReader(cs))
+                        using (StreamReader sr = new StreamReader(cs, 編碼_))
                         {
                             return sr.ReadToEnd();
                         }
@@ -335,12 +361,25 @@ namespace WokyTool.通用
             }
         }
 
+        public static string 讀出(string 路徑_, string 密碼_)
+        {
+            return 讀出(路徑_, 密碼_, Encoding.UTF8);
+        }
+
+        public static string 讀出(string 路徑_, bool 資料是否加密, Encoding 編碼_)
+        {
+            if (資料是否加密)
+                return 讀出(路徑_, "ApTx4869", 編碼_);
+            else
+                return 讀出(路徑_, 編碼_);
+        }
+
         public static string 讀出(string 路徑_, bool 資料是否加密)
         {
             if (資料是否加密)
-                return 讀出(路徑_, "ApTx4869");
+                return 讀出(路徑_, "ApTx4869", Encoding.UTF8);
             else
-                return 讀出(路徑_);
+                return 讀出(路徑_, Encoding.UTF8);
         }
 
         public static IEnumerable<T> 詢問並讀出<T>() where T : 可初始化介面
@@ -369,6 +408,17 @@ namespace WokyTool.通用
                     訊息管理器.獨體.錯誤("不支援格式: " + 副檔名_);
                     return null;
 
+            }
+        }
+
+        public static Encoding 取得檔案編碼(string 路徑_)
+        {
+            using (var reader = new StreamReader(路徑_, true))
+            {
+                if (reader.Peek() >= 0) // you need this!
+                    reader.Read();
+
+                return reader.CurrentEncoding;
             }
         }
     }

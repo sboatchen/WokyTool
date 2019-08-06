@@ -108,9 +108,6 @@ namespace WokyTool.通用
 
         public static string 轉成字串(this string 內容_)
         {
-            if (String.IsNullOrEmpty(內容_))
-                return 內容_;
-
             if (內容_.StartsWith("\""))
                 return 內容_.Substring(1, 內容_.Length - 2);    //@@ 需測試 字串裡面有""的狀況
             else
@@ -119,21 +116,33 @@ namespace WokyTool.通用
 
         public static int 轉成整數(this string 內容_)
         {
+            if (內容_.StartsWith("\""))
+                內容_ = 內容_.Substring(1, 內容_.Length - 2);
+
             return Int32.Parse(內容_);
         }
 
         public static float 轉成浮點數(this string 內容_)
         {
+            if (內容_.StartsWith("\""))
+                內容_ = 內容_.Substring(1, 內容_.Length - 2);
+
             return float.Parse(內容_);
         }
 
         public static double 轉成倍精準浮點數(this string 內容_)
         {
+            if (內容_.StartsWith("\""))
+                內容_ = 內容_.Substring(1, 內容_.Length - 2);
+
             return Double.Parse(內容_);
         }
 
         public static DateTime 轉成時間(this string 內容_)
         {
+            if (內容_.StartsWith("\""))
+                內容_ = 內容_.Substring(1, 內容_.Length - 2);
+
             double d;
             if (double.TryParse(內容_, out d))
                 return DateTime.FromOADate(d);

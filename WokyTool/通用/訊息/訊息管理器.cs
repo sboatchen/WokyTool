@@ -14,6 +14,8 @@ namespace WokyTool.通用
     {
         private ILog logger = null;
 
+        private StringBuilder _SB = new StringBuilder();
+
         // 獨體
         private static readonly 訊息管理器 _獨體 = new 訊息管理器();
         public static 訊息管理器 獨體
@@ -61,7 +63,11 @@ namespace WokyTool.通用
                 logger.Error(Environment.StackTrace);
             }
 
-            MessageBox.Show(Environment.StackTrace, 內容_.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _SB.Clear();
+            _SB.AppendLine(內容_.ToString());
+            _SB.AppendLine(Environment.StackTrace);
+
+            MessageBox.Show(_SB.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void 錯誤(Exception Ex_)
@@ -72,7 +78,11 @@ namespace WokyTool.通用
                 logger.Error(Environment.StackTrace);
             }
 
-            MessageBox.Show(Environment.StackTrace, Ex_.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _SB.Clear();
+            _SB.AppendLine(Ex_.Message);
+            _SB.AppendLine(Environment.StackTrace);
+
+            MessageBox.Show(_SB.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void 錯誤(object 內容_, Exception Ex_)
@@ -83,7 +93,12 @@ namespace WokyTool.通用
                 logger.Error(Environment.StackTrace);
             }
 
-            MessageBox.Show(Environment.StackTrace, 內容_.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            _SB.Clear();
+            _SB.AppendLine(內容_.ToString());
+            _SB.AppendLine(Ex_.Message);
+            _SB.AppendLine(Environment.StackTrace);
+
+            MessageBox.Show(_SB.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void 警告(object 內容_)
@@ -94,7 +109,11 @@ namespace WokyTool.通用
                 logger.Warn(Environment.StackTrace);
             }
 
-            MessageBox.Show(Environment.StackTrace, 內容_.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            _SB.Clear();
+            _SB.AppendLine(內容_.ToString());
+            _SB.AppendLine(Environment.StackTrace);
+
+            MessageBox.Show(_SB.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         public void 警告(Exception Ex_)
@@ -105,7 +124,11 @@ namespace WokyTool.通用
                 logger.Warn(Environment.StackTrace);
             }
 
-            MessageBox.Show(Environment.StackTrace, Ex_.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            _SB.Clear();
+            _SB.AppendLine(Ex_.Message);
+            _SB.AppendLine(Environment.StackTrace);
+
+            MessageBox.Show(_SB.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         public void 警告(object 內容_, Exception Ex_)
@@ -116,7 +139,12 @@ namespace WokyTool.通用
                 logger.Warn(Environment.StackTrace);
             }
 
-            MessageBox.Show(Environment.StackTrace, 內容_.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            _SB.Clear();
+            _SB.AppendLine(內容_.ToString());
+            _SB.AppendLine(Ex_.Message);
+            _SB.AppendLine(Environment.StackTrace);
+
+            MessageBox.Show(_SB.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         public void 追蹤(object 內容_, bool 是否記錄堆疊_ = false)

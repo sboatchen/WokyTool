@@ -13,6 +13,8 @@ namespace WokyTool.通用
 
         string 密碼 { get; }
 
+        Encoding 編碼 { get; }
+
         void 寫入(CSVBuilder Builder_);
     }
 }

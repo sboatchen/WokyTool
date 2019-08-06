@@ -26,7 +26,7 @@ namespace WokyTool.通用
             CSVBuilder Builder_ = new CSVBuilder(轉換_.分格號);
             轉換_.寫入(Builder_);
 
-            寫入(SFD_.FileName, Builder_.ToString(), 轉換_.密碼);
+            寫入(SFD_.FileName, Builder_.ToString(), 轉換_.密碼, 轉換_.編碼);
         }
 
         public static void 詢問並寫入(string 預設檔名_, List<可寫入介面_CSV> 轉換列_)
@@ -53,7 +53,7 @@ namespace WokyTool.通用
                 else
                     路徑_ = 增加檔名後綴(SFD_.FileName, 轉換_.分類);
 
-                寫入(路徑_, Builder_.ToString(), 轉換_.密碼);
+                寫入(路徑_, Builder_.ToString(), 轉換_.密碼, 轉換_.編碼);
                 index++;
             }
         }
@@ -70,7 +70,7 @@ namespace WokyTool.通用
             if (false == 備份(OFD_.FileName, typeof(T).Name, "檔案讀出"))
                 return null;
 
-            string 內容_ = 讀出(OFD_.FileName, 轉換_.密碼);
+            string 內容_ = 讀出(OFD_.FileName, 轉換_.密碼, 轉換_.編碼);
             if (String.IsNullOrEmpty(內容_))
                 return null;
 
