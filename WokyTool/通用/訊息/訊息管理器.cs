@@ -61,7 +61,7 @@ namespace WokyTool.通用
                 logger.Error(Environment.StackTrace);
             }
 
-            MessageBox.Show(內容_.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(Environment.StackTrace, 內容_.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void 錯誤(Exception Ex_)
@@ -69,9 +69,10 @@ namespace WokyTool.通用
             if (logger != null)
             {
                 logger.Error(Ex_.Message, Ex_);
+                logger.Error(Environment.StackTrace);
             }
 
-            MessageBox.Show(Ex_.Message, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(Environment.StackTrace, Ex_.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void 錯誤(object 內容_, Exception Ex_)
@@ -79,9 +80,10 @@ namespace WokyTool.通用
             if (logger != null)
             {
                 logger.Error(內容_, Ex_);
+                logger.Error(Environment.StackTrace);
             }
 
-            MessageBox.Show(內容_.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(Environment.StackTrace, 內容_.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public void 警告(object 內容_)
@@ -89,10 +91,10 @@ namespace WokyTool.通用
             if (logger != null)
             {
                 logger.Warn(內容_);
-                logger.Error(Environment.StackTrace);
+                logger.Warn(Environment.StackTrace);
             }
 
-            MessageBox.Show(內容_.ToString(), 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(Environment.StackTrace, 內容_.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         public void 警告(Exception Ex_)
@@ -103,7 +105,7 @@ namespace WokyTool.通用
                 logger.Warn(Environment.StackTrace);
             }
 
-            MessageBox.Show(Ex_.Message.ToString(), 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(Environment.StackTrace, Ex_.Message, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         public void 警告(object 內容_, Exception Ex_)
@@ -114,7 +116,7 @@ namespace WokyTool.通用
                 logger.Warn(Environment.StackTrace);
             }
 
-            MessageBox.Show(內容_.ToString(), 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(Environment.StackTrace, 內容_.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         public void 追蹤(object 內容_, bool 是否記錄堆疊_ = false)
