@@ -123,13 +123,14 @@ namespace WokyTool.平台訂單
             //this.OnActivated(null);
         }
 
-        private void 中華電信_午洋ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 中華電信午洋ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _公司 = 公司資料管理器.獨體.Get("午洋");
-            _客戶 = 客戶資料管理器.獨體.Get("中華電信");
 
             平台訂單匯入轉換_中華電信 轉換_ = new 平台訂單匯入轉換_中華電信(_公司);
-            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出((可讀出介面_EXCEL<平台訂單匯入資料>)轉換_);
+            _客戶 = 轉換_.客戶;
+
+            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
 
             匯入完成(資料列舉_);
         }
@@ -137,10 +138,35 @@ namespace WokyTool.平台訂單
         private void 東森洋承ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _公司 = 公司資料管理器.獨體.Get("洋承");
-            _客戶 = 客戶資料管理器.獨體.Get("東森");
 
             平台訂單匯入轉換_東森 轉換_ = new 平台訂單匯入轉換_東森(_公司);
-            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出((可讀出介面_EXCEL<平台訂單匯入資料>)轉換_);
+            _客戶 = 轉換_.客戶;
+
+            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
+
+            匯入完成(資料列舉_);
+        }
+
+        private void friday田和豐ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _公司 = 公司資料管理器.獨體.Get("田和豐");
+
+            平台訂單匯入轉換_Friday 轉換_ = new 平台訂單匯入轉換_Friday(_公司);
+            _客戶 = 轉換_.客戶;
+
+            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
+
+            匯入完成(資料列舉_);
+        }
+
+        private void friday午洋ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _公司 = 公司資料管理器.獨體.Get("午洋");
+
+            平台訂單匯入轉換_Friday 轉換_ = new 平台訂單匯入轉換_Friday(_公司);
+            _客戶 = 轉換_.客戶;
+
+            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
 
             匯入完成(資料列舉_);
         }

@@ -247,6 +247,7 @@
       <DependentUpon>客戶選取元件.cs</DependentUpon>
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
+    <Compile Include="客製\匯入\平台訂單匯入轉換_Friday.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_東森.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_中華電信.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_陳沂.cs" />
@@ -255,7 +256,6 @@
     <Compile Include="客製\匯入\平台訂單自定義_Momo第三方.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_Momo.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_森森.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_Friday.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_ibonMart.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_myfone.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_PC專櫃.cs" />
@@ -472,6 +472,12 @@
     </Compile>
     <Compile Include="測試\視窗\測試主視窗.Designer.cs">
       <DependentUpon>測試主視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="測試\視窗\訊息測試視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="測試\視窗\訊息測試視窗.Designer.cs">
+      <DependentUpon>訊息測試視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="測試\視窗\資料綁定測試視窗.cs">
       <SubType>Form</SubType>
@@ -1185,6 +1191,9 @@
     <EmbeddedResource Include="測試\視窗\測試主視窗.resx">
       <DependentUpon>測試主視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="測試\視窗\訊息測試視窗.resx">
+      <DependentUpon>訊息測試視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="測試\視窗\資料綁定測試視窗.resx">
       <DependentUpon>資料綁定測試視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1263,6 +1272,9 @@
     <EmbeddedResource Include="配送\視窗\待配送總覽視窗.resx">
       <DependentUpon>待配送總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WokyTool.Common.可配送.datasource" />
     <None Include="Properties\DataSources\WokyTool.Common.舊列舉+銷售狀態類型.datasource" />

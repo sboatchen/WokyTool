@@ -12,61 +12,49 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    class 平台訂單回單轉換_Friday : 可格式化_Csv
+    class 平台訂單回單轉換_Friday : 可寫入介面_CSV
     {
         private static string 全速配編號 = "4";
         private static string 宅配通編號 = "3";
 
-        protected 平台訂單新增資料 _Data;
+        public string 分類 { get { return null; } }
 
-        public 平台訂單回單轉換_Friday(平台訂單新增資料 Data_)
+        public string 分格號 { get { return ","; } }
+
+        public string 密碼 { get { return null; } }
+
+        private IEnumerable<平台訂單新增資料> _資料列;
+
+        public 平台訂單回單轉換_Friday(IEnumerable<平台訂單新增資料> 資料列_)
         {
-            _Data = Data_;
+            _資料列 = 資料列_;
         }
 
-        [CsvColumn(Name = "訂單編號", FieldIndex = 1)]
-        public string 訂單編號
+        public void 寫入(CSVBuilder Builder_)
         {
-            get
-            {
-                return _Data.訂單編號;
-            }
-        }
+            Builder_.加入標頭("訂單編號", "出貨單號", "宅配廠商代碼", "宅配單號");
 
-        [CsvColumn(Name = "出貨單號", FieldIndex = 2)]
-        public string 出貨單號
-        {
-            get
+            foreach (平台訂單新增資料 資料_ in _資料列)
             {
-                return 函式.取得字串(_Data.額外資訊, 4);
-            }
-        }
-
-        [CsvColumn(Name = "宅配廠商代碼", FieldIndex = 3)]
-        public string 配送公司
-        {
-            get
-            {
-                switch (_Data.配送公司)
+                string 宅配廠商代碼_;
+                switch (資料_.配送公司)
                 {
                     case 列舉.配送公司.全速配:
-                        return 全速配編號;
+                        宅配廠商代碼_ = 全速配編號;
+                        break;
                     case 列舉.配送公司.宅配通:
-                        return 宅配通編號;
+                        宅配廠商代碼_ = 宅配通編號;
+                        break;
                     default:
-                        if (_Data.處理狀態 != 列舉.訂單處理狀態.忽略)
-                            訊息管理器.獨體.錯誤("平台訂單回單轉換_Friday 不支援配送公司 " + _Data.配送公司.ToString());
-                        return 字串.空;
+                    {
+                        if (資料_.處理狀態 != 列舉.訂單處理狀態.忽略)
+                            throw new Exception("平台訂單回單轉換_Friday 不支援配送公司 " + 資料_.配送公司.ToString());
+                        宅配廠商代碼_ = 字串.空;
+                        break;
+                    }   
                 }
-            }
-        }
 
-        [CsvColumn(Name = "宅配單號", FieldIndex = 4)]
-        public string 配送單號
-        {
-            get
-            {
-                return _Data.配送單號;
+                Builder_.加入(資料_.訂單編號, 資料_.內容[3], 資料_.配送單號, 宅配廠商代碼_, 資料_.配送單號);
             }
         }
     }

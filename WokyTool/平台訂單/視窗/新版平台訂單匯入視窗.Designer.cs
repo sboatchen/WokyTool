@@ -56,10 +56,12 @@
             this.平台訂單匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.匯入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.中華電信_午洋ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.中華電信午洋ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.東森洋承ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.friday田和豐ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.東森洋承ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.friday午洋ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收方式BindingSource)).BeginInit();
@@ -108,10 +110,11 @@
             this.錯誤訊息DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.平台訂單匯入資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 28);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1369, 529);
+            this.dataGridView1.Size = new System.Drawing.Size(1825, 663);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -256,60 +259,79 @@
             // 
             // menuStrip2
             // 
+            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.匯入ToolStripMenuItem,
             this.檢查ToolStripMenuItem,
             this.匯出ToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1369, 24);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip2.Size = new System.Drawing.Size(1825, 28);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
             // 匯入ToolStripMenuItem
             // 
             this.匯入ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.中華電信_午洋ToolStripMenuItem,
-            this.東森洋承ToolStripMenuItem});
+            this.中華電信午洋ToolStripMenuItem,
+            this.東森洋承ToolStripMenuItem,
+            this.friday田和豐ToolStripMenuItem,
+            this.friday午洋ToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
-            this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.匯入ToolStripMenuItem.Text = "匯入        ";
             // 
-            // 中華電信_午洋ToolStripMenuItem
+            // 中華電信午洋ToolStripMenuItem
             // 
-            this.中華電信_午洋ToolStripMenuItem.Name = "中華電信_午洋ToolStripMenuItem";
-            this.中華電信_午洋ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.中華電信_午洋ToolStripMenuItem.Text = "中華電信_午洋";
-            this.中華電信_午洋ToolStripMenuItem.Click += new System.EventHandler(this.中華電信_午洋ToolStripMenuItem_Click);
+            this.中華電信午洋ToolStripMenuItem.Name = "中華電信午洋ToolStripMenuItem";
+            this.中華電信午洋ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.中華電信午洋ToolStripMenuItem.Text = "中華電信_午洋";
+            this.中華電信午洋ToolStripMenuItem.Click += new System.EventHandler(this.中華電信午洋ToolStripMenuItem_Click);
+            // 
+            // 東森洋承ToolStripMenuItem
+            // 
+            this.東森洋承ToolStripMenuItem.Name = "東森洋承ToolStripMenuItem";
+            this.東森洋承ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.東森洋承ToolStripMenuItem.Text = "東森_洋承";
+            this.東森洋承ToolStripMenuItem.Click += new System.EventHandler(this.東森洋承ToolStripMenuItem_Click);
+            // 
+            // friday田和豐ToolStripMenuItem
+            // 
+            this.friday田和豐ToolStripMenuItem.Name = "friday田和豐ToolStripMenuItem";
+            this.friday田和豐ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.friday田和豐ToolStripMenuItem.Text = "Friday_田和豐";
+            this.friday田和豐ToolStripMenuItem.Click += new System.EventHandler(this.friday田和豐ToolStripMenuItem_Click);
             // 
             // 檢查ToolStripMenuItem
             // 
             this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
-            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.檢查ToolStripMenuItem.Text = "檢查";
             this.檢查ToolStripMenuItem.Click += new System.EventHandler(this.檢查ToolStripMenuItem_Click);
             // 
             // 匯出ToolStripMenuItem
             // 
             this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
-            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.匯出ToolStripMenuItem.Text = "匯出";
             this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
             // 
-            // 東森洋承ToolStripMenuItem
+            // friday午洋ToolStripMenuItem
             // 
-            this.東森洋承ToolStripMenuItem.Name = "東森洋承ToolStripMenuItem";
-            this.東森洋承ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.東森洋承ToolStripMenuItem.Text = "東森_洋承";
-            this.東森洋承ToolStripMenuItem.Click += new System.EventHandler(this.東森洋承ToolStripMenuItem_Click);
+            this.friday午洋ToolStripMenuItem.Name = "friday午洋ToolStripMenuItem";
+            this.friday午洋ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.friday午洋ToolStripMenuItem.Text = "Friday_午洋";
+            this.friday午洋ToolStripMenuItem.Click += new System.EventHandler(this.friday午洋ToolStripMenuItem_Click);
             // 
             // 新版平台訂單匯入視窗
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1369, 553);
+            this.ClientSize = new System.Drawing.Size(1825, 691);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "新版平台訂單匯入視窗";
             this.Text = "平台訂單匯入視窗";
             ((System.ComponentModel.ISupportInitialize)(this.配送公司BindingSource)).EndInit();
@@ -357,7 +379,9 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn 代收方式DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 代收金額DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 錯誤訊息DataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripMenuItem 中華電信_午洋ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 中華電信午洋ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 東森洋承ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem friday田和豐ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem friday午洋ToolStripMenuItem;
     }
 }

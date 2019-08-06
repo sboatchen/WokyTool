@@ -62,5 +62,12 @@ namespace WokyTool.測試
             i.Show();
             i.BringToFront();
         }
+
+        private void 訊息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var i = new 訊息測試視窗();
+            i.Show();
+            i.BringToFront();
+        }
     }
 }
