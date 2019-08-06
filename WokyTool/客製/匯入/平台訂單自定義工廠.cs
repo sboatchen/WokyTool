@@ -100,9 +100,6 @@ namespace WokyTool.客製
                 case "friday":
                     介面_ = new 平台訂單自定義_Friday();
                     break;
-                case "東森":
-                    介面_ = new 平台訂單自定義_東森();
-                    break;
                 case "森森":
                     介面_ = new 平台訂單自定義_森森();
                     break;
@@ -114,6 +111,12 @@ namespace WokyTool.客製
                     break; 
                 case "陳沂":
                     介面_ = new 平台訂單自定義_陳沂();
+                    break;
+                case "中華電信":
+                    介面_ = new 平台訂單匯入轉換_中華電信();
+                    break;
+                case "東森":
+                    介面_ = new 平台訂單匯入轉換_東森();
                     break;
                 default:
                     訊息管理器.獨體.錯誤("平台訂單自定義工廠::不支援 " + 客戶_.名稱);

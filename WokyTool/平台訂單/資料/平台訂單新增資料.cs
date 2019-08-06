@@ -179,6 +179,12 @@ namespace WokyTool.平台訂單
         public Dictionary<int, Object> 額外資訊 { get; set; }
 
         [JsonProperty]
+        public string[] 標頭 { get; set; }
+
+        [JsonProperty]
+        public string[] 內容 { get; set; }
+
+        [JsonProperty]
         public int 配送分組 { get; set; }
 
         [JsonProperty]
@@ -255,6 +261,8 @@ namespace WokyTool.平台訂單
             代收金額 = 0,
 
             額外資訊 = null,
+            標頭 = null,
+            內容 = null,
 
             配送分組 = 0,
 
@@ -301,6 +309,8 @@ namespace WokyTool.平台訂單
             代收金額 = 0,
 
             額外資訊 = null,
+            標頭 = null,
+            內容 = null,
 
             配送分組 = 0,
 
@@ -347,6 +357,8 @@ namespace WokyTool.平台訂單
                 代收金額 = Value.代收金額,
 
                 額外資訊 = Value.額外資訊,
+                標頭 = Value.標頭,
+                內容 = Value.內容,
 
                 發票號碼 = Value.發票號碼,
 
@@ -392,6 +404,8 @@ namespace WokyTool.平台訂單
                 代收金額 = this.代收金額,
 
                 額外資訊 = this.額外資訊,
+                標頭 = this.標頭,
+                內容 = this.內容,
 
                 發票號碼 = this.發票號碼,
             };
@@ -431,6 +445,8 @@ namespace WokyTool.平台訂單
             代收金額 = Data_.代收金額;
 
             額外資訊 = Data_.額外資訊;
+            標頭 = Data_.標頭;
+            內容 = Data_.內容;
 
             發票號碼 = Data_.發票號碼;
         }

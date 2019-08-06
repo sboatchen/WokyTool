@@ -103,7 +103,7 @@ namespace WokyTool.測試
             Console.WriteLine("-----------");
         }
 
-        public 讀寫測試資料 讀出資料(string[] 資料列_)
+        public IEnumerable<讀寫測試資料> 讀出資料(string[] 資料列_)
         {
             讀寫測試資料 新資料 = new 讀寫測試資料
             {
@@ -115,7 +115,7 @@ namespace WokyTool.測試
                 列舉 = 資料列_[5].轉成列舉<列舉.編號>()
             };
 
-            return 新資料;
+            yield return 新資料;
         }
     }
 }

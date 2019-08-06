@@ -65,6 +65,17 @@ namespace WokyTool.通用
             }
         }
 
+        //("yyyyMMdd")
+        protected static string _明天日期;
+        public static string 明天日期
+        {
+            get
+            {
+                更新時間快取();
+                return _明天日期;
+            }
+        }
+
         public static string 目前時間
         {
             get
@@ -94,6 +105,7 @@ namespace WokyTool.通用
             _目前日期_斜線 = _今天.ToString("yyyy/MM/dd");
 
             _明天 = _今天.AddDays(1);
+            _明天日期 = _明天.ToString("yyyyMMdd");
 
             _五天後 = _今天.AddDays(5);
 

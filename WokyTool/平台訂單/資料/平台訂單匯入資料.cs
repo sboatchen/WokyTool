@@ -172,6 +172,12 @@ namespace WokyTool.平台訂單
 
         public 平台訂單自定義介面 自定義介面 { get; set; }
 
+        [JsonProperty]
+        public string[] 標頭 { get; set; }
+
+        [JsonProperty]
+        public string[] 內容 { get; set; }
+
         /********************************/
 
         public 平台訂單匯入資料 Self

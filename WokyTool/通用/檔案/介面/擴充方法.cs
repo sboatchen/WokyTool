@@ -12,19 +12,19 @@ namespace WokyTool.通用
 {
     public static class 擴充方法_檔案
     {
-        private static string[] CSV資料切割_ = new string[] { "\r\n", "\r", "\n" };
-        private static string CSV欄位切割_ = "{0}(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))";
+        private static string[] _CSV資料切割 = new string[] { "\r\n", "\r", "\n" };
+        private static string _CSV欄位切割 = "{0}(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))";
 
         public static IEnumerable<T> 讀出<T>(this 可讀出介面_CSV<T> 轉換_, string 內容_)
         {
             if (String.IsNullOrEmpty(內容_))
                 yield break;
 
-            string 欄位切割_ = string.Format(CSV欄位切割_, 轉換_.分格號);
+            string 欄位切割_ = string.Format(_CSV欄位切割, 轉換_.分格號);
             Regex 欄位解析_ = new Regex(欄位切割_);
 
             bool 是否檢查標頭_ = 轉換_.是否有標頭;
-            foreach (string 資料_ in 內容_.Split(CSV資料切割_, StringSplitOptions.RemoveEmptyEntries))
+            foreach (string 資料_ in 內容_.Split(_CSV資料切割, StringSplitOptions.RemoveEmptyEntries))
             {
                 string[] 資料列_ = 欄位解析_.Split(資料_);
 
@@ -35,7 +35,8 @@ namespace WokyTool.通用
                     continue;
                 }
 
-                yield return 轉換_.讀出資料(資料列_);
+                foreach (T 子資料_ in 轉換_.讀出資料(資料列_))
+                    yield return 子資料_;
             }
         }
 
@@ -100,8 +101,9 @@ namespace WokyTool.通用
 
             foreach (string[] 資料列_ in 資料暫存_)
             {
-                yield return 轉換_.讀出資料(資料列_);
-            }
+                foreach(T 資料_ in 轉換_.讀出資料(資料列_))
+                    yield return 資料_;
+            }   
         }
 
         public static string 轉成字串(this string 內容_)

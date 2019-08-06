@@ -247,13 +247,14 @@
       <DependentUpon>客戶選取元件.cs</DependentUpon>
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
+    <Compile Include="客製\匯入\平台訂單匯入轉換_東森.cs" />
+    <Compile Include="客製\匯入\平台訂單匯入轉換_中華電信.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_陳沂.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_手作.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_一休.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_Momo第三方.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_Momo.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_森森.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_東森.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_Friday.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_ibonMart.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_myfone.cs" />
@@ -268,6 +269,7 @@
     <Compile Include="客製\匯入\平台訂單自定義_遠傳加購.cs" />
     <Compile Include="客製\匯入\平台訂單自定義介面.cs" />
     <Compile Include="客製\匯入\平台訂單自定義工廠.cs" />
+    <Compile Include="客製\回單轉換\平台訂單回單轉換_中華電信.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_總金額_一休_陳沂_手作.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_手作.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_陳沂.cs" />
@@ -296,6 +298,12 @@
     <Compile Include="平台訂單\控制\平台訂單新增資料管理器.cs" />
     <Compile Include="平台訂單\控制\平台訂單匯入設定管理器.cs" />
     <Compile Include="平台訂單\控制\平台訂單匯入管理器.cs" />
+    <Compile Include="平台訂單\視窗\新版平台訂單匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="平台訂單\視窗\新版平台訂單匯入視窗.Designer.cs">
+      <DependentUpon>新版平台訂單匯入視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="平台訂單\視窗\平台訂單匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -634,6 +642,9 @@
     <Compile Include="通用\檔案\檔案_CSV.cs" />
     <Compile Include="通用\檔案\檔案_EXCEL.cs" />
     <Compile Include="通用\其他\系統參數.cs" />
+    <Compile Include="通用\視窗\樣板\新版匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="通用\視窗\樣板\新版總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -648,10 +659,12 @@
     <Compile Include="通用\可列舉\介面\可列舉資料管理介面.cs" />
     <Compile Include="通用\資料99\介面\可選取資料列管理介面99.cs" />
     <Compile Include="通用\資料99\可記錄資料99.cs" />
+    <Compile Include="通用\資料\介面\可匯入資料.cs" />
     <Compile Include="通用\資料\介面\可記錄資料.cs" />
     <Compile Include="通用\資料\介面\可編輯資料.cs" />
     <Compile Include="通用\資料\介面\基本資料.cs" />
     <Compile Include="通用\資料99\可匯入資料99.cs" />
+    <Compile Include="通用\資料\管理\可匯入資料管理器.cs" />
     <Compile Include="通用\資料\管理\可儲存資料管理器.cs" />
     <Compile Include="配送\介面\可配送介面.cs" />
     <Compile Include="通用\資料99\動態匯入\通用檔案匯入設定資料.cs" />
@@ -1038,6 +1051,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="幣值\視窗\幣值總覽視窗.resx">
       <DependentUpon>幣值總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="平台訂單\視窗\新版平台訂單匯入視窗.resx">
+      <DependentUpon>新版平台訂單匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="平台訂單\視窗\平台訂單匯入視窗.resx">
       <DependentUpon>平台訂單匯入視窗.cs</DependentUpon>
