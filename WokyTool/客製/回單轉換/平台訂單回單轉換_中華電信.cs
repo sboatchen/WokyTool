@@ -13,13 +13,13 @@ namespace WokyTool.客製
 {
     public class 平台訂單回單轉換_中華電信 : 可寫入介面_EXCEL
     {
-        public String 分類 { get { return null; } }
+        public string 分類 { get { return null; } }
 
-        public String 樣板 { get { return null; } }
+        public string 樣板 { get { return null; } }
 
         public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
 
-        public String 密碼 { get { return null; } }
+        public string 密碼 { get { return null; } }
 
         private IEnumerable<平台訂單新增資料> _資料列;
 
@@ -53,8 +53,7 @@ namespace WokyTool.客製
                         App_.Cells[目前行數_, 3] = 字串.宅配通;
                         break;
                     default:
-                        訊息管理器.獨體.錯誤("平台訂單回單轉換_中華電信 不支援配送公司 " + 資料_.配送公司.ToString());
-                        break;
+                        throw new Exception("平台訂單回單轉換_中華電信 不支援配送公司 " + 資料_.配送公司.ToString());
                 }
 
                 App_.Cells[目前行數_, 4] = 資料_.配送單號;

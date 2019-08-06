@@ -12,9 +12,9 @@ namespace WokyTool.測試
     {
         private static int 測試編號_ = 0;
 
-        public String 分類 { get; set; }
+        public string 分類 { get; set; }
 
-        public String 分格號 
+        public string 分格號 
         {
             get 
             {
@@ -32,11 +32,11 @@ namespace WokyTool.測試
 
         public int 資料結尾忽略行數 { get { return 0; } }
 
-        public String 樣板 { get; set; }
+        public string 樣板 { get; set; }
 
         public XlFileFormat 格式 { get; set; }
 
-        public String 密碼 { get; set; }
+        public string 密碼 { get; set; }
 
         private IEnumerable<讀寫測試資料> _資料列;
 

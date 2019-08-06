@@ -10,13 +10,13 @@ namespace WokyTool.月結帳
 {
     public class 月結帳支出新增錯誤匯出轉換 : 可寫入介面_EXCEL
     {
-        public String 分類 { get { return null; } }
+        public string 分類 { get { return null; } }
 
-        public String 樣板 { get { return null; } }
+        public string 樣板 { get { return null; } }
 
         public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
 
-        public String 密碼 { get { return null; } }
+        public string 密碼 { get { return null; } }
 
         private IEnumerable<月結帳支出新增匯入資料> _資料列;
 

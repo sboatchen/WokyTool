@@ -12,7 +12,7 @@ namespace WokyTool.發票
 {
     public class 發票匯入管理器 : 匯入資料管理器<發票匯入資料>
     {
-        private const String 樣板設定檔案路徑 = "樣板/發票/匯入設定.json";
+        private const string 樣板設定檔案路徑 = "樣板/發票/匯入設定.json";
 
         public override bool 是否可編輯
         {

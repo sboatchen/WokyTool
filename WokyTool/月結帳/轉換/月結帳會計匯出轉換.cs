@@ -12,13 +12,13 @@ namespace WokyTool.月結帳
 {
     class 月結帳會計匯出轉換 : 可寫入介面_EXCEL
     {
-        public String 分類 { get { return "會計"; } }
+        public string 分類 { get { return "會計"; } }
 
-        public String 樣板 { get { return null; } }
+        public string 樣板 { get { return null; } }
 
         public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
 
-        public String 密碼 { get { return null; } }
+        public string 密碼 { get { return null; } }
 
         private IEnumerable<月結帳會計資料> _資料列;
 

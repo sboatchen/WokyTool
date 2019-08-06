@@ -11,13 +11,13 @@ namespace WokyTool.一般訂單
 {
     public class 一般訂單匯出轉換 : 可寫入介面_EXCEL
     {
-        public String 分類 { get; set; }
+        public string 分類 { get; set; }
 
-        public String 樣板 { get { return null; } }
+        public string 樣板 { get { return null; } }
 
         public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
 
-        public String 密碼 { get { return null; } }
+        public string 密碼 { get { return null; } }
 
         private IEnumerable<一般訂單資料> _資料列;
 

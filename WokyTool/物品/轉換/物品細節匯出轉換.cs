@@ -10,13 +10,13 @@ namespace WokyTool.物品
 {
     public class 物品細節匯出轉換 : 可寫入介面_EXCEL
     {
-        public String 分類 { get { return "細節"; } }
+        public string 分類 { get { return "細節"; } }
 
-        public String 樣板 { get { return null; } }
+        public string 樣板 { get { return null; } }
 
         public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
 
-        public String 密碼 { get { return null; } }
+        public string 密碼 { get { return null; } }
 
         private IEnumerable<物品資料> _資料列;
 

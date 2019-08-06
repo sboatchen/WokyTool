@@ -7,9 +7,9 @@ namespace WokyTool.通用
 {
     public interface 可讀出介面_CSV<T>
     {
-        String 分格號 { get; }
+        string 分格號 { get; }
 
-        String 密碼 { get; }
+        string 密碼 { get; }
 
         bool 是否有標頭 { get; }
 

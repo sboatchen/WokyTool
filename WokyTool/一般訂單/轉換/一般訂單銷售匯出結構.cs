@@ -14,9 +14,9 @@ namespace WokyTool.一般訂單
 {
     public class 一般訂單銷售匯出結構 : 可寫入介面_EXCEL
     {
-        public String 分類 { get { return "明細"; } }
+        public string 分類 { get { return "明細"; } }
 
-        public String 樣板
+        public string 樣板
         {
             get
             {
@@ -29,7 +29,7 @@ namespace WokyTool.一般訂單
 
         public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
 
-        public String 密碼 { get { return null; } }
+        public string 密碼 { get { return null; } }
 
         public 一般訂單新增資料 資料 { get; set; }
 

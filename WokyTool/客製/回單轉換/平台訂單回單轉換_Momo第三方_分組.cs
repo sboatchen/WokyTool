@@ -14,13 +14,13 @@ namespace WokyTool.客製
 {
     public class 平台訂單回單轉換_Momo第三方_分組 : 可寫入介面_EXCEL
     {
-        public String 分類 { get { return null; } }
+        public string 分類 { get { return null; } }
 
-        public String 樣板 { get { return null; } }
+        public string 樣板 { get { return null; } }
 
         public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
 
-        public String 密碼 { get { return null; } }
+        public string 密碼 { get { return null; } }
 
         private IEnumerable<平台訂單新增資料> _資料列;
 

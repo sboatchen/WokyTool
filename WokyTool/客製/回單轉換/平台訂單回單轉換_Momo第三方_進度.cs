@@ -17,13 +17,13 @@ namespace WokyTool.客製
         private static string 可出貨 = "可出貨";
         private static string 已確認指定配送日 = "已確認指定配送日";
 
-        public String 分類 { get { return null; } }
+        public string 分類 { get { return null; } }
 
-        public String 樣板 { get { return null; } }
+        public string 樣板 { get { return null; } }
 
         public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
 
-        public String 密碼 { get { return null; } }
+        public string 密碼 { get { return null; } }
 
         private IEnumerable<平台訂單新增資料> _資料列;
 

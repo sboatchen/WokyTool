@@ -7,11 +7,11 @@ namespace WokyTool.通用
 {
     public interface 可寫入介面_CSV
     {
-        String 分類 { get; }
+        string 分類 { get; }
 
-        String 分格號 { get; }
+        string 分格號 { get; }
 
-        String 密碼 { get; }
+        string 密碼 { get; }
 
         void 寫入(CSVBuilder Builder_);
     }

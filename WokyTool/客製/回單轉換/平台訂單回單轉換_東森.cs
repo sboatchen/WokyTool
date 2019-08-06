@@ -18,7 +18,7 @@ namespace WokyTool.客製
 
         public string 分格號 { get { return ","; } }
 
-        public String 密碼 { get { return null; } }
+        public string 密碼 { get { return null; } }
 
         private IEnumerable<平台訂單新增資料> _資料列;
 
@@ -48,8 +48,7 @@ namespace WokyTool.客製
                         輸出資料_[18] =  字串.宅配通;
                         break;
                     default:
-                        訊息管理器.獨體.錯誤("平台訂單回單轉換_東森 不支援配送公司 " + 資料_.配送公司.ToString());
-                        break;
+                        throw new Exception("平台訂單回單轉換_東森 不支援配送公司 " + 資料_.配送公司.ToString());
                 }
 
                 輸出資料_[19] = 資料_.配送單號;

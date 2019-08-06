@@ -12,17 +12,17 @@ namespace WokyTool.商品
 {
     public class 商品總覽匯出轉換 : 可寫入介面_EXCEL
     {
-        public String 分類 { get; set; }
+        public string 分類 { get; set; }
 
-        public String 樣板 { get { return null; } }
+        public string 樣板 { get { return null; } }
 
         public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
 
-        public String 密碼 { get { return null; } }
+        public string 密碼 { get { return null; } }
 
         private IEnumerable<商品資料> _資料列;
 
-        public 商品總覽匯出轉換(String 分類_, IEnumerable<商品資料> 資料列_)
+        public 商品總覽匯出轉換(string 分類_, IEnumerable<商品資料> 資料列_)
         {
             分類 = 分類_;
             _資料列 = 資料列_;

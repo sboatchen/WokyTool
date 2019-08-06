@@ -11,13 +11,13 @@ namespace WokyTool.月結帳
 {
     public class 月結帳商品統計匯出轉換 : 可寫入介面_EXCEL
     {
-        public String 分類 { get { return "總覽"; } }
+        public string 分類 { get { return "總覽"; } }
 
-        public String 樣板 { get { return null; } }
+        public string 樣板 { get { return null; } }
 
         public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
 
-        public String 密碼 { get { return null; } }
+        public string 密碼 { get { return null; } }
 
         private Dictionary<商品.商品資料, 月結帳商品統計暫存資料> Map_;
 

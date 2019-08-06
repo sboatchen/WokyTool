@@ -136,7 +136,7 @@ namespace WokyTool.使用者
                 return Item_;
         }
 
-        public 使用者資料 登入(String 帳號_, String 密碼_)
+        public 使用者資料 登入(String 帳號_, string 密碼_)
         {
             if (使用者 != 錯誤資料)
                 throw new Exception("已登入:" + 使用者.名稱);
