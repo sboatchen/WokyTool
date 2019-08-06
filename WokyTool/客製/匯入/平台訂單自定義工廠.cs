@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WokyTool.公司;
 using WokyTool.平台訂單;
 using WokyTool.客戶;
 using WokyTool.通用;
@@ -13,10 +14,7 @@ namespace WokyTool.客製
     {
         public static 平台訂單自定義介面 MOMO第三方 = new 平台訂單自定義_Momo第三方();
 
-        private Dictionary<客戶資料, 平台訂單自定義介面> _Map;
-
-        private 客戶資料 _快取客戶;
-        private 平台訂單自定義介面 _快取自定義;
+        private Dictionary<int, 平台訂單自定義介面> _Map;
 
         // 獨體
         private static readonly 平台訂單自定義工廠 _獨體 = new 平台訂單自定義工廠();
@@ -30,24 +28,16 @@ namespace WokyTool.客製
 
         private 平台訂單自定義工廠()
         {
-            _Map = new Dictionary<客戶資料, 平台訂單自定義介面>();
-
-            _快取客戶 = null;
-            _快取自定義 = null;
+            _Map = new Dictionary<int, 平台訂單自定義介面>();
         }
 
-        public 平台訂單自定義介面 取得自定義(客戶資料 客戶_)
+        public 平台訂單自定義介面 取得自定義(公司資料 公司_, 客戶資料 客戶_)
         {
-            if (客戶_ == _快取客戶)
-                return _快取自定義;
+            int Hash_ = 公司_.編號 * 10000 + 客戶_.編號;
 
             平台訂單自定義介面 介面_ = null;
-            if (_Map.TryGetValue(客戶_, out 介面_))
-            {
-                _快取客戶 = 客戶_;
-                _快取自定義 = 介面_;
+            if (_Map.TryGetValue(Hash_, out 介面_))
                 return 介面_;
-            }
 
             String 名稱_ = 客戶_.名稱.ToLower().Replace(" ", "");
 
@@ -96,10 +86,6 @@ namespace WokyTool.客製
                 case "ibonmart":
                     介面_ = new 平台訂單自定義_ibonMart();
                     break;
-                case "gohappy":
-                case "friday":
-                    介面_ = new 平台訂單自定義_Friday();
-                    break;
                 case "森森":
                     介面_ = new 平台訂單自定義_森森();
                     break;
@@ -112,20 +98,24 @@ namespace WokyTool.客製
                 case "陳沂":
                     介面_ = new 平台訂單自定義_陳沂();
                     break;
+
+
+
                 case "中華電信":
-                    介面_ = new 平台訂單匯入轉換_中華電信();
+                    介面_ = new 平台訂單匯入轉換_中華電信(公司_);
                     break;
                 case "東森":
-                    介面_ = new 平台訂單匯入轉換_東森();
+                    介面_ = new 平台訂單匯入轉換_東森(公司_);
+                    break;
+                case "friday":
+                    介面_ = new 平台訂單匯入轉換_Friday(公司_);
                     break;
                 default:
                     訊息管理器.獨體.錯誤("平台訂單自定義工廠::不支援 " + 客戶_.名稱);
                     return null;
             }
 
-            _快取客戶 = 客戶_;
-            _快取自定義 = 介面_;
-            _Map.Add(客戶_, 介面_);
+            _Map.Add(Hash_, 介面_);
 
             return 介面_;
         }
@@ -135,7 +125,7 @@ namespace WokyTool.客製
             if(平台訂單匯入設定資料_.名稱.ToLower().Contains("momo第三方"))
                 return MOMO第三方;
 
-            return 取得自定義(平台訂單匯入設定資料_.客戶);
+            return 取得自定義(平台訂單匯入設定資料_.公司, 平台訂單匯入設定資料_.客戶);
         }
     }
 }

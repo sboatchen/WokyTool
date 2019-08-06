@@ -199,7 +199,7 @@ namespace WokyTool.平台訂單
             get
             {
                 if (_自定義介面 == null)
-                    _自定義介面 = 平台訂單自定義工廠.獨體.取得自定義(this.客戶);
+                    _自定義介面 = 平台訂單自定義工廠.獨體.取得自定義(this.公司, this.客戶);
                 return _自定義介面;
             }
             set 

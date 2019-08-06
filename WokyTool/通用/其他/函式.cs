@@ -72,5 +72,24 @@ namespace WokyTool.通用
 
             return X_ == Y_;
         }
+
+        private static StringBuilder _商品識別SB = new StringBuilder();
+        public static String 取得商品識別(params string[] 資料列_)
+        {
+            _商品識別SB.Clear();
+
+            foreach (string 資料_ in 資料列_)
+            {
+                if (string.IsNullOrEmpty(資料_))
+                    continue;
+
+                if (_商品識別SB.Length > 0)
+                    _商品識別SB.Append('@');
+
+                _商品識別SB.Append(資料_);
+            }
+
+            return _商品識別SB.ToString();
+        }
     }
 }

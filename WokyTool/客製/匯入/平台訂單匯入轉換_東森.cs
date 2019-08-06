@@ -35,12 +35,6 @@ namespace WokyTool.客製
 
         protected string[] _標頭列;
 
-        public 平台訂單匯入轉換_東森()
-        {
-            公司 = 公司資料管理器.獨體.Get("洋承");
-            客戶 = 客戶資料管理器.獨體.Get("東森");
-        }
-
         public 平台訂單匯入轉換_東森(公司資料 公司_)
         {
             公司 = 公司_;
@@ -51,10 +45,6 @@ namespace WokyTool.客製
         {
             this._標頭列 = 標頭列_;
         }
-
-
-        private static string[] _資料切割 = new string[] {"\n" };
-        private static string[] _欄位切割 = new string[] {",數量:", ",單價:"};
 
         public IEnumerable<平台訂單匯入資料> 讀出資料(string[] 資料列_)
         {
@@ -77,7 +67,7 @@ namespace WokyTool.客製
             string 商品編號_ = 資料列_[5].轉成字串();
             string 款式_ = 資料列_[8].轉成字串();
             string 顏色_ = 資料列_[7].轉成字串();
-            String 商品識別_ = 商品識別_ = string.Format("{0}@{1}@{2}", 商品編號_, 款式_, 顏色_);
+            string 商品識別_ = 函式.取得商品識別(商品編號_, 款式_, 顏色_);
             商品資料 商品_ = 商品資料管理器.獨體.Get(客戶.編號, 商品識別_);
 
             int 數量_ = 資料列_[11].轉成整數();
