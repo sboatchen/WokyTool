@@ -24,7 +24,7 @@ namespace WokyTool.客製
 
         public virtual String 取得分組識別(平台訂單新增資料 資料_)
         {
-            return String.Format("{0}_{1}_{2}", 資料_.客戶.名稱, 資料_.姓名, 資料_.地址);
+            return String.Format("{0}_{1}_{2}_{3}", 資料_.公司.名稱, 資料_.客戶.名稱, 資料_.姓名, 資料_.地址);
         }
 
         public virtual String 取得配送姓名(平台訂單新增資料 資料_)

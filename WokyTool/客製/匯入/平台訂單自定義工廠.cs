@@ -12,7 +12,7 @@ namespace WokyTool.客製
 {
     public class 平台訂單自定義工廠
     {
-        public static 平台訂單自定義介面 MOMO第三方 = new 平台訂單自定義_Momo第三方();
+        public static 平台訂單自定義介面 MOMO第三方 = new 平台訂單匯入轉換_Momo第三方(null);
 
         private Dictionary<int, 平台訂單自定義介面> _Map;
 

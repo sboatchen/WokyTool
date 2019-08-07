@@ -247,13 +247,13 @@
       <DependentUpon>客戶選取元件.cs</DependentUpon>
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
+    <Compile Include="客製\匯入\平台訂單匯入轉換_Momo第三方.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_Friday.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_東森.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_中華電信.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_陳沂.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_手作.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_一休.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_Momo第三方.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_Momo.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_森森.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_ibonMart.cs" />
