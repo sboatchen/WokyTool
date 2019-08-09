@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,20 +9,17 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public class 總覽視窗 : Form, 通用視窗介面
+    public class 匯入視窗 : Form, 通用視窗介面
     {
-        protected BindingSource 資料BindingSource;
-
-        protected int _資料版本;
-
-        protected 可編輯資料列管理介面 _資料管理器;
-
         protected bool _是否關閉 = false;
+        protected 可編輯資料列管理介面 _資料管理器 = null;
+        protected BindingSource 資料BindingSource = null;
+        protected int _資料版本;
 
         public void 初始化(BindingSource 資料BindingSource_, 可編輯資料列管理介面 資料管理器_)
         {
-            this.資料BindingSource = 資料BindingSource_;
             this._資料管理器 = 資料管理器_;
+            this.資料BindingSource = 資料BindingSource_;
 
             this.Activated += new System.EventHandler(this._視窗激活);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);
@@ -33,10 +31,19 @@ namespace WokyTool.通用
                 return;
 
             視窗激活();
-
             if (_資料版本 != _資料管理器.可編輯資料列版本)
             {
                 _資料版本 = _資料管理器.可編輯資料列版本;
+
+                try
+                {
+                    _資料管理器.檢查合法();
+                }
+                catch
+                {
+                    ;
+                }
+
                 this.資料BindingSource.DataSource = _資料管理器.可編輯資料列;
                 this.資料BindingSource.ResetBindings(false);
             }
@@ -44,6 +51,21 @@ namespace WokyTool.通用
 
         protected virtual void 視窗激活()
         {
+        }
+
+        protected void 更新資料合法性()
+        {
+            try
+            {
+                _資料管理器.檢查合法();
+            }
+            catch(Exception ex)
+            {
+                訊息管理器.獨體.通知(ex.Message);
+            }
+
+            _資料管理器.資料異動();
+            this.OnActivated(null);
         }
 
         private void _視窗關閉(object sender, FormClosingEventArgs e)
@@ -67,18 +89,12 @@ namespace WokyTool.通用
                 }
             }
 
-            if (!(e is 視窗關閉事件))
-            {
-                e.Cancel = true;
-                this.Hide();
-            }
-
             視窗關閉();
         }
 
         protected virtual void 視窗關閉()
         {
- 
+
         }
 
         /********************************/
@@ -110,9 +126,12 @@ namespace WokyTool.通用
             _視窗關閉(null, new 視窗關閉事件());
         }
 
-        public bool 是否顯現()
+        public bool 是否顯現
         {
-            return this.Visible;
+            get{
+                return this.Visible;
+            }
         }
     }
 }
+

@@ -14,7 +14,7 @@ using WokyTool.通用;
 
 namespace WokyTool.測試
 {
-    public class 讀寫測試資料管理器 : 資料來源管理器<讀寫測試資料>
+    public class 讀寫測試資料管理器 : 可管理資料管理器<讀寫測試資料>
     {
         protected List<讀寫測試資料> _資料列 = null;
 

@@ -134,9 +134,12 @@ namespace WokyTool.通用
             _視窗關閉(null, new 視窗關閉事件());
         }
 
-        public bool 是否顯現()
+        public bool 是否顯現
         {
-            return this.Visible;
+            get
+            {
+                return this.Visible;
+            }
         }
     }
 }

@@ -13,7 +13,7 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.通用
 {
-    public abstract class 資料來源管理器<T> : 可列舉資料來源管理介面 where T : 可編輯資料<T>
+    public abstract class 可管理資料管理器<T> : 可列舉資料來源管理介面 where T : 可編輯資料<T>
     {
         public int 資料版本 { get; protected set; }
 
@@ -27,22 +27,22 @@ namespace WokyTool.通用
 
         public abstract void 更新資料(object 資料列_);
 
-        public 可清單列舉資料管理介面 資料清單管理器
+        public 可清單列舉資料管理介面 清單管理器
         {
             get
             {
-                return new 資料清單管理器<T>(this, 取得篩選介面(), 取得清單特殊選項());
+                return new 可清單資料管理器<T>(this, 取得篩選介面(), 取得清單特殊選項());
             }
         }
 
-        private 資料編輯管理器<T> _資料編輯管理器獨體 = null;
-        public 可編輯列舉資料管理介面 資料編輯管理器
+        private 可編輯列舉資料管理介面 _編輯管理器獨體 = null;
+        public 可編輯列舉資料管理介面 編輯管理器
         {
             get
             {
-                if (_資料編輯管理器獨體 == null)
-                    _資料編輯管理器獨體 = new 資料編輯管理器<T>(this, 取得篩選介面(), 是否可編輯);
-                return _資料編輯管理器獨體;
+                if (_編輯管理器獨體 == null)
+                    _編輯管理器獨體 = new 可編輯資料管理器<T>(this, 取得篩選介面(), 是否可編輯);
+                return _編輯管理器獨體;
             }
         }
 

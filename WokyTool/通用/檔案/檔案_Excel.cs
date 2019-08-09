@@ -186,7 +186,7 @@ namespace WokyTool.通用
                 return null;
 
             // 備份
-            if (false == 備份(OFD_.FileName, typeof(T).Name, "檔案讀出"))
+            if (false == 備份(OFD_.FileName, 轉換_.GetType().Name, "檔案讀出"))
                 return null;
 
             Microsoft.Office.Interop.Excel.Application 應用程式_ = null;

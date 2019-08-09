@@ -13,7 +13,7 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.通用
 {
-    public abstract class 可匯入資料管理器<T> : 資料來源管理器<T>, 可儲存介面 where T : 新版可匯入資料<T>
+    public abstract class 可匯入資料管理器<T> : 可管理資料管理器<T>, 可儲存介面 where T : 新版可匯入資料<T>
     {
         protected override IEnumerable<T> 取得清單特殊選項()
         {

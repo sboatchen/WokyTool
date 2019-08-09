@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
-    //@@@ 待整理
     public class 函式
     {
+        //@@@ 待整理
         public static String 取得字串(Dictionary<int, Object> Map_, int index_)
         {
             Object Value_ = null;
@@ -19,6 +19,7 @@ namespace WokyTool.通用
             return Value_.ToString();
         }
 
+        //@@@ 待整理
         public static object 轉型資料(object dynamic, 列舉.資料格式 資料格式類型)
         {
             if (dynamic == null)
@@ -45,6 +46,7 @@ namespace WokyTool.通用
             }
         }
 
+        //@@@ 待整理
         public static bool 是否一致<T>(List<T> X_, List<T> Y_)
         {
              if(X_ == null && Y_ == null)
@@ -59,6 +61,7 @@ namespace WokyTool.通用
             return X_ == Y_;
         }
 
+        //@@@ 待整理
         public static bool 是否一致<T, P>(Dictionary<P, List<T>> X_, Dictionary<P, List<T>> Y_)
         {
             if (X_ == null && Y_ == null)

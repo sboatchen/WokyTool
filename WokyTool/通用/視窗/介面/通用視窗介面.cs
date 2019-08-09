@@ -14,6 +14,6 @@ namespace WokyTool.通用
         void 隱藏();
         void 關閉();
 
-        bool 是否顯現();    //@@@ 換成 get
+        bool 是否顯現 { get; }
     }
 }

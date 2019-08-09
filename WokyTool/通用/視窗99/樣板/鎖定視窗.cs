@@ -66,9 +66,12 @@ namespace WokyTool.通用
             this.Close();
         }
 
-        public bool 是否顯現()
+        public bool 是否顯現
         {
-            return this.Visible;
+            get
+            {
+                return this.Visible;
+            }
         }
     }
 }

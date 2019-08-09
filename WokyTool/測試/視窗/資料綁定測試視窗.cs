@@ -13,7 +13,7 @@ namespace WokyTool.測試
 {
     public partial class 資料綁定測試視窗 : 新版總覽視窗
     {
-        public override 可編輯列舉資料管理介面 管理介面 { get { return 讀寫測試資料管理器.獨體.資料編輯管理器; } }
+        public override 可編輯列舉資料管理介面 管理介面 { get { return 讀寫測試資料管理器.獨體.編輯管理器; } }
         public override BindingSource 資料BS { get { return this.讀寫測試資料BindingSource; } }
         public override DataGridView 資料GV { get { return this.dataGridView1; } }
 
