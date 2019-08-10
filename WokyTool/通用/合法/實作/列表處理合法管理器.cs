@@ -16,6 +16,11 @@ namespace WokyTool.通用
 {
     public class 列表處理合法管理器 : 可處理合法介面
     {
+        public bool 是否合法
+        {
+            get { return 字串列.Count == 0; }
+        }
+
         private StringBuilder _SB = new StringBuilder();
 
         public List<String> 字串列 { get; set; }
@@ -24,7 +29,6 @@ namespace WokyTool.通用
         {
             字串列 = new List<string>();
         }
-
 
         public void 錯誤(基本資料 資料_, string 訊息_)
         {

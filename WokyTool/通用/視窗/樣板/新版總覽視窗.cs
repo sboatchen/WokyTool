@@ -74,7 +74,7 @@ namespace WokyTool.通用
                 }
                 catch (Exception ex)
                 {
-                    訊息管理器.獨體.通知(字串.儲存失敗, ex.Message);
+                    訊息管理器.獨體.通知(字串.操作失敗, ex.Message);
                     e.Cancel = true;
                     是否關閉 = false;
                     return;
@@ -100,7 +100,16 @@ namespace WokyTool.通用
             if (管理介面.是否編輯中)
             {
                 bool Result_ = 訊息管理器.獨體.確認(字串.儲存確認, 字串.排序前儲存確認內容);
-                管理介面.完成編輯(Result_);
+
+                try
+                {
+                    管理介面.完成編輯(Result_);
+                }
+                catch (Exception ex)
+                {
+                    訊息管理器.獨體.通知(字串.操作失敗, ex.Message);
+                    return;
+                }
             }
 
             var col = 資料GV.Columns[e.ColumnIndex];

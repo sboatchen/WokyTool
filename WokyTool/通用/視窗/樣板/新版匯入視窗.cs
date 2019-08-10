@@ -63,20 +63,12 @@ namespace WokyTool.通用
         {
         }
 
-        /*protected void 更新資料合法性()
+        protected void 更新資料合法性()
         {
-            try
-            {
-                管理介面.檢查合法();
-            }
-            catch(Exception ex)
-            {
-                訊息管理器.獨體.通知(ex.Message);
-            }
-
-            管理介面.資料異動();
-            this.OnActivated(null);
-        }*/
+            管理介面.檢查合法(new 匯入處理合法管理器());
+            //@@ 更新資料版本??
+            //@@ 錯誤呈現紅色??
+        }
 
         private void _視窗關閉(object sender, FormClosingEventArgs e)
         {
@@ -92,7 +84,7 @@ namespace WokyTool.通用
                 }
                 catch (Exception ex)
                 {
-                    訊息管理器.獨體.通知(字串.儲存失敗, ex.Message);
+                    訊息管理器.獨體.通知(字串.操作失敗, ex.Message);
                     e.Cancel = true;
                     是否關閉 = false;
                     return;
@@ -112,7 +104,16 @@ namespace WokyTool.通用
             if (管理介面.是否編輯中)
             {
                 bool Result_ = 訊息管理器.獨體.確認(字串.儲存確認, 字串.排序前儲存確認內容);
-                管理介面.完成編輯(Result_);
+
+                try
+                {
+                    管理介面.完成編輯(Result_);
+                }
+                catch (Exception ex)
+                {
+                    訊息管理器.獨體.通知(字串.操作失敗, ex.Message);
+                    return;
+                }
             }
 
             var col = 資料GV.Columns[e.ColumnIndex];

@@ -16,18 +16,17 @@ namespace WokyTool.通用
 {
     public class 匯入處理合法管理器 : 可處理合法介面
     {
-        private StringBuilder _SB = new StringBuilder();
-
-        public List<String> 字串列 { get; set; }
+        public bool 是否合法 { get; protected set; }
 
         public 匯入處理合法管理器()
         {
-            字串列 = new List<string>();
+            是否合法 = true;
         }
-
 
         public void 錯誤(基本資料 資料_, string 訊息_)
         {
+            是否合法 = false;
+
             可匯入資料 可匯入資料_ = 資料_ as 可匯入資料;
             if (可匯入資料_ == null)
                 throw new Exception("匯入處理合法管理器處理失敗:不是可匯入資料");
