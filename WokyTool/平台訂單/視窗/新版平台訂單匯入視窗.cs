@@ -25,9 +25,8 @@ namespace WokyTool.平台訂單
         protected 公司資料 _公司 = null;
         protected 客戶資料 _客戶 = null;
 
+        private int _公司資料版本 = -1;
         private int _商品資料版本 = -1;
-        private int _平台訂單匯入設定資料版本 = -1;
-
 
         //protected 平台訂單匯入詳細視窗 _平台訂單匯入詳細視窗 = null;
 
@@ -46,12 +45,21 @@ namespace WokyTool.平台訂單
             this.匯出ToolStripMenuItem.Enabled = false;
             this.dataGridView1.Enabled = false;
 
+            this._公司資料版本 = 公司資料管理器.獨體.可編輯資料列版本;
+            this.公司.ComboBox.DataSource = 公司資料管理器.獨體.可編輯BList;
+            this.公司.ComboBox.DisplayMember = "名稱";
+            this.公司.ComboBox.ValueMember = "Self";
+            this.公司.ComboBox.FormattingEnabled = true;
+            //this.公司.ComboBox.TabIndex = 10;
+            this.公司.ComboBox.BindingContext = this.BindingContext;  // 這行很重要
+            this.公司.ComboBox.SelectedIndex = 0;
+
             this.dataGridView1.DataError += new DataGridViewDataErrorEventHandler(this._DataGridView錯誤);
         }
 
         private void _DataGridView錯誤(object sender, DataGridViewDataErrorEventArgs e)
         {
-            訊息管理器.獨體.錯誤("資料錯誤:" + e.RowIndex + "," + e.ColumnIndex);
+            訊息管理器.獨體.訊息("資料錯誤:" + e.RowIndex + "," + e.ColumnIndex);
             e.ThrowException = false;
 
             if (e.ColumnIndex == 3)
@@ -61,6 +69,11 @@ namespace WokyTool.平台訂單
         private void 檢查ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             更新資料合法性();
+        }
+
+         private void 公司_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _公司 = (公司資料)((ToolStripComboBox)sender).SelectedItem;
         }
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,10 +95,10 @@ namespace WokyTool.平台訂單
 
         protected override void 視窗激活()
         {
-            if (_平台訂單匯入設定資料版本 != 平台訂單匯入設定資料管理器.獨體.可選取資料列版本)
+            if (_公司資料版本 != 平台訂單匯入設定資料管理器.獨體.可選取資料列版本)
             {
-                _平台訂單匯入設定資料版本 = 平台訂單匯入設定資料管理器.獨體.可選取資料列版本;
-                this.平台訂單匯入設定資料BindingSource.DataSource = 平台訂單匯入設定資料管理器.獨體.可編輯BList.OrderBy(Value => Value.名稱).ToList();   // 這邊不呈現 無/錯誤 所以不選唯讀BList??
+                _公司資料版本 = 公司資料管理器.獨體.可編輯資料列版本;
+                this.公司.ComboBox.DataSource = 公司資料管理器.獨體.可編輯BList;
             }
 
             if (_商品資料版本 != 商品資料管理器.獨體.可選取資料列版本 && _客戶 != null)    // 有資料後才處理
@@ -103,7 +116,7 @@ namespace WokyTool.平台訂單
             //    _平台訂單匯入詳細視窗.關閉();
         }
 
-        private void 匯入完成(IEnumerable<平台訂單匯入資料> 資料列舉_)
+        private void 匯入完成(IEnumerable<平台訂單匯入資料> 資料列舉_, bool momo第三方_ = false)
         {
             _平台訂單匯入管理器.新增(資料列舉_);
             if (_平台訂單匯入管理器.是否正在編輯() == false)
@@ -112,8 +125,12 @@ namespace WokyTool.平台訂單
                 return;
             }
 
-            _平台訂單匯入管理器.平台訂單管理器 = 平台訂單新增資料管理器.獨體;
+            if (momo第三方_)
+                _平台訂單匯入管理器.平台訂單管理器 = Momo第三方平台訂單新增資料管理器.獨體;
+            else
+                _平台訂單匯入管理器.平台訂單管理器 = 平台訂單新增資料管理器.獨體;
 
+            this.公司ToolStripMenuItem.Enabled = false;
             this.匯入ToolStripMenuItem.Enabled = false;
             this.檢查ToolStripMenuItem.Enabled = true;
             this.匯出ToolStripMenuItem.Enabled = true;
@@ -123,10 +140,8 @@ namespace WokyTool.平台訂單
             //this.OnActivated(null);
         }
 
-        private void 中華電信午洋ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 中華電信_Click(object sender, EventArgs e)
         {
-            _公司 = 公司資料管理器.獨體.Get("午洋");
-
             平台訂單匯入轉換_中華電信 轉換_ = new 平台訂單匯入轉換_中華電信(_公司);
             _客戶 = 轉換_.客戶;
 
@@ -135,10 +150,8 @@ namespace WokyTool.平台訂單
             匯入完成(資料列舉_);
         }
 
-        private void 東森洋承ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 東森_Click(object sender, EventArgs e)
         {
-            _公司 = 公司資料管理器.獨體.Get("洋承");
-
             平台訂單匯入轉換_東森 轉換_ = new 平台訂單匯入轉換_東森(_公司);
             _客戶 = 轉換_.客戶;
 
@@ -147,9 +160,8 @@ namespace WokyTool.平台訂單
             匯入完成(資料列舉_);
         }
 
-        private void friday田和豐ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void friday_Click(object sender, EventArgs e)
         {
-            _公司 = 公司資料管理器.獨體.Get("田和豐");
 
             平台訂單匯入轉換_Friday 轉換_ = new 平台訂單匯入轉換_Friday(_公司);
             _客戶 = 轉換_.客戶;
@@ -159,16 +171,14 @@ namespace WokyTool.平台訂單
             匯入完成(資料列舉_);
         }
 
-        private void friday午洋ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Momo第三方_Click(object sender, EventArgs e)
         {
-            _公司 = 公司資料管理器.獨體.Get("午洋");
-
-            平台訂單匯入轉換_Friday 轉換_ = new 平台訂單匯入轉換_Friday(_公司);
+            平台訂單匯入轉換_Momo第三方 轉換_ = new 平台訂單匯入轉換_Momo第三方(_公司);
             _客戶 = 轉換_.客戶;
 
             IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
 
-            匯入完成(資料列舉_);
+            匯入完成(資料列舉_, true);
         }
     }
 }

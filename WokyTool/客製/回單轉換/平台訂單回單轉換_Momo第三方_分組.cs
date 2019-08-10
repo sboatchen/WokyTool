@@ -20,7 +20,7 @@ namespace WokyTool.客製
 
         public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
 
-        public string 密碼 { get { return null; } }
+        public string 密碼 { get { return "0"; } }
 
         private IEnumerable<平台訂單新增資料> _資料列;
 
