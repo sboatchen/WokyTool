@@ -126,6 +126,7 @@
       <DependentUpon>登入視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="使用者\資料\使用者資料.cs" />
+    <Compile Include="使用者\資料\使用者資料篩選.cs" />
     <Compile Include="公司\控制\公司資料管理器.cs" />
     <Compile Include="公司\視窗\公司總覽視窗.cs">
       <SubType>Form</SubType>
@@ -621,13 +622,14 @@
     <Compile Include="通用\其他\函式.cs" />
     <Compile Include="通用\其他\列舉.cs" />
     <Compile Include="通用\其他\擴充方法.cs" />
-    <Compile Include="通用\可列舉\介面\可列舉資料來源管理介面.cs" />
-    <Compile Include="通用\可列舉\介面\可清單列舉資料管理介面.cs" />
-    <Compile Include="通用\可列舉\介面\可篩選介面_視窗.cs" />
-    <Compile Include="通用\可列舉\介面\可編輯列舉資料管理介面.cs" />
-    <Compile Include="通用\可列舉\實作\可管理資料管理器.cs" />
-    <Compile Include="通用\可列舉\實作\可清單資料管理器.cs" />
-    <Compile Include="通用\可列舉\實作\可編輯資料管理器.cs" />
+    <Compile Include="通用\篩選\實作\通用可篩選介面.cs" />
+    <Compile Include="通用\列舉\介面\可列舉資料來源管理介面.cs" />
+    <Compile Include="通用\列舉\介面\可清單列舉資料管理介面.cs" />
+    <Compile Include="通用\篩選\介面\可篩選介面_視窗.cs" />
+    <Compile Include="通用\列舉\介面\可編輯列舉資料管理介面.cs" />
+    <Compile Include="通用\列舉\實作\可管理資料管理器.cs" />
+    <Compile Include="通用\列舉\實作\可清單資料管理器.cs" />
+    <Compile Include="通用\列舉\實作\可編輯資料管理器.cs" />
     <Compile Include="通用\合法\介面\可處理合法介面.cs" />
     <Compile Include="通用\合法\實作\匯入處理合法管理器.cs" />
     <Compile Include="通用\合法\物件\錯誤資料.cs" />
@@ -651,21 +653,24 @@
     <Compile Include="通用\檔案\檔案_CSV.cs" />
     <Compile Include="通用\檔案\檔案_EXCEL.cs" />
     <Compile Include="通用\其他\系統參數.cs" />
+    <Compile Include="通用\視窗\其他\新版抽象選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="通用\視窗\樣板\新版匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="通用\視窗\樣板\新版總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="通用\視窗99\樣板\鎖定視窗.cs">
+    <Compile Include="通用\視窗\樣板\鎖定視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="通用\視窗99\樣板\鎖定視窗.Designer.cs">
+    <Compile Include="通用\視窗\樣板\鎖定視窗.Designer.cs">
       <DependentUpon>鎖定視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="通用\訊息\訊息管理器.cs" />
     <Compile Include="通用\介面\可初始化介面.cs" />
-    <Compile Include="通用\可列舉\介面\可列舉資料管理介面.cs" />
+    <Compile Include="通用\列舉\介面\可列舉資料管理介面.cs" />
     <Compile Include="通用\資料99\介面\可選取資料列管理介面99.cs" />
     <Compile Include="通用\資料99\可記錄資料99.cs" />
     <Compile Include="通用\資料\介面\可匯入資料.cs" />
@@ -723,7 +728,7 @@
     <Compile Include="聯絡人\視窗\聯絡人總覽視窗.Designer.cs">
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="通用\可列舉\介面\可篩選介面.cs" />
+    <Compile Include="通用\篩選\介面\可篩選介面.cs" />
     <Compile Include="通用\介面\可編號介面99.cs" />
     <Compile Include="通用\資料99\管理\資料儲存管理器99.cs" />
     <Compile Include="通用\視窗99\樣板\詳細視窗.cs">

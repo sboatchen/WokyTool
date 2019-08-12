@@ -39,8 +39,8 @@ namespace WokyTool.使用者
                 return;
             }
 
+            _使用者資料.BeginEdit();
             _使用者資料.密碼 = this.新密碼.Text;
-            使用者資料管理器.獨體.資料異動();
 
             this.Close();
         }

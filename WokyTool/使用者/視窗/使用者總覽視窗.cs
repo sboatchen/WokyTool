@@ -11,13 +11,18 @@ using WokyTool.通用;
 
 namespace WokyTool.使用者
 {
-    public partial class 使用者總覽視窗 : 總覽視窗
+    public partial class 使用者總覽視窗 : 新版總覽視窗
     {
+        public override 可編輯列舉資料管理介面 管理介面 { get { return 使用者資料管理器.獨體.編輯管理器; } }
+        public override BindingSource 資料BS { get { return this.使用者資料BindingSource; } }
+        public override DataGridView 資料GV { get { return this.dataGridView1; } }
+
+
         public 使用者總覽視窗()
         {
             InitializeComponent();
 
-            this.初始化(this.使用者資料BindingSource, 使用者資料管理器.獨體);
+            this.初始化();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

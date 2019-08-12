@@ -24,13 +24,13 @@ namespace WokyTool.通用
     public class 視窗管理器
     {
         private Dictionary<列舉.編號, Type> 總覽視窗設定Map { get; set; }
-        private Dictionary<列舉.編號, 總覽視窗> 總覽視窗Map { get; set; }
+        private Dictionary<列舉.編號, 通用視窗介面> 總覽視窗Map { get; set; }
 
         private Dictionary<列舉.編號, Type> 詳細視窗設定Map { get; set; }
-        private Dictionary<列舉.編號, 詳細視窗> 詳細視窗Map { get; set; }
+        private Dictionary<列舉.編號, 通用視窗介面> 詳細視窗Map { get; set; }
 
         private Dictionary<列舉.編號, Type> 篩選視窗設定Map { get; set; }
-        private Dictionary<列舉.編號, 篩選視窗> 篩選視窗Map { get; set; }
+        private Dictionary<列舉.編號, 通用視窗介面> 篩選視窗Map { get; set; }
 
         private Dictionary<列舉.編號, Type> 匯入視窗設定Map { get; set; }
         //private Dictionary<列舉.編號類型, 匯入視窗> 匯入視窗Map { get; set; } no need cache
@@ -48,7 +48,7 @@ namespace WokyTool.通用
         private 視窗管理器()
         {
             總覽視窗設定Map = new Dictionary<列舉.編號, Type>();
-            總覽視窗Map = new Dictionary<列舉.編號, 總覽視窗>();
+            總覽視窗Map = new Dictionary<列舉.編號, 通用視窗介面>();
 
             總覽視窗設定Map.Add(列舉.編號.使用者, typeof(使用者總覽視窗));
 
@@ -90,7 +90,7 @@ namespace WokyTool.通用
             /********************************/
 
             詳細視窗設定Map = new Dictionary<列舉.編號, Type>();
-            詳細視窗Map = new Dictionary<列舉.編號, 詳細視窗>();
+            詳細視窗Map = new Dictionary<列舉.編號, 通用視窗介面>();
 
             詳細視窗設定Map.Add(列舉.編號.客戶, typeof(客戶詳細視窗));
             詳細視窗設定Map.Add(列舉.編號.子客戶, typeof(子客戶詳細視窗));
@@ -108,14 +108,14 @@ namespace WokyTool.通用
             /********************************/
 
             篩選視窗設定Map = new Dictionary<列舉.編號, Type>();
-            篩選視窗Map = new Dictionary<列舉.編號, 篩選視窗>();
+            篩選視窗Map = new Dictionary<列舉.編號, 通用視窗介面>();
 
             篩選視窗設定Map.Add(列舉.編號.物品, typeof(物品篩選視窗));
             篩選視窗設定Map.Add(列舉.編號.商品, typeof(商品篩選視窗));
 
             篩選視窗設定Map.Add(列舉.編號.月結帳, typeof(月結帳篩選視窗));
 
-             /********************************/
+            /********************************/
 
             匯入視窗設定Map = new Dictionary<列舉.編號, Type>();
 
@@ -124,14 +124,14 @@ namespace WokyTool.通用
 
         private 通用視窗介面 取得總覽視窗(列舉.編號 類型_)
         {
-            總覽視窗 視窗_ = null;
+            通用視窗介面 視窗_ = null;
             if (總覽視窗Map.TryGetValue(類型_, out 視窗_) == false)
             {
                 Type Type_ = null;
                 if (總覽視窗設定Map.TryGetValue(類型_, out Type_) == false)
                     throw new Exception("視窗管理器:取得總覽視窗實體失敗, " + 類型_);
 
-                視窗_ = (總覽視窗)(Activator.CreateInstance(Type_));
+                視窗_ = (通用視窗介面)(Activator.CreateInstance(Type_));
                 總覽視窗Map.Add(類型_, 視窗_);
             }
 
@@ -140,14 +140,14 @@ namespace WokyTool.通用
 
         private 通用視窗介面 取得詳細視窗(列舉.編號 類型_)
         {
-            詳細視窗 視窗_ = null;
-            if ( 詳細視窗Map.TryGetValue(類型_, out 視窗_) == false)
+            通用視窗介面 視窗_ = null;
+            if (詳細視窗Map.TryGetValue(類型_, out 視窗_) == false)
             {
                 Type Type_ = null;
-                if ( 詳細視窗設定Map.TryGetValue(類型_, out Type_) == false)
+                if (詳細視窗設定Map.TryGetValue(類型_, out Type_) == false)
                     throw new Exception("視窗管理器:取得詳細視窗實體失敗, " + 類型_);
 
-                視窗_ = (詳細視窗)(Activator.CreateInstance(Type_));
+                視窗_ = (通用視窗介面)(Activator.CreateInstance(Type_));
                 詳細視窗Map.Add(類型_, 視窗_);
             }
 
@@ -156,14 +156,14 @@ namespace WokyTool.通用
 
         private 通用視窗介面 取得篩選視窗(列舉.編號 類型_)
         {
-            篩選視窗 視窗_ = null;
+            通用視窗介面 視窗_ = null;
             if (篩選視窗Map.TryGetValue(類型_, out 視窗_) == false)
             {
                 Type Type_ = null;
                 if (篩選視窗設定Map.TryGetValue(類型_, out Type_) == false)
                     throw new Exception("視窗管理器:取得篩選視窗實體失敗, " + 類型_);
 
-                視窗_ = (篩選視窗)(Activator.CreateInstance(Type_));
+                視窗_ = (通用視窗介面)(Activator.CreateInstance(Type_));
                 篩選視窗Map.Add(類型_, 視窗_);
             }
 
@@ -172,12 +172,12 @@ namespace WokyTool.通用
 
         private 通用視窗介面 取得匯入視窗(列舉.編號 類型_)
         {
-            匯入視窗 視窗_ = null;
+            通用視窗介面 視窗_ = null;
             Type Type_ = null;
             if (匯入視窗設定Map.TryGetValue(類型_, out Type_) == false)
                 throw new Exception("視窗管理器:取得匯入視窗實體失敗, " + 類型_);
 
-            視窗_ = (匯入視窗)(Activator.CreateInstance(Type_));
+            視窗_ = (通用視窗介面)(Activator.CreateInstance(Type_));
 
             return 視窗_;
         }
@@ -211,7 +211,7 @@ namespace WokyTool.通用
         public void 顯現(列舉.編號 編號類型_, 列舉.視窗 視窗類型, int 編號_)
         {
             通用視窗介面 視窗_ = 取得視窗(編號類型_, 視窗類型);
-            
+
             //@@ 視窗隱藏->關閉視窗->儲存修改 這是如果要看的資料是新建立的 還沒設定內容 會出錯(因為儲存時會檢查資料是否合法)
             //if (視窗_.是否顯現)
             //    視窗_.隱藏();

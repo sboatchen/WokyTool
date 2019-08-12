@@ -17,8 +17,8 @@ namespace WokyTool.通用
     {
         public abstract 列舉.編號 編號類型 { get; }
 
-        public virtual bool 資料是否加密 { get { return false; } }
-        public virtual bool 資料是否備份 { get { return true; } }
+        public virtual bool 是否加密 { get { return false; } }
+        public virtual bool 是否備份 { get { return true; } }
 
         public abstract string 檔案路徑 { get; }
 
@@ -63,7 +63,7 @@ namespace WokyTool.通用
         {
             if (File.Exists(檔案路徑))
             {
-                string json = 檔案.讀出(檔案路徑, 資料是否加密);
+                string json = 檔案.讀出(檔案路徑, 是否加密);
                 if (String.IsNullOrEmpty(json))
                     _資料書 = new Dictionary<int, T>();
                 else
@@ -88,16 +88,15 @@ namespace WokyTool.通用
                 _目前資料書版本 = 資料版本;
 
                 // 備份舊資料
-                if (資料是否備份)
+                if (是否備份)
                     檔案.備份(檔案路徑, true);
 
                 // 更新資料
-                檔案.寫入(檔案路徑, JsonConvert.SerializeObject(_資料書, Formatting.Indented), 資料是否加密);
+                檔案.寫入(檔案路徑, JsonConvert.SerializeObject(_資料書, Formatting.Indented), 是否加密);
             }
         }
 
-        // 取得資料
-        public virtual T Get(int ID_)
+        public virtual T 取得(int ID_)
         {
             if (ID_ == 常數.空白資料編碼)
                 return 空白資料;
@@ -112,6 +111,16 @@ namespace WokyTool.通用
             }
 
             return 錯誤資料;
+        }
+
+        public virtual bool 包含(int ID_)
+        {
+            return _資料書.ContainsKey(ID_);
+        }
+
+        public virtual bool 包含(T 資料_)
+        {
+            return _資料書.ContainsKey(資料_.編號);
         }
 
         public void 新增(T 資料_)

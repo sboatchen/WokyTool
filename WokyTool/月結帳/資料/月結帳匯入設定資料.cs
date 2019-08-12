@@ -87,7 +87,7 @@ namespace WokyTool.月結帳
             }
             set
             {
-                _業務 = 使用者資料管理器.獨體.Get(value);
+                _業務 = 使用者資料管理器.獨體.取得(value);
             }
         }
 
@@ -97,9 +97,9 @@ namespace WokyTool.月結帳
             get
             {
                 if (_業務 == null)
-                    _業務 = 使用者資料.NULL;
-                else if (使用者資料管理器.獨體.唯讀BList.Contains(_業務) == false)
-                    _業務 = 使用者資料.ERROR;
+                    _業務 = 使用者資料.空白;
+                else if (使用者資料管理器.獨體.包含(_業務) == false)
+                    _業務 = 使用者資料.錯誤;
 
                 return _業務;
             }
@@ -129,7 +129,7 @@ namespace WokyTool.月結帳
             標頭位置 = 0,
             公司 = 公司資料.NULL,
             客戶 = 客戶資料.NULL,
-            業務 = 使用者資料.NULL,
+            業務 = 使用者資料.空白,
             商品識別 = 列舉.商品識別.無,
         };
         public static 月結帳匯入設定資料 NULL
@@ -150,7 +150,7 @@ namespace WokyTool.月結帳
             標頭位置 = 0,
             公司 = 公司資料.ERROR,
             客戶 = 客戶資料.ERROR,
-            業務 = 使用者資料.ERROR,
+            業務 = 使用者資料.錯誤,
             商品識別 = 列舉.商品識別.錯誤,
         };
         public static 月結帳匯入設定資料 ERROR

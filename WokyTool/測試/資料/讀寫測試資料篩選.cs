@@ -12,8 +12,6 @@ namespace WokyTool.測試
 {
     public class 讀寫測試資料篩選 : 新版可篩選介面<讀寫測試資料>
     {
-        public bool 是否異動 { get; set; }
-
         private string _排序欄位 = null;
         public string 排序欄位 
         {

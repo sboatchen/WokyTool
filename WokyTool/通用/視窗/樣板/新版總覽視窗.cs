@@ -10,24 +10,15 @@ namespace WokyTool.通用
 {
     public class 新版總覽視窗 : Form, 通用視窗介面
     {
-        public virtual 可編輯列舉資料管理介面 管理介面 { get { return null; } }
-        public virtual BindingSource 資料BS { get { return null; } }
-        public virtual DataGridView 資料GV { get { return null; } }
+        public virtual 可編輯列舉資料管理介面 管理介面 { get { throw new Exception(this.GetType().Name + " 未設定管理介面"); } }
+        public virtual BindingSource 資料BS { get { throw new Exception(this.GetType().Name + " 未設定資料BS"); } }
+        public virtual DataGridView 資料GV { get { throw new Exception(this.GetType().Name + " 未設定資料GV"); } }
 
         public int 資料版本 { get; protected set; }
         public bool 是否關閉 { get; protected set; }
 
         public void 初始化()
         {
-            if (管理介面 == null)
-                throw new Exception(this.GetType().Name + " 未設定管理介面");
-
-            if (資料BS == null)
-                throw new Exception(this.GetType().Name + " 未設定資料BS");
-
-            if (資料GV == null)
-                throw new Exception(this.GetType().Name + " 未設定資料GV");
-
             this.Activated += new System.EventHandler(this._視窗激活);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);
             資料GV.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._點擊標頭);

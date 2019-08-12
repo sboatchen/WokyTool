@@ -58,7 +58,7 @@ namespace WokyTool.通用
             {
                 _目前資料列版本 = 資料版本;
 
-                //TODO
+                throw new Exception("Not implement yet.");
             }
         }
 

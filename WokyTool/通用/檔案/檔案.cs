@@ -280,17 +280,17 @@ namespace WokyTool.通用
             return 寫入(路徑_, 資料_, 密碼_, Encoding.UTF8);
         }
 
-        public static bool 寫入(string 路徑_, string 資料_, bool 資料是否加密, Encoding 編碼_)
+        public static bool 寫入(string 路徑_, string 資料_, bool 是否加密, Encoding 編碼_)
         {
-            if (資料是否加密)
+            if (是否加密)
                 return 寫入(路徑_, 資料_, "ApTx4869", 編碼_);
             else
                 return 寫入(路徑_, 資料_, 編碼_);
         }
 
-        public static bool 寫入(string 路徑_, string 資料_, bool 資料是否加密)
+        public static bool 寫入(string 路徑_, string 資料_, bool 是否加密)
         {
-            if (資料是否加密)
+            if (是否加密)
                 return 寫入(路徑_, 資料_, "ApTx4869", Encoding.UTF8);
             else
                 return 寫入(路徑_, 資料_, Encoding.UTF8);
@@ -366,17 +366,17 @@ namespace WokyTool.通用
             return 讀出(路徑_, 密碼_, Encoding.UTF8);
         }
 
-        public static string 讀出(string 路徑_, bool 資料是否加密, Encoding 編碼_)
+        public static string 讀出(string 路徑_, bool 是否加密, Encoding 編碼_)
         {
-            if (資料是否加密)
+            if (是否加密)
                 return 讀出(路徑_, "ApTx4869", 編碼_);
             else
                 return 讀出(路徑_, 編碼_);
         }
 
-        public static string 讀出(string 路徑_, bool 資料是否加密)
+        public static string 讀出(string 路徑_, bool 是否加密)
         {
-            if (資料是否加密)
+            if (是否加密)
                 return 讀出(路徑_, "ApTx4869", Encoding.UTF8);
             else
                 return 讀出(路徑_, Encoding.UTF8);

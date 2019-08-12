@@ -9,8 +9,9 @@ using WokyTool.通用;
 
 namespace WokyTool.使用者
 {
+    [Serializable]
     [JsonObject(MemberSerialization.OptIn)]
-    public class 使用者資料 : 可記錄資料<使用者資料>
+    public class 使用者資料 : 新版可記錄資料<使用者資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }
@@ -39,6 +40,8 @@ namespace WokyTool.使用者
         [JsonProperty]
         public bool 匯入月結帳 { get; set; }
 
+        /********************************/
+
         public string 顯示密碼
         {
             get 
@@ -49,14 +52,9 @@ namespace WokyTool.使用者
             }
         }
 
-        /********************************/
+        public 使用者資料 Self { get { return this; } }
 
-        public 使用者資料 Self
-        {
-            get { return this; }
-        }
-
-        private static readonly 使用者資料 _NULL = new 使用者資料
+        public static readonly 使用者資料 空白 = new 使用者資料
         {
             編號 = 常數.空白資料編碼,
 
@@ -71,15 +69,8 @@ namespace WokyTool.使用者
             匯入進貨 = false,
             匯入月結帳 = false,
         };
-        public static 使用者資料 NULL
-        {
-            get
-            {
-                return _NULL;
-            }
-        }
 
-        private static 使用者資料 _ERROR = new 使用者資料
+        public static 使用者資料 錯誤 = new 使用者資料
         {
             編號 = 常數.錯誤資料編碼,
 
@@ -94,80 +85,19 @@ namespace WokyTool.使用者
             匯入進貨 = false,
             匯入月結帳 = false,
         };
-        public static 使用者資料 ERROR
-        {
-            get
-            {
-                return _ERROR;
-            }
-        }
 
         /********************************/
 
-        public override 使用者資料 拷貝()
-        {
-            使用者資料 Data_ = new 使用者資料
-            {
-                編號 = this.編號,
-
-                帳號 = this.帳號,
-                密碼 = this.密碼,
-
-                名稱 = this.名稱,
-
-                修改基本資料 = this.修改基本資料,
-                修改設定資料 = this.修改設定資料,
-                匯入訂單 = this.匯入訂單,
-                匯入進貨 = this.匯入進貨,
-                匯入月結帳 = this.匯入月結帳,
-            };
-
-            return Data_;
-        }
-
-        public override void 覆蓋(使用者資料 Data_)
-        {
-            編號 = Data_.編號;
-
-            帳號 = Data_.帳號;
-            密碼 = Data_.密碼;
-
-            名稱 = Data_.名稱;
-
-            修改基本資料 = Data_.修改基本資料;
-            修改設定資料 = Data_.修改設定資料;
-            匯入訂單 = Data_.匯入訂單;
-            匯入進貨 = Data_.匯入進貨;
-            匯入月結帳 = Data_.匯入月結帳;
-        }
-
-        public override bool 是否一致(使用者資料 Data_)
-        {
-            return
-                編號 == Data_.編號 &&
-
-                帳號 == Data_.帳號 &&
-                密碼 == Data_.密碼 &&
-
-                名稱 == Data_.名稱 &&
-
-                修改基本資料 == Data_.修改基本資料 &&
-                修改設定資料 == Data_.修改設定資料 &&
-                匯入訂單 == Data_.匯入訂單 &&
-                匯入進貨 == Data_.匯入進貨 &&
-                匯入月結帳 == Data_.匯入月結帳;
-        }
-
-        public override void 檢查合法()
+        public override void 檢查合法(可處理合法介面 介面_)
         {
             if (String.IsNullOrEmpty(帳號))
-                throw new Exception("使用者資料:帳號不合法");
+                介面_.錯誤(this, "帳號不合法");
 
             if (String.IsNullOrEmpty(密碼))
-                throw new Exception("使用者資料:密碼不合法");
+                介面_.錯誤(this, "密碼不合法");
 
             if (String.IsNullOrEmpty(名稱))
-                throw new Exception("使用者資料:名稱不合法");
+                介面_.錯誤(this, "名稱不合法");
         }
     }
 }
