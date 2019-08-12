@@ -12,7 +12,11 @@ namespace WokyTool.客製
 {
     public class 平台訂單自定義工廠
     {
-        public static 平台訂單自定義介面 MOMO第三方 = new 平台訂單匯入轉換_Momo第三方(null);
+        public static 客戶資料 MOMO第三方假客戶資料 = new 客戶資料
+        {
+            編號 = -1,
+            名稱 = "momo第三方",
+        };
 
         private Dictionary<int, 平台訂單自定義介面> _Map;
 
@@ -83,9 +87,6 @@ namespace WokyTool.客製
                 case "myfone":
                     介面_ = new 平台訂單自定義_myfone();
                     break;
-                case "ibonmart":
-                    介面_ = new 平台訂單自定義_ibonMart();
-                    break;
                 case "森森":
                     介面_ = new 平台訂單自定義_森森();
                     break;
@@ -100,7 +101,9 @@ namespace WokyTool.客製
                     break;
 
 
-
+                case "momo第三方":
+                    介面_ = new 平台訂單匯入轉換_Momo第三方(公司_);
+                    break;
                 case "中華電信":
                     介面_ = new 平台訂單匯入轉換_中華電信(公司_);
                     break;
@@ -109,6 +112,12 @@ namespace WokyTool.客製
                     break;
                 case "friday":
                     介面_ = new 平台訂單匯入轉換_Friday(公司_);
+                    break;
+                case "udn":
+                    介面_ = new 平台訂單匯入轉換_UDN(公司_);
+                    break;
+                case "ibonmart":
+                    介面_ = new 平台訂單匯入轉換_ibonMart(公司_);
                     break;
                 default:
                     訊息管理器.獨體.錯誤("平台訂單自定義工廠::不支援 " + 客戶_.名稱);
@@ -122,10 +131,12 @@ namespace WokyTool.客製
 
         public 平台訂單自定義介面 取得自定義(平台訂單匯入設定資料 平台訂單匯入設定資料_)
         {
-            if(平台訂單匯入設定資料_.名稱.ToLower().Contains("momo第三方"))
-                return MOMO第三方;
-
             return 取得自定義(平台訂單匯入設定資料_.公司, 平台訂單匯入設定資料_.客戶);
+        }
+
+        public 平台訂單自定義介面 取得自定義_momo三方(公司資料 公司資料_)
+        {
+            return 取得自定義(公司資料_, MOMO第三方假客戶資料);
         }
     }
 }

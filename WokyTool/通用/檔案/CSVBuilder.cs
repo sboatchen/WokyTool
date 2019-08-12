@@ -13,6 +13,8 @@ namespace WokyTool.通用
         private string _分格號;
         private StringBuilder _SB;
 
+        public StringBuilder SB { get { return _SB; } }
+
         public CSVBuilder(string 分格號_ = ",")
         {
             this._分格號 = 分格號_;

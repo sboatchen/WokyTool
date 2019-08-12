@@ -63,7 +63,7 @@ namespace WokyTool.平台訂單
             {
                 if (Item_.處理狀態 == 列舉.訂單處理狀態.新增)
                 {
-                    Item_.自定義介面 = 平台訂單自定義工廠.MOMO第三方;
+                    //Item_.自定義介面 = 平台訂單自定義工廠.MOMO第三方;
                     Item_.重新分組();
                 }
             }
@@ -90,7 +90,11 @@ namespace WokyTool.平台訂單
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            平台訂單自定義工廠.MOMO第三方.回單(Momo第三方平台訂單新增資料管理器.獨體.可編輯BList);
+            平台訂單新增資料 平台訂單新增資料_ = Momo第三方平台訂單新增資料管理器.獨體.可編輯BList.First();
+            if (平台訂單新增資料_ == null)
+                return;
+
+            平台訂單新增資料_.自定義介面.回單(Momo第三方平台訂單新增資料管理器.獨體.可編輯BList);
 
             訊息管理器.獨體.通知("已完成匯出");
         }

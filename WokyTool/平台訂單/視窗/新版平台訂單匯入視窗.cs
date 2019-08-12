@@ -52,7 +52,6 @@ namespace WokyTool.平台訂單
             this.公司.ComboBox.FormattingEnabled = true;
             //this.公司.ComboBox.TabIndex = 10;
             this.公司.ComboBox.BindingContext = this.BindingContext;  // 這行很重要
-            this.公司.ComboBox.SelectedIndex = 0;
 
             this.dataGridView1.DataError += new DataGridViewDataErrorEventHandler(this._DataGridView錯誤);
         }
@@ -95,6 +94,11 @@ namespace WokyTool.平台訂單
 
         protected override void 視窗激活()
         {
+            if (_公司 == null)
+            {
+                公司_SelectedIndexChanged(this.公司, null);
+            }
+
             if (_公司資料版本 != 平台訂單匯入設定資料管理器.獨體.可選取資料列版本)
             {
                 _公司資料版本 = 公司資料管理器.獨體.可編輯資料列版本;
@@ -179,6 +183,26 @@ namespace WokyTool.平台訂單
             IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
 
             匯入完成(資料列舉_, true);
+        }
+
+        private void uDNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單匯入轉換_UDN 轉換_ = new 平台訂單匯入轉換_UDN(_公司);
+            _客戶 = 轉換_.客戶;
+
+            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
+
+            匯入完成(資料列舉_, false);
+        }
+
+        private void ibonMartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單匯入轉換_ibonMart 轉換_ = new 平台訂單匯入轉換_ibonMart(_公司);
+            _客戶 = 轉換_.客戶;
+
+            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
+
+            匯入完成(資料列舉_, false);
         }
     }
 }

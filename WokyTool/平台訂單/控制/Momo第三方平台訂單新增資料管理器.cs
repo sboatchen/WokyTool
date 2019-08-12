@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
+using WokyTool.客製;
 using WokyTool.通用;
 
 namespace WokyTool.平台訂單
@@ -74,6 +75,16 @@ namespace WokyTool.平台訂單
         // 建構子
         private Momo第三方平台訂單新增資料管理器()
         {
+        }
+
+        protected override void 初始化資料()
+        {
+            base.初始化資料();
+
+            foreach (平台訂單新增資料 資料_ in Map.Values)
+            {
+                資料_.自定義介面 = 平台訂單自定義工廠.獨體.取得自定義_momo三方(資料_.公司);
+            }
         }
 
         public void 完成()   //@@

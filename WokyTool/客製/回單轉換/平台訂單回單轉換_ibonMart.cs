@@ -16,7 +16,7 @@ namespace WokyTool.客製
     // '外箱規格' -->固定填入'0001'			
     // 回單要託運公司代號要注意：12新竹貨運 14宅配通
 
-    class 平台訂單回單轉換_ibonMart : 可格式化_Csv
+    class 平台訂單回單轉換_ibonMart : 可寫入介面_CSV
     {
         private static string 全速配編號 = "'12'";
         private static string 宅配通編號 = "'14'";
@@ -24,61 +24,65 @@ namespace WokyTool.客製
         private static string 午洋編號 = "'45036257WD'";
         private static string 田和豐編號 = "'54867084WD'";
 
-        protected 平台訂單新增資料 _Data;
+        public string 分類 { get { return null; } }
 
-        public 平台訂單回單轉換_ibonMart(平台訂單新增資料 Data_)
+        public string 分格號 { get { return ","; } }
+
+        public string 密碼 { get { return null; } }
+
+        public Encoding 編碼 { get { return Encoding.UTF8; } }
+
+        private IEnumerable<平台訂單新增資料> _資料列;
+
+        public 平台訂單回單轉換_ibonMart(IEnumerable<平台訂單新增資料> 資料列_)
         {
-            _Data = Data_;
+            _資料列 = 資料列_;
         }
 
-        [CsvColumn(Name = "'配送商廠編'", FieldIndex = 1)]
-        public string 配送商廠編
+        public void 寫入(CSVBuilder Builder_)
         {
-            get
+            Builder_.加入標頭("'配送商廠編'", "'訂單編號'", "'出貨單編號'", "'託運單編號'", "'託運公司'", "'外箱規格'", "'商品品號'", "'實際出貨數量'");
+
+            foreach (平台訂單新增資料 資料_ in _資料列)
             {
-                switch (_Data.商品.公司.名稱)
+                switch (資料_.公司.名稱)
                 {
                     case "午洋":
-                        return 午洋編號;
+                        Builder_.SB.Append(午洋編號).Append(",");
+                        break;
                     case "田和豐":
-                        return 田和豐編號;
+                        Builder_.SB.Append(田和豐編號).Append(",");
+                        break;
                     default:
-                        MessageBox.Show("平台訂單回單轉換_ibonMart can't find 配送商廠編 " + _Data.商品.公司.名稱, 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return 字串.空;
+                         throw new Exception("平台訂單回單轉換_ibonMart can't find 配送商廠編 " + 資料_.商品.公司.名稱);
+                        Builder_.SB.Append(",");
+                        break;
                 }
-            }
-        }
 
-        [CsvColumn(Name = "'訂單編號'", FieldIndex = 2)]
-        public string 訂單編號 { get { return 函式.取得字串(_Data.額外資訊, 5); } }
-        [CsvColumn(Name = "'出貨單編號'", FieldIndex = 3)]
-        public string 出貨單編號 { get { return 函式.取得字串(_Data.額外資訊, 6); } }
+                Builder_.SB.Append(資料_.內容[4]).Append(",");
+                Builder_.SB.Append(資料_.內容[5]).Append(",");
+                Builder_.SB.Append("'").Append(資料_.配送單號).Append("',");
 
-        [CsvColumn(Name = "'託運單編號'", FieldIndex = 4)]
-        public string 託運單編號 { get { return "'" + _Data.配送單號 + "'"; } }
-        [CsvColumn(Name = "託運公司'", FieldIndex = 5)]
-        public string 託運公司
-        {
-            get
-            {
-                switch (_Data.配送公司)
+                switch (資料_.配送公司)
                 {
                     case 列舉.配送公司.全速配:
-                        return 全速配編號;
+                        Builder_.SB.Append(全速配編號).Append(",");
+                        break;
                     case 列舉.配送公司.宅配通:
-                        return 宅配通編號;
+                        Builder_.SB.Append(宅配通編號).Append(",");
+                        break;
                     default:
-                        訊息管理器.獨體.錯誤("平台訂單回單轉換_ibonMart 不支援配送公司 " + _Data.配送公司.ToString());
-                        return 字串.空;
+                    {
+                       throw new Exception("平台訂單回單轉換_Friday 不支援配送公司 " + 資料_.配送公司.ToString());
+                        Builder_.SB.Append(",");
+                        break;
+                    }   
                 }
+
+                Builder_.SB.Append(外箱規格格式).Append(",");
+                Builder_.SB.Append(資料_.內容[15]).Append(",");
+                Builder_.SB.AppendLine(資料_.內容[19]);
             }
         }
-        [CsvColumn(Name = "'外箱規格'", FieldIndex = 6)]
-        public string 外箱規格 { get { return 外箱規格格式; } }
-
-        [CsvColumn(Name = "商品品號'", FieldIndex = 7)]
-        public string 商品品號 { get { return 函式.取得字串(_Data.額外資訊, 16); } }
-        [CsvColumn(Name = "'實際出貨數量'", FieldIndex = 8)]
-        public string 實際出貨數量 { get { return 函式.取得字串(_Data.額外資訊, 20); } }
     }
 }
