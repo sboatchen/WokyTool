@@ -9,8 +9,6 @@ namespace WokyTool.通用
 {
     public class 新版抽象選取元件 : UserControl
     {
-        protected virtual 可清單列舉資料管理介面 管理介面設定 { get { throw new Exception(this.GetType().Name + " 未設定管理介面設定"); } }
-
         public virtual BindingSource 資料BS { get { throw new Exception(this.GetType().Name + " 未設定資料BS"); } }
         public virtual ComboBox 下拉選單 { get { throw new Exception(this.GetType().Name + " 未設定下拉選單"); } }
 
@@ -20,13 +18,18 @@ namespace WokyTool.通用
             set { throw new Exception(this.GetType().Name + " 未設定篩選文字"); }
         }
 
+        protected virtual 可清單列舉資料管理介面 取得管理介面實體()
+        {
+            throw new Exception(this.GetType().Name + " 未複寫 取得管理介面實體");
+        }
+
         public 可清單列舉資料管理介面 管理介面 { get; protected set; }
 
         public int 資料版本 { get; protected set; }
 
         public void 初始化()
         {
-            管理介面 = 管理介面設定;
+            管理介面 = 取得管理介面實體();
 
             this.下拉選單.DropDown += new System.EventHandler(this._on開啟選單);
             this.下拉選單.TextChanged += new System.EventHandler(this._on文字異動);
