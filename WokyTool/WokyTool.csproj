@@ -729,7 +729,7 @@
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="通用\篩選\介面\可篩選介面.cs" />
-    <Compile Include="通用\介面\可編號介面99.cs" />
+    <Compile Include="通用\介面\可編號介面.cs" />
     <Compile Include="通用\資料99\管理\資料儲存管理器99.cs" />
     <Compile Include="通用\視窗99\樣板\詳細視窗.cs">
       <SubType>Form</SubType>

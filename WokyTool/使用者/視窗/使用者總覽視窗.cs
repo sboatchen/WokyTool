@@ -13,6 +13,8 @@ namespace WokyTool.使用者
 {
     public partial class 使用者總覽視窗 : 新版總覽視窗
     {
+        public override 列舉.編號 編號類型 { get { return 列舉.編號.使用者; } }
+
         public override 可編輯列舉資料管理介面 管理介面 { get { return 使用者資料管理器.獨體.編輯管理器; } }
         public override BindingSource 資料BS { get { return this.使用者資料BindingSource; } }
         public override DataGridView 資料GV { get { return this.dataGridView1; } }
@@ -25,7 +27,7 @@ namespace WokyTool.使用者
             this.初始化();
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        protected override void _雙點擊資料(object sender, DataGridViewCellEventArgs e)
         {
             使用者資料 目前使用者資料_ = (使用者資料)this.使用者資料BindingSource.Current;
 

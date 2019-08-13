@@ -10,6 +10,9 @@ namespace WokyTool.通用
 {
     public class 新版總覽視窗 : Form, 通用視窗介面
     {
+        public static 列舉.視窗 視窗類型 { get { return 列舉.視窗.總覽; } }
+        public virtual 列舉.編號 編號類型 { get { throw new Exception(this.GetType().Name + " 未設定編號類型"); } }
+
         public virtual 可編輯列舉資料管理介面 管理介面 { get { throw new Exception(this.GetType().Name + " 未設定管理介面"); } }
         public virtual BindingSource 資料BS { get { throw new Exception(this.GetType().Name + " 未設定資料BS"); } }
         public virtual DataGridView 資料GV { get { throw new Exception(this.GetType().Name + " 未設定資料GV"); } }
@@ -22,6 +25,7 @@ namespace WokyTool.通用
             this.Activated += new System.EventHandler(this._視窗激活);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);
             資料GV.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._點擊標頭);
+            資料GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._雙點擊資料);
 
             資料GV.AllowUserToAddRows = 管理介面.是否可編輯;
             資料GV.AllowUserToDeleteRows = 管理介面.是否可編輯;
@@ -86,7 +90,7 @@ namespace WokyTool.通用
  
         }
 
-        private void _點擊標頭(object sender, DataGridViewCellMouseEventArgs e)
+        protected void _點擊標頭(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (管理介面.是否編輯中)
             {
@@ -107,6 +111,21 @@ namespace WokyTool.通用
             ((可篩選介面_視窗)管理介面.篩選介面).排序欄位 = col.DataPropertyName;
 
             _視窗激活(null, null);
+        }
+
+        protected virtual void _雙點擊資料(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.資料BS.Current == null)
+                return;
+
+            可編號介面 資料_ = this.資料BS.Current as 可編號介面;
+            if(資料_ == null)
+            {
+                訊息管理器.獨體.錯誤("資料無法沒有編號:" + 資料_.GetType().Name);
+                return;
+            }
+
+            視窗管理器.獨體.顯現(編號類型, 列舉.視窗.詳細, 資料_.編號);
         }
 
         /********************************/

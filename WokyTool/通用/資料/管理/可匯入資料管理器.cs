@@ -31,11 +31,19 @@ namespace WokyTool.通用
             }
         }
 
-        public virtual 可處理合法介面 新增合法處理介面
+        protected virtual 可處理合法介面 取得新增合法檢查實體()
+        {
+            return new 例外處理合法管理器();
+        }
+
+        protected 可處理合法介面 _新增合法檢查獨體 = null;
+        public 可處理合法介面 新增合法檢查
         {
             get
             {
-                return new 例外處理合法管理器();
+                if (_新增合法檢查獨體 == null)
+                    _新增合法檢查獨體 = 取得新增合法檢查實體();
+                return _新增合法檢查獨體;
             }
         }
 
@@ -64,7 +72,7 @@ namespace WokyTool.通用
 
         public void 新增(T 資料_)
         {
-            資料_.檢查合法(新增合法處理介面);
+            資料_.檢查合法(新增合法檢查);
             資料_.紀錄編輯(true);
 
             _資料列.Add(資料_);
@@ -77,11 +85,9 @@ namespace WokyTool.通用
             if (資料列舉_.Count() == 0)
                 return;
 
-            可處理合法介面 新增合法處理介面_ = 新增合法處理介面;
-
             foreach (T 資料_ in 資料列舉_)
             {
-                資料_.檢查合法(新增合法處理介面_);
+                資料_.檢查合法(新增合法檢查);
                 資料_.紀錄編輯(true);
 
                 _資料列.Add(資料_);
