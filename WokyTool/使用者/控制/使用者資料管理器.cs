@@ -51,13 +51,7 @@ namespace WokyTool.使用者
 
         // 獨體
         private static readonly 使用者資料管理器 _獨體 = new 使用者資料管理器();
-        public static 使用者資料管理器 獨體
-        {
-            get
-            {
-                return _獨體;
-            }
-        }
+        public static 使用者資料管理器 獨體 { get { return _獨體; } }
 
         // 建構子
         private 使用者資料管理器()
@@ -66,7 +60,7 @@ namespace WokyTool.使用者
         }
 
         // 取得資料
-        public 使用者資料 Get(string 名稱_)
+        public 使用者資料 取得(string 名稱_)
         {
             if (String.IsNullOrEmpty(名稱_))
                 return 錯誤資料;
@@ -95,7 +89,7 @@ namespace WokyTool.使用者
             if (String.IsNullOrEmpty(密碼_))
                 throw new Exception("未輸入密碼_");
 
-            使用者 = Get(帳號_);
+            使用者 = 取得(帳號_);
             if (使用者 == 錯誤資料)
                 throw new Exception("帳號不存在:" + 帳號_);
 

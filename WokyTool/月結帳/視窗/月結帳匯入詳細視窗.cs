@@ -28,7 +28,6 @@ namespace WokyTool.月結帳
 
         protected override void 視窗激活()
         {
-            this.公司選取元件1.視窗激活();
             this.客戶選取元件1.視窗激活();
 
             this.商品選取元件1.視窗激活();

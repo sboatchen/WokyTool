@@ -140,6 +140,7 @@
     <Compile Include="公司\視窗\元件\公司選取元件.Designer.cs">
       <DependentUpon>公司選取元件.cs</DependentUpon>
     </Compile>
+    <Compile Include="公司\資料\公司資料篩選.cs" />
     <Compile Include="公司\資料\公司資料.cs" />
     <Compile Include="商品\控制\商品大類資料管理器.cs" />
     <Compile Include="商品\控制\商品資料管理器.cs" />

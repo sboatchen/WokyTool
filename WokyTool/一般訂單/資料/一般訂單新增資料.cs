@@ -36,7 +36,7 @@ namespace WokyTool.一般訂單
             }
             set
             {
-                _公司 = 公司資料管理器.獨體.Get(value);
+                _公司 = 公司資料管理器.獨體.取得(value);
             }
         }
 
@@ -46,9 +46,9 @@ namespace WokyTool.一般訂單
             get
             {
                 if (_公司 == null)
-                    _公司 = 公司資料.NULL;
-                else if (公司資料管理器.獨體.唯讀BList.Contains(_公司) == false)
-                    _公司 = 公司資料.ERROR;
+                    _公司 = 公司資料.空白;
+                else if (公司資料管理器.獨體.包含(_公司) == false)
+                    _公司 = 公司資料.錯誤;
 
                 return _公司;
             }
@@ -222,7 +222,7 @@ namespace WokyTool.一般訂單
             編號 = 常數.空白資料編碼,
             處理狀態 = 列舉.訂單處理狀態.完成,
 
-            公司 = 公司資料.NULL,
+            公司 = 公司資料.空白,
             客戶 = 客戶資料.NULL,
 
             姓名 = 字串.無,
@@ -258,7 +258,7 @@ namespace WokyTool.一般訂單
             編號 = 常數.錯誤資料編碼,
             處理狀態 = 列舉.訂單處理狀態.錯誤,
 
-            公司 = 公司資料.ERROR,
+            公司 = 公司資料.錯誤,
             客戶 = 客戶資料.ERROR,
 
             姓名 = 字串.錯誤,
