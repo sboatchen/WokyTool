@@ -19,8 +19,10 @@ namespace WokyTool.平台訂單
 {
     public partial class 平台訂單新增總覽視窗 : 總覽視窗
     {
-        private int _公司資料版本 = -1;
         private int _客戶資料版本 = -1;
+
+        private 可清單列舉資料管理介面 _公司清單管理器 = 公司資料管理器.獨體.清單管理器;
+        private int _公司資料版本 = -1;
 
         public 平台訂單新增總覽視窗()
         {
@@ -33,6 +35,7 @@ namespace WokyTool.平台訂單
             this.指配時段DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.指配時段));
             this.代收方式DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.代收方式));
             this.配送公司DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.配送公司));
+
         }
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -179,10 +182,10 @@ namespace WokyTool.平台訂單
 
         protected override void 視窗激活()
         {
-            if (_公司資料版本 != 公司資料管理器.獨體.可選取資料列版本)
+            if (_公司資料版本 != _公司清單管理器.資料版本)
             {
-                _公司資料版本 = 公司資料管理器.獨體.可選取資料列版本;
-                this.公司資料BindingSource.DataSource = 公司資料管理器.獨體.唯讀BList;
+                _公司資料版本 = _公司清單管理器.資料版本;
+                this.公司資料BindingSource.DataSource = _公司清單管理器.資料列舉;
             }
 
             if (_客戶資料版本 != 客戶資料管理器.獨體.可選取資料列版本)

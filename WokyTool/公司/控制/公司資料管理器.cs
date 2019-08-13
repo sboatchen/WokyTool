@@ -12,57 +12,25 @@ using WokyTool.通用;
 
 namespace WokyTool.公司
 {
-    public class 公司資料管理器 : 資料管理器<公司資料>
+    public class 公司資料管理器 : 可儲存資料管理器<公司資料>
     {
-        public override string 檔案路徑 
-        {
-            get 
-            { 
-                return "設定/公司.json"; 
-            } 
-        }
+        public override 列舉.編號 編號類型 { get { return 列舉.編號.公司; } }
 
-        public override 公司資料 空白資料
-        {
-            get
-            {
-                return 公司資料.NULL;
-            }
-        }
+        public override bool 是否可編輯 { get { return 系統參數.修改基本資料; } }
 
-        public override 公司資料 錯誤資料
-        {
-            get 
-            {
-                return 公司資料.ERROR; 
-            } 
-        }
+        public override string 檔案路徑 { get { return "設定/公司.json"; } }
 
-        public override 列舉.編號 編號類型
-        { 
-            get 
-            { 
-                return 列舉.編號.公司; 
-            } 
-        }
+        public override 公司資料 空白資料 { get { return 公司資料.空白; } }
+        public override 公司資料 錯誤資料 { get { return 公司資料.錯誤; } }
 
-        public override bool 是否可編輯
+        protected override 新版可篩選介面<公司資料> 取得篩選介面()
         {
-            get
-            {
-                return 系統參數.修改設定資料;
-            }
+            return new 公司資料篩選();
         }
 
         // 獨體
         private static readonly 公司資料管理器 _獨體 = new 公司資料管理器();
-        public static 公司資料管理器 獨體
-        {
-            get
-            {
-                return _獨體;
-            }
-        }
+        public static 公司資料管理器 獨體 { get { return _獨體; } }
 
         // 建構子
         private 公司資料管理器()
@@ -70,19 +38,19 @@ namespace WokyTool.公司
         }
 
         // 取得資料
-        public 公司資料 Get(string Name)
+        public 公司資料 取得(string 名稱_)
         {
-            if (String.IsNullOrEmpty(Name) || 字串.無.Equals(Name))
-                return 空白資料;
+            if (String.IsNullOrEmpty(名稱_))
+                return 錯誤資料;
 
-            公司資料 Item_ = Map.Values
-                                   .Where(Value => Name.Equals(Value.名稱))
+            公司資料 資料_ = _資料書.Values
+                                   .Where(Value => 名稱_.Equals(Value.名稱))
                                    .FirstOrDefault();
 
-            if (Item_ == null)
+            if (資料_ == null)
                 return 錯誤資料;
             else
-                return Item_;
+                return 資料_;
         }
     }
 }

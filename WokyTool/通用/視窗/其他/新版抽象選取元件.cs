@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,14 +28,20 @@ namespace WokyTool.通用
 
         public int 資料版本 { get; protected set; }
 
+        private PropertyInfo _呈現屬性;
+
         public void 初始化()
         {
             管理介面 = 取得管理介面實體();
+
+            Type Type_ = (Type)this.資料BS.DataSource;
+            _呈現屬性 = Type_.GetProperty(this.下拉選單.DisplayMember);
 
             this.下拉選單.DropDown += new System.EventHandler(this._on開啟選單);
             this.下拉選單.TextChanged += new System.EventHandler(this._on文字異動);
 
             資料版本 = -1;
+            更新資料();
         }
 
         public bool ReadOnly
@@ -62,22 +69,45 @@ namespace WokyTool.通用
 
             set
             {
+                // 一但有選取物件，移除篩選條件，避免指定的物件找不到
+                this.篩選文字 = null;
+                更新資料();
+
                 if (this.下拉選單.SelectedItem != value)
                     this.下拉選單.SelectedItem = value;
             }
         }
 
-        private void _on開啟選單(object sender, EventArgs e)
+        private void 更新資料()
         {
             if (資料版本 != 管理介面.資料版本)
             {
+                object 舊選取物件_ = this.下拉選單.SelectedItem;
+
                 資料版本 = 管理介面.資料版本;
                 資料BS.DataSource = 管理介面.資料列舉;
+
+                this.下拉選單.SelectedItem = 舊選取物件_;
             }
+        }
+
+        private void _on開啟選單(object sender, EventArgs e)
+        {
+            更新資料();
         }
 
         private void _on文字異動(object sender, EventArgs e)
         {
+            if (this.下拉選單.SelectedItem != null)
+            {
+                string 目前物件呈現_ = (string)_呈現屬性.GetValue(this.下拉選單.SelectedItem);
+                if (this.下拉選單.Text.Equals(目前物件呈現_))
+                {
+                    this.篩選文字 = null;
+                    return;
+                }
+            }
+
             this.篩選文字 = this.下拉選單.Text;
         }
     }

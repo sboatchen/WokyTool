@@ -19,9 +19,11 @@ namespace WokyTool.商品
 {
     public partial class 商品總覽視窗 : 總覽視窗
     {
+        private 可清單列舉資料管理介面 _公司清單管理器 = 公司資料管理器.獨體.清單管理器;
+        private int _公司資料版本 = -1;
+
         private int _商品大類資料版本 = -1; //@@ 嘗試建立 下拉選單選取元件(選取元件介面) 統一處理; 視窗介面 新增 綁定(編號類型, BindingSource)
         private int _商品小類資料版本 = -1;
-        private int _公司資料版本 = -1;
         private int _客戶資料版本 = -1;
         private int _物品資料版本 = -1;
 
@@ -92,10 +94,10 @@ namespace WokyTool.商品
                 this.商品小類資料BindingSource.DataSource = 商品小類資料管理器.獨體.唯讀BList;
             }
 
-            if (_公司資料版本 != 公司資料管理器.獨體.可選取資料列版本)
+            if (_公司資料版本 != _公司清單管理器.資料版本)
             {
-                _公司資料版本 = 公司資料管理器.獨體.可選取資料列版本;
-                this.公司資料BindingSource.DataSource = 公司資料管理器.獨體.唯讀BList;
+                _公司資料版本 = _公司清單管理器.資料版本;
+                this.公司資料BindingSource.DataSource = _公司清單管理器.資料列舉;
             }
 
             if (_客戶資料版本 != 客戶資料管理器.獨體.可選取資料列版本)

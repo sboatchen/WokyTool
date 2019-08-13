@@ -11,43 +11,30 @@ using WokyTool.通用;
 
 namespace WokyTool.公司
 {
-    public partial class 公司選取元件 : 抽象選取元件
+    public partial class 公司選取元件 : 新版抽象選取元件
     {
-        public override ComboBox 下拉選單
+        public override BindingSource 資料BS { get { return this.公司資料BindingSource; } }
+        public override ComboBox 下拉選單 { get { return this.comboBox1; } }
+
+        public override string 篩選文字
         {
-            get
-            {
-                return this.comboBox1;
-            } 
+            get { return 篩選.名稱; }
+            set { 篩選.名稱 = value; }
         }
 
-        protected override BindingSource 綁定資源
+        protected override 可清單列舉資料管理介面 取得管理介面實體()
         {
-            get
-            {
-                return this.公司資料BindingSource;
-            }
+            return 公司資料管理器.獨體.清單管理器;
         }
 
-        protected override 可選取資料列管理介面 資料管理器
-        {
-            get
-            {
-                return 公司資料管理器.獨體;
-            }
-        }
-
-        protected override object 篩選(String Name_)
-        {
-            if (Name_ == null)
-                return 公司資料管理器.獨體.唯讀BList;
-            return 公司資料管理器.獨體.唯讀BList.Where(Value => Value.名稱.Contains(Name_)).ToList();
-        }
+        public 公司資料篩選 篩選 { get; protected set; } 
 
         public 公司選取元件()
         {
             InitializeComponent();
             初始化();
+
+            篩選 = (公司資料篩選)管理介面.篩選介面;
         }
     }
 }
