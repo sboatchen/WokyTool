@@ -35,8 +35,7 @@ namespace WokyTool.使用者
                 return;
 
             密碼修改視窗 密碼修改視窗_ = new 密碼修改視窗((使用者資料)this.使用者資料BindingSource.Current);
-            密碼修改視窗_.Show();
-            密碼修改視窗_.BringToFront();
+            密碼修改視窗_.顯現();
         }
     }
 }

@@ -27,7 +27,7 @@ namespace WokyTool.使用者
                 return;
 
             this.DialogResult = DialogResult.OK;
-            this.Close();
+            this.關閉();
         }
     }
 }

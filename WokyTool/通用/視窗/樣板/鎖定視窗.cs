@@ -12,6 +12,8 @@ namespace WokyTool.通用
 {
     public partial class 鎖定視窗 : Form, 通用視窗介面
     {
+        private List<Form> _鎖住視窗列 = new List<Form>();
+
         public 鎖定視窗()
         {
             InitializeComponent();
@@ -46,23 +48,44 @@ namespace WokyTool.通用
 
         public void 顯現()
         {
+            foreach (Form 視窗_ in Application.OpenForms)
+            {
+                if (視窗_.Enabled == false)
+                    continue;
+
+                if (視窗_ is 鎖定視窗)
+                    continue;
+
+                訊息管理器.獨體.訊息("鎖定視窗:" + 視窗_.GetType().Name);
+
+                視窗_.Enabled = false;
+                _鎖住視窗列.Add(視窗_);
+            }  
+
             this.Show();
             this.BringToFront();
         }
 
         public void 顯現(int Pos_)
         {
-            this.Show();
-            this.BringToFront();
+            顯現();
         }
 
         public void 隱藏()
         {
-            this.Close();
+            關閉();
         }
 
         public void 關閉()
         {
+            foreach (Form 視窗_ in _鎖住視窗列)
+            {
+                視窗_.Enabled = true;
+
+                訊息管理器.獨體.訊息("解除鎖定視窗:" + 視窗_.GetType().Name);
+            }
+            _鎖住視窗列.Clear();
+
             this.Close();
         }
 

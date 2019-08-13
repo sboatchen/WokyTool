@@ -21,8 +21,6 @@ namespace WokyTool.使用者
             InitializeComponent();
 
             this._使用者資料 = 使用者資料_;
-
-            this.確認.Enabled = (使用者資料_ != null);
         }
 
         private void 確認_Click(object sender, EventArgs e)
@@ -42,12 +40,12 @@ namespace WokyTool.使用者
             _使用者資料.BeginEdit();
             _使用者資料.密碼 = this.新密碼.Text;
 
-            this.Close();
+            this.關閉();
         }
 
         private void 取消_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.關閉();
         }
     }
 }
