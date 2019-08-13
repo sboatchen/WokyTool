@@ -248,8 +248,6 @@ namespace WokyTool.一般訂單
             this.聯絡人選取元件.SelectedItem = null;
             this.聯絡人選取元件.Size = new System.Drawing.Size(172, 25);
             this.聯絡人選取元件.TabIndex = 89;
-            this.聯絡人選取元件.綁定子客戶 = null;
-            this.聯絡人選取元件.綁定客戶 = null;
             // 
             // 備註
             // 

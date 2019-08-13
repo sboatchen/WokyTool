@@ -11,8 +11,9 @@ using WokyTool.通用;
 
 namespace WokyTool.聯絡人
 {
+    [Serializable]
     [JsonObject(MemberSerialization.OptIn)]
-    public class 聯絡人資料 : 可記錄資料<聯絡人資料>
+    public class 聯絡人資料 : 新版可記錄資料<聯絡人資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }
@@ -31,7 +32,9 @@ namespace WokyTool.聯絡人
 
         /********************************/
 
-        private static readonly 聯絡人資料 _NULL = new 聯絡人資料
+        public 聯絡人資料 Self { get { return this; } }
+
+        public static readonly 聯絡人資料 空白 = new 聯絡人資料
         {
             編號 = 常數.空白資料編碼,
             姓名 = 字串.無,
@@ -39,15 +42,8 @@ namespace WokyTool.聯絡人
             手機 = 字串.無,
             地址 = 字串.無,
         };
-        public static 聯絡人資料 NULL
-        {
-            get
-            {
-                return _NULL;
-            }
-        }
 
-        private static 聯絡人資料 _ERROR = new 聯絡人資料
+        public static 聯絡人資料 錯誤 = new 聯絡人資料
         {
             編號 = 常數.錯誤資料編碼,
             姓名 = 字串.錯誤,
@@ -55,64 +51,19 @@ namespace WokyTool.聯絡人
             手機 = 字串.錯誤,
             地址 = 字串.錯誤,
         };
-        public static 聯絡人資料 ERROR
-        {
-            get
-            {
-                return _ERROR;
-            }
-        }
 
         /********************************/
 
-        public 聯絡人資料 Self
-        {
-            get { return this; }
-        }
-
-        public override 聯絡人資料 拷貝()
-        {
-            聯絡人資料 Data_ = new 聯絡人資料
-            {  
-                編號 = this.編號,
-                姓名 = this.姓名,
-                電話 = this.電話,
-                手機 = this.手機,
-                地址 = this.地址,
-            };
-
-            return Data_;
-        }
-
-        public override void 覆蓋(聯絡人資料 Data_)
-        {
-            編號 = Data_.編號;
-            姓名 = Data_.姓名;
-            電話 = Data_.電話;
-            手機 = Data_.手機;
-            地址 = Data_.地址;
-        }
-
-        public override bool 是否一致(聯絡人資料 Data_)
-        {
-            return
-                編號 == Data_.編號 &&
-                姓名 == Data_.姓名 &&
-                電話 == Data_.電話 &&
-                手機 == Data_.手機 &&
-                地址 == Data_.地址;
-        }
-
-        public override void 檢查合法()
+        public override void 檢查合法(可處理合法介面 介面_)
         {
             if (String.IsNullOrEmpty(姓名))
-                throw new Exception("聯絡人資料:姓名不合法:" + this.ToString());
+                介面_.錯誤(this, "姓名不合法");
 
             if (String.IsNullOrEmpty(電話) && String.IsNullOrEmpty(手機))
-                throw new Exception("聯絡人資料:電話/手機不合法:" + this.ToString());
+                介面_.錯誤(this, "電話/手機不合法");
 
             if (String.IsNullOrEmpty(地址))
-                throw new Exception("聯絡人資料:地址不合法:" + this.ToString());
+                介面_.錯誤(this, "地址不合法");
         }
     }
 }

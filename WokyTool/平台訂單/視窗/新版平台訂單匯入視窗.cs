@@ -25,7 +25,9 @@ namespace WokyTool.平台訂單
         protected 公司資料 _公司 = null;
         protected 客戶資料 _客戶 = null;
 
+        private 可編輯列舉資料管理介面 _公司編輯管理器 = 公司資料管理器.獨體.編輯管理器;
         private int _公司資料版本 = -1;
+
         private int _商品資料版本 = -1;
 
         //protected 平台訂單匯入詳細視窗 _平台訂單匯入詳細視窗 = null;
@@ -45,8 +47,8 @@ namespace WokyTool.平台訂單
             this.匯出ToolStripMenuItem.Enabled = false;
             this.dataGridView1.Enabled = false;
 
-            this._公司資料版本 = 公司資料管理器.獨體.可編輯資料列版本;
-            this.公司.ComboBox.DataSource = 公司資料管理器.獨體.可編輯BList;
+            //this._公司資料版本 = 公司資料管理器.獨體.可編輯資料列版本;
+            //this.公司.ComboBox.DataSource = 公司資料管理器.獨體.可編輯BList;
             this.公司.ComboBox.DisplayMember = "名稱";
             this.公司.ComboBox.ValueMember = "Self";
             this.公司.ComboBox.FormattingEnabled = true;
@@ -99,10 +101,10 @@ namespace WokyTool.平台訂單
                 公司_SelectedIndexChanged(this.公司, null);
             }
 
-            if (_公司資料版本 != 平台訂單匯入設定資料管理器.獨體.可選取資料列版本)
+            if (_公司資料版本 != _公司編輯管理器.資料版本)
             {
-                _公司資料版本 = 公司資料管理器.獨體.可編輯資料列版本;
-                this.公司.ComboBox.DataSource = 公司資料管理器.獨體.可編輯BList;
+                _公司資料版本 = _公司編輯管理器.資料版本;
+                this.公司.ComboBox.DataSource = _公司編輯管理器.資料列舉;
             }
 
             if (_商品資料版本 != 商品資料管理器.獨體.可選取資料列版本 && _客戶 != null)    // 有資料後才處理

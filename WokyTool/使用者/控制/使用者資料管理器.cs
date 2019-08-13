@@ -62,8 +62,8 @@ namespace WokyTool.使用者
         // 取得資料
         public 使用者資料 取得(string 名稱_)
         {
-            if (String.IsNullOrEmpty(名稱_))
-                return 錯誤資料;
+            if (String.IsNullOrEmpty(名稱_) || 字串.無.Equals(名稱_))
+                return 空白資料;
 
             if (_管理者.名稱.Equals(名稱_))
                 return _管理者;

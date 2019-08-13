@@ -16,7 +16,7 @@ namespace WokyTool.公司
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.公司; } }
 
-        public override bool 是否可編輯 { get { return 系統參數.修改基本資料; } }
+        public override bool 是否可編輯 { get { return 系統參數.修改設定資料; } }
 
         public override string 檔案路徑 { get { return "設定/公司.json"; } }
 
@@ -40,8 +40,8 @@ namespace WokyTool.公司
         // 取得資料
         public 公司資料 取得(string 名稱_)
         {
-            if (String.IsNullOrEmpty(名稱_))
-                return 錯誤資料;
+            if (String.IsNullOrEmpty(名稱_) || 字串.無.Equals(名稱_))
+                return 空白資料;
 
             公司資料 資料_ = _資料書.Values
                                    .Where(Value => 名稱_.Equals(Value.名稱))

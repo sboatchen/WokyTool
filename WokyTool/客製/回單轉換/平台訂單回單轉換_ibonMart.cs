@@ -54,9 +54,7 @@ namespace WokyTool.客製
                         Builder_.SB.Append(田和豐編號).Append(",");
                         break;
                     default:
-                         throw new Exception("平台訂單回單轉換_ibonMart can't find 配送商廠編 " + 資料_.商品.公司.名稱);
-                        Builder_.SB.Append(",");
-                        break;
+                        throw new Exception("平台訂單回單轉換_ibonMart can't find 配送商廠編 " + 資料_.商品.公司.名稱);
                 }
 
                 Builder_.SB.Append(資料_.內容[4]).Append(",");
@@ -72,11 +70,7 @@ namespace WokyTool.客製
                         Builder_.SB.Append(宅配通編號).Append(",");
                         break;
                     default:
-                    {
                        throw new Exception("平台訂單回單轉換_Friday 不支援配送公司 " + 資料_.配送公司.ToString());
-                        Builder_.SB.Append(",");
-                        break;
-                    }   
                 }
 
                 Builder_.SB.Append(外箱規格格式).Append(",");

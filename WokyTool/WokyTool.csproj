@@ -619,6 +619,7 @@
     <Compile Include="聯絡人\視窗\元件\聯絡人選取元件.Designer.cs">
       <DependentUpon>聯絡人選取元件.cs</DependentUpon>
     </Compile>
+    <Compile Include="聯絡人\資料\聯絡人資料資料篩選.cs" />
     <Compile Include="通用\介面\可篩選介面99.cs" />
     <Compile Include="通用\其他\函式.cs" />
     <Compile Include="通用\其他\列舉.cs" />
@@ -654,6 +655,7 @@
     <Compile Include="通用\檔案\檔案_CSV.cs" />
     <Compile Include="通用\檔案\檔案_EXCEL.cs" />
     <Compile Include="通用\其他\系統參數.cs" />
+    <Compile Include="通用\視窗99\其他\資料列選取插件2.cs" />
     <Compile Include="通用\視窗\其他\新版抽象選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
