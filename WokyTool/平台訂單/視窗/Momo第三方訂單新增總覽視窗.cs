@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.公司;
+using WokyTool.物品;
 using WokyTool.客戶;
 using WokyTool.客製;
 using WokyTool.配送;
@@ -162,7 +163,7 @@ namespace WokyTool.平台訂單
                                        new FilteredTextRenderListener(new LocationTextExtractionStrategy(), Nofilter2_),
                                        new FilteredTextRenderListener(new LocationTextExtractionStrategy(), Userfilter2_),
                                        writer,
-                                       35);
+                                       30);
                 }
             }
             catch (Exception theException)
@@ -219,14 +220,45 @@ namespace WokyTool.平台訂單
             Phrase myText = null;
 
             // 取得物件
-            var ItemList_ = Momo第三方平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => 發票號碼_.Equals(Value.發票號碼)).ToList();
-            if (ItemList_ == null || ItemList_.Count == 0)
+            IEnumerable<平台訂單新增資料> ItemList_ = Momo第三方平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => 發票號碼_.Equals(Value.發票號碼) && Value.處理狀態 == 列舉.訂單處理狀態.新增);
+            if (ItemList_ == null || ItemList_.Count() == 0)
             {
                 訊息管理器.獨體.警告("找不到匹配的發票 " + 發票號碼_);
 
                 myText = new Phrase("錯誤", MyFont);
             }
-            else if (ItemList_.Count == 1)
+            else
+            {
+                var Group_ =  ItemList_.GroupBy(Value => Value.配送分組);
+                if(Group_.Count() > 1)
+                    訊息管理器.獨體.警告("找到多個同發票號碼的組別，請注意: " + 名字_);
+
+                物品合併資料 物品合併資料_ = new 物品合併資料();
+
+                ItemList_ = Group_.First();
+                foreach(平台訂單新增資料 資料_ in ItemList_)
+                {
+                    資料_.BeginEdit();
+
+                    資料_.姓名 = 名字_;
+                    資料_.電話 = 電話_;
+                    資料_.手機 = 手機_;
+                    資料_.地址 = 地址_;
+
+                    資料_.配送單號 = 宅配單號_;
+                    資料_.處理狀態 = 列舉.訂單處理狀態.配送;
+
+                    物品合併資料_.新增(資料_.商品, 資料_.數量);
+                }
+
+                // 拷貝舊資料
+                var importedPage = Output_.GetImportedPage(File_, PageIndex_);
+                PdfContentByte contentByte = Output_.DirectContent;
+                contentByte.AddTemplate(importedPage, 0, 0);
+
+                myText = new Phrase(物品合併資料_.ToString(), MyFont);
+            }
+            /*else if (ItemList_.Count == 1)
             {
                 var Item_ = ItemList_[0];
 
@@ -267,7 +299,7 @@ namespace WokyTool.平台訂單
                 }
 
                 myText = new Phrase("複數!!", MyFont);
-            }
+            }*/
 
             // 塞入資訊
             ColumnText ct = new ColumnText(Output_.DirectContent);
