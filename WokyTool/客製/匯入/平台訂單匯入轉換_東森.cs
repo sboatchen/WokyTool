@@ -30,14 +30,10 @@ namespace WokyTool.客製
 
         public string 密碼 { get { return null; } }
 
-        public 公司資料 公司 { get; set; }
-        public 客戶資料 客戶 { get; set; }
-
         protected string[] _標頭列;
 
-        public 平台訂單匯入轉換_東森(公司資料 公司_)
+        public 平台訂單匯入轉換_東森()
         {
-            公司 = 公司_;
             客戶 = 客戶資料管理器.獨體.Get("東森");
         }
 
@@ -79,7 +75,6 @@ namespace WokyTool.客製
                 處理狀態 = 處理狀態_,
                 訂單編號 = 訂單編號_,
 
-                公司 = this.公司,
                 客戶 = this.客戶,
 
                 姓名 = 姓名_,

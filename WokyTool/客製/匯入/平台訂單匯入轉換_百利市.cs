@@ -27,14 +27,10 @@ namespace WokyTool.客製
 
         public string 密碼 { get { return null; } }
 
-        public 公司資料 公司 { get; set; }
-        public 客戶資料 客戶 { get; set; }
-
         protected string[] _標頭列;
 
-        public 平台訂單匯入轉換_百利市(公司資料 公司_)
+        public 平台訂單匯入轉換_百利市()
         {
-            公司 = 公司_;
             客戶 = 客戶資料管理器.獨體.Get("百利市");
         }
 

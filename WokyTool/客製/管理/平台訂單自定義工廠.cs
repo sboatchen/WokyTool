@@ -96,39 +96,41 @@ namespace WokyTool.客製
 
 
                 case "momo第三方":
-                    介面_ = new 平台訂單匯入轉換_Momo第三方(公司_);
+                    介面_ = new 平台訂單匯入轉換_Momo第三方();
                     break;
                 case "中華電信":
-                    介面_ = new 平台訂單匯入轉換_中華電信(公司_);
+                    介面_ = new 平台訂單匯入轉換_中華電信();
                     break;
                 case "東森":
-                    介面_ = new 平台訂單匯入轉換_東森(公司_);
+                    介面_ = new 平台訂單匯入轉換_東森();
                     break;
                 case "friday":
-                    介面_ = new 平台訂單匯入轉換_Friday(公司_);
+                    介面_ = new 平台訂單匯入轉換_Friday();
                     break;
                 case "udn":
-                    介面_ = new 平台訂單匯入轉換_UDN(公司_);
+                    介面_ = new 平台訂單匯入轉換_UDN();
                     break;
                 case "ibonmart":
-                    介面_ = new 平台訂單匯入轉換_ibonMart(公司_);
+                    介面_ = new 平台訂單匯入轉換_ibonMart();
                     break;
                 case "金石堂":
-                    介面_ = new 平台訂單匯入轉換_金石堂(公司_);
+                    介面_ = new 平台訂單匯入轉換_金石堂();
                     break;
                 case "百利市":
-                    介面_ = new 平台訂單匯入轉換_百利市(公司_);
+                    介面_ = new 平台訂單匯入轉換_百利市();
                     break;
                 case "viva":
-                    介面_ = new 平台訂單匯入轉換_viva(公司_);
+                    介面_ = new 平台訂單匯入轉換_viva();
                     break;
                 case "特力屋":
-                    介面_ = new 平台訂單匯入轉換_特力屋(公司_);
+                    介面_ = new 平台訂單匯入轉換_特力屋();
                     break;
                 default:
                     訊息管理器.獨體.錯誤("平台訂單自定義工廠::不支援 " + 客戶_.名稱);
                     return null;
             }
+
+            介面_.公司 = 公司_;
 
             _Map.Add(Hash_, 介面_);
 

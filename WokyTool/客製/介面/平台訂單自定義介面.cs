@@ -19,6 +19,9 @@ namespace WokyTool.客製
     {
         public abstract IEnumerable<平台訂單匯入資料> 轉換(動態匯入檔案結構 動態匯入檔案結構_);
 
+        public 公司資料 公司 { get; set; }
+        public 客戶資料 客戶 { get; set; }
+
         public abstract void 回單(IEnumerable<平台訂單新增資料> 資料_);
 
 

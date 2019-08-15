@@ -29,14 +29,10 @@ namespace WokyTool.客製
 
         public string 密碼 { get { return "27723845t"; } }
 
-        public 公司資料 公司 { get; set; }
-        public 客戶資料 客戶 { get; set; }
-
         protected string[] _標頭列;
 
-        public 平台訂單匯入轉換_Momo第三方(公司資料 公司_)
+        public 平台訂單匯入轉換_Momo第三方()
         {
-            公司 = 公司_;
             客戶 = 客戶資料管理器.獨體.Get("Momo");
         }
 
@@ -81,7 +77,6 @@ namespace WokyTool.客製
                 處理時間 = 處理時間_,
                 訂單編號 = 訂單編號_,
 
-                公司 = this.公司,
                 客戶 = this.客戶,
 
                 姓名 = 姓名_,

@@ -198,14 +198,14 @@ namespace WokyTool.平台訂單
             if (商品.編號是否合法() == false)
                 throw new Exception("平台訂單匯入資料:商品不合法:" + 商品編號);
 
-            if (商品.編號 != 常數.商品折扣資料編碼)
+            /*if (商品.編號 != 常數.商品折扣資料編碼)
             {
                 if (商品.公司 != 公司)
                     throw new Exception("平台訂單匯入資料:公司不一致:" + 商品.公司.名稱 + "," + 公司.名稱);
 
                 if (商品.客戶 != 客戶)
                     throw new Exception("平台訂單匯入資料:客戶不一致:" + 商品.客戶.名稱 + "," + 客戶.名稱);
-            }
+            }*/
 
             if (String.IsNullOrEmpty(姓名))
                 throw new Exception("平台訂單匯入資料:姓名不合法:" + this.ToString());
