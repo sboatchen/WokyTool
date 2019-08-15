@@ -35,21 +35,21 @@ namespace WokyTool.客製
 
         public void 寫入(Application App_)
         {
-            App_.Cells[1, 1] = "*訂單號碼";
-            App_.Cells[1, 2] = "*出貨日期";
-            App_.Cells[1, 3] = "*配送單號";
-            App_.Cells[1, 4] = "*貨運公司";
-            App_.Cells[1, 5] = "貨運公司名稱";
-            App_.Cells[1, 6] = "商品編號";
-            App_.Cells[1, 7] = "商品名稱";
-            App_.Cells[1, 8] = "廠商料號";
-            App_.Cells[1, 9] = "數量";
-            App_.Cells[1, 10] = "成本(未稅)";
-            App_.Cells[1, 11] = "訂單日期";
-            App_.Cells[1, 12] = "通路別(下單店別)";
-            App_.Cells[1, 13] = "出貨備註";
+            App_.Cells[2, 1] = "*訂單號碼";
+            App_.Cells[2, 2] = "*出貨日期";
+            App_.Cells[2, 3] = "*配送單號";
+            App_.Cells[2, 4] = "*貨運公司";
+            App_.Cells[2, 5] = "貨運公司名稱";
+            App_.Cells[2, 6] = "商品編號";
+            App_.Cells[2, 7] = "商品名稱";
+            App_.Cells[2, 8] = "廠商料號";
+            App_.Cells[2, 9] = "數量";
+            App_.Cells[2, 10] = "成本(未稅)";
+            App_.Cells[2, 11] = "訂單日期";
+            App_.Cells[2, 12] = "通路別(下單店別)";
+            App_.Cells[2, 13] = "出貨備註";
 
-            int 目前行數_ = 2;
+            int 目前行數_ = 3;
             foreach (平台訂單新增資料 資料_ in _資料列)
             {
                 App_.Cells[目前行數_, 1] = 資料_.訂單編號;
