@@ -226,5 +226,25 @@ namespace WokyTool.平台訂單
 
             匯入完成(資料列舉_, false);
         }
+
+        private void vivaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單匯入轉換_viva 轉換_ = new 平台訂單匯入轉換_viva(_公司);
+            _客戶 = 轉換_.客戶;
+
+            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
+
+            匯入完成(資料列舉_, false);
+        }
+
+        private void 特力屋ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單匯入轉換_特力屋 轉換_ = new 平台訂單匯入轉換_特力屋(_公司);
+            _客戶 = 轉換_.客戶;
+
+            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
+
+            匯入完成(資料列舉_, false);
+        }
     }
 }

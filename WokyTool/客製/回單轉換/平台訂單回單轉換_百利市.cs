@@ -46,7 +46,7 @@ namespace WokyTool.客製
             App_.Cells[1, 8] = "客約送貨時間";
 
             int 目前行數_ = 2;
-            foreach (平台訂單新增資料 資料_ in _資料列.GroupBy(Value => Value.配送單號).Select(Value => Value.First()))
+            foreach (平台訂單新增資料 資料_ in _資料列)
             {
                 App_.Cells[目前行數_, 1] = 資料_.內容[6];
                 App_.Cells[目前行數_, 2] = 資料_.訂單編號;

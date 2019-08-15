@@ -119,6 +119,12 @@ namespace WokyTool.客製
                 case "百利市":
                     介面_ = new 平台訂單匯入轉換_百利市(公司_);
                     break;
+                case "viva":
+                    介面_ = new 平台訂單匯入轉換_viva(公司_);
+                    break;
+                case "特力屋":
+                    介面_ = new 平台訂單匯入轉換_特力屋(公司_);
+                    break;
                 default:
                     訊息管理器.獨體.錯誤("平台訂單自定義工廠::不支援 " + 客戶_.名稱);
                     return null;

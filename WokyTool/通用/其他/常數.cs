@@ -23,6 +23,6 @@ namespace WokyTool.通用
         public const int 空白列舉編碼 = 0;
         public const int 錯誤列舉編碼 = -2;
 
-        public static int 宅配通配送最小體積 = 5;
+        public static int 宅配通配送最小體積 = 0;
     }
 }

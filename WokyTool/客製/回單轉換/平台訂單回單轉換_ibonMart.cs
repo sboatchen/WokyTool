@@ -18,8 +18,8 @@ namespace WokyTool.客製
 
     class 平台訂單回單轉換_ibonMart : 可寫入介面_CSV
     {
-        private static string 全速配編號 = "'12'";
-        private static string 宅配通編號 = "'14'";
+        private static string 全速配 = "'12'";
+        private static string 宅配通 = "'14'";
         private static string 外箱規格格式 = "'0001'";
         private static string 午洋編號 = "'45036257WD'";
         private static string 田和豐編號 = "'54867084WD'";
@@ -64,10 +64,10 @@ namespace WokyTool.客製
                 switch (資料_.配送公司)
                 {
                     case 列舉.配送公司.全速配:
-                        Builder_.SB.Append(全速配編號).Append(",");
+                        Builder_.SB.Append(全速配).Append(",");
                         break;
                     case 列舉.配送公司.宅配通:
-                        Builder_.SB.Append(宅配通編號).Append(",");
+                        Builder_.SB.Append(宅配通).Append(",");
                         break;
                     default:
                        throw new Exception("平台訂單回單轉換_Friday 不支援配送公司 " + 資料_.配送公司.ToString());

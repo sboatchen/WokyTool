@@ -65,9 +65,11 @@
             this.uDNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ibonMartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.金石堂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.百利市ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vivaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.百利市ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.特力屋ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收方式BindingSource)).BeginInit();
@@ -300,7 +302,9 @@
             this.uDNToolStripMenuItem,
             this.ibonMartToolStripMenuItem,
             this.金石堂ToolStripMenuItem,
-            this.百利市ToolStripMenuItem});
+            this.百利市ToolStripMenuItem,
+            this.vivaToolStripMenuItem,
+            this.特力屋ToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
             this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "客戶";
@@ -354,6 +358,20 @@
             this.金石堂ToolStripMenuItem.Text = "金石堂";
             this.金石堂ToolStripMenuItem.Click += new System.EventHandler(this.金石堂ToolStripMenuItem_Click);
             // 
+            // 百利市ToolStripMenuItem
+            // 
+            this.百利市ToolStripMenuItem.Name = "百利市ToolStripMenuItem";
+            this.百利市ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.百利市ToolStripMenuItem.Text = "百利市";
+            this.百利市ToolStripMenuItem.Click += new System.EventHandler(this.百利市ToolStripMenuItem_Click);
+            // 
+            // vivaToolStripMenuItem
+            // 
+            this.vivaToolStripMenuItem.Name = "vivaToolStripMenuItem";
+            this.vivaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.vivaToolStripMenuItem.Text = "viva";
+            this.vivaToolStripMenuItem.Click += new System.EventHandler(this.vivaToolStripMenuItem_Click);
+            // 
             // 檢查ToolStripMenuItem
             // 
             this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
@@ -368,12 +386,12 @@
             this.匯出ToolStripMenuItem.Text = "匯出";
             this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
             // 
-            // 百利市ToolStripMenuItem
+            // 特力屋ToolStripMenuItem
             // 
-            this.百利市ToolStripMenuItem.Name = "百利市ToolStripMenuItem";
-            this.百利市ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.百利市ToolStripMenuItem.Text = "百利市";
-            this.百利市ToolStripMenuItem.Click += new System.EventHandler(this.百利市ToolStripMenuItem_Click);
+            this.特力屋ToolStripMenuItem.Name = "特力屋ToolStripMenuItem";
+            this.特力屋ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.特力屋ToolStripMenuItem.Text = "特力屋";
+            this.特力屋ToolStripMenuItem.Click += new System.EventHandler(this.特力屋ToolStripMenuItem_Click);
             // 
             // 新版平台訂單匯入視窗
             // 
@@ -439,5 +457,7 @@
         private System.Windows.Forms.ToolStripMenuItem ibonMartToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 金石堂ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 百利市ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vivaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 特力屋ToolStripMenuItem;
     }
 }

@@ -254,6 +254,8 @@
     <Compile Include="客製\匯入\平台訂單匯入轉換_Friday.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_ibonMart.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_UDN.cs" />
+    <Compile Include="客製\匯入\平台訂單匯入轉換_viva.cs" />
+    <Compile Include="客製\匯入\平台訂單匯入轉換_特力屋.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_百利市.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_金石堂.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_東森.cs" />
@@ -271,8 +273,9 @@
     <Compile Include="客製\匯入\平台訂單自定義_神坊.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_博客來.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_遠傳加購.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義介面.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義工廠.cs" />
+    <Compile Include="客製\介面\平台訂單自定義介面.cs" />
+    <Compile Include="客製\回單轉換\平台訂單回單轉換_特力屋.cs" />
+    <Compile Include="客製\管理\平台訂單自定義工廠.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_UDN.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_中華電信.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_總金額_一休_陳沂_手作.cs" />

@@ -14,8 +14,8 @@ namespace WokyTool.客製
 {
     class 平台訂單回單轉換_Friday : 可寫入介面_CSV
     {
-        private static string 全速配編號 = "4";
-        private static string 宅配通編號 = "3";
+        private static string 全速配 = "4";
+        private static string 宅配通 = "3";
 
         public string 分類 { get { return null; } }
 
@@ -42,10 +42,10 @@ namespace WokyTool.客製
                 switch (資料_.配送公司)
                 {
                     case 列舉.配送公司.全速配:
-                        宅配廠商代碼_ = 全速配編號;
+                        宅配廠商代碼_ = 全速配;
                         break;
                     case 列舉.配送公司.宅配通:
-                        宅配廠商代碼_ = 宅配通編號;
+                        宅配廠商代碼_ = 宅配通;
                         break;
                     default:
                     {
