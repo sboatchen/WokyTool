@@ -37,7 +37,7 @@ namespace WokyTool.客製
 
             // 以下同匯入訂單
             int 欄位索引_ = 3;
-            foreach (string 標頭_ in _資料列.First().標頭.Skip(1))
+            foreach (string 標頭_ in _資料列.First().標頭.Skip(5))
             {
                 App_.Cells[1, 欄位索引_++] = 標頭_;
             }
@@ -50,7 +50,7 @@ namespace WokyTool.客製
 
                 // 以下同匯入訂單
                 欄位索引_ = 3;
-                foreach (string 欄位內容_ in 資料_.內容.Skip(1))
+                foreach (string 欄位內容_ in 資料_.內容.Skip(5))
                 {
                     App_.Cells[目前行數_, 欄位索引_++] = 欄位內容_;
                 }

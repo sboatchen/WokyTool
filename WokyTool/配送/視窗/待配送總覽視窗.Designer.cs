@@ -42,10 +42,6 @@ namespace WokyTool.配送
             this.宅配通ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.測試用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.指配時段類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.代收類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.配送公司類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.可配送資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.電話DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,11 +51,15 @@ namespace WokyTool.配送
             this.件數 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.指配日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.指配時段DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.指配時段類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.代收方式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.代收類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.體積 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.配送公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.配送公司類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.配送單號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.可配送資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段類型BindingSource)).BeginInit();
@@ -70,6 +70,7 @@ namespace WokyTool.配送
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.略過ToolStripMenuItem,
             this.匯出ToolStripMenuItem,
@@ -77,14 +78,15 @@ namespace WokyTool.配送
             this.測試用ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1445, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1927, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // 略過ToolStripMenuItem
             // 
             this.略過ToolStripMenuItem.Name = "略過ToolStripMenuItem";
-            this.略過ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.略過ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
             this.略過ToolStripMenuItem.Text = "略過";
             this.略過ToolStripMenuItem.Click += new System.EventHandler(this.略過ToolStripMenuItem_Click);
             // 
@@ -95,27 +97,27 @@ namespace WokyTool.配送
             this.宅配通ToolStripMenuItem1,
             this.統計ToolStripMenuItem});
             this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
-            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
             this.匯出ToolStripMenuItem.Text = "匯出";
             // 
             // 全速配ToolStripMenuItem1
             // 
             this.全速配ToolStripMenuItem1.Name = "全速配ToolStripMenuItem1";
-            this.全速配ToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.全速配ToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.全速配ToolStripMenuItem1.Text = "全速配";
             this.全速配ToolStripMenuItem1.Click += new System.EventHandler(this.全速配ToolStripMenuItem1_Click);
             // 
             // 宅配通ToolStripMenuItem1
             // 
             this.宅配通ToolStripMenuItem1.Name = "宅配通ToolStripMenuItem1";
-            this.宅配通ToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.宅配通ToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.宅配通ToolStripMenuItem1.Text = "宅配通";
             this.宅配通ToolStripMenuItem1.Click += new System.EventHandler(this.宅配通ToolStripMenuItem1_Click);
             // 
             // 統計ToolStripMenuItem
             // 
             this.統計ToolStripMenuItem.Name = "統計ToolStripMenuItem";
-            this.統計ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.統計ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.統計ToolStripMenuItem.Text = "統計";
             this.統計ToolStripMenuItem.Click += new System.EventHandler(this.統計ToolStripMenuItem_Click);
             // 
@@ -125,27 +127,27 @@ namespace WokyTool.配送
             this.全速配ToolStripMenuItem,
             this.宅配通ToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
-            this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
             this.匯入ToolStripMenuItem.Text = "匯入";
             // 
             // 全速配ToolStripMenuItem
             // 
             this.全速配ToolStripMenuItem.Name = "全速配ToolStripMenuItem";
-            this.全速配ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.全速配ToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
             this.全速配ToolStripMenuItem.Text = "全速配";
             this.全速配ToolStripMenuItem.Click += new System.EventHandler(this.全速配ToolStripMenuItem_Click);
             // 
             // 宅配通ToolStripMenuItem
             // 
             this.宅配通ToolStripMenuItem.Name = "宅配通ToolStripMenuItem";
-            this.宅配通ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.宅配通ToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
             this.宅配通ToolStripMenuItem.Text = "宅配通";
             this.宅配通ToolStripMenuItem.Click += new System.EventHandler(this.宅配通ToolStripMenuItem_Click);
             // 
             // 測試用ToolStripMenuItem
             // 
             this.測試用ToolStripMenuItem.Name = "測試用ToolStripMenuItem";
-            this.測試用ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.測試用ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
             this.測試用ToolStripMenuItem.Text = "測試";
             this.測試用ToolStripMenuItem.Click += new System.EventHandler(this.測試用ToolStripMenuItem_Click);
             // 
@@ -172,27 +174,12 @@ namespace WokyTool.配送
             this.配送單號});
             this.dataGridView1.DataSource = this.可配送資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 27);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1445, 445);
+            this.dataGridView1.Size = new System.Drawing.Size(1927, 559);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // 指配時段類型BindingSource
-            // 
-            this.指配時段類型BindingSource.DataSource = typeof(WokyTool.通用.列舉.指配時段);
-            // 
-            // 代收類型BindingSource
-            // 
-            this.代收類型BindingSource.DataSource = typeof(WokyTool.通用.列舉.代收方式);
-            // 
-            // 配送公司類型BindingSource
-            // 
-            this.配送公司類型BindingSource.DataSource = typeof(WokyTool.通用.列舉.配送公司);
-            // 
-            // 可配送資料BindingSource
-            // 
-            this.可配送資料BindingSource.DataSource = typeof(WokyTool.配送.可配送資料);
             // 
             // 姓名DataGridViewTextBoxColumn
             // 
@@ -258,6 +245,10 @@ namespace WokyTool.配送
             this.指配時段DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.指配時段DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // 指配時段類型BindingSource
+            // 
+            this.指配時段類型BindingSource.DataSource = typeof(WokyTool.通用.列舉.指配時段);
+            // 
             // 代收方式DataGridViewTextBoxColumn
             // 
             this.代收方式DataGridViewTextBoxColumn.DataPropertyName = "代收方式";
@@ -267,6 +258,10 @@ namespace WokyTool.配送
             this.代收方式DataGridViewTextBoxColumn.ReadOnly = true;
             this.代收方式DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.代收方式DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // 代收類型BindingSource
+            // 
+            this.代收類型BindingSource.DataSource = typeof(WokyTool.通用.列舉.代收方式);
             // 
             // 代收金額DataGridViewTextBoxColumn
             // 
@@ -291,20 +286,29 @@ namespace WokyTool.配送
             this.配送公司DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.配送公司DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // 配送公司類型BindingSource
+            // 
+            this.配送公司類型BindingSource.DataSource = typeof(WokyTool.通用.列舉.配送公司);
+            // 
             // 配送單號
             // 
             this.配送單號.DataPropertyName = "配送單號";
             this.配送單號.HeaderText = "配送單號";
             this.配送單號.Name = "配送單號";
             // 
+            // 可配送資料BindingSource
+            // 
+            this.可配送資料BindingSource.DataSource = typeof(WokyTool.配送.可配送資料);
+            // 
             // 待配送總覽視窗
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1445, 469);
+            this.ClientSize = new System.Drawing.Size(1927, 586);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "待配送總覽視窗";
             this.Text = "待配送總覽";
             this.menuStrip1.ResumeLayout(false);

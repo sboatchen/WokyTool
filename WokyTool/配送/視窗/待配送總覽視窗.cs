@@ -68,6 +68,12 @@ namespace WokyTool.配送
                 this.全速配ToolStripMenuItem.Enabled = true;
             }
 
+            配送明細轉換 轉換_ = new 配送明細轉換("全速配", 配送管理器.獨體.可編輯BList.Where(Value => Value.配送公司 == 列舉.配送公司.全速配));
+            string 標題_ = String.Format("全速配明細匯出_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換_);
+
+            訊息管理器.獨體.通知("匯出完成");
+
         }
 
         private void 宅配通ToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -86,6 +92,12 @@ namespace WokyTool.配送
                 this.宅配通ToolStripMenuItem1.Enabled = false;
                 this.宅配通ToolStripMenuItem.Enabled = true;
             }
+
+            配送明細轉換 轉換_ = new 配送明細轉換("宅配通", 配送管理器.獨體.可編輯BList.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通));
+            string 標題_ = String.Format("宅配通明細匯出_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換_);
+
+            訊息管理器.獨體.通知("匯出完成");
         }
 
         private void 全速配ToolStripMenuItem_Click(object sender, EventArgs e)
