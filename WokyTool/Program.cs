@@ -74,11 +74,14 @@ namespace WokyTool
          * 代處理
          * 
          * 所有總攬視窗 編號欄位唯讀
+         * 訊息管理器.獨體.錯誤 VS EXCEPTION
+         * 
+         * 
          * bindingsource c# DataBindings DateTimePicker
-         * 
-         * 
-         * 
-         * 
+         * 新版頁索引元件
+         * 資料編輯詳細測試視窗
+         * 資料編輯總覽測試視窗
+         * 子客戶資料*
          * 
          * 
          * 

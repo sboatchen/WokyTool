@@ -63,9 +63,11 @@
             this.friday = new System.Windows.Forms.ToolStripMenuItem();
             this.Momo第三方 = new System.Windows.Forms.ToolStripMenuItem();
             this.uDNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ibonMartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.金石堂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ibonMartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.百利市ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.配送公司BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.指配時段BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.代收方式BindingSource)).BeginInit();
@@ -296,7 +298,9 @@
             this.friday,
             this.Momo第三方,
             this.uDNToolStripMenuItem,
-            this.ibonMartToolStripMenuItem});
+            this.ibonMartToolStripMenuItem,
+            this.金石堂ToolStripMenuItem,
+            this.百利市ToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
             this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "客戶";
@@ -336,6 +340,20 @@
             this.uDNToolStripMenuItem.Text = "UDN";
             this.uDNToolStripMenuItem.Click += new System.EventHandler(this.uDNToolStripMenuItem_Click);
             // 
+            // ibonMartToolStripMenuItem
+            // 
+            this.ibonMartToolStripMenuItem.Name = "ibonMartToolStripMenuItem";
+            this.ibonMartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ibonMartToolStripMenuItem.Text = "ibon mart";
+            this.ibonMartToolStripMenuItem.Click += new System.EventHandler(this.ibonMartToolStripMenuItem_Click);
+            // 
+            // 金石堂ToolStripMenuItem
+            // 
+            this.金石堂ToolStripMenuItem.Name = "金石堂ToolStripMenuItem";
+            this.金石堂ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.金石堂ToolStripMenuItem.Text = "金石堂";
+            this.金石堂ToolStripMenuItem.Click += new System.EventHandler(this.金石堂ToolStripMenuItem_Click);
+            // 
             // 檢查ToolStripMenuItem
             // 
             this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
@@ -350,12 +368,12 @@
             this.匯出ToolStripMenuItem.Text = "匯出";
             this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
             // 
-            // ibonMartToolStripMenuItem
+            // 百利市ToolStripMenuItem
             // 
-            this.ibonMartToolStripMenuItem.Name = "ibonMartToolStripMenuItem";
-            this.ibonMartToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.ibonMartToolStripMenuItem.Text = "ibon mart";
-            this.ibonMartToolStripMenuItem.Click += new System.EventHandler(this.ibonMartToolStripMenuItem_Click);
+            this.百利市ToolStripMenuItem.Name = "百利市ToolStripMenuItem";
+            this.百利市ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.百利市ToolStripMenuItem.Text = "百利市";
+            this.百利市ToolStripMenuItem.Click += new System.EventHandler(this.百利市ToolStripMenuItem_Click);
             // 
             // 新版平台訂單匯入視窗
             // 
@@ -419,5 +437,7 @@
         private System.Windows.Forms.ToolStripMenuItem Momo第三方;
         private System.Windows.Forms.ToolStripMenuItem uDNToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ibonMartToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 金石堂ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 百利市ToolStripMenuItem;
     }
 }

@@ -63,12 +63,6 @@ namespace WokyTool.客製
                 case "神坊":
                     介面_ = new 平台訂單自定義_神坊();
                     break;
-                case "金石堂":
-                    介面_ = new 平台訂單自定義_金石堂();
-                    break;
-                case "百利市":
-                    介面_ = new 平台訂單自定義_百利市();
-                    break;
                 case "udesign":
                     介面_ = new 平台訂單自定義_uDesign();
                     break;
@@ -118,6 +112,12 @@ namespace WokyTool.客製
                     break;
                 case "ibonmart":
                     介面_ = new 平台訂單匯入轉換_ibonMart(公司_);
+                    break;
+                case "金石堂":
+                    介面_ = new 平台訂單匯入轉換_金石堂(公司_);
+                    break;
+                case "百利市":
+                    介面_ = new 平台訂單匯入轉換_百利市(公司_);
                     break;
                 default:
                     訊息管理器.獨體.錯誤("平台訂單自定義工廠::不支援 " + 客戶_.名稱);

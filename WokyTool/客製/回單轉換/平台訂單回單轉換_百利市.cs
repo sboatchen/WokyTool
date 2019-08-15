@@ -14,8 +14,9 @@ namespace WokyTool.客製
 {
     public class 平台訂單回單轉換_百利市 : 可寫入介面_EXCEL
     {
-        private static string 全速配編號 = "新竹物流";
-        private static string 宅配通編號 = "台灣宅配通";
+        private static string 全速配 = "新竹物流";
+        private static string 宅配通 = "台灣宅配通";
+
 
         public string 分類 { get { return null; } }
 
@@ -45,29 +46,28 @@ namespace WokyTool.客製
             App_.Cells[1, 8] = "客約送貨時間";
 
             int 目前行數_ = 2;
-            foreach (平台訂單新增資料 資料_ in _資料列)
+            foreach (平台訂單新增資料 資料_ in _資料列.GroupBy(Value => Value.配送單號).Select(Value => Value.First()))
             {
-                App_.Cells[目前行數_, 1] = 函式.取得字串(資料_.額外資訊, 7);
+                App_.Cells[目前行數_, 1] = 資料_.內容[6];
                 App_.Cells[目前行數_, 2] = 資料_.訂單編號;
-                App_.Cells[目前行數_, 3] = 資料_.商品編號;
+                App_.Cells[目前行數_, 3] = 資料_.內容[5];
 
                 switch (資料_.配送公司)
                 {
                     case 列舉.配送公司.全速配:
-                        App_.Cells[目前行數_, 4] = 全速配編號;
+                        App_.Cells[目前行數_, 4] = 全速配;
                         break;
                     case 列舉.配送公司.宅配通:
-                        App_.Cells[目前行數_, 4] = 宅配通編號;
+                        App_.Cells[目前行數_, 4] = 宅配通;
                         break;
                     default:
-                        訊息管理器.獨體.錯誤("平台訂單回單轉換_百利市 不支援配送公司 " + 資料_.配送公司.ToString());
-                        break;
+                        throw new Exception("平台訂單回單轉換_百利市 不支援配送公司 " + 資料_.配送公司.ToString());
                 }
-            
+
                 App_.Cells[目前行數_, 5] = 資料_.配送單號;
 
                 // 出貨時間格式應該為年月日時分秒。例如：2015.12.30 12：00：00，例如：2015.12.30，則默認是2015.12.30 0：00:00
-                App_.Cells[目前行數_, 6] = DateTime.Now.ToString("yyyy.MM.dd") + " 0:00:00";
+                App_.Cells[目前行數_, 6] = 資料_.處理時間.ToString("yyyy.MM.dd") + " 0:00:00";
 
                 目前行數_++;
             }
