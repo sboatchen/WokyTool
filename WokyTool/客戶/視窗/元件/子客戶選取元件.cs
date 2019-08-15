@@ -12,66 +12,30 @@ using WokyTool.Common;
 
 namespace WokyTool.客戶
 {
-    public partial class 子客戶選取元件 : 抽象選取元件
+    public partial class 子客戶選取元件 : 新版抽象選取元件
     {
-        public override ComboBox 下拉選單
+        public override BindingSource 資料BS { get { return this.子客戶資料BindingSource; } }
+        public override ComboBox 下拉選單 { get { return this.comboBox1; } }
+
+        public override string 篩選文字
         {
-            get
-            {
-                return this.comboBox1;
-            } 
+            get { return 篩選.名稱; }
+            set { 篩選.名稱 = value; }
         }
 
-        protected override BindingSource 綁定資源
+        protected override 可清單列舉資料管理介面 取得管理介面實體()
         {
-            get
-            {
-                return this.子客戶資料BindingSource;
-            }
+            return 子客戶資料管理器.獨體.清單管理器;
         }
 
-        protected override 可選取資料列管理介面 資料管理器
-        {
-            get
-            {
-                return 子客戶資料管理器.獨體;
-            }
-        }
-
-        private 客戶資料 _綁定客戶;
-        public 客戶資料 綁定客戶
-        {
-            get
-            {
-                return _綁定客戶;
-            }
-            set
-            {
-                _綁定客戶 = value;
-                篩選異動 = true;
-            }
-        }
-
-        protected override object 篩選(String Name_)
-        {
-            if (綁定客戶 == null && Name_ == null)
-                return 子客戶資料管理器.獨體.唯讀BList;
-
-            IEnumerable<子客戶資料> query = 子客戶資料管理器.獨體.唯讀BList;
-
-            if (綁定客戶 != null)
-                query = query.Where(Value => 綁定客戶.子客戶編號列 != null && 綁定客戶.子客戶編號列.Contains(Value.編號));
-
-            if(Name_ != null)
-                query = query.Where(Value => Value.名稱.Contains(Name_));
-
-            return query.ToList();
-        }
+        public 子客戶資料篩選 篩選 { get; protected set; } 
 
         public 子客戶選取元件()
         {
             InitializeComponent();
             初始化();
+
+            篩選 = (子客戶資料篩選)管理介面.篩選介面;
         }
 
         private void Detail_Click(object sender, EventArgs e)

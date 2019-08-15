@@ -189,7 +189,7 @@ namespace WokyTool.一般訂單
             this.子客戶選取元件.SelectedItem = null;
             this.子客戶選取元件.Size = new System.Drawing.Size(186, 25);
             this.子客戶選取元件.TabIndex = 79;
-            this.子客戶選取元件.綁定客戶 = null;
+
             // 
             // label14
             // 

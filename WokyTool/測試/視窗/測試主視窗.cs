@@ -37,7 +37,7 @@ namespace WokyTool.測試
 
         private void 綁定ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var i = new 資料綁定測試視窗();
+            var i = new 資料編輯總覽測試視窗();
             i.Show();
             i.BringToFront();
         }
@@ -66,6 +66,13 @@ namespace WokyTool.測試
         private void 訊息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var i = new 訊息測試視窗();
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void 詳細ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var i = new 資料編輯詳細測試視窗();
             i.Show();
             i.BringToFront();
         }

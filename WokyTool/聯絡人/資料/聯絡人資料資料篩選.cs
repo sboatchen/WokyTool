@@ -120,12 +120,12 @@ namespace WokyTool.聯絡人
 
             if (null != 子客戶)
             {
-                if(子客戶.聯絡人編號列 != null & 子客戶.聯絡人編號列.Count > 0)
+                if (子客戶.聯絡人編號列 != null && 子客戶.聯絡人編號列.Count > 0)
                     目前列舉_ = 目前列舉_.Where(Value => 子客戶.聯絡人編號列.Contains(Value.編號));
             }
             else if (null != 客戶)
             {
-                if (客戶.聯絡人編號列 != null & 客戶.聯絡人編號列.Count > 0)
+                if (客戶.聯絡人編號列 != null && 客戶.聯絡人編號列.Count > 0)
                     目前列舉_ = 目前列舉_.Where(Value => 客戶.聯絡人編號列.Contains(Value.編號));
             }
 

@@ -47,6 +47,50 @@ namespace WokyTool
         static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             訊息管理器.獨體.錯誤(e.ExceptionObject as Exception);
-        }			
+        }
+
+        /*
+         * 已完成
+         * 
+         * 使用者
+         * 公司
+         * 聯絡人
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 代處理
+         * 
+         * 所有總攬視窗 編號欄位唯讀
+         * bindingsource c# DataBindings DateTimePicker
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+        */
+
     }
 }

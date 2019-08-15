@@ -61,7 +61,7 @@ namespace WokyTool.一般訂單
             this.子客戶選取元件.SelectedItem = null;
             this.聯絡人選取元件.SelectedItem = null;
 
-            this.子客戶選取元件.綁定客戶 = 客戶_;
+            this.子客戶選取元件.篩選.客戶 = 客戶_;
             this.聯絡人選取元件.篩選.客戶 = 客戶_;
         }
 
@@ -91,7 +91,7 @@ namespace WokyTool.一般訂單
         protected override void 視窗激活()
         {
             this.客戶選取元件.視窗激活();
-            this.子客戶選取元件.視窗激活();
+            //this.子客戶選取元件.視窗激活();
             //this.聯絡人選取元件.視窗激活();
             this.商品選取元件.視窗激活();
         }

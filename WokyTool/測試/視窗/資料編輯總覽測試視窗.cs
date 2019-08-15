@@ -11,21 +11,33 @@ using WokyTool.通用;
 
 namespace WokyTool.測試
 {
-    public partial class 資料綁定測試視窗 : 新版總覽視窗
+    public partial class 資料編輯總覽測試視窗 : 新版總覽視窗
     {
         public override 可編輯列舉資料管理介面 管理介面 { get { return 讀寫測試資料管理器.獨體.編輯管理器; } }
         public override BindingSource 資料BS { get { return this.讀寫測試資料BindingSource; } }
         public override DataGridView 資料GV { get { return this.dataGridView1; } }
 
-        private 讀寫測試資料篩選 _篩選介面; 
+        private 讀寫測試資料篩選 _篩選介面;
 
-        public 資料綁定測試視窗()
+        public 資料編輯總覽測試視窗()
         {
             InitializeComponent();
 
             初始化();
 
             _篩選介面 = (讀寫測試資料篩選)管理介面.篩選介面;
+
+            this.列舉.DataSource = Enum.GetValues(typeof(列舉.編號));
+
+            this.時間.Value = DateTime.Now;
+
+
+            this.字串.DataBindings.Add("Text", 資料BS, "字串");
+            this.整數.DataBindings.Add("Value", 資料BS, "整數");
+            this.浮點數.DataBindings.Add("Value", 資料BS, "浮點數");
+            this.倍精準浮點數.DataBindings.Add("Value", 資料BS, "倍精準浮點數");
+            this.時間.DataBindings.Add("Value", 資料BS, "時間");
+            this.列舉.DataBindings.Add("SelectedItem", 資料BS, "列舉");
         }
 
         private void 列印ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,6 +56,11 @@ namespace WokyTool.測試
                 this._篩選介面.最小整數 = Int32.Parse(this.最小整數.Text);
 
             _視窗激活(null, null);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            資料BS.Position++;
         }
     }
 }

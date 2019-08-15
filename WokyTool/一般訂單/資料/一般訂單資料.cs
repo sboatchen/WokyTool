@@ -97,7 +97,7 @@ namespace WokyTool.一般訂單
             }
             set
             {
-                _子客戶 = 子客戶資料管理器.獨體.Get(value);
+                _子客戶 = 子客戶資料管理器.獨體.取得(value);
             }
         }
 
@@ -107,9 +107,9 @@ namespace WokyTool.一般訂單
             get
             {
                 if (_子客戶 == null)
-                    _子客戶 = 子客戶資料.NULL;
-                else if (子客戶資料管理器.獨體.唯讀BList.Contains(_子客戶) == false)
-                    _子客戶 = 子客戶資料.ERROR;
+                    _子客戶 = 子客戶資料.空白;
+                else if (子客戶資料管理器.獨體.包含(_子客戶) == false)
+                    _子客戶 = 子客戶資料.錯誤;
 
                 return _子客戶;
             }
@@ -245,7 +245,7 @@ namespace WokyTool.一般訂單
 
             公司 = 公司資料.空白,
             客戶 = 客戶資料.NULL,
-            子客戶 = 子客戶資料.NULL,
+            子客戶 = 子客戶資料.空白,
 
             商品 = 商品資料.NULL,
 
@@ -286,7 +286,7 @@ namespace WokyTool.一般訂單
 
             公司 = 公司資料.錯誤,
             客戶 = 客戶資料.ERROR,
-            子客戶 = 子客戶資料.ERROR,
+            子客戶 = 子客戶資料.錯誤,
 
             商品 = 商品資料.ERROR,
 

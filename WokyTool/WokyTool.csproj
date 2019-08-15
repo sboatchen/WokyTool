@@ -249,6 +249,7 @@
       <DependentUpon>客戶選取元件.cs</DependentUpon>
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
+    <Compile Include="客戶\資料\子客戶資料資料篩選.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_Momo第三方.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_Friday.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_ibonMart.cs" />
@@ -483,17 +484,23 @@
     <Compile Include="測試\視窗\訊息測試視窗.Designer.cs">
       <DependentUpon>訊息測試視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="測試\視窗\資料綁定測試視窗.cs">
+    <Compile Include="測試\視窗\資料編輯總覽測試視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="測試\視窗\資料綁定測試視窗.Designer.cs">
-      <DependentUpon>資料綁定測試視窗.cs</DependentUpon>
+    <Compile Include="測試\視窗\資料編輯總覽測試視窗.Designer.cs">
+      <DependentUpon>資料編輯總覽測試視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="測試\視窗\資料清單測試視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="測試\視窗\資料清單測試視窗.Designer.cs">
       <DependentUpon>資料清單測試視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="測試\視窗\資料編輯詳細測試視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="測試\視窗\資料編輯詳細測試視窗.Designer.cs">
+      <DependentUpon>資料編輯詳細測試視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="測試\資料\讀寫測試資料篩選.cs" />
     <Compile Include="測試\資料\讀寫測試資料.cs" />
@@ -658,6 +665,12 @@
     <Compile Include="通用\視窗99\其他\資料列選取插件2.cs" />
     <Compile Include="通用\視窗\其他\新版抽象選取元件.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="通用\視窗\其他\新版頁索引元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="通用\視窗\其他\新版頁索引元件.Designer.cs">
+      <DependentUpon>新版頁索引元件.cs</DependentUpon>
     </Compile>
     <Compile Include="通用\視窗\樣板\新版匯入視窗.cs">
       <SubType>Form</SubType>
@@ -1204,11 +1217,14 @@
     <EmbeddedResource Include="測試\視窗\訊息測試視窗.resx">
       <DependentUpon>訊息測試視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="測試\視窗\資料綁定測試視窗.resx">
-      <DependentUpon>資料綁定測試視窗.cs</DependentUpon>
+    <EmbeddedResource Include="測試\視窗\資料編輯總覽測試視窗.resx">
+      <DependentUpon>資料編輯總覽測試視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="測試\視窗\資料清單測試視窗.resx">
       <DependentUpon>資料清單測試視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="測試\視窗\資料編輯詳細測試視窗.resx">
+      <DependentUpon>資料編輯詳細測試視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品新增匯入視窗.resx">
       <DependentUpon>物品新增匯入視窗.cs</DependentUpon>
@@ -1269,6 +1285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="通用\視窗99\其他\頁索引元件.resx">
       <DependentUpon>頁索引元件.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="通用\視窗\其他\新版頁索引元件.resx">
+      <DependentUpon>新版頁索引元件.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="進貨\視窗\進貨新增匯入視窗.resx">
       <DependentUpon>進貨新增匯入視窗.cs</DependentUpon>
@@ -1352,6 +1371,7 @@
     <None Include="Properties\DataSources\WokyTool.通用.列舉+指配時段.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+更新狀態.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+檔案格式.datasource" />
+    <None Include="Properties\DataSources\WokyTool.通用.列舉+編號.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+訂單處理狀態.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+資料格式.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+進貨.datasource" />
