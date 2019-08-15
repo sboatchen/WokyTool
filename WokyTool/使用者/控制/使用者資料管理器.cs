@@ -37,7 +37,7 @@ namespace WokyTool.使用者
 
         protected static 使用者資料 _管理者 = new 使用者資料
         {
-            編號 = 0,
+            編號 = Int32.MaxValue,
             名稱 = "root",
             密碼 = "Aptx4869",
             修改基本資料 = true,
