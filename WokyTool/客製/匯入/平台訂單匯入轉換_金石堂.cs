@@ -30,7 +30,7 @@ namespace WokyTool.客製
 
         public 平台訂單匯入轉換_金石堂()
         {
-            客戶 = 客戶資料管理器.獨體.Get("金石堂");
+            客戶 = 客戶資料管理器.獨體.取得("金石堂");
         }
 
         public void 讀出標頭(string[] 標頭列_)

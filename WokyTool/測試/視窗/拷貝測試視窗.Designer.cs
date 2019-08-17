@@ -33,6 +33,8 @@
             this.位元組 = new System.Windows.Forms.Button();
             this.完全拷貝 = new System.Windows.Forms.Button();
             this.編輯測試 = new System.Windows.Forms.Button();
+            this.序列化 = new System.Windows.Forms.Button();
+            this.序列化時間 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // 拷貝
@@ -90,11 +92,35 @@
             this.編輯測試.UseVisualStyleBackColor = true;
             this.編輯測試.Click += new System.EventHandler(this.編輯測試_Click);
             // 
+            // 序列化
+            // 
+            this.序列化.Location = new System.Drawing.Point(117, 80);
+            this.序列化.Margin = new System.Windows.Forms.Padding(2);
+            this.序列化.Name = "序列化";
+            this.序列化.Size = new System.Drawing.Size(56, 26);
+            this.序列化.TabIndex = 5;
+            this.序列化.Text = "序列化";
+            this.序列化.UseVisualStyleBackColor = true;
+            this.序列化.Click += new System.EventHandler(this.序列化_Click);
+            // 
+            // 序列化時間
+            // 
+            this.序列化時間.Location = new System.Drawing.Point(117, 110);
+            this.序列化時間.Margin = new System.Windows.Forms.Padding(2);
+            this.序列化時間.Name = "序列化時間";
+            this.序列化時間.Size = new System.Drawing.Size(84, 26);
+            this.序列化時間.TabIndex = 6;
+            this.序列化時間.Text = "序列化時間";
+            this.序列化時間.UseVisualStyleBackColor = true;
+            this.序列化時間.Click += new System.EventHandler(this.序列化時間_Click);
+            // 
             // 拷貝測試視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(212, 202);
+            this.Controls.Add(this.序列化時間);
+            this.Controls.Add(this.序列化);
             this.Controls.Add(this.編輯測試);
             this.Controls.Add(this.完全拷貝);
             this.Controls.Add(this.位元組);
@@ -114,5 +140,7 @@
         private System.Windows.Forms.Button 位元組;
         private System.Windows.Forms.Button 完全拷貝;
         private System.Windows.Forms.Button 編輯測試;
+        private System.Windows.Forms.Button 序列化;
+        private System.Windows.Forms.Button 序列化時間;
     }
 }

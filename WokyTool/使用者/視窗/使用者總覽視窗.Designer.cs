@@ -32,14 +32,14 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.使用者資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.帳號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.顯示密碼 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.帳號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.顯示密碼DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.修改基本資料DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.修改設定資料 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.修改設定資料DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.匯入訂單DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.匯入進貨 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.匯入月結帳 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.匯入進貨DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.匯入月結帳DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.使用者資料BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -50,14 +50,14 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.編號DataGridViewTextBoxColumn,
-            this.帳號,
-            this.顯示密碼,
+            this.帳號DataGridViewTextBoxColumn,
             this.名稱DataGridViewTextBoxColumn,
+            this.顯示密碼DataGridViewTextBoxColumn,
             this.修改基本資料DataGridViewCheckBoxColumn,
-            this.修改設定資料,
+            this.修改設定資料DataGridViewCheckBoxColumn,
             this.匯入訂單DataGridViewCheckBoxColumn,
-            this.匯入進貨,
-            this.匯入月結帳});
+            this.匯入進貨DataGridViewCheckBoxColumn,
+            this.匯入月結帳DataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.使用者資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -77,18 +77,11 @@
             this.編號DataGridViewTextBoxColumn.Name = "編號DataGridViewTextBoxColumn";
             this.編號DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 帳號
+            // 帳號DataGridViewTextBoxColumn
             // 
-            this.帳號.DataPropertyName = "帳號";
-            this.帳號.HeaderText = "帳號";
-            this.帳號.Name = "帳號";
-            // 
-            // 顯示密碼
-            // 
-            this.顯示密碼.DataPropertyName = "顯示密碼";
-            this.顯示密碼.HeaderText = "密碼";
-            this.顯示密碼.Name = "顯示密碼";
-            this.顯示密碼.ReadOnly = true;
+            this.帳號DataGridViewTextBoxColumn.DataPropertyName = "帳號";
+            this.帳號DataGridViewTextBoxColumn.HeaderText = "帳號";
+            this.帳號DataGridViewTextBoxColumn.Name = "帳號DataGridViewTextBoxColumn";
             // 
             // 名稱DataGridViewTextBoxColumn
             // 
@@ -96,17 +89,24 @@
             this.名稱DataGridViewTextBoxColumn.HeaderText = "名稱";
             this.名稱DataGridViewTextBoxColumn.Name = "名稱DataGridViewTextBoxColumn";
             // 
+            // 顯示密碼DataGridViewTextBoxColumn
+            // 
+            this.顯示密碼DataGridViewTextBoxColumn.DataPropertyName = "顯示密碼";
+            this.顯示密碼DataGridViewTextBoxColumn.HeaderText = "密碼";
+            this.顯示密碼DataGridViewTextBoxColumn.Name = "顯示密碼DataGridViewTextBoxColumn";
+            this.顯示密碼DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // 修改基本資料DataGridViewCheckBoxColumn
             // 
             this.修改基本資料DataGridViewCheckBoxColumn.DataPropertyName = "修改基本資料";
             this.修改基本資料DataGridViewCheckBoxColumn.HeaderText = "修改基本資料";
             this.修改基本資料DataGridViewCheckBoxColumn.Name = "修改基本資料DataGridViewCheckBoxColumn";
             // 
-            // 修改設定資料
+            // 修改設定資料DataGridViewCheckBoxColumn
             // 
-            this.修改設定資料.DataPropertyName = "修改設定資料";
-            this.修改設定資料.HeaderText = "修改設定資料";
-            this.修改設定資料.Name = "修改設定資料";
+            this.修改設定資料DataGridViewCheckBoxColumn.DataPropertyName = "修改設定資料";
+            this.修改設定資料DataGridViewCheckBoxColumn.HeaderText = "修改設定資料";
+            this.修改設定資料DataGridViewCheckBoxColumn.Name = "修改設定資料DataGridViewCheckBoxColumn";
             // 
             // 匯入訂單DataGridViewCheckBoxColumn
             // 
@@ -114,17 +114,17 @@
             this.匯入訂單DataGridViewCheckBoxColumn.HeaderText = "匯入訂單";
             this.匯入訂單DataGridViewCheckBoxColumn.Name = "匯入訂單DataGridViewCheckBoxColumn";
             // 
-            // 匯入進貨
+            // 匯入進貨DataGridViewCheckBoxColumn
             // 
-            this.匯入進貨.DataPropertyName = "匯入進貨";
-            this.匯入進貨.HeaderText = "匯入進貨";
-            this.匯入進貨.Name = "匯入進貨";
+            this.匯入進貨DataGridViewCheckBoxColumn.DataPropertyName = "匯入進貨";
+            this.匯入進貨DataGridViewCheckBoxColumn.HeaderText = "匯入進貨";
+            this.匯入進貨DataGridViewCheckBoxColumn.Name = "匯入進貨DataGridViewCheckBoxColumn";
             // 
-            // 匯入月結帳
+            // 匯入月結帳DataGridViewCheckBoxColumn
             // 
-            this.匯入月結帳.DataPropertyName = "匯入月結帳";
-            this.匯入月結帳.HeaderText = "匯入月結帳";
-            this.匯入月結帳.Name = "匯入月結帳";
+            this.匯入月結帳DataGridViewCheckBoxColumn.DataPropertyName = "匯入月結帳";
+            this.匯入月結帳DataGridViewCheckBoxColumn.HeaderText = "匯入月結帳";
+            this.匯入月結帳DataGridViewCheckBoxColumn.Name = "匯入月結帳DataGridViewCheckBoxColumn";
             // 
             // 使用者總覽視窗
             // 
@@ -145,13 +145,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 使用者資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 帳號;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 顯示密碼;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 帳號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 顯示密碼DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn 修改基本資料DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn 修改設定資料;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn 修改設定資料DataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn 匯入訂單DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn 匯入進貨;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn 匯入月結帳;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn 匯入進貨DataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn 匯入月結帳DataGridViewCheckBoxColumn;
     }
 }

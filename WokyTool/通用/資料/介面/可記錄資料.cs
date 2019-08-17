@@ -9,7 +9,6 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    [Serializable]
     public abstract class 新版可記錄資料<T> : 可編輯資料<T>, 可編號介面 where T : 基本資料
     {
         public abstract int 編號 { get; set; }

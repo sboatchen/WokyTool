@@ -31,7 +31,7 @@ namespace WokyTool.客製
 
         public 平台訂單匯入轉換_特力屋()
         {
-            客戶 = 客戶資料管理器.獨體.Get("特力屋");
+            客戶 = 客戶資料管理器.獨體.取得("特力屋");
         }
 
         public void 讀出標頭(string[] 標頭列_)

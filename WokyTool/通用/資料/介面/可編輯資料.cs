@@ -9,17 +9,15 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    [Serializable]
     public abstract class 可編輯資料<T> : 基本資料, IEditableObject where T : 基本資料
     {
-        [NonSerialized()]
-        protected byte[] _副本;
+        protected string _副本;
 
         // IEditableObject
         public virtual void BeginEdit()
         {
             if (_副本 == null)
-                _副本 = this.轉成位元組();
+                _副本 = this.ToString(false);
         }
 
         // IEditableObject
@@ -51,8 +49,7 @@ namespace WokyTool.通用
             {
                 訊息管理器.獨體.訊息("資列修改");
 
-                T 資料_ = _副本.轉成物件<T>();
-                訊息管理器.獨體.訊息(資料_.ToString(false));
+                訊息管理器.獨體.訊息(_副本);
 
                 訊息管理器.獨體.訊息(this.ToString(false));
 
@@ -69,9 +66,9 @@ namespace WokyTool.通用
                 if (_副本 == null)
                     return false;
 
-                byte[] 位元組_ = this.轉成位元組();
+                string 資料_ = this.ToString(false);
 
-                if (_副本.是否相等(位元組_))
+                if (_副本.Equals(資料_))
                 {
                     _副本 = null;
                     return false;

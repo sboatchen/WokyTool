@@ -1,4 +1,5 @@
 ﻿using Microsoft.Office.Interop.Excel;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,12 +22,15 @@ namespace WokyTool.通用
         {
             if (物件_ != null)
             {
-                using (var MS_ = new MemoryStream())
+                string 資料_ = JsonConvert.SerializeObject(物件_, Formatting.None);
+                return JsonConvert.DeserializeObject<T>(資料_);
+
+                /*using (var MS_ = new MemoryStream())
                 {
                     BF_.Serialize(MS_, 物件_);
                     MS_.Seek(0, SeekOrigin.Begin);
                     return (T)BF_.Deserialize(MS_);
-                }
+                }*/
             }
 
             return default(T);
@@ -57,6 +61,14 @@ namespace WokyTool.通用
                     return (T)BF_.Deserialize(MS_);
                 }
             }
+
+            return default(T);
+        }
+
+        public static T 轉成物件<T>(this string 資料_)
+        {
+            if (string.IsNullOrEmpty(資料_) == false)
+                return JsonConvert.DeserializeObject<T>(資料_);
 
             return default(T);
         }

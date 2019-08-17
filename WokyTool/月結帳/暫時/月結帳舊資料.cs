@@ -60,7 +60,7 @@ namespace WokyTool.月結帳
             }
             set
             {
-                _客戶 = 客戶資料管理器.獨體.Get(value);
+                _客戶 = 客戶資料管理器.獨體.取得(value);
             }
         }
 
@@ -70,9 +70,9 @@ namespace WokyTool.月結帳
             get
             {
                 if (_客戶 == null)
-                    _客戶 = 客戶資料.NULL;
-                else if (客戶資料管理器.獨體.唯讀BList.Contains(_客戶) == false)
-                    _客戶 = 客戶資料.ERROR;
+                    _客戶 = 客戶資料.空白;
+                else if (客戶資料管理器.獨體.包含(_客戶) == false)
+                    _客戶 = 客戶資料.錯誤;
 
                 return _客戶;
             }
@@ -169,7 +169,7 @@ namespace WokyTool.月結帳
             編號 = 常數.空白資料編碼,
 
             公司 = 公司資料.空白,
-            客戶 = 客戶資料.NULL,
+            客戶 = 客戶資料.空白,
 
             商品 = 商品資料.NULL,
 
@@ -190,7 +190,7 @@ namespace WokyTool.月結帳
             編號 = 常數.錯誤資料編碼,
 
             公司 = 公司資料.錯誤,
-            客戶 = 客戶資料.ERROR,
+            客戶 = 客戶資料.錯誤,
 
             商品 = 商品資料.ERROR,
 

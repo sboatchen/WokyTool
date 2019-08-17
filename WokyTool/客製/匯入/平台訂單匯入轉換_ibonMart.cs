@@ -31,7 +31,7 @@ namespace WokyTool.客製
 
         public 平台訂單匯入轉換_ibonMart()
         {
-            客戶 = 客戶資料管理器.獨體.Get("ibon mart");
+            客戶 = 客戶資料管理器.獨體.取得("ibon mart");
         }
 
         public void 讀出標頭(string[] 標頭列_)

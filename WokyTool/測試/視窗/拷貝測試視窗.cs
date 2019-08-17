@@ -1,13 +1,17 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
+using WokyTool.客戶;
 using WokyTool.通用;
 
 namespace WokyTool.測試
@@ -204,6 +208,143 @@ namespace WokyTool.測試
             讀寫測試資料_.書.Add(1, "9999");
 
             讀寫測試資料_.紀錄編輯(true);
+        }
+
+        private void 序列化_Click(object sender, EventArgs e)
+        {
+            /*序列化測試資料 資料_ = new 序列化測試資料
+            {
+                整數 = 12345,
+                字串 = "感林洋",
+                浮點數 = 1.2345f,
+                客戶 = 客戶資料.空白,
+                客戶2 = 客戶資料.錯誤,
+            };
+
+            訊息管理器.獨體.通知(JsonConvert.SerializeObject(資料_, Formatting.Indented));
+
+            {
+                var 第一個資料位元組_ = 資料_.轉成位元組();
+
+                object 轉回來_ = 第一個資料位元組_.轉成物件<object>();
+
+                訊息管理器.獨體.通知(JsonConvert.SerializeObject(轉回來_, Formatting.Indented));
+            }
+
+            SaveFileDialog SFD_ = new SaveFileDialog();
+            SFD_.DefaultExt = ".xml";
+            SFD_.Filter = "xml files (.xml)|*.xml";
+            if (SFD_.ShowDialog() != DialogResult.OK)
+                return;
+
+            int index = SFD_.FileName.IndexOf(".");
+            string fileName = SFD_.FileName.Substring(0, index + 1);
+            Console.WriteLine(fileName);
+            
+            {
+                FileStream stream = new FileStream(fileName + "xml", FileMode.Create);
+                XmlSerializer xmlserilize = new XmlSerializer(typeof(序列化測試資料));
+                xmlserilize.Serialize(stream, 資料_);
+                stream.Close();
+            }*/
+
+            子客戶資料 資料_ = new 子客戶資料
+            {
+                編號 = 12345,
+                名稱 = "感林洋",
+                客戶 = 客戶資料管理器.獨體.取得(3),
+            };
+
+            訊息管理器.獨體.通知(JsonConvert.SerializeObject(資料_, Formatting.Indented));
+
+            {
+                var 第一個資料位元組_ = 資料_.轉成位元組();
+
+                子客戶資料 轉回來_ = 第一個資料位元組_.轉成物件<子客戶資料>();
+
+                訊息管理器.獨體.通知(JsonConvert.SerializeObject(轉回來_, Formatting.Indented));
+            }
+        }
+
+        private void 序列化時間_Click(object sender, EventArgs e)
+        {
+            List<讀寫測試資料> 資料列_ = new List<讀寫測試資料>();
+
+            Random 隨機_ = new Random();
+            for (int i = 1; i <= 100000; i++)
+            {
+                讀寫測試資料 讀寫測試資料_ = new 讀寫測試資料
+                {
+                    字串 = "字串" + i,
+                    整數 = i,
+                    浮點數 = (float)隨機_.NextDouble(),
+                    倍精準浮點數 = 隨機_.NextDouble(),
+                    時間 = DateTime.Now.AddMinutes(i),
+                    列舉 = (列舉.編號)(i % 10 + 1),
+                };
+
+                資料列_.Add(讀寫測試資料_);
+            }
+
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+
+            List<byte[]> 中繼資料列_ = new List<byte[]>();
+            foreach (讀寫測試資料 資料_ in 資料列_)
+            {
+                中繼資料列_.Add(資料_.轉成位元組());
+            }
+
+            watch.Stop();
+            Console.WriteLine("建立資料花費:" + watch.ElapsedMilliseconds);
+            watch.Restart();
+
+            byte[] 比較範例_ = 中繼資料列_.First();
+            foreach (byte[] 資料_ in 中繼資料列_)
+            {
+                資料_.是否相等(比較範例_);
+            }
+
+            watch.Stop();
+            Console.WriteLine("比較資料花費:" + watch.ElapsedMilliseconds);
+            watch.Restart();
+
+            foreach (byte[] 資料_ in 中繼資料列_)
+            {
+                var x = 資料_.轉成物件<讀寫測試資料>();
+            }
+
+            watch.Stop();
+            Console.WriteLine("轉換資料花費:" + watch.ElapsedMilliseconds);
+            Console.WriteLine("------------------");
+            watch.Restart();
+
+            List<string> 中繼資料列2_ = new List<string>();
+            foreach (讀寫測試資料 資料_ in 資料列_)
+            {
+                中繼資料列2_.Add(資料_.ToString(false));
+            }
+
+            watch.Stop();
+            Console.WriteLine("建立資料花費:" + watch.ElapsedMilliseconds);
+            watch.Restart();
+
+            string 比較範例2_ = 中繼資料列2_.First();
+            foreach (string 資料_ in 中繼資料列2_)
+            {
+                資料_.Equals(比較範例_);
+            }
+
+            watch.Stop();
+            Console.WriteLine("比較資料花費:" + watch.ElapsedMilliseconds);
+            watch.Restart();
+
+            foreach (string 資料_ in 中繼資料列2_)
+            {
+                var x = JsonConvert.DeserializeObject<讀寫測試資料>(資料_);
+            }
+
+            watch.Stop();
+            Console.WriteLine("轉換資料花費:" + watch.ElapsedMilliseconds);
         }
     }
 }

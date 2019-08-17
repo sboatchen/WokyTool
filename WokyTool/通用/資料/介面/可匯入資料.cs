@@ -9,7 +9,6 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    [Serializable]
     public abstract class 新版可匯入資料<T> : 可編輯資料<T> where T : 基本資料
     {
         [JsonProperty]

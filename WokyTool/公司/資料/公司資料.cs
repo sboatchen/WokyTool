@@ -9,7 +9,6 @@ using WokyTool.通用;
 
 namespace WokyTool.公司
 {
-    [Serializable]
     [JsonObject(MemberSerialization.OptIn)]
     public class 公司資料 : 新版可記錄資料<公司資料>
     {

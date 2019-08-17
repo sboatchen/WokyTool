@@ -87,9 +87,9 @@ namespace WokyTool.商品
             get
             {
                 if (_客戶 == null)
-                    _客戶 = 客戶資料.NULL;
-                else if (客戶資料管理器.獨體.唯讀BList.Contains(_客戶) == false)
-                    _客戶 = 客戶資料.ERROR;
+                    _客戶 = 客戶資料.空白;
+                else if (客戶資料管理器.獨體.包含(_客戶) == false)
+                    _客戶 = 客戶資料.錯誤;
 
                 return _客戶;
             }
@@ -153,7 +153,7 @@ namespace WokyTool.商品
             小類 = 商品小類資料管理器.獨體.Get(小類識別);
 
             公司 = 公司資料管理器.獨體.取得(公司識別);
-            客戶 = 客戶資料管理器.獨體.Get(客戶識別);
+            客戶 = 客戶資料管理器.獨體.取得(客戶識別);
 
             if (String.IsNullOrEmpty(組成識別))
                 return;

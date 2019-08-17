@@ -36,7 +36,7 @@ namespace WokyTool.客製
 
         public 平台訂單匯入轉換_中華電信()
         {
-            客戶 = 客戶資料管理器.獨體.Get("中華電信");
+            客戶 = 客戶資料管理器.獨體.取得("中華電信");
         }
 
         public void 讀出標頭(string[] 標頭列_)

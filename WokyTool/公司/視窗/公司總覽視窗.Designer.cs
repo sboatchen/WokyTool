@@ -49,7 +49,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(293, 305);
+            this.dataGridView1.Size = new System.Drawing.Size(245, 305);
             this.dataGridView1.TabIndex = 0;
             // 
             // 公司資料BindingSource
@@ -67,13 +67,12 @@
             this.名稱DataGridViewTextBoxColumn.DataPropertyName = "名稱";
             this.名稱DataGridViewTextBoxColumn.HeaderText = "名稱";
             this.名稱DataGridViewTextBoxColumn.Name = "名稱DataGridViewTextBoxColumn";
-            this.名稱DataGridViewTextBoxColumn.Width = 150;
             // 
             // 公司總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(293, 305);
+            this.ClientSize = new System.Drawing.Size(245, 305);
             this.Controls.Add(this.dataGridView1);
             this.Name = "公司總覽視窗";
             this.Text = "公司總覽視窗";
@@ -86,8 +85,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource 公司資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 公司資料BindingSource;
     }
 }

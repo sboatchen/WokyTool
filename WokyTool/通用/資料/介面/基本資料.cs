@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
-    [Serializable]
     public abstract class 基本資料
     {
         public override string ToString()

@@ -31,7 +31,7 @@ namespace WokyTool.客製
 
         public 平台訂單匯入轉換_viva()
         {
-            客戶 = 客戶資料管理器.獨體.Get("viva");
+            客戶 = 客戶資料管理器.獨體.取得("viva");
         }
 
         public void 讀出標頭(string[] 標頭列_)

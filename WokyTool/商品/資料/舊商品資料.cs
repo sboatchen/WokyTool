@@ -120,7 +120,7 @@ namespace WokyTool.商品
             }
             set
             {
-                _客戶 = 客戶資料管理器.獨體.Get(value);
+                _客戶 = 客戶資料管理器.獨體.取得(value);
             }
         }
 
@@ -130,9 +130,9 @@ namespace WokyTool.商品
             get
             {
                 if (_客戶 == null)
-                    _客戶 = 客戶資料.NULL;
-                else if (客戶資料管理器.獨體.唯讀BList.Contains(_客戶) == false)
-                    _客戶 = 客戶資料.ERROR;
+                    _客戶 = 客戶資料.空白;
+                else if (客戶資料管理器.獨體.包含(_客戶) == false)
+                    _客戶 = 客戶資料.錯誤;
 
                 return _客戶;
             }
@@ -358,7 +358,7 @@ namespace WokyTool.商品
             小類 = 商品小類資料.NULL,
 
             公司 = 公司資料.空白,
-            客戶 = 客戶資料.NULL,
+            客戶 = 客戶資料.空白,
 
             品號 = 字串.無,
             名稱 = 字串.無,
@@ -394,7 +394,7 @@ namespace WokyTool.商品
             小類 = 商品小類資料.ERROR,
 
             公司 = 公司資料.錯誤,
-            客戶 = 客戶資料.ERROR,
+            客戶 = 客戶資料.錯誤,
 
             品號 = 字串.錯誤,
             名稱 = 字串.錯誤,
@@ -430,7 +430,7 @@ namespace WokyTool.商品
             小類 = 商品小類資料.NULL,
 
             公司 = 公司資料.空白,
-            客戶 = 客戶資料.NULL,
+            客戶 = 客戶資料.空白,
 
             品號 = 字串.空,
             名稱 = 字串.折扣,
