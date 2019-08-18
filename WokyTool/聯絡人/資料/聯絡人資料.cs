@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.Data;
 using WokyTool.DataMgr;
+using WokyTool.客戶;
 using WokyTool.通用;
 
 namespace WokyTool.聯絡人
 {
-    [Serializable]
     [JsonObject(MemberSerialization.OptIn)]
     public class 聯絡人資料 : 新版可記錄資料<聯絡人資料>
     {
@@ -30,7 +30,41 @@ namespace WokyTool.聯絡人
         [JsonProperty]
         public string 地址 { get; set; }
 
+        [JsonProperty]
+        public int 客戶編號
+        {
+            get
+            {
+                return 客戶.編號;
+            }
+            set
+            {
+                客戶 = 客戶資料管理器.獨體.取得(value);
+            }
+        }
+
+        [JsonProperty]
+        public int 子客戶編號
+        {
+            get
+            {
+                return 子客戶.編號;
+            }
+            set
+            {
+                子客戶 = 子客戶資料管理器.獨體.取得(value);
+            }
+        }
+
         /********************************/
+
+        public 客戶資料 客戶 { get; set; }
+
+        public 子客戶資料 子客戶 { get; set; }
+
+        public string 客戶名稱 { get { return 客戶.名稱; } }
+
+        public string 子客戶名稱 { get { return 子客戶.名稱; } }
 
         public 聯絡人資料 Self { get { return this; } }
 
@@ -54,7 +88,7 @@ namespace WokyTool.聯絡人
 
         /********************************/
 
-        public override void 檢查合法(可處理合法介面 介面_)
+        public override void 合法檢查(可處理檢查介面 介面_)
         {
             if (String.IsNullOrEmpty(姓名))
                 介面_.錯誤(this, "姓名不合法");
@@ -64,6 +98,13 @@ namespace WokyTool.聯絡人
 
             if (String.IsNullOrEmpty(地址))
                 介面_.錯誤(this, "地址不合法");
+
+            if (false == 客戶.編號是否有值())
+                介面_.錯誤(this, "客戶不合法");
+
+            // 可以不設定子客戶, 但若設定了 必須屬於上層客戶
+            if (子客戶.編號是否有值() && 子客戶.客戶 != 客戶)
+                介面_.錯誤(this, "子客戶不屬於客戶");
         }
     }
 }

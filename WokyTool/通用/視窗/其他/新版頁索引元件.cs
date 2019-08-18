@@ -45,7 +45,6 @@ namespace WokyTool.通用
                     if (可編號資料_.編號 == value)
                     {
                         _資料BS.Position = i;
-                        //更新索引();
                         return;
                     }
                 }
@@ -73,7 +72,6 @@ namespace WokyTool.通用
                 else
                 {
                     _資料BS.Position = value;
-                    //更新索引();
                 }
             }
         }
@@ -95,8 +93,6 @@ namespace WokyTool.通用
                 _資料BS.MoveLast();
             else
                 _資料BS.MovePrevious();
-
-            //更新索引();
         }
 
         private void 下一頁_Click(object sender, EventArgs e)
@@ -105,18 +101,11 @@ namespace WokyTool.通用
                 _資料BS.MoveFirst();
             else
                 _資料BS.MoveNext();
-
-            //更新索引();
         }
 
         private void _選擇改變(object sender, EventArgs e)
         {
             索引.Text = String.Format("{0} / {1}", _資料BS.Position + 1, _資料BS.Count);
         }
-
-        /*public void 更新索引()
-        {
-            索引.Text = String.Format("{0} / {1}", _資料BS.Position + 1, _資料BS.Count);
-        }*/
     }
 }
