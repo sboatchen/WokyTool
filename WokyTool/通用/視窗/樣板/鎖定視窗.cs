@@ -66,7 +66,7 @@ namespace WokyTool.通用
             this.BringToFront();
         }
 
-        public void 顯現(int Pos_)
+        public void 顯現(int 編號_)
         {
             顯現();
         }

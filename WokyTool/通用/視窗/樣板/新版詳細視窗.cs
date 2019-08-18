@@ -119,9 +119,25 @@ namespace WokyTool.通用
             this.BringToFront();
         }
 
-        public void 顯現(int Pos_)
+        public void 顯現(int 編號_)
         {
             this.是否關閉 = false;
+
+            for (int i = 0; i < 資料BS.Count; i++)
+            {
+                可編號介面 可編號資料_ = 資料BS[i] as 可編號介面;
+                if (可編號資料_ == null)
+                {
+                    訊息管理器.獨體.錯誤("非可編號介面:" + 資料BS[i].GetType().Name);
+                    return;
+                }
+
+                if (可編號資料_.編號 == 編號_)
+                {
+                    資料BS.Position = i;
+                    break;
+                }
+            }
 
             this.Show();
             this.BringToFront();

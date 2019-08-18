@@ -12,18 +12,38 @@ using WokyTool.通用;
 
 namespace WokyTool.客戶
 {
-    public partial class 客戶總覽視窗 : 總覽視窗
+    public partial class 客戶總覽視窗 : 新版總覽視窗
     {
+        public override 列舉.編號 編號類型 { get { return 列舉.編號.客戶; } }
+
+        public override 可編輯列舉資料管理介面 管理介面 { get { return 客戶資料管理器.獨體.編輯管理器; } }
+        public override DataGridView 資料GV { get { return this.dataGridView1; } }
+
         public 客戶總覽視窗()
         {
             InitializeComponent();
 
-            this.初始化(this.客戶資料BindingSource, 客戶資料管理器.獨體);
+            this.初始化();
         }
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int 編號_ = ((客戶資料)(this.客戶資料BindingSource.Current)).編號;
-            視窗管理器.獨體.顯現(列舉.編號.客戶, 列舉.視窗.詳細, 編號_);
+            訊息管理器.獨體.通知("尚未實作");
+        }
+
+        private void 檢查ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            列表處理檢查管理器 檢查管理器_ = new 列表處理檢查管理器();
+            管理介面.合法檢查(檢查管理器_);
+
+            var i = new 錯誤列表視窗(檢查管理器_, 編號類型.ToString());
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            訊息管理器.獨體.通知("尚未實作");
         }
     }
 }

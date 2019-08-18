@@ -8,57 +8,25 @@ using WokyTool.通用;
 
 namespace WokyTool.客戶
 {
-    public class 客戶資料管理器 : 資料管理器<客戶資料>
+    public class 客戶資料管理器 : 可儲存資料管理器<客戶資料>
     {
-        public override string 檔案路徑 
-        {
-            get 
-            { 
-                return "設定/客戶.json"; 
-            } 
-        }
+        public override 列舉.編號 編號類型 { get { return 列舉.編號.客戶; } }
 
-        public override 客戶資料 空白資料
-        {
-            get
-            {
-                return 客戶資料.NULL;
-            }
-        }
+        public override bool 是否可編輯 { get { return 系統參數.修改設定資料; } }
 
-        public override 客戶資料 錯誤資料
-        {
-            get 
-            {
-                return 客戶資料.ERROR; 
-            } 
-        }
+        public override string 檔案路徑 { get { return "設定/客戶V2_1_7.json"; } }
 
-        public override 列舉.編號 編號類型
-        { 
-            get 
-            { 
-                return 列舉.編號.客戶; 
-            } 
-        }
+        public override 客戶資料 空白資料 { get { return 客戶資料.空白; } }
+        public override 客戶資料 錯誤資料 { get { return 客戶資料.錯誤; } }
 
-        public override bool 是否可編輯
+        protected override 新版可篩選介面<客戶資料> 取得篩選介面()
         {
-            get
-            {
-                return 系統參數.修改設定資料;
-            }
+            return new 客戶資料篩選();
         }
 
         // 獨體
         private static readonly 客戶資料管理器 _獨體 = new 客戶資料管理器();
-        public static 客戶資料管理器 獨體
-        {
-            get
-            {
-                return _獨體;
-            }
-        }
+        public static 客戶資料管理器 獨體 { get { return _獨體; } }
 
         // 建構子
         private 客戶資料管理器()
@@ -66,19 +34,19 @@ namespace WokyTool.客戶
         }
 
         // 取得資料
-        public 客戶資料 Get(string Name)
+        public 客戶資料 取得(string 名稱_)
         {
-            if (String.IsNullOrEmpty(Name) || 字串.無.Equals(Name))
+            if (String.IsNullOrEmpty(名稱_) || 字串.無.Equals(名稱_))
                 return 空白資料;
 
-            客戶資料 Item_ = Map.Values
-                                   .Where(Value => Name.Equals(Value.名稱))
+            客戶資料 資料_ = _資料書.Values
+                                   .Where(Value => 名稱_.Equals(Value.名稱))
                                    .FirstOrDefault();
 
-            if (Item_ == null)
+            if (資料_ == null)
                 return 錯誤資料;
             else
-                return Item_;
+                return 資料_;
         }
     }
 }

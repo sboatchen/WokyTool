@@ -36,7 +36,7 @@ namespace WokyTool.客戶
             列表處理檢查管理器 檢查管理器_ = new 列表處理檢查管理器();
             管理介面.合法檢查(檢查管理器_);
 
-            var i = new 錯誤列表視窗(檢查管理器_, "聯絡人檢查");
+            var i = new 錯誤列表視窗(檢查管理器_, 編號類型.ToString());
             i.Show();
             i.BringToFront();
         }
