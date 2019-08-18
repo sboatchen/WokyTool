@@ -23,6 +23,7 @@ namespace WokyTool.一般訂單
         private 可清單列舉資料管理介面 _子客戶清單管理器 = 子客戶資料管理器.獨體.清單管理器;
         private int _子客戶資料版本 = -1;
 
+        private 可清單列舉資料管理介面 _客戶清單管理器 = 客戶資料管理器.獨體.清單管理器;
         private int _客戶資料版本 = -1;
 
         public 一般訂單新增總覽視窗()
@@ -109,10 +110,10 @@ namespace WokyTool.一般訂單
                 this.子客戶資料BindingSource.DataSource = _子客戶清單管理器.資料列舉;
             }
 
-            if (_客戶資料版本 != 客戶資料管理器.獨體.可選取資料列版本)
+            if (_客戶資料版本 != _客戶清單管理器.資料版本)
             {
-                _客戶資料版本 = 客戶資料管理器.獨體.可選取資料列版本;
-                this.客戶資料BindingSource.DataSource = 客戶資料管理器.獨體.唯讀BList;
+                _客戶資料版本 = _客戶清單管理器.資料版本;
+                this.客戶資料BindingSource.DataSource = _客戶清單管理器.資料列舉;
             }
         }
     }

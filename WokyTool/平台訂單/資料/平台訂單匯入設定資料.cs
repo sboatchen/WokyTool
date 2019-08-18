@@ -55,7 +55,7 @@ namespace WokyTool.平台訂單
             }
             set
             {
-                _客戶 = 客戶資料管理器.獨體.Get(value);
+                _客戶 = 客戶資料管理器.獨體.取得(value);
             }
         }
 
@@ -65,9 +65,9 @@ namespace WokyTool.平台訂單
             get
             {
                 if (_客戶 == null)
-                    _客戶 = 客戶資料.NULL;
-                else if (客戶資料管理器.獨體.唯讀BList.Contains(_客戶) == false)
-                    _客戶 = 客戶資料.ERROR;
+                    _客戶 = 客戶資料.空白;
+                else if (客戶資料管理器.獨體.包含(_客戶) == false)
+                    _客戶 = 客戶資料.錯誤;
 
                 return _客戶;
             }
@@ -93,7 +93,7 @@ namespace WokyTool.平台訂單
             結束位置 = 0,
             標頭位置 = 0,
             公司 = 公司資料.空白,
-            客戶 = 客戶資料.NULL,
+            客戶 = 客戶資料.空白,
         };
         public static 平台訂單匯入設定資料 NULL
         {
@@ -112,7 +112,7 @@ namespace WokyTool.平台訂單
             結束位置 = 0,
             標頭位置 = 0,
             公司 = 公司資料.錯誤,
-            客戶 = 客戶資料.ERROR,
+            客戶 = 客戶資料.錯誤,
         };
         public static 平台訂單匯入設定資料 ERROR
         {

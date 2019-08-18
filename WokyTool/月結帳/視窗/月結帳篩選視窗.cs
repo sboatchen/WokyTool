@@ -28,7 +28,7 @@ namespace WokyTool.月結帳{
 
         protected override void 視窗激活()
         {
-            this.客戶選取元件1.視窗激活();
+            //@@@this.客戶選取元件1.視窗激活();
 
             //@@ 目前無法解決資料更新時 會預設選第一個當值
             this.公司選取元件1.SelectedItem = _篩選設定.公司;
