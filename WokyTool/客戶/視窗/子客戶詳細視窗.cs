@@ -13,58 +13,29 @@ using WokyTool.聯絡人;
 
 namespace WokyTool.客戶
 {
-    public partial class 子客戶詳細視窗 : 詳細視窗
+    public partial class 子客戶詳細視窗 : 新版詳細視窗
     {
-        private 可清單列舉資料管理介面 _聯絡人清單管理器 = 聯絡人資料管理器.獨體.清單管理器;
-        private int _聯絡人資料版本 = -1;
+        public override 列舉.編號 編號類型 { get { return 列舉.編號.子客戶; } }
 
-        private 資料列選取插件2<聯絡人資料> _資料列選取插件;
+        public override 可編輯列舉資料管理介面 管理介面 { get { return 子客戶資料管理器.獨體.編輯管理器; } }
+        public override 新版頁索引元件 頁索引 { get { return this.新版頁索引元件1; } }
+
 
         public 子客戶詳細視窗()
         {
             InitializeComponent();
 
-            //@@@@this.初始化(this.頁索引元件1, 子客戶資料管理器.獨體);
+            初始化();
 
-            _資料列選取插件 = new 資料列選取插件2<聯絡人資料>(聯絡人資料管理器.獨體, this.聯絡人資料BindingSource, this.dataGridView1, 1);
+            資料綁定(this.名稱, "名稱");
+            資料綁定(this.客戶選取元件1, "客戶");
 
-            bool 是否唯讀_ = 子客戶資料管理器.獨體.是否可編輯 == false;
-
-            this.名稱.ReadOnly = 是否唯讀_;
-            
-            this._資料列選取插件.ReadOnly = 是否唯讀_;
+            //選擇改變(this, null);
         }
 
-        /********************************/
-        // 子客戶詳細視窗樣板
-
-        protected override void 視窗激活()
+        protected override void 選擇改變(object sender, EventArgs e)
         {
-            if (_聯絡人資料版本 != _聯絡人清單管理器.資料版本)
-            {
-                _聯絡人資料版本 = _聯絡人清單管理器.資料版本;
-                this.聯絡人資料BindingSource.DataSource = _聯絡人清單管理器.資料列舉;
-            }
-        }
-
-        /********************************/
-        // 頁索引上層介面
-
-        public override void 索引切換_異動儲存()
-        {
-            子客戶資料 目前資料_ = (子客戶資料)(this.頁索引元件1.目前資料);
-
-            目前資料_.名稱 = this.名稱.Text;
-            目前資料_.聯絡人編號列 = _資料列選取插件.編號列;
-        }
-
-        public override void 索引切換_更新呈現()
-        {
-            子客戶資料 目前資料_ = (子客戶資料)(this.頁索引元件1.目前資料);
-
-            this.名稱.Text = 目前資料_.名稱;
-
-            _資料列選取插件.綁定(目前資料_.聯絡人編號列);
+            this.聯絡人資料BindingSource.DataSource = ((子客戶資料)(this.資料BS.Current)).聯絡人列舉;
         }
     }
 }

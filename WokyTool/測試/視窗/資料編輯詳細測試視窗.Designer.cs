@@ -160,8 +160,6 @@
             this.新版頁索引元件1.Name = "新版頁索引元件1";
             this.新版頁索引元件1.Size = new System.Drawing.Size(234, 34);
             this.新版頁索引元件1.TabIndex = 13;
-            this.新版頁索引元件1.位置 = -1;
-            this.新版頁索引元件1.編號 = -1;
             // 
             // menuStrip1
             // 

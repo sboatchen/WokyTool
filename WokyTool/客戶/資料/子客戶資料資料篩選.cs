@@ -62,10 +62,7 @@ namespace WokyTool.客戶
                 目前列舉_ = 目前列舉_.Where(Value => Value.名稱.Contains(名稱));
 
             if (null != 客戶)
-            {
-                if (客戶.子客戶編號列 != null && 客戶.子客戶編號列.Count > 0)
-                    目前列舉_ = 目前列舉_.Where(Value => 客戶.子客戶編號列.Contains(Value.編號));
-            }
+                目前列舉_ = 目前列舉_.Where(Value => Value.客戶 == 客戶);
 
             return 目前列舉_;
         }

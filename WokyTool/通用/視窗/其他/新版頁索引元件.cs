@@ -15,7 +15,7 @@ namespace WokyTool.通用
     {
         protected BindingSource _資料BS = null;
 
-        public int 編號
+        /*public int 編號
         {
             get
             {
@@ -74,7 +74,7 @@ namespace WokyTool.通用
                     _資料BS.Position = value;
                 }
             }
-        }
+        }*/
 
         public 新版頁索引元件()
         {
