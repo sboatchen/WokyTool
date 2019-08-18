@@ -14,14 +14,17 @@ namespace WokyTool.通用
         public virtual 列舉.編號 編號類型 { get { throw new Exception(this.GetType().Name + " 未設定編號類型"); } }
 
         public virtual 可編輯列舉資料管理介面 管理介面 { get { throw new Exception(this.GetType().Name + " 未設定管理介面"); } }
-        public virtual BindingSource 資料BS { get { throw new Exception(this.GetType().Name + " 未設定資料BS"); } }
         public virtual DataGridView 資料GV { get { throw new Exception(this.GetType().Name + " 未設定資料GV"); } }
+
+        public BindingSource 資料BS { get { return 管理介面.公用BS; } }
 
         public int 資料版本 { get; protected set; }
         public bool 是否關閉 { get; protected set; }
 
         public void 初始化()
         {
+            this.資料GV.DataSource = 資料BS;
+
             this.Activated += new System.EventHandler(this._視窗激活);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);
             資料GV.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._點擊標頭);
@@ -32,7 +35,16 @@ namespace WokyTool.通用
             資料GV.AllowUserToDeleteRows = 管理介面.是否可編輯;
             資料GV.ReadOnly = 管理介面.是否可編輯 == false;
 
-            資料版本 = -1;
+            更新資料();
+        }
+
+        private void 更新資料()
+        {
+            資料版本 = 管理介面.資料版本;
+            this.資料BS.DataSource = 管理介面.資料列舉;
+            this.資料BS.ResetBindings(false);
+
+            資料GV.AllowUserToDeleteRows = 管理介面.是否可編輯 && ((可篩選介面_視窗)管理介面.篩選介面).是否篩選 == false; // 含篩選條件時 仍可刪除 擋掉
         }
 
         protected void _視窗激活(object sender, EventArgs e)
@@ -43,13 +55,7 @@ namespace WokyTool.通用
             視窗激活();
 
             if (資料版本 != 管理介面.資料版本)
-            {
-                資料版本 = 管理介面.資料版本;
-                this.資料BS.DataSource = 管理介面.資料列舉;
-                this.資料BS.ResetBindings(false);
-
-                資料GV.AllowUserToDeleteRows = 管理介面.是否可編輯 && ((可篩選介面_視窗)管理介面.篩選介面).是否篩選 == false; // 含篩選條件時 仍可刪除 擋掉
-            }
+                更新資料();
         }
 
         protected virtual void 視窗激活()
@@ -119,14 +125,7 @@ namespace WokyTool.通用
             if (this.資料BS.Current == null)
                 return;
 
-            可編號介面 資料_ = this.資料BS.Current as 可編號介面;
-            if(資料_ == null)
-            {
-                訊息管理器.獨體.錯誤("資料無法沒有編號:" + 資料_.GetType().Name);
-                return;
-            }
-
-            視窗管理器.獨體.顯現(編號類型, 列舉.視窗.詳細, 資料_.編號, true);
+            視窗管理器.獨體.顯現(編號類型, 列舉.視窗.詳細, true);
         }
 
         private 列表處理檢查管理器 _刪除檢查;

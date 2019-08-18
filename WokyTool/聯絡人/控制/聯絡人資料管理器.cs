@@ -18,7 +18,7 @@ namespace WokyTool.聯絡人
 
         public override bool 是否可編輯 { get { return 系統參數.修改設定資料; } }
 
-        public override string 檔案路徑 { get { return "設定/聯絡人.json"; } }
+        public override string 檔案路徑 { get { return "設定/聯絡人V2_1_7.json"; } }
 
         public override 聯絡人資料 空白資料 { get { return 聯絡人資料.空白; } }
         public override 聯絡人資料 錯誤資料 { get { return 聯絡人資料.錯誤; } }

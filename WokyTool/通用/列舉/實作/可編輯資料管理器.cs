@@ -53,6 +53,9 @@ namespace WokyTool.通用
             }
         }
 
+        protected BindingSource _公用BS = new BindingSource();
+        public BindingSource 公用BS { get { return _公用BS; } }
+
         protected 新版可篩選介面<T> _篩選介面 = null;
         public object 篩選介面
         {

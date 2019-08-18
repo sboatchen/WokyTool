@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WokyTool.通用
 {
@@ -14,5 +15,7 @@ namespace WokyTool.通用
         bool 是否編輯中 { get; }
 
         void 完成編輯(bool 是否紀錄_);
+
+        BindingSource 公用BS { get; }
     }
 }

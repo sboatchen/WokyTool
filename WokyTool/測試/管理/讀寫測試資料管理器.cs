@@ -18,7 +18,7 @@ namespace WokyTool.測試
     {
         protected List<讀寫測試資料> _資料列 = null;
 
-        public override object 資料列舉 
+        public override IEnumerable<讀寫測試資料> 資料列舉2 
         {   
             get 
             { 

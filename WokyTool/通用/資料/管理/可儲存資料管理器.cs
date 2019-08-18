@@ -35,7 +35,7 @@ namespace WokyTool.通用
         protected int _目前資料書版本 = 0;
         protected int _下個編號 = 1;
 
-        public override object 資料列舉
+        public override IEnumerable<T> 資料列舉2
         {
             get
             {

@@ -17,7 +17,8 @@ namespace WokyTool.通用
     {
         public int 資料版本 { get; protected set; }
 
-        public abstract object 資料列舉 { get; }
+        public object 資料列舉 { get { return 資料列舉2; } }
+        public abstract IEnumerable<T> 資料列舉2 { get; }
 
         protected abstract 新版可篩選介面<T> 取得篩選介面();
 
@@ -48,14 +49,7 @@ namespace WokyTool.通用
 
         public void 合法檢查(可處理檢查介面 管理器_)
         {
-            IEnumerable<T> 資料列_ = 資料列舉 as IEnumerable<T>;
-            if (資料列_ == null)
-            {
-                訊息管理器.獨體.錯誤("型別錯誤: " + 資料列舉.GetType().Name);
-                return;
-            }
-
-            foreach (T 資料_ in 資料列_)
+            foreach (T 資料_ in 資料列舉2)
             {
                 資料_.合法檢查(管理器_);
             }
