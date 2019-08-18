@@ -24,5 +24,25 @@ namespace WokyTool.公司
 
             this.初始化();
         }
+
+        private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            訊息管理器.獨體.通知("尚未實作");
+        }
+
+        private void 檢查ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            列表處理檢查管理器 檢查管理器_ = new 列表處理檢查管理器();
+            管理介面.合法檢查(檢查管理器_);
+
+            var i = new 錯誤列表視窗(檢查管理器_, 編號類型.ToString());
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            訊息管理器.獨體.通知("尚未實作");
+        }
     }
 }

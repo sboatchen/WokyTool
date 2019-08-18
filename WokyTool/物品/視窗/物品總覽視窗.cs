@@ -146,7 +146,8 @@ namespace WokyTool.物品
 
         protected override void 視窗激活()
         {
-            if (_物品大類資料版本 != 物品大類資料管理器.獨體.可選取資料列版本)
+            //@@
+            /*if (_物品大類資料版本 != 物品大類資料管理器.獨體.可選取資料列版本)
             {
                 _物品大類資料版本 = 物品大類資料管理器.獨體.可選取資料列版本;
                 this.物品大類資料BindingSource.DataSource = 物品大類資料管理器.獨體.唯讀BList;
@@ -162,7 +163,7 @@ namespace WokyTool.物品
             {
                 _物品品牌資料版本 = 物品品牌資料管理器.獨體.可選取資料列版本;
                 this.物品品牌資料BindingSource.DataSource = 物品品牌資料管理器.獨體.唯讀BList;
-            }
+            }*/
         }
 
         private void 檢查ToolStripMenuItem_Click(object sender, EventArgs e)

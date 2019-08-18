@@ -69,7 +69,7 @@ namespace WokyTool.物品
                     cl = range.Columns.Count;
 
                     String 品牌名稱_ = xlWorkSheet.Name;
-                    物品品牌資料 品牌_ = 物品品牌資料管理器.獨體.Get(品牌名稱_);
+                    物品品牌資料 品牌_ = 物品品牌資料管理器.獨體.取得(品牌名稱_);
 
                     for (rCnt = 2; rCnt <= rw; rCnt++)
                     {
@@ -81,10 +81,10 @@ namespace WokyTool.物品
                         String 名稱_ = ((range.Cells[rCnt, 1] as Excel.Range).Value2 as object).ToString();
                         
                         String 大類名稱_ = ((range.Cells[rCnt, 2] as Excel.Range).Value2 as object).ToString();
-                        物品大類資料 大類_ = 物品大類資料管理器.獨體.Get(大類名稱_);
+                        物品大類資料 大類_ = 物品大類資料管理器.獨體.取得(大類名稱_);
 
                         String 小類名稱_ = ((range.Cells[rCnt, 3] as Excel.Range).Value2 as object).ToString();
-                        物品小類資料 小類_ = 物品小類資料管理器.獨體.Get(小類名稱_);
+                        物品小類資料 小類_ = 物品小類資料管理器.獨體.取得(小類名稱_);
 
                         String 縮寫_ = ((range.Cells[rCnt, 4] as Excel.Range).Value2 as object).ToString();
 

@@ -21,9 +21,9 @@ namespace WokyTool.物品
             get
             {
                 if (_大類 == null)
-                    _大類 = 物品大類資料.NULL;
-                else if (物品大類資料管理器.獨體.唯讀BList.Contains(_大類) == false)
-                    _大類 = 物品大類資料.ERROR;
+                    _大類 = 物品大類資料.空白;
+                else if (物品大類資料管理器.獨體.包含(_大類) == false)
+                    _大類 = 物品大類資料.錯誤;
 
                 return _大類;
             }
@@ -42,9 +42,9 @@ namespace WokyTool.物品
             get
             {
                 if (_小類 == null)
-                    _小類 = 物品小類資料.NULL;
-                else if (物品小類資料管理器.獨體.唯讀BList.Contains(_小類) == false)
-                    _小類 = 物品小類資料.ERROR;
+                    _小類 = 物品小類資料.空白;
+                else if (物品小類資料管理器.獨體.包含(_小類) == false)
+                    _小類 = 物品小類資料.錯誤;
 
                 return _小類;
             }
@@ -63,9 +63,9 @@ namespace WokyTool.物品
             get
             {
                 if (_品牌 == null)
-                    _品牌 = 物品品牌資料.NULL;
-                else if (物品品牌資料管理器.獨體.唯讀BList.Contains(_品牌) == false)
-                    _品牌 = 物品品牌資料.ERROR;
+                    _品牌 = 物品品牌資料.空白;
+                else if (物品品牌資料管理器.獨體.包含(_品牌) == false)
+                    _品牌 = 物品品牌資料.錯誤;
 
                 return _品牌;
             }
@@ -121,9 +121,9 @@ namespace WokyTool.物品
 
         public override void 初始化()
         {
-            大類 = 物品大類資料管理器.獨體.Get(大類識別);
-            小類 = 物品小類資料管理器.獨體.Get(小類識別);
-            品牌 = 物品品牌資料管理器.獨體.Get(品牌識別);
+            大類 = 物品大類資料管理器.獨體.取得(大類識別);
+            小類 = 物品小類資料管理器.獨體.取得(小類識別);
+            品牌 = 物品品牌資料管理器.獨體.取得(品牌識別);
         }
 
         public override void 檢查合法()

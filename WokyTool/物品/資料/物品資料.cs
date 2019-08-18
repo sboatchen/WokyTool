@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
-using WokyTool.Data;
-using WokyTool.DataMgr;
 using WokyTool.通用;
 
 namespace WokyTool.物品
@@ -26,7 +24,7 @@ namespace WokyTool.物品
             }
             set
             {
-                _大類 = 物品大類資料管理器.獨體.Get(value);
+                _大類 = 物品大類資料管理器.獨體.取得(value);
             }
         }
 
@@ -36,9 +34,9 @@ namespace WokyTool.物品
             get
             {
                 if (_大類 == null)
-                    _大類 = 物品大類資料.NULL;
-                else if (物品大類資料管理器.獨體.唯讀BList.Contains(_大類) == false)
-                    _大類 = 物品大類資料.ERROR;
+                    _大類 = 物品大類資料.空白;
+                else if (物品大類資料管理器.獨體.包含(_大類) == false)
+                    _大類 = 物品大類資料.錯誤;
 
                 return _大類;
             }
@@ -57,7 +55,7 @@ namespace WokyTool.物品
             }
             set
             {
-                _小類 = 物品小類資料管理器.獨體.Get(value);
+                _小類 = 物品小類資料管理器.獨體.取得(value);
             }
         }
 
@@ -67,9 +65,9 @@ namespace WokyTool.物品
             get
             {
                 if (_小類 == null)
-                    _小類 = 物品小類資料.NULL;
-                else if (物品小類資料管理器.獨體.唯讀BList.Contains(_小類) == false)
-                    _小類 = 物品小類資料.ERROR;
+                    _小類 = 物品小類資料.空白;
+                else if (物品小類資料管理器.獨體.包含(_小類) == false)
+                    _小類 = 物品小類資料.錯誤;
 
                 return _小類;
             }
@@ -88,7 +86,7 @@ namespace WokyTool.物品
             }
             set
             {
-                _品牌 = 物品品牌資料管理器.獨體.Get(value);
+                _品牌 = 物品品牌資料管理器.獨體.取得(value);
             }
         }
 
@@ -98,9 +96,9 @@ namespace WokyTool.物品
             get
             {
                 if (_品牌 == null)
-                    _品牌 = 物品品牌資料.NULL;
-                else if (物品品牌資料管理器.獨體.唯讀BList.Contains(_品牌) == false)
-                    _品牌 = 物品品牌資料.ERROR;
+                    _品牌 = 物品品牌資料.空白;
+                else if (物品品牌資料管理器.獨體.包含(_品牌) == false)
+                    _品牌 = 物品品牌資料.錯誤;
 
                 return _品牌;
             }
@@ -165,9 +163,9 @@ namespace WokyTool.物品
         {
             編號 = 常數.空白資料編碼,
 
-            大類 = 物品大類資料.NULL,
-            小類 = 物品小類資料.NULL,
-            品牌 = 物品品牌資料.NULL,
+            大類 = 物品大類資料.空白,
+            小類 = 物品小類資料.空白,
+            品牌 = 物品品牌資料.空白,
 
             條碼 = 字串.無,
             原廠編號 = 字串.無,
@@ -199,9 +197,9 @@ namespace WokyTool.物品
         {
             編號 = 常數.錯誤資料編碼,
 
-            大類 = 物品大類資料.ERROR,
-            小類 = 物品小類資料.ERROR,
-            品牌 = 物品品牌資料.ERROR,
+            大類 = 物品大類資料.錯誤,
+            小類 = 物品小類資料.錯誤,
+            品牌 = 物品品牌資料.錯誤,
 
             條碼 = 字串.錯誤,
             原廠編號 = 字串.錯誤,

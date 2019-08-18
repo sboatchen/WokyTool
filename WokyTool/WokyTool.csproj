@@ -249,6 +249,7 @@
       <DependentUpon>客戶選取元件.cs</DependentUpon>
     </Compile>
     <Compile Include="客戶\資料\子客戶資料.cs" />
+    <Compile Include="客戶\資料\客戶資料資料篩選.cs" />
     <Compile Include="客戶\資料\子客戶資料資料篩選.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_Momo第三方.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_Friday.cs" />
@@ -349,6 +350,10 @@
     <Compile Include="客製\匯入\平台訂單自定義_摩天.cs" />
     <Compile Include="客製\匯入\平台訂單自定義_PayEasy.cs" />
     <Compile Include="平台訂單\轉換\平台訂單新增錯誤匯出轉換.cs" />
+    <Compile Include="廢棄\客戶\舊子客戶資料.cs" />
+    <Compile Include="廢棄\客戶\舊客戶資料.cs" />
+    <Compile Include="廢棄\客戶\舊聯絡人資料.cs" />
+    <Compile Include="廢棄\客戶\舊客戶資料轉換.cs" />
     <Compile Include="月結帳\視窗\月結帳篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -505,6 +510,7 @@
     <Compile Include="測試\視窗\資料編輯詳細測試視窗.Designer.cs">
       <DependentUpon>資料編輯詳細測試視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="測試\資料\序列化測試資料.cs" />
     <Compile Include="測試\資料\讀寫測試資料篩選.cs" />
     <Compile Include="測試\資料\讀寫測試資料.cs" />
     <Compile Include="測試\轉換\讀寫測試轉換.cs" />
@@ -607,8 +613,11 @@
     </Compile>
     <Compile Include="物品\資料\匯入\物品總覽更新匯入資料.cs" />
     <Compile Include="物品\資料\匯入\物品條碼更新匯入資料.cs" />
-    <Compile Include="物品\資料\物品合併資料.cs" />
+    <Compile Include="物品\資料\物品合併資料999.cs" />
     <Compile Include="物品\資料\匯入\物品新增匯入資料.cs" />
+    <Compile Include="物品\資料\物品小類資料篩選.cs" />
+    <Compile Include="物品\資料\物品品牌資料篩選.cs" />
+    <Compile Include="物品\資料\物品大類資料篩選.cs" />
     <Compile Include="物品\資料\物品資料篩選設定.cs" />
     <Compile Include="物品\轉換\物品新增錯誤匯出轉換.cs" />
     <Compile Include="物品\轉換\物品條碼更新錯誤匯出轉換.cs" />
@@ -629,8 +638,15 @@
     <Compile Include="聯絡人\視窗\元件\聯絡人選取元件.Designer.cs">
       <DependentUpon>聯絡人選取元件.cs</DependentUpon>
     </Compile>
-    <Compile Include="聯絡人\資料\聯絡人資料資料篩選.cs" />
+    <Compile Include="聯絡人\視窗\聯絡人詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="聯絡人\視窗\聯絡人詳細視窗.Designer.cs">
+      <DependentUpon>聯絡人詳細視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="聯絡人\資料\聯絡人資料篩選.cs" />
     <Compile Include="通用\介面\可篩選介面99.cs" />
+    <Compile Include="通用\介面\可刪除檢查介面.cs" />
     <Compile Include="通用\其他\函式.cs" />
     <Compile Include="通用\其他\列舉.cs" />
     <Compile Include="通用\其他\擴充方法.cs" />
@@ -642,16 +658,16 @@
     <Compile Include="通用\列舉\實作\可管理資料管理器.cs" />
     <Compile Include="通用\列舉\實作\可清單資料管理器.cs" />
     <Compile Include="通用\列舉\實作\可編輯資料管理器.cs" />
-    <Compile Include="通用\合法\介面\可處理合法介面.cs" />
-    <Compile Include="通用\合法\實作\匯入處理合法管理器.cs" />
-    <Compile Include="通用\合法\物件\錯誤資料.cs" />
-    <Compile Include="通用\合法\物件\合法性錯誤.cs" />
-    <Compile Include="通用\合法\實作\列表處理合法管理器.cs" />
-    <Compile Include="通用\合法\實作\例外處理合法管理器.cs" />
-    <Compile Include="通用\合法\視窗\錯誤列表視窗.cs">
+    <Compile Include="通用\檢查\介面\可處理檢查介面.cs" />
+    <Compile Include="通用\檢查\實作\錯誤訊息處理檢查管理器.cs" />
+    <Compile Include="通用\檢查\物件\錯誤資料.cs" />
+    <Compile Include="通用\檢查\物件\合法性錯誤.cs" />
+    <Compile Include="通用\檢查\實作\列表處理檢查管理器.cs" />
+    <Compile Include="通用\檢查\實作\例外處理檢查管理器.cs" />
+    <Compile Include="通用\檢查\視窗\錯誤列表視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="通用\合法\視窗\錯誤列表視窗.Designer.cs">
+    <Compile Include="通用\檢查\視窗\錯誤列表視窗.Designer.cs">
       <DependentUpon>錯誤列表視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="通用\檔案\介面\可寫入介面_EXCEL.cs" />
@@ -676,6 +692,9 @@
       <DependentUpon>新版頁索引元件.cs</DependentUpon>
     </Compile>
     <Compile Include="通用\視窗\樣板\新版匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="通用\視窗\樣板\新版詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="通用\視窗\樣板\新版總覽視窗.cs">
@@ -1284,7 +1303,10 @@
     <EmbeddedResource Include="聯絡人\視窗\元件\聯絡人選取元件.resx">
       <DependentUpon>聯絡人選取元件.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="通用\合法\視窗\錯誤列表視窗.resx">
+    <EmbeddedResource Include="聯絡人\視窗\聯絡人詳細視窗.resx">
+      <DependentUpon>聯絡人詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="通用\檢查\視窗\錯誤列表視窗.resx">
       <DependentUpon>錯誤列表視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="通用\視窗99\其他\頁索引元件.resx">

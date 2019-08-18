@@ -242,11 +242,11 @@ namespace WokyTool.商品
                         if (_品牌 == null)
                             _品牌 = Temp_;
                         else
-                            _品牌 = 物品品牌資料.MIX;
+                            _品牌 = 物品品牌資料.混和;
                     }
 
                     if(_品牌 == null)
-                        _品牌 = 物品品牌資料.NULL;
+                        _品牌 = 物品品牌資料.空白;
                 }
 
                 return _品牌;
