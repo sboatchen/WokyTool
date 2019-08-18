@@ -87,7 +87,7 @@ namespace WokyTool.使用者
 
         /********************************/
 
-        public override void 檢查合法(可處理合法介面 介面_)
+        public override void 合法檢查(可處理檢查介面 介面_)
         {
             if (String.IsNullOrEmpty(帳號))
                 介面_.錯誤(this, "帳號不合法");

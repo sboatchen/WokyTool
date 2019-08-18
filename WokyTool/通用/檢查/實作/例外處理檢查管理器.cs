@@ -14,13 +14,13 @@ using WokyTool.通用;
 
 namespace WokyTool.通用
 {
-    public class 例外處理合法管理器 : 可處理合法介面
+    public class 例外處理檢查管理器 : 可處理檢查介面
     {
         public bool 是否合法 { get; protected set; }
 
         private StringBuilder _SB = new StringBuilder();
 
-        public 例外處理合法管理器()
+        public 例外處理檢查管理器()
         {
             是否合法 = true;
         }

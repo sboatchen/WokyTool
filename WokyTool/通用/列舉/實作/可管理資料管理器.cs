@@ -46,7 +46,7 @@ namespace WokyTool.通用
             }
         }
 
-        public void 檢查合法(可處理合法介面 管理器_)
+        public void 合法檢查(可處理檢查介面 管理器_)
         {
             IEnumerable<T> 資料列_ = 資料列舉 as IEnumerable<T>;
             if (資料列_ == null)
@@ -57,7 +57,7 @@ namespace WokyTool.通用
 
             foreach (T 資料_ in 資料列_)
             {
-                資料_.檢查合法(管理器_);
+                資料_.合法檢查(管理器_);
             }
         }
     }

@@ -61,6 +61,7 @@
             this.編號DataGridViewTextBoxColumn.DataPropertyName = "編號";
             this.編號DataGridViewTextBoxColumn.HeaderText = "編號";
             this.編號DataGridViewTextBoxColumn.Name = "編號DataGridViewTextBoxColumn";
+            this.編號DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 名稱DataGridViewTextBoxColumn
             // 

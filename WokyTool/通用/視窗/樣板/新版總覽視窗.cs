@@ -26,6 +26,7 @@ namespace WokyTool.通用
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);
             資料GV.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._點擊標頭);
             資料GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._雙點擊資料);
+            資料GV.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this._刪除資料);
 
             資料GV.AllowUserToAddRows = 管理介面.是否可編輯;
             資料GV.AllowUserToDeleteRows = 管理介面.是否可編輯;
@@ -125,7 +126,43 @@ namespace WokyTool.通用
                 return;
             }
 
-            視窗管理器.獨體.顯現(編號類型, 列舉.視窗.詳細, 資料_.編號);
+            視窗管理器.獨體.顯現(編號類型, 列舉.視窗.詳細, 資料_.編號, true);
+        }
+
+        private 列表處理檢查管理器 _刪除檢查;
+        private int _目前訊息數量;
+        private int _剩餘處理數量;
+
+        protected virtual void _刪除資料(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            if(_刪除檢查 == null)
+            {
+                _刪除檢查 = new 列表處理檢查管理器();
+                _目前訊息數量 = 0;
+                _剩餘處理數量 = 資料GV.SelectedRows.Count;
+            }
+
+            可刪除檢查介面 資料_ = e.Row.DataBoundItem as 可刪除檢查介面;
+            資料_.刪除檢查(_刪除檢查);
+
+            if(_目前訊息數量 != _刪除檢查.字串列.Count)
+            {
+                _目前訊息數量 = _刪除檢查.字串列.Count;
+                e.Cancel = true;
+            }
+
+            _剩餘處理數量--;
+            if(_剩餘處理數量 == 0)
+            {
+                if (_目前訊息數量 > 0)
+                {
+                    var i = new 錯誤列表視窗(_刪除檢查, "刪除失敗，以下資料綁定");
+                    i.Show();
+                    i.BringToFront();
+                }
+
+                _刪除檢查 = null;
+            }
         }
 
         /********************************/

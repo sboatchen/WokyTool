@@ -14,11 +14,11 @@ using WokyTool.通用;
 
 namespace WokyTool.通用
 {
-    public class 匯入處理合法管理器 : 可處理合法介面
+    public class 錯誤訊息處理檢查管理器 : 可處理檢查介面
     {
         public bool 是否合法 { get; protected set; }
 
-        public 匯入處理合法管理器()
+        public 錯誤訊息處理檢查管理器()
         {
             是否合法 = true;
         }
@@ -29,7 +29,7 @@ namespace WokyTool.通用
 
             可匯入資料 可匯入資料_ = 資料_ as 可匯入資料;
             if (可匯入資料_ == null)
-                throw new Exception("匯入處理合法管理器處理失敗:不是可匯入資料");
+                throw new Exception("錯誤訊息處理檢查管理器處理失敗:不是可匯入資料");
 
             if (string.IsNullOrEmpty(可匯入資料_.錯誤訊息))
                 可匯入資料_.錯誤訊息 = 訊息_;

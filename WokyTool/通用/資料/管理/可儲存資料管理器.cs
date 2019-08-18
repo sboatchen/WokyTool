@@ -43,13 +43,13 @@ namespace WokyTool.通用
             }
         }
 
-        protected virtual 可處理合法介面 取得新增合法檢查實體()
+        protected virtual 可處理檢查介面 取得新增合法檢查實體()
         {
-            return new 例外處理合法管理器();
+            return new 例外處理檢查管理器();
         }
 
-        protected 可處理合法介面 _新增合法檢查獨體 = null;
-        public 可處理合法介面 新增合法檢查
+        protected 可處理檢查介面 _新增合法檢查獨體 = null;
+        public 可處理檢查介面 新增合法檢查
         {
             get
             {
@@ -133,7 +133,7 @@ namespace WokyTool.通用
 
         public void 新增(T 資料_)
         {
-            資料_.檢查合法(新增合法檢查);
+            資料_.合法檢查(新增合法檢查);
             資料_.紀錄編輯(true);
             資料_.編號 = _下個編號++;
 
@@ -149,7 +149,7 @@ namespace WokyTool.通用
 
             foreach (T 資料_ in 資料列舉_)
             {
-                資料_.檢查合法(新增合法檢查);
+                資料_.合法檢查(新增合法檢查);
                 資料_.紀錄編輯(true);
                 資料_.編號 = _下個編號++;
 

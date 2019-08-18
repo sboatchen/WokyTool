@@ -14,7 +14,7 @@ using WokyTool.通用;
 
 namespace WokyTool.通用
 {
-    public class 列表處理合法管理器 : 可處理合法介面
+    public class 列表處理檢查管理器 : 可處理檢查介面
     {
         public bool 是否合法
         {
@@ -25,7 +25,7 @@ namespace WokyTool.通用
 
         public List<String> 字串列 { get; set; }
 
-        public 列表處理合法管理器()
+        public 列表處理檢查管理器()
         {
             字串列 = new List<string>();
         }

@@ -18,6 +18,7 @@ namespace WokyTool.測試
         public override DataGridView 資料GV { get { return this.dataGridView1; } }
 
         private 讀寫測試資料篩選 _篩選介面;
+        private bool 是否未綁定_ = true;
 
         public 資料編輯總覽測試視窗()
         {
@@ -29,15 +30,23 @@ namespace WokyTool.測試
 
             this.列舉.DataSource = Enum.GetValues(typeof(列舉.編號));
 
-            this.時間.Value = DateTime.Now;
+            this.時間.MinDate = DateTime.MinValue;
+            this.時間.MaxDate = DateTime.MaxValue;
+        }
 
+        protected override void 視窗激活()
+        {
+            if (是否未綁定_)
+            {
+                是否未綁定_ = false;
 
-            this.字串.DataBindings.Add("Text", 資料BS, "字串");
-            this.整數.DataBindings.Add("Value", 資料BS, "整數");
-            this.浮點數.DataBindings.Add("Value", 資料BS, "浮點數");
-            this.倍精準浮點數.DataBindings.Add("Value", 資料BS, "倍精準浮點數");
-            this.時間.DataBindings.Add("Value", 資料BS, "時間");
-            this.列舉.DataBindings.Add("SelectedItem", 資料BS, "列舉");
+                this.字串.DataBindings.Add("Text", 資料BS, "字串");
+                this.整數.DataBindings.Add("Value", 資料BS, "整數");
+                this.浮點數.DataBindings.Add("Value", 資料BS, "浮點數");
+                this.倍精準浮點數.DataBindings.Add("Value", 資料BS, "倍精準浮點數");
+                //this.時間.DataBindings.Add("Value", 資料BS, "時間");
+                this.列舉.DataBindings.Add("SelectedItem", 資料BS, "列舉");
+            }
         }
 
         private void 列印ToolStripMenuItem_Click(object sender, EventArgs e)

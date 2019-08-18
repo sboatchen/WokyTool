@@ -9,7 +9,7 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public abstract class 可編輯資料<T> : 基本資料, IEditableObject where T : 基本資料
+    public abstract class 可編輯資料<T> : 基本資料, IEditableObject, 可刪除檢查介面 where T : 基本資料
     {
         protected string _副本;
 
@@ -77,5 +77,7 @@ namespace WokyTool.通用
                     return true;
             }
         }
+
+        public virtual void 刪除檢查(可處理檢查介面 介面_) { ; }
     }
 }

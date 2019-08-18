@@ -12,6 +12,6 @@ namespace WokyTool.通用
 
         int 資料版本 { get; }
 
-        void 檢查合法(可處理合法介面 管理器_);
+        void 合法檢查(可處理檢查介面 管理器_);
     }
 }

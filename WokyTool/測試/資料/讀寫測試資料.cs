@@ -28,7 +28,20 @@ namespace WokyTool.測試
         public double 倍精準浮點數 { get; set; }
 
         [JsonProperty]
-        public DateTime 時間 { get; set; }
+        private DateTime _時間;
+        public DateTime 時間 
+        {
+            get
+            {
+                if (_時間 == null)
+                    return DateTime.MinValue;
+                return _時間.AddDays(123);
+            }
+            set
+            {
+                _時間 = value;
+            }
+        }
 
         [JsonProperty]
         public 列舉.編號 列舉 { get; set; }
@@ -69,13 +82,19 @@ namespace WokyTool.測試
 
         public void 初始化() { ; }
 
-        public override void 檢查合法(可處理合法介面 介面_)
+        public override void 合法檢查(可處理檢查介面 介面_)
         {
             if (整數 < 0)
                 介面_.錯誤(this, "整數不合法");
 
             if (浮點數 < 0)
                 介面_.錯誤(this, "浮點數不合法");
+        }
+
+        public override void 刪除檢查(可處理檢查介面 介面_)
+        {
+            if(列舉 == 通用.列舉.編號.公司)
+                介面_.錯誤(this, "刪除測試");
         }
     }
 }

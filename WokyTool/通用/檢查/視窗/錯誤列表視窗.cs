@@ -12,12 +12,13 @@ namespace WokyTool.通用
 {
     public partial class 錯誤列表視窗 : Form
     {
-        private 列表處理合法管理器 _管理器;
+        private 列表處理檢查管理器 _管理器;
 
-        public 錯誤列表視窗(列表處理合法管理器 管理器_)
+        public 錯誤列表視窗(列表處理檢查管理器 管理器_, string 標題_ = "錯誤列表視窗")
         {
             InitializeComponent();
 
+            this.Text = 標題_;
             this._管理器 = 管理器_;
 
             this.dataGridView1.DataSource = _管理器.字串列.Select(Value => new 錯誤資料(Value)).ToList();
