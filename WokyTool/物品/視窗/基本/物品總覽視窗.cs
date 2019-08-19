@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -196,6 +197,43 @@ namespace WokyTool.物品
             var i = new 物品總覽更新匯入視窗();
             i.Show();
             i.BringToFront();
+        }
+
+        private void 類別ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OFD_ = new OpenFileDialog();
+            OFD_.Filter = "json files (.json)|*.json";
+            if (OFD_.ShowDialog() != DialogResult.OK)
+                return;
+
+            string 內容_ = 檔案.讀出(OFD_.FileName);
+            Dictionary<int, 物品資料> 資料書_ = JsonConvert.DeserializeObject<Dictionary<int, 物品資料>>(內容_);
+            
+            列表處理檢查管理器 檢查_ = new 列表處理檢查管理器();
+
+            foreach(物品資料 更新資料_ in 資料書_.Values)
+            {
+                if(string.IsNullOrEmpty(更新資料_.類別) && string.IsNullOrEmpty(更新資料_.顏色))
+                    continue;
+
+                物品資料 物品資料_ = 物品資料管理器.獨體.取得(更新資料_.名稱);
+                if(物品資料_.編號是否有值() == false)
+                {
+                    檢查_.錯誤(更新資料_, "編號有問題");
+                    continue;
+                }
+
+                物品資料_.BeginEdit();
+                物品資料_.類別 = 更新資料_.類別;
+                物品資料_.顏色 = 更新資料_.顏色;
+            }
+
+            if (檢查_.字串列.Count > 0)
+            {
+                var i = new 錯誤列表視窗(檢查_, "類別更新錯誤");
+                i.Show();
+                i.BringToFront();
+            }
         }
     }
 }

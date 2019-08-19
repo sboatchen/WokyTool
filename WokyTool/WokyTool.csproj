@@ -656,11 +656,11 @@
     <Compile Include="通用\其他\函式.cs" />
     <Compile Include="通用\其他\列舉.cs" />
     <Compile Include="通用\其他\擴充方法.cs" />
-    <Compile Include="通用\屬性\可匯出匯入Attribute.cs" />
-    <Compile Include="通用\屬性\視窗\通用匯出視窗.cs">
+    <Compile Include="通用\轉換\屬性\可匯出匯入Attribute.cs" />
+    <Compile Include="通用\轉換\視窗\通用匯出視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="通用\屬性\視窗\通用匯出視窗.Designer.cs">
+    <Compile Include="通用\轉換\視窗\通用匯出視窗.Designer.cs">
       <DependentUpon>通用匯出視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="通用\篩選\實作\通用可篩選介面.cs" />
@@ -734,6 +734,8 @@
     <Compile Include="通用\資料99\可匯入資料99.cs" />
     <Compile Include="通用\資料\管理\可匯入資料管理器.cs" />
     <Compile Include="通用\資料\管理\可儲存資料管理器.cs" />
+    <Compile Include="通用\轉換\資料\通用匯出欄位設定資料.cs" />
+    <Compile Include="通用\轉換\資料\通用匯出設定資料.cs" />
     <Compile Include="配送\介面\可配送介面.cs" />
     <Compile Include="通用\資料99\動態匯入\通用檔案匯入設定資料.cs" />
     <Compile Include="通用\資料99\動態匯入\檔案匯入設定資料介面.cs" />
@@ -1325,7 +1327,7 @@
     <EmbeddedResource Include="聯絡人\視窗\聯絡人詳細視窗.resx">
       <DependentUpon>聯絡人詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="通用\屬性\視窗\通用匯出視窗.resx">
+    <EmbeddedResource Include="通用\轉換\視窗\通用匯出視窗.resx">
       <DependentUpon>通用匯出視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="通用\檢查\視窗\錯誤列表視窗.resx">
@@ -1426,6 +1428,7 @@
     <None Include="Properties\DataSources\WokyTool.通用.列舉+進貨處理狀態.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+配送公司.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.欄位匯入設定資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.通用.通用匯出欄位設定資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.錯誤資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.進貨.進貨新增匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.進貨.進貨新增資料.datasource" />
