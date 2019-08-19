@@ -10,7 +10,7 @@ using WokyTool.通用;
 namespace WokyTool.物品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 物品小類資料 : 新版可記錄資料<物品小類資料>
+    public class 物品大類資料 : 新版可記錄資料<物品大類資料>
     {
         [JsonProperty]
         public override int 編號 { get; set; }
@@ -20,15 +20,15 @@ namespace WokyTool.物品
 
         /********************************/
 
-        public 物品小類資料 Self { get { return this; } }
+        public 物品大類資料 Self { get { return this; } }
 
-        public static readonly 物品小類資料 空白 = new 物品小類資料
+        public static readonly 物品大類資料 空白 = new 物品大類資料
         {
             編號 = 常數.空白資料編碼,
             名稱 = 字串.無,
         };
 
-        public static 物品小類資料 錯誤 = new 物品小類資料
+        public static 物品大類資料 錯誤 = new 物品大類資料
         {
             編號 = 常數.錯誤資料編碼,
             名稱 = 字串.錯誤,
@@ -40,6 +40,14 @@ namespace WokyTool.物品
         {
             if (String.IsNullOrEmpty(名稱))
                 介面_.錯誤(this, "名稱不合法");
+        }
+
+        public override void 刪除檢查(可處理檢查介面 介面_)
+        {
+            foreach (物品資料 資料_ in 物品資料管理器.獨體.資料列舉2.Where(Value => Value.大類 == this))
+            {
+                介面_.錯誤(資料_, "資料綁定中");
+            }
         }
     }
 }

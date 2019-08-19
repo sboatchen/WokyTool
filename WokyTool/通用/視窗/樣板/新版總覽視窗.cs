@@ -44,7 +44,7 @@ namespace WokyTool.通用
             this.資料BS.DataSource = 管理介面.資料列舉;
             this.資料BS.ResetBindings(false);
 
-            資料GV.AllowUserToDeleteRows = 管理介面.是否可編輯 && ((可篩選介面_視窗)管理介面.篩選介面).是否篩選 == false; // 含篩選條件時 仍可刪除 擋掉
+            資料GV.AllowUserToDeleteRows = 管理介面.是否可編輯 && 管理介面.篩選介面.是否篩選 == false; // 含篩選條件時 仍可刪除 擋掉
         }
 
         protected void _視窗激活(object sender, EventArgs e)
@@ -115,7 +115,7 @@ namespace WokyTool.通用
             }
 
             var col = 資料GV.Columns[e.ColumnIndex];
-            ((可篩選介面_視窗)管理介面.篩選介面).排序欄位 = col.DataPropertyName;
+            管理介面.篩選介面.排序欄位 = col.DataPropertyName;
 
             _視窗激活(null, null);
         }

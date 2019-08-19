@@ -18,13 +18,11 @@ namespace WokyTool.通用
     {
         public 可列舉資料來源管理介面 來源管理介面 { get; protected set; }
 
-        private int 取消編輯更新版本 = 0;
-
         public int 資料版本 
         {
             get
             {
-                return 來源管理介面.資料版本 + _篩選介面.排序版本 + _篩選介面.篩選版本 + 取消編輯更新版本;
+                return 來源管理介面.資料版本 + _篩選介面.排序版本 + _篩選介面.篩選版本;
             }
         }
 
@@ -35,14 +33,14 @@ namespace WokyTool.通用
         {
             get
             {
-                if (_目前資料列版本 != (來源管理介面.資料版本 + _篩選介面.排序版本 + 取消編輯更新版本))
+                if (_目前資料列版本 != (來源管理介面.資料版本 + _篩選介面.排序版本))
                 {
                     if (_篩選介面.是否排序)
                         _目前資料列 = _篩選介面.排序((IEnumerable<T>)來源管理介面.資料列舉).ToList();
                     else
                         _目前資料列 = ((IEnumerable<T>)來源管理介面.資料列舉).ToList();
 
-                    _目前資料列版本 = (來源管理介面.資料版本 + _篩選介面.排序版本 + 取消編輯更新版本);
+                    _目前資料列版本 = (來源管理介面.資料版本 + _篩選介面.排序版本);
                     _目前資料列數量 = _目前資料列.Count();
                 }
 
@@ -57,7 +55,7 @@ namespace WokyTool.通用
         public BindingSource 公用BS { get { return _公用BS; } }
 
         protected 新版可篩選介面<T> _篩選介面 = null;
-        public object 篩選介面
+        public 可篩選介面_視窗 篩選介面
         {
             get
             {
@@ -111,8 +109,7 @@ namespace WokyTool.通用
                     資料_.取消編輯();
                 }
 
-                // 修正資料增減
-                取消編輯更新版本++;
+                來源管理介面.更新資料();
             }
         }
 

@@ -74,10 +74,9 @@ namespace WokyTool
          * 
          * 
          * bindingsource c# DataBindings DateTimePicker
-         * 新版頁索引元件
+         * 頁索引元件 + DataBinding + 篩選 卡死問題 
          * 資料編輯詳細測試視窗
          * 資料編輯總覽測試視窗
-         * 子客戶資料*
          * 
          * 
          * 

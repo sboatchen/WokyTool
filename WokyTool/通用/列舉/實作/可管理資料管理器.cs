@@ -54,5 +54,10 @@ namespace WokyTool.通用
                 資料_.合法檢查(管理器_);
             }
         }
+
+        public void 更新資料()
+        {
+            資料版本++;
+        }
     }
 }

@@ -68,7 +68,7 @@ namespace WokyTool.通用
 
         public void 顯現(int 編號_)
         {
-            顯現();
+            訊息管理器.獨體.錯誤("不支援此功能");
         }
 
         public void 隱藏()

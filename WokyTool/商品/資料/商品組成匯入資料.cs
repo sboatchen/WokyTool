@@ -22,7 +22,7 @@ namespace WokyTool.商品
             }
             set
             {
-                _物品 = 物品資料管理器.獨體.Get(value);
+                _物品 = 物品資料管理器.獨體.取得(value);
             }
         }
 
@@ -32,9 +32,9 @@ namespace WokyTool.商品
             get
             {
                 if (_物品 == null)
-                    _物品 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_物品) == false)
-                    _物品 = 物品資料.ERROR;
+                    _物品 = 物品資料.空白;
+                else if (物品資料管理器.獨體.包含(_物品) == false)
+                    _物品 = 物品資料.錯誤;
 
                 return _物品;
             }
@@ -83,7 +83,7 @@ namespace WokyTool.商品
         public 商品組成匯入資料(string Value_)
         {
             識別名稱 = Value_;
-            物品 = 物品資料.ERROR;
+            物品 = 物品資料.錯誤;
             數量 = 0;
 
             // 不支援空白資料
@@ -110,7 +110,7 @@ namespace WokyTool.商品
                 數量 = 1;
             }
 
-            物品 = 物品資料管理器.獨體.GetByLike(Pair_[0]);
+            物品 = 物品資料管理器.獨體.取得(Pair_[0]);
         }
 
         /********************************/

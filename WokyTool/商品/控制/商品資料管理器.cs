@@ -116,7 +116,7 @@ namespace WokyTool.商品
                     };
 
                     New_.組成 = new List<商品組成資料>();
-                    if (Item_.需求1 != 物品.物品資料.NULL)
+                    if (Item_.需求1 != 物品.物品資料.空白)
                     {
                         商品組成資料 組成_ = new 商品組成資料
                         {
@@ -126,7 +126,7 @@ namespace WokyTool.商品
 
                         New_.組成.Add(組成_);
                     }
-                    if (Item_.需求2 != 物品.物品資料.NULL)
+                    if (Item_.需求2 != 物品.物品資料.空白)
                     {
                         商品組成資料 組成_ = new 商品組成資料
                         {
@@ -136,7 +136,7 @@ namespace WokyTool.商品
 
                         New_.組成.Add(組成_);
                     }
-                    if (Item_.需求3 != 物品.物品資料.NULL)
+                    if (Item_.需求3 != 物品.物品資料.空白)
                     {
                         商品組成資料 組成_ = new 商品組成資料
                         {
@@ -146,7 +146,7 @@ namespace WokyTool.商品
 
                         New_.組成.Add(組成_);
                     }
-                    if (Item_.需求4 != 物品.物品資料.NULL)
+                    if (Item_.需求4 != 物品.物品資料.空白)
                     {
                         商品組成資料 組成_ = new 商品組成資料
                         {
@@ -156,7 +156,7 @@ namespace WokyTool.商品
 
                         New_.組成.Add(組成_);
                     }
-                    if (Item_.需求5 != 物品.物品資料.NULL)
+                    if (Item_.需求5 != 物品.物品資料.空白)
                     {
                         商品組成資料 組成_ = new 商品組成資料
                         {

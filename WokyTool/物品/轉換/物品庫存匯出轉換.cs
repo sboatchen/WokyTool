@@ -32,18 +32,18 @@ namespace WokyTool.物品
         {
             App_.Cells[1, 1] = "名稱";
             App_.Cells[1, 2] = "縮寫";
-            App_.Cells[1, 3] = "內庫數量";
-            App_.Cells[1, 4] = "外庫數量";
-            App_.Cells[1, 5] = "庫存總量";
+            App_.Cells[1, 3] = "內庫";
+            App_.Cells[1, 4] = "外庫";
+            App_.Cells[1, 5] = "總量";
 
             int 目前行數_ = 2;
             foreach (物品資料 資料_ in _資料列)
             {
                 App_.Cells[目前行數_, 1] = 資料_.名稱;
                 App_.Cells[目前行數_, 2] = 資料_.縮寫;
-                App_.Cells[目前行數_, 3] = 資料_.內庫數量;
-                App_.Cells[目前行數_, 4] = 資料_.外庫數量;
-                App_.Cells[目前行數_, 5] = 資料_.庫存總量;
+                App_.Cells[目前行數_, 3] = 資料_.庫存;
+                //@@@@App_.Cells[目前行數_, 4] = 資料_.外庫數量;
+                //@@@@App_.Cells[目前行數_, 5] = 資料_.庫存總量;
 
                 目前行數_++;
             }

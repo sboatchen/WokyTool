@@ -52,9 +52,9 @@ namespace WokyTool.進貨
             get
             {
                 if (_物品 == null)
-                    _物品 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_物品) == false)
-                    _物品 = 物品資料.ERROR;
+                    _物品 = 物品資料.空白;
+                else if (物品資料管理器.獨體.包含(_物品) == false)
+                    _物品 = 物品資料.錯誤;
 
                 return _物品;
             }
@@ -106,7 +106,7 @@ namespace WokyTool.進貨
         public override void 初始化() 
         {
             廠商 = 廠商資料管理器.獨體.Get(廠商識別);
-            物品 = 物品資料管理器.獨體.GetBySName(物品識別);
+            物品 = 物品資料管理器.獨體.取得(物品識別);
             幣值 = 幣值資料管理器.獨體.Get(幣值識別);
 
             類型 = 列舉.進貨.錯誤;

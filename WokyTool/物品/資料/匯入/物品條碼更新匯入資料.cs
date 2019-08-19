@@ -21,9 +21,9 @@ namespace WokyTool.物品
             get
             {
                 if (_物品 == null)
-                    _物品 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_物品) == false)
-                    _物品 = 物品資料.ERROR;
+                    _物品 = 物品資料.空白;
+                else if (物品資料管理器.獨體.包含(_物品) == false)
+                    _物品 = 物品資料.錯誤;
 
                 return _物品;
             }
@@ -43,7 +43,7 @@ namespace WokyTool.物品
 
         public override void 初始化()
         {
-            物品 = 物品資料管理器.獨體.GetBySName(物品縮寫識別);
+            物品 = 物品資料管理器.獨體.取得(物品縮寫識別);
 
             if (條碼 == _物品.條碼)
                 更新狀態 = 列舉.更新狀態.相同;

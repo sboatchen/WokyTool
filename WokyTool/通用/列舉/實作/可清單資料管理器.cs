@@ -52,7 +52,7 @@ namespace WokyTool.通用
         }
 
         protected 新版可篩選介面<T> _篩選介面 = null;
-        public object 篩選介面
+        public 可篩選介面_視窗 篩選介面
         {
             get
             {

@@ -90,9 +90,6 @@ namespace WokyTool.一般訂單
 
         protected override void 視窗激活()
         {
-            //@@@this.客戶選取元件.視窗激活();
-            //this.子客戶選取元件.視窗激活();
-            //this.聯絡人選取元件.視窗激活();
             this.商品選取元件.視窗激活();
         }
 

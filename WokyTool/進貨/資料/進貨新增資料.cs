@@ -66,7 +66,7 @@ namespace WokyTool.進貨
             }
             set
             {
-                _物品 = 物品資料管理器.獨體.Get(value);
+                _物品 = 物品資料管理器.獨體.取得(value);
             }
         }
 
@@ -76,9 +76,9 @@ namespace WokyTool.進貨
             get
             {
                 if (_物品 == null)
-                    _物品 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_物品) == false)
-                    _物品 = 物品資料.ERROR;
+                    _物品 = 物品資料.空白;
+                else if (物品資料管理器.獨體.包含(_物品) == false)
+                    _物品 = 物品資料.錯誤;
 
                 return _物品;
             }
@@ -152,7 +152,7 @@ namespace WokyTool.進貨
 
             廠商 = 廠商資料.NULL,
 
-            物品 = 物品資料.NULL,
+            物品 = 物品資料.空白,
 
             數量 = 0,
             單價 = 0,
@@ -179,7 +179,7 @@ namespace WokyTool.進貨
 
             廠商 = 廠商資料.ERROR,
 
-            物品 = 物品資料.ERROR,
+            物品 = 物品資料.錯誤,
 
             數量 = 0,
             單價 = 0,

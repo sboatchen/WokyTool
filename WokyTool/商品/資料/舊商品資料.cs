@@ -156,7 +156,7 @@ namespace WokyTool.商品
             }
             set
             {
-                _需求1 = 物品資料管理器.獨體.Get(value);
+                _需求1 = 物品資料管理器.獨體.取得(value);
             }
         }
 
@@ -166,9 +166,9 @@ namespace WokyTool.商品
             get
             {
                 if (_需求1 == null)
-                    _需求1 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_需求1) == false)
-                    _需求1 = 物品資料.ERROR;
+                    _需求1 = 物品資料.空白;
+                else if (物品資料管理器.獨體.包含(_需求1) == false)
+                    _需求1 = 物品資料.錯誤;
 
                 return _需求1;
             }
@@ -187,7 +187,7 @@ namespace WokyTool.商品
             }
             set
             {
-                _需求2 = 物品資料管理器.獨體.Get(value);
+                _需求2 = 物品資料管理器.獨體.取得(value);
             }
         }
 
@@ -197,9 +197,9 @@ namespace WokyTool.商品
             get
             {
                 if (_需求2 == null)
-                    _需求2 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_需求2) == false)
-                    _需求2 = 物品資料.ERROR;
+                    _需求2 = 物品資料.空白;
+                else if (物品資料管理器.獨體.包含(_需求2) == false)
+                    _需求2 = 物品資料.錯誤;
 
                 return _需求2;
             }
@@ -218,7 +218,7 @@ namespace WokyTool.商品
             }
             set
             {
-                _需求3 = 物品資料管理器.獨體.Get(value);
+                _需求3 = 物品資料管理器.獨體.取得(value);
             }
         }
 
@@ -228,9 +228,9 @@ namespace WokyTool.商品
             get
             {
                 if (_需求3 == null)
-                    _需求3 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_需求3) == false)
-                    _需求3 = 物品資料.ERROR;
+                    _需求3 = 物品資料.空白;
+                else if (物品資料管理器.獨體.包含(_需求3) == false)
+                    _需求3 = 物品資料.錯誤;
 
                 return _需求3;
             }
@@ -249,7 +249,7 @@ namespace WokyTool.商品
             }
             set
             {
-                _需求4 = 物品資料管理器.獨體.Get(value);
+                _需求4 = 物品資料管理器.獨體.取得(value);
             }
         }
 
@@ -259,9 +259,9 @@ namespace WokyTool.商品
             get
             {
                 if (_需求4 == null)
-                    _需求4 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_需求4) == false)
-                    _需求4 = 物品資料.ERROR;
+                    _需求4 = 物品資料.空白;
+                else if (物品資料管理器.獨體.包含(_需求4) == false)
+                    _需求4 = 物品資料.錯誤;
 
                 return _需求4;
             }
@@ -280,7 +280,7 @@ namespace WokyTool.商品
             }
             set
             {
-                _需求5 = 物品資料管理器.獨體.Get(value);
+                _需求5 = 物品資料管理器.獨體.取得(value);
             }
         }
 
@@ -290,9 +290,9 @@ namespace WokyTool.商品
             get
             {
                 if (_需求5 == null)
-                    _需求5 = 物品資料.NULL;
-                else if (物品資料管理器.獨體.唯讀BList.Contains(_需求5) == false)
-                    _需求5 = 物品資料.ERROR;
+                    _需求5 = 物品資料.空白;
+                else if (物品資料管理器.獨體.包含(_需求5) == false)
+                    _需求5 = 物品資料.錯誤;
 
                 return _需求5;
             }
@@ -363,11 +363,11 @@ namespace WokyTool.商品
             品號 = 字串.無,
             名稱 = 字串.無,
 
-            需求1 = 物品資料.NULL,
-            需求2 = 物品資料.NULL,
-            需求3 = 物品資料.NULL,
-            需求4 = 物品資料.NULL,
-            需求5 = 物品資料.NULL,
+            需求1 = 物品資料.空白,
+            需求2 = 物品資料.空白,
+            需求3 = 物品資料.空白,
+            需求4 = 物品資料.空白,
+            需求5 = 物品資料.空白,
 
             數量1 = 0,
             數量2 = 0,
@@ -399,11 +399,11 @@ namespace WokyTool.商品
             品號 = 字串.錯誤,
             名稱 = 字串.錯誤,
 
-            需求1 = 物品資料.ERROR,
-            需求2 = 物品資料.ERROR,
-            需求3 = 物品資料.ERROR,
-            需求4 = 物品資料.ERROR,
-            需求5 = 物品資料.ERROR,
+            需求1 = 物品資料.錯誤,
+            需求2 = 物品資料.錯誤,
+            需求3 = 物品資料.錯誤,
+            需求4 = 物品資料.錯誤,
+            需求5 = 物品資料.錯誤,
 
             數量1 = 0,
             數量2 = 0,
@@ -435,11 +435,11 @@ namespace WokyTool.商品
             品號 = 字串.空,
             名稱 = 字串.折扣,
 
-            需求1 = 物品資料.NULL,
-            需求2 = 物品資料.NULL,
-            需求3 = 物品資料.NULL,
-            需求4 = 物品資料.NULL,
-            需求5 = 物品資料.NULL,
+            需求1 = 物品資料.空白,
+            需求2 = 物品資料.空白,
+            需求3 = 物品資料.空白,
+            需求4 = 物品資料.空白,
+            需求5 = 物品資料.空白,
 
             數量1 = 0,
             數量2 = 0,

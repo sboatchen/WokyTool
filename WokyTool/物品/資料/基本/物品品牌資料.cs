@@ -47,5 +47,13 @@ namespace WokyTool.物品
             if (String.IsNullOrEmpty(名稱))
                 介面_.錯誤(this, "名稱不合法");
         }
+
+        public override void 刪除檢查(可處理檢查介面 介面_)
+        {
+            foreach (物品資料 資料_ in 物品資料管理器.獨體.資料列舉2.Where(Value => Value.品牌 == this))
+            {
+                介面_.錯誤(資料_, "資料綁定中");
+            }
+        }
     }
 }

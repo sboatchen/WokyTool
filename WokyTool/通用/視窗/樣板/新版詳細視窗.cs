@@ -42,15 +42,19 @@ namespace WokyTool.通用
         protected void 資料綁定(TextBox 元件_, string 屬性名稱_)
         {
             元件_.DataBindings.Add("Text", 資料BS, 屬性名稱_);
-
-            元件_.Enabled = 管理介面.是否可編輯;
+            元件_.ReadOnly |= !管理介面.是否可編輯;
         }
 
         protected void 資料綁定(新版抽象選取元件 元件_, string 屬性名稱_)
         {
             元件_.DataBindings.Add("SelectedItem", 資料BS, 屬性名稱_);
+            元件_.ReadOnly |= !管理介面.是否可編輯;
+        }
 
-            元件_.Enabled = 管理介面.是否可編輯;
+        protected void 資料綁定(NumericUpDown 元件_, string 屬性名稱_)
+        {
+            元件_.DataBindings.Add("Value", 資料BS, 屬性名稱_);
+            元件_.ReadOnly |= !管理介面.是否可編輯;
         }
 
         protected void _視窗激活(object sender, EventArgs e)

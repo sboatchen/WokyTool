@@ -20,9 +20,9 @@ namespace WokyTool.物品
 
         protected override void 匯入()
         {
-            物品資料管理器.獨體.Map.Clear();
+            //@@@@物品資料管理器.獨體.Map.Clear();
 
-            int 下個編號_ = 物品資料管理器.獨體.下個編號;
+            int 下個編號_ = -1;//@@@@物品資料管理器.獨體.下個編號;
 
             物品總覽更新匯入資料 錯誤快取_ = null;
             try
@@ -36,11 +36,11 @@ namespace WokyTool.物品
                         case 列舉.更新狀態.新增:
                             Data_.物品.編號 = 下個編號_;
                             下個編號_++;
-                            物品資料管理器.獨體.Map.Add(Data_.物品.編號, Data_.物品);
+                            //@@@@物品資料管理器.獨體.Map.Add(Data_.物品.編號, Data_.物品);
                             break;
                         case 列舉.更新狀態.更新:
                         case 列舉.更新狀態.相同:
-                            物品資料管理器.獨體.Map.Add(Data_.物品.編號, Data_.物品);
+                            //@@@@物品資料管理器.獨體.Map.Add(Data_.物品.編號, Data_.物品);
                             break;
                         case 列舉.更新狀態.刪除:
                             break;
@@ -57,7 +57,7 @@ namespace WokyTool.物品
                 throw ex;
             }
 
-            物品資料管理器.獨體.資料搬移();
+            //@@物品資料管理器.獨體.資料搬移();
         }
     }
 }

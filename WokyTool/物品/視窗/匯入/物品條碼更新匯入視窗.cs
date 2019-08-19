@@ -63,11 +63,12 @@ namespace WokyTool.物品
 
         protected override void 視窗激活()
         {
-            if (_物品資料版本 != 物品資料管理器.獨體.可選取資料列版本)
+            //@@@@
+            /*if (_物品資料版本 != 物品資料管理器.獨體.可選取資料列版本)
             {
                 _物品資料版本 = 物品資料管理器.獨體.可選取資料列版本;
                 this.物品資料BindingSource.DataSource = 物品資料管理器.獨體.唯讀BList;
-            }
+            }*/
         }
 
         protected override void 視窗關閉()

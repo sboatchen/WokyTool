@@ -16,7 +16,9 @@ namespace WokyTool.商品{
 
     public partial class 商品詳細視窗 : 詳細視窗
     {
+        private 可清單列舉資料管理介面 _物品清單管理器 = 物品資料管理器.獨體.清單管理器;
         private int _物品資料版本 = -1;
+
         private BindingList<商品組成資料> _組成BList = new BindingList<商品組成資料>();
 
         public 商品詳細視窗()
@@ -58,12 +60,12 @@ namespace WokyTool.商品{
 
             //@@@this.客戶選取元件1.視窗激活();
 
-            this.物品選取元件.視窗激活();
+            //@@@@this.物品選取元件.視窗激活();
 
-            if (_物品資料版本 != 物品資料管理器.獨體.可選取資料列版本)
+            if (_物品資料版本 != _物品清單管理器.資料版本)
             {
-                _物品資料版本 = 物品資料管理器.獨體.可選取資料列版本;
-                this.物品資料BindingSource.DataSource = 物品資料管理器.獨體.唯讀BList;
+                _物品資料版本 = _物品清單管理器.資料版本;
+                this.物品資料BindingSource.DataSource = _物品清單管理器.資料列舉;
             }
         }
 

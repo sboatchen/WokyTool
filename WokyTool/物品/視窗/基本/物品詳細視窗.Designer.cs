@@ -1,6 +1,6 @@
 ﻿namespace WokyTool.物品
 {
-    partial class 物品篩選視窗
+    partial class 物品詳細視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -39,11 +39,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.名稱 = new System.Windows.Forms.TextBox();
             this.原廠編號 = new System.Windows.Forms.TextBox();
@@ -52,30 +50,28 @@
             this.條碼 = new System.Windows.Forms.TextBox();
             this.代理編號 = new System.Windows.Forms.TextBox();
             this.成本備註 = new System.Windows.Forms.TextBox();
-            this.庫存總量 = new System.Windows.Forms.NumericUpDown();
             this.體積 = new System.Windows.Forms.NumericUpDown();
             this.庫存總成本 = new System.Windows.Forms.NumericUpDown();
             this.最後進貨成本 = new System.Windows.Forms.NumericUpDown();
             this.成本 = new System.Windows.Forms.NumericUpDown();
-            this.外庫數量 = new System.Windows.Forms.NumericUpDown();
-            this.內庫數量 = new System.Windows.Forms.NumericUpDown();
-            this.篩選 = new System.Windows.Forms.Button();
-            this.物品品牌選取元件1 = new WokyTool.物品.物品品牌選取元件();
-            this.物品小類選取元件1 = new WokyTool.物品.物品小類選取元件();
+            this.庫存 = new System.Windows.Forms.NumericUpDown();
             this.物品大類選取元件1 = new WokyTool.物品.物品大類選取元件();
-            ((System.ComponentModel.ISupportInitialize)(this.庫存總量)).BeginInit();
+            this.物品小類選取元件1 = new WokyTool.物品.物品小類選取元件();
+            this.物品品牌選取元件1 = new WokyTool.物品.物品品牌選取元件();
+            this.類別 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.新版頁索引元件1 = new WokyTool.通用.新版頁索引元件();
             ((System.ComponentModel.ISupportInitialize)(this.體積)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.庫存總成本)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.最後進貨成本)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.成本)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.外庫數量)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.內庫數量)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.庫存)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 97);
+            this.label1.Location = new System.Drawing.Point(12, 152);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
@@ -84,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 127);
+            this.label2.Location = new System.Drawing.Point(12, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 1;
@@ -93,7 +89,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 70);
+            this.label3.Location = new System.Drawing.Point(12, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 2;
@@ -102,7 +98,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(300, 70);
+            this.label4.Location = new System.Drawing.Point(245, 124);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 3;
@@ -111,7 +107,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(300, 97);
+            this.label5.Location = new System.Drawing.Point(238, 152);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 4;
@@ -120,7 +116,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(300, 127);
+            this.label6.Location = new System.Drawing.Point(238, 180);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 5;
@@ -138,7 +134,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(300, 13);
+            this.label8.Location = new System.Drawing.Point(12, 55);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 7;
@@ -147,7 +143,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 173);
+            this.label9.Location = new System.Drawing.Point(12, 227);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 12);
             this.label9.TabIndex = 8;
@@ -156,7 +152,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 199);
+            this.label10.Location = new System.Drawing.Point(245, 82);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 12);
             this.label10.TabIndex = 9;
@@ -165,35 +161,26 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(300, 173);
+            this.label11.Location = new System.Drawing.Point(12, 255);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 12);
+            this.label11.Size = new System.Drawing.Size(29, 12);
             this.label11.TabIndex = 10;
-            this.label11.Text = "內庫數量";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(300, 199);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(53, 12);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "外庫數量";
+            this.label11.Text = "庫存";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 269);
+            this.label13.Location = new System.Drawing.Point(237, 227);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(65, 12);
+            this.label13.Size = new System.Drawing.Size(53, 12);
             this.label13.TabIndex = 12;
-            this.label13.Text = "庫存總成本";
+            this.label13.Text = "庫存成本";
             this.label13.Visible = false;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(300, 300);
+            this.label14.Location = new System.Drawing.Point(237, 283);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 12);
             this.label14.TabIndex = 13;
@@ -203,111 +190,82 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(12, 325);
+            this.label15.Location = new System.Drawing.Point(2, 330);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(53, 12);
             this.label15.TabIndex = 14;
             this.label15.Text = "成本備註";
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(300, 228);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(53, 12);
-            this.label17.TabIndex = 16;
-            this.label17.Text = "庫存總量";
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(12, 297);
+            this.label18.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label18.Location = new System.Drawing.Point(237, 256);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(77, 12);
+            this.label18.Size = new System.Drawing.Size(53, 12);
             this.label18.TabIndex = 17;
-            this.label18.Text = "最後進貨成本";
+            this.label18.Text = "進貨成本";
             // 
             // 名稱
             // 
-            this.名稱.Location = new System.Drawing.Point(64, 10);
+            this.名稱.Location = new System.Drawing.Point(55, 10);
             this.名稱.Name = "名稱";
-            this.名稱.Size = new System.Drawing.Size(210, 22);
+            this.名稱.Size = new System.Drawing.Size(400, 22);
             this.名稱.TabIndex = 23;
             // 
             // 原廠編號
             // 
-            this.原廠編號.Location = new System.Drawing.Point(381, 94);
+            this.原廠編號.Location = new System.Drawing.Point(297, 147);
             this.原廠編號.Name = "原廠編號";
             this.原廠編號.Size = new System.Drawing.Size(167, 22);
             this.原廠編號.TabIndex = 29;
             // 
             // 顏色
             // 
-            this.顏色.Location = new System.Drawing.Point(107, 196);
+            this.顏色.Location = new System.Drawing.Point(297, 79);
             this.顏色.Name = "顏色";
-            this.顏色.ReadOnly = true;
             this.顏色.Size = new System.Drawing.Size(167, 22);
             this.顏色.TabIndex = 33;
             // 
             // 縮寫
             // 
-            this.縮寫.Location = new System.Drawing.Point(381, 10);
+            this.縮寫.Location = new System.Drawing.Point(56, 52);
             this.縮寫.Name = "縮寫";
             this.縮寫.Size = new System.Drawing.Size(167, 22);
             this.縮寫.TabIndex = 35;
             // 
             // 條碼
             // 
-            this.條碼.Location = new System.Drawing.Point(381, 67);
+            this.條碼.Location = new System.Drawing.Point(297, 119);
             this.條碼.Name = "條碼";
             this.條碼.Size = new System.Drawing.Size(167, 22);
             this.條碼.TabIndex = 36;
             // 
             // 代理編號
             // 
-            this.代理編號.Location = new System.Drawing.Point(381, 124);
+            this.代理編號.Location = new System.Drawing.Point(297, 176);
             this.代理編號.Name = "代理編號";
             this.代理編號.Size = new System.Drawing.Size(167, 22);
             this.代理編號.TabIndex = 37;
             // 
             // 成本備註
             // 
-            this.成本備註.Location = new System.Drawing.Point(107, 322);
+            this.成本備註.Location = new System.Drawing.Point(55, 327);
             this.成本備註.Name = "成本備註";
-            this.成本備註.ReadOnly = true;
-            this.成本備註.Size = new System.Drawing.Size(167, 22);
+            this.成本備註.Size = new System.Drawing.Size(326, 22);
             this.成本備註.TabIndex = 42;
-            // 
-            // 庫存總量
-            // 
-            this.庫存總量.Location = new System.Drawing.Point(381, 226);
-            this.庫存總量.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.庫存總量.Minimum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            -2147483648});
-            this.庫存總量.Name = "庫存總量";
-            this.庫存總量.ReadOnly = true;
-            this.庫存總量.Size = new System.Drawing.Size(167, 22);
-            this.庫存總量.TabIndex = 45;
             // 
             // 體積
             // 
-            this.體積.Location = new System.Drawing.Point(107, 171);
+            this.體積.Location = new System.Drawing.Point(56, 225);
             this.體積.Name = "體積";
-            this.體積.ReadOnly = true;
             this.體積.Size = new System.Drawing.Size(167, 22);
             this.體積.TabIndex = 46;
             // 
             // 庫存總成本
             // 
             this.庫存總成本.DecimalPlaces = 3;
-            this.庫存總成本.Location = new System.Drawing.Point(107, 267);
+            this.庫存總成本.Location = new System.Drawing.Point(297, 225);
             this.庫存總成本.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -319,15 +277,13 @@
             0,
             -2147483648});
             this.庫存總成本.Name = "庫存總成本";
-            this.庫存總成本.ReadOnly = true;
             this.庫存總成本.Size = new System.Drawing.Size(167, 22);
             this.庫存總成本.TabIndex = 47;
-            this.庫存總成本.Visible = false;
             // 
             // 最後進貨成本
             // 
             this.最後進貨成本.DecimalPlaces = 3;
-            this.最後進貨成本.Location = new System.Drawing.Point(107, 295);
+            this.最後進貨成本.Location = new System.Drawing.Point(297, 253);
             this.最後進貨成本.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -339,14 +295,13 @@
             0,
             -2147483648});
             this.最後進貨成本.Name = "最後進貨成本";
-            this.最後進貨成本.ReadOnly = true;
             this.最後進貨成本.Size = new System.Drawing.Size(167, 22);
             this.最後進貨成本.TabIndex = 48;
             // 
             // 成本
             // 
             this.成本.DecimalPlaces = 3;
-            this.成本.Location = new System.Drawing.Point(381, 295);
+            this.成本.Location = new System.Drawing.Point(297, 281);
             this.成本.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -361,97 +316,97 @@
             this.成本.ReadOnly = true;
             this.成本.Size = new System.Drawing.Size(167, 22);
             this.成本.TabIndex = 49;
-            this.成本.Visible = false;
             // 
-            // 外庫數量
+            // 庫存
             // 
-            this.外庫數量.Location = new System.Drawing.Point(381, 197);
-            this.外庫數量.Maximum = new decimal(new int[] {
+            this.庫存.Location = new System.Drawing.Point(56, 254);
+            this.庫存.Maximum = new decimal(new int[] {
             99999999,
             0,
             0,
             0});
-            this.外庫數量.Minimum = new decimal(new int[] {
+            this.庫存.Minimum = new decimal(new int[] {
             99999999,
             0,
             0,
             -2147483648});
-            this.外庫數量.Name = "外庫數量";
-            this.外庫數量.ReadOnly = true;
-            this.外庫數量.Size = new System.Drawing.Size(167, 22);
-            this.外庫數量.TabIndex = 50;
-            // 
-            // 內庫數量
-            // 
-            this.內庫數量.Location = new System.Drawing.Point(381, 170);
-            this.內庫數量.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.內庫數量.Minimum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            -2147483648});
-            this.內庫數量.Name = "內庫數量";
-            this.內庫數量.ReadOnly = true;
-            this.內庫數量.Size = new System.Drawing.Size(167, 22);
-            this.內庫數量.TabIndex = 51;
-            // 
-            // 篩選
-            // 
-            this.篩選.Location = new System.Drawing.Point(238, 371);
-            this.篩選.Name = "篩選";
-            this.篩選.Size = new System.Drawing.Size(75, 23);
-            this.篩選.TabIndex = 55;
-            this.篩選.Text = "篩選";
-            this.篩選.UseVisualStyleBackColor = true;
-            this.篩選.Click += new System.EventHandler(this.篩選_Click);
-            // 
-            // 物品品牌選取元件1
-            // 
-            this.物品品牌選取元件1.Location = new System.Drawing.Point(107, 67);
-            this.物品品牌選取元件1.Name = "物品品牌選取元件1";
-            this.物品品牌選取元件1.ReadOnly = false;
-            this.物品品牌選取元件1.SelectedItem = null;
-            this.物品品牌選取元件1.Size = new System.Drawing.Size(172, 25);
-            this.物品品牌選取元件1.TabIndex = 54;
-            // 
-            // 物品小類選取元件1
-            // 
-            this.物品小類選取元件1.Location = new System.Drawing.Point(107, 121);
-            this.物品小類選取元件1.Name = "物品小類選取元件1";
-            this.物品小類選取元件1.ReadOnly = false;
-            this.物品小類選取元件1.SelectedItem = null;
-            this.物品小類選取元件1.Size = new System.Drawing.Size(172, 25);
-            this.物品小類選取元件1.TabIndex = 53;
+            this.庫存.Name = "庫存";
+            this.庫存.Size = new System.Drawing.Size(167, 22);
+            this.庫存.TabIndex = 51;
             // 
             // 物品大類選取元件1
             // 
-            this.物品大類選取元件1.Location = new System.Drawing.Point(107, 94);
+            this.物品大類選取元件1.Location = new System.Drawing.Point(56, 148);
+            this.物品大類選取元件1.Margin = new System.Windows.Forms.Padding(4);
             this.物品大類選取元件1.Name = "物品大類選取元件1";
             this.物品大類選取元件1.ReadOnly = false;
             this.物品大類選取元件1.SelectedItem = null;
             this.物品大類選取元件1.Size = new System.Drawing.Size(172, 25);
             this.物品大類選取元件1.TabIndex = 52;
+            this.物品大類選取元件1.篩選文字 = null;
             // 
-            // 物品篩選視窗
+            // 物品小類選取元件1
+            // 
+            this.物品小類選取元件1.Location = new System.Drawing.Point(56, 174);
+            this.物品小類選取元件1.Margin = new System.Windows.Forms.Padding(4);
+            this.物品小類選取元件1.Name = "物品小類選取元件1";
+            this.物品小類選取元件1.ReadOnly = false;
+            this.物品小類選取元件1.SelectedItem = null;
+            this.物品小類選取元件1.Size = new System.Drawing.Size(172, 25);
+            this.物品小類選取元件1.TabIndex = 53;
+            this.物品小類選取元件1.篩選文字 = null;
+            // 
+            // 物品品牌選取元件1
+            // 
+            this.物品品牌選取元件1.Location = new System.Drawing.Point(56, 122);
+            this.物品品牌選取元件1.Margin = new System.Windows.Forms.Padding(4);
+            this.物品品牌選取元件1.Name = "物品品牌選取元件1";
+            this.物品品牌選取元件1.ReadOnly = false;
+            this.物品品牌選取元件1.SelectedItem = null;
+            this.物品品牌選取元件1.Size = new System.Drawing.Size(172, 25);
+            this.物品品牌選取元件1.TabIndex = 54;
+            this.物品品牌選取元件1.篩選文字 = null;
+            // 
+            // 類別
+            // 
+            this.類別.Location = new System.Drawing.Point(56, 80);
+            this.類別.Name = "類別";
+            this.類別.Size = new System.Drawing.Size(167, 22);
+            this.類別.TabIndex = 56;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(12, 82);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(29, 12);
+            this.label16.TabIndex = 55;
+            this.label16.Text = "類別";
+            // 
+            // 新版頁索引元件1
+            // 
+            this.新版頁索引元件1.Location = new System.Drawing.Point(125, 360);
+            this.新版頁索引元件1.Name = "新版頁索引元件1";
+            this.新版頁索引元件1.Size = new System.Drawing.Size(234, 34);
+            this.新版頁索引元件1.TabIndex = 57;
+            // 
+            // 物品詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 418);
-            this.Controls.Add(this.篩選);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(482, 406);
+            this.Controls.Add(this.新版頁索引元件1);
+            this.Controls.Add(this.類別);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.物品品牌選取元件1);
             this.Controls.Add(this.物品小類選取元件1);
             this.Controls.Add(this.物品大類選取元件1);
-            this.Controls.Add(this.內庫數量);
-            this.Controls.Add(this.外庫數量);
+            this.Controls.Add(this.庫存);
             this.Controls.Add(this.成本);
             this.Controls.Add(this.最後進貨成本);
             this.Controls.Add(this.庫存總成本);
             this.Controls.Add(this.體積);
-            this.Controls.Add(this.庫存總量);
             this.Controls.Add(this.成本備註);
             this.Controls.Add(this.代理編號);
             this.Controls.Add(this.條碼);
@@ -460,11 +415,9 @@
             this.Controls.Add(this.原廠編號);
             this.Controls.Add(this.名稱);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -476,15 +429,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "物品篩選視窗";
-            this.Text = "物品篩選視窗";
-            ((System.ComponentModel.ISupportInitialize)(this.庫存總量)).EndInit();
+            this.Name = "物品詳細視窗";
+            this.Text = "物品詳細視窗";
             ((System.ComponentModel.ISupportInitialize)(this.體積)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.庫存總成本)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.最後進貨成本)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.成本)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.外庫數量)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.內庫數量)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.庫存)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,11 +454,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox 名稱;
         private System.Windows.Forms.TextBox 原廠編號;
@@ -516,16 +465,16 @@
         private System.Windows.Forms.TextBox 條碼;
         private System.Windows.Forms.TextBox 代理編號;
         private System.Windows.Forms.TextBox 成本備註;
-        private System.Windows.Forms.NumericUpDown 庫存總量;
         private System.Windows.Forms.NumericUpDown 體積;
         private System.Windows.Forms.NumericUpDown 庫存總成本;
         private System.Windows.Forms.NumericUpDown 最後進貨成本;
         private System.Windows.Forms.NumericUpDown 成本;
-        private System.Windows.Forms.NumericUpDown 外庫數量;
-        private System.Windows.Forms.NumericUpDown 內庫數量;
+        private System.Windows.Forms.NumericUpDown 庫存;
         private 物品大類選取元件 物品大類選取元件1;
         private 物品小類選取元件 物品小類選取元件1;
         private 物品品牌選取元件 物品品牌選取元件1;
-        private System.Windows.Forms.Button 篩選;
+        private System.Windows.Forms.TextBox 類別;
+        private System.Windows.Forms.Label label16;
+        private 通用.新版頁索引元件 新版頁索引元件1;
     }
 }

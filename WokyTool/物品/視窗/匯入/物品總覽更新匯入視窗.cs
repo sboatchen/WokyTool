@@ -55,7 +55,7 @@ namespace WokyTool.物品
             try
             {
                 List<物品總覽更新匯入資料> 資料列_ = new List<物品總覽更新匯入資料>();
-                List<int> 舊資料號碼列_ = 物品資料管理器.獨體.Map.Select(Value => Value.Key).ToList();
+                List<int> 舊資料號碼列_ = null;//@@@@ 物品資料管理器.獨體.Map.Select(Value => Value.Key).ToList();
                 List<int> 更新資料號碼列_ = new List<int>();
 
                 int SheetCount_ = xlWorkBook.Worksheets.Count;
@@ -90,27 +90,27 @@ namespace WokyTool.物品
 
                         decimal 最後進貨成本_ = Convert.ToDecimal(((range.Cells[rCnt, 5] as Excel.Range).Value2 as object).ToString());
 
-                        物品資料 物品_ = 物品資料管理器.獨體.Get(名稱_);
+                        物品資料 物品_ = 物品資料管理器.獨體.取得(名稱_);
                         if(物品_.編號是否有值() == false)
-                            物品_ = 物品資料管理器.獨體.GetBySName(縮寫_);
+                            物品_ = 物品資料管理器.獨體.取得(縮寫_);
 
-                        if(物品_ == 物品資料.NULL)
+                        if (物品_ == 物品資料.空白)
                         {
                             資料_.更新狀態 = 列舉.更新狀態.錯誤;
                             資料_.錯誤訊息 = "物品名稱為空";
-                            資料_.物品 = 物品資料.ERROR;
+                            資料_.物品 = 物品資料.錯誤;
                             資料列_.Add(資料_);
                             continue;
                         }
 
-                        if(物品_ == 物品資料.ERROR)
+                        if (物品_ == 物品資料.錯誤)
                         {
                             資料_.更新狀態 = 列舉.更新狀態.新增;
                             資料_.物品 = new 物品資料();
                         }
                         else
                         {
-                            資料_.物品 = 物品_.拷貝();
+                            資料_.物品 = 物品_.深複製();
                             舊資料號碼列_.Remove(資料_.物品.編號);
 
                             if (更新資料號碼列_.Contains(物品_.編號))
@@ -141,7 +141,7 @@ namespace WokyTool.物品
                 foreach (var 編號_ in 舊資料號碼列_)
                 {
                     物品總覽更新匯入資料 資料_ = new 物品總覽更新匯入資料();
-                    資料_.物品 = 物品資料管理器.獨體.Get(編號_).拷貝();
+                    資料_.物品 = 物品資料管理器.獨體.取得(編號_).深複製();
                     資料_.更新狀態 = 列舉.更新狀態.刪除;
                     資料列_.Add(資料_);
                 }

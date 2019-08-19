@@ -9,7 +9,7 @@ namespace WokyTool.通用
 {
     public interface 可編輯列舉資料管理介面 : 可列舉資料管理介面
     {
-        object 篩選介面 { get; }
+        可篩選介面_視窗 篩選介面 { get; }
 
         bool 是否可編輯 { get; }
         bool 是否編輯中 { get; }
