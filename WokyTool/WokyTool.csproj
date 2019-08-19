@@ -456,6 +456,12 @@
     <Compile Include="月結帳\轉換\月結帳總計匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳支出新增錯誤匯出轉換.cs" />
     <Compile Include="測試\管理\讀寫測試資料管理器.cs" />
+    <Compile Include="測試\視窗\可匯入匯出測試視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="測試\視窗\可匯入匯出測試視窗.Designer.cs">
+      <DependentUpon>可匯入匯出測試視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="測試\視窗\合法性測試視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -650,6 +656,13 @@
     <Compile Include="通用\其他\函式.cs" />
     <Compile Include="通用\其他\列舉.cs" />
     <Compile Include="通用\其他\擴充方法.cs" />
+    <Compile Include="通用\屬性\可匯出匯入Attribute.cs" />
+    <Compile Include="通用\屬性\視窗\通用匯出視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="通用\屬性\視窗\通用匯出視窗.Designer.cs">
+      <DependentUpon>通用匯出視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="通用\篩選\實作\通用可篩選介面.cs" />
     <Compile Include="通用\列舉\介面\可列舉資料來源管理介面.cs" />
     <Compile Include="通用\列舉\介面\可清單列舉資料管理介面.cs" />
@@ -1225,6 +1238,9 @@
     <EmbeddedResource Include="月結帳\視窗\月結帳支出新增匯入視窗.resx">
       <DependentUpon>月結帳支出新增匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="測試\視窗\可匯入匯出測試視窗.resx">
+      <DependentUpon>可匯入匯出測試視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="測試\視窗\合法性測試視窗.resx">
       <DependentUpon>合法性測試視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1308,6 +1324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="聯絡人\視窗\聯絡人詳細視窗.resx">
       <DependentUpon>聯絡人詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="通用\屬性\視窗\通用匯出視窗.resx">
+      <DependentUpon>通用匯出視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="通用\檢查\視窗\錯誤列表視窗.resx">
       <DependentUpon>錯誤列表視窗.cs</DependentUpon>

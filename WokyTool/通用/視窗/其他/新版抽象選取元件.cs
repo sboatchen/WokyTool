@@ -69,6 +69,7 @@ namespace WokyTool.通用
 
             set
             {
+                //@@@@Console.WriteLine("SelectedItem:" + value);
                 // 一但有選取物件，移除篩選條件，避免指定的物件找不到
                 this.篩選文字 = null;
                 更新資料();
@@ -88,11 +89,13 @@ namespace WokyTool.通用
                 資料BS.DataSource = 管理介面.資料列舉;
 
                 this.下拉選單.SelectedItem = 舊選取物件_;
+                //@@@@Console.WriteLine("更新資料:" + this.下拉選單.SelectedItem);
             }
         }
 
         private void _on開啟選單(object sender, EventArgs e)
         {
+            //@@@@Console.WriteLine("開啟選單:" + this.GetType().Name);
             更新資料();
         }
 

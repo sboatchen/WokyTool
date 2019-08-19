@@ -10,6 +10,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WokyTool.物品;
 using WokyTool.通用;
 
 namespace WokyTool.測試
@@ -73,6 +74,22 @@ namespace WokyTool.測試
         private void 詳細ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var i = new 資料編輯詳細測試視窗();
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void 可匯出匯入ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var i = new 可匯入匯出測試視窗();
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void 快速_Click(object sender, EventArgs e)
+        {
+            //可匯出匯入ToolStripMenuItem_Click(null, null);
+
+            var i = new 通用匯出視窗(typeof(物品資料));
             i.Show();
             i.BringToFront();
         }
