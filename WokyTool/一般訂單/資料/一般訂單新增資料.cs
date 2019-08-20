@@ -45,11 +45,6 @@ namespace WokyTool.一般訂單
         {
             get
             {
-                if (_公司 == null)
-                    _公司 = 公司資料.空白;
-                else if (公司資料管理器.獨體.包含(_公司) == false)
-                    _公司 = 公司資料.錯誤;
-
                 return _公司;
             }
             set
@@ -76,11 +71,6 @@ namespace WokyTool.一般訂單
         {
             get
             {
-                if (_客戶 == null)
-                    _客戶 = 客戶資料.空白;
-                else if (客戶資料管理器.獨體.包含(_客戶) == false)
-                    _客戶 = 客戶資料.錯誤;
-
                 return _客戶;
             }
             set
@@ -107,11 +97,6 @@ namespace WokyTool.一般訂單
         {
             get
             {
-                if (_子客戶 == null)
-                    _子客戶 = 子客戶資料.空白;
-                else if (子客戶資料管理器.獨體.包含(_子客戶) == false)
-                    _子客戶 = 子客戶資料.錯誤;
-
                 return _子客戶;
             }
             set

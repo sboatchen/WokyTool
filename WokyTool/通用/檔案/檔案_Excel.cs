@@ -42,6 +42,9 @@ namespace WokyTool.通用
             Workbook 工作簿_ = null;
             Worksheet 分頁_ = null;
 
+            var 時間監測_ = System.Diagnostics.Stopwatch.StartNew();
+            時間監測_.Start();
+
             try
             {
                 // 開啟應用程式
@@ -70,6 +73,10 @@ namespace WokyTool.通用
                     工作簿_.SaveAs(SFD_.FileName, 轉換_.格式);
                 else
                     工作簿_.SaveAs(SFD_.FileName, 轉換_.格式, 轉換_.密碼);
+
+
+                時間監測_.Stop();
+                訊息管理器.獨體.訊息("寫入檔案完成: " + SFD_.FileName + ", 費時:" + 時間監測_.ElapsedMilliseconds);
             }
             catch (Exception ex)
             {
@@ -89,16 +96,26 @@ namespace WokyTool.通用
                 工作簿_ = null;
                 應用程式_ = null;
                 GC.Collect();
+
+                if(時間監測_.IsRunning)
+                    時間監測_.Stop();
             }
         }
 
-        public static void 詢問並寫入(string 檔名_, List<可寫入介面_EXCEL> 轉換列_)
+        public static void 詢問並寫入(string 檔名_, IEnumerable<可寫入介面_EXCEL> 轉換列_)
         {
+            可寫入介面_EXCEL 參考_ = 轉換列_.DefaultIfEmpty(null).First();
+            if (參考_ == null)
+            {
+                訊息管理器.獨體.通知("群組為空");
+                return;
+            }
+
             // 開啟存檔位置
             SaveFileDialog SFD_ = new SaveFileDialog();
             SFD_.FileName = 檔名_;
 
-            switch (轉換列_[0].格式)
+            switch (參考_.格式)
             {
                 case XlFileFormat.xlOpenXMLWorkbook:
                     SFD_.DefaultExt = ".xlsx";
@@ -109,7 +126,7 @@ namespace WokyTool.通用
                     SFD_.Filter = "xls files (.xls)|*.xls";
                     break;
                 default:
-                    訊息管理器.獨體.錯誤("不支援輸出格式: " + 轉換列_[0].格式);
+                    訊息管理器.獨體.錯誤("不支援輸出格式: " + 參考_.格式);
                     return;
             }
 
@@ -150,10 +167,10 @@ namespace WokyTool.通用
                 }
 
                 // 存檔
-                if (轉換列_[0].密碼 == null)
-                    工作簿_.SaveAs(SFD_.FileName, 轉換列_[0].格式);
+                if (參考_.密碼 == null)
+                    工作簿_.SaveAs(SFD_.FileName, 參考_.格式);
                 else
-                    工作簿_.SaveAs(SFD_.FileName, 轉換列_[0].格式, 轉換列_[0].密碼);
+                    工作簿_.SaveAs(SFD_.FileName, 參考_.格式, 參考_.密碼);
             }
             catch (Exception ex)
             {

@@ -8,44 +8,41 @@ using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataImport;
 using WokyTool.Data;
+using WokyTool.通用;
 
 namespace WokyTool.物品
 {
-    public class 物品盤點匯出轉換 : 可格式化_Csv
+    // 輸出
+    // 條碼號, 商品描述, 0
+    public class 物品盤點匯出轉換 : 可寫入介面_CSV
     {
-        protected 物品資料 _Data;
+        public string 分類 { get { return null; } }
+
+        public string 分格號 { get { return ","; } }
+
+        public string 密碼 { get { return null; } }
+
+        public Encoding 編碼 { get { return Encoding.Default; } }
 
         //條碼號, 商品描述, 0
 
-        public 物品盤點匯出轉換(物品資料 Data_)
+        public 物品盤點匯出轉換()
         {
-            _Data = Data_;
         }
 
-        [CsvColumn(Name = "條碼號", FieldIndex = 1)]
-        public string 條碼號
+        public void 寫入(CSVBuilder Builder_)
         {
-            get
-            {
-                return String.Format("{0:0000000000000}", _Data.條碼);
-            }
-        }
+            Builder_.加入標頭("條碼號", "商品描述", "類型");
 
-        [CsvColumn(Name = "商品描述", FieldIndex = 2)]
-        public string 商品描述
-        {
-            get
-            {
-                return _Data.縮寫;
-            }
-        }
+            var Queqe_ = 物品資料管理器.獨體.資料列舉2.Where(Value => (Value.編號 > 0) && (String.IsNullOrEmpty(Value.條碼) == false));
 
-        [CsvColumn(FieldIndex = 3)]
-        public int 類型
-        {
-            get
+            foreach (物品資料 資料_ in Queqe_)
             {
-                return 0;
+                Builder_.加入(
+                    String.Format("{0:0000000000000}", 資料_.條碼),
+                    資料_.縮寫,
+                    0
+                );
             }
         }
     }

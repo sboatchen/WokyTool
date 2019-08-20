@@ -627,7 +627,6 @@
     <Compile Include="物品\資料\基本\物品資料篩選.cs" />
     <Compile Include="物品\轉換\物品新增錯誤匯出轉換.cs" />
     <Compile Include="物品\轉換\物品條碼更新錯誤匯出轉換.cs" />
-    <Compile Include="物品\轉換\物品細節匯出轉換.cs" />
     <Compile Include="發票\控制\發票匯入管理器.cs" />
     <Compile Include="發票\視窗\發票匯入視窗.cs">
       <SubType>Form</SubType>
@@ -656,6 +655,7 @@
     <Compile Include="通用\其他\函式.cs" />
     <Compile Include="通用\其他\列舉.cs" />
     <Compile Include="通用\其他\擴充方法.cs" />
+    <Compile Include="通用\轉換\匯出\格式化匯出轉換.cs" />
     <Compile Include="通用\轉換\屬性\可匯出匯入Attribute.cs" />
     <Compile Include="通用\轉換\視窗\通用匯出視窗.cs">
       <SubType>Form</SubType>
@@ -734,6 +734,7 @@
     <Compile Include="通用\資料99\可匯入資料99.cs" />
     <Compile Include="通用\資料\管理\可匯入資料管理器.cs" />
     <Compile Include="通用\資料\管理\可儲存資料管理器.cs" />
+    <Compile Include="通用\轉換\資料\通用匯出欄位方法資料.cs" />
     <Compile Include="通用\轉換\資料\通用匯出欄位設定資料.cs" />
     <Compile Include="通用\轉換\資料\通用匯出設定資料.cs" />
     <Compile Include="配送\介面\可配送介面.cs" />
@@ -761,8 +762,6 @@
     <Compile Include="物品\資料\基本\物品小類資料.cs" />
     <Compile Include="物品\資料\基本\物品大類資料.cs" />
     <Compile Include="物品\資料\基本\物品資料.cs" />
-    <Compile Include="物品\轉換\物品庫存匯出轉換.cs" />
-    <Compile Include="物品\轉換\物品總覽匯出轉換.cs" />
     <Compile Include="物品\轉換\物品盤點匯出轉換.cs" />
     <Compile Include="通用\視窗99\其他\選取元件介面.cs" />
     <Compile Include="通用\視窗99\其他\頁索引上層介面.cs" />
@@ -815,7 +814,7 @@
     <Compile Include="客製\回單轉換\平台訂單回單轉換_博客來.cs" />
     <Compile Include="DataExport\工廠出貨匯出結構.cs" />
     <Compile Include="通用\資料99\管理\資料統合管理器99.cs" />
-    <Compile Include="通用\檔案\通用\字串轉換.cs" />
+    <Compile Include="通用\轉換\匯出\字串匯出轉換.cs" />
     <Compile Include="進貨\控制\進貨新增匯入管理器.cs" />
     <Compile Include="進貨\控制\進貨新增資料管理器.cs" />
     <Compile Include="進貨\控制\進貨資料管理器.cs" />

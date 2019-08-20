@@ -30,11 +30,6 @@ namespace WokyTool.商品
         {
             get
             {
-                if (_物品 == null)
-                    _物品 = 物品資料.空白;
-                else if (物品資料管理器.獨體.包含(_物品) == false)
-                    _物品 = 物品資料.錯誤;
-
                 return _物品;
             }
             set

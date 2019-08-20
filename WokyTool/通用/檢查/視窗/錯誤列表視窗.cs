@@ -32,7 +32,7 @@ namespace WokyTool.通用
                 return;
             }
 
-            var 轉換_ = new 字串轉換("錯誤", _管理器.字串列);
+            var 轉換_ = new 字串匯出轉換("錯誤", _管理器.字串列);
 
             string 標題_ = String.Format("錯誤匯出_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);

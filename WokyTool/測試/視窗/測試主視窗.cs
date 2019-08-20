@@ -89,7 +89,7 @@ namespace WokyTool.測試
         {
             //可匯出匯入ToolStripMenuItem_Click(null, null);
 
-            var i = new 通用匯出視窗(typeof(物品資料));
+            var i = new 通用匯出視窗(typeof(物品資料), 物品資料管理器.獨體.資料列舉2);
             i.Show();
             i.BringToFront();
         }

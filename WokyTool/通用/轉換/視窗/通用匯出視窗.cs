@@ -10,24 +10,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
+using WokyTool.物品;
 
 namespace WokyTool.通用
 {
     public partial class 通用匯出視窗 : Form
     {
         public Type 資料類型 { get; protected set; }
+        public IEnumerable<object> 資料列舉 { get; protected set; }
+
         public 通用匯出設定資料 設定 { get; protected set; }
 
         private List<通用匯出欄位設定資料> _可用欄位選單列 = new List<通用匯出欄位設定資料>();
         private List<Binding> _資料綁定列 = new List<Binding>();
 
-        public 通用匯出視窗(Type 資料類型_)
+        public 通用匯出視窗(Type 資料類型_, object 資料列舉_)
         {
             InitializeComponent();
 
             this.Text = 資料類型_.Name + "通用匯出視窗";
 
             資料類型 = 資料類型_;
+            資料列舉 = (IEnumerable<object>)資料列舉_;
 
             _可用欄位選單列.Add(通用匯出欄位設定資料.空白); 
             foreach (PropertyInfo 欄位_ in 資料類型.GetProperties())
@@ -165,6 +169,82 @@ namespace WokyTool.通用
         private void 測試ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             訊息管理器.獨體.通知(設定);
+        }
+
+        private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PropertyInfo 切檔方法_ = null;
+            if (設定.切檔方式 != 字串.無)
+                切檔方法_ = 資料類型.GetProperty(設定.切檔方式);
+
+            PropertyInfo 分頁方法_ = null;
+            if (設定.分頁方式 != 字串.無)
+                分頁方法_ = 資料類型.GetProperty(設定.分頁方式);
+
+            List<通用匯出欄位方法資料> 欄位方法列_ = new List<通用匯出欄位方法資料>();
+            foreach (通用匯出欄位設定資料 設定資料_ in 設定.欄位列)
+            {
+                通用匯出欄位方法資料 方法資料_ = new 通用匯出欄位方法資料
+                {
+                    名稱 = 設定資料_.名稱,
+                    方法 = 資料類型.GetProperty(設定資料_.屬性)
+                };
+
+                欄位方法列_.Add(方法資料_);
+            }
+
+            /********************************/
+
+            IEnumerable<IGrouping<object, object>> 檔案列舉_;
+            if (切檔方法_ != null)
+            {
+                檔案列舉_ = 資料列舉.GroupBy(Value => "_" + 切檔方法_.GetValue(Value));
+            }
+            else
+            {
+                檔案列舉_ = 資料列舉.GroupBy(Value => "");
+            }
+
+            foreach(var 檔案群組_ in 檔案列舉_)
+            {
+                if(分頁方法_ != null)
+                {
+                    var 檔案轉換列舉_ = 檔案群組_.GroupBy(Value => 分頁方法_.GetValue(Value)).Select(Value => new 格式化匯出轉換(Value.Key.ToString(), Value, 欄位方法列_));
+
+                    switch (設定.檔案格式)
+                    {
+                        case 列舉.檔案格式.EXCEL:
+                            檔案.詢問並寫入(設定.預設檔名 + 檔案群組_.Key, (IEnumerable<可寫入介面_EXCEL>)檔案轉換列舉_);
+                            break;
+                        case 列舉.檔案格式.CSV:
+                            檔案.詢問並寫入(設定.預設檔名 + 檔案群組_.Key, (IEnumerable<可寫入介面_CSV>)檔案轉換列舉_);
+                            break;
+                        default:
+                            訊息管理器.獨體.通知("尚未實作指定格式:" + 設定.檔案格式);
+                            return;
+
+                    }
+                }
+                else
+                {
+                    var 檔案轉換_ = new 格式化匯出轉換("總覽", 檔案群組_, 欄位方法列_);
+
+                    switch (設定.檔案格式)
+                    {
+                        case 列舉.檔案格式.EXCEL:
+                            檔案.詢問並寫入(設定.預設檔名 + 檔案群組_.Key, (可寫入介面_EXCEL)檔案轉換_);
+                            break;
+                        case 列舉.檔案格式.CSV:
+                            檔案.詢問並寫入(設定.預設檔名 + 檔案群組_.Key, (可寫入介面_CSV)檔案轉換_);
+                            break;
+                        default:
+                            訊息管理器.獨體.通知("尚未實作指定格式:" + 設定.檔案格式);
+                            return;
+                    }
+                }
+            }
+
+            訊息管理器.獨體.通知("匯出完成");
         }
     }
 }

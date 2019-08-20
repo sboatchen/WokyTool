@@ -45,12 +45,13 @@
             this.載入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.快速儲存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.另存新檔ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.測試ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.預設檔名 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.屬性DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.測試ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.通用匯出欄位設定資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.檔案格式BindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -59,10 +60,9 @@
             // 
             // 新增
             // 
-            this.新增.Location = new System.Drawing.Point(17, 213);
-            this.新增.Margin = new System.Windows.Forms.Padding(4);
+            this.新增.Location = new System.Drawing.Point(13, 150);
             this.新增.Name = "新增";
-            this.新增.Size = new System.Drawing.Size(59, 29);
+            this.新增.Size = new System.Drawing.Size(44, 23);
             this.新增.TabIndex = 0;
             this.新增.Text = "新增";
             this.新增.UseVisualStyleBackColor = true;
@@ -73,10 +73,9 @@
             this.屬性.DataSource = this.通用匯出欄位設定資料BindingSource;
             this.屬性.DisplayMember = "名稱";
             this.屬性.FormattingEnabled = true;
-            this.屬性.Location = new System.Drawing.Point(256, 213);
-            this.屬性.Margin = new System.Windows.Forms.Padding(4);
+            this.屬性.Location = new System.Drawing.Point(228, 151);
             this.屬性.Name = "屬性";
-            this.屬性.Size = new System.Drawing.Size(160, 23);
+            this.屬性.Size = new System.Drawing.Size(160, 20);
             this.屬性.TabIndex = 1;
             this.屬性.ValueMember = "Self";
             this.屬性.SelectedIndexChanged += new System.EventHandler(this.屬性_SelectedIndexChanged);
@@ -87,19 +86,17 @@
             // 
             // 名稱
             // 
-            this.名稱.Location = new System.Drawing.Point(88, 213);
-            this.名稱.Margin = new System.Windows.Forms.Padding(4);
+            this.名稱.Location = new System.Drawing.Point(66, 150);
             this.名稱.Name = "名稱";
-            this.名稱.Size = new System.Drawing.Size(161, 25);
+            this.名稱.Size = new System.Drawing.Size(155, 22);
             this.名稱.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 75);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(9, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 3;
             this.label1.Text = "檔案格式";
             // 
@@ -107,10 +104,9 @@
             // 
             this.檔案格式.DataSource = this.檔案格式BindingSource;
             this.檔案格式.FormattingEnabled = true;
-            this.檔案格式.Location = new System.Drawing.Point(88, 71);
-            this.檔案格式.Margin = new System.Windows.Forms.Padding(4);
+            this.檔案格式.Location = new System.Drawing.Point(66, 57);
             this.檔案格式.Name = "檔案格式";
-            this.檔案格式.Size = new System.Drawing.Size(160, 23);
+            this.檔案格式.Size = new System.Drawing.Size(160, 20);
             this.檔案格式.TabIndex = 5;
             // 
             // 檔案格式BindingSource
@@ -122,20 +118,18 @@
             this.切檔方式.DataSource = this.通用匯出欄位設定資料BindingSource;
             this.切檔方式.DisplayMember = "名稱";
             this.切檔方式.FormattingEnabled = true;
-            this.切檔方式.Location = new System.Drawing.Point(88, 104);
-            this.切檔方式.Margin = new System.Windows.Forms.Padding(4);
+            this.切檔方式.Location = new System.Drawing.Point(66, 83);
             this.切檔方式.Name = "切檔方式";
-            this.切檔方式.Size = new System.Drawing.Size(160, 23);
+            this.切檔方式.Size = new System.Drawing.Size(160, 20);
             this.切檔方式.TabIndex = 7;
             this.切檔方式.ValueMember = "屬性";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 108);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(9, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 15);
+            this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 6;
             this.label2.Text = "切檔方式";
             // 
@@ -144,20 +138,18 @@
             this.分頁方式.DataSource = this.通用匯出欄位設定資料BindingSource;
             this.分頁方式.DisplayMember = "名稱";
             this.分頁方式.FormattingEnabled = true;
-            this.分頁方式.Location = new System.Drawing.Point(88, 137);
-            this.分頁方式.Margin = new System.Windows.Forms.Padding(4);
+            this.分頁方式.Location = new System.Drawing.Point(66, 110);
             this.分頁方式.Name = "分頁方式";
-            this.分頁方式.Size = new System.Drawing.Size(160, 23);
+            this.分頁方式.Size = new System.Drawing.Size(160, 20);
             this.分頁方式.TabIndex = 9;
             this.分頁方式.ValueMember = "屬性";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 140);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(9, 112);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 15);
+            this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 8;
             this.label3.Text = "分頁方式";
             // 
@@ -166,10 +158,12 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.檔案ToolStripMenuItem,
+            this.匯出ToolStripMenuItem,
             this.測試ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(432, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(397, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -180,45 +174,57 @@
             this.快速儲存ToolStripMenuItem,
             this.另存新檔ToolStripMenuItem});
             this.檔案ToolStripMenuItem.Name = "檔案ToolStripMenuItem";
-            this.檔案ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
+            this.檔案ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.檔案ToolStripMenuItem.Text = "檔案";
             // 
             // 載入ToolStripMenuItem
             // 
             this.載入ToolStripMenuItem.Name = "載入ToolStripMenuItem";
-            this.載入ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.載入ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.載入ToolStripMenuItem.Text = "載入";
             this.載入ToolStripMenuItem.Click += new System.EventHandler(this.載入ToolStripMenuItem_Click);
             // 
             // 快速儲存ToolStripMenuItem
             // 
             this.快速儲存ToolStripMenuItem.Name = "快速儲存ToolStripMenuItem";
-            this.快速儲存ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.快速儲存ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.快速儲存ToolStripMenuItem.Text = "快速儲存";
             this.快速儲存ToolStripMenuItem.Click += new System.EventHandler(this.快速儲存ToolStripMenuItem_Click);
             // 
             // 另存新檔ToolStripMenuItem
             // 
             this.另存新檔ToolStripMenuItem.Name = "另存新檔ToolStripMenuItem";
-            this.另存新檔ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
+            this.另存新檔ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.另存新檔ToolStripMenuItem.Text = "另存新檔";
             this.另存新檔ToolStripMenuItem.Click += new System.EventHandler(this.另存新檔ToolStripMenuItem_Click);
             // 
+            // 匯出ToolStripMenuItem
+            // 
+            this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
+            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.匯出ToolStripMenuItem.Text = "匯出";
+            this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
+            // 
+            // 測試ToolStripMenuItem
+            // 
+            this.測試ToolStripMenuItem.Name = "測試ToolStripMenuItem";
+            this.測試ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.測試ToolStripMenuItem.Text = "測試";
+            this.測試ToolStripMenuItem.Click += new System.EventHandler(this.測試ToolStripMenuItem_Click);
+            // 
             // 預設檔名
             // 
-            this.預設檔名.Location = new System.Drawing.Point(87, 38);
-            this.預設檔名.Margin = new System.Windows.Forms.Padding(4);
+            this.預設檔名.Location = new System.Drawing.Point(65, 30);
             this.預設檔名.Name = "預設檔名";
-            this.預設檔名.Size = new System.Drawing.Size(161, 25);
+            this.預設檔名.Size = new System.Drawing.Size(160, 22);
             this.預設檔名.TabIndex = 11;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 41);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(9, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 15);
+            this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 12;
             this.label4.Text = "預設檔名";
             // 
@@ -230,10 +236,11 @@
             this.名稱DataGridViewTextBoxColumn,
             this.屬性DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.通用匯出欄位設定資料BindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(51, 258);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 178);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(372, 270);
+            this.dataGridView1.Size = new System.Drawing.Size(364, 216);
             this.dataGridView1.TabIndex = 13;
             // 
             // 名稱DataGridViewTextBoxColumn
@@ -251,18 +258,11 @@
             this.屬性DataGridViewTextBoxColumn.ReadOnly = true;
             this.屬性DataGridViewTextBoxColumn.Width = 160;
             // 
-            // 測試ToolStripMenuItem
-            // 
-            this.測試ToolStripMenuItem.Name = "測試ToolStripMenuItem";
-            this.測試ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
-            this.測試ToolStripMenuItem.Text = "測試";
-            this.測試ToolStripMenuItem.Click += new System.EventHandler(this.測試ToolStripMenuItem_Click);
-            // 
             // 通用匯出視窗
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 565);
+            this.ClientSize = new System.Drawing.Size(397, 405);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.預設檔名);
@@ -277,7 +277,6 @@
             this.Controls.Add(this.新增);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "通用匯出視窗";
             this.Text = "通用匯出視窗";
             ((System.ComponentModel.ISupportInitialize)(this.通用匯出欄位設定資料BindingSource)).EndInit();
@@ -314,5 +313,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 屬性DataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem 測試ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 匯出ToolStripMenuItem;
     }
 }

@@ -98,11 +98,6 @@ namespace WokyTool.商品
         {
             get
             {
-                if (_公司 == null)
-                    _公司 = 公司資料.空白;
-                else if (公司資料管理器.獨體.包含(_公司) == false)
-                    _公司 = 公司資料.錯誤;
-
                 return _公司;
             }
             set
@@ -129,11 +124,6 @@ namespace WokyTool.商品
         {
             get
             {
-                if (_客戶 == null)
-                    _客戶 = 客戶資料.空白;
-                else if (客戶資料管理器.獨體.包含(_客戶) == false)
-                    _客戶 = 客戶資料.錯誤;
-
                 return _客戶;
             }
             set
@@ -165,11 +155,6 @@ namespace WokyTool.商品
         {
             get
             {
-                if (_需求1 == null)
-                    _需求1 = 物品資料.空白;
-                else if (物品資料管理器.獨體.包含(_需求1) == false)
-                    _需求1 = 物品資料.錯誤;
-
                 return _需求1;
             }
             set
@@ -196,11 +181,6 @@ namespace WokyTool.商品
         {
             get
             {
-                if (_需求2 == null)
-                    _需求2 = 物品資料.空白;
-                else if (物品資料管理器.獨體.包含(_需求2) == false)
-                    _需求2 = 物品資料.錯誤;
-
                 return _需求2;
             }
             set
@@ -227,11 +207,6 @@ namespace WokyTool.商品
         {
             get
             {
-                if (_需求3 == null)
-                    _需求3 = 物品資料.空白;
-                else if (物品資料管理器.獨體.包含(_需求3) == false)
-                    _需求3 = 物品資料.錯誤;
-
                 return _需求3;
             }
             set
@@ -258,11 +233,6 @@ namespace WokyTool.商品
         {
             get
             {
-                if (_需求4 == null)
-                    _需求4 = 物品資料.空白;
-                else if (物品資料管理器.獨體.包含(_需求4) == false)
-                    _需求4 = 物品資料.錯誤;
-
                 return _需求4;
             }
             set
@@ -289,11 +259,6 @@ namespace WokyTool.商品
         {
             get
             {
-                if (_需求5 == null)
-                    _需求5 = 物品資料.空白;
-                else if (物品資料管理器.獨體.包含(_需求5) == false)
-                    _需求5 = 物品資料.錯誤;
-
                 return _需求5;
             }
             set

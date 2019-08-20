@@ -29,7 +29,7 @@ namespace WokyTool.通用
             寫入(SFD_.FileName, Builder_.ToString(), 轉換_.密碼, 轉換_.編碼);
         }
 
-        public static void 詢問並寫入(string 預設檔名_, List<可寫入介面_CSV> 轉換列_)
+        public static void 詢問並寫入(string 預設檔名_, IEnumerable<可寫入介面_CSV> 轉換列_)
         {
             // 開啟存檔位置
             SaveFileDialog SFD_ = new SaveFileDialog();

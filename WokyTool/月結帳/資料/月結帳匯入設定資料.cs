@@ -34,11 +34,6 @@ namespace WokyTool.月結帳
         {
             get
             {
-                if (_公司 == null)
-                    _公司 = 公司資料.空白;
-                else if (公司資料管理器.獨體.包含(_公司) == false)
-                    _公司 = 公司資料.錯誤;
-
                 return _公司;
             }
             set
@@ -65,11 +60,6 @@ namespace WokyTool.月結帳
         {
             get
             {
-                if (_客戶 == null)
-                    _客戶 = 客戶資料.空白;
-                else if (客戶資料管理器.獨體.包含(_客戶) == false)
-                    _客戶 = 客戶資料.錯誤;
-
                 return _客戶;
             }
             set
@@ -96,11 +86,6 @@ namespace WokyTool.月結帳
         {
             get
             {
-                if (_業務 == null)
-                    _業務 = 使用者資料.空白;
-                else if (使用者資料管理器.獨體.包含(_業務) == false)
-                    _業務 = 使用者資料.錯誤;
-
                 return _業務;
             }
             set

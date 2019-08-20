@@ -18,8 +18,6 @@ namespace WokyTool.通用
         [JsonProperty]
         public string 屬性 { get; set; }
 
-        public 通用匯出欄位設定資料 Self { get { return this; } }
-
         public static readonly 通用匯出欄位設定資料 空白 = new 通用匯出欄位設定資料
         {
             名稱 = 字串.無,
