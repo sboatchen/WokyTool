@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataMgr;
+using WokyTool.公司;
+using WokyTool.客戶;
 using WokyTool.通用;
 
 namespace WokyTool.商品
@@ -116,7 +118,7 @@ namespace WokyTool.商品
                     };
 
                     New_.組成 = new List<商品組成資料>();
-                    if (Item_.需求1 != 物品.物品資料.空白)
+                    if (Item_.需求1.編號是否有值())
                     {
                         商品組成資料 組成_ = new 商品組成資料
                         {
@@ -126,7 +128,7 @@ namespace WokyTool.商品
 
                         New_.組成.Add(組成_);
                     }
-                    if (Item_.需求2 != 物品.物品資料.空白)
+                    if (Item_.需求2.編號是否有值())
                     {
                         商品組成資料 組成_ = new 商品組成資料
                         {
@@ -136,7 +138,7 @@ namespace WokyTool.商品
 
                         New_.組成.Add(組成_);
                     }
-                    if (Item_.需求3 != 物品.物品資料.空白)
+                    if (Item_.需求3.編號是否有值())
                     {
                         商品組成資料 組成_ = new 商品組成資料
                         {
@@ -146,7 +148,7 @@ namespace WokyTool.商品
 
                         New_.組成.Add(組成_);
                     }
-                    if (Item_.需求4 != 物品.物品資料.空白)
+                    if (Item_.需求4.編號是否有值())
                     {
                         商品組成資料 組成_ = new 商品組成資料
                         {
@@ -156,7 +158,7 @@ namespace WokyTool.商品
 
                         New_.組成.Add(組成_);
                     }
-                    if (Item_.需求5 != 物品.物品資料.空白)
+                    if (Item_.需求5.編號是否有值())
                     {
                         商品組成資料 組成_ = new 商品組成資料
                         {

@@ -63,7 +63,7 @@ namespace WokyTool.物品
             //}
 
             //if (合法性檢查_.Count != 0)
-            //    所有錯誤_.Add(new 字串轉換("合法性", 合法性檢查_));
+            //    所有錯誤_.Add(new 字串匯出轉換("合法性", 合法性檢查_));
 
             ///******************/
 
@@ -74,7 +74,7 @@ namespace WokyTool.物品
             //                                .ToList();
 
             //if (名稱重複檢查_.Count != 0)
-            //    所有錯誤_.Add(new 字串轉換("名稱重複", 名稱重複檢查_));
+            //    所有錯誤_.Add(new 字串匯出轉換("名稱重複", 名稱重複檢查_));
 
             ///******************/
 
@@ -85,98 +85,36 @@ namespace WokyTool.物品
             //                               .ToList();
 
             //if (縮寫重複檢查_.Count != 0)
-            //    所有錯誤_.Add(new 字串轉換("縮寫重複", 縮寫重複檢查_));
+            //    所有錯誤_.Add(new 字串匯出轉換("縮寫重複", 縮寫重複檢查_));
 
             //if (所有錯誤_.Count > 0)
             //{
             //    string 標題_ = String.Format("物品錯誤匯出_{0}", 時間.目前日期);
-            //    檔案.詢問並寫入(標題_, 所有錯誤_);
+            //    檔案.寫入(標題_, 所有錯誤_);
             //}
 
             //訊息管理器.獨體.通知("處理完畢");
         }
 
-
-
-        private void 總表ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 自訂ToolStripMenuItem_Click(object sender, EventArgs e)
         {
- 
-            //@@ TODO
-            /*var ItemGroup_ = 物品資料管理器.獨體.可編輯BList
-                                .Where(Value => Value.編號 > 0)
-                                .GroupBy(
-                                    Value => Value.品牌.名稱,
-                                    Value => Value);
-
-            List<可寫入介面_EXCEL> 轉換列_ = new List<可寫入介面_EXCEL>();
-            foreach (var x in ItemGroup_)
-            {
-                物品總覽匯出轉換 匯出轉換_ = new 物品總覽匯出轉換(x.Key, x);
-                轉換列_.Add(匯出轉換_);
-            }
-
-            string 標題_ = String.Format("物品總覽_{0}", 時間.目前日期);
-            檔案.詢問並寫入(標題_, 轉換列_);
-
-            訊息管理器.獨體.通知("匯出完成");*/
-        }
-
-        private void 庫存ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //@@ TODO
-            /*var ItemGroup_ = 物品資料管理器.獨體.可編輯BList
-                                .Where(Value => Value.編號 > 0)
-                                .GroupBy(
-                                    Value => Value.品牌.名稱,
-                                    Value => Value);
-
-            List<可寫入介面_EXCEL> 轉換列_ = new List<可寫入介面_EXCEL>();
-            foreach (var x in ItemGroup_)
-            {
-                物品庫存匯出轉換 匯出轉換_ = new 物品庫存匯出轉換(x.Key, x);
-                轉換列_.Add(匯出轉換_);
-            }
-
-            //通用匯出結構 總結_ = new 通用匯出結構("總結");
-
-            //decimal 總庫存成本_ = 物品資料管理器.獨體.可編輯BList.Select(Value => Value.庫存總成本).Sum();
-            //總結_.Add("總庫存成本", 總庫存成本_.ToString());
-
-            string 標題_ = String.Format("物品庫存_{0}", 時間.目前日期);
-            檔案.詢問並寫入(標題_, 轉換列_); ;
-
-            訊息管理器.獨體.通知("匯出完成");*/
+            var i = new 通用匯出視窗(typeof(物品資料), 管理介面.資料列舉);
+            i.Show();
+            i.BringToFront();
         }
 
         private void 盤點ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //@@ TODO
-            /*var Item_ = 物品資料管理器.獨體.可編輯BList
-                               .Where(Value => (Value.編號 > 0) && (String.IsNullOrEmpty(Value.條碼) == false))
-                               .Select(Value => new 物品盤點匯出轉換(Value));
+            訊息管理器.獨體.通知("此報表無視篩選設定");
 
-            string Title_ = String.Format("盤點匯出_{0}", 時間.目前日期);
-            舊函式.ExportCSV<物品盤點匯出轉換>(Title_, Item_);*/
-        }
-
-        private void 細節ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            /*this.Enabled = false;
-
-            物品細節匯出轉換 轉換_ = new 物品細節匯出轉換(物品資料管理器.獨體.可編輯BList);
-
-            string 標題_ = String.Format("物品細節_{0}", 時間.目前日期);
+            var 轉換_ = new 物品盤點匯出轉換();
+            String 標題_ = String.Format("盤點匯出_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
-            this.Enabled = true;
-
-            訊息管理器.獨體.通知("匯出完成");*/
+            訊息管理器.獨體.通知("匯出完成");
         }
 
-        private void 自訂ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            訊息管理器.獨體.通知(字串.功能尚未實作);
-        }
+
 
         private void 物品ToolStripMenuItem_Click(object sender, EventArgs e)
         {
