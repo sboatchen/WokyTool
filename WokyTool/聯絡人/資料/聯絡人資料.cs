@@ -68,6 +68,15 @@ namespace WokyTool.聯絡人
 
         public 聯絡人資料 Self { get { return this; } }
 
+        public static readonly 聯絡人資料 不篩 = new 聯絡人資料
+        {
+            編號 = 常數.不篩資料編碼,
+            姓名 = 字串.不篩選,
+            電話 = 字串.空,
+            手機 = 字串.空,
+            地址 = 字串.空,
+        };
+
         public static readonly 聯絡人資料 空白 = new 聯絡人資料
         {
             編號 = 常數.空白資料編碼,

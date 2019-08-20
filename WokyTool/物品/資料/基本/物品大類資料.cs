@@ -22,6 +22,12 @@ namespace WokyTool.物品
 
         public 物品大類資料 Self { get { return this; } }
 
+        public static readonly 物品大類資料 不篩 = new 物品大類資料
+        {
+            編號 = 常數.不篩資料編碼,
+            名稱 = 字串.不篩選,
+        };
+
         public static readonly 物品大類資料 空白 = new 物品大類資料
         {
             編號 = 常數.空白資料編碼,

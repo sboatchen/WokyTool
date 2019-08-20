@@ -16,15 +16,9 @@ namespace WokyTool.物品
         public override BindingSource 資料BS { get { return this.物品大類資料BindingSource; } }
         public override ComboBox 下拉選單 { get { return this.comboBox1; } }
 
-        public override string 篩選文字
-        {
-            get { return 篩選.名稱; }
-            set { 篩選.名稱 = value; }
-        }
-
         protected override 可清單列舉資料管理介面 取得管理介面實體()
         {
-            return 物品大類資料管理器.獨體.清單管理器;
+            return 物品大類資料管理器.獨體.篩選管理器;
         }
 
         public 物品大類資料篩選 篩選 { get; protected set; } 

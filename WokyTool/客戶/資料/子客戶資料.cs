@@ -50,6 +50,13 @@ namespace WokyTool.客戶
 
         public 子客戶資料 Self { get { return this; } }
 
+        public static readonly 子客戶資料 不篩 = new 子客戶資料
+        {
+            編號 = 常數.不篩資料編碼,
+            名稱 = 字串.不篩選,
+            客戶 = 客戶資料.不篩,
+        };
+
         public static readonly 子客戶資料 空白 = new 子客戶資料
         {
             編號 = 常數.空白資料編碼,

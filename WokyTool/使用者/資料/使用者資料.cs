@@ -53,6 +53,22 @@ namespace WokyTool.使用者
 
         public 使用者資料 Self { get { return this; } }
 
+        public static readonly 使用者資料 不篩 = new 使用者資料
+        {
+            編號 = 常數.不篩資料編碼,
+
+            帳號 = 字串.不篩選,
+            密碼 = 字串.無,
+
+            名稱 = 字串.不篩選,
+
+            修改基本資料 = false,
+            修改設定資料 = false,
+            匯入訂單 = false,
+            匯入進貨 = false,
+            匯入月結帳 = false,
+        };
+
         public static readonly 使用者資料 空白 = new 使用者資料
         {
             編號 = 常數.空白資料編碼,
