@@ -44,10 +44,14 @@ namespace WokyTool.通用
                     _目前資料列數量 = _目前資料列.Count();
                 }
 
-                if (_篩選介面.是否篩選)
-                    return _篩選介面.篩選(_目前資料列);
-                else
+                if (false == _篩選介面.是否篩選)
                     return _目前資料列;
+
+                IEnumerable<T> 篩選列舉_ = _篩選介面.篩選(_目前資料列);
+                if (篩選列舉_.Any() == false)
+                    return new List<T>();
+                else
+                    return 篩選列舉_;
             }
         }
 

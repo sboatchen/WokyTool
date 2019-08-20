@@ -51,7 +51,7 @@ namespace WokyTool.商品
 
             if (物品 != null)
             {
-                if (Data_.組成 == null || Data_.組成.Where(Value => Value.物品 == 物品).First() == null)
+                if (Data_.組成 == null || Data_.組成.Where(Value => Value.物品 == 物品).Any() == false)
                     return false;
             }
 

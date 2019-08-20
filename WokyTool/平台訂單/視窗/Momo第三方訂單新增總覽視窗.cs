@@ -94,7 +94,7 @@ namespace WokyTool.平台訂單
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            平台訂單新增資料 平台訂單新增資料_ = Momo第三方平台訂單新增資料管理器.獨體.可編輯BList.First();
+            平台訂單新增資料 平台訂單新增資料_ = Momo第三方平台訂單新增資料管理器.獨體.可編輯BList.DefaultIfEmpty(null).First();
             if (平台訂單新增資料_ == null)
                 return;
 

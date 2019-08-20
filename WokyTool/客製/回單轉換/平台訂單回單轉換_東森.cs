@@ -31,7 +31,7 @@ namespace WokyTool.客製
 
         public void 寫入(CSVBuilder Builder_)
         {
-            平台訂單新增資料 平台訂單新增資料_ = _資料列.First();
+            平台訂單新增資料 平台訂單新增資料_ = _資料列.DefaultIfEmpty(null).First();
             if (平台訂單新增資料_ == null)
                 return;
 

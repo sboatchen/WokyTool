@@ -71,6 +71,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.基本 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.客戶資料轉換 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -87,7 +88,6 @@
             this.button34 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
-            this.客戶資料轉換 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -551,6 +551,18 @@
             this.panel3.Size = new System.Drawing.Size(482, 185);
             this.panel3.TabIndex = 50;
             // 
+            // 客戶資料轉換
+            // 
+            this.客戶資料轉換.ForeColor = System.Drawing.Color.Red;
+            this.客戶資料轉換.Location = new System.Drawing.Point(357, 62);
+            this.客戶資料轉換.Name = "客戶資料轉換";
+            this.客戶資料轉換.Size = new System.Drawing.Size(100, 23);
+            this.客戶資料轉換.TabIndex = 54;
+            this.客戶資料轉換.Text = "客戶資料轉換";
+            this.客戶資料轉換.UseVisualStyleBackColor = true;
+            this.客戶資料轉換.Visible = false;
+            this.客戶資料轉換.Click += new System.EventHandler(this.客戶資料轉換_Click);
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(122, 149);
@@ -719,17 +731,6 @@
             this.button46.UseVisualStyleBackColor = true;
             this.button46.Click += new System.EventHandler(this.button46_Click);
             // 
-            // 客戶資料轉換
-            // 
-            this.客戶資料轉換.ForeColor = System.Drawing.Color.Red;
-            this.客戶資料轉換.Location = new System.Drawing.Point(357, 62);
-            this.客戶資料轉換.Name = "客戶資料轉換";
-            this.客戶資料轉換.Size = new System.Drawing.Size(100, 23);
-            this.客戶資料轉換.TabIndex = 54;
-            this.客戶資料轉換.Text = "客戶資料轉換";
-            this.客戶資料轉換.UseVisualStyleBackColor = true;
-            this.客戶資料轉換.Click += new System.EventHandler(this.客戶資料轉換_Click);
-            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -745,7 +746,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "主視窗";
-            this.Text = "V 2.1.6";
+            this.Text = "V 2.1.7";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.主視窗_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
