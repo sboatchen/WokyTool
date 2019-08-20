@@ -19,6 +19,7 @@ namespace WokyTool.Common
         public static string 確認 = "確認";
         public static string 保密字串 = "*******";
         public static string 未定義 = "未定義";
+        public static string 不篩選 = "不篩選";
 
         public static string 雜支 = "雜支";
         public static string 進貨 = "進貨";

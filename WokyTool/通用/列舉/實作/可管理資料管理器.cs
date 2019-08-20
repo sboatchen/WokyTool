@@ -23,6 +23,7 @@ namespace WokyTool.通用
         protected abstract 新版可篩選介面<T> 取得篩選介面();
 
         protected abstract IEnumerable<T> 取得清單特殊選項();
+        protected abstract IEnumerable<T> 取得篩選特殊選項();
 
         public abstract bool 是否可編輯 { get; }
 
@@ -33,6 +34,14 @@ namespace WokyTool.通用
             get
             {
                 return new 可清單資料管理器<T>(this, 取得篩選介面(), 取得清單特殊選項());
+            }
+        }
+
+        public 可清單列舉資料管理介面 篩選管理器
+        {
+            get
+            {
+                return new 可清單資料管理器<T>(this, 取得篩選介面(), 取得篩選特殊選項());
             }
         }
 

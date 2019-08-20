@@ -12,5 +12,7 @@ namespace WokyTool.通用
 
         bool 是否排序 { get; }
         bool 是否篩選 { get; }
+
+        string 文字 { get; set; }
     }
 }

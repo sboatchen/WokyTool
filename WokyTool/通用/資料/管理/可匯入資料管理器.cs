@@ -20,6 +20,11 @@ namespace WokyTool.通用
             yield break;
         }
 
+        protected override IEnumerable<T> 取得篩選特殊選項()
+        {
+            yield break;
+        }
+
         protected List<T> _資料列 = null;
         protected int _目前資料列版本 = 0;
 

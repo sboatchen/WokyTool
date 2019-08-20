@@ -22,11 +22,19 @@ namespace WokyTool.通用
 
         public abstract string 檔案路徑 { get; }
 
+        public abstract T 不篩資料 { get; }
         public abstract T 空白資料 { get; }
         public abstract T 錯誤資料 { get; }
 
         protected override IEnumerable<T> 取得清單特殊選項()
         {
+            yield return 空白資料;
+            yield return 錯誤資料;
+        }
+
+        protected override IEnumerable<T> 取得篩選特殊選項()
+        {
+            yield return 不篩資料;
             yield return 空白資料;
             yield return 錯誤資料;
         }

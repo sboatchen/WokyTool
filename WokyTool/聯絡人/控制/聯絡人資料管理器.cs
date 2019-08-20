@@ -20,6 +20,7 @@ namespace WokyTool.聯絡人
 
         public override string 檔案路徑 { get { return "設定/聯絡人V2_1_7.json"; } }
 
+        public override 聯絡人資料 不篩資料 { get { return 聯絡人資料.不篩; } }
         public override 聯絡人資料 空白資料 { get { return 聯絡人資料.空白; } }
         public override 聯絡人資料 錯誤資料 { get { return 聯絡人資料.錯誤; } }
 

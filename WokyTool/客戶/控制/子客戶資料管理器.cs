@@ -20,6 +20,7 @@ namespace WokyTool.客戶
 
         public override string 檔案路徑 { get { return "設定/子客戶V2_1_7.json"; } }
 
+        public override 子客戶資料 不篩資料 { get { return 子客戶資料.不篩; } }
         public override 子客戶資料 空白資料 { get { return 子客戶資料.空白; } }
         public override 子客戶資料 錯誤資料 { get { return 子客戶資料.錯誤; } }
 

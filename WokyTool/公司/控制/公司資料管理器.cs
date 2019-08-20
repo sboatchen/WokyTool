@@ -20,6 +20,7 @@ namespace WokyTool.公司
 
         public override string 檔案路徑 { get { return "設定/公司.json"; } }
 
+        public override 公司資料 不篩資料 { get { return 公司資料.不篩; } }
         public override 公司資料 空白資料 { get { return 公司資料.空白; } }
         public override 公司資料 錯誤資料 { get { return 公司資料.錯誤; } }
 

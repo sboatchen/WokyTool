@@ -10,7 +10,7 @@ using WokyTool.通用;
 
 namespace WokyTool.通用
 {
-    public abstract class 通用可篩選介面<T> : 新版可篩選介面<T>
+    public abstract class 通用可篩選介面<T> : 基本資料, 新版可篩選介面<T>
     {
         private string _排序欄位 = null;
         public string 排序欄位 
@@ -47,12 +47,32 @@ namespace WokyTool.通用
             }
         }
 
-        public bool 是否排序
+        protected string _文字 = null;
+        public string 文字
         {
-            get { return null != 排序欄位; }
+            get { return _文字; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    value = null;
+
+                if (_文字 != value)
+                {
+                    _文字 = value;
+                    篩選版本++;
+                }
+            }
         }
 
-        public abstract bool 是否篩選 { get; }
+        public bool 是否排序
+        {
+            get { return null != _排序欄位; }
+        }
+
+        public virtual bool 是否篩選
+        {
+            get { return null != _文字; }
+        }
 
         public int 排序版本 { get; protected set; }
         public int 篩選版本 { get; protected set; }
@@ -61,9 +81,9 @@ namespace WokyTool.通用
         {
             IEnumerable<T> 目前列舉_ = 資料列舉_;
 
-            if (null != 排序欄位)
+            if (null != _排序欄位)
             {
-                System.Reflection.PropertyInfo 屬性_ = typeof(T).GetProperty(排序欄位);
+                System.Reflection.PropertyInfo 屬性_ = typeof(T).GetProperty(_排序欄位);
 
                 if (排序方向)
                     目前列舉_ = 目前列舉_.OrderBy(Value => 屬性_.GetValue(Value));

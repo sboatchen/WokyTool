@@ -13,12 +13,6 @@ namespace WokyTool.通用
         public virtual BindingSource 資料BS { get { throw new Exception(this.GetType().Name + " 未設定資料BS"); } }
         public virtual ComboBox 下拉選單 { get { throw new Exception(this.GetType().Name + " 未設定下拉選單"); } }
 
-        public virtual string 篩選文字
-        {
-            get { throw new Exception(this.GetType().Name + " 未設定篩選文字"); }
-            set { throw new Exception(this.GetType().Name + " 未設定篩選文字"); }
-        }
-
         protected virtual 可清單列舉資料管理介面 取得管理介面實體()
         {
             throw new Exception(this.GetType().Name + " 未複寫 取得管理介面實體");
@@ -69,9 +63,8 @@ namespace WokyTool.通用
 
             set
             {
-                //@@@@Console.WriteLine("SelectedItem:" + value);
-                // 一但有選取物件，移除篩選條件，避免指定的物件找不到
-                this.篩選文字 = null;
+                //Console.WriteLine("設定物件-" + this.GetType().Name);
+                管理介面.篩選介面.文字 = null;
                 更新資料();
 
                 if (this.下拉選單.SelectedItem != value)
@@ -89,29 +82,30 @@ namespace WokyTool.通用
                 資料BS.DataSource = 管理介面.資料列舉;
 
                 this.下拉選單.SelectedItem = 舊選取物件_;
-                //@@@@Console.WriteLine("更新資料:" + this.下拉選單.SelectedItem);
+                //Console.WriteLine("更新資料");
             }
         }
 
         private void _on開啟選單(object sender, EventArgs e)
         {
-            //@@@@Console.WriteLine("開啟選單:" + this.GetType().Name);
+            //Console.WriteLine("開啟選單");
             更新資料();
         }
 
         private void _on文字異動(object sender, EventArgs e)
         {
+            //Console.WriteLine("文字異動");
             if (this.下拉選單.SelectedItem != null)
             {
                 string 目前物件呈現_ = (string)_呈現屬性.GetValue(this.下拉選單.SelectedItem);
                 if (this.下拉選單.Text.Equals(目前物件呈現_))
                 {
-                    this.篩選文字 = null;
+                    管理介面.篩選介面.文字 = null;
                     return;
                 }
             }
 
-            this.篩選文字 = this.下拉選單.Text;
+            管理介面.篩選介面.文字 = this.下拉選單.Text;
         }
     }
 }
