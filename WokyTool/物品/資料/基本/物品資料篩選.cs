@@ -12,9 +12,17 @@ namespace WokyTool.物品
         private 物品大類資料 _大類 = null;
         public 物品大類資料 大類
         {
-            get { return _大類; }
+            get
+            {
+                if (_大類 == null)
+                    return 物品大類資料.不篩;
+                return _大類;
+            }
             set
             {
+                if (物品大類資料.不篩 == value)
+                    value = null;
+
                 if (_大類 != value)
                 {
                     _大類 = value;
@@ -26,9 +34,17 @@ namespace WokyTool.物品
         private 物品小類資料 _小類 = null;
         public 物品小類資料 小類
         {
-            get { return _小類; }
+            get
+            {
+                if (_小類 == null)
+                    return 物品小類資料.不篩;
+                return _小類;
+            }
             set
             {
+                if (物品小類資料.不篩 == value)
+                    value = null;
+
                 if (_小類 != value)
                 {
                     _小類 = value;
@@ -40,9 +56,17 @@ namespace WokyTool.物品
         private 物品品牌資料 _品牌 = null;
         public 物品品牌資料 品牌
         {
-            get { return _品牌; }
+            get
+            {
+                if (_品牌 == null)
+                    return 物品品牌資料.不篩;
+                return _品牌;
+            }
             set
             {
+                if (物品品牌資料.不篩 == value)
+                    value = null;
+
                 if (_品牌 != value)
                 {
                     _品牌 = value;
@@ -97,23 +121,6 @@ namespace WokyTool.物品
                 if (_代理編號 != value)
                 {
                     _代理編號 = value;
-                    篩選版本++;
-                }
-            }
-        }
-
-        private string _名稱 = null;
-        public string 名稱
-        {
-            get { return _名稱; }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = null;
-
-                if (_名稱 != value)
-                {
-                    _名稱 = value;
                     篩選版本++;
                 }
             }
@@ -186,50 +193,52 @@ namespace WokyTool.物品
             get
             {
                 return
-                    null != 大類 ||
-                    null != 小類 ||
-                    null != 品牌 ||
-                    null != 條碼 ||
-                    null != 原廠編號 ||
-                    null != 代理編號 ||
-                    null != 名稱 ||
-                    null != 類別 ||
-                    null != 顏色 ||
-                    -1 != 最小庫存 ||
-                    -1 != 最大庫存;
+                    null != _大類 ||
+                    null != _小類 ||
+                    null != _品牌 ||
+                    null != _條碼 ||
+                    null != _原廠編號 ||
+                    null != _代理編號 ||
+                    null != _文字 ||
+                    null != _類別 ||
+                    null != _顏色 ||
+                    -1 != _最小庫存 ||
+                    -1 != _最大庫存;
             }
         }
 
         public override IEnumerable<物品資料> 篩選(IEnumerable<物品資料> 資料列舉_)
         {
+            訊息管理器.獨體.訊息("物品篩選:" + this);
+
             IEnumerable<物品資料> 目前列舉_ = 資料列舉_;
 
-            if (null != 大類)
-                目前列舉_ = 目前列舉_.Where(Value => Value.大類 == 大類);
-            if (null != 小類)
-                目前列舉_ = 目前列舉_.Where(Value => Value.小類 == 小類);
-            if (null != 品牌)
-                目前列舉_ = 目前列舉_.Where(Value => Value.品牌 == 品牌);
+            if (null != _大類)
+                目前列舉_ = 目前列舉_.Where(Value => Value.大類 == _大類);
+            if (null != _小類)
+                目前列舉_ = 目前列舉_.Where(Value => Value.小類 == _小類);
+            if (null != _品牌)
+                目前列舉_ = 目前列舉_.Where(Value => Value.品牌 == _品牌);
 
-            if (null != 條碼)
-                目前列舉_ = 目前列舉_.Where(Value => Value.條碼.Contains(條碼));
-            if (null != 原廠編號)
-                目前列舉_ = 目前列舉_.Where(Value => Value.原廠編號.Contains(原廠編號));
-            if (null != 代理編號)
-                目前列舉_ = 目前列舉_.Where(Value => Value.代理編號.Contains(代理編號));
+            if (null != _條碼)
+                目前列舉_ = 目前列舉_.Where(Value => Value.條碼.Contains(_條碼));
+            if (null != _原廠編號)
+                目前列舉_ = 目前列舉_.Where(Value => Value.原廠編號.Contains(_原廠編號));
+            if (null != _代理編號)
+                目前列舉_ = 目前列舉_.Where(Value => Value.代理編號.Contains(_代理編號));
 
-            if (null != 名稱)
-                目前列舉_ = 目前列舉_.Where(Value => Value.名稱.Contains(名稱) || Value.縮寫.Contains(名稱));
+            if (null != _文字)
+                目前列舉_ = 目前列舉_.Where(Value => Value.名稱.Contains(_文字) || Value.縮寫.Contains(_文字));
 
-            if (null != 類別)
-                目前列舉_ = 目前列舉_.Where(Value => Value.類別.Contains(類別));
+            if (null != _類別)
+                目前列舉_ = 目前列舉_.Where(Value => Value.類別.Contains(_類別));
             if (null != 顏色)
-                目前列舉_ = 目前列舉_.Where(Value => Value.顏色.Contains(顏色));
+                目前列舉_ = 目前列舉_.Where(Value => Value.顏色.Contains(_顏色));
 
-            if (-1 != 最小庫存)
-                目前列舉_ = 目前列舉_.Where(Value => Value.庫存 >= 最小庫存);
-            if (-1 != 最大庫存)
-                目前列舉_ = 目前列舉_.Where(Value => Value.庫存 <= 最大庫存);
+            if (-1 != _最小庫存)
+                目前列舉_ = 目前列舉_.Where(Value => Value.庫存 >= _最小庫存);
+            if (-1 != _最大庫存)
+                目前列舉_ = 目前列舉_.Where(Value => Value.庫存 <= _最大庫存);
 
             return 目前列舉_;
         }
