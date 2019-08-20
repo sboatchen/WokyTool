@@ -33,9 +33,9 @@ namespace WokyTool.測試
 
         private void 字串_TextChanged(object sender, EventArgs e)
         {
-            _篩選介面.字串 = this.字串.Text;
+            _篩選介面.文字 = this.字串.Text;
 
-            Console.WriteLine("字串: " + _篩選介面.字串);
+            Console.WriteLine("字串: " + _篩選介面.文字);
         }
 
         private void 整數1_ValueChanged(object sender, EventArgs e)

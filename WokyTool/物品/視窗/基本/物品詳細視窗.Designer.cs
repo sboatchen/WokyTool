@@ -343,7 +343,6 @@
             this.物品大類選取元件1.SelectedItem = null;
             this.物品大類選取元件1.Size = new System.Drawing.Size(172, 25);
             this.物品大類選取元件1.TabIndex = 52;
-            this.物品大類選取元件1.篩選文字 = null;
             // 
             // 物品小類選取元件1
             // 
@@ -354,7 +353,6 @@
             this.物品小類選取元件1.SelectedItem = null;
             this.物品小類選取元件1.Size = new System.Drawing.Size(172, 25);
             this.物品小類選取元件1.TabIndex = 53;
-            this.物品小類選取元件1.篩選文字 = null;
             // 
             // 物品品牌選取元件1
             // 
@@ -365,7 +363,6 @@
             this.物品品牌選取元件1.SelectedItem = null;
             this.物品品牌選取元件1.Size = new System.Drawing.Size(172, 25);
             this.物品品牌選取元件1.TabIndex = 54;
-            this.物品品牌選取元件1.篩選文字 = null;
             // 
             // 類別
             // 

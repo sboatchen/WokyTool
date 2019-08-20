@@ -51,7 +51,6 @@
             this.客戶選取元件1.SelectedItem = null;
             this.客戶選取元件1.Size = new System.Drawing.Size(190, 25);
             this.客戶選取元件1.TabIndex = 80;
-            this.客戶選取元件1.篩選文字 = null;
             // 
             // 姓名
             // 
@@ -143,7 +142,6 @@
             this.子客戶選取元件1.SelectedItem = null;
             this.子客戶選取元件1.Size = new System.Drawing.Size(186, 25);
             this.子客戶選取元件1.TabIndex = 91;
-            this.子客戶選取元件1.篩選文字 = null;
             // 
             // 新版頁索引元件1
             // 

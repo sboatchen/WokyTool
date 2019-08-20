@@ -47,18 +47,18 @@ namespace WokyTool.測試
             }
         }
 
-        private string _字串 = null;
-        public string 字串
+        private string _文字 = null;
+        public string 文字
         {
-            get { return _字串; }
+            get { return _文字; }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = null;
 
-                if (_字串 != value)
+                if (_文字 != value)
                 {
-                    _字串 = value;
+                    _文字 = value;
                     篩選版本++;
                 }
             }
@@ -108,9 +108,9 @@ namespace WokyTool.測試
             get
             {
                 return
-                    null != 字串 ||
-                    null != 最小整數 ||
-                    null != 最大整數;
+                    null != _文字 ||
+                    null != _最小整數 ||
+                    null != _最大整數;
             }
         }
 
@@ -138,14 +138,14 @@ namespace WokyTool.測試
         {
             IEnumerable<讀寫測試資料> 目前列舉_ = 資料列舉_;
 
-            if (null != 字串)
-                目前列舉_ = 目前列舉_.Where(Value => 字串.Equals(Value.字串));
+            if (null != 文字)
+                目前列舉_ = 目前列舉_.Where(Value => _文字.Equals(Value.字串));
 
             if (null != 最小整數)
-                目前列舉_ = 目前列舉_.Where(Value => 最小整數 <= Value.整數);
+                目前列舉_ = 目前列舉_.Where(Value => _最小整數 <= Value.整數);
 
             if (null != 最大整數)
-                目前列舉_ = 目前列舉_.Where(Value => 最大整數 >= Value.整數);
+                目前列舉_ = 目前列舉_.Where(Value => _最大整數 >= Value.整數);
 
             return 目前列舉_;
         }

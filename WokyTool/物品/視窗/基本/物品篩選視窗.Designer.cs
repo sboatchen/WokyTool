@@ -78,7 +78,6 @@
             this.物品品牌選取元件1.SelectedItem = null;
             this.物品品牌選取元件1.Size = new System.Drawing.Size(172, 25);
             this.物品品牌選取元件1.TabIndex = 86;
-            this.物品品牌選取元件1.篩選文字 = null;
             // 
             // 物品小類選取元件1
             // 
@@ -89,7 +88,6 @@
             this.物品小類選取元件1.SelectedItem = null;
             this.物品小類選取元件1.Size = new System.Drawing.Size(172, 25);
             this.物品小類選取元件1.TabIndex = 85;
-            this.物品小類選取元件1.篩選文字 = null;
             // 
             // 物品大類選取元件1
             // 
@@ -100,7 +98,6 @@
             this.物品大類選取元件1.SelectedItem = null;
             this.物品大類選取元件1.Size = new System.Drawing.Size(172, 25);
             this.物品大類選取元件1.TabIndex = 84;
-            this.物品大類選取元件1.篩選文字 = null;
             // 
             // 最小庫存
             // 

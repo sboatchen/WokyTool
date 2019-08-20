@@ -146,7 +146,6 @@
             this.客戶選取元件1.SelectedItem = null;
             this.客戶選取元件1.Size = new System.Drawing.Size(190, 25);
             this.客戶選取元件1.TabIndex = 93;
-            this.客戶選取元件1.篩選文字 = null;
             // 
             // label5
             // 
