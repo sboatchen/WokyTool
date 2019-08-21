@@ -104,14 +104,14 @@
             // 自訂ToolStripMenuItem
             // 
             this.自訂ToolStripMenuItem.Name = "自訂ToolStripMenuItem";
-            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.自訂ToolStripMenuItem.Text = "自訂";
             this.自訂ToolStripMenuItem.Click += new System.EventHandler(this.自訂ToolStripMenuItem_Click);
             // 
             // 盤點ToolStripMenuItem
             // 
             this.盤點ToolStripMenuItem.Name = "盤點ToolStripMenuItem";
-            this.盤點ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.盤點ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.盤點ToolStripMenuItem.Text = "盤點";
             this.盤點ToolStripMenuItem.Click += new System.EventHandler(this.盤點ToolStripMenuItem_Click);
             // 
@@ -124,33 +124,33 @@
             this.類別ToolStripMenuItem});
             this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
             this.更新ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.更新ToolStripMenuItem.Text = "更新";
+            this.更新ToolStripMenuItem.Text = "匯入";
             // 
             // 物品ToolStripMenuItem
             // 
             this.物品ToolStripMenuItem.Name = "物品ToolStripMenuItem";
-            this.物品ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.物品ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.物品ToolStripMenuItem.Text = "新增";
             this.物品ToolStripMenuItem.Click += new System.EventHandler(this.物品ToolStripMenuItem_Click);
             // 
             // 條碼ToolStripMenuItem
             // 
             this.條碼ToolStripMenuItem.Name = "條碼ToolStripMenuItem";
-            this.條碼ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.條碼ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.條碼ToolStripMenuItem.Text = "條碼";
             this.條碼ToolStripMenuItem.Click += new System.EventHandler(this.條碼ToolStripMenuItem_Click);
             // 
             // 重新匯入ToolStripMenuItem
             // 
             this.重新匯入ToolStripMenuItem.Name = "重新匯入ToolStripMenuItem";
-            this.重新匯入ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.重新匯入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.重新匯入ToolStripMenuItem.Text = "重新匯入";
             this.重新匯入ToolStripMenuItem.Click += new System.EventHandler(this.重新匯入ToolStripMenuItem_Click);
             // 
             // 類別ToolStripMenuItem
             // 
             this.類別ToolStripMenuItem.Name = "類別ToolStripMenuItem";
-            this.類別ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.類別ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.類別ToolStripMenuItem.Text = "類別";
             this.類別ToolStripMenuItem.Click += new System.EventHandler(this.類別ToolStripMenuItem_Click);
             // 
