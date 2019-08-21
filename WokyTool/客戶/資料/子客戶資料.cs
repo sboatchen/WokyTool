@@ -73,10 +73,14 @@ namespace WokyTool.客戶
 
         /********************************/
 
-        public override void 合法檢查(可處理檢查介面 介面_)
+        public override void 合法檢查(可處理檢查介面 介面_, object 資料列舉_)
         {
+            IEnumerable<子客戶資料> 子客戶資料列舉_ = (IEnumerable<子客戶資料>)資料列舉_;
+
             if (String.IsNullOrEmpty(名稱))
                 介面_.錯誤(this, "名稱不合法");
+            else if (子客戶資料列舉_.Where(Value => 名稱.Equals(Value.名稱)).Count() > 1)
+                介面_.錯誤(this, "名稱重複");
 
             if (false == 客戶.編號是否有值())
                 介面_.錯誤(this, "客戶不合法");

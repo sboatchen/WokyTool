@@ -97,10 +97,14 @@ namespace WokyTool.聯絡人
 
         /********************************/
 
-        public override void 合法檢查(可處理檢查介面 介面_)
+        public override void 合法檢查(可處理檢查介面 介面_, object 資料列舉_)
         {
+            IEnumerable<聯絡人資料> 聯絡人資料列舉_ = (IEnumerable<聯絡人資料>)資料列舉_;
+
             if (String.IsNullOrEmpty(姓名))
                 介面_.錯誤(this, "姓名不合法");
+            else if (聯絡人資料列舉_.Where(Value => 姓名.Equals(Value.姓名)).Count() > 1)
+                介面_.錯誤(this, "姓名重複");
 
             if (String.IsNullOrEmpty(電話) && String.IsNullOrEmpty(手機))
                 介面_.錯誤(this, "電話/手機不合法");
