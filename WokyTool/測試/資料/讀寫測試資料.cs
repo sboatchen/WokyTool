@@ -88,7 +88,7 @@ namespace WokyTool.測試
 
         public void 初始化() { ; }
 
-        public override void 合法檢查(可處理檢查介面 介面_)
+        public override void 合法檢查(可處理檢查介面 介面_, object 資料列舉_)
         {
             if (整數 < 0)
                 介面_.錯誤(this, "整數不合法");

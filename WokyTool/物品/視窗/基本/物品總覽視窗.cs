@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Remotion.Collections;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,55 +46,6 @@ namespace WokyTool.物品
             var i = new 錯誤列表視窗(檢查管理器_, 編號類型.ToString());
             i.Show();
             i.BringToFront();
-
-            //@@@@
-            //List<可寫入介面_EXCEL> 所有錯誤_ = new List<可寫入介面_EXCEL>();
-
-            //List<String> 合法性檢查_ = new List<string>();
-            //foreach(var Item_ in 物品資料管理器.獨體.可編輯BList)
-            //{
-            //    try
-            //    {
-            //        Item_.檢查合法();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        合法性檢查_.Add(Item_.名稱 + ":" + ex.Message);
-            //    }
-            //}
-
-            //if (合法性檢查_.Count != 0)
-            //    所有錯誤_.Add(new 字串匯出轉換("合法性", 合法性檢查_));
-
-            ///******************/
-
-            //List<String> 名稱重複檢查_ = 物品資料管理器.獨體.可編輯BList
-            //                                .GroupBy(Value => Value.名稱)
-            //                                .Where(Value => Value.Count() > 1)
-            //                                .Select(Value => Value.Key)
-            //                                .ToList();
-
-            //if (名稱重複檢查_.Count != 0)
-            //    所有錯誤_.Add(new 字串匯出轉換("名稱重複", 名稱重複檢查_));
-
-            ///******************/
-
-            //List<String> 縮寫重複檢查_ = 物品資料管理器.獨體.可編輯BList
-            //                               .GroupBy(Value => Value.縮寫)
-            //                               .Where(Value => Value.Count() > 1)
-            //                               .Select(Value => Value.Key)
-            //                               .ToList();
-
-            //if (縮寫重複檢查_.Count != 0)
-            //    所有錯誤_.Add(new 字串匯出轉換("縮寫重複", 縮寫重複檢查_));
-
-            //if (所有錯誤_.Count > 0)
-            //{
-            //    string 標題_ = String.Format("物品錯誤匯出_{0}", 時間.目前日期);
-            //    檔案.寫入(標題_, 所有錯誤_);
-            //}
-
-            //訊息管理器.獨體.通知("處理完畢");
         }
 
         private void 自訂ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,6 +65,14 @@ namespace WokyTool.物品
 
             訊息管理器.獨體.通知("匯出完成");
         }
+
+
+
+
+
+
+
+
 
 
 

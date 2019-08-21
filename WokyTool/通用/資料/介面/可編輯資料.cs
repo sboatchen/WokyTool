@@ -13,6 +13,8 @@ namespace WokyTool.通用
     {
         protected string _副本;
 
+        public bool 是否編輯中 { get; protected set; }
+
         // IEditableObject
         public virtual void BeginEdit()
         {
@@ -34,7 +36,7 @@ namespace WokyTool.通用
 
         public virtual void 取消編輯()
         {
-            if (_副本 != null)
+            if (是否編輯中)
             {
                 T 資料_ = _副本.轉成物件<T>();
                 this.完全拷貝(資料_);
@@ -45,7 +47,7 @@ namespace WokyTool.通用
 
         public virtual void 紀錄編輯(bool 是否列印_ = false)
         {
-            if (是否列印_ && _副本 != null)
+            if (是否列印_ && 是否編輯中)
             {
                 訊息管理器.獨體.訊息("資列修改");
 
@@ -59,23 +61,24 @@ namespace WokyTool.通用
             _副本 = null;
         }
 
-        public virtual bool 是否編輯中
+        public virtual bool 更新編輯狀態()
         {
-            get 
+            if (_副本 == null)
             {
-                if (_副本 == null)
-                    return false;
-
-                string 資料_ = this.ToString(false);
-
-                if (_副本.Equals(資料_))
-                {
-                    _副本 = null;
-                    return false;
-                }
-                else
-                    return true;
+                是否編輯中 = false;
+                return false;
             }
+
+            string 資料_ = this.ToString(false);
+            if (_副本.Equals(資料_))
+            {
+                _副本 = null;
+                是否編輯中 = false;
+                return false;
+            }
+
+            是否編輯中 = true;
+            return true;
         }
 
         public virtual void 刪除檢查(可處理檢查介面 介面_) { ; }

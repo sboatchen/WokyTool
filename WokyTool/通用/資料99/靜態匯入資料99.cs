@@ -30,7 +30,7 @@ namespace WokyTool.通用
                 try
                 {
                     // 備份
-                    檔案.備份(openFileDialog1.FileName, openFileDialog1.FileName, "匯入", typeof(T).Name);
+                    檔案.備份(openFileDialog1.FileName, "匯入", typeof(T).Name);
 
                     Excel_ = new ExcelQueryFactory(openFileDialog1.FileName);
                     Source_ = Excel_.Worksheet<T>();

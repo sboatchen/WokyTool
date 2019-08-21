@@ -28,12 +28,14 @@ namespace WokyTool.使用者
 
         protected override void _雙點擊資料(object sender, DataGridViewCellEventArgs e)
         {
-            使用者資料 目前使用者資料_ = (使用者資料)this.使用者資料BindingSource.Current;
-
             if (系統參數.修改基本資料 == false)
                 return;
 
-            密碼修改視窗 密碼修改視窗_ = new 密碼修改視窗((使用者資料)this.使用者資料BindingSource.Current);
+            使用者資料 目前使用者資料_ = (使用者資料)this.資料BS.Current;
+            if (目前使用者資料_ == null)
+                return;
+
+            密碼修改視窗 密碼修改視窗_ = new 密碼修改視窗(目前使用者資料_);
             密碼修改視窗_.顯現();
         }
     }

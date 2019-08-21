@@ -43,7 +43,7 @@ namespace WokyTool.測試
 
             foreach (var 資料_ in _資料列)
             {
-                資料_.合法檢查(管理器_);
+                資料_.合法檢查(管理器_, _資料列);
             }
 
         }
@@ -54,7 +54,7 @@ namespace WokyTool.測試
 
             foreach (var 資料_ in _資料列)
             {
-                資料_.合法檢查(管理器_);
+                資料_.合法檢查(管理器_, _資料列);
             }
 
             var i = new 錯誤列表視窗(管理器_);

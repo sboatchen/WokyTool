@@ -45,13 +45,13 @@
             this.載入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.快速儲存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.另存新檔ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.測試ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.預設檔名 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.屬性DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.匯出 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.通用匯出欄位設定資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.檔案格式BindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -158,7 +158,6 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.檔案ToolStripMenuItem,
-            this.匯出ToolStripMenuItem,
             this.測試ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -197,13 +196,6 @@
             this.另存新檔ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.另存新檔ToolStripMenuItem.Text = "另存新檔";
             this.另存新檔ToolStripMenuItem.Click += new System.EventHandler(this.另存新檔ToolStripMenuItem_Click);
-            // 
-            // 匯出ToolStripMenuItem
-            // 
-            this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
-            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.匯出ToolStripMenuItem.Text = "匯出";
-            this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
             // 
             // 測試ToolStripMenuItem
             // 
@@ -258,11 +250,22 @@
             this.屬性DataGridViewTextBoxColumn.ReadOnly = true;
             this.屬性DataGridViewTextBoxColumn.Width = 160;
             // 
+            // 匯出
+            // 
+            this.匯出.Location = new System.Drawing.Point(163, 416);
+            this.匯出.Name = "匯出";
+            this.匯出.Size = new System.Drawing.Size(75, 23);
+            this.匯出.TabIndex = 14;
+            this.匯出.Text = "匯出";
+            this.匯出.UseVisualStyleBackColor = true;
+            this.匯出.Click += new System.EventHandler(this.匯出_Click);
+            // 
             // 通用匯出視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 405);
+            this.ClientSize = new System.Drawing.Size(397, 451);
+            this.Controls.Add(this.匯出);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.預設檔名);
@@ -313,6 +316,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 屬性DataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem 測試ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 匯出ToolStripMenuItem;
+        private System.Windows.Forms.Button 匯出;
     }
 }

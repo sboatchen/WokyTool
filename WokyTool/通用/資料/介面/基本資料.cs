@@ -26,7 +26,7 @@ namespace WokyTool.通用
         {
         }
 
-        public virtual void 合法檢查(可處理檢查介面 介面_)
+        public virtual void 合法檢查(可處理檢查介面 介面_, object 資料列舉_)
         {
         }
 

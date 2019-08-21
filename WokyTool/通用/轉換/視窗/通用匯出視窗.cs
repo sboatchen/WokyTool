@@ -171,7 +171,7 @@ namespace WokyTool.通用
             訊息管理器.獨體.通知(設定);
         }
 
-        private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 匯出_Click(object sender, EventArgs e)
         {
             PropertyInfo 切檔方法_ = null;
             if (設定.切檔方式 != 字串.無)

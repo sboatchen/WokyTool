@@ -63,18 +63,21 @@
             this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
             this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.篩選ToolStripMenuItem.Text = "篩選";
+            this.篩選ToolStripMenuItem.Click += new System.EventHandler(this.篩選ToolStripMenuItem_Click);
             // 
             // 檢查ToolStripMenuItem
             // 
             this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
             this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.檢查ToolStripMenuItem.Text = "檢查";
+            this.檢查ToolStripMenuItem.Click += new System.EventHandler(this.檢查ToolStripMenuItem_Click);
             // 
             // 匯出ToolStripMenuItem
             // 
             this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
             this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯出ToolStripMenuItem.Text = "匯出";
+            this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 

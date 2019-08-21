@@ -76,16 +76,11 @@ namespace WokyTool.通用
                 if (是否可編輯 == false)
                     return false;
 
-                if (_目前資料列數量 != _目前資料列.Count())
-                    return true;
-
+                bool 是否編輯中_ = false;
                 foreach (T 資料_ in _目前資料列)
-                {
-                    if (資料_.是否編輯中)
-                        return true;
-                }
+                    是否編輯中_ |= 資料_.更新編輯狀態();
 
-                return false;
+                return 是否編輯中_ || (_目前資料列數量 != _目前資料列.Count());
             }
         }
 
@@ -94,14 +89,14 @@ namespace WokyTool.通用
             if (是否紀錄_)
             {
                 例外處理檢查管理器 例外處理檢查管理器_ = new 例外處理檢查管理器();
-                foreach (T 資料_ in _目前資料列)
+                foreach (T 資料_ in _目前資料列.Where(Value => Value.是否編輯中))
                 {
-                    資料_.合法檢查(例外處理檢查管理器_);
+                    資料_.合法檢查(例外處理檢查管理器_, 資料列舉);
                 }
 
                 foreach (T 資料_ in _目前資料列)
                 {
-                    資料_.紀錄編輯();
+                    資料_.紀錄編輯(true);
                 }
 
                 來源管理介面.更新資料(_目前資料列);
@@ -129,7 +124,7 @@ namespace WokyTool.通用
         {
             foreach (T 資料_ in _目前資料列)
             {
-                資料_.合法檢查(管理器_);
+                資料_.合法檢查(管理器_, 資料列舉);
             }
         }
     }
