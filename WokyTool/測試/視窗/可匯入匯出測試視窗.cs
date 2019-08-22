@@ -24,7 +24,7 @@ namespace WokyTool.測試
             var 欄位列舉_ = typeof(物品資料).GetProperties();
             foreach (var 欄位_ in 欄位列舉_)
             {
-                var 屬性列舉_ = 欄位_.GetCustomAttributes(typeof(可匯出匯入Attribute), true).Cast<可匯出匯入Attribute>();
+                var 屬性列舉_ = 欄位_.GetCustomAttributes(typeof(可匯出Attribute), true).Cast<可匯出Attribute>();
                 if (屬性列舉_.Count() == 0)
                     continue;
 

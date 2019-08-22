@@ -1,0 +1,39 @@
+﻿using Microsoft.Office.Interop.Excel;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+using WokyTool.Common;
+
+namespace WokyTool.通用
+{
+    public class 通用標頭匯出轉換 : 可寫入介面_EXCEL
+    {
+        public string 分類 { get; set; }
+
+        public string 樣板 { get { return null; } }
+
+        public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
+
+        public string 密碼 { get { return null; } }
+
+        public Type 資料類型 { get; protected set; }
+
+        public 通用標頭匯出轉換(Type 資料類型_)
+        {
+            資料類型 = 資料類型_;
+        }
+
+        public void 寫入(Application App_)
+        {
+            int 目前欄數_ = 1;
+            foreach (PropertyInfo 欄位_ in 資料類型.GetProperties())
+            {
+                if(欄位_.GetCustomAttributes(typeof(可匯入Attribute), true).Cast<可匯入Attribute>().Any())
+                    App_.Cells[1, 目前欄數_++] = 欄位_.Name;
+            }
+        }
+    }
+}

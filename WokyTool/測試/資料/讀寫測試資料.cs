@@ -13,8 +13,11 @@ namespace WokyTool.測試
 {
     [Serializable]
     [JsonObject(MemberSerialization.OptIn)]
-    public class 讀寫測試資料 : 可編輯資料<讀寫測試資料>, 可初始化介面
+    public class 讀寫測試資料 : 新版可記錄資料<讀寫測試資料>, 可初始化介面
     {
+        [JsonProperty]
+        public override int 編號 { get; set; }
+
         [JsonProperty]
         public string 字串 { get; set; }
 
@@ -68,20 +71,20 @@ namespace WokyTool.測試
 
         public static 讀寫測試資料 不篩 = new 讀寫測試資料
         {
+            編號 = 常數.不篩資料編碼,
             字串 = Common.字串.不篩選,
-            整數 = 常數.不篩資料編碼,
         };
 
         public static 讀寫測試資料 空白 = new 讀寫測試資料
         {
+            編號 = 常數.空白資料編碼,
             字串 = Common.字串.空白,
-            整數 = 常數.空白資料編碼,
         };
 
         public static 讀寫測試資料 錯誤 = new 讀寫測試資料
         {
+            編號 = 常數.錯誤資料編碼,
             字串 = Common.字串.錯誤,
-            整數 = 常數.錯誤資料編碼,
         };
 
         /************************************************/

@@ -122,6 +122,15 @@ namespace WokyTool.通用
             JSON = 4,
         };
 
+        public enum 匯入方式
+        {
+            錯誤 = 常數.錯誤列舉編碼,
+            無 = 常數.空白列舉編碼,
+
+            更新 = 1,
+            刪除,
+        };
+
         public enum 更新狀態
         {
             錯誤 = 常數.錯誤列舉編碼,

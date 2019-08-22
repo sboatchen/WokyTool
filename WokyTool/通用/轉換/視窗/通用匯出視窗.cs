@@ -36,12 +36,8 @@ namespace WokyTool.通用
             _可用欄位選單列.Add(通用匯出欄位設定資料.空白); 
             foreach (PropertyInfo 欄位_ in 資料類型.GetProperties())
             {
-                var 屬性列舉_ = 欄位_.GetCustomAttributes(typeof(可匯出匯入Attribute), true).Cast<可匯出匯入Attribute>();
-                if (屬性列舉_.Count() == 0)
-                    continue;
-
-                可匯出匯入Attribute 屬性_ = 屬性列舉_.First();
-                if (屬性_.匯出 == false)
+                可匯出Attribute 屬性_ = 欄位_.GetCustomAttributes(typeof(可匯出Attribute), true).Cast<可匯出Attribute>().DefaultIfEmpty(null).First();
+                if (屬性_ == null)
                     continue;
 
                 string 名稱_ = 欄位_.Name;

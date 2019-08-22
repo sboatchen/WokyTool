@@ -15,18 +15,23 @@ namespace WokyTool.聯絡人
     [JsonObject(MemberSerialization.OptIn)]
     public class 聯絡人資料 : 新版可記錄資料<聯絡人資料>
     {
+        [可匯出]
         [JsonProperty]
         public override int 編號 { get; set; }
 
+        [可匯出]
         [JsonProperty]
         public string 姓名 { get; set; }
 
+        [可匯出]
         [JsonProperty]
         public string 電話 { get; set; }
 
+        [可匯出]
         [JsonProperty]
         public string 手機 { get; set; }
 
+        [可匯出]
         [JsonProperty]
         public string 地址 { get; set; }
 
@@ -62,8 +67,10 @@ namespace WokyTool.聯絡人
 
         public 子客戶資料 子客戶 { get; set; }
 
+        [可匯出(名稱 = "客戶")]
         public string 客戶名稱 { get { return 客戶.名稱; } }
 
+        [可匯出(名稱 = "子客戶")]
         public string 子客戶名稱 { get { return 子客戶.名稱; } }
 
         public 聯絡人資料 Self { get { return this; } }

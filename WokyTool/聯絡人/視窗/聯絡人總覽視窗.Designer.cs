@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.聯絡人資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.客戶名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.子客戶名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +37,12 @@
             this.電話DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.手機DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.聯絡人資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.聯絡人資料BindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -67,43 +68,6 @@
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(944, 381);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // 聯絡人資料BindingSource
-            // 
-            this.聯絡人資料BindingSource.DataSource = typeof(WokyTool.聯絡人.聯絡人資料);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.篩選ToolStripMenuItem,
-            this.檢查ToolStripMenuItem,
-            this.匯出ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(944, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // 篩選ToolStripMenuItem
-            // 
-            this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
-            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.篩選ToolStripMenuItem.Text = "篩選";
-            this.篩選ToolStripMenuItem.Click += new System.EventHandler(this.篩選ToolStripMenuItem_Click);
-            // 
-            // 檢查ToolStripMenuItem
-            // 
-            this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
-            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.檢查ToolStripMenuItem.Text = "檢查";
-            this.檢查ToolStripMenuItem.Click += new System.EventHandler(this.檢查ToolStripMenuItem_Click);
-            // 
-            // 匯出ToolStripMenuItem
-            // 
-            this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
-            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.匯出ToolStripMenuItem.Text = "匯出";
-            this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
             // 
             // 編號DataGridViewTextBoxColumn
             // 
@@ -151,6 +115,51 @@
             this.地址DataGridViewTextBoxColumn.Name = "地址DataGridViewTextBoxColumn";
             this.地址DataGridViewTextBoxColumn.Width = 300;
             // 
+            // 聯絡人資料BindingSource
+            // 
+            this.聯絡人資料BindingSource.DataSource = typeof(WokyTool.聯絡人.聯絡人資料);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.篩選ToolStripMenuItem,
+            this.檢查ToolStripMenuItem,
+            this.匯出ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(944, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 篩選ToolStripMenuItem
+            // 
+            this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
+            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.篩選ToolStripMenuItem.Text = "篩選";
+            this.篩選ToolStripMenuItem.Click += new System.EventHandler(this.篩選ToolStripMenuItem_Click);
+            // 
+            // 檢查ToolStripMenuItem
+            // 
+            this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
+            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.檢查ToolStripMenuItem.Text = "檢查";
+            this.檢查ToolStripMenuItem.Click += new System.EventHandler(this.檢查ToolStripMenuItem_Click);
+            // 
+            // 匯出ToolStripMenuItem
+            // 
+            this.匯出ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.自訂ToolStripMenuItem});
+            this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
+            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.匯出ToolStripMenuItem.Text = "匯出";
+            // 
+            // 自訂ToolStripMenuItem
+            // 
+            this.自訂ToolStripMenuItem.Name = "自訂ToolStripMenuItem";
+            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.自訂ToolStripMenuItem.Text = "自訂";
+            this.自訂ToolStripMenuItem.Click += new System.EventHandler(this.自訂ToolStripMenuItem_Click);
+            // 
             // 聯絡人總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -186,5 +195,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 電話DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 手機DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 地址DataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem 自訂ToolStripMenuItem;
     }
 }

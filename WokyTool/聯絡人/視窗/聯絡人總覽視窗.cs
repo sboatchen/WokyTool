@@ -41,9 +41,11 @@ namespace WokyTool.聯絡人
             i.BringToFront();
         }
 
-        private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 自訂ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            訊息管理器.獨體.通知("尚未實作");
+            var i = new 通用匯出視窗(typeof(聯絡人資料), 管理介面.資料列舉);
+            i.Show();
+            i.BringToFront();
         }
     }
 }

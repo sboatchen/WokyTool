@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.物品;
 using WokyTool.通用;
+using WokyTool.聯絡人;
 
 namespace WokyTool.測試
 {
@@ -87,9 +88,7 @@ namespace WokyTool.測試
 
         private void 快速_Click(object sender, EventArgs e)
         {
-            //可匯出匯入ToolStripMenuItem_Click(null, null);
-
-            var i = new 通用匯出視窗(typeof(物品資料), 物品資料管理器.獨體.資料列舉2);
+            var i = new 聯絡人更新視窗();
             i.Show();
             i.BringToFront();
         }

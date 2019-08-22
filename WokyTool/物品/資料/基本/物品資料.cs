@@ -12,7 +12,7 @@ namespace WokyTool.物品
     [JsonObject(MemberSerialization.OptIn)]
     public class 物品資料 : 新版可記錄資料<物品資料>
     {
-        [可匯出匯入(匯出 = true, 匯入 = false)]
+        [可匯出]
         [JsonProperty]
         public override int 編號 { get; set; }
 
@@ -55,51 +55,51 @@ namespace WokyTool.物品
             }
         }
 
-        [可匯出匯入(匯出 = true, 匯入 = true)]
+        [可匯出]
         [JsonProperty]
         public string 條碼 { get; set; }
 
-        [可匯出匯入(匯出 = true, 匯入 = true)]
+        [可匯出]
         [JsonProperty]
         public string 原廠編號 { get; set; }
 
-        [可匯出匯入(匯出 = true, 匯入 = true)]
+        [可匯出]
         [JsonProperty]
         public string 代理編號 { get; set; }
 
-        [可匯出匯入(匯出 = true, 匯入 = true)]
+        [可匯出]
         [JsonProperty]
         public string 名稱 { get; set; }
 
-        [可匯出匯入(匯出 = true, 匯入 = true)]
+        [可匯出]
         [JsonProperty]
         public string 縮寫 { get; set; }
 
-        [可匯出匯入(匯出 = true, 匯入 = true)]
+        [可匯出]
         [JsonProperty]
         public string 類別 { get; set; }
 
-        [可匯出匯入(匯出 = true, 匯入 = true)]
+        [可匯出]
         [JsonProperty]
         public string 顏色 { get; set; }
 
-        [可匯出匯入(匯出 = true, 匯入 = true)]
+        [可匯出]
         [JsonProperty]
         public int 體積 { get; set; }
 
-        [可匯出匯入(匯出 = true, 匯入 = true)]
+        [可匯出]
         [JsonProperty]
         public int 庫存 { get; set; }
 
-        [可匯出匯入(匯出 = true, 匯入 = true)]
+        [可匯出]
         [JsonProperty]
         public decimal 庫存總成本 { get; set; }
 
-        [可匯出匯入(匯出 = true, 匯入 = true)]
+        [可匯出]
         [JsonProperty]
         public decimal 最後進貨成本 { get; set; }
 
-        [可匯出匯入(匯出 = true, 匯入 = true)]
+        [可匯出]
         [JsonProperty]
         public string 成本備註 { get; set; }
 
@@ -111,16 +111,16 @@ namespace WokyTool.物品
 
         public 物品品牌資料 品牌 { get; set; }
 
-        [可匯出匯入(匯出 = true, 匯入 = true, 名稱 = "大類")]
-        public string 大類名稱 { get { return 大類.名稱; } }   //@@ support set
+        [可匯出(名稱 = "大類")]
+        public string 大類名稱 { get { return 大類.名稱; } }
 
-        [可匯出匯入(匯出 = true, 匯入 = true, 名稱 = "小類")]
-        public string 小類名稱 { get { return 小類.名稱; } }   //@@ support set
+        [可匯出(名稱 = "小類")]
+        public string 小類名稱 { get { return 小類.名稱; } }
 
-        [可匯出匯入(匯出 = true, 匯入 = true, 名稱 = "品牌")]
-        public string 品牌名稱 { get { return 品牌.名稱; } }   //@@ support set
+        [可匯出(名稱 = "品牌")]
+        public string 品牌名稱 { get { return 品牌.名稱; } }
 
-        [可匯出匯入(匯出 = true, 匯入 = false)]
+        [可匯出]
         public decimal 成本
         {
             get
