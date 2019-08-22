@@ -120,5 +120,15 @@ namespace WokyTool.通用
 
             return true;
         }
+
+        public static IEnumerable<TSource> 執行<TSource>(this IEnumerable<TSource> 資料列舉_, Action<TSource> 方法_)
+        {
+            foreach (TSource 資料_ in 資料列舉_)
+            {
+                方法_(資料_);
+                yield return 資料_;
+
+            }
+        }
     }
 }
