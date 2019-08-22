@@ -12,39 +12,65 @@ using WokyTool.通用;
 
 namespace WokyTool.聯絡人
 {
+    public enum 更新處理方式
+    {
+        更新 = 0,
+        刪除,
+    };
+
     [JsonObject(MemberSerialization.OptIn)]
     public class 聯絡人更新資料 : 新版可匯入資料<聯絡人更新資料>
     {
-        [可匯入]
-        public string 匯入類型 
+        [可匯入(名稱 = "處理方式")]
+        public string 處理方式識別
         {
             set
             {
-                if (string.IsNullOrEmpty(value))
-                    return;
-                匯入方式 = (列舉.匯入方式)Enum.Parse(typeof(列舉.匯入方式), value);
-                if (匯入方式 == 列舉.匯入方式.刪除)
+                處理方式 = (更新處理方式)Enum.Parse(typeof(更新處理方式), value);
+                if (處理方式 == 更新處理方式.刪除)
                     更新狀態 = 列舉.更新狀態.刪除;
             } 
         }
 
-        [可匯入]
+        [可匯入(名稱 = "編號", 優先級 = Int32.MaxValue)]
         [JsonProperty]
-        public string 編號 
+        public string 編號識別 
         {
             get
             {
-                return _編號;
+                return _編號識別;
             }
             set
             {
-                _編號 = value;
+                _編號識別 = value;
+                if (參考 == null)
+                {
+                    int 編號_ = Int32.Parse(value);
+                    參考 = 聯絡人資料管理器.獨體.取得(編號_);
+                    修改 = 參考.深複製();
+                }
             }
         }
 
-        [可匯入]
+        [可匯入(優先級 = 1)]
         [JsonProperty]
-        public string 姓名 { get; set; }
+        public string 姓名
+        {
+            get
+            {
+                return 修改.姓名;
+            }
+            set
+            {
+                if (參考 == null)
+                {
+                    參考 = 聯絡人資料管理器.獨體.取得(value);
+                    修改 = 參考.深複製();
+                }
+                else
+                    修改.姓名 = value;
+            }
+        }
 
         [可匯入]
         [JsonProperty]
@@ -52,39 +78,83 @@ namespace WokyTool.聯絡人
         {
             get
             {
-                return _電話;
+                return 修改.電話;
             }
             set
             {
-                _電話 = value;
+                修改.電話 = value;
             }
         }
 
         [可匯入]
         [JsonProperty]
-        public string 手機 { get; set; }
+        public string 手機
+        {
+            get
+            {
+                return 修改.手機;
+            }
+            set
+            {
+                修改.手機 = value;
+            }
+        }
 
         [可匯入]
         [JsonProperty]
-        public string 地址 { get; set; }
+        public string 地址
+        {
+            get
+            {
+                return 修改.地址;
+            }
+            set
+            {
+                修改.地址 = value;
+            }
+        }
 
-        [可匯入]
+        [可匯入(名稱 = "客戶")]
         [JsonProperty]
-        public string 客戶 { get; set; }
+        public string 客戶識別
+        {
+            get
+            {
+                return _客戶識別;
+            }
+            set
+            {
+                _客戶識別 = value;
+                修改.客戶 = 客戶資料管理器.獨體.取得(value);
+            }
+        }
 
-        [可匯入]
+        [可匯入(名稱 = "子客戶")]
         [JsonProperty]
-        public string 子客戶 { get; set; }
+        public string 子客戶識別
+        {
+            get
+            {
+                return _子客戶識別;
+            }
+            set
+            {
+                _子客戶識別 = value;
+                修改.子客戶 = 子客戶資料管理器.獨體.取得(value);
+            }
+        }
 
         /********************************/
 
-        private string _編號;
+        private string _編號識別;
+        private string _客戶識別;
+        private string _子客戶識別;
 
-        private string _電話;
+        [JsonProperty]
+        public 更新處理方式 處理方式 { get; protected set; }
 
-        //[JsonProperty]
-        public 列舉.匯入方式 匯入方式 { get; set; }
-        public 列舉.更新狀態 更新狀態 { get; set; }
+        [JsonProperty]
+        public 列舉.更新狀態 更新狀態 { get; protected set; }
 
         public 聯絡人資料 參考 { get; protected set; }
         public 聯絡人資料 修改 { get; protected set; }
@@ -93,7 +163,7 @@ namespace WokyTool.聯絡人
 
         public 聯絡人更新資料()
         {
-            匯入方式 = 列舉.匯入方式.更新;
+            處理方式 = 更新處理方式.更新;
             更新狀態 = 列舉.更新狀態.更新;
         }
 
@@ -101,7 +171,7 @@ namespace WokyTool.聯絡人
         {
             是否編輯中 = true;
 
-            if (false == string.IsNullOrEmpty(編號))
+            /*if (false == string.IsNullOrEmpty(編號))
             {
                 參考 = 聯絡人資料管理器.獨體.取得(Int32.Parse(編號));
                 if (參考 == 聯絡人資料.錯誤)
@@ -150,7 +220,7 @@ namespace WokyTool.聯絡人
 
             訊息管理器.獨體.訊息(參考.ToString(false));
             訊息管理器.獨體.訊息(修改.ToString(false));
-            訊息管理器.獨體.訊息("-----------------------");
+            訊息管理器.獨體.訊息("-----------------------");*/
         }
 
         public override void 合法檢查(可處理檢查介面 介面_, object 資料列舉_)

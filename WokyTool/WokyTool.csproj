@@ -663,7 +663,7 @@
     </Compile>
     <Compile Include="聯絡人\資料\聯絡人更新資料.cs" />
     <Compile Include="聯絡人\資料\聯絡人資料篩選.cs" />
-    <Compile Include="聯絡人\轉換\聯絡人資料匯入轉換.cs" />
+    <Compile Include="通用\轉換\匯出\通用更新匯入轉換.cs" />
     <Compile Include="通用\介面\可篩選介面99.cs" />
     <Compile Include="通用\介面\可刪除檢查介面.cs" />
     <Compile Include="通用\其他\函式.cs" />
@@ -750,6 +750,7 @@
     <Compile Include="通用\資料99\可匯入資料99.cs" />
     <Compile Include="通用\資料\管理\可匯入資料管理器.cs" />
     <Compile Include="通用\資料\管理\可儲存資料管理器.cs" />
+    <Compile Include="通用\轉換\資料\通用更新匯入欄位方法資料.cs" />
     <Compile Include="通用\轉換\資料\通用匯出欄位方法資料.cs" />
     <Compile Include="通用\轉換\資料\通用匯出欄位設定資料.cs" />
     <Compile Include="通用\轉換\資料\通用匯出設定資料.cs" />

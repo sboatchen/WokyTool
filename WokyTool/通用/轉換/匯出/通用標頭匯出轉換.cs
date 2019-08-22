@@ -31,8 +31,19 @@ namespace WokyTool.通用
             int 目前欄數_ = 1;
             foreach (PropertyInfo 欄位_ in 資料類型.GetProperties())
             {
-                if(欄位_.GetCustomAttributes(typeof(可匯入Attribute), true).Cast<可匯入Attribute>().Any())
-                    App_.Cells[1, 目前欄數_++] = 欄位_.Name;
+                可匯入Attribute 屬性_ = 欄位_.GetCustomAttributes(typeof(可匯入Attribute), true).Cast<可匯入Attribute>().DefaultIfEmpty(null).First();
+                if (屬性_ == null)
+                    continue;
+
+                if (string.IsNullOrEmpty(屬性_.名稱))
+                    App_.Cells[1, 目前欄數_] = 欄位_.Name;
+                else
+                    App_.Cells[1, 目前欄數_] = 屬性_.名稱;
+
+                if (false == string.IsNullOrEmpty(屬性_.說明))
+                    App_.Cells[2, 目前欄數_] = 屬性_.說明;
+
+                目前欄數_++;
             }
         }
     }

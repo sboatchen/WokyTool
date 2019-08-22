@@ -37,10 +37,9 @@ namespace WokyTool.聯絡人
 
         private void 匯入ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IEnumerable<聯絡人更新資料> 資料列舉_ = 檔案.詢問並讀出<聯絡人更新資料>();
-
-
-            Console.WriteLine(資料列舉_.Count());
+            通用更新匯入轉換<聯絡人更新資料> 轉換_ = new 通用更新匯入轉換<聯絡人更新資料>();
+            IEnumerable<聯絡人更新資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
+            資料列舉_.Count();
         }
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)

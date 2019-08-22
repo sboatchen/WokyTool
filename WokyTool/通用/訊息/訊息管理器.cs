@@ -176,6 +176,8 @@ namespace WokyTool.通用
         public void 通知(object 內容_)
         {
             MessageBox.Show(內容_.ToString(), 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (logger != null)
+                logger.Info(內容_);
         }
 
         public void 通知(String 標題_, object 內容_)
