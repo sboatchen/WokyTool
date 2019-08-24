@@ -14,7 +14,7 @@ namespace WokyTool.測試
     public partial class 資料編輯總覽測試視窗 : 新版總覽視窗
     {
         public override 可編輯列舉資料管理介面 管理介面 { get { return 讀寫測試資料管理器.獨體.編輯管理器; } }
-        public override DataGridView 資料GV { get { return this.dataGridView1; } }
+        public override MyDataGridView 資料GV { get { return this.dataGridView1; } }
 
         private 讀寫測試資料篩選 _篩選介面;
         private bool 是否未綁定_ = true;

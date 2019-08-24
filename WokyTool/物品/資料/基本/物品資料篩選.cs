@@ -221,19 +221,19 @@ namespace WokyTool.物品
                 目前列舉_ = 目前列舉_.Where(Value => Value.品牌 == _品牌);
 
             if (null != _條碼)
-                目前列舉_ = 目前列舉_.Where(Value => Value.條碼.Contains(_條碼));
+                目前列舉_ = 目前列舉_.Where(Value => Value.條碼 != null && Value.條碼.Contains(_條碼));
             if (null != _原廠編號)
-                目前列舉_ = 目前列舉_.Where(Value => Value.原廠編號.Contains(_原廠編號));
+                目前列舉_ = 目前列舉_.Where(Value => Value.原廠編號 != null && Value.原廠編號.Contains(_原廠編號));
             if (null != _代理編號)
-                目前列舉_ = 目前列舉_.Where(Value => Value.代理編號.Contains(_代理編號));
+                目前列舉_ = 目前列舉_.Where(Value => Value.代理編號 != null && Value.代理編號.Contains(_代理編號));
 
             if (null != _文字)
                 目前列舉_ = 目前列舉_.Where(Value => Value.名稱.Contains(_文字) || Value.縮寫.Contains(_文字));
 
             if (null != _類別)
-                目前列舉_ = 目前列舉_.Where(Value => Value.類別.Contains(_類別));
+                目前列舉_ = 目前列舉_.Where(Value => Value.類別 != null && Value.類別.Contains(_類別));
             if (null != 顏色)
-                目前列舉_ = 目前列舉_.Where(Value => Value.顏色.Contains(_顏色));
+                目前列舉_ = 目前列舉_.Where(Value => Value.顏色 != null && Value.顏色.Contains(_顏色));
 
             if (-1 != _最小庫存)
                 目前列舉_ = 目前列舉_.Where(Value => Value.庫存 >= _最小庫存);

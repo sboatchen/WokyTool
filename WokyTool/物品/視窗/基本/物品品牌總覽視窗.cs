@@ -16,7 +16,7 @@ namespace WokyTool.物品
         public override 列舉.編號 編號類型 { get { return 列舉.編號.物品品牌; } }
 
         public override 可編輯列舉資料管理介面 管理介面 { get { return 物品品牌資料管理器.獨體.編輯管理器; } }
-        public override DataGridView 資料GV { get { return this.dataGridView1; } }
+        public override MyDataGridView 資料GV { get { return this.dataGridView1; } }
 
         public 物品品牌總覽視窗()
         {

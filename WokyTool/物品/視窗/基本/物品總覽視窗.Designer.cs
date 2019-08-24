@@ -1,4 +1,5 @@
-﻿namespace WokyTool.物品
+﻿using WokyTool.通用;
+namespace WokyTool.物品
 {
     partial class 物品總覽視窗
     {
@@ -41,7 +42,7 @@
             this.重新匯入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.類別ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new MyDataGridView();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.大類名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.小類名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -323,7 +324,7 @@
         private System.Windows.Forms.ToolStripMenuItem 盤點ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 自訂ToolStripMenuItem;
         private System.Windows.Forms.BindingSource 物品資料BindingSource;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private MyDataGridView dataGridView1;
         private System.Windows.Forms.ToolStripMenuItem 更新ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 物品ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 條碼ToolStripMenuItem;

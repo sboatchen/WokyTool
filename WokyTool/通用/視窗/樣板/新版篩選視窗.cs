@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,9 +18,12 @@ namespace WokyTool.通用
 
         public bool 是否關閉 { get; protected set; }
 
+        private List<Action> _視窗凍結工作列 = new List<Action>();
+
         public void 初始化()
         {
             this.Activated += new System.EventHandler(this._視窗激活);
+            this.Deactivate += new EventHandler(this._視窗凍結);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);
         }
 
@@ -33,6 +37,12 @@ namespace WokyTool.通用
 
         protected virtual void 視窗激活()
         {
+        }
+
+        protected void _視窗凍結(object sender, EventArgs e)
+        {
+            foreach (Action 工作_ in _視窗凍結工作列)
+                工作_();
         }
 
         private void _視窗關閉(object sender, FormClosingEventArgs e)
@@ -50,22 +60,33 @@ namespace WokyTool.通用
 
         protected virtual void 視窗關閉()
         {
-
         }
 
         protected void 資料綁定(TextBox 元件_, string 屬性名稱_)
         {
             元件_.DataBindings.Add("Text", 可篩選視窗介面, 屬性名稱_);
+
+            PropertyInfo 屬性_ = 可篩選視窗介面.GetType().GetProperty(屬性名稱_);
+            _視窗凍結工作列.Add(() => 屬性_.SetValue(可篩選視窗介面, 元件_.Text));
         }
 
         protected void 資料綁定(新版抽象選取元件 元件_, string 屬性名稱_)
         {
             元件_.DataBindings.Add("SelectedItem", 可篩選視窗介面, 屬性名稱_);
+
+            PropertyInfo 屬性_ = 可篩選視窗介面.GetType().GetProperty(屬性名稱_);
+            _視窗凍結工作列.Add(() => 屬性_.SetValue(可篩選視窗介面, 元件_.SelectedItem));
         }
 
         protected void 資料綁定(NumericUpDown 元件_, string 屬性名稱_)
         {
             元件_.DataBindings.Add("Value", 可篩選視窗介面, 屬性名稱_);
+
+            PropertyInfo 屬性_ = 可篩選視窗介面.GetType().GetProperty(屬性名稱_);
+            if (屬性_.PropertyType == typeof(Int32))
+                _視窗凍結工作列.Add(() => 屬性_.SetValue(可篩選視窗介面, (int)元件_.Value));
+            else
+                _視窗凍結工作列.Add(() => 屬性_.SetValue(可篩選視窗介面, 元件_.Value));
         }
 
         /********************************/

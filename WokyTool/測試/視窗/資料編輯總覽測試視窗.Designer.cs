@@ -1,4 +1,5 @@
-﻿namespace WokyTool.測試
+﻿using WokyTool.通用;
+namespace WokyTool.測試
 {
     partial class 資料編輯總覽測試視窗
     {
@@ -42,7 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new MyDataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.列印ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.過濾ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -336,7 +337,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private MyDataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 讀寫測試資料BindingSource;
         private System.Windows.Forms.ToolStripMenuItem 列印ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 過濾ToolStripMenuItem;

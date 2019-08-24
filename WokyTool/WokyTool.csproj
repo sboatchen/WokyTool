@@ -637,6 +637,7 @@
     <Compile Include="發票\資料\發票匯入資料.cs" />
     <Compile Include="發票\轉換\發票匯入轉換.cs" />
     <Compile Include="發票\轉換\發票匯出轉換.cs" />
+    <Compile Include="聯絡人\控制\聯絡人更新資料管理器.cs" />
     <Compile Include="聯絡人\視窗\元件\聯絡人選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -662,7 +663,11 @@
       <DependentUpon>聯絡人詳細視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="聯絡人\資料\聯絡人更新資料.cs" />
+    <Compile Include="聯絡人\資料\聯絡人更新資料篩選.cs" />
     <Compile Include="聯絡人\資料\聯絡人資料篩選.cs" />
+    <Compile Include="通用\視窗\複寫\MyDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="通用\轉換\匯出\通用更新匯入轉換.cs" />
     <Compile Include="通用\介面\可篩選介面99.cs" />
     <Compile Include="通用\介面\可刪除檢查介面.cs" />
@@ -720,7 +725,7 @@
     <Compile Include="通用\視窗\其他\新版頁索引元件.Designer.cs">
       <DependentUpon>新版頁索引元件.cs</DependentUpon>
     </Compile>
-    <Compile Include="通用\視窗\樣板\新版匯入視窗.cs">
+    <Compile Include="通用\視窗\樣板\更新總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="通用\視窗\樣板\新版詳細視窗.cs">

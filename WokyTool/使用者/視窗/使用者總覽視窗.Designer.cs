@@ -1,4 +1,5 @@
-﻿namespace WokyTool.使用者
+﻿using WokyTool.通用;
+namespace WokyTool.使用者
 {
     partial class 使用者總覽視窗
     {
@@ -29,7 +30,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new MyDataGridView();
             this.使用者資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.帳號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -142,7 +143,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private MyDataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 使用者資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 帳號DataGridViewTextBoxColumn;

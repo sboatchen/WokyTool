@@ -14,7 +14,7 @@ namespace WokyTool.通用
         public virtual 列舉.編號 編號類型 { get { throw new Exception(this.GetType().Name + " 未設定編號類型"); } }
 
         public virtual 可編輯列舉資料管理介面 管理介面 { get { throw new Exception(this.GetType().Name + " 未設定管理介面"); } }
-        public virtual DataGridView 資料GV { get { throw new Exception(this.GetType().Name + " 未設定資料GV"); } }
+        public virtual MyDataGridView 資料GV { get { throw new Exception(this.GetType().Name + " 未設定資料GV"); } }
 
         public BindingSource 資料BS { get { return 管理介面.公用BS; } }
 
@@ -26,6 +26,7 @@ namespace WokyTool.通用
             this.資料GV.DataSource = 資料BS;
 
             this.Activated += new System.EventHandler(this._視窗激活);
+            this.Deactivate += new EventHandler(this._視窗凍結);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);
             資料GV.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this._點擊標頭);
             資料GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._雙點擊資料);
@@ -56,6 +57,11 @@ namespace WokyTool.通用
 
             if (資料版本 != 管理介面.資料版本)
                 更新資料();
+        }
+
+        protected void _視窗凍結(object sender, EventArgs e)
+        {
+            資料GV.凍結();
         }
 
         protected virtual void 視窗激活()
