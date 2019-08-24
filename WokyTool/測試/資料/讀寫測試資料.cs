@@ -16,9 +16,6 @@ namespace WokyTool.測試
     public class 讀寫測試資料 : 新版可記錄資料<讀寫測試資料>, 可初始化介面
     {
         [JsonProperty]
-        public override int 編號 { get; set; }
-
-        [JsonProperty]
         public string 字串 { get; set; }
 
         [JsonProperty]
@@ -91,7 +88,7 @@ namespace WokyTool.測試
 
         public void 初始化() { ; }
 
-        public override void 合法檢查(可處理檢查介面 介面_, object 資料列舉_)
+        public override void 合法檢查(可處理檢查介面 介面_, IEnumerable<讀寫測試資料> 資料列舉_)
         {
             if (整數 < 0)
                 介面_.錯誤(this, "整數不合法");

@@ -34,6 +34,7 @@ namespace WokyTool.通用
 
         public void 讀出標頭(string[] 標頭列_)
         {
+            bool 是否有識別欄位_ = false;
             foreach (PropertyInfo 欄位_ in 資料類型.GetProperties())
             {
                 可匯入Attribute 屬性_ = 欄位_.GetCustomAttributes(typeof(可匯入Attribute), true).Cast<可匯入Attribute>().DefaultIfEmpty(null).First();
@@ -51,8 +52,13 @@ namespace WokyTool.通用
                     方法 = (TSource, TValue) => 欄位_.SetValue(TSource, TValue[資料索引_])
                 };
 
+                是否有識別欄位_ |= 屬性_.識別;
+
                _方法資料列.Add(方法_);
             }
+
+            if (false == 是否有識別欄位_)
+                throw new Exception("缺少識別欄位");
 
             _方法資料列 = _方法資料列.OrderByDescending(Value => Value.優先級).ToList();
         }

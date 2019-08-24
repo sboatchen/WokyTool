@@ -9,11 +9,14 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
+    [JsonObject(MemberSerialization.OptIn)]
     public abstract class 新版可記錄資料<T> : 可編輯資料<T>, 可編號介面 where T : 基本資料
     {
-        protected string _副本;
+        [可匯出]
+        [JsonProperty]
+        public int 編號 { get; set; }
 
-        public abstract int 編號 { get; set; }
+        protected string _副本;
 
         public virtual bool 編號是否合法()
         {

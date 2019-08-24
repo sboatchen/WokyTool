@@ -29,6 +29,8 @@ namespace WokyTool.通用
         private List<T> _目前資料列 = null;
         private int _目前資料列版本 = -1;
         private int _目前資料列數量 = -1;
+        private IEnumerable<T> _目前資料列舉 = null;
+        private int _目前篩選版本 = -1;
         public object 資料列舉
         {
             get
@@ -42,16 +44,20 @@ namespace WokyTool.通用
 
                     _目前資料列版本 = (來源管理介面.資料版本 + _篩選介面.排序版本);
                     _目前資料列數量 = _目前資料列.Count();
+
+                    _目前篩選版本 = -1;
                 }
 
-                if (false == _篩選介面.是否篩選)
-                    return _目前資料列;
+                if (_目前篩選版本 != _篩選介面.篩選版本)
+                {
+                    _目前篩選版本 = _篩選介面.篩選版本;
 
-                IEnumerable<T> 篩選列舉_ = _篩選介面.篩選(_目前資料列);
-                if (篩選列舉_.Any() == false)
-                    return new List<T>();
-                else
-                    return 篩選列舉_;
+                    _目前資料列舉 = _篩選介面.篩選(_目前資料列);
+                    if (_目前資料列舉.Any() == false)
+                        _目前資料列舉 = new List<T>();
+                }
+
+                return _目前資料列舉;
             }
         }
 
@@ -89,9 +95,11 @@ namespace WokyTool.通用
             if (是否紀錄_)
             {
                 例外處理檢查管理器 例外處理檢查管理器_ = new 例外處理檢查管理器();
+                IEnumerable<T> 資料列舉_ = (IEnumerable<T>)來源管理介面.資料列舉;
+
                 foreach (T 資料_ in _目前資料列.Where(Value => Value.是否編輯中))
                 {
-                    資料_.合法檢查(例外處理檢查管理器_, 資料列舉);
+                    資料_.合法檢查(例外處理檢查管理器_, 資料列舉_);
                 }
 
                 foreach (T 資料_ in _目前資料列)
@@ -122,9 +130,11 @@ namespace WokyTool.通用
 
         public void 合法檢查(可處理檢查介面 管理器_)
         {
+            IEnumerable<T> 資料列舉_ = (IEnumerable<T>)來源管理介面.資料列舉;
+
             foreach (T 資料_ in _目前資料列)
             {
-                資料_.合法檢查(管理器_, 資料列舉);
+                資料_.合法檢查(管理器_, 資料列舉_);
             }
         }
     }

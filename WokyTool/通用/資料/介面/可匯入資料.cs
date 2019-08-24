@@ -9,6 +9,7 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
+    [JsonObject(MemberSerialization.OptIn)]
     public abstract class 新版可匯入資料<T> : 可編輯資料<T>, 可初始化介面 where T : 基本資料
     {
         [可匯出]

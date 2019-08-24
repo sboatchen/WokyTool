@@ -12,10 +12,6 @@ namespace WokyTool.物品
     [JsonObject(MemberSerialization.OptIn)]
     public class 物品資料 : 新版可記錄資料<物品資料>
     {
-        [可匯出]
-        [JsonProperty]
-        public override int 編號 { get; set; }
-
         [JsonProperty]
         public int 大類編號
         {
@@ -211,7 +207,7 @@ namespace WokyTool.物品
 
         /********************************/
 
-        public override void 合法檢查(可處理檢查介面 介面_, object 資料列舉_)
+        public override void 合法檢查(可處理檢查介面 介面_, IEnumerable<物品資料> 資料列舉_)
         {
             if (false == 大類.編號是否合法())
                 介面_.錯誤(this, "大類不合法");
@@ -222,16 +218,14 @@ namespace WokyTool.物品
             if (false == 品牌.編號是否合法())
                 介面_.錯誤(this, "品牌不合法");
 
-            IEnumerable<物品資料> 物品資料列舉_ = (IEnumerable<物品資料>)資料列舉_;
-
             if (String.IsNullOrEmpty(名稱))
                 介面_.錯誤(this, "名稱不合法");
-            else if (物品資料列舉_.Where(Value => 名稱.Equals(Value.名稱) || 名稱.Equals(Value.縮寫)).Count() > 1)
+            else if (資料列舉_.Where(Value => 名稱.Equals(Value.名稱) || 名稱.Equals(Value.縮寫)).Count() > 1)
                 介面_.錯誤(this, "名稱重複");
 
             if (String.IsNullOrEmpty(縮寫))
                 介面_.錯誤(this, "縮寫不合法");
-            else if (物品資料列舉_.Where(Value => 縮寫.Equals(Value.名稱) || 縮寫.Equals(Value.縮寫)).Count() > 1)
+            else if (資料列舉_.Where(Value => 縮寫.Equals(Value.名稱) || 縮寫.Equals(Value.縮寫)).Count() > 1)
                 介面_.錯誤(this, "縮寫重複");
         }
 

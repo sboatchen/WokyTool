@@ -13,9 +13,6 @@ namespace WokyTool.使用者
     public class 使用者資料 : 新版可記錄資料<使用者資料>
     {
         [JsonProperty]
-        public override int 編號 { get; set; }
-
-        [JsonProperty]
         public string 帳號 { get; set; }
 
         [JsonProperty]
@@ -103,13 +100,11 @@ namespace WokyTool.使用者
 
         /********************************/
 
-        public override void 合法檢查(可處理檢查介面 介面_, object 資料列舉_)
+        public override void 合法檢查(可處理檢查介面 介面_, IEnumerable<使用者資料> 資料列舉_)
         {
-            IEnumerable<使用者資料> 使用者資料列舉_ = (IEnumerable<使用者資料>)資料列舉_;
-
             if (String.IsNullOrEmpty(帳號))
                 介面_.錯誤(this, "帳號不合法");
-            else if (使用者資料列舉_.Where(Value => 帳號.Equals(Value.帳號)).Count() > 1)
+            else if (資料列舉_.Where(Value => 帳號.Equals(Value.帳號)).Count() > 1)
                 介面_.錯誤(this, "帳號重複");
 
             if (String.IsNullOrEmpty(密碼))
@@ -117,7 +112,7 @@ namespace WokyTool.使用者
 
             if (String.IsNullOrEmpty(名稱))
                 介面_.錯誤(this, "名稱不合法");
-            else if (使用者資料列舉_.Where(Value => 名稱.Equals(Value.名稱)).Count() > 1)
+            else if (資料列舉_.Where(Value => 名稱.Equals(Value.名稱)).Count() > 1)
                 介面_.錯誤(this, "名稱重複");
         }
     }

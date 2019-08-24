@@ -70,9 +70,11 @@ namespace WokyTool.通用
 
         public void 合法檢查(可處理檢查介面 管理器_)
         {
+            IEnumerable<T> 資料列舉_ = (IEnumerable<T>)來源管理介面.資料列舉;
+
             foreach (T 資料_ in _目前資料列)
             {
-                資料_.合法檢查(管理器_, 資料列舉);
+                資料_.合法檢查(管理器_, 資料列舉_);
             }
         }
     }
