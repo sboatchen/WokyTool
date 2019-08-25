@@ -15,7 +15,7 @@ namespace WokyTool.物品
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.物品; } }
 
-        public override 可篩選介面_視窗 可篩選視窗介面 { get { return 物品資料管理器.獨體.編輯管理器.篩選介面; } }
+        public override 視窗可篩選介面 視窗篩選器 { get { return 物品資料管理器.獨體.編輯管理器.視窗篩選器; } }
 
         //protected 物品資料篩選設定 _物品資料篩選設定 = new 物品資料篩選設定();
 

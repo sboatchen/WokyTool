@@ -45,7 +45,7 @@ namespace WokyTool.通用
             this.資料BS.DataSource = 管理介面.資料列舉;
             this.資料BS.ResetBindings(false);
 
-            資料GV.AllowUserToDeleteRows = 管理介面.是否可編輯 && 管理介面.篩選介面.是否篩選 == false; // 含篩選條件時 仍可刪除 擋掉
+            資料GV.AllowUserToDeleteRows = 管理介面.是否可編輯 && 管理介面.視窗篩選器.是否篩選 == false; // 含篩選條件時 仍可刪除 擋掉
         }
 
         protected void _視窗激活(object sender, EventArgs e)
@@ -105,23 +105,10 @@ namespace WokyTool.通用
 
         protected void _點擊標頭(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (管理介面.是否編輯中)
-            {
-                bool Result_ = 訊息管理器.獨體.確認(字串.儲存確認, 字串.排序前儲存確認內容);
-
-                try
-                {
-                    管理介面.完成編輯(Result_);
-                }
-                catch (Exception ex)
-                {
-                    訊息管理器.獨體.通知(字串.操作失敗, ex.Message);
-                    return;
-                }
-            }
+            資料GV.凍結();
 
             var col = 資料GV.Columns[e.ColumnIndex];
-            管理介面.篩選介面.排序欄位 = col.DataPropertyName;
+            管理介面.視窗篩選器.排序欄位 = col.DataPropertyName;
 
             _視窗激活(null, null);
         }
@@ -134,25 +121,25 @@ namespace WokyTool.通用
             視窗管理器.獨體.顯現(編號類型, 列舉.視窗.詳細, true);
         }
 
-        private 列表處理檢查管理器 _刪除檢查;
+        private 列表檢查器 _刪除檢查器;
         private int _目前訊息數量;
         private int _剩餘處理數量;
 
         protected virtual void _刪除資料(object sender, DataGridViewRowCancelEventArgs e)
         {
-            if(_刪除檢查 == null)
+            if (_刪除檢查器 == null)
             {
-                _刪除檢查 = new 列表處理檢查管理器();
+                _刪除檢查器 = new 列表檢查器();
                 _目前訊息數量 = 0;
                 _剩餘處理數量 = 資料GV.SelectedRows.Count;
             }
 
             可刪除檢查介面 資料_ = e.Row.DataBoundItem as 可刪除檢查介面;
-            資料_.刪除檢查(_刪除檢查);
+            資料_.刪除檢查(_刪除檢查器);
 
-            if(_目前訊息數量 != _刪除檢查.字串列.Count)
+            if (_目前訊息數量 != _刪除檢查器.字串列.Count)
             {
-                _目前訊息數量 = _刪除檢查.字串列.Count;
+                _目前訊息數量 = _刪除檢查器.字串列.Count;
                 e.Cancel = true;
             }
 
@@ -161,12 +148,12 @@ namespace WokyTool.通用
             {
                 if (_目前訊息數量 > 0)
                 {
-                    var i = new 錯誤列表視窗(_刪除檢查, "刪除失敗，以下資料綁定");
+                    var i = new 錯誤列表視窗(_刪除檢查器, "刪除失敗，以下資料綁定");
                     i.Show();
                     i.BringToFront();
                 }
 
-                _刪除檢查 = null;
+                _刪除檢查器 = null;
             }
         }
 

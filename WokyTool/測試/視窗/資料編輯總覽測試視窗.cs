@@ -16,7 +16,7 @@ namespace WokyTool.測試
         public override 可編輯列舉資料管理介面 管理介面 { get { return 讀寫測試資料管理器.獨體.編輯管理器; } }
         public override MyDataGridView 資料GV { get { return this.dataGridView1; } }
 
-        private 讀寫測試資料篩選 _篩選介面;
+        private 讀寫測試資料篩選 _視窗篩選器;
         private bool 是否未綁定_ = true;
 
         public 資料編輯總覽測試視窗()
@@ -25,7 +25,7 @@ namespace WokyTool.測試
 
             初始化();
 
-            _篩選介面 = (讀寫測試資料篩選)管理介面.篩選介面;
+            _視窗篩選器 = (讀寫測試資料篩選)管理介面.視窗篩選器;
 
             this.列舉.DataSource = Enum.GetValues(typeof(列舉.編號));
 
@@ -59,9 +59,9 @@ namespace WokyTool.測試
         private void 最小整數_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(this.最小整數.Text))
-                this._篩選介面.最小整數 = -1;
+                this._視窗篩選器.最小整數 = -1;
             else
-                this._篩選介面.最小整數 = Int32.Parse(this.最小整數.Text);
+                this._視窗篩選器.最小整數 = Int32.Parse(this.最小整數.Text);
 
             _視窗激活(null, null);
         }

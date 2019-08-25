@@ -14,7 +14,7 @@ namespace WokyTool.通用
     {
         public static 列舉.視窗 視窗類型 { get { return 列舉.視窗.篩選; } }
         public virtual 列舉.編號 編號類型 { get { throw new Exception(this.GetType().Name + " 未設定編號類型"); } }
-        public virtual 可篩選介面_視窗 可篩選視窗介面 { get { throw new Exception(this.GetType().Name + " 未設定編號類型"); } }
+        public virtual 視窗可篩選介面 視窗篩選器 { get { throw new Exception(this.GetType().Name + " 未設定編號類型"); } }
 
         public bool 是否關閉 { get; protected set; }
 
@@ -64,29 +64,29 @@ namespace WokyTool.通用
 
         protected void 資料綁定(TextBox 元件_, string 屬性名稱_)
         {
-            元件_.DataBindings.Add("Text", 可篩選視窗介面, 屬性名稱_);
+            元件_.DataBindings.Add("Text", 視窗篩選器, 屬性名稱_);
 
-            PropertyInfo 屬性_ = 可篩選視窗介面.GetType().GetProperty(屬性名稱_);
-            _視窗凍結工作列.Add(() => 屬性_.SetValue(可篩選視窗介面, 元件_.Text));
+            PropertyInfo 屬性_ = 視窗篩選器.GetType().GetProperty(屬性名稱_);
+            _視窗凍結工作列.Add(() => 屬性_.SetValue(視窗篩選器, 元件_.Text));
         }
 
         protected void 資料綁定(新版抽象選取元件 元件_, string 屬性名稱_)
         {
-            元件_.DataBindings.Add("SelectedItem", 可篩選視窗介面, 屬性名稱_);
+            元件_.DataBindings.Add("SelectedItem", 視窗篩選器, 屬性名稱_);
 
-            PropertyInfo 屬性_ = 可篩選視窗介面.GetType().GetProperty(屬性名稱_);
-            _視窗凍結工作列.Add(() => 屬性_.SetValue(可篩選視窗介面, 元件_.SelectedItem));
+            PropertyInfo 屬性_ = 視窗篩選器.GetType().GetProperty(屬性名稱_);
+            _視窗凍結工作列.Add(() => 屬性_.SetValue(視窗篩選器, 元件_.SelectedItem));
         }
 
         protected void 資料綁定(NumericUpDown 元件_, string 屬性名稱_)
         {
-            元件_.DataBindings.Add("Value", 可篩選視窗介面, 屬性名稱_);
+            元件_.DataBindings.Add("Value", 視窗篩選器, 屬性名稱_);
 
-            PropertyInfo 屬性_ = 可篩選視窗介面.GetType().GetProperty(屬性名稱_);
+            PropertyInfo 屬性_ = 視窗篩選器.GetType().GetProperty(屬性名稱_);
             if (屬性_.PropertyType == typeof(Int32))
-                _視窗凍結工作列.Add(() => 屬性_.SetValue(可篩選視窗介面, (int)元件_.Value));
+                _視窗凍結工作列.Add(() => 屬性_.SetValue(視窗篩選器, (int)元件_.Value));
             else
-                _視窗凍結工作列.Add(() => 屬性_.SetValue(可篩選視窗介面, 元件_.Value));
+                _視窗凍結工作列.Add(() => 屬性_.SetValue(視窗篩選器, 元件_.Value));
         }
 
         /********************************/

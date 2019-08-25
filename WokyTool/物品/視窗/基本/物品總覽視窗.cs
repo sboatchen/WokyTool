@@ -107,7 +107,7 @@ namespace WokyTool.物品
             string 內容_ = 檔案.讀出(OFD_.FileName);
             Dictionary<int, 物品資料> 資料書_ = JsonConvert.DeserializeObject<Dictionary<int, 物品資料>>(內容_);
             
-            列表檢查器 檢查_ = new 列表檢查器();
+            列表檢查器 檢查器_ = new 列表檢查器();
 
             foreach(物品資料 更新資料_ in 資料書_.Values)
             {
@@ -117,7 +117,7 @@ namespace WokyTool.物品
                 物品資料 物品資料_ = 物品資料管理器.獨體.取得(更新資料_.名稱);
                 if(物品資料_.編號是否有值() == false)
                 {
-                    檢查_.錯誤(更新資料_, "編號有問題");
+                    檢查器_.錯誤(更新資料_, "編號有問題");
                     continue;
                 }
 
@@ -126,9 +126,9 @@ namespace WokyTool.物品
                 物品資料_.顏色 = 更新資料_.顏色;
             }
 
-            if (檢查_.字串列.Count > 0)
+            if (檢查器_.字串列.Count > 0)
             {
-                var i = new 錯誤列表視窗(檢查_, "類別更新錯誤");
+                var i = new 錯誤列表視窗(檢查器_, "類別更新錯誤");
                 i.Show();
                 i.BringToFront();
             }
