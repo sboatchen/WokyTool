@@ -61,24 +61,28 @@ namespace WokyTool.客戶
 
         /********************************/
 
-        public override void 合法檢查(可處理檢查介面 介面_, IEnumerable<客戶資料> 資料列舉_)
+        public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
         {
+            基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
+
             if (String.IsNullOrEmpty(名稱))
-                介面_.錯誤(this, "名稱不合法");
-            else if (資料列舉_.Where(Value => 名稱.Equals(Value.名稱)).Count() > 1)
-                介面_.錯誤(this, "名稱重複");
+                檢查器_.錯誤(資料_, "名稱不合法");
+            else if (客戶資料管理器.獨體.資料列舉2.Where(Value => 名稱.Equals(Value.名稱)).Count() > 1)
+                檢查器_.錯誤(資料_, "名稱重複");
         }
 
-        public override void 刪除檢查(可處理檢查介面 介面_)
+        public override void 刪除檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
         {
-            foreach (聯絡人資料 資料_ in 聯絡人列舉)
+            基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
+
+            foreach (聯絡人資料 聯絡人資料_ in 聯絡人列舉)
             {
-                介面_.錯誤(資料_, "資料綁定中");
+                檢查器_.錯誤(資料_, "資料綁定中:" + 聯絡人資料_.ToString(false));
             }
 
-            foreach (子客戶資料 資料_ in 子客戶列舉)
+            foreach (子客戶資料 子客戶資料_ in 子客戶列舉)
             {
-                介面_.錯誤(資料_, "資料綁定中");
+                檢查器_.錯誤(資料_, "資料綁定中:" + 子客戶資料_.ToString(false));
             }
         }
     }

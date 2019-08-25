@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
-    public interface 可編號介面
+    public interface 可記錄錯誤介面
     {
-        int 編號 { get; set; }
-
-        bool 編號是否合法();
-
-        bool 編號是否有值();
+        string 錯誤訊息 { get; set; }
     }
 }

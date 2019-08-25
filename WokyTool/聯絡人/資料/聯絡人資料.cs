@@ -100,25 +100,27 @@ namespace WokyTool.聯絡人
 
         /********************************/
 
-        public override void 合法檢查(可處理檢查介面 介面_, IEnumerable<聯絡人資料> 資料列舉_)
+        public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
         {
+            基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
+
             if (String.IsNullOrEmpty(姓名))
-                介面_.錯誤(this, "姓名不合法");
-            else if (資料列舉_.Where(Value => 姓名.Equals(Value.姓名)).Count() > 1)
-                介面_.錯誤(this, "姓名重複");
+                檢查器_.錯誤(資料_, "姓名不合法");
+            else if (聯絡人資料管理器.獨體.資料列舉2.Where(Value => 姓名.Equals(Value.姓名)).Count() > 1)
+                檢查器_.錯誤(資料_, "姓名重複");
 
             if (String.IsNullOrEmpty(電話) && String.IsNullOrEmpty(手機))
-                介面_.錯誤(this, "電話/手機不合法");
+                檢查器_.錯誤(資料_, "電話/手機不合法");
 
             if (String.IsNullOrEmpty(地址))
-                介面_.錯誤(this, "地址不合法");
+                檢查器_.錯誤(資料_, "地址不合法");
 
             if (false == 客戶.編號是否有值())
-                介面_.錯誤(this, "客戶不合法");
+                檢查器_.錯誤(資料_, "客戶不合法");
 
             // 可以不設定子客戶, 但若設定了 必須屬於上層客戶
             if (子客戶.編號是否有值() && 子客戶.客戶 != 客戶)
-                介面_.錯誤(this, "子客戶不屬於客戶");
+                檢查器_.錯誤(資料_, "子客戶不屬於客戶");
         }
     }
 }

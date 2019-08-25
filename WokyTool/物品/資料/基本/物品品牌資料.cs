@@ -45,19 +45,23 @@ namespace WokyTool.物品
 
         /********************************/
 
-        public override void 合法檢查(可處理檢查介面 介面_, IEnumerable<物品品牌資料> 資料列舉_)
+        public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
         {
+            基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
+
             if (String.IsNullOrEmpty(名稱))
-                介面_.錯誤(this, "名稱不合法");
-            else if (資料列舉_.Where(Value => 名稱.Equals(Value.名稱)).Count() > 1)
-                介面_.錯誤(this, "名稱重複");
+                檢查器_.錯誤(資料_, "名稱不合法");
+            else if (物品品牌資料管理器.獨體.資料列舉2.Where(Value => 名稱.Equals(Value.名稱)).Count() > 1)
+                檢查器_.錯誤(資料_, "名稱重複");
         }
 
-        public override void 刪除檢查(可處理檢查介面 介面_)
+        public override void 刪除檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
         {
-            foreach (物品資料 資料_ in 物品資料管理器.獨體.資料列舉2.Where(Value => Value.品牌 == this))
+            基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
+
+            foreach (物品資料 物品資料_ in 物品資料管理器.獨體.資料列舉2.Where(Value => Value.品牌 == this))
             {
-                介面_.錯誤(資料_, "資料綁定中");
+                檢查器_.錯誤(資料_, "資料綁定中:" + 物品資料_.ToString(false));
             }
         }
     }

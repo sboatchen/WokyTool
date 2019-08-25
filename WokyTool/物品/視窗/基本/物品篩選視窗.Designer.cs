@@ -30,9 +30,9 @@
         {
             this.類別 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.物品品牌選取元件1 = new WokyTool.物品.物品品牌選取元件();
-            this.物品小類選取元件1 = new WokyTool.物品.物品小類選取元件();
-            this.物品大類選取元件1 = new WokyTool.物品.物品大類選取元件();
+            this.物品品牌選取元件1 = new WokyTool.物品.物品品牌選取元件(WokyTool.通用.選取元件類型.篩選);
+            this.物品小類選取元件1 = new WokyTool.物品.物品小類選取元件(WokyTool.通用.選取元件類型.篩選);
+            this.物品大類選取元件1 = new WokyTool.物品.物品大類選取元件(WokyTool.通用.選取元件類型.篩選);
             this.最小庫存 = new System.Windows.Forms.NumericUpDown();
             this.代理編號 = new System.Windows.Forms.TextBox();
             this.條碼 = new System.Windows.Forms.TextBox();
