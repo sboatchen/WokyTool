@@ -35,9 +35,10 @@ namespace WokyTool.物品
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new MyDataGridView();
+            this.dataGridView1 = new WokyTool.通用.MyDataGridView();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.物品小類資料BindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -64,21 +65,20 @@ namespace WokyTool.物品
             this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
             this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.篩選ToolStripMenuItem.Text = "篩選";
-            this.篩選ToolStripMenuItem.Click += new System.EventHandler(this.篩選ToolStripMenuItem_Click);
             // 
             // 檢查ToolStripMenuItem
             // 
             this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
             this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.檢查ToolStripMenuItem.Text = "檢查";
-            this.檢查ToolStripMenuItem.Click += new System.EventHandler(this.檢查ToolStripMenuItem_Click);
             // 
             // 匯出ToolStripMenuItem
             // 
+            this.匯出ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.自訂ToolStripMenuItem});
             this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
             this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯出ToolStripMenuItem.Text = "匯出";
-            this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -109,6 +109,12 @@ namespace WokyTool.物品
             this.名稱DataGridViewTextBoxColumn.Name = "名稱DataGridViewTextBoxColumn";
             this.名稱DataGridViewTextBoxColumn.Width = 200;
             // 
+            // 自訂ToolStripMenuItem
+            // 
+            this.自訂ToolStripMenuItem.Name = "自訂ToolStripMenuItem";
+            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.自訂ToolStripMenuItem.Text = "自訂";
+            // 
             // 物品小類總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -137,5 +143,6 @@ namespace WokyTool.物品
         private MyDataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem 自訂ToolStripMenuItem;
     }
 }

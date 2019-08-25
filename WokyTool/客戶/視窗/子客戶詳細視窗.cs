@@ -17,7 +17,7 @@ namespace WokyTool.客戶
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.子客戶; } }
 
-        public override 可編輯列舉資料管理介面 管理介面 { get { return 子客戶資料管理器.獨體.編輯管理器; } }
+        public override 可編輯列舉資料管理介面 編輯管理器 { get { return 子客戶資料管理器.獨體.編輯管理器; } }
         public override 新版頁索引元件 頁索引 { get { return this.新版頁索引元件1; } }
 
 

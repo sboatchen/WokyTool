@@ -13,10 +13,10 @@ namespace WokyTool.通用
         public static 列舉.視窗 視窗類型 { get { return 列舉.視窗.詳細; } }
         public virtual 列舉.編號 編號類型 { get { throw new Exception(this.GetType().Name + " 未設定編號類型"); } }
 
-        public virtual 可編輯列舉資料管理介面 管理介面 { get { throw new Exception(this.GetType().Name + " 未設定管理介面"); } }
+        public virtual 可編輯列舉資料管理介面 編輯管理器 { get { throw new Exception(this.GetType().Name + " 未設定編輯管理器"); } }
         public virtual 新版頁索引元件 頁索引 { get { throw new Exception(this.GetType().Name + " 未設定頁索引"); } }
 
-        public BindingSource 資料BS { get { return 管理介面.公用BS; } }
+        public BindingSource 資料BS { get { return 編輯管理器.公用BS; } }
 
         public int 資料版本 { get; protected set; }
         public bool 是否關閉 { get; protected set; }
@@ -34,8 +34,8 @@ namespace WokyTool.通用
 
         private void 更新資料()
         {
-            資料版本 = 管理介面.資料版本;
-            資料BS.DataSource = 管理介面.資料列舉;
+            資料版本 = 編輯管理器.資料版本;
+            資料BS.DataSource = 編輯管理器.資料列舉;
             資料BS.ResetBindings(false);
         }
 
@@ -46,7 +46,7 @@ namespace WokyTool.通用
 
             視窗激活();
 
-            if (資料版本 != 管理介面.資料版本)
+            if (資料版本 != 編輯管理器.資料版本)
                 更新資料();
         }
 
@@ -58,13 +58,13 @@ namespace WokyTool.通用
         {
             是否關閉 = true;
 
-            if (管理介面.是否編輯中)
+            if (編輯管理器.是否編輯中)
             {
                 bool Result_ = 訊息管理器.獨體.確認(字串.儲存確認, 字串.儲存確認內容);
 
                 try
                 {
-                    管理介面.完成編輯(Result_);
+                    編輯管理器.完成編輯(Result_);
                 }
                 catch (Exception ex)
                 {
@@ -98,19 +98,19 @@ namespace WokyTool.通用
         protected void 資料綁定(TextBox 元件_, string 屬性名稱_)
         {
             元件_.DataBindings.Add("Text", 資料BS, 屬性名稱_);
-            元件_.ReadOnly |= !管理介面.是否可編輯;
+            元件_.ReadOnly |= !編輯管理器.是否可編輯;
         }
 
         protected void 資料綁定(新版抽象選取元件 元件_, string 屬性名稱_)
         {
             元件_.DataBindings.Add("SelectedItem", 資料BS, 屬性名稱_);
-            元件_.ReadOnly |= !管理介面.是否可編輯;
+            元件_.ReadOnly |= !編輯管理器.是否可編輯;
         }
 
         protected void 資料綁定(NumericUpDown 元件_, string 屬性名稱_)
         {
             元件_.DataBindings.Add("Value", 資料BS, 屬性名稱_);
-            元件_.ReadOnly |= !管理介面.是否可編輯;
+            元件_.ReadOnly |= !編輯管理器.是否可編輯;
         }
 
         /********************************/

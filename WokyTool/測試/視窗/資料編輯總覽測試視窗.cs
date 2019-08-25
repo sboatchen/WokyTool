@@ -13,7 +13,7 @@ namespace WokyTool.測試
 {
     public partial class 資料編輯總覽測試視窗 : 新版總覽視窗
     {
-        public override 可編輯列舉資料管理介面 管理介面 { get { return 讀寫測試資料管理器.獨體.編輯管理器; } }
+        public override 可編輯列舉資料管理介面 編輯管理器 { get { return 讀寫測試資料管理器.獨體.編輯管理器; } }
         public override MyDataGridView 資料GV { get { return this.dataGridView1; } }
 
         private 讀寫測試資料篩選 _視窗篩選器;
@@ -25,7 +25,7 @@ namespace WokyTool.測試
 
             初始化();
 
-            _視窗篩選器 = (讀寫測試資料篩選)管理介面.視窗篩選器;
+            _視窗篩選器 = (讀寫測試資料篩選)編輯管理器.視窗篩選器;
 
             this.列舉.DataSource = Enum.GetValues(typeof(列舉.編號));
 
@@ -50,7 +50,7 @@ namespace WokyTool.測試
 
         private void 列印ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (讀寫測試資料 資料_ in (IEnumerable<讀寫測試資料>)管理介面.資料列舉)
+            foreach (讀寫測試資料 資料_ in (IEnumerable<讀寫測試資料>)編輯管理器.資料列舉)
             {
                 Console.WriteLine(資料_.ToString(false));
             }

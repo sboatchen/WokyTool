@@ -12,11 +12,15 @@ namespace WokyTool.通用
     {
         public static 列舉.視窗 視窗類型 { get { return 列舉.視窗.總覽; } }
         public virtual 列舉.編號 編號類型 { get { throw new Exception(this.GetType().Name + " 未設定編號類型"); } }
+        public virtual Type 資料類型 { get { throw new Exception(this.GetType().Name + " 未設定資料類型"); } }
 
-        public virtual 可編輯列舉資料管理介面 管理介面 { get { throw new Exception(this.GetType().Name + " 未設定管理介面"); } }
+        public virtual 可編輯列舉資料管理介面 編輯管理器 { get { throw new Exception(this.GetType().Name + " 未設定編輯管理器"); } }
         public virtual MyDataGridView 資料GV { get { throw new Exception(this.GetType().Name + " 未設定資料GV"); } }
+        public virtual ToolStripMenuItem 篩選MI { get { throw new Exception(this.GetType().Name + " 未設定篩選MI"); } }
+        public virtual ToolStripMenuItem 檢查MI { get { throw new Exception(this.GetType().Name + " 未設定檢查MI"); } }
+        public virtual ToolStripMenuItem 自訂MI { get { throw new Exception(this.GetType().Name + " 未設定自訂MI"); } }
 
-        public BindingSource 資料BS { get { return 管理介面.公用BS; } }
+        public BindingSource 資料BS { get { return 編輯管理器.公用BS; } }
 
         public int 資料版本 { get; protected set; }
         public bool 是否關閉 { get; protected set; }
@@ -32,20 +36,24 @@ namespace WokyTool.通用
             資料GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._雙點擊資料);
             資料GV.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this._刪除資料);
 
-            資料GV.AllowUserToAddRows = 管理介面.是否可編輯;
-            資料GV.AllowUserToDeleteRows = 管理介面.是否可編輯;
-            資料GV.ReadOnly = 管理介面.是否可編輯 == false;
+            篩選MI.Click += new EventHandler(this._篩選);
+            檢查MI.Click += new EventHandler(this._檢查);
+            自訂MI.Click += new EventHandler(this._自訂);
+
+            資料GV.AllowUserToAddRows = 編輯管理器.是否可編輯;
+            資料GV.AllowUserToDeleteRows = 編輯管理器.是否可編輯;
+            資料GV.ReadOnly = 編輯管理器.是否可編輯 == false;
 
             更新資料();
         }
 
         private void 更新資料()
         {
-            資料版本 = 管理介面.資料版本;
-            this.資料BS.DataSource = 管理介面.資料列舉;
+            資料版本 = 編輯管理器.資料版本;
+            this.資料BS.DataSource = 編輯管理器.資料列舉;
             this.資料BS.ResetBindings(false);
 
-            資料GV.AllowUserToDeleteRows = 管理介面.是否可編輯 && 管理介面.視窗篩選器.是否篩選 == false; // 含篩選條件時 仍可刪除 擋掉
+            資料GV.AllowUserToDeleteRows = 編輯管理器.是否可編輯 && 編輯管理器.視窗篩選器.是否篩選 == false; // 含篩選條件時 仍可刪除 擋掉
         }
 
         protected void _視窗激活(object sender, EventArgs e)
@@ -55,7 +63,7 @@ namespace WokyTool.通用
 
             視窗激活();
 
-            if (資料版本 != 管理介面.資料版本)
+            if (資料版本 != 編輯管理器.資料版本)
                 更新資料();
         }
 
@@ -72,13 +80,13 @@ namespace WokyTool.通用
         {
             是否關閉 = true;
 
-            if (管理介面.是否編輯中)
+            if (編輯管理器.是否編輯中)
             {
                 bool Result_ = 訊息管理器.獨體.確認(字串.儲存確認, 字串.儲存確認內容);
 
                 try
                 {
-                    管理介面.完成編輯(Result_);
+                    編輯管理器.完成編輯(Result_);
                 }
                 catch (Exception ex)
                 {
@@ -108,7 +116,7 @@ namespace WokyTool.通用
             資料GV.凍結();
 
             var col = 資料GV.Columns[e.ColumnIndex];
-            管理介面.視窗篩選器.排序欄位 = col.DataPropertyName;
+            編輯管理器.視窗篩選器.排序欄位 = col.DataPropertyName;
 
             _視窗激活(null, null);
         }
@@ -155,6 +163,29 @@ namespace WokyTool.通用
 
                 _刪除檢查器 = null;
             }
+        }
+
+        private void _篩選(object sender, EventArgs e)
+        {
+            if (false == 視窗管理器.獨體.顯現(編號類型, 列舉.視窗.篩選, true))
+                訊息管理器.獨體.通知("尚未實作篩選視窗");
+        }
+
+        private void _檢查(object sender, EventArgs e)
+        {
+            列表檢查器 檢查器_ = new 列表檢查器();
+            編輯管理器.合法檢查(檢查器_);
+
+            var i = new 錯誤列表視窗(檢查器_, 編號類型.ToString());
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void _自訂(object sender, EventArgs e)
+        {
+            var i = new 通用匯出視窗(資料類型, 編輯管理器.資料列舉);
+            i.Show();
+            i.BringToFront();
         }
 
         /********************************/

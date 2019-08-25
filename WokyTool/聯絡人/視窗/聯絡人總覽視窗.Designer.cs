@@ -30,7 +30,7 @@ namespace WokyTool.聯絡人
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new MyDataGridView();
+            this.dataGridView1 = new WokyTool.通用.MyDataGridView();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.客戶名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.子客戶名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,14 +137,12 @@ namespace WokyTool.聯絡人
             this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
             this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.篩選ToolStripMenuItem.Text = "篩選";
-            this.篩選ToolStripMenuItem.Click += new System.EventHandler(this.篩選ToolStripMenuItem_Click);
             // 
             // 檢查ToolStripMenuItem
             // 
             this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
             this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.檢查ToolStripMenuItem.Text = "檢查";
-            this.檢查ToolStripMenuItem.Click += new System.EventHandler(this.檢查ToolStripMenuItem_Click);
             // 
             // 匯出ToolStripMenuItem
             // 
@@ -159,7 +157,6 @@ namespace WokyTool.聯絡人
             this.自訂ToolStripMenuItem.Name = "自訂ToolStripMenuItem";
             this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.自訂ToolStripMenuItem.Text = "自訂";
-            this.自訂ToolStripMenuItem.Click += new System.EventHandler(this.自訂ToolStripMenuItem_Click);
             // 
             // 聯絡人總覽視窗
             // 
