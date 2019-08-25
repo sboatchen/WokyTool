@@ -20,9 +20,13 @@ namespace WokyTool.物品
     public partial class 物品總覽視窗 : 新版總覽視窗
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.物品; } }
+        public override Type 資料類型 { get { return typeof(物品資料); } }
 
-        public override 可編輯列舉資料管理介面 管理介面 { get { return 物品資料管理器.獨體.編輯管理器; } }
+        public override 可編輯列舉資料管理介面 編輯管理器 { get { return 物品資料管理器.獨體.編輯管理器; } }
         public override MyDataGridView 資料GV { get { return this.dataGridView1; } }
+        public override ToolStripMenuItem 篩選MI { get { return this.篩選ToolStripMenuItem; } }
+        public override ToolStripMenuItem 檢查MI { get { return this.檢查ToolStripMenuItem; } }
+        public override ToolStripMenuItem 自訂MI { get { return this.自訂ToolStripMenuItem; } }
 
         public 物品總覽視窗()
         {
@@ -30,29 +34,7 @@ namespace WokyTool.物品
 
             this.初始化();
 
-            this.更新ToolStripMenuItem.Enabled = 管理介面.是否可編輯;
-        }
-
-        private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.物品, 列舉.視窗.篩選);
-        }
-
-        private void 檢查ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            列表檢查器 檢查器_ = new 列表檢查器();
-            管理介面.合法檢查(檢查器_);
-
-            var i = new 錯誤列表視窗(檢查器_, 編號類型.ToString());
-            i.Show();
-            i.BringToFront();
-        }
-
-        private void 自訂ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var i = new 通用匯出視窗(typeof(物品資料), 管理介面.資料列舉);
-            i.Show();
-            i.BringToFront();
+            this.更新ToolStripMenuItem.Enabled = 編輯管理器.是否可編輯;
         }
 
         private void 盤點ToolStripMenuItem_Click(object sender, EventArgs e)
