@@ -24,7 +24,7 @@ namespace WokyTool.聯絡人
         public override 聯絡人資料 空白資料 { get { return 聯絡人資料.空白; } }
         public override 聯絡人資料 錯誤資料 { get { return 聯絡人資料.錯誤; } }
 
-        protected override 新版可篩選介面<聯絡人資料> 取得篩選介面()
+        protected override 新版可篩選介面<聯絡人資料> 取得篩選器實體()
         {
             return new 聯絡人資料篩選();
         }

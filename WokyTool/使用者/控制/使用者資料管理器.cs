@@ -29,7 +29,7 @@ namespace WokyTool.使用者
         public override 使用者資料 空白資料 { get { return 使用者資料.空白; } }
         public override 使用者資料 錯誤資料 { get { return 使用者資料.錯誤; } }
 
-        protected override 新版可篩選介面<使用者資料> 取得篩選介面()
+        protected override 新版可篩選介面<使用者資料> 取得篩選器實體()
         {
             return new 使用者資料篩選();
         }

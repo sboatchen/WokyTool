@@ -24,7 +24,7 @@ namespace WokyTool.物品
         public override 物品小類資料 空白資料 { get { return 物品小類資料.空白; } }
         public override 物品小類資料 錯誤資料 { get { return 物品小類資料.錯誤; } }
 
-        protected override 新版可篩選介面<物品小類資料> 取得篩選介面()
+        protected override 新版可篩選介面<物品小類資料> 取得篩選器實體()
         {
             return new 物品小類資料篩選();
         }

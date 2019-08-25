@@ -24,7 +24,7 @@ namespace WokyTool.客戶
         public override 子客戶資料 空白資料 { get { return 子客戶資料.空白; } }
         public override 子客戶資料 錯誤資料 { get { return 子客戶資料.錯誤; } }
 
-        protected override 新版可篩選介面<子客戶資料> 取得篩選介面()
+        protected override 新版可篩選介面<子客戶資料> 取得篩選器實體()
         {
             return new 子客戶資料篩選();
         }
