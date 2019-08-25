@@ -10,7 +10,7 @@ using WokyTool.Common;
 namespace WokyTool.通用
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public abstract class 新版可記錄資料<T> : 可編輯資料<T>, 可編號介面 where T : 基本資料
+    public abstract class 新版可記錄資料<T> : 可編輯資料, 可編號介面 where T : 基本資料
     {
         [可匯出]
         [JsonProperty]
@@ -34,6 +34,15 @@ namespace WokyTool.通用
                 _副本 = this.ToString(false);
         }
 
+        public override void CancelEdit()
+        {
+        }
+
+        public override void EndEdit()
+        {
+            //@@todo    //更新編輯狀態()
+        }
+
         public override void 取消編輯()
         {
             if (是否編輯中)
@@ -49,7 +58,7 @@ namespace WokyTool.通用
         {
             if (是否列印_ && 是否編輯中)
             {
-                訊息管理器.獨體.訊息("資列修改");
+                訊息管理器.獨體.訊息("資料修改");
 
                 訊息管理器.獨體.訊息(_副本);
 

@@ -10,7 +10,7 @@ using WokyTool.Common;
 namespace WokyTool.通用
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public abstract class 新版可匯入資料<T> : 可編輯資料<T>, 可初始化介面 where T : 基本資料
+    public abstract class 新版可匯入資料<T> : 可編輯資料, 可初始化介面, 可記錄錯誤介面 where T : 基本資料
     {
         [可匯出]
         [JsonProperty]
@@ -23,6 +23,15 @@ namespace WokyTool.通用
 
         public override void BeginEdit()
         {
+        }
+
+        public override void CancelEdit()
+        {
+        }
+
+        public override void EndEdit()
+        {
+            //@@todo    //更新編輯狀態()
         }
 
         public override void 取消編輯()

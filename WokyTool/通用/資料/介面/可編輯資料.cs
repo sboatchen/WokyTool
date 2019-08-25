@@ -9,20 +9,13 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public abstract class 可編輯資料<T> : 基本資料, IEditableObject, 可刪除檢查介面 where T : 基本資料
+    public abstract class 可編輯資料 : 基本資料, IEditableObject, 可刪除檢查介面
     {
-        public bool 是否編輯中 { get; protected set; }
-
-        // IEditableObject
         public abstract void BeginEdit();
+        public abstract void CancelEdit();
+        public abstract void EndEdit();
 
-        public virtual void CancelEdit()
-        {
-        }
-
-        public virtual void EndEdit()
-        {
-        }
+        public bool 是否編輯中 { get; protected set; }
 
         public abstract void 取消編輯();
 
@@ -30,11 +23,11 @@ namespace WokyTool.通用
 
         public abstract bool 更新編輯狀態();
 
-        public virtual void 刪除檢查(可處理檢查介面 介面_)
+        public virtual void 刪除檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
         { 
         }
 
-        public virtual void 合法檢查(可處理檢查介面 介面_, IEnumerable<T> 資料列舉_)
+        public virtual void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
         {
         }
     }

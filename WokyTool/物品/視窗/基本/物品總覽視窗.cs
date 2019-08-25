@@ -40,10 +40,10 @@ namespace WokyTool.物品
 
         private void 檢查ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            列表處理檢查管理器 檢查管理器_ = new 列表處理檢查管理器();
-            管理介面.合法檢查(檢查管理器_);
+            列表檢查器 檢查器_ = new 列表檢查器();
+            管理介面.合法檢查(檢查器_);
 
-            var i = new 錯誤列表視窗(檢查管理器_, 編號類型.ToString());
+            var i = new 錯誤列表視窗(檢查器_, 編號類型.ToString());
             i.Show();
             i.BringToFront();
         }
@@ -107,7 +107,7 @@ namespace WokyTool.物品
             string 內容_ = 檔案.讀出(OFD_.FileName);
             Dictionary<int, 物品資料> 資料書_ = JsonConvert.DeserializeObject<Dictionary<int, 物品資料>>(內容_);
             
-            列表處理檢查管理器 檢查_ = new 列表處理檢查管理器();
+            列表檢查器 檢查_ = new 列表檢查器();
 
             foreach(物品資料 更新資料_ in 資料書_.Values)
             {

@@ -39,7 +39,7 @@ namespace WokyTool.測試
             yield return 讀寫測試資料.錯誤;
         }
 
-        protected override 新版可篩選介面<讀寫測試資料> 取得篩選介面()
+        protected override 新版可篩選介面<讀寫測試資料> 取得篩選器實體()
         {
             return new 讀寫測試資料篩選();
         }

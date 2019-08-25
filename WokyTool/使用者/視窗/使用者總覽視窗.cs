@@ -38,5 +38,27 @@ namespace WokyTool.使用者
             密碼修改視窗 密碼修改視窗_ = new 密碼修改視窗(目前使用者資料_);
             密碼修改視窗_.顯現();
         }
+
+        private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            訊息管理器.獨體.通知("尚未實作");
+        }
+
+        private void 檢查ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            列表檢查器 檢查器_ = new 列表檢查器();
+            管理介面.合法檢查(檢查器_);
+
+            var i = new 錯誤列表視窗(檢查器_, 編號類型.ToString());
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void 自訂ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var i = new 通用匯出視窗(typeof(使用者資料), 管理介面.資料列舉);
+            i.Show();
+            i.BringToFront();
+        }
     }
 }

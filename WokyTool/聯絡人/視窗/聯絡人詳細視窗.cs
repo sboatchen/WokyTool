@@ -39,9 +39,9 @@ namespace WokyTool.聯絡人
         private void _on客戶更新(object sender, EventArgs e)
         {
             if (this.客戶選取元件1.SelectedItem != null)
-                this.子客戶選取元件1.篩選.客戶 = (客戶資料)this.客戶選取元件1.SelectedItem;
+                this.子客戶選取元件1.篩選器.客戶 = (客戶資料)this.客戶選取元件1.SelectedItem;
             else
-                this.子客戶選取元件1.篩選.客戶 = 客戶資料.空白;
+                this.子客戶選取元件1.篩選器.客戶 = 客戶資料.空白;
         }
     }
 }

@@ -13,14 +13,14 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.通用
 {
-    public abstract class 可管理資料管理器<T> : 可列舉資料來源管理介面 where T : 可編輯資料<T>
+    public abstract class 可管理資料管理器<T> : 可列舉資料來源管理介面 where T : 可編輯資料
     {
         public int 資料版本 { get; protected set; }
 
         public object 資料列舉 { get { return 資料列舉2; } }
         public abstract IEnumerable<T> 資料列舉2 { get; }
 
-        protected abstract 新版可篩選介面<T> 取得篩選介面();
+        protected abstract 新版可篩選介面<T> 取得篩選器實體();
 
         protected abstract IEnumerable<T> 取得清單特殊選項();
         protected abstract IEnumerable<T> 取得篩選特殊選項();
@@ -33,7 +33,7 @@ namespace WokyTool.通用
         {
             get
             {
-                return new 可清單資料管理器<T>(this, 取得篩選介面(), 取得清單特殊選項());
+                return new 可清單資料管理器<T>(this, 取得篩選器實體(), 取得清單特殊選項());
             }
         }
 
@@ -41,7 +41,7 @@ namespace WokyTool.通用
         {
             get
             {
-                return new 可清單資料管理器<T>(this, 取得篩選介面(), 取得篩選特殊選項());
+                return new 可清單資料管理器<T>(this, 取得篩選器實體(), 取得篩選特殊選項());
             }
         }
 
@@ -51,16 +51,16 @@ namespace WokyTool.通用
             get
             {
                 if (_編輯管理器獨體 == null)
-                    _編輯管理器獨體 = new 可編輯資料管理器<T>(this, 取得篩選介面(), 是否可編輯);
+                    _編輯管理器獨體 = new 可編輯資料管理器<T>(this, 取得篩選器實體(), 是否可編輯);
                 return _編輯管理器獨體;
             }
         }
 
-        public void 合法檢查(可處理檢查介面 管理器_)
+        public void 合法檢查(可檢查介面 檢查器_)
         {
             foreach (T 資料_ in 資料列舉2)
             {
-                資料_.合法檢查(管理器_, 資料列舉);
+                資料_.合法檢查(檢查器_);
             }
         }
 

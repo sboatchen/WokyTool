@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
-    public interface 可篩選介面_視窗
+    public interface 視窗可篩選介面
     {
         string 排序欄位 { get; set; }
 

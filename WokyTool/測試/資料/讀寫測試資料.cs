@@ -88,19 +88,23 @@ namespace WokyTool.測試
 
         public void 初始化() { ; }
 
-        public override void 合法檢查(可處理檢查介面 介面_, IEnumerable<讀寫測試資料> 資料列舉_)
+        public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
         {
+            基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
+
             if (整數 < 0)
-                介面_.錯誤(this, "整數不合法");
+                檢查器_.錯誤(資料_, "整數不合法");
 
             if (浮點數 < 0)
-                介面_.錯誤(this, "浮點數不合法");
+                檢查器_.錯誤(資料_, "浮點數不合法");
         }
 
-        public override void 刪除檢查(可處理檢查介面 介面_)
+        public override void 刪除檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
         {
+            基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
+
             if(列舉 == 通用.列舉.編號.公司)
-                介面_.錯誤(this, "刪除測試");
+                檢查器_.錯誤(資料_, "刪除測試");
         }
     }
 }

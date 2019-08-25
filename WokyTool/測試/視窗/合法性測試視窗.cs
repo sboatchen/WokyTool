@@ -39,22 +39,22 @@ namespace WokyTool.測試
 
         private void 例外_Click(object sender, EventArgs e)
         {
-            例外處理檢查管理器 管理器_ = new 例外處理檢查管理器();
+            例外檢查器 管理器_ = new 例外檢查器();
 
             foreach (var 資料_ in _資料列)
             {
-                資料_.合法檢查(管理器_, _資料列);
+                資料_.合法檢查(管理器_);
             }
 
         }
 
         private void 列表_Click(object sender, EventArgs e)
         {
-            列表處理檢查管理器 管理器_ = new 列表處理檢查管理器();
+            列表檢查器 管理器_ = new 列表檢查器();
 
             foreach (var 資料_ in _資料列)
             {
-                資料_.合法檢查(管理器_, _資料列);
+                資料_.合法檢查(管理器_);
             }
 
             var i = new 錯誤列表視窗(管理器_);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
-    public interface 可處理檢查介面
+    public interface 可檢查介面
     {
         bool 是否合法 { get;  }
 

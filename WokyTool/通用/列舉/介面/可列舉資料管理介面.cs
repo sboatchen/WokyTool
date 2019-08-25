@@ -11,7 +11,5 @@ namespace WokyTool.通用
         object 資料列舉 { get; }
 
         int 資料版本 { get; }
-
-        void 合法檢查(可處理檢查介面 管理器_);
     }
 }
