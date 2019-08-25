@@ -12,27 +12,34 @@ namespace WokyTool.使用者
     [JsonObject(MemberSerialization.OptIn)]
     public class 使用者資料 : 新版可記錄資料<使用者資料>
     {
+        [可匯出]
         [JsonProperty]
         public string 帳號 { get; set; }
 
         [JsonProperty]
         public string 密碼 { get; set; }
 
+        [可匯出]
         [JsonProperty]
         public string 名稱 { get; set; }
 
+        [可匯出]
         [JsonProperty]
         public bool 修改基本資料 { get; set; }
 
+        [可匯出]
         [JsonProperty]
         public bool 修改設定資料 { get; set; }
 
+        [可匯出]
         [JsonProperty]
         public bool 匯入訂單 { get; set; }
 
+        [可匯出]
         [JsonProperty]
         public bool 匯入進貨 { get; set; }
 
+        [可匯出]
         [JsonProperty]
         public bool 匯入月結帳 { get; set; }
 

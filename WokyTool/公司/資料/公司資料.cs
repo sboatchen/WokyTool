@@ -12,6 +12,7 @@ namespace WokyTool.公司
     [JsonObject(MemberSerialization.OptIn)]
     public class 公司資料 : 新版可記錄資料<公司資料>
     {
+        [可匯出]
         [JsonProperty]
         public string 名稱 { get; set; }
 

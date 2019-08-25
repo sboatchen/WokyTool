@@ -13,6 +13,7 @@ namespace WokyTool.客戶
     [JsonObject(MemberSerialization.OptIn)]
     public class 子客戶資料 : 新版可記錄資料<子客戶資料>
     {
+        [可匯出]
         [JsonProperty]
         public string 名稱 { get; set; }
 
@@ -33,6 +34,7 @@ namespace WokyTool.客戶
 
         public 客戶資料 客戶 { get; set; }
 
+        [可匯出(名稱 = "客戶")]
         public string 客戶名稱 { get { return 客戶.名稱; } }
 
         public IEnumerable<聯絡人資料> 聯絡人列舉

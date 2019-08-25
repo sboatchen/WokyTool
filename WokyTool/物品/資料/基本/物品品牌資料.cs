@@ -12,6 +12,7 @@ namespace WokyTool.物品
     [JsonObject(MemberSerialization.OptIn)]
     public class 物品品牌資料 : 新版可記錄資料<物品品牌資料>
     {
+        [可匯出]
         [JsonProperty]
         public string 名稱 { get; set; }
 
