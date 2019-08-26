@@ -73,14 +73,14 @@ namespace WokyTool.測試
 
         public override void 更新資料(object 資料列obj_)
         {
-            IEnumerable<讀寫測試資料> 資料列_ = 資料列obj_ as IEnumerable<讀寫測試資料>;
-            if (資料列_ == null)
+            IEnumerable<讀寫測試資料> 資料列舉_ = 資料列obj_ as IEnumerable<讀寫測試資料>;
+            if (資料列舉_ == null)
             {
                 訊息管理器.獨體.錯誤("更新資料型別錯誤: " + 資料列obj_.GetType().Name);
                 return;
             }
 
-            _資料列 = 資料列_.ToList();
+            _資料列 = 資料列舉_.ToList();
             資料版本++;
         }
     }

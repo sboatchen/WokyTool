@@ -18,11 +18,11 @@ namespace WokyTool.進貨
 
         public string 密碼 { get { return null; } }
 
-        private IEnumerable<進貨新增匯入資料> _資料列;
+        private IEnumerable<進貨新增匯入資料> _資料列舉;
 
-        public 進貨新增錯誤匯出轉換(IEnumerable<進貨新增匯入資料> 資料列_)
+        public 進貨新增錯誤匯出轉換(IEnumerable<進貨新增匯入資料> 資料列舉_)
         {
-            _資料列 = 資料列_;
+            _資料列舉 = 資料列舉_;
         }
 
         public void 寫入(Application App_)
@@ -36,7 +36,7 @@ namespace WokyTool.進貨
             App_.Cells[1, 7] = "錯誤訊息";
 
             int 目前行數_ = 2;
-            foreach (進貨新增匯入資料 資料_ in _資料列)
+            foreach (進貨新增匯入資料 資料_ in _資料列舉)
             {
                 App_.Cells[目前行數_, 1] = 資料_.類型;
                 App_.Cells[目前行數_, 2] = 資料_.廠商識別;

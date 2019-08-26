@@ -20,11 +20,11 @@ namespace WokyTool.月結帳
 
         public string 密碼 { get { return null; } }
 
-        private IEnumerable<月結帳會計資料> _資料列;
+        private IEnumerable<月結帳會計資料> _資料列舉;
 
-        public 月結帳會計匯出轉換(IEnumerable<月結帳會計資料> 資料列_)
+        public 月結帳會計匯出轉換(IEnumerable<月結帳會計資料> 資料列舉_)
         {
-            _資料列 = 資料列_;
+            _資料列舉 = 資料列舉_;
         }
 
         public void 寫入(Application App_)
@@ -44,7 +44,7 @@ namespace WokyTool.月結帳
             App_.Cells[1, 13] = "業務";
 
             int 目前行數_ = 2;
-            foreach (月結帳會計資料 月結帳會計資料_ in _資料列)
+            foreach (月結帳會計資料 月結帳會計資料_ in _資料列舉)
             {
                 App_.Cells[目前行數_, 1] = 月結帳會計資料_.設定.名稱;
                 App_.Cells[目前行數_, 2] = Convert.ToInt32(月結帳會計資料_.營業額);

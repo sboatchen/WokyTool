@@ -87,7 +87,7 @@ namespace WokyTool.客製
             throw new NotImplementedException();
         }
 
-        public override void 回單(IEnumerable<平台訂單新增資料> 資料_)
+        public override void 回單(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
             // 無須回單
         }

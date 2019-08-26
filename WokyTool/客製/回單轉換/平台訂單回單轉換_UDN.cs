@@ -23,17 +23,17 @@ namespace WokyTool.客製
 
         public string 密碼 { get { return null; } }
 
-        private IEnumerable<平台訂單新增資料> _資料列;
+        private IEnumerable<平台訂單新增資料> _資料列舉;
 
-        public 平台訂單回單轉換_UDN(IEnumerable<平台訂單新增資料> 資料列_)
+        public 平台訂單回單轉換_UDN(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
-            _資料列 = 資料列_;
+            _資料列舉 = 資料列舉_;
         }
 
         public void 寫入(Application App_)
         {
             int 欄位索引_ = 1;
-            foreach (string 標頭_ in _資料列.First().標頭)
+            foreach (string 標頭_ in _資料列舉.First().標頭)
             {
                 App_.Cells[1, 欄位索引_++] = 標頭_;
             }
@@ -41,7 +41,7 @@ namespace WokyTool.客製
             // 第二行資料目前無法處理
 
             int 目前行數_ = 3;
-            foreach (平台訂單新增資料 資料_ in _資料列)
+            foreach (平台訂單新增資料 資料_ in _資料列舉)
             {
                 欄位索引_ = 1;
                 foreach (string 欄位內容_ in 資料_.內容)

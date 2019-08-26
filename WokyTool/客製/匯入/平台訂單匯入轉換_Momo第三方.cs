@@ -110,16 +110,16 @@ namespace WokyTool.客製
             return String.Format("{0}_{1}_{2}_{3}_{4}_{5}_{6}", 資料_.公司.名稱, 資料_.客戶.名稱, 資料_.姓名, 資料_.地址, 資料_.訂單編號.Substring(0, 14), 資料_.內容[8], 資料_.內容[9]);
         }
 
-        public override void 回單(IEnumerable<平台訂單新增資料> 資料_)
+        public override void 回單(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
             {
-                var 轉換_ = new 平台訂單回單轉換_Momo第三方_分組(資料_);
+                var 轉換_ = new 平台訂單回單轉換_Momo第三方_分組(資料列舉_);
                 String 標題_ = String.Format("分組_{0}_{1}_{2}", 公司.名稱, "Momo第三方", 時間.目前日期);
                 檔案.詢問並寫入(標題_, 轉換_);
             }
 
             {
-                var 轉換_ = new 平台訂單回單轉換_Momo第三方_進度(資料_);
+                var 轉換_ = new 平台訂單回單轉換_Momo第三方_進度(資料列舉_);
                 String 標題_ = String.Format("進度_{0}_{1}_{2}", 公司.名稱, "Momo第三方", 時間.目前日期);
                 檔案.詢問並寫入(標題_, 轉換_);
             }

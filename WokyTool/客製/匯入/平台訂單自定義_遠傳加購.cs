@@ -77,9 +77,9 @@ namespace WokyTool.客製
             }
         }
 
-        public override void 回單(IEnumerable<平台訂單新增資料> 資料_)
+        public override void 回單(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
-            var 轉換_ = new 平台訂單回單轉換_遠傳加購(資料_);
+            var 轉換_ = new 平台訂單回單轉換_遠傳加購(資料列舉_);
 
             String 標題_ = String.Format("遠傳加購回單_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);

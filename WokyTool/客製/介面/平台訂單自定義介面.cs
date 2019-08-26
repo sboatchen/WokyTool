@@ -22,7 +22,7 @@ namespace WokyTool.客製
         public 公司資料 公司 { get; set; }
         public 客戶資料 客戶 { get; set; }
 
-        public abstract void 回單(IEnumerable<平台訂單新增資料> 資料_);
+        public abstract void 回單(IEnumerable<平台訂單新增資料> 資料列舉_);
 
 
         public virtual String 取得分組識別(平台訂單新增資料 資料_)

@@ -99,10 +99,10 @@ namespace WokyTool.客製
             }
         }
 
-        public override void 回單(IEnumerable<平台訂單新增資料> 資料_)
+        public override void 回單(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
             {
-                var 轉換_ = new 平台訂單回單轉換_手作(資料_);
+                var 轉換_ = new 平台訂單回單轉換_手作(資料列舉_);
 
                 String 標題_ = String.Format("手作回單_{0}", 時間.目前日期);
                 檔案.詢問並寫入(標題_, 轉換_);
@@ -110,7 +110,7 @@ namespace WokyTool.客製
 
             {
                 // 會計要用的 需列出總金額資料
-                var GroupQueue_ = 資料_.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送).GroupBy(Value => Value.配送分組 == 0 ? Value.ToString() : Value.配送分組.ToString());
+                var GroupQueue_ = 資料列舉_.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送).GroupBy(Value => Value.配送分組 == 0 ? Value.ToString() : Value.配送分組.ToString());
 
                 var 轉換_ = new 平台訂單回單轉換_總金額_一休_陳沂_手作(GroupQueue_);
 

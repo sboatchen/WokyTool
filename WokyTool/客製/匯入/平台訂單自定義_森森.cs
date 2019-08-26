@@ -64,9 +64,9 @@ namespace WokyTool.客製
             }
         }
 
-        public override void 回單(IEnumerable<平台訂單新增資料> 資料_)
+        public override void 回單(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
-            var Items_ = 資料_.Select(Value => new 平台訂單回單轉換_森森(Value));
+            var Items_ = 資料列舉_.Select(Value => new 平台訂單回單轉換_森森(Value));
 
             String Title_ = String.Format("森森回單_{0}", 時間.目前日期);
             舊函式.ExportCSV<平台訂單回單轉換_森森>(Title_, Items_);

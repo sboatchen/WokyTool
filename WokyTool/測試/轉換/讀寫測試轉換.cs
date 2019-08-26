@@ -40,7 +40,7 @@ namespace WokyTool.測試
 
         public Encoding 編碼{ get { return Encoding.UTF8; } }
 
-        private IEnumerable<讀寫測試資料> _資料列;
+        private IEnumerable<讀寫測試資料> _資料列舉;
 
         public 讀寫測試轉換()
         {
@@ -62,14 +62,14 @@ namespace WokyTool.測試
             // 空資料
             資料列_.Add(new 讀寫測試資料());
 
-            _資料列 = 資料列_;
+            _資料列舉 = 資料列_;
         }
 
         public void 寫入(CSVBuilder Builder_)
         {
             Builder_.加入標頭("字串", "整數", "浮點數", "倍精準浮點數", "時間", "列舉");
 
-            foreach (讀寫測試資料 資料_ in _資料列)
+            foreach (讀寫測試資料 資料_ in _資料列舉)
             {
                 Builder_.加入(資料_.字串, 資料_.整數, 資料_.浮點數, 資料_.倍精準浮點數, 資料_.時間, 資料_.列舉);
             }
@@ -85,7 +85,7 @@ namespace WokyTool.測試
             App_.Cells[1, 6] = "列舉";
 
             int 目前行數_ = 2;
-            foreach (讀寫測試資料 資料_ in _資料列)
+            foreach (讀寫測試資料 資料_ in _資料列舉)
             {
                 App_.Cells[目前行數_, 1] = 資料_.字串;
                 App_.Cells[目前行數_, 2] = 資料_.整數;

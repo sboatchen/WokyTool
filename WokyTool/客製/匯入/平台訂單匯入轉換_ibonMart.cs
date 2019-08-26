@@ -88,9 +88,9 @@ namespace WokyTool.客製
             throw new NotImplementedException();
         }
 
-        public override void 回單(IEnumerable<平台訂單新增資料> 資料_)
+        public override void 回單(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
-            var 轉換_ = new 平台訂單回單轉換_ibonMart(資料_);
+            var 轉換_ = new 平台訂單回單轉換_ibonMart(資料列舉_);
 
             String 標題_ = String.Format("回單_{0}_{1}_{2}", 公司.名稱, 客戶.名稱, 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);

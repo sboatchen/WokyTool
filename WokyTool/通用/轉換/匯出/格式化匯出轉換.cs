@@ -22,13 +22,13 @@ namespace WokyTool.通用
 
         public Encoding 編碼 { get { return Encoding.Default; } }
 
-        private IEnumerable<object> _資料列;
+        private IEnumerable<object> _資料列舉;
         private List<通用匯出欄位方法資料> _欄位方法列;
 
-        public 格式化匯出轉換(string 分類_, IEnumerable<object> 資料列_, List<通用匯出欄位方法資料> 欄位方法列_)
+        public 格式化匯出轉換(string 分類_, IEnumerable<object> 資料列舉_, List<通用匯出欄位方法資料> 欄位方法列_)
         {
             分類 = 分類_;
-            _資料列 = 資料列_;
+            _資料列舉 = 資料列舉_;
             _欄位方法列 = 欄位方法列_;
         }
 
@@ -41,7 +41,7 @@ namespace WokyTool.通用
             }
 
             int 目前行數_ = 2;
-            foreach (object 資料_ in _資料列)
+            foreach (object 資料_ in _資料列舉)
             {
                 目前欄數_ = 1;
                 foreach (通用匯出欄位方法資料 方法_ in _欄位方法列)
@@ -57,7 +57,7 @@ namespace WokyTool.通用
         {
             Builder_.加入標頭(_欄位方法列.Select(Value => Value.名稱).ToArray());
 
-            foreach (object 資料_ in _資料列)
+            foreach (object 資料_ in _資料列舉)
             {
                 foreach (通用匯出欄位方法資料 方法_ in _欄位方法列)
                 {

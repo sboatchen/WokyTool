@@ -25,11 +25,11 @@ namespace WokyTool.客製
 
         public string 密碼 { get { return null; } }
 
-        private IEnumerable<平台訂單新增資料> _資料列;
+        private IEnumerable<平台訂單新增資料> _資料列舉;
 
-        public 平台訂單回單轉換_神坊(IEnumerable<平台訂單新增資料> 資料列_)
+        public 平台訂單回單轉換_神坊(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
-            _資料列 = 資料列_;
+            _資料列舉 = 資料列舉_;
         }
 
         public void 寫入(Application App_)
@@ -42,7 +42,7 @@ namespace WokyTool.客製
             App_.Cells[1, 5] = "出貨單號";
 
             int 目前行數_ = 2;
-            foreach (平台訂單新增資料 資料_ in _資料列)
+            foreach (平台訂單新增資料 資料_ in _資料列舉)
             {
                 App_.Cells[目前行數_, 1] = 資料_.訂單編號;
                 App_.Cells[目前行數_, 2] = 函式.取得字串(資料_.額外資訊, 2);

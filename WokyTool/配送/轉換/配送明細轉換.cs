@@ -19,12 +19,12 @@ namespace WokyTool.配送
 
         public string 密碼 { get { return null; } }
 
-        private IEnumerable<可配送資料> _資料列;
+        private IEnumerable<可配送資料> _資料列舉;
 
-        public 配送明細轉換(string 分類_, IEnumerable<可配送資料> 資料列_)
+        public 配送明細轉換(string 分類_, IEnumerable<可配送資料> 資料列舉_)
         {
             分類 = 分類_;
-            _資料列 = 資料列_;
+            _資料列舉 = 資料列舉_;
         }
 
         public void 寫入(Application App_)
@@ -34,7 +34,7 @@ namespace WokyTool.配送
             App_.Cells[1, 3] = "明細";
 
             int 目前行數_ = 2;
-            foreach (可配送資料 資料_ in _資料列)
+            foreach (可配送資料 資料_ in _資料列舉)
             {
                 平台訂單新增資料 平台資料_ = 資料_.配送參考 as 平台訂單新增資料;
                 if (平台資料_ != null)

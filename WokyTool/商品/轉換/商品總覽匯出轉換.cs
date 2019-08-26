@@ -20,12 +20,12 @@ namespace WokyTool.商品
 
         public string 密碼 { get { return null; } }
 
-        private IEnumerable<商品資料> _資料列;
+        private IEnumerable<商品資料> _資料列舉;
 
-        public 商品總覽匯出轉換(string 分類_, IEnumerable<商品資料> 資料列_)
+        public 商品總覽匯出轉換(string 分類_, IEnumerable<商品資料> 資料列舉_)
         {
             分類 = 分類_;
-            _資料列 = 資料列_;
+            _資料列舉 = 資料列舉_;
         }
 
         public void 寫入(Application App_)
@@ -52,7 +52,7 @@ namespace WokyTool.商品
 
             int 目前行數_ = 2;
             物品合併資料 物品合併資料_ = new 物品合併資料();
-            foreach (商品資料 資料_ in _資料列)
+            foreach (商品資料 資料_ in _資料列舉)
             {
                 App_.Cells[目前行數_, 1] = 資料_.編號;
 

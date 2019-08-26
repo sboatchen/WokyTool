@@ -18,18 +18,18 @@ namespace WokyTool.通用
 
         public string 密碼 { get { return null; } }
 
-        private IEnumerable<String> _資料列;
+        private IEnumerable<String> _資料列舉;
 
-        public 字串匯出轉換(string 分類_, IEnumerable<String> 資料列_)
+        public 字串匯出轉換(string 分類_, IEnumerable<String> 資料列舉_)
         {
             分類 = 分類_;
-            _資料列 = 資料列_;
+            _資料列舉 = 資料列舉_;
         }
 
         public void 寫入(Application App_)
         {
             int 目前行數_ = 1;
-            foreach (String 資料_ in _資料列)
+            foreach (String 資料_ in _資料列舉)
             {
                 App_.Cells[目前行數_, 1] = 資料_;
 

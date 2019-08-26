@@ -18,11 +18,11 @@ namespace WokyTool.物品
 
         public string 密碼 { get { return null; } }
 
-        private IEnumerable<物品條碼更新匯入資料> _資料列;
+        private IEnumerable<物品條碼更新匯入資料> _資料列舉;
 
-        public 物品條碼更新錯誤匯出轉換(IEnumerable<物品條碼更新匯入資料> 資料列_)
+        public 物品條碼更新錯誤匯出轉換(IEnumerable<物品條碼更新匯入資料> 資料列舉_)
         {
-            _資料列 = 資料列_;
+            _資料列舉 = 資料列舉_;
         }
 
         public void 寫入(Application App_)
@@ -32,7 +32,7 @@ namespace WokyTool.物品
             App_.Cells[1, 3] = "錯誤訊息";
 
             int 目前行數_ = 2;
-            foreach (物品條碼更新匯入資料 資料_ in _資料列)
+            foreach (物品條碼更新匯入資料 資料_ in _資料列舉)
             {
                 App_.Cells[目前行數_, 1] = 資料_.物品縮寫識別;
                 App_.Cells[目前行數_, 2] = 資料_.條碼;

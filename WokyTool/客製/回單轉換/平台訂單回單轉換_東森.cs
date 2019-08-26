@@ -22,22 +22,22 @@ namespace WokyTool.客製
 
         public Encoding 編碼 { get { return Encoding.UTF8; } }
 
-        private IEnumerable<平台訂單新增資料> _資料列;
+        private IEnumerable<平台訂單新增資料> _資料列舉;
 
-        public 平台訂單回單轉換_東森(IEnumerable<平台訂單新增資料> 資料列_)
+        public 平台訂單回單轉換_東森(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
-            _資料列 = 資料列_;
+            _資料列舉 = 資料列舉_;
         }
 
         public void 寫入(CSVBuilder Builder_)
         {
-            平台訂單新增資料 平台訂單新增資料_ = _資料列.DefaultIfEmpty(null).First();
+            平台訂單新增資料 平台訂單新增資料_ = _資料列舉.DefaultIfEmpty(null).First();
             if (平台訂單新增資料_ == null)
                 return;
 
             Builder_.加入標頭(平台訂單新增資料_.標頭);
 
-            foreach (平台訂單新增資料 資料_ in _資料列)
+            foreach (平台訂單新增資料 資料_ in _資料列舉)
             {
                 string[] 輸出資料_ = 資料_.內容.深複製();
 

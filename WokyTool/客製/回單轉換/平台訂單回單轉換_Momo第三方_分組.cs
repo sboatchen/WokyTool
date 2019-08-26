@@ -22,12 +22,12 @@ namespace WokyTool.客製
 
         public string 密碼 { get { return "0"; } }
 
-        private IEnumerable<平台訂單新增資料> _資料列;
+        private IEnumerable<平台訂單新增資料> _資料列舉;
 
 
-        public 平台訂單回單轉換_Momo第三方_分組(IEnumerable<平台訂單新增資料> 資料列_)
+        public 平台訂單回單轉換_Momo第三方_分組(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
-            _資料列 = 資料列_;
+            _資料列舉 = 資料列舉_;
         }
 
         public void 寫入(Application App_)
@@ -37,13 +37,13 @@ namespace WokyTool.客製
 
             // 以下同匯入訂單
             int 欄位索引_ = 3;
-            foreach (string 標頭_ in _資料列.First().標頭.Skip(5))
+            foreach (string 標頭_ in _資料列舉.First().標頭.Skip(5))
             {
                 App_.Cells[1, 欄位索引_++] = 標頭_;
             }
 
             int 目前行數_ = 2;
-            foreach (平台訂單新增資料 資料_ in _資料列)
+            foreach (平台訂單新增資料 資料_ in _資料列舉)
             {
                 App_.Cells[目前行數_, 1] = 資料_.內容[0];
                 App_.Cells[目前行數_, 2] = 資料_.配送分組;

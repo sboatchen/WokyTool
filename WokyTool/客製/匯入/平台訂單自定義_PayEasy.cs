@@ -50,9 +50,9 @@ namespace WokyTool.客製
             }
         }
 
-        public override void 回單(IEnumerable<平台訂單新增資料> 資料_)
+        public override void 回單(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
-            var Items_ = 資料_.Select(Value => new 平台訂單回單轉換_PayEasy(Value));
+            var Items_ = 資料列舉_.Select(Value => new 平台訂單回單轉換_PayEasy(Value));
 
             String Title_ = String.Format("PayEasy回單_{0}", 時間.目前日期);
             舊函式.ExportCSV<平台訂單回單轉換_PayEasy>(Title_, Items_);

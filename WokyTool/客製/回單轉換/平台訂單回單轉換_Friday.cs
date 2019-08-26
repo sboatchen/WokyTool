@@ -25,18 +25,18 @@ namespace WokyTool.客製
 
         public Encoding 編碼 { get { return Encoding.Default; } }
 
-        private IEnumerable<平台訂單新增資料> _資料列;
+        private IEnumerable<平台訂單新增資料> _資料列舉;
 
-        public 平台訂單回單轉換_Friday(IEnumerable<平台訂單新增資料> 資料列_)
+        public 平台訂單回單轉換_Friday(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
-            _資料列 = 資料列_;
+            _資料列舉 = 資料列舉_;
         }
 
         public void 寫入(CSVBuilder Builder_)
         {
             Builder_.加入標頭("訂單編號", "出貨單號", "宅配廠商代碼", "宅配單號");
 
-            foreach (平台訂單新增資料 資料_ in _資料列)
+            foreach (平台訂單新增資料 資料_ in _資料列舉)
             {
                 string 宅配廠商代碼_;
                 switch (資料_.配送公司)
