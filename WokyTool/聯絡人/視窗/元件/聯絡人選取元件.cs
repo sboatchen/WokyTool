@@ -33,7 +33,7 @@ namespace WokyTool.聯絡人
 
         public 聯絡人資料篩選 篩選器 { get; protected set; }
 
-        public 聯絡人選取元件(選取元件類型 元件類型_ = 選取元件類型.指定)
+        public 聯絡人選取元件(選取元件類型 元件類型_)
         {
             元件類型 = 元件類型_;
 
@@ -41,6 +41,10 @@ namespace WokyTool.聯絡人
             初始化();
 
             篩選器 = (聯絡人資料篩選)管理器.視窗篩選器;
+        }
+
+        public 聯絡人選取元件() : this(選取元件類型.指定)
+        {
         }
     }
 }

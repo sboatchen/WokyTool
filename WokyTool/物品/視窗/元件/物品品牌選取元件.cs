@@ -32,7 +32,7 @@ namespace WokyTool.物品
 
         public 物品品牌資料篩選 篩選器 { get; protected set; }
 
-        public 物品品牌選取元件(選取元件類型 元件類型_ = 選取元件類型.指定)
+        public 物品品牌選取元件(選取元件類型 元件類型_)
         {
             元件類型 = 元件類型_;
 
@@ -40,6 +40,10 @@ namespace WokyTool.物品
             初始化();
 
             篩選器 = (物品品牌資料篩選)管理器.視窗篩選器;
+        }
+
+        public 物品品牌選取元件() : this(選取元件類型.指定)
+        {
         }
     }
 }
