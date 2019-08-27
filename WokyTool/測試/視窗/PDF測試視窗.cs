@@ -1,5 +1,6 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
+using iTextSharp.text.pdf.parser;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -158,6 +159,91 @@ namespace WokyTool.測試
                     fs.Close();
                 if (reader != null)
                     reader.Close();
+            }
+        }
+
+        private void 取出影像_Click(object sender, EventArgs e)
+        {
+            // 開啟參考檔案位置
+            OpenFileDialog OFD_ = new OpenFileDialog();
+            OFD_.Filter = "pdf files (.pdf)|*.pdf";
+
+            if (OFD_.ShowDialog() != DialogResult.OK)
+                return;
+
+            string 路徑_ = System.IO.Path.GetDirectoryName(OFD_.FileName);
+            Console.WriteLine("路徑: " + 路徑_);
+
+            PdfReader.unethicalreading = true;
+            using (PdfReader PdfReader_ = new PdfReader(OFD_.FileName))
+            {
+                int n = PdfReader_.XrefSize;
+                for (int i = 0; i < n; i++)
+                {
+                    PdfObject po = PdfReader_.GetPdfObject(i); //get the object at the index i in the objects collection
+                    if (po == null || !po.IsStream()) //object not found so continue
+                        continue;
+
+                    PRStream pst = (PRStream)po; //cast object to stream
+                    PdfObject type = pst.Get(PdfName.SUBTYPE); //get the object type
+
+                    //check if the object is the image type object
+                    if (type == null || type.ToString().Equals(PdfName.IMAGE.ToString()) == false)
+                        continue;
+
+                    PdfImageObject pio = new PdfImageObject(pst); //get the image
+
+                    FileStream fs = new FileStream(路徑_ + "/image" + i + ".jpg", FileMode.Create);
+                    //read bytes of image in to an array
+                    byte[] imgdata = pio.GetImageAsBytes();
+                    //write the bytes array to file
+                    fs.Write(imgdata, 0, imgdata.Length);
+                    fs.Flush();
+                    fs.Close();
+                }
+            }   
+        }
+
+        private void 抓取_Click(object sender, EventArgs e)
+        {
+            // 開啟參考檔案位置
+            OpenFileDialog OFD_ = new OpenFileDialog();
+            OFD_.Filter = "pdf files (.pdf)|*.pdf";
+
+            if (OFD_.ShowDialog() != DialogResult.OK)
+                return;
+
+            string 路徑_ = System.IO.Path.GetDirectoryName(OFD_.FileName);
+            Console.WriteLine("路徑: " + 路徑_);
+
+            using (PdfReader PdfReader_ = new PdfReader(OFD_.FileName))
+            {
+                // 開啟寫入檔案
+                string 寫檔名稱_ = OFD_.FileName.Replace(".pdf", "_覆蓋.pdf");
+                iTextSharp.text.Rectangle 尺寸_ = PdfReader_.GetPageSizeWithRotation(1);
+
+                using (FileStream FS_ = new FileStream(寫檔名稱_, FileMode.Create, FileAccess.Write))
+                {
+                    using (Document Document_ = new Document(尺寸_))
+                    {
+                        PdfWriter PdfWriter_ = PdfWriter.GetInstance(Document_, FS_);
+                        Document_.Open();
+
+                        for (int 頁索引_ = 1; 頁索引_ <= PdfReader_.NumberOfPages; 頁索引_++)
+                        {
+                            Document_.NewPage();
+
+                            // 拷貝舊資料
+                            PdfImportedPage importedPage = PdfWriter_.GetImportedPage(PdfReader_, 頁索引_);
+                            PdfContentByte contentByte = PdfWriter_.DirectContent;
+                            contentByte.AddTemplate(importedPage, 0, 0);
+
+                            iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(new Bitmap(200, 200), BaseColor.WHITE);
+                            image.SetAbsolutePosition(100, 100);
+                            contentByte.AddImage(image);
+                        }
+                    }
+                }
             }
         }
     }

@@ -13,7 +13,7 @@ namespace WokyTool.通用
 {
     public partial class 檔案
     {
-        public static void 詢問並修改(string 標頭_, 可寫入介面_PDF 轉換_)
+        public static void 詢問並修改(string 標頭_, 可寫入介面_PDF 轉換_, bool 是否測試_ = false)
         {
             // 開啟參考檔案位置
             OpenFileDialog OFD_ = new OpenFileDialog();
@@ -51,7 +51,10 @@ namespace WokyTool.通用
                             PdfContentByte contentByte = PdfWriter_.DirectContent;
                             contentByte.AddTemplate(importedPage, 轉換_.X位移, 轉換_.Y位移);
 
-                            轉換_.寫入(PdfReader_, 頁索引_, contentByte);
+                            if (是否測試_)
+                                轉換_.測試(PdfReader_, 頁索引_, contentByte);
+                            else
+                                轉換_.寫入(PdfReader_, 頁索引_, contentByte);
                         }
                     }
                 }

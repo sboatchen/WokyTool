@@ -106,7 +106,25 @@ namespace WokyTool.物品
             if (Map.Count == 0)
                 return 字串.空;
 
+            var GroupQuery_ = Map.GroupBy(Pair => (string.IsNullOrEmpty(Pair.Key.類別)) ? 字串.無 : Pair.Key.類別);
+
             StringBuilder SB_ = new StringBuilder();
+            /*foreach (var Group_ in GroupQuery_)
+            {
+                if (Group_.Key == 字串.無)
+                if (SB_.Length > 0)
+                    SB_.Append("+");
+
+                if (String.IsNullOrEmpty(Pair_.Key.縮寫))
+                    SB_.Append(Pair_.Key.名稱);
+                else
+                    SB_.Append(Pair_.Key.縮寫);
+
+                if (Pair_.Value != 0)
+                    SB_.Append("*").Append(Pair_.Value);
+            }*/
+
+
             foreach (var Pair_ in Map)
             {
                 if (SB_.Length > 0)

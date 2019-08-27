@@ -1,4 +1,5 @@
 ﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
 using LINQtoCSV;
 using System;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ namespace WokyTool.客製
             _資料列舉 = 資料列舉_;
         }
 
-        public void 寫入(iTextSharp.text.pdf.PdfReader PdfReader_, int 頁索引_, iTextSharp.text.pdf.PdfContentByte PCB_)
+        public void 寫入(PdfReader PdfReader_, int 頁索引_, PdfContentByte PCB_)
         {
             foreach (var Pair_ in 設定資料書)
             {
@@ -56,6 +57,7 @@ namespace WokyTool.客製
                 if (string.IsNullOrEmpty(配送單號_))
                     return;
 
+                配送單號_ = 配送單號_.Substring(3); // 移除前三碼
                 訊息管理器.獨體.訊息("讀出配送單號:" + 配送單號_);
 
                 var 符合資料列_ = _資料列舉.Where(Value => 配送單號_.Equals(Value.配送單號)).ToArray();
@@ -72,6 +74,14 @@ namespace WokyTool.客製
 
                     Pair_.Value.寫入(PCB_, 物品合併資料_.ToString());
                 }
+            }
+        }
+
+        public void 測試(PdfReader PdfReader_, int 頁索引_, PdfContentByte PCB_)
+        {
+            foreach (var Pair_ in 設定資料書)
+            {
+                Pair_.Value.寫入(PCB_, 字串.多字測試);
             }
         }
     }

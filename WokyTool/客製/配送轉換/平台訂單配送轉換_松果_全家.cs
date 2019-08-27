@@ -1,4 +1,5 @@
 ﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
 using LINQtoCSV;
 using System;
 using System.Collections.Generic;
@@ -24,12 +25,12 @@ namespace WokyTool.客製
                     // 讀出 配送單號
                     // 寫入 物品組成
                     _設定資料書 = new Dictionary<PDF字串讀出元件, PDF字串寫入元件>();
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(130, 755, 250, 775)), new PDF字串寫入元件(new Rectangle(10, 819, 290, 840), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 755, 550, 775)), new PDF字串寫入元件(new Rectangle(310, 819, 590, 840), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(130, 475, 250, 490)), new PDF字串寫入元件(new Rectangle(10, 542, 290, 563), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 475, 550, 490)), new PDF字串寫入元件(new Rectangle(310, 542, 590, 563), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(130, 195, 250, 210)), new PDF字串寫入元件(new Rectangle(10, 4, 290, 25), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 195, 550, 210)), new PDF字串寫入元件(new Rectangle(310, 4, 590, 25), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(130, 755, 250, 775)), new PDF字串寫入元件(new Rectangle(10, 811, 290, 840), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 755, 550, 775)), new PDF字串寫入元件(new Rectangle(310, 811, 590, 840), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(130, 475, 250, 490)), new PDF字串寫入元件(new Rectangle(10, 534, 290, 563), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 475, 550, 490)), new PDF字串寫入元件(new Rectangle(310, 534, 590, 563), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(130, 195, 250, 210)), new PDF字串寫入元件(new Rectangle(10, -4, 290, 25), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 195, 550, 210)), new PDF字串寫入元件(new Rectangle(310, -4, 590, 25), 常數.通用字體));
                 }
 
                 return _設定資料書;
@@ -48,12 +49,8 @@ namespace WokyTool.客製
             _資料列舉 = 資料列舉_;
         }
 
-        public void 寫入(iTextSharp.text.pdf.PdfReader PdfReader_, int 頁索引_, iTextSharp.text.pdf.PdfContentByte PCB_)
+        public void 寫入(PdfReader PdfReader_, int 頁索引_, PdfContentByte PCB_)
         {
-            foreach (var XX in _資料列舉)
-                訊息管理器.獨體.訊息("!!" + XX.配送單號);
-
-
             foreach (var Pair_ in 設定資料書)
             {
                 string 配送單號_ = Pair_.Key.讀出(PdfReader_, 頁索引_);
@@ -76,6 +73,14 @@ namespace WokyTool.客製
 
                     Pair_.Value.寫入(PCB_, 物品合併資料_.ToString());
                 }
+            }
+        }
+
+        public void 測試(PdfReader PdfReader_, int 頁索引_, PdfContentByte PCB_)
+        {
+            foreach (var Pair_ in 設定資料書)
+            {
+                Pair_.Value.寫入(PCB_, 字串.多字測試);
             }
         }
     }

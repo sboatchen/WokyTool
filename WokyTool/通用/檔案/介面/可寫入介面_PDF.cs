@@ -17,5 +17,6 @@ namespace WokyTool.通用
         double Y位移 { get; }
 
         void 寫入(PdfReader PdfReader_, int 頁索引_, PdfContentByte PCB_);
+        void 測試(PdfReader PdfReader_, int 頁索引_, PdfContentByte PCB_);
     }
 }
