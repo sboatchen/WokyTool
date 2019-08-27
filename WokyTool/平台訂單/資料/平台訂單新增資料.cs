@@ -189,7 +189,7 @@ namespace WokyTool.平台訂單
             get
             {
                 if (_自定義介面 == null)
-                    _自定義介面 = 平台訂單自定義工廠.獨體.取得自定義(this.公司, this.客戶);
+                    _自定義介面 = 平台訂單自定義工廠.獨體.取得自定義(this.公司, this.客戶, this.配送公司);
                 return _自定義介面;
             }
             set 
@@ -339,6 +339,7 @@ namespace WokyTool.平台訂單
                 備註 = Value.備註,
 
                 配送公司 = Value.配送公司,
+                配送單號 = Value.配送單號,
 
                 指配日期 = Value.指配日期,
                 指配時段 = Value.指配時段,

@@ -213,5 +213,55 @@ namespace WokyTool.平台訂單
             IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
             匯入完成(轉換_, 資料列舉_);
         }
+
+        private void 松果一般ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單匯入轉換_松果 轉換_ = new 平台訂單匯入轉換_松果();
+            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
+            匯入完成(轉換_, 資料列舉_);
+        }
+
+        private void 松果sevenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單匯入轉換_松果_超商 轉換_ = new 平台訂單匯入轉換_松果_超商();
+            轉換_.配送公司 = 列舉.配送公司.SEVEN;
+
+            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
+            匯入完成(轉換_, 資料列舉_);
+        }
+
+        private void 松果全家ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單匯入轉換_松果_超商 轉換_ = new 平台訂單匯入轉換_松果_超商();
+            轉換_.配送公司 = 列舉.配送公司.全家;
+
+            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
+            匯入完成(轉換_, 資料列舉_);
+        }
+
+        private void 生活市集一般ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單匯入轉換_生活市集 轉換_ = new 平台訂單匯入轉換_生活市集();
+            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
+            匯入完成(轉換_, 資料列舉_);
+        }
+
+        private void 生活市集SEVENToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單匯入轉換_生活市集_超商 轉換_ = new 平台訂單匯入轉換_生活市集_超商();
+            轉換_.配送公司 = 列舉.配送公司.SEVEN;
+
+            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
+            匯入完成(轉換_, 資料列舉_);
+        }
+
+        private void 生活市集全家ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單匯入轉換_生活市集_超商 轉換_ = new 平台訂單匯入轉換_生活市集_超商();
+            轉換_.配送公司 = 列舉.配送公司.全家;
+
+            IEnumerable<平台訂單匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
+            匯入完成(轉換_, 資料列舉_);
+        }
     }
 }

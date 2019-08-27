@@ -201,8 +201,10 @@ namespace WokyTool.平台訂單
 
         public IEnumerable<平台訂單匯入資料> 匯入Excel()
         {
-            平台訂單自定義介面 自定義_ = 平台訂單自定義工廠.獨體.取得自定義(this);
-            return 匯入Excel<平台訂單匯入資料>(自定義_, true);
+            /*平台訂單自定義介面 自定義_ = 平台訂單自定義工廠.獨體.取得自定義(this);
+            return 匯入Excel<平台訂單匯入資料>(自定義_, true);*/
+
+            return null;
         }
     }
 }

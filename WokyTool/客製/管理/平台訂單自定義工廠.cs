@@ -35,9 +35,9 @@ namespace WokyTool.客製
             _Map = new Dictionary<int, 平台訂單自定義介面>();
         }
 
-        public 平台訂單自定義介面 取得自定義(公司資料 公司_, 客戶資料 客戶_)
+        public 平台訂單自定義介面 取得自定義(公司資料 公司_, 客戶資料 客戶_, 列舉.配送公司 配送公司_)
         {
-            int Hash_ = 公司_.編號 * 10000 + 客戶_.編號;
+            int Hash_ = 公司_.編號 * 100000 + 客戶_.編號 * 100 + (int)配送公司_;
 
             平台訂單自定義介面 介面_ = null;
             if (_Map.TryGetValue(Hash_, out 介面_))
@@ -125,6 +125,30 @@ namespace WokyTool.客製
                 case "特力屋":
                     介面_ = new 平台訂單匯入轉換_特力屋();
                     break;
+                case "松果":
+                    switch (配送公司_)
+                    {
+                        case 列舉.配送公司.全家:
+                        case 列舉.配送公司.SEVEN:
+                            介面_ = new 平台訂單匯入轉換_松果_超商();
+                            break;
+                        default:
+                             介面_ = new 平台訂單匯入轉換_松果();
+                            break;
+                    }
+                    break;
+                case "生活市集":
+                    switch (配送公司_)
+                    {
+                        case 列舉.配送公司.全家:
+                        case 列舉.配送公司.SEVEN:
+                            介面_ = new 平台訂單匯入轉換_生活市集_超商();
+                            break;
+                        default:
+                             介面_ = new 平台訂單匯入轉換_生活市集();
+                            break;
+                    }
+                    break;
                 default:
                     訊息管理器.獨體.錯誤("平台訂單自定義工廠::不支援 " + 客戶_.名稱);
                     return null;
@@ -137,14 +161,9 @@ namespace WokyTool.客製
             return 介面_;
         }
 
-        public 平台訂單自定義介面 取得自定義(平台訂單匯入設定資料 平台訂單匯入設定資料_)
-        {
-            return 取得自定義(平台訂單匯入設定資料_.公司, 平台訂單匯入設定資料_.客戶);
-        }
-
         public 平台訂單自定義介面 取得自定義_momo三方(公司資料 公司資料_)
         {
-            return 取得自定義(公司資料_, MOMO第三方假客戶資料);
+            return 取得自定義(公司資料_, MOMO第三方假客戶資料, 列舉.配送公司.無);   //@@ todo
         }
     }
 }

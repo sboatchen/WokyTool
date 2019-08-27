@@ -119,37 +119,43 @@ namespace WokyTool.通用
             return 視窗_;
         }
 
-        public void 顯現(列舉.編號 編號類型_, 列舉.視窗 視窗類型_, bool 是否允許不存在_ = false)
+        public bool 顯現(列舉.編號 編號類型_, 列舉.視窗 視窗類型_, bool 是否允許不存在_ = false)
         {
             通用視窗介面 視窗_ = 取得視窗(編號類型_, 視窗類型_, 是否允許不存在_);
             if (視窗_ == null)
-                return;
+                return false;
 
             if (視窗_.是否顯現)
                 視窗_.隱藏();
             視窗_.顯現();
+
+            return true;
         }
 
-        public void 顯現(列舉.編號 編號類型_, 列舉.視窗 視窗類型_, int 資料編號_, bool 是否允許不存在_ = false)
+        public bool 顯現(列舉.編號 編號類型_, 列舉.視窗 視窗類型_, int 資料編號_, bool 是否允許不存在_ = false)
         {
             通用視窗介面 視窗_ = 取得視窗(編號類型_, 視窗類型_, 是否允許不存在_);
             if (視窗_ == null)
-                return;
+                return false;
 
             //@@ 視窗隱藏->關閉視窗->儲存修改 這是如果要看的資料是新建立的 還沒設定內容 會出錯(因為儲存時會檢查資料是否合法)
             //if (視窗_.是否顯現)
             //    視窗_.隱藏();
 
             視窗_.顯現(資料編號_);
+
+            return true;
         }
 
-        public void 隱藏(列舉.編號 編號類型_, 列舉.視窗 視窗類型, bool 是否允許不存在_ = false)
+        public bool 隱藏(列舉.編號 編號類型_, 列舉.視窗 視窗類型, bool 是否允許不存在_ = false)
         {
             通用視窗介面 視窗_ = 取得視窗(編號類型_, 視窗類型, 是否允許不存在_);
             if (視窗_ == null)
-                return;
+                return false;
 
             視窗_.隱藏();
+
+            return true;
         }
     }
 }

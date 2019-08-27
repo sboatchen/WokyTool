@@ -1,4 +1,5 @@
-﻿namespace WokyTool.聯絡人
+﻿using WokyTool.通用;
+namespace WokyTool.聯絡人
 {
     partial class 聯絡人更新視窗
     {
@@ -34,7 +35,7 @@
             this.匯入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new MyDataGridView();
             this.更新狀態DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -221,7 +222,7 @@
         private System.Windows.Forms.ToolStripMenuItem 樣板ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 匯入ToolStripMenuItem;
         private System.Windows.Forms.BindingSource 廠商資料BindingSource;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private MyDataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 聯絡人更新資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 更新狀態DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;

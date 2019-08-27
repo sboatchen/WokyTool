@@ -140,6 +140,9 @@ namespace WokyTool.平台訂單
         public 列舉.配送公司 配送公司 { get; set; }
 
         [JsonProperty]
+        public string 配送單號 { get; set; }
+
+        [JsonProperty]
         public DateTime 指配日期 { get; set; }     // 指配日期.Ticks == 0 代表不指定
 
         [JsonProperty]

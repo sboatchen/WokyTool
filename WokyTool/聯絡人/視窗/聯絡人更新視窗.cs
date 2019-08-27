@@ -12,24 +12,25 @@ using WokyTool.通用;
 
 namespace WokyTool.聯絡人
 {
-    public partial class 聯絡人更新視窗 : Form//: 新版總覽視窗
+    public partial class 聯絡人更新視窗 : 更新總覽視窗
     {
-        public 列舉.編號 編號類型 { get { return 列舉.編號.聯絡人; } }
+        public override 可編輯列舉資料管理介面 更新管理器 { get { return 資料管理器; } }
+        public override MyDataGridView 資料GV { get { return this.dataGridView1; } }
+        public Type 資料類型 { get { return typeof(聯絡人更新資料); } }
 
-        //public override 可編輯列舉資料管理介面 管理介面 { get { return 聯絡人資料管理器.獨體.編輯管理器; } }
-        //public override DataGridView 資料GV { get { return this.dataGridView1; } }
+        public 聯絡人更新資料管理器 資料管理器 = new 聯絡人更新資料管理器();
 
         public 聯絡人更新視窗()
         {
             InitializeComponent();
 
-            //this.初始化();
+            this.初始化();
         }
 
         private void 樣板ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var 轉換_ = new 通用標頭匯出轉換(typeof(聯絡人更新資料));
-            String 標題_ = String.Format("{0}更新樣板匯出", 編號類型);
+            var 轉換_ = new 通用標頭匯出轉換(資料類型);
+            String 標題_ = String.Format("{0}更新樣板", 資料類型.Name);
             檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.通知("匯出完成");
@@ -39,7 +40,10 @@ namespace WokyTool.聯絡人
         {
             通用更新匯入轉換<聯絡人更新資料> 轉換_ = new 通用更新匯入轉換<聯絡人更新資料>();
             IEnumerable<聯絡人更新資料> 資料列舉_ = 檔案.詢問並讀出(轉換_);
-            資料列舉_.Count();
+
+            資料管理器.新增(資料列舉_);
+
+            更新資料();
         }
 
         private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,12 +53,12 @@ namespace WokyTool.聯絡人
 
         private void 檢查ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*列表處理檢查管理器 檢查管理器_ = new 列表處理檢查管理器();
-            管理介面.合法檢查(檢查管理器_);
+            列表檢查器 檢查器_ = new 列表檢查器();
+            更新管理器.合法檢查(檢查器_);
 
-            var i = new 錯誤列表視窗(檢查管理器_, 編號類型.ToString());
+            var i = new 錯誤列表視窗(檢查器_, 資料類型.ToString());
             i.Show();
-            i.BringToFront();*/
+            i.BringToFront();
         }
     }
 }

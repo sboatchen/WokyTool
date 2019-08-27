@@ -78,15 +78,14 @@ namespace WokyTool.配送
             this.測試用ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1927, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1445, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // 略過ToolStripMenuItem
             // 
             this.略過ToolStripMenuItem.Name = "略過ToolStripMenuItem";
-            this.略過ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
+            this.略過ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.略過ToolStripMenuItem.Text = "略過";
             this.略過ToolStripMenuItem.Click += new System.EventHandler(this.略過ToolStripMenuItem_Click);
             // 
@@ -97,27 +96,27 @@ namespace WokyTool.配送
             this.宅配通ToolStripMenuItem1,
             this.統計ToolStripMenuItem});
             this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
-            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
+            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯出ToolStripMenuItem.Text = "匯出";
             // 
             // 全速配ToolStripMenuItem1
             // 
             this.全速配ToolStripMenuItem1.Name = "全速配ToolStripMenuItem1";
-            this.全速配ToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.全速配ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.全速配ToolStripMenuItem1.Text = "全速配";
             this.全速配ToolStripMenuItem1.Click += new System.EventHandler(this.全速配ToolStripMenuItem1_Click);
             // 
             // 宅配通ToolStripMenuItem1
             // 
             this.宅配通ToolStripMenuItem1.Name = "宅配通ToolStripMenuItem1";
-            this.宅配通ToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.宅配通ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.宅配通ToolStripMenuItem1.Text = "宅配通";
             this.宅配通ToolStripMenuItem1.Click += new System.EventHandler(this.宅配通ToolStripMenuItem1_Click);
             // 
             // 統計ToolStripMenuItem
             // 
             this.統計ToolStripMenuItem.Name = "統計ToolStripMenuItem";
-            this.統計ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.統計ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.統計ToolStripMenuItem.Text = "統計";
             this.統計ToolStripMenuItem.Click += new System.EventHandler(this.統計ToolStripMenuItem_Click);
             // 
@@ -127,27 +126,27 @@ namespace WokyTool.配送
             this.全速配ToolStripMenuItem,
             this.宅配通ToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
-            this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
+            this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "匯入";
             // 
             // 全速配ToolStripMenuItem
             // 
             this.全速配ToolStripMenuItem.Name = "全速配ToolStripMenuItem";
-            this.全速配ToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
+            this.全速配ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.全速配ToolStripMenuItem.Text = "全速配";
             this.全速配ToolStripMenuItem.Click += new System.EventHandler(this.全速配ToolStripMenuItem_Click);
             // 
             // 宅配通ToolStripMenuItem
             // 
             this.宅配通ToolStripMenuItem.Name = "宅配通ToolStripMenuItem";
-            this.宅配通ToolStripMenuItem.Size = new System.Drawing.Size(129, 26);
+            this.宅配通ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.宅配通ToolStripMenuItem.Text = "宅配通";
             this.宅配通ToolStripMenuItem.Click += new System.EventHandler(this.宅配通ToolStripMenuItem_Click);
             // 
             // 測試用ToolStripMenuItem
             // 
             this.測試用ToolStripMenuItem.Name = "測試用ToolStripMenuItem";
-            this.測試用ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
+            this.測試用ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.測試用ToolStripMenuItem.Text = "測試";
             this.測試用ToolStripMenuItem.Click += new System.EventHandler(this.測試用ToolStripMenuItem_Click);
             // 
@@ -174,11 +173,10 @@ namespace WokyTool.配送
             this.配送單號});
             this.dataGridView1.DataSource = this.可配送資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 27);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1927, 559);
+            this.dataGridView1.Size = new System.Drawing.Size(1445, 445);
             this.dataGridView1.TabIndex = 1;
             // 
             // 姓名DataGridViewTextBoxColumn
@@ -302,13 +300,12 @@ namespace WokyTool.配送
             // 
             // 待配送總覽視窗
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1927, 586);
+            this.ClientSize = new System.Drawing.Size(1445, 469);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "待配送總覽視窗";
             this.Text = "待配送總覽";
             this.menuStrip1.ResumeLayout(false);
