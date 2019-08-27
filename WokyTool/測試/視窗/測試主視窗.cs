@@ -92,5 +92,19 @@ namespace WokyTool.測試
             i.Show();
             i.BringToFront();
         }
+
+        private void pDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var i = new PDF測試視窗();
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void imageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var i = new Image測試視窗();
+            i.Show();
+            i.BringToFront();
+        }
     }
 }

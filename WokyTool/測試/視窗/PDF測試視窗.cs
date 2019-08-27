@@ -1,0 +1,164 @@
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using WokyTool.Common;
+
+namespace WokyTool.測試
+{
+    public partial class PDF測試視窗 : Form
+    {
+        private static string 字體路徑 = Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\..\Fonts\kaiu.ttf";
+        private static BaseFont 字體 = BaseFont.CreateFont(
+            字體路徑,
+            BaseFont.IDENTITY_H, //橫式中文
+            BaseFont.NOT_EMBEDDED
+        );
+        private static iTextSharp.text.Font 小字格式 = new iTextSharp.text.Font(字體, 9);
+
+        public PDF測試視窗()
+        {
+            InitializeComponent();
+            Console.WriteLine(字體路徑);
+        }
+
+        private void 定位_Click(object sender, EventArgs e)
+        {
+            // 取得匯入檔案
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "pdf files (.pdf)|*.pdf";
+            if (dlg.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+                return;
+
+            // 寫入資料
+            PdfReader reader = null;
+            FileStream fs = null;
+            Document document = null;
+            PdfWriter writer = null;
+            try
+            {
+                PdfReader.unethicalreading = true;
+
+                // 開啟匯入檔案
+                reader = new PdfReader(dlg.FileName);
+
+                // 開啟寫入檔案
+                string OutputName = dlg.FileName.Replace(".pdf", "_定位.pdf");
+                iTextSharp.text.Rectangle size = reader.GetPageSizeWithRotation(1);
+                document = new Document(size);
+                fs = new FileStream(OutputName, FileMode.Create, FileAccess.Write);
+                writer = PdfWriter.GetInstance(document, fs);
+                document.Open();
+
+                for (var i = 1; i <= reader.NumberOfPages; i++)
+                {
+                    document.NewPage();
+
+                    // 拷貝舊資料
+                    var importedPage = writer.GetImportedPage(reader, i);
+                    PdfContentByte contentByte = writer.DirectContent;
+                    contentByte.AddTemplate(importedPage, 0, 0);
+
+                    Phrase myText;
+                    for (int x = 0; x < 60; x++)
+                    {
+                        for (int y = 0; y < 90; y++)
+                        {
+                            if (x == 0 && y == 0)
+                                myText = new Phrase("X", 小字格式);
+                            else if(y % 10 == 0)
+                                myText = new Phrase((y / 10).ToString(), 小字格式);
+                            else if (x % 10 == 0)
+                                myText = new Phrase((x / 10).ToString(), 小字格式);
+                            else
+                                myText = new Phrase(".", 小字格式);
+
+                            ColumnText ct = new ColumnText(writer.DirectContent);
+
+                            ct.SetSimpleColumn(myText, x * 10, y * 10, x * 10 + 10, y * 10, 0, Element.ALIGN_LEFT);
+                            ct.Go();
+                        }
+                    }
+                }
+            }
+            catch (Exception theException)
+            {
+                MessageBox.Show("momo第三方配送失敗，請通知苦逼程式," + theException.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                /*if (writer != null)
+                    writer.Close();*/
+                if (document != null)
+                    document.Close();
+                if (fs != null)
+                    fs.Close();
+                if (reader != null)
+                    reader.Close();
+            }
+        }
+
+        private void 位移_Click(object sender, EventArgs e)
+        {
+            // 取得匯入檔案
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "pdf files (.pdf)|*.pdf";
+            if (dlg.ShowDialog() != System.Windows.Forms.DialogResult.OK)
+                return;
+
+            // 寫入資料
+            PdfReader reader = null;
+            FileStream fs = null;
+            Document document = null;
+            PdfWriter writer = null;
+            try
+            {
+                PdfReader.unethicalreading = true;
+
+                // 開啟匯入檔案
+                reader = new PdfReader(dlg.FileName);
+
+                // 開啟寫入檔案
+                string OutputName = dlg.FileName.Replace(".pdf", "_位移.pdf");
+                iTextSharp.text.Rectangle size = reader.GetPageSizeWithRotation(1);
+                document = new Document(size);
+                fs = new FileStream(OutputName, FileMode.Create, FileAccess.Write);
+                writer = PdfWriter.GetInstance(document, fs);
+                document.Open();
+
+                for (var i = 1; i <= reader.NumberOfPages; i++)
+                {
+                    document.NewPage();
+
+                    // 拷貝舊資料
+                    var importedPage = writer.GetImportedPage(reader, i);
+                    PdfContentByte contentByte = writer.DirectContent;
+                    contentByte.AddTemplate(importedPage, 0, 20);
+                }
+            }
+            catch (Exception theException)
+            {
+                MessageBox.Show("momo第三方配送失敗，請通知苦逼程式," + theException.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                /*if (writer != null)
+                    writer.Close();*/
+                if (document != null)
+                    document.Close();
+                if (fs != null)
+                    fs.Close();
+                if (reader != null)
+                    reader.Close();
+            }
+        }
+    }
+}

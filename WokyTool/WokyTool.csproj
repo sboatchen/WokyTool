@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IronOcr">
+      <HintPath>..\packages\IronOcr.4.4.0\lib\net40\IronOcr.dll</HintPath>
+    </Reference>
     <Reference Include="itextsharp">
       <HintPath>..\packages\itextsharp.dll</HintPath>
     </Reference>
@@ -256,8 +259,12 @@
     <Compile Include="客製\匯入\平台訂單匯入轉換_ibonMart.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_UDN.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_viva.cs" />
+    <Compile Include="客製\匯入\平台訂單匯入轉換_生活市集_超商.cs" />
+    <Compile Include="客製\匯入\平台訂單匯入轉換_松果_超商.cs" />
+    <Compile Include="客製\匯入\平台訂單匯入轉換_松果.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_特力屋.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_百利市.cs" />
+    <Compile Include="客製\匯入\平台訂單匯入轉換_生活市集.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_金石堂.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_東森.cs" />
     <Compile Include="客製\匯入\平台訂單匯入轉換_中華電信.cs" />
@@ -289,6 +296,10 @@
     <Compile Include="客製\回單轉換\平台訂單回單轉換_Momo.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_森森.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_東森.cs" />
+    <Compile Include="客製\配送轉換\平台訂單配送轉換_生活市集_全家.cs" />
+    <Compile Include="客製\配送轉換\平台訂單配送轉換_生活市集_SEVEN.cs" />
+    <Compile Include="客製\配送轉換\平台訂單配送轉換_松果_全家.cs" />
+    <Compile Include="客製\配送轉換\平台訂單配送轉換_松果_SEVEN.cs" />
     <Compile Include="幣值\控制\幣值資料管理器.cs" />
     <Compile Include="幣值\視窗\元件\幣值選取元件.cs">
       <SubType>UserControl</SubType>
@@ -456,6 +467,18 @@
     <Compile Include="月結帳\轉換\月結帳總計匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳支出新增錯誤匯出轉換.cs" />
     <Compile Include="測試\管理\讀寫測試資料管理器.cs" />
+    <Compile Include="測試\視窗\Image測試視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="測試\視窗\Image測試視窗.Designer.cs">
+      <DependentUpon>Image測試視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="測試\視窗\PDF測試視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="測試\視窗\PDF測試視窗.Designer.cs">
+      <DependentUpon>PDF測試視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="測試\視窗\可匯入匯出測試視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -665,9 +688,16 @@
     <Compile Include="聯絡人\資料\聯絡人更新資料.cs" />
     <Compile Include="聯絡人\資料\聯絡人更新資料篩選.cs" />
     <Compile Include="聯絡人\資料\聯絡人資料篩選.cs" />
+    <Compile Include="通用\介面\可記錄錯誤介面.cs" />
+    <Compile Include="通用\檔案\介面\可寫入介面_PDF.cs" />
+    <Compile Include="通用\檔案\元件\PDF字串寫入元件.cs" />
+    <Compile Include="通用\檔案\元件\PDF圖片字串讀出元件.cs" />
+    <Compile Include="通用\檔案\元件\PDF字串讀出元件.cs" />
+    <Compile Include="通用\檔案\檔案_PDF.cs" />
     <Compile Include="通用\視窗\複寫\MyDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="通用\資料\介面\可更新資料.cs" />
     <Compile Include="通用\轉換\匯出\通用更新匯入轉換.cs" />
     <Compile Include="通用\介面\可篩選介面99.cs" />
     <Compile Include="通用\介面\可刪除檢查介面.cs" />
@@ -687,17 +717,17 @@
     <Compile Include="通用\篩選\實作\通用可篩選介面.cs" />
     <Compile Include="通用\列舉\介面\可列舉資料來源管理介面.cs" />
     <Compile Include="通用\列舉\介面\可清單列舉資料管理介面.cs" />
-    <Compile Include="通用\篩選\介面\可篩選介面_視窗.cs" />
+    <Compile Include="通用\篩選\介面\視窗可篩選介面.cs" />
     <Compile Include="通用\列舉\介面\可編輯列舉資料管理介面.cs" />
     <Compile Include="通用\列舉\實作\可管理資料管理器.cs" />
     <Compile Include="通用\列舉\實作\可清單資料管理器.cs" />
     <Compile Include="通用\列舉\實作\可編輯資料管理器.cs" />
-    <Compile Include="通用\檢查\介面\可處理檢查介面.cs" />
-    <Compile Include="通用\檢查\實作\錯誤訊息處理檢查管理器.cs" />
+    <Compile Include="通用\檢查\介面\可檢查介面.cs" />
+    <Compile Include="通用\檢查\實作\錯誤訊息檢查器.cs" />
     <Compile Include="通用\檢查\物件\錯誤資料.cs" />
     <Compile Include="通用\檢查\物件\合法性錯誤.cs" />
-    <Compile Include="通用\檢查\實作\列表處理檢查管理器.cs" />
-    <Compile Include="通用\檢查\實作\例外處理檢查管理器.cs" />
+    <Compile Include="通用\檢查\實作\列表檢查器.cs" />
+    <Compile Include="通用\檢查\實作\例外檢查器.cs" />
     <Compile Include="通用\檢查\視窗\錯誤列表視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -709,7 +739,7 @@
     <Compile Include="通用\檔案\介面\可讀出介面_CSV.cs" />
     <Compile Include="通用\檔案\介面\可寫入介面_CSV.cs" />
     <Compile Include="通用\其他\時間.cs" />
-    <Compile Include="通用\檔案\CSVBuilder.cs" />
+    <Compile Include="通用\檔案\元件\CSVBuilder.cs" />
     <Compile Include="通用\檔案\介面\擴充方法.cs" />
     <Compile Include="通用\檔案\檔案.cs" />
     <Compile Include="通用\檔案\檔案_CSV.cs" />
@@ -753,7 +783,7 @@
     <Compile Include="通用\資料\介面\可編輯資料.cs" />
     <Compile Include="通用\資料\介面\基本資料.cs" />
     <Compile Include="通用\資料99\可匯入資料99.cs" />
-    <Compile Include="通用\資料\管理\可匯入資料管理器.cs" />
+    <Compile Include="通用\資料\管理\可更新資料管理器.cs" />
     <Compile Include="通用\資料\管理\可儲存資料管理器.cs" />
     <Compile Include="通用\轉換\資料\通用更新匯入欄位方法資料.cs" />
     <Compile Include="通用\轉換\資料\通用匯出欄位方法資料.cs" />
@@ -1260,6 +1290,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="月結帳\視窗\月結帳支出新增匯入視窗.resx">
       <DependentUpon>月結帳支出新增匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="測試\視窗\Image測試視窗.resx">
+      <DependentUpon>Image測試視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="測試\視窗\PDF測試視窗.resx">
+      <DependentUpon>PDF測試視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="測試\視窗\可匯入匯出測試視窗.resx">
       <DependentUpon>可匯入匯出測試視窗.cs</DependentUpon>

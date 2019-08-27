@@ -40,7 +40,10 @@
             this.綁定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.詳細ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.清單ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.檔案ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.快速 = new System.Windows.Forms.Button();
+            this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +52,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.通用ToolStripMenuItem,
-            this.視窗ToolStripMenuItem});
+            this.視窗ToolStripMenuItem,
+            this.檔案ToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(284, 24);
@@ -142,6 +146,22 @@
             this.清單ToolStripMenuItem.Text = "清單";
             this.清單ToolStripMenuItem.Click += new System.EventHandler(this.清單ToolStripMenuItem_Click);
             // 
+            // 檔案ToolStripMenuItem1
+            // 
+            this.檔案ToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pDFToolStripMenuItem,
+            this.imageToolStripMenuItem});
+            this.檔案ToolStripMenuItem1.Name = "檔案ToolStripMenuItem1";
+            this.檔案ToolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
+            this.檔案ToolStripMenuItem1.Text = "檔案";
+            // 
+            // pDFToolStripMenuItem
+            // 
+            this.pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
+            this.pDFToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pDFToolStripMenuItem.Text = "PDF";
+            this.pDFToolStripMenuItem.Click += new System.EventHandler(this.pDFToolStripMenuItem_Click);
+            // 
             // 快速
             // 
             this.快速.Location = new System.Drawing.Point(23, 52);
@@ -151,6 +171,13 @@
             this.快速.Text = "快速";
             this.快速.UseVisualStyleBackColor = true;
             this.快速.Click += new System.EventHandler(this.快速_Click);
+            // 
+            // imageToolStripMenuItem
+            // 
+            this.imageToolStripMenuItem.Name = "imageToolStripMenuItem";
+            this.imageToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.imageToolStripMenuItem.Text = "Image";
+            this.imageToolStripMenuItem.Click += new System.EventHandler(this.imageToolStripMenuItem_Click);
             // 
             // 測試主視窗
             // 
@@ -184,5 +211,8 @@
         private System.Windows.Forms.ToolStripMenuItem 詳細ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 可匯出匯入ToolStripMenuItem;
         private System.Windows.Forms.Button 快速;
+        private System.Windows.Forms.ToolStripMenuItem 檔案ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imageToolStripMenuItem;
     }
 }

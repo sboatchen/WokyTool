@@ -50,12 +50,12 @@ namespace WokyTool.通用
 
         public void 顯示編輯明細()
         {
-            訊息管理器.獨體.訊息("---------");
+            /*訊息管理器.獨體.訊息("---------");
             訊息管理器.獨體.訊息(this.ToString(false));
             訊息管理器.獨體.訊息("->");
             if(_副本 != null)
                 訊息管理器.獨體.訊息(JsonConvert.SerializeObject(_副本, Formatting.None));
-            訊息管理器.獨體.訊息("---------");
+            訊息管理器.獨體.訊息("---------");*/
         }
 
         public bool 編號是否合法()

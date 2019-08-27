@@ -107,6 +107,9 @@ namespace WokyTool.通用
 
             全速配 = 1,
             宅配通,
+            SEVEN,
+            全家,
+            三方, //momo
         };
 
       
