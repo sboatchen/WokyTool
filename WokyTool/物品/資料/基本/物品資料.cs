@@ -130,6 +130,13 @@ namespace WokyTool.物品
 
         public 物品資料 Self { get { return this; } }
 
+        public 物品資料()
+        {
+            大類 = 物品大類資料.空白;
+            小類 = 物品小類資料.空白;
+            品牌 = 物品品牌資料.空白;
+        }
+
         public static readonly 物品資料 不篩 = new 物品資料
         {
             編號 = 常數.不篩資料編碼,
@@ -229,6 +236,10 @@ namespace WokyTool.物品
                 檢查器_.錯誤(資料_, "縮寫不合法");
             else if (物品資料管理器.獨體.資料列舉2.Where(Value => 縮寫.Equals(Value.名稱) || 縮寫.Equals(Value.縮寫)).Count() > 1)
                 檢查器_.錯誤(資料_, "縮寫重複");
+
+            // 有設定類別 則必須設定顏色
+            if(false == String.IsNullOrEmpty(類別) && String.IsNullOrEmpty(顏色))
+                檢查器_.錯誤(資料_, "有類別沒顏色");
         }
 
         public override void 刪除檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)

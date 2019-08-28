@@ -119,5 +119,21 @@ namespace WokyTool.商品{
 
             this.寄庫數量.Value = 目前資料_.寄庫數量;
         }
+
+        private void 新增_Click(object sender, EventArgs e)
+        {
+            物品資料 物品_ = (物品資料)(this.物品選取元件.SelectedItem);
+            if (物品_ == null || 物品_.編號是否有值() == false)
+            {
+                訊息管理器.獨體.通知("物品不合法");
+                return;
+            }
+
+            商品組成匯入資料 newItem_ = new 商品組成匯入資料();
+            newItem_.物品 = 物品_;
+            newItem_.數量 = (int)this.數量.Value;
+
+            _組成BList.Add(newItem_);
+        }
     }
 }

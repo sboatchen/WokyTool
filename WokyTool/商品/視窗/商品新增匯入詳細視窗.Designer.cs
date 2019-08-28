@@ -413,6 +413,7 @@
             this.新增.TabIndex = 102;
             this.新增.Text = "新增";
             this.新增.UseVisualStyleBackColor = true;
+            this.新增.Click += new System.EventHandler(this.新增_Click);
             // 
             // 數量
             // 

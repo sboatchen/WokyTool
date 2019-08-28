@@ -15,6 +15,7 @@ namespace WokyTool.通用
     {
         private static AutoOcr OCR = new AutoOcr();
 
+        // 請注意 這邊的範圍 不是指圖片文字在PDF上的範圍，而是指文字在圖片上的範圍
         public System.Drawing.Rectangle 範圍 { get; set; }
 
         public PDF圖片字串讀出元件(System.Drawing.Rectangle 範圍_)

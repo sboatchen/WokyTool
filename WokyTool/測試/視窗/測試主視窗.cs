@@ -101,16 +101,11 @@ namespace WokyTool.測試
             {
                 var 轉換_ = new 平台訂單配送轉換_生活市集_全家(null);
                 檔案.詢問並修改("生活市集全家配送原始檔", 轉換_, true);
-            }
+            }*/
 
             {
                 var 轉換_ = new 平台訂單配送轉換_松果_SEVEN(null);
                 檔案.詢問並修改("松果Seven配送原始檔", 轉換_, true);
-            }*/
-
-            {
-                var 轉換_ = new 平台訂單配送轉換_松果_全家(null);
-                檔案.詢問並修改("松果全家配送原始檔", 轉換_, true);
             }
         }
 
@@ -124,6 +119,13 @@ namespace WokyTool.測試
         private void imageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var i = new Image測試視窗();
+            i.Show();
+            i.BringToFront();
+        }
+
+        private void 物品合併ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var i = new 物品合併測試視窗();
             i.Show();
             i.BringToFront();
         }

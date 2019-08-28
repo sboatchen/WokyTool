@@ -33,6 +33,6 @@ namespace WokyTool.通用
             BaseFont.IDENTITY_H, //橫式中文
             BaseFont.NOT_EMBEDDED
         );
-        public static Font 通用字體 = new Font(通用字體設定, 14);
+        public static Font 通用字體 = new Font(通用字體設定, 13);
     }
 }

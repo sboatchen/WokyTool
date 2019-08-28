@@ -109,34 +109,41 @@ namespace WokyTool.物品
             var GroupQuery_ = Map.GroupBy(Pair => (string.IsNullOrEmpty(Pair.Key.類別)) ? 字串.無 : Pair.Key.類別);
 
             StringBuilder SB_ = new StringBuilder();
-            /*foreach (var Group_ in GroupQuery_)
+            foreach (var Group_ in GroupQuery_)
             {
+                if (SB_.Length > 0)
+                    SB_.Append("+");
+
                 if (Group_.Key == 字串.無)
-                if (SB_.Length > 0)
-                    SB_.Append("+");
+                {
+                    foreach (var 物品組成_ in Group_)
+                    {
+                        if (String.IsNullOrEmpty(物品組成_.Key.縮寫))
+                            SB_.Append(物品組成_.Key.名稱);
+                        else
+                            SB_.Append(物品組成_.Key.縮寫);
 
-                if (String.IsNullOrEmpty(Pair_.Key.縮寫))
-                    SB_.Append(Pair_.Key.名稱);
+                        if (物品組成_.Value > 1)
+                            SB_.Append("*").Append(物品組成_.Value);
+                    }
+                }
                 else
-                    SB_.Append(Pair_.Key.縮寫);
+                {
+                    SB_.Append(Group_.Key).Append("-");
 
-                if (Pair_.Value != 0)
-                    SB_.Append("*").Append(Pair_.Value);
-            }*/
+                    bool 非第一個_ = false;
+                    foreach (var 物品組成_ in Group_)
+                    {
+                        if (非第一個_)
+                            SB_.Append("，");
+                        非第一個_ = true;
 
+                        SB_.Append(物品組成_.Key.顏色);
 
-            foreach (var Pair_ in Map)
-            {
-                if (SB_.Length > 0)
-                    SB_.Append("+");
-
-                if (String.IsNullOrEmpty(Pair_.Key.縮寫))
-                    SB_.Append(Pair_.Key.名稱);
-                else
-                    SB_.Append(Pair_.Key.縮寫);
-
-                if (Pair_.Value != 0)
-                    SB_.Append("*").Append(Pair_.Value);
+                        if (物品組成_.Value > 1)
+                            SB_.Append("*").Append(物品組成_.Value);
+                    }
+                }
             }
 
             return SB_.ToString();

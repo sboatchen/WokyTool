@@ -25,12 +25,12 @@ namespace WokyTool.客製
                     // 讀出 配送單號
                     // 寫入 物品組成
                     _設定資料書 = new Dictionary<PDF字串讀出元件, PDF字串寫入元件>();
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(130, 755, 250, 775)), new PDF字串寫入元件(new Rectangle(10, 811, 290, 840), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 755, 550, 775)), new PDF字串寫入元件(new Rectangle(310, 811, 590, 840), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(130, 475, 250, 490)), new PDF字串寫入元件(new Rectangle(10, 534, 290, 563), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 475, 550, 490)), new PDF字串寫入元件(new Rectangle(310, 534, 590, 563), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(130, 195, 250, 210)), new PDF字串寫入元件(new Rectangle(10, -4, 290, 25), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 195, 550, 210)), new PDF字串寫入元件(new Rectangle(310, -4, 590, 25), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(130, 755, 250, 775)), new PDF字串寫入元件(new Rectangle(10, 811, 290, 838), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 755, 550, 775)), new PDF字串寫入元件(new Rectangle(310, 811, 590, 838), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(130, 475, 250, 490)), new PDF字串寫入元件(new Rectangle(10, 534, 290, 561), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 475, 550, 490)), new PDF字串寫入元件(new Rectangle(310, 534, 590, 561), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(130, 195, 250, 210)), new PDF字串寫入元件(new Rectangle(10, -2, 290, 25), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 195, 550, 210)), new PDF字串寫入元件(new Rectangle(310, -2, 590, 25), 常數.通用字體));
                 }
 
                 return _設定資料書;
