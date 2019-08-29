@@ -38,10 +38,12 @@ namespace WokyTool.通用
             _可用行數 = _可用範圍.Count;
         }
 
-        public void 寫入(PdfContentByte PCB_, string 字串_)
+        public void 處理(PdfWriter PdfWriter_, string 字串_)
         {
             if(string.IsNullOrEmpty(字串_))
                 return;
+
+            PdfContentByte PdfContentByte_ = PdfWriter_.DirectContent;
 
             string 目前字串_ = 字串_;
             int 目前行數_ = 0;
@@ -49,20 +51,20 @@ namespace WokyTool.通用
             {
                 if(目前字串_.Length <= _每行字數)
                 {
-                    寫入(PCB_, 目前字串_, _可用範圍.ElementAt(目前行數_++));
+                    寫入(PdfContentByte_, 目前字串_, _可用範圍.ElementAt(目前行數_++));
                     目前字串_ = null;
                 }
                 else if(目前行數_ == (_可用行數 - 1))
                 {
                     string 剪下字串_ = 目前字串_.Substring(0, _每行字數 - 3) + "...";
-                    寫入(PCB_, 剪下字串_, _可用範圍.ElementAt(目前行數_++));
+                    寫入(PdfContentByte_, 剪下字串_, _可用範圍.ElementAt(目前行數_++));
 
                     目前字串_ = null;
                 }
                 else
                 {
                     string 剪下字串_ = 目前字串_.Substring(0, _每行字數);
-                    寫入(PCB_, 剪下字串_, _可用範圍.ElementAt(目前行數_++));
+                    寫入(PdfContentByte_, 剪下字串_, _可用範圍.ElementAt(目前行數_++));
 
                     目前字串_ = 目前字串_.Substring(_每行字數);
                 }

@@ -23,7 +23,7 @@ namespace WokyTool.通用
             this.範圍 = 範圍_;
         }
 
-        public string 讀出(PdfReader PdfReader_, int 頁索引_)
+        public string 處理(PdfReader PdfReader_, int 頁索引_)
         {
             PdfDictionary pg = PdfReader_.GetPageN(頁索引_);
 

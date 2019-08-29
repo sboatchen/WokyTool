@@ -46,15 +46,10 @@ namespace WokyTool.通用
                         {
                             Document_.NewPage();
 
-                            // 拷貝舊資料
-                            PdfImportedPage importedPage = PdfWriter_.GetImportedPage(PdfReader_, 頁索引_);
-                            PdfContentByte contentByte = PdfWriter_.DirectContent;
-                            contentByte.AddTemplate(importedPage, 轉換_.X位移, 轉換_.Y位移);
-
                             if (是否測試_)
-                                轉換_.測試(PdfReader_, 頁索引_, contentByte);
+                                轉換_.測試(PdfReader_, 頁索引_, PdfWriter_);
                             else
-                                轉換_.寫入(PdfReader_, 頁索引_, contentByte);
+                                轉換_.寫入(PdfReader_, 頁索引_, PdfWriter_);
                         }
                     }
                 }

@@ -246,5 +246,49 @@ namespace WokyTool.測試
                 }
             }
         }
+
+        private void 移動_Click(object sender, EventArgs e)
+        {
+            // 開啟參考檔案位置
+            OpenFileDialog OFD_ = new OpenFileDialog();
+            OFD_.Filter = "pdf files (.pdf)|*.pdf";
+
+            if (OFD_.ShowDialog() != DialogResult.OK)
+                return;
+
+            string 路徑_ = System.IO.Path.GetDirectoryName(OFD_.FileName);
+            Console.WriteLine("路徑: " + 路徑_);
+
+            using (PdfReader PdfReader_ = new PdfReader(OFD_.FileName))
+            {
+                // 開啟寫入檔案
+                string 寫檔名稱_ = OFD_.FileName.Replace(".pdf", "_移動2.pdf");
+                iTextSharp.text.Rectangle 尺寸_ = PdfReader_.GetPageSizeWithRotation(1);
+
+                using (FileStream FS_ = new FileStream(寫檔名稱_, FileMode.Create, FileAccess.Write))
+                {
+                    using (Document Document_ = new Document(尺寸_))
+                    {
+                        PdfWriter PdfWriter_ = PdfWriter.GetInstance(Document_, FS_);
+                        Document_.Open();
+
+                        for (int 頁索引_ = 1; 頁索引_ <= PdfReader_.NumberOfPages; 頁索引_++)
+                        {
+                            Document_.NewPage();
+
+                            PdfImportedPage importedPage = PdfWriter_.GetImportedPage(PdfReader_, 頁索引_);
+                            PdfContentByte contentByte = PdfWriter_.DirectContent;
+
+                            PdfTemplate template = contentByte.CreateTemplate(300, 600);
+                            template.Rectangle(0, 0, 150, 300);
+                            template.Clip();
+                            template.NewPath();
+                            template.AddTemplate(importedPage, 0, 0);
+                            contentByte.AddTemplate(template, 100, 100);
+                        }
+                    }
+                }
+            }
+        }
     }
 }

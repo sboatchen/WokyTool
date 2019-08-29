@@ -19,11 +19,13 @@ namespace WokyTool.通用
             this.範圍 = 範圍_;
         }
 
-        public void 寫入(PdfContentByte PCB_)
+        public void 處理(PdfWriter PdfWriter_)
         {
+            PdfContentByte PdfContentByte_ = PdfWriter_.DirectContent;
+
             Image image = Image.GetInstance(new System.Drawing.Bitmap((int)範圍.Width, (int)範圍.Height), BaseColor.WHITE);
             image.SetAbsolutePosition(範圍.Left, 範圍.Bottom);
-            PCB_.AddImage(image);
+            PdfContentByte_.AddImage(image);
         }
     }
 }

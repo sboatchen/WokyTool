@@ -696,6 +696,8 @@
     <Compile Include="聯絡人\資料\聯絡人資料篩選.cs" />
     <Compile Include="通用\介面\可記錄錯誤介面.cs" />
     <Compile Include="通用\檔案\介面\可寫入介面_PDF.cs" />
+    <Compile Include="通用\檔案\元件\PDF定位元件.cs" />
+    <Compile Include="通用\檔案\元件\PDF拷貝元件.cs" />
     <Compile Include="通用\檔案\元件\PDF清除元件.cs" />
     <Compile Include="通用\檔案\元件\PDF字串寫入元件.cs" />
     <Compile Include="通用\檔案\元件\PDF圖片字串讀出元件.cs" />

@@ -13,10 +13,7 @@ namespace WokyTool.通用
 
         string 密碼 { get; }
 
-        double X位移 { get;}
-        double Y位移 { get; }
-
-        void 寫入(PdfReader PdfReader_, int 頁索引_, PdfContentByte PCB_);
-        void 測試(PdfReader PdfReader_, int 頁索引_, PdfContentByte PCB_);
+        void 寫入(PdfReader PdfReader_, int 頁索引_, PdfWriter PdfWriter_);
+        void 測試(PdfReader PdfReader_, int 頁索引_, PdfWriter PdfWriter_);
     }
 }
