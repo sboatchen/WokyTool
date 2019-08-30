@@ -72,6 +72,8 @@ namespace WokyTool.通用
         protected BindingSource _公用BS = new BindingSource();
         public BindingSource 公用BS { get { return _公用BS; } }
 
+        protected abstract 可儲存資料管理器<TValue> 儲存器 { get; }
+
         // 建構子
         public 可更新資料管理器()
         {
@@ -124,11 +126,11 @@ namespace WokyTool.通用
         {
             if (是否紀錄_)
             {
-                例外檢查器 例外檢查器_ = new 例外檢查器();
-
-                foreach (TSource 資料_ in 資料列)
+                TSource 錯誤資料_ = 資料列.Where(Value => string.IsNullOrEmpty(Value.錯誤訊息) == false).DefaultIfEmpty(null).First();
+                if (錯誤資料_ != null)
                 {
-                    資料_.合法檢查(例外檢查器_);
+                    例外檢查器 例外檢查器_ = new 例外檢查器();
+                    例外檢查器_.錯誤(錯誤資料_, 錯誤資料_.錯誤訊息);
                 }
 
                 foreach (TSource 資料_ in 資料列)
@@ -152,21 +154,9 @@ namespace WokyTool.通用
         // 儲存檔案
         public virtual void 儲存()
         {
-            foreach (TSource 資料_ in 資料列)
-            {
-                /*switch (資料_.更新狀態)
-                {
-                    case 列舉.更新狀態.相同:
-                    case 列舉.更新狀態.錯誤:
-                        break;
-                    case 列舉.更新狀態.刪除:
-                        參考.刪除檢查(檢查器_);
-                        break;
-                    case 列舉.更新狀態.更新:
-                        修改.合法檢查(檢查器_, this);
-                        break;
-                }*/
-            }
+            儲存器.更新(資料列.Where(Value => Value.更新狀態 == 列舉.更新狀態.更新).Select(Value => Value.修改));
+            儲存器.新增(資料列.Where(Value => Value.更新狀態 == 列舉.更新狀態.新增).Select(Value => Value.修改));
+            儲存器.刪除(資料列.Where(Value => Value.更新狀態 == 列舉.更新狀態.刪除).Select(Value => Value.修改));
         }
     }
 }

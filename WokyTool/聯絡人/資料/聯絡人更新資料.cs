@@ -139,13 +139,21 @@ namespace WokyTool.聯絡人
         public 客戶資料 客戶 
         {
             get { return 修改.客戶; }
-            set { 修改.客戶 = value; }
+            set 
+            { 
+                修改.客戶 = value;
+                _客戶識別 = value.名稱;
+            }
         }
 
         public 子客戶資料 子客戶
         {
             get { return 修改.子客戶; }
-            set { 修改.子客戶 = value; }
+            set 
+            { 
+                修改.子客戶 = value;
+                _子客戶識別 = value.名稱;
+            }
         }
 
         public string 參考姓名 { get { return 參考.姓名; } }

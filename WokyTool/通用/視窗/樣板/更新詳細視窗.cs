@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -96,10 +97,48 @@ namespace WokyTool.通用
             元件_.ReadOnly |= !更新管理器.是否可編輯;
         }
 
+        protected void 資料綁定(ComboBox 元件_, string 屬性名稱_)
+        {
+            元件_.DataBindings.Add("SelectedItem", 資料BS, 屬性名稱_);
+
+            if (元件_.DropDownStyle == ComboBoxStyle.Simple || 更新管理器.是否可編輯 == false)
+                元件_.DropDownStyle = ComboBoxStyle.Simple;
+            else
+                元件_.DropDownStyle = ComboBoxStyle.DropDown;
+        }
+
         protected void 資料綁定(NumericUpDown 元件_, string 屬性名稱_)
         {
             元件_.DataBindings.Add("Value", 資料BS, 屬性名稱_);
             元件_.ReadOnly |= !更新管理器.是否可編輯;
+        }
+
+        protected void 資料異動顯示綁定(新版抽象選取元件 修改元件_, 新版抽象選取元件 參考元件_)
+        {
+            EventHandler 比較處理_ = new EventHandler(delegate(Object o, EventArgs a)
+            {
+                if (修改元件_.SelectedItem == 參考元件_.SelectedItem)
+                    修改元件_.下拉選單.ForeColor = Color.Black;
+                else
+                    修改元件_.下拉選單.ForeColor = Color.Red;
+            });
+
+            修改元件_.下拉選單.SelectedValueChanged += 比較處理_;
+            參考元件_.下拉選單.SelectedValueChanged += 比較處理_;
+        }
+
+        protected void 資料異動顯示綁定(TextBox 修改元件_, TextBox 參考元件_)
+        {
+            EventHandler 比較處理_ = new EventHandler(delegate(Object o, EventArgs a)
+            {
+                if (修改元件_.Text == 參考元件_.Text)
+                    修改元件_.ForeColor = Color.Black;
+                else
+                    修改元件_.ForeColor = Color.Red;
+            });
+
+            修改元件_.TextChanged += 比較處理_;
+            參考元件_.TextChanged += 比較處理_;
         }
 
         /********************************/

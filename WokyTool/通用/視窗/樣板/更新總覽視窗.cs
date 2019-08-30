@@ -92,7 +92,7 @@ namespace WokyTool.通用
 
             if (更新管理器.是否編輯中)
             {
-                bool Result_ = 訊息管理器.獨體.確認(字串.儲存確認, 字串.儲存確認內容);
+                bool Result_ = 訊息管理器.獨體.確認(字串.更新確認, 字串.更新確認內容);
 
                 try
                 {
@@ -100,7 +100,7 @@ namespace WokyTool.通用
                 }
                 catch (Exception ex)
                 {
-                    訊息管理器.獨體.通知(字串.操作失敗, ex.Message);
+                    訊息管理器.獨體.通知(字串.更新失敗, ex.Message);
                     e.Cancel = true;
                     是否關閉 = false;
                     return;

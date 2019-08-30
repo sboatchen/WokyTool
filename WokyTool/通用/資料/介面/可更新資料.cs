@@ -96,12 +96,10 @@ namespace WokyTool.通用
 
         public override void BeginEdit()
         {
-            Console.WriteLine("@@開始編輯" + this.ToString(false));
         }
 
         public override void CancelEdit()
         {
-            Console.WriteLine("@@取消編輯" + this.ToString(false));
         }
 
         public override void EndEdit()
@@ -136,7 +134,6 @@ namespace WokyTool.通用
                 switch (更新狀態)
                 {
                     case 列舉.更新狀態.相同:
-                    case 列舉.更新狀態.錯誤:
                         break;
                     case 列舉.更新狀態.刪除:
                         訊息管理器.獨體.訊息("資料刪除");
@@ -148,6 +145,14 @@ namespace WokyTool.通用
                         訊息管理器.獨體.訊息(_參考Hash);
                         訊息管理器.獨體.訊息(修改.ToString(false));
                         訊息管理器.獨體.訊息("---------");
+                        break;
+                    case 列舉.更新狀態.新增:
+                        訊息管理器.獨體.訊息("資料新增");
+                        訊息管理器.獨體.訊息(修改.ToString(false));
+                        訊息管理器.獨體.訊息("---------");
+                        break;
+                    default:
+                        訊息管理器.獨體.錯誤("不支援更新狀態:" + 更新狀態);
                         break;
                 }
             }

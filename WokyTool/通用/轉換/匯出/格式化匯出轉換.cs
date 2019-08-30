@@ -37,6 +37,9 @@ namespace WokyTool.通用
             int 目前欄數_ = 1;
             foreach (通用匯出欄位方法資料 方法_ in _欄位方法列)
             {
+                if(方法_.方法.PropertyType == typeof(string))
+                    App_.Cells[1, 目前欄數_].EntireColumn.NumberFormat = "@";
+
                 App_.Cells[1, 目前欄數_++] = 方法_.名稱;
             }
 

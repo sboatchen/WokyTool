@@ -51,6 +51,10 @@ namespace WokyTool.Common
         public static string 儲存確認內容 = "是否儲存目前修改";
         public static string 儲存失敗 = "儲存失敗";
 
+        public static string 更新確認 = "更新確認";
+        public static string 更新確認內容 = "是否更新資料";
+        public static string 更新失敗 = "更新失敗";
+
         public static string 操作失敗 = "操作失敗";
 
         public static string 排序前儲存確認內容 = "排序前，是否儲存目前修改";

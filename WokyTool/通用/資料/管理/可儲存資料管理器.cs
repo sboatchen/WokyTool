@@ -166,6 +166,63 @@ namespace WokyTool.通用
             return true;
         }
 
+        public bool 刪除(IEnumerable<T> 資料列舉_)
+        {
+            if (資料列舉_ == null || 資料列舉_.Any() == false)
+                return true;
+
+            資料版本++;
+
+            foreach (T 資料_ in 資料列舉_)
+            {
+                if (_資料書.ContainsKey(資料_.編號) == false)
+                {
+                    訊息管理器.獨體.警告("無法刪除指定物件,找不到 " + 資料_.ToString());
+                    return false;
+                }
+
+                _資料書.Remove(資料_.編號);
+            }
+
+            return true;
+        }
+
+        public bool 更新(T 資料_)
+        {
+            if (_資料書.ContainsKey(資料_.編號) == false)
+            {
+                訊息管理器.獨體.警告("無法更新指定物件,找不到 " + 資料_.ToString());
+                return false;
+            }
+
+            _資料書[資料_.編號] = 資料_;
+
+            資料版本++;
+
+            return true;
+        }
+
+        public bool 更新(IEnumerable<T> 資料列舉_)
+        {
+            if (資料列舉_ == null || 資料列舉_.Any() == false)
+                return true;
+
+            資料版本++;
+
+            foreach (T 資料_ in 資料列舉_)
+            {
+                if (_資料書.ContainsKey(資料_.編號) == false)
+                {
+                    訊息管理器.獨體.警告("無法更新指定物件,找不到 " + 資料_.ToString());
+                    return false;
+                }
+
+                _資料書[資料_.編號] = 資料_;
+            }
+
+            return true;
+        }
+
         public override void 更新資料(object 資料列obj_)
         {
             IEnumerable<T> 資料列_ = 資料列obj_ as IEnumerable<T>;
