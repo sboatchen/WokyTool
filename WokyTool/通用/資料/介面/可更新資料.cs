@@ -110,14 +110,17 @@ namespace WokyTool.通用
             更新編輯狀態();
         }
 
+        private static 可檢查介面 更新檢查器 = new 錯誤訊息檢查器();
         public override bool 更新編輯狀態()
         {
-            if (_參考Hash == null)
-                return false;
+            if (_參考Hash != null)
+            {
+                string 資料_ = 修改.ToString(false);
+                是否編輯中 = _參考Hash.Equals(資料_) == false;
+                更新狀態 = 是否編輯中 ? 列舉.更新狀態.更新 : 列舉.更新狀態.相同;
+            }
 
-            string 資料_ = 修改.ToString(false);
-            是否編輯中 = _參考Hash.Equals(資料_) == false;
-            更新狀態 = 是否編輯中 ? 列舉.更新狀態.更新 : 列舉.更新狀態.相同;
+            合法檢查(更新檢查器);
 
             return 是否編輯中;
         }
@@ -156,12 +159,17 @@ namespace WokyTool.通用
             switch (更新狀態)
             {
                 case 列舉.更新狀態.相同:
+                    錯誤訊息 = null;
+                    break;
                 case 列舉.更新狀態.錯誤:
                     break;
                 case 列舉.更新狀態.刪除:
+                    錯誤訊息 = null;
                     參考.刪除檢查(檢查器_);
                     break;
+                case 列舉.更新狀態.新增:
                 case 列舉.更新狀態.更新:
+                    錯誤訊息 = null;
                     修改.合法檢查(檢查器_, this);
                     break;
             }

@@ -29,7 +29,7 @@ namespace WokyTool.聯絡人
             set
             {
                 _編號識別 = value;
-                if (參考 == null)
+                if (參考 == null && string.IsNullOrEmpty(value) == false)
                 {
                     int 編號_ = Int32.Parse(value);
                     參考 = 聯絡人資料管理器.獨體.取得(編號_);
@@ -48,7 +48,7 @@ namespace WokyTool.聯絡人
             }
             set
             {
-                if (參考 == null)
+                if (參考 == null || string.IsNullOrEmpty(編號識別))
                 {
                     參考 = 聯絡人資料管理器.獨體.取得(value);
                     修改 = 參考.深複製();
@@ -134,6 +134,26 @@ namespace WokyTool.聯絡人
 
         private string _編號識別;
         private string _客戶識別;
-        private string _子客戶識別; 
+        private string _子客戶識別;
+
+        public 客戶資料 客戶 
+        {
+            get { return 修改.客戶; }
+            set { 修改.客戶 = value; }
+        }
+
+        public 子客戶資料 子客戶
+        {
+            get { return 修改.子客戶; }
+            set { 修改.子客戶 = value; }
+        }
+
+        public string 參考姓名 { get { return 參考.姓名; } }
+        public string 參考電話 { get { return 參考.電話; } }
+        public string 參考手機 { get { return 參考.手機; } }
+        public string 參考地址 { get { return 參考.地址; } }
+
+        public 客戶資料 參考客戶 { get { return 參考.客戶; } }
+        public 子客戶資料 參考子客戶 { get { return 參考.子客戶; } }
     }
 }

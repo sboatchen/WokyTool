@@ -35,22 +35,20 @@ namespace WokyTool.聯絡人
             this.匯入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new MyDataGridView();
+            this.dataGridView1 = new WokyTool.通用.MyDataGridView();
             this.更新狀態DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.編號識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.電話DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.手機DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.客戶DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.子客戶DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.客戶識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.子客戶識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.聯絡人更新資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.廠商資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.聯絡人更新資料BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -73,7 +71,6 @@ namespace WokyTool.聯絡人
             this.樣板ToolStripMenuItem.Name = "樣板ToolStripMenuItem";
             this.樣板ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.樣板ToolStripMenuItem.Text = "樣板";
-            this.樣板ToolStripMenuItem.Click += new System.EventHandler(this.樣板ToolStripMenuItem_Click);
             // 
             // 匯入ToolStripMenuItem
             // 
@@ -87,14 +84,12 @@ namespace WokyTool.聯絡人
             this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
             this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.篩選ToolStripMenuItem.Text = "篩選";
-            this.篩選ToolStripMenuItem.Click += new System.EventHandler(this.篩選ToolStripMenuItem_Click);
             // 
             // 檢查ToolStripMenuItem
             // 
             this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
             this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.檢查ToolStripMenuItem.Text = "檢查";
-            this.檢查ToolStripMenuItem.Click += new System.EventHandler(this.檢查ToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -104,18 +99,18 @@ namespace WokyTool.聯絡人
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.更新狀態DataGridViewTextBoxColumn,
-            this.編號DataGridViewTextBoxColumn,
+            this.編號識別DataGridViewTextBoxColumn,
             this.姓名DataGridViewTextBoxColumn,
             this.電話DataGridViewTextBoxColumn,
             this.手機DataGridViewTextBoxColumn,
             this.地址DataGridViewTextBoxColumn,
-            this.客戶DataGridViewTextBoxColumn,
-            this.子客戶DataGridViewTextBoxColumn,
+            this.客戶識別DataGridViewTextBoxColumn,
+            this.子客戶識別DataGridViewTextBoxColumn,
             this.錯誤訊息DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.聯絡人更新資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 28);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -129,12 +124,12 @@ namespace WokyTool.聯絡人
             this.更新狀態DataGridViewTextBoxColumn.Name = "更新狀態DataGridViewTextBoxColumn";
             this.更新狀態DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 編號DataGridViewTextBoxColumn
+            // 編號識別DataGridViewTextBoxColumn
             // 
-            this.編號DataGridViewTextBoxColumn.DataPropertyName = "編號";
-            this.編號DataGridViewTextBoxColumn.HeaderText = "編號";
-            this.編號DataGridViewTextBoxColumn.Name = "編號DataGridViewTextBoxColumn";
-            this.編號DataGridViewTextBoxColumn.ReadOnly = true;
+            this.編號識別DataGridViewTextBoxColumn.DataPropertyName = "編號識別";
+            this.編號識別DataGridViewTextBoxColumn.HeaderText = "編號";
+            this.編號識別DataGridViewTextBoxColumn.Name = "編號識別DataGridViewTextBoxColumn";
+            this.編號識別DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 姓名DataGridViewTextBoxColumn
             // 
@@ -164,19 +159,19 @@ namespace WokyTool.聯絡人
             this.地址DataGridViewTextBoxColumn.Name = "地址DataGridViewTextBoxColumn";
             this.地址DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 客戶DataGridViewTextBoxColumn
+            // 客戶識別DataGridViewTextBoxColumn
             // 
-            this.客戶DataGridViewTextBoxColumn.DataPropertyName = "客戶";
-            this.客戶DataGridViewTextBoxColumn.HeaderText = "客戶";
-            this.客戶DataGridViewTextBoxColumn.Name = "客戶DataGridViewTextBoxColumn";
-            this.客戶DataGridViewTextBoxColumn.ReadOnly = true;
+            this.客戶識別DataGridViewTextBoxColumn.DataPropertyName = "客戶識別";
+            this.客戶識別DataGridViewTextBoxColumn.HeaderText = "客戶";
+            this.客戶識別DataGridViewTextBoxColumn.Name = "客戶識別DataGridViewTextBoxColumn";
+            this.客戶識別DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 子客戶DataGridViewTextBoxColumn
+            // 子客戶識別DataGridViewTextBoxColumn
             // 
-            this.子客戶DataGridViewTextBoxColumn.DataPropertyName = "子客戶";
-            this.子客戶DataGridViewTextBoxColumn.HeaderText = "子客戶";
-            this.子客戶DataGridViewTextBoxColumn.Name = "子客戶DataGridViewTextBoxColumn";
-            this.子客戶DataGridViewTextBoxColumn.ReadOnly = true;
+            this.子客戶識別DataGridViewTextBoxColumn.DataPropertyName = "子客戶識別";
+            this.子客戶識別DataGridViewTextBoxColumn.HeaderText = "子客戶";
+            this.子客戶識別DataGridViewTextBoxColumn.Name = "子客戶識別DataGridViewTextBoxColumn";
+            this.子客戶識別DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 錯誤訊息DataGridViewTextBoxColumn
             // 
@@ -188,10 +183,6 @@ namespace WokyTool.聯絡人
             // 聯絡人更新資料BindingSource
             // 
             this.聯絡人更新資料BindingSource.DataSource = typeof(WokyTool.聯絡人.聯絡人更新資料);
-            // 
-            // 廠商資料BindingSource
-            // 
-            this.廠商資料BindingSource.DataSource = typeof(WokyTool.廠商.廠商資料);
             // 
             // 聯絡人更新視窗
             // 
@@ -208,7 +199,6 @@ namespace WokyTool.聯絡人
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.聯絡人更新資料BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,17 +211,16 @@ namespace WokyTool.聯絡人
         private System.Windows.Forms.ToolStripMenuItem 檢查ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 樣板ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 匯入ToolStripMenuItem;
-        private System.Windows.Forms.BindingSource 廠商資料BindingSource;
         private MyDataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 聯絡人更新資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 更新狀態DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 編號識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 姓名DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 電話DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 手機DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 地址DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 客戶DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 子客戶DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 客戶識別DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 子客戶識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 錯誤訊息DataGridViewTextBoxColumn;
     }
 }

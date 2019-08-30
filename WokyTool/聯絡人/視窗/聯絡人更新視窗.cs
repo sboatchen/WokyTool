@@ -14,9 +14,17 @@ namespace WokyTool.聯絡人
 {
     public partial class 聯絡人更新視窗 : 更新總覽視窗
     {
+        public override Type 資料類型 { get { return typeof(聯絡人更新資料); } }
+
         public override 可編輯列舉資料管理介面 更新管理器 { get { return 資料管理器; } }
+
         public override MyDataGridView 資料GV { get { return this.dataGridView1; } }
-        public Type 資料類型 { get { return typeof(聯絡人更新資料); } }
+        public override ToolStripMenuItem 樣板MI { get { return this.樣板ToolStripMenuItem; } }
+        public override ToolStripMenuItem 篩選MI { get { return this.篩選ToolStripMenuItem; } }
+        public override ToolStripMenuItem 檢查MI { get { return this.檢查ToolStripMenuItem; } }
+
+        public override 通用視窗介面 取得篩選視窗實體 { get { return null; } }
+        public override 通用視窗介面 取得詳細視窗實體 { get { return new 聯絡人更新詳細視窗(資料管理器); } }
 
         public 聯絡人更新資料管理器 資料管理器 = new 聯絡人更新資料管理器();
 
@@ -27,15 +35,6 @@ namespace WokyTool.聯絡人
             this.初始化();
         }
 
-        private void 樣板ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var 轉換_ = new 通用標頭匯出轉換(資料類型);
-            String 標題_ = String.Format("{0}更新樣板", 資料類型.Name);
-            檔案.詢問並寫入(標題_, 轉換_);
-
-            訊息管理器.獨體.通知("匯出完成");
-        }
-
         private void 匯入ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             通用更新匯入轉換<聯絡人更新資料> 轉換_ = new 通用更新匯入轉換<聯絡人更新資料>();
@@ -44,21 +43,6 @@ namespace WokyTool.聯絡人
             資料管理器.新增(資料列舉_);
 
             更新資料();
-        }
-
-        private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            訊息管理器.獨體.通知("尚未實作");
-        }
-
-        private void 檢查ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            列表檢查器 檢查器_ = new 列表檢查器();
-            更新管理器.合法檢查(檢查器_);
-
-            var i = new 錯誤列表視窗(檢查器_, 資料類型.ToString());
-            i.Show();
-            i.BringToFront();
         }
     }
 }

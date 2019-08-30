@@ -107,6 +107,7 @@ namespace WokyTool.DataMgr
 
             公司資料 Item_ = Map.Values
                                 .Where(Value => Value.名稱 == Name)
+                                //.DefaultIfEmpty(公司資料.ERROR)
                                 .FirstOrDefault();
 
             if (Item_ == null)

@@ -112,7 +112,7 @@ namespace WokyTool.物品
             foreach (var Group_ in GroupQuery_)
             {
                 if (SB_.Length > 0)
-                    SB_.Append("+");
+                    SB_.Append(" & ");
 
                 if (Group_.Key == 字串.無)
                 {
@@ -123,25 +123,18 @@ namespace WokyTool.物品
                         else
                             SB_.Append(物品組成_.Key.縮寫);
 
-                        if (物品組成_.Value > 1)
-                            SB_.Append("*").Append(物品組成_.Value);
+                        SB_.Append("*").Append(物品組成_.Value);
                     }
                 }
                 else
                 {
                     SB_.Append(Group_.Key).Append("-");
 
-                    bool 非第一個_ = false;
                     foreach (var 物品組成_ in Group_)
                     {
-                        if (非第一個_)
-                            SB_.Append("，");
-                        非第一個_ = true;
-
                         SB_.Append(物品組成_.Key.顏色);
 
-                        if (物品組成_.Value > 1)
-                            SB_.Append("*").Append(物品組成_.Value);
+                        SB_.Append("*").Append(物品組成_.Value);
                     }
                 }
             }

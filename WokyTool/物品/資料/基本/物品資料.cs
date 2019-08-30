@@ -214,6 +214,7 @@ namespace WokyTool.物品
 
         /********************************/
 
+        private static char[] 縮寫保留字元列 = new char[] { '*', '&' };
         public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
         {
             基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
@@ -236,6 +237,8 @@ namespace WokyTool.物品
                 檢查器_.錯誤(資料_, "縮寫不合法");
             else if (物品資料管理器.獨體.資料列舉2.Where(Value => 縮寫.Equals(Value.名稱) || 縮寫.Equals(Value.縮寫)).Count() > 1)
                 檢查器_.錯誤(資料_, "縮寫重複");
+            else if (縮寫.IndexOfAny(縮寫保留字元列) != -1)
+                檢查器_.錯誤(資料_, "縮寫包含保留字元");
 
             // 有設定類別 則必須設定顏色
             if(false == String.IsNullOrEmpty(類別) && String.IsNullOrEmpty(顏色))

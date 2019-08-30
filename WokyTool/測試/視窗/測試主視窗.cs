@@ -89,9 +89,9 @@ namespace WokyTool.測試
 
         private void 快速_Click(object sender, EventArgs e)
         {
-            /*var i = new 聯絡人更新視窗();
+            var i = new 聯絡人更新視窗();
             i.Show();
-            i.BringToFront();*/
+            i.BringToFront();
 
             /*{
                 var 轉換_ = new 平台訂單配送轉換_生活市集_SEVEN(null);
@@ -101,12 +101,17 @@ namespace WokyTool.測試
             {
                 var 轉換_ = new 平台訂單配送轉換_生活市集_全家(null);
                 檔案.詢問並修改("生活市集全家配送原始檔", 轉換_, true);
-            }*/
+            }
 
             {
                 var 轉換_ = new 平台訂單配送轉換_松果_SEVEN(null);
                 檔案.詢問並修改("松果Seven配送原始檔", 轉換_, true);
             }
+
+            {
+                var 轉換_ = new 平台訂單配送轉換_松果_全家(null);
+                檔案.詢問並修改("松果全家配送原始檔", 轉換_, true);
+            }*/
         }
 
         private void pDFToolStripMenuItem_Click(object sender, EventArgs e)

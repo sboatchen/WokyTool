@@ -23,9 +23,9 @@ namespace WokyTool.客製
                 if (_拷貝資料列 == null)
                 {
                     _拷貝資料列 = new List<PDF拷貝元件>();
-                    _拷貝資料列.Add(new PDF拷貝元件(new Rectangle(0, 0, 595, 280), 0, 17));
-                    _拷貝資料列.Add(new PDF拷貝元件(new Rectangle(0, 280, 595, 560), 0, 17));
-                    _拷貝資料列.Add(new PDF拷貝元件(new Rectangle(0, 560, 595, 840), 0, 17));
+                    _拷貝資料列.Add(new PDF拷貝元件(new Rectangle(0, 0, 595, 280), 0, 19));
+                    _拷貝資料列.Add(new PDF拷貝元件(new Rectangle(0, 280, 595, 560), 0, 22));
+                    _拷貝資料列.Add(new PDF拷貝元件(new Rectangle(0, 560, 595, 840), 0, 24));
                 }
 
                 return _拷貝資料列;
@@ -42,10 +42,10 @@ namespace WokyTool.客製
                     // 讀出 配送單號
                     // 寫入 物品組成
                     _設定資料書 = new Dictionary<PDF字串讀出元件, PDF字串寫入元件>();
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(135, 765, 260, 780)), new PDF字串寫入元件(new Rectangle(5, 555, 295, 596), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 765, 560, 780)), new PDF字串寫入元件(new Rectangle(305, 555, 595, 596), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(135, 485, 260, 500)), new PDF字串寫入元件(new Rectangle(5, 275, 295, 316), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 485, 560, 500)), new PDF字串寫入元件(new Rectangle(305, 275, 595, 316), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(135, 765, 260, 780)), new PDF字串寫入元件(new Rectangle(5, 562, 295, 603), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 765, 560, 780)), new PDF字串寫入元件(new Rectangle(305, 562, 595, 603), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(135, 485, 260, 500)), new PDF字串寫入元件(new Rectangle(5, 277, 295, 318), 常數.通用字體));
+                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 485, 560, 500)), new PDF字串寫入元件(new Rectangle(305, 277, 595, 318), 常數.通用字體));
                     _設定資料書.Add(new PDF字串讀出元件(new Rectangle(135, 205, 260, 220)), new PDF字串寫入元件(new Rectangle(5, -5, 295, 36), 常數.通用字體));
                     _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 205, 560, 220)), new PDF字串寫入元件(new Rectangle(305, -5, 595, 36), 常數.通用字體));
                 }

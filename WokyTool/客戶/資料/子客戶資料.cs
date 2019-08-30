@@ -49,6 +49,11 @@ namespace WokyTool.客戶
 
         public 子客戶資料 Self { get { return this; } }
 
+        public 子客戶資料()
+        {
+            客戶 = 客戶資料.空白;
+        }
+
         public static readonly 子客戶資料 不篩 = new 子客戶資料
         {
             編號 = 常數.不篩資料編碼,
