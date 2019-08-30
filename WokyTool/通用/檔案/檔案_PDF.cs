@@ -47,7 +47,10 @@ namespace WokyTool.通用
                             Document_.NewPage();
 
                             if (是否測試_)
+                            {
                                 轉換_.測試(PdfReader_, 頁索引_, PdfWriter_);
+                                return;
+                            }
                             else
                                 轉換_.寫入(PdfReader_, 頁索引_, PdfWriter_);
                         }

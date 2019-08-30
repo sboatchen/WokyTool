@@ -94,5 +94,18 @@ namespace WokyTool.通用
 
             return _商品識別SB.ToString();
         }
+
+        public static List<Type> 取得繼承結構列(Type 物件類別_)
+        {
+            List<Type> 繼承結構列_ = new List<Type>();
+            Type 疊代類別_ = 物件類別_;
+            do
+            {
+                繼承結構列_.Add(疊代類別_);
+                疊代類別_ = 疊代類別_.BaseType;
+            } while (疊代類別_ != null);
+
+            return 繼承結構列_;
+        }
     }
 }

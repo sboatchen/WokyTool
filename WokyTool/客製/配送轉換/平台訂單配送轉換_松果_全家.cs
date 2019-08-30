@@ -97,8 +97,8 @@ namespace WokyTool.客製
                 拷貝資料_.處理(PdfReader_, 頁索引_, PdfWriter_);
             }
 
-            PDF定位元件 PDF定位元件_ = new PDF定位元件();
-            PDF定位元件_.處理(PdfWriter_);
+            //PDF定位元件 PDF定位元件_ = new PDF定位元件();
+            //PDF定位元件_.處理(PdfWriter_);
 
             foreach (var Pair_ in 設定資料書)
             {

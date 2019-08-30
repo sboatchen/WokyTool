@@ -28,8 +28,10 @@ namespace WokyTool.通用
 
         public void 寫入(Application App_)
         {
+            List<Type> 繼承結構列_ = 函式.取得繼承結構列(資料類型);
+
             int 目前欄數_ = 1;
-            foreach (PropertyInfo 欄位_ in 資料類型.GetProperties())
+            foreach (PropertyInfo 欄位_ in 資料類型.GetProperties().OrderByDescending(Value => 繼承結構列_.IndexOf(Value.DeclaringType)))
             {
                 可匯入Attribute 屬性_ = 欄位_.GetCustomAttributes(typeof(可匯入Attribute), true).Cast<可匯入Attribute>().DefaultIfEmpty(null).First();
                 if (屬性_ == null)

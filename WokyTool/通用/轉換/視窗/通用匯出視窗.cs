@@ -33,8 +33,10 @@ namespace WokyTool.通用
             資料類型 = 資料類型_;
             資料列舉 = (IEnumerable<object>)資料列舉_;
 
-            _可用欄位選單列.Add(通用匯出欄位設定資料.空白); 
-            foreach (PropertyInfo 欄位_ in 資料類型.GetProperties())
+            List<Type> 繼承結構列_ = 函式.取得繼承結構列(資料類型);
+
+            _可用欄位選單列.Add(通用匯出欄位設定資料.空白);
+            foreach (PropertyInfo 欄位_ in 資料類型.GetProperties().OrderByDescending(Value => 繼承結構列_.IndexOf(Value.DeclaringType)))
             {
                 可匯出Attribute 屬性_ = 欄位_.GetCustomAttributes(typeof(可匯出Attribute), true).Cast<可匯出Attribute>().DefaultIfEmpty(null).First();
                 if (屬性_ == null)

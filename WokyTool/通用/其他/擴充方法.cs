@@ -130,5 +130,10 @@ namespace WokyTool.通用
 
             }
         }
+
+        public static List<Type> 取得繼承結構列(this Object 物件_)
+        {
+            return 取得繼承結構列(物件_.GetType());
+        }
     }
 }
