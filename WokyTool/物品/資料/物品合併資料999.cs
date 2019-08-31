@@ -11,7 +11,7 @@ using WokyTool.通用;
 namespace WokyTool.物品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 物品合併資料 : 基本資料
+    public class 物品合併資料 : 基本資料  //@@ 999
     {
         public Dictionary<物品資料, int> Map { get; private set; }
 

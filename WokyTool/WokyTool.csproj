@@ -552,26 +552,26 @@
     <Compile Include="物品\控制\匯入\物品新增匯入管理器.cs" />
     <Compile Include="物品\控制\匯入\物品總覽更新匯入管理器.cs" />
     <Compile Include="物品\控制\匯入\物品條碼更新匯入管理器.cs" />
-    <Compile Include="物品\控制\基本\物品資料管理器.cs" />
-    <Compile Include="物品\控制\基本\物品品牌資料管理器.cs" />
-    <Compile Include="物品\控制\基本\物品小類資料管理器.cs" />
-    <Compile Include="物品\控制\基本\物品大類資料管理器.cs" />
+    <Compile Include="物品\控制\物品資料管理器.cs" />
+    <Compile Include="物品\控制\物品品牌資料管理器.cs" />
+    <Compile Include="物品\控制\物品小類資料管理器.cs" />
+    <Compile Include="物品\控制\物品大類資料管理器.cs" />
     <Compile Include="物品\視窗\匯入\物品新增匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="物品\視窗\匯入\物品新增匯入視窗.Designer.cs">
       <DependentUpon>物品新增匯入視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\基本\物品品牌總覽視窗.cs">
+    <Compile Include="物品\視窗\物品品牌總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\基本\物品品牌總覽視窗.Designer.cs">
+    <Compile Include="物品\視窗\物品品牌總覽視窗.Designer.cs">
       <DependentUpon>物品品牌總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\基本\物品大類總覽視窗.cs">
+    <Compile Include="物品\視窗\物品大類總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\基本\物品大類總覽視窗.Designer.cs">
+    <Compile Include="物品\視窗\物品大類總覽視窗.Designer.cs">
       <DependentUpon>物品大類總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="商品\視窗\元件\商品選取元件.cs">
@@ -604,10 +604,10 @@
     <Compile Include="物品\視窗\元件\物品大類選取元件.Designer.cs">
       <DependentUpon>物品大類選取元件.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\基本\物品小類總覽視窗.cs">
+    <Compile Include="物品\視窗\物品小類總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\基本\物品小類總覽視窗.Designer.cs">
+    <Compile Include="物品\視窗\物品小類總覽視窗.Designer.cs">
       <DependentUpon>物品小類總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="物品\視窗\匯入\物品總覽更新匯入視窗.cs">
@@ -622,16 +622,16 @@
     <Compile Include="物品\視窗\匯入\物品條碼更新匯入視窗.Designer.cs">
       <DependentUpon>物品條碼更新匯入視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\基本\物品總覽視窗.cs">
+    <Compile Include="物品\視窗\物品總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\基本\物品總覽視窗.Designer.cs">
+    <Compile Include="物品\視窗\物品總覽視窗.Designer.cs">
       <DependentUpon>物品總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\基本\物品篩選視窗.cs">
+    <Compile Include="物品\視窗\物品篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\基本\物品篩選視窗.Designer.cs">
+    <Compile Include="物品\視窗\物品篩選視窗.Designer.cs">
       <DependentUpon>物品篩選視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="物品\視窗\匯入\物品新增匯入詳細視窗.cs">
@@ -640,20 +640,20 @@
     <Compile Include="物品\視窗\匯入\物品新增匯入詳細視窗.Designer.cs">
       <DependentUpon>物品新增匯入詳細視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\基本\物品詳細視窗.cs">
+    <Compile Include="物品\視窗\物品詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\基本\物品詳細視窗.Designer.cs">
+    <Compile Include="物品\視窗\物品詳細視窗.Designer.cs">
       <DependentUpon>物品詳細視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="物品\資料\匯入\物品總覽更新匯入資料.cs" />
     <Compile Include="物品\資料\匯入\物品條碼更新匯入資料.cs" />
     <Compile Include="物品\資料\物品合併資料999.cs" />
     <Compile Include="物品\資料\匯入\物品新增匯入資料.cs" />
-    <Compile Include="物品\資料\基本\物品小類資料篩選.cs" />
-    <Compile Include="物品\資料\基本\物品品牌資料篩選.cs" />
-    <Compile Include="物品\資料\基本\物品大類資料篩選.cs" />
-    <Compile Include="物品\資料\基本\物品資料篩選.cs" />
+    <Compile Include="物品\資料\物品小類資料篩選.cs" />
+    <Compile Include="物品\資料\物品品牌資料篩選.cs" />
+    <Compile Include="物品\資料\物品大類資料篩選.cs" />
+    <Compile Include="物品\資料\物品資料篩選.cs" />
     <Compile Include="物品\轉換\物品新增錯誤匯出轉換.cs" />
     <Compile Include="物品\轉換\物品條碼更新錯誤匯出轉換.cs" />
     <Compile Include="發票\控制\發票匯入管理器.cs" />
@@ -831,10 +831,10 @@
     <Compile Include="通用\資料99\管理\暫存資料管理器99.cs" />
     <Compile Include="通用\資料99\管理\匯入資料管理器99.cs" />
     <Compile Include="通用\資料99\靜態匯入資料99.cs" />
-    <Compile Include="物品\資料\基本\物品品牌資料.cs" />
-    <Compile Include="物品\資料\基本\物品小類資料.cs" />
-    <Compile Include="物品\資料\基本\物品大類資料.cs" />
-    <Compile Include="物品\資料\基本\物品資料.cs" />
+    <Compile Include="物品\資料\物品品牌資料.cs" />
+    <Compile Include="物品\資料\物品小類資料.cs" />
+    <Compile Include="物品\資料\物品大類資料.cs" />
+    <Compile Include="物品\資料\物品資料.cs" />
     <Compile Include="物品\轉換\物品盤點匯出轉換.cs" />
     <Compile Include="通用\視窗99\其他\選取元件介面.cs" />
     <Compile Include="通用\視窗99\其他\頁索引上層介面.cs" />
@@ -1354,10 +1354,10 @@
     <EmbeddedResource Include="物品\視窗\匯入\物品新增匯入視窗.resx">
       <DependentUpon>物品新增匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\基本\物品品牌總覽視窗.resx">
+    <EmbeddedResource Include="物品\視窗\物品品牌總覽視窗.resx">
       <DependentUpon>物品品牌總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\基本\物品大類總覽視窗.resx">
+    <EmbeddedResource Include="物品\視窗\物品大類總覽視窗.resx">
       <DependentUpon>物品大類總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\匯入\物品總覽更新匯入視窗.resx">
@@ -1381,19 +1381,19 @@
     <EmbeddedResource Include="物品\視窗\元件\物品大類選取元件.resx">
       <DependentUpon>物品大類選取元件.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\基本\物品小類總覽視窗.resx">
+    <EmbeddedResource Include="物品\視窗\物品小類總覽視窗.resx">
       <DependentUpon>物品小類總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\基本\物品總覽視窗.resx">
+    <EmbeddedResource Include="物品\視窗\物品總覽視窗.resx">
       <DependentUpon>物品總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\基本\物品篩選視窗.resx">
+    <EmbeddedResource Include="物品\視窗\物品篩選視窗.resx">
       <DependentUpon>物品篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\匯入\物品新增匯入詳細視窗.resx">
       <DependentUpon>物品新增匯入詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\基本\物品詳細視窗.resx">
+    <EmbeddedResource Include="物品\視窗\物品詳細視窗.resx">
       <DependentUpon>物品詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="發票\視窗\發票匯入視窗.resx">
