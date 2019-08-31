@@ -28,9 +28,7 @@ namespace WokyTool.聯絡人
 
             初始化();
 
-            this.更新狀態.DataSource = Enum.GetValues(typeof(列舉.更新狀態));
-
-            資料綁定(this.更新狀態, "更新狀態");
+            資料綁定(this.更新狀態選取元件1, "更新狀態");
             資料綁定(this.錯誤訊息, "錯誤訊息");
 
             資料綁定(this.姓名, "姓名");

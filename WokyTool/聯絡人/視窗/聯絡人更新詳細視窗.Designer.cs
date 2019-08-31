@@ -53,21 +53,19 @@
             this.參考姓名 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.更新狀態 = new System.Windows.Forms.ComboBox();
             this.更新狀態BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.錯誤訊息 = new System.Windows.Forms.TextBox();
             this.新版頁索引元件1 = new WokyTool.通用.新版頁索引元件();
+            this.更新狀態選取元件1 = new WokyTool.通用.更新狀態選取元件();
             ((System.ComponentModel.ISupportInitialize)(this.更新狀態BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // 客戶
             // 
             this.客戶.Location = new System.Drawing.Point(300, 93);
-            this.客戶.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.客戶.Margin = new System.Windows.Forms.Padding(4);
             this.客戶.Name = "客戶";
             this.客戶.ReadOnly = false;
             this.客戶.SelectedItem = null;
@@ -159,7 +157,7 @@
             // 子客戶
             // 
             this.子客戶.Location = new System.Drawing.Point(301, 121);
-            this.子客戶.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.子客戶.Margin = new System.Windows.Forms.Padding(4);
             this.子客戶.Name = "子客戶";
             this.子客戶.ReadOnly = false;
             this.子客戶.SelectedItem = null;
@@ -169,7 +167,7 @@
             // 參考子客戶
             // 
             this.參考子客戶.Location = new System.Drawing.Point(876, 121);
-            this.參考子客戶.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.參考子客戶.Margin = new System.Windows.Forms.Padding(4);
             this.參考子客戶.Name = "參考子客戶";
             this.參考子客戶.ReadOnly = true;
             this.參考子客戶.SelectedItem = null;
@@ -239,7 +237,7 @@
             // 參考客戶
             // 
             this.參考客戶.Location = new System.Drawing.Point(875, 93);
-            this.參考客戶.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.參考客戶.Margin = new System.Windows.Forms.Padding(4);
             this.參考客戶.Name = "參考客戶";
             this.參考客戶.ReadOnly = true;
             this.參考客戶.SelectedItem = null;
@@ -271,33 +269,6 @@
             this.label12.Size = new System.Drawing.Size(29, 12);
             this.label12.TabIndex = 93;
             this.label12.Text = "客戶";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 14);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(29, 12);
-            this.label13.TabIndex = 106;
-            this.label13.Text = "更新";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(12, 30);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(29, 12);
-            this.label14.TabIndex = 107;
-            this.label14.Text = "狀態";
-            // 
-            // 更新狀態
-            // 
-            this.更新狀態.DataSource = this.更新狀態BindingSource;
-            this.更新狀態.FormattingEnabled = true;
-            this.更新狀態.Location = new System.Drawing.Point(48, 17);
-            this.更新狀態.Name = "更新狀態";
-            this.更新狀態.Size = new System.Drawing.Size(164, 20);
-            this.更新狀態.TabIndex = 108;
             // 
             // 更新狀態BindingSource
             // 
@@ -336,18 +307,26 @@
             this.新版頁索引元件1.Size = new System.Drawing.Size(234, 34);
             this.新版頁索引元件1.TabIndex = 112;
             // 
+            // 更新狀態選取元件1
+            // 
+            this.更新狀態選取元件1.Location = new System.Drawing.Point(12, 12);
+            this.更新狀態選取元件1.Name = "更新狀態選取元件1";
+            this.更新狀態選取元件1.ReadOnly = true;
+            this.更新狀態選取元件1.SelectedItem = WokyTool.通用.列舉.更新狀態.錯誤;
+            this.更新狀態選取元件1.Size = new System.Drawing.Size(204, 28);
+            this.更新狀態選取元件1.TabIndex = 113;
+            this.更新狀態選取元件1.元件類型 = WokyTool.通用.選取元件類型.指定;
+            // 
             // 聯絡人更新詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 229);
+            this.Controls.Add(this.更新狀態選取元件1);
             this.Controls.Add(this.新版頁索引元件1);
             this.Controls.Add(this.錯誤訊息);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.更新狀態);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.參考子客戶);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.參考電話);
@@ -406,13 +385,11 @@
         private System.Windows.Forms.TextBox 參考姓名;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox 更新狀態;
         private System.Windows.Forms.BindingSource 更新狀態BindingSource;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox 錯誤訊息;
         private 通用.新版頁索引元件 新版頁索引元件1;
+        private 通用.更新狀態選取元件 更新狀態選取元件1;
     }
 }

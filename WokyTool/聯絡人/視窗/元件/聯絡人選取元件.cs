@@ -12,7 +12,7 @@ using WokyTool.客戶;
 
 namespace WokyTool.聯絡人
 {
-    public partial class 聯絡人選取元件 : 新版抽象選取元件
+    public partial class 聯絡人選取元件 : 抽象資料選取元件
     {
         public override BindingSource 資料BS { get { return this.聯絡人資料BindingSource; } }
         public override ComboBox 下拉選單 { get { return this.comboBox1; } }

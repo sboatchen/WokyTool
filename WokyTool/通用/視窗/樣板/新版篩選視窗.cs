@@ -70,7 +70,7 @@ namespace WokyTool.通用
             _視窗凍結工作列.Add(() => 屬性_.SetValue(視窗篩選器, 元件_.Text));
         }
 
-        protected void 資料綁定(新版抽象選取元件 元件_, string 屬性名稱_)
+        protected void 資料綁定(抽象資料選取元件 元件_, string 屬性名稱_)
         {
             元件_.DataBindings.Add("SelectedItem", 視窗篩選器, 屬性名稱_);
 

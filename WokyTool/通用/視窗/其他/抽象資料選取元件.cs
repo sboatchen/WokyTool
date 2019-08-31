@@ -14,7 +14,7 @@ namespace WokyTool.通用
         篩選,
     };
 
-    public class 新版抽象選取元件 : UserControl
+    public class 抽象資料選取元件 : UserControl
     {
         public virtual BindingSource 資料BS { get { throw new Exception(this.GetType().Name + " 未設定資料BS"); } }
         public virtual ComboBox 下拉選單 { get { throw new Exception(this.GetType().Name + " 未設定下拉選單"); } }

@@ -43,9 +43,9 @@
             this.檔案ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.快速 = new System.Windows.Forms.Button();
             this.資料ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.物品合併ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.快速 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,16 +172,6 @@
             this.imageToolStripMenuItem.Text = "Image";
             this.imageToolStripMenuItem.Click += new System.EventHandler(this.imageToolStripMenuItem_Click);
             // 
-            // 快速
-            // 
-            this.快速.Location = new System.Drawing.Point(23, 52);
-            this.快速.Name = "快速";
-            this.快速.Size = new System.Drawing.Size(75, 23);
-            this.快速.TabIndex = 1;
-            this.快速.Text = "快速";
-            this.快速.UseVisualStyleBackColor = true;
-            this.快速.Click += new System.EventHandler(this.快速_Click);
-            // 
             // 資料ToolStripMenuItem
             // 
             this.資料ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -193,9 +183,19 @@
             // 物品合併ToolStripMenuItem
             // 
             this.物品合併ToolStripMenuItem.Name = "物品合併ToolStripMenuItem";
-            this.物品合併ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.物品合併ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.物品合併ToolStripMenuItem.Text = "物品合併";
             this.物品合併ToolStripMenuItem.Click += new System.EventHandler(this.物品合併ToolStripMenuItem_Click);
+            // 
+            // 快速
+            // 
+            this.快速.Location = new System.Drawing.Point(23, 52);
+            this.快速.Name = "快速";
+            this.快速.Size = new System.Drawing.Size(75, 23);
+            this.快速.TabIndex = 1;
+            this.快速.Text = "快速";
+            this.快速.UseVisualStyleBackColor = true;
+            this.快速.Click += new System.EventHandler(this.快速_Click);
             // 
             // 測試主視窗
             // 

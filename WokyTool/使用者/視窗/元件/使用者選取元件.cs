@@ -12,7 +12,7 @@ using WokyTool.Common;
 
 namespace WokyTool.使用者
 {
-    public partial class 使用者選取元件 : 新版抽象選取元件
+    public partial class 使用者選取元件 : 抽象資料選取元件
     {
         public override BindingSource 資料BS { get { return this.使用者資料BindingSource; } }
         public override ComboBox 下拉選單 { get { return this.comboBox1; } }

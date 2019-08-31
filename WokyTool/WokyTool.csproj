@@ -703,6 +703,15 @@
     <Compile Include="通用\檔案\元件\PDF圖片字串讀出元件.cs" />
     <Compile Include="通用\檔案\元件\PDF字串讀出元件.cs" />
     <Compile Include="通用\檔案\檔案_PDF.cs" />
+    <Compile Include="通用\視窗\其他\抽象列舉選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="通用\視窗\選取\更新狀態選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="通用\視窗\選取\更新狀態選取元件.Designer.cs">
+      <DependentUpon>更新狀態選取元件.cs</DependentUpon>
+    </Compile>
     <Compile Include="通用\視窗\樣板\更新詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -758,7 +767,7 @@
     <Compile Include="通用\檔案\檔案_EXCEL.cs" />
     <Compile Include="通用\其他\系統參數.cs" />
     <Compile Include="通用\視窗99\其他\資料列選取插件2.cs" />
-    <Compile Include="通用\視窗\其他\新版抽象選取元件.cs">
+    <Compile Include="通用\視窗\其他\抽象資料選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="通用\視窗\其他\新版頁索引元件.cs">
@@ -1404,6 +1413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="聯絡人\視窗\聯絡人詳細視窗.resx">
       <DependentUpon>聯絡人詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="通用\視窗\選取\更新狀態選取元件.resx">
+      <DependentUpon>更新狀態選取元件.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="通用\轉換\視窗\通用匯出視窗.resx">
       <DependentUpon>通用匯出視窗.cs</DependentUpon>

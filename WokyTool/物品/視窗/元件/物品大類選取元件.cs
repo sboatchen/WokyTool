@@ -11,7 +11,7 @@ using WokyTool.通用;
 
 namespace WokyTool.物品
 {
-    public partial class 物品大類選取元件 : 新版抽象選取元件
+    public partial class 物品大類選取元件 : 抽象資料選取元件
     {
         public override BindingSource 資料BS { get { return this.物品大類資料BindingSource; } }
         public override ComboBox 下拉選單 { get { return this.comboBox1; } }

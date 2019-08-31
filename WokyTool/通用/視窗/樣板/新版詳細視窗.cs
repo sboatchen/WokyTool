@@ -101,7 +101,7 @@ namespace WokyTool.通用
             元件_.ReadOnly |= !編輯管理器.是否可編輯;
         }
 
-        protected void 資料綁定(新版抽象選取元件 元件_, string 屬性名稱_)
+        protected void 資料綁定(抽象資料選取元件 元件_, string 屬性名稱_)
         {
             元件_.DataBindings.Add("SelectedItem", 資料BS, 屬性名稱_);
             元件_.ReadOnly |= !編輯管理器.是否可編輯;
