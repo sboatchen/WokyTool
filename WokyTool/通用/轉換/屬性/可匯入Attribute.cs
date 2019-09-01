@@ -13,8 +13,13 @@ namespace WokyTool.通用
 
         public string 說明 { get; set; }
 
-        public int 優先級 { get; set; }    // 越大越優先
+        public int 優先級 { get; set; }    // 越小越優先
 
         public bool 識別 { get; set; }
+
+        public 可匯入Attribute()
+        {
+            優先級 = Int32.MaxValue;
+        }
     }
 }

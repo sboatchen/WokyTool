@@ -104,7 +104,7 @@ namespace WokyTool.通用
 
         public override void EndEdit()
         {
-            Console.WriteLine("@@完成編輯:" + this.ToString(false));
+            //Console.WriteLine("完成編輯:" + this.ToString(false));
             更新編輯狀態();
         }
 
@@ -160,7 +160,7 @@ namespace WokyTool.通用
 
         public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
         {
-            Console.WriteLine("@@合法檢查:" + this.ToString(false));
+            //Console.WriteLine("合法檢查:" + this.ToString(false));
             switch (更新狀態)
             {
                 case 列舉.更新狀態.相同:

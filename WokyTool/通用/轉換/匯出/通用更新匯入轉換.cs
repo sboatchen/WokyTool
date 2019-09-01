@@ -60,7 +60,7 @@ namespace WokyTool.通用
             if (false == 是否有識別欄位_)
                 throw new Exception("缺少識別欄位");
 
-            _方法資料列 = _方法資料列.OrderByDescending(Value => Value.優先級).ToList();
+            _方法資料列 = _方法資料列.OrderBy(Value => Value.優先級).ToList();
         }
 
         public IEnumerable<T> 讀出資料(string[] 資料列_)
