@@ -44,14 +44,7 @@ namespace WokyTool.公司
             if (String.IsNullOrEmpty(名稱_) || 字串.無.Equals(名稱_))
                 return 空白資料;
 
-            公司資料 資料_ = _資料書.Values
-                                   .Where(Value => 名稱_.Equals(Value.名稱))
-                                   .FirstOrDefault();
-
-            if (資料_ == null)
-                return 錯誤資料;
-            else
-                return 資料_;
+            return _資料書.Values.Where(Value => 名稱_.Equals(Value.名稱)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
         }
     }
 }

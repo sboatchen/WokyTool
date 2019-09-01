@@ -69,14 +69,7 @@ namespace WokyTool.使用者
             if (_管理者.名稱.Equals(名稱_))
                 return _管理者;
 
-            使用者資料 資料_ = _資料書.Values
-                                   .Where(Value => 名稱_.Equals(Value.名稱) || 名稱_.Equals(Value.帳號))
-                                   .FirstOrDefault();
-
-            if (資料_ == null)
-                return 錯誤資料;
-            else
-                return 資料_;
+            return _資料書.Values.Where(Value => 名稱_.Equals(Value.名稱) || 名稱_.Equals(Value.帳號)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
         }
 
         public 使用者資料 登入(String 帳號_, string 密碼_)
