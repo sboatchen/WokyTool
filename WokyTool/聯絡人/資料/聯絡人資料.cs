@@ -69,6 +69,8 @@ namespace WokyTool.聯絡人
         [可匯出(名稱 = "子客戶")]
         public string 子客戶名稱 { get { return 子客戶.名稱; } }
 
+        /********************************/
+
         public 聯絡人資料 Self { get { return this; } }
 
         public 聯絡人資料()

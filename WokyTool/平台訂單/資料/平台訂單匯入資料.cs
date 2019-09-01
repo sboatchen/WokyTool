@@ -87,7 +87,7 @@ namespace WokyTool.平台訂單
             }
             set
             {
-                _商品 = 商品資料管理器.獨體.Get(value);
+                _商品 = 商品資料管理器.獨體.取得(value);
             }
         }
 
@@ -96,11 +96,6 @@ namespace WokyTool.平台訂單
         {
             get
             {
-                if (_商品 == null)
-                    _商品 = 商品資料.NULL;
-                else if (商品資料管理器.獨體.唯讀BList.Contains(_商品) == false)
-                    _商品 = 商品資料.ERROR;
-
                 return _商品;
             }
             set

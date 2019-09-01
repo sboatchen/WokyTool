@@ -43,11 +43,6 @@ namespace WokyTool.月結帳
         {
             get
             {
-                if (_商品 == null)
-                    _商品 = 商品資料.NULL;
-                else if (商品資料管理器.獨體.唯讀BList.Contains(_商品) == false)
-                    _商品 = 商品資料.ERROR;
-
                 return _商品;
             }
             set
@@ -82,7 +77,7 @@ namespace WokyTool.月結帳
             設定 = 月結帳匯入設定資料.NULL,
 
             商品識別 = 字串.無,
-            商品 = 商品資料.NULL,
+            商品 = 商品資料.空白,
 
             數量 = 0,
             單價 = 0,
@@ -101,7 +96,7 @@ namespace WokyTool.月結帳
             設定 = 月結帳匯入設定資料.ERROR,
 
             商品識別 = 字串.錯誤,
-            商品 = 商品資料.ERROR,
+            商品 = 商品資料.錯誤,
 
             數量 = 0,
             單價 = 0,
