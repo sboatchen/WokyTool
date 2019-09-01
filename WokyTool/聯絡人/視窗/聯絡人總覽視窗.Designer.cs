@@ -44,6 +44,8 @@ namespace WokyTool.聯絡人
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.通用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.聯絡人資料BindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -125,7 +127,8 @@ namespace WokyTool.聯絡人
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.篩選ToolStripMenuItem,
             this.檢查ToolStripMenuItem,
-            this.匯出ToolStripMenuItem});
+            this.匯出ToolStripMenuItem,
+            this.更新ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(944, 24);
@@ -157,6 +160,21 @@ namespace WokyTool.聯絡人
             this.自訂ToolStripMenuItem.Name = "自訂ToolStripMenuItem";
             this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.自訂ToolStripMenuItem.Text = "自訂";
+            // 
+            // 更新ToolStripMenuItem
+            // 
+            this.更新ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.通用ToolStripMenuItem});
+            this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
+            this.更新ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.更新ToolStripMenuItem.Text = "更新";
+            // 
+            // 通用ToolStripMenuItem
+            // 
+            this.通用ToolStripMenuItem.Name = "通用ToolStripMenuItem";
+            this.通用ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.通用ToolStripMenuItem.Text = "通用";
+            this.通用ToolStripMenuItem.Click += new System.EventHandler(this.通用ToolStripMenuItem_Click);
             // 
             // 聯絡人總覽視窗
             // 
@@ -194,5 +212,7 @@ namespace WokyTool.聯絡人
         private System.Windows.Forms.DataGridViewTextBoxColumn 手機DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 地址DataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem 自訂ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 更新ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 通用ToolStripMenuItem;
     }
 }

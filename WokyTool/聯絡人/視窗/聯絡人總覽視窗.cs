@@ -29,5 +29,12 @@ namespace WokyTool.聯絡人
 
             this.初始化();
         }
+
+        private void 通用ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var i = new 聯絡人更新視窗();
+            i.Show();
+            i.BringToFront();
+        }
     }
 }

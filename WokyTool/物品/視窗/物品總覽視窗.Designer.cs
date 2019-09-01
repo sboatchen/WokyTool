@@ -38,9 +38,6 @@ namespace WokyTool.物品
             this.盤點ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.通用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.條碼ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.重新匯入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.類別ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new WokyTool.通用.MyDataGridView();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -116,10 +113,7 @@ namespace WokyTool.物品
             // 更新ToolStripMenuItem
             // 
             this.更新ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.通用ToolStripMenuItem,
-            this.條碼ToolStripMenuItem,
-            this.重新匯入ToolStripMenuItem,
-            this.類別ToolStripMenuItem});
+            this.通用ToolStripMenuItem});
             this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
             this.更新ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.更新ToolStripMenuItem.Text = "更新";
@@ -130,27 +124,6 @@ namespace WokyTool.物品
             this.通用ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.通用ToolStripMenuItem.Text = "通用";
             this.通用ToolStripMenuItem.Click += new System.EventHandler(this.通用ToolStripMenuItem_Click);
-            // 
-            // 條碼ToolStripMenuItem
-            // 
-            this.條碼ToolStripMenuItem.Name = "條碼ToolStripMenuItem";
-            this.條碼ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.條碼ToolStripMenuItem.Text = "條碼";
-            this.條碼ToolStripMenuItem.Click += new System.EventHandler(this.條碼ToolStripMenuItem_Click);
-            // 
-            // 重新匯入ToolStripMenuItem
-            // 
-            this.重新匯入ToolStripMenuItem.Name = "重新匯入ToolStripMenuItem";
-            this.重新匯入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.重新匯入ToolStripMenuItem.Text = "重新匯入";
-            this.重新匯入ToolStripMenuItem.Click += new System.EventHandler(this.重新匯入ToolStripMenuItem_Click);
-            // 
-            // 類別ToolStripMenuItem
-            // 
-            this.類別ToolStripMenuItem.Name = "類別ToolStripMenuItem";
-            this.類別ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.類別ToolStripMenuItem.Text = "類別";
-            this.類別ToolStripMenuItem.Click += new System.EventHandler(this.類別ToolStripMenuItem_Click);
             // 
             // 物品資料BindingSource
             // 
@@ -323,8 +296,6 @@ namespace WokyTool.物品
         private System.Windows.Forms.BindingSource 物品資料BindingSource;
         private MyDataGridView dataGridView1;
         private System.Windows.Forms.ToolStripMenuItem 更新ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 條碼ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 重新匯入ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 檢查ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 大類名稱DataGridViewTextBoxColumn;
@@ -343,7 +314,6 @@ namespace WokyTool.物品
         private System.Windows.Forms.DataGridViewTextBoxColumn 最後進貨成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本備註DataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripMenuItem 類別ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 通用ToolStripMenuItem;
     }
 }
