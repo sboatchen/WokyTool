@@ -48,22 +48,15 @@ namespace WokyTool.物品
             訊息管理器.獨體.通知("匯出完成");
         }
 
-
-
-
-
-
-
-
-
-
-
-        private void 物品ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 通用ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var i = new 物品新增匯入視窗();
+            var i = new 物品更新視窗();
             i.Show();
             i.BringToFront();
         }
+
+
+
 
         private void 條碼ToolStripMenuItem_Click(object sender, EventArgs e)
         {

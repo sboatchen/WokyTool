@@ -88,9 +88,10 @@ namespace WokyTool.測試
 
         public void 初始化() { ; }
 
-        public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
+        public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null, 基本資料 資料參考_ = null)
         {
             基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
+            //基本資料 參考_ = (資料參考_ == null) ? this : 資料參考_;
 
             if (整數 < 0)
                 檢查器_.錯誤(資料_, "整數不合法");

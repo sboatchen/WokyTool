@@ -17,28 +17,24 @@ namespace WokyTool.聯絡人
     [JsonObject(MemberSerialization.OptIn)]
     public class 聯絡人更新資料 : 可更新資料<聯絡人資料>
     {
-
-        [可匯入(名稱 = "編號", 優先級 = Int32.MaxValue, 識別 = true)]
+        [可匯入(優先級 = 1, 識別 = true)]
         [JsonProperty]
-        public string 編號識別 
+        public int 編號
         {
             get
             {
-                return _編號識別;
+                return 修改.編號;
             }
             set
             {
-                _編號識別 = value;
-                if (參考 == null && string.IsNullOrEmpty(value) == false)
-                {
-                    int 編號_ = Int32.Parse(value);
-                    參考 = 聯絡人資料管理器.獨體.取得(編號_);
-                    修改 = 參考.深複製();
-                }
+                參考 = 聯絡人資料管理器.獨體.取得(value);
+                修改 = 參考.深複製();
+
+                修改.編號 = value;
             }
         }
 
-        [可匯入(優先級 = 1, 識別 = true)]
+        [可匯入(優先級 = 2, 識別 = true)]
         [JsonProperty]
         public string 姓名
         {
@@ -48,7 +44,7 @@ namespace WokyTool.聯絡人
             }
             set
             {
-                if (參考 == null || string.IsNullOrEmpty(編號識別))
+                if (參考 == null)
                 {
                     參考 = 聯絡人資料管理器.獨體.取得(value);
                     修改 = 參考.深複製();
@@ -132,7 +128,6 @@ namespace WokyTool.聯絡人
 
         /********************************/
 
-        private string _編號識別;
         private string _客戶識別;
         private string _子客戶識別;
 

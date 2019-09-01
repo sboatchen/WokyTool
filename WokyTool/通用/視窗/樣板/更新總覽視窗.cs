@@ -107,6 +107,12 @@ namespace WokyTool.通用
                 }
             }
 
+            if (篩選視窗 != null)
+                篩選視窗.關閉();
+
+            if (詳細視窗 != null)
+                詳細視窗.關閉();
+
             視窗關閉();
         }
 
@@ -137,7 +143,7 @@ namespace WokyTool.通用
         private void _樣板(object sender, EventArgs e)
         {
             通用標頭匯出轉換 轉換_ = new 通用標頭匯出轉換(資料類型);
-            String 標題_ = String.Format("{0}更新樣板", 資料類型.Name);
+            String 標題_ = String.Format("{0}樣板", 資料類型.Name);
             檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.通知("匯出完成");

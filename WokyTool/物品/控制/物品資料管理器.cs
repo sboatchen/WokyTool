@@ -39,7 +39,7 @@ namespace WokyTool.物品
         }
 
         // 取得資料
-        public 物品資料 取得(string 名稱_)
+        public 物品資料 取得(string 名稱_)  //@@ check use
         {
             if (String.IsNullOrEmpty(名稱_) || 字串.無.Equals(名稱_))
                 return 空白資料;
@@ -54,20 +54,29 @@ namespace WokyTool.物品
                 return 資料_;
         }
 
+        public 物品資料 取得_名稱(string 名稱_)
+        {
+            if (String.IsNullOrEmpty(名稱_))
+                return 空白資料;
+
+            return _資料書.Values.Where(Value => 名稱_.Equals(Value.名稱)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
+        }
+
+        public 物品資料 取得_縮寫(string 縮寫_)
+        {
+            if (String.IsNullOrEmpty(縮寫_))
+                return 空白資料;
+
+            return _資料書.Values.Where(Value => 縮寫_.Equals(Value.縮寫)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
+        }
+
         // 取得資料
         public 物品資料 取得_條碼(string 條碼_)
         {
             if (String.IsNullOrEmpty(條碼_))
                 return 空白資料;
 
-            物品資料 資料_ = _資料書.Values
-                                .Where(Value => 條碼_.Equals(Value.條碼))
-                                .FirstOrDefault();
-
-            if (資料_ == null)
-                return 錯誤資料;
-            else
-                return 資料_;
+            return _資料書.Values.Where(Value => 條碼_.Equals(Value.條碼)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
         }
     }
 }

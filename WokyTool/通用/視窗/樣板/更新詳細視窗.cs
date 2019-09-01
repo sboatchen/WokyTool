@@ -147,6 +147,20 @@ namespace WokyTool.通用
             參考元件_.TextChanged += 比較處理_;
         }
 
+        protected void 資料異動顯示綁定(NumericUpDown 修改元件_, NumericUpDown 參考元件_)
+        {
+            EventHandler 比較處理_ = new EventHandler(delegate(Object o, EventArgs a)
+            {
+                if (修改元件_.Value == 參考元件_.Value)
+                    修改元件_.ForeColor = Color.Black;
+                else
+                    修改元件_.ForeColor = Color.Red;
+            });
+
+            修改元件_.ValueChanged += 比較處理_;
+            參考元件_.ValueChanged += 比較處理_;
+        }
+
         /********************************/
         // 通用視窗介面
 

@@ -107,21 +107,22 @@ namespace WokyTool.使用者
 
         /********************************/
 
-        public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
+        public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null, 基本資料 資料參考_ = null)
         {
             基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
+            基本資料 參考_ = (資料參考_ == null) ? this : 資料參考_;
 
             if (String.IsNullOrEmpty(帳號))
                 檢查器_.錯誤(資料_, "帳號不合法");
-            else if (使用者資料管理器.獨體.資料列舉2.Where(Value => 帳號.Equals(Value.帳號)).Count() > 1)
-                檢查器_.錯誤(資料_, "帳號重複");
+            else if (使用者資料管理器.獨體.資料列舉2.Where(Value => Value != 參考_ && 帳號.Equals(Value.帳號)).Any())
+                檢查器_.錯誤(資料_, "名稱重複");
 
             if (String.IsNullOrEmpty(密碼))
                 檢查器_.錯誤(資料_, "密碼不合法");
 
             if (String.IsNullOrEmpty(名稱))
                 檢查器_.錯誤(資料_, "名稱不合法");
-            else if (使用者資料管理器.獨體.資料列舉2.Where(Value => 名稱.Equals(Value.名稱)).Count() > 1)
+            else if (使用者資料管理器.獨體.資料列舉2.Where(Value => Value != 參考_ && 名稱.Equals(Value.名稱)).Any())
                 檢查器_.錯誤(資料_, "名稱重複");
         }
     }

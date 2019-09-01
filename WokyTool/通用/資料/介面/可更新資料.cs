@@ -23,7 +23,7 @@ namespace WokyTool.通用
         [JsonProperty]
         public string 錯誤訊息 { get; set; }
 
-        [可匯入(名稱 = "處理方式")]
+        [可匯入(名稱 = "處理方式", 說明 = "更新/新增/刪除")]
         public string 處理方式識別
         {
             get
@@ -158,7 +158,7 @@ namespace WokyTool.通用
             }
         }
 
-        public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
+        public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null, 基本資料 資料參考_ = null)
         {
             //Console.WriteLine("合法檢查:" + this.ToString(false));
             switch (更新狀態)
@@ -173,9 +173,15 @@ namespace WokyTool.通用
                     參考.刪除檢查(檢查器_);
                     break;
                 case 列舉.更新狀態.新增:
-                case 列舉.更新狀態.更新:
                     錯誤訊息 = null;
                     修改.合法檢查(檢查器_, this);
+                    break;
+                case 列舉.更新狀態.更新:
+                    錯誤訊息 = null;
+                    修改.合法檢查(檢查器_, this, 參考);
+                    break;
+                default:
+                    訊息管理器.獨體.錯誤("未處理類型:" + 更新狀態);
                     break;
             }
         }

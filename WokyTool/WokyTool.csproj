@@ -549,19 +549,13 @@
     <Compile Include="測試\資料\讀寫測試資料篩選.cs" />
     <Compile Include="測試\資料\讀寫測試資料.cs" />
     <Compile Include="測試\轉換\讀寫測試轉換.cs" />
-    <Compile Include="物品\控制\匯入\物品新增匯入管理器.cs" />
     <Compile Include="物品\控制\匯入\物品總覽更新匯入管理器.cs" />
     <Compile Include="物品\控制\匯入\物品條碼更新匯入管理器.cs" />
     <Compile Include="物品\控制\物品資料管理器.cs" />
     <Compile Include="物品\控制\物品品牌資料管理器.cs" />
     <Compile Include="物品\控制\物品小類資料管理器.cs" />
     <Compile Include="物品\控制\物品大類資料管理器.cs" />
-    <Compile Include="物品\視窗\匯入\物品新增匯入視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="物品\視窗\匯入\物品新增匯入視窗.Designer.cs">
-      <DependentUpon>物品新增匯入視窗.cs</DependentUpon>
-    </Compile>
+    <Compile Include="物品\控制\物品更新資料管理器.cs" />
     <Compile Include="物品\視窗\物品品牌總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -634,11 +628,11 @@
     <Compile Include="物品\視窗\物品篩選視窗.Designer.cs">
       <DependentUpon>物品篩選視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\匯入\物品新增匯入詳細視窗.cs">
+    <Compile Include="物品\視窗\物品更新詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\匯入\物品新增匯入詳細視窗.Designer.cs">
-      <DependentUpon>物品新增匯入詳細視窗.cs</DependentUpon>
+    <Compile Include="物品\視窗\物品更新詳細視窗.Designer.cs">
+      <DependentUpon>物品更新詳細視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="物品\視窗\物品詳細視窗.cs">
       <SubType>Form</SubType>
@@ -646,15 +640,21 @@
     <Compile Include="物品\視窗\物品詳細視窗.Designer.cs">
       <DependentUpon>物品詳細視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="物品\視窗\物品更新視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="物品\視窗\物品更新視窗.Designer.cs">
+      <DependentUpon>物品更新視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="物品\資料\匯入\物品總覽更新匯入資料.cs" />
     <Compile Include="物品\資料\匯入\物品條碼更新匯入資料.cs" />
     <Compile Include="物品\資料\物品合併資料999.cs" />
-    <Compile Include="物品\資料\匯入\物品新增匯入資料.cs" />
     <Compile Include="物品\資料\物品小類資料篩選.cs" />
     <Compile Include="物品\資料\物品品牌資料篩選.cs" />
     <Compile Include="物品\資料\物品大類資料篩選.cs" />
+    <Compile Include="物品\資料\物品更新資料.cs" />
+    <Compile Include="物品\資料\物品更新資料篩選.cs" />
     <Compile Include="物品\資料\物品資料篩選.cs" />
-    <Compile Include="物品\轉換\物品新增錯誤匯出轉換.cs" />
     <Compile Include="物品\轉換\物品條碼更新錯誤匯出轉換.cs" />
     <Compile Include="發票\控制\發票匯入管理器.cs" />
     <Compile Include="發票\視窗\發票匯入視窗.cs">
@@ -1351,9 +1351,6 @@
     <EmbeddedResource Include="測試\視窗\資料編輯詳細測試視窗.resx">
       <DependentUpon>資料編輯詳細測試視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\匯入\物品新增匯入視窗.resx">
-      <DependentUpon>物品新增匯入視窗.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品品牌總覽視窗.resx">
       <DependentUpon>物品品牌總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1390,11 +1387,14 @@
     <EmbeddedResource Include="物品\視窗\物品篩選視窗.resx">
       <DependentUpon>物品篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\匯入\物品新增匯入詳細視窗.resx">
-      <DependentUpon>物品新增匯入詳細視窗.cs</DependentUpon>
+    <EmbeddedResource Include="物品\視窗\物品更新詳細視窗.resx">
+      <DependentUpon>物品更新詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品詳細視窗.resx">
       <DependentUpon>物品詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="物品\視窗\物品更新視窗.resx">
+      <DependentUpon>物品更新視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="發票\視窗\發票匯入視窗.resx">
       <DependentUpon>發票匯入視窗.cs</DependentUpon>
@@ -1501,10 +1501,12 @@
     <None Include="Properties\DataSources\WokyTool.物品.物品大類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品小類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品新增匯入資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.物品.物品更新資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品條碼更新匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品總覽更新匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.發票.發票匯入資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.聯絡人.聯絡人更新資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.聯絡人.聯絡人資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+代收方式.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+商品識別.datasource" />

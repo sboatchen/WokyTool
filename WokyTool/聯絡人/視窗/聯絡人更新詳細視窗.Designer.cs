@@ -54,7 +54,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.更新狀態BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.錯誤訊息 = new System.Windows.Forms.TextBox();
             this.新版頁索引元件1 = new WokyTool.通用.新版頁索引元件();
@@ -64,7 +63,7 @@
             // 
             // 客戶
             // 
-            this.客戶.Location = new System.Drawing.Point(300, 93);
+            this.客戶.Location = new System.Drawing.Point(305, 93);
             this.客戶.Margin = new System.Windows.Forms.Padding(4);
             this.客戶.Name = "客戶";
             this.客戶.ReadOnly = false;
@@ -74,7 +73,7 @@
             // 
             // 姓名
             // 
-            this.姓名.Location = new System.Drawing.Point(47, 53);
+            this.姓名.Location = new System.Drawing.Point(52, 53);
             this.姓名.Name = "姓名";
             this.姓名.Size = new System.Drawing.Size(165, 22);
             this.姓名.TabIndex = 76;
@@ -91,7 +90,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(265, 96);
+            this.label5.Location = new System.Drawing.Point(258, 96);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 73;
@@ -99,7 +98,7 @@
             // 
             // 地址
             // 
-            this.地址.Location = new System.Drawing.Point(47, 149);
+            this.地址.Location = new System.Drawing.Point(52, 149);
             this.地址.Name = "地址";
             this.地址.Size = new System.Drawing.Size(421, 22);
             this.地址.TabIndex = 85;
@@ -115,7 +114,7 @@
             // 
             // 手機
             // 
-            this.手機.Location = new System.Drawing.Point(47, 121);
+            this.手機.Location = new System.Drawing.Point(52, 121);
             this.手機.Name = "手機";
             this.手機.Size = new System.Drawing.Size(165, 22);
             this.手機.TabIndex = 87;
@@ -131,7 +130,7 @@
             // 
             // 電話
             // 
-            this.電話.Location = new System.Drawing.Point(47, 93);
+            this.電話.Location = new System.Drawing.Point(52, 93);
             this.電話.Name = "電話";
             this.電話.Size = new System.Drawing.Size(165, 22);
             this.電話.TabIndex = 89;
@@ -156,7 +155,7 @@
             // 
             // 子客戶
             // 
-            this.子客戶.Location = new System.Drawing.Point(301, 121);
+            this.子客戶.Location = new System.Drawing.Point(306, 121);
             this.子客戶.Margin = new System.Windows.Forms.Padding(4);
             this.子客戶.Name = "子客戶";
             this.子客戶.ReadOnly = false;
@@ -194,7 +193,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(587, 96);
+            this.label2.Location = new System.Drawing.Point(579, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 101;
@@ -211,7 +210,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(587, 124);
+            this.label3.Location = new System.Drawing.Point(579, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 99;
@@ -228,7 +227,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(587, 152);
+            this.label4.Location = new System.Drawing.Point(579, 152);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 97;
@@ -255,7 +254,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(587, 56);
+            this.label8.Location = new System.Drawing.Point(579, 56);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 94;
@@ -264,7 +263,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(840, 96);
+            this.label12.Location = new System.Drawing.Point(834, 97);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 12);
             this.label12.TabIndex = 93;
@@ -274,23 +273,14 @@
             // 
             this.更新狀態BindingSource.DataSource = typeof(WokyTool.通用.列舉.更新狀態);
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(265, 28);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(29, 12);
-            this.label15.TabIndex = 110;
-            this.label15.Text = "訊息";
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(265, 12);
+            this.label16.Location = new System.Drawing.Point(244, 21);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(29, 12);
+            this.label16.Size = new System.Drawing.Size(53, 12);
             this.label16.TabIndex = 109;
-            this.label16.Text = "錯誤";
+            this.label16.Text = "錯誤訊息";
             // 
             // 錯誤訊息
             // 
@@ -309,11 +299,11 @@
             // 
             // 更新狀態選取元件1
             // 
-            this.更新狀態選取元件1.Location = new System.Drawing.Point(12, 12);
+            this.更新狀態選取元件1.Location = new System.Drawing.Point(-1, 12);
             this.更新狀態選取元件1.Name = "更新狀態選取元件1";
             this.更新狀態選取元件1.ReadOnly = true;
             this.更新狀態選取元件1.SelectedItem = WokyTool.通用.列舉.更新狀態.錯誤;
-            this.更新狀態選取元件1.Size = new System.Drawing.Size(204, 28);
+            this.更新狀態選取元件1.Size = new System.Drawing.Size(221, 28);
             this.更新狀態選取元件1.TabIndex = 113;
             this.更新狀態選取元件1.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
@@ -325,7 +315,6 @@
             this.Controls.Add(this.更新狀態選取元件1);
             this.Controls.Add(this.新版頁索引元件1);
             this.Controls.Add(this.錯誤訊息);
-            this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.參考子客戶);
             this.Controls.Add(this.label1);
@@ -386,7 +375,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.BindingSource 更新狀態BindingSource;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox 錯誤訊息;
         private 通用.新版頁索引元件 新版頁索引元件1;

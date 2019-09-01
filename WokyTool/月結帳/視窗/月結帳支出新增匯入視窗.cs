@@ -19,7 +19,6 @@ namespace WokyTool.月結帳
     public partial class 月結帳支出新增匯入視窗 : 匯入視窗
     {
         protected 月結帳支出新增匯入管理器 _月結帳支出新增匯入管理器 = new 月結帳支出新增匯入管理器();
-        protected 物品新增匯入詳細視窗 _物品新增匯入詳細視窗 = null;
 
         private int _廠商資料版本 = -1;
 

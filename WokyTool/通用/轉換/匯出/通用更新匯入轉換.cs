@@ -49,8 +49,60 @@ namespace WokyTool.通用
                 通用更新匯入欄位方法資料 方法_ = new 通用更新匯入欄位方法資料
                 {
                     優先級 = 屬性_.優先級,
-                    方法 = (TSource, TValue) => 欄位_.SetValue(TSource, TValue[資料索引_])
                 };
+
+                switch (欄位_.PropertyType.Name)
+                {
+                    case "String":
+                        方法_.方法 = (TSource, TValue) =>
+                        {
+                            string 值_ = TValue[資料索引_];
+                            if (string.IsNullOrEmpty(值_))
+                                欄位_.SetValue(TSource, null);
+                            else
+                                欄位_.SetValue(TSource, 值_);
+
+                        };
+                        break;
+                    case "Int32":
+                        方法_.方法 = (TSource, TValue) =>
+                        {
+                            string 值_ = TValue[資料索引_];
+                            if (string.IsNullOrEmpty(值_))
+                                欄位_.SetValue(TSource, 0);
+                            else
+                                欄位_.SetValue(TSource, Int32.Parse(值_));
+
+                        };
+                        break;
+                    case "Int64":
+                        方法_.方法 = (TSource, TValue) =>
+                        {
+                            string 值_ = TValue[資料索引_];
+                            if (string.IsNullOrEmpty(值_))
+                                欄位_.SetValue(TSource, 0);
+                            else
+                                欄位_.SetValue(TSource, Int64.Parse(值_));
+
+                        };
+                        break;
+                    case "Decimal":
+                        方法_.方法 = (TSource, TValue) =>
+                        {
+                            string 值_ = TValue[資料索引_];
+                            if (string.IsNullOrEmpty(值_))
+                                欄位_.SetValue(TSource, 0);
+                            else
+                                欄位_.SetValue(TSource, Decimal.Parse(值_));
+
+                        };
+                        break;
+                    default:
+                        訊息管理器.獨體.錯誤("不支援欄位類型轉換:" + 欄位_.PropertyType.Name);
+                        break;
+
+                }
+
 
                 是否有識別欄位_ |= 屬性_.識別;
 

@@ -42,11 +42,13 @@ namespace WokyTool.通用
                 else
                     App_.Cells[1, 目前欄數_] = 屬性_.名稱;
 
-                if (false == string.IsNullOrEmpty(屬性_.說明))
-                    App_.Cells[2, 目前欄數_] = 屬性_.說明;
-
                 if (屬性_.識別)
-                    App_.Cells[3, 目前欄數_] = "識別:" + 屬性_.優先級;
+                    App_.Cells[2, 目前欄數_] = "識別:" + 屬性_.優先級;
+
+                if (false == string.IsNullOrEmpty(屬性_.說明))
+                    App_.Cells[3, 目前欄數_] = 屬性_.說明;
+
+                
 
                 目前欄數_++;
             }
