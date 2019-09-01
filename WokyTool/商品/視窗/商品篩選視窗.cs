@@ -28,11 +28,6 @@ namespace WokyTool.商品{
 
         protected override void 視窗激活()
         {
-            this.商品大類選取元件1.視窗激活();
-            this.商品小類選取元件1.視窗激活();
-            //@@@this.客戶選取元件1.視窗激活();
-            //@@this.物品選取元件1.視窗激活();
-
             //@@ 目前無法解決資料更新時 會預設選第一個當值
             this.商品大類選取元件1.SelectedItem = _商品資料篩選設定.大類;
             this.商品小類選取元件1.SelectedItem = _商品資料篩選設定.小類;

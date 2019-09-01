@@ -29,36 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.更新狀態BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.更新狀態BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(0, 16);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(29, 12);
-            this.label14.TabIndex = 110;
-            this.label14.Text = "狀態";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(0, 0);
+            this.label13.Location = new System.Drawing.Point(0, 6);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(29, 12);
+            this.label13.Size = new System.Drawing.Size(53, 12);
             this.label13.TabIndex = 109;
-            this.label13.Text = "更新";
+            this.label13.Text = "更新狀態";
             // 
             // comboBox1
             // 
             this.comboBox1.DataSource = this.更新狀態BindingSource;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(35, 3);
+            this.comboBox1.Location = new System.Drawing.Point(53, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(164, 20);
             this.comboBox1.TabIndex = 112;
@@ -72,10 +62,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Name = "更新狀態選取元件";
-            this.Size = new System.Drawing.Size(204, 28);
+            this.Size = new System.Drawing.Size(222, 28);
             ((System.ComponentModel.ISupportInitialize)(this.更新狀態BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -84,7 +73,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.BindingSource 更新狀態BindingSource;

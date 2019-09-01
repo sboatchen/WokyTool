@@ -56,7 +56,7 @@ namespace WokyTool
          * 公司
          * 聯絡人
          * 客戶
-         * 
+         * 物品
          * 
          * 
          * 

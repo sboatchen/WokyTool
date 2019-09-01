@@ -23,11 +23,6 @@ namespace WokyTool.商品
         {
             get
             {
-                if (_大類 == null)
-                    _大類 = 商品大類資料.NULL;
-                else if (商品大類資料管理器.獨體.唯讀BList.Contains(_大類) == false)
-                    _大類 = 商品大類資料.ERROR;
-
                 return _大類;
             }
             set
@@ -44,11 +39,6 @@ namespace WokyTool.商品
         {
             get
             {
-                if (_小類 == null)
-                    _小類 = 商品小類資料.NULL;
-                else if (商品小類資料管理器.獨體.唯讀BList.Contains(_小類) == false)
-                    _小類 = 商品小類資料.ERROR;
-
                 return _小類;
             }
             set
@@ -139,8 +129,8 @@ namespace WokyTool.商品
 
         public override void 初始化() 
         {
-            大類 = 商品大類資料管理器.獨體.Get(大類識別);
-            小類 = 商品小類資料管理器.獨體.Get(小類識別);
+            大類 = 商品大類資料管理器.獨體.取得(大類識別);
+            小類 = 商品小類資料管理器.獨體.取得(小類識別);
 
             公司 = 公司資料管理器.獨體.取得(公司識別);
             客戶 = 客戶資料管理器.獨體.取得(客戶識別);

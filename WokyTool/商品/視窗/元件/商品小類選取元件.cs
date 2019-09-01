@@ -11,43 +11,39 @@ using WokyTool.通用;
 
 namespace WokyTool.商品
 {
-    public partial class 商品小類選取元件 : 抽象選取元件
+    public partial class 商品小類選取元件 : 抽象資料選取元件
     {
-        public override ComboBox 下拉選單
-        {
-            get
-            {
-                return this.comboBox1;
-            } 
-        }
+        public override BindingSource 資料BS { get { return this.商品小類資料BindingSource; } }
+        public override ComboBox 下拉選單 { get { return this.comboBox1; } }
 
-        protected override BindingSource 綁定資源
+        protected override 可清單列舉資料管理介面 取得管理器實體()
         {
-            get
+            switch (元件類型)
             {
-                return this.商品小類資料BindingSource;
+                case 選取元件類型.指定:
+                    return 商品小類資料管理器.獨體.清單管理器;
+                case 選取元件類型.篩選:
+                    return 商品小類資料管理器.獨體.篩選管理器;
+                default:
+                    訊息管理器.獨體.錯誤(this.GetType().Name + "不支援元件類型:" + 元件類型);
+                    return null;
             }
         }
 
-        protected override 可選取資料列管理介面 資料管理器
-        {
-            get
-            {
-                return 商品小類資料管理器.獨體;
-            }
-        }
+        public 商品小類資料篩選 篩選器 { get; protected set; }
 
-        protected override object 篩選(String Name_)
+        public 商品小類選取元件(選取元件類型 元件類型_)
         {
-            if (Name_ == null)
-                return 商品小類資料管理器.獨體.唯讀BList;
-            return 商品小類資料管理器.獨體.唯讀BList.Where(Value => Value.名稱.Contains(Name_)).ToList();
-        }
+            元件類型 = 元件類型_;
 
-        public 商品小類選取元件()
-        {
             InitializeComponent();
             初始化();
+
+            篩選器 = (商品小類資料篩選)管理器.視窗篩選器;
+        }
+
+        public 商品小類選取元件() : this(選取元件類型.指定)
+        {
         }
     }
 }

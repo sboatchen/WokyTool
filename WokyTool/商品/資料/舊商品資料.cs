@@ -27,7 +27,7 @@ namespace WokyTool.商品
             }
             set
             {
-                _大類 = 商品大類資料管理器.獨體.Get(value);
+                _大類 = 商品大類資料管理器.獨體.取得(value);
             }
         }
 
@@ -36,11 +36,6 @@ namespace WokyTool.商品
         {
             get
             {
-                if (_大類 == null)
-                    _大類 = 商品大類資料.NULL;
-                else if (商品大類資料管理器.獨體.唯讀BList.Contains(_大類) == false)
-                    _大類 = 商品大類資料.ERROR;
-
                 return _大類;
             }
             set
@@ -58,7 +53,7 @@ namespace WokyTool.商品
             }
             set
             {
-                _小類 = 商品小類資料管理器.獨體.Get(value);
+                _小類 = 商品小類資料管理器.獨體.取得(value);
             }
         }
 
@@ -67,11 +62,6 @@ namespace WokyTool.商品
         {
             get
             {
-                if (_小類 == null)
-                    _小類 = 商品小類資料.NULL;
-                else if (商品小類資料管理器.獨體.唯讀BList.Contains(_小類) == false)
-                    _小類 = 商品小類資料.ERROR;
-
                 return _小類;
             }
             set
@@ -319,8 +309,8 @@ namespace WokyTool.商品
         {
             編號 = 常數.空白資料編碼,
 
-            大類 = 商品大類資料.NULL,
-            小類 = 商品小類資料.NULL,
+            大類 = 商品大類資料.空白,
+            小類 = 商品小類資料.空白,
 
             公司 = 公司資料.空白,
             客戶 = 客戶資料.空白,
@@ -355,8 +345,8 @@ namespace WokyTool.商品
         {
             編號 = 常數.錯誤資料編碼,
 
-            大類 = 商品大類資料.ERROR,
-            小類 = 商品小類資料.ERROR,
+            大類 = 商品大類資料.錯誤,
+            小類 = 商品小類資料.錯誤,
 
             公司 = 公司資料.錯誤,
             客戶 = 客戶資料.錯誤,
@@ -391,8 +381,8 @@ namespace WokyTool.商品
         {
             編號 = 常數.商品折扣資料編碼,
 
-            大類 = 商品大類資料.NULL,
-            小類 = 商品小類資料.NULL,
+            大類 = 商品大類資料.空白,
+            小類 = 商品小類資料.空白,
 
             公司 = 公司資料.空白,
             客戶 = 客戶資料.空白,
