@@ -6,11 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.物品;
+using WokyTool.通用;
 
 namespace WokyTool.商品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 商品組成資料
+    public class 商品組成資料 : 基本資料
     {
         [JsonProperty]
         public int 物品編號
@@ -21,33 +22,18 @@ namespace WokyTool.商品
             }
             set
             {
-                _物品 = 物品資料管理器.獨體.取得(value);
-            }
-        }
-
-        protected 物品資料 _物品;
-        public 物品資料 物品
-        {
-            get
-            {
-                return _物品;
-            }
-            set
-            {
-                _物品 = value;
-            }
-        }
-
-        public String 物品名稱
-        {
-            get
-            {
-                return _物品.名稱;
+                物品 = 物品資料管理器.獨體.取得(value);
             }
         }
 
         [JsonProperty]
         public int 數量 { get; set; }
+
+        /********************************/
+
+        public 物品資料 物品 { get; set; }
+
+        public string 物品名稱 { get { return 物品.名稱; } }
 
         public decimal 成本
         {
@@ -67,17 +53,14 @@ namespace WokyTool.商品
 
         /********************************/
 
-        public 商品組成資料 Self
+        public 商品組成資料 Self { get { return this; } }
+
+        public 商品組成資料()
         {
-            get { return this; }
+            物品 = 物品資料.空白;
         }
 
-        public override int GetHashCode()
-        {
-            return 數量 * 物品編號;
-        }
-
-        public static 商品組成資料 新增(商品組成匯入資料 Item_)
+        public static 商品組成資料 新增(商品組成匯入資料 Item_) //@@ remove
         {
             return new 商品組成資料
             {
@@ -88,24 +71,16 @@ namespace WokyTool.商品
 
         /********************************/
 
-        public void 檢查合法()
+        public void 檢查合法(可檢查介面 檢查器_, 基本資料 資料上層_ = null, 基本資料 資料參考_ = null)
         {
-            if (物品.編號是否合法() == false)
-                throw new Exception("商品組成資料:物品不合法:" + 物品編號);
+            基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
+            //基本資料 參考_ = (資料參考_ == null) ? this : 資料參考_;
 
-            if(數量 <= 0)
-                throw new Exception("商品組成資料:數量不合法:" + 物品編號);
-        }
+            if (false == 物品.編號是否合法())
+                檢查器_.錯誤(資料_, "物品不合法");
 
-        public 商品組成資料 拷貝()
-        {
-            商品組成資料 Data_ = new 商品組成資料
-            {
-                _物品 = this._物品, //@@ 測試加速效果
-                數量 = this.數量,
-            };
-
-            return Data_;
+            if (數量 <= 0)
+                檢查器_.錯誤(資料_, "數量不合法");
         }
     }
 }

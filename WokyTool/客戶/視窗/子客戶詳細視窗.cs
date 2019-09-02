@@ -33,7 +33,7 @@ namespace WokyTool.客戶
             //選擇改變(this, null);
         }
 
-        protected override void 選擇改變(object sender, EventArgs e)
+        protected override void 選擇改變()
         {
             this.聯絡人資料BindingSource.DataSource = ((子客戶資料)(this.資料BS.Current)).聯絡人列舉;
         }

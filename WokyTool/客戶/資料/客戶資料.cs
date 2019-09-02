@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
+using WokyTool.商品;
 using WokyTool.通用;
 using WokyTool.聯絡人;
 
@@ -85,6 +86,11 @@ namespace WokyTool.客戶
             foreach (子客戶資料 子客戶資料_ in 子客戶列舉)
             {
                 檢查器_.錯誤(資料_, "資料綁定中:" + 子客戶資料_.ToString(false));
+            }
+
+            foreach (商品資料 商品資料_ in 商品資料管理器.獨體.資料列舉2.Where(Value => Value.客戶 == this))
+            {
+                檢查器_.錯誤(資料_, "資料綁定中:" + 商品資料_.ToString(false));
             }
         }
     }

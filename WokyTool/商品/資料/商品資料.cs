@@ -13,11 +13,8 @@ using WokyTool.通用;
 namespace WokyTool.商品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 商品資料 : 可記錄資料<商品資料>
+    public class 商品資料 : 新版可記錄資料<商品資料>
     {
-        [JsonProperty]
-        public override int 編號 { get; set; }
-
         [JsonProperty]
         public int 大類編號
         {
@@ -27,20 +24,7 @@ namespace WokyTool.商品
             }
             set
             {
-                _大類 = 商品大類資料管理器.獨體.取得(value);
-            }
-        }
-
-        protected 商品大類資料 _大類;
-        public 商品大類資料 大類
-        {
-            get
-            {
-                return _大類;
-            }
-            set
-            {
-                _大類 = value;
+                大類 = 商品大類資料管理器.獨體.取得(value);
             }
         }
 
@@ -53,22 +37,10 @@ namespace WokyTool.商品
             }
             set
             {
-                _小類 = 商品小類資料管理器.獨體.取得(value);
+                小類 = 商品小類資料管理器.獨體.取得(value);
             }
         }
 
-        protected 商品小類資料 _小類;
-        public 商品小類資料 小類
-        {
-            get
-            {
-                return _小類;
-            }
-            set
-            {
-                _小類 = value;
-            }
-        }
 
         [JsonProperty]
         public int 公司編號
@@ -79,20 +51,7 @@ namespace WokyTool.商品
             }
             set
             {
-                _公司 = 公司資料管理器.獨體.取得(value);
-            }
-        }
-
-        protected 公司資料 _公司;
-        public 公司資料 公司
-        {
-            get
-            {
-                return _公司;
-            }
-            set
-            {
-                _公司 = value;
+                公司 = 公司資料管理器.獨體.取得(value);
             }
         }
 
@@ -105,97 +64,70 @@ namespace WokyTool.商品
             }
             set
             {
-                _客戶 = 客戶資料管理器.獨體.取得(value);
+                客戶 = 客戶資料管理器.獨體.取得(value);
             }
         }
 
-        protected 客戶資料 _客戶;
-        public 客戶資料 客戶
-        {
-            get
-            {
-                return _客戶;
-            }
-            set
-            {
-                _客戶 = value;
-            }
-        }
-
+        [可匯出]
         [JsonProperty]
         public string 品號 { get; set; }   // 對方使用的產品編號
+
+        [可匯出]
         [JsonProperty]
         public string 名稱 { get; set; }    // 對方使用的產品名稱
 
         [JsonProperty]
         public List<商品組成資料> 組成 { get; set; }
 
-        private string _組成字串 = null;
-        public string 組成字串 
-        {
-            get
-            {
-                if (_組成字串 == null)
-                    更新組成字串();
-                return _組成字串;
-            }
-        }
-
-        public void 更新組成字串()
-        {
-            if(組成 == null || 組成.Count == 0)
-            {
-                _組成字串 = 字串.空;
-                return;
-            }
-               
-            StringBuilder SB_ = new StringBuilder();
-            foreach (商品組成資料 商品組成資料_ in 組成)
-            {
-                if(SB_.Length != 0)
-                    SB_.Append("+");
-
-                if(String.IsNullOrEmpty(商品組成資料_.物品.縮寫))
-                    SB_.Append(商品組成資料_.物品.名稱);
-                else
-                     SB_.Append(商品組成資料_.物品.縮寫);
-
-                if (商品組成資料_.數量 != 0)
-                    SB_.Append("*").Append(商品組成資料_.數量);
-            }
-
-            _組成字串 = SB_.ToString();
-        }
-
+        [可匯出]
         [JsonProperty]
         public decimal 進價 { get; set; }
 
+        [可匯出]
         [JsonProperty]
         public decimal 售價 { get; set; }
 
+        [可匯出]
         [JsonProperty]
         public int 寄庫數量 { get; set; }
 
-        public decimal 成本
-        {
-            get
-            {
-                if (組成 == null)
-                    return 0;
-                return 組成.Sum(Value => Value.成本);
-            }
-        }
+        /********************************/
 
-        public int 體積
-        {
-            get
-            {
-                if (組成 == null)
-                    return 0;
-                return 組成.Sum(Value => Value.體積);
-            }
-        }
+        public 商品大類資料 大類 { get; set; }
 
+        public 商品小類資料 小類 { get; set; }
+
+        public 物品品牌資料 品牌 { get; protected set; }
+
+        public 公司資料 公司 { get; set; }
+
+        public 客戶資料 客戶 { get; set; }
+
+        [可匯出(名稱 = "組成")]
+        public string 組成字串 { get; protected set; }
+
+        [可匯出]
+        public int 體積 { get; protected set; }
+
+        [可匯出]
+        public decimal 成本 { get; protected set; }
+
+        [可匯出(名稱 = "大類")]
+        public string 大類名稱 { get { return 大類.名稱; } }
+
+        [可匯出(名稱 = "小類")]
+        public string 小類名稱 { get { return 小類.名稱; } }
+
+        [可匯出(名稱 = "品牌")]
+        public string 品牌名稱 { get { return 品牌.名稱; } }
+
+        [可匯出(名稱 = "公司")]
+        public string 公司名稱 { get { return 公司.名稱; } }
+
+        [可匯出(名稱 = "客戶")]
+        public string 客戶名稱 { get { return 客戶.名稱; } }
+
+        [可匯出]
         public decimal 利潤
         {
             get
@@ -204,43 +136,35 @@ namespace WokyTool.商品
             }
         }
 
-        protected 物品品牌資料 _品牌 = null;
-        public 物品品牌資料 品牌
-        {
-            get
-            {
-                if (_品牌 == null)
-                {
-                    foreach(商品組成資料 商品組成資料_ in 組成)
-                    {
-                        物品品牌資料 Temp_ = 商品組成資料_.物品.品牌;
-                        if (_品牌 == Temp_)
-                            continue;
-                        if (Temp_.編號 <= 0)
-                            continue;
-
-                        if (_品牌 == null)
-                            _品牌 = Temp_;
-                        else
-                            _品牌 = 物品品牌資料.混和;
-                    }
-
-                    if(_品牌 == null)
-                        _品牌 = 物品品牌資料.空白;
-                }
-
-                return _品牌;
-            }
-        }
-
         /********************************/
 
-        public 商品資料 Self
+        public 商品資料 Self { get { return this; } }
+
+        public 商品資料()
         {
-            get { return this; }
+            大類 = 商品大類資料.空白;
+            小類 = 商品小類資料.空白;
+            品牌 = 物品品牌資料.空白;
+            公司 = 公司資料.空白;
+            客戶 = 客戶資料.空白;
+
         }
 
-        private static readonly 商品資料 _NULL = new 商品資料
+        public static readonly 商品資料 不篩 = new 商品資料
+        {
+            編號 = 常數.不篩資料編碼,
+
+            大類 = 商品大類資料.不篩,
+            小類 = 商品小類資料.不篩,
+
+            公司 = 公司資料.不篩,
+            客戶 = 客戶資料.不篩,
+
+            品號 = 字串.不篩選,
+            名稱 = 字串.不篩選,
+        };
+
+        public static readonly 商品資料 空白 = new 商品資料
         {
             編號 = 常數.空白資料編碼,
 
@@ -252,21 +176,9 @@ namespace WokyTool.商品
 
             品號 = 字串.無,
             名稱 = 字串.無,
-
-            寄庫數量 = 0,
-
-            進價 = 0,
-            售價 = 0,
         };
-        public static 商品資料 NULL
-        {
-            get
-            {
-                return _NULL;
-            }
-        }
 
-        private static 商品資料 _ERROR = new 商品資料
+        public static 商品資料 錯誤 = new 商品資料
         {
             編號 = 常數.錯誤資料編碼,
 
@@ -278,21 +190,9 @@ namespace WokyTool.商品
 
             品號 = 字串.錯誤,
             名稱 = 字串.錯誤,
-
-            寄庫數量 = 0,
-
-            進價 = 0,
-            售價 = 0,
         };
-        public static 商品資料 ERROR
-        {
-            get
-            {
-                return _ERROR;
-            }
-        }
 
-        private static 商品資料 _折扣 = new 商品資料
+        public static 商品資料 折扣 = new 商品資料    //@@ check use
         {
             編號 = 常數.商品折扣資料編碼,
 
@@ -302,151 +202,83 @@ namespace WokyTool.商品
             公司 = 公司資料.空白,
             客戶 = 客戶資料.空白,
 
-            品號 = 字串.空,
+            品號 = 字串.折扣,
             名稱 = 字串.折扣,
-
-            寄庫數量 = 0,
-
-            進價 = 0,
-            售價 = 0,
         };
-        public static 商品資料 折扣
-        {
-            get
-            {
-                return _折扣;
-            }
-        }
 
         /********************************/
 
-        public override 商品資料 拷貝()
+        public void 更新組成()
         {
-            商品資料 Data_ = new 商品資料
+            if (組成 == null || 組成.Count == 0)
             {
-                編號 = this.編號,
-
-                大類 = this.大類,
-                小類 = this.小類,
-
-                公司 = this.公司,
-                客戶 = this.客戶,
-
-                品號 = this.品號,
-                名稱 = this.名稱,
-
-                寄庫數量 = this.寄庫數量,
-
-                進價 = this.進價,
-                售價 = this.售價,
-            };
-
-            if(this.組成 != null)
-            {
-                Data_.組成 = this.組成.Select(Value => Value.拷貝()).ToList();
-
+                組成 = null;
+                組成字串 = 字串.空;
+                成本 = 0;
+                體積 = 0;
+                品牌 = 物品品牌資料.空白;
             }
+            else
+            {
+                物品合併資料.共用.清除();
+                物品合併資料.共用.新增(this);
 
-            return Data_;
+                組成字串 = 物品合併資料.共用.ToString();
+                成本 = 物品合併資料.共用.成本;
+                體積 = 物品合併資料.共用.體積;
+
+                品牌 = 物品品牌資料.空白;
+                foreach (商品組成資料 商品組成資料_ in 組成)
+                {
+                    物品品牌資料 Temp_ = 商品組成資料_.物品.品牌;
+                    if (Temp_.編號 <= 0 || Temp_ == 品牌)
+                        continue;
+
+                    if (品牌 == 物品品牌資料.空白)
+                        品牌 = Temp_;
+                    else
+                        品牌 = 物品品牌資料.混和;
+                }
+            }
         }
 
-        public override void 覆蓋(商品資料 Data_)
+        public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null, 基本資料 資料參考_ = null)
         {
-            編號 = Data_.編號;
+            基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
+            基本資料 參考_ = (資料參考_ == null) ? this : 資料參考_;
 
-            大類 = Data_.大類;
-            小類 = Data_.小類;
+            if (false == 大類.編號是否合法())
+                檢查器_.錯誤(資料_, "大類不合法");
 
-            公司 = Data_.公司;
-            客戶 = Data_.客戶;
+            if (false == 小類.編號是否合法())
+                檢查器_.錯誤(資料_, "小類不合法");
 
-            品號 = Data_.品號;
-            名稱 = Data_.名稱;
+            if (false == 公司.編號是否合法())
+                檢查器_.錯誤(資料_, "公司不合法");
 
-            組成 = Data_.組成;
-
-            寄庫數量 = Data_.寄庫數量;
-
-            進價 = Data_.進價;
-            售價 = Data_.售價;
-        }
-
-        public override bool 是否一致(商品資料 Data_)
-        {
-            Boolean 是否相同_ =
-                編號 == Data_.編號 &&
-
-                大類 == Data_.大類 &&
-                小類 == Data_.小類 &&
-
-                公司 == Data_.公司 &&
-                客戶 == Data_.客戶 &&
-
-                品號 == Data_.品號 &&
-                名稱 == Data_.名稱 &&
-
-                寄庫數量 == Data_.寄庫數量 &&
-
-                進價 == Data_.進價 &&
-                售價 == Data_.售價;
-
-            if (是否相同_ == false)
-                return false;
-
-            return 函式.是否一致(組成, Data_.組成);
-        }
-
-        public override void 檢查合法()
-        {
-            if (大類.編號是否合法() == false)
-                throw new Exception("商品資料:大類編號不合法:" + 大類編號);
-
-            if (小類.編號是否合法() == false)
-                throw new Exception("商品資料:小類編號不合法:" + 小類編號);
-
-            if (公司.編號是否合法() == false)
-                throw new Exception("商品資料:公司編號不合法:" + 公司編號);
-
-            if (客戶.編號是否合法() == false)
-                throw new Exception("商品資料:客戶編號不合法:" + 客戶編號);
+            if (false == 客戶.編號是否合法())
+                檢查器_.錯誤(資料_, "客戶不合法");
 
             if (String.IsNullOrEmpty(名稱))
-                throw new Exception("商品資料:名稱不合法:" + this.ToString());
+                檢查器_.錯誤(this, "名稱不合法");
+            //else if (商品資料管理器.獨體.資料列舉2.Where(Value => Value.公司 == 公司 && Value.客戶 == 客戶 && Value != 參考_ && 名稱.Equals(Value.名稱)).Any())
+            //    檢查器_.錯誤(資料_, "名稱重複"); //@@ 名稱是否該唯一 顏色??
+
+            if (false == String.IsNullOrEmpty(品號) && 
+                    商品資料管理器.獨體.資料列舉2.Where(Value => Value.公司 == 公司 && Value.客戶 == 客戶 && Value != 參考_ && 品號.Equals(Value.品號)).Any())
+                檢查器_.錯誤(資料_, "品號重複");
 
             if (組成 != null)
             {
-                foreach (商品組成資料 Item_ in 組成)
-                    Item_.檢查合法();
-            }        
+                foreach (商品組成資料 商品組成資料_ in 組成)
+                    商品組成資料_.檢查合法(檢查器_, 資料_, 參考_);
+            }  
+            //@@ 是否允許組合為空
         }
 
-        /********************************/
-
-        // 商品販賣
-        /*public bool Sell(bool 寄庫出貨_, int 數量_)
+        public override void 刪除檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
         {
-            //@@
-            //if (數量_ <= 0)
-            //{
-            //    MessageBox.Show("商品資料::Sell 總數量參數不合法，請通知苦逼程式,", 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return false;
-            //}
-
-            ////@@ should not direct control flag
-            //商品管理器.Instance.SetDirty();
-
-            //if (寄庫出貨_)
-            //{
-            //    外庫數量 -= 數量_;
-            //}
-            //else
-            //{
-            //    內庫數量 -= 數量_;
-            //    if (內庫數量 < 0)
-            //        MessageBox.Show(this.名稱 + " 庫存數量不足", 字串.警告, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //}
-
-            return true;
-        }*/
+            //@@ todo
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿namespace WokyTool.商品
+﻿using WokyTool.通用;
+namespace WokyTool.商品
 {
     partial class 商品詳細視窗
     {
@@ -35,17 +36,16 @@
             this.體積 = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.成本 = new System.Windows.Forms.NumericUpDown();
-            this.商品小類選取元件1 = new WokyTool.商品.商品小類選取元件();
+            this.小類 = new WokyTool.商品.商品小類選取元件();
             this.label6 = new System.Windows.Forms.Label();
             this.售價 = new System.Windows.Forms.NumericUpDown();
             this.寄庫數量 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.客戶選取元件1 = new WokyTool.客戶.客戶選取元件();
-            this.公司選取元件1 = new WokyTool.公司.公司選取元件();
-            this.商品大類選取元件1 = new WokyTool.商品.商品大類選取元件();
+            this.客戶 = new WokyTool.客戶.客戶選取元件();
+            this.公司 = new WokyTool.公司.公司選取元件();
+            this.大類 = new WokyTool.商品.商品大類選取元件();
             this.品號 = new System.Windows.Forms.TextBox();
             this.名稱 = new System.Windows.Forms.TextBox();
-            this.頁索引元件1 = new WokyTool.通用.頁索引元件();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,25 +53,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.物品選取元件 = new WokyTool.物品.物品選取元件();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.物品DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new WokyTool.通用.MyDataGridView();
+            this.物品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.體積DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品組成資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.新增 = new System.Windows.Forms.Button();
             this.數量 = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.進價 = new System.Windows.Forms.NumericUpDown();
+            this.新版頁索引元件1 = new WokyTool.通用.新版頁索引元件();
             ((System.ComponentModel.ISupportInitialize)(this.利潤)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.體積)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.成本)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.售價)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.寄庫數量)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品組成資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.數量)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.進價)).BeginInit();
             this.SuspendLayout();
@@ -154,19 +155,19 @@
             this.成本.Size = new System.Drawing.Size(167, 22);
             this.成本.TabIndex = 70;
             // 
-            // 商品小類選取元件1
+            // 小類
             // 
-            this.商品小類選取元件1.Location = new System.Drawing.Point(64, 76);
-            this.商品小類選取元件1.Name = "商品小類選取元件1";
-            this.商品小類選取元件1.ReadOnly = false;
-            this.商品小類選取元件1.SelectedItem = null;
-            this.商品小類選取元件1.Size = new System.Drawing.Size(172, 25);
-            this.商品小類選取元件1.TabIndex = 69;
+            this.小類.Location = new System.Drawing.Point(64, 76);
+            this.小類.Name = "小類";
+            this.小類.ReadOnly = false;
+            this.小類.SelectedItem = null;
+            this.小類.Size = new System.Drawing.Size(172, 25);
+            this.小類.TabIndex = 69;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(512, 473);
+            this.label6.Location = new System.Drawing.Point(523, 473);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 12);
             this.label6.TabIndex = 68;
@@ -211,32 +212,32 @@
             this.label3.TabIndex = 65;
             this.label3.Text = "寄庫數量";
             // 
-            // 客戶選取元件1
+            // 客戶
             // 
-            this.客戶選取元件1.Location = new System.Drawing.Point(571, 76);
-            this.客戶選取元件1.Name = "客戶選取元件1";
-            this.客戶選取元件1.ReadOnly = false;
-            this.客戶選取元件1.SelectedItem = null;
-            this.客戶選取元件1.Size = new System.Drawing.Size(190, 25);
-            this.客戶選取元件1.TabIndex = 55;
+            this.客戶.Location = new System.Drawing.Point(571, 76);
+            this.客戶.Name = "客戶";
+            this.客戶.ReadOnly = false;
+            this.客戶.SelectedItem = null;
+            this.客戶.Size = new System.Drawing.Size(190, 25);
+            this.客戶.TabIndex = 55;
             // 
-            // 公司選取元件1
+            // 公司
             // 
-            this.公司選取元件1.Location = new System.Drawing.Point(571, 49);
-            this.公司選取元件1.Name = "公司選取元件1";
-            this.公司選取元件1.ReadOnly = false;
-            this.公司選取元件1.SelectedItem = null;
-            this.公司選取元件1.Size = new System.Drawing.Size(172, 25);
-            this.公司選取元件1.TabIndex = 54;
+            this.公司.Location = new System.Drawing.Point(571, 49);
+            this.公司.Name = "公司";
+            this.公司.ReadOnly = false;
+            this.公司.SelectedItem = null;
+            this.公司.Size = new System.Drawing.Size(172, 25);
+            this.公司.TabIndex = 54;
             // 
-            // 商品大類選取元件1
+            // 大類
             // 
-            this.商品大類選取元件1.Location = new System.Drawing.Point(64, 49);
-            this.商品大類選取元件1.Name = "商品大類選取元件1";
-            this.商品大類選取元件1.ReadOnly = false;
-            this.商品大類選取元件1.SelectedItem = null;
-            this.商品大類選取元件1.Size = new System.Drawing.Size(172, 25);
-            this.商品大類選取元件1.TabIndex = 52;
+            this.大類.Location = new System.Drawing.Point(64, 49);
+            this.大類.Name = "大類";
+            this.大類.ReadOnly = false;
+            this.大類.SelectedItem = null;
+            this.大類.Size = new System.Drawing.Size(172, 25);
+            this.大類.TabIndex = 52;
             // 
             // 品號
             // 
@@ -252,17 +253,10 @@
             this.名稱.Size = new System.Drawing.Size(400, 22);
             this.名稱.TabIndex = 23;
             // 
-            // 頁索引元件1
-            // 
-            this.頁索引元件1.Location = new System.Drawing.Point(219, 547);
-            this.頁索引元件1.Name = "頁索引元件1";
-            this.頁索引元件1.Size = new System.Drawing.Size(234, 34);
-            this.頁索引元件1.TabIndex = 18;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(512, 13);
+            this.label8.Location = new System.Drawing.Point(523, 13);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 7;
@@ -280,7 +274,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(512, 76);
+            this.label5.Location = new System.Drawing.Point(523, 76);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 4;
@@ -289,7 +283,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(512, 52);
+            this.label4.Location = new System.Drawing.Point(523, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 3;
@@ -315,7 +309,7 @@
             // 
             // 物品選取元件
             // 
-            this.物品選取元件.Location = new System.Drawing.Point(57, 142);
+            this.物品選取元件.Location = new System.Drawing.Point(55, 142);
             this.物品選取元件.Name = "物品選取元件";
             this.物品選取元件.ReadOnly = false;
             this.物品選取元件.SelectedItem = null;
@@ -327,7 +321,7 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.物品DataGridViewTextBoxColumn,
+            this.物品名稱DataGridViewTextBoxColumn,
             this.數量DataGridViewTextBoxColumn,
             this.成本DataGridViewTextBoxColumn,
             this.體積DataGridViewTextBoxColumn});
@@ -338,21 +332,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(747, 248);
             this.dataGridView1.TabIndex = 99;
             // 
-            // 物品DataGridViewTextBoxColumn
+            // 物品名稱DataGridViewTextBoxColumn
             // 
-            this.物品DataGridViewTextBoxColumn.DataPropertyName = "物品";
-            this.物品DataGridViewTextBoxColumn.DataSource = this.物品資料BindingSource;
-            this.物品DataGridViewTextBoxColumn.DisplayMember = "名稱";
-            this.物品DataGridViewTextBoxColumn.HeaderText = "物品";
-            this.物品DataGridViewTextBoxColumn.Name = "物品DataGridViewTextBoxColumn";
-            this.物品DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.物品DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.物品DataGridViewTextBoxColumn.ValueMember = "Self";
-            this.物品DataGridViewTextBoxColumn.Width = 400;
-            // 
-            // 物品資料BindingSource
-            // 
-            this.物品資料BindingSource.DataSource = typeof(WokyTool.物品.物品資料);
+            this.物品名稱DataGridViewTextBoxColumn.DataPropertyName = "物品名稱";
+            this.物品名稱DataGridViewTextBoxColumn.HeaderText = "物品";
+            this.物品名稱DataGridViewTextBoxColumn.Name = "物品名稱DataGridViewTextBoxColumn";
+            this.物品名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.物品名稱DataGridViewTextBoxColumn.Width = 400;
             // 
             // 數量DataGridViewTextBoxColumn
             // 
@@ -378,9 +364,13 @@
             // 
             this.商品組成資料BindingSource.DataSource = typeof(WokyTool.商品.商品組成資料);
             // 
+            // 物品資料BindingSource
+            // 
+            this.物品資料BindingSource.DataSource = typeof(WokyTool.物品.物品資料);
+            // 
             // 新增
             // 
-            this.新增.Location = new System.Drawing.Point(14, 140);
+            this.新增.Location = new System.Drawing.Point(11, 140);
             this.新增.Name = "新增";
             this.新增.Size = new System.Drawing.Size(42, 23);
             this.新增.TabIndex = 97;
@@ -390,20 +380,30 @@
             // 
             // 數量
             // 
-            this.數量.Location = new System.Drawing.Point(463, 141);
+            this.數量.Location = new System.Drawing.Point(459, 141);
             this.數量.Maximum = new decimal(new int[] {
             99999999,
+            0,
+            0,
+            0});
+            this.數量.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
             this.數量.Name = "數量";
             this.數量.Size = new System.Drawing.Size(100, 22);
             this.數量.TabIndex = 95;
+            this.數量.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(512, 442);
+            this.label9.Location = new System.Drawing.Point(523, 442);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 12);
             this.label9.TabIndex = 102;
@@ -422,11 +422,19 @@
             this.進價.Size = new System.Drawing.Size(167, 22);
             this.進價.TabIndex = 101;
             // 
+            // 新版頁索引元件1
+            // 
+            this.新版頁索引元件1.Location = new System.Drawing.Point(270, 534);
+            this.新版頁索引元件1.Name = "新版頁索引元件1";
+            this.新版頁索引元件1.Size = new System.Drawing.Size(234, 34);
+            this.新版頁索引元件1.TabIndex = 103;
+            // 
             // 商品詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 595);
+            this.ClientSize = new System.Drawing.Size(771, 578);
+            this.Controls.Add(this.新版頁索引元件1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.進價);
             this.Controls.Add(this.物品選取元件);
@@ -439,17 +447,16 @@
             this.Controls.Add(this.體積);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.成本);
-            this.Controls.Add(this.商品小類選取元件1);
+            this.Controls.Add(this.小類);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.售價);
             this.Controls.Add(this.寄庫數量);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.客戶選取元件1);
-            this.Controls.Add(this.公司選取元件1);
-            this.Controls.Add(this.商品大類選取元件1);
+            this.Controls.Add(this.客戶);
+            this.Controls.Add(this.公司);
+            this.Controls.Add(this.大類);
             this.Controls.Add(this.品號);
             this.Controls.Add(this.名稱);
-            this.Controls.Add(this.頁索引元件1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -464,8 +471,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.售價)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.寄庫數量)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品組成資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.數量)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.進價)).EndInit();
             this.ResumeLayout(false);
@@ -481,17 +488,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private 通用.頁索引元件 頁索引元件1;
         private System.Windows.Forms.TextBox 名稱;
         private System.Windows.Forms.TextBox 品號;
-        private 商品大類選取元件 商品大類選取元件1;
-        private 公司.公司選取元件 公司選取元件1;
-        private 客戶.客戶選取元件 客戶選取元件1;
+        private 商品大類選取元件 大類;
+        private 公司.公司選取元件 公司;
+        private 客戶.客戶選取元件 客戶;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown 寄庫數量;
         private System.Windows.Forms.NumericUpDown 售價;
         private System.Windows.Forms.Label label6;
-        private 商品小類選取元件 商品小類選取元件1;
+        private 商品小類選取元件 小類;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown 成本;
         private System.Windows.Forms.Label label12;
@@ -499,16 +505,17 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.NumericUpDown 體積;
         private 物品.物品選取元件 物品選取元件;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private MyDataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 商品組成資料BindingSource;
         private System.Windows.Forms.Button 新增;
         private System.Windows.Forms.NumericUpDown 數量;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 物品DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 物品資料BindingSource;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown 進價;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 物品名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 體積DataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown 進價;
+        private 通用.新版頁索引元件 新版頁索引元件1;
     }
 }

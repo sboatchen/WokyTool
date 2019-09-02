@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
+using WokyTool.商品;
 using WokyTool.通用;
 
 namespace WokyTool.公司
@@ -49,6 +50,16 @@ namespace WokyTool.公司
                 檢查器_.錯誤(資料_, "名稱不合法");
             else if (公司資料管理器.獨體.資料列舉2.Where(Value => Value != 參考_ && 名稱.Equals(Value.名稱)).Any())
                 檢查器_.錯誤(資料_, "名稱重複");
+        }
+
+        public override void 刪除檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
+        {
+            基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
+
+            foreach (商品資料 商品資料_ in 商品資料管理器.獨體.資料列舉2.Where(Value => Value.公司 == this))
+            {
+                檢查器_.錯誤(資料_, "資料綁定中:" + 商品資料_.ToString(false));
+            }
         }
     }
 }

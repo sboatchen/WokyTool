@@ -209,7 +209,7 @@ namespace WokyTool.物品
 
         public override IEnumerable<物品資料> 篩選(IEnumerable<物品資料> 資料列舉_)
         {
-            訊息管理器.獨體.訊息("物品篩選:" + this);
+            //訊息管理器.獨體.訊息("物品篩選:" + this);
 
             IEnumerable<物品資料> 目前列舉_ = 資料列舉_;
 

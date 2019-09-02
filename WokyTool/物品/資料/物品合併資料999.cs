@@ -13,14 +13,19 @@ namespace WokyTool.物品
     [JsonObject(MemberSerialization.OptIn)]
     public class 物品合併資料 : 基本資料  //@@ 999
     {
+        public static 物品合併資料 共用 = new 物品合併資料();
+
         public Dictionary<物品資料, int> Map { get; private set; }
 
         public int 體積 { get; private set; }
+
+        public decimal 成本 { get; private set; }
 
         public 物品合併資料()
         {
             Map = new Dictionary<物品資料, int>();
             體積 = 0;
+            成本 = 0;
         }
 
         public 物品合併資料(商品資料 商品資料_)
@@ -37,6 +42,7 @@ namespace WokyTool.物品
                 throw new Exception("物品合併資料::數量小於0" + 數量_);
 
             體積 += 物品資料_.體積 * 數量_;
+            成本 += 物品資料_.成本 * 數量_;
 
             int 目前數量_ = 0;
             if (Map.TryGetValue(物品資料_, out 目前數量_))
@@ -99,6 +105,8 @@ namespace WokyTool.物品
         public void 清除()
         {
             Map.Clear();
+            體積 = 0;
+            成本 = 0;
         }
 
         public override string ToString()

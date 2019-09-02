@@ -27,7 +27,7 @@ namespace WokyTool.通用
 
             this.Activated += new System.EventHandler(this._視窗激活);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);
-            this.資料BS.CurrentChanged += new EventHandler(this.選擇改變);
+            this.資料BS.CurrentChanged += new EventHandler(this._選擇改變);
 
             更新資料();
         }
@@ -58,23 +58,6 @@ namespace WokyTool.通用
         {
             是否關閉 = true;
 
-            if (編輯管理器.是否編輯中)
-            {
-                bool Result_ = 訊息管理器.獨體.確認(字串.儲存確認, 字串.儲存確認內容);
-
-                try
-                {
-                    編輯管理器.完成編輯(Result_);
-                }
-                catch (Exception ex)
-                {
-                    訊息管理器.獨體.通知(字串.操作失敗, ex.Message);
-                    e.Cancel = true;
-                    是否關閉 = false;
-                    return;
-                }
-            }
-
             if (!(e is 視窗關閉事件))
             {
                 e.Cancel = true;
@@ -89,11 +72,16 @@ namespace WokyTool.通用
  
         }
 
-        protected virtual void 選擇改變(object sender, EventArgs e) //@@ check
+        protected void _選擇改變(object sender, EventArgs e)
         {
-            ;
+            if (false == 是否關閉)
+                選擇改變();
         }
 
+        protected virtual void 選擇改變()
+        {
+
+        }
 
         protected void 資料綁定(TextBox 元件_, string 屬性名稱_)
         {
@@ -122,6 +110,8 @@ namespace WokyTool.通用
 
             this.Show();
             this.BringToFront();
+
+            選擇改變();
         }
 
         public void 顯現(int 編號_)
@@ -146,6 +136,8 @@ namespace WokyTool.通用
 
             this.Show();
             this.BringToFront();
+
+            選擇改變();
         }
 
         public void 隱藏()

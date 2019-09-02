@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WokyTool.Common;
+using WokyTool.商品;
 using WokyTool.通用;
 
 namespace WokyTool.物品
@@ -128,6 +129,8 @@ namespace WokyTool.物品
             }
         }
 
+        /********************************/
+
         public 物品資料 Self { get { return this; } }
 
         public 物品資料()
@@ -248,7 +251,12 @@ namespace WokyTool.物品
 
         public override void 刪除檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
         {
-            //@@ todo
+            基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
+
+            foreach (商品資料 商品資料_ in 商品資料管理器.獨體.資料列舉2.Where(Value => Value.組成 != null && Value.組成.Where(Value2 => Value2.物品 == this).Any()))
+            {
+                檢查器_.錯誤(資料_, "資料綁定中:" + 商品資料_.ToString(false));
+            }
         }
     }
 }
