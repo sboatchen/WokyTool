@@ -32,19 +32,16 @@ namespace WokyTool.公司
 
         public 公司資料篩選 篩選器 { get; protected set; }
 
-        public 公司選取元件(選取元件類型 元件類型_)
+        public 公司選取元件()
         {
-            元件類型 = 元件類型_;
-
             InitializeComponent();
-            初始化();
+        }
+
+        public override void 初始化()
+        {
+            base.初始化();
 
             篩選器 = (公司資料篩選)管理器.視窗篩選器;
         }
-
-        public 公司選取元件() : this(選取元件類型.指定)
-        {
-        }
-
     }
 }

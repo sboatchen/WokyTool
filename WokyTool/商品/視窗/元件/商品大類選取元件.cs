@@ -32,18 +32,16 @@ namespace WokyTool.商品
 
         public 商品大類資料篩選 篩選器 { get; protected set; }
 
-        public 商品大類選取元件(選取元件類型 元件類型_)
+        public 商品大類選取元件()
         {
-            元件類型 = 元件類型_;
-
             InitializeComponent();
-            初始化();
-
-            篩選器 = (商品大類資料篩選)管理器.視窗篩選器;
         }
 
-        public 商品大類選取元件() : this(選取元件類型.指定)
+        public override void 初始化()
         {
+            base.初始化();
+
+            篩選器 = (商品大類資料篩選)管理器.視窗篩選器;
         }
     }
 }

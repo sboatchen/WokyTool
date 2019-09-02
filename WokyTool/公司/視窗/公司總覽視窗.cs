@@ -25,8 +25,6 @@ namespace WokyTool.公司
         public 公司總覽視窗()
         {
             InitializeComponent();
-
-            this.初始化();
         }
     }
 }
