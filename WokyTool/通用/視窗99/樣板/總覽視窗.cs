@@ -18,6 +18,10 @@ namespace WokyTool.通用
 
         protected bool _是否關閉 = false;
 
+        public void 初始化()
+        {
+        }
+
         public void 初始化(BindingSource 資料BindingSource_, 可編輯資料列管理介面 資料管理器_)
         {
             this.資料BindingSource = 資料BindingSource_;

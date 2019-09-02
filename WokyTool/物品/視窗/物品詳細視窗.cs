@@ -18,12 +18,14 @@ namespace WokyTool.物品{
         public override 可編輯列舉資料管理介面 編輯管理器 { get { return 物品資料管理器.獨體.編輯管理器; } }
         public override 新版頁索引元件 頁索引 { get { return this.新版頁索引元件1; } }
 
-
         public 物品詳細視窗()
         {
             InitializeComponent();
+        }
 
-            初始化();
+        public override void 初始化()
+        {
+            base.初始化();
 
             資料綁定(this.名稱, "名稱");
             資料綁定(this.縮寫, "縮寫");

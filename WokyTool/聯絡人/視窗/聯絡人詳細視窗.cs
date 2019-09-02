@@ -23,8 +23,11 @@ namespace WokyTool.聯絡人
         public 聯絡人詳細視窗()
         {
             InitializeComponent();
+        }
 
-            初始化();
+        public override void 初始化()
+        {
+            base.初始化();
 
             資料綁定(this.姓名, "姓名");
             資料綁定(this.電話, "電話");

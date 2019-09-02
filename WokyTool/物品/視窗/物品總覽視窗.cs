@@ -31,8 +31,11 @@ namespace WokyTool.物品
         public 物品總覽視窗()
         {
             InitializeComponent();
+        }
 
-            this.初始化();
+        public override void 初始化()
+        {
+            base.初始化();
 
             this.更新ToolStripMenuItem.Enabled = 編輯管理器.是否可編輯;
         }

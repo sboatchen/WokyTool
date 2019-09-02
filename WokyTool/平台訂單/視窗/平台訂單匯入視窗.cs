@@ -24,7 +24,10 @@ namespace WokyTool.平台訂單
         protected 公司資料 _公司 = null;
         protected 客戶資料 _客戶 = null;
 
+        private 可清單列舉資料管理介面 _商品清單管理器 = 商品資料管理器.獨體.清單管理器;
+        private 商品資料篩選 _商品清單篩選;
         private int _商品資料版本 = -1;
+
         private int _平台訂單匯入設定資料版本 = -1;
 
 
@@ -53,6 +56,8 @@ namespace WokyTool.平台訂單
             this.dataGridView1.Enabled = false;
 
             this.dataGridView1.DataError += new DataGridViewDataErrorEventHandler(this._DataGridView錯誤);
+
+            _商品清單篩選 = (商品資料篩選)_商品清單管理器.視窗篩選器;
         }
 
         private void _DataGridView錯誤(object sender, DataGridViewDataErrorEventArgs e)
@@ -61,7 +66,7 @@ namespace WokyTool.平台訂單
             e.ThrowException = false;
 
             if (e.ColumnIndex == 3)
-                _平台訂單匯入管理器.可編輯BList[e.RowIndex].商品 = 商品資料.ERROR;
+                _平台訂單匯入管理器.可編輯BList[e.RowIndex].商品 = 商品資料.錯誤;
         }
 
         private void 格式_SelectedIndexChanged(object sender, EventArgs e)
@@ -72,10 +77,12 @@ namespace WokyTool.平台訂單
 
             this._公司 = 資料_.公司;
             this._客戶 = 資料_.客戶;
-            _商品資料版本 = 商品資料管理器.獨體.可選取資料列版本;
-            this.商品資料BindingSource.DataSource = 商品資料管理器.獨體.唯讀BList
-                                                          .Where(Value => (Value.客戶 == _客戶 && Value.公司 == _公司) || Value.編號 <= 常數.錯誤資料編碼)
-                                                          .ToList();
+
+            _商品清單篩選.公司 = _公司;
+            _商品清單篩選.客戶 = _客戶;
+
+            _商品資料版本 = _商品清單管理器.資料版本;
+            this.商品資料BindingSource.DataSource = _商品清單管理器.資料列舉;
 
             _平台訂單匯入管理器.新增(資料_.匯入Excel());
             if (_平台訂單匯入管理器.是否正在編輯() == false)
@@ -124,12 +131,10 @@ namespace WokyTool.平台訂單
                 this.平台訂單匯入設定資料BindingSource.DataSource = 平台訂單匯入設定資料管理器.獨體.可編輯BList.OrderBy(Value => Value.名稱).ToList();   // 這邊不呈現 無/錯誤 所以不選唯讀BList??
             }
 
-            if (_商品資料版本 != 商品資料管理器.獨體.可選取資料列版本 && _客戶 != null)    // 有資料後才處理
+            if (_商品資料版本 != _商品清單管理器.資料版本 && _客戶 != null)    // 有資料後才處理
             {
-                _商品資料版本 = 商品資料管理器.獨體.可選取資料列版本;
-                this.商品資料BindingSource.DataSource = 商品資料管理器.獨體.唯讀BList
-                                                            .Where(Value => (Value.客戶 == _客戶 && Value.公司 == _公司) || Value.編號 <= 常數.錯誤資料編碼)
-                                                            .ToList();
+                _商品資料版本 = _商品清單管理器.資料版本;
+                this.商品資料BindingSource.DataSource = _商品清單管理器.資料列舉;
             }
         }
 

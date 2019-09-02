@@ -290,7 +290,6 @@ namespace WokyTool.一般訂單
             this.商品選取元件.SelectedItem = null;
             this.商品選取元件.Size = new System.Drawing.Size(419, 27);
             this.商品選取元件.TabIndex = 94;
-            this.商品選取元件.綁定客戶 = null;
             // 
             // 一般訂單新增商品資料BindingSource
             // 

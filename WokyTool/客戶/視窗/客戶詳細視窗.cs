@@ -23,8 +23,11 @@ namespace WokyTool.客戶
         public 客戶詳細視窗()
         {
             InitializeComponent();
+        }
 
-            初始化();
+        public override void 初始化()
+        {
+            base.初始化();
 
             資料綁定(this.名稱, "名稱");
         }

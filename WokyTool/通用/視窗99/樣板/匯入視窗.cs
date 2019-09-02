@@ -16,6 +16,10 @@ namespace WokyTool.通用
         protected BindingSource 資料BindingSource = null;
         protected int _資料版本;
 
+        public void 初始化()
+        {
+        }
+
         public void 初始化(BindingSource 資料BindingSource_, 可編輯資料列管理介面 資料管理器_)
         {
             this._資料管理器 = 資料管理器_;

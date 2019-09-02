@@ -25,8 +25,6 @@ namespace WokyTool.使用者
         public 使用者總覽視窗()
         {
             InitializeComponent();
-
-            this.初始化();
         }
 
         protected override void _雙點擊資料(object sender, DataGridViewCellEventArgs e)

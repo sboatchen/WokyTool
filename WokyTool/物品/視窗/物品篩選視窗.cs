@@ -17,13 +17,14 @@ namespace WokyTool.物品
 
         public override 視窗可篩選介面 視窗篩選器 { get { return 物品資料管理器.獨體.編輯管理器.視窗篩選器; } }
 
-        //protected 物品資料篩選設定 _物品資料篩選設定 = new 物品資料篩選設定();
-
         public 物品篩選視窗()
         {
             InitializeComponent();
+        }
 
-            this.初始化();
+        public override void 初始化()
+        {
+            base.初始化();
 
             資料綁定(this.名稱, "文字");
             資料綁定(this.類別, "類別");
@@ -33,9 +34,9 @@ namespace WokyTool.物品
             資料綁定(this.原廠編號, "原廠編號");
             資料綁定(this.代理編號, "代理編號");
 
-            資料綁定(this.物品大類選取元件1, "大類");
-            資料綁定(this.物品小類選取元件1, "小類");
-            資料綁定(this.物品品牌選取元件1, "品牌");
+            資料綁定(this.大類, "大類");
+            資料綁定(this.小類, "小類");
+            資料綁定(this.品牌, "品牌");
 
             資料綁定(this.最小庫存, "最小庫存");
             資料綁定(this.最大庫存, "最大庫存");

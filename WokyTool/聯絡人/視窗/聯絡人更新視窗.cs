@@ -31,8 +31,6 @@ namespace WokyTool.聯絡人
         public 聯絡人更新視窗()
         {
             InitializeComponent();
-
-            this.初始化();
         }
 
         private void 匯入ToolStripMenuItem_Click(object sender, EventArgs e)

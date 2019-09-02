@@ -25,8 +25,6 @@ namespace WokyTool.物品
         public 物品大類總覽視窗()
         {
             InitializeComponent();
-
-            this.初始化();
         }
     }
 }

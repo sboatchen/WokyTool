@@ -24,6 +24,7 @@ namespace WokyTool.月結帳
         private 可清單列舉資料管理介面 _客戶清單管理器 = 客戶資料管理器.獨體.清單管理器;
         private int _客戶資料版本 = -1;
 
+        private 可清單列舉資料管理介面 _商品清單管理器 = 商品資料管理器.獨體.清單管理器;
         private int _商品資料版本 = -1;
 
         public 月結帳總覽視窗()
@@ -66,10 +67,10 @@ namespace WokyTool.月結帳
                 this.客戶資料BindingSource.DataSource = _客戶清單管理器.資料列舉;
             }
 
-            if (_商品資料版本 != 商品資料管理器.獨體.可選取資料列版本)
+            if (_商品資料版本 != _商品清單管理器.資料版本)
             {
-                _商品資料版本 = 商品資料管理器.獨體.可選取資料列版本;
-                this.商品資料BindingSource.DataSource = 商品資料管理器.獨體.唯讀BList;
+                _商品資料版本 = _商品清單管理器.資料版本;
+                this.商品資料BindingSource.DataSource = _商品清單管理器.資料列舉;
             }
         }
 

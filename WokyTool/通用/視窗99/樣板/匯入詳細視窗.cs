@@ -16,6 +16,10 @@ namespace WokyTool.通用
 
         protected bool _是否關閉 = false;
 
+        public void 初始化()
+        {
+        }
+
         public void 初始化(頁索引元件 頁索引元件_, 可編輯資料列管理介面 資料管理器_)
         {
             this._頁索引元件 = 頁索引元件_;

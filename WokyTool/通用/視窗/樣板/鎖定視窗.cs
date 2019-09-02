@@ -23,6 +23,10 @@ namespace WokyTool.通用
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
         }
 
+        public virtual void 初始化()
+        {
+        }
+
         protected override void WndProc(ref Message m)
         {
             const int WM_NCLBUTTONDOWN = 161;

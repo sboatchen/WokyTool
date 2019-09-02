@@ -24,8 +24,11 @@ namespace WokyTool.物品{
         public 物品更新詳細視窗(可編輯列舉資料管理介面 更新管理器_) : base(更新管理器_)
         {
             InitializeComponent();
+        }
 
-            初始化();
+        public override void 初始化()
+        {
+            base.初始化();
 
             資料綁定(this.更新狀態選取元件1, "更新狀態");
             資料綁定(this.錯誤訊息, "錯誤訊息");
@@ -93,7 +96,5 @@ namespace WokyTool.物品{
 
             資料異動顯示綁定(this.成本備註, this.參考成本備註);
         }
-
-       
     }
 }

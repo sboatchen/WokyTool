@@ -26,8 +26,6 @@ namespace WokyTool.客戶
         public 客戶總覽視窗()
         {
             InitializeComponent();
-
-            this.初始化();
         }
     }
 }

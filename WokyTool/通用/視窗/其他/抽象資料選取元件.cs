@@ -14,12 +14,12 @@ namespace WokyTool.通用
         篩選,
     };
 
-    public class 抽象資料選取元件 : UserControl
+    public class 抽象資料選取元件 : UserControl, 可初始化介面
     {
         public virtual BindingSource 資料BS { get { throw new Exception(this.GetType().Name + " 未設定資料BS"); } }
         public virtual ComboBox 下拉選單 { get { throw new Exception(this.GetType().Name + " 未設定下拉選單"); } }
 
-        public 選取元件類型 元件類型 { get; protected set; }
+        public 選取元件類型 元件類型 { get; set; }
 
         protected virtual 可清單列舉資料管理介面 取得管理器實體()
         {
@@ -32,7 +32,7 @@ namespace WokyTool.通用
 
         private PropertyInfo _呈現屬性;
 
-        public void 初始化()
+        public virtual void 初始化()
         {
             管理器 = 取得管理器實體();
 
@@ -72,8 +72,11 @@ namespace WokyTool.通用
             set
             {
                 //Console.WriteLine("設定物件-" + this.GetType().Name);
-                管理器.視窗篩選器.文字 = null;
-                更新資料();
+                if (管理器 != null)
+                {
+                    管理器.視窗篩選器.文字 = null;
+                    更新資料();
+                }
 
                 if (this.下拉選單.SelectedItem != value)
                     this.下拉選單.SelectedItem = value;

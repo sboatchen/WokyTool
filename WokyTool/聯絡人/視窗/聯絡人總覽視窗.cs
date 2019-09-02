@@ -26,8 +26,6 @@ namespace WokyTool.聯絡人
         public 聯絡人總覽視窗()
         {
             InitializeComponent();
-
-            this.初始化();
         }
 
         private void 通用ToolStripMenuItem_Click(object sender, EventArgs e)

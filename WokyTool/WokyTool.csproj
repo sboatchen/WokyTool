@@ -178,6 +178,7 @@
     <Compile Include="商品\資料\商品組成資料.cs" />
     <Compile Include="商品\資料\商品新增匯入資料.cs" />
     <Compile Include="商品\資料\商品大類資料篩選.cs" />
+    <Compile Include="商品\資料\商品資料篩選.cs" />
     <Compile Include="商品\資料\舊商品資料.cs" />
     <Compile Include="商品\轉換\商品總覽匯出轉換.cs" />
     <Compile Include="商品\視窗\商品總覽視窗.cs">

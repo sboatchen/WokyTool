@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,8 +32,16 @@ namespace WokyTool.通用
         public int 資料版本 { get; protected set; }
         public bool 是否關閉 { get; protected set; }
 
-        public void 初始化()
+        public virtual void 初始化()
         {
+            foreach (PropertyInfo 屬性_ in GetType().GetProperties())
+            {
+                object 欄位_ = 屬性_.GetValue(this);
+                抽象資料選取元件 可初始化欄位_ = 欄位_ as 抽象資料選取元件;
+                if (可初始化欄位_ != null)
+                    可初始化欄位_.初始化();
+            }
+
             this.資料GV.DataSource = 資料BS;
 
             this.Activated += new System.EventHandler(this._視窗激活);

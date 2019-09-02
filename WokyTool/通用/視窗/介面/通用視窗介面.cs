@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {
-    public interface 通用視窗介面
+    public interface 通用視窗介面 : 可初始化介面
     {
         void 顯現();
         void 顯現(int 編號_);

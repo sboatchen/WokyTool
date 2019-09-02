@@ -24,13 +24,14 @@ namespace WokyTool.客戶
         public 子客戶詳細視窗()
         {
             InitializeComponent();
+        }
 
-            初始化();
+        public override void 初始化()
+        {
+            base.初始化();
 
             資料綁定(this.名稱, "名稱");
             資料綁定(this.客戶選取元件1, "客戶");
-
-            //選擇改變(this, null);
         }
 
         protected override void 選擇改變()
