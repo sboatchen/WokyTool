@@ -35,7 +35,7 @@ namespace WokyTool.通用
 
             this.Activated += new System.EventHandler(this._視窗激活);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);
-            this.資料BS.CurrentChanged += new EventHandler(this.選擇改變);
+            this.資料BS.CurrentChanged += new EventHandler(this._選擇改變);
 
             更新資料();
         }
@@ -80,9 +80,15 @@ namespace WokyTool.通用
  
         }
 
-        protected virtual void 選擇改變(object sender, EventArgs e) //@@ check
+        protected virtual void _選擇改變(object sender, EventArgs e)
         {
-            ;
+            if (false == 是否關閉)
+                選擇改變();
+        }
+
+        protected virtual void 選擇改變()
+        {
+
         }
 
 
@@ -171,6 +177,8 @@ namespace WokyTool.通用
 
             this.Show();
             this.BringToFront();
+
+            選擇改變();
         }
 
         public void 顯現(int 編號_)

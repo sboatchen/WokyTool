@@ -53,9 +53,10 @@ namespace WokyTool.物品
 
         private void 通用ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var i = new 物品更新視窗();
-            i.Show();
-            i.BringToFront();
+            var 視窗_ = new 物品更新視窗();
+            視窗_.初始化();
+            視窗_.Show();
+            視窗_.BringToFront();
         }
     }
 }

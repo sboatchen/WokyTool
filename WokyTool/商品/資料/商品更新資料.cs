@@ -204,7 +204,7 @@ namespace WokyTool.商品
             }
         }
 
-        [可匯入(名稱 = "組成字串")]
+        [可匯入(名稱 = "組成")]
         [JsonProperty]
         public string 組成字串識別
         {
@@ -280,12 +280,14 @@ namespace WokyTool.商品
         }
 
         public 物品品牌資料 品牌 { get {return 修改.品牌; } }
+        public string 品牌名稱 { get { return 修改.品牌.名稱; } }
 
         public decimal 成本 { get { return 修改.成本; } }
         public decimal 利潤 { get { return 修改.利潤; } }
 
         public int 體積 { get { return 修改.體積; } }
 
+        public string 組成字串 { get { return 修改.組成字串; } }
 
         public string 參考名稱 { get { return 參考.名稱; } }
         public string 參考品號 { get { return 參考.品號; } }
@@ -307,5 +309,13 @@ namespace WokyTool.商品
 
         public List<商品組成資料> 參考組成 { get { return 參考.組成; } }
         public string 參考組成字串 { get { return 參考.組成字串; } }
+
+        /********************************/
+
+        public void 更新組成()
+        {
+            修改.更新組成();
+            _組成字串識別 = 修改.組成字串;
+        }
     }
 }

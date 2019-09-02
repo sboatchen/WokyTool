@@ -139,7 +139,7 @@
             // 
             // 新版頁索引元件1
             // 
-            this.新版頁索引元件1.Location = new System.Drawing.Point(259, 462);
+            this.新版頁索引元件1.Location = new System.Drawing.Point(267, 462);
             this.新版頁索引元件1.Name = "新版頁索引元件1";
             this.新版頁索引元件1.Size = new System.Drawing.Size(234, 34);
             this.新版頁索引元件1.TabIndex = 15;
