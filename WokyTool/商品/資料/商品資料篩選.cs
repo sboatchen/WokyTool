@@ -12,20 +12,15 @@ namespace WokyTool.商品
 {
     public class 商品資料篩選 : 通用可篩選介面<商品資料>
     {
-        private 商品大類資料 _大類 = null;
+        private 商品大類資料 _大類 = 商品大類資料.不篩選;
         public 商品大類資料 大類
         {
             get
             {
-                if (_大類 == null)
-                    return 商品大類資料.不篩;
                 return _大類;
             }
             set
             {
-                if (商品大類資料.不篩 == value)
-                    value = null;
-
                 if (_大類 != value)
                 {
                     _大類 = value;
@@ -34,20 +29,15 @@ namespace WokyTool.商品
             }
         }
 
-        private 商品小類資料 _小類 = null;
+        private 商品小類資料 _小類 = 商品小類資料.不篩選;
         public 商品小類資料 小類
         {
             get
             {
-                if (_小類 == null)
-                    return 商品小類資料.不篩;
                 return _小類;
             }
             set
             {
-                if (商品小類資料.不篩 == value)
-                    value = null;
-
                 if (_小類 != value)
                 {
                     _小類 = value;
@@ -56,20 +46,15 @@ namespace WokyTool.商品
             }
         }
 
-        private 公司資料 _公司 = null;
+        private 公司資料 _公司 = 公司資料.不篩選;
         public 公司資料 公司
         {
             get
             {
-                if (_公司 == null)
-                    return 公司資料.不篩;
                 return _公司;
             }
             set
             {
-                if (公司資料.不篩 == value)
-                    value = null;
-
                 if (_公司 != value)
                 {
                     _公司 = value;
@@ -78,20 +63,15 @@ namespace WokyTool.商品
             }
         }
 
-        private 客戶資料 _客戶 = null;
+        private 客戶資料 _客戶 = 客戶資料.不篩選;
         public 客戶資料 客戶
         {
             get
             {
-                if (_客戶 == null)
-                    return 客戶資料.不篩;
                 return _客戶;
             }
             set
             {
-                if (客戶資料.不篩 == value)
-                    value = null;
-
                 if (_客戶 != value)
                 {
                     _客戶 = value;
@@ -100,20 +80,15 @@ namespace WokyTool.商品
             }
         }
 
-        private 物品品牌資料 _品牌 = null;
+        private 物品品牌資料 _品牌 = 物品品牌資料.不篩選;
         public 物品品牌資料 品牌
         {
             get
             {
-                if (_品牌 == null)
-                    return 物品品牌資料.不篩;
                 return _品牌;
             }
             set
             {
-                if (物品品牌資料.不篩 == value)
-                    value = null;
-
                 if (_品牌 != value)
                 {
                     _品牌 = value;
@@ -122,20 +97,15 @@ namespace WokyTool.商品
             }
         }
 
-        private 物品資料 _物品 = null;
+        private 物品資料 _物品 = 物品資料.不篩選;
         public 物品資料 物品
         {
             get
             {
-                if (_物品 == null)
-                    return 物品資料.不篩;
                 return _物品;
             }
             set
             {
-                if (物品資料.不篩 == value)
-                    value = null;
-
                 if (_物品 != value)
                 {
                     _物品 = value;
@@ -224,12 +194,12 @@ namespace WokyTool.商品
             {
                 return
                     null != _文字 ||
-                    null != _大類 ||
-                    null != _小類 ||
-                    null != _公司 ||
-                    null != _客戶 ||
-                    null != _品牌 ||
-                    null != _物品 ||
+                    商品大類資料.不篩選 != _大類 ||
+                    商品小類資料.不篩選 != _小類 ||
+                    公司資料.不篩選 != _公司 ||
+                    客戶資料.不篩選 != _客戶 ||
+                    物品品牌資料.不篩選 != _品牌 ||
+                    物品資料.不篩選 != _物品 ||
                     null != _品號 ||
                     -1 != _最小寄庫數量 ||
                     -1 != _最大寄庫數量 ||
@@ -244,18 +214,18 @@ namespace WokyTool.商品
 
             IEnumerable<商品資料> 目前列舉_ = 資料列舉_;
 
-            if (null != _大類)
+            if (商品大類資料.不篩選 != _大類)
                 目前列舉_ = 目前列舉_.Where(Value => Value.大類 == _大類);
-            if (null != _小類)
+            if (商品小類資料.不篩選 != _小類)
                 目前列舉_ = 目前列舉_.Where(Value => Value.小類 == _小類);
-            if (null != _公司)
+            if (公司資料.不篩選 != _公司)
                 目前列舉_ = 目前列舉_.Where(Value => Value.公司 == _公司);
-            if (null != _客戶)
+            if (客戶資料.不篩選 != _客戶)
                 目前列舉_ = 目前列舉_.Where(Value => Value.客戶 == _客戶);
 
-            if (null != _品牌)
+            if (物品品牌資料.不篩選 != _品牌)
                 目前列舉_ = 目前列舉_.Where(Value => Value.品牌 == _品牌);
-            if (null != _物品)
+            if (物品資料.不篩選 != _物品)
                 目前列舉_ = 目前列舉_.Where(Value => Value.組成 != null && Value.組成.Where(Value2 => Value2.物品 == _物品).Any());
 
             if (null != _品號)

@@ -47,20 +47,15 @@ namespace WokyTool.聯絡人
             }
         }
 
-        private 客戶資料 _客戶 = null;
+        private 客戶資料 _客戶 = 客戶資料.不篩選;
         public 客戶資料 客戶
         {
             get
             {
-                if (_客戶 == null)
-                    return 客戶資料.不篩;
                 return _客戶;
             }
             set
             {
-                if (客戶資料.不篩 == value)
-                    value = null;
-
                 if (_客戶 != value)
                 {
                     _客戶 = value;
@@ -69,19 +64,14 @@ namespace WokyTool.聯絡人
             }
         }
 
-        private 子客戶資料 _子客戶 = null;
+        private 子客戶資料 _子客戶 = 子客戶資料.不篩選;
         public 子客戶資料 子客戶
         {
             get {
-                if (_子客戶 == null)
-                    return 子客戶資料.不篩;
                 return _子客戶; 
             }
             set
             {
-                if (子客戶資料.不篩 == value)
-                    value = null;
-
                 if (_子客戶 != value)
                 {
                     _子客戶 = value;
@@ -98,8 +88,8 @@ namespace WokyTool.聯絡人
                     null != _文字 ||
                     null != _電話 ||
                     null != _地址 ||
-                    null != _客戶 ||
-                    null != _子客戶;
+                    客戶資料.不篩選 != _客戶 ||
+                    子客戶資料.不篩選 != _子客戶;
             }
         }
 
@@ -116,9 +106,9 @@ namespace WokyTool.聯絡人
             if (null != _地址)
                 目前列舉_ = 目前列舉_.Where(Value => Value.地址.Contains(_地址));
 
-            if (null != _子客戶)
+            if (子客戶資料.不篩選 != _子客戶)
                 目前列舉_ = 目前列舉_.Where(Value => Value.修改.子客戶 == _子客戶);
-            else if (null != _客戶)
+            else if (客戶資料.不篩選 != _客戶)
                 目前列舉_ = 目前列舉_.Where(Value => Value.修改.客戶 == _客戶);
 
             return 目前列舉_;

@@ -13,20 +13,15 @@ namespace WokyTool.客戶
 {
     public class 子客戶資料篩選 : 通用可篩選介面<子客戶資料>
     {
-        private 客戶資料 _客戶 = null;
+        private 客戶資料 _客戶 = 客戶資料.不篩選;
         public 客戶資料 客戶
         {
             get
             {
-                if (_客戶 == null)
-                    return 客戶資料.不篩;
                 return _客戶;
             }
             set
             {
-                if (客戶資料.不篩 == value)
-                    value = null;
-
                 if (_客戶 != value)
                 {
                     _客戶 = value;
@@ -41,7 +36,7 @@ namespace WokyTool.客戶
             {
                 return
                     null != _文字 ||
-                    null != _客戶;
+                    客戶資料.不篩選 != _客戶;
             }
         }
 
@@ -52,7 +47,7 @@ namespace WokyTool.客戶
             if (null != _文字)
                 目前列舉_ = 目前列舉_.Where(Value => Value.名稱.Contains(_文字));
 
-            if (null != _客戶)
+            if (客戶資料.不篩選 != _客戶)
                 目前列舉_ = 目前列舉_.Where(Value => Value.客戶 == _客戶);
 
             return 目前列舉_;

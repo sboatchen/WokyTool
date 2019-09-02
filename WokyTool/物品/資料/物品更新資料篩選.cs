@@ -26,20 +26,15 @@ namespace WokyTool.物品
             }
         }
 
-        private 物品大類資料 _大類 = null;
+        private 物品大類資料 _大類 = 物品大類資料.不篩選;
         public 物品大類資料 大類
         {
             get
             {
-                if (_大類 == null)
-                    return 物品大類資料.不篩;
                 return _大類;
             }
             set
             {
-                if (物品大類資料.不篩 == value)
-                    value = null;
-
                 if (_大類 != value)
                 {
                     _大類 = value;
@@ -48,20 +43,15 @@ namespace WokyTool.物品
             }
         }
 
-        private 物品小類資料 _小類 = null;
+        private 物品小類資料 _小類 = 物品小類資料.不篩選;
         public 物品小類資料 小類
         {
             get
             {
-                if (_小類 == null)
-                    return 物品小類資料.不篩;
                 return _小類;
             }
             set
             {
-                if (物品小類資料.不篩 == value)
-                    value = null;
-
                 if (_小類 != value)
                 {
                     _小類 = value;
@@ -70,20 +60,15 @@ namespace WokyTool.物品
             }
         }
 
-        private 物品品牌資料 _品牌 = null;
+        private 物品品牌資料 _品牌 = 物品品牌資料.不篩選;
         public 物品品牌資料 品牌
         {
             get
             {
-                if (_品牌 == null)
-                    return 物品品牌資料.不篩;
                 return _品牌;
             }
             set
             {
-                if (物品品牌資料.不篩 == value)
-                    value = null;
-
                 if (_品牌 != value)
                 {
                     _品牌 = value;
@@ -211,9 +196,9 @@ namespace WokyTool.物品
             {
                 return
                     列舉.更新狀態.不篩選 != _更新狀態 ||
-                    null != _大類 ||
-                    null != _小類 ||
-                    null != _品牌 ||
+                    物品大類資料.不篩選 != _大類 ||
+                    物品小類資料.不篩選 != _小類 ||
+                    物品品牌資料.不篩選 != _品牌 ||
                     null != _條碼 ||
                     null != _原廠編號 ||
                     null != _代理編號 ||
@@ -234,11 +219,11 @@ namespace WokyTool.物品
             if (列舉.更新狀態.不篩選 != _更新狀態)
                 目前列舉_ = 目前列舉_.Where(Value => Value.更新狀態 == _更新狀態);
 
-            if (null != _大類)
+            if (物品大類資料.不篩選 != _大類)
                 目前列舉_ = 目前列舉_.Where(Value => Value.大類 == _大類);
-            if (null != _小類)
+            if (物品小類資料.不篩選 != _小類)
                 目前列舉_ = 目前列舉_.Where(Value => Value.小類 == _小類);
-            if (null != _品牌)
+            if (物品品牌資料.不篩選 != _品牌)
                 目前列舉_ = 目前列舉_.Where(Value => Value.品牌 == _品牌);
 
             if (null != _條碼)
