@@ -148,24 +148,11 @@
     <Compile Include="商品\控制\商品大類資料管理器.cs" />
     <Compile Include="商品\控制\商品資料管理器.cs" />
     <Compile Include="商品\控制\商品小類資料管理器.cs" />
-    <Compile Include="商品\控制\商品新增匯入管理器.cs" />
     <Compile Include="商品\視窗\商品小類總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="商品\視窗\商品小類總覽視窗.Designer.cs">
       <DependentUpon>商品小類總覽視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="商品\視窗\商品新增匯入視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="商品\視窗\商品新增匯入視窗.Designer.cs">
-      <DependentUpon>商品新增匯入視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="商品\視窗\商品新增匯入詳細視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="商品\視窗\商品新增匯入詳細視窗.Designer.cs">
-      <DependentUpon>商品新增匯入詳細視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="商品\視窗\商品大類總覽視窗.cs">
       <SubType>Form</SubType>
@@ -174,13 +161,12 @@
       <DependentUpon>商品大類總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="商品\資料\商品小類資料篩選.cs" />
-    <Compile Include="商品\資料\商品組成匯入資料.cs" />
     <Compile Include="商品\資料\商品組成資料.cs" />
-    <Compile Include="商品\資料\商品新增匯入資料.cs" />
     <Compile Include="商品\資料\商品大類資料篩選.cs" />
     <Compile Include="商品\資料\商品資料篩選.cs" />
+    <Compile Include="商品\資料\商品更新資料.cs" />
+    <Compile Include="商品\資料\商品更新資料篩選.cs" />
     <Compile Include="商品\資料\舊商品資料.cs" />
-    <Compile Include="商品\轉換\商品總覽匯出轉換.cs" />
     <Compile Include="商品\視窗\商品總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,8 +200,6 @@
     <Compile Include="商品\資料\商品大類資料.cs" />
     <Compile Include="商品\資料\商品小類資料.cs" />
     <Compile Include="商品\資料\商品資料.cs" />
-    <Compile Include="商品\資料\商品資料篩選設定.cs" />
-    <Compile Include="商品\轉換\商品新增錯誤匯出轉換.cs" />
     <Compile Include="客戶\控制\子客戶資料管理器.cs" />
     <Compile Include="客戶\控制\客戶資料管理器.cs" />
     <Compile Include="客戶\視窗\子客戶詳細視窗.cs">
@@ -1163,14 +1147,8 @@
     <EmbeddedResource Include="商品\視窗\商品篩選視窗.resx">
       <DependentUpon>商品篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="商品\視窗\商品新增匯入詳細視窗.resx">
-      <DependentUpon>商品新增匯入詳細視窗.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="商品\視窗\商品詳細視窗.resx">
       <DependentUpon>商品詳細視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="商品\視窗\商品新增匯入視窗.resx">
-      <DependentUpon>商品新增匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="商品\視窗\商品大類總覽視窗.resx">
       <DependentUpon>商品大類總覽視窗.cs</DependentUpon>
@@ -1458,8 +1436,7 @@
     <None Include="Properties\DataSources\WokyTool.公司.公司資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品大類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品小類資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.商品.商品新增匯入資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.商品.商品組成匯入資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.商品.商品更新資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品組成資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.子客戶資料.datasource" />
@@ -1516,7 +1493,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="商品\轉換\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

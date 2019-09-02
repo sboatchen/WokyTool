@@ -60,15 +60,6 @@ namespace WokyTool.商品
             物品 = 物品資料.空白;
         }
 
-        public static 商品組成資料 新增(商品組成匯入資料 Item_) //@@ remove
-        {
-            return new 商品組成資料
-            {
-                物品 = Item_.物品,
-                數量 = Item_.數量,
-            };
-        }
-
         /********************************/
 
         public void 檢查合法(可檢查介面 檢查器_, 基本資料 資料上層_ = null, 基本資料 資料參考_ = null)

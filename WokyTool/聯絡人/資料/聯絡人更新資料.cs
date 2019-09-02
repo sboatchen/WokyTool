@@ -12,8 +12,6 @@ using WokyTool.通用;
 
 namespace WokyTool.聯絡人
 {
-
-
     [JsonObject(MemberSerialization.OptIn)]
     public class 聯絡人更新資料 : 可更新資料<聯絡人資料>
     {

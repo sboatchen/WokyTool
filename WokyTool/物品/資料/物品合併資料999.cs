@@ -119,13 +119,13 @@ namespace WokyTool.物品
             StringBuilder SB_ = new StringBuilder();
             foreach (var Group_ in GroupQuery_)
             {
-                if (SB_.Length > 0)
-                    SB_.Append(" & ");
-
                 if (Group_.Key == 字串.無)
                 {
                     foreach (var 物品組成_ in Group_)
                     {
+                        if (SB_.Length > 0)
+                            SB_.Append(" & ");
+
                         if (String.IsNullOrEmpty(物品組成_.Key.縮寫))
                             SB_.Append(物品組成_.Key.名稱);
                         else
@@ -136,10 +136,18 @@ namespace WokyTool.物品
                 }
                 else
                 {
+                    if (SB_.Length > 0)
+                        SB_.Append(" & ");
+
                     SB_.Append(Group_.Key).Append("-");
 
+                    bool isNotFirst_ = false;
                     foreach (var 物品組成_ in Group_)
                     {
+                        if (isNotFirst_)
+                            SB_.Append(",");
+                        isNotFirst_ = true;
+
                         SB_.Append(物品組成_.Key.顏色);
 
                         SB_.Append("*").Append(物品組成_.Value);
@@ -148,6 +156,51 @@ namespace WokyTool.物品
             }
 
             return SB_.ToString();
+        }
+
+        public List<商品組成資料> 解構(string 組成字串_)
+        {
+            if (string.IsNullOrEmpty(組成字串_))
+                return null;
+
+            var 類別列_ = 組成字串_.Split(new string[]{" & "}, Int16.MaxValue, StringSplitOptions.None);
+
+            List<商品組成資料> 組成列_ = new List<商品組成資料>();
+            foreach (string 同類別資料_ in 類別列_)
+            {
+                int 類別索引_ = 同類別資料_.IndexOf('-');
+                if (類別索引_ == -1)
+                {
+                    var 組成_ = 同類別資料_.Split('*');
+                    商品組成資料 商品組成資料_ = new 商品組成資料
+                    {
+                        數量 = Int16.Parse(組成_[1]),
+                        物品 = 物品資料管理器.獨體.取得(組成_[0])
+                    };
+
+                    組成列_.Add(商品組成資料_);
+                }
+                else
+                {
+                    string 類別_ = 同類別資料_.Substring(0, 類別索引_);
+                    string 顏色資料群_ = 同類別資料_.Substring(類別索引_ + 1);
+
+                    var 顏色資料列_ = 顏色資料群_.Split(',');
+                    foreach (string 顏色資料_ in 顏色資料列_)
+                    {
+                        var 組成_ = 顏色資料_.Split('*');
+                        商品組成資料 商品組成資料_ = new 商品組成資料
+                        {
+                            數量 = Int16.Parse(組成_[1]),
+                            物品 = 物品資料管理器.獨體.取得_類別(類別_, 組成_[0])
+                        };
+
+                        組成列_.Add(商品組成資料_);
+                    }
+                }
+            }
+
+            return 組成列_;
         }
     }
 }

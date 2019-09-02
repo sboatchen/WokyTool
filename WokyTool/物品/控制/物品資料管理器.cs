@@ -63,13 +63,17 @@ namespace WokyTool.物品
             return _資料書.Values.Where(Value => 縮寫_.Equals(Value.縮寫)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
         }
 
-        // 取得資料
         public 物品資料 取得_條碼(string 條碼_)
         {
             if (String.IsNullOrEmpty(條碼_))
                 return 空白資料;
 
             return _資料書.Values.Where(Value => 條碼_.Equals(Value.條碼)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
+        }
+
+        public 物品資料 取得_類別(string 類別_, string 顏色_)
+        {
+            return _資料書.Values.Where(Value => 類別_.Equals(Value.類別) && 顏色_.Equals(Value.顏色)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
         }
     }
 }
