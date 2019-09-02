@@ -22,14 +22,6 @@ namespace WokyTool.通用
 
         public virtual void 初始化()
         {
-            foreach (PropertyInfo 屬性_ in GetType().GetProperties())
-            {
-                object 欄位_ = 屬性_.GetValue(this);
-                抽象資料選取元件 可初始化欄位_ = 欄位_ as 抽象資料選取元件;
-                if (可初始化欄位_ != null)
-                    可初始化欄位_.初始化();
-            }
-
             this.Activated += new System.EventHandler(this._視窗激活);
             this.Deactivate += new EventHandler(this._視窗凍結);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._視窗關閉);

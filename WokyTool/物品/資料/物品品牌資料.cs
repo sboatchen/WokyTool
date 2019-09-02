@@ -38,7 +38,7 @@ namespace WokyTool.物品
             名稱 = 字串.錯誤,
         };
 
-        public static 物品品牌資料 混和 = new 物品品牌資料    //@@
+        public static 物品品牌資料 混和 = new 物品品牌資料
         {
             編號 = 常數.品牌混和資料編碼,
             名稱 = 字串.混和,

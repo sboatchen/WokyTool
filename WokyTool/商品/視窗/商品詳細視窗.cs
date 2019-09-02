@@ -30,6 +30,15 @@ namespace WokyTool.商品{
 
         public override void 初始化()
         {
+            客戶.初始化();
+            公司.初始化();
+
+            大類.初始化();
+            小類.初始化();
+            //品牌.初始化();
+
+            物品.初始化();
+
             base.初始化();
 
             資料綁定(this.名稱, "名稱");
@@ -54,7 +63,7 @@ namespace WokyTool.商品{
 
         private void 新增_Click(object sender, EventArgs e)
         {
-            物品資料 物品_ = (物品資料)(this.物品選取元件.SelectedItem);
+            物品資料 物品_ = (物品資料)(this.物品.SelectedItem);
             if (物品_ == null || 物品_.編號是否有值() == false)
             {
                 訊息管理器.獨體.通知("物品不合法");

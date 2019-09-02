@@ -40,7 +40,7 @@
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.聯絡人資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.新版頁索引元件1 = new WokyTool.通用.新版頁索引元件();
-            this.客戶選取元件1 = new WokyTool.客戶.客戶選取元件();
+            this.客戶 = new WokyTool.客戶.客戶選取元件();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.聯絡人資料BindingSource)).BeginInit();
@@ -49,26 +49,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 19);
+            this.label1.Location = new System.Drawing.Point(17, 24);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.Size = new System.Drawing.Size(37, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "名稱";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 71);
+            this.label2.Location = new System.Drawing.Point(17, 89);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "聯絡人";
             // 
             // 名稱
             // 
-            this.名稱.Location = new System.Drawing.Point(64, 13);
+            this.名稱.Location = new System.Drawing.Point(85, 16);
+            this.名稱.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.名稱.Name = "名稱";
-            this.名稱.Size = new System.Drawing.Size(126, 22);
+            this.名稱.Size = new System.Drawing.Size(167, 25);
             this.名稱.TabIndex = 2;
             // 
             // dataGridView1
@@ -84,11 +87,12 @@
             this.手機DataGridViewTextBoxColumn,
             this.地址DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.聯絡人資料BindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 99);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 124);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(745, 214);
+            this.dataGridView1.Size = new System.Drawing.Size(993, 268);
             this.dataGridView1.TabIndex = 3;
             // 
             // 編號DataGridViewTextBoxColumn
@@ -133,41 +137,46 @@
             // 
             // 新版頁索引元件1
             // 
-            this.新版頁索引元件1.Location = new System.Drawing.Point(269, 333);
+            this.新版頁索引元件1.Location = new System.Drawing.Point(359, 416);
+            this.新版頁索引元件1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.新版頁索引元件1.Name = "新版頁索引元件1";
-            this.新版頁索引元件1.Size = new System.Drawing.Size(234, 34);
+            this.新版頁索引元件1.Size = new System.Drawing.Size(312, 42);
             this.新版頁索引元件1.TabIndex = 94;
             // 
-            // 客戶選取元件1
+            // 客戶
             // 
-            this.客戶選取元件1.Location = new System.Drawing.Point(64, 41);
-            this.客戶選取元件1.Name = "客戶選取元件1";
-            this.客戶選取元件1.ReadOnly = false;
-            this.客戶選取元件1.SelectedItem = null;
-            this.客戶選取元件1.Size = new System.Drawing.Size(190, 25);
-            this.客戶選取元件1.TabIndex = 93;
+            this.客戶.Location = new System.Drawing.Point(85, 51);
+            this.客戶.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.客戶.Name = "客戶";
+            this.客戶.ReadOnly = false;
+            this.客戶.SelectedItem = null;
+            this.客戶.Size = new System.Drawing.Size(253, 31);
+            this.客戶.TabIndex = 93;
+            this.客戶.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 43);
+            this.label5.Location = new System.Drawing.Point(17, 54);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.Size = new System.Drawing.Size(37, 15);
             this.label5.TabIndex = 95;
             this.label5.Text = "客戶";
             // 
             // 子客戶詳細視窗
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 379);
+            this.ClientSize = new System.Drawing.Size(1023, 474);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.新版頁索引元件1);
-            this.Controls.Add(this.客戶選取元件1);
+            this.Controls.Add(this.客戶);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.名稱);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "子客戶詳細視窗";
             this.Text = "子客戶詳細視窗";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -185,7 +194,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 聯絡人資料BindingSource;
         private 通用.新版頁索引元件 新版頁索引元件1;
-        private 客戶選取元件 客戶選取元件1;
+        private 客戶選取元件 客戶;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 姓名DataGridViewTextBoxColumn;

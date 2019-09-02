@@ -24,6 +24,10 @@ namespace WokyTool.物品
 
         public override void 初始化()
         {
+            大類.初始化();
+            小類.初始化();
+            品牌.初始化();
+
             base.初始化();
 
             資料綁定(this.名稱, "文字");

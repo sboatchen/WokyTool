@@ -28,10 +28,12 @@ namespace WokyTool.客戶
 
         public override void 初始化()
         {
+            客戶.初始化();
+
             base.初始化();
 
             資料綁定(this.名稱, "名稱");
-            資料綁定(this.客戶選取元件1, "客戶");
+            資料綁定(this.客戶, "客戶");
         }
 
         protected override void 選擇改變()

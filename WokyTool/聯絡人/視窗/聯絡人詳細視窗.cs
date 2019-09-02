@@ -27,24 +27,27 @@ namespace WokyTool.聯絡人
 
         public override void 初始化()
         {
+            客戶.初始化();
+            子客戶.初始化();
+
             base.初始化();
 
             資料綁定(this.姓名, "姓名");
             資料綁定(this.電話, "電話");
             資料綁定(this.手機, "手機");
             資料綁定(this.地址, "地址");
-            資料綁定(this.客戶選取元件1, "客戶");
-            資料綁定(this.子客戶選取元件1, "子客戶");
+            資料綁定(this.客戶, "客戶");
+            資料綁定(this.子客戶, "子客戶");
 
-            this.客戶選取元件1.下拉選單.SelectedValueChanged += new EventHandler(this._on客戶更新);
+            this.客戶.下拉選單.SelectedValueChanged += new EventHandler(this._on客戶更新);
         }
 
         private void _on客戶更新(object sender, EventArgs e)
         {
-            if (this.客戶選取元件1.SelectedItem != null)
-                this.子客戶選取元件1.篩選器.客戶 = (客戶資料)this.客戶選取元件1.SelectedItem;
+            if (this.客戶.SelectedItem != null)
+                this.子客戶.篩選器.客戶 = (客戶資料)this.客戶.SelectedItem;
             else
-                this.子客戶選取元件1.篩選器.客戶 = 客戶資料.空白;
+                this.子客戶.篩選器.客戶 = 客戶資料.空白;
         }
     }
 }
