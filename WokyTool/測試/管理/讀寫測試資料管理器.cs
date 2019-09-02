@@ -34,7 +34,7 @@ namespace WokyTool.測試
 
         protected override IEnumerable<讀寫測試資料> 取得篩選特殊選項()
         {
-            yield return 讀寫測試資料.不篩;
+            yield return 讀寫測試資料.不篩選;
             yield return 讀寫測試資料.空白;
             yield return 讀寫測試資料.錯誤;
         }

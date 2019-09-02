@@ -21,9 +21,9 @@ namespace WokyTool.公司
 
         public 公司資料 Self { get { return this; } }
 
-        public static readonly 公司資料 不篩 = new 公司資料
+        public static readonly 公司資料 不篩選 = new 公司資料
         {
-            編號 = 常數.不篩資料編碼,
+            編號 = 常數.不篩選資料編碼,
             名稱 = 字串.不篩選,
         };
 

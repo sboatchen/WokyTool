@@ -20,9 +20,9 @@ namespace WokyTool.商品
 
         public 商品小類資料 Self { get { return this; } }
 
-        public static readonly 商品小類資料 不篩 = new 商品小類資料
+        public static readonly 商品小類資料 不篩選 = new 商品小類資料
         {
-            編號 = 常數.不篩資料編碼,
+            編號 = 常數.不篩選資料編碼,
             名稱 = 字串.不篩選,
         };
 

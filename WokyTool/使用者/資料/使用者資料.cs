@@ -57,9 +57,9 @@ namespace WokyTool.使用者
 
         public 使用者資料 Self { get { return this; } }
 
-        public static readonly 使用者資料 不篩 = new 使用者資料
+        public static readonly 使用者資料 不篩選 = new 使用者資料
         {
-            編號 = 常數.不篩資料編碼,
+            編號 = 常數.不篩選資料編碼,
 
             帳號 = 字串.不篩選,
             密碼 = 字串.無,

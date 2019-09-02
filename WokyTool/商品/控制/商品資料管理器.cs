@@ -22,7 +22,7 @@ namespace WokyTool.商品
 
         public override string 檔案路徑 { get { return "設定/商品V2.1.1.json"; } }
 
-        public override 商品資料 不篩資料 { get { return 商品資料.不篩; } }
+        public override 商品資料 不篩選資料 { get { return 商品資料.不篩選; } }
         public override 商品資料 空白資料 { get { return 商品資料.空白; } }
         public override 商品資料 錯誤資料 { get { return 商品資料.錯誤; } }
         public 商品資料 折扣資料 { get { return 商品資料.折扣; } }

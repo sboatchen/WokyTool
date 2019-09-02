@@ -20,9 +20,9 @@ namespace WokyTool.物品
 
         public 物品品牌資料 Self { get { return this; } }
 
-        public static 物品品牌資料 不篩 = new 物品品牌資料
+        public static 物品品牌資料 不篩選 = new 物品品牌資料
         {
-            編號 = 常數.不篩資料編碼,
+            編號 = 常數.不篩選資料編碼,
             名稱 = 字串.不篩選,
         };
 

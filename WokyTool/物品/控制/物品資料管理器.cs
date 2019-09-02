@@ -20,7 +20,7 @@ namespace WokyTool.物品
 
         public override string 檔案路徑 { get { return "設定/物品.json"; } }
 
-        public override 物品資料 不篩資料 { get { return 物品資料.不篩; } }
+        public override 物品資料 不篩選資料 { get { return 物品資料.不篩選; } }
         public override 物品資料 空白資料 { get { return 物品資料.空白; } }
         public override 物品資料 錯誤資料 { get { return 物品資料.錯誤; } }
 
