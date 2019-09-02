@@ -148,6 +148,7 @@
     <Compile Include="商品\控制\商品大類資料管理器.cs" />
     <Compile Include="商品\控制\商品資料管理器.cs" />
     <Compile Include="商品\控制\商品小類資料管理器.cs" />
+    <Compile Include="商品\控制\商品更新資料管理器.cs" />
     <Compile Include="商品\視窗\商品小類總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +160,18 @@
     </Compile>
     <Compile Include="商品\視窗\商品大類總覽視窗.Designer.cs">
       <DependentUpon>商品大類總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\視窗\商品更新視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\視窗\商品更新視窗.Designer.cs">
+      <DependentUpon>商品更新視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品\視窗\商品更新詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\視窗\商品更新詳細視窗.Designer.cs">
+      <DependentUpon>商品更新詳細視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="商品\資料\商品小類資料篩選.cs" />
     <Compile Include="商品\資料\商品組成資料.cs" />
@@ -1152,6 +1165,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="商品\視窗\商品大類總覽視窗.resx">
       <DependentUpon>商品大類總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品\視窗\商品更新視窗.resx">
+      <DependentUpon>商品更新視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品\視窗\商品更新詳細視窗.resx">
+      <DependentUpon>商品更新詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="客戶\視窗\元件\子客戶選取元件.resx">
       <DependentUpon>子客戶選取元件.cs</DependentUpon>
