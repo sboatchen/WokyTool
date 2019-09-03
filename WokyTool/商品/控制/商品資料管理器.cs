@@ -39,8 +39,6 @@ namespace WokyTool.商品
         // 建構子
         private 商品資料管理器()
         {
-            foreach (商品資料 資料_ in _資料書.Values)
-                資料_.更新組成();
         }
 
         public override 商品資料 取得(int ID_)
@@ -187,6 +185,17 @@ namespace WokyTool.商品
             儲存();
 
             訊息管理器.獨體.通知("商品轉換完成");
+        }
+
+        public void 更新組成()
+        {
+            foreach (var Item_ in 商品資料管理器.獨體.資料列舉2)
+            {
+                Item_.更新組成();
+            }
+
+            資料版本++;
+            儲存();
         }
     }
 }

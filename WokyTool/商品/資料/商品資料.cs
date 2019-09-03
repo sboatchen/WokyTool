@@ -41,6 +41,18 @@ namespace WokyTool.商品
             }
         }
 
+        [JsonProperty]
+        public int 品牌編號
+        {
+            get
+            {
+                return 品牌.編號;
+            }
+            set
+            {
+                品牌 = 物品品牌資料管理器.獨體.取得(value);
+            }
+        }
 
         [JsonProperty]
         public int 公司編號
@@ -79,6 +91,10 @@ namespace WokyTool.商品
         [JsonProperty]
         public List<商品組成資料> 組成 { get; set; }
 
+        [JsonProperty]
+        [可匯出(名稱 = "組成")]
+        public string 組成字串 { get; set; }
+
         [可匯出]
         [JsonProperty]
         public decimal 進價 { get; set; }
@@ -91,6 +107,14 @@ namespace WokyTool.商品
         [JsonProperty]
         public int 寄庫數量 { get; set; }
 
+        [可匯出]
+        [JsonProperty]
+        public int 體積 { get; set; }
+
+        [可匯出]
+        [JsonProperty]
+        public decimal 成本 { get; set; }
+
         /********************************/
 
         public 商品大類資料 大類 { get; set; }
@@ -102,15 +126,6 @@ namespace WokyTool.商品
         public 公司資料 公司 { get; set; }
 
         public 客戶資料 客戶 { get; set; }
-
-        [可匯出(名稱 = "組成")]
-        public string 組成字串 { get; protected set; }
-
-        [可匯出]
-        public int 體積 { get; protected set; }
-
-        [可匯出]
-        public decimal 成本 { get; protected set; }
 
         [可匯出(名稱 = "大類")]
         public string 大類名稱 { get { return 大類.名稱; } }
@@ -156,6 +171,7 @@ namespace WokyTool.商品
 
             大類 = 商品大類資料.不篩選,
             小類 = 商品小類資料.不篩選,
+            品牌 = 物品品牌資料.不篩選,
 
             公司 = 公司資料.不篩選,
             客戶 = 客戶資料.不篩選,
@@ -170,6 +186,7 @@ namespace WokyTool.商品
 
             大類 = 商品大類資料.空白,
             小類 = 商品小類資料.空白,
+            品牌 = 物品品牌資料.空白,
 
             公司 = 公司資料.空白,
             客戶 = 客戶資料.空白,
@@ -184,6 +201,7 @@ namespace WokyTool.商品
 
             大類 = 商品大類資料.錯誤,
             小類 = 商品小類資料.錯誤,
+            品牌 = 物品品牌資料.錯誤,
 
             公司 = 公司資料.錯誤,
             客戶 = 客戶資料.錯誤,
@@ -198,6 +216,7 @@ namespace WokyTool.商品
 
             大類 = 商品大類資料.空白,
             小類 = 商品小類資料.空白,
+            品牌 = 物品品牌資料.空白,
 
             公司 = 公司資料.空白,
             客戶 = 客戶資料.空白,
