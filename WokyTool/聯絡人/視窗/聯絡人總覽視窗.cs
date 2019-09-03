@@ -36,5 +36,11 @@ namespace WokyTool.聯絡人
             視窗_.BringToFront();
 
         }
+
+        private void 舊資料轉換ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (訊息管理器.獨體.確認("轉換確認", "是否用舊版資料覆蓋新資料?"))
+                聯絡人資料管理器.獨體.舊資料轉換();
+        }
     }
 }

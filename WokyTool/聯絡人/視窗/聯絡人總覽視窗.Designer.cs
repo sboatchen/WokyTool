@@ -46,6 +46,7 @@ namespace WokyTool.聯絡人
             this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.通用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.舊資料轉換ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.聯絡人資料BindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -158,13 +159,14 @@ namespace WokyTool.聯絡人
             // 自訂ToolStripMenuItem
             // 
             this.自訂ToolStripMenuItem.Name = "自訂ToolStripMenuItem";
-            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.自訂ToolStripMenuItem.Text = "自訂";
             // 
             // 更新ToolStripMenuItem
             // 
             this.更新ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.通用ToolStripMenuItem});
+            this.通用ToolStripMenuItem,
+            this.舊資料轉換ToolStripMenuItem});
             this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
             this.更新ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.更新ToolStripMenuItem.Text = "更新";
@@ -175,6 +177,13 @@ namespace WokyTool.聯絡人
             this.通用ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.通用ToolStripMenuItem.Text = "通用";
             this.通用ToolStripMenuItem.Click += new System.EventHandler(this.通用ToolStripMenuItem_Click);
+            // 
+            // 舊資料轉換ToolStripMenuItem
+            // 
+            this.舊資料轉換ToolStripMenuItem.Name = "舊資料轉換ToolStripMenuItem";
+            this.舊資料轉換ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.舊資料轉換ToolStripMenuItem.Text = "舊資料轉換";
+            this.舊資料轉換ToolStripMenuItem.Click += new System.EventHandler(this.舊資料轉換ToolStripMenuItem_Click);
             // 
             // 聯絡人總覽視窗
             // 
@@ -214,5 +223,6 @@ namespace WokyTool.聯絡人
         private System.Windows.Forms.ToolStripMenuItem 自訂ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 更新ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 通用ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 舊資料轉換ToolStripMenuItem;
     }
 }

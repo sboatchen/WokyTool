@@ -69,28 +69,6 @@ namespace WokyTool
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();  //@@ 搬進去
-            openFileDialog1.Filter = "Excel files|*.*";
-
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                try
-                {
-                    var Excel_ = new ExcelQueryFactory(openFileDialog1.FileName);
-                    var i = new 物品匯入視窗(Excel_);
-                    i.Show();
-                    i.BringToFront();
-
-                }
-                catch (Exception Error_)
-                {
-                    MessageBox.Show("開啟檔案失敗" + Error_.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void button6_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.物品, 列舉.視窗.總覽);
@@ -199,28 +177,6 @@ namespace WokyTool
         private void button24_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.公司, 列舉.視窗.總覽);
-        }
-
-        private void button25_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "Excel files|*.*";
-
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                try
-                {
-                    var Excel_ = new ExcelQueryFactory(openFileDialog1.FileName);
-
-                    var i = new 物品更新匯入視窗(Excel_);
-                    i.Show();
-                    i.BringToFront();
-                }
-                catch (Exception Error_)
-                {
-                    MessageBox.Show("開啟檔案失敗" + Error_.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
         }
 
         private void button26_Click(object sender, EventArgs e)
