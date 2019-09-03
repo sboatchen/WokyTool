@@ -116,43 +116,15 @@ namespace WokyTool.物品
 
         [可匯入]
         [JsonProperty]
-        public string 條碼
+        public string 國際條碼
         {
             get
             {
-                return 修改.條碼;
+                return 修改.國際條碼;
             }
             set
             {
-                修改.條碼 = value;
-            }
-        }
-
-        [可匯入]
-        [JsonProperty]
-        public string 原廠編號
-        {
-            get
-            {
-                return 修改.原廠編號;
-            }
-            set
-            {
-                修改.原廠編號 = value;
-            }
-        }
-
-        [可匯入]
-        [JsonProperty]
-        public string 代理編號
-        {
-            get
-            {
-                return 修改.代理編號;
-            }
-            set
-            {
-                修改.代理編號 = value;
+                修改.國際條碼 = value;
             }
         }
 
@@ -306,9 +278,7 @@ namespace WokyTool.物品
         public 物品小類資料 參考小類 { get { return 參考.小類; } }
         public 物品品牌資料 參考品牌 { get { return 參考.品牌; } }
 
-        public string 參考條碼 { get { return 參考.條碼; } }
-        public string 參考原廠編號 { get { return 參考.原廠編號; } }
-        public string 參考代理編號 { get { return 參考.代理編號; } }
+        public string 參考國際條碼 { get { return 參考.國際條碼; } }
 
         public string 參考類別 { get { return 參考.類別; } }
         public string 參考顏色 { get { return 參考.顏色; } }

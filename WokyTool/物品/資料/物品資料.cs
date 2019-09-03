@@ -54,15 +54,7 @@ namespace WokyTool.物品
 
         [可匯出]
         [JsonProperty]
-        public string 條碼 { get; set; }
-
-        [可匯出]
-        [JsonProperty]
-        public string 原廠編號 { get; set; }
-
-        [可匯出]
-        [JsonProperty]
-        public string 代理編號 { get; set; }
+        public string 國際條碼 { get; set; }
 
         [可匯出]
         [JsonProperty]
@@ -148,9 +140,7 @@ namespace WokyTool.物品
             小類 = 物品小類資料.不篩選,
             品牌 = 物品品牌資料.不篩選,
 
-            條碼 = 字串.空,
-            原廠編號 = 字串.空,
-            代理編號 = 字串.空,
+            國際條碼 = 字串.空,
 
             名稱 = 字串.不篩選,
             縮寫 = 字串.不篩選,
@@ -173,9 +163,7 @@ namespace WokyTool.物品
             小類 = 物品小類資料.空白,
             品牌 = 物品品牌資料.空白,
 
-            條碼 = 字串.無,
-            原廠編號 = 字串.無,
-            代理編號 = 字串.無,
+            國際條碼 = 字串.無,
 
             名稱 = 字串.無,
             縮寫 = 字串.無,
@@ -198,9 +186,7 @@ namespace WokyTool.物品
             小類 = 物品小類資料.錯誤,
             品牌 = 物品品牌資料.錯誤,
 
-            條碼 = 字串.錯誤,
-            原廠編號 = 字串.錯誤,
-            代理編號 = 字串.錯誤,
+            國際條碼 = 字串.錯誤,
 
             名稱 = 字串.錯誤,
             縮寫 = 字串.錯誤,

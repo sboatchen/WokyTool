@@ -36,16 +36,15 @@ namespace WokyTool.物品
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new WokyTool.通用.MyDataGridView();
+            this.物品更新資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.更新狀態DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.縮寫DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.國際條碼 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.大類識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.小類識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.品牌識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.條碼DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.原廠編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.代理編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.類別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.顏色DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.體積DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +54,6 @@ namespace WokyTool.物品
             this.成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.成本備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.物品更新資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.物品更新資料BindingSource)).BeginInit();
@@ -71,34 +69,33 @@ namespace WokyTool.物品
             this.檢查ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(2424, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1857, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // 樣板ToolStripMenuItem
             // 
             this.樣板ToolStripMenuItem.Name = "樣板ToolStripMenuItem";
-            this.樣板ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
+            this.樣板ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.樣板ToolStripMenuItem.Text = "樣板";
             // 
             // 匯入ToolStripMenuItem
             // 
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
-            this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
+            this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "匯入";
             this.匯入ToolStripMenuItem.Click += new System.EventHandler(this.匯入ToolStripMenuItem_Click);
             // 
             // 篩選ToolStripMenuItem
             // 
             this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
-            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
+            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.篩選ToolStripMenuItem.Text = "篩選";
             // 
             // 檢查ToolStripMenuItem
             // 
             this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
-            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
+            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.檢查ToolStripMenuItem.Text = "檢查";
             // 
             // dataGridView1
@@ -111,12 +108,10 @@ namespace WokyTool.物品
             this.編號DataGridViewTextBoxColumn,
             this.名稱DataGridViewTextBoxColumn,
             this.縮寫DataGridViewTextBoxColumn,
+            this.國際條碼,
             this.大類識別DataGridViewTextBoxColumn,
             this.小類識別DataGridViewTextBoxColumn,
             this.品牌識別DataGridViewTextBoxColumn,
-            this.條碼DataGridViewTextBoxColumn,
-            this.原廠編號DataGridViewTextBoxColumn,
-            this.代理編號DataGridViewTextBoxColumn,
             this.類別DataGridViewTextBoxColumn,
             this.顏色DataGridViewTextBoxColumn,
             this.體積DataGridViewTextBoxColumn,
@@ -128,12 +123,15 @@ namespace WokyTool.物品
             this.錯誤訊息DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.物品更新資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 27);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(2424, 503);
+            this.dataGridView1.Size = new System.Drawing.Size(1857, 400);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // 物品更新資料BindingSource
+            // 
+            this.物品更新資料BindingSource.DataSource = typeof(WokyTool.物品.物品更新資料);
             // 
             // 更新狀態DataGridViewTextBoxColumn
             // 
@@ -162,6 +160,12 @@ namespace WokyTool.物品
             this.縮寫DataGridViewTextBoxColumn.HeaderText = "縮寫";
             this.縮寫DataGridViewTextBoxColumn.Name = "縮寫DataGridViewTextBoxColumn";
             // 
+            // 國際條碼
+            // 
+            this.國際條碼.DataPropertyName = "國際條碼";
+            this.國際條碼.HeaderText = "國際條碼";
+            this.國際條碼.Name = "國際條碼";
+            // 
             // 大類識別DataGridViewTextBoxColumn
             // 
             this.大類識別DataGridViewTextBoxColumn.DataPropertyName = "大類識別";
@@ -179,24 +183,6 @@ namespace WokyTool.物品
             this.品牌識別DataGridViewTextBoxColumn.DataPropertyName = "品牌識別";
             this.品牌識別DataGridViewTextBoxColumn.HeaderText = "品牌";
             this.品牌識別DataGridViewTextBoxColumn.Name = "品牌識別DataGridViewTextBoxColumn";
-            // 
-            // 條碼DataGridViewTextBoxColumn
-            // 
-            this.條碼DataGridViewTextBoxColumn.DataPropertyName = "條碼";
-            this.條碼DataGridViewTextBoxColumn.HeaderText = "條碼";
-            this.條碼DataGridViewTextBoxColumn.Name = "條碼DataGridViewTextBoxColumn";
-            // 
-            // 原廠編號DataGridViewTextBoxColumn
-            // 
-            this.原廠編號DataGridViewTextBoxColumn.DataPropertyName = "原廠編號";
-            this.原廠編號DataGridViewTextBoxColumn.HeaderText = "原廠編號";
-            this.原廠編號DataGridViewTextBoxColumn.Name = "原廠編號DataGridViewTextBoxColumn";
-            // 
-            // 代理編號DataGridViewTextBoxColumn
-            // 
-            this.代理編號DataGridViewTextBoxColumn.DataPropertyName = "代理編號";
-            this.代理編號DataGridViewTextBoxColumn.HeaderText = "代理編號";
-            this.代理編號DataGridViewTextBoxColumn.Name = "代理編號DataGridViewTextBoxColumn";
             // 
             // 類別DataGridViewTextBoxColumn
             // 
@@ -254,19 +240,15 @@ namespace WokyTool.物品
             this.錯誤訊息DataGridViewTextBoxColumn.Name = "錯誤訊息DataGridViewTextBoxColumn";
             this.錯誤訊息DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 物品更新資料BindingSource
-            // 
-            this.物品更新資料BindingSource.DataSource = typeof(WokyTool.物品.物品更新資料);
-            // 
             // 物品更新視窗
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2424, 530);
+            this.ClientSize = new System.Drawing.Size(1857, 424);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "物品更新視窗";
             this.Text = "物品更新視窗";
             this.menuStrip1.ResumeLayout(false);
@@ -291,12 +273,10 @@ namespace WokyTool.物品
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 縮寫DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 國際條碼;
         private System.Windows.Forms.DataGridViewTextBoxColumn 大類識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 小類識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 品牌識別DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 條碼DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 原廠編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 代理編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 類別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 顏色DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 體積DataGridViewTextBoxColumn;

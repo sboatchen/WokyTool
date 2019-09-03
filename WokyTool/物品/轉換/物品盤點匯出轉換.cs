@@ -34,12 +34,12 @@ namespace WokyTool.物品
         {
             Builder_.加入標頭("條碼號", "商品描述", "類型");
 
-            var Queqe_ = 物品資料管理器.獨體.資料列舉2.Where(Value => (Value.編號 > 0) && (String.IsNullOrEmpty(Value.條碼) == false));
+            var Queqe_ = 物品資料管理器.獨體.資料列舉2.Where(Value => (Value.編號 > 0) && (String.IsNullOrEmpty(Value.國際條碼) == false));
 
             foreach (物品資料 資料_ in Queqe_)
             {
                 Builder_.加入(
-                    String.Format("{0:0000000000000}", 資料_.條碼),
+                    String.Format("{0:0000000000000}", 資料_.國際條碼),
                     資料_.縮寫,
                     0
                 );

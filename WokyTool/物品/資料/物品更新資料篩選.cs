@@ -77,52 +77,18 @@ namespace WokyTool.物品
             }
         }
 
-        private string _條碼 = null;
-        public string 條碼
+        private string _國際條碼 = null;
+        public string 國際條碼
         {
-            get { return _條碼; }
+            get { return _國際條碼; }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = null;
 
-                if (_條碼 != value)
+                if (_國際條碼 != value)
                 {
-                    _條碼 = value;
-                    篩選版本++;
-                }
-            }
-        }
-
-        private string _原廠編號 = null;
-        public string 原廠編號
-        {
-            get { return _原廠編號; }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = null;
-
-                if (_原廠編號 != value)
-                {
-                    _原廠編號 = value;
-                    篩選版本++;
-                }
-            }
-        }
-
-        private string _代理編號 = null;
-        public string 代理編號
-        {
-            get { return _代理編號; }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = null;
-
-                if (_代理編號 != value)
-                {
-                    _代理編號 = value;
+                    _國際條碼 = value;
                     篩選版本++;
                 }
             }
@@ -199,9 +165,7 @@ namespace WokyTool.物品
                     物品大類資料.不篩選 != _大類 ||
                     物品小類資料.不篩選 != _小類 ||
                     物品品牌資料.不篩選 != _品牌 ||
-                    null != _條碼 ||
-                    null != _原廠編號 ||
-                    null != _代理編號 ||
+                    null != _國際條碼 ||
                     null != _文字 ||
                     null != _類別 ||
                     null != _顏色 ||
@@ -226,12 +190,8 @@ namespace WokyTool.物品
             if (物品品牌資料.不篩選 != _品牌)
                 目前列舉_ = 目前列舉_.Where(Value => Value.品牌 == _品牌);
 
-            if (null != _條碼)
-                目前列舉_ = 目前列舉_.Where(Value => Value.條碼 != null && Value.條碼.Contains(_條碼));
-            if (null != _原廠編號)
-                目前列舉_ = 目前列舉_.Where(Value => Value.原廠編號 != null && Value.原廠編號.Contains(_原廠編號));
-            if (null != _代理編號)
-                目前列舉_ = 目前列舉_.Where(Value => Value.代理編號 != null && Value.代理編號.Contains(_代理編號));
+            if (null != _國際條碼)
+                目前列舉_ = 目前列舉_.Where(Value => Value.國際條碼 != null && Value.國際條碼.Contains(_國際條碼));
 
             if (null != _文字)
                 目前列舉_ = 目前列舉_.Where(Value => Value.名稱.Contains(_文字) || Value.縮寫.Contains(_文字));
