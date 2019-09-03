@@ -131,7 +131,7 @@ namespace WokyTool.商品{
         protected override void 選擇改變()
         {
             if (_目前資料 != null)
-                _目前資料.更新組成();
+                _目前資料.更新組成();   //@@ 優化更新方式 不要每次更新, 還有商品詳細視窗
 
             _目前資料 = (商品更新資料)(this.資料BS.Current);
             if (_目前資料.組成 == null)

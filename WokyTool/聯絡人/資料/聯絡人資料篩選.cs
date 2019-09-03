@@ -30,6 +30,23 @@ namespace WokyTool.聯絡人
             }
         }
 
+        private string _手機 = null;
+        public string 手機
+        {
+            get { return _手機; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    value = null;
+
+                if (_手機 != value)
+                {
+                    _手機 = value;
+                    篩選版本++;
+                }
+            }
+        }
+
         private string _地址 = null;
         public string 地址
         {
@@ -87,6 +104,7 @@ namespace WokyTool.聯絡人
                 return
                     null != _文字 ||
                     null != _電話 ||
+                    null != _手機 ||
                     null != _地址 ||
                     客戶資料.不篩選 != _客戶 ||
                     子客戶資料.不篩選 != _子客戶;
@@ -101,7 +119,10 @@ namespace WokyTool.聯絡人
                 目前列舉_ = 目前列舉_.Where(Value => Value.姓名.Contains(_文字));
 
             if (null != _電話)
-                目前列舉_ = 目前列舉_.Where(Value => Value.電話.Contains(_電話) || Value.手機.Contains(_電話));
+                目前列舉_ = 目前列舉_.Where(Value => Value.電話 != null && Value.電話.Contains(_電話));
+
+            if (null != _手機)
+                目前列舉_ = 目前列舉_.Where(Value => Value.手機 != null && Value.手機.Contains(_手機));
 
             if (null != _地址)
                 目前列舉_ = 目前列舉_.Where(Value => Value.地址.Contains(_地址));

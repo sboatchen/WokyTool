@@ -146,6 +146,15 @@ namespace WokyTool.通用
             {
                 if (修改元件_.Text == 參考元件_.Text)
                     修改元件_.ForeColor = Color.Black;
+                else if (修改元件_.ReadOnly)    //https://stackoverflow.com/questions/20688408/how-do-you-change-the-text-color-of-a-readonly-textbox
+                {
+                    //先將原本的BackColor取出來
+                    Color backColor = 修改元件_.BackColor;
+                    //設定字的Color
+                    修改元件_.ForeColor = Color.Red;
+                    //把原本的BackColor Assign回去
+                    修改元件_.BackColor = backColor;
+                }
                 else
                     修改元件_.ForeColor = Color.Red;
             });
@@ -160,6 +169,15 @@ namespace WokyTool.通用
             {
                 if (修改元件_.Value == 參考元件_.Value)
                     修改元件_.ForeColor = Color.Black;
+                else if (修改元件_.ReadOnly)    //https://stackoverflow.com/questions/20688408/how-do-you-change-the-text-color-of-a-readonly-textbox
+                {
+                    //先將原本的BackColor取出來
+                    Color backColor = 修改元件_.BackColor;
+                    //設定字的Color
+                    修改元件_.ForeColor = Color.Red;
+                    //把原本的BackColor Assign回去
+                    修改元件_.BackColor = backColor;
+                }
                 else
                     修改元件_.ForeColor = Color.Red;
             });

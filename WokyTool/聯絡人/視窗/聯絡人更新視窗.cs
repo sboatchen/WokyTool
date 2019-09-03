@@ -23,8 +23,25 @@ namespace WokyTool.聯絡人
         public override ToolStripMenuItem 篩選MI { get { return this.篩選ToolStripMenuItem; } }
         public override ToolStripMenuItem 檢查MI { get { return this.檢查ToolStripMenuItem; } }
 
-        public override 通用視窗介面 取得篩選視窗實體 { get { return null; } }
-        public override 通用視窗介面 取得詳細視窗實體 { get { return new 聯絡人更新詳細視窗(資料管理器); } }
+        public override 通用視窗介面 取得篩選視窗實體
+        {
+            get
+            {
+                var 視窗_ = new 聯絡人更新篩選視窗(資料管理器.視窗篩選器);
+                視窗_.初始化();
+                return 視窗_;
+            }
+        }
+
+        public override 通用視窗介面 取得詳細視窗實體
+        {
+            get
+            {
+                var 視窗_ = new 聯絡人更新詳細視窗(資料管理器);
+                視窗_.初始化();
+                return 視窗_;
+            }
+        }
 
         public 聯絡人更新資料管理器 資料管理器 = new 聯絡人更新資料管理器();
 

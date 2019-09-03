@@ -173,6 +173,12 @@
     <Compile Include="商品\視窗\商品更新詳細視窗.Designer.cs">
       <DependentUpon>商品更新詳細視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="商品\視窗\商品更新篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品\視窗\商品更新篩選視窗.Designer.cs">
+      <DependentUpon>商品更新篩選視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="商品\資料\商品小類資料篩選.cs" />
     <Compile Include="商品\資料\商品組成資料.cs" />
     <Compile Include="商品\資料\商品大類資料篩選.cs" />
@@ -602,6 +608,12 @@
     <Compile Include="物品\視窗\物品小類總覽視窗.Designer.cs">
       <DependentUpon>物品小類總覽視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="物品\視窗\物品更新篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="物品\視窗\物品更新篩選視窗.Designer.cs">
+      <DependentUpon>物品更新篩選視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="物品\視窗\物品總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -668,6 +680,18 @@
     <Compile Include="聯絡人\視窗\聯絡人更新詳細視窗.Designer.cs">
       <DependentUpon>聯絡人更新詳細視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="聯絡人\視窗\聯絡人更新篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="聯絡人\視窗\聯絡人更新篩選視窗.Designer.cs">
+      <DependentUpon>聯絡人更新篩選視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="聯絡人\視窗\聯絡人篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="聯絡人\視窗\聯絡人篩選視窗.Designer.cs">
+      <DependentUpon>聯絡人篩選視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="聯絡人\視窗\聯絡人詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -688,6 +712,9 @@
     <Compile Include="通用\檔案\檔案_PDF.cs" />
     <Compile Include="通用\視窗\其他\抽象列舉選取元件.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="通用\視窗\樣板\更新篩選視窗.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="通用\視窗\選取\更新狀態選取元件.cs">
       <SubType>UserControl</SubType>
@@ -1154,6 +1181,9 @@
     <EmbeddedResource Include="商品\視窗\商品小類總覽視窗.resx">
       <DependentUpon>商品小類總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="商品\視窗\商品更新篩選視窗.resx">
+      <DependentUpon>商品更新篩選視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="商品\視窗\商品總覽視窗.resx">
       <DependentUpon>商品總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1358,6 +1388,9 @@
     <EmbeddedResource Include="物品\視窗\物品小類總覽視窗.resx">
       <DependentUpon>物品小類總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="物品\視窗\物品更新篩選視窗.resx">
+      <DependentUpon>物品更新篩選視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="物品\視窗\物品總覽視窗.resx">
       <DependentUpon>物品總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1379,6 +1412,9 @@
     <EmbeddedResource Include="聯絡人\視窗\聯絡人更新視窗.resx">
       <DependentUpon>聯絡人更新視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="聯絡人\視窗\聯絡人更新篩選視窗.resx">
+      <DependentUpon>聯絡人更新篩選視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="聯絡人\視窗\聯絡人總覽視窗.resx">
       <DependentUpon>聯絡人總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1387,6 +1423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="聯絡人\視窗\聯絡人更新詳細視窗.resx">
       <DependentUpon>聯絡人更新詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="聯絡人\視窗\聯絡人篩選視窗.resx">
+      <DependentUpon>聯絡人篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="聯絡人\視窗\聯絡人詳細視窗.resx">
       <DependentUpon>聯絡人詳細視窗.cs</DependentUpon>
