@@ -21,6 +21,9 @@ namespace WokyTool.通用
         protected int _資料更新版本 = 0;  // 用於通知外部資料變更
         protected int _資料排序版本 = -1;
 
+        protected BindingSource _公用BS = new BindingSource();
+        public BindingSource 公用BS { get { return _公用BS; } }
+
         public int 資料版本
         {
             get
@@ -56,6 +59,9 @@ namespace WokyTool.通用
                     _資料列舉 = 篩選器.篩選(資料列);
                     if (_資料列舉.Any() == false)
                         _資料列舉 = new List<TSource>();
+
+                    _公用BS.DataSource = _資料列舉;
+                    _公用BS.ResetBindings(false);
                 }
 
                 return _資料列舉;
@@ -70,9 +76,6 @@ namespace WokyTool.通用
         protected abstract 新版可篩選介面<TSource> 取得篩選器實體();
         public 新版可篩選介面<TSource> 篩選器 { get; protected set; }
         public 視窗可篩選介面 視窗篩選器 { get { return 篩選器; } }
-
-        protected BindingSource _公用BS = new BindingSource();
-        public BindingSource 公用BS { get { return _公用BS; } }
 
         protected abstract 可儲存資料管理器<TValue> 儲存器 { get; }
 

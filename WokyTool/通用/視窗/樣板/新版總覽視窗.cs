@@ -51,8 +51,10 @@ namespace WokyTool.通用
         private void 更新資料()
         {
             資料版本 = 編輯管理器.資料版本;
-            this.資料BS.DataSource = 編輯管理器.資料列舉;
-            this.資料BS.ResetBindings(false);
+            //資料BS.DataSource = 編輯管理器.資料列舉;
+            //資料BS.ResetBindings(false);
+
+            var x = 編輯管理器.資料列舉; // 強制更新
 
             資料GV.AllowUserToDeleteRows = 編輯管理器.是否可編輯 && 編輯管理器.視窗篩選器.是否篩選 == false; // 含篩選條件時 仍可刪除 擋掉
         }

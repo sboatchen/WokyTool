@@ -13,11 +13,16 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.通用
 {
-    public abstract class 可更新資料管理器<TSource, TValue> : 可編輯列舉資料管理介面, 可儲存介面 where TSource : 可更新資料<TValue> where TValue : 新版可記錄資料<TValue>
+    public abstract class 可更新資料管理器<TSource, TValue> : 可編輯列舉資料管理介面, 可儲存介面 
+		where TSource : 可更新資料<TValue> 
+		where TValue : 新版可記錄資料<TValue>
     {
         public List<TSource> 資料列 { get; protected set; }
         protected int _資料更新版本 = 0;  // 用於通知外部資料變更
         protected int _資料排序版本 = -1;
+
+        protected BindingSource _公用BS = new BindingSource();
+        public BindingSource 公用BS { get { return _公用BS; } }
 
         public int 資料版本
         {
@@ -54,6 +59,9 @@ namespace WokyTool.通用
                     _資料列舉 = 篩選器.篩選(資料列);
                     if (_資料列舉.Any() == false)
                         _資料列舉 = new List<TSource>();
+
+                    _公用BS.DataSource = _資料列舉;
+                    _公用BS.ResetBindings(false);
                 }
 
                 return _資料列舉;
@@ -61,16 +69,13 @@ namespace WokyTool.通用
         }
 
         public bool 是否可編輯 { get { return true; } }
-        public bool 是否編輯中 { get { return true; } }
+        public bool 是否編輯中 { get { return 資料列.Count > 0; } }
 
         protected 可檢查介面 新增物件檢查器 = new 錯誤訊息檢查器();
 
         protected abstract 新版可篩選介面<TSource> 取得篩選器實體();
         public 新版可篩選介面<TSource> 篩選器 { get; protected set; }
         public 視窗可篩選介面 視窗篩選器 { get { return 篩選器; } }
-
-        protected BindingSource _公用BS = new BindingSource();
-        public BindingSource 公用BS { get { return _公用BS; } }
 
         protected abstract 可儲存資料管理器<TValue> 儲存器 { get; }
 
@@ -126,7 +131,7 @@ namespace WokyTool.通用
         {
             if (是否紀錄_)
             {
-                TSource 錯誤資料_ = 資料列.Where(Value => string.IsNullOrEmpty(Value.錯誤訊息) == false).DefaultIfEmpty(null).First();
+                TSource 錯誤資料_ = 資料列.執行(Value => Value.合法檢查(新增物件檢查器)).Where(Value => string.IsNullOrEmpty(Value.錯誤訊息) == false).DefaultIfEmpty(null).First();
                 if (錯誤資料_ != null)
                 {
                     例外檢查器 例外檢查器_ = new 例外檢查器();

@@ -43,8 +43,10 @@ namespace WokyTool.通用
         private void 更新資料()
         {
             資料版本 = 更新管理器.資料版本;
-            資料BS.DataSource = 更新管理器.資料列舉;
-            資料BS.ResetBindings(false);
+            //資料BS.DataSource = 更新管理器.資料列舉;
+            //資料BS.ResetBindings(false);
+
+            var x = 更新管理器.資料列舉; // 強制更新
         }
 
         protected void _視窗激活(object sender, EventArgs e)

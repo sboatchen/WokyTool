@@ -18,6 +18,9 @@ namespace WokyTool.通用
     {
         public 可列舉資料來源管理介面 來源管理介面 { get; protected set; }
 
+        protected BindingSource _公用BS = new BindingSource();
+        public BindingSource 公用BS { get { return _公用BS; } }
+
         public int 資料版本 
         {
             get
@@ -74,14 +77,14 @@ namespace WokyTool.通用
                     _目前資料列舉 = 篩選器.篩選(_目前資料列);
                     if (_目前資料列舉.Any() == false)
                         _目前資料列舉 = new List<T>();
+
+                    _公用BS.DataSource = _目前資料列舉;
+                    _公用BS.ResetBindings(false);
                 }
 
                 return _目前資料列舉;
             }
         }
-
-        protected BindingSource _公用BS = new BindingSource();
-        public BindingSource 公用BS { get { return _公用BS; } }
 
         public 新版可篩選介面<T> 篩選器 { get; protected set; }
         public 視窗可篩選介面 視窗篩選器 { get { return 篩選器; } }
