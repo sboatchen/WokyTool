@@ -34,7 +34,8 @@ namespace WokyTool.通用
 
         protected override IEnumerable<T> 取得篩選特殊選項()
         {
-            yield return 不篩選資料;
+            if (不篩選資料 != null)
+                yield return 不篩選資料;
             yield return 空白資料;
             yield return 錯誤資料;
         }

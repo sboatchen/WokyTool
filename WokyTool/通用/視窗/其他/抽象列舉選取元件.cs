@@ -62,7 +62,7 @@ namespace WokyTool.通用
                             foreach (var 資料_ in Enum.GetValues(列舉類型))
                             {
                                 int Value_ = (int)資料_;
-                                if (Value_ == 常數.不篩列舉編碼)
+                                if (Value_ == 常數.不篩選列舉編碼)
                                     continue;
 
                                 資料列_.Add(資料_);

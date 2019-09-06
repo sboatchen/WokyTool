@@ -43,7 +43,8 @@ namespace WokyTool.通用
             資料GV.ColumnHeaderMouseClick += new DataGridViewCellMouseEventHandler(this._點擊標頭);
             資料GV.CellDoubleClick += new DataGridViewCellEventHandler(this._雙點擊資料);
 
-            樣板MI.Click += new EventHandler(this._樣板);
+            if (樣板MI != null)
+                樣板MI.Click += new EventHandler(this._樣板);
             篩選MI.Click += new EventHandler(this._篩選);
             檢查MI.Click += new EventHandler(this._檢查);
 

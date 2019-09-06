@@ -126,6 +126,12 @@ namespace WokyTool.通用
             元件_.ReadOnly |= !更新管理器.是否可編輯;
         }
 
+        protected void 資料綁定(DateTimePicker 元件_, string 屬性名稱_)
+        {
+            元件_.DataBindings.Add("Value", 資料BS, 屬性名稱_);
+            元件_.Enabled |= 更新管理器.是否可編輯;
+        }
+
         protected void 資料異動顯示綁定(抽象資料選取元件 修改元件_, 抽象資料選取元件 參考元件_)
         {
             EventHandler 比較處理_ = new EventHandler(delegate(Object o, EventArgs a)

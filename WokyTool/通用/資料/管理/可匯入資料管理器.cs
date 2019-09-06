@@ -13,7 +13,9 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.通用
 {
-    public abstract class 可更新資料管理器<TSource, TValue> : 可編輯列舉資料管理介面, 可儲存介面 where TSource : 可更新資料<TValue> where TValue : 新版可記錄資料<TValue>
+    public abstract class 可匯入資料管理器<TSource, TValue> : 可編輯列舉資料管理介面, 可儲存介面
+        where TSource : 新版可匯入資料<TValue>
+        where TValue : 新版可記錄資料<TValue>
     {
         public List<TSource> 資料列 { get; protected set; }
         protected int _資料更新版本 = 0;  // 用於通知外部資料變更
@@ -75,7 +77,7 @@ namespace WokyTool.通用
         protected abstract 可儲存資料管理器<TValue> 儲存器 { get; }
 
         // 建構子
-        public 可更新資料管理器()
+        public 可匯入資料管理器()
         {
             資料列 = new List<TSource>();
             篩選器 = 取得篩選器實體();
@@ -153,9 +155,7 @@ namespace WokyTool.通用
         // 儲存檔案
         public virtual void 儲存()
         {
-            儲存器.更新(資料列.Where(Value => Value.更新狀態 == 列舉.更新狀態.更新).Select(Value => Value.修改));
-            儲存器.新增(資料列.Where(Value => Value.更新狀態 == 列舉.更新狀態.新增).Select(Value => Value.修改));
-            儲存器.刪除(資料列.Where(Value => Value.更新狀態 == 列舉.更新狀態.刪除).Select(Value => Value.修改));
+            儲存器.新增(資料列.Select(Value => Value.新增資料));
         }
     }
 }
