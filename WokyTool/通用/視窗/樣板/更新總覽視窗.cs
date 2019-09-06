@@ -10,7 +10,7 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public class 更新總覽視窗 : Form, 通用視窗介面
+    public class 更新總覽視窗 : Form, 通用視窗介面   //@@ TODO rename to 匯入總覽視窗
     {
         public virtual Type 資料類型 { get { throw new Exception(this.GetType().Name + " 未設定資料類型"); } }
 

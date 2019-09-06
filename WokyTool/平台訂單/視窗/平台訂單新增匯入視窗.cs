@@ -31,10 +31,9 @@ namespace WokyTool.平台訂單
         {
             get
             {
-                return null;
-                /*var 視窗_ = new 聯絡人更新篩選視窗(資料管理器.視窗篩選器);
+                var 視窗_ = new 平台訂單新增匯入篩選視窗(資料管理器.視窗篩選器);
                 視窗_.初始化();
-                return 視窗_;*/
+                return 視窗_;
             }
         }
 
@@ -57,6 +56,9 @@ namespace WokyTool.平台訂單
 
         private void 匯入完成(平台訂單匯入處理介面 處理器_, IEnumerable<平台訂單新增匯入資料> 資料列舉_)
         {
+            if(資料列舉_ == null)
+                return;
+
             List<平台訂單新增匯入資料> 資料列_ = 資料列舉_.ToList(); // 先將資料確實轉換出來
 
             if (資料列_.Count == 0)

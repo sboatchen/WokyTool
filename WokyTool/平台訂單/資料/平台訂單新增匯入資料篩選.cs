@@ -283,7 +283,7 @@ namespace WokyTool.平台訂單
             }
         }
 
-        private decimal _最小代收金額 = -1;
+        private decimal _最小代收金額 = -1;       //@@ todo 換成 decimal?
         public decimal 最小代收金額
         {
             get { return _最小代收金額; }

@@ -10,9 +10,9 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public class 更新篩選視窗 : Form, 通用視窗介面
+    public class 更新篩選視窗 : Form, 通用視窗介面   //@@ TODO rename to 匯入篩選視窗
     {
-        public virtual 視窗可篩選介面 視窗篩選器 { get; protected set; }
+        public 視窗可篩選介面 視窗篩選器 { get; protected set; }
 
         public bool 是否關閉 { get; protected set; }
 
@@ -102,6 +102,14 @@ namespace WokyTool.通用
                 _視窗凍結工作列.Add(() => 屬性_.SetValue(視窗篩選器, (int)元件_.Value));
             else
                 _視窗凍結工作列.Add(() => 屬性_.SetValue(視窗篩選器, 元件_.Value));
+        }
+
+        protected void 資料綁定(MyDateTimePicker 元件_, string 屬性名稱_)
+        {
+            元件_.DataBindings.Add("Value", 視窗篩選器, 屬性名稱_);
+
+            PropertyInfo 屬性_ = 視窗篩選器.GetType().GetProperty(屬性名稱_);
+            _視窗凍結工作列.Add(() => 屬性_.SetValue(視窗篩選器, 元件_.Value));
         }
 
         /********************************/

@@ -10,7 +10,7 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public class 更新詳細視窗 : Form, 通用視窗介面
+    public class 更新詳細視窗 : Form, 通用視窗介面  //@@ TODO rename to 匯入詳細視窗
     {
         public virtual 新版頁索引元件 頁索引 { get { throw new Exception(this.GetType().Name + " 未設定頁索引"); } }
 
@@ -126,7 +126,7 @@ namespace WokyTool.通用
             元件_.ReadOnly |= !更新管理器.是否可編輯;
         }
 
-        protected void 資料綁定(DateTimePicker 元件_, string 屬性名稱_)
+        protected void 資料綁定(MyDateTimePicker 元件_, string 屬性名稱_)
         {
             元件_.DataBindings.Add("Value", 資料BS, 屬性名稱_);
             元件_.Enabled |= 更新管理器.是否可編輯;

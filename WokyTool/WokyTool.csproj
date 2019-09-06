@@ -186,6 +186,12 @@
     <Compile Include="商品\資料\商品更新資料.cs" />
     <Compile Include="商品\資料\商品更新資料篩選.cs" />
     <Compile Include="平台訂單\介面\平台訂單匯入處理介面.cs" />
+    <Compile Include="平台訂單\視窗\平台訂單新增匯入篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="平台訂單\視窗\平台訂單新增匯入篩選視窗.Designer.cs">
+      <DependentUpon>平台訂單新增匯入篩選視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="平台訂單\視窗\平台訂單新增匯入詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,7 +372,6 @@
     <Compile Include="平台訂單\資料\平台訂單新增資料.cs" />
     <Compile Include="廢棄\轉換\平台訂單自定義_摩天.cs" />
     <Compile Include="廢棄\轉換\平台訂單自定義_PayEasy.cs" />
-    <Compile Include="平台訂單\轉換\平台訂單新增錯誤匯出轉換.cs" />
     <Compile Include="廢棄\資料\舊子客戶資料.cs" />
     <Compile Include="廢棄\資料\舊客戶資料.cs" />
     <Compile Include="廢棄\資料\舊聯絡人資料.cs" />
@@ -1233,6 +1238,9 @@
     <EmbeddedResource Include="平台訂單\視窗\Momo第三方訂單新增總覽視窗.resx">
       <DependentUpon>Momo第三方訂單新增總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="平台訂單\視窗\平台訂單新增匯入篩選視窗.resx">
+      <DependentUpon>平台訂單新增匯入篩選視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="平台訂單\視窗\平台訂單新增總覽視窗.resx">
       <DependentUpon>平台訂單新增總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1560,6 +1568,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="商品\轉換\" />
+    <Folder Include="平台訂單\轉換\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
