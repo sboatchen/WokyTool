@@ -761,6 +761,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="通用\資料\介面\可更新資料.cs" />
+    <Compile Include="通用\資料\管理\可暫存資料管理器.cs" />
     <Compile Include="通用\資料\管理\可匯入資料管理器.cs" />
     <Compile Include="通用\轉換\匯出\通用更新匯入轉換.cs" />
     <Compile Include="通用\介面\可篩選介面99.cs" />

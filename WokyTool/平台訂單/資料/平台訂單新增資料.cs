@@ -152,13 +152,27 @@ namespace WokyTool.平台訂單
         [可匯出(名稱 = "商品")]
         public string 商品名稱 { get { return 商品.名稱; } }
 
+        [可匯出]
+        [JsonProperty]
+        public int 配送分組 { get; set; }
+
         /********************************/
         // 暫時性資訊
 
-        [JsonProperty]
-        public int 配送分組 { get; set; }   //@@
-
-        public 平台訂單匯入處理介面 處理器 { get; set; }
+        public 平台訂單匯入處理介面 _處理器 = null; 
+        public 平台訂單匯入處理介面 處理器 
+        {
+            get
+            {
+                if (_處理器 == null)
+                    _處理器 = 平台訂單新增資料管理器.獨體.取得處理器(this);
+                return _處理器;
+            }
+            set
+            {
+                _處理器 = value;
+            }
+        }
 
         public String 分組識別 { get; private set; }
 
@@ -294,6 +308,7 @@ namespace WokyTool.平台訂單
 
         public void 重新分組()
         {
+            BeginEdit();
             配送分組 = 0;
             分組識別 = 處理器.取得分組識別(this);
         }

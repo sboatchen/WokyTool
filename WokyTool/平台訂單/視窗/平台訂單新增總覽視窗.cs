@@ -17,75 +17,58 @@ using WokyTool.通用;
 
 namespace WokyTool.平台訂單
 {
-    public partial class 平台訂單新增總覽視窗 : 總覽視窗
+    public partial class 平台訂單新增總覽視窗 : 新版總覽視窗
     {
-        private 可清單列舉資料管理介面 _客戶清單管理器 = 客戶資料管理器.獨體.清單管理器;
-        private int _客戶資料版本 = -1;
+        public override 列舉.編號 編號類型 { get { return 列舉.編號.平台訂單新增; } }
+        public override Type 資料類型 { get { return typeof(平台訂單新增資料); } }
 
-        private 可清單列舉資料管理介面 _公司清單管理器 = 公司資料管理器.獨體.清單管理器;
-        private int _公司資料版本 = -1;
+        public override 可編輯列舉資料管理介面 編輯管理器 { get { return 平台訂單新增資料管理器.獨體.編輯管理器; } }
+        public override MyDataGridView 資料GV { get { return this.dataGridView1; } }
+        public override ToolStripMenuItem 篩選MI { get { return this.篩選ToolStripMenuItem; } }
+        public override ToolStripMenuItem 檢查MI { get { return this.檢查ToolStripMenuItem; } }
+        public override ToolStripMenuItem 自訂MI { get { return this.自訂ToolStripMenuItem; } }
 
         public 平台訂單新增總覽視窗()
         {
             InitializeComponent();
-
-            //@@this.初始化(this.平台訂單新增資料BindingSource, 平台訂單新增資料管理器.獨體);
-
-            this.處理狀態DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.訂單處理狀態));
-
-            this.指配時段DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.指配時段));
-            this.代收方式DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.代收方式));
-            this.配送公司DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.配送公司));
-
         }
 
-        private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 分組ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            訊息管理器.獨體.通知("功能尚未實作");
-            //視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.篩選);
-        }
-
-        private void 系統分組ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // 清除所有舊的配送分組
-            /*@@foreach(var Item_ in 平台訂單新增資料管理器.獨體.可編輯BList)
-            {
-                if (Item_.處理狀態 == 列舉.訂單處理狀態.新增)
-                    Item_.重新分組();
-            }
+            IEnumerable<平台訂單新增資料> 資料列舉_ = (IEnumerable<平台訂單新增資料>)編輯管理器.資料列舉;
 
             int StartGroup_ = 1;
-            var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增).GroupBy(Value => Value.分組識別);
+            var GroupQueue_ = 資料列舉_.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增).執行(Value => Value.重新分組()).GroupBy(Value => Value.分組識別);
             foreach (var Group_ in GroupQueue_)
             {
                 if (Group_.Count() == 1)
                     continue;
 
-                foreach (var Item_ in Group_)
-                    Item_.配送分組 = StartGroup_;
+                foreach (平台訂單新增資料 資料_ in Group_)
+                    資料_.配送分組 = StartGroup_;
                 
                 StartGroup_++;
-
-                var x = Group_.ToList();
             }
 
             this.dataGridView1.Refresh();
-            */
-            訊息管理器.獨體.通知("已完成系統分組");
+            
+            訊息管理器.獨體.通知("已完成分組");
         }
 
         private void 配送ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*@@var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增).GroupBy(Value => Value.配送分組);
+            IEnumerable<平台訂單新增資料> 資料列舉_ = (IEnumerable<平台訂單新增資料>)編輯管理器.資料列舉;
+
+            var GroupQueue_ = 資料列舉_.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增).GroupBy(Value => Value.配送分組);
 
             List<可配送資料> 配送列表_ = new List<可配送資料>();
             foreach (var Group_ in GroupQueue_)
             {
                 if (Group_.Key == 0)
                 {
-                    foreach (var Item_ in Group_)
+                    foreach (平台訂單新增資料 資料_ in Group_)
                     {
-                        配送列表_.Add(new 平台訂單配送資料(Item_));
+                        配送列表_.Add(new 平台訂單配送資料(資料_));
                     }
                 }
                 else
@@ -99,12 +82,12 @@ namespace WokyTool.平台訂單
                 }
             }
 
-            配送管理器.獨體.新增(配送列表_);*/
+            配送管理器.獨體.新增(配送列表_);
 
             訊息管理器.獨體.通知("已轉入配送系統");
         }
 
-        private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
+       /* private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             /*@@var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList
                                     .Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送 || Value.處理狀態 == 列舉.訂單處理狀態.忽略)
@@ -115,9 +98,26 @@ namespace WokyTool.平台訂單
                 平台訂單自定義介面 平台訂單自定義介面_ = Group_.First().自定義介面;
 
                 平台訂單自定義介面_.回單(Group_);
-            }*/
+            }
 
             訊息管理器.獨體.通知("已完成匯出");
+        }*/
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // 設定群組顏色
+            foreach (DataGridViewRow Myrow in dataGridView1.Rows)
+            {
+                int value = Convert.ToInt32(Myrow.Cells[2].Value);
+                Myrow.DefaultCellStyle.BackColor = 顏色處理.GetRandomColor(value);
+            }
+        }
+
+        /********************************/
+
+        private void 回單ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void 完成ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -127,73 +127,6 @@ namespace WokyTool.平台訂單
             this.OnActivated(null);
 
             訊息管理器.獨體.通知("已完成");
-        }
-
-        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            // 設定群組顏色
-            foreach (DataGridViewRow Myrow in dataGridView1.Rows)
-            {
-                int value = Convert.ToInt32(Myrow.Cells[1].Value);
-                Myrow.DefaultCellStyle.BackColor = 顏色處理.GetRandomColor(value);
-            }
-        }
-
-        //@@ move to parent 排序功能試做
-        /*private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            DataGridViewColumn newColumn = dataGridView1.Columns[e.ColumnIndex];
-            DataGridViewColumn oldColumn = dataGridView1.SortedColumn;
-            ListSortDirection direction;
-
-            // If oldColumn is null, then the DataGridView is not sorted.
-            if (oldColumn != null)
-            {
-                // Sort the same column again, reversing the SortOrder.
-                if (oldColumn == newColumn && dataGridView1.SortOrder == SortOrder.Ascending)
-                {
-                    direction = ListSortDirection.Descending;
-                }
-                else
-                {
-                    // Sort a new column and remove the old SortGlyph.
-                    direction = ListSortDirection.Ascending;
-                    oldColumn.HeaderCell.SortGlyphDirection = SortOrder.None;
-                }
-            }
-            else
-            {
-                direction = ListSortDirection.Ascending;
-            }
-
-            // Sort the selected column.
-            dataGridView1.Sort(newColumn, direction);
-            newColumn.HeaderCell.SortGlyphDirection = direction == ListSortDirection.Ascending ? SortOrder.Ascending : SortOrder.Descending;
-        }*/
-
-        //@@ move to parent
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //訊息管理器.獨體.通知("功能尚未實作");
-            //int 編號_ = ((平台訂單新增資料)(this.平台訂單新增資料BindingSource.Current)).編號;
-            //視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.詳細, 編號_);
-        }
-
-        /********************************/
-
-        protected override void 視窗激活()
-        {
-            if (_公司資料版本 != _公司清單管理器.資料版本)
-            {
-                _公司資料版本 = _公司清單管理器.資料版本;
-                this.公司資料BindingSource.DataSource = _公司清單管理器.資料列舉;
-            }
-
-            if (_客戶資料版本 != _客戶清單管理器.資料版本)
-            {
-                _客戶資料版本 = _客戶清單管理器.資料版本;
-                this.客戶資料BindingSource.DataSource = _客戶清單管理器.資料列舉;
-            }
         }
     }
 }

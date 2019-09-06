@@ -70,20 +70,21 @@ namespace WokyTool.物品
             this.更新ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1654, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(2205, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // 篩選ToolStripMenuItem
             // 
             this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
-            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.篩選ToolStripMenuItem.Text = "篩選";
             // 
             // 檢查ToolStripMenuItem
             // 
             this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
-            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.檢查ToolStripMenuItem.Text = "檢查";
             // 
             // 匯出ToolStripMenuItem
@@ -92,19 +93,19 @@ namespace WokyTool.物品
             this.自訂ToolStripMenuItem,
             this.盤點ToolStripMenuItem});
             this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
-            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.匯出ToolStripMenuItem.Text = "匯出";
             // 
             // 自訂ToolStripMenuItem
             // 
             this.自訂ToolStripMenuItem.Name = "自訂ToolStripMenuItem";
-            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.自訂ToolStripMenuItem.Text = "自訂";
             // 
             // 盤點ToolStripMenuItem
             // 
             this.盤點ToolStripMenuItem.Name = "盤點ToolStripMenuItem";
-            this.盤點ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.盤點ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.盤點ToolStripMenuItem.Text = "盤點";
             this.盤點ToolStripMenuItem.Click += new System.EventHandler(this.盤點ToolStripMenuItem_Click);
             // 
@@ -113,13 +114,13 @@ namespace WokyTool.物品
             this.更新ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.通用ToolStripMenuItem});
             this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
-            this.更新ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.更新ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.更新ToolStripMenuItem.Text = "更新";
             // 
             // 通用ToolStripMenuItem
             // 
             this.通用ToolStripMenuItem.Name = "通用ToolStripMenuItem";
-            this.通用ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.通用ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.通用ToolStripMenuItem.Text = "通用";
             this.通用ToolStripMenuItem.Click += new System.EventHandler(this.通用ToolStripMenuItem_Click);
             // 
@@ -149,10 +150,11 @@ namespace WokyTool.物品
             this.成本備註DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.物品資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 28);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1654, 487);
+            this.dataGridView1.Size = new System.Drawing.Size(2205, 611);
             this.dataGridView1.TabIndex = 2;
             // 
             // 編號DataGridViewTextBoxColumn
@@ -253,12 +255,13 @@ namespace WokyTool.物品
             // 
             // 物品總覽視窗
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1654, 511);
+            this.ClientSize = new System.Drawing.Size(2205, 639);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "物品總覽視窗";
             this.Text = "物品總覽視窗";
             this.menuStrip1.ResumeLayout(false);
