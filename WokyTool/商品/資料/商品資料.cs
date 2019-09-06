@@ -297,7 +297,7 @@ namespace WokyTool.商品
 
         public override void 刪除檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
         {
-            //@@ todo
+            //@@ 平台訂單新增資料 需考慮所有新增資料
         }
     }
 }

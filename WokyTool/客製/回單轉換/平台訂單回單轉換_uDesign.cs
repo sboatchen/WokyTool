@@ -12,9 +12,9 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    public class 平台訂單回單轉換_uDesign : 可寫入介面_EXCEL
+    public class 平台訂單回單轉換_uDesign //: 可寫入介面_EXCEL
     {
-        private static readonly string 全速配編號 = "HCT-新竹貨運";
+        /*private static readonly string 全速配編號 = "HCT-新竹貨運";
         private static readonly string 宅配通編號 = "CAN-台灣宅配通";
 
         public string 分類 { get { return null; } }
@@ -118,6 +118,6 @@ namespace WokyTool.客製
 
                 目前行數_++;
             }
-        }
+        }*/
     }
 }

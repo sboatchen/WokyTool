@@ -12,9 +12,9 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    public class 平台訂單回單轉換_Momo : 可寫入介面_EXCEL
+    public class 平台訂單回單轉換_Momo //: 可寫入介面_EXCEL
     {
-        private static string 已配送 = "已配送";
+        /*private static string 已配送 = "已配送";
         private static string 已確認指定配送日 = "已確認指定配送日";
 
         public string 分類 { get { return null; } }
@@ -109,6 +109,6 @@ namespace WokyTool.客製
 
                 目前行數_++;
             }
-        }
+        }*/
     }
 }

@@ -19,9 +19,9 @@ namespace WokyTool.平台訂單
 
         public string 密碼 { get { return null; } }
 
-        private IEnumerable<平台訂單匯入資料> _資料列舉;
+        private IEnumerable<平台訂單新增匯入資料> _資料列舉;
 
-        public 平台訂單新增錯誤匯出轉換(IEnumerable<平台訂單匯入資料> 資料列舉_)
+        public 平台訂單新增錯誤匯出轉換(IEnumerable<平台訂單新增匯入資料> 資料列舉_)
         {
             _資料列舉 = 資料列舉_;
         }
@@ -34,7 +34,7 @@ namespace WokyTool.平台訂單
             App_.Cells[1, 4] = "錯誤訊息";
 
             int 目前行數_ = 2;
-            foreach (平台訂單匯入資料 資料_ in _資料列舉)
+            foreach (平台訂單新增匯入資料 資料_ in _資料列舉)
             {
                 App_.Cells[目前行數_, 1] = 資料_.訂單編號;
                 App_.Cells[目前行數_, 2] = 資料_.姓名;

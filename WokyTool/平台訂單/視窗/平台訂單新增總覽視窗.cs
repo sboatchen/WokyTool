@@ -29,7 +29,7 @@ namespace WokyTool.平台訂單
         {
             InitializeComponent();
 
-            this.初始化(this.平台訂單新增資料BindingSource, 平台訂單新增資料管理器.獨體);
+            //@@this.初始化(this.平台訂單新增資料BindingSource, 平台訂單新增資料管理器.獨體);
 
             this.處理狀態DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.訂單處理狀態));
 
@@ -48,7 +48,7 @@ namespace WokyTool.平台訂單
         private void 系統分組ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // 清除所有舊的配送分組
-            foreach(var Item_ in 平台訂單新增資料管理器.獨體.可編輯BList)
+            /*@@foreach(var Item_ in 平台訂單新增資料管理器.獨體.可編輯BList)
             {
                 if (Item_.處理狀態 == 列舉.訂單處理狀態.新增)
                     Item_.重新分組();
@@ -70,13 +70,13 @@ namespace WokyTool.平台訂單
             }
 
             this.dataGridView1.Refresh();
-
+            */
             訊息管理器.獨體.通知("已完成系統分組");
         }
 
         private void 配送ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增).GroupBy(Value => Value.配送分組);
+            /*@@var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增).GroupBy(Value => Value.配送分組);
 
             List<可配送資料> 配送列表_ = new List<可配送資料>();
             foreach (var Group_ in GroupQueue_)
@@ -99,14 +99,14 @@ namespace WokyTool.平台訂單
                 }
             }
 
-            配送管理器.獨體.新增(配送列表_);
+            配送管理器.獨體.新增(配送列表_);*/
 
             訊息管理器.獨體.通知("已轉入配送系統");
         }
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList
+            /*@@var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList
                                     .Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送 || Value.處理狀態 == 列舉.訂單處理狀態.忽略)
                                     .GroupBy(Value => Value.公司.編號 * 1000 + Value.客戶.編號);
 
@@ -115,7 +115,7 @@ namespace WokyTool.平台訂單
                 平台訂單自定義介面 平台訂單自定義介面_ = Group_.First().自定義介面;
 
                 平台訂單自定義介面_.回單(Group_);
-            }
+            }*/
 
             訊息管理器.獨體.通知("已完成匯出");
         }

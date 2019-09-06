@@ -12,9 +12,9 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    class 平台訂單回單轉換_森森 : 可格式化_Csv
+    class 平台訂單回單轉換_森森 //: 可格式化_Csv
     {
-        protected 平台訂單新增資料 _Data;
+        /*protected 平台訂單新增資料 _Data;
 
         public 平台訂單回單轉換_森森(平台訂單新增資料 Data_)
         {
@@ -96,6 +96,6 @@ namespace WokyTool.客製
         [CsvColumn(Name = "併單訂單項次", FieldIndex = 29)]
         public string 併單訂單項次 { get { return 函式.取得字串(_Data.額外資訊, 29); } }
         [CsvColumn(Name = "訂單類別代號", FieldIndex = 30)]
-        public string 訂單類別代號 { get { return 函式.取得字串(_Data.額外資訊, 30); } }
+        public string 訂單類別代號 { get { return 函式.取得字串(_Data.額外資訊, 30); } }*/
     }
 }

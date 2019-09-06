@@ -12,9 +12,9 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    public class 平台訂單回單轉換_神坊 : 可寫入介面_EXCEL
+    public class 平台訂單回單轉換_神坊 //: 可寫入介面_EXCEL
     {
-        private static string 全速配編號 = "5";
+        /*private static string 全速配編號 = "5";
         private static string 宅配通編號 = "2";
 
         public string 分類 { get { return null; } }
@@ -65,6 +65,6 @@ namespace WokyTool.客製
 
                 目前行數_++;
             }
-        }
+        }*/
     }
 }

@@ -11,9 +11,9 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    public class 平台訂單回單轉換_摩天 : 可寫入介面_EXCEL
+    public class 平台訂單回單轉換_摩天 //: 可寫入介面_EXCEL
     {
-        public string 分類 { get { return null; } }
+        /*public string 分類 { get { return null; } }
 
         public string 樣板 { get { return null; } }
 
@@ -84,6 +84,6 @@ namespace WokyTool.客製
 
                 目前行數_++;
             }
-        }
+        }*/
     }
 }

@@ -185,6 +185,15 @@
     <Compile Include="商品\資料\商品資料篩選.cs" />
     <Compile Include="商品\資料\商品更新資料.cs" />
     <Compile Include="商品\資料\商品更新資料篩選.cs" />
+    <Compile Include="平台訂單\介面\平台訂單匯入處理介面.cs" />
+    <Compile Include="平台訂單\視窗\平台訂單新增匯入詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="平台訂單\視窗\平台訂單新增匯入詳細視窗.Designer.cs">
+      <DependentUpon>平台訂單新增匯入詳細視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="平台訂單\資料\平台訂單新增匯入資料篩選.cs" />
+    <Compile Include="平台訂單\資料\平台訂單新增資料篩選.cs" />
     <Compile Include="廢棄\資料\舊商品資料.cs" />
     <Compile Include="商品\視窗\商品總覽視窗.cs">
       <SubType>Form</SubType>
@@ -260,36 +269,34 @@
     <Compile Include="客戶\資料\子客戶資料.cs" />
     <Compile Include="客戶\資料\客戶資料資料篩選.cs" />
     <Compile Include="客戶\資料\子客戶資料資料篩選.cs" />
-    <Compile Include="客製\匯入\平台訂單匯入轉換_Momo第三方.cs" />
-    <Compile Include="客製\匯入\平台訂單匯入轉換_Friday.cs" />
-    <Compile Include="客製\匯入\平台訂單匯入轉換_ibonMart.cs" />
-    <Compile Include="客製\匯入\平台訂單匯入轉換_UDN.cs" />
-    <Compile Include="客製\匯入\平台訂單匯入轉換_viva.cs" />
-    <Compile Include="客製\匯入\平台訂單匯入轉換_生活市集_超商.cs" />
-    <Compile Include="客製\匯入\平台訂單匯入轉換_松果_超商.cs" />
-    <Compile Include="客製\匯入\平台訂單匯入轉換_松果.cs" />
-    <Compile Include="客製\匯入\平台訂單匯入轉換_特力屋.cs" />
-    <Compile Include="客製\匯入\平台訂單匯入轉換_百利市.cs" />
-    <Compile Include="客製\匯入\平台訂單匯入轉換_生活市集.cs" />
-    <Compile Include="客製\匯入\平台訂單匯入轉換_金石堂.cs" />
-    <Compile Include="客製\匯入\平台訂單匯入轉換_東森.cs" />
-    <Compile Include="客製\匯入\平台訂單匯入轉換_中華電信.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_陳沂.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_手作.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_一休.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_Momo.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_森森.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_myfone.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_PC專櫃.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_PC購物中心.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_PC商店街.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_uDesign.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_神坊.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_博客來.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_遠傳加購.cs" />
-    <Compile Include="客製\介面\平台訂單自定義介面.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_Momo第三方.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_Friday.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_ibonMart.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_UDN.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_viva.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_生活市集_超商.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_松果_超商.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_松果.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_特力屋.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_百利市.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_生活市集.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_金石堂.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_東森.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_中華電信.cs" />
+    <Compile Include="廢棄\轉換\平台訂單自定義_陳沂.cs" />
+    <Compile Include="廢棄\轉換\平台訂單自定義_手作.cs" />
+    <Compile Include="廢棄\轉換\平台訂單自定義_一休.cs" />
+    <Compile Include="廢棄\轉換\平台訂單自定義_Momo.cs" />
+    <Compile Include="廢棄\轉換\平台訂單自定義_森森.cs" />
+    <Compile Include="廢棄\轉換\平台訂單自定義_myfone.cs" />
+    <Compile Include="廢棄\轉換\平台訂單自定義_PC專櫃.cs" />
+    <Compile Include="廢棄\轉換\平台訂單自定義_PC購物中心.cs" />
+    <Compile Include="廢棄\轉換\平台訂單自定義_PC商店街.cs" />
+    <Compile Include="廢棄\轉換\平台訂單自定義_uDesign.cs" />
+    <Compile Include="廢棄\轉換\平台訂單自定義_神坊.cs" />
+    <Compile Include="廢棄\轉換\平台訂單自定義_博客來.cs" />
+    <Compile Include="廢棄\轉換\平台訂單自定義_遠傳加購.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_特力屋.cs" />
-    <Compile Include="客製\管理\平台訂單自定義工廠.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_UDN.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_中華電信.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_總金額_一休_陳沂_手作.cs" />
@@ -320,21 +327,14 @@
       <DependentUpon>幣值總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="幣值\資料\幣值資料.cs" />
-    <Compile Include="平台訂單\控制\Momo第三方平台訂單新增資料管理器.cs" />
     <Compile Include="平台訂單\控制\平台訂單新增資料管理器.cs" />
     <Compile Include="平台訂單\控制\平台訂單匯入設定管理器.cs" />
-    <Compile Include="平台訂單\控制\平台訂單匯入管理器.cs" />
-    <Compile Include="平台訂單\視窗\新版平台訂單匯入視窗.cs">
+    <Compile Include="平台訂單\控制\平台訂單新增匯入資料管理器.cs" />
+    <Compile Include="平台訂單\視窗\平台訂單新增匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="平台訂單\視窗\新版平台訂單匯入視窗.Designer.cs">
-      <DependentUpon>新版平台訂單匯入視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="平台訂單\視窗\平台訂單匯入視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="平台訂單\視窗\平台訂單匯入視窗.Designer.cs">
-      <DependentUpon>平台訂單匯入視窗.cs</DependentUpon>
+    <Compile Include="平台訂單\視窗\平台訂單新增匯入視窗.Designer.cs">
+      <DependentUpon>平台訂單新增匯入視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="平台訂單\視窗\平台訂單匯入設定總覽視窗.cs">
       <SubType>Form</SubType>
@@ -361,11 +361,11 @@
       <DependentUpon>平台訂單新增總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="平台訂單\資料\平台訂單列舉.cs" />
-    <Compile Include="平台訂單\資料\平台訂單匯入資料.cs" />
+    <Compile Include="平台訂單\資料\平台訂單新增匯入資料.cs" />
     <Compile Include="平台訂單\資料\平台訂單資料.cs" />
     <Compile Include="平台訂單\資料\平台訂單新增資料.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_摩天.cs" />
-    <Compile Include="客製\匯入\平台訂單自定義_PayEasy.cs" />
+    <Compile Include="廢棄\轉換\平台訂單自定義_摩天.cs" />
+    <Compile Include="廢棄\轉換\平台訂單自定義_PayEasy.cs" />
     <Compile Include="平台訂單\轉換\平台訂單新增錯誤匯出轉換.cs" />
     <Compile Include="廢棄\資料\舊子客戶資料.cs" />
     <Compile Include="廢棄\資料\舊客戶資料.cs" />
@@ -716,6 +716,33 @@
     <Compile Include="通用\視窗\樣板\更新篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="通用\視窗\複寫\MyDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="通用\視窗\選取\代收方式選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="通用\視窗\選取\代收方式選取元件.Designer.cs">
+      <DependentUpon>代收方式選取元件.cs</DependentUpon>
+    </Compile>
+    <Compile Include="通用\視窗\選取\指配時段選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="通用\視窗\選取\指配時段選取元件.Designer.cs">
+      <DependentUpon>指配時段選取元件.cs</DependentUpon>
+    </Compile>
+    <Compile Include="通用\視窗\選取\配送公司選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="通用\視窗\選取\配送公司選取元件.Designer.cs">
+      <DependentUpon>配送公司選取元件.cs</DependentUpon>
+    </Compile>
+    <Compile Include="通用\視窗\選取\訂單處理狀態選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="通用\視窗\選取\訂單處理狀態選取元件.Designer.cs">
+      <DependentUpon>訂單處理狀態選取元件.cs</DependentUpon>
+    </Compile>
     <Compile Include="通用\視窗\選取\更新狀態選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -729,6 +756,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="通用\資料\介面\可更新資料.cs" />
+    <Compile Include="通用\資料\管理\可匯入資料管理器.cs" />
     <Compile Include="通用\轉換\匯出\通用更新匯入轉換.cs" />
     <Compile Include="通用\介面\可篩選介面99.cs" />
     <Compile Include="通用\介面\可刪除檢查介面.cs" />
@@ -1193,11 +1221,8 @@
     <EmbeddedResource Include="幣值\視窗\幣值總覽視窗.resx">
       <DependentUpon>幣值總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="平台訂單\視窗\新版平台訂單匯入視窗.resx">
-      <DependentUpon>新版平台訂單匯入視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="平台訂單\視窗\平台訂單匯入視窗.resx">
-      <DependentUpon>平台訂單匯入視窗.cs</DependentUpon>
+    <EmbeddedResource Include="平台訂單\視窗\平台訂單新增匯入視窗.resx">
+      <DependentUpon>平台訂單新增匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="平台訂單\視窗\平台訂單匯入設定總覽視窗.resx">
       <DependentUpon>平台訂單匯入設定總覽視窗.cs</DependentUpon>
@@ -1210,6 +1235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="平台訂單\視窗\平台訂單新增總覽視窗.resx">
       <DependentUpon>平台訂單新增總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="平台訂單\視窗\平台訂單新增匯入詳細視窗.resx">
+      <DependentUpon>平台訂單新增匯入詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="廠商\視窗\元件\廠商選取元件.resx">
       <DependentUpon>廠商選取元件.cs</DependentUpon>
@@ -1400,6 +1428,18 @@
     <EmbeddedResource Include="聯絡人\視窗\聯絡人詳細視窗.resx">
       <DependentUpon>聯絡人詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="通用\視窗\選取\代收方式選取元件.resx">
+      <DependentUpon>代收方式選取元件.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="通用\視窗\選取\指配時段選取元件.resx">
+      <DependentUpon>指配時段選取元件.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="通用\視窗\選取\配送公司選取元件.resx">
+      <DependentUpon>配送公司選取元件.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="通用\視窗\選取\訂單處理狀態選取元件.resx">
+      <DependentUpon>訂單處理狀態選取元件.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="通用\視窗\選取\更新狀態選取元件.resx">
       <DependentUpon>更新狀態選取元件.cs</DependentUpon>
     </EmbeddedResource>
@@ -1468,7 +1508,7 @@
     <None Include="Properties\DataSources\WokyTool.客戶.客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.幣值.幣值資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.平台訂單.平台訂單匯入設定資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.平台訂單.平台訂單匯入資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.平台訂單.平台訂單新增匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.平台訂單.平台訂單新增資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.廠商.廠商資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳列舉+匯入需求欄位.datasource" />

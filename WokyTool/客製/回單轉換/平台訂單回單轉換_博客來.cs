@@ -12,9 +12,9 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    class 平台訂單回單轉換_博客來 : 可格式化_Csv
+    class 平台訂單回單轉換_博客來 //: 可格式化_Csv
     {
-        private static string 全速配編號 = "EX00000005";
+        /*private static string 全速配編號 = "EX00000005";
         private static string 宅配通編號 = "EX00000007";
 
         protected 平台訂單新增資料 _Data;
@@ -103,6 +103,6 @@ namespace WokyTool.客製
         public string 預計配送日 { get { return 函式.取得字串(_Data.額外資訊, 21); } }
 
         [CsvColumn(Name = "上市日期", FieldIndex = 22)]
-        public string 上市日期 { get { return 函式.取得字串(_Data.額外資訊, 22); } }
+        public string 上市日期 { get { return 函式.取得字串(_Data.額外資訊, 22); } }*/
     }
 }

@@ -45,7 +45,7 @@ namespace WokyTool.平台訂單
         {
             InitializeComponent();
 
-            this.初始化(this.平台訂單新增資料BindingSource, Momo第三方平台訂單新增資料管理器.獨體);
+            //@@this.初始化(this.平台訂單新增資料BindingSource, Momo第三方平台訂單新增資料管理器.獨體);
 
             this.處理狀態DataGridViewTextBoxColumn.DataSource = Enum.GetValues(typeof(列舉.訂單處理狀態));
 
@@ -63,7 +63,7 @@ namespace WokyTool.平台訂單
         private void 系統分組ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // 清除所有舊的配送分組
-            foreach(var Item_ in Momo第三方平台訂單新增資料管理器.獨體.可編輯BList)
+            /*@@foreach(var Item_ in Momo第三方平台訂單新增資料管理器.獨體.可編輯BList)
             {
                 if (Item_.處理狀態 == 列舉.訂單處理狀態.新增)
                 {
@@ -87,18 +87,18 @@ namespace WokyTool.平台訂單
                 var x = Group_.ToList();
             }
 
-            this.dataGridView1.Refresh();
+            this.dataGridView1.Refresh();*/
 
             訊息管理器.獨體.通知("已完成系統分組");
         }
 
         private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            平台訂單新增資料 平台訂單新增資料_ = Momo第三方平台訂單新增資料管理器.獨體.可編輯BList.DefaultIfEmpty(null).First();
+            /*@@平台訂單新增資料 平台訂單新增資料_ = Momo第三方平台訂單新增資料管理器.獨體.可編輯BList.DefaultIfEmpty(null).First();
             if (平台訂單新增資料_ == null)
                 return;
 
-            平台訂單新增資料_.自定義介面.回單(Momo第三方平台訂單新增資料管理器.獨體.可編輯BList);
+            平台訂單新增資料_.自定義介面.回單(Momo第三方平台訂單新增資料管理器.獨體.可編輯BList);*/
 
             訊息管理器.獨體.通知("已完成匯出");
         }
@@ -221,7 +221,7 @@ namespace WokyTool.平台訂單
             Phrase myText = null;
 
             // 取得物件
-            IEnumerable<平台訂單新增資料> ItemList_ = Momo第三方平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => 發票號碼_.Equals(Value.發票號碼) && Value.處理狀態 == 列舉.訂單處理狀態.新增);
+            /*@@IEnumerable<平台訂單新增資料> ItemList_ = Momo第三方平台訂單新增資料管理器.獨體.可編輯BList.Where(Value => 發票號碼_.Equals(Value.發票號碼) && Value.處理狀態 == 列舉.訂單處理狀態.新增);
             if (ItemList_ == null || ItemList_.Count() == 0)
             {
                 訊息管理器.獨體.警告("找不到匹配的發票 " + 發票號碼_);
@@ -258,48 +258,6 @@ namespace WokyTool.平台訂單
                 contentByte.AddTemplate(importedPage, 0, 0);
 
                 myText = new Phrase(物品合併資料_.ToString(), MyFont);
-            }
-            /*else if (ItemList_.Count == 1)
-            {
-                var Item_ = ItemList_[0];
-
-                Item_.BeginEdit();
-
-                Item_.姓名 = 名字_;
-                Item_.電話 = 電話_;
-                Item_.手機 = 手機_;
-                Item_.地址 = 地址_;
-
-                Item_.配送單號 = 宅配單號_;
-                Item_.處理狀態 = 列舉.訂單處理狀態.配送;
-                Item_.處理時間 = DateTime.Now;
-
-                // 拷貝舊資料
-                var importedPage = Output_.GetImportedPage(File_, PageIndex_);
-                PdfContentByte contentByte = Output_.DirectContent;
-                contentByte.AddTemplate(importedPage, 0, 0);
-
-                myText = new Phrase(Item_.合併.ToString(), MyFont);
-            }
-            else // 有複數個 
-            {
-                訊息管理器.獨體.警告("發票號碼 " + 發票號碼_ + " 有" + ItemList_.Count + "筆資料匹配");
-
-                foreach(var Item_ in ItemList_)
-                {
-                    Item_.BeginEdit();
-
-                    Item_.姓名 = 名字_;
-                    Item_.電話 = 電話_;
-                    Item_.手機 = 手機_;
-                    Item_.地址 = 地址_;
-
-                    Item_.配送單號 = "請協助回填";
-                    Item_.處理狀態 = 列舉.訂單處理狀態.配送;
-                    Item_.處理時間 = DateTime.Now;
-                }
-
-                myText = new Phrase("複數!!", MyFont);
             }*/
 
             // 塞入資訊
@@ -310,7 +268,7 @@ namespace WokyTool.平台訂單
 
         private void 完成ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Momo第三方平台訂單新增資料管理器.獨體.完成();
+            //@@Momo第三方平台訂單新增資料管理器.獨體.完成();
 
             this.OnActivated(null);
 

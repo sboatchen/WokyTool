@@ -509,8 +509,8 @@ namespace WokyTool
 
         private void button10_Click(object sender, EventArgs e)
         {
-            var i = new 新版平台訂單匯入視窗();
-            //@@@var i = new 平台訂單匯入視窗();
+            var i = new 平台訂單新增匯入視窗();
+            i.初始化();
             i.Show();
             i.BringToFront();
         }

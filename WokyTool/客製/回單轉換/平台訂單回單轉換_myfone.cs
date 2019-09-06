@@ -12,9 +12,9 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    class 平台訂單回單轉換_myfone : 可格式化_Csv
+    class 平台訂單回單轉換_myfone //: 可格式化_Csv
     {
-        private static string 全速配編號 = "hct_s";
+        /*private static string 全速配編號 = "hct_s";
         private static string 宅配通編號 = "e_can_s";
 
         protected 平台訂單新增資料 _Data;
@@ -85,6 +85,6 @@ namespace WokyTool.客製
         [CsvColumn(Name = "發票號碼", FieldIndex = 20)]
         public string 發票號碼 { get { return 函式.取得字串(_Data.額外資訊, 20); } }
         [CsvColumn(Name = "出貨單備註", FieldIndex = 21)]
-        public string 出貨單備註 { get { return _Data.備註; } }
+        public string 出貨單備註 { get { return _Data.備註; } }*/
     }
 }
