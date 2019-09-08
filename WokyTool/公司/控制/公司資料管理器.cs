@@ -12,7 +12,7 @@ using WokyTool.通用;
 
 namespace WokyTool.公司
 {
-    public class 公司資料管理器 : 可儲存資料管理器<公司資料>
+    public class 公司資料管理器 : 可編號記錄資料管理器<公司資料>
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.公司; } }
 

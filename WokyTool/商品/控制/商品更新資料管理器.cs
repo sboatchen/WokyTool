@@ -19,7 +19,7 @@ namespace WokyTool.商品
             return new 商品更新資料篩選();
         }
 
-        protected override 可儲存資料管理器<商品資料> 儲存器 { get { return 商品資料管理器.獨體; } }
+        protected override 可編號記錄資料管理器<商品資料> 儲存器 { get { return 商品資料管理器.獨體; } }
 
         // 建構子
         public 商品更新資料管理器()

@@ -15,7 +15,7 @@ using WokyTool.廢棄;
 
 namespace WokyTool.聯絡人
 {
-    public class 聯絡人資料管理器 : 可儲存資料管理器<聯絡人資料>
+    public class 聯絡人資料管理器 : 可編號記錄資料管理器<聯絡人資料>
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.聯絡人; } }
 

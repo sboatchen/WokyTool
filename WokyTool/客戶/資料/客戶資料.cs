@@ -13,7 +13,7 @@ using WokyTool.聯絡人;
 namespace WokyTool.客戶
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 客戶資料 : 新版可記錄資料<客戶資料>
+    public class 客戶資料 : 可編號記錄資料
     {
         [可匯出]
         [JsonProperty]

@@ -12,7 +12,7 @@ using WokyTool.通用;
 
 namespace WokyTool.商品
 {
-    public class 商品小類資料管理器 : 可儲存資料管理器<商品小類資料>
+    public class 商品小類資料管理器 : 可編號記錄資料管理器<商品小類資料>
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.商品小類; } }
 

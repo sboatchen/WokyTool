@@ -73,6 +73,14 @@ namespace WokyTool.通用
             return default(T);
         }
 
+        public static object 轉成物件(this string 資料_, Type 類型_)
+        {
+            if (string.IsNullOrEmpty(資料_) == false)
+                return JsonConvert.DeserializeObject(資料_, 類型_);
+
+            return null;
+        }
+
         [DllImport("msvcrt.dll", CallingConvention = CallingConvention.Cdecl)]
         static extern int memcmp(byte[] b1, byte[] b2, long count);
 

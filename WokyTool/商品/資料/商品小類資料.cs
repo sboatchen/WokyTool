@@ -10,7 +10,7 @@ using WokyTool.通用;
 namespace WokyTool.商品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 商品小類資料 : 新版可記錄資料<商品小類資料>
+    public class 商品小類資料 : 可編號記錄資料
     {
         [可匯出]
         [JsonProperty]

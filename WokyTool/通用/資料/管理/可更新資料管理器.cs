@@ -15,7 +15,7 @@ namespace WokyTool.通用
 {
     public abstract class 可更新資料管理器<TSource, TValue> : 可編輯列舉資料管理介面, 可儲存介面 
 		where TSource : 可更新資料<TValue> 
-		where TValue : 新版可記錄資料<TValue>
+		where TValue : 可編號記錄資料
     {
         public List<TSource> 資料列 { get; protected set; }
         protected int _資料更新版本 = 0;  // 用於通知外部資料變更
@@ -77,7 +77,7 @@ namespace WokyTool.通用
         public 新版可篩選介面<TSource> 篩選器 { get; protected set; }
         public 視窗可篩選介面 視窗篩選器 { get { return 篩選器; } }
 
-        protected abstract 可儲存資料管理器<TValue> 儲存器 { get; }
+        protected abstract 可編號記錄資料管理器<TValue> 儲存器 { get; }
 
         // 建構子
         public 可更新資料管理器()

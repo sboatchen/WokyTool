@@ -17,7 +17,7 @@ namespace WokyTool.通用
     };
 
     [JsonObject(MemberSerialization.OptIn)]
-    public abstract class 可更新資料<T> : 可編輯資料, 可初始化介面, 可記錄錯誤介面 where T : 新版可記錄資料<T>
+    public abstract class 可更新資料<T> : 可編輯資料, 可初始化介面, 可記錄錯誤介面 where T : 可編號記錄資料
     {
         [可匯出]
         [JsonProperty]

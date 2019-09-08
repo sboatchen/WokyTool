@@ -13,7 +13,7 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.通用
 {
-    public abstract class 可儲存資料管理器<T> : 可管理資料管理器<T>, 可儲存介面 where T : 新版可記錄資料<T>
+    public abstract class 可編號記錄資料管理器<T> : 可管理資料管理器<T>, 可儲存介面 where T : 可編號記錄資料
     {
         public abstract 列舉.編號 編號類型 { get; }
 
@@ -55,7 +55,7 @@ namespace WokyTool.通用
         protected 可檢查介面 新增物件檢查器 = new 例外檢查器();
 
         // 建構子
-        protected 可儲存資料管理器()
+        protected 可編號記錄資料管理器()
         {
             初始化資料();
 

@@ -15,7 +15,7 @@ public delegate void 使用者登入事件(使用者資料 使用者資料_);
 
 namespace WokyTool.使用者
 {
-    public class 使用者資料管理器 : 可儲存資料管理器<使用者資料>
+    public class 使用者資料管理器 : 可編號記錄資料管理器<使用者資料>
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.使用者; } }
 

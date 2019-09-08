@@ -706,6 +706,7 @@
     <Compile Include="聯絡人\資料\聯絡人更新資料.cs" />
     <Compile Include="聯絡人\資料\聯絡人更新資料篩選.cs" />
     <Compile Include="聯絡人\資料\聯絡人資料篩選.cs" />
+    <Compile Include="通用\介面\可索引介面.cs" />
     <Compile Include="通用\介面\可記錄錯誤介面.cs" />
     <Compile Include="通用\檔案\介面\可寫入介面_PDF.cs" />
     <Compile Include="通用\檔案\元件\PDF定位元件.cs" />
@@ -761,6 +762,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="通用\資料\介面\可更新資料.cs" />
+    <Compile Include="通用\資料\介面\可記錄資料.cs" />
     <Compile Include="通用\資料\管理\可暫存資料管理器.cs" />
     <Compile Include="通用\資料\管理\可匯入資料管理器.cs" />
     <Compile Include="通用\轉換\匯出\通用更新匯入轉換.cs" />
@@ -810,7 +812,6 @@
     <Compile Include="通用\檔案\檔案_CSV.cs" />
     <Compile Include="通用\檔案\檔案_EXCEL.cs" />
     <Compile Include="通用\其他\系統參數.cs" />
-    <Compile Include="通用\視窗99\其他\資料列選取插件2.cs" />
     <Compile Include="通用\視窗\其他\抽象資料選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -844,12 +845,12 @@
     <Compile Include="通用\資料99\介面\可選取資料列管理介面99.cs" />
     <Compile Include="通用\資料99\可記錄資料99.cs" />
     <Compile Include="通用\資料\介面\可匯入資料.cs" />
-    <Compile Include="通用\資料\介面\可記錄資料.cs" />
+    <Compile Include="通用\資料\介面\可編號記錄資料.cs" />
     <Compile Include="通用\資料\介面\可編輯資料.cs" />
     <Compile Include="通用\資料\介面\基本資料.cs" />
     <Compile Include="通用\資料99\可匯入資料99.cs" />
     <Compile Include="通用\資料\管理\可更新資料管理器.cs" />
-    <Compile Include="通用\資料\管理\可儲存資料管理器.cs" />
+    <Compile Include="通用\資料\管理\可編號記錄資料管理器.cs" />
     <Compile Include="通用\轉換\資料\通用更新匯入欄位方法資料.cs" />
     <Compile Include="通用\轉換\資料\通用匯出欄位方法資料.cs" />
     <Compile Include="通用\轉換\資料\通用匯出欄位設定資料.cs" />
@@ -960,6 +961,7 @@
     <Compile Include="進貨\轉換\進貨新增總覽匯出轉換.cs" />
     <Compile Include="進貨\轉換\進貨總覽匯出轉換.cs" />
     <Compile Include="配送\資料\一般訂單配送資料.cs" />
+    <Compile Include="配送\資料\可配送資料.cs" />
     <Compile Include="配送\資料\撿貨資料.cs" />
     <Compile Include="配送\轉換\配送明細轉換.cs" />
     <Compile Include="配送\轉換\撿貨匯出轉換.cs" />
@@ -1141,7 +1143,7 @@
       <DependentUpon>待配送總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="配送\資料\平台合併訂單配送資料.cs" />
-    <Compile Include="配送\資料\可配送資料.cs" />
+    <Compile Include="配送\資料\配送資料.cs" />
     <Compile Include="配送\資料\平台訂單配送資料.cs" />
     <EmbeddedResource Include="FormOther\銷售篩選視窗.resx">
       <DependentUpon>銷售篩選視窗.cs</DependentUpon>
