@@ -15,7 +15,10 @@ namespace WokyTool.平台訂單
             return new 平台訂單新增匯入資料篩選();
         }
 
-        protected override 可編號記錄資料管理器<平台訂單新增資料> 儲存器 { get { return 平台訂單新增資料管理器.獨體; } }
+        protected override 可新增介面<平台訂單新增資料> 記錄器
+        {
+            get { return 平台訂單新增資料管理器.獨體; }
+        }
 
         // 建構子
         public 平台訂單新增匯入資料管理器()

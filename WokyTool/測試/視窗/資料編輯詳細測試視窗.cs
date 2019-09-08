@@ -20,7 +20,7 @@ namespace WokyTool.測試
         {
             InitializeComponent();
 
-            編輯管理器 = 讀寫測試資料管理器.獨體.編輯管理器;
+            編輯管理器 = 讀寫測試資料管理器.獨體;
 
             foreach (讀寫測試資料 x in (IEnumerable<讀寫測試資料>)編輯管理器.資料列舉)
                 資料BS.Add(x);

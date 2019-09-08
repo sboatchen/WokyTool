@@ -7,10 +7,8 @@ using System.Windows.Forms;
 
 namespace WokyTool.通用
 {
-    public interface 可編輯列舉資料管理介面 : 可列舉資料管理介面
+    public interface 可編輯列舉資料管理介面 : 可清單列舉資料管理介面
     {
-        視窗可篩選介面 視窗篩選器 { get; }
-
         bool 是否可編輯 { get; }
         bool 是否編輯中 { get; }
 

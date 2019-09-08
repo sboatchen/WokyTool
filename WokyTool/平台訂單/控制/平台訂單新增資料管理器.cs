@@ -11,7 +11,7 @@ using WokyTool.通用;
 
 namespace WokyTool.平台訂單
 {
-    public class 平台訂單新增資料管理器 : 可編號記錄資料管理器<平台訂單新增資料>
+    public class 平台訂單新增資料管理器 : 可記錄資料管理器<平台訂單新增資料>
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.平台訂單新增; } }
 

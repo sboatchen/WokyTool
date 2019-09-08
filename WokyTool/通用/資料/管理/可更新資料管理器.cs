@@ -77,7 +77,7 @@ namespace WokyTool.通用
         public 新版可篩選介面<TSource> 篩選器 { get; protected set; }
         public 視窗可篩選介面 視窗篩選器 { get { return 篩選器; } }
 
-        protected abstract 可編號記錄資料管理器<TValue> 儲存器 { get; }
+        protected abstract 可編號記錄資料管理器<TValue> 記錄器 { get; }
 
         // 建構子
         public 可更新資料管理器()
@@ -158,9 +158,9 @@ namespace WokyTool.通用
         // 儲存檔案
         public virtual void 儲存()
         {
-            儲存器.更新(資料列.Where(Value => Value.更新狀態 == 列舉.更新狀態.更新).Select(Value => Value.修改));
-            儲存器.新增(資料列.Where(Value => Value.更新狀態 == 列舉.更新狀態.新增).Select(Value => Value.修改));
-            儲存器.刪除(資料列.Where(Value => Value.更新狀態 == 列舉.更新狀態.刪除).Select(Value => Value.修改));
+            記錄器.更新(資料列.Where(Value => Value.更新狀態 == 列舉.更新狀態.更新).Select(Value => Value.修改));
+            記錄器.新增(資料列.Where(Value => Value.更新狀態 == 列舉.更新狀態.新增).Select(Value => Value.修改));
+            記錄器.刪除(資料列.Where(Value => Value.更新狀態 == 列舉.更新狀態.刪除).Select(Value => Value.修改));
         }
     }
 }
