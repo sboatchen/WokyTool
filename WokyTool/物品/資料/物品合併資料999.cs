@@ -202,5 +202,17 @@ namespace WokyTool.物品
 
             return 組成列_;
         }
+
+        public 列舉.配送公司 推薦配送公司 
+        {
+            get
+            {
+                return 列舉.配送公司.宅配通;
+                /*if (體積 >= 常數.宅配通配送最小體積)
+                    return 列舉.配送公司.宅配通;
+                else
+                    return 列舉.配送公司.全速配;*/
+            }
+        }
     }
 }

@@ -60,6 +60,7 @@ namespace WokyTool.平台訂單
             IEnumerable<平台訂單新增資料> 資料列舉_ = (IEnumerable<平台訂單新增資料>)編輯管理器.資料列舉;
 
             var GroupQueue_ = 資料列舉_.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增).GroupBy(Value => Value.配送分組);
+            //@@ 略過已進入配送介面的
 
             List<配送轉換資料> 資料列_ = new List<配送轉換資料>();
             foreach (var Group_ in GroupQueue_)
@@ -82,7 +83,10 @@ namespace WokyTool.平台訂單
                 }
             }
 
-            配送轉換資料管理器.獨體.新增(資料列_);
+            var 視窗_ = new 配送新增總覽視窗(資料列_);
+            視窗_.初始化();
+            視窗_.Show();
+            視窗_.BringToFront();
 
             訊息管理器.獨體.通知("已轉入配送系統");
         }

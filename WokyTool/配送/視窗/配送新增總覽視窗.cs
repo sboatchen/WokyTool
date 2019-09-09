@@ -22,7 +22,7 @@ namespace WokyTool.配送
     {
         public override Type 資料類型 { get { return typeof(配送轉換資料); } }
 
-        public override 可編輯列舉資料管理介面 更新管理器 { get { return 配送轉換資料管理器.獨體; } }
+        public override 可編輯列舉資料管理介面 更新管理器 { get { return 資料管理器; } }
 
         public override MyDataGridView 資料GV { get { return this.myDataGridView1; } }
         public override ToolStripMenuItem 樣板MI { get { return null; } }
@@ -33,7 +33,7 @@ namespace WokyTool.配送
         {
             get
             {
-                var 視窗_ = new 配送新增篩選視窗(配送轉換資料管理器.獨體.視窗篩選器);
+                var 視窗_ = new 配送新增篩選視窗(資料管理器.視窗篩選器);
                 視窗_.初始化();
                 return 視窗_;
             }
@@ -43,209 +43,120 @@ namespace WokyTool.配送
         {
             get
             {
-                var 視窗_ = new 配送新增詳細視窗(配送轉換資料管理器.獨體);
+                var 視窗_ = new 配送新增詳細視窗(資料管理器);
                 視窗_.初始化();
                 return 視窗_;
             }
         }
 
-        private void 測試用ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            int i = 1;
-            foreach (var Item_ in 配送管理器.獨體.可編輯BList)
-            {
-                Item_.配送單號 = String.Format("宅配回單測試{0}", i++);
-            }
-
-            配送管理器.獨體.完成編輯(true);
-
-            //@@平台訂單新增資料管理器.獨體.資料異動();  //@@ 目前沒想到好方法 通知更新
-
-            this.OnActivated(null);
-        }
-
-        private void 全速配匯出ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void 全速配匯出ToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void 全速配撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void 全速配明細ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void 宅配通匯出ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void 宅配通匯入ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void 宅配通撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void 宅配通明細ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // 匯出暫存
-        private List<全速配匯出結構> _Export1 = new List<全速配匯出結構>();
-        private List<宅配通匯出結構> _Export2 = new List<宅配通匯出結構>();
+        public 配送轉換資料管理器 資料管理器 = new 配送轉換資料管理器();
 
         public 配送新增總覽視窗()
         {
             InitializeComponent();
         }
 
-        private void 全速配ToolStripMenuItem1_Click(object sender, EventArgs e)
+        public 配送新增總覽視窗(List<配送轉換資料> 資料列_)
         {
-            int x = 1;
-            _Export1 = 配送管理器.獨體.可編輯BList
-                                .Where(Value => Value.配送公司 == 列舉.配送公司.全速配)
-                                .Select(Value => new 全速配匯出結構(x++, Value))
-                                .ToList();
+            InitializeComponent();
 
-            string Title_ = String.Format("全速配匯出_{0}", 時間.目前日期);
-            舊函式.ExportCSV<全速配匯出結構>(Title_, _Export1);
+            資料管理器.新增(資料列_);
+        }
 
-            // 如果有資料匯出，則鎖定不再允許匯出，並開放匯入
-            /*@@if (_Export1.Count > 0)
-            {
-                this.全速配ToolStripMenuItem1.Enabled = false;
-                this.全速配ToolStripMenuItem.Enabled = true;
-            }*/
+        private void 全速配匯出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配);
 
-            配送明細轉換 轉換_ = new 配送明細轉換("全速配", 配送管理器.獨體.可編輯BList.Where(Value => Value.配送公司 == 列舉.配送公司.全速配));
+            全速配匯出轉換 轉換_ = new 全速配匯出轉換(資料列舉_);
             string 標題_ = String.Format("全速配明細匯出_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.通知("匯出完成");
-
         }
 
-        private void 宅配通ToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void 全速配匯入ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _Export2 = 配送管理器.獨體.可編輯BList
-                                .Where(Value => Value.配送公司 == 列舉.配送公司.宅配通)
-                                .Select(Value => new 宅配通匯出結構(Value))
-                                .ToList();
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配);
 
-            string Title_ = String.Format("宅配通匯出_{0}", 時間.目前日期);
-            舊函式.ExportExcel<宅配通匯出結構>(Title_, _Export2);
+            全速配匯入轉換 轉換器_ = new 全速配匯入轉換(資料列舉_);
+            檔案.詢問並讀出(轉換器_);
 
-            // 如果有資料匯出，則鎖定不再允許匯出，並開放匯入
-            /*@@if (_Export2.Count > 0)
-            {
-                this.宅配通ToolStripMenuItem1.Enabled = false;
-                this.宅配通ToolStripMenuItem.Enabled = true;
-            }*/
+            訊息管理器.獨體.通知("匯入完成");
+        }
 
-            配送明細轉換 轉換_ = new 配送明細轉換("宅配通", 配送管理器.獨體.可編輯BList.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通));
+        private void 全速配撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配 && String.IsNullOrEmpty(Value.配送單號) == false);
+            
+            配送撿貨轉換 轉換_ = new 配送撿貨轉換(資料列舉_);
+            string 標題_ = String.Format("全速配撿貨匯出_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換_);
+
+            訊息管理器.獨體.通知("匯出完成");
+        }
+
+        private void 全速配明細ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配 && String.IsNullOrEmpty(Value.配送單號) == false);
+
+            配送明細轉換 轉換_ = new 配送明細轉換(資料列舉_);
+            string 標題_ = String.Format("全速配明細匯出_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換_);
+
+            訊息管理器.獨體.通知("匯出完成");
+        }
+
+        private void 宅配通匯出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通);
+
+
+            宅配通匯出轉換 轉換_ = new 宅配通匯出轉換(資料列舉_);
             string 標題_ = String.Format("宅配通明細匯出_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.通知("匯出完成");
         }
 
-        private void 全速配ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 宅配通匯入ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var List_ = 全速配匯入資料.匯入Excel<全速配匯入資料>().ToList();
-            if (List_ == null || List_.Count == 0)
-                return;
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通);
 
-            // 檢查資料數是否一致
-            if (List_.Count() != _Export1.Count)
-            {
-                訊息管理器.獨體.通知("資料筆數不符合");
-                return;
-            }
+            宅配通匯入轉換 轉換器_ = new 宅配通匯入轉換(資料列舉_);
+            檔案.詢問並讀出(轉換器_);
 
-            bool IsRight_ = true;
-            for (int i = 0; i < _Export1.Count; i++)
-            {
-                if (_Export1[i].設定配送單號(List_[i]) == false)
-                {
-                    訊息管理器.獨體.通知("資料內容不符合, 筆數: " + i);
-                    IsRight_ = false;
-                    break;
-                }
-            }
-            if (IsRight_ == false)
-            {
-                foreach (var Item_ in _Export1)
-                {
-                    Item_.清除配送單號();
-                }
-                return;
-            }
-
-            // 清除暫存，並關閉匯入
-            _Export1.Clear();
-            this.全速配ToolStripMenuItem.Enabled = false;
-
-            配送管理器.獨體.完成編輯(true);
-
-            //@@平台訂單新增資料管理器.獨體.資料異動();  //@@ 目前沒想到好方法 通知更新
-
-            this.OnActivated(null);
+            訊息管理器.獨體.通知("匯入完成");
         }
 
-        private void 宅配通ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 宅配通撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var List_ = 宅配通匯入資料.匯入Excel<宅配通匯入資料>().ToList();
-            if (List_ == null || List_.Count == 0)
-                return;
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通 && String.IsNullOrEmpty(Value.配送單號) == false);
 
-            // 檢查資料數是否一致
-            if (List_.Count() != _Export2.Count)
+            配送撿貨轉換 轉換_ = new 配送撿貨轉換(資料列舉_);
+            string 標題_ = String.Format("宅配通撿貨匯出_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換_);
+
+            訊息管理器.獨體.通知("匯出完成");
+        }
+
+        private void 宅配通明細ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通 && String.IsNullOrEmpty(Value.配送單號) == false);
+
+            配送明細轉換 轉換_ = new 配送明細轉換(資料列舉_);
+            string 標題_ = String.Format("宅配通明細匯出_{0}", 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換_);
+
+            訊息管理器.獨體.通知("匯出完成");
+        }
+
+        private void 測試ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int i = 1;
+            foreach (var 資料_ in 資料管理器.資料列.Where(Value => String.IsNullOrEmpty(Value.配送單號)))
             {
-                訊息管理器.獨體.通知("資料筆數不符合");
-                return;
+                資料_.配送單號 = String.Format("宅配回單測試{0}", i++);
             }
-
-            bool IsRight_ = true;
-            for (int i = 0; i < _Export2.Count; i++)
-            {
-                if (_Export2[i].設定配送單號(List_[i]) == false)
-                {
-                    訊息管理器.獨體.通知("資料內容不符合, 筆數: " + i);
-                    IsRight_ = false;
-                    break;
-                }
-            }
-            if (IsRight_ == false)
-            {
-                foreach (var Item_ in _Export1)
-                {
-                    Item_.清除配送單號();
-                }
-                return;
-            }
-
-            // 清除暫存，並關閉匯入
-            _Export1.Clear();
-            this.全速配ToolStripMenuItem.Enabled = false;
-
-            配送管理器.獨體.完成編輯(true);
-
-            //@@平台訂單新增資料管理器.獨體.資料異動();  //@@ 目前沒想到好方法 通知更新
-
-            this.OnActivated(null);
         }
     }
 }

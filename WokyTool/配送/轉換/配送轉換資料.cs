@@ -177,5 +177,7 @@ namespace WokyTool.配送
             if (件數 <= 0)
                 檢查器_.錯誤(資料_, "件數不合法");
         }
+
+        public virtual void 撿貨合併(物品合併資料 合併資料_) { ; }
     }
 }

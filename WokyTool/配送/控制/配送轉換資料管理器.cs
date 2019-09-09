@@ -18,15 +18,11 @@ namespace WokyTool.配送
 
         protected override 可新增介面<配送資料> 記錄器
         {
-            get { return null;/*平台訂單新增資料管理器.獨體;*/ }
+            get { return null;/*@@平台訂單新增資料管理器.獨體;*/ }
         }
 
-        // 獨體
-        private static readonly 配送轉換資料管理器 _獨體 = new 配送轉換資料管理器();
-        public static 配送轉換資料管理器 獨體 { get { return _獨體; } }
-
         // 建構子
-        protected 配送轉換資料管理器()
+        public 配送轉換資料管理器()
         {
         }
     }

@@ -78,7 +78,8 @@ namespace WokyTool.通用
                     if (_目前資料列舉.Any() == false)
                         _目前資料列舉 = new List<T>();
 
-                    _公用BS.DataSource = _目前資料列舉;
+                    _公用BS.DataSource = _目前資料列舉;     //@@ 當原本沒有資料 並允許家資料 GridView 會預設一筆空資料 這時加入資料 會導致錯誤
+                                                        // ex 開啟 平台訂單新增總攬視窗 -> 開啟 平台訂單新增匯入視窗 並匯入 -> 平台訂單新增總攬視窗 出錯 
                     _公用BS.ResetBindings(false);
                 }
 
