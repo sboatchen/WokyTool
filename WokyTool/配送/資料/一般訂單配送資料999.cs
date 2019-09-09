@@ -13,7 +13,7 @@ using WokyTool.通用;
 namespace WokyTool.配送
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 一般訂單配送資料 : 可配送資料
+    public class 一般訂單配送資料 {/*@@: 可配送資料
     {
         public 一般訂單新增資料 訂單 { get; protected set; }
 
@@ -78,6 +78,6 @@ namespace WokyTool.配送
             this.備註 = 訂單_.備註;
 
             初始化();
-        }
+        }*/
     }
 }

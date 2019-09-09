@@ -55,11 +55,11 @@ namespace WokyTool.一般訂單
                 Item_.處理時間 = DateTime.Now;
             }
 
-            var 出貨Queue_ = 一般訂單新增資料管理器.獨體.可編輯BList
+            /*@@var 出貨Queue_ = 一般訂單新增資料管理器.獨體.可編輯BList
                             .Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增) // 不須再檢查退貨
                             .Select(Value => new 一般訂單配送資料(Value));
 
-            配送管理器.獨體.新增(出貨Queue_);
+            配送管理器.獨體.新增(出貨Queue_);*/
 
             訊息管理器.獨體.通知("已轉入配送系統");
         }

@@ -60,17 +60,36 @@ namespace WokyTool.配送
                 Builder_.加入((object)null, false);
                 Builder_.加入(資料_.地址);
                 Builder_.加入(資料_.電話);
-                Builder_.加入(資料_.電話);
-                Builder_.加入(資料_.手機);
+
+                if(String.IsNullOrEmpty(資料_.手機))
+                {
+                    Builder_.加入((object)null, false);
+                    Builder_.加入((object)null, false);
+                }
+                else if (資料_.手機.Length >= 15)    // 手機欄位無法放太長的字串 過長的改放到電話2
+                {
+                    Builder_.加入(資料_.電話);
+                    Builder_.加入((object)null, false);
+                }
+                else
+                {
+                    Builder_.加入((object)null, false);
+                    Builder_.加入(資料_.手機);
+                }
+
                 Builder_.加入(資料_.備註);
                 Builder_.加入(資料_.內容);
                 Builder_.加入((object)null, false);
                 Builder_.加入((object)null, false);
+                Builder_.加入(1);
+                Builder_.加入(3);
                 Builder_.加入((object)null, false);
                 Builder_.加入((object)null, false);
-                Builder_.加入((object)null, false);
-                Builder_.加入((object)null, false);
-                Builder_.加入(資料_.指配日期, true);
+
+                if (資料_.指配日期.Ticks > 0)
+                    Builder_.加入(資料_.指配日期.ToString("yyyyMMdd"), true);
+                else
+                    Builder_.加入((object)null, true);
             }
         }
     }

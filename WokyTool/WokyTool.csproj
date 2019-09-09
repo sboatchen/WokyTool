@@ -858,7 +858,6 @@
     <Compile Include="通用\轉換\資料\通用匯出欄位方法資料.cs" />
     <Compile Include="通用\轉換\資料\通用匯出欄位設定資料.cs" />
     <Compile Include="通用\轉換\資料\通用匯出設定資料.cs" />
-    <Compile Include="配送\介面\可配送介面.cs" />
     <Compile Include="通用\資料99\動態匯入\通用檔案匯入設定資料.cs" />
     <Compile Include="通用\資料99\動態匯入\檔案匯入設定資料介面.cs" />
     <Compile Include="通用\資料99\動態匯入\檔案匯入轉換介面.cs" />
@@ -982,14 +981,13 @@
     <Compile Include="配送\視窗\配送新增總覽視窗.Designer.cs">
       <DependentUpon>配送新增總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="配送\資料\一般訂單配送資料.cs" />
+    <Compile Include="配送\資料\一般訂單配送資料999.cs" />
     <Compile Include="配送\資料\配送轉換資料篩選.cs" />
     <Compile Include="配送\轉換\全速配匯入轉換.cs" />
     <Compile Include="配送\轉換\宅配通匯入轉換.cs" />
     <Compile Include="配送\轉換\宅配通匯出轉換.cs" />
     <Compile Include="配送\轉換\全速配匯出轉換.cs" />
     <Compile Include="配送\轉換\配送轉換資料.cs" />
-    <Compile Include="配送\資料\可配送資料.cs" />
     <Compile Include="配送\轉換\配送明細轉換.cs" />
     <Compile Include="配送\轉換\配送撿貨轉換.cs" />
     <Compile Include="DataExport\銷售匯出結構.cs" />
@@ -997,7 +995,6 @@
     <Compile Include="廢棄\出貨匯入結構_愛料理.cs" />
     <Compile Include="DataExport\商品庫存匯出結構.cs" />
     <Compile Include="廢棄\回單號結構_citiesocial.cs" />
-    <Compile Include="配送\資料\全速配匯出結構.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_ibonMart.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_myfone.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_PayEasy.cs" />
@@ -1008,7 +1005,6 @@
     <Compile Include="廢棄\回單號結構_通用.cs" />
     <Compile Include="廢棄\回單號結構_遠傳.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_遠傳加購.cs" />
-    <Compile Include="配送\資料\宅配通匯出結構.cs" />
     <Compile Include="DataExport\物品庫存匯出結構.cs" />
     <Compile Include="DataExport\物品總覽匯出結構.cs" />
     <Compile Include="DataExport\通用匯出結構.cs" />
@@ -1088,10 +1084,8 @@
     <Compile Include="FormOverview\雜支總覽視窗.Designer.cs">
       <DependentUpon>雜支總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="配送\資料\全速配匯入資料.cs" />
     <Compile Include="廢棄\出貨匯入結構_PCHome.cs" />
     <Compile Include="廢棄\出貨匯入結構_創業家兄弟.cs" />
-    <Compile Include="配送\資料\宅配通匯入資料.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_Friday.cs" />
     <Compile Include="DataImport\雜支匯入結構.cs" />
     <Compile Include="DataMgr\幣值管理器.cs" />
@@ -1162,13 +1156,6 @@
     <Compile Include="聯絡人\資料\聯絡人資料.cs" />
     <Compile Include="通用\介面\可儲存介面.cs" />
     <Compile Include="通用\資料99\介面\可編輯資料列管理介面99.cs" />
-    <Compile Include="配送\控制\配送管理器.cs" />
-    <Compile Include="配送\視窗\待配送總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="配送\視窗\待配送總覽視窗.Designer.cs">
-      <DependentUpon>待配送總覽視窗.cs</DependentUpon>
-    </Compile>
     <Compile Include="平台訂單\轉換\平台訂單合併配送轉換資料.cs" />
     <Compile Include="配送\資料\配送資料.cs" />
     <Compile Include="平台訂單\轉換\平台訂單配送轉換資料.cs" />
@@ -1511,9 +1498,6 @@
     <EmbeddedResource Include="配送\視窗\配送新增總覽視窗.resx">
       <DependentUpon>配送新增總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="配送\視窗\待配送總覽視窗.resx">
-      <DependentUpon>待配送總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="log4net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1591,7 +1575,6 @@
     <None Include="Properties\DataSources\WokyTool.進貨.進貨新增匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.進貨.進貨新增資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.進貨.進貨資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.配送.可配送資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.配送.配送轉換資料.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

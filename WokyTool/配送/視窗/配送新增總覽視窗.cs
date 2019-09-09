@@ -68,7 +68,7 @@ namespace WokyTool.配送
             IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配);
 
             全速配匯出轉換 轉換_ = new 全速配匯出轉換(資料列舉_);
-            string 標題_ = String.Format("全速配明細匯出_{0}", 時間.目前日期);
+            string 標題_ = String.Format("全速配匯出_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.通知("匯出完成");
@@ -79,7 +79,7 @@ namespace WokyTool.配送
             IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配);
 
             全速配匯入轉換 轉換器_ = new 全速配匯入轉換(資料列舉_);
-            檔案.詢問並讀出(轉換器_);
+            檔案.詢問並讀出(轉換器_).Count(); // .Count() 驅動執行
 
             訊息管理器.獨體.通知("匯入完成");
         }
@@ -89,7 +89,7 @@ namespace WokyTool.配送
             IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配 && String.IsNullOrEmpty(Value.配送單號) == false);
             
             配送撿貨轉換 轉換_ = new 配送撿貨轉換(資料列舉_);
-            string 標題_ = String.Format("全速配撿貨匯出_{0}", 時間.目前日期);
+            string 標題_ = String.Format("全速配撿貨_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.通知("匯出完成");
@@ -100,7 +100,7 @@ namespace WokyTool.配送
             IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配 && String.IsNullOrEmpty(Value.配送單號) == false);
 
             配送明細轉換 轉換_ = new 配送明細轉換(資料列舉_);
-            string 標題_ = String.Format("全速配明細匯出_{0}", 時間.目前日期);
+            string 標題_ = String.Format("全速配明細_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.通知("匯出完成");
@@ -112,7 +112,7 @@ namespace WokyTool.配送
 
 
             宅配通匯出轉換 轉換_ = new 宅配通匯出轉換(資料列舉_);
-            string 標題_ = String.Format("宅配通明細匯出_{0}", 時間.目前日期);
+            string 標題_ = String.Format("宅配通匯出_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.通知("匯出完成");
@@ -123,7 +123,7 @@ namespace WokyTool.配送
             IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通);
 
             宅配通匯入轉換 轉換器_ = new 宅配通匯入轉換(資料列舉_);
-            檔案.詢問並讀出(轉換器_);
+            檔案.詢問並讀出(轉換器_).Count(); // .Count() 驅動執行
 
             訊息管理器.獨體.通知("匯入完成");
         }
@@ -133,7 +133,7 @@ namespace WokyTool.配送
             IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通 && String.IsNullOrEmpty(Value.配送單號) == false);
 
             配送撿貨轉換 轉換_ = new 配送撿貨轉換(資料列舉_);
-            string 標題_ = String.Format("宅配通撿貨匯出_{0}", 時間.目前日期);
+            string 標題_ = String.Format("宅配通撿貨_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.通知("匯出完成");
@@ -144,7 +144,7 @@ namespace WokyTool.配送
             IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通 && String.IsNullOrEmpty(Value.配送單號) == false);
 
             配送明細轉換 轉換_ = new 配送明細轉換(資料列舉_);
-            string 標題_ = String.Format("宅配通明細匯出_{0}", 時間.目前日期);
+            string 標題_ = String.Format("宅配通明細_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);
 
             訊息管理器.獨體.通知("匯出完成");
