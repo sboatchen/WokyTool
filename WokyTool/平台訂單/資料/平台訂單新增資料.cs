@@ -16,7 +16,7 @@ using WokyTool.通用;
 namespace WokyTool.平台訂單
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 平台訂單新增資料 : 新版可記錄資料<平台訂單新增資料>, 可配送介面
+    public class 平台訂單新增資料 : 新版可記錄資料
     {
         [可匯出]
         [JsonProperty]
@@ -176,17 +176,6 @@ namespace WokyTool.平台訂單
 
         public String 分組識別 { get; private set; }
 
-        public 物品合併資料 合併   //@@
-        {
-            get
-            {
-                物品合併資料 物品合併資料_ = new 物品合併資料();
-                物品合併資料_.新增(商品, 數量);
-
-                return 物品合併資料_;
-            }
-        }
-
         /********************************/
 
         public 平台訂單新增資料 Self { get { return this; } }
@@ -200,8 +189,6 @@ namespace WokyTool.平台訂單
 
         public static readonly 平台訂單新增資料 空白 = new 平台訂單新增資料
         {
-            編號 = 常數.空白資料編碼,
-
             處理狀態 = 列舉.訂單處理狀態.新增,
             處理時間 = default(DateTime),
 
@@ -238,8 +225,6 @@ namespace WokyTool.平台訂單
 
         public static 平台訂單新增資料 錯誤 = new 平台訂單新增資料
         {
-            編號 = 常數.錯誤資料編碼,
-
             處理狀態 = 列舉.訂單處理狀態.錯誤,
             處理時間 = default(DateTime),
 

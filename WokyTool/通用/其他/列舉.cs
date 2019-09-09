@@ -58,6 +58,7 @@ namespace WokyTool.通用
             一般訂單,
 
             配送,
+            配送新增,
 
             廠商,
             幣值,

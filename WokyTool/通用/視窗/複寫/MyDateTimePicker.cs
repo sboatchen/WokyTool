@@ -73,7 +73,7 @@ namespace WokyTool.通用
 			base.OnKeyDown (e);
 
 			if (e.KeyCode == Keys.Delete)
-				this.Value = DateTime.MinValue; 
+				this.Value = DateTime.MinValue; //@@ todo 無法刪除
 		}
 	}
 }

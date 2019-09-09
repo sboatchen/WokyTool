@@ -61,28 +61,28 @@ namespace WokyTool.平台訂單
 
             var GroupQueue_ = 資料列舉_.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增).GroupBy(Value => Value.配送分組);
 
-            List<可配送資料> 配送列表_ = new List<可配送資料>();
+            List<配送轉換資料> 資料列_ = new List<配送轉換資料>();
             foreach (var Group_ in GroupQueue_)
             {
                 if (Group_.Key == 0)
                 {
                     foreach (平台訂單新增資料 資料_ in Group_)
                     {
-                        配送列表_.Add(new 平台訂單配送資料(資料_));
+                        資料列_.Add(new 平台訂單配送轉換資料(資料_));
                     }
                 }
                 else
                 {
-                    平台訂單新增資料 主單_ = Group_.First();
+                    平台訂單新增資料 第一單_ = Group_.First();
 
                     if (Group_.Count() == 1)
-                        配送列表_.Add(new 平台訂單配送資料(主單_));
+                        資料列_.Add(new 平台訂單配送轉換資料(第一單_));
                     else
-                        配送列表_.Add(new 平台合併訂單配送資料(Group_.ToList()));
+                        資料列_.Add(new 平台訂單合併配送轉換資料(Group_.ToList()));
                 }
             }
 
-            配送管理器.獨體.新增(配送列表_);
+            配送轉換資料管理器.獨體.新增(資料列_);
 
             訊息管理器.獨體.通知("已轉入配送系統");
         }

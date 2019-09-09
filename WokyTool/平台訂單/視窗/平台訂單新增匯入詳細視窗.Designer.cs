@@ -39,7 +39,7 @@ namespace WokyTool.平台訂單
             this.單價 = new System.Windows.Forms.NumericUpDown();
             this.含稅單價 = new System.Windows.Forms.NumericUpDown();
             this.新版頁索引元件1 = new WokyTool.通用.新版頁索引元件();
-            this.處理時間 = new MyDateTimePicker();
+            this.處理時間 = new WokyTool.通用.MyDateTimePicker();
             this.處理狀態 = new WokyTool.通用.訂單處理狀態選取元件();
             this.公司 = new WokyTool.公司.公司選取元件();
             this.客戶 = new WokyTool.客戶.客戶選取元件();
@@ -63,7 +63,7 @@ namespace WokyTool.平台訂單
             this.配送公司 = new WokyTool.通用.配送公司選取元件();
             this.配送單號 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.指配日期 = new MyDateTimePicker();
+            this.指配日期 = new WokyTool.通用.MyDateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.指配時段 = new WokyTool.通用.指配時段選取元件();
             this.代收方式 = new WokyTool.通用.代收方式選取元件();
@@ -142,11 +142,6 @@ namespace WokyTool.平台訂單
             0,
             0,
             0});
-            this.單價.Minimum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            -2147483648});
             this.單價.Name = "單價";
             this.單價.Size = new System.Drawing.Size(167, 22);
             this.單價.TabIndex = 47;
@@ -160,11 +155,6 @@ namespace WokyTool.平台訂單
             0,
             0,
             0});
-            this.含稅單價.Minimum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            -2147483648});
             this.含稅單價.Name = "含稅單價";
             this.含稅單價.Size = new System.Drawing.Size(167, 22);
             this.含稅單價.TabIndex = 48;
@@ -184,6 +174,7 @@ namespace WokyTool.平台訂單
             this.處理時間.Name = "處理時間";
             this.處理時間.Size = new System.Drawing.Size(167, 22);
             this.處理時間.TabIndex = 58;
+            this.處理時間.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 752);
             // 
             // 處理狀態
             // 
@@ -387,6 +378,7 @@ namespace WokyTool.平台訂單
             this.指配日期.Name = "指配日期";
             this.指配日期.Size = new System.Drawing.Size(167, 22);
             this.指配日期.TabIndex = 83;
+            this.指配日期.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 697);
             // 
             // label11
             // 
@@ -420,6 +412,11 @@ namespace WokyTool.平台訂單
             // 代收金額
             // 
             this.代收金額.Location = new System.Drawing.Point(302, 389);
+            this.代收金額.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
             this.代收金額.Name = "代收金額";
             this.代收金額.Size = new System.Drawing.Size(167, 22);
             this.代收金額.TabIndex = 86;

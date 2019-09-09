@@ -762,9 +762,11 @@
     <Compile Include="通用\視窗\複寫\MyDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="通用\資料\介面\可轉換資料.cs" />
     <Compile Include="通用\資料\介面\可更新資料.cs" />
     <Compile Include="通用\資料\介面\可記錄資料.cs" />
     <Compile Include="通用\資料\管理\可暫存資料管理器.cs" />
+    <Compile Include="通用\資料\管理\可轉換資料管理器.cs" />
     <Compile Include="通用\資料\管理\可匯入資料管理器.cs" />
     <Compile Include="通用\資料\管理\可記錄資料管理器.cs" />
     <Compile Include="通用\轉換\匯出\通用更新匯入轉換.cs" />
@@ -961,7 +963,28 @@
     <Compile Include="進貨\轉換\進貨新增錯誤匯出轉換.cs" />
     <Compile Include="進貨\轉換\進貨新增總覽匯出轉換.cs" />
     <Compile Include="進貨\轉換\進貨總覽匯出轉換.cs" />
+    <Compile Include="配送\控制\配送轉換資料管理器.cs" />
+    <Compile Include="配送\視窗\配送新增篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="配送\視窗\配送新增篩選視窗.Designer.cs">
+      <DependentUpon>配送新增篩選視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="配送\視窗\配送新增詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="配送\視窗\配送新增詳細視窗.Designer.cs">
+      <DependentUpon>配送新增詳細視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="配送\視窗\配送新增總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="配送\視窗\配送新增總覽視窗.Designer.cs">
+      <DependentUpon>配送新增總覽視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="配送\資料\一般訂單配送資料.cs" />
+    <Compile Include="配送\資料\配送轉換資料篩選.cs" />
+    <Compile Include="配送\轉換\配送轉換資料.cs" />
     <Compile Include="配送\資料\可配送資料.cs" />
     <Compile Include="配送\資料\撿貨資料.cs" />
     <Compile Include="配送\轉換\配送明細轉換.cs" />
@@ -1143,9 +1166,9 @@
     <Compile Include="配送\視窗\待配送總覽視窗.Designer.cs">
       <DependentUpon>待配送總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="配送\資料\平台合併訂單配送資料.cs" />
+    <Compile Include="平台訂單\轉換\平台訂單合併配送轉換資料.cs" />
     <Compile Include="配送\資料\配送資料.cs" />
-    <Compile Include="配送\資料\平台訂單配送資料.cs" />
+    <Compile Include="平台訂單\轉換\平台訂單配送轉換資料.cs" />
     <EmbeddedResource Include="FormOther\銷售篩選視窗.resx">
       <DependentUpon>銷售篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1476,6 +1499,15 @@
     <EmbeddedResource Include="進貨\視窗\進貨總覽視窗.resx">
       <DependentUpon>進貨總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="配送\視窗\配送新增篩選視窗.resx">
+      <DependentUpon>配送新增篩選視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="配送\視窗\配送新增詳細視窗.resx">
+      <DependentUpon>配送新增詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="配送\視窗\配送新增總覽視窗.resx">
+      <DependentUpon>配送新增總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="配送\視窗\待配送總覽視窗.resx">
       <DependentUpon>待配送總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1557,6 +1589,7 @@
     <None Include="Properties\DataSources\WokyTool.進貨.進貨新增資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.進貨.進貨資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.配送.可配送資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.配送.配送轉換資料.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1572,7 +1605,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="商品\轉換\" />
-    <Folder Include="平台訂單\轉換\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
