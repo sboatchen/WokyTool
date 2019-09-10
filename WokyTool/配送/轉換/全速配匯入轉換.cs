@@ -40,7 +40,7 @@ namespace WokyTool.配送
             string 姓名_ = 資料列_[2];
             string 配送單號_ = 資料列_[15];
 
-            配送轉換資料 資料_ = _資料列舉.Where(Value => string.IsNullOrEmpty(Value.配送單號) && 姓名_.Equals(Value.姓名)).First();
+            配送轉換資料 資料_ = _資料列舉.Where(Value => string.IsNullOrEmpty(Value.配送單號) && 姓名_.Equals(Value.姓名)).FirstOrDefault();
             if (資料_ == null)
             {
                 訊息管理器.獨體.錯誤("找不到配送資料, 姓名:" + 姓名_);

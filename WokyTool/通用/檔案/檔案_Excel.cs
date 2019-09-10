@@ -14,7 +14,7 @@ namespace WokyTool.通用
 {
     public partial class 檔案
     {
-        public static void 詢問並寫入(string 檔名_, 可寫入介面_EXCEL 轉換_)
+        public static bool 詢問並寫入(string 檔名_, 可寫入介面_EXCEL 轉換_)
         {
             // 開啟存檔位置
             SaveFileDialog SFD_ = new SaveFileDialog();
@@ -32,11 +32,11 @@ namespace WokyTool.通用
                     break;
                 default:
                     訊息管理器.獨體.錯誤("不支援輸出格式: " + 轉換_.格式);
-                    return;
+                    return false;
             }
 
             if (SFD_.ShowDialog() != DialogResult.OK)
-                return;
+                return false;
 
             Microsoft.Office.Interop.Excel.Application 應用程式_ = null;
             Workbook 工作簿_ = null;
@@ -77,10 +77,14 @@ namespace WokyTool.通用
 
                 時間監測_.Stop();
                 訊息管理器.獨體.訊息("寫入檔案完成: " + SFD_.FileName + ", 費時:" + 時間監測_.ElapsedMilliseconds);
+
+                return true;
             }
             catch (Exception ex)
             {
                 訊息管理器.獨體.錯誤("寫入檔案失敗: " + SFD_.FileName, ex);
+
+                return false;
             }
             finally
             {
@@ -102,13 +106,13 @@ namespace WokyTool.通用
             }
         }
 
-        public static void 詢問並寫入(string 檔名_, IEnumerable<可寫入介面_EXCEL> 轉換列_)
+        public static bool 詢問並寫入(string 檔名_, IEnumerable<可寫入介面_EXCEL> 轉換列_)
         {
             可寫入介面_EXCEL 參考_ = 轉換列_.DefaultIfEmpty(null).First();
             if (參考_ == null)
             {
                 訊息管理器.獨體.通知("群組為空");
-                return;
+                return false;
             }
 
             // 開啟存檔位置
@@ -127,11 +131,11 @@ namespace WokyTool.通用
                     break;
                 default:
                     訊息管理器.獨體.錯誤("不支援輸出格式: " + 參考_.格式);
-                    return;
+                    return false;
             }
 
             if (SFD_.ShowDialog() != DialogResult.OK)
-                return;
+                return false;
 
             Microsoft.Office.Interop.Excel.Application 應用程式_ = null;
             Workbook 工作簿_ = null;
@@ -171,10 +175,14 @@ namespace WokyTool.通用
                     工作簿_.SaveAs(SFD_.FileName, 參考_.格式);
                 else
                     工作簿_.SaveAs(SFD_.FileName, 參考_.格式, 參考_.密碼);
+
+                return true;
             }
             catch (Exception ex)
             {
                 訊息管理器.獨體.錯誤("寫入檔案失敗: " + SFD_.FileName, ex);
+
+                return false;
             }
             finally
             {

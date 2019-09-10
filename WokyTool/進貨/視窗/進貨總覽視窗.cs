@@ -46,9 +46,8 @@ namespace WokyTool.進貨
             var 轉換_ = new 進貨總覽匯出轉換(進貨資料管理器.獨體.可編輯BList);
 
             string 標題_ = String.Format("進貨總覽_{0}", 時間.目前日期);
-            檔案.詢問並寫入(標題_, 轉換_);
-
-            訊息管理器.獨體.通知("匯出完成");
+            if(檔案.詢問並寫入(標題_, 轉換_))
+                訊息管理器.獨體.通知("匯出完成");
         }
 
         private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)

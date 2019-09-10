@@ -46,9 +46,8 @@ namespace WokyTool.物品
 
             var 轉換_ = new 物品盤點匯出轉換();
             String 標題_ = String.Format("盤點匯出_{0}", 時間.目前日期);
-            檔案.詢問並寫入(標題_, 轉換_);
-
-            訊息管理器.獨體.通知("匯出完成");
+            if (檔案.詢問並寫入(標題_, 轉換_))
+                訊息管理器.獨體.通知("匯出完成");
         }
 
         private void 通用ToolStripMenuItem_Click(object sender, EventArgs e)

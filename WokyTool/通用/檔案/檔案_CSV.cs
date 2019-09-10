@@ -12,7 +12,7 @@ namespace WokyTool.通用
 {
     public partial class 檔案
     {
-        public static void 詢問並寫入(string 預設檔名_, 可寫入介面_CSV 轉換_)
+        public static bool 詢問並寫入(string 預設檔名_, 可寫入介面_CSV 轉換_)
         {
             // 開啟存檔位置
             SaveFileDialog SFD_ = new SaveFileDialog();
@@ -20,16 +20,16 @@ namespace WokyTool.通用
             SFD_.DefaultExt = ".csv";
             SFD_.Filter = "csv files (.csv)|*.csv";
             if (SFD_.ShowDialog() != DialogResult.OK)
-                return;
+                return false;
 
             // 寫入資料
             CSVBuilder Builder_ = new CSVBuilder(轉換_.分格號);
             轉換_.寫入(Builder_);
 
-            寫入(SFD_.FileName, Builder_.ToString(), 轉換_.密碼, 轉換_.編碼);
+            return 寫入(SFD_.FileName, Builder_.ToString(), 轉換_.密碼, 轉換_.編碼);
         }
 
-        public static void 詢問並寫入(string 預設檔名_, IEnumerable<可寫入介面_CSV> 轉換列_)
+        public static bool 詢問並寫入(string 預設檔名_, IEnumerable<可寫入介面_CSV> 轉換列_)
         {
             // 開啟存檔位置
             SaveFileDialog SFD_ = new SaveFileDialog();
@@ -37,7 +37,7 @@ namespace WokyTool.通用
             SFD_.DefaultExt = ".csv";
             SFD_.Filter = "csv files (.csv)|*.csv";
             if (SFD_.ShowDialog() != DialogResult.OK)
-                return;
+                return false;
 
             // 寫入資料
             CSVBuilder Builder_ = new CSVBuilder();
@@ -53,9 +53,14 @@ namespace WokyTool.通用
                 else
                     路徑_ = 增加檔名後綴(SFD_.FileName, 轉換_.分類);
 
-                寫入(路徑_, Builder_.ToString(), 轉換_.密碼, 轉換_.編碼);
+                bool 結果_ = 寫入(路徑_, Builder_.ToString(), 轉換_.密碼, 轉換_.編碼);
+                if (結果_ == false)
+                    return false;
+
                 index++;
             }
+
+            return true;
         }
 
         public static IEnumerable<T> 詢問並讀出<T>(可讀出介面_CSV<T> 轉換_)
