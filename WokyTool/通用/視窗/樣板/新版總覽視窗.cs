@@ -106,6 +106,8 @@ namespace WokyTool.通用
                 this.Hide();
             }
 
+            資料版本 = -1;
+
             視窗關閉();
         }
 

@@ -161,6 +161,7 @@ namespace WokyTool.通用
             記錄器.更新(資料列.Where(Value => Value.更新狀態 == 列舉.更新狀態.更新).Select(Value => Value.修改));
             記錄器.新增(資料列.Where(Value => Value.更新狀態 == 列舉.更新狀態.新增).Select(Value => Value.修改));
             記錄器.刪除(資料列.Where(Value => Value.更新狀態 == 列舉.更新狀態.刪除).Select(Value => Value.修改));
+            記錄器.儲存();
         }
     }
 }

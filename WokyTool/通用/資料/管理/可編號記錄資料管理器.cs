@@ -285,10 +285,5 @@ namespace WokyTool.通用
 
             資料版本++;
         }
-
-        public virtual void 更新資料()
-        {
-            資料版本++;
-        }
     }
 }

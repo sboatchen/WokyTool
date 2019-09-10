@@ -159,6 +159,10 @@ namespace WokyTool.通用
         public virtual void 儲存()
         {
             記錄器.新增(資料列.Select(Value => Value.新增資料));
+
+            可儲存介面 儲存器_ = 記錄器 as 可儲存介面;
+            if (儲存器_ != null)
+                儲存器_.儲存();
         }
     }
 }
