@@ -15,63 +15,6 @@ namespace WokyTool.平台訂單
     [JsonObject(MemberSerialization.OptIn)]
     public class 平台訂單配送轉換資料 : 配送轉換資料
     {
-        [可匯出]
-        [JsonProperty]
-        public override 列舉.配送公司 配送公司
-        {
-            get
-            {
-                return 目標資料.配送公司;
-            }
-
-            set
-            {
-                if(目標資料.配送公司 == value)
-                    return;
-
-                來源資料.BeginEdit();
-                來源資料.配送公司 = value;
-                目標資料.配送公司 = value;
-            }
-        }
-
-        [可匯出]
-        [JsonProperty]
-        public override string 配送單號
-        {
-            get
-            {
-                return 目標資料.配送單號;
-            }
-
-            set
-            {
-                if (目標資料.配送單號 == value)
-                    return;
-
-                if (String.IsNullOrEmpty(value))
-                {
-                    訊息管理器.獨體.警告("目標資料單號不可設定為空");
-                    return;
-                }
-
-
-                if (String.IsNullOrEmpty(目標資料.配送單號) == false)
-                {
-                    訊息管理器.獨體.警告("資料重複目標資料 " + this.ToString(false));
-                    return;
-                }
-
-                來源資料.BeginEdit();
-                來源資料.處理狀態 = 列舉.訂單處理狀態.配送;
-                來源資料.配送單號 = value;
-                目標資料.處理時間 = DateTime.Now;
-                目標資料.配送單號 = value;
-            }
-        }
-
-        /********************************/
-
         public 平台訂單新增資料 來源資料 { get; protected set; }
 
         /********************************/
@@ -111,6 +54,20 @@ namespace WokyTool.平台訂單
         public override void 撿貨合併(物品合併資料 合併資料_)
         {
             合併資料_.新增(來源資料.商品, 來源資料.數量);
+        }
+
+        public override bool 更新來源()
+        {
+            if (目標資料.處理時間.Ticks == 0)
+                return false;
+
+            來源資料.BeginEdit();
+
+            來源資料.配送公司 = 目標資料.配送公司;
+            來源資料.處理狀態 = 列舉.訂單處理狀態.配送;
+            來源資料.配送單號 = 目標資料.配送單號;
+
+            return true;
         }
     }
 }

@@ -59,7 +59,7 @@
             this.分組ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.配送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.回單ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.完成ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.封存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -97,11 +97,10 @@
             this.代收金額DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.平台訂單新增資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 27);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1929, 789);
+            this.dataGridView1.Size = new System.Drawing.Size(1447, 629);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
@@ -255,78 +254,76 @@
             this.分組ToolStripMenuItem,
             this.配送ToolStripMenuItem,
             this.回單ToolStripMenuItem,
-            this.完成ToolStripMenuItem,
+            this.封存ToolStripMenuItem,
             this.匯出ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1929, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1447, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // 篩選ToolStripMenuItem
             // 
             this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
-            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
+            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.篩選ToolStripMenuItem.Text = "篩選";
             // 
             // 檢查ToolStripMenuItem
             // 
             this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
-            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
+            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.檢查ToolStripMenuItem.Text = "檢查";
             // 
             // 分組ToolStripMenuItem
             // 
             this.分組ToolStripMenuItem.Name = "分組ToolStripMenuItem";
-            this.分組ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
+            this.分組ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.分組ToolStripMenuItem.Text = "分組";
             this.分組ToolStripMenuItem.Click += new System.EventHandler(this.分組ToolStripMenuItem_Click);
             // 
             // 配送ToolStripMenuItem
             // 
             this.配送ToolStripMenuItem.Name = "配送ToolStripMenuItem";
-            this.配送ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
+            this.配送ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.配送ToolStripMenuItem.Text = "配送";
             this.配送ToolStripMenuItem.Click += new System.EventHandler(this.配送ToolStripMenuItem_Click);
             // 
             // 回單ToolStripMenuItem
             // 
             this.回單ToolStripMenuItem.Name = "回單ToolStripMenuItem";
-            this.回單ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
+            this.回單ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.回單ToolStripMenuItem.Text = "回單";
             this.回單ToolStripMenuItem.Click += new System.EventHandler(this.回單ToolStripMenuItem_Click);
             // 
-            // 完成ToolStripMenuItem
+            // 封存ToolStripMenuItem
             // 
-            this.完成ToolStripMenuItem.Name = "完成ToolStripMenuItem";
-            this.完成ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
-            this.完成ToolStripMenuItem.Text = "完成";
-            this.完成ToolStripMenuItem.Click += new System.EventHandler(this.完成ToolStripMenuItem_Click);
+            this.封存ToolStripMenuItem.Name = "封存ToolStripMenuItem";
+            this.封存ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.封存ToolStripMenuItem.Text = "封存";
+            this.封存ToolStripMenuItem.Click += new System.EventHandler(this.封存ToolStripMenuItem_Click);
             // 
             // 匯出ToolStripMenuItem
             // 
             this.匯出ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.自訂ToolStripMenuItem});
             this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
-            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
+            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯出ToolStripMenuItem.Text = "匯出";
             // 
             // 自訂ToolStripMenuItem
             // 
             this.自訂ToolStripMenuItem.Name = "自訂ToolStripMenuItem";
-            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.自訂ToolStripMenuItem.Text = "自訂";
             // 
             // 平台訂單新增總覽視窗
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1929, 816);
+            this.ClientSize = new System.Drawing.Size(1447, 653);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "平台訂單新增總覽視窗";
             this.Text = "平台訂單新增總覽視窗";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -350,7 +347,7 @@
         private System.Windows.Forms.ToolStripMenuItem 檢查ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 自訂ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 回單ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 完成ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 封存ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn 處理時間DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 處理狀態DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 配送分組DataGridViewTextBoxColumn;

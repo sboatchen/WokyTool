@@ -127,7 +127,7 @@ namespace WokyTool.通用
             return true;
         }
 
-        public void 完成編輯(bool 是否紀錄_)
+        public virtual void 完成編輯(bool 是否紀錄_)
         {
             if (是否紀錄_)
             {

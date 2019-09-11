@@ -17,40 +17,41 @@ namespace WokyTool.配送
     {
         [可匯出]
         [JsonProperty]
-        public virtual 列舉.配送公司 配送公司
+        public 列舉.配送公司 配送公司
         {
-           get { return 目標資料.配送公司; }
-           set { 目標資料.配送公司 = value; }
+            get { return 目標資料.配送公司; }
+            set
+            {
+                if (String.IsNullOrEmpty(目標資料.配送單號) == false)
+                {
+                    訊息管理器.獨體.警告("已配送目標無法充新配送 " + this.ToString(false));
+                    return;
+                }
+
+                目標資料.配送公司 = value;
+            }
         }
 
         [可匯出]
         [JsonProperty]
-        public virtual string 配送單號
+        public string 配送單號
         {
-            get
-            {
-                return 目標資料.配送單號;
-            }
-
+            get { return 目標資料.配送單號; }
             set
             {
-                if (目標資料.配送單號 == value)
-                    return;
-
                 if (String.IsNullOrEmpty(value))
                 {
-                    訊息管理器.獨體.警告("目標資料單號不可設定為空");
+                    訊息管理器.獨體.警告("配送單號不可設定為空");
                     return;
                 }
-
 
                 if (String.IsNullOrEmpty(目標資料.配送單號) == false)
                 {
-                    訊息管理器.獨體.警告("資料重複目標資料 " + this.ToString(false));
+                    訊息管理器.獨體.警告("已配送目標無法充新配送 " + this.ToString(false));
                     return;
                 }
 
-                目標資料.處理時間 = DateTime.Now;
+                目標資料.處理時間 = DateTime.Now;   // 這個值會同時用來判斷是否為新配送的資料
                 目標資料.配送單號 = value;
             }
         }
@@ -92,13 +93,7 @@ namespace WokyTool.配送
         public DateTime 指配日期
         {
             get { return 目標資料.指配日期; }
-            set {
-                目標資料.指配日期 = value;
-                /*if (value == null)
-                    目標資料.指配日期 = DateTime.MinValue;
-                else
-                    目標資料.指配日期 = value.Value; */
-            }
+            set { 目標資料.指配日期 = value; }
         }
 
         [可匯出]
@@ -179,5 +174,14 @@ namespace WokyTool.配送
         }
 
         public virtual void 撿貨合併(物品合併資料 合併資料_) { ; }
+
+        public virtual bool 更新來源() 
+        {
+            if (目標資料.處理時間.Ticks == 0)
+                return false;
+
+            // do something
+            return true;
+        }
     }
 }

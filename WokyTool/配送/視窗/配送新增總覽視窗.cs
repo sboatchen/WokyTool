@@ -69,9 +69,8 @@ namespace WokyTool.配送
 
             全速配匯出轉換 轉換_ = new 全速配匯出轉換(資料列舉_);
             string 標題_ = String.Format("全速配匯出_{0}", 時間.目前日期);
-            檔案.詢問並寫入(標題_, 轉換_);
-
-            訊息管理器.獨體.通知("匯出完成");
+            if (檔案.詢問並寫入(標題_, 轉換_))
+                訊息管理器.獨體.通知("匯出完成");
         }
 
         private void 全速配匯入ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,9 +78,13 @@ namespace WokyTool.配送
             IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配);
 
             全速配匯入轉換 轉換器_ = new 全速配匯入轉換(資料列舉_);
-            檔案.詢問並讀出(轉換器_).Count(); // .Count() 驅動執行
 
-            訊息管理器.獨體.通知("匯入完成");
+            IEnumerable<配送轉換資料> 處理列舉_ = 檔案.詢問並讀出(轉換器_);
+            if (處理列舉_ != null) 
+            {
+                處理列舉_.Count();  // 強制處理
+                訊息管理器.獨體.通知("匯入完成");
+            }
         }
 
         private void 全速配撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,9 +93,8 @@ namespace WokyTool.配送
             
             配送撿貨轉換 轉換_ = new 配送撿貨轉換(資料列舉_);
             string 標題_ = String.Format("全速配撿貨_{0}", 時間.目前日期);
-            檔案.詢問並寫入(標題_, 轉換_);
-
-            訊息管理器.獨體.通知("匯出完成");
+            if (檔案.詢問並寫入(標題_, 轉換_))
+                訊息管理器.獨體.通知("匯出完成");
         }
 
         private void 全速配明細ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,9 +103,8 @@ namespace WokyTool.配送
 
             配送明細轉換 轉換_ = new 配送明細轉換(資料列舉_);
             string 標題_ = String.Format("全速配明細_{0}", 時間.目前日期);
-            檔案.詢問並寫入(標題_, 轉換_);
-
-            訊息管理器.獨體.通知("匯出完成");
+            if (檔案.詢問並寫入(標題_, 轉換_))
+                訊息管理器.獨體.通知("匯出完成");
         }
 
         private void 宅配通匯出ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,9 +114,8 @@ namespace WokyTool.配送
 
             宅配通匯出轉換 轉換_ = new 宅配通匯出轉換(資料列舉_);
             string 標題_ = String.Format("宅配通匯出_{0}", 時間.目前日期);
-            檔案.詢問並寫入(標題_, 轉換_);
-
-            訊息管理器.獨體.通知("匯出完成");
+            if (檔案.詢問並寫入(標題_, 轉換_))
+                訊息管理器.獨體.通知("匯出完成");
         }
 
         private void 宅配通匯入ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -123,9 +123,13 @@ namespace WokyTool.配送
             IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通);
 
             宅配通匯入轉換 轉換器_ = new 宅配通匯入轉換(資料列舉_);
-            檔案.詢問並讀出(轉換器_).Count(); // .Count() 驅動執行
 
-            訊息管理器.獨體.通知("匯入完成");
+            IEnumerable<配送轉換資料> 處理列舉_ = 檔案.詢問並讀出(轉換器_);
+            if (處理列舉_ != null)
+            {
+                處理列舉_.Count();  // 強制處理
+                訊息管理器.獨體.通知("匯入完成");
+            }
         }
 
         private void 宅配通撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -134,9 +138,8 @@ namespace WokyTool.配送
 
             配送撿貨轉換 轉換_ = new 配送撿貨轉換(資料列舉_);
             string 標題_ = String.Format("宅配通撿貨_{0}", 時間.目前日期);
-            檔案.詢問並寫入(標題_, 轉換_);
-
-            訊息管理器.獨體.通知("匯出完成");
+            if (檔案.詢問並寫入(標題_, 轉換_))
+                訊息管理器.獨體.通知("匯出完成");
         }
 
         private void 宅配通明細ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -145,9 +148,8 @@ namespace WokyTool.配送
 
             配送明細轉換 轉換_ = new 配送明細轉換(資料列舉_);
             string 標題_ = String.Format("宅配通明細_{0}", 時間.目前日期);
-            檔案.詢問並寫入(標題_, 轉換_);
-
-            訊息管理器.獨體.通知("匯出完成");
+            if (檔案.詢問並寫入(標題_, 轉換_))
+                訊息管理器.獨體.通知("匯出完成");
         }
 
         private void 測試ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,6 +159,8 @@ namespace WokyTool.配送
             {
                 資料_.配送單號 = String.Format("宅配回單測試{0}", i++);
             }
+
+            訊息管理器.獨體.通知("測試完成");
         }
     }
 }

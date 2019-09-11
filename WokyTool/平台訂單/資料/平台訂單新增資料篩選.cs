@@ -317,8 +317,8 @@ namespace WokyTool.平台訂單
             {
                 return
                     null != _文字 ||  // 訂單編號
-                    default(DateTime) != _最小處理時間 ||
-                    default(DateTime) != _最大處理時間 ||
+                    0 != _最小處理時間.Ticks ||
+                    0 != _最大處理時間.Ticks ||
                     列舉.訂單處理狀態.不篩選 != _處理狀態 ||
                     公司資料.不篩選 != _公司 ||
                     客戶資料.不篩選 != _客戶 ||
@@ -331,7 +331,7 @@ namespace WokyTool.平台訂單
                     null != _備註 ||
                     列舉.配送公司.不篩選 != _配送公司 ||
                     null != _配送單號 ||
-                    default(DateTime) != _指配日期 ||
+                    0 != _指配日期.Ticks ||
                     列舉.指配時段.不篩選 != _指配時段 ||
                     列舉.代收方式.不篩選 != _代收方式 ||
                     -1 != _最小代收金額 ||
@@ -346,9 +346,9 @@ namespace WokyTool.平台訂單
             if (null != _文字)    // 訂單編號
                 目前列舉_ = 目前列舉_.Where(Value => Value.訂單編號.Contains(_文字));
 
-            if (default(DateTime) != _最小處理時間)
+            if (0 != _最小處理時間.Ticks)
                 目前列舉_ = 目前列舉_.Where(Value => Value.處理時間 >= _最小處理時間);
-            if (default(DateTime) != _最大處理時間)
+            if (0 != _最大處理時間.Ticks)
                 目前列舉_ = 目前列舉_.Where(Value => Value.處理時間 <= _最大處理時間);
 
             if (列舉.訂單處理狀態.不篩選 != _處理狀態)
@@ -380,7 +380,7 @@ namespace WokyTool.平台訂單
             if (null != _配送單號)
                 目前列舉_ = 目前列舉_.Where(Value => Value.配送單號 != null && Value.配送單號.Contains(_配送單號));
 
-            if (default(DateTime) != _指配日期)
+            if (0 != _指配日期.Ticks)
                 目前列舉_ = 目前列舉_.Where(Value => Value.指配日期 == _指配日期);
             if (列舉.指配時段.不篩選 != _指配時段)
                 目前列舉_ = 目前列舉_.Where(Value => Value.指配時段 == _指配時段);

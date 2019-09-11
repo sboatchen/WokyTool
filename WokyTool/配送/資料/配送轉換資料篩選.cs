@@ -241,7 +241,7 @@ namespace WokyTool.配送
                     null != _電話 ||
                     null != _手機 ||
                     null != _地址 ||
-                    default(DateTime) != _指配日期 ||
+                    0 != _指配日期.Ticks ||
                     列舉.指配時段.不篩選 != _指配時段 ||
                     列舉.代收方式.不篩選 != _代收方式 ||
                     -1 != _最小代收金額 ||
@@ -274,7 +274,7 @@ namespace WokyTool.配送
             if (null != _手機)
                 目前列舉_ = 目前列舉_.Where(Value => Value.手機 != null && Value.手機.Contains(_手機));
 
-            if (default(DateTime) != _指配日期)
+            if (0 != _指配日期.Ticks)
                 目前列舉_ = 目前列舉_.Where(Value => Value.指配日期 == _指配日期);
             if (列舉.指配時段.不篩選 != _指配時段)
                 目前列舉_ = 目前列舉_.Where(Value => Value.指配時段 == _指配時段);

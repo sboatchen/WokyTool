@@ -284,6 +284,7 @@ namespace WokyTool.通用
             }
 
             資料版本++;
+            儲存();
         }
     }
 }

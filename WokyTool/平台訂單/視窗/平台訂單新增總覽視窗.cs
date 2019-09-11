@@ -59,7 +59,7 @@ namespace WokyTool.平台訂單
         {
             IEnumerable<平台訂單新增資料> 資料列舉_ = (IEnumerable<平台訂單新增資料>)編輯管理器.資料列舉;
 
-            var GroupQueue_ = 資料列舉_.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增).GroupBy(Value => Value.配送分組);
+            var GroupQueue_ = 資料列舉_.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增 || Value.處理狀態 == 列舉.訂單處理狀態.配送).GroupBy(Value => Value.配送分組);
             //@@ 略過已進入配送介面的
 
             List<配送轉換資料> 資料列_ = new List<配送轉換資料>();
@@ -91,22 +91,6 @@ namespace WokyTool.平台訂單
             訊息管理器.獨體.通知("已轉入配送系統");
         }
 
-       /* private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            /*@@var GroupQueue_ = 平台訂單新增資料管理器.獨體.可編輯BList
-                                    .Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送 || Value.處理狀態 == 列舉.訂單處理狀態.忽略)
-                                    .GroupBy(Value => Value.公司.編號 * 1000 + Value.客戶.編號);
-
-            foreach (var Group_ in GroupQueue_)
-            {
-                平台訂單自定義介面 平台訂單自定義介面_ = Group_.First().自定義介面;
-
-                平台訂單自定義介面_.回單(Group_);
-            }
-
-            訊息管理器.獨體.通知("已完成匯出");
-        }*/
-
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // 設定群組顏色
@@ -117,14 +101,25 @@ namespace WokyTool.平台訂單
             }
         }
 
-        /********************************/
-
         private void 回單ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            IEnumerable<平台訂單新增資料> 資料列舉_ = (IEnumerable<平台訂單新增資料>)編輯管理器.資料列舉;
 
+            var GroupQueue_ = 資料列舉_
+                                    .Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送 || Value.處理狀態 == 列舉.訂單處理狀態.忽略)
+                                    .GroupBy(Value => Value.公司.編號 * 1000 + Value.客戶.編號);
+
+            foreach (var Group_ in GroupQueue_)
+            {
+                平台訂單匯入處理介面 處理器_ = Group_.First().處理器;
+
+                處理器_.後續處理(Group_);
+            }
+
+            訊息管理器.獨體.通知("已完成匯出");
         }
 
-        private void 完成ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 封存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             平台訂單新增資料管理器.獨體.完成();
 
