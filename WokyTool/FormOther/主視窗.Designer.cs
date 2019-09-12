@@ -88,6 +88,7 @@
             this.button34 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
+            this.寄庫新增 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -630,12 +631,13 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.寄庫新增);
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.button15);
             this.panel5.Location = new System.Drawing.Point(12, 479);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(482, 71);
+            this.panel5.Size = new System.Drawing.Size(482, 105);
             this.panel5.TabIndex = 51;
             // 
             // button1
@@ -655,7 +657,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 42;
-            this.label3.Text = "進貨";
+            this.label3.Text = "庫存";
             // 
             // panel6
             // 
@@ -666,7 +668,7 @@
             this.panel6.Controls.Add(this.button35);
             this.panel6.Controls.Add(this.button11);
             this.panel6.Controls.Add(this.button12);
-            this.panel6.Location = new System.Drawing.Point(12, 556);
+            this.panel6.Location = new System.Drawing.Point(12, 600);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(482, 71);
             this.panel6.TabIndex = 52;
@@ -703,7 +705,7 @@
             // 
             // button34
             // 
-            this.button34.Location = new System.Drawing.Point(19, 652);
+            this.button34.Location = new System.Drawing.Point(19, 684);
             this.button34.Name = "button34";
             this.button34.Size = new System.Drawing.Size(100, 23);
             this.button34.TabIndex = 49;
@@ -713,7 +715,7 @@
             // 
             // button42
             // 
-            this.button42.Location = new System.Drawing.Point(18, 681);
+            this.button42.Location = new System.Drawing.Point(18, 713);
             this.button42.Name = "button42";
             this.button42.Size = new System.Drawing.Size(100, 23);
             this.button42.TabIndex = 53;
@@ -723,7 +725,7 @@
             // 
             // button46
             // 
-            this.button46.Location = new System.Drawing.Point(370, 681);
+            this.button46.Location = new System.Drawing.Point(370, 713);
             this.button46.Name = "button46";
             this.button46.Size = new System.Drawing.Size(100, 23);
             this.button46.TabIndex = 45;
@@ -731,11 +733,21 @@
             this.button46.UseVisualStyleBackColor = true;
             this.button46.Click += new System.EventHandler(this.button46_Click);
             // 
+            // 寄庫新增
+            // 
+            this.寄庫新增.Location = new System.Drawing.Point(6, 69);
+            this.寄庫新增.Name = "寄庫新增";
+            this.寄庫新增.Size = new System.Drawing.Size(100, 23);
+            this.寄庫新增.TabIndex = 50;
+            this.寄庫新增.Text = "寄庫新增";
+            this.寄庫新增.UseVisualStyleBackColor = true;
+            this.寄庫新增.Click += new System.EventHandler(this.寄庫新增_Click);
+            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 724);
+            this.ClientSize = new System.Drawing.Size(997, 755);
             this.Controls.Add(this.button46);
             this.Controls.Add(this.button42);
             this.Controls.Add(this.button34);
@@ -826,6 +838,7 @@
         private System.Windows.Forms.Button button45;
         private System.Windows.Forms.Button button46;
         private System.Windows.Forms.Button 客戶資料轉換;
+        private System.Windows.Forms.Button 寄庫新增;
 
 
     }

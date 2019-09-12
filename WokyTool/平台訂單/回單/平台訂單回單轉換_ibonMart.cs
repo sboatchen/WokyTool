@@ -10,7 +10,7 @@ using WokyTool.DataImport;
 using WokyTool.平台訂單;
 using WokyTool.通用;
 
-namespace WokyTool.客製
+namespace WokyTool.平台訂單
 {
     // 配送商廠編' 目前有兩家公司午洋跟田和豐 午洋編號是45036257WD、田和豐是54867084WD
     // '外箱規格' -->固定填入'0001'			

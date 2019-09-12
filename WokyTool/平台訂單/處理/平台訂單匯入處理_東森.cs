@@ -94,7 +94,6 @@ namespace WokyTool.平台訂單
                 處理器 = this,
                 標頭 = _標頭列,
                 內容 = 資料列_,
-
             };
         }
 

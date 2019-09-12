@@ -92,8 +92,8 @@ namespace WokyTool.平台訂單
 
             更新資料();
 
-            foreach (var x in 資料列_)
-                Console.WriteLine(x.ToString());
+            //foreach (var x in 資料列_)
+            //    Console.WriteLine(x.ToString());
 
             訊息管理器.獨體.通知("匯入完成");
         }

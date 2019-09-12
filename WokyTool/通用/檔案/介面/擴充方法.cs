@@ -101,7 +101,7 @@ namespace WokyTool.通用
 
             foreach (string[] 資料列_ in 資料暫存_)
             {
-                foreach(T 資料_ in 轉換_.讀出資料(資料列_))
+                foreach(T 資料_ in 轉換_.讀出資料(資料列_))    //@@濾掉資料底端 全部空白的資料
                     yield return 資料_;
             }   
         }

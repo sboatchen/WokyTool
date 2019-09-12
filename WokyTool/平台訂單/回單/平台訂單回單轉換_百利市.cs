@@ -10,7 +10,7 @@ using WokyTool.DataImport;
 using WokyTool.平台訂單;
 using WokyTool.通用;
 
-namespace WokyTool.客製
+namespace WokyTool.平台訂單
 {
     public class 平台訂單回單轉換_百利市 : 可寫入介面_EXCEL
     {

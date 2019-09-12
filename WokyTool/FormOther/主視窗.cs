@@ -622,5 +622,10 @@ namespace WokyTool
             舊客戶資料轉換 轉換 = new 舊客戶資料轉換();
             轉換.轉換();
         }
+
+        private void 寄庫新增_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.寄庫新增, 列舉.視窗.總覽);
+        }
     }
 }

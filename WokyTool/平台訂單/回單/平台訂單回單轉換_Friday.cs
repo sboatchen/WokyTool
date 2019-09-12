@@ -10,7 +10,7 @@ using WokyTool.DataImport;
 using WokyTool.平台訂單;
 using WokyTool.通用;
 
-namespace WokyTool.客製
+namespace WokyTool.平台訂單
 {
     class 平台訂單回單轉換_Friday : 可寫入介面_CSV
     {

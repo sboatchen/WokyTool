@@ -9,7 +9,7 @@ using WokyTool.Common;
 using WokyTool.平台訂單;
 using WokyTool.通用;
 
-namespace WokyTool.客製
+namespace WokyTool.平台訂單
 {
     public class 平台訂單回單轉換_UDN : 可寫入介面_EXCEL
     {
