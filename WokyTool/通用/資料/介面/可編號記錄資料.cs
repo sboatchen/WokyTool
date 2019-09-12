@@ -14,7 +14,7 @@ namespace WokyTool.通用
     {
         [可匯出]
         [JsonProperty]
-        public int 編號 { get; set; }
+        public virtual int 編號 { get; set; }
 
         public virtual bool 編號是否合法()
         {

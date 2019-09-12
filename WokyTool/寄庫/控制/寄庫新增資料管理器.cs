@@ -17,7 +17,7 @@ namespace WokyTool.寄庫
 
         public override bool 是否可編輯 { get { return 系統參數.匯入訂單; } }    //@@ 新增更新庫存
 
-        public override string 檔案路徑 { get { return String.Format("進度/寄庫待封存/{0}_{1}.json", 系統參數.使用者名稱, 時間.目前完整時間); } }   不行 不要一值存
+        public override string 檔案路徑 { get { return String.Format("進度/寄庫待封存/{0}_{1}.json", 系統參數.使用者名稱, 時間.目前完整時間); } }
 
         public override 寄庫新增資料 不篩選資料 { get { return null; } }
         public override 寄庫新增資料 空白資料 { get { return 寄庫新增資料.空白; } }
@@ -40,6 +40,20 @@ namespace WokyTool.寄庫
         protected override void 初始化資料()
         {
             _資料列 = new List<寄庫新增資料>();
+        }
+
+        // 儲存檔案
+        public override void 儲存()
+        {
+            if (_資料列.Count != 0)
+            {
+                _目前資料列版本 = 資料版本;
+
+                // 更新資料
+                檔案.寫入(檔案路徑, JsonConvert.SerializeObject(_資料列, Formatting.Indented), 是否加密);
+
+                _資料列.Clear();
+            }
         }
     }
 }

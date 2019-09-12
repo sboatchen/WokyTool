@@ -124,7 +124,7 @@ namespace WokyTool.通用
             }
         }
 
-        public void 儲存()
+        public virtual void 儲存()
         {
             if (_目前資料書版本 != 資料版本)
             {

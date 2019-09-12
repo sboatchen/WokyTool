@@ -10,6 +10,8 @@ namespace WokyTool.寄庫
 {
     public class 寄庫新增匯入資料管理器 : 可匯入資料管理器<寄庫新增匯入資料, 寄庫新增資料>
     {
+        public override bool 是否自動存檔 { get { return false; } }
+
         protected override 新版可篩選介面<寄庫新增匯入資料> 取得篩選器實體()
         {
             return new 寄庫新增匯入資料篩選();

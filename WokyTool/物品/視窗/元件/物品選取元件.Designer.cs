@@ -41,8 +41,9 @@
             this.comboBox1.DisplayMember = "名稱";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(0, 0);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(400, 20);
+            this.comboBox1.Size = new System.Drawing.Size(545, 23);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.ValueMember = "Self";
             // 
@@ -54,21 +55,23 @@
             // 
             this.Detail.AutoSize = true;
             this.Detail.Font = new System.Drawing.Font("PMingLiU", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Detail.Location = new System.Drawing.Point(404, 6);
+            this.Detail.Location = new System.Drawing.Point(550, 6);
+            this.Detail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Detail.Name = "Detail";
-            this.Detail.Size = new System.Drawing.Size(10, 11);
+            this.Detail.Size = new System.Drawing.Size(13, 14);
             this.Detail.TabIndex = 1;
             this.Detail.Text = "?";
             this.Detail.Click += new System.EventHandler(this.Detail_Click);
             // 
             // 物品選取元件
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Detail);
             this.Controls.Add(this.comboBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "物品選取元件";
-            this.Size = new System.Drawing.Size(427, 30);
+            this.Size = new System.Drawing.Size(568, 28);
             ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

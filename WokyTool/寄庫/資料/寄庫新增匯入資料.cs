@@ -29,15 +29,8 @@ namespace WokyTool.寄庫
         [JsonProperty]
         public string 商品識別
         {
-            get
-            {
-                return _商品識別;
-            }
-            set
-            {
-                _商品識別 = value;
-                新增資料.公司 = 公司資料管理器.獨體.取得(value);
-            }
+            get { return _商品識別; }
+            set { _商品識別 = value; }
         }
 
         [可匯出]

@@ -119,7 +119,7 @@ namespace WokyTool.通用
         }
 
         // 儲存檔案
-        public void 儲存()
+        public virtual void 儲存()
         {
             if (_目前資料列版本 != 資料版本)
             {

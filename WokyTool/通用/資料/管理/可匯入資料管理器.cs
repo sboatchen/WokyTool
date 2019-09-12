@@ -70,6 +70,7 @@ namespace WokyTool.通用
 
         public bool 是否可編輯 { get { return true; } }
         public bool 是否編輯中 { get { return 資料列.Count > 0; } }
+        public virtual bool 是否自動存檔 { get { return true; } }
 
         protected 可檢查介面 新增物件檢查器 = new 錯誤訊息檢查器();
 
@@ -160,9 +161,12 @@ namespace WokyTool.通用
         {
             記錄器.新增(資料列.Select(Value => Value.新增資料));
 
-            可儲存介面 儲存器_ = 記錄器 as 可儲存介面;
-            if (儲存器_ != null)
-                儲存器_.儲存();
+            if (是否自動存檔)
+            {
+                可儲存介面 儲存器_ = 記錄器 as 可儲存介面;
+                if (儲存器_ != null)
+                    儲存器_.儲存();
+            }
         }
     }
 }
