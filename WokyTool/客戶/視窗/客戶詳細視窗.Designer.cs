@@ -55,7 +55,7 @@
             // 
             this.名稱.Location = new System.Drawing.Point(64, 12);
             this.名稱.Name = "名稱";
-            this.名稱.Size = new System.Drawing.Size(126, 22);
+            this.名稱.Size = new System.Drawing.Size(165, 22);
             this.名稱.TabIndex = 10;
             // 
             // label1

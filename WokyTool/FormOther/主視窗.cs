@@ -502,11 +502,6 @@ namespace WokyTool
             月結帳匯入設定資料管理器.獨體.新增(Map.Values);
         }
 
-        private void button5_Click_1(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.平台訂單設定, 列舉.視窗.總覽);
-        }
-
         private void button10_Click(object sender, EventArgs e)
         {
             var i = new 平台訂單新增匯入視窗();

@@ -216,7 +216,7 @@ namespace WokyTool.商品
             // 
             // 客戶
             // 
-            this.客戶.Location = new System.Drawing.Point(297, 99);
+            this.客戶.Location = new System.Drawing.Point(289, 99);
             this.客戶.Margin = new System.Windows.Forms.Padding(4);
             this.客戶.Name = "客戶";
             this.客戶.ReadOnly = false;
@@ -227,7 +227,7 @@ namespace WokyTool.商品
             // 
             // 公司
             // 
-            this.公司.Location = new System.Drawing.Point(297, 72);
+            this.公司.Location = new System.Drawing.Point(289, 72);
             this.公司.Margin = new System.Windows.Forms.Padding(4);
             this.公司.Name = "公司";
             this.公司.ReadOnly = false;
@@ -322,7 +322,7 @@ namespace WokyTool.商品
             this.物品.Name = "物品";
             this.物品.ReadOnly = false;
             this.物品.SelectedItem = null;
-            this.物品.Size = new System.Drawing.Size(404, 24);
+            this.物品.Size = new System.Drawing.Size(423, 24);
             this.物品.TabIndex = 100;
             this.物品.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
@@ -337,7 +337,7 @@ namespace WokyTool.商品
             this.dataGridView1.Location = new System.Drawing.Point(14, 184);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(551, 248);
+            this.dataGridView1.Size = new System.Drawing.Size(549, 248);
             this.dataGridView1.TabIndex = 99;
             // 
             // 物品名稱DataGridViewTextBoxColumn
@@ -364,7 +364,7 @@ namespace WokyTool.商品
             // 
             // 新增
             // 
-            this.新增.Location = new System.Drawing.Point(11, 154);
+            this.新增.Location = new System.Drawing.Point(7, 154);
             this.新增.Name = "新增";
             this.新增.Size = new System.Drawing.Size(42, 23);
             this.新增.TabIndex = 97;
@@ -374,7 +374,7 @@ namespace WokyTool.商品
             // 
             // 數量
             // 
-            this.數量.Location = new System.Drawing.Point(459, 155);
+            this.數量.Location = new System.Drawing.Point(481, 155);
             this.數量.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -386,7 +386,7 @@ namespace WokyTool.商品
             0,
             0});
             this.數量.Name = "數量";
-            this.數量.Size = new System.Drawing.Size(100, 22);
+            this.數量.Size = new System.Drawing.Size(74, 22);
             this.數量.TabIndex = 95;
             this.數量.Value = new decimal(new int[] {
             1,
@@ -418,7 +418,7 @@ namespace WokyTool.商品
             // 
             // 新版頁索引元件1
             // 
-            this.新版頁索引元件1.Location = new System.Drawing.Point(165, 541);
+            this.新版頁索引元件1.Location = new System.Drawing.Point(167, 541);
             this.新版頁索引元件1.Name = "新版頁索引元件1";
             this.新版頁索引元件1.Size = new System.Drawing.Size(234, 34);
             this.新版頁索引元件1.TabIndex = 103;
@@ -447,7 +447,7 @@ namespace WokyTool.商品
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 581);
+            this.ClientSize = new System.Drawing.Size(574, 586);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.品牌);
             this.Controls.Add(this.新版頁索引元件1);

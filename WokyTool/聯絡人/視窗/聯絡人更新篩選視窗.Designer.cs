@@ -127,7 +127,7 @@
             // 
             // 更新狀態
             // 
-            this.更新狀態.Location = new System.Drawing.Point(1, 1);
+            this.更新狀態.Location = new System.Drawing.Point(-1, 1);
             this.更新狀態.Margin = new System.Windows.Forms.Padding(4);
             this.更新狀態.Name = "更新狀態";
             this.更新狀態.ReadOnly = false;

@@ -188,7 +188,7 @@
             // 
             this.名稱.Location = new System.Drawing.Point(55, 10);
             this.名稱.Name = "名稱";
-            this.名稱.Size = new System.Drawing.Size(400, 22);
+            this.名稱.Size = new System.Drawing.Size(407, 22);
             this.名稱.TabIndex = 23;
             // 
             // 顏色
@@ -216,7 +216,7 @@
             // 
             this.成本備註.Location = new System.Drawing.Point(55, 288);
             this.成本備註.Name = "成本備註";
-            this.成本備註.Size = new System.Drawing.Size(326, 22);
+            this.成本備註.Size = new System.Drawing.Size(407, 22);
             this.成本備註.TabIndex = 42;
             // 
             // 體積

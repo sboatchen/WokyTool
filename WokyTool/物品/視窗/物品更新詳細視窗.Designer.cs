@@ -243,7 +243,7 @@
             // 
             this.成本備註.Location = new System.Drawing.Point(55, 332);
             this.成本備註.Name = "成本備註";
-            this.成本備註.Size = new System.Drawing.Size(326, 22);
+            this.成本備註.Size = new System.Drawing.Size(409, 22);
             this.成本備註.TabIndex = 42;
             // 
             // 體積
@@ -549,7 +549,7 @@
             this.參考成本備註.Location = new System.Drawing.Point(604, 332);
             this.參考成本備註.Name = "參考成本備註";
             this.參考成本備註.ReadOnly = true;
-            this.參考成本備註.Size = new System.Drawing.Size(326, 22);
+            this.參考成本備註.Size = new System.Drawing.Size(409, 22);
             this.參考成本備註.TabIndex = 139;
             // 
             // 參考國際條碼

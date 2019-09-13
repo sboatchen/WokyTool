@@ -68,7 +68,7 @@
             // 
             this.名稱.Location = new System.Drawing.Point(64, 13);
             this.名稱.Name = "名稱";
-            this.名稱.Size = new System.Drawing.Size(126, 22);
+            this.名稱.Size = new System.Drawing.Size(166, 22);
             this.名稱.TabIndex = 2;
             // 
             // dataGridView1
@@ -134,7 +134,7 @@
             // 客戶
             // 
             this.客戶.Location = new System.Drawing.Point(64, 41);
-            this.客戶.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.客戶.Margin = new System.Windows.Forms.Padding(4);
             this.客戶.Name = "客戶";
             this.客戶.ReadOnly = false;
             this.客戶.SelectedItem = null;

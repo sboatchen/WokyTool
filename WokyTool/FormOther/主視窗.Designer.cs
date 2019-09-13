@@ -61,7 +61,6 @@
             this.button38 = new System.Windows.Forms.Button();
             this.button39 = new System.Windows.Forms.Button();
             this.button40 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
@@ -79,6 +78,7 @@
             this.button44 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.寄庫新增 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -88,7 +88,6 @@
             this.button34 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
-            this.寄庫新增 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -427,16 +426,6 @@
             this.button40.UseVisualStyleBackColor = true;
             this.button40.Click += new System.EventHandler(this.button40_Click);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(5, 36);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 23);
-            this.button5.TabIndex = 43;
-            this.button5.Text = "設定";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click_1);
-            // 
             // button10
             // 
             this.button10.Location = new System.Drawing.Point(121, 36);
@@ -589,7 +578,6 @@
             this.panel4.Controls.Add(this.button45);
             this.panel4.Controls.Add(this.button44);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.button5);
             this.panel4.Controls.Add(this.button20);
             this.panel4.Controls.Add(this.button10);
             this.panel4.Controls.Add(this.button33);
@@ -639,6 +627,16 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(482, 105);
             this.panel5.TabIndex = 51;
+            // 
+            // 寄庫新增
+            // 
+            this.寄庫新增.Location = new System.Drawing.Point(6, 69);
+            this.寄庫新增.Name = "寄庫新增";
+            this.寄庫新增.Size = new System.Drawing.Size(100, 23);
+            this.寄庫新增.TabIndex = 50;
+            this.寄庫新增.Text = "寄庫新增";
+            this.寄庫新增.UseVisualStyleBackColor = true;
+            this.寄庫新增.Click += new System.EventHandler(this.寄庫新增_Click);
             // 
             // button1
             // 
@@ -733,16 +731,6 @@
             this.button46.UseVisualStyleBackColor = true;
             this.button46.Click += new System.EventHandler(this.button46_Click);
             // 
-            // 寄庫新增
-            // 
-            this.寄庫新增.Location = new System.Drawing.Point(6, 69);
-            this.寄庫新增.Name = "寄庫新增";
-            this.寄庫新增.Size = new System.Drawing.Size(100, 23);
-            this.寄庫新增.TabIndex = 50;
-            this.寄庫新增.Text = "寄庫新增";
-            this.寄庫新增.UseVisualStyleBackColor = true;
-            this.寄庫新增.Click += new System.EventHandler(this.寄庫新增_Click);
-            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -811,7 +799,6 @@
         private System.Windows.Forms.Button button38;
         private System.Windows.Forms.Button button39;
         private System.Windows.Forms.Button button40;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button25;

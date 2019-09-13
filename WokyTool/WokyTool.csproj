@@ -400,25 +400,12 @@
     </Compile>
     <Compile Include="幣值\資料\幣值資料.cs" />
     <Compile Include="平台訂單\控制\平台訂單新增資料管理器.cs" />
-    <Compile Include="平台訂單\控制\平台訂單匯入設定管理器.cs" />
     <Compile Include="平台訂單\控制\平台訂單新增匯入資料管理器.cs" />
     <Compile Include="平台訂單\視窗\平台訂單新增匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="平台訂單\視窗\平台訂單新增匯入視窗.Designer.cs">
       <DependentUpon>平台訂單新增匯入視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="平台訂單\視窗\平台訂單匯入設定總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="平台訂單\視窗\平台訂單匯入設定總覽視窗.Designer.cs">
-      <DependentUpon>平台訂單匯入設定總覽視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="平台訂單\視窗\平台訂單匯入設定詳細視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="平台訂單\視窗\平台訂單匯入設定詳細視窗.Designer.cs">
-      <DependentUpon>平台訂單匯入設定詳細視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="平台訂單\視窗\Momo第三方訂單新增總覽視窗.cs">
       <SubType>Form</SubType>
@@ -1099,7 +1086,6 @@
     <Compile Include="通用\資料99\動態匯入\檔案匯入設定資料.cs" />
     <Compile Include="通用\資料99\動態匯入\動態匯入資料結構.cs" />
     <Compile Include="客戶\資料\客戶資料.cs" />
-    <Compile Include="平台訂單\資料\平台訂單匯入設定資料.cs" />
     <Compile Include="月結帳\資料\月結帳匯入設定資料.cs" />
     <Compile Include="月結帳\控制\月結帳匯入設定管理器.cs" />
     <Compile Include="通用\資料99\動態匯入\欄位匯入設定資料.cs" />
@@ -1324,12 +1310,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="平台訂單\視窗\平台訂單新增匯入視窗.resx">
       <DependentUpon>平台訂單新增匯入視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="平台訂單\視窗\平台訂單匯入設定總覽視窗.resx">
-      <DependentUpon>平台訂單匯入設定總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="平台訂單\視窗\平台訂單匯入設定詳細視窗.resx">
-      <DependentUpon>平台訂單匯入設定詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="平台訂單\視窗\Momo第三方訂單新增總覽視窗.resx">
       <DependentUpon>Momo第三方訂單新增總覽視窗.cs</DependentUpon>
