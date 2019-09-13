@@ -81,7 +81,7 @@ namespace WokyTool.月結帳
             0,
             0});
             this.開始位置.Name = "開始位置";
-            this.開始位置.Size = new System.Drawing.Size(167, 22);
+            this.開始位置.Size = new System.Drawing.Size(165, 22);
             this.開始位置.TabIndex = 86;
             // 
             // 結束位置
@@ -93,7 +93,7 @@ namespace WokyTool.月結帳
             0,
             0});
             this.結束位置.Name = "結束位置";
-            this.結束位置.Size = new System.Drawing.Size(167, 22);
+            this.結束位置.Size = new System.Drawing.Size(165, 22);
             this.結束位置.TabIndex = 85;
             // 
             // 標頭位置
@@ -111,7 +111,7 @@ namespace WokyTool.月結帳
             -2147483648});
             this.標頭位置.Name = "標頭位置";
             this.標頭位置.ReadOnly = true;
-            this.標頭位置.Size = new System.Drawing.Size(167, 22);
+            this.標頭位置.Size = new System.Drawing.Size(165, 22);
             this.標頭位置.TabIndex = 80;
             // 
             // 名稱

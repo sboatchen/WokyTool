@@ -76,7 +76,7 @@
             0,
             -2147483648});
             this.含稅單價.Name = "含稅單價";
-            this.含稅單價.Size = new System.Drawing.Size(167, 22);
+            this.含稅單價.Size = new System.Drawing.Size(165, 22);
             this.含稅單價.TabIndex = 97;
             // 
             // 單價
@@ -94,7 +94,7 @@
             0,
             -2147483648});
             this.單價.Name = "單價";
-            this.單價.Size = new System.Drawing.Size(167, 22);
+            this.單價.Size = new System.Drawing.Size(165, 22);
             this.單價.TabIndex = 96;
             // 
             // 客戶選取元件1
@@ -129,7 +129,7 @@
             0,
             -2147483648});
             this.數量.Name = "數量";
-            this.數量.Size = new System.Drawing.Size(167, 22);
+            this.數量.Size = new System.Drawing.Size(165, 22);
             this.數量.TabIndex = 87;
             // 
             // 商品識別
@@ -226,7 +226,7 @@
             -2147483648});
             this.總金額.Name = "總金額";
             this.總金額.ReadOnly = true;
-            this.總金額.Size = new System.Drawing.Size(167, 22);
+            this.總金額.Size = new System.Drawing.Size(165, 22);
             this.總金額.TabIndex = 117;
             // 
             // label1

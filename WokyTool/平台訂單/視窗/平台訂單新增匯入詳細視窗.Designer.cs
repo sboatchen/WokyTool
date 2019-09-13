@@ -40,11 +40,9 @@ namespace WokyTool.平台訂單
             this.含稅單價 = new System.Windows.Forms.NumericUpDown();
             this.新版頁索引元件1 = new WokyTool.通用.新版頁索引元件();
             this.處理時間 = new WokyTool.通用.MyDateTimePicker();
-            this.處理狀態 = new WokyTool.通用.訂單處理狀態選取元件();
             this.公司 = new WokyTool.公司.公司選取元件();
             this.客戶 = new WokyTool.客戶.客戶選取元件();
             this.label4 = new System.Windows.Forms.Label();
-            this.商品 = new WokyTool.商品.商品選取元件();
             this.數量 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.姓名 = new System.Windows.Forms.TextBox();
@@ -71,6 +69,8 @@ namespace WokyTool.平台訂單
             this.label14 = new System.Windows.Forms.Label();
             this.錯誤訊息 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.商品 = new WokyTool.商品.商品選取元件();
+            this.處理狀態 = new WokyTool.通用.訂單處理狀態選取元件();
             ((System.ComponentModel.ISupportInitialize)(this.單價)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.含稅單價)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.數量)).BeginInit();
@@ -80,7 +80,7 @@ namespace WokyTool.平台訂單
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(259, 60);
+            this.label1.Location = new System.Drawing.Point(249, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
@@ -107,7 +107,7 @@ namespace WokyTool.平台訂單
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 291);
+            this.label7.Location = new System.Drawing.Point(4, 291);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 6;
@@ -116,7 +116,7 @@ namespace WokyTool.平台訂單
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(258, 117);
+            this.label13.Location = new System.Drawing.Point(249, 118);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(29, 12);
             this.label13.TabIndex = 12;
@@ -127,7 +127,7 @@ namespace WokyTool.平台訂單
             // 
             this.label18.AutoSize = true;
             this.label18.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label18.Location = new System.Drawing.Point(246, 143);
+            this.label18.Location = new System.Drawing.Point(238, 145);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(53, 12);
             this.label18.TabIndex = 17;
@@ -136,32 +136,32 @@ namespace WokyTool.平台訂單
             // 單價
             // 
             this.單價.DecimalPlaces = 3;
-            this.單價.Location = new System.Drawing.Point(303, 113);
+            this.單價.Location = new System.Drawing.Point(294, 113);
             this.單價.Maximum = new decimal(new int[] {
             99999999,
             0,
             0,
             0});
             this.單價.Name = "單價";
-            this.單價.Size = new System.Drawing.Size(167, 22);
+            this.單價.Size = new System.Drawing.Size(165, 22);
             this.單價.TabIndex = 47;
             // 
             // 含稅單價
             // 
             this.含稅單價.DecimalPlaces = 3;
-            this.含稅單價.Location = new System.Drawing.Point(303, 141);
+            this.含稅單價.Location = new System.Drawing.Point(294, 141);
             this.含稅單價.Maximum = new decimal(new int[] {
             99999999,
             0,
             0,
             0});
             this.含稅單價.Name = "含稅單價";
-            this.含稅單價.Size = new System.Drawing.Size(167, 22);
+            this.含稅單價.Size = new System.Drawing.Size(165, 22);
             this.含稅單價.TabIndex = 48;
             // 
             // 新版頁索引元件1
             // 
-            this.新版頁索引元件1.Location = new System.Drawing.Point(127, 453);
+            this.新版頁索引元件1.Location = new System.Drawing.Point(127, 451);
             this.新版頁索引元件1.Name = "新版頁索引元件1";
             this.新版頁索引元件1.Size = new System.Drawing.Size(234, 34);
             this.新版頁索引元件1.TabIndex = 57;
@@ -172,19 +172,9 @@ namespace WokyTool.平台訂單
             this.處理時間.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.處理時間.Location = new System.Drawing.Point(59, 287);
             this.處理時間.Name = "處理時間";
-            this.處理時間.Size = new System.Drawing.Size(167, 22);
+            this.處理時間.Size = new System.Drawing.Size(165, 22);
             this.處理時間.TabIndex = 58;
             this.處理時間.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 752);
-            // 
-            // 處理狀態
-            // 
-            this.處理狀態.Location = new System.Drawing.Point(8, 315);
-            this.處理狀態.Name = "處理狀態";
-            this.處理狀態.ReadOnly = false;
-            this.處理狀態.SelectedItem = WokyTool.通用.列舉.訂單處理狀態.錯誤;
-            this.處理狀態.Size = new System.Drawing.Size(222, 28);
-            this.處理狀態.TabIndex = 59;
-            this.處理狀態.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
             // 公司
             // 
@@ -198,7 +188,7 @@ namespace WokyTool.平台訂單
             // 
             // 客戶
             // 
-            this.客戶.Location = new System.Drawing.Point(301, 56);
+            this.客戶.Location = new System.Drawing.Point(294, 57);
             this.客戶.Name = "客戶";
             this.客戶.ReadOnly = true;
             this.客戶.SelectedItem = null;
@@ -215,21 +205,11 @@ namespace WokyTool.平台訂單
             this.label4.TabIndex = 62;
             this.label4.Text = "商品";
             // 
-            // 商品
-            // 
-            this.商品.Location = new System.Drawing.Point(59, 85);
-            this.商品.Name = "商品";
-            this.商品.ReadOnly = false;
-            this.商品.SelectedItem = null;
-            this.商品.Size = new System.Drawing.Size(426, 25);
-            this.商品.TabIndex = 63;
-            this.商品.元件類型 = WokyTool.通用.選取元件類型.指定;
-            // 
             // 數量
             // 
             this.數量.Location = new System.Drawing.Point(60, 113);
             this.數量.Name = "數量";
-            this.數量.Size = new System.Drawing.Size(167, 22);
+            this.數量.Size = new System.Drawing.Size(165, 22);
             this.數量.TabIndex = 65;
             // 
             // label5
@@ -245,14 +225,14 @@ namespace WokyTool.平台訂單
             // 
             this.姓名.Location = new System.Drawing.Point(59, 187);
             this.姓名.Name = "姓名";
-            this.姓名.Size = new System.Drawing.Size(168, 22);
+            this.姓名.Size = new System.Drawing.Size(165, 22);
             this.姓名.TabIndex = 66;
             // 
             // 地址
             // 
             this.地址.Location = new System.Drawing.Point(59, 215);
             this.地址.Name = "地址";
-            this.地址.Size = new System.Drawing.Size(168, 22);
+            this.地址.Size = new System.Drawing.Size(165, 22);
             this.地址.TabIndex = 68;
             // 
             // label6
@@ -266,15 +246,15 @@ namespace WokyTool.平台訂單
             // 
             // 手機
             // 
-            this.手機.Location = new System.Drawing.Point(302, 213);
+            this.手機.Location = new System.Drawing.Point(294, 215);
             this.手機.Name = "手機";
-            this.手機.Size = new System.Drawing.Size(168, 22);
+            this.手機.Size = new System.Drawing.Size(165, 22);
             this.手機.TabIndex = 72;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(259, 218);
+            this.label8.Location = new System.Drawing.Point(249, 220);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 71;
@@ -282,15 +262,15 @@ namespace WokyTool.平台訂單
             // 
             // 電話
             // 
-            this.電話.Location = new System.Drawing.Point(302, 185);
+            this.電話.Location = new System.Drawing.Point(294, 187);
             this.電話.Name = "電話";
-            this.電話.Size = new System.Drawing.Size(168, 22);
+            this.電話.Size = new System.Drawing.Size(165, 22);
             this.電話.TabIndex = 70;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(260, 190);
+            this.label10.Location = new System.Drawing.Point(249, 192);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 12);
             this.label10.TabIndex = 69;
@@ -298,15 +278,15 @@ namespace WokyTool.平台訂單
             // 
             // 發票號碼
             // 
-            this.發票號碼.Location = new System.Drawing.Point(300, 8);
+            this.發票號碼.Location = new System.Drawing.Point(292, 10);
             this.發票號碼.Name = "發票號碼";
-            this.發票號碼.Size = new System.Drawing.Size(168, 22);
+            this.發票號碼.Size = new System.Drawing.Size(165, 22);
             this.發票號碼.TabIndex = 76;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(246, 13);
+            this.label12.Location = new System.Drawing.Point(236, 15);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(53, 12);
             this.label12.TabIndex = 75;
@@ -316,13 +296,13 @@ namespace WokyTool.平台訂單
             // 
             this.訂單編號.Location = new System.Drawing.Point(57, 10);
             this.訂單編號.Name = "訂單編號";
-            this.訂單編號.Size = new System.Drawing.Size(168, 22);
+            this.訂單編號.Size = new System.Drawing.Size(165, 22);
             this.訂單編號.TabIndex = 74;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(4, 15);
+            this.label16.Location = new System.Drawing.Point(2, 14);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(53, 12);
             this.label16.TabIndex = 73;
@@ -332,7 +312,7 @@ namespace WokyTool.平台訂單
             // 
             this.備註.Location = new System.Drawing.Point(59, 243);
             this.備註.Name = "備註";
-            this.備註.Size = new System.Drawing.Size(411, 22);
+            this.備註.Size = new System.Drawing.Size(400, 22);
             this.備註.TabIndex = 78;
             // 
             // label17
@@ -346,7 +326,7 @@ namespace WokyTool.平台訂單
             // 
             // 配送公司
             // 
-            this.配送公司.Location = new System.Drawing.Point(250, 287);
+            this.配送公司.Location = new System.Drawing.Point(238, 287);
             this.配送公司.Name = "配送公司";
             this.配送公司.ReadOnly = false;
             this.配送公司.SelectedItem = WokyTool.通用.列舉.配送公司.錯誤;
@@ -356,15 +336,15 @@ namespace WokyTool.平台訂單
             // 
             // 配送單號
             // 
-            this.配送單號.Location = new System.Drawing.Point(303, 318);
+            this.配送單號.Location = new System.Drawing.Point(292, 316);
             this.配送單號.Name = "配送單號";
-            this.配送單號.Size = new System.Drawing.Size(168, 22);
+            this.配送單號.Size = new System.Drawing.Size(165, 22);
             this.配送單號.TabIndex = 81;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(246, 322);
+            this.label9.Location = new System.Drawing.Point(237, 319);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 12);
             this.label9.TabIndex = 80;
@@ -376,14 +356,14 @@ namespace WokyTool.平台訂單
             this.指配日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.指配日期.Location = new System.Drawing.Point(60, 361);
             this.指配日期.Name = "指配日期";
-            this.指配日期.Size = new System.Drawing.Size(167, 22);
+            this.指配日期.Size = new System.Drawing.Size(165, 22);
             this.指配日期.TabIndex = 83;
             this.指配日期.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 697);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 365);
+            this.label11.Location = new System.Drawing.Point(5, 365);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 12);
             this.label11.TabIndex = 82;
@@ -391,7 +371,7 @@ namespace WokyTool.平台訂單
             // 
             // 指配時段
             // 
-            this.指配時段.Location = new System.Drawing.Point(7, 389);
+            this.指配時段.Location = new System.Drawing.Point(5, 389);
             this.指配時段.Name = "指配時段";
             this.指配時段.ReadOnly = false;
             this.指配時段.SelectedItem = WokyTool.通用.列舉.指配時段.錯誤;
@@ -401,7 +381,7 @@ namespace WokyTool.平台訂單
             // 
             // 代收方式
             // 
-            this.代收方式.Location = new System.Drawing.Point(249, 359);
+            this.代收方式.Location = new System.Drawing.Point(237, 359);
             this.代收方式.Name = "代收方式";
             this.代收方式.ReadOnly = false;
             this.代收方式.SelectedItem = WokyTool.通用.列舉.代收方式.錯誤;
@@ -411,21 +391,21 @@ namespace WokyTool.平台訂單
             // 
             // 代收金額
             // 
-            this.代收金額.Location = new System.Drawing.Point(302, 389);
+            this.代收金額.Location = new System.Drawing.Point(292, 387);
             this.代收金額.Maximum = new decimal(new int[] {
             99999999,
             0,
             0,
             0});
             this.代收金額.Name = "代收金額";
-            this.代收金額.Size = new System.Drawing.Size(167, 22);
+            this.代收金額.Size = new System.Drawing.Size(165, 22);
             this.代收金額.TabIndex = 86;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label14.Location = new System.Drawing.Point(245, 393);
+            this.label14.Location = new System.Drawing.Point(238, 391);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 12);
             this.label14.TabIndex = 87;
@@ -436,24 +416,46 @@ namespace WokyTool.平台訂單
             this.錯誤訊息.Location = new System.Drawing.Point(59, 423);
             this.錯誤訊息.Name = "錯誤訊息";
             this.錯誤訊息.ReadOnly = true;
-            this.錯誤訊息.Size = new System.Drawing.Size(409, 22);
+            this.錯誤訊息.Size = new System.Drawing.Size(400, 22);
             this.錯誤訊息.TabIndex = 118;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(5, 428);
+            this.label15.Location = new System.Drawing.Point(4, 428);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(53, 12);
             this.label15.TabIndex = 117;
             this.label15.Text = "錯誤訊息";
+            // 
+            // 商品
+            // 
+            this.商品.Location = new System.Drawing.Point(59, 84);
+            this.商品.Name = "商品";
+            this.商品.ReadOnly = false;
+            this.商品.SelectedItem = null;
+            this.商品.Size = new System.Drawing.Size(420, 22);
+            this.商品.TabIndex = 119;
+            this.商品.元件類型 = WokyTool.通用.選取元件類型.指定;
+            // 
+            // 處理狀態
+            // 
+            this.處理狀態.Location = new System.Drawing.Point(5, 316);
+            this.處理狀態.Name = "處理狀態";
+            this.處理狀態.ReadOnly = false;
+            this.處理狀態.SelectedItem = WokyTool.通用.列舉.訂單處理狀態.錯誤;
+            this.處理狀態.Size = new System.Drawing.Size(230, 22);
+            this.處理狀態.TabIndex = 120;
+            this.處理狀態.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
             // 平台訂單新增匯入詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(489, 498);
+            this.ClientSize = new System.Drawing.Size(483, 489);
+            this.Controls.Add(this.處理狀態);
+            this.Controls.Add(this.商品);
             this.Controls.Add(this.錯誤訊息);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -480,11 +482,9 @@ namespace WokyTool.平台訂單
             this.Controls.Add(this.姓名);
             this.Controls.Add(this.數量);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.商品);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.客戶);
             this.Controls.Add(this.公司);
-            this.Controls.Add(this.處理狀態);
             this.Controls.Add(this.處理時間);
             this.Controls.Add(this.新版頁索引元件1);
             this.Controls.Add(this.含稅單價);
@@ -518,11 +518,9 @@ namespace WokyTool.平台訂單
         private System.Windows.Forms.NumericUpDown 含稅單價;
         private 通用.新版頁索引元件 新版頁索引元件1;
         private MyDateTimePicker 處理時間;
-        private 通用.訂單處理狀態選取元件 處理狀態;
         private 公司.公司選取元件 公司;
         private 客戶.客戶選取元件 客戶;
         private System.Windows.Forms.Label label4;
-        private 商品.商品選取元件 商品;
         private System.Windows.Forms.NumericUpDown 數量;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox 姓名;
@@ -549,5 +547,7 @@ namespace WokyTool.平台訂單
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox 錯誤訊息;
         private System.Windows.Forms.Label label15;
+        private 商品.商品選取元件 商品;
+        private 訂單處理狀態選取元件 處理狀態;
     }
 }

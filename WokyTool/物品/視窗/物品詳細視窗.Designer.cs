@@ -94,7 +94,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(240, 55);
+            this.label4.Location = new System.Drawing.Point(238, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 3;
@@ -148,7 +148,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(237, 188);
+            this.label13.Location = new System.Drawing.Point(237, 190);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(53, 12);
             this.label13.TabIndex = 12;
@@ -158,7 +158,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(237, 244);
+            this.label14.Location = new System.Drawing.Point(237, 246);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 12);
             this.label14.TabIndex = 13;
@@ -178,7 +178,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label18.Location = new System.Drawing.Point(237, 217);
+            this.label18.Location = new System.Drawing.Point(237, 218);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(53, 12);
             this.label18.TabIndex = 17;
@@ -186,50 +186,50 @@
             // 
             // 名稱
             // 
-            this.名稱.Location = new System.Drawing.Point(55, 10);
+            this.名稱.Location = new System.Drawing.Point(58, 10);
             this.名稱.Name = "名稱";
-            this.名稱.Size = new System.Drawing.Size(407, 22);
+            this.名稱.Size = new System.Drawing.Size(400, 22);
             this.名稱.TabIndex = 23;
             // 
             // 顏色
             // 
-            this.顏色.Location = new System.Drawing.Point(296, 119);
+            this.顏色.Location = new System.Drawing.Point(293, 118);
             this.顏色.Name = "顏色";
-            this.顏色.Size = new System.Drawing.Size(167, 22);
+            this.顏色.Size = new System.Drawing.Size(165, 22);
             this.顏色.TabIndex = 33;
             // 
             // 縮寫
             // 
-            this.縮寫.Location = new System.Drawing.Point(56, 52);
+            this.縮寫.Location = new System.Drawing.Point(58, 52);
             this.縮寫.Name = "縮寫";
-            this.縮寫.Size = new System.Drawing.Size(167, 22);
+            this.縮寫.Size = new System.Drawing.Size(165, 22);
             this.縮寫.TabIndex = 35;
             // 
             // 國際條碼
             // 
-            this.國際條碼.Location = new System.Drawing.Point(296, 51);
+            this.國際條碼.Location = new System.Drawing.Point(293, 52);
             this.國際條碼.Name = "國際條碼";
-            this.國際條碼.Size = new System.Drawing.Size(167, 22);
+            this.國際條碼.Size = new System.Drawing.Size(165, 22);
             this.國際條碼.TabIndex = 36;
             // 
             // 成本備註
             // 
-            this.成本備註.Location = new System.Drawing.Point(55, 288);
+            this.成本備註.Location = new System.Drawing.Point(58, 288);
             this.成本備註.Name = "成本備註";
-            this.成本備註.Size = new System.Drawing.Size(407, 22);
+            this.成本備註.Size = new System.Drawing.Size(400, 22);
             this.成本備註.TabIndex = 42;
             // 
             // 體積
             // 
-            this.體積.Location = new System.Drawing.Point(56, 186);
+            this.體積.Location = new System.Drawing.Point(58, 186);
             this.體積.Name = "體積";
-            this.體積.Size = new System.Drawing.Size(167, 22);
+            this.體積.Size = new System.Drawing.Size(165, 22);
             this.體積.TabIndex = 46;
             // 
             // 庫存總成本
             // 
             this.庫存總成本.DecimalPlaces = 3;
-            this.庫存總成本.Location = new System.Drawing.Point(297, 186);
+            this.庫存總成本.Location = new System.Drawing.Point(293, 186);
             this.庫存總成本.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -241,13 +241,13 @@
             0,
             -2147483648});
             this.庫存總成本.Name = "庫存總成本";
-            this.庫存總成本.Size = new System.Drawing.Size(167, 22);
+            this.庫存總成本.Size = new System.Drawing.Size(165, 22);
             this.庫存總成本.TabIndex = 47;
             // 
             // 最後進貨成本
             // 
             this.最後進貨成本.DecimalPlaces = 3;
-            this.最後進貨成本.Location = new System.Drawing.Point(297, 214);
+            this.最後進貨成本.Location = new System.Drawing.Point(293, 214);
             this.最後進貨成本.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -259,13 +259,13 @@
             0,
             -2147483648});
             this.最後進貨成本.Name = "最後進貨成本";
-            this.最後進貨成本.Size = new System.Drawing.Size(167, 22);
+            this.最後進貨成本.Size = new System.Drawing.Size(165, 22);
             this.最後進貨成本.TabIndex = 48;
             // 
             // 成本
             // 
             this.成本.DecimalPlaces = 3;
-            this.成本.Location = new System.Drawing.Point(297, 242);
+            this.成本.Location = new System.Drawing.Point(293, 242);
             this.成本.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -278,12 +278,12 @@
             -2147483648});
             this.成本.Name = "成本";
             this.成本.ReadOnly = true;
-            this.成本.Size = new System.Drawing.Size(167, 22);
+            this.成本.Size = new System.Drawing.Size(165, 22);
             this.成本.TabIndex = 49;
             // 
             // 庫存
             // 
-            this.庫存.Location = new System.Drawing.Point(56, 215);
+            this.庫存.Location = new System.Drawing.Point(58, 214);
             this.庫存.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -295,12 +295,12 @@
             0,
             -2147483648});
             this.庫存.Name = "庫存";
-            this.庫存.Size = new System.Drawing.Size(167, 22);
+            this.庫存.Size = new System.Drawing.Size(165, 22);
             this.庫存.TabIndex = 51;
             // 
             // 大類
             // 
-            this.大類.Location = new System.Drawing.Point(56, 117);
+            this.大類.Location = new System.Drawing.Point(58, 116);
             this.大類.Margin = new System.Windows.Forms.Padding(4);
             this.大類.Name = "大類";
             this.大類.ReadOnly = false;
@@ -311,7 +311,7 @@
             // 
             // 小類
             // 
-            this.小類.Location = new System.Drawing.Point(56, 143);
+            this.小類.Location = new System.Drawing.Point(58, 144);
             this.小類.Margin = new System.Windows.Forms.Padding(4);
             this.小類.Name = "小類";
             this.小類.ReadOnly = false;
@@ -322,7 +322,7 @@
             // 
             // 品牌
             // 
-            this.品牌.Location = new System.Drawing.Point(56, 91);
+            this.品牌.Location = new System.Drawing.Point(58, 90);
             this.品牌.Margin = new System.Windows.Forms.Padding(4);
             this.品牌.Name = "品牌";
             this.品牌.ReadOnly = false;
@@ -333,9 +333,9 @@
             // 
             // 類別
             // 
-            this.類別.Location = new System.Drawing.Point(295, 90);
+            this.類別.Location = new System.Drawing.Point(293, 91);
             this.類別.Name = "類別";
-            this.類別.Size = new System.Drawing.Size(167, 22);
+            this.類別.Size = new System.Drawing.Size(165, 22);
             this.類別.TabIndex = 56;
             // 
             // label16
@@ -349,7 +349,7 @@
             // 
             // 新版頁索引元件1
             // 
-            this.新版頁索引元件1.Location = new System.Drawing.Point(122, 321);
+            this.新版頁索引元件1.Location = new System.Drawing.Point(122, 320);
             this.新版頁索引元件1.Name = "新版頁索引元件1";
             this.新版頁索引元件1.Size = new System.Drawing.Size(234, 34);
             this.新版頁索引元件1.TabIndex = 57;
@@ -359,7 +359,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(482, 362);
+            this.ClientSize = new System.Drawing.Size(478, 358);
             this.Controls.Add(this.新版頁索引元件1);
             this.Controls.Add(this.類別);
             this.Controls.Add(this.label16);

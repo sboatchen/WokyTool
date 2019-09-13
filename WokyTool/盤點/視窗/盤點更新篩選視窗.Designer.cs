@@ -39,53 +39,48 @@ namespace WokyTool.盤點
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 14);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(18, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 15);
+            this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 2;
             this.label3.Text = "物品";
             // 
             // 備註
             // 
-            this.備註.Location = new System.Drawing.Point(79, 53);
-            this.備註.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.備註.Location = new System.Drawing.Point(58, 41);
             this.備註.Name = "備註";
-            this.備註.Size = new System.Drawing.Size(547, 25);
+            this.備註.Size = new System.Drawing.Size(400, 22);
             this.備註.TabIndex = 78;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(21, 58);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(16, 45);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(37, 15);
+            this.label17.Size = new System.Drawing.Size(29, 12);
             this.label17.TabIndex = 77;
             this.label17.Text = "備註";
             // 
             // 物品
             // 
-            this.物品.Location = new System.Drawing.Point(79, 14);
-            this.物品.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.物品.Location = new System.Drawing.Point(58, 10);
             this.物品.Name = "物品";
             this.物品.ReadOnly = false;
             this.物品.SelectedItem = null;
-            this.物品.Size = new System.Drawing.Size(569, 38);
+            this.物品.Size = new System.Drawing.Size(427, 30);
             this.物品.TabIndex = 79;
             this.物品.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
             // 盤點更新篩選視窗
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(652, 96);
+            this.ClientSize = new System.Drawing.Size(480, 78);
             this.Controls.Add(this.物品);
             this.Controls.Add(this.備註);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "盤點更新篩選視窗";
             this.Text = "盤點更新篩選視窗";
             this.ResumeLayout(false);

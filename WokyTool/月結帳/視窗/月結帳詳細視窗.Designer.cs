@@ -126,7 +126,7 @@
             0,
             -2147483648});
             this.數量.Name = "數量";
-            this.數量.Size = new System.Drawing.Size(167, 22);
+            this.數量.Size = new System.Drawing.Size(165, 22);
             this.數量.TabIndex = 87;
             // 
             // 公司選取元件1
@@ -162,7 +162,7 @@
             0,
             -2147483648});
             this.單價.Name = "單價";
-            this.單價.Size = new System.Drawing.Size(167, 22);
+            this.單價.Size = new System.Drawing.Size(165, 22);
             this.單價.TabIndex = 96;
             // 
             // 含稅單價
@@ -180,7 +180,7 @@
             0,
             -2147483648});
             this.含稅單價.Name = "含稅單價";
-            this.含稅單價.Size = new System.Drawing.Size(167, 22);
+            this.含稅單價.Size = new System.Drawing.Size(165, 22);
             this.含稅單價.TabIndex = 97;
             // 
             // label6
@@ -208,7 +208,7 @@
             -2147483648});
             this.成本.Name = "成本";
             this.成本.ReadOnly = true;
-            this.成本.Size = new System.Drawing.Size(167, 22);
+            this.成本.Size = new System.Drawing.Size(165, 22);
             this.成本.TabIndex = 105;
             // 
             // 利潤
@@ -227,7 +227,7 @@
             -2147483648});
             this.利潤.Name = "利潤";
             this.利潤.ReadOnly = true;
-            this.利潤.Size = new System.Drawing.Size(167, 22);
+            this.利潤.Size = new System.Drawing.Size(165, 22);
             this.利潤.TabIndex = 109;
             // 
             // 商品選取元件1
@@ -282,7 +282,7 @@
             -2147483648});
             this.總金額.Name = "總金額";
             this.總金額.ReadOnly = true;
-            this.總金額.Size = new System.Drawing.Size(167, 22);
+            this.總金額.Size = new System.Drawing.Size(165, 22);
             this.總金額.TabIndex = 117;
             // 
             // 總利潤
@@ -301,7 +301,7 @@
             -2147483648});
             this.總利潤.Name = "總利潤";
             this.總利潤.ReadOnly = true;
-            this.總利潤.Size = new System.Drawing.Size(167, 22);
+            this.總利潤.Size = new System.Drawing.Size(165, 22);
             this.總利潤.TabIndex = 118;
             // 
             // label16

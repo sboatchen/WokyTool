@@ -46,7 +46,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(256, 96);
+            this.label11.Location = new System.Drawing.Point(248, 96);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 12);
             this.label11.TabIndex = 90;
@@ -54,7 +54,7 @@
             // 
             // 電話
             // 
-            this.電話.Location = new System.Drawing.Point(51, 65);
+            this.電話.Location = new System.Drawing.Point(58, 65);
             this.電話.Name = "電話";
             this.電話.Size = new System.Drawing.Size(165, 22);
             this.電話.TabIndex = 89;
@@ -62,7 +62,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 68);
+            this.label10.Location = new System.Drawing.Point(12, 70);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 12);
             this.label10.TabIndex = 88;
@@ -70,7 +70,7 @@
             // 
             // 手機
             // 
-            this.手機.Location = new System.Drawing.Point(51, 93);
+            this.手機.Location = new System.Drawing.Point(58, 93);
             this.手機.Name = "手機";
             this.手機.Size = new System.Drawing.Size(165, 22);
             this.手機.TabIndex = 87;
@@ -78,7 +78,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 96);
+            this.label9.Location = new System.Drawing.Point(12, 98);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 12);
             this.label9.TabIndex = 86;
@@ -86,15 +86,15 @@
             // 
             // 地址
             // 
-            this.地址.Location = new System.Drawing.Point(51, 121);
+            this.地址.Location = new System.Drawing.Point(58, 121);
             this.地址.Name = "地址";
-            this.地址.Size = new System.Drawing.Size(421, 22);
+            this.地址.Size = new System.Drawing.Size(400, 22);
             this.地址.TabIndex = 85;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 124);
+            this.label6.Location = new System.Drawing.Point(12, 126);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 12);
             this.label6.TabIndex = 84;
@@ -102,7 +102,7 @@
             // 
             // 姓名
             // 
-            this.姓名.Location = new System.Drawing.Point(51, 33);
+            this.姓名.Location = new System.Drawing.Point(58, 33);
             this.姓名.Name = "姓名";
             this.姓名.Size = new System.Drawing.Size(165, 22);
             this.姓名.TabIndex = 76;
@@ -110,7 +110,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 36);
+            this.label7.Location = new System.Drawing.Point(12, 38);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 74;
@@ -119,7 +119,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(268, 68);
+            this.label5.Location = new System.Drawing.Point(255, 69);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 73;
@@ -127,7 +127,7 @@
             // 
             // 更新狀態
             // 
-            this.更新狀態.Location = new System.Drawing.Point(-1, 1);
+            this.更新狀態.Location = new System.Drawing.Point(4, 4);
             this.更新狀態.Margin = new System.Windows.Forms.Padding(4);
             this.更新狀態.Name = "更新狀態";
             this.更新狀態.ReadOnly = false;
@@ -138,7 +138,7 @@
             // 
             // 子客戶
             // 
-            this.子客戶.Location = new System.Drawing.Point(304, 93);
+            this.子客戶.Location = new System.Drawing.Point(293, 93);
             this.子客戶.Margin = new System.Windows.Forms.Padding(4);
             this.子客戶.Name = "子客戶";
             this.子客戶.ReadOnly = false;
@@ -149,7 +149,7 @@
             // 
             // 客戶
             // 
-            this.客戶.Location = new System.Drawing.Point(303, 65);
+            this.客戶.Location = new System.Drawing.Point(293, 65);
             this.客戶.Margin = new System.Windows.Forms.Padding(4);
             this.客戶.Name = "客戶";
             this.客戶.ReadOnly = false;
@@ -162,7 +162,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 151);
+            this.ClientSize = new System.Drawing.Size(480, 153);
             this.Controls.Add(this.更新狀態);
             this.Controls.Add(this.子客戶);
             this.Controls.Add(this.label11);

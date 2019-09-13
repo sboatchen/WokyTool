@@ -59,7 +59,7 @@
             // 最大利潤
             // 
             this.最大利潤.DecimalPlaces = 3;
-            this.最大利潤.Location = new System.Drawing.Point(384, 209);
+            this.最大利潤.Location = new System.Drawing.Point(378, 208);
             this.最大利潤.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -81,7 +81,7 @@
             // 
             // 最大寄庫數量
             // 
-            this.最大寄庫數量.Location = new System.Drawing.Point(151, 207);
+            this.最大寄庫數量.Location = new System.Drawing.Point(143, 207);
             this.最大寄庫數量.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -104,7 +104,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(12, 135);
+            this.label15.Location = new System.Drawing.Point(14, 132);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(29, 12);
             this.label15.TabIndex = 94;
@@ -113,7 +113,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(248, 211);
+            this.label12.Location = new System.Drawing.Point(248, 212);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 12);
             this.label12.TabIndex = 75;
@@ -122,7 +122,7 @@
             // 最小利潤
             // 
             this.最小利潤.DecimalPlaces = 3;
-            this.最小利潤.Location = new System.Drawing.Point(297, 209);
+            this.最小利潤.Location = new System.Drawing.Point(293, 209);
             this.最小利潤.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -144,7 +144,7 @@
             // 
             // 最小寄庫數量
             // 
-            this.最小寄庫數量.Location = new System.Drawing.Point(64, 207);
+            this.最小寄庫數量.Location = new System.Drawing.Point(58, 207);
             this.最小寄庫數量.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -167,7 +167,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 209);
+            this.label3.Location = new System.Drawing.Point(2, 211);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 65;
@@ -175,14 +175,14 @@
             // 
             // 品號
             // 
-            this.品號.Location = new System.Drawing.Point(64, 38);
+            this.品號.Location = new System.Drawing.Point(58, 38);
             this.品號.Name = "品號";
-            this.品號.Size = new System.Drawing.Size(167, 22);
+            this.品號.Size = new System.Drawing.Size(165, 22);
             this.品號.TabIndex = 35;
             // 
             // 名稱
             // 
-            this.名稱.Location = new System.Drawing.Point(64, 10);
+            this.名稱.Location = new System.Drawing.Point(58, 10);
             this.名稱.Name = "名稱";
             this.名稱.Size = new System.Drawing.Size(400, 22);
             this.名稱.TabIndex = 23;
@@ -190,7 +190,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 182);
+            this.label9.Location = new System.Drawing.Point(14, 180);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 12);
             this.label9.TabIndex = 8;
@@ -199,7 +199,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 41);
+            this.label8.Location = new System.Drawing.Point(14, 43);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 7;
@@ -208,7 +208,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 13);
+            this.label7.Location = new System.Drawing.Point(14, 14);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 6;
@@ -235,7 +235,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 104);
+            this.label2.Location = new System.Drawing.Point(14, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 1;
@@ -244,7 +244,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 77);
+            this.label1.Location = new System.Drawing.Point(14, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
@@ -252,8 +252,8 @@
             // 
             // 品牌
             // 
-            this.品牌.Location = new System.Drawing.Point(64, 131);
-            this.品牌.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.品牌.Location = new System.Drawing.Point(58, 128);
+            this.品牌.Margin = new System.Windows.Forms.Padding(4);
             this.品牌.Name = "品牌";
             this.品牌.ReadOnly = false;
             this.品牌.SelectedItem = null;
@@ -263,8 +263,8 @@
             // 
             // 小類
             // 
-            this.小類.Location = new System.Drawing.Point(64, 101);
-            this.小類.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.小類.Location = new System.Drawing.Point(58, 101);
+            this.小類.Margin = new System.Windows.Forms.Padding(4);
             this.小類.Name = "小類";
             this.小類.ReadOnly = false;
             this.小類.SelectedItem = null;
@@ -274,8 +274,8 @@
             // 
             // 物品
             // 
-            this.物品.Location = new System.Drawing.Point(64, 176);
-            this.物品.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.物品.Location = new System.Drawing.Point(58, 176);
+            this.物品.Margin = new System.Windows.Forms.Padding(4);
             this.物品.Name = "物品";
             this.物品.ReadOnly = false;
             this.物品.SelectedItem = null;
@@ -285,8 +285,8 @@
             // 
             // 客戶
             // 
-            this.客戶.Location = new System.Drawing.Point(297, 102);
-            this.客戶.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.客戶.Location = new System.Drawing.Point(293, 101);
+            this.客戶.Margin = new System.Windows.Forms.Padding(4);
             this.客戶.Name = "客戶";
             this.客戶.ReadOnly = false;
             this.客戶.SelectedItem = null;
@@ -296,8 +296,8 @@
             // 
             // 公司
             // 
-            this.公司.Location = new System.Drawing.Point(297, 75);
-            this.公司.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.公司.Location = new System.Drawing.Point(293, 74);
+            this.公司.Margin = new System.Windows.Forms.Padding(4);
             this.公司.Name = "公司";
             this.公司.ReadOnly = false;
             this.公司.SelectedItem = null;
@@ -307,8 +307,8 @@
             // 
             // 大類
             // 
-            this.大類.Location = new System.Drawing.Point(64, 74);
-            this.大類.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.大類.Location = new System.Drawing.Point(58, 74);
+            this.大類.Margin = new System.Windows.Forms.Padding(4);
             this.大類.Name = "大類";
             this.大類.ReadOnly = false;
             this.大類.SelectedItem = null;
@@ -320,7 +320,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 246);
+            this.ClientSize = new System.Drawing.Size(481, 244);
             this.Controls.Add(this.最大利潤);
             this.Controls.Add(this.最大寄庫數量);
             this.Controls.Add(this.label15);
