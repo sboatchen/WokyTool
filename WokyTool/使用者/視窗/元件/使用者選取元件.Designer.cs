@@ -41,7 +41,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(0, 0);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(167, 20);
+            this.comboBox1.Size = new System.Drawing.Size(165, 20);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.ValueMember = "Self";
             // 
@@ -55,7 +55,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.comboBox1);
             this.Name = "使用者選取元件";
-            this.Size = new System.Drawing.Size(173, 24);
+            this.Size = new System.Drawing.Size(175, 22);
             ((System.ComponentModel.ISupportInitialize)(this.使用者資料BindingSource)).EndInit();
             this.ResumeLayout(false);
 

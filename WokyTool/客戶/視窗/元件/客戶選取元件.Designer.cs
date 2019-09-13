@@ -42,7 +42,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(0, 0);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(167, 20);
+            this.comboBox1.Size = new System.Drawing.Size(165, 20);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.ValueMember = "Self";
             // 
@@ -54,7 +54,7 @@
             // 
             this.Detail.AutoSize = true;
             this.Detail.Font = new System.Drawing.Font("PMingLiU", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Detail.Location = new System.Drawing.Point(171, 7);
+            this.Detail.Location = new System.Drawing.Point(170, 5);
             this.Detail.Name = "Detail";
             this.Detail.Size = new System.Drawing.Size(10, 11);
             this.Detail.TabIndex = 2;
@@ -68,7 +68,7 @@
             this.Controls.Add(this.Detail);
             this.Controls.Add(this.comboBox1);
             this.Name = "客戶選取元件";
-            this.Size = new System.Drawing.Size(186, 25);
+            this.Size = new System.Drawing.Size(185, 22);
             ((System.ComponentModel.ISupportInitialize)(this.客戶資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -38,7 +38,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(-1, 6);
+            this.label13.Location = new System.Drawing.Point(0, 3);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(53, 12);
             this.label13.TabIndex = 109;
@@ -48,9 +48,9 @@
             // 
             this.comboBox1.DataSource = this.指配時段BindingSource;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(54, 3);
+            this.comboBox1.Location = new System.Drawing.Point(55, 0);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(164, 20);
+            this.comboBox1.Size = new System.Drawing.Size(165, 20);
             this.comboBox1.TabIndex = 112;
             // 
             // 指配時段BindingSource
@@ -64,7 +64,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label13);
             this.Name = "指配時段選取元件";
-            this.Size = new System.Drawing.Size(222, 28);
+            this.Size = new System.Drawing.Size(230, 22);
             ((System.ComponentModel.ISupportInitialize)(this.指配時段BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
