@@ -8,6 +8,23 @@ namespace WokyTool.盤點
 {
     public class 盤點更新資料篩選 : 通用可篩選介面<盤點更新資料>
     {
+        private 列舉.更新狀態 _更新狀態 = 列舉.更新狀態.不篩選;
+        public 列舉.更新狀態 更新狀態
+        {
+            get
+            {
+                return _更新狀態;
+            }
+            set
+            {
+                if (_更新狀態 != value)
+                {
+                    _更新狀態 = value;
+                    篩選版本++;
+                }
+            }
+        }
+
         private 物品資料 _物品 = 物品資料.不篩選;
         public 物品資料 物品
         {
@@ -48,6 +65,7 @@ namespace WokyTool.盤點
             {
                 return
                     null != _文字 ||  // 物品名稱
+                    列舉.更新狀態.不篩選 != _更新狀態 ||
                     物品資料.不篩選 != _物品 ||
                     null != _備註;
             }
@@ -59,6 +77,9 @@ namespace WokyTool.盤點
 
             if (null != _文字)
                 目前列舉_ = 目前列舉_.Where(Value => Value.物品名稱.Contains(_文字));
+
+            if (列舉.更新狀態.不篩選 != _更新狀態)
+                目前列舉_ = 目前列舉_.Where(Value => Value.更新狀態 == _更新狀態);
 
             if (物品資料.不篩選 != _物品)
                 目前列舉_ = 目前列舉_.Where(Value => Value.物品 == _物品);

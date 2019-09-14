@@ -23,6 +23,7 @@ namespace WokyTool.盤點
 
             base.初始化();
 
+            資料綁定(this.更新狀態, "更新狀態");
             資料綁定(this.物品, "物品");
             資料綁定(this.備註, "備註");
         }

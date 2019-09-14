@@ -49,6 +49,20 @@ namespace WokyTool.盤點
             }
         }
 
+        private 列舉.布林狀態 _是否一致 = 列舉.布林狀態.不篩選;
+        public 列舉.布林狀態 是否一致
+        {
+            get { return _是否一致; }
+            set
+            {
+                if (_是否一致 != value)
+                {
+                    _是否一致 = value;
+                    篩選版本++;
+                }
+            }
+        }
+
         public override bool 是否篩選
         {
             get
@@ -56,7 +70,8 @@ namespace WokyTool.盤點
                 return
                     null != _文字 ||  // 物品名稱
                     物品資料.不篩選 != _物品 ||
-                    null != _備註;
+                    null != _備註 ||
+                    列舉.布林狀態.不篩選 != _是否一致;
             }
         }
 
@@ -72,6 +87,14 @@ namespace WokyTool.盤點
 
             if (null != _備註)
                 目前列舉_ = 目前列舉_.Where(Value => Value.備註 != null && Value.備註.Contains(_備註));
+
+            if (列舉.布林狀態.不篩選 != _是否一致)
+            {
+                if(列舉.布林狀態.是 == _是否一致)
+                    目前列舉_ = 目前列舉_.Where(Value => Value.是否一致);
+                else
+                    目前列舉_ = 目前列舉_.Where(Value => Value.是否一致 == false);
+            }
 
             return 目前列舉_;
         }

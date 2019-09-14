@@ -237,6 +237,12 @@
     <Compile Include="平台訂單\資料\平台訂單新增資料篩選.cs" />
     <Compile Include="盤點\控制\盤點更新資料管理器.cs" />
     <Compile Include="盤點\控制\盤點資料管理器.cs" />
+    <Compile Include="盤點\視窗\盤點篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="盤點\視窗\盤點篩選視窗.Designer.cs">
+      <DependentUpon>盤點篩選視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="盤點\視窗\盤點更新篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -780,6 +786,12 @@
     </Compile>
     <Compile Include="通用\視窗\複寫\MyDateTimePicker.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="通用\視窗\選取\布林狀態選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="通用\視窗\選取\布林狀態選取元件.Designer.cs">
+      <DependentUpon>布林狀態選取元件.cs</DependentUpon>
     </Compile>
     <Compile Include="通用\視窗\選取\代收方式選取元件.cs">
       <SubType>UserControl</SubType>
@@ -1493,6 +1505,9 @@
     <EmbeddedResource Include="發票\視窗\發票匯入視窗.resx">
       <DependentUpon>發票匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="盤點\視窗\盤點篩選視窗.resx">
+      <DependentUpon>盤點篩選視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="盤點\視窗\盤點更新篩選視窗.resx">
       <DependentUpon>盤點更新篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1525,6 +1540,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="聯絡人\視窗\聯絡人詳細視窗.resx">
       <DependentUpon>聯絡人詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="通用\視窗\選取\布林狀態選取元件.resx">
+      <DependentUpon>布林狀態選取元件.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="通用\視窗\選取\代收方式選取元件.resx">
       <DependentUpon>代收方式選取元件.cs</DependentUpon>
@@ -1637,6 +1655,7 @@
     <None Include="Properties\DataSources\WokyTool.聯絡人.聯絡人資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+代收方式.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+商品識別.datasource" />
+    <None Include="Properties\DataSources\WokyTool.通用.列舉+布林狀態.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+指配時段.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+更新狀態.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+檔案格式.datasource" />

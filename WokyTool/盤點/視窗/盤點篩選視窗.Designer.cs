@@ -2,7 +2,7 @@
 using WokyTool.通用;
 namespace WokyTool.盤點
 {
-    partial class 盤點更新篩選視窗
+    partial class 盤點篩選視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -30,36 +30,25 @@ namespace WokyTool.盤點
         /// </summary>
         private void InitializeComponent()
         {
-            this.更新狀態 = new WokyTool.通用.更新狀態選取元件();
-            this.物品 = new WokyTool.物品.物品選取元件();
+            this.label3 = new System.Windows.Forms.Label();
             this.備註 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.物品 = new WokyTool.物品.物品選取元件();
+            this.是否一致 = new WokyTool.通用.布林狀態選取元件();
             this.SuspendLayout();
             // 
-            // 更新狀態
+            // label3
             // 
-            this.更新狀態.Location = new System.Drawing.Point(3, 9);
-            this.更新狀態.Name = "更新狀態";
-            this.更新狀態.ReadOnly = false;
-            this.更新狀態.SelectedItem = WokyTool.通用.列舉.更新狀態.不篩選;
-            this.更新狀態.Size = new System.Drawing.Size(230, 22);
-            this.更新狀態.TabIndex = 80;
-            this.更新狀態.元件類型 = WokyTool.通用.選取元件類型.篩選;
-            // 
-            // 物品
-            // 
-            this.物品.Location = new System.Drawing.Point(58, 39);
-            this.物品.Name = "物品";
-            this.物品.ReadOnly = false;
-            this.物品.SelectedItem = null;
-            this.物品.Size = new System.Drawing.Size(427, 30);
-            this.物品.TabIndex = 79;
-            this.物品.元件類型 = WokyTool.通用.選取元件類型.篩選;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "物品";
             // 
             // 備註
             // 
-            this.備註.Location = new System.Drawing.Point(58, 70);
+            this.備註.Location = new System.Drawing.Point(58, 41);
             this.備註.Name = "備註";
             this.備註.Size = new System.Drawing.Size(400, 22);
             this.備註.TabIndex = 78;
@@ -67,34 +56,46 @@ namespace WokyTool.盤點
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(14, 74);
+            this.label17.Location = new System.Drawing.Point(16, 45);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(29, 12);
             this.label17.TabIndex = 77;
             this.label17.Text = "備註";
             // 
-            // label3
+            // 物品
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "物品";
+            this.物品.Location = new System.Drawing.Point(58, 10);
+            this.物品.Name = "物品";
+            this.物品.ReadOnly = false;
+            this.物品.SelectedItem = null;
+            this.物品.Size = new System.Drawing.Size(427, 30);
+            this.物品.TabIndex = 79;
+            this.物品.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
-            // 盤點更新篩選視窗
+            // 是否一致
+            // 
+            this.是否一致.Location = new System.Drawing.Point(3, 74);
+            this.是否一致.Name = "是否一致";
+            this.是否一致.ReadOnly = false;
+            this.是否一致.SelectedItem = WokyTool.通用.列舉.布林狀態.不篩選;
+            this.是否一致.Size = new System.Drawing.Size(230, 22);
+            this.是否一致.TabIndex = 80;
+            this.是否一致.元件類型 = WokyTool.通用.選取元件類型.篩選;
+            this.是否一致.名稱 = "是否一致";
+            // 
+            // 盤點篩選視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(480, 107);
-            this.Controls.Add(this.更新狀態);
+            this.ClientSize = new System.Drawing.Size(480, 103);
+            this.Controls.Add(this.是否一致);
             this.Controls.Add(this.物品);
             this.Controls.Add(this.備註);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label3);
-            this.Name = "盤點更新篩選視窗";
-            this.Text = "盤點更新篩選視窗";
+            this.Name = "盤點篩選視窗";
+            this.Text = "盤點篩選視窗";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,6 +107,6 @@ namespace WokyTool.盤點
         private System.Windows.Forms.TextBox 備註;
         private System.Windows.Forms.Label label17;
         private 物品選取元件 物品;
-        private 更新狀態選取元件 更新狀態;
+        private 布林狀態選取元件 是否一致;
     }
 }

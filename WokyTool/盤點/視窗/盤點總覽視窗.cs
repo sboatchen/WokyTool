@@ -39,6 +39,21 @@ namespace WokyTool.盤點
             base.初始化();
 
             this.更新ToolStripMenuItem.Enabled = 編輯管理器.是否可編輯;
+            this.myDataGridView1.CellFormatting += new DataGridViewCellFormattingEventHandler(_onCellFormatting);
+        }
+
+        private void _onCellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            foreach (DataGridViewRow 資料_ in myDataGridView1.Rows)
+            {
+                if (資料_.Cells[2].Value == null)
+                    return;
+
+                if (資料_.Cells[2].Value.Equals(資料_.Cells[6].Value))
+                    資料_.DefaultCellStyle.BackColor = Color.Empty;
+                else
+                    資料_.DefaultCellStyle.BackColor = Color.Red;
+            }
         }
 
         private void 通用ToolStripMenuItem_Click(object sender, EventArgs e)
