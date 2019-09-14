@@ -132,7 +132,9 @@ namespace WokyTool.通用
         {
             if (是否紀錄_)
             {
-                TSource 錯誤資料_ = 資料列.執行(Value => Value.合法檢查(新增物件檢查器)).Where(Value => string.IsNullOrEmpty(Value.錯誤訊息) == false).DefaultIfEmpty(null).First();
+                合法檢查(新增物件檢查器);
+
+                TSource 錯誤資料_ = 資料列.Where(Value => string.IsNullOrEmpty(Value.錯誤訊息) == false).DefaultIfEmpty(null).First();
                 if (錯誤資料_ != null)
                 {
                     例外檢查器 例外檢查器_ = new 例外檢查器();

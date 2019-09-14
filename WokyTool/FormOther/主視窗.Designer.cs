@@ -88,6 +88,7 @@
             this.button34 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
+            this.盤點 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -619,6 +620,7 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.盤點);
             this.panel5.Controls.Add(this.寄庫新增);
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.label3);
@@ -731,6 +733,16 @@
             this.button46.UseVisualStyleBackColor = true;
             this.button46.Click += new System.EventHandler(this.button46_Click);
             // 
+            // 盤點
+            // 
+            this.盤點.Location = new System.Drawing.Point(121, 69);
+            this.盤點.Name = "盤點";
+            this.盤點.Size = new System.Drawing.Size(100, 23);
+            this.盤點.TabIndex = 51;
+            this.盤點.Text = "盤點";
+            this.盤點.UseVisualStyleBackColor = true;
+            this.盤點.Click += new System.EventHandler(this.盤點_Click);
+            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -826,6 +838,7 @@
         private System.Windows.Forms.Button button46;
         private System.Windows.Forms.Button 客戶資料轉換;
         private System.Windows.Forms.Button 寄庫新增;
+        private System.Windows.Forms.Button 盤點;
 
 
     }

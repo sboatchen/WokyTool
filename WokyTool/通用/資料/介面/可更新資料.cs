@@ -17,7 +17,7 @@ namespace WokyTool.通用
     };
 
     [JsonObject(MemberSerialization.OptIn)]
-    public abstract class 可更新資料<T> : 可編輯資料, 可初始化介面, 可記錄錯誤介面 where T : 可編號記錄資料
+    public abstract class 可更新資料<TCovert, TValue> : 可編輯資料, 可初始化介面, 可記錄錯誤介面  where TCovert:可更新資料<TCovert, TValue> where TValue : 可編號記錄資料
     {
         [可匯出]
         [JsonProperty]
@@ -44,10 +44,12 @@ namespace WokyTool.通用
         [JsonProperty]
         public 列舉.更新狀態 更新狀態 { get; protected set; }
 
-        public T 參考 { get; protected set; }
-        public T 修改 { get; protected set; }
+        public TValue 參考 { get; protected set; }
+        public TValue 修改 { get; protected set; }
 
         protected string _參考Hash;
+
+        public 可更新資料管理器<TCovert, TValue> 管理器 { get; set; }
 
         /********************************/
 
@@ -170,10 +172,10 @@ namespace WokyTool.通用
                     錯誤訊息 = null;
                     break;
                 case 列舉.更新狀態.錯誤:
-                    break;
+                    return;
                 case 列舉.更新狀態.刪除:
                     錯誤訊息 = null;
-                    參考.刪除檢查(檢查器_);
+                    修改.刪除檢查(檢查器_, 資料_);
                     break;
                 case 列舉.更新狀態.新增:
                     錯誤訊息 = null;
@@ -187,6 +189,17 @@ namespace WokyTool.通用
                     訊息管理器.獨體.錯誤("未處理類型:" + 更新狀態);
                     break;
             }
+
+            if (管理器.資料列.Where(Value => Value != this && Value.參考 == 參考_).Any())
+            {
+                檢查器_.錯誤(資料_, "重複更新");
+            }
+        }
+
+        protected void 重複性檢查()
+        {
+            //@@1. 參考物錯誤 修改問題
+            //@@2. 資料重複參考
         }
     }
 }

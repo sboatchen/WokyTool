@@ -18,6 +18,7 @@ using WokyTool.寄庫;
 using WokyTool.進貨;
 using WokyTool.幣值;
 using WokyTool.廠商;
+using WokyTool.盤點;
 using WokyTool.聯絡人;
 
 namespace WokyTool.通用
@@ -69,7 +70,11 @@ namespace WokyTool.通用
 
             //TOD
 
-             _資料書.Add(取得編號(列舉.編號.寄庫新增, 列舉.視窗.總覽), typeof(寄庫新增總覽視窗));
+            _資料書.Add(取得編號(列舉.編號.寄庫新增, 列舉.視窗.總覽), typeof(寄庫新增總覽視窗));
+
+            _資料書.Add(取得編號(列舉.編號.盤點, 列舉.視窗.總覽), typeof(盤點總覽視窗));
+
+
 
             _資料書.Add(取得編號(列舉.編號.月結帳設定, 列舉.視窗.總覽), typeof(月結帳匯入設定總覽視窗));
             _資料書.Add(取得編號(列舉.編號.月結帳設定, 列舉.視窗.詳細), typeof(月結帳匯入設定詳細視窗));

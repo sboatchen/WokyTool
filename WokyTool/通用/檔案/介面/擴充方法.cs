@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using WokyTool.Common;
 using WokyTool.測試;
 
 
@@ -69,6 +70,7 @@ namespace WokyTool.通用
                 轉換_.讀出標頭(資料_);
             }
 
+            int 已處理行數_ = 0;
             List<string[]> 資料暫存_ = new List<string[]>();
             for (int 資料索引_ = 轉換_.資料開始索引; 資料索引_ <= 資料總數_; 資料索引_++)
             {
@@ -89,6 +91,14 @@ namespace WokyTool.通用
                 }
 
                 資料暫存_.Add(資料列_);
+
+                已處理行數_++;
+                if (已處理行數_ % 1000 == 0)
+                {
+                    bool 是否繼續_ = 訊息管理器.獨體.確認(字串.讀取確認, "目前已讀取 " + 已處理行數_ + " 行, 請確認是否繼續??");
+                    if (是否繼續_ == false)
+                        break;
+                }
             }
 
             return 資料暫存_;

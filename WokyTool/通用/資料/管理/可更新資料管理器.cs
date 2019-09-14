@@ -13,8 +13,8 @@ using WokyTool.DataMgr;
 
 namespace WokyTool.通用
 {
-    public abstract class 可更新資料管理器<TSource, TValue> : 可編輯列舉資料管理介面, 可儲存介面 
-		where TSource : 可更新資料<TValue> 
+    public abstract class 可更新資料管理器<TSource, TValue> : 可編輯列舉資料管理介面, 可儲存介面
+        where TSource : 可更新資料<TSource, TValue> 
 		where TValue : 可編號記錄資料
     {
         public List<TSource> 資料列 { get; protected set; }
@@ -89,6 +89,7 @@ namespace WokyTool.通用
 
         public void 新增(TSource 資料_)
         {
+            資料_.管理器 = this;
             資料_.初始化();
             資料_.合法檢查(新增物件檢查器);
 
@@ -104,6 +105,7 @@ namespace WokyTool.通用
 
             foreach (TSource 資料_ in 資料列舉_)
             {
+                資料_.管理器 = this;
                 資料_.初始化();
                 資料_.合法檢查(新增物件檢查器);
 
@@ -132,7 +134,9 @@ namespace WokyTool.通用
         {
             if (是否紀錄_)
             {
-                TSource 錯誤資料_ = 資料列.執行(Value => Value.合法檢查(新增物件檢查器)).Where(Value => string.IsNullOrEmpty(Value.錯誤訊息) == false).DefaultIfEmpty(null).First();
+                合法檢查(新增物件檢查器);
+
+                TSource 錯誤資料_ = 資料列.Where(Value => string.IsNullOrEmpty(Value.錯誤訊息) == false).DefaultIfEmpty(null).First();
                 if (錯誤資料_ != null)
                 {
                     例外檢查器 例外檢查器_ = new 例外檢查器();
@@ -148,7 +152,7 @@ namespace WokyTool.通用
             }
         }
 
-        public void 合法檢查(可檢查介面 檢查器_)
+        public virtual void 合法檢查(可檢查介面 檢查器_)
         {
             foreach (TSource 資料_ in 資料列)
             {

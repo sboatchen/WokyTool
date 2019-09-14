@@ -238,9 +238,9 @@ namespace WokyTool.通用
                 // 取得資料範圍
                 Range 資料範圍_ = 分頁_.UsedRange;
 
-                int 資料總數_ = 資料範圍_.Rows.Count;
-                if (資料總數_ >= 5000)
-                    throw new Exception("偵測到檔案行數超過5000行，請確認");
+                //int 資料總數_ = 資料範圍_.Rows.Count;
+                //if (資料總數_ >= 5000)
+                //    throw new Exception("偵測到檔案行數超過5000行，請確認");
 
                 int 欄位總數_ = 資料範圍_.Columns.Count;
                 if (欄位總數_ >= 200)

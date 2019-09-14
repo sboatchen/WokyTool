@@ -56,10 +56,10 @@ namespace WokyTool.盤點
 
         private void 匯入完成(IEnumerable<盤點更新資料> 資料列舉_)
         {
-            /*if(資料列舉_ == null)
+            if(資料列舉_ == null)
                 return;
 
-            List<盤點更新> 資料列_ = 資料列舉_.ToList(); // 先將資料確實轉換出來
+            List<盤點更新資料> 資料列_ = 資料列舉_.ToList(); // 先將資料確實轉換出來
 
             if (資料列_.Count == 0)
             {
@@ -67,56 +67,32 @@ namespace WokyTool.盤點
                 return;
             }
 
-            // 取得公司
-            var Queue_ = 資料列_.Select(Value => Value.商品.公司).Where(Value => Value.編號是否有值()).Distinct();
-            if (Queue_.Count() == 0)
-            {
-                訊息管理器.獨體.警告("資料中沒有公司資訊");
-                return;
-            }
-            if (Queue_.Count() > 1)
-            {
-                訊息管理器.獨體.警告("資料中包含複數個公司");
-                return;
-            }
-
-            公司資料 公司_ = Queue_.First();
-
-            foreach (盤點更新 資料_ in 資料列_)
-            {
-                資料_.公司 = 公司_;
-            }
-
             資料管理器.新增(資料列_);
 
-            更新資料();*/
+            更新資料();
 
             訊息管理器.獨體.通知("匯入完成");
         }
 
-        private void momoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 大料架ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            盤點更新轉換_大料架 轉換器_ = new 盤點更新轉換_大料架();
+            IEnumerable<盤點更新資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
+            匯入完成(資料列舉_);
         }
 
-        private void pCHomeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 小料架ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            盤點更新轉換_小料架 轉換器_ = new 盤點更新轉換_小料架();
+            IEnumerable<盤點更新資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
+            匯入完成(資料列舉_);
         }
 
-        private void 博客來ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 萬通ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-        }
-
-        private void 蝦皮ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void 料理123ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void 京站站前店ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            盤點更新轉換_萬通 轉換器_ = new 盤點更新轉換_萬通();
+            IEnumerable<盤點更新資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
+            匯入完成(資料列舉_);
         }
     }
 }

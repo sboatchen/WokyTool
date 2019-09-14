@@ -13,7 +13,7 @@ using WokyTool.通用;
 namespace WokyTool.商品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 商品更新資料 : 可更新資料<商品資料>
+    public class 商品更新資料 : 可更新資料<商品更新資料, 商品資料>
     {
         [可匯入(優先級 = 1, 識別 = true)]
         [JsonProperty]

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
+using WokyTool.物品;
 using WokyTool.通用;
 
 namespace WokyTool.盤點
@@ -39,7 +40,7 @@ namespace WokyTool.盤點
 
         protected override void 初始化資料()
         {
-            _資料書 = new Dictionary<int, 盤點資料>();
+            _資料書 = 物品資料管理器.獨體.資料列舉2.ToDictionary(Value => Value.編號, Value => 盤點資料.建立(Value));
         }
 
         // 儲存檔案
@@ -56,10 +57,13 @@ namespace WokyTool.盤點
             }*/
         }
 
-        internal 盤點資料 取得(string value)
+        // 取得資料
+        public 盤點資料 取得(string 名稱_)
         {
-            //@@
-            throw new NotImplementedException();
+            if (String.IsNullOrEmpty(名稱_) || 字串.無.Equals(名稱_))
+                return 空白資料;
+
+            return _資料書.Values.Where(Value => 名稱_.Equals(Value.物品.名稱) || 名稱_.Equals(Value.物品.縮寫)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
         }
     }
 }

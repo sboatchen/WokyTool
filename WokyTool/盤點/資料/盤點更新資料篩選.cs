@@ -47,7 +47,7 @@ namespace WokyTool.盤點
             get
             {
                 return
-                    null != _文字 ||
+                    null != _文字 ||  // 物品名稱
                     物品資料.不篩選 != _物品 ||
                     null != _備註;
             }
@@ -58,7 +58,7 @@ namespace WokyTool.盤點
             IEnumerable<盤點更新資料> 目前列舉_ = 資料列舉_;
 
             if (null != _文字)
-                目前列舉_ = 目前列舉_.Where(Value => Value.物品名稱.Contains(_文字) || (Value.備註 != null && Value.備註.Contains(_備註)));
+                目前列舉_ = 目前列舉_.Where(Value => Value.物品名稱.Contains(_文字));
 
             if (物品資料.不篩選 != _物品)
                 目前列舉_ = 目前列舉_.Where(Value => Value.物品 == _物品);

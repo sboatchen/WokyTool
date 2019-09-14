@@ -14,7 +14,7 @@ using WokyTool.通用;
 namespace WokyTool.盤點
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 盤點更新資料 : 可更新資料<盤點資料>
+    public class 盤點更新資料 : 可更新資料<盤點更新資料, 盤點資料>
     {
         [可匯出]
         [JsonProperty]
@@ -70,8 +70,22 @@ namespace WokyTool.盤點
             get { return 修改.物品; }
             set
             {
+                盤點資料 舊參考_ = 參考;
+
+                參考 = 盤點資料管理器.獨體.取得(物品.編號);
                 修改.物品 = value;
                 _物品識別 = value.名稱;
+
+                if (修改.大料架庫存 == 舊參考_.大料架庫存)
+                    修改.大料架庫存 = 參考.大料架庫存;
+                if (修改.小料架庫存 == 舊參考_.小料架庫存)
+                    修改.小料架庫存 = 參考.小料架庫存;
+                if (修改.萬通庫存 == 舊參考_.萬通庫存)
+                    修改.萬通庫存 = 參考.萬通庫存;
+                if (修改.備註 == 舊參考_.備註)
+                    修改.備註 = 參考.備註;
+
+                初始化();
             }
         }
 

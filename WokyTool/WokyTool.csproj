@@ -265,7 +265,9 @@
     <Compile Include="盤點\資料\盤點更新資料篩選.cs" />
     <Compile Include="盤點\資料\盤點資料.cs" />
     <Compile Include="盤點\資料\盤點資料篩選.cs" />
-    <Compile Include="盤點\轉換\盤點新增匯入轉換_大料架.cs" />
+    <Compile Include="盤點\轉換\盤點更新轉換_小料架.cs" />
+    <Compile Include="盤點\轉換\盤點更新轉換_萬通.cs" />
+    <Compile Include="盤點\轉換\盤點更新轉換_大料架.cs" />
     <Compile Include="廢棄\資料\舊商品資料.cs" />
     <Compile Include="商品\視窗\商品總覽視窗.cs">
       <SubType>Form</SubType>
@@ -1629,6 +1631,8 @@
     <None Include="Properties\DataSources\WokyTool.物品.物品更新資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.發票.發票匯入資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.盤點.盤點更新資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.盤點.盤點資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.聯絡人.聯絡人更新資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.聯絡人.聯絡人資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+代收方式.datasource" />
