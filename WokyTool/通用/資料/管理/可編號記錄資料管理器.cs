@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.DataMgr;
+using WokyTool.盤點;
 
 namespace WokyTool.通用
 {
@@ -281,6 +282,17 @@ namespace WokyTool.通用
                     資料_.編號 = _下個編號++;
 
                 _資料書[資料_.編號] = 資料_;
+            }
+
+            資料版本++;
+            儲存();
+        }
+
+        public void 更新庫存(IEnumerable<盤點資料> 資料列_)
+        {
+            foreach (盤點資料 資料_ in 資料列_)
+            {
+                資料_.物品.庫存 = 資料_.目前庫存;
             }
 
             資料版本++;

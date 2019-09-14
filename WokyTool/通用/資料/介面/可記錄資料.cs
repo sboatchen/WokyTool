@@ -19,6 +19,11 @@ namespace WokyTool.通用
                 _副本 = this.ToString(false);
         }
 
+        public void BeginEdit(string 副本_)
+        {
+            _副本 = 副本_;
+        }
+
         public override void CancelEdit()
         {
         }

@@ -43,20 +43,6 @@ namespace WokyTool.盤點
             _資料書 = 物品資料管理器.獨體.資料列舉2.ToDictionary(Value => Value.編號, Value => 盤點資料.建立(Value));
         }
 
-        // 儲存檔案
-        public override void 儲存()
-        {
-            /*@@if (_資料列.Count != 0)
-            {
-                _目前資料列版本 = 資料版本;
-
-                // 更新資料
-                檔案.寫入(檔案路徑, JsonConvert.SerializeObject(_資料列, Formatting.Indented), 是否加密);
-
-                _資料列.Clear();
-            }*/
-        }
-
         // 取得資料
         public 盤點資料 取得(string 名稱_)
         {
@@ -64,6 +50,12 @@ namespace WokyTool.盤點
                 return 空白資料;
 
             return _資料書.Values.Where(Value => 名稱_.Equals(Value.物品.名稱) || 名稱_.Equals(Value.物品.縮寫)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
+        }
+
+        // 儲存檔案
+        public override void 儲存()
+        {
+            物品資料管理器.獨體.更新庫存(_資料書.Select(Pair => Pair.Value));
         }
     }
 }

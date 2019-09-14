@@ -91,6 +91,7 @@ namespace WokyTool.通用
                 else
                 {
                     _參考Hash = 參考.ToString(false);
+                    修改.BeginEdit(_參考Hash);
                     更新編輯狀態();
                 }
             }
