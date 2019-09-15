@@ -835,13 +835,11 @@
     </Compile>
     <Compile Include="通用\資料\管理\抽象資料列管理器.cs" />
     <Compile Include="通用\資料\介面\可封存資料.cs" />
-    <Compile Include="通用\資料\介面\可轉換資料.cs" />
     <Compile Include="通用\資料\介面\可更新資料.cs" />
     <Compile Include="通用\資料\介面\可記錄資料.cs" />
     <Compile Include="通用\資料\管理\可暫存資料管理器.cs" />
     <Compile Include="通用\資料\管理\可封存資料管理器.cs" />
     <Compile Include="通用\資料\管理\可轉換資料管理器.cs" />
-    <Compile Include="通用\資料\管理\可匯入資料管理器.cs" />
     <Compile Include="通用\資料\管理\可記錄資料管理器.cs" />
     <Compile Include="通用\轉換\匯出\通用更新匯入轉換.cs" />
     <Compile Include="通用\介面\可篩選介面99.cs" />
@@ -921,7 +919,7 @@
     <Compile Include="通用\列舉\介面\可列舉資料管理介面.cs" />
     <Compile Include="通用\資料99\介面\可選取資料列管理介面99.cs" />
     <Compile Include="通用\資料99\可記錄資料99.cs" />
-    <Compile Include="通用\資料\介面\可匯入資料.cs" />
+    <Compile Include="通用\資料\介面\可轉換資料.cs" />
     <Compile Include="通用\資料\介面\可編號記錄資料.cs" />
     <Compile Include="通用\資料\介面\可編輯資料.cs" />
     <Compile Include="通用\資料\介面\基本資料.cs" />

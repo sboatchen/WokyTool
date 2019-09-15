@@ -15,14 +15,14 @@ using WokyTool.通用;
 namespace WokyTool.寄庫
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 寄庫新增匯入資料 : 新版可匯入資料<寄庫新增資料>
+    public class 寄庫新增匯入資料 : 可轉換資料<寄庫新增資料>
     {
         [可匯出]
         [JsonProperty]
         public DateTime 處理時間
         {
-            get { return 新增資料.處理時間; }
-            set { 新增資料.處理時間 = value; }
+            get { return 轉換.處理時間; }
+            set { 轉換.處理時間 = value; }
         }
 
         [可匯出]
@@ -37,24 +37,24 @@ namespace WokyTool.寄庫
         [JsonProperty]
         public int 數量
         {
-            get { return 新增資料.數量; }
-            set { 新增資料.數量 = value; }
+            get { return 轉換.數量; }
+            set { 轉換.數量 = value; }
         }
 
         [可匯出]
         [JsonProperty]
         public string 入庫單號
         {
-            get { return 新增資料.入庫單號; }
-            set { 新增資料.入庫單號 = value; }
+            get { return 轉換.入庫單號; }
+            set { 轉換.入庫單號 = value; }
         }
 
         [可匯出]
         [JsonProperty]
         public string 備註
         {
-            get { return 新增資料.備註; }
-            set { 新增資料.備註 = value; }
+            get { return 轉換.備註; }
+            set { 轉換.備註 = value; }
         }
 
         /********************************/
@@ -63,25 +63,25 @@ namespace WokyTool.寄庫
 
         public 公司資料 公司
         {
-            get { return 新增資料.公司; }
-            set { 新增資料.公司 = value; }
+            get { return 轉換.公司; }
+            set { 轉換.公司 = value; }
         }
 
         public 客戶資料 客戶
         {
-            get { return 新增資料.客戶; }
-            set { 新增資料.客戶 = value; }
+            get { return 轉換.客戶; }
+            set { 轉換.客戶 = value; }
         }
 
         public 商品資料 商品
         {
-            get { return 新增資料.商品; }
-            set { 新增資料.商品 = value; }
+            get { return 轉換.商品; }
+            set { 轉換.商品 = value; }
         }
 
-        public string 公司名稱 { get { return 新增資料.公司.名稱; } }
-        public string 客戶名稱 { get { return 新增資料.客戶.名稱; } }
-        public string 商品名稱 { get { return 新增資料.商品.名稱; } }
+        public string 公司名稱 { get { return 轉換.公司.名稱; } }
+        public string 客戶名稱 { get { return 轉換.客戶.名稱; } }
+        public string 商品名稱 { get { return 轉換.商品.名稱; } }
 
     }
 }

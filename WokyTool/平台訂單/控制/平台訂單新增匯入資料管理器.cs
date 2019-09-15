@@ -8,7 +8,7 @@ using WokyTool.通用;
 
 namespace WokyTool.平台訂單
 {
-    public class 平台訂單新增匯入資料管理器 : 可匯入資料管理器<平台訂單新增匯入資料, 平台訂單新增資料>
+    public class 平台訂單新增匯入資料管理器 : 可轉換資料管理器<平台訂單新增匯入資料, 平台訂單新增資料>
     {
         protected override 新版可篩選介面<平台訂單新增匯入資料> 取得篩選器實體()
         {
