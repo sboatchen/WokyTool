@@ -57,7 +57,7 @@ namespace WokyTool.盤點
                 資料_.物品識別 = 物品識別_;
                 資料_.大料架庫存 = 數量_;
 
-                Console.WriteLine(資料_.ToString(false));
+                //Console.WriteLine(資料_.ToString(false));
 
                 yield return 資料_;
 

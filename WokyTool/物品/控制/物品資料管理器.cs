@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using WokyTool.Common;
 using WokyTool.通用;
+using WokyTool.盤點;
 
 namespace WokyTool.物品
 {
@@ -67,6 +69,18 @@ namespace WokyTool.物品
         public 物品資料 取得_類別(string 類別_, string 顏色_)
         {
             return _資料書.Values.Where(Value => 類別_.Equals(Value.類別) && 顏色_.Equals(Value.顏色)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
+        }
+
+        public void 更新庫存(IEnumerable<盤點資料> 資料列_)
+        {
+            foreach (盤點資料 資料_ in 資料列_)
+            {
+                資料_.物品.取消編輯();
+                資料_.物品.庫存 = 資料_.目前庫存;
+            }
+
+            資料版本++;
+            儲存();
         }
     }
 }

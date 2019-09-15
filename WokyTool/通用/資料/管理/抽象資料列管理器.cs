@@ -48,6 +48,7 @@ namespace WokyTool.通用
                     _資料列舉 = 篩選器.篩選(資料列);
 
                     公用BS.DataSource = _資料列舉;
+                    公用BS.ResetBindings(false);
                 }
 
                 return _資料列舉;

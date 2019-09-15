@@ -9,8 +9,21 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
+    [JsonObject(MemberSerialization.OptIn)]
     public abstract class 可封存資料 : 可編輯資料
     {
+        [JsonProperty]
+        public DateTime 處理時間 { get; set; }
+
+        [JsonProperty]
+        public string 更新者 { get; set; }
+
+        public 可封存資料()
+        {
+            處理時間 = DateTime.Now;
+            更新者 = 系統參數.使用者名稱;
+        }
+
         public override void 取消編輯()
         {
         }

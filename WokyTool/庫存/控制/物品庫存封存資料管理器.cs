@@ -14,7 +14,7 @@ namespace WokyTool.庫存
 {
     public class 物品庫存封存資料管理器 : 可封存資料管理器<物品庫存封存資料>
     {
-        public override 列舉.編號 編號類型 { get { return 列舉.編號.物品庫存; } }
+        public override 列舉.編號 編號類型 { get { return 列舉.編號.物品庫存封存; } }
 
         public override string 檔案路徑 { get { return String.Format("進度/物品庫存/{0}_{1}.json", 系統參數.使用者名稱, 時間.目前完整時間); } }
 

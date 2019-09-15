@@ -43,6 +43,7 @@ namespace WokyTool.盤點
         protected override void 初始化資料()
         {
             _資料書 = 物品資料管理器.獨體.資料列舉2.ToDictionary(Value => Value.編號, Value => 盤點資料.建立(Value));
+            資料版本++;
         }
 
         // 取得資料
@@ -57,8 +58,8 @@ namespace WokyTool.盤點
         // 儲存檔案
         public override void 儲存()
         {
-            List<盤點封存資料> 資料列_ = _資料書.Select(Pair => new 盤點封存資料(Pair.Value)).ToList();
-            檔案.寫入(檔案路徑, JsonConvert.SerializeObject(資料列_, Formatting.Indented));
+            var 盤點封存資料列舉_ = _資料書.Select(Pair => new 盤點封存資料(Pair.Value));
+            盤點封存資料管理器.獨體.新增(盤點封存資料列舉_);
 
             // 紀錄盤點數量調整
             var 物品庫存封存資料列舉_ = _資料書.Select(Pair => 物品庫存封存資料.建立(Pair.Value)).Where(Value => Value != null);
