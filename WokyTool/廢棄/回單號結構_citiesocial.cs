@@ -41,23 +41,23 @@ namespace WokyTool.DataExport
         // 設定資料
         public int SetExcelData(Application App_, int Row_)
         {
-            App_.Cells[Row_, 2] = _Data.訂單編號;
+            //App_.Cells[Row_, 2] = _Data.訂單編號;
            
-            switch (_Data.配送公司)
-            {
-                case 列舉.配送公司.全速配:
-                    App_.Cells[Row_, 3] = 字串.新竹物流;
-                    break;
-                case 列舉.配送公司.宅配通:
-                    App_.Cells[Row_, 3] = 字串.宅配通;
-                    break;
-                default:
-                    訊息管理器.獨體.通知("回單號結構_citiesocial can't find 配送公司 " + _Data.配送公司.ToString());
-                    break;
-            }
+            //switch (_Data.配送公司)
+            //{
+            //    case 列舉.配送公司.全速配:
+            //        App_.Cells[Row_, 3] = 字串.新竹物流;
+            //        break;
+            //    case 列舉.配送公司.宅配通:
+            //        App_.Cells[Row_, 3] = 字串.宅配通;
+            //        break;
+            //    default:
+            //        訊息管理器.獨體.通知("回單號結構_citiesocial can't find 配送公司 " + _Data.配送公司.ToString());
+            //        break;
+            //}
 
-            App_.Cells[Row_, 4] = _Data.配送單號;
-            App_.Cells[Row_, 6] = _Data.數量;
+            //App_.Cells[Row_, 4] = _Data.配送單號;
+            //App_.Cells[Row_, 6] = _Data.數量;
 
             return Row_ + 1;
         }

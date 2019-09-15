@@ -37,26 +37,12 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
-            this.button31 = new System.Windows.Forms.Button();
-            this.盤點出貨 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.button36 = new System.Windows.Forms.Button();
             this.button37 = new System.Windows.Forms.Button();
             this.button38 = new System.Windows.Forms.Button();
             this.button39 = new System.Windows.Forms.Button();
@@ -78,6 +64,7 @@
             this.button44 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.盤點 = new System.Windows.Forms.Button();
             this.寄庫新增 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -88,7 +75,6 @@
             this.button34 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
-            this.盤點 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -187,46 +173,6 @@
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(15, 88);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 23);
-            this.button16.TabIndex = 15;
-            this.button16.Text = "雜支總覽";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(111, 88);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(75, 23);
-            this.button17.TabIndex = 16;
-            this.button17.Text = "雜支匯入";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(219, 88);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(75, 23);
-            this.button18.TabIndex = 17;
-            this.button18.Text = "支出總覽";
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
-            // 
-            // button19
-            // 
-            this.button19.Location = new System.Drawing.Point(271, 48);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(75, 23);
-            this.button19.TabIndex = 18;
-            this.button19.Text = "幣值總覽";
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
-            // 
             // button20
             // 
             this.button20.Location = new System.Drawing.Point(357, 36);
@@ -236,26 +182,6 @@
             this.button20.Text = "配送";
             this.button20.UseVisualStyleBackColor = true;
             this.button20.Click += new System.EventHandler(this.button20_Click);
-            // 
-            // button21
-            // 
-            this.button21.Location = new System.Drawing.Point(15, 140);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(90, 23);
-            this.button21.TabIndex = 20;
-            this.button21.Text = "平台訂單匯入";
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
-            // 
-            // button23
-            // 
-            this.button23.Location = new System.Drawing.Point(15, 198);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(75, 23);
-            this.button23.TabIndex = 22;
-            this.button23.Text = "入庫總覽";
-            this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // button24
             // 
@@ -267,16 +193,6 @@
             this.button24.UseVisualStyleBackColor = true;
             this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
-            // button26
-            // 
-            this.button26.Location = new System.Drawing.Point(15, 169);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(90, 23);
-            this.button26.TabIndex = 25;
-            this.button26.Text = "通用訂單匯入";
-            this.button26.UseVisualStyleBackColor = true;
-            this.button26.Click += new System.EventHandler(this.button26_Click);
-            // 
             // button27
             // 
             this.button27.Location = new System.Drawing.Point(219, 257);
@@ -286,66 +202,6 @@
             this.button27.Text = "測試1";
             this.button27.UseVisualStyleBackColor = true;
             this.button27.Click += new System.EventHandler(this.button27_Click);
-            // 
-            // button28
-            // 
-            this.button28.Location = new System.Drawing.Point(15, 49);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(107, 23);
-            this.button28.TabIndex = 27;
-            this.button28.Text = "退貨重進匯入";
-            this.button28.UseVisualStyleBackColor = true;
-            this.button28.Click += new System.EventHandler(this.button28_Click);
-            // 
-            // button29
-            // 
-            this.button29.Location = new System.Drawing.Point(128, 48);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(107, 23);
-            this.button29.TabIndex = 28;
-            this.button29.Text = "庫存調整匯入";
-            this.button29.UseVisualStyleBackColor = true;
-            this.button29.Click += new System.EventHandler(this.button29_Click);
-            // 
-            // button30
-            // 
-            this.button30.Location = new System.Drawing.Point(15, 227);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(75, 23);
-            this.button30.TabIndex = 29;
-            this.button30.Text = "銷售總覽";
-            this.button30.UseVisualStyleBackColor = true;
-            this.button30.Click += new System.EventHandler(this.button30_Click);
-            // 
-            // button31
-            // 
-            this.button31.Location = new System.Drawing.Point(126, 257);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(75, 23);
-            this.button31.TabIndex = 30;
-            this.button31.Text = "存檔";
-            this.button31.UseVisualStyleBackColor = true;
-            this.button31.Click += new System.EventHandler(this.button31_Click);
-            // 
-            // 盤點出貨
-            // 
-            this.盤點出貨.Location = new System.Drawing.Point(351, 169);
-            this.盤點出貨.Name = "盤點出貨";
-            this.盤點出貨.Size = new System.Drawing.Size(81, 23);
-            this.盤點出貨.TabIndex = 31;
-            this.盤點出貨.Text = "盤點出貨";
-            this.盤點出貨.UseVisualStyleBackColor = true;
-            this.盤點出貨.Click += new System.EventHandler(this.盤點出貨_Click);
-            // 
-            // button32
-            // 
-            this.button32.Location = new System.Drawing.Point(111, 169);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(90, 23);
-            this.button32.TabIndex = 32;
-            this.button32.Text = "工廠出貨訂單";
-            this.button32.UseVisualStyleBackColor = true;
-            this.button32.Click += new System.EventHandler(this.button32_Click);
             // 
             // button35
             // 
@@ -376,16 +232,6 @@
             this.button12.Text = "月報表匯入";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button36
-            // 
-            this.button36.Location = new System.Drawing.Point(219, 169);
-            this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(90, 23);
-            this.button36.TabIndex = 38;
-            this.button36.Text = "工廠訂單紀錄";
-            this.button36.UseVisualStyleBackColor = true;
-            this.button36.Click += new System.EventHandler(this.button36_Click);
             // 
             // button37
             // 
@@ -470,22 +316,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.以下功能還未處理完);
-            this.panel1.Controls.Add(this.button28);
-            this.panel1.Controls.Add(this.button19);
-            this.panel1.Controls.Add(this.button29);
-            this.panel1.Controls.Add(this.button16);
-            this.panel1.Controls.Add(this.button17);
-            this.panel1.Controls.Add(this.button18);
-            this.panel1.Controls.Add(this.button21);
-            this.panel1.Controls.Add(this.button23);
             this.panel1.Controls.Add(this.button38);
-            this.panel1.Controls.Add(this.button26);
-            this.panel1.Controls.Add(this.button30);
-            this.panel1.Controls.Add(this.button36);
-            this.panel1.Controls.Add(this.盤點出貨);
-            this.panel1.Controls.Add(this.button32);
             this.panel1.Controls.Add(this.button27);
-            this.panel1.Controls.Add(this.button31);
             this.panel1.Location = new System.Drawing.Point(508, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(467, 294);
@@ -630,6 +462,16 @@
             this.panel5.Size = new System.Drawing.Size(482, 105);
             this.panel5.TabIndex = 51;
             // 
+            // 盤點
+            // 
+            this.盤點.Location = new System.Drawing.Point(121, 69);
+            this.盤點.Name = "盤點";
+            this.盤點.Size = new System.Drawing.Size(100, 23);
+            this.盤點.TabIndex = 51;
+            this.盤點.Text = "盤點";
+            this.盤點.UseVisualStyleBackColor = true;
+            this.盤點.Click += new System.EventHandler(this.盤點_Click);
+            // 
             // 寄庫新增
             // 
             this.寄庫新增.Location = new System.Drawing.Point(6, 69);
@@ -733,16 +575,6 @@
             this.button46.UseVisualStyleBackColor = true;
             this.button46.Click += new System.EventHandler(this.button46_Click);
             // 
-            // 盤點
-            // 
-            this.盤點.Location = new System.Drawing.Point(121, 69);
-            this.盤點.Name = "盤點";
-            this.盤點.Size = new System.Drawing.Size(100, 23);
-            this.盤點.TabIndex = 51;
-            this.盤點.Text = "盤點";
-            this.盤點.UseVisualStyleBackColor = true;
-            this.盤點.Click += new System.EventHandler(this.盤點_Click);
-            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -787,26 +619,12 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button30;
-        private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Button 盤點出貨;
-        private System.Windows.Forms.Button button32;
         private System.Windows.Forms.Button button35;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button36;
         private System.Windows.Forms.Button button37;
         private System.Windows.Forms.Button button38;
         private System.Windows.Forms.Button button39;

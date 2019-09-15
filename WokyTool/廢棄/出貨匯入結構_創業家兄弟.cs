@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WokyTool.Common;
-using WokyTool.Data;
-using WokyTool.DataMgr;
-using WokyTool.通用;
-
+﻿
 namespace WokyTool.DataImport
 {
     /*
      * 時段資料不使用
      */
 
-    class 出貨匯入結構_創業家兄弟 : 商品訂單資料
+    class 出貨匯入結構_創業家兄弟 //: 商品訂單資料
     {
         /* 可讀入資訊 */
 
@@ -46,23 +37,23 @@ namespace WokyTool.DataImport
 
         /* 自用資訊 */
 
-        public string 訂單類別 { get; set; }
+        //public string 訂單類別 { get; set; }
 
         /* 無用資訊 */
 
-        public string 無用_配送時段 { get; set; }
+        //public string 無用_配送時段 { get; set; }
 
         // 共用廠商快取
-        protected static 廠商資料 _共用廠商快取 = null;
-        protected static 廠商資料 共用廠商快取
-        {
-            get
-            {
-                if (_共用廠商快取 == null)
-                    _共用廠商快取 = 廠商管理器.Instance.Get("創業家兄弟");
-                return _共用廠商快取;
-            }
-        }
+        //protected static 廠商資料 _共用廠商快取 = null;
+        //protected static 廠商資料 共用廠商快取
+        //{
+        //    get
+        //    {
+        //        if (_共用廠商快取 == null)
+        //            _共用廠商快取 = 廠商管理器.Instance.Get("創業家兄弟");
+        //        return _共用廠商快取;
+        //    }
+        //}
 
         // 是否為需處理物件
         //override public bool IsRead()
@@ -71,22 +62,22 @@ namespace WokyTool.DataImport
         //override public bool IsLegal();
 
         // 初始化
-        override public void Init()
-        {
-            群組 = 0;
+        //override public void Init()
+        //{
+        //    群組 = 0;
 
-            廠商 = 共用廠商快取;
-            商品 = 商品資料.NULL;
+        //    廠商 = 共用廠商快取;
+        //    商品 = 商品資料.NULL;
 
-            指配日期 = 時間.NULL;
-            指配時段 = 列舉.指配時段.無;
+        //    指配日期 = 時間.NULL;
+        //    指配時段 = 列舉.指配時段.無;
 
-            代收方式 = 列舉.代收方式.無;
-            代收金額 = 0;
+        //    代收方式 = 列舉.代收方式.無;
+        //    代收金額 = 0;
 
-            配送公司 = 列舉.配送公司.無;
-            配送單號 = null;
-        }
+        //    配送公司 = 列舉.配送公司.無;
+        //    配送單號 = null;
+        //}
 
         // 準備配送
         //override public void 準備配送();

@@ -1,13 +1,5 @@
 ﻿using Microsoft.Office.Interop.Excel;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WokyTool.Common;
-using WokyTool.Data;
-using WokyTool.一般訂單;
 using WokyTool.通用;
 
 namespace WokyTool.一般訂單

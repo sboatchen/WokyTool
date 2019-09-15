@@ -1,37 +1,13 @@
-﻿using LINQtoCSV;
-using LinqToExcel;
-using log4net;
-using Microsoft.Office.Interop.Excel;
+﻿using LinqToExcel;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
-using WokyTool.Data;
-using WokyTool.DataForm;
-using WokyTool.DataImport;
-using WokyTool.DataMgr;
-using WokyTool.FormOther;
-using WokyTool.FormOverview;
-using WokyTool.ImportForm;
 using WokyTool.通用;
 using WokyTool.月結帳;
-using Excel = Microsoft.Office.Interop.Excel;
-using WokyTool.聯絡人;
-using WokyTool.客戶;
-using WokyTool.物品;
-using WokyTool.公司;
-using WokyTool.商品;
 using WokyTool.平台訂單;
-using WokyTool.使用者;
 using WokyTool.發票;
 using WokyTool.測試;
 using WokyTool.廢棄;
@@ -104,109 +80,14 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編號.進貨, 列舉.視窗.總覽);
         }
 
-        private void button28_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void button29_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-            var i = new 雜支總覽視窗();
-            i.Show();
-            i.BringToFront();
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "Excel files|*.*";
-
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                try
-                {
-                    var Excel_ = new ExcelQueryFactory(openFileDialog1.FileName);
-                    var i = new 雜支匯入視窗(Excel_);
-                    i.Show();
-                    i.BringToFront();
-
-                }
-                catch (Exception Error_)
-                {
-                    MessageBox.Show("開啟檔案失敗" + Error_.ToString(), 字串.錯誤, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-            var i = new 支出總覽視窗();
-            i.Show();
-            i.BringToFront();
-        }
-
-        private void button19_Click(object sender, EventArgs e)
-        {
-            var i = new 幣值總覽視窗();
-            i.Show();
-            i.BringToFront();
-        }
-
         private void button20_Click(object sender, EventArgs e)
         {
             //視窗管理器.獨體.顯現(列舉.編號.配送, 列舉.視窗.總覽);
         }
 
-        private void button21_Click(object sender, EventArgs e)
-        {
-            var i = new 商品訂單匯入視窗();
-            i.Show();
-            i.BringToFront();
-        }
-
-        private void button23_Click(object sender, EventArgs e)
-        {
-            var i = new 入庫總覽視窗();
-            i.Show();
-            i.BringToFront();
-        }
-
         private void button24_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.公司, 列舉.視窗.總覽);
-        }
-
-        private void button26_Click(object sender, EventArgs e)
-        {
-            var i = new 物品訂單匯入視窗();
-            i.Show();
-            i.BringToFront();
-        }
-
-        private void button30_Click(object sender, EventArgs e)
-        {
-            var i = new 銷售總覽視窗();
-            i.Show();
-            i.BringToFront();
-        }
-
-        private void button31_Click(object sender, EventArgs e)
-        {
-            舊函式.SaveAll();
-        }
-
-        private void 盤點出貨_Click(object sender, EventArgs e)
-        {
-            var i = new 盤點出貨匯入視窗();
-            i.Show();
-            i.BringToFront();
-        }
-
-        private void button32_Click(object sender, EventArgs e)
-        {
         }
 
         private void button35_Click(object sender, EventArgs e)
@@ -224,11 +105,6 @@ namespace WokyTool
         private void button11_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.月結帳, 列舉.視窗.總覽);
-        }
-
-        private void button36_Click(object sender, EventArgs e)
-        {
-            非平台訂單資料管理器.Instance.Get(1);
         }
 
         private void button37_Click(object sender, EventArgs e)

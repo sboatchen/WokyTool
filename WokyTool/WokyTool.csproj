@@ -76,7 +76,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\Log.cs" />
     <Compile Include="一般訂單\控制\一般訂單資料管理器.cs" />
     <Compile Include="一般訂單\控制\一般訂單新增資料管理器.cs" />
     <Compile Include="一般訂單\視窗\一般訂單總覽視窗.cs">
@@ -981,30 +980,15 @@
     <Compile Include="通用\視窗99\樣板\詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Common\MyString.cs" />
-    <Compile Include="Common\共用.cs" />
     <Compile Include="Common\函式.cs" />
     <Compile Include="Common\可格式化_Csv.cs" />
-    <Compile Include="Common\可樣板化_Excel.cs" />
-    <Compile Include="Common\可選擇子視窗.cs" />
-    <Compile Include="Common\可選擇父視窗.cs" />
-    <Compile Include="Common\監測綁定.cs" />
-    <Compile Include="Common\可運作.cs" />
-    <Compile Include="Common\可配送.cs" />
-    <Compile Include="Common\子視窗.cs" />
     <Compile Include="通用\其他\常數.cs" />
-    <Compile Include="Common\舊列舉.cs" />
     <Compile Include="Common\字串.cs" />
     <Compile Include="Common\可格式化_Excel.cs" />
-    <Compile Include="Common\父視窗.cs" />
-    <Compile Include="Common\資料讀寫.cs" />
-    <Compile Include="Common\資料讀寫參數.cs" />
-    <Compile Include="Common\資料讀寫參數CSV.cs" />
     <Compile Include="Common\顏色處理.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_摩天.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_uDesign.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_博客來.cs" />
-    <Compile Include="DataExport\工廠出貨匯出結構.cs" />
     <Compile Include="通用\資料99\管理\資料統合管理器99.cs" />
     <Compile Include="通用\轉換\匯出\字串匯出轉換.cs" />
     <Compile Include="進貨\控制\進貨新增匯入管理器.cs" />
@@ -1063,10 +1047,8 @@
     <Compile Include="配送\轉換\配送轉換資料.cs" />
     <Compile Include="配送\轉換\配送明細轉換.cs" />
     <Compile Include="配送\轉換\配送撿貨轉換.cs" />
-    <Compile Include="DataExport\銷售匯出結構.cs" />
     <Compile Include="廢棄\出貨匯入結構_夠麻吉.cs" />
     <Compile Include="廢棄\出貨匯入結構_愛料理.cs" />
-    <Compile Include="DataExport\商品庫存匯出結構.cs" />
     <Compile Include="廢棄\回單號結構_citiesocial.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_ibonMart.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_myfone.cs" />
@@ -1075,31 +1057,11 @@
     <Compile Include="廢棄\回單號結構_創業家兄弟.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_百利市.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_神坊.cs" />
-    <Compile Include="廢棄\回單號結構_通用.cs" />
     <Compile Include="廢棄\回單號結構_遠傳.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_遠傳加購.cs" />
-    <Compile Include="DataExport\物品庫存匯出結構.cs" />
-    <Compile Include="DataExport\物品總覽匯出結構.cs" />
-    <Compile Include="DataExport\通用匯出結構.cs" />
     <Compile Include="廢棄\出貨匯入結構_ASAP.cs" />
     <Compile Include="廢棄\出貨匯入結構_citiesocial.cs" />
     <Compile Include="廢棄\出貨匯入結構_遠傳.cs" />
-    <Compile Include="DataMgr\平台訂單資料管理器.cs" />
-    <Compile Include="DataMgr\銷售管理器.cs" />
-    <Compile Include="DataMgr\非平台訂單資料管理器.cs" />
-    <Compile Include="Data\盤點歷史資料.cs" />
-    <Compile Include="Data\盤點資料.cs" />
-    <Compile Include="Data\銷售資料.cs" />
-    <Compile Include="Data\銷售資料_編輯.cs" />
-    <Compile Include="Data\物品訂單資料.cs" />
-    <Compile Include="DataMgr\入庫管理器.cs" />
-    <Compile Include="DataMgr\公司管理器.cs" />
-    <Compile Include="DataRecord\入庫紀錄資料.cs" />
-    <Compile Include="Data\入庫資料.cs" />
-    <Compile Include="Data\公司資料.cs" />
-    <Compile Include="Data\訂單資料.cs" />
-    <Compile Include="Data\訊息資料.cs" />
-    <Compile Include="Data\非平台訂單資料.cs" />
     <Compile Include="通用\資料99\管理\資料管理器99.cs" />
     <Compile Include="通用\資料99\動態匯入\動態匯入檔案結構.cs" />
     <Compile Include="通用\資料99\動態匯入\檔案匯入設定資料.cs" />
@@ -1108,102 +1070,9 @@
     <Compile Include="月結帳\資料\月結帳匯入設定資料.cs" />
     <Compile Include="月結帳\控制\月結帳匯入設定管理器.cs" />
     <Compile Include="通用\資料99\動態匯入\欄位匯入設定資料.cs" />
-    <Compile Include="FormOther\銷售篩選視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOther\銷售篩選視窗.Designer.cs">
-      <DependentUpon>銷售篩選視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormOther\測試視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOther\測試視窗.Designer.cs">
-      <DependentUpon>測試視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ImportForm\盤點出貨匯入視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ImportForm\盤點出貨匯入視窗.Designer.cs">
-      <DependentUpon>盤點出貨匯入視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormOther\訊息列印視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOther\訊息列印視窗.Designer.cs">
-      <DependentUpon>訊息列印視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormOverview\入庫總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOverview\入庫總覽視窗.Designer.cs">
-      <DependentUpon>入庫總覽視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormOverview\幣值總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOverview\幣值總覽視窗.Designer.cs">
-      <DependentUpon>幣值總覽視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormOverview\銷售總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOverview\銷售總覽視窗.Designer.cs">
-      <DependentUpon>銷售總覽視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormOverview\雜支總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOverview\雜支總覽視窗.Designer.cs">
-      <DependentUpon>雜支總覽視窗.cs</DependentUpon>
-    </Compile>
     <Compile Include="廢棄\出貨匯入結構_PCHome.cs" />
     <Compile Include="廢棄\出貨匯入結構_創業家兄弟.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_Friday.cs" />
-    <Compile Include="DataImport\雜支匯入結構.cs" />
-    <Compile Include="DataMgr\幣值管理器.cs" />
-    <Compile Include="DataMgr\商品大類管理器.cs" />
-    <Compile Include="DataMgr\商品小類管理器.cs" />
-    <Compile Include="DataMgr\商品管理器.cs" />
-    <Compile Include="DataMgr\物品品牌管理器.cs" />
-    <Compile Include="DataMgr\物品管理器.cs" />
-    <Compile Include="DataMgr\物品大類管理器.cs" />
-    <Compile Include="DataMgr\物品小類管理器.cs" />
-    <Compile Include="DataMgr\廠商管理器.cs" />
-    <Compile Include="DataMgr\編碼管理器.cs" />
-    <Compile Include="DataMgr\配送管理器.cs" />
-    <Compile Include="DataMgr\雜支管理器.cs" />
-    <Compile Include="Data\商品訂單資料.cs" />
-    <Compile Include="Data\合併訂單資料.cs" />
-    <Compile Include="Data\幣值資料.cs" />
-    <Compile Include="Data\商品大類資料.cs" />
-    <Compile Include="Data\商品小類資料.cs" />
-    <Compile Include="Data\支出資料.cs" />
-    <Compile Include="Data\物品品牌資料.cs" />
-    <Compile Include="Data\物品資料.cs" />
-    <Compile Include="Data\物品大類資料.cs" />
-    <Compile Include="Data\物品小類資料.cs" />
-    <Compile Include="Data\廠商資料.cs" />
-    <Compile Include="Data\商品資料.cs" />
-    <Compile Include="Data\編碼資料.cs" />
-    <Compile Include="Data\雜支資料.cs" />
-    <Compile Include="ImportForm\商品訂單匯入視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ImportForm\商品訂單匯入視窗.Designer.cs">
-      <DependentUpon>商品訂單匯入視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ImportForm\物品訂單匯入視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ImportForm\物品訂單匯入視窗.Designer.cs">
-      <DependentUpon>物品訂單匯入視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ImportForm\雜支匯入視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ImportForm\雜支匯入視窗.Designer.cs">
-      <DependentUpon>雜支匯入視窗.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormOther\主視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1212,18 +1081,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FormOverview\支出總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOverview\支出總覽視窗.Designer.cs">
-      <DependentUpon>支出總覽視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormOverview\編碼總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOverview\編碼總覽視窗.Designer.cs">
-      <DependentUpon>編碼總覽視窗.cs</DependentUpon>
-    </Compile>
     <Compile Include="聯絡人\控制\聯絡人資料管理器.cs" />
     <Compile Include="聯絡人\資料\聯絡人資料.cs" />
     <Compile Include="通用\介面\可儲存介面.cs" />
@@ -1231,33 +1088,6 @@
     <Compile Include="平台訂單\轉換\平台訂單合併配送轉換資料.cs" />
     <Compile Include="配送\資料\配送資料.cs" />
     <Compile Include="平台訂單\轉換\平台訂單配送轉換資料.cs" />
-    <EmbeddedResource Include="FormOther\銷售篩選視窗.resx">
-      <DependentUpon>銷售篩選視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOther\測試視窗.resx">
-      <DependentUpon>測試視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ImportForm\盤點出貨匯入視窗.resx">
-      <DependentUpon>盤點出貨匯入視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOther\訊息列印視窗.resx">
-      <DependentUpon>訊息列印視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOverview\入庫總覽視窗.resx">
-      <DependentUpon>入庫總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOverview\幣值總覽視窗.resx">
-      <DependentUpon>幣值總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOverview\銷售總覽視窗.resx">
-      <DependentUpon>銷售總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOverview\雜支總覽視窗.resx">
-      <DependentUpon>雜支總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ImportForm\商品訂單匯入視窗.resx">
-      <DependentUpon>商品訂單匯入視窗.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="一般訂單\視窗\一般訂單總覽視窗.resx">
       <DependentUpon>一般訂單總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1348,12 +1178,6 @@
     <EmbeddedResource Include="廠商\視窗\廠商總覽視窗.resx">
       <DependentUpon>廠商總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ImportForm\物品訂單匯入視窗.resx">
-      <DependentUpon>物品訂單匯入視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ImportForm\雜支匯入視窗.resx">
-      <DependentUpon>雜支匯入視窗.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -1365,12 +1189,6 @@
     </Compile>
     <EmbeddedResource Include="FormOther\主視窗.resx">
       <DependentUpon>主視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOverview\支出總覽視窗.resx">
-      <DependentUpon>支出總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOverview\編碼總覽視窗.resx">
-      <DependentUpon>編碼總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="公司\視窗\公司總覽視窗.resx">
       <DependentUpon>公司總覽視窗.cs</DependentUpon>
@@ -1598,29 +1416,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\WokyTool.Common.可配送.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Common.舊列舉+銷售狀態類型.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.入庫資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.公司資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.商品大類資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.商品小類資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.商品訂單資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.商品資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.幣值資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.廠商資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.支出資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.物品品牌資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.物品大類資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.物品小類資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.物品訂單資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.物品資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.盤點資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.編碼資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.訂單資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.訊息資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.銷售資料_編輯.datasource" />
-    <None Include="Properties\DataSources\WokyTool.Data.雜支資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.DataImport.雜支匯入結構.datasource" />
     <None Include="Properties\DataSources\WokyTool.一般訂單.一般訂單新增商品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.一般訂單.一般訂單新增資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.一般訂單.一般訂單資料.datasource" />
@@ -1636,7 +1431,6 @@
     <None Include="Properties\DataSources\WokyTool.寄庫.寄庫新增匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.寄庫.寄庫新增資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.幣值.幣值資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.平台訂單.平台訂單匯入設定資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.平台訂單.平台訂單新增匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.平台訂單.平台訂單新增資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.廠商.廠商資料.datasource" />

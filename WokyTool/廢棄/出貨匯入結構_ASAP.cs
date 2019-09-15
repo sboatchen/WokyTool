@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WokyTool.Common;
-using WokyTool.Data;
-using WokyTool.DataMgr;
-using WokyTool.通用;
-
+﻿
 namespace WokyTool.DataImport
 {
     /*
@@ -15,7 +6,7 @@ namespace WokyTool.DataImport
      * 
      */
 
-    class 出貨匯入結構_ASAP : 商品訂單資料
+    class 出貨匯入結構_ASAP //: 商品訂單資料
     {
         /***** 資訊格式
         訂單編號
@@ -47,7 +38,7 @@ namespace WokyTool.DataImport
         //public string 無用_XXXX { get; set; }
 
         // 共用廠商快取
-        protected static readonly 廠商資料 _共用廠商快取 = 廠商管理器.Instance.Get("ASAP");
+        //protected static readonly 廠商資料 _共用廠商快取 = 廠商管理器.Instance.Get("ASAP");
 
         // 是否為需處理物件
         //override public bool IsRead();
@@ -56,23 +47,23 @@ namespace WokyTool.DataImport
         //override public bool IsLegal();
 
         // 初始化
-        override public void Init()
-        {
-            群組 = 0;
+        //override public void Init()
+        //{
+        //    群組 = 0;
 
-            廠商 = _共用廠商快取;
+        //    廠商 = _共用廠商快取;
 
-            指配日期 = 時間.NULL;
-            指配時段 = 列舉.指配時段.無;
+        //    指配日期 = 時間.NULL;
+        //    指配時段 = 列舉.指配時段.無;
 
-            代收方式 = 列舉.代收方式.無;
-            代收金額 = 0;
+        //    代收方式 = 列舉.代收方式.無;
+        //    代收金額 = 0;
 
-            配送公司 = 列舉.配送公司.無;
-            配送單號 = null;
+        //    配送公司 = 列舉.配送公司.無;
+        //    配送單號 = null;
 
-            商品 = 商品管理器.Instance.Get(廠商.編號, 商品序號);
-        }
+        //    商品 = 商品管理器.Instance.Get(廠商.編號, 商品序號);
+        //}
 
         // 準備配送
         //override public void 準備配送();

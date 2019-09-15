@@ -1,14 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WokyTool.Common;
-using WokyTool.Data;
-using WokyTool.DataMgr;
 using WokyTool.客戶;
-using WokyTool.通用;
 using WokyTool.聯絡人;
 
 namespace WokyTool.捨棄
