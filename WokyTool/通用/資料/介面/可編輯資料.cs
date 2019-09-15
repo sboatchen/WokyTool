@@ -11,9 +11,17 @@ namespace WokyTool.通用
 {
     public abstract class 可編輯資料 : 基本資料, IEditableObject, 可刪除檢查介面
     {
-        public abstract void BeginEdit();
-        public abstract void CancelEdit();
-        public abstract void EndEdit();
+        public virtual void BeginEdit()
+        {
+        }
+
+        public virtual void CancelEdit()
+        {
+        }
+
+        public virtual void EndEdit()
+        {
+        }
 
         public bool 是否編輯中 { get; protected set; }
 

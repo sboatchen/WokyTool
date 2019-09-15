@@ -33,14 +33,6 @@ namespace WokyTool.通用
             更新編輯狀態();
         }
 
-        public override void BeginEdit()
-        {
-        }
-
-        public override void CancelEdit()
-        {
-        }
-
         public override void EndEdit()
         {
             更新編輯狀態();

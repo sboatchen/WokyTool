@@ -24,10 +24,6 @@ namespace WokyTool.通用
             _副本 = 副本_;
         }
 
-        public override void CancelEdit()
-        {
-        }
-
         public override void EndEdit()
         {
             //@@todo    //更新編輯狀態()

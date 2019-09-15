@@ -235,6 +235,9 @@
     </Compile>
     <Compile Include="平台訂單\資料\平台訂單新增匯入資料篩選.cs" />
     <Compile Include="平台訂單\資料\平台訂單新增資料篩選.cs" />
+    <Compile Include="庫存\控制\物品庫存封存資料管理器.cs" />
+    <Compile Include="庫存\資料\物品庫存封存資料.cs" />
+    <Compile Include="庫存\資料\物品庫存封存資料篩選.cs" />
     <Compile Include="盤點\控制\盤點更新資料管理器.cs" />
     <Compile Include="盤點\控制\盤點資料管理器.cs" />
     <Compile Include="盤點\視窗\盤點篩選視窗.cs">
@@ -269,6 +272,7 @@
     </Compile>
     <Compile Include="盤點\資料\盤點更新資料.cs" />
     <Compile Include="盤點\資料\盤點更新資料篩選.cs" />
+    <Compile Include="盤點\資料\盤點封存資料.cs" />
     <Compile Include="盤點\資料\盤點資料.cs" />
     <Compile Include="盤點\資料\盤點資料篩選.cs" />
     <Compile Include="盤點\轉換\盤點更新轉換_小料架.cs" />
@@ -829,10 +833,13 @@
     <Compile Include="通用\視窗\複寫\MyDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="通用\資料\管理\抽象資料列管理器.cs" />
+    <Compile Include="通用\資料\介面\可封存資料.cs" />
     <Compile Include="通用\資料\介面\可轉換資料.cs" />
     <Compile Include="通用\資料\介面\可更新資料.cs" />
     <Compile Include="通用\資料\介面\可記錄資料.cs" />
     <Compile Include="通用\資料\管理\可暫存資料管理器.cs" />
+    <Compile Include="通用\資料\管理\可封存資料管理器.cs" />
     <Compile Include="通用\資料\管理\可轉換資料管理器.cs" />
     <Compile Include="通用\資料\管理\可匯入資料管理器.cs" />
     <Compile Include="通用\資料\管理\可記錄資料管理器.cs" />

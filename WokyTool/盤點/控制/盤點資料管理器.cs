@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.物品;
+using WokyTool.庫存;
 using WokyTool.通用;
 
 namespace WokyTool.盤點
@@ -16,6 +17,7 @@ namespace WokyTool.盤點
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.盤點; } }
 
+        public override bool 是否備份 { get { return false; } }
         public override bool 是否可編輯 { get { return 系統參數.匯入訂單; } }    //@@ 新增更新庫存
 
         public override string 檔案路徑 { get { return String.Format("進度/盤點/{0}_{1}.json", 系統參數.使用者名稱, 時間.目前完整時間); } }
@@ -55,6 +57,13 @@ namespace WokyTool.盤點
         // 儲存檔案
         public override void 儲存()
         {
+            List<盤點封存資料> 資料列_ = _資料書.Select(Pair => new 盤點封存資料(Pair.Value)).ToList();
+            檔案.寫入(檔案路徑, JsonConvert.SerializeObject(資料列_, Formatting.Indented));
+
+            // 紀錄盤點數量調整
+            var 物品庫存封存資料列舉_ = _資料書.Select(Pair => 物品庫存封存資料.建立(Pair.Value)).Where(Value => Value != null);
+            物品庫存封存資料管理器.獨體.新增(物品庫存封存資料列舉_);
+
             物品資料管理器.獨體.更新庫存(_資料書.Select(Pair => Pair.Value));
         }
     }

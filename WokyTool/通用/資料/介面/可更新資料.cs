@@ -97,14 +97,6 @@ namespace WokyTool.通用
             }
         }
 
-        public override void BeginEdit()
-        {
-        }
-
-        public override void CancelEdit()
-        {
-        }
-
         public override void EndEdit()
         {
             //Console.WriteLine("完成編輯:" + this.ToString(false));
