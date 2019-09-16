@@ -16,7 +16,7 @@ using WokyTool.通用;
 
 namespace WokyTool.盤點
 {
-    public partial class 盤點更新視窗 : 更新總覽視窗
+    public partial class 盤點更新視窗 : 新增總覽視窗
     {
         public override Type 資料類型 { get { return typeof(盤點更新資料); } }
 

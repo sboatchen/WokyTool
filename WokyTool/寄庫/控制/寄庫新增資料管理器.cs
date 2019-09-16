@@ -11,17 +11,9 @@ using WokyTool.通用;
 
 namespace WokyTool.寄庫
 {
-    public class 寄庫新增資料管理器 : 可記錄資料管理器<寄庫新增資料>
+    public class 寄庫新增資料管理器 : 可暫存資料管理器<寄庫新增資料>
     {
-        public override 列舉.編號 編號類型 { get { return 列舉.編號.寄庫新增; } }
-
-        public override bool 是否可編輯 { get { return 系統參數.匯入訂單; } }    //@@ 新增更新庫存
-
-        public override string 檔案路徑 { get { return String.Format("進度/寄庫待封存/{0}_{1}.json", 系統參數.使用者名稱, 時間.目前完整時間); } }
-
-        public override 寄庫新增資料 不篩選資料 { get { return null; } }
-        public override 寄庫新增資料 空白資料 { get { return 寄庫新增資料.空白; } }
-        public override 寄庫新增資料 錯誤資料 { get { return 寄庫新增資料.錯誤; } }
+        public string 檔案路徑 { get { return String.Format("進度/寄庫/{0}_{1}.json", 系統參數.使用者名稱, 時間.目前完整時間); } }
 
         protected override 新版可篩選介面<寄庫新增資料> 取得篩選器實體()
         {
@@ -37,22 +29,22 @@ namespace WokyTool.寄庫
         {
         }
 
-        protected override void 初始化資料()
+        public override void 完成編輯(bool 是否紀錄_)
         {
-            _資料列 = new List<寄庫新增資料>();
-        }
-
-        // 儲存檔案
-        public override void 儲存()
-        {
-            if (_資料列.Count != 0)
+            if (是否紀錄_)
             {
-                _目前資料列版本 = 資料版本;
+                例外檢查器 例外檢查器_ = new 例外檢查器();
+                合法檢查(例外檢查器_);
 
-                // 更新資料
-                檔案.寫入(檔案路徑, JsonConvert.SerializeObject(_資料列, Formatting.Indented), 是否加密);
+                foreach (寄庫新增資料 資料_ in 資料列)
+                {
+                    資料_.紀錄編輯(true);
+                }
 
-                _資料列.Clear();
+                檔案.寫入(檔案路徑, JsonConvert.SerializeObject(資料列, Formatting.Indented), false);
+
+                資料列.Clear();
+                資料版本++;
             }
         }
     }

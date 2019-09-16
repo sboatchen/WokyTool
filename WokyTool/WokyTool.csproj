@@ -238,7 +238,6 @@
     <Compile Include="庫存\資料\物品庫存封存資料.cs" />
     <Compile Include="庫存\資料\物品庫存封存資料篩選.cs" />
     <Compile Include="盤點\控制\盤點更新資料管理器.cs" />
-    <Compile Include="盤點\控制\盤點封存資料管理器.cs" />
     <Compile Include="盤點\控制\盤點資料管理器.cs" />
     <Compile Include="盤點\視窗\盤點篩選視窗.cs">
       <SubType>Form</SubType>
@@ -786,7 +785,7 @@
     <Compile Include="通用\視窗\其他\抽象列舉選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="通用\視窗\樣板\更新篩選視窗.cs">
+    <Compile Include="通用\視窗\樣板\新增篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="通用\視窗\複寫\MyDateTimePicker.cs">
@@ -828,7 +827,7 @@
     <Compile Include="通用\視窗\選取\更新狀態選取元件.Designer.cs">
       <DependentUpon>更新狀態選取元件.cs</DependentUpon>
     </Compile>
-    <Compile Include="通用\視窗\樣板\更新詳細視窗.cs">
+    <Compile Include="通用\視窗\樣板\新增詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="通用\視窗\複寫\MyDataGridView.cs">
@@ -897,16 +896,16 @@
     <Compile Include="通用\視窗\其他\新版頁索引元件.Designer.cs">
       <DependentUpon>新版頁索引元件.cs</DependentUpon>
     </Compile>
-    <Compile Include="通用\視窗\樣板\更新總覽視窗.cs">
+    <Compile Include="通用\視窗\樣板\新增總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="通用\視窗\樣板\新版詳細視窗.cs">
+    <Compile Include="通用\視窗\樣板\獨體詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="通用\視窗\樣板\新版總覽視窗.cs">
+    <Compile Include="通用\視窗\樣板\獨體總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="通用\視窗\樣板\新版篩選視窗.cs">
+    <Compile Include="通用\視窗\樣板\獨體篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="通用\視窗\樣板\鎖定視窗.cs">
@@ -948,7 +947,6 @@
     <Compile Include="通用\視窗99\樣板\匯入詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="通用\資料99\管理\暫存資料管理器99.cs" />
     <Compile Include="通用\資料99\管理\匯入資料管理器99.cs" />
     <Compile Include="通用\資料99\靜態匯入資料99.cs" />
     <Compile Include="物品\資料\物品品牌資料.cs" />
@@ -1075,10 +1073,10 @@
     <Compile Include="廢棄\出貨匯入結構_PCHome.cs" />
     <Compile Include="廢棄\出貨匯入結構_創業家兄弟.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_Friday.cs" />
-    <Compile Include="FormOther\主視窗.cs">
+    <Compile Include="主視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormOther\主視窗.Designer.cs">
+    <Compile Include="主視窗.Designer.cs">
       <DependentUpon>主視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -1189,7 +1187,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormOther\主視窗.resx">
+    <EmbeddedResource Include="主視窗.resx">
       <DependentUpon>主視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="公司\視窗\公司總覽視窗.resx">

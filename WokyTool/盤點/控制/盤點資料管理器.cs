@@ -20,7 +20,7 @@ namespace WokyTool.盤點
         public override bool 是否備份 { get { return false; } }
         public override bool 是否可編輯 { get { return 系統參數.匯入訂單; } }    //@@ 新增更新庫存
 
-        public override string 檔案路徑 { get { return String.Format("進度/盤點/{0}_{1}.json", 系統參數.使用者名稱, 時間.目前完整時間); } }
+        public override string 檔案路徑 { get { return String.Format("封存/盤點/{0}_{1}.json", 系統參數.使用者名稱, 時間.目前完整時間); } }
 
         public override 盤點資料 不篩選資料 { get { return null; } }
         public override 盤點資料 空白資料 { get { return 盤點資料.空白; } }
@@ -58,13 +58,15 @@ namespace WokyTool.盤點
         // 儲存檔案
         public override void 儲存()
         {
-            var 盤點封存資料列舉_ = _資料書.Select(Pair => new 盤點封存資料(Pair.Value));
-            盤點封存資料管理器.獨體.新增(盤點封存資料列舉_);
+            // 紀錄盤點資料
+            var 盤點封存資料列_ = _資料書.Select(Pair => new 盤點封存資料(Pair.Value)).ToList();
+            檔案.寫入(檔案路徑, JsonConvert.SerializeObject(盤點封存資料列_, Formatting.Indented), false);
 
-            // 紀錄盤點數量調整
+            // 紀錄庫存調整
             var 物品庫存封存資料列舉_ = _資料書.Select(Pair => 物品庫存封存資料.建立(Pair.Value)).Where(Value => Value != null);
             物品庫存封存資料管理器.獨體.新增(物品庫存封存資料列舉_);
 
+            // 更新庫存
             物品資料管理器.獨體.更新庫存(_資料書.Select(Pair => Pair.Value));
         }
     }
