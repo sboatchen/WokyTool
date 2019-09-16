@@ -18,7 +18,7 @@ using WokyTool.通用;
 
 namespace WokyTool.盤點
 {
-    public partial class 盤點總覽視窗: 新版總覽視窗
+    public partial class 盤點總覽視窗: 獨體總覽視窗
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.盤點; } }
         public override Type 資料類型 { get { return typeof(盤點資料); } }

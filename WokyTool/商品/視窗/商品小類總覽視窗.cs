@@ -11,7 +11,7 @@ using WokyTool.通用;
 
 namespace WokyTool.商品
 {
-    public partial class 商品小類總覽視窗 : 新版總覽視窗
+    public partial class 商品小類總覽視窗 : 獨體總覽視窗
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.商品小類; } }
         public override Type 資料類型 { get { return typeof(商品小類資料); } }

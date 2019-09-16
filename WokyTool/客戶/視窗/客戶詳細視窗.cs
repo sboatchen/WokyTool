@@ -13,7 +13,7 @@ using WokyTool.聯絡人;
 
 namespace WokyTool.客戶
 {
-    public partial class 客戶詳細視窗 : 新版詳細視窗
+    public partial class 客戶詳細視窗 : 獨體詳細視窗
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.客戶; } }
 

@@ -18,7 +18,7 @@ using WokyTool.通用;
 
 namespace WokyTool.配送
 {
-    public partial class 配送新增總覽視窗 : 更新總覽視窗
+    public partial class 配送新增總覽視窗 : 新增總覽視窗
     {
         public override Type 資料類型 { get { return typeof(配送轉換資料); } }
 

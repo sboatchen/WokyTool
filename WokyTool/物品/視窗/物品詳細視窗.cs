@@ -11,7 +11,7 @@ using WokyTool.通用;
 
 namespace WokyTool.物品{
 
-    public partial class 物品詳細視窗 : 新版詳細視窗
+    public partial class 物品詳細視窗 : 獨體詳細視窗
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.物品; } }
 

@@ -12,7 +12,7 @@ using WokyTool.通用;
 
 namespace WokyTool.聯絡人
 {
-    public partial class 聯絡人總覽視窗 : 新版總覽視窗
+    public partial class 聯絡人總覽視窗 : 獨體總覽視窗
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.聯絡人; } }
         public override Type 資料類型 { get { return typeof(聯絡人資料); } }

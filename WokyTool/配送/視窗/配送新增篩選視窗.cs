@@ -14,7 +14,7 @@ using WokyTool.通用;
 
 namespace WokyTool.配送
 {
-    public partial class 配送新增篩選視窗 : 更新篩選視窗
+    public partial class 配送新增篩選視窗 : 新增篩選視窗
     {
         // 介面編輯呈現用
         public 配送新增篩選視窗()

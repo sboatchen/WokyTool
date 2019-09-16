@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace WokyTool.通用
 {
-    public abstract class 抽象資料列管理器<T> : 可編輯列舉資料管理介面
+    public abstract class 抽象資料列管理器<T> : 可編輯列舉資料管理介面, 可新增介面<T>
         where T : 可編輯資料
     {
         public List<T> 資料列 { get; protected set; }

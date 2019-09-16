@@ -9,7 +9,7 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public class 新版總覽視窗 : Form, 通用視窗介面
+    public class 獨體總覽視窗 : Form, 通用視窗介面
     {
         public static 列舉.視窗 視窗類型 { get { return 列舉.視窗.總覽; } }
         public virtual 列舉.編號 編號類型 { get { throw new Exception(this.GetType().Name + " 未設定編號類型"); } }

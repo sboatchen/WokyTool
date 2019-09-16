@@ -10,15 +10,22 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public class 新版篩選視窗 : Form, 通用視窗介面
+    public class 新增篩選視窗 : Form, 通用視窗介面   //@@ TODO rename to 匯入篩選視窗
     {
-        public static 列舉.視窗 視窗類型 { get { return 列舉.視窗.篩選; } }
-        public virtual 列舉.編號 編號類型 { get { throw new Exception(this.GetType().Name + " 未設定編號類型"); } }
-        public virtual 視窗可篩選介面 視窗篩選器 { get { throw new Exception(this.GetType().Name + " 未設定視窗篩選器"); } }
+        public 視窗可篩選介面 視窗篩選器 { get; protected set; }
 
         public bool 是否關閉 { get; protected set; }
 
         private List<Action> _視窗凍結工作列 = new List<Action>();
+
+        public 新增篩選視窗()
+        {
+        }
+
+        public 新增篩選視窗(視窗可篩選介面 視窗篩選器_)
+        {
+            視窗篩選器 = 視窗篩選器_;
+        }
 
         public virtual void 初始化()
         {
@@ -95,6 +102,14 @@ namespace WokyTool.通用
                 _視窗凍結工作列.Add(() => 屬性_.SetValue(視窗篩選器, (int)元件_.Value));
             else
                 _視窗凍結工作列.Add(() => 屬性_.SetValue(視窗篩選器, 元件_.Value));
+        }
+
+        protected void 資料綁定(MyDateTimePicker 元件_, string 屬性名稱_)
+        {
+            元件_.DataBindings.Add("Value", 視窗篩選器, 屬性名稱_);
+
+            PropertyInfo 屬性_ = 視窗篩選器.GetType().GetProperty(屬性名稱_);
+            _視窗凍結工作列.Add(() => 屬性_.SetValue(視窗篩選器, 元件_.Value));
         }
 
         /********************************/

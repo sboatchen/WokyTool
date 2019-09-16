@@ -10,7 +10,7 @@ using WokyTool.Common;
 
 namespace WokyTool.通用
 {
-    public class 更新詳細視窗 : Form, 通用視窗介面  //@@ TODO rename to 匯入詳細視窗
+    public class 新增詳細視窗 : Form, 通用視窗介面  //@@ TODO rename to 匯入詳細視窗
     {
         public virtual 新版頁索引元件 頁索引 { get { throw new Exception(this.GetType().Name + " 未設定頁索引"); } }
 
@@ -20,11 +20,11 @@ namespace WokyTool.通用
         public int 資料版本 { get; protected set; }
         public bool 是否關閉 { get; protected set; }
 
-        public 更新詳細視窗()
+        public 新增詳細視窗()
         {
         }
 
-        public 更新詳細視窗(可編輯列舉資料管理介面 更新管理器_)
+        public 新增詳細視窗(可編輯列舉資料管理介面 更新管理器_)
         {
             更新管理器 = 更新管理器_;
         }

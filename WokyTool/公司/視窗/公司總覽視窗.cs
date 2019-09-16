@@ -11,7 +11,7 @@ using WokyTool.通用;
 
 namespace WokyTool.公司
 {
-    public partial class 公司總覽視窗 : 新版總覽視窗
+    public partial class 公司總覽視窗 : 獨體總覽視窗
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.公司; } }
         public override Type 資料類型 { get { return typeof(公司資料); } }
