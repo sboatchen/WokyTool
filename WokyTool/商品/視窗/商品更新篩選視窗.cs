@@ -15,7 +15,7 @@ using WokyTool.物品;
 
 namespace WokyTool.商品{
 
-    public partial class 商品更新篩選視窗 : 更新篩選視窗
+    public partial class 商品更新篩選視窗 : 新增篩選視窗
     {
         // 介面編輯呈現用
         public 商品更新篩選視窗() : base()

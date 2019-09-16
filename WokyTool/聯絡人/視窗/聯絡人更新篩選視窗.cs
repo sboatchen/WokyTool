@@ -12,7 +12,7 @@ using WokyTool.通用;
 
 namespace WokyTool.聯絡人
 {
-    public partial class 聯絡人更新篩選視窗 : 更新篩選視窗
+    public partial class 聯絡人更新篩選視窗 : 新增篩選視窗
     {
         // 介面編輯呈現用
         public 聯絡人更新篩選視窗() : base()

@@ -12,7 +12,7 @@ using WokyTool.通用;
 
 namespace WokyTool.聯絡人
 {
-    public partial class 聯絡人更新詳細視窗 : 更新詳細視窗
+    public partial class 聯絡人更新詳細視窗 : 新增詳細視窗
     {
         public override 新版頁索引元件 頁索引 { get { return this.新版頁索引元件1; } }
 

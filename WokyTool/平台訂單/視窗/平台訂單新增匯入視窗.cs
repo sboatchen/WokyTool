@@ -16,7 +16,7 @@ using WokyTool.通用;
 
 namespace WokyTool.平台訂單
 {
-    public partial class 平台訂單新增匯入視窗 : 更新總覽視窗
+    public partial class 平台訂單新增匯入視窗 : 新增總覽視窗
     {
         public override Type 資料類型 { get { return typeof(平台訂單新增匯入資料); } }
 

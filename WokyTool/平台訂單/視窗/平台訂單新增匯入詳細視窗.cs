@@ -14,7 +14,7 @@ using WokyTool.通用;
 
 namespace WokyTool.平台訂單
 {
-    public partial class 平台訂單新增匯入詳細視窗 : 更新詳細視窗
+    public partial class 平台訂單新增匯入詳細視窗 : 新增詳細視窗
     {
         public override 新版頁索引元件 頁索引 { get { return this.新版頁索引元件1; } }
 

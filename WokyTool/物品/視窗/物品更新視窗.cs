@@ -12,7 +12,7 @@ using WokyTool.通用;
 
 namespace WokyTool.物品
 {
-    public partial class 物品更新視窗 : 更新總覽視窗
+    public partial class 物品更新視窗 : 新增總覽視窗
     {
         public override Type 資料類型 { get { return typeof(物品更新資料); } }
 
