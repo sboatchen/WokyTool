@@ -76,6 +76,14 @@ namespace WokyTool.通用
             }
         }
 
+        public static string 目前月
+        {
+            get
+            {
+                return DateTime.Now.ToString("yyyyMM");
+            }
+        }
+
         public static string 目前時間
         {
             get

@@ -185,6 +185,7 @@
     <Compile Include="商品\資料\商品更新資料.cs" />
     <Compile Include="商品\資料\商品更新資料篩選.cs" />
     <Compile Include="寄庫\控制\寄庫匯入資料管理器.cs" />
+    <Compile Include="寄庫\控制\寄庫資料管理器.cs" />
     <Compile Include="寄庫\控制\寄庫暫存資料管理器.cs" />
     <Compile Include="寄庫\視窗\寄庫暫存篩選視窗.cs">
       <SubType>Form</SubType>
@@ -729,7 +730,7 @@
     <Compile Include="物品\視窗\物品更新視窗.Designer.cs">
       <DependentUpon>物品更新視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\資料\物品合併資料999.cs" />
+    <Compile Include="物品\資料\物品合併資料.cs" />
     <Compile Include="物品\資料\物品小類資料篩選.cs" />
     <Compile Include="物品\資料\物品品牌資料篩選.cs" />
     <Compile Include="物品\資料\物品大類資料篩選.cs" />

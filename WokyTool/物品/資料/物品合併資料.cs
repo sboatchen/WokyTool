@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.商品;
 using WokyTool.通用;
@@ -11,7 +10,7 @@ using WokyTool.通用;
 namespace WokyTool.物品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 物品合併資料 : 基本資料  //@@ 999
+    public class 物品合併資料 : 基本資料
     {
         public static 物品合併資料 共用 = new 物品合併資料();
 
