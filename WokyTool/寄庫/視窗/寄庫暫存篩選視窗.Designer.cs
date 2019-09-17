@@ -2,7 +2,7 @@
 using WokyTool.通用;
 namespace WokyTool.寄庫
 {
-    partial class 寄庫匯入篩選視窗
+    partial class 寄庫暫存篩選視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -165,7 +165,7 @@ namespace WokyTool.寄庫
             this.商品.TabIndex = 124;
             this.商品.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
-            // 寄庫匯入篩選視窗
+            // 寄庫暫存篩選視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -184,8 +184,8 @@ namespace WokyTool.寄庫
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Name = "寄庫匯入篩選視窗";
-            this.Text = "寄庫匯入篩選視窗";
+            this.Name = "寄庫暫存篩選視窗";
+            this.Text = "寄庫暫存篩選視窗";
             this.ResumeLayout(false);
             this.PerformLayout();
 

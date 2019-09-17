@@ -75,7 +75,7 @@ namespace WokyTool.平台訂單
 
         private void _on商品列表更新(object sender, EventArgs e)
         {
-            Console.WriteLine("_on商品列表更新");
+            //Console.WriteLine("_on商品列表更新");
             this.商品.篩選器.公司 = (公司資料)this.公司.SelectedItem;
             this.商品.篩選器.客戶 = (客戶資料)this.客戶.SelectedItem;
         }

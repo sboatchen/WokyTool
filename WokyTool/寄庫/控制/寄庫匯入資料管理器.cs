@@ -19,7 +19,7 @@ namespace WokyTool.寄庫
 
         protected override 可新增介面<寄庫資料> 記錄器
         {
-            get { return 寄庫資料管理器.獨體; }
+            get { return 寄庫暫存資料管理器.獨體; }
         }
 
         // 建構子

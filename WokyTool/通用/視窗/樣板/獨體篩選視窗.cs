@@ -97,6 +97,14 @@ namespace WokyTool.通用
                 _視窗凍結工作列.Add(() => 屬性_.SetValue(視窗篩選器, 元件_.Value));
         }
 
+        protected void 資料綁定(MyDateTimePicker 元件_, string 屬性名稱_)
+        {
+            元件_.DataBindings.Add("Value", 視窗篩選器, 屬性名稱_);
+
+            PropertyInfo 屬性_ = 視窗篩選器.GetType().GetProperty(屬性名稱_);
+            _視窗凍結工作列.Add(() => 屬性_.SetValue(視窗篩選器, 元件_.Value));
+        }
+
         /********************************/
         // 通用視窗介面
 

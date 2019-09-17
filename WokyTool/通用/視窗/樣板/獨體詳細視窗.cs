@@ -104,6 +104,12 @@ namespace WokyTool.通用
             元件_.ReadOnly |= !編輯管理器.是否可編輯;
         }
 
+        protected void 資料綁定(MyDateTimePicker 元件_, string 屬性名稱_)
+        {
+            元件_.DataBindings.Add("Value", 資料BS, 屬性名稱_);
+            元件_.Enabled |= 編輯管理器.是否可編輯;
+        }
+
         /********************************/
         // 通用視窗介面
 

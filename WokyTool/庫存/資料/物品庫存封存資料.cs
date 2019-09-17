@@ -52,7 +52,7 @@ namespace WokyTool.庫存
         {
             get
             {
-                if (庫存 == 0)
+                if (庫存 <= 0)
                     return 最後進貨成本;
                 else
                     return 庫存總成本 / 庫存;

@@ -13,7 +13,7 @@ using WokyTool.通用;
 
 namespace WokyTool.寄庫
 {
-    public class 寄庫資料管理器 : 可暫存資料管理器<寄庫資料>
+    public class 寄庫暫存資料管理器 : 可暫存資料管理器<寄庫資料>
     {
         public string 檔案路徑 { get { return String.Format("進度/寄庫/{0}_{1}.json", 系統參數.使用者名稱, 時間.目前完整時間); } }
 
@@ -23,11 +23,11 @@ namespace WokyTool.寄庫
         }
 
         // 獨體
-        private static readonly 寄庫資料管理器 _獨體 = new 寄庫資料管理器();
-        public static 寄庫資料管理器 獨體 { get { return _獨體; } }
+        private static readonly 寄庫暫存資料管理器 _獨體 = new 寄庫暫存資料管理器();
+        public static 寄庫暫存資料管理器 獨體 { get { return _獨體; } }
 
         // 建構子
-        private 寄庫資料管理器()
+        private 寄庫暫存資料管理器()
         {
         }
 
