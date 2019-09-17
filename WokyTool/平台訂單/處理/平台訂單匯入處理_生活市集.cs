@@ -25,17 +25,9 @@ namespace WokyTool.平台訂單
 
         public Encoding 編碼 { get { return Encoding.Default; } }
 
-
-        protected string[] _標頭列;
-
         public 平台訂單匯入處理_生活市集()
         {
             客戶 = 客戶資料管理器.獨體.取得("生活市集");
-        }
-
-        public void 讀出標頭(string[] 標頭列_)
-        {
-            this._標頭列 = 標頭列_;
         }
 
         public IEnumerable<平台訂單新增匯入資料> 讀出資料(string[] 資料列_)

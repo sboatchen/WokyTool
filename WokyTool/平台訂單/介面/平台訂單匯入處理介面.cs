@@ -20,6 +20,13 @@ namespace WokyTool.平台訂單
         public 公司資料 公司 { get; set; }
         public 客戶資料 客戶 { get; set; }
 
+        protected string[] _標頭列;
+
+        public virtual void 讀出標頭(string[] 標頭列_)
+        {
+            this._標頭列 = 標頭列_;
+        }
+
         public virtual void 後續處理(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
         }

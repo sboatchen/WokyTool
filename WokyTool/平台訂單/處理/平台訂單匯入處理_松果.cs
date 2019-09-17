@@ -27,16 +27,9 @@ namespace WokyTool.平台訂單
 
         public string 密碼 { get { return null; } }
 
-        protected string[] _標頭列;
-
         public 平台訂單匯入處理_松果()
         {
             客戶 = 客戶資料管理器.獨體.取得("松果");
-        }
-
-        public void 讀出標頭(string[] 標頭列_)
-        {
-            this._標頭列 = 標頭列_;
         }
 
         public IEnumerable<平台訂單新增匯入資料> 讀出資料(string[] 資料列_)

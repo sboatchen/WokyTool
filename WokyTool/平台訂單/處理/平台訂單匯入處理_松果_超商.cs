@@ -31,14 +31,12 @@ namespace WokyTool.平台訂單
 
         public 列舉.配送公司 配送公司 { get; set; }
 
-        protected string[] _標頭列;
-
         public 平台訂單匯入處理_松果_超商()
         {
             客戶 = 客戶資料管理器.獨體.取得("松果");
         }
 
-        public void 讀出標頭(string[] 標頭列_)
+        public override void 讀出標頭(string[] 標頭列_)
         {
             if (配送公司 != 列舉.配送公司.SEVEN && 配送公司 != 列舉.配送公司.全家)
             {
