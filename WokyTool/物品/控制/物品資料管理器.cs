@@ -90,10 +90,10 @@ namespace WokyTool.物品
             儲存();
         }
 
-        public void 更新庫存(List<寄庫新增資料> 資料列_)
+        public void 更新庫存(List<寄庫資料> 資料列_)
         {
             HashSet<物品資料> 物品異動群_ = new HashSet<物品資料>();
-            foreach (寄庫新增資料 資料_ in 資料列_)
+            foreach (寄庫資料 資料_ in 資料列_)
             {
                 if (資料_.商品.組成 == null)
                     continue;

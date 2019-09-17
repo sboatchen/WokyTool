@@ -16,7 +16,7 @@ using WokyTool.通用;
 namespace WokyTool.寄庫
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 寄庫新增資料 : 新版可記錄資料
+    public class 寄庫資料 : 新版可記錄資料
     {
         [可匯出]
         [JsonProperty]
@@ -92,9 +92,9 @@ namespace WokyTool.寄庫
 
         /********************************/
 
-        public 寄庫新增資料 Self { get { return this; } }
+        public 寄庫資料 Self { get { return this; } }
 
-        public 寄庫新增資料()
+        public 寄庫資料()
         {
             處理時間 = DateTime.Now;
 
@@ -103,7 +103,7 @@ namespace WokyTool.寄庫
             商品 = 商品資料.空白;
         }
 
-        public static readonly 寄庫新增資料 空白 = new 寄庫新增資料
+        public static readonly 寄庫資料 空白 = new 寄庫資料
         {
             處理時間 = default(DateTime),
 
@@ -117,7 +117,7 @@ namespace WokyTool.寄庫
             備註 = 字串.無,
         };
 
-        public static 寄庫新增資料 錯誤 = new 寄庫新增資料
+        public static 寄庫資料 錯誤 = new 寄庫資料
         {
             處理時間 = default(DateTime),
 

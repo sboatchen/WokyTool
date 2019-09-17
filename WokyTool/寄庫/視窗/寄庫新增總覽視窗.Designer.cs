@@ -1,6 +1,6 @@
 ﻿namespace WokyTool.寄庫
 {
-    partial class 寄庫新增總覽視窗
+    partial class 寄庫總覽視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,7 @@
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.入庫單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.寄庫新增資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.寄庫資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +46,7 @@
             this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.通用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.寄庫新增資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.寄庫資料BindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@
             this.數量DataGridViewTextBoxColumn,
             this.入庫單號DataGridViewTextBoxColumn,
             this.備註DataGridViewTextBoxColumn});
-            this.myDataGridView1.DataSource = this.寄庫新增資料BindingSource;
+            this.myDataGridView1.DataSource = this.寄庫資料BindingSource;
             this.myDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.myDataGridView1.Location = new System.Drawing.Point(0, 28);
             this.myDataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -118,9 +118,9 @@
             this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
             this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
             // 
-            // 寄庫新增資料BindingSource
+            // 寄庫資料BindingSource
             // 
-            this.寄庫新增資料BindingSource.DataSource = typeof(WokyTool.寄庫.寄庫新增資料);
+            this.寄庫資料BindingSource.DataSource = typeof(WokyTool.寄庫.寄庫資料);
             // 
             // menuStrip1
             // 
@@ -178,7 +178,7 @@
             this.通用ToolStripMenuItem.Text = "通用";
             this.通用ToolStripMenuItem.Click += new System.EventHandler(this.通用ToolStripMenuItem_Click);
             // 
-            // 寄庫新增總覽視窗
+            // 寄庫總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -186,10 +186,10 @@
             this.Controls.Add(this.myDataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "寄庫新增總覽視窗";
-            this.Text = "寄庫新增總覽視窗";
+            this.Name = "寄庫總覽視窗";
+            this.Text = "寄庫總覽視窗";
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.寄庫新增資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.寄庫資料BindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -214,6 +214,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 入庫單號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 寄庫新增資料BindingSource;
+        private System.Windows.Forms.BindingSource 寄庫資料BindingSource;
     }
 }

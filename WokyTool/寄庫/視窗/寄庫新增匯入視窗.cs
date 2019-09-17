@@ -16,9 +16,9 @@ using WokyTool.通用;
 
 namespace WokyTool.寄庫
 {
-    public partial class 寄庫新增匯入視窗 : 新增總覽視窗
+    public partial class 寄庫匯入視窗 : 新增總覽視窗
     {
-        public override Type 資料類型 { get { return typeof(寄庫新增匯入資料); } }
+        public override Type 資料類型 { get { return typeof(寄庫匯入資料); } }
 
         public override 可編輯列舉資料管理介面 更新管理器 { get { return 資料管理器; } }
 
@@ -31,7 +31,7 @@ namespace WokyTool.寄庫
         {
             get
             {
-                var 視窗_ = new 寄庫新增匯入篩選視窗(資料管理器.視窗篩選器);
+                var 視窗_ = new 寄庫匯入篩選視窗(資料管理器.視窗篩選器);
                 視窗_.初始化();
                 return 視窗_;
             }
@@ -41,25 +41,25 @@ namespace WokyTool.寄庫
         {
             get
             {
-                var 視窗_ = new 寄庫新增匯入詳細視窗(資料管理器);
+                var 視窗_ = new 寄庫匯入詳細視窗(資料管理器);
                 視窗_.初始化();
                 return 視窗_;
             }
         }
 
-        public 寄庫新增匯入資料管理器 資料管理器 = new 寄庫新增匯入資料管理器();
+        public 寄庫匯入資料管理器 資料管理器 = new 寄庫匯入資料管理器();
 
-        public 寄庫新增匯入視窗()
+        public 寄庫匯入視窗()
         {
             InitializeComponent();
         }
 
-        private void 匯入完成(IEnumerable<寄庫新增匯入資料> 資料列舉_)
+        private void 匯入完成(IEnumerable<寄庫匯入資料> 資料列舉_)
         {
             if(資料列舉_ == null)
                 return;
 
-            List<寄庫新增匯入資料> 資料列_ = 資料列舉_.ToList(); // 先將資料確實轉換出來
+            List<寄庫匯入資料> 資料列_ = 資料列舉_.ToList(); // 先將資料確實轉換出來
 
             if (資料列_.Count == 0)
             {
@@ -82,7 +82,7 @@ namespace WokyTool.寄庫
 
             公司資料 公司_ = Queue_.First();
 
-            foreach (寄庫新增匯入資料 資料_ in 資料列_)
+            foreach (寄庫匯入資料 資料_ in 資料列_)
             {
                 資料_.公司 = 公司_;
             }
@@ -97,42 +97,42 @@ namespace WokyTool.寄庫
         private void momoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             寄庫匯入轉換_Momo 轉換器_ = new 寄庫匯入轉換_Momo();
-            IEnumerable<寄庫新增匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
+            IEnumerable<寄庫匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
             匯入完成(資料列舉_);
         }
 
         private void pCHomeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             寄庫匯入轉換_PCHome 轉換器_ = new 寄庫匯入轉換_PCHome();
-            IEnumerable<寄庫新增匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
+            IEnumerable<寄庫匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
             匯入完成(資料列舉_);
         }
 
         private void 博客來ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             寄庫匯入轉換_博客來 轉換器_ = new 寄庫匯入轉換_博客來();
-            IEnumerable<寄庫新增匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
+            IEnumerable<寄庫匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
             匯入完成(資料列舉_);
         }
 
         private void 蝦皮ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             寄庫匯入轉換_蝦皮 轉換器_ = new 寄庫匯入轉換_蝦皮();
-            IEnumerable<寄庫新增匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
+            IEnumerable<寄庫匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
             匯入完成(資料列舉_);
         }
 
         private void 料理123ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             寄庫匯入轉換_料理123 轉換器_ = new 寄庫匯入轉換_料理123();
-            IEnumerable<寄庫新增匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
+            IEnumerable<寄庫匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
             匯入完成(資料列舉_);
         }
 
         private void 京站站前店ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             寄庫匯入轉換_京站站前店 轉換器_ = new 寄庫匯入轉換_京站站前店();
-            IEnumerable<寄庫新增匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
+            IEnumerable<寄庫匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
             匯入完成(資料列舉_);
         }
     }

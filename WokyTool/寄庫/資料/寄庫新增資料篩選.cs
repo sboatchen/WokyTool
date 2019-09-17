@@ -13,7 +13,7 @@ using WokyTool.通用;
 
 namespace WokyTool.寄庫
 {
-    public class 寄庫新增資料篩選 : 通用可篩選介面<寄庫新增資料>
+    public class 寄庫資料篩選 : 通用可篩選介面<寄庫資料>
     {
         private DateTime _最小處理時間 = default(DateTime);
         public DateTime 最小處理時間
@@ -126,9 +126,9 @@ namespace WokyTool.寄庫
             }
         }
 
-        public override IEnumerable<寄庫新增資料> 篩選(IEnumerable<寄庫新增資料> 資料列舉_)
+        public override IEnumerable<寄庫資料> 篩選(IEnumerable<寄庫資料> 資料列舉_)
         {
-            IEnumerable<寄庫新增資料> 目前列舉_ = 資料列舉_;
+            IEnumerable<寄庫資料> 目前列舉_ = 資料列舉_;
 
             if (null != _文字)    // 入庫單號
                 目前列舉_ = 目前列舉_.Where(Value => Value.入庫單號.Contains(_文字));

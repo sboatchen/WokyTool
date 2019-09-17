@@ -1,6 +1,6 @@
 ﻿namespace WokyTool.寄庫
 {
-    partial class 寄庫新增匯入視窗
+    partial class 寄庫匯入視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -49,10 +49,10 @@
             this.入庫單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.寄庫新增匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.寄庫匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.寄庫新增匯入資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.寄庫匯入資料BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip2
@@ -150,7 +150,7 @@
             this.入庫單號DataGridViewTextBoxColumn,
             this.備註DataGridViewTextBoxColumn,
             this.錯誤訊息DataGridViewTextBoxColumn});
-            this.myDataGridView1.DataSource = this.寄庫新增匯入資料BindingSource;
+            this.myDataGridView1.DataSource = this.寄庫匯入資料BindingSource;
             this.myDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.myDataGridView1.Location = new System.Drawing.Point(0, 24);
             this.myDataGridView1.Name = "myDataGridView1";
@@ -217,23 +217,23 @@
             this.錯誤訊息DataGridViewTextBoxColumn.HeaderText = "錯誤訊息";
             this.錯誤訊息DataGridViewTextBoxColumn.Name = "錯誤訊息DataGridViewTextBoxColumn";
             // 
-            // 寄庫新增匯入資料BindingSource
+            // 寄庫匯入資料BindingSource
             // 
-            this.寄庫新增匯入資料BindingSource.DataSource = typeof(WokyTool.寄庫.寄庫新增匯入資料);
+            this.寄庫匯入資料BindingSource.DataSource = typeof(WokyTool.寄庫.寄庫匯入資料);
             // 
-            // 寄庫新增匯入視窗
+            // 寄庫匯入視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1344, 553);
             this.Controls.Add(this.myDataGridView1);
             this.Controls.Add(this.menuStrip2);
-            this.Name = "寄庫新增匯入視窗";
-            this.Text = "寄庫新增匯入視窗";
+            this.Name = "寄庫匯入視窗";
+            this.Text = "寄庫匯入視窗";
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.寄庫新增匯入資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.寄庫匯入資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,7 +251,7 @@
         private System.Windows.Forms.ToolStripMenuItem 博客來ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 蝦皮ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 料理123ToolStripMenuItem;
-        private System.Windows.Forms.BindingSource 寄庫新增匯入資料BindingSource;
+        private System.Windows.Forms.BindingSource 寄庫匯入資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 處理時間DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 公司名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 客戶名稱DataGridViewTextBoxColumn;

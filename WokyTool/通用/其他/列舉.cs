@@ -44,7 +44,7 @@ namespace WokyTool.通用
             商品小類,
             商品,
 
-            寄庫新增,
+            寄庫,
 
             盤點,
 

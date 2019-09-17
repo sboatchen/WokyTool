@@ -14,16 +14,16 @@ using WokyTool.通用;
 
 namespace WokyTool.寄庫
 {
-    public partial class 寄庫新增匯入篩選視窗 : 新增篩選視窗
+    public partial class 寄庫匯入篩選視窗 : 新增篩選視窗
     {
         // 介面編輯呈現用
-        public 寄庫新增匯入篩選視窗()
+        public 寄庫匯入篩選視窗()
             : base()
         {
             InitializeComponent();
         }
 
-        public 寄庫新增匯入篩選視窗(視窗可篩選介面 視窗篩選器_)
+        public 寄庫匯入篩選視窗(視窗可篩選介面 視窗篩選器_)
             : base(視窗篩選器_)
         {
             InitializeComponent();

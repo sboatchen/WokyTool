@@ -14,17 +14,17 @@ using WokyTool.通用;
 
 namespace WokyTool.寄庫
 {
-    public partial class 寄庫新增匯入詳細視窗 : 新增詳細視窗
+    public partial class 寄庫匯入詳細視窗 : 新增詳細視窗
     {
         public override 新版頁索引元件 頁索引 { get { return this.新版頁索引元件1; } }
 
         // 介面編輯呈現用
-        public 寄庫新增匯入詳細視窗() : base()
+        public 寄庫匯入詳細視窗() : base()
         {
             InitializeComponent();
         }
 
-        public 寄庫新增匯入詳細視窗(可編輯列舉資料管理介面 更新管理器_)
+        public 寄庫匯入詳細視窗(可編輯列舉資料管理介面 更新管理器_)
             : base(更新管理器_)
         {
             InitializeComponent();

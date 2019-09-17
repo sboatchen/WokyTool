@@ -2,7 +2,7 @@
 using WokyTool.通用;
 namespace WokyTool.寄庫
 {
-    partial class 寄庫新增匯入詳細視窗
+    partial class 寄庫匯入詳細視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -203,7 +203,7 @@ namespace WokyTool.寄庫
             this.label1.TabIndex = 0;
             this.label1.Text = "客戶";
             // 
-            // 寄庫新增匯入詳細視窗
+            // 寄庫匯入詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -226,8 +226,8 @@ namespace WokyTool.寄庫
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Name = "寄庫新增匯入詳細視窗";
-            this.Text = "寄庫新增匯入詳細視窗";
+            this.Name = "寄庫匯入詳細視窗";
+            this.Text = "寄庫匯入詳細視窗";
             ((System.ComponentModel.ISupportInitialize)(this.數量)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -65,7 +65,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.盤點 = new System.Windows.Forms.Button();
-            this.寄庫新增 = new System.Windows.Forms.Button();
+            this.寄庫 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -453,7 +453,7 @@
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.盤點);
-            this.panel5.Controls.Add(this.寄庫新增);
+            this.panel5.Controls.Add(this.寄庫);
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.button15);
@@ -472,15 +472,15 @@
             this.盤點.UseVisualStyleBackColor = true;
             this.盤點.Click += new System.EventHandler(this.盤點_Click);
             // 
-            // 寄庫新增
+            // 寄庫
             // 
-            this.寄庫新增.Location = new System.Drawing.Point(6, 69);
-            this.寄庫新增.Name = "寄庫新增";
-            this.寄庫新增.Size = new System.Drawing.Size(100, 23);
-            this.寄庫新增.TabIndex = 50;
-            this.寄庫新增.Text = "寄庫新增";
-            this.寄庫新增.UseVisualStyleBackColor = true;
-            this.寄庫新增.Click += new System.EventHandler(this.寄庫新增_Click);
+            this.寄庫.Location = new System.Drawing.Point(6, 69);
+            this.寄庫.Name = "寄庫";
+            this.寄庫.Size = new System.Drawing.Size(100, 23);
+            this.寄庫.TabIndex = 50;
+            this.寄庫.Text = "寄庫";
+            this.寄庫.UseVisualStyleBackColor = true;
+            this.寄庫.Click += new System.EventHandler(this.寄庫_Click);
             // 
             // button1
             // 
@@ -655,7 +655,7 @@
         private System.Windows.Forms.Button button45;
         private System.Windows.Forms.Button button46;
         private System.Windows.Forms.Button 客戶資料轉換;
-        private System.Windows.Forms.Button 寄庫新增;
+        private System.Windows.Forms.Button 寄庫;
         private System.Windows.Forms.Button 盤點;
 
 

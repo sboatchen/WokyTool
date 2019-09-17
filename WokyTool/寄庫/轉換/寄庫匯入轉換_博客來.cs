@@ -16,7 +16,7 @@ using WokyTool.通用;
 
 namespace WokyTool.寄庫
 {
-    public class 寄庫匯入轉換_博客來 : 可讀出介面_EXCEL<寄庫新增匯入資料>
+    public class 寄庫匯入轉換_博客來 : 可讀出介面_EXCEL<寄庫匯入資料>
     {
         public int 分頁索引 { get { return 1; } }
 
@@ -42,14 +42,14 @@ namespace WokyTool.寄庫
             this._標頭列 = 標頭列_;
         }
 
-        public IEnumerable<寄庫新增匯入資料> 讀出資料(string[] 資料列_)
+        public IEnumerable<寄庫匯入資料> 讀出資料(string[] 資料列_)
         {
             string 商品識別_ = 資料列_[4].轉成字串();
             商品資料 商品_ = 商品資料管理器.獨體.取得(客戶.編號, 商品識別_);
 
             int 數量_ = 資料列_[7].轉成整數();
 
-            yield return new 寄庫新增匯入資料
+            yield return new 寄庫匯入資料
             {
                 客戶 = this.客戶,
 

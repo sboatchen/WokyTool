@@ -489,9 +489,9 @@ namespace WokyTool
             轉換.轉換();
         }
 
-        private void 寄庫新增_Click(object sender, EventArgs e)
+        private void 寄庫_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編號.寄庫新增, 列舉.視窗.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.寄庫, 列舉.視窗.總覽);
         }
 
         private void 盤點_Click(object sender, EventArgs e)

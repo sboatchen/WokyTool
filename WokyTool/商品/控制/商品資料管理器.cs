@@ -192,9 +192,9 @@ namespace WokyTool.商品
             儲存();
         }
 
-        public void 更新庫存(List<寄庫新增資料> 資料列_)
+        public void 更新庫存(List<寄庫資料> 資料列_)
         {
-            foreach (寄庫新增資料 資料_ in 資料列_)
+            foreach (寄庫資料 資料_ in 資料列_)
             {
                 資料_.商品.寄庫數量 += 資料_.數量;
             }

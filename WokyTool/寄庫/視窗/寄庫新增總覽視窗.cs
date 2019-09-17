@@ -18,18 +18,18 @@ using WokyTool.通用;
 
 namespace WokyTool.寄庫
 {
-    public partial class 寄庫新增總覽視窗: 獨體總覽視窗
+    public partial class 寄庫總覽視窗: 獨體總覽視窗
     {
-        public override 列舉.編號 編號類型 { get { return 列舉.編號.寄庫新增; } }
-        public override Type 資料類型 { get { return typeof(寄庫新增資料); } }
+        public override 列舉.編號 編號類型 { get { return 列舉.編號.寄庫; } }
+        public override Type 資料類型 { get { return typeof(寄庫資料); } }
 
-        public override 可編輯列舉資料管理介面 編輯管理器 { get { return 寄庫新增資料管理器.獨體; } }
+        public override 可編輯列舉資料管理介面 編輯管理器 { get { return 寄庫資料管理器.獨體; } }
         public override MyDataGridView 資料GV { get { return this.myDataGridView1; } }
         public override ToolStripMenuItem 篩選MI { get { return this.篩選ToolStripMenuItem; } }
         public override ToolStripMenuItem 檢查MI { get { return this.檢查ToolStripMenuItem; } }
         public override ToolStripMenuItem 自訂MI { get { return this.自訂ToolStripMenuItem; } }
 
-        public 寄庫新增總覽視窗()
+        public 寄庫總覽視窗()
         {
             InitializeComponent();
         }
@@ -43,7 +43,7 @@ namespace WokyTool.寄庫
 
         private void 通用ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var 視窗_ = new 寄庫新增匯入視窗();
+            var 視窗_ = new 寄庫匯入視窗();
             視窗_.初始化();
             視窗_.Show();
             視窗_.BringToFront();

@@ -15,7 +15,7 @@ using WokyTool.通用;
 namespace WokyTool.寄庫
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 寄庫新增匯入資料 : 可轉換資料<寄庫新增資料>
+    public class 寄庫匯入資料 : 可轉換資料<寄庫資料>
     {
         [可匯出]
         [JsonProperty]
