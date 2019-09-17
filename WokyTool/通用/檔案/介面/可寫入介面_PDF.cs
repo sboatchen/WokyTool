@@ -9,7 +9,7 @@ namespace WokyTool.通用
 {
     public interface 可寫入介面_PDF
     {
-        //string 樣板 { get; }
+        string 標頭 { get; }
 
         string 密碼 { get; }
 

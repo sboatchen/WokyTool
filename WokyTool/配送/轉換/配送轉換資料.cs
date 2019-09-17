@@ -146,6 +146,13 @@ namespace WokyTool.配送
 
         /********************************/
 
+        public bool 已配送
+        {
+            get { return string.IsNullOrEmpty(轉換.配送單號) == false; }
+        }
+
+        /********************************/
+
         public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null, 基本資料 資料參考_ = null)
         {
             基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;

@@ -60,6 +60,10 @@ namespace WokyTool.配送
             this.件數DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.內容DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.配送轉換資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sEVENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SEVEN轉換ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SEVEN撿貨ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SEVEN明細ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送轉換資料BindingSource)).BeginInit();
@@ -73,24 +77,24 @@ namespace WokyTool.配送
             this.篩選ToolStripMenuItem,
             this.全速配ToolStripMenuItem,
             this.宅配通ToolStripMenuItem,
-            this.測試用ToolStripMenuItem});
+            this.測試用ToolStripMenuItem,
+            this.sEVENToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(2063, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1547, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // 檢查ToolStripMenuItem
             // 
             this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
-            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
+            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.檢查ToolStripMenuItem.Text = "檢查";
             // 
             // 篩選ToolStripMenuItem
             // 
             this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
-            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
+            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.篩選ToolStripMenuItem.Text = "篩選";
             // 
             // 全速配ToolStripMenuItem
@@ -101,34 +105,34 @@ namespace WokyTool.配送
             this.全速配撿貨ToolStripMenuItem,
             this.全速配明細ToolStripMenuItem});
             this.全速配ToolStripMenuItem.Name = "全速配ToolStripMenuItem";
-            this.全速配ToolStripMenuItem.Size = new System.Drawing.Size(66, 23);
+            this.全速配ToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.全速配ToolStripMenuItem.Text = "全速配";
             // 
             // 全速配匯出ToolStripMenuItem
             // 
             this.全速配匯出ToolStripMenuItem.Name = "全速配匯出ToolStripMenuItem";
-            this.全速配匯出ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.全速配匯出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.全速配匯出ToolStripMenuItem.Text = "匯出";
             this.全速配匯出ToolStripMenuItem.Click += new System.EventHandler(this.全速配匯出ToolStripMenuItem_Click);
             // 
             // 全速配匯入ToolStripMenuItem
             // 
             this.全速配匯入ToolStripMenuItem.Name = "全速配匯入ToolStripMenuItem";
-            this.全速配匯入ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.全速配匯入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.全速配匯入ToolStripMenuItem.Text = "匯入";
             this.全速配匯入ToolStripMenuItem.Click += new System.EventHandler(this.全速配匯入ToolStripMenuItem_Click);
             // 
             // 全速配撿貨ToolStripMenuItem
             // 
             this.全速配撿貨ToolStripMenuItem.Name = "全速配撿貨ToolStripMenuItem";
-            this.全速配撿貨ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.全速配撿貨ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.全速配撿貨ToolStripMenuItem.Text = "撿貨";
             this.全速配撿貨ToolStripMenuItem.Click += new System.EventHandler(this.全速配撿貨ToolStripMenuItem_Click);
             // 
             // 全速配明細ToolStripMenuItem
             // 
             this.全速配明細ToolStripMenuItem.Name = "全速配明細ToolStripMenuItem";
-            this.全速配明細ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.全速配明細ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.全速配明細ToolStripMenuItem.Text = "明細";
             this.全速配明細ToolStripMenuItem.Click += new System.EventHandler(this.全速配明細ToolStripMenuItem_Click);
             // 
@@ -140,41 +144,41 @@ namespace WokyTool.配送
             this.宅配通撿貨ToolStripMenuItem,
             this.宅配通明細ToolStripMenuItem});
             this.宅配通ToolStripMenuItem.Name = "宅配通ToolStripMenuItem";
-            this.宅配通ToolStripMenuItem.Size = new System.Drawing.Size(66, 23);
+            this.宅配通ToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.宅配通ToolStripMenuItem.Text = "宅配通";
             // 
             // 宅配通匯出ToolStripMenuItem
             // 
             this.宅配通匯出ToolStripMenuItem.Name = "宅配通匯出ToolStripMenuItem";
-            this.宅配通匯出ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.宅配通匯出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.宅配通匯出ToolStripMenuItem.Text = "匯出";
             this.宅配通匯出ToolStripMenuItem.Click += new System.EventHandler(this.宅配通匯出ToolStripMenuItem_Click);
             // 
             // 宅配通匯入ToolStripMenuItem
             // 
             this.宅配通匯入ToolStripMenuItem.Name = "宅配通匯入ToolStripMenuItem";
-            this.宅配通匯入ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.宅配通匯入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.宅配通匯入ToolStripMenuItem.Text = "匯入";
             this.宅配通匯入ToolStripMenuItem.Click += new System.EventHandler(this.宅配通匯入ToolStripMenuItem_Click);
             // 
             // 宅配通撿貨ToolStripMenuItem
             // 
             this.宅配通撿貨ToolStripMenuItem.Name = "宅配通撿貨ToolStripMenuItem";
-            this.宅配通撿貨ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.宅配通撿貨ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.宅配通撿貨ToolStripMenuItem.Text = "撿貨";
             this.宅配通撿貨ToolStripMenuItem.Click += new System.EventHandler(this.宅配通撿貨ToolStripMenuItem_Click);
             // 
             // 宅配通明細ToolStripMenuItem
             // 
             this.宅配通明細ToolStripMenuItem.Name = "宅配通明細ToolStripMenuItem";
-            this.宅配通明細ToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
+            this.宅配通明細ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.宅配通明細ToolStripMenuItem.Text = "明細";
             this.宅配通明細ToolStripMenuItem.Click += new System.EventHandler(this.宅配通明細ToolStripMenuItem_Click);
             // 
             // 測試用ToolStripMenuItem
             // 
             this.測試用ToolStripMenuItem.Name = "測試用ToolStripMenuItem";
-            this.測試用ToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
+            this.測試用ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.測試用ToolStripMenuItem.Text = "測試";
             this.測試用ToolStripMenuItem.Click += new System.EventHandler(this.測試ToolStripMenuItem_Click);
             // 
@@ -198,11 +202,10 @@ namespace WokyTool.配送
             this.內容DataGridViewTextBoxColumn});
             this.myDataGridView1.DataSource = this.配送轉換資料BindingSource;
             this.myDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.myDataGridView1.Location = new System.Drawing.Point(0, 27);
-            this.myDataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.myDataGridView1.Location = new System.Drawing.Point(0, 24);
             this.myDataGridView1.Name = "myDataGridView1";
             this.myDataGridView1.RowTemplate.Height = 24;
-            this.myDataGridView1.Size = new System.Drawing.Size(2063, 559);
+            this.myDataGridView1.Size = new System.Drawing.Size(1547, 445);
             this.myDataGridView1.TabIndex = 1;
             // 
             // 配送公司DataGridViewTextBoxColumn
@@ -288,15 +291,45 @@ namespace WokyTool.配送
             // 
             this.配送轉換資料BindingSource.DataSource = typeof(WokyTool.配送.配送轉換資料);
             // 
+            // sEVENToolStripMenuItem
+            // 
+            this.sEVENToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SEVEN轉換ToolStripMenuItem,
+            this.SEVEN撿貨ToolStripMenuItem,
+            this.SEVEN明細ToolStripMenuItem});
+            this.sEVENToolStripMenuItem.Name = "sEVENToolStripMenuItem";
+            this.sEVENToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.sEVENToolStripMenuItem.Text = "SEVEN";
+            // 
+            // SEVEN轉換ToolStripMenuItem
+            // 
+            this.SEVEN轉換ToolStripMenuItem.Name = "SEVEN轉換ToolStripMenuItem";
+            this.SEVEN轉換ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.SEVEN轉換ToolStripMenuItem.Text = "轉換";
+            this.SEVEN轉換ToolStripMenuItem.Click += new System.EventHandler(this.SEVEN轉換ToolStripMenuItem_Click);
+            // 
+            // SEVEN撿貨ToolStripMenuItem
+            // 
+            this.SEVEN撿貨ToolStripMenuItem.Name = "SEVEN撿貨ToolStripMenuItem";
+            this.SEVEN撿貨ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.SEVEN撿貨ToolStripMenuItem.Text = "撿貨";
+            this.SEVEN撿貨ToolStripMenuItem.Click += new System.EventHandler(this.SEVEN撿貨ToolStripMenuItem_Click);
+            // 
+            // SEVEN明細ToolStripMenuItem
+            // 
+            this.SEVEN明細ToolStripMenuItem.Name = "SEVEN明細ToolStripMenuItem";
+            this.SEVEN明細ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.SEVEN明細ToolStripMenuItem.Text = "明細";
+            this.SEVEN明細ToolStripMenuItem.Click += new System.EventHandler(this.SEVEN明細ToolStripMenuItem_Click);
+            // 
             // 配送新增總覽視窗
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2063, 586);
+            this.ClientSize = new System.Drawing.Size(1547, 469);
             this.Controls.Add(this.myDataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "配送新增總覽視窗";
             this.Text = "配送新增總覽視窗";
             this.menuStrip1.ResumeLayout(false);
@@ -339,5 +372,9 @@ namespace WokyTool.配送
         private System.Windows.Forms.ToolStripMenuItem 宅配通匯入ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 宅配通撿貨ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 宅配通明細ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sEVENToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SEVEN轉換ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SEVEN撿貨ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SEVEN明細ToolStripMenuItem;
     }
 }

@@ -396,7 +396,6 @@
     <Compile Include="廢棄\轉換\平台訂單自定義_PC商店街.cs" />
     <Compile Include="廢棄\轉換\平台訂單自定義_uDesign.cs" />
     <Compile Include="廢棄\轉換\平台訂單自定義_神坊.cs" />
-    <Compile Include="廢棄\轉換\平台訂單自定義_博客來.cs" />
     <Compile Include="廢棄\轉換\平台訂單自定義_遠傳加購.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_特力屋.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_UDN.cs" />
@@ -412,7 +411,7 @@
     <Compile Include="客製\回單轉換\平台訂單回單轉換_森森.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_東森.cs" />
     <Compile Include="客製\配送轉換\平台訂單配送轉換_生活市集_全家.cs" />
-    <Compile Include="客製\配送轉換\平台訂單配送轉換_生活市集_SEVEN.cs" />
+    <Compile Include="平台訂單\轉換\平台訂單配送轉換資料_生活市集_SEVEN.cs" />
     <Compile Include="客製\配送轉換\平台訂單配送轉換_松果_全家.cs" />
     <Compile Include="客製\配送轉換\平台訂單配送轉換_松果_SEVEN.cs" />
     <Compile Include="幣值\控制\幣值資料管理器.cs" />

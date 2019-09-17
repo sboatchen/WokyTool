@@ -13,12 +13,12 @@ namespace WokyTool.通用
 {
     public partial class 檔案
     {
-        public static void 詢問並修改(string 標頭_, 可寫入介面_PDF 轉換_, bool 是否測試_ = false)
+        public static void 詢問並修改(可寫入介面_PDF 轉換_, bool 是否測試_ = false)
         {
             // 開啟參考檔案位置
             OpenFileDialog OFD_ = new OpenFileDialog();
             OFD_.Filter = "pdf files (.pdf)|*.pdf";
-            OFD_.Title = 標頭_;
+            OFD_.Title = 轉換_.標頭;
 
             if (OFD_.ShowDialog() != DialogResult.OK)
                 return;

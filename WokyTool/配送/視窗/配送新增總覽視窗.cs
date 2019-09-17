@@ -65,7 +65,7 @@ namespace WokyTool.配送
 
         private void 全速配匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配);
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配 && Value.已配送 == false);
 
             全速配匯出轉換 轉換_ = new 全速配匯出轉換(資料列舉_);
             string 標題_ = String.Format("全速配匯出_{0}", 時間.目前日期);
@@ -89,7 +89,7 @@ namespace WokyTool.配送
 
         private void 全速配撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配 && String.IsNullOrEmpty(Value.配送單號) == false);
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配 && Value.已配送);
             
             配送撿貨轉換 轉換_ = new 配送撿貨轉換(資料列舉_);
             string 標題_ = String.Format("全速配撿貨_{0}", 時間.目前日期);
@@ -99,7 +99,7 @@ namespace WokyTool.配送
 
         private void 全速配明細ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配 && String.IsNullOrEmpty(Value.配送單號) == false);
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配 && Value.已配送);
 
             配送明細轉換 轉換_ = new 配送明細轉換(資料列舉_);
             string 標題_ = String.Format("全速配明細_{0}", 時間.目前日期);
@@ -109,7 +109,7 @@ namespace WokyTool.配送
 
         private void 宅配通匯出ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通);
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通 && Value.已配送 == false);
 
 
             宅配通匯出轉換 轉換_ = new 宅配通匯出轉換(資料列舉_);
@@ -134,7 +134,7 @@ namespace WokyTool.配送
 
         private void 宅配通撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通 && String.IsNullOrEmpty(Value.配送單號) == false);
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通 && Value.已配送);
 
             配送撿貨轉換 轉換_ = new 配送撿貨轉換(資料列舉_);
             string 標題_ = String.Format("宅配通撿貨_{0}", 時間.目前日期);
@@ -144,7 +144,7 @@ namespace WokyTool.配送
 
         private void 宅配通明細ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通 && String.IsNullOrEmpty(Value.配送單號) == false);
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通 && Value.已配送);
 
             配送明細轉換 轉換_ = new 配送明細轉換(資料列舉_);
             string 標題_ = String.Format("宅配通明細_{0}", 時間.目前日期);
@@ -155,12 +155,40 @@ namespace WokyTool.配送
         private void 測試ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int i = 1;
-            foreach (var 資料_ in 資料管理器.資料列.Where(Value => String.IsNullOrEmpty(Value.配送單號)))
+            foreach (var 資料_ in 資料管理器.資料列.Where(Value => Value.已配送 == false))
             {
                 資料_.配送單號 = String.Format("宅配回單測試{0}", i++);
             }
 
             訊息管理器.獨體.通知("測試完成");
+        }
+
+        private void SEVEN轉換ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IEnumerable<可寫入介面_PDF> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.SEVEN).Select(Value => (可寫入介面_PDF)Value);
+
+            foreach (可寫入介面_PDF 資料_ in 資料列舉_)
+            {
+                檔案.詢問並修改(資料_);
+            }
+        }
+
+        private void SEVEN撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.SEVEN);
+
+            foreach (配送轉換資料 資料_ in 資料列舉_)
+            {
+                配送撿貨轉換 轉換_ = new 配送撿貨轉換(資料列舉_);
+                string 標題_ = String.Format("宅配通撿貨_{0}", 時間.目前日期);
+                if (檔案.詢問並寫入(標題_, 轉換_))
+                    訊息管理器.獨體.通知("匯出完成");
+            }
+        }
+
+        private void SEVEN明細ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
