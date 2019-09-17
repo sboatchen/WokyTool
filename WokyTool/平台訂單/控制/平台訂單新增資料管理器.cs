@@ -118,6 +118,9 @@ namespace WokyTool.平台訂單
                 case "特力屋":
                     處理器_ = new 平台訂單匯入處理_特力屋();
                     break;
+                case "博客來":
+                    處理器_ = new 平台訂單匯入處理_博客來();
+                    break;
                 case "松果":
                     switch (資料_.配送公司)
                     {

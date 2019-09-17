@@ -234,6 +234,7 @@
     <Compile Include="寄庫\轉換\寄庫匯入轉換_PCHome.cs" />
     <Compile Include="平台訂單\介面\平台訂單匯入處理介面.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_博客來.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_博客來.cs" />
     <Compile Include="平台訂單\視窗\平台訂單新增匯入篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
