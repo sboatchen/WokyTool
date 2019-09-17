@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using WokyTool.庫存;
+using WokyTool.寄庫;
 using WokyTool.通用;
 
 namespace WokyTool.商品
@@ -185,6 +187,20 @@ namespace WokyTool.商品
             {
                 Item_.更新組成();
             }
+
+            資料版本++;
+            儲存();
+        }
+
+        public void 更新庫存(List<寄庫新增資料> 資料列_)
+        {
+            foreach (寄庫新增資料 資料_ in 資料列_)
+            {
+                資料_.商品.寄庫數量 += 資料_.數量;
+            }
+
+            var 商品庫存封存資料列舉_ = 資料列_.Select(Value => 商品庫存封存資料.建立_寄庫(Value.商品)).Where(Value => Value != null);
+            商品庫存封存資料管理器.獨體.新增(商品庫存封存資料列舉_);
 
             資料版本++;
             儲存();

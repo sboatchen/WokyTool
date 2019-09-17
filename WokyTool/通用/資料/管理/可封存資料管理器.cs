@@ -6,8 +6,6 @@ namespace WokyTool.通用
 {
     public abstract class 可封存資料管理器<T> : 抽象資料列管理器<T>, 可儲存介面, 可新增介面<T> where T : 可封存資料    //@@ 支援讀檔
     {
-        public abstract 列舉.編號 編號類型 { get; }
-
         public abstract string 檔案路徑 { get; }
 
         public override bool 是否可編輯 { get { return false; } }
@@ -16,9 +14,8 @@ namespace WokyTool.通用
         protected 可檢查介面 新增物件檢查器 = new 例外檢查器();
 
          // 建構子
-        protected 可封存資料管理器()
+        public 可封存資料管理器()
         {
-            資料儲存管理器.獨體.註冊(編號類型, this);
         }
 
         protected override void 新增物品處理(T 資料_)

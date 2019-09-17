@@ -234,8 +234,11 @@
     </Compile>
     <Compile Include="平台訂單\資料\平台訂單新增匯入資料篩選.cs" />
     <Compile Include="平台訂單\資料\平台訂單新增資料篩選.cs" />
+    <Compile Include="庫存\控制\商品庫存封存資料管理器.cs" />
     <Compile Include="庫存\控制\物品庫存封存資料管理器.cs" />
+    <Compile Include="庫存\資料\商品庫存封存資料.cs" />
     <Compile Include="庫存\資料\物品庫存封存資料.cs" />
+    <Compile Include="庫存\資料\商品庫存封存資料篩選.cs" />
     <Compile Include="庫存\資料\物品庫存封存資料篩選.cs" />
     <Compile Include="盤點\控制\盤點更新資料管理器.cs" />
     <Compile Include="盤點\控制\盤點資料管理器.cs" />

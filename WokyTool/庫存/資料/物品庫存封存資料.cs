@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using WokyTool.Common;
 using WokyTool.物品;
 using WokyTool.通用;
 using WokyTool.盤點;
@@ -29,13 +27,22 @@ namespace WokyTool.庫存
         }
 
         [JsonProperty]
-        public int 庫存 { get; set; }
+        public int 庫存
+        {
+            get { return 物品.庫存; }
+        }
 
         [JsonProperty]
-        public decimal 最後進貨成本 { get; set; }
+        public decimal 最後進貨成本
+        {
+            get { return 物品.最後進貨成本; }
+        }
 
         [JsonProperty]
-        public decimal 庫存總成本 { get; set; }
+        public decimal 庫存總成本
+        {
+            get { return 物品.庫存總成本; }
+        }
 
         [JsonProperty]
         public string 備註 { get; set; }
@@ -66,10 +73,16 @@ namespace WokyTool.庫存
             return new 物品庫存封存資料
             {
                 物品 = 資料_.物品,
-                庫存 = 資料_.目前庫存,
-                最後進貨成本 = 資料_.物品.最後進貨成本,
-                庫存總成本 = 資料_.物品.庫存總成本,
                 備註 = "盤點調整",
+            };
+        }
+
+        public static 物品庫存封存資料 建立_寄庫(物品資料 資料_)
+        {
+            return new 物品庫存封存資料
+            {
+                物品 = 資料_,
+                備註 = "寄庫",
             };
         }
     }

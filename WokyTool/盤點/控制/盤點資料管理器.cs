@@ -62,10 +62,6 @@ namespace WokyTool.盤點
             var 盤點封存資料列_ = _資料書.Select(Pair => new 盤點封存資料(Pair.Value)).ToList();
             檔案.寫入(檔案路徑, JsonConvert.SerializeObject(盤點封存資料列_, Formatting.Indented), false);
 
-            // 紀錄庫存調整
-            var 物品庫存封存資料列舉_ = _資料書.Select(Pair => 物品庫存封存資料.建立(Pair.Value)).Where(Value => Value != null);
-            物品庫存封存資料管理器.獨體.新增(物品庫存封存資料列舉_);
-
             // 更新庫存
             物品資料管理器.獨體.更新庫存(_資料書.Select(Pair => Pair.Value));
         }

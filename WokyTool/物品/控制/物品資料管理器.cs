@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using WokyTool.Common;
+using WokyTool.庫存;
+using WokyTool.商品;
+using WokyTool.寄庫;
 using WokyTool.通用;
 using WokyTool.盤點;
 
@@ -73,11 +76,46 @@ namespace WokyTool.物品
 
         public void 更新庫存(IEnumerable<盤點資料> 資料列_)
         {
+            // 紀錄庫存調整
+            var 物品庫存封存資料列舉_ = 資料列_.Select(Value => 物品庫存封存資料.建立(Value)).Where(Value => Value != null);
+            物品庫存封存資料管理器.獨體.新增(物品庫存封存資料列舉_);
+
             foreach (盤點資料 資料_ in 資料列_)
             {
                 資料_.物品.取消編輯();
                 資料_.物品.庫存 = 資料_.目前庫存;
             }
+
+            資料版本++;
+            儲存();
+        }
+
+        public void 更新庫存(List<寄庫新增資料> 資料列_)
+        {
+            HashSet<物品資料> 物品異動群_ = new HashSet<物品資料>();
+            foreach (寄庫新增資料 資料_ in 資料列_)
+            {
+                if (資料_.商品.組成 == null)
+                    continue;
+
+                foreach (商品組成資料 組成資料_ in 資料_.商品.組成)
+                {
+                    int 數量異動_ = 組成資料_.數量 * 資料_.數量;
+                    decimal 目前成本_ = 組成資料_.物品.成本;
+
+                    組成資料_.物品.庫存 -= 數量異動_;
+
+                    if (組成資料_.物品.庫存 <= 0)
+                        組成資料_.物品.庫存總成本 = 組成資料_.物品.庫存 * 組成資料_.物品.最後進貨成本 * -1;
+                    else
+                        組成資料_.物品.庫存總成本 -= 數量異動_ * 目前成本_;
+
+                    物品異動群_.Add(組成資料_.物品); 
+                }
+            }
+
+            var 物品庫存封存資料列舉_ = 物品異動群_.Select(Value => 物品庫存封存資料.建立_寄庫(Value)).Where(Value => Value != null);
+            物品庫存封存資料管理器.獨體.新增(物品庫存封存資料列舉_);
 
             資料版本++;
             儲存();
