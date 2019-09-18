@@ -1,13 +1,6 @@
-﻿using LINQtoCSV;
-using Microsoft.Office.Interop.Excel;
+﻿using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WokyTool.Common;
-using WokyTool.DataImport;
-using WokyTool.平台訂單;
 using WokyTool.通用;
 
 namespace WokyTool.平台訂單

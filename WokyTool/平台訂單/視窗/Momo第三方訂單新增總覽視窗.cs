@@ -1,23 +1,13 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.公司;
-using WokyTool.物品;
 using WokyTool.客戶;
-using WokyTool.客製;
-using WokyTool.配送;
 using WokyTool.通用;
 
 namespace WokyTool.平台訂單

@@ -6,7 +6,7 @@ using WokyTool.通用;
 
 namespace WokyTool.平台訂單
 {
-    public class 平台訂單回單轉換_UDN : 可寫入介面_EXCEL
+    public class 平台訂單回單轉換_uDesign : 可寫入介面_EXCEL
     {
         private static string 全速配 = "HCT-新竹貨運";
         private static string 宅配通 = "CAN-台灣宅配通";
@@ -21,7 +21,7 @@ namespace WokyTool.平台訂單
 
         private IEnumerable<平台訂單新增資料> _資料列舉;
 
-        public 平台訂單回單轉換_UDN(IEnumerable<平台訂單新增資料> 資料列舉_)
+        public 平台訂單回單轉換_uDesign(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
             _資料列舉 = 資料列舉_;
         }
@@ -83,7 +83,7 @@ namespace WokyTool.平台訂單
                         App_.Cells[目前行數_, 28] = 宅配通;
                         break;
                     default:
-                        throw new Exception("平台訂單回單轉換_UDN 不支援配送公司 " + 資料_.配送公司.ToString());
+                        throw new Exception("平台訂單回單轉換_uDesign 不支援配送公司 " + 資料_.配送公司.ToString());
                 }
 
                 目前行數_++;

@@ -103,6 +103,9 @@ namespace WokyTool.平台訂單
                 case "udn":
                     處理器_ = new 平台訂單匯入處理_UDN();
                     break;
+                case "udesign":
+                    處理器_ = new 平台訂單匯入處理_uDesign();
+                    break;
                 case "ibonmart":
                     處理器_ = new 平台訂單匯入處理_ibonMart();
                     break;

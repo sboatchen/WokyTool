@@ -1,22 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using WokyTool.Common;
-using WokyTool.公司;
-using WokyTool.平台訂單;
 using WokyTool.客戶;
-using WokyTool.客製;
-using WokyTool.配送;
 using WokyTool.商品;
 using WokyTool.通用;
 
 namespace WokyTool.平台訂單
 {
-    public class 平台訂單匯入處理_UDN : 平台訂單匯入處理介面, 可讀出介面_EXCEL<平台訂單新增匯入資料>
+    public class 平台訂單匯入處理_uDesign : 平台訂單匯入處理介面, 可讀出介面_EXCEL<平台訂單新增匯入資料>
     {
         public int 分頁索引 { get { return 1; } }
 
@@ -28,9 +18,9 @@ namespace WokyTool.平台訂單
 
         public string 密碼 { get { return null; } }
 
-        public 平台訂單匯入處理_UDN()
+        public 平台訂單匯入處理_uDesign()
         {
-            客戶 = 客戶資料管理器.獨體.取得("UDN");
+            客戶 = 客戶資料管理器.獨體.取得("uDesign");
         }
 
         public IEnumerable<平台訂單新增匯入資料> 讀出資料(string[] 資料列_)
@@ -47,7 +37,7 @@ namespace WokyTool.平台訂單
 
             int 數量_ = 資料列_[19].轉成整數();
 
-            string 備註_ = 資料列_[11].轉成字串() + 資料列_[12].轉成字串();
+            string 備註_ = 資料列_[11].轉成字串();
 
             yield return new 平台訂單新增匯入資料
             {
@@ -59,8 +49,8 @@ namespace WokyTool.平台訂單
                 客戶 = this.客戶,
 
                 姓名 = 姓名_,
-                手機 = 手機_,
                 電話 = 電話_,
+                手機 = 手機_,
                 地址 = 地址_,
 
                 商品識別 = 商品識別_,
@@ -77,7 +67,7 @@ namespace WokyTool.平台訂單
 
         public override void 後續處理(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
-            var 轉換_ = new 平台訂單回單轉換_UDN(資料列舉_);
+            var 轉換_ = new 平台訂單回單轉換_uDesign(資料列舉_);
 
             String 標題_ = String.Format("回單_{0}_{1}_{2}", 公司.名稱, 客戶.名稱, 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換_);

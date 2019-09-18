@@ -1,17 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WokyTool.Common;
 using WokyTool.公司;
-using WokyTool.客戶;
-using WokyTool.商品;
 using WokyTool.通用;
 
 namespace WokyTool.平台訂單
@@ -228,6 +219,13 @@ namespace WokyTool.平台訂單
         private void 神坊ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             平台訂單匯入處理_神坊 轉換器_ = new 平台訂單匯入處理_神坊();
+            IEnumerable<平台訂單新增匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
+            匯入完成(轉換器_, 資料列舉_);
+        }
+
+        private void uDesignToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單匯入處理_uDesign 轉換器_ = new 平台訂單匯入處理_uDesign();
             IEnumerable<平台訂單新增匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
             匯入完成(轉換器_, 資料列舉_);
         }

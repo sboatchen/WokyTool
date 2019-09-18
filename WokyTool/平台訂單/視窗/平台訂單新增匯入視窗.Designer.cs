@@ -51,6 +51,7 @@
             this.生活市集SEVENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.生活市集全家ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.博客來ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.神坊ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
@@ -78,7 +79,7 @@
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.平台訂單新增匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.神坊ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uDesignToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單新增匯入資料BindingSource)).BeginInit();
@@ -105,6 +106,7 @@
             this.friday,
             this.Momo,
             this.uDNToolStripMenuItem,
+            this.uDesignToolStripMenuItem,
             this.ibonMartToolStripMenuItem,
             this.金石堂ToolStripMenuItem,
             this.百利市ToolStripMenuItem,
@@ -264,6 +266,13 @@
             this.博客來ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.博客來ToolStripMenuItem.Text = "博客來";
             this.博客來ToolStripMenuItem.Click += new System.EventHandler(this.博客來ToolStripMenuItem_Click);
+            // 
+            // 神坊ToolStripMenuItem
+            // 
+            this.神坊ToolStripMenuItem.Name = "神坊ToolStripMenuItem";
+            this.神坊ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.神坊ToolStripMenuItem.Text = "神坊";
+            this.神坊ToolStripMenuItem.Click += new System.EventHandler(this.神坊ToolStripMenuItem_Click);
             // 
             // 篩選ToolStripMenuItem
             // 
@@ -461,12 +470,12 @@
             // 
             this.平台訂單新增匯入資料BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單新增匯入資料);
             // 
-            // 神坊ToolStripMenuItem
+            // uDesignToolStripMenuItem
             // 
-            this.神坊ToolStripMenuItem.Name = "神坊ToolStripMenuItem";
-            this.神坊ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.神坊ToolStripMenuItem.Text = "神坊";
-            this.神坊ToolStripMenuItem.Click += new System.EventHandler(this.神坊ToolStripMenuItem_Click);
+            this.uDesignToolStripMenuItem.Name = "uDesignToolStripMenuItem";
+            this.uDesignToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.uDesignToolStripMenuItem.Text = "uDesign";
+            this.uDesignToolStripMenuItem.Click += new System.EventHandler(this.uDesignToolStripMenuItem_Click);
             // 
             // 平台訂單新增匯入視窗
             // 
@@ -538,6 +547,7 @@
         private System.Windows.Forms.BindingSource 平台訂單新增匯入資料BindingSource;
         private System.Windows.Forms.ToolStripMenuItem 博客來ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 神坊ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uDesignToolStripMenuItem;
 
     }
 }
