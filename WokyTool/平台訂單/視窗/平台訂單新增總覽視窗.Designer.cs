@@ -62,6 +62,7 @@
             this.封存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.匯入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單新增資料BindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -249,6 +250,7 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.匯入ToolStripMenuItem,
             this.篩選ToolStripMenuItem,
             this.檢查ToolStripMenuItem,
             this.分組ToolStripMenuItem,
@@ -313,8 +315,15 @@
             // 自訂ToolStripMenuItem
             // 
             this.自訂ToolStripMenuItem.Name = "自訂ToolStripMenuItem";
-            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.自訂ToolStripMenuItem.Text = "自訂";
+            // 
+            // 匯入ToolStripMenuItem
+            // 
+            this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
+            this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.匯入ToolStripMenuItem.Text = "匯入";
+            this.匯入ToolStripMenuItem.Click += new System.EventHandler(this.匯入ToolStripMenuItem_Click);
             // 
             // 平台訂單新增總覽視窗
             // 
@@ -370,5 +379,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 指配時段DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 代收方式DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 代收金額DataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem 匯入ToolStripMenuItem;
     }
 }

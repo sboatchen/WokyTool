@@ -95,26 +95,28 @@ namespace WokyTool.平台訂單
 
         public override String 取得分組識別(平台訂單新增資料 資料_)
         {
-            return String.Format("{0}_{1}", 資料_.配送公司, 資料_.配送單號);
+            return String.Format("{0}_{1}", this.GetType().Name, 資料_.配送公司);
         }
 
-        public override void 後續處理(IEnumerable<平台訂單新增資料> 資料列舉_)
+        public override IEnumerable<配送轉換資料> 配送轉換(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
-            {
-                IEnumerable<平台訂單新增資料> 篩選資料列舉_ = 資料列舉_.Where(Value => Value.配送公司 == 列舉.配送公司.SEVEN);
-                if (篩選資料列舉_.Any())
-                {
-                    var 轉換_ = new 平台訂單配送轉換_生活市集_SEVEN(篩選資料列舉_);
-                    檔案.詢問並修改("生活市集Seven配送原始檔", 轉換_);
-                }
-            }
+            var GroupQueue_ = 資料列舉_.GroupBy(Value => Value.配送分組);
 
+            foreach (var Group_ in GroupQueue_)
             {
-                IEnumerable<平台訂單新增資料> 篩選資料列舉_ = 資料列舉_.Where(Value => Value.配送公司 == 列舉.配送公司.全家);
-                if (篩選資料列舉_.Any())
+                平台訂單新增資料 第一單_ = Group_.First();
+
+                switch (第一單_.配送公司)
                 {
-                    var 轉換_ = new 平台訂單配送轉換_生活市集_全家(篩選資料列舉_);
-                    檔案.詢問並修改("生活市集全家配送原始檔", 轉換_);
+                    case 列舉.配送公司.SEVEN:
+                        yield return new 平台訂單配送轉換資料_生活市集_SEVEN(Group_.ToList());
+                        break;
+                    case 列舉.配送公司.全家:
+                        yield return new 平台訂單配送轉換資料_生活市集_全家(Group_.ToList());
+                        break;
+                    default:
+                        訊息管理器.獨體.錯誤("不支援配送公司 " + 第一單_.配送公司);
+                        break;
                 }
             }
         }

@@ -27,6 +27,31 @@ namespace WokyTool.平台訂單
             this._標頭列 = 標頭列_;
         }
 
+        public virtual IEnumerable<配送轉換資料> 配送轉換(IEnumerable<平台訂單新增資料> 資料列舉_)
+        {
+            var GroupQueue_ = 資料列舉_.GroupBy(Value => Value.配送分組);
+
+            foreach (var Group_ in GroupQueue_)
+            {
+                if (Group_.Key == 0)
+                {
+                    foreach (平台訂單新增資料 資料_ in Group_)
+                    {
+                        yield return new 平台訂單配送轉換資料(資料_);
+                    }
+                }
+                else
+                {
+                    平台訂單新增資料 第一單_ = Group_.First();
+
+                    if (Group_.Count() == 1)
+                        yield return new 平台訂單配送轉換資料(第一單_);
+                    else
+                        yield return new 平台訂單合併配送轉換資料(Group_.ToList());
+                }
+            }
+        }
+
         public virtual void 後續處理(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
         }

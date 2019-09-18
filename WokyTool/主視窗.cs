@@ -373,27 +373,9 @@ namespace WokyTool
             月結帳匯入設定資料管理器.獨體.新增(Map.Values);
         }
 
-        private void button10_Click(object sender, EventArgs e)
-        {
-            var i = new 平台訂單新增匯入視窗();
-            i.初始化();
-            i.Show();
-            i.BringToFront();
-        }
-
         private void 使用者_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.使用者, 列舉.視窗.總覽);
-        }
-
-        private void button25_Click_1(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.總覽);
-        }
-
-        private void button33_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.平台訂單新增_Momo三方, 列舉.視窗.總覽);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -497,6 +479,11 @@ namespace WokyTool
         private void 盤點_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.盤點, 列舉.視窗.總覽);
+        }
+
+        private void 平台_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.總覽);
         }
     }
 }

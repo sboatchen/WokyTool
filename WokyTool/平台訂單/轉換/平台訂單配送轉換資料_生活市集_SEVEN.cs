@@ -1,16 +1,14 @@
 ﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using WokyTool.Common;
 using WokyTool.物品;
-using WokyTool.配送;
 using WokyTool.通用;
 
 namespace WokyTool.平台訂單
 {
-    public class 平台訂單配送轉換資料_生活市集_SEVEN : 配送轉換資料, 可寫入介面_PDF
+    public class 平台訂單配送轉換資料_生活市集_SEVEN : 平台訂單配送轉換資料_超商
     {
         private static List<PDF拷貝元件> _拷貝資料列;
         public static List<PDF拷貝元件> 拷貝資料列
@@ -51,32 +49,17 @@ namespace WokyTool.平台訂單
             }
         }
 
-        public string 標頭 { get { return "請提供 生活市集 Seven 配送原始檔"; } }
+        public override string 標頭 { get { return "請提供 生活市集 Seven 配送原始檔"; } }
 
-        public string 密碼 { get { return null; } }
-
-        public List<平台訂單新增資料> 來源資料列 { get; protected set; }
+        public override string 密碼 { get { return null; } }
 
         public 平台訂單配送轉換資料_生活市集_SEVEN(List<平台訂單新增資料> 來源資料列_)
+            : base(來源資料列_)
         {
-            if (來源資料列_.Count == 0)
-                throw new Exception("併單數量為0");
-
-            來源資料列 = 來源資料列_;
-
             轉換.配送公司 = 列舉.配送公司.SEVEN;
-            轉換.配送單號 = "合併訂單";
-
-            /*轉換.姓名 = 第一筆資料_.處理器.取得配送姓名(第一筆資料_);    //@@ 取得超商配送相關資料
-            轉換.地址 = 第一筆資料_.地址;
-            轉換.電話 = 第一筆資料_.電話;
-            轉換.手機 = 第一筆資料_.手機;*/
-
-            轉換.件數 = 1;
-            //轉換.內容 = 字串.空;
         }
 
-        public void 寫入(PdfReader PdfReader_, int 頁索引_, PdfWriter PdfWriter_)
+        public override void 寫入(PdfReader PdfReader_, int 頁索引_, PdfWriter PdfWriter_)
         {
             foreach (PDF拷貝元件 拷貝資料_ in 拷貝資料列)
             {
@@ -108,7 +91,7 @@ namespace WokyTool.平台訂單
             }
         }
 
-        public void 測試(PdfReader PdfReader_, int 頁索引_, PdfWriter PdfWriter_)
+        public override void 測試(PdfReader PdfReader_, int 頁索引_, PdfWriter PdfWriter_)
         {
             foreach (PDF拷貝元件 拷貝資料_ in 拷貝資料列)
             {

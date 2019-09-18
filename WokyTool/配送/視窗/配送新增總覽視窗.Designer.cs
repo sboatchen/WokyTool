@@ -45,6 +45,10 @@ namespace WokyTool.配送
             this.宅配通撿貨ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.宅配通明細ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.測試用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sEVENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SEVEN轉換ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SEVEN撿貨ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SEVEN明細ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
             this.配送公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.配送單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,10 +64,10 @@ namespace WokyTool.配送
             this.件數DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.內容DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.配送轉換資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sEVENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SEVEN轉換ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SEVEN撿貨ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SEVEN明細ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.全家ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.全家轉換ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.全家撿貨ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.全家明細ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送轉換資料BindingSource)).BeginInit();
@@ -77,8 +81,9 @@ namespace WokyTool.配送
             this.篩選ToolStripMenuItem,
             this.全速配ToolStripMenuItem,
             this.宅配通ToolStripMenuItem,
-            this.測試用ToolStripMenuItem,
-            this.sEVENToolStripMenuItem});
+            this.sEVENToolStripMenuItem,
+            this.全家ToolStripMenuItem,
+            this.測試用ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1547, 24);
@@ -111,28 +116,28 @@ namespace WokyTool.配送
             // 全速配匯出ToolStripMenuItem
             // 
             this.全速配匯出ToolStripMenuItem.Name = "全速配匯出ToolStripMenuItem";
-            this.全速配匯出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.全速配匯出ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.全速配匯出ToolStripMenuItem.Text = "匯出";
             this.全速配匯出ToolStripMenuItem.Click += new System.EventHandler(this.全速配匯出ToolStripMenuItem_Click);
             // 
             // 全速配匯入ToolStripMenuItem
             // 
             this.全速配匯入ToolStripMenuItem.Name = "全速配匯入ToolStripMenuItem";
-            this.全速配匯入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.全速配匯入ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.全速配匯入ToolStripMenuItem.Text = "匯入";
             this.全速配匯入ToolStripMenuItem.Click += new System.EventHandler(this.全速配匯入ToolStripMenuItem_Click);
             // 
             // 全速配撿貨ToolStripMenuItem
             // 
             this.全速配撿貨ToolStripMenuItem.Name = "全速配撿貨ToolStripMenuItem";
-            this.全速配撿貨ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.全速配撿貨ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.全速配撿貨ToolStripMenuItem.Text = "撿貨";
             this.全速配撿貨ToolStripMenuItem.Click += new System.EventHandler(this.全速配撿貨ToolStripMenuItem_Click);
             // 
             // 全速配明細ToolStripMenuItem
             // 
             this.全速配明細ToolStripMenuItem.Name = "全速配明細ToolStripMenuItem";
-            this.全速配明細ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.全速配明細ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.全速配明細ToolStripMenuItem.Text = "明細";
             this.全速配明細ToolStripMenuItem.Click += new System.EventHandler(this.全速配明細ToolStripMenuItem_Click);
             // 
@@ -150,28 +155,28 @@ namespace WokyTool.配送
             // 宅配通匯出ToolStripMenuItem
             // 
             this.宅配通匯出ToolStripMenuItem.Name = "宅配通匯出ToolStripMenuItem";
-            this.宅配通匯出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.宅配通匯出ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.宅配通匯出ToolStripMenuItem.Text = "匯出";
             this.宅配通匯出ToolStripMenuItem.Click += new System.EventHandler(this.宅配通匯出ToolStripMenuItem_Click);
             // 
             // 宅配通匯入ToolStripMenuItem
             // 
             this.宅配通匯入ToolStripMenuItem.Name = "宅配通匯入ToolStripMenuItem";
-            this.宅配通匯入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.宅配通匯入ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.宅配通匯入ToolStripMenuItem.Text = "匯入";
             this.宅配通匯入ToolStripMenuItem.Click += new System.EventHandler(this.宅配通匯入ToolStripMenuItem_Click);
             // 
             // 宅配通撿貨ToolStripMenuItem
             // 
             this.宅配通撿貨ToolStripMenuItem.Name = "宅配通撿貨ToolStripMenuItem";
-            this.宅配通撿貨ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.宅配通撿貨ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.宅配通撿貨ToolStripMenuItem.Text = "撿貨";
             this.宅配通撿貨ToolStripMenuItem.Click += new System.EventHandler(this.宅配通撿貨ToolStripMenuItem_Click);
             // 
             // 宅配通明細ToolStripMenuItem
             // 
             this.宅配通明細ToolStripMenuItem.Name = "宅配通明細ToolStripMenuItem";
-            this.宅配通明細ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.宅配通明細ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.宅配通明細ToolStripMenuItem.Text = "明細";
             this.宅配通明細ToolStripMenuItem.Click += new System.EventHandler(this.宅配通明細ToolStripMenuItem_Click);
             // 
@@ -181,6 +186,37 @@ namespace WokyTool.配送
             this.測試用ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.測試用ToolStripMenuItem.Text = "測試";
             this.測試用ToolStripMenuItem.Click += new System.EventHandler(this.測試ToolStripMenuItem_Click);
+            // 
+            // sEVENToolStripMenuItem
+            // 
+            this.sEVENToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SEVEN轉換ToolStripMenuItem,
+            this.SEVEN撿貨ToolStripMenuItem,
+            this.SEVEN明細ToolStripMenuItem});
+            this.sEVENToolStripMenuItem.Name = "sEVENToolStripMenuItem";
+            this.sEVENToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.sEVENToolStripMenuItem.Text = "SEVEN";
+            // 
+            // SEVEN轉換ToolStripMenuItem
+            // 
+            this.SEVEN轉換ToolStripMenuItem.Name = "SEVEN轉換ToolStripMenuItem";
+            this.SEVEN轉換ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.SEVEN轉換ToolStripMenuItem.Text = "轉換";
+            this.SEVEN轉換ToolStripMenuItem.Click += new System.EventHandler(this.SEVEN轉換ToolStripMenuItem_Click);
+            // 
+            // SEVEN撿貨ToolStripMenuItem
+            // 
+            this.SEVEN撿貨ToolStripMenuItem.Name = "SEVEN撿貨ToolStripMenuItem";
+            this.SEVEN撿貨ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.SEVEN撿貨ToolStripMenuItem.Text = "撿貨";
+            this.SEVEN撿貨ToolStripMenuItem.Click += new System.EventHandler(this.SEVEN撿貨ToolStripMenuItem_Click);
+            // 
+            // SEVEN明細ToolStripMenuItem
+            // 
+            this.SEVEN明細ToolStripMenuItem.Name = "SEVEN明細ToolStripMenuItem";
+            this.SEVEN明細ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.SEVEN明細ToolStripMenuItem.Text = "明細";
+            this.SEVEN明細ToolStripMenuItem.Click += new System.EventHandler(this.SEVEN明細ToolStripMenuItem_Click);
             // 
             // myDataGridView1
             // 
@@ -291,36 +327,36 @@ namespace WokyTool.配送
             // 
             this.配送轉換資料BindingSource.DataSource = typeof(WokyTool.配送.配送轉換資料);
             // 
-            // sEVENToolStripMenuItem
+            // 全家ToolStripMenuItem
             // 
-            this.sEVENToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SEVEN轉換ToolStripMenuItem,
-            this.SEVEN撿貨ToolStripMenuItem,
-            this.SEVEN明細ToolStripMenuItem});
-            this.sEVENToolStripMenuItem.Name = "sEVENToolStripMenuItem";
-            this.sEVENToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.sEVENToolStripMenuItem.Text = "SEVEN";
+            this.全家ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.全家轉換ToolStripMenuItem,
+            this.全家撿貨ToolStripMenuItem,
+            this.全家明細ToolStripMenuItem});
+            this.全家ToolStripMenuItem.Name = "全家ToolStripMenuItem";
+            this.全家ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.全家ToolStripMenuItem.Text = "全家";
             // 
-            // SEVEN轉換ToolStripMenuItem
+            // 全家轉換ToolStripMenuItem
             // 
-            this.SEVEN轉換ToolStripMenuItem.Name = "SEVEN轉換ToolStripMenuItem";
-            this.SEVEN轉換ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.SEVEN轉換ToolStripMenuItem.Text = "轉換";
-            this.SEVEN轉換ToolStripMenuItem.Click += new System.EventHandler(this.SEVEN轉換ToolStripMenuItem_Click);
+            this.全家轉換ToolStripMenuItem.Name = "全家轉換ToolStripMenuItem";
+            this.全家轉換ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.全家轉換ToolStripMenuItem.Text = "轉換";
+            this.全家轉換ToolStripMenuItem.Click += new System.EventHandler(this.全家轉換ToolStripMenuItem_Click);
             // 
-            // SEVEN撿貨ToolStripMenuItem
+            // 全家撿貨ToolStripMenuItem
             // 
-            this.SEVEN撿貨ToolStripMenuItem.Name = "SEVEN撿貨ToolStripMenuItem";
-            this.SEVEN撿貨ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.SEVEN撿貨ToolStripMenuItem.Text = "撿貨";
-            this.SEVEN撿貨ToolStripMenuItem.Click += new System.EventHandler(this.SEVEN撿貨ToolStripMenuItem_Click);
+            this.全家撿貨ToolStripMenuItem.Name = "全家撿貨ToolStripMenuItem";
+            this.全家撿貨ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.全家撿貨ToolStripMenuItem.Text = "撿貨";
+            this.全家撿貨ToolStripMenuItem.Click += new System.EventHandler(this.全家撿貨ToolStripMenuItem_Click);
             // 
-            // SEVEN明細ToolStripMenuItem
+            // 全家明細ToolStripMenuItem
             // 
-            this.SEVEN明細ToolStripMenuItem.Name = "SEVEN明細ToolStripMenuItem";
-            this.SEVEN明細ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.SEVEN明細ToolStripMenuItem.Text = "明細";
-            this.SEVEN明細ToolStripMenuItem.Click += new System.EventHandler(this.SEVEN明細ToolStripMenuItem_Click);
+            this.全家明細ToolStripMenuItem.Name = "全家明細ToolStripMenuItem";
+            this.全家明細ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.全家明細ToolStripMenuItem.Text = "明細";
+            this.全家明細ToolStripMenuItem.Click += new System.EventHandler(this.全家明細ToolStripMenuItem_Click);
             // 
             // 配送新增總覽視窗
             // 
@@ -376,5 +412,9 @@ namespace WokyTool.配送
         private System.Windows.Forms.ToolStripMenuItem SEVEN轉換ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SEVEN撿貨ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SEVEN明細ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 全家ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 全家轉換ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 全家撿貨ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 全家明細ToolStripMenuItem;
     }
 }

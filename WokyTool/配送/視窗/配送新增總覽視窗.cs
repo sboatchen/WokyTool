@@ -152,17 +152,6 @@ namespace WokyTool.配送
                 訊息管理器.獨體.通知("匯出完成");
         }
 
-        private void 測試ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            int i = 1;
-            foreach (var 資料_ in 資料管理器.資料列.Where(Value => Value.已配送 == false))
-            {
-                資料_.配送單號 = String.Format("宅配回單測試{0}", i++);
-            }
-
-            訊息管理器.獨體.通知("測試完成");
-        }
-
         private void SEVEN轉換ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             IEnumerable<可寫入介面_PDF> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.SEVEN).Select(Value => (可寫入介面_PDF)Value);
@@ -176,19 +165,94 @@ namespace WokyTool.配送
         private void SEVEN撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.SEVEN);
+            if (資料列舉_.Any() == false)
+                return;
 
+            bool 是否匯出完成_ = true;
             foreach (配送轉換資料 資料_ in 資料列舉_)
             {
                 配送撿貨轉換 轉換_ = new 配送撿貨轉換(資料列舉_);
-                string 標題_ = String.Format("宅配通撿貨_{0}", 時間.目前日期);
-                if (檔案.詢問並寫入(標題_, 轉換_))
-                    訊息管理器.獨體.通知("匯出完成");
+                string 標題_ = String.Format("{0}_SEVEN撿貨_{1}", 資料_.客戶名稱, 時間.目前日期);
+                是否匯出完成_ &= 檔案.詢問並寫入(標題_, 轉換_);
             }
+
+            if(是否匯出完成_)
+                訊息管理器.獨體.通知("匯出完成");
         }
 
         private void SEVEN明細ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            IEnumerable<平台訂單配送轉換資料_超商> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.SEVEN).Select(Value => (平台訂單配送轉換資料_超商)Value);
+            if (資料列舉_.Any() == false)
+                return;
 
+            bool 是否匯出完成_ = true;
+            foreach (平台訂單配送轉換資料_超商 資料_ in 資料列舉_)
+            {
+                配送明細轉換 轉換_ = new 配送明細轉換(資料_);
+                string 標題_ = String.Format("{0}_SEVEN明細_{1}", 資料_.客戶名稱, 時間.目前日期);
+                是否匯出完成_ &= 檔案.詢問並寫入(標題_, 轉換_);
+            }
+
+            if (是否匯出完成_)
+                訊息管理器.獨體.通知("匯出完成");
+        }
+
+        private void 全家轉換ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IEnumerable<可寫入介面_PDF> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全家).Select(Value => (可寫入介面_PDF)Value);
+
+            foreach (可寫入介面_PDF 資料_ in 資料列舉_)
+            {
+                檔案.詢問並修改(資料_);
+            }
+        }
+
+        private void 全家撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全家);
+            if (資料列舉_.Any() == false)
+                return;
+
+            bool 是否匯出完成_ = true;
+            foreach (配送轉換資料 資料_ in 資料列舉_)
+            {
+                配送撿貨轉換 轉換_ = new 配送撿貨轉換(資料列舉_);
+                string 標題_ = String.Format("{0}_全家撿貨_{1}", 資料_.客戶名稱, 時間.目前日期);
+                是否匯出完成_ &= 檔案.詢問並寫入(標題_, 轉換_);
+            }
+
+            if (是否匯出完成_)
+                訊息管理器.獨體.通知("匯出完成");
+        }
+
+        private void 全家明細ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IEnumerable<平台訂單配送轉換資料_超商> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全家).Select(Value => (平台訂單配送轉換資料_超商)Value);
+            if (資料列舉_.Any() == false)
+                return;
+
+            bool 是否匯出完成_ = true;
+            foreach (平台訂單配送轉換資料_超商 資料_ in 資料列舉_)
+            {
+                配送明細轉換 轉換_ = new 配送明細轉換(資料_);
+                string 標題_ = String.Format("{0}_全家明細_{1}", 資料_.客戶名稱, 時間.目前日期);
+                是否匯出完成_ &= 檔案.詢問並寫入(標題_, 轉換_);
+            }
+
+            if (是否匯出完成_)
+                訊息管理器.獨體.通知("匯出完成");
+        }
+
+        private void 測試ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int i = 1;
+            foreach (var 資料_ in 資料管理器.資料列.Where(Value => Value.已配送 == false))
+            {
+                資料_.配送單號 = String.Format("宅配回單測試{0}", i++);
+            }
+
+            訊息管理器.獨體.通知("測試完成");
         }
     }
 }

@@ -33,6 +33,14 @@ namespace WokyTool.平台訂單
             InitializeComponent();
         }
 
+        private void 匯入ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var i = new 平台訂單新增匯入視窗();
+            i.初始化();
+            i.Show();
+            i.BringToFront();
+        }
+
         private void 分組ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             IEnumerable<平台訂單新增資料> 資料列舉_ = (IEnumerable<平台訂單新增資料>)編輯管理器.資料列舉;
@@ -59,27 +67,14 @@ namespace WokyTool.平台訂單
         {
             IEnumerable<平台訂單新增資料> 資料列舉_ = (IEnumerable<平台訂單新增資料>)編輯管理器.資料列舉;
 
-            var GroupQueue_ = 資料列舉_.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增 || Value.處理狀態 == 列舉.訂單處理狀態.配送).GroupBy(Value => Value.配送分組);
-            //@@ 略過已進入配送介面的
+            var GroupQueue_ = 資料列舉_.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增 || Value.處理狀態 == 列舉.訂單處理狀態.配送).GroupBy(Value => Value.處理器);
 
             List<配送轉換資料> 資料列_ = new List<配送轉換資料>();
             foreach (var Group_ in GroupQueue_)
             {
-                if (Group_.Key == 0)
+                foreach (配送轉換資料 轉換_ in Group_.Key.配送轉換(Group_))
                 {
-                    foreach (平台訂單新增資料 資料_ in Group_)
-                    {
-                        資料列_.Add(new 平台訂單配送轉換資料(資料_));
-                    }
-                }
-                else
-                {
-                    平台訂單新增資料 第一單_ = Group_.First();
-
-                    if (Group_.Count() == 1)
-                        資料列_.Add(new 平台訂單配送轉換資料(第一單_));
-                    else
-                        資料列_.Add(new 平台訂單合併配送轉換資料(Group_.ToList()));
+                    資料列_.Add(轉換_);
                 }
             }
 

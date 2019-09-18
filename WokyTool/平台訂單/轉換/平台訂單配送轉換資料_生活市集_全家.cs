@@ -1,22 +1,14 @@
-﻿using IronOcr;
-using iTextSharp.text;
+﻿using iTextSharp.text;
 using iTextSharp.text.pdf;
-using iTextSharp.text.pdf.parser;
-using LINQtoCSV;
-using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WokyTool.Common;
-using WokyTool.平台訂單;
 using WokyTool.物品;
 using WokyTool.通用;
 
-namespace WokyTool.客製
+namespace WokyTool.平台訂單
 {
-    public class 平台訂單配送轉換_生活市集_全家 : 可寫入介面_PDF
+    public class 平台訂單配送轉換資料_生活市集_全家 : 平台訂單配送轉換資料_超商
     {
         private static PDF拷貝元件 拷貝資料 = new PDF拷貝元件(new Rectangle(0, 50, 595, 810), 0, -20);
 
@@ -40,16 +32,17 @@ namespace WokyTool.客製
             }
         }
 
-        public string 密碼 { get { return null; } }
+        public override string 標頭 { get { return "請提供 生活市集 全家 配送原始檔"; } }
 
-        private IEnumerable<平台訂單新增資料> _資料列舉;
+        public override string 密碼 { get { return null; } }
 
-        public 平台訂單配送轉換_生活市集_全家(IEnumerable<平台訂單新增資料> 資料列舉_)
+        public 平台訂單配送轉換資料_生活市集_全家(List<平台訂單新增資料> 來源資料列_)
+            : base(來源資料列_)
         {
-            _資料列舉 = 資料列舉_;
+            轉換.配送公司 = 列舉.配送公司.全家;
         }
 
-        public void 寫入(PdfReader PdfReader_, int 頁索引_, PdfWriter PdfWriter_)
+        public override void 寫入(PdfReader PdfReader_, int 頁索引_, PdfWriter PdfWriter_)
         {
             拷貝資料.處理(PdfReader_, 頁索引_, PdfWriter_);
 
@@ -61,7 +54,7 @@ namespace WokyTool.客製
 
                 訊息管理器.獨體.訊息("讀出訂單編號:" + 訂單編號_);
 
-                var 符合資料列_ = _資料列舉.Where(Value => 訂單編號_.Equals(Value.訂單編號)).ToArray();
+                var 符合資料列_ = 來源資料列.Where(Value => 訂單編號_.Equals(Value.訂單編號)).ToArray();
                 if (符合資料列_.Length == 0)
                 {
                     Pair_.Value.處理(PdfWriter_, "找不到符合的訂單編號");
@@ -78,7 +71,7 @@ namespace WokyTool.客製
             }
         }
 
-        public void 測試(PdfReader PdfReader_, int 頁索引_, PdfWriter PdfWriter_)
+        public override void 測試(PdfReader PdfReader_, int 頁索引_, PdfWriter PdfWriter_)
         {
             拷貝資料.處理(PdfReader_, 頁索引_, PdfWriter_);
 

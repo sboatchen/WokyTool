@@ -42,7 +42,7 @@ namespace WokyTool.平台訂單
             轉換.件數 = 1;
 
             物品合併資料.共用.清除();
-            物品合併資料.共用.新增(來源資料.商品, 來源資料.數量);
+            物品合併資料.共用.新增(來源資料);
             轉換.內容 = 物品合併資料.共用.ToString();
 
             // 配送公司
@@ -68,6 +68,11 @@ namespace WokyTool.平台訂單
             來源資料.配送單號 = 轉換.配送單號;
 
             return true;
+        }
+
+        public override string 客戶名稱
+        {
+            get { return 來源資料.客戶.名稱; }
         }
     }
 }

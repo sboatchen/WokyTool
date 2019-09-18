@@ -151,6 +151,11 @@ namespace WokyTool.配送
             get { return string.IsNullOrEmpty(轉換.配送單號) == false; }
         }
 
+        public virtual string 客戶名稱
+        {
+            get { return 字串.空; }
+        }
+
         /********************************/
 
         public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null, 基本資料 資料參考_ = null)
