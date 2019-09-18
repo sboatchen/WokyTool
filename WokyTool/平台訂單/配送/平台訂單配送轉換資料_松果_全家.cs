@@ -61,6 +61,11 @@ namespace WokyTool.平台訂單
 
         public override void 寫入(PdfReader PdfReader_, int 頁索引_, PdfWriter PdfWriter_)
         {
+            foreach (PDF拷貝元件 拷貝資料_ in 拷貝資料列)
+            {
+                拷貝資料_.處理(PdfReader_, 頁索引_, PdfWriter_);
+            }
+
             foreach (var Pair_ in 設定資料書)
             {
                 string 配送單號_ = Pair_.Key.處理(PdfReader_, 頁索引_);

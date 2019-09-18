@@ -17,7 +17,6 @@ namespace WokyTool.平台訂單
         private static int 全速配 = 1;
         private static int 宅配通 = 5;
 
-
         public string 分類 { get { return null; } }
 
         public string 樣板 { get { return null; } }

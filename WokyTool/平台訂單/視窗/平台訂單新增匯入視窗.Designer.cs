@@ -50,6 +50,7 @@
             this.生活市集一般ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.生活市集SEVENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.生活市集全家ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.博客來ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
@@ -77,7 +78,7 @@
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.平台訂單新增匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.博客來ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.神坊ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單新增匯入資料BindingSource)).BeginInit();
@@ -111,7 +112,8 @@
             this.特力屋ToolStripMenuItem,
             this.松果ToolStripMenuItem,
             this.生活市集ToolStripMenuItem,
-            this.博客來ToolStripMenuItem});
+            this.博客來ToolStripMenuItem,
+            this.神坊ToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
             this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "匯入";
@@ -207,21 +209,21 @@
             // 松果一般ToolStripMenuItem
             // 
             this.松果一般ToolStripMenuItem.Name = "松果一般ToolStripMenuItem";
-            this.松果一般ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.松果一般ToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.松果一般ToolStripMenuItem.Text = "一般";
             this.松果一般ToolStripMenuItem.Click += new System.EventHandler(this.松果一般ToolStripMenuItem_Click);
             // 
             // 松果sevenToolStripMenuItem
             // 
             this.松果sevenToolStripMenuItem.Name = "松果sevenToolStripMenuItem";
-            this.松果sevenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.松果sevenToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.松果sevenToolStripMenuItem.Text = "Seven";
             this.松果sevenToolStripMenuItem.Click += new System.EventHandler(this.松果sevenToolStripMenuItem_Click);
             // 
             // 松果全家ToolStripMenuItem
             // 
             this.松果全家ToolStripMenuItem.Name = "松果全家ToolStripMenuItem";
-            this.松果全家ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.松果全家ToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.松果全家ToolStripMenuItem.Text = "全家";
             this.松果全家ToolStripMenuItem.Click += new System.EventHandler(this.松果全家ToolStripMenuItem_Click);
             // 
@@ -255,6 +257,13 @@
             this.生活市集全家ToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.生活市集全家ToolStripMenuItem.Text = "全家";
             this.生活市集全家ToolStripMenuItem.Click += new System.EventHandler(this.生活市集全家ToolStripMenuItem_Click);
+            // 
+            // 博客來ToolStripMenuItem
+            // 
+            this.博客來ToolStripMenuItem.Name = "博客來ToolStripMenuItem";
+            this.博客來ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.博客來ToolStripMenuItem.Text = "博客來";
+            this.博客來ToolStripMenuItem.Click += new System.EventHandler(this.博客來ToolStripMenuItem_Click);
             // 
             // 篩選ToolStripMenuItem
             // 
@@ -452,12 +461,12 @@
             // 
             this.平台訂單新增匯入資料BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單新增匯入資料);
             // 
-            // 博客來ToolStripMenuItem
+            // 神坊ToolStripMenuItem
             // 
-            this.博客來ToolStripMenuItem.Name = "博客來ToolStripMenuItem";
-            this.博客來ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.博客來ToolStripMenuItem.Text = "博客來";
-            this.博客來ToolStripMenuItem.Click += new System.EventHandler(this.博客來ToolStripMenuItem_Click);
+            this.神坊ToolStripMenuItem.Name = "神坊ToolStripMenuItem";
+            this.神坊ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.神坊ToolStripMenuItem.Text = "神坊";
+            this.神坊ToolStripMenuItem.Click += new System.EventHandler(this.神坊ToolStripMenuItem_Click);
             // 
             // 平台訂單新增匯入視窗
             // 
@@ -528,6 +537,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 錯誤訊息DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 平台訂單新增匯入資料BindingSource;
         private System.Windows.Forms.ToolStripMenuItem 博客來ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 神坊ToolStripMenuItem;
 
     }
 }

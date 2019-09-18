@@ -233,8 +233,11 @@
     <Compile Include="寄庫\轉換\寄庫匯入轉換_料理123.cs" />
     <Compile Include="寄庫\轉換\寄庫匯入轉換_PCHome.cs" />
     <Compile Include="平台訂單\介面\平台訂單匯入處理介面.cs" />
+    <Compile Include="平台訂單\回單\平台訂單回單轉換_松果.cs" />
+    <Compile Include="平台訂單\回單\平台訂單回單轉換_神坊.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_生活市集.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_博客來.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_神坊.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_博客來.cs" />
     <Compile Include="平台訂單\視窗\平台訂單新增匯入篩選視窗.cs">
       <SubType>Form</SubType>
@@ -250,7 +253,7 @@
     </Compile>
     <Compile Include="平台訂單\資料\平台訂單新增匯入資料篩選.cs" />
     <Compile Include="平台訂單\資料\平台訂單新增資料篩選.cs" />
-    <Compile Include="平台訂單\轉換\平台訂單配送轉換資料_超商.cs" />
+    <Compile Include="平台訂單\配送\平台訂單配送轉換資料_超商.cs" />
     <Compile Include="庫存\控制\商品庫存封存資料管理器.cs" />
     <Compile Include="庫存\控制\物品庫存封存資料管理器.cs" />
     <Compile Include="庫存\資料\商品庫存封存資料.cs" />
@@ -397,7 +400,6 @@
     <Compile Include="廢棄\轉換\平台訂單自定義_PC購物中心.cs" />
     <Compile Include="廢棄\轉換\平台訂單自定義_PC商店街.cs" />
     <Compile Include="廢棄\轉換\平台訂單自定義_uDesign.cs" />
-    <Compile Include="廢棄\轉換\平台訂單自定義_神坊.cs" />
     <Compile Include="廢棄\轉換\平台訂單自定義_遠傳加購.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_特力屋.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_UDN.cs" />
@@ -412,10 +414,10 @@
     <Compile Include="客製\回單轉換\平台訂單回單轉換_Momo.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_森森.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_東森.cs" />
-    <Compile Include="平台訂單\轉換\平台訂單配送轉換資料_生活市集_全家.cs" />
-    <Compile Include="平台訂單\轉換\平台訂單配送轉換資料_生活市集_SEVEN.cs" />
-    <Compile Include="平台訂單\轉換\平台訂單配送轉換資料_松果_全家.cs" />
-    <Compile Include="平台訂單\轉換\平台訂單配送轉換資料_松果_SEVEN.cs" />
+    <Compile Include="平台訂單\配送\平台訂單配送轉換資料_生活市集_全家.cs" />
+    <Compile Include="平台訂單\配送\平台訂單配送轉換資料_生活市集_SEVEN.cs" />
+    <Compile Include="平台訂單\配送\平台訂單配送轉換資料_松果_全家.cs" />
+    <Compile Include="平台訂單\配送\平台訂單配送轉換資料_松果_SEVEN.cs" />
     <Compile Include="幣值\控制\幣值資料管理器.cs" />
     <Compile Include="幣值\視窗\元件\幣值選取元件.cs">
       <SubType>UserControl</SubType>
@@ -1074,7 +1076,6 @@
     <Compile Include="客製\回單轉換\平台訂單回單轉換_PC商店街.cs" />
     <Compile Include="廢棄\回單號結構_創業家兄弟.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_百利市.cs" />
-    <Compile Include="客製\回單轉換\平台訂單回單轉換_神坊.cs" />
     <Compile Include="廢棄\回單號結構_遠傳.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_遠傳加購.cs" />
     <Compile Include="廢棄\出貨匯入結構_ASAP.cs" />
@@ -1103,9 +1104,9 @@
     <Compile Include="聯絡人\資料\聯絡人資料.cs" />
     <Compile Include="通用\介面\可儲存介面.cs" />
     <Compile Include="通用\資料99\介面\可編輯資料列管理介面99.cs" />
-    <Compile Include="平台訂單\轉換\平台訂單合併配送轉換資料.cs" />
+    <Compile Include="平台訂單\配送\平台訂單合併配送轉換資料.cs" />
     <Compile Include="配送\資料\配送資料.cs" />
-    <Compile Include="平台訂單\轉換\平台訂單配送轉換資料.cs" />
+    <Compile Include="平台訂單\配送\平台訂單配送轉換資料.cs" />
     <EmbeddedResource Include="一般訂單\視窗\一般訂單總覽視窗.resx">
       <DependentUpon>一般訂單總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
