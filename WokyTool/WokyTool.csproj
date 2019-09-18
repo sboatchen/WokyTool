@@ -458,7 +458,6 @@
     <Compile Include="平台訂單\資料\平台訂單資料.cs" />
     <Compile Include="平台訂單\資料\平台訂單新增資料.cs" />
     <Compile Include="廢棄\轉換\平台訂單自定義_摩天.cs" />
-    <Compile Include="廢棄\轉換\平台訂單自定義_PayEasy.cs" />
     <Compile Include="廢棄\資料\舊子客戶資料.cs" />
     <Compile Include="廢棄\資料\舊客戶資料.cs" />
     <Compile Include="廢棄\資料\舊聯絡人資料.cs" />
@@ -1072,7 +1071,6 @@
     <Compile Include="廢棄\回單號結構_citiesocial.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_ibonMart.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_myfone.cs" />
-    <Compile Include="客製\回單轉換\平台訂單回單轉換_PayEasy.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_PC商店街.cs" />
     <Compile Include="廢棄\回單號結構_創業家兄弟.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_百利市.cs" />
