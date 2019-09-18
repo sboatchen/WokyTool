@@ -1,12 +1,8 @@
 ﻿using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using WokyTool.Common;
-using WokyTool.測試;
 
 
 namespace WokyTool.通用

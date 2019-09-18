@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using WokyTool.公司;
-using WokyTool.物品;
-using WokyTool.客戶;
-using WokyTool.通用;
+﻿using WokyTool.通用;
 
 namespace WokyTool.配送
 {

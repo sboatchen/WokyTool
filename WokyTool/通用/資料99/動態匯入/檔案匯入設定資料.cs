@@ -1,11 +1,6 @@
 ﻿using System.Collections.Generic;
-using WokyTool.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System;
-using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace WokyTool.通用

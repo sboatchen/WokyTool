@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace WokyTool.平台訂單
 {
-    public static class 平台訂單列舉
+    public static class 平台訂單列舉  //@@ remove
     {
         public enum 匯入需求欄位
         {

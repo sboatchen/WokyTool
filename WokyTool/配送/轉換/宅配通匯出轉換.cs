@@ -1,14 +1,5 @@
 ﻿using Microsoft.Office.Interop.Excel;
-using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WokyTool.Common;
-using WokyTool.平台訂單;
-using WokyTool.物品;
-using WokyTool.配送;
 using WokyTool.通用;
 
 namespace WokyTool.配送

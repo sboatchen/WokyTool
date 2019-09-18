@@ -1,12 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WokyTool.Common;
-
+﻿
 namespace WokyTool.通用
 {
     public abstract class 新版可記錄資料 : 可編輯資料

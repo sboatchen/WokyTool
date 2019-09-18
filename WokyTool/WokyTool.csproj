@@ -185,7 +185,6 @@
     <Compile Include="商品\資料\商品更新資料.cs" />
     <Compile Include="商品\資料\商品更新資料篩選.cs" />
     <Compile Include="寄庫\控制\寄庫匯入資料管理器.cs" />
-    <Compile Include="寄庫\控制\寄庫資料管理器.cs" />
     <Compile Include="寄庫\控制\寄庫暫存資料管理器.cs" />
     <Compile Include="寄庫\視窗\寄庫暫存篩選視窗.cs">
       <SubType>Form</SubType>
@@ -1507,9 +1506,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="商品\轉換\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

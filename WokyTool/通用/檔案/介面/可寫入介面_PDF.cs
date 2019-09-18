@@ -1,9 +1,4 @@
 ﻿using iTextSharp.text.pdf;
-using Microsoft.Office.Interop.Excel;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WokyTool.通用
 {

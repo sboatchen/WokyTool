@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using WokyTool.Common;
-using WokyTool.公司;
-using WokyTool.寄庫;
-using WokyTool.客戶;
-using WokyTool.客製;
-using WokyTool.配送;
-using WokyTool.商品;
+﻿using System.Collections.Generic;
 using WokyTool.通用;
 
 namespace WokyTool.盤點
