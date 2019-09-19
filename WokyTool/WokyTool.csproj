@@ -242,6 +242,18 @@
     <Compile Include="平台訂單\處理\平台訂單匯入處理_神坊.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_博客來.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_PayEasy.cs" />
+    <Compile Include="平台訂單\視窗\平台訂單新增詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="平台訂單\視窗\平台訂單新增詳細視窗.Designer.cs">
+      <DependentUpon>平台訂單新增詳細視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="平台訂單\視窗\平台訂單新增篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="平台訂單\視窗\平台訂單新增篩選視窗.Designer.cs">
+      <DependentUpon>平台訂單新增篩選視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="平台訂單\視窗\平台訂單新增匯入篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -882,8 +894,8 @@
     <Compile Include="通用\列舉\實作\可編輯資料管理器.cs" />
     <Compile Include="通用\檢查\介面\可檢查介面.cs" />
     <Compile Include="通用\檢查\實作\錯誤訊息檢查器.cs" />
-    <Compile Include="通用\檢查\物件\錯誤資料.cs" />
-    <Compile Include="通用\檢查\物件\合法性錯誤.cs" />
+    <Compile Include="通用\檢查\資料\錯誤資料.cs" />
+    <Compile Include="通用\檢查\資料\合法性錯誤.cs" />
     <Compile Include="通用\檢查\實作\列表檢查器.cs" />
     <Compile Include="通用\檢查\實作\例外檢查器.cs" />
     <Compile Include="通用\檢查\視窗\錯誤列表視窗.cs">
@@ -1174,6 +1186,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="幣值\視窗\幣值總覽視窗.resx">
       <DependentUpon>幣值總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="平台訂單\視窗\平台訂單新增詳細視窗.resx">
+      <DependentUpon>平台訂單新增詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="平台訂單\視窗\平台訂單新增篩選視窗.resx">
+      <DependentUpon>平台訂單新增篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="平台訂單\視窗\平台訂單新增匯入視窗.resx">
       <DependentUpon>平台訂單新增匯入視窗.cs</DependentUpon>
