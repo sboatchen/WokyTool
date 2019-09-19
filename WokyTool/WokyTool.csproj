@@ -451,7 +451,6 @@
     </Compile>
     <Compile Include="平台訂單\資料\平台訂單列舉.cs" />
     <Compile Include="平台訂單\資料\平台訂單新增匯入資料.cs" />
-    <Compile Include="平台訂單\資料\平台訂單資料.cs" />
     <Compile Include="平台訂單\資料\平台訂單新增資料.cs" />
     <Compile Include="廢棄\轉換\平台訂單自定義_摩天.cs" />
     <Compile Include="廢棄\資料\舊子客戶資料.cs" />

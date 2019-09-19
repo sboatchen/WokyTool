@@ -332,6 +332,11 @@ namespace WokyTool.平台訂單
             this.最小代收金額.Name = "最小代收金額";
             this.最小代收金額.Size = new System.Drawing.Size(165, 22);
             this.最小代收金額.TabIndex = 86;
+            this.最小代收金額.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             // 
             // label14
             // 
@@ -369,16 +374,21 @@ namespace WokyTool.平台訂單
             this.最大代收金額.Name = "最大代收金額";
             this.最大代收金額.Size = new System.Drawing.Size(165, 22);
             this.最大代收金額.TabIndex = 120;
+            this.最大代收金額.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             // 
             // 指配時段
             // 
             this.指配時段.Location = new System.Drawing.Point(3, 352);
             this.指配時段.Name = "指配時段";
             this.指配時段.ReadOnly = false;
-            this.指配時段.SelectedItem = WokyTool.通用.列舉.指配時段.錯誤;
+            this.指配時段.SelectedItem = WokyTool.通用.列舉.指配時段.不篩選;
             this.指配時段.Size = new System.Drawing.Size(230, 22);
             this.指配時段.TabIndex = 125;
-            this.指配時段.元件類型 = WokyTool.通用.選取元件類型.指定;
+            this.指配時段.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
             // 商品
             // 
@@ -388,7 +398,7 @@ namespace WokyTool.平台訂單
             this.商品.SelectedItem = null;
             this.商品.Size = new System.Drawing.Size(420, 22);
             this.商品.TabIndex = 126;
-            this.商品.元件類型 = WokyTool.通用.選取元件類型.指定;
+            this.商品.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
             // 平台訂單新增匯入篩選視窗
             // 

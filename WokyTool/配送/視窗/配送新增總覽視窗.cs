@@ -149,6 +149,8 @@ namespace WokyTool.配送
             {
                 檔案.詢問並修改(資料_);
             }
+
+            訊息管理器.獨體.通知("轉換完成");
         }
 
         private void SEVEN撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -195,6 +197,8 @@ namespace WokyTool.配送
             {
                 檔案.詢問並修改(資料_);
             }
+
+            訊息管理器.獨體.通知("轉換完成");
         }
 
         private void 全家撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -241,6 +245,8 @@ namespace WokyTool.配送
             {
                 檔案.詢問並修改(資料_);
             }
+
+            訊息管理器.獨體.通知("轉換完成");
         }
 
         private void 三方撿貨ToolStripMenuItem_Click(object sender, EventArgs e)

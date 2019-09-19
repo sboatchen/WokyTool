@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using WokyTool.通用;
+using Newtonsoft.Json;
 
 namespace WokyTool.平台訂單
 {
@@ -12,7 +14,7 @@ namespace WokyTool.平台訂單
 
         public override string 檔案路徑 { get { return String.Format("進度/平台訂單新增/{0}.json", 系統參數.使用者名稱); } }
 
-        public string 完成檔案路徑{ get { return String.Format("進度/平台訂單待合併/{0}_{1}.json", 系統參數.使用者名稱, 時間.目前完整時間); } }
+        public string 完成檔案路徑 { get { return String.Format("進度/平台訂單新增待合併/{0}_{1}.json", 系統參數.使用者名稱, 時間.目前完整時間); } }
 
         public override 平台訂單新增資料 不篩選資料 { get { return null; } }
         public override 平台訂單新增資料 空白資料 { get { return 平台訂單新增資料.空白; } }
@@ -32,32 +34,13 @@ namespace WokyTool.平台訂單
         {
         }
 
-        public void 完成()   //@@
+        public void 完成()
         {
-            /*var Item_ = 可編輯BList.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送).Select(Value => 平台訂單資料.新增(Value)).ToList();
-            檔案.寫入(完成檔案路徑, JsonConvert.SerializeObject(Item_, Formatting.Indented));
+            List<平台訂單新增資料> 完成資料列_ = _資料列.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送).ToList();
+            檔案.寫入(完成檔案路徑, JsonConvert.SerializeObject(完成資料列_, Formatting.Indented), false);
 
-            可編輯BList.RaiseListChangedEvents = false;
-
-            var Left_ = 可編輯BList.Where(Value => Value.處理狀態 != 列舉.訂單處理狀態.配送 && Value.處理狀態 != 列舉.訂單處理狀態.忽略).ToList();
-
-            Map.Clear();
-            可編輯BList.Clear();
-
-            唯讀BList.Clear();
-            唯讀BList.Add(空白資料);
-            唯讀BList.Add(錯誤資料);
-
-            foreach (var x in Left_)
-            {
-                可編輯BList.Add(x);
-                唯讀BList.Add(x);
-                Map[x.編號] = x;
-            }
-
-            資料異動();
-
-            可編輯BList.RaiseListChangedEvents = true;*/
+            _資料列.RemoveAll(Value => 完成資料列_.Contains(Value));
+            資料版本++;
         }
 
         private Dictionary<int, 平台訂單匯入處理介面> _處理器資料書 = new Dictionary<int, 平台訂單匯入處理介面>();

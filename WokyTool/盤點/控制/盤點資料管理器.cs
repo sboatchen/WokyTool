@@ -12,7 +12,7 @@ namespace WokyTool.盤點
         public override 列舉.編號 編號類型 { get { return 列舉.編號.盤點; } }
 
         public override bool 是否備份 { get { return false; } }
-        public override bool 是否可編輯 { get { return 系統參數.匯入訂單; } }    //@@ 新增更新庫存
+        public override bool 是否可編輯 { get { return 系統參數.匯入進貨; } }
 
         public override string 檔案路徑 { get { return String.Format("封存/盤點/{0}_{1}.json", 系統參數.使用者名稱, 時間.目前完整時間); } }
 

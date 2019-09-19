@@ -10,6 +10,8 @@ namespace WokyTool.寄庫
     {
         public string 檔案路徑 { get { return String.Format("進度/寄庫/{0}_{1}.json", 系統參數.使用者名稱, 時間.目前完整時間); } }
 
+        public override bool 是否可編輯 { get { return 系統參數.匯入進貨; } }
+
         protected override 新版可篩選介面<寄庫資料> 取得篩選器實體()
         {
             return new 寄庫資料篩選();
