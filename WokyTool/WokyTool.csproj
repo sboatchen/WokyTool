@@ -232,6 +232,7 @@
     <Compile Include="寄庫\轉換\寄庫匯入轉換_料理123.cs" />
     <Compile Include="寄庫\轉換\寄庫匯入轉換_PCHome.cs" />
     <Compile Include="平台訂單\介面\平台訂單匯入處理介面.cs" />
+    <Compile Include="平台訂單\回單\平台訂單回單轉換_PayEasy.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_uDesign.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_松果.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_神坊.cs" />
@@ -240,6 +241,7 @@
     <Compile Include="平台訂單\處理\平台訂單匯入處理_uDesign.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_神坊.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_博客來.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_PayEasy.cs" />
     <Compile Include="平台訂單\視窗\平台訂單新增匯入篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +256,7 @@
     </Compile>
     <Compile Include="平台訂單\資料\平台訂單新增匯入資料篩選.cs" />
     <Compile Include="平台訂單\資料\平台訂單新增資料篩選.cs" />
+    <Compile Include="平台訂單\配送\平台訂單配送轉換資料_Momo_三方.cs" />
     <Compile Include="平台訂單\配送\平台訂單配送轉換資料_超商.cs" />
     <Compile Include="庫存\控制\商品庫存封存資料管理器.cs" />
     <Compile Include="庫存\控制\物品庫存封存資料管理器.cs" />
@@ -408,8 +411,8 @@
     <Compile Include="客製\回單轉換\平台訂單回單轉換_手作.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_陳沂.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_一休.cs" />
-    <Compile Include="客製\回單轉換\平台訂單回單轉換_Momo第三方_進度.cs" />
-    <Compile Include="客製\回單轉換\平台訂單回單轉換_Momo第三方_分組.cs" />
+    <Compile Include="平台訂單\回單\平台訂單回單轉換_Momo第三方_進度.cs" />
+    <Compile Include="平台訂單\回單\平台訂單回單轉換_Momo第三方_分組.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_PC專櫃.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_Momo.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_森森.cs" />
@@ -439,12 +442,6 @@
     </Compile>
     <Compile Include="平台訂單\視窗\平台訂單新增匯入視窗.Designer.cs">
       <DependentUpon>平台訂單新增匯入視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="平台訂單\視窗\Momo第三方訂單新增總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="平台訂單\視窗\Momo第三方訂單新增總覽視窗.Designer.cs">
-      <DependentUpon>Momo第三方訂單新增總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="平台訂單\視窗\平台訂單新增總覽視窗.cs">
       <SubType>Form</SubType>
@@ -1181,9 +1178,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="平台訂單\視窗\平台訂單新增匯入視窗.resx">
       <DependentUpon>平台訂單新增匯入視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="平台訂單\視窗\Momo第三方訂單新增總覽視窗.resx">
-      <DependentUpon>Momo第三方訂單新增總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="平台訂單\視窗\平台訂單新增匯入篩選視窗.resx">
       <DependentUpon>平台訂單新增匯入篩選視窗.cs</DependentUpon>

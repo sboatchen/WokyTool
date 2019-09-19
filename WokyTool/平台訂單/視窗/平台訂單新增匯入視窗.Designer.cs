@@ -37,6 +37,7 @@
             this.Momo = new System.Windows.Forms.ToolStripMenuItem();
             this.Momo第三方ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uDNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uDesignToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ibonMartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.金石堂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.百利市ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,7 +80,7 @@
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.平台訂單新增匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uDesignToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.payEasyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單新增匯入資料BindingSource)).BeginInit();
@@ -115,7 +116,8 @@
             this.松果ToolStripMenuItem,
             this.生活市集ToolStripMenuItem,
             this.博客來ToolStripMenuItem,
-            this.神坊ToolStripMenuItem});
+            this.神坊ToolStripMenuItem,
+            this.payEasyToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
             this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "匯入";
@@ -162,6 +164,13 @@
             this.uDNToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.uDNToolStripMenuItem.Text = "UDN";
             this.uDNToolStripMenuItem.Click += new System.EventHandler(this.uDNToolStripMenuItem_Click);
+            // 
+            // uDesignToolStripMenuItem
+            // 
+            this.uDesignToolStripMenuItem.Name = "uDesignToolStripMenuItem";
+            this.uDesignToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.uDesignToolStripMenuItem.Text = "uDesign";
+            this.uDesignToolStripMenuItem.Click += new System.EventHandler(this.uDesignToolStripMenuItem_Click);
             // 
             // ibonMartToolStripMenuItem
             // 
@@ -470,12 +479,12 @@
             // 
             this.平台訂單新增匯入資料BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單新增匯入資料);
             // 
-            // uDesignToolStripMenuItem
+            // payEasyToolStripMenuItem
             // 
-            this.uDesignToolStripMenuItem.Name = "uDesignToolStripMenuItem";
-            this.uDesignToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.uDesignToolStripMenuItem.Text = "uDesign";
-            this.uDesignToolStripMenuItem.Click += new System.EventHandler(this.uDesignToolStripMenuItem_Click);
+            this.payEasyToolStripMenuItem.Name = "payEasyToolStripMenuItem";
+            this.payEasyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.payEasyToolStripMenuItem.Text = "PayEasy";
+            this.payEasyToolStripMenuItem.Click += new System.EventHandler(this.payEasyToolStripMenuItem_Click);
             // 
             // 平台訂單新增匯入視窗
             // 
@@ -548,6 +557,7 @@
         private System.Windows.Forms.ToolStripMenuItem 博客來ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 神坊ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uDesignToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem payEasyToolStripMenuItem;
 
     }
 }

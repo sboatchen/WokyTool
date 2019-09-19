@@ -1,16 +1,10 @@
-﻿using LINQtoCSV;
-using Microsoft.Office.Interop.Excel;
+﻿using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WokyTool.Common;
-using WokyTool.DataImport;
-using WokyTool.平台訂單;
 using WokyTool.通用;
 
-namespace WokyTool.客製
+namespace WokyTool.平台訂單
 {
     public class 平台訂單回單轉換_Momo第三方_進度 : 可寫入介面_EXCEL
     {

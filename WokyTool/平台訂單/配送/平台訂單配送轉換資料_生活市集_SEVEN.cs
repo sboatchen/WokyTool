@@ -84,7 +84,7 @@ namespace WokyTool.平台訂單
                 {
                     物品合併資料 物品合併資料_ = new 物品合併資料();
                     foreach(平台訂單新增資料 資料_ in 符合資料列_)
-                        物品合併資料_.新增(資料_.商品, 資料_.數量);
+                        物品合併資料_.新增(資料_);
 
                     Pair_.Value.處理(PdfWriter_, 物品合併資料_.ToString());
                 }

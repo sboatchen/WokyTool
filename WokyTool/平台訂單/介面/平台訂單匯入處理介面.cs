@@ -20,6 +20,17 @@ namespace WokyTool.平台訂單
             this._標頭列 = 標頭列_;
         }
 
+        public virtual String 取得分組識別(平台訂單新增資料 資料_)
+        {
+            return String.Format("{0}_{1}_{2}_{3}", 資料_.公司.名稱, 資料_.客戶.名稱, 資料_.姓名, 資料_.地址);
+            //return String.Format("{0}_{1}_{2}_{3}_{4}_{5}_{6}_{7}", 資料_.公司.名稱, 資料_.客戶.名稱, 資料_.姓名, 資料_.地址, 資料_.配送公司, 資料_.指配日期, 資料_.指配時段, 資料_.代收方式);
+            //@@ 請確認合理分組方法 + 併單檢查合法
+        }
+
+        public virtual void 配送前置處理(IEnumerable<平台訂單新增資料> 資料列舉_)
+        {
+        }
+
         public virtual IEnumerable<配送轉換資料> 配送轉換(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
             var GroupQueue_ = 資料列舉_.GroupBy(Value => Value.配送分組);
@@ -47,13 +58,6 @@ namespace WokyTool.平台訂單
 
         public virtual void 後續處理(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
-        }
-
-        public virtual String 取得分組識別(平台訂單新增資料 資料_)
-        {
-            return String.Format("{0}_{1}_{2}_{3}", 資料_.公司.名稱, 資料_.客戶.名稱, 資料_.姓名, 資料_.地址);
-            //return String.Format("{0}_{1}_{2}_{3}_{4}_{5}_{6}_{7}", 資料_.公司.名稱, 資料_.客戶.名稱, 資料_.姓名, 資料_.地址, 資料_.配送公司, 資料_.指配日期, 資料_.指配時段, 資料_.代收方式);
-            //@@ 請確認合理分組方法 + 併單檢查合法
         }
 
         public virtual String 取得配送姓名(平台訂單新增資料 資料_)

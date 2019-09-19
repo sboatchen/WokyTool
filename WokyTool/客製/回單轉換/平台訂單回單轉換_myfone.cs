@@ -1,15 +1,4 @@
-﻿using LINQtoCSV;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using WokyTool.Common;
-using WokyTool.DataImport;
-using WokyTool.平台訂單;
-using WokyTool.通用;
-
+﻿
 namespace WokyTool.客製
 {
     class 平台訂單回單轉換_myfone //: 可格式化_Csv

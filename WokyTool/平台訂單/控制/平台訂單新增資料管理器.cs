@@ -63,7 +63,7 @@ namespace WokyTool.平台訂單
         private Dictionary<int, 平台訂單匯入處理介面> _處理器資料書 = new Dictionary<int, 平台訂單匯入處理介面>();
         public 平台訂單匯入處理介面 取得處理器(平台訂單新增資料 資料_)
         {
-            int Hash_ = 資料_.公司.編號 * 100000 + 資料_.客戶.編號 * 100 + (int)(資料_.配送公司);
+            int Hash_ = 資料_.處理器Hash;
 
             平台訂單匯入處理介面 處理器_ = null;
             if (_處理器資料書.TryGetValue(Hash_, out 處理器_))
@@ -143,6 +143,9 @@ namespace WokyTool.平台訂單
                     break;
                 case "神坊":
                     處理器_ = new 平台訂單匯入處理_神坊();
+                    break;
+                case "payeasy":
+                    處理器_ = new 平台訂單匯入處理_PayEasy();
                     break;
                 default:
                     訊息管理器.獨體.錯誤("平台訂單自定義工廠::不支援 " + 名稱_);

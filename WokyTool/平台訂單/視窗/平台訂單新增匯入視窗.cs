@@ -229,5 +229,12 @@ namespace WokyTool.平台訂單
             IEnumerable<平台訂單新增匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
             匯入完成(轉換器_, 資料列舉_);
         }
+
+        private void payEasyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單匯入處理_PayEasy 轉換器_ = new 平台訂單匯入處理_PayEasy();
+            IEnumerable<平台訂單新增匯入資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
+            匯入完成(轉換器_, 資料列舉_);
+        }
     }
 }

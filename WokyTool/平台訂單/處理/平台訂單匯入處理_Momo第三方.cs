@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using WokyTool.客戶;
 using WokyTool.客製;
+using WokyTool.配送;
 using WokyTool.商品;
 using WokyTool.通用;
 
@@ -77,7 +79,8 @@ namespace WokyTool.平台訂單
                 備註 = 備註_,
 
                 發票號碼 = 發票號碼_,
-                配送公司 = 列舉.配送公司.三方, //@@ 列舉.配送公司.宅配通
+
+                配送公司 = 列舉.配送公司.三方,
 
                 處理器 = this,
                 標頭 = _標頭列,
@@ -91,7 +94,7 @@ namespace WokyTool.平台訂單
             return String.Format("{0}_{1}_{2}_{3}_{4}_{5}_{6}", 資料_.公司.名稱, 資料_.客戶.名稱, 資料_.姓名, 資料_.地址, 資料_.訂單編號.Substring(0, 14), 資料_.內容[8], 資料_.內容[9]);
         }
 
-        public override void 後續處理(IEnumerable<平台訂單新增資料> 資料列舉_)
+        public override void 配送前置處理(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
             {
                 var 轉換_ = new 平台訂單回單轉換_Momo第三方_分組(資料列舉_);
@@ -104,6 +107,16 @@ namespace WokyTool.平台訂單
                 String 標題_ = String.Format("進度_{0}_{1}_{2}", 公司.名稱, "Momo三方", 時間.目前日期);
                 檔案.詢問並寫入(標題_, 轉換_);
             }
+        }
+
+        public override IEnumerable<配送轉換資料> 配送轉換(IEnumerable<平台訂單新增資料> 資料列舉_)
+        {
+            yield return new 平台訂單配送轉換資料_Momo_三方(資料列舉_.ToList());
+        }
+
+        public override void 後續處理(IEnumerable<平台訂單新增資料> 資料列舉_)
+        {
+
         }
     }
 }

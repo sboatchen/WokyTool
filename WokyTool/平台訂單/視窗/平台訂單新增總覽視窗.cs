@@ -54,16 +54,33 @@ namespace WokyTool.平台訂單
             訊息管理器.獨體.通知("已完成分組");
         }
 
-        private void 配送ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 配送前置處理()
         {
             IEnumerable<平台訂單新增資料> 資料列舉_ = (IEnumerable<平台訂單新增資料>)編輯管理器.資料列舉;
 
-            var GroupQueue_ = 資料列舉_.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增 || Value.處理狀態 == 列舉.訂單處理狀態.配送).GroupBy(Value => Value.處理器);
+            var GroupQueue_ = 資料列舉_.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增 || Value.處理狀態 == 列舉.訂單處理狀態.配送).GroupBy(Value => Value.處理器Hash);
 
             List<配送轉換資料> 資料列_ = new List<配送轉換資料>();
             foreach (var Group_ in GroupQueue_)
             {
-                foreach (配送轉換資料 轉換_ in Group_.Key.配送轉換(Group_))
+                平台訂單匯入處理介面 處理器_ = Group_.First().處理器;
+                處理器_.配送前置處理(Group_);
+            }
+        }
+
+        private void 配送ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            配送前置處理();
+
+            IEnumerable<平台訂單新增資料> 資料列舉_ = (IEnumerable<平台訂單新增資料>)編輯管理器.資料列舉;
+
+            var GroupQueue_ = 資料列舉_.Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.新增 || Value.處理狀態 == 列舉.訂單處理狀態.配送).GroupBy(Value => Value.處理器Hash);
+
+            List<配送轉換資料> 資料列_ = new List<配送轉換資料>();
+            foreach (var Group_ in GroupQueue_)
+            {
+                平台訂單匯入處理介面 處理器_ = Group_.First().處理器;
+                foreach (配送轉換資料 轉換_ in 處理器_.配送轉換(Group_))
                 {
                     資料列_.Add(轉換_);
                 }
@@ -77,28 +94,17 @@ namespace WokyTool.平台訂單
             訊息管理器.獨體.通知("已轉入配送系統");
         }
 
-        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            // 設定群組顏色
-            foreach (DataGridViewRow Myrow in dataGridView1.Rows)
-            {
-                int value = Convert.ToInt32(Myrow.Cells[2].Value);
-                Myrow.DefaultCellStyle.BackColor = 顏色處理.GetRandomColor(value);
-            }
-        }
-
         private void 回單ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             IEnumerable<平台訂單新增資料> 資料列舉_ = (IEnumerable<平台訂單新增資料>)編輯管理器.資料列舉;
 
             var GroupQueue_ = 資料列舉_
                                     .Where(Value => Value.處理狀態 == 列舉.訂單處理狀態.配送 || Value.處理狀態 == 列舉.訂單處理狀態.忽略)
-                                    .GroupBy(Value => Value.公司.編號 * 1000 + Value.客戶.編號);
+                                    .GroupBy(Value => Value.處理器Hash);
 
             foreach (var Group_ in GroupQueue_)
             {
                 平台訂單匯入處理介面 處理器_ = Group_.First().處理器;
-
                 處理器_.後續處理(Group_);
             }
 
@@ -112,6 +118,16 @@ namespace WokyTool.平台訂單
             this.OnActivated(null);
 
             訊息管理器.獨體.通知("已完成");
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // 設定群組顏色
+            foreach (DataGridViewRow Myrow in dataGridView1.Rows)
+            {
+                int value = Convert.ToInt32(Myrow.Cells[2].Value);
+                Myrow.DefaultCellStyle.BackColor = 顏色處理.GetRandomColor(value);
+            }
         }
     }
 }

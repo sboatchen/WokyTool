@@ -169,6 +169,23 @@ namespace WokyTool.平台訂單
 
         public String 分組識別 { get; private set; }
 
+        public int 處理器Hash
+        {
+            get
+            {
+                int Hash_ = 公司.編號 * 100000 + 客戶.編號 * 100;
+                switch (配送公司)
+                {
+                    case 列舉.配送公司.全家:
+                    case 列舉.配送公司.SEVEN:
+                    case 列舉.配送公司.三方:
+                        return Hash_ + 1;
+                    default:
+                        return Hash_;
+                }
+            }
+        }
+
         /********************************/
 
         public 平台訂單新增資料 Self { get { return this; } }
