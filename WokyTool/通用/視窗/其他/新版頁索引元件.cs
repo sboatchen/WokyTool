@@ -77,6 +77,7 @@ namespace WokyTool.通用
         {
             this._資料BS = 資料BS_;
             this._資料BS.CurrentChanged += new EventHandler(this._選擇改變);
+            _選擇改變(null, null);
         }
 
         private void 上一頁_Click(object sender, EventArgs e)
