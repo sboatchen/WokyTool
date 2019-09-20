@@ -19,7 +19,6 @@ namespace WokyTool.通用
             return 編號 > 常數.新建資料編碼;
         }
 
-        [可匯出]
         public object 索引 { get { return 編號; } }
     }
 }

@@ -121,5 +121,10 @@ namespace WokyTool.測試
             i.Show();
             i.BringToFront();
         }
+
+        private void 動態訊息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
