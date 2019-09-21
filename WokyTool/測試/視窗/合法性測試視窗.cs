@@ -44,14 +44,14 @@ namespace WokyTool.測試
 
         private void 列表_Click(object sender, EventArgs e)
         {
-            列表檢查器 檢查器_ = new 列表檢查器();
+            列印檢查器 檢查器_ = new 列印檢查器();
 
             foreach (var 資料_ in _資料列)
             {
                 資料_.合法檢查(檢查器_);
             }
 
-            var i = new 錯誤列表視窗(檢查器_);
+            var i = new 錯誤總覽視窗(檢查器_);
             i.Show();
             i.BringToFront();
         }

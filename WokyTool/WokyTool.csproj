@@ -276,6 +276,12 @@
     <Compile Include="庫存\資料\物品庫存封存資料.cs" />
     <Compile Include="庫存\資料\商品庫存封存資料篩選.cs" />
     <Compile Include="庫存\資料\物品庫存封存資料篩選.cs" />
+    <Compile Include="通用\檢查\視窗\錯誤總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="通用\檢查\視窗\錯誤總覽視窗.Designer.cs">
+      <DependentUpon>錯誤總覽視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="盤點\控制\盤點更新資料管理器.cs" />
     <Compile Include="盤點\控制\盤點資料管理器.cs" />
     <Compile Include="盤點\視窗\盤點篩選視窗.cs">
@@ -876,7 +882,7 @@
     <Compile Include="通用\其他\函式.cs" />
     <Compile Include="通用\其他\列舉.cs" />
     <Compile Include="通用\其他\擴充方法.cs" />
-    <Compile Include="通用\轉換\匯出\通用列印匯出轉換.cs" />
+    <Compile Include="通用\轉換\匯出\通用錯誤列印匯出轉換.cs" />
     <Compile Include="通用\轉換\匯出\通用標頭匯出轉換.cs" />
     <Compile Include="通用\轉換\匯出\格式化匯出轉換.cs" />
     <Compile Include="通用\轉換\屬性\可匯入Attribute.cs" />
@@ -896,16 +902,8 @@
     <Compile Include="通用\列舉\實作\可編輯資料管理器.cs" />
     <Compile Include="通用\檢查\介面\可檢查介面.cs" />
     <Compile Include="通用\檢查\實作\錯誤訊息檢查器.cs" />
-    <Compile Include="通用\檢查\資料\錯誤資料.cs" />
     <Compile Include="通用\檢查\資料\合法性錯誤.cs" />
-    <Compile Include="通用\檢查\實作\列表檢查器.cs" />
     <Compile Include="通用\檢查\實作\例外檢查器.cs" />
-    <Compile Include="通用\檢查\視窗\錯誤列表視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="通用\檢查\視窗\錯誤列表視窗.Designer.cs">
-      <DependentUpon>錯誤列表視窗.cs</DependentUpon>
-    </Compile>
     <Compile Include="通用\檔案\介面\可寫入介面_EXCEL.cs" />
     <Compile Include="通用\檔案\介面\可讀出介面_EXCEL.cs" />
     <Compile Include="通用\檔案\介面\可讀出介面_CSV.cs" />
@@ -1306,6 +1304,9 @@
     <EmbeddedResource Include="測試\視窗\物品合併測試視窗.resx">
       <DependentUpon>物品合併測試視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="通用\檢查\視窗\錯誤總覽視窗.resx">
+      <DependentUpon>錯誤總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="測試\視窗\訊息測試視窗.resx">
       <DependentUpon>訊息測試視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1420,9 +1421,6 @@
     <EmbeddedResource Include="通用\轉換\視窗\通用匯出視窗.resx">
       <DependentUpon>通用匯出視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="通用\檢查\視窗\錯誤列表視窗.resx">
-      <DependentUpon>錯誤列表視窗.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="通用\視窗99\其他\頁索引元件.resx">
       <DependentUpon>頁索引元件.cs</DependentUpon>
     </EmbeddedResource>
@@ -1501,7 +1499,6 @@
     <None Include="Properties\DataSources\WokyTool.通用.列舉+配送公司.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.欄位匯入設定資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.通用匯出欄位設定資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.通用.錯誤資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.進貨.進貨新增匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.進貨.進貨新增資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.進貨.進貨資料.datasource" />
