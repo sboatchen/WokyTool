@@ -21,6 +21,9 @@ namespace WokyTool.月結帳
             InitializeComponent();
 
             this.初始化(this.頁索引元件1, 資料管理器_);
+
+            this.公司選取元件1.初始化();
+            this.客戶選取元件1.初始化();
         }
 
         /********************************/
