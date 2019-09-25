@@ -238,10 +238,29 @@
     <Compile Include="平台訂單\回單\平台訂單回單轉換_神坊.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_生活市集.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_博客來.cs" />
+    <Compile Include="平台訂單\控制\平台訂單資料管理器.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_uDesign.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_神坊.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_博客來.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_PayEasy.cs" />
+    <Compile Include="平台訂單\視窗\平台訂單詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="平台訂單\視窗\平台訂單詳細視窗.Designer.cs">
+      <DependentUpon>平台訂單詳細視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="平台訂單\視窗\平台訂單篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="平台訂單\視窗\平台訂單篩選視窗.Designer.cs">
+      <DependentUpon>平台訂單篩選視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="平台訂單\視窗\平台訂單總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="平台訂單\視窗\平台訂單總覽視窗.Designer.cs">
+      <DependentUpon>平台訂單總覽視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="平台訂單\視窗\平台訂單新增詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +286,8 @@
       <DependentUpon>平台訂單新增匯入詳細視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="平台訂單\資料\平台訂單新增匯入資料篩選.cs" />
+    <Compile Include="平台訂單\資料\平台訂單資料篩選.cs" />
+    <Compile Include="平台訂單\資料\平台訂單資料.cs" />
     <Compile Include="平台訂單\資料\平台訂單新增資料篩選.cs" />
     <Compile Include="平台訂單\配送\平台訂單配送轉換資料_Momo_三方.cs" />
     <Compile Include="平台訂單\配送\平台訂單配送轉換資料_超商.cs" />
@@ -868,6 +889,7 @@
     <Compile Include="通用\視窗\複寫\MyDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="通用\資料\管理\可整理記錄資料管理器.cs" />
     <Compile Include="通用\資料\管理\抽象資料列管理器.cs" />
     <Compile Include="通用\資料\介面\可封存資料.cs" />
     <Compile Include="通用\資料\介面\可更新資料.cs" />
@@ -1186,6 +1208,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="幣值\視窗\幣值總覽視窗.resx">
       <DependentUpon>幣值總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="平台訂單\視窗\平台訂單詳細視窗.resx">
+      <DependentUpon>平台訂單詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="平台訂單\視窗\平台訂單篩選視窗.resx">
+      <DependentUpon>平台訂單篩選視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="平台訂單\視窗\平台訂單總覽視窗.resx">
+      <DependentUpon>平台訂單總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="平台訂單\視窗\平台訂單新增詳細視窗.resx">
       <DependentUpon>平台訂單新增詳細視窗.cs</DependentUpon>

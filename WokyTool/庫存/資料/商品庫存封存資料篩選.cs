@@ -35,6 +35,23 @@ namespace WokyTool.庫存
             }
         }
 
+        private string _處理者 = null;
+        public string 處理者
+        {
+            get { return _處理者; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    value = null;
+
+                if (_處理者 != value)
+                {
+                    _處理者 = value;
+                    篩選版本++;
+                }
+            }
+        }
+
         private string _公司名稱 = null;
         public string 公司名稱
         {
@@ -86,23 +103,6 @@ namespace WokyTool.庫存
             }
         }
 
-        private string _更新者 = null;
-        public string 更新者
-        {
-            get { return _更新者; }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = null;
-
-                if (_更新者 != value)
-                {
-                    _更新者 = value;
-                    篩選版本++;
-                }
-            }
-        }
-
         public override bool 是否篩選
         {
             get
@@ -110,11 +110,11 @@ namespace WokyTool.庫存
                 return
                     0 != _最小處理時間.Ticks ||
                     0 != _最大處理時間.Ticks ||
+                    null != _處理者 ||
                     null != _文字 ||  // 商品名稱
                     null != _備註 ||
                     null != _公司名稱 ||
-                    null != _客戶名稱 ||
-                    null != _更新者;
+                    null != _客戶名稱;
             }
         }
 
@@ -127,6 +127,9 @@ namespace WokyTool.庫存
             if (0 != _最大處理時間.Ticks)
                 目前列舉_ = 目前列舉_.Where(Value => Value.處理時間 <= _最大處理時間);
 
+            if (null != _處理者)
+                目前列舉_ = 目前列舉_.Where(Value => Value.處理者.Contains(_處理者));
+
             if (null != _文字)
                 目前列舉_ = 目前列舉_.Where(Value => Value.商品名稱.Contains(_文字));
 
@@ -138,9 +141,6 @@ namespace WokyTool.庫存
 
             if (null != _客戶名稱)
                 目前列舉_ = 目前列舉_.Where(Value => Value.客戶名稱.Contains(_客戶名稱));
-
-            if (null != _更新者)
-                目前列舉_ = 目前列舉_.Where(Value => Value.更新者.Contains(_更新者));
 
             return 目前列舉_;
         }

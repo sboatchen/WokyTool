@@ -132,7 +132,7 @@ namespace WokyTool.通用
             return _資料列.Contains(資料_);
         }
 
-        public void 新增(T 資料_)
+        public virtual void 新增(T 資料_)
         {
             資料_.合法檢查(新增物件檢查器);
 
@@ -141,17 +141,15 @@ namespace WokyTool.通用
             資料版本++;
         }
 
-        public void 新增(IEnumerable<T> 資料列舉_)
+        public virtual void 新增(IEnumerable<T> 資料列舉_)
         {
             if (資料列舉_ == null || 資料列舉_.Any() == false)
                 return;
 
             foreach (T 資料_ in 資料列舉_)
-            {
                 資料_.合法檢查(新增物件檢查器);
-                _資料列.Add(資料_);
-            }
 
+            _資料列.AddRange(資料列舉_);
             資料版本++;
         }
 

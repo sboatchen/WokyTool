@@ -97,11 +97,9 @@ namespace WokyTool.通用
                 return;
 
             foreach (T 資料_ in 資料列舉_)
-            {
                 新增資料處理(資料_);
 
-                資料列.Add(資料_);
-            }
+            資料列.AddRange(資料列舉_);
 
             資料版本++;
         }

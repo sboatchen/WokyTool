@@ -485,5 +485,15 @@ namespace WokyTool
         {
             視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.總覽);
         }
+
+        private void 整理_Click(object sender, EventArgs e)
+        {
+            平台訂單資料管理器.獨體.整理();
+        }
+
+        private void 訂單_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.平台訂單, 列舉.視窗.總覽);
+        }
     }
 }

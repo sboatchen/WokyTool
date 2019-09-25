@@ -9,7 +9,7 @@ using WokyTool.通用;
 namespace WokyTool.平台訂單
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 平台訂單新增資料 : 新版可記錄資料
+    public class 平台訂單資料 : 新版可記錄資料
     {
         [可匯出]
         [JsonProperty]
@@ -18,6 +18,10 @@ namespace WokyTool.平台訂單
         [可匯出]
         [JsonProperty]
         public 列舉.訂單處理狀態 處理狀態 { get; set; }
+
+        [可匯出]
+        [JsonProperty]
+        public string 處理者 { get; set; }
 
         [JsonProperty]
         public int 公司編號
@@ -128,10 +132,6 @@ namespace WokyTool.平台訂單
         [JsonProperty]
         public string[] 內容 { get; set; }
 
-        [可匯出]
-        [JsonProperty]
-        public int 配送分組 { get; set; }
-
         /********************************/
 
         public 公司資料 公司 { get; set; }
@@ -150,57 +150,21 @@ namespace WokyTool.平台訂單
         public string 商品名稱 { get { return 商品.名稱; } }
 
         /********************************/
-        // 暫時性資訊
 
-        public 平台訂單匯入處理介面 _處理器 = null; 
-        public 平台訂單匯入處理介面 處理器 
-        {
-            get
-            {
-                if (_處理器 == null)
-                    _處理器 = 平台訂單新增資料管理器.獨體.取得處理器(this);
-                return _處理器;
-            }
-            set
-            {
-                _處理器 = value;
-            }
-        }
+        public 平台訂單資料 Self { get { return this; } }
 
-        public String 分組識別 { get; private set; }
-
-        public int 處理器Hash
-        {
-            get
-            {
-                int Hash_ = 公司.編號 * 100000 + 客戶.編號 * 100;
-                switch (配送公司)
-                {
-                    case 列舉.配送公司.全家:
-                    case 列舉.配送公司.SEVEN:
-                    case 列舉.配送公司.三方:
-                        return Hash_ + 1;
-                    default:
-                        return Hash_;
-                }
-            }
-        }
-
-        /********************************/
-
-        public 平台訂單新增資料 Self { get { return this; } }
-
-        public 平台訂單新增資料()
+        public 平台訂單資料()
         {
             公司 = 公司資料.空白;   //@@ 可以嘗試讓 下拉選單支援 null 資料
             客戶 = 客戶資料.空白;
             商品 = 商品資料.空白;
         }
 
-        public static readonly 平台訂單新增資料 空白 = new 平台訂單新增資料
+        public static readonly 平台訂單資料 空白 = new 平台訂單資料
         {
             處理狀態 = 列舉.訂單處理狀態.新增,
             處理時間 = default(DateTime),
+            處理者 = 字串.無,
 
             公司 = 公司資料.空白,
             客戶 = 客戶資料.空白,
@@ -233,10 +197,11 @@ namespace WokyTool.平台訂單
             內容 = null,
         };
 
-        public static 平台訂單新增資料 錯誤 = new 平台訂單新增資料
+        public static 平台訂單資料 錯誤 = new 平台訂單資料
         {
             處理狀態 = 列舉.訂單處理狀態.錯誤,
             處理時間 = default(DateTime),
+            處理者 = 字串.錯誤,
 
             公司 = 公司資料.錯誤,
             客戶 = 客戶資料.錯誤,
@@ -276,7 +241,7 @@ namespace WokyTool.平台訂單
             基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
             //基本資料 參考_ = (資料參考_ == null) ? this : 資料參考_;
 
-            if (列舉.訂單處理狀態.錯誤 == 處理狀態)
+            /*if (列舉.訂單處理狀態.錯誤 == 處理狀態)
                 檢查器_.錯誤(資料_, "處理錯誤");
 
             if (公司.編號是否合法() == false)
@@ -298,14 +263,7 @@ namespace WokyTool.平台訂單
                 檢查器_.錯誤(資料_, "電話/手機不合法");
 
             if (String.IsNullOrEmpty(訂單編號))
-                檢查器_.錯誤(資料_, "訂單編號不合法");
-        }
-
-        public void 重新分組()
-        {
-            BeginEdit();
-            配送分組 = 0;
-            分組識別 = 處理器.取得分組識別(this);
+                檢查器_.錯誤(資料_, "訂單編號不合法");*/
         }
     }
 }

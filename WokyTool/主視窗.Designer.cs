@@ -72,6 +72,8 @@
             this.button34 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
+            this.整理 = new System.Windows.Forms.Button();
+            this.訂單 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -321,6 +323,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.整理);
             this.panel3.Controls.Add(this.客戶資料轉換);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.label1);
@@ -375,6 +378,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.訂單);
             this.panel4.Controls.Add(this.button45);
             this.panel4.Controls.Add(this.button44);
             this.panel4.Controls.Add(this.label2);
@@ -396,7 +400,7 @@
             // 
             // button44
             // 
-            this.button44.Location = new System.Drawing.Point(236, 128);
+            this.button44.Location = new System.Drawing.Point(122, 36);
             this.button44.Name = "button44";
             this.button44.Size = new System.Drawing.Size(100, 23);
             this.button44.TabIndex = 48;
@@ -539,6 +543,26 @@
             this.button46.UseVisualStyleBackColor = true;
             this.button46.Click += new System.EventHandler(this.button46_Click);
             // 
+            // 整理
+            // 
+            this.整理.Location = new System.Drawing.Point(357, 157);
+            this.整理.Name = "整理";
+            this.整理.Size = new System.Drawing.Size(100, 23);
+            this.整理.TabIndex = 55;
+            this.整理.Text = "整理";
+            this.整理.UseVisualStyleBackColor = true;
+            this.整理.Click += new System.EventHandler(this.整理_Click);
+            // 
+            // 訂單
+            // 
+            this.訂單.Location = new System.Drawing.Point(237, 36);
+            this.訂單.Name = "訂單";
+            this.訂單.Size = new System.Drawing.Size(100, 23);
+            this.訂單.TabIndex = 50;
+            this.訂單.Text = "訂單";
+            this.訂單.UseVisualStyleBackColor = true;
+            this.訂單.Click += new System.EventHandler(this.訂單_Click);
+            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -618,6 +642,8 @@
         private System.Windows.Forms.Button 客戶資料轉換;
         private System.Windows.Forms.Button 寄庫;
         private System.Windows.Forms.Button 盤點;
+        private System.Windows.Forms.Button 整理;
+        private System.Windows.Forms.Button 訂單;
 
 
     }
