@@ -22,6 +22,9 @@ namespace WokyTool.月結帳
 
             this.初始化(this.頁索引元件1, 月結帳資料管理器.獨體);
 
+            this.公司選取元件1.初始化();
+            this.客戶選取元件1.初始化();
+
             bool 是否唯讀_ = 月結帳資料管理器.獨體.是否可編輯 == false;
 
             this.商品選取元件1.ReadOnly = 是否唯讀_;

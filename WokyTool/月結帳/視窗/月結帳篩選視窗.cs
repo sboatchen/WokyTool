@@ -24,6 +24,9 @@ namespace WokyTool.月結帳{
             InitializeComponent();
 
             this.初始化();
+
+            this.公司選取元件1.初始化();
+            this.客戶選取元件1.初始化();
         }
 
         protected override void 視窗激活()
