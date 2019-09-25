@@ -38,6 +38,7 @@ namespace WokyTool.通用
             商品小類,
             商品,
 
+            寄庫,
             寄庫暫存,
 
             盤點,

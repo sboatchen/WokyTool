@@ -95,10 +95,10 @@ namespace WokyTool.物品
             儲存();
         }
 
-        public void 更新庫存(IEnumerable<寄庫資料> 資料列舉_)
+        public void 更新庫存(IEnumerable<寄庫新增資料> 資料列舉_)
         {
             HashSet<物品資料> 物品異動群_ = new HashSet<物品資料>();
-            foreach (寄庫資料 資料_ in 資料列舉_)
+            foreach (寄庫新增資料 資料_ in 資料列舉_)
             {
                 if (資料_.商品.組成 == null)
                     continue;
@@ -137,15 +137,15 @@ namespace WokyTool.物品
                 foreach (商品組成資料 組成資料_ in 資料_.商品.組成)
                 {
                     物品資料 物品_ = 組成資料_.物品;
-                    int 數量異動_ = 組成資料_.數量 * 資料_.數量;
+                    int 數量異動_ = 0 - 組成資料_.數量 * 資料_.數量;
                     decimal 目前成本_ = 物品_.成本;
 
-                    物品_.庫存 -= 數量異動_;
+                    物品_.庫存 += 數量異動_;
 
                     if (物品_.庫存 <= 0)
                         物品_.庫存總成本 = 物品_.庫存 * 物品_.最後進貨成本;
                     else
-                        物品_.庫存總成本 -= 數量異動_ * 目前成本_;
+                        物品_.庫存總成本 += 數量異動_ * 目前成本_;
 
                     庫存列_.Add(new 物品庫存封存資料
                         {
@@ -167,12 +167,20 @@ namespace WokyTool.物品
                             最後進貨成本 = 物品_.最後進貨成本,
                             庫存總成本 = 物品_.庫存總成本,
 
-                            備註 = string.Format("{\"商品\":\"{0}\"}", 資料_.商品名稱),
+                            備註 = string.Format("{{\"商品\":\"{0}\"}}", 資料_.商品名稱),
                         });
                 }
             }
 
             物品庫存封存資料管理器.獨體.新增(庫存列_);
+
+            資料版本++;
+            儲存();
+        }
+
+        internal void 更新庫存(IEnumerable<寄庫資料> 資料列舉_)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -41,8 +41,8 @@ namespace WokyTool.寄庫
                 檔案.寫入(檔案路徑, JsonConvert.SerializeObject(資料列, Formatting.Indented), false);
 
                 // 更新庫存
-                商品資料管理器.獨體.更新庫存(資料列);
-                物品資料管理器.獨體.更新庫存(資料列);
+                //@@商品資料管理器.獨體.更新庫存(資料列);
+                //@@物品資料管理器.獨體.更新庫存(資料列);
 
                 資料列.Clear();
                 資料版本++;
