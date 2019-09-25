@@ -28,7 +28,7 @@ namespace WokyTool.平台訂單
                 if (_拷貝資料列 == null)
                 {
                     _拷貝資料列 = new List<PDF拷貝元件>();
-                    _拷貝資料列.Add(new PDF拷貝元件(new Rectangle(0, 0, 600, 840), 0, 0));
+                    _拷貝資料列.Add(new PDF拷貝元件(new Rectangle(0, 0, 600, 840), 0, 10));
                 }
                 return _拷貝資料列;
             }
@@ -47,14 +47,14 @@ namespace WokyTool.平台訂單
                         發票讀出元件 = new PDF字串讀出元件(new Rectangle(80, 515, 130, 525)),
                         配送單號讀出元件 = new PDF字串讀出元件(new Rectangle(75, 695, 150, 710)),
                         消費者讀出元件 = new PDF字串讀出元件(new Rectangle(70, 640, 280, 680))
-                    }, new PDF字串寫入元件(new Rectangle(290, 430, 595, 475), 常數.通用字體));
+                    }, new PDF字串寫入元件(new Rectangle(5, 430, 595, 457), 常數.通用字體));
 
                     _設定資料書.Add(new 三方讀出元件組
                     {
                         發票讀出元件 = new PDF字串讀出元件(new Rectangle(80, 80, 130, 90)),
                         配送單號讀出元件 = new PDF字串讀出元件(new Rectangle(75, 265, 100, 280)),
                         消費者讀出元件 = new PDF字串讀出元件(new Rectangle(70, 200, 280, 250))
-                    }, new PDF字串寫入元件(new Rectangle(290, 0, 595, 42), 常數.通用字體));
+                    }, new PDF字串寫入元件(new Rectangle(5, 0, 595, 27), 常數.通用字體));
                 }
 
                 return _設定資料書;
@@ -132,6 +132,15 @@ namespace WokyTool.平台訂單
 
         public override void 測試(PdfReader PdfReader_, int 頁索引_, PdfWriter PdfWriter_)
         {
+            foreach (PDF拷貝元件 拷貝資料_ in 拷貝資料列)
+            {
+                拷貝資料_.處理(PdfReader_, 頁索引_, PdfWriter_);
+            }
+
+            foreach (var Pair_ in 設定資料書)
+            {
+                Pair_.Value.處理(PdfWriter_, 字串.多字測試.ToString());
+            }
         }
     }
 }

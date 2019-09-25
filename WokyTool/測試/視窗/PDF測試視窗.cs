@@ -6,6 +6,8 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using WokyTool.Common;
+using WokyTool.平台訂單;
+using WokyTool.通用;
 
 namespace WokyTool.測試
 {
@@ -283,6 +285,12 @@ namespace WokyTool.測試
                     }
                 }
             }
+        }
+
+        private void 測試_Click(object sender, EventArgs e)
+        {
+            var 轉換_ = new 平台訂單配送轉換資料_Momo_三方(null);
+            檔案.詢問並修改(轉換_, true);
         }
     }
 }
