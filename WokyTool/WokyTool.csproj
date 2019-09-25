@@ -876,9 +876,9 @@
     <Compile Include="通用\其他\函式.cs" />
     <Compile Include="通用\其他\列舉.cs" />
     <Compile Include="通用\其他\擴充方法.cs" />
-    <Compile Include="通用\轉換\匯出\通用列印匯出轉換.cs" />
     <Compile Include="通用\轉換\匯出\通用標頭匯出轉換.cs" />
     <Compile Include="通用\轉換\匯出\格式化匯出轉換.cs" />
+    <Compile Include="通用\轉換\匯出\通用錯誤列印匯出轉換.cs" />
     <Compile Include="通用\轉換\屬性\可匯入Attribute.cs" />
     <Compile Include="通用\轉換\屬性\可匯出Attribute.cs" />
     <Compile Include="通用\轉換\視窗\通用匯出視窗.cs">
