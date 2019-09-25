@@ -543,7 +543,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 609);
+            this.ClientSize = new System.Drawing.Size(508, 609);
             this.Controls.Add(this.button46);
             this.Controls.Add(this.button42);
             this.Controls.Add(this.button34);
@@ -554,7 +554,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "主視窗";
-            this.Text = "V 2.1.16";
+            this.Text = "V 2.1.17";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.主視窗_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
