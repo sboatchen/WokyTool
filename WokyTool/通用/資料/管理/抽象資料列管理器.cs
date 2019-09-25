@@ -55,8 +55,8 @@ namespace WokyTool.通用
             } 
         }
 
-        protected abstract void 新增物品處理(T 資料_);
-        protected abstract void 刪除物品處理(T 資料_);
+        protected abstract void 新增資料處理(T 資料_);
+        protected abstract void 刪除資料處理(T 資料_);
 
         protected abstract 新版可篩選介面<T> 取得篩選器實體();
         public 新版可篩選介面<T> 篩選器 { get; protected set; }
@@ -84,7 +84,7 @@ namespace WokyTool.通用
 
         public virtual void 新增(T 資料_)
         {
-            新增物品處理(資料_);
+            新增資料處理(資料_);
 
             資料列.Add(資料_);
 
@@ -98,7 +98,7 @@ namespace WokyTool.通用
 
             foreach (T 資料_ in 資料列舉_)
             {
-                新增物品處理(資料_);
+                新增資料處理(資料_);
 
                 資料列.Add(資料_);
             }
@@ -114,7 +114,7 @@ namespace WokyTool.通用
                 return false;
             }
 
-            刪除物品處理(資料_);
+            刪除資料處理(資料_);
 
             資料列.Remove(資料_);
 

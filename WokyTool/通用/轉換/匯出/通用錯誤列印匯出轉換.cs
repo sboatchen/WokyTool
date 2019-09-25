@@ -7,7 +7,7 @@ using System.Text;
 
 namespace WokyTool.通用
 {
-    public class 通用錯誤列印匯出轉換<T> : 可寫入介面_EXCEL, 可寫入介面_CSV
+    public class 通用錯誤列印匯出轉換 : 可寫入介面_EXCEL, 可寫入介面_CSV
     {
         public string 分類 { get; set; }
 
@@ -21,14 +21,16 @@ namespace WokyTool.通用
 
         public Encoding 編碼 { get { return Encoding.Default; } }
 
-        private Dictionary<T, string> _資料書;
+        private Dictionary<object, string> _資料書;
         private List<通用匯出欄位方法資料> _欄位方法列;
 
-        public 通用錯誤列印匯出轉換(Dictionary<T, string> 資料書_)
+        public 通用錯誤列印匯出轉換(Dictionary<object, string> 資料書_)
         {
             _資料書 = 資料書_;
+            if(_資料書.Count == 0)
+                return;
 
-            Type 資料類型_ = typeof(T);
+            Type 資料類型_ = _資料書.First().Key.GetType();
 
             List<Type> 繼承結構列_ = 函式.取得繼承結構列(資料類型_);
 
@@ -55,6 +57,9 @@ namespace WokyTool.通用
 
         public void 寫入(Application App_)
         {
+            if (_資料書.Count == 0)
+                return;
+
             int 目前欄數_ = 1;
             foreach (通用匯出欄位方法資料 方法_ in _欄位方法列)
             {
@@ -71,7 +76,7 @@ namespace WokyTool.通用
             foreach (var 資料組_ in _資料書)
             {
                 目前欄數_ = 1;
-                T 資料_ = 資料組_.Key;
+                object 資料_ = 資料組_.Key;
 
                 foreach (通用匯出欄位方法資料 方法_ in _欄位方法列)
                 {
@@ -86,6 +91,9 @@ namespace WokyTool.通用
 
         public void 寫入(CSVBuilder Builder_)
         {
+            if (_資料書.Count == 0)
+                return;
+
             foreach (通用匯出欄位方法資料 方法_ in _欄位方法列)
                 Builder_.加入(方法_.名稱);
 
@@ -93,7 +101,7 @@ namespace WokyTool.通用
 
             foreach (var 資料組_ in _資料書)
             {
-                T 資料_ = 資料組_.Key;
+                object 資料_ = 資料組_.Key;
 
                 foreach (通用匯出欄位方法資料 方法_ in _欄位方法列)
                 {

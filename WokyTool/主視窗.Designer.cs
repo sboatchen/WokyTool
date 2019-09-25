@@ -381,12 +381,12 @@
             this.panel4.Controls.Add(this.平台);
             this.panel4.Location = new System.Drawing.Point(12, 285);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(482, 188);
+            this.panel4.Size = new System.Drawing.Size(482, 79);
             this.panel4.TabIndex = 50;
             // 
             // button45
             // 
-            this.button45.Location = new System.Drawing.Point(6, 160);
+            this.button45.Location = new System.Drawing.Point(237, 36);
             this.button45.Name = "button45";
             this.button45.Size = new System.Drawing.Size(100, 23);
             this.button45.TabIndex = 49;
@@ -396,7 +396,7 @@
             // 
             // button44
             // 
-            this.button44.Location = new System.Drawing.Point(236, 128);
+            this.button44.Location = new System.Drawing.Point(122, 36);
             this.button44.Name = "button44";
             this.button44.Size = new System.Drawing.Size(100, 23);
             this.button44.TabIndex = 48;
@@ -421,7 +421,7 @@
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.button15);
-            this.panel5.Location = new System.Drawing.Point(12, 479);
+            this.panel5.Location = new System.Drawing.Point(12, 373);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(482, 105);
             this.panel5.TabIndex = 51;
@@ -474,7 +474,7 @@
             this.panel6.Controls.Add(this.button35);
             this.panel6.Controls.Add(this.button11);
             this.panel6.Controls.Add(this.button12);
-            this.panel6.Location = new System.Drawing.Point(12, 600);
+            this.panel6.Location = new System.Drawing.Point(12, 494);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(482, 71);
             this.panel6.TabIndex = 52;
@@ -511,7 +511,7 @@
             // 
             // button34
             // 
-            this.button34.Location = new System.Drawing.Point(19, 684);
+            this.button34.Location = new System.Drawing.Point(19, 574);
             this.button34.Name = "button34";
             this.button34.Size = new System.Drawing.Size(100, 23);
             this.button34.TabIndex = 49;
@@ -521,7 +521,7 @@
             // 
             // button42
             // 
-            this.button42.Location = new System.Drawing.Point(18, 713);
+            this.button42.Location = new System.Drawing.Point(250, 574);
             this.button42.Name = "button42";
             this.button42.Size = new System.Drawing.Size(100, 23);
             this.button42.TabIndex = 53;
@@ -531,7 +531,7 @@
             // 
             // button46
             // 
-            this.button46.Location = new System.Drawing.Point(370, 713);
+            this.button46.Location = new System.Drawing.Point(370, 574);
             this.button46.Name = "button46";
             this.button46.Size = new System.Drawing.Size(100, 23);
             this.button46.TabIndex = 45;
@@ -543,7 +543,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(997, 755);
+            this.ClientSize = new System.Drawing.Size(997, 609);
             this.Controls.Add(this.button46);
             this.Controls.Add(this.button42);
             this.Controls.Add(this.button34);
@@ -554,7 +554,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "主視窗";
-            this.Text = "V 2.1.14";
+            this.Text = "V 2.1.16";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.主視窗_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

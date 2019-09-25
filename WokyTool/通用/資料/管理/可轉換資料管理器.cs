@@ -15,13 +15,13 @@ namespace WokyTool.通用
 
         protected abstract 可新增介面<TValue> 記錄器 { get; }
 
-        protected override void 新增物品處理(TSource 資料_)
+        protected override void 新增資料處理(TSource 資料_)
         {
             資料_.初始化();
             資料_.合法檢查(新增物件檢查器);
         }
 
-        protected override void 刪除物品處理(TSource 資料_)
+        protected override void 刪除資料處理(TSource 資料_)
         {
         }
 

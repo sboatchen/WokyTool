@@ -155,10 +155,10 @@ namespace WokyTool.通用
 
         private void _檢查(object sender, EventArgs e)
         {
-            列表檢查器 檢查器_ = new 列表檢查器();
+            列印檢查器 檢查器_ = new 列印檢查器();
             更新管理器.合法檢查(檢查器_);
 
-            var i = new 錯誤列表視窗(檢查器_, 資料類型.ToString());
+            var i = new 錯誤總覽視窗(檢查器_, 資料類型.ToString());
             i.Show();
             i.BringToFront();
         }

@@ -38,6 +38,10 @@ namespace WokyTool.月結帳
 
             this.名稱.ReadOnly = 是否唯讀_;
 
+            this.公司選取元件1.初始化();
+            this.客戶選取元件1.初始化();
+            this.使用者選取元件1.初始化();
+
             this.公司選取元件1.ReadOnly = 是否唯讀_;
             this.客戶選取元件1.ReadOnly = 是否唯讀_;
 

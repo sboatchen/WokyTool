@@ -46,7 +46,6 @@
             this.資料ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.物品合併ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.快速 = new System.Windows.Forms.Button();
-            this.動態訊息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,8 +71,7 @@
             this.拷貝ToolStripMenuItem,
             this.合法ToolStripMenuItem,
             this.訊息ToolStripMenuItem,
-            this.可匯出匯入ToolStripMenuItem,
-            this.動態訊息ToolStripMenuItem});
+            this.可匯出匯入ToolStripMenuItem});
             this.通用ToolStripMenuItem.Name = "通用ToolStripMenuItem";
             this.通用ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.通用ToolStripMenuItem.Text = "通用";
@@ -199,13 +197,6 @@
             this.快速.UseVisualStyleBackColor = true;
             this.快速.Click += new System.EventHandler(this.快速_Click);
             // 
-            // 動態訊息ToolStripMenuItem
-            // 
-            this.動態訊息ToolStripMenuItem.Name = "動態訊息ToolStripMenuItem";
-            this.動態訊息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.動態訊息ToolStripMenuItem.Text = "動態訊息";
-            this.動態訊息ToolStripMenuItem.Click += new System.EventHandler(this.動態訊息ToolStripMenuItem_Click);
-            // 
             // 測試主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -243,6 +234,5 @@
         private System.Windows.Forms.ToolStripMenuItem imageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 資料ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 物品合併ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 動態訊息ToolStripMenuItem;
     }
 }

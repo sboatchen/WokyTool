@@ -129,7 +129,7 @@ namespace WokyTool.通用
             視窗管理器.獨體.顯現(編號類型, 列舉.視窗.詳細, true);
         }
 
-        private 列表檢查器 _刪除檢查器;
+        private 列印檢查器 _刪除檢查器;
         private int _目前訊息數量;
         private int _剩餘處理數量;
 
@@ -137,7 +137,7 @@ namespace WokyTool.通用
         {
             if (_刪除檢查器 == null)
             {
-                _刪除檢查器 = new 列表檢查器();
+                _刪除檢查器 = new 列印檢查器();
                 _目前訊息數量 = 0;
                 _剩餘處理數量 = 資料GV.SelectedRows.Count;
             }
@@ -145,9 +145,9 @@ namespace WokyTool.通用
             可刪除檢查介面 資料_ = e.Row.DataBoundItem as 可刪除檢查介面;
             資料_.刪除檢查(_刪除檢查器);
 
-            if (_目前訊息數量 != _刪除檢查器.字串列.Count)
+            if (_目前訊息數量 != _刪除檢查器.資料書.Count)
             {
-                _目前訊息數量 = _刪除檢查器.字串列.Count;
+                _目前訊息數量 = _刪除檢查器.資料書.Count;
                 e.Cancel = true;
             }
 
@@ -156,7 +156,7 @@ namespace WokyTool.通用
             {
                 if (_目前訊息數量 > 0)
                 {
-                    var i = new 錯誤列表視窗(_刪除檢查器, "刪除失敗，以下資料綁定");
+                    var i = new 錯誤總覽視窗(_刪除檢查器, "刪除失敗，以下資料綁定");
                     i.Show();
                     i.BringToFront();
                 }
@@ -173,10 +173,10 @@ namespace WokyTool.通用
 
         private void _檢查(object sender, EventArgs e)
         {
-            列表檢查器 檢查器_ = new 列表檢查器();
+            列印檢查器 檢查器_ = new 列印檢查器();
             編輯管理器.合法檢查(檢查器_);
 
-            var i = new 錯誤列表視窗(檢查器_, 編號類型.ToString());
+            var i = new 錯誤總覽視窗(檢查器_, 編號類型.ToString());
             i.Show();
             i.BringToFront();
         }

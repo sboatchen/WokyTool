@@ -6,11 +6,11 @@ namespace WokyTool.通用
         public override bool 是否可編輯 { get { return true; } }
         public override bool 是否編輯中 { get { return 資料列.Count > 0; } }
 
-        protected override void 新增物品處理(T 資料_)
+        protected override void 新增資料處理(T 資料_)
         {
         }
 
-        protected override void 刪除物品處理(T 資料_)
+        protected override void 刪除資料處理(T 資料_)
         {
         }
 

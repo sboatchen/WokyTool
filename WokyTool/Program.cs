@@ -25,16 +25,16 @@ namespace WokyTool
             Application.ThreadException += new ThreadExceptionEventHandler(Application_ThreadException);
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
             
-            /*using (var 登入視窗_ = new 登入視窗())
+            using (var 登入視窗_ = new 登入視窗())
             {
                 if (登入視窗_.ShowDialog() == DialogResult.OK)
                 {
                     Application.Run(new 主視窗());
                 }
-            }*/
+            }
 
-            使用者資料管理器.獨體.登入("root", "Aptx4869");
-            Application.Run(new 主視窗());
+            /*使用者資料管理器.獨體.登入("root", "Aptx4869");
+            Application.Run(new 主視窗());*/
         }
 
         static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
@@ -153,7 +153,23 @@ namespace WokyTool
          * 
          * 
          * 
-         * 生活市集 還是 松果 有一個 廠配 + 回單 未處理
+         * 總攬為空時的預訂資料問題
+
+平台訂單 封存
+
+庫存更新
+
+一般訂單
+
+進貨
+
+保留
+
+訊息 輩分 指定路徑存檔
+
+設定管理器
+
+合併資料管理器
 
         */
 
