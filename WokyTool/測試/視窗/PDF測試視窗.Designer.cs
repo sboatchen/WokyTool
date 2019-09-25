@@ -33,6 +33,7 @@
             this.取出影像 = new System.Windows.Forms.Button();
             this.抓取 = new System.Windows.Forms.Button();
             this.移動 = new System.Windows.Forms.Button();
+            this.測試 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // 定位
@@ -85,11 +86,22 @@
             this.移動.UseVisualStyleBackColor = true;
             this.移動.Click += new System.EventHandler(this.移動_Click);
             // 
+            // 測試
+            // 
+            this.測試.Location = new System.Drawing.Point(119, 70);
+            this.測試.Name = "測試";
+            this.測試.Size = new System.Drawing.Size(75, 23);
+            this.測試.TabIndex = 5;
+            this.測試.Text = "測試";
+            this.測試.UseVisualStyleBackColor = true;
+            this.測試.Click += new System.EventHandler(this.測試_Click);
+            // 
             // PDF測試視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.測試);
             this.Controls.Add(this.移動);
             this.Controls.Add(this.抓取);
             this.Controls.Add(this.取出影像);
@@ -108,5 +120,6 @@
         private System.Windows.Forms.Button 取出影像;
         private System.Windows.Forms.Button 抓取;
         private System.Windows.Forms.Button 移動;
+        private System.Windows.Forms.Button 測試;
     }
 }
