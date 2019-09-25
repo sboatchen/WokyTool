@@ -5,17 +5,13 @@ using WokyTool.通用;
 
 namespace WokyTool.寄庫
 {
-    public partial class 寄庫匯入篩選視窗 : 新增篩選視窗
+    public partial class 寄庫新增篩選視窗 : 獨體篩選視窗
     {
-        // 介面編輯呈現用
-        public 寄庫匯入篩選視窗()
-            : base()
-        {
-            InitializeComponent();
-        }
+        public override 列舉.編號 編號類型 { get { return 列舉.編號.寄庫新增; } }
 
-        public 寄庫匯入篩選視窗(視窗可篩選介面 視窗篩選器_)
-            : base(視窗篩選器_)
+        public override 視窗可篩選介面 視窗篩選器 { get { return 寄庫新增資料管理器.獨體.視窗篩選器; } }
+
+        public 寄庫新增篩選視窗()
         {
             InitializeComponent();
         }

@@ -10,34 +10,6 @@ namespace WokyTool.寄庫
 {
     public class 寄庫匯入資料篩選 : 通用可篩選介面<寄庫匯入資料>
     {
-        private DateTime _最小處理時間 = default(DateTime);
-        public DateTime 最小處理時間
-        {
-            get { return _最小處理時間; }
-            set
-            {
-                if (_最小處理時間 != value)
-                {
-                    _最小處理時間 = value;
-                    篩選版本++;
-                }
-            }
-        }
-
-        private DateTime _最大處理時間 = default(DateTime);
-        public DateTime 最大處理時間
-        {
-            get { return _最大處理時間; }
-            set
-            {
-                if (_最大處理時間 != value)
-                {
-                    _最大處理時間 = value;
-                    篩選版本++;
-                }
-            }
-        }
-
         private 公司資料 _公司 = 公司資料.不篩選;
         public 公司資料 公司
         {
@@ -112,8 +84,6 @@ namespace WokyTool.寄庫
             {
                 return
                     null != _文字 ||  // 入庫單號
-                    0 != _最小處理時間.Ticks ||
-                    0 != _最大處理時間.Ticks ||
                     公司資料.不篩選 != _公司 ||
                     客戶資料.不篩選 != _客戶 ||
                     商品資料.不篩選 != _商品 ||
@@ -127,11 +97,6 @@ namespace WokyTool.寄庫
 
             if (null != _文字)    // 入庫單號
                 目前列舉_ = 目前列舉_.Where(Value => Value.入庫單號.Contains(_文字));
-
-            if (0 != _最小處理時間.Ticks)
-                目前列舉_ = 目前列舉_.Where(Value => Value.處理時間 >= _最小處理時間);
-            if (0 != _最大處理時間.Ticks)
-                目前列舉_ = 目前列舉_.Where(Value => Value.處理時間 <= _最大處理時間);
 
             if (公司資料.不篩選 != _公司)
                 目前列舉_ = 目前列舉_.Where(Value => Value.公司 == _公司);

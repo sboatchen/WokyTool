@@ -21,6 +21,8 @@ namespace WokyTool.通用
         public int 資料版本 { get; protected set; }
         public bool 是否關閉 { get; protected set; }
 
+        private bool _預設是否可刪除資料;
+
         public virtual void 初始化()
         {
             this.資料GV.DataSource = 資料BS;
@@ -36,9 +38,12 @@ namespace WokyTool.通用
             檢查MI.Click += new EventHandler(this._檢查);
             自訂MI.Click += new EventHandler(this._自訂);
 
-            資料GV.AllowUserToAddRows = 編輯管理器.是否可編輯;
-            資料GV.AllowUserToDeleteRows = 編輯管理器.是否可編輯;
-            資料GV.ReadOnly = 編輯管理器.是否可編輯 == false;
+            資料GV.AllowUserToAddRows &= 編輯管理器.是否可編輯;
+
+            _預設是否可刪除資料 = 資料GV.AllowUserToDeleteRows;
+            資料GV.AllowUserToDeleteRows &= 編輯管理器.是否可編輯;
+
+            資料GV.ReadOnly |= 編輯管理器.是否可編輯 == false;
 
             更新資料();
         }
@@ -51,7 +56,7 @@ namespace WokyTool.通用
 
             var x = 編輯管理器.資料列舉; // 強制更新
 
-            資料GV.AllowUserToDeleteRows = 編輯管理器.是否可編輯 && 編輯管理器.視窗篩選器.是否篩選 == false; // 含篩選條件時 仍可刪除 擋掉
+            資料GV.AllowUserToDeleteRows = _預設是否可刪除資料 && 編輯管理器.是否可編輯 && 編輯管理器.視窗篩選器.是否篩選 == false; // 含篩選條件時 仍可刪除 擋掉
         }
 
         protected void _視窗激活(object sender, EventArgs e)

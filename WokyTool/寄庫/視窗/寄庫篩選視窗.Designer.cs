@@ -2,7 +2,7 @@
 using WokyTool.通用;
 namespace WokyTool.寄庫
 {
-    partial class 寄庫暫存篩選視窗
+    partial class 寄庫篩選視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -43,12 +43,14 @@ namespace WokyTool.寄庫
             this.label9 = new System.Windows.Forms.Label();
             this.最大處理時間 = new WokyTool.通用.MyDateTimePicker();
             this.商品 = new WokyTool.商品.商品選取元件();
+            this.處理者 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(257, 12);
+            this.label1.Location = new System.Drawing.Point(257, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
@@ -57,7 +59,7 @@ namespace WokyTool.寄庫
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 11);
+            this.label3.Location = new System.Drawing.Point(16, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 2;
@@ -66,7 +68,7 @@ namespace WokyTool.寄庫
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 80);
+            this.label7.Location = new System.Drawing.Point(3, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 6;
@@ -76,7 +78,7 @@ namespace WokyTool.寄庫
             // 
             this.最小處理時間.CustomFormat = " ";
             this.最小處理時間.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.最小處理時間.Location = new System.Drawing.Point(58, 75);
+            this.最小處理時間.Location = new System.Drawing.Point(58, 12);
             this.最小處理時間.Name = "最小處理時間";
             this.最小處理時間.Size = new System.Drawing.Size(165, 22);
             this.最小處理時間.TabIndex = 58;
@@ -84,7 +86,7 @@ namespace WokyTool.寄庫
             // 
             // 公司
             // 
-            this.公司.Location = new System.Drawing.Point(58, 8);
+            this.公司.Location = new System.Drawing.Point(58, 78);
             this.公司.Margin = new System.Windows.Forms.Padding(4);
             this.公司.Name = "公司";
             this.公司.ReadOnly = false;
@@ -95,7 +97,7 @@ namespace WokyTool.寄庫
             // 
             // 客戶
             // 
-            this.客戶.Location = new System.Drawing.Point(293, 8);
+            this.客戶.Location = new System.Drawing.Point(293, 78);
             this.客戶.Margin = new System.Windows.Forms.Padding(4);
             this.客戶.Name = "客戶";
             this.客戶.ReadOnly = false;
@@ -107,7 +109,7 @@ namespace WokyTool.寄庫
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 39);
+            this.label4.Location = new System.Drawing.Point(16, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 62;
@@ -115,7 +117,7 @@ namespace WokyTool.寄庫
             // 
             // 備註
             // 
-            this.備註.Location = new System.Drawing.Point(58, 131);
+            this.備註.Location = new System.Drawing.Point(58, 172);
             this.備註.Name = "備註";
             this.備註.Size = new System.Drawing.Size(400, 22);
             this.備註.TabIndex = 78;
@@ -123,7 +125,7 @@ namespace WokyTool.寄庫
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(16, 136);
+            this.label17.Location = new System.Drawing.Point(16, 177);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(29, 12);
             this.label17.TabIndex = 77;
@@ -131,7 +133,7 @@ namespace WokyTool.寄庫
             // 
             // 入庫單號
             // 
-            this.入庫單號.Location = new System.Drawing.Point(293, 77);
+            this.入庫單號.Location = new System.Drawing.Point(58, 144);
             this.入庫單號.Name = "入庫單號";
             this.入庫單號.Size = new System.Drawing.Size(165, 22);
             this.入庫單號.TabIndex = 81;
@@ -139,7 +141,7 @@ namespace WokyTool.寄庫
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(238, 81);
+            this.label9.Location = new System.Drawing.Point(3, 148);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 12);
             this.label9.TabIndex = 80;
@@ -149,7 +151,7 @@ namespace WokyTool.寄庫
             // 
             this.最大處理時間.CustomFormat = " ";
             this.最大處理時間.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.最大處理時間.Location = new System.Drawing.Point(58, 103);
+            this.最大處理時間.Location = new System.Drawing.Point(58, 40);
             this.最大處理時間.Name = "最大處理時間";
             this.最大處理時間.Size = new System.Drawing.Size(165, 22);
             this.最大處理時間.TabIndex = 119;
@@ -157,7 +159,7 @@ namespace WokyTool.寄庫
             // 
             // 商品
             // 
-            this.商品.Location = new System.Drawing.Point(58, 35);
+            this.商品.Location = new System.Drawing.Point(58, 105);
             this.商品.Name = "商品";
             this.商品.ReadOnly = false;
             this.商品.SelectedItem = null;
@@ -165,12 +167,30 @@ namespace WokyTool.寄庫
             this.商品.TabIndex = 124;
             this.商品.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
-            // 寄庫暫存篩選視窗
+            // 處理者
+            // 
+            this.處理者.Location = new System.Drawing.Point(293, 12);
+            this.處理者.Name = "處理者";
+            this.處理者.Size = new System.Drawing.Size(165, 22);
+            this.處理者.TabIndex = 126;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(249, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.TabIndex = 125;
+            this.label2.Text = "處理者";
+            // 
+            // 寄庫篩選視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(483, 160);
+            this.ClientSize = new System.Drawing.Size(483, 205);
+            this.Controls.Add(this.處理者);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.商品);
             this.Controls.Add(this.最大處理時間);
             this.Controls.Add(this.入庫單號);
@@ -184,8 +204,8 @@ namespace WokyTool.寄庫
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Name = "寄庫暫存篩選視窗";
-            this.Text = "寄庫暫存篩選視窗";
+            this.Name = "寄庫篩選視窗";
+            this.Text = "寄庫篩選視窗";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,5 +226,7 @@ namespace WokyTool.寄庫
         private System.Windows.Forms.Label label9;
         private MyDateTimePicker 最大處理時間;
         private 商品.商品選取元件 商品;
+        private System.Windows.Forms.TextBox 處理者;
+        private System.Windows.Forms.Label label2;
     }
 }

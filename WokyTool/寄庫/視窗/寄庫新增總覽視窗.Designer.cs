@@ -1,6 +1,6 @@
 ﻿namespace WokyTool.寄庫
 {
-    partial class 寄庫暫存總覽視窗
+    partial class 寄庫新增總覽視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
-            this.處理時間DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.公司名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.客戶名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +54,6 @@
             this.myDataGridView1.AutoGenerateColumns = false;
             this.myDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.myDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.處理時間DataGridViewTextBoxColumn,
             this.公司名稱DataGridViewTextBoxColumn,
             this.客戶名稱DataGridViewTextBoxColumn,
             this.商品名稱DataGridViewTextBoxColumn,
@@ -67,14 +65,8 @@
             this.myDataGridView1.Location = new System.Drawing.Point(0, 24);
             this.myDataGridView1.Name = "myDataGridView1";
             this.myDataGridView1.RowTemplate.Height = 24;
-            this.myDataGridView1.Size = new System.Drawing.Size(943, 432);
+            this.myDataGridView1.Size = new System.Drawing.Size(847, 432);
             this.myDataGridView1.TabIndex = 3;
-            // 
-            // 處理時間DataGridViewTextBoxColumn
-            // 
-            this.處理時間DataGridViewTextBoxColumn.DataPropertyName = "處理時間";
-            this.處理時間DataGridViewTextBoxColumn.HeaderText = "處理時間";
-            this.處理時間DataGridViewTextBoxColumn.Name = "處理時間DataGridViewTextBoxColumn";
             // 
             // 公司名稱DataGridViewTextBoxColumn
             // 
@@ -130,7 +122,7 @@
             this.更新ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(943, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(847, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -175,15 +167,15 @@
             this.通用ToolStripMenuItem.Text = "通用";
             this.通用ToolStripMenuItem.Click += new System.EventHandler(this.通用ToolStripMenuItem_Click);
             // 
-            // 寄庫暫存總覽視窗
+            // 寄庫新增總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 456);
+            this.ClientSize = new System.Drawing.Size(847, 456);
             this.Controls.Add(this.myDataGridView1);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "寄庫暫存總覽視窗";
-            this.Text = "寄庫暫存總覽視窗";
+            this.Name = "寄庫新增總覽視窗";
+            this.Text = "寄庫新增總覽視窗";
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.寄庫新增資料BindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -203,7 +195,6 @@
         private System.Windows.Forms.ToolStripMenuItem 更新ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 通用ToolStripMenuItem;
         private 通用.MyDataGridView myDataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 處理時間DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 公司名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 客戶名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 商品名稱DataGridViewTextBoxColumn;

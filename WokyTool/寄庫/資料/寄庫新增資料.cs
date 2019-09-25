@@ -11,10 +11,6 @@ namespace WokyTool.寄庫
     [JsonObject(MemberSerialization.OptIn)]
     public class 寄庫新增資料 : 新版可記錄資料
     {
-        [可匯出]
-        [JsonProperty]
-        public DateTime 處理時間 { get; set; }
-
         [JsonProperty]
         public int 公司編號
         {
@@ -89,8 +85,6 @@ namespace WokyTool.寄庫
 
         public 寄庫新增資料()
         {
-            處理時間 = DateTime.Now;
-
             公司 = 公司資料.空白;   //@@ 可以嘗試讓 下拉選單支援 null 資料
             客戶 = 客戶資料.空白;
             商品 = 商品資料.空白;
@@ -98,8 +92,6 @@ namespace WokyTool.寄庫
 
         public static readonly 寄庫新增資料 空白 = new 寄庫新增資料
         {
-            處理時間 = default(DateTime),
-
             公司 = 公司資料.空白,
             客戶 = 客戶資料.空白,
 
@@ -112,8 +104,6 @@ namespace WokyTool.寄庫
 
         public static 寄庫新增資料 錯誤 = new 寄庫新增資料
         {
-            處理時間 = default(DateTime),
-
             公司 = 公司資料.錯誤,
             客戶 = 客戶資料.錯誤,
 
@@ -130,9 +120,6 @@ namespace WokyTool.寄庫
         {
             基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
             //基本資料 參考_ = (資料參考_ == null) ? this : 資料參考_;
-
-            if (處理時間.Ticks == 0)
-                檢查器_.錯誤(資料_, "處理時間不合法");
 
             if (公司.編號是否合法() == false)
                 檢查器_.錯誤(資料_, "公司不合法");

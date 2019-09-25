@@ -1,8 +1,5 @@
 ﻿using Newtonsoft.Json;
-using WokyTool.平台訂單;
-using WokyTool.物品;
 using WokyTool.通用;
-using WokyTool.盤點;
 
 namespace WokyTool.庫存
 {
@@ -56,26 +53,6 @@ namespace WokyTool.庫存
                 else
                     return 庫存總成本 / 庫存;
             }
-        }
-
-        /********************************/
-
-        public static 物品庫存封存資料 建立_盤點(物品資料 資料_)
-        {
-            return new 物品庫存封存資料
-            {
-                //物品 = 資料_,
-                備註 = "盤點",
-            };
-        }
-
-        public static 物品庫存封存資料 建立_寄庫(物品資料 資料_)
-        {
-            return new 物品庫存封存資料
-            {
-                //物品 = 資料_,
-                備註 = "寄庫",
-            };
         }
     }
 }

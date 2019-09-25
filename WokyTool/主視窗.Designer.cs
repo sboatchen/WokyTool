@@ -53,16 +53,18 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.基本 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.整理 = new System.Windows.Forms.Button();
             this.客戶資料轉換 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.訂單 = new System.Windows.Forms.Button();
             this.button45 = new System.Windows.Forms.Button();
             this.button44 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.盤點 = new System.Windows.Forms.Button();
-            this.寄庫 = new System.Windows.Forms.Button();
+            this.寄庫新增 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -72,8 +74,7 @@
             this.button34 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
-            this.整理 = new System.Windows.Forms.Button();
-            this.訂單 = new System.Windows.Forms.Button();
+            this.寄庫總覽 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -344,6 +345,16 @@
             this.panel3.Size = new System.Drawing.Size(482, 185);
             this.panel3.TabIndex = 50;
             // 
+            // 整理
+            // 
+            this.整理.Location = new System.Drawing.Point(357, 157);
+            this.整理.Name = "整理";
+            this.整理.Size = new System.Drawing.Size(100, 23);
+            this.整理.TabIndex = 55;
+            this.整理.Text = "整理";
+            this.整理.UseVisualStyleBackColor = true;
+            this.整理.Click += new System.EventHandler(this.整理_Click);
+            // 
             // 客戶資料轉換
             // 
             this.客戶資料轉換.ForeColor = System.Drawing.Color.Red;
@@ -388,6 +399,16 @@
             this.panel4.Size = new System.Drawing.Size(482, 79);
             this.panel4.TabIndex = 50;
             // 
+            // 訂單
+            // 
+            this.訂單.Location = new System.Drawing.Point(237, 36);
+            this.訂單.Name = "訂單";
+            this.訂單.Size = new System.Drawing.Size(100, 23);
+            this.訂單.TabIndex = 50;
+            this.訂單.Text = "訂單";
+            this.訂單.UseVisualStyleBackColor = true;
+            this.訂單.Click += new System.EventHandler(this.訂單_Click);
+            // 
             // button45
             // 
             this.button45.Location = new System.Drawing.Point(237, 36);
@@ -420,8 +441,9 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.寄庫總覽);
             this.panel5.Controls.Add(this.盤點);
-            this.panel5.Controls.Add(this.寄庫);
+            this.panel5.Controls.Add(this.寄庫新增);
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.button15);
@@ -432,7 +454,7 @@
             // 
             // 盤點
             // 
-            this.盤點.Location = new System.Drawing.Point(121, 69);
+            this.盤點.Location = new System.Drawing.Point(237, 69);
             this.盤點.Name = "盤點";
             this.盤點.Size = new System.Drawing.Size(100, 23);
             this.盤點.TabIndex = 51;
@@ -440,15 +462,15 @@
             this.盤點.UseVisualStyleBackColor = true;
             this.盤點.Click += new System.EventHandler(this.盤點_Click);
             // 
-            // 寄庫
+            // 寄庫新增
             // 
-            this.寄庫.Location = new System.Drawing.Point(6, 69);
-            this.寄庫.Name = "寄庫";
-            this.寄庫.Size = new System.Drawing.Size(100, 23);
-            this.寄庫.TabIndex = 50;
-            this.寄庫.Text = "寄庫";
-            this.寄庫.UseVisualStyleBackColor = true;
-            this.寄庫.Click += new System.EventHandler(this.寄庫_Click);
+            this.寄庫新增.Location = new System.Drawing.Point(6, 69);
+            this.寄庫新增.Name = "寄庫新增";
+            this.寄庫新增.Size = new System.Drawing.Size(100, 23);
+            this.寄庫新增.TabIndex = 50;
+            this.寄庫新增.Text = "寄庫新增";
+            this.寄庫新增.UseVisualStyleBackColor = true;
+            this.寄庫新增.Click += new System.EventHandler(this.寄庫新增_Click);
             // 
             // button1
             // 
@@ -543,25 +565,15 @@
             this.button46.UseVisualStyleBackColor = true;
             this.button46.Click += new System.EventHandler(this.button46_Click);
             // 
-            // 整理
+            // 寄庫總覽
             // 
-            this.整理.Location = new System.Drawing.Point(357, 157);
-            this.整理.Name = "整理";
-            this.整理.Size = new System.Drawing.Size(100, 23);
-            this.整理.TabIndex = 55;
-            this.整理.Text = "整理";
-            this.整理.UseVisualStyleBackColor = true;
-            this.整理.Click += new System.EventHandler(this.整理_Click);
-            // 
-            // 訂單
-            // 
-            this.訂單.Location = new System.Drawing.Point(237, 36);
-            this.訂單.Name = "訂單";
-            this.訂單.Size = new System.Drawing.Size(100, 23);
-            this.訂單.TabIndex = 50;
-            this.訂單.Text = "訂單";
-            this.訂單.UseVisualStyleBackColor = true;
-            this.訂單.Click += new System.EventHandler(this.訂單_Click);
+            this.寄庫總覽.Location = new System.Drawing.Point(122, 69);
+            this.寄庫總覽.Name = "寄庫總覽";
+            this.寄庫總覽.Size = new System.Drawing.Size(100, 23);
+            this.寄庫總覽.TabIndex = 52;
+            this.寄庫總覽.Text = "寄庫總覽";
+            this.寄庫總覽.UseVisualStyleBackColor = true;
+            this.寄庫總覽.Click += new System.EventHandler(this.寄庫總覽_Click);
             // 
             // 主視窗
             // 
@@ -640,10 +652,11 @@
         private System.Windows.Forms.Button button45;
         private System.Windows.Forms.Button button46;
         private System.Windows.Forms.Button 客戶資料轉換;
-        private System.Windows.Forms.Button 寄庫;
+        private System.Windows.Forms.Button 寄庫新增;
         private System.Windows.Forms.Button 盤點;
         private System.Windows.Forms.Button 整理;
         private System.Windows.Forms.Button 訂單;
+        private System.Windows.Forms.Button 寄庫總覽;
 
 
     }

@@ -11,6 +11,9 @@ using WokyTool.平台訂單;
 using WokyTool.發票;
 using WokyTool.測試;
 using WokyTool.廢棄;
+using WokyTool.寄庫;
+using WokyTool.物品;
+using WokyTool.商品;
 
 namespace WokyTool
 {
@@ -471,11 +474,6 @@ namespace WokyTool
             轉換.轉換();
         }
 
-        private void 寄庫_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.寄庫暫存, 列舉.視窗.總覽);
-        }
-
         private void 盤點_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.盤點, 列舉.視窗.總覽);
@@ -489,11 +487,24 @@ namespace WokyTool
         private void 整理_Click(object sender, EventArgs e)
         {
             平台訂單資料管理器.獨體.整理();
+            寄庫資料管理器.獨體.整理();
+
+            資料儲存管理器.獨體.儲存();
         }
 
         private void 訂單_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.平台訂單, 列舉.視窗.總覽);
+        }
+
+        private void 寄庫總覽_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.寄庫, 列舉.視窗.總覽);
+        }
+
+        private void 寄庫新增_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.寄庫新增, 列舉.視窗.總覽);
         }
     }
 }

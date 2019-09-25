@@ -12,14 +12,6 @@ namespace WokyTool.寄庫
     {
         [可匯出]
         [JsonProperty]
-        public DateTime 處理時間
-        {
-            get { return 轉換.處理時間; }
-            set { 轉換.處理時間 = value; }
-        }
-
-        [可匯出]
-        [JsonProperty]
         public string 商品識別
         {
             get { return _商品識別; }

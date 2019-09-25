@@ -52,6 +52,8 @@
             // 
             // myDataGridView1
             // 
+            this.myDataGridView1.AllowUserToAddRows = false;
+            this.myDataGridView1.AllowUserToDeleteRows = false;
             this.myDataGridView1.AutoGenerateColumns = false;
             this.myDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.myDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -67,6 +69,7 @@
             this.myDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.myDataGridView1.Location = new System.Drawing.Point(0, 24);
             this.myDataGridView1.Name = "myDataGridView1";
+            this.myDataGridView1.ReadOnly = true;
             this.myDataGridView1.RowTemplate.Height = 24;
             this.myDataGridView1.Size = new System.Drawing.Size(1144, 444);
             this.myDataGridView1.TabIndex = 3;
@@ -76,36 +79,42 @@
             this.處理時間DataGridViewTextBoxColumn.DataPropertyName = "處理時間";
             this.處理時間DataGridViewTextBoxColumn.HeaderText = "處理時間";
             this.處理時間DataGridViewTextBoxColumn.Name = "處理時間DataGridViewTextBoxColumn";
+            this.處理時間DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 處理者DataGridViewTextBoxColumn
             // 
             this.處理者DataGridViewTextBoxColumn.DataPropertyName = "處理者";
             this.處理者DataGridViewTextBoxColumn.HeaderText = "處理者";
             this.處理者DataGridViewTextBoxColumn.Name = "處理者DataGridViewTextBoxColumn";
+            this.處理者DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 公司DataGridViewTextBoxColumn
             // 
             this.公司DataGridViewTextBoxColumn.DataPropertyName = "公司";
             this.公司DataGridViewTextBoxColumn.HeaderText = "公司";
             this.公司DataGridViewTextBoxColumn.Name = "公司DataGridViewTextBoxColumn";
+            this.公司DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 客戶DataGridViewTextBoxColumn
             // 
             this.客戶DataGridViewTextBoxColumn.DataPropertyName = "客戶";
             this.客戶DataGridViewTextBoxColumn.HeaderText = "客戶";
             this.客戶DataGridViewTextBoxColumn.Name = "客戶DataGridViewTextBoxColumn";
+            this.客戶DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 入庫單號DataGridViewTextBoxColumn
             // 
             this.入庫單號DataGridViewTextBoxColumn.DataPropertyName = "入庫單號";
             this.入庫單號DataGridViewTextBoxColumn.HeaderText = "入庫單號";
             this.入庫單號DataGridViewTextBoxColumn.Name = "入庫單號DataGridViewTextBoxColumn";
+            this.入庫單號DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 商品DataGridViewTextBoxColumn
             // 
             this.商品DataGridViewTextBoxColumn.DataPropertyName = "商品";
             this.商品DataGridViewTextBoxColumn.HeaderText = "商品";
             this.商品DataGridViewTextBoxColumn.Name = "商品DataGridViewTextBoxColumn";
+            this.商品DataGridViewTextBoxColumn.ReadOnly = true;
             this.商品DataGridViewTextBoxColumn.Width = 400;
             // 
             // 數量DataGridViewTextBoxColumn
@@ -113,12 +122,14 @@
             this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
             this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
             this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
+            this.數量DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 備註DataGridViewTextBoxColumn
             // 
             this.備註DataGridViewTextBoxColumn.DataPropertyName = "備註";
             this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
             this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
+            this.備註DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 寄庫資料BindingSource
             // 

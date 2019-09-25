@@ -42,9 +42,7 @@ namespace WokyTool.寄庫
             this.label4 = new System.Windows.Forms.Label();
             this.客戶 = new WokyTool.客戶.客戶選取元件();
             this.公司 = new WokyTool.公司.公司選取元件();
-            this.處理時間 = new WokyTool.通用.MyDateTimePicker();
             this.新版頁索引元件1 = new WokyTool.通用.新版頁索引元件();
-            this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.數量)).BeginInit();
@@ -69,7 +67,7 @@ namespace WokyTool.寄庫
             // 
             // 入庫單號
             // 
-            this.入庫單號.Location = new System.Drawing.Point(293, 107);
+            this.入庫單號.Location = new System.Drawing.Point(58, 107);
             this.入庫單號.Name = "入庫單號";
             this.入庫單號.Size = new System.Drawing.Size(165, 22);
             this.入庫單號.TabIndex = 81;
@@ -77,7 +75,7 @@ namespace WokyTool.寄庫
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(238, 111);
+            this.label9.Location = new System.Drawing.Point(3, 111);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 12);
             this.label9.TabIndex = 80;
@@ -101,7 +99,7 @@ namespace WokyTool.寄庫
             // 
             // 數量
             // 
-            this.數量.Location = new System.Drawing.Point(58, 68);
+            this.數量.Location = new System.Drawing.Point(58, 64);
             this.數量.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -114,7 +112,7 @@ namespace WokyTool.寄庫
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 73);
+            this.label5.Location = new System.Drawing.Point(16, 69);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 64;
@@ -159,31 +157,12 @@ namespace WokyTool.寄庫
             this.公司.TabIndex = 60;
             this.公司.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
-            // 處理時間
-            // 
-            this.處理時間.CustomFormat = "yyyy-MM-dd HH:mm";
-            this.處理時間.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.處理時間.Location = new System.Drawing.Point(58, 107);
-            this.處理時間.Name = "處理時間";
-            this.處理時間.Size = new System.Drawing.Size(165, 22);
-            this.處理時間.TabIndex = 58;
-            this.處理時間.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 752);
-            // 
             // 新版頁索引元件1
             // 
             this.新版頁索引元件1.Location = new System.Drawing.Point(128, 208);
             this.新版頁索引元件1.Name = "新版頁索引元件1";
             this.新版頁索引元件1.Size = new System.Drawing.Size(234, 34);
             this.新版頁索引元件1.TabIndex = 57;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(2, 111);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 12);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "處理時間";
             // 
             // label3
             // 
@@ -221,9 +200,7 @@ namespace WokyTool.寄庫
             this.Controls.Add(this.label4);
             this.Controls.Add(this.客戶);
             this.Controls.Add(this.公司);
-            this.Controls.Add(this.處理時間);
             this.Controls.Add(this.新版頁索引元件1);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "寄庫匯入詳細視窗";
@@ -238,9 +215,7 @@ namespace WokyTool.寄庫
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
         private 通用.新版頁索引元件 新版頁索引元件1;
-        private MyDateTimePicker 處理時間;
         private 公司.公司選取元件 公司;
         private 客戶.客戶選取元件 客戶;
         private System.Windows.Forms.Label label4;

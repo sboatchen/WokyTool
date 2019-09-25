@@ -137,5 +137,10 @@ namespace WokyTool.通用
         {
             return 取得繼承結構列(物件_.GetType());
         }
+
+        public static IEnumerable<T> 取得列舉<T>(this T 物件_)
+        {
+            yield return 物件_;
+        }
     }
 }

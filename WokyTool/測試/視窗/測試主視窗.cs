@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using WokyTool.物品;
+using WokyTool.商品;
 using WokyTool.聯絡人;
 
 namespace WokyTool.測試
@@ -120,6 +122,14 @@ namespace WokyTool.測試
             var i = new 物品合併測試視窗();
             i.Show();
             i.BringToFront();
+        }
+
+        private void 快速清除庫存ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            物品資料管理器.獨體.清除庫存();
+            物品資料管理器.獨體.儲存();
+            商品資料管理器.獨體.清除庫存();
+            商品資料管理器.獨體.儲存();
         }
     }
 }

@@ -46,6 +46,7 @@
             this.資料ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.物品合併ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.快速 = new System.Windows.Forms.Button();
+            this.快速清除庫存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,42 +80,42 @@
             // 時間ToolStripMenuItem
             // 
             this.時間ToolStripMenuItem.Name = "時間ToolStripMenuItem";
-            this.時間ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.時間ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.時間ToolStripMenuItem.Text = "時間";
             this.時間ToolStripMenuItem.Click += new System.EventHandler(this.時間ToolStripMenuItem_Click);
             // 
             // 檔案ToolStripMenuItem
             // 
             this.檔案ToolStripMenuItem.Name = "檔案ToolStripMenuItem";
-            this.檔案ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.檔案ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.檔案ToolStripMenuItem.Text = "檔案";
             this.檔案ToolStripMenuItem.Click += new System.EventHandler(this.檔案ToolStripMenuItem_Click);
             // 
             // 拷貝ToolStripMenuItem
             // 
             this.拷貝ToolStripMenuItem.Name = "拷貝ToolStripMenuItem";
-            this.拷貝ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.拷貝ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.拷貝ToolStripMenuItem.Text = "拷貝";
             this.拷貝ToolStripMenuItem.Click += new System.EventHandler(this.拷貝ToolStripMenuItem_Click);
             // 
             // 合法ToolStripMenuItem
             // 
             this.合法ToolStripMenuItem.Name = "合法ToolStripMenuItem";
-            this.合法ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.合法ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.合法ToolStripMenuItem.Text = "合法";
             this.合法ToolStripMenuItem.Click += new System.EventHandler(this.合法ToolStripMenuItem_Click);
             // 
             // 訊息ToolStripMenuItem
             // 
             this.訊息ToolStripMenuItem.Name = "訊息ToolStripMenuItem";
-            this.訊息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.訊息ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.訊息ToolStripMenuItem.Text = "訊息";
             this.訊息ToolStripMenuItem.Click += new System.EventHandler(this.訊息ToolStripMenuItem_Click);
             // 
             // 可匯出匯入ToolStripMenuItem
             // 
             this.可匯出匯入ToolStripMenuItem.Name = "可匯出匯入ToolStripMenuItem";
-            this.可匯出匯入ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.可匯出匯入ToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.可匯出匯入ToolStripMenuItem.Text = "可匯出匯入";
             this.可匯出匯入ToolStripMenuItem.Click += new System.EventHandler(this.可匯出匯入ToolStripMenuItem_Click);
             // 
@@ -175,7 +176,8 @@
             // 資料ToolStripMenuItem
             // 
             this.資料ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.物品合併ToolStripMenuItem});
+            this.物品合併ToolStripMenuItem,
+            this.快速清除庫存ToolStripMenuItem});
             this.資料ToolStripMenuItem.Name = "資料ToolStripMenuItem";
             this.資料ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.資料ToolStripMenuItem.Text = "資料";
@@ -183,7 +185,7 @@
             // 物品合併ToolStripMenuItem
             // 
             this.物品合併ToolStripMenuItem.Name = "物品合併ToolStripMenuItem";
-            this.物品合併ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.物品合併ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.物品合併ToolStripMenuItem.Text = "物品合併";
             this.物品合併ToolStripMenuItem.Click += new System.EventHandler(this.物品合併ToolStripMenuItem_Click);
             // 
@@ -196,6 +198,13 @@
             this.快速.Text = "快速";
             this.快速.UseVisualStyleBackColor = true;
             this.快速.Click += new System.EventHandler(this.快速_Click);
+            // 
+            // 快速清除庫存ToolStripMenuItem
+            // 
+            this.快速清除庫存ToolStripMenuItem.Name = "快速清除庫存ToolStripMenuItem";
+            this.快速清除庫存ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.快速清除庫存ToolStripMenuItem.Text = "快速清除庫存";
+            this.快速清除庫存ToolStripMenuItem.Click += new System.EventHandler(this.快速清除庫存ToolStripMenuItem_Click);
             // 
             // 測試主視窗
             // 
@@ -234,5 +243,6 @@
         private System.Windows.Forms.ToolStripMenuItem imageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 資料ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 物品合併ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 快速清除庫存ToolStripMenuItem;
     }
 }

@@ -13,6 +13,9 @@ namespace WokyTool.通用
 
         public virtual void 整理()
         {
+            if (Directory.Exists(待整理資料夾路徑) == false)
+                return;
+
             訊息管理器.獨體.訊息(typeof(T).Name + " 開始整理資料夾");
 
             List<T> 新增資料列_ = new List<T>();
@@ -38,7 +41,8 @@ namespace WokyTool.通用
             {
                 檔案.搬移至備份(檔案路徑_);
             }
-            Directory.Delete(待整理資料夾路徑, true);
+
+            資料版本++;
         }
 
         public virtual void 待整理(List<T> 資料列_)

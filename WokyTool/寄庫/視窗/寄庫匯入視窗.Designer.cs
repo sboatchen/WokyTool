@@ -40,7 +40,6 @@
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
-            this.處理時間DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.公司名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.客戶名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,7 +63,7 @@
             this.檢查ToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1344, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(1249, 24);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -141,7 +140,6 @@
             this.myDataGridView1.AutoGenerateColumns = false;
             this.myDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.myDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.處理時間DataGridViewTextBoxColumn,
             this.公司名稱DataGridViewTextBoxColumn,
             this.客戶名稱DataGridViewTextBoxColumn,
             this.商品識別DataGridViewTextBoxColumn,
@@ -155,14 +153,8 @@
             this.myDataGridView1.Location = new System.Drawing.Point(0, 24);
             this.myDataGridView1.Name = "myDataGridView1";
             this.myDataGridView1.RowTemplate.Height = 24;
-            this.myDataGridView1.Size = new System.Drawing.Size(1344, 529);
+            this.myDataGridView1.Size = new System.Drawing.Size(1249, 529);
             this.myDataGridView1.TabIndex = 3;
-            // 
-            // 處理時間DataGridViewTextBoxColumn
-            // 
-            this.處理時間DataGridViewTextBoxColumn.DataPropertyName = "處理時間";
-            this.處理時間DataGridViewTextBoxColumn.HeaderText = "處理時間";
-            this.處理時間DataGridViewTextBoxColumn.Name = "處理時間DataGridViewTextBoxColumn";
             // 
             // 公司名稱DataGridViewTextBoxColumn
             // 
@@ -225,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 553);
+            this.ClientSize = new System.Drawing.Size(1249, 553);
             this.Controls.Add(this.myDataGridView1);
             this.Controls.Add(this.menuStrip2);
             this.Name = "寄庫匯入視窗";
@@ -252,7 +244,6 @@
         private System.Windows.Forms.ToolStripMenuItem 蝦皮ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 料理123ToolStripMenuItem;
         private System.Windows.Forms.BindingSource 寄庫匯入資料BindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 處理時間DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 公司名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 客戶名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 商品識別DataGridViewTextBoxColumn;
