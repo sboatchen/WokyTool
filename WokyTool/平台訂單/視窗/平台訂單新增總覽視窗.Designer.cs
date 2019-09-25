@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new WokyTool.通用.MyDataGridView();
-            this.處理時間DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.處理狀態DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.配送分組DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.公司名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,7 +73,6 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.處理時間DataGridViewTextBoxColumn,
             this.處理狀態DataGridViewTextBoxColumn,
             this.配送分組DataGridViewTextBoxColumn,
             this.公司名稱DataGridViewTextBoxColumn,
@@ -104,12 +102,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1447, 629);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
-            // 
-            // 處理時間DataGridViewTextBoxColumn
-            // 
-            this.處理時間DataGridViewTextBoxColumn.DataPropertyName = "處理時間";
-            this.處理時間DataGridViewTextBoxColumn.HeaderText = "處理時間";
-            this.處理時間DataGridViewTextBoxColumn.Name = "處理時間DataGridViewTextBoxColumn";
             // 
             // 處理狀態DataGridViewTextBoxColumn
             // 
@@ -357,7 +349,6 @@
         private System.Windows.Forms.ToolStripMenuItem 自訂ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 回單ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 封存ToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 處理時間DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 處理狀態DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 配送分組DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 公司名稱DataGridViewTextBoxColumn;

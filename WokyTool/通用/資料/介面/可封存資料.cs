@@ -4,7 +4,7 @@ using System;
 namespace WokyTool.通用
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public abstract class 可封存資料 : 可編輯資料
+    public abstract class 可封存資料 : 可編輯資料, 可處理介面
     {
         [JsonProperty]
         public DateTime 處理時間 { get; set; }

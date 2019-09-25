@@ -33,13 +33,11 @@ namespace WokyTool.平台訂單
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.單價 = new System.Windows.Forms.NumericUpDown();
             this.含稅單價 = new System.Windows.Forms.NumericUpDown();
             this.新版頁索引元件1 = new WokyTool.通用.新版頁索引元件();
-            this.處理時間 = new WokyTool.通用.MyDateTimePicker();
             this.公司 = new WokyTool.公司.公司選取元件();
             this.客戶 = new WokyTool.客戶.客戶選取元件();
             this.label4 = new System.Windows.Forms.Label();
@@ -104,15 +102,6 @@ namespace WokyTool.平台訂單
             this.label3.TabIndex = 2;
             this.label3.Text = "公司";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 291);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 12);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "處理時間";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -165,16 +154,6 @@ namespace WokyTool.平台訂單
             this.新版頁索引元件1.Name = "新版頁索引元件1";
             this.新版頁索引元件1.Size = new System.Drawing.Size(234, 34);
             this.新版頁索引元件1.TabIndex = 57;
-            // 
-            // 處理時間
-            // 
-            this.處理時間.CustomFormat = "yyyy-MM-dd HH:mm";
-            this.處理時間.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.處理時間.Location = new System.Drawing.Point(59, 287);
-            this.處理時間.Name = "處理時間";
-            this.處理時間.Size = new System.Drawing.Size(165, 22);
-            this.處理時間.TabIndex = 58;
-            this.處理時間.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 752);
             // 
             // 公司
             // 
@@ -440,7 +419,7 @@ namespace WokyTool.平台訂單
             // 
             // 處理狀態
             // 
-            this.處理狀態.Location = new System.Drawing.Point(5, 316);
+            this.處理狀態.Location = new System.Drawing.Point(4, 287);
             this.處理狀態.Name = "處理狀態";
             this.處理狀態.ReadOnly = false;
             this.處理狀態.SelectedItem = WokyTool.通用.列舉.訂單處理狀態.錯誤;
@@ -485,13 +464,11 @@ namespace WokyTool.平台訂單
             this.Controls.Add(this.label4);
             this.Controls.Add(this.客戶);
             this.Controls.Add(this.公司);
-            this.Controls.Add(this.處理時間);
             this.Controls.Add(this.新版頁索引元件1);
             this.Controls.Add(this.含稅單價);
             this.Controls.Add(this.單價);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -511,13 +488,11 @@ namespace WokyTool.平台訂單
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.NumericUpDown 單價;
         private System.Windows.Forms.NumericUpDown 含稅單價;
         private 通用.新版頁索引元件 新版頁索引元件1;
-        private MyDateTimePicker 處理時間;
         private 公司.公司選取元件 公司;
         private 客戶.客戶選取元件 客戶;
         private System.Windows.Forms.Label label4;

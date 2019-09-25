@@ -37,7 +37,7 @@
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.入庫單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.寄庫資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.寄庫新增資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +46,7 @@
             this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.通用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.寄庫資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.寄庫新增資料BindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +62,7 @@
             this.數量DataGridViewTextBoxColumn,
             this.入庫單號DataGridViewTextBoxColumn,
             this.備註DataGridViewTextBoxColumn});
-            this.myDataGridView1.DataSource = this.寄庫資料BindingSource;
+            this.myDataGridView1.DataSource = this.寄庫新增資料BindingSource;
             this.myDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.myDataGridView1.Location = new System.Drawing.Point(0, 24);
             this.myDataGridView1.Name = "myDataGridView1";
@@ -116,9 +116,9 @@
             this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
             this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
             // 
-            // 寄庫資料BindingSource
+            // 寄庫新增資料BindingSource
             // 
-            this.寄庫資料BindingSource.DataSource = typeof(WokyTool.寄庫.寄庫資料);
+            this.寄庫新增資料BindingSource.DataSource = typeof(WokyTool.寄庫.寄庫新增資料);
             // 
             // menuStrip1
             // 
@@ -185,7 +185,7 @@
             this.Name = "寄庫暫存總覽視窗";
             this.Text = "寄庫暫存總覽視窗";
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.寄庫資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.寄庫新增資料BindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -210,6 +210,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 入庫單號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 寄庫資料BindingSource;
+        private System.Windows.Forms.BindingSource 寄庫新增資料BindingSource;
     }
 }

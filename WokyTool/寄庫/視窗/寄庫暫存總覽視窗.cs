@@ -7,7 +7,7 @@ namespace WokyTool.寄庫
     public partial class 寄庫暫存總覽視窗: 獨體總覽視窗
     {
         public override 列舉.編號 編號類型 { get { return 列舉.編號.寄庫暫存; } }
-        public override Type 資料類型 { get { return typeof(寄庫資料); } }
+        public override Type 資料類型 { get { return typeof(寄庫新增資料); } }
 
         public override 可編輯列舉資料管理介面 編輯管理器 { get { return 寄庫暫存資料管理器.獨體; } }
         public override MyDataGridView 資料GV { get { return this.myDataGridView1; } }

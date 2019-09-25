@@ -33,8 +33,6 @@ namespace WokyTool.平台訂單
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.最小處理時間 = new WokyTool.通用.MyDateTimePicker();
             this.處理狀態 = new WokyTool.通用.訂單處理狀態選取元件();
             this.公司 = new WokyTool.公司.公司選取元件();
             this.客戶 = new WokyTool.客戶.客戶選取元件();
@@ -60,7 +58,6 @@ namespace WokyTool.平台訂單
             this.代收方式 = new WokyTool.通用.代收方式選取元件();
             this.最小代收金額 = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
-            this.最大處理時間 = new WokyTool.通用.MyDateTimePicker();
             this.最大代收金額 = new System.Windows.Forms.NumericUpDown();
             this.指配時段 = new WokyTool.通用.指配時段選取元件();
             this.商品 = new WokyTool.商品.商品選取元件();
@@ -95,28 +92,9 @@ namespace WokyTool.平台訂單
             this.label3.TabIndex = 2;
             this.label3.Text = "公司";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(2, 231);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 12);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "處理時間";
-            // 
-            // 最小處理時間
-            // 
-            this.最小處理時間.CustomFormat = " ";
-            this.最小處理時間.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.最小處理時間.Location = new System.Drawing.Point(58, 227);
-            this.最小處理時間.Name = "最小處理時間";
-            this.最小處理時間.Size = new System.Drawing.Size(165, 22);
-            this.最小處理時間.TabIndex = 58;
-            this.最小處理時間.Value = new System.DateTime(((long)(0)));
-            // 
             // 處理狀態
             // 
-            this.處理狀態.Location = new System.Drawing.Point(4, 284);
+            this.處理狀態.Location = new System.Drawing.Point(4, 233);
             this.處理狀態.Margin = new System.Windows.Forms.Padding(4);
             this.處理狀態.Name = "處理狀態";
             this.處理狀態.ReadOnly = false;
@@ -261,7 +239,7 @@ namespace WokyTool.平台訂單
             // 
             // 配送公司
             // 
-            this.配送公司.Location = new System.Drawing.Point(239, 227);
+            this.配送公司.Location = new System.Drawing.Point(239, 231);
             this.配送公司.Margin = new System.Windows.Forms.Padding(4);
             this.配送公司.Name = "配送公司";
             this.配送公司.ReadOnly = false;
@@ -272,7 +250,7 @@ namespace WokyTool.平台訂單
             // 
             // 配送單號
             // 
-            this.配送單號.Location = new System.Drawing.Point(293, 259);
+            this.配送單號.Location = new System.Drawing.Point(293, 263);
             this.配送單號.Name = "配送單號";
             this.配送單號.Size = new System.Drawing.Size(165, 22);
             this.配送單號.TabIndex = 81;
@@ -280,7 +258,7 @@ namespace WokyTool.平台訂單
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(237, 263);
+            this.label9.Location = new System.Drawing.Point(237, 267);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 12);
             this.label9.TabIndex = 80;
@@ -290,7 +268,7 @@ namespace WokyTool.平台訂單
             // 
             this.指配日期.CustomFormat = " ";
             this.指配日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.指配日期.Location = new System.Drawing.Point(58, 322);
+            this.指配日期.Location = new System.Drawing.Point(58, 312);
             this.指配日期.Name = "指配日期";
             this.指配日期.Size = new System.Drawing.Size(165, 22);
             this.指配日期.TabIndex = 83;
@@ -299,7 +277,7 @@ namespace WokyTool.平台訂單
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 327);
+            this.label11.Location = new System.Drawing.Point(3, 317);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 12);
             this.label11.TabIndex = 82;
@@ -307,7 +285,7 @@ namespace WokyTool.平台訂單
             // 
             // 代收方式
             // 
-            this.代收方式.Location = new System.Drawing.Point(239, 322);
+            this.代收方式.Location = new System.Drawing.Point(239, 312);
             this.代收方式.Margin = new System.Windows.Forms.Padding(4);
             this.代收方式.Name = "代收方式";
             this.代收方式.ReadOnly = false;
@@ -318,7 +296,7 @@ namespace WokyTool.平台訂單
             // 
             // 最小代收金額
             // 
-            this.最小代收金額.Location = new System.Drawing.Point(293, 351);
+            this.最小代收金額.Location = new System.Drawing.Point(293, 341);
             this.最小代收金額.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -342,25 +320,15 @@ namespace WokyTool.平台訂單
             // 
             this.label14.AutoSize = true;
             this.label14.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label14.Location = new System.Drawing.Point(237, 355);
+            this.label14.Location = new System.Drawing.Point(237, 345);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 12);
             this.label14.TabIndex = 87;
             this.label14.Text = "代收金額";
             // 
-            // 最大處理時間
-            // 
-            this.最大處理時間.CustomFormat = " ";
-            this.最大處理時間.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.最大處理時間.Location = new System.Drawing.Point(58, 255);
-            this.最大處理時間.Name = "最大處理時間";
-            this.最大處理時間.Size = new System.Drawing.Size(165, 22);
-            this.最大處理時間.TabIndex = 119;
-            this.最大處理時間.Value = new System.DateTime(((long)(0)));
-            // 
             // 最大代收金額
             // 
-            this.最大代收金額.Location = new System.Drawing.Point(293, 379);
+            this.最大代收金額.Location = new System.Drawing.Point(293, 369);
             this.最大代收金額.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -382,7 +350,7 @@ namespace WokyTool.平台訂單
             // 
             // 指配時段
             // 
-            this.指配時段.Location = new System.Drawing.Point(3, 352);
+            this.指配時段.Location = new System.Drawing.Point(3, 342);
             this.指配時段.Name = "指配時段";
             this.指配時段.ReadOnly = false;
             this.指配時段.SelectedItem = WokyTool.通用.列舉.指配時段.不篩選;
@@ -405,11 +373,10 @@ namespace WokyTool.平台訂單
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(478, 414);
+            this.ClientSize = new System.Drawing.Size(478, 401);
             this.Controls.Add(this.商品);
             this.Controls.Add(this.指配時段);
             this.Controls.Add(this.最大代收金額);
-            this.Controls.Add(this.最大處理時間);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.最小代收金額);
             this.Controls.Add(this.代收方式);
@@ -435,8 +402,6 @@ namespace WokyTool.平台訂單
             this.Controls.Add(this.客戶);
             this.Controls.Add(this.公司);
             this.Controls.Add(this.處理狀態);
-            this.Controls.Add(this.最小處理時間);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -454,8 +419,6 @@ namespace WokyTool.平台訂單
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
-        private MyDateTimePicker 最小處理時間;
         private 通用.訂單處理狀態選取元件 處理狀態;
         private 公司.公司選取元件 公司;
         private 客戶.客戶選取元件 客戶;
@@ -481,7 +444,6 @@ namespace WokyTool.平台訂單
         private 通用.代收方式選取元件 代收方式;
         private System.Windows.Forms.NumericUpDown 最小代收金額;
         private System.Windows.Forms.Label label14;
-        private MyDateTimePicker 最大處理時間;
         private System.Windows.Forms.NumericUpDown 最大代收金額;
         private 指配時段選取元件 指配時段;
         private 商品.商品選取元件 商品;

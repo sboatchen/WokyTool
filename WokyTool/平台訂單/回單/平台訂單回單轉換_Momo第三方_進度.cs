@@ -53,7 +53,7 @@ namespace WokyTool.平台訂單
                     case 列舉.訂單處理狀態.忽略:
                         App_.Cells[目前行數_, 2] = 已確認指定配送日;
 
-                        String 配送訊息_ = 資料_.處理時間.ToString("yyyy/MM/dd");
+                        String 配送訊息_ = 資料_.內容[13].轉成時間().ToString("yyyy/MM/dd");
                         App_.Cells[目前行數_, 3] = 配送訊息_;    // 配送訊息
                         App_.Cells[目前行數_, 4] = 配送訊息_;    // 約定配送日;
                         break;

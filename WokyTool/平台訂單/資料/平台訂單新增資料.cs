@@ -13,10 +13,6 @@ namespace WokyTool.平台訂單
     {
         [可匯出]
         [JsonProperty]
-        public DateTime 處理時間 { get; set; }
-
-        [可匯出]
-        [JsonProperty]
         public 列舉.訂單處理狀態 處理狀態 { get; set; }
 
         [JsonProperty]
@@ -200,7 +196,6 @@ namespace WokyTool.平台訂單
         public static readonly 平台訂單新增資料 空白 = new 平台訂單新增資料
         {
             處理狀態 = 列舉.訂單處理狀態.新增,
-            處理時間 = default(DateTime),
 
             公司 = 公司資料.空白,
             客戶 = 客戶資料.空白,
@@ -236,7 +231,6 @@ namespace WokyTool.平台訂單
         public static 平台訂單新增資料 錯誤 = new 平台訂單新增資料
         {
             處理狀態 = 列舉.訂單處理狀態.錯誤,
-            處理時間 = default(DateTime),
 
             公司 = 公司資料.錯誤,
             客戶 = 客戶資料.錯誤,

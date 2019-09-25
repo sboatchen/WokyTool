@@ -10,34 +10,6 @@ namespace WokyTool.平台訂單
 {
     public class 平台訂單新增匯入資料篩選 : 通用可篩選介面<平台訂單新增匯入資料>
     {
-        private DateTime _最小處理時間 = default(DateTime);
-        public DateTime 最小處理時間
-        {
-            get { return _最小處理時間; }
-            set
-            {
-                if (_最小處理時間 != value)
-                {
-                    _最小處理時間 = value;
-                    篩選版本++;
-                }
-            }
-        }
-
-        private DateTime _最大處理時間 = default(DateTime);
-        public DateTime 最大處理時間
-        {
-            get { return _最大處理時間; }
-            set
-            {
-                if (_最大處理時間 != value)
-                {
-                    _最大處理時間 = value;
-                    篩選版本++;
-                }
-            }
-        }
-
         private 列舉.訂單處理狀態 _處理狀態 = 列舉.訂單處理狀態.不篩選;
         public 列舉.訂單處理狀態 處理狀態
         {
@@ -312,8 +284,6 @@ namespace WokyTool.平台訂單
             {
                 return
                     null != _文字 ||  // 訂單編號
-                    0 != _最小處理時間.Ticks ||
-                    0 != _最大處理時間.Ticks ||
                     列舉.訂單處理狀態.不篩選 != _處理狀態 ||
                     公司資料.不篩選 != _公司 ||
                     客戶資料.不篩選 != _客戶 ||
@@ -340,11 +310,6 @@ namespace WokyTool.平台訂單
 
             if (null != _文字)    // 訂單編號
                 目前列舉_ = 目前列舉_.Where(Value => Value.訂單編號.Contains(_文字));
-
-            if (0 != _最小處理時間.Ticks)
-                目前列舉_ = 目前列舉_.Where(Value => Value.處理時間 >= _最小處理時間);
-            if (0 != _最大處理時間.Ticks)
-                目前列舉_ = 目前列舉_.Where(Value => Value.處理時間 <= _最大處理時間);
 
             if (列舉.訂單處理狀態.不篩選 != _處理狀態)
                 目前列舉_ = 目前列舉_.Where(Value => Value.處理狀態 == _處理狀態);

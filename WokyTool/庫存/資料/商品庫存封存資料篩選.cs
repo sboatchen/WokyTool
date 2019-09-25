@@ -5,53 +5,8 @@ using WokyTool.通用;
 
 namespace WokyTool.庫存
 {
-    public class 商品庫存封存資料篩選 : 通用可篩選介面<商品庫存封存資料>
+    public class 商品庫存封存資料篩選 : 通用可處理資料篩選介面<商品庫存封存資料>
     {
-        private DateTime _最小處理時間 = default(DateTime);
-        public DateTime 最小處理時間
-        {
-            get { return _最小處理時間; }
-            set
-            {
-                if (_最小處理時間 != value)
-                {
-                    _最小處理時間 = value;
-                    篩選版本++;
-                }
-            }
-        }
-
-        private DateTime _最大處理時間 = default(DateTime);
-        public DateTime 最大處理時間
-        {
-            get { return _最大處理時間; }
-            set
-            {
-                if (_最大處理時間 != value)
-                {
-                    _最大處理時間 = value;
-                    篩選版本++;
-                }
-            }
-        }
-
-        private string _處理者 = null;
-        public string 處理者
-        {
-            get { return _處理者; }
-            set
-            {
-                if (string.IsNullOrEmpty(value))
-                    value = null;
-
-                if (_處理者 != value)
-                {
-                    _處理者 = value;
-                    篩選版本++;
-                }
-            }
-        }
-
         private string _公司名稱 = null;
         public string 公司名稱
         {
@@ -107,11 +62,7 @@ namespace WokyTool.庫存
         {
             get
             {
-                return
-                    0 != _最小處理時間.Ticks ||
-                    0 != _最大處理時間.Ticks ||
-                    null != _處理者 ||
-                    null != _文字 ||  // 商品名稱
+                return base.是否篩選 ||
                     null != _備註 ||
                     null != _公司名稱 ||
                     null != _客戶名稱;
@@ -120,15 +71,7 @@ namespace WokyTool.庫存
 
         public override IEnumerable<商品庫存封存資料> 篩選(IEnumerable<商品庫存封存資料> 資料列舉_)
         {
-            IEnumerable<商品庫存封存資料> 目前列舉_ = 資料列舉_;
-
-            if (0 != _最小處理時間.Ticks)
-                目前列舉_ = 目前列舉_.Where(Value => Value.處理時間 >= _最小處理時間);
-            if (0 != _最大處理時間.Ticks)
-                目前列舉_ = 目前列舉_.Where(Value => Value.處理時間 <= _最大處理時間);
-
-            if (null != _處理者)
-                目前列舉_ = 目前列舉_.Where(Value => Value.處理者.Contains(_處理者));
+            IEnumerable<商品庫存封存資料> 目前列舉_ = base.篩選(資料列舉_);
 
             if (null != _文字)
                 目前列舉_ = 目前列舉_.Where(Value => Value.商品名稱.Contains(_文字));

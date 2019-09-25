@@ -45,7 +45,7 @@ namespace WokyTool.平台訂單
             foreach (平台訂單新增資料 資料_ in _資料列舉)
             {
                 App_.Cells[目前行數_, 1] = 資料_.訂單編號;
-                App_.Cells[目前行數_, 2] = 資料_.處理時間.ToString("yyyyMMdd");
+                App_.Cells[目前行數_, 2] = DateTime.Now.ToString("yyyyMMdd");
                 App_.Cells[目前行數_, 3] = 資料_.配送單號;
 
                 switch (資料_.配送公司)

@@ -40,7 +40,6 @@ namespace WokyTool.平台訂單
 
             yield return new 平台訂單新增匯入資料
             {
-                處理時間 = DateTime.Now,
                 處理狀態 = 列舉.訂單處理狀態.新增,
 
                 訂單編號 = 訂單編號_,
