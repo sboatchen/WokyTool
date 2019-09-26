@@ -52,12 +52,17 @@ namespace WokyTool.盤點
         // 儲存檔案
         public override void 儲存()
         {
-            // 紀錄盤點資料
-            var 盤點封存資料列_ = _資料書.Select(Pair => new 盤點封存資料(Pair.Value)).ToList();
-            檔案.寫入(檔案路徑, JsonConvert.SerializeObject(盤點封存資料列_, Formatting.Indented), false);
+            if (_目前資料書版本 != 資料版本)
+            {
+                _目前資料書版本 = 資料版本;
 
-            // 更新庫存
-            物品資料管理器.獨體.更新庫存(_資料書.Select(Pair => Pair.Value));
+                // 紀錄盤點資料
+                var 盤點封存資料列_ = _資料書.Select(Pair => new 盤點封存資料(Pair.Value)).ToList();
+                檔案.寫入(檔案路徑, JsonConvert.SerializeObject(盤點封存資料列_, Formatting.Indented), false);
+
+                // 更新庫存
+                物品資料管理器.獨體.更新庫存(_資料書.Select(Pair => Pair.Value));
+            }
         }
     }
 }

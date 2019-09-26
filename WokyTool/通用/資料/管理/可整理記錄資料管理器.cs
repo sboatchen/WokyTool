@@ -6,10 +6,15 @@ using System.Linq;
 
 namespace WokyTool.通用
 {
-    public abstract class 可整理記錄資料管理器<T> : 可記錄資料管理器<T> where T : 新版可記錄資料
+    public abstract class 可整理記錄資料管理器<T> : 可記錄資料管理器<T>, 可整理介面 where T : 新版可記錄資料
     {
         public abstract string 待整理資料夾路徑 { get; }
         public string 待整理檔案路徑 { get { return String.Format("{0}/{1}_{2}.json", 待整理資料夾路徑, 系統參數.使用者名稱, 時間.目前完整時間); } }
+
+        public bool 是否需整理()
+        {
+            return Directory.Exists(待整理資料夾路徑);
+        }
 
         public virtual void 整理()
         {
@@ -33,7 +38,10 @@ namespace WokyTool.通用
             }
 
             if (新增資料列_.Count == 0)
+            {
+                Directory.Delete(待整理資料夾路徑);
                 return;
+            }
 
             新增(新增資料列_);
 
@@ -41,6 +49,7 @@ namespace WokyTool.通用
             {
                 檔案.搬移至備份(檔案路徑_);
             }
+            Directory.Delete(待整理資料夾路徑);
 
             資料版本++;
         }

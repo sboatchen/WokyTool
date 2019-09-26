@@ -1,19 +1,13 @@
-﻿using LinqToExcel;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using WokyTool.Common;
 using WokyTool.通用;
 using WokyTool.月結帳;
-using WokyTool.平台訂單;
 using WokyTool.發票;
 using WokyTool.測試;
 using WokyTool.廢棄;
-using WokyTool.寄庫;
-using WokyTool.物品;
-using WokyTool.商品;
 
 namespace WokyTool
 {
@@ -486,10 +480,7 @@ namespace WokyTool
 
         private void 整理_Click(object sender, EventArgs e)
         {
-            平台訂單資料管理器.獨體.整理();
-            寄庫資料管理器.獨體.整理();
-
-            資料儲存管理器.獨體.儲存();
+            可整理管理器.獨體.整理();
         }
 
         private void 訂單_Click(object sender, EventArgs e)

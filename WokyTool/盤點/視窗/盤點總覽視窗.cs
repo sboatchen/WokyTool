@@ -45,6 +45,12 @@ namespace WokyTool.盤點
 
         private void 通用ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (可整理管理器.獨體.是否需整理())
+            {
+                訊息管理器.獨體.通知("請先整理資料");
+                return;
+            }
+
             var 視窗_ = new 盤點更新視窗();
             視窗_.初始化();
             視窗_.Show();
