@@ -44,12 +44,10 @@ namespace WokyTool.盤點
             InitializeComponent();
         }
 
-        private void 匯入完成(IEnumerable<盤點更新資料> 資料列舉_)
+        private void 匯入完成(List<盤點更新資料> 資料列_)
         {
-            if(資料列舉_ == null)
+            if(資料列_ == null)
                 return;
-
-            List<盤點更新資料> 資料列_ = 資料列舉_.ToList(); // 先將資料確實轉換出來
 
             if (資料列_.Count == 0)
             {
@@ -67,22 +65,22 @@ namespace WokyTool.盤點
         private void 大料架ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             盤點更新轉換_大料架 轉換器_ = new 盤點更新轉換_大料架();
-            IEnumerable<盤點更新資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
-            匯入完成(資料列舉_);
+            List<盤點更新資料> 資料列_ = 檔案.詢問並讀出(轉換器_);
+            匯入完成(資料列_);
         }
 
         private void 小料架ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             盤點更新轉換_小料架 轉換器_ = new 盤點更新轉換_小料架();
-            IEnumerable<盤點更新資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
-            匯入完成(資料列舉_);
+            List<盤點更新資料> 資料列_ = 檔案.詢問並讀出(轉換器_);
+            匯入完成(資料列_);
         }
 
         private void 萬通ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             盤點更新轉換_萬通 轉換器_ = new 盤點更新轉換_萬通();
-            IEnumerable<盤點更新資料> 資料列舉_ = 檔案.詢問並讀出(轉換器_);
-            匯入完成(資料列舉_);
+            List<盤點更新資料> 資料列_ = 檔案.詢問並讀出(轉換器_);
+            匯入完成(資料列_);
         }
     }
 }

@@ -24,43 +24,22 @@ namespace WokyTool.平台訂單
         public string 處理者 { get; set; }
 
         [JsonProperty]
-        public int 公司編號
-        {
-            get
-            {
-                return 公司.編號;
-            }
-            set
-            {
-                公司 = 公司資料管理器.獨體.取得(value);
-            }
-        }
+        public int 公司編號 { get; set; }
 
         [JsonProperty]
-        public int 客戶編號
-        {
-            get
-            {
-                return 客戶.編號;
-            }
-            set
-            {
-                客戶 = 客戶資料管理器.獨體.取得(value);
-            }
-        }
+        public string 公司名稱 { get; set; }
 
         [JsonProperty]
-        public int 商品編號
-        {
-            get
-            {
-                return 商品.編號;
-            }
-            set
-            {
-                商品 = 商品資料管理器.獨體.取得(value);
-            }
-        }
+        public int 客戶編號 { get; set; }
+
+        [JsonProperty]
+        public string 客戶名稱 { get; set; }
+
+        [JsonProperty]
+        public int 商品編號 { get; set; }
+
+        [JsonProperty]
+        public string 商品名稱 { get; set; }
 
         [可匯出]
         [JsonProperty]
@@ -134,31 +113,7 @@ namespace WokyTool.平台訂單
 
         /********************************/
 
-        public 公司資料 公司 { get; set; }
-
-        public 客戶資料 客戶 { get; set; }
-
-        public 商品資料 商品 { get; set; }
-
-        [可匯出(名稱 = "公司")]
-        public string 公司名稱 { get { return 公司.名稱; } }
-
-        [可匯出(名稱 = "客戶")]
-        public string 客戶名稱 { get { return 客戶.名稱; } }
-
-        [可匯出(名稱 = "商品")]
-        public string 商品名稱 { get { return 商品.名稱; } }
-
-        /********************************/
-
         public 平台訂單資料 Self { get { return this; } }
-
-        public 平台訂單資料()
-        {
-            公司 = 公司資料.空白;   //@@ 可以嘗試讓 下拉選單支援 null 資料
-            客戶 = 客戶資料.空白;
-            商品 = 商品資料.空白;
-        }
 
         public static readonly 平台訂單資料 空白 = new 平台訂單資料
         {
@@ -166,10 +121,12 @@ namespace WokyTool.平台訂單
             處理時間 = default(DateTime),
             處理者 = 字串.無,
 
-            公司 = 公司資料.空白,
-            客戶 = 客戶資料.空白,
-
-            商品 = 商品資料.空白,
+            公司編號 = 常數.空白資料編碼,
+            公司名稱 = 字串.無,
+            客戶編號 = 常數.空白資料編碼,
+            客戶名稱 = 字串.無,
+            商品編號 = 常數.空白資料編碼,
+            商品名稱 = 字串.無,
 
             數量 = 0,
             單價 = 0,
@@ -203,10 +160,12 @@ namespace WokyTool.平台訂單
             處理時間 = default(DateTime),
             處理者 = 字串.錯誤,
 
-            公司 = 公司資料.錯誤,
-            客戶 = 客戶資料.錯誤,
-
-            商品 = 商品資料.錯誤,
+            公司編號 = 常數.錯誤資料編碼,
+            公司名稱 = 字串.錯誤,
+            客戶編號 = 常數.錯誤資料編碼,
+            客戶名稱 = 字串.錯誤,
+            商品編號 = 常數.錯誤資料編碼,
+            商品名稱 = 字串.錯誤,
 
             數量 = 0,
             單價 = 0,
@@ -242,10 +201,12 @@ namespace WokyTool.平台訂單
                 處理者 = 系統參數.使用者名稱,
                 處理狀態 = 資料_.處理狀態,
 
-                公司 = 資料_.公司,
-                客戶 = 資料_.客戶,
-
-                商品 = 資料_.商品,
+                公司編號 = 資料_.公司編號,
+                公司名稱 = 資料_.公司名稱,
+                客戶編號 = 資料_.客戶編號,
+                客戶名稱 = 資料_.客戶名稱,
+                商品編號 = 資料_.商品編號,
+                商品名稱 = 資料_.商品名稱,
 
                 數量 = 資料_.數量,
                 單價 = 資料_.單價,
@@ -276,12 +237,12 @@ namespace WokyTool.平台訂單
 
         /********************************/
 
-        public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null, 基本資料 資料參考_ = null)
+        /*public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null, 基本資料 資料參考_ = null)
         {
             基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
             //基本資料 參考_ = (資料參考_ == null) ? this : 資料參考_;
 
-            /*if (列舉.訂單處理狀態.錯誤 == 處理狀態)
+            if (列舉.訂單處理狀態.錯誤 == 處理狀態)
                 檢查器_.錯誤(資料_, "處理錯誤");
 
             if (公司.編號是否合法() == false)
@@ -303,8 +264,8 @@ namespace WokyTool.平台訂單
                 檢查器_.錯誤(資料_, "電話/手機不合法");
 
             if (String.IsNullOrEmpty(訂單編號))
-                檢查器_.錯誤(資料_, "訂單編號不合法");*/
-        }
+                檢查器_.錯誤(資料_, "訂單編號不合法");
+        }*/
     }
 }
 

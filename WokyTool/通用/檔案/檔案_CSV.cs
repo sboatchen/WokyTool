@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -57,7 +58,7 @@ namespace WokyTool.通用
             return true;
         }
 
-        public static IEnumerable<T> 詢問並讀出<T>(可讀出介面_CSV<T> 轉換_)
+        public static List<T> 詢問並讀出<T>(可讀出介面_CSV<T> 轉換_)
         {
             // 開啟存檔位置
             OpenFileDialog OFD_ = new OpenFileDialog();
@@ -73,10 +74,10 @@ namespace WokyTool.通用
             if (String.IsNullOrEmpty(內容_))
                 return null;
 
-            return 轉換_.讀出(內容_);
+            return 轉換_.讀出(內容_).ToList();
         }
 
-        private static IEnumerable<T> 詢問並讀出_CSV<T>(string 路徑_) where T : 可初始化介面
+        private static List<T> 詢問並讀出_CSV<T>(string 路徑_) where T : 可初始化介面
         {
             訊息管理器.獨體.錯誤("尚未實作"); //@@
             return null;

@@ -125,7 +125,7 @@ namespace WokyTool.平台訂單
             // 設定群組顏色
             foreach (DataGridViewRow Myrow in dataGridView1.Rows)
             {
-                int value = Convert.ToInt32(Myrow.Cells[2].Value);
+                int value = Convert.ToInt32(Myrow.Cells[1].Value);
                 Myrow.DefaultCellStyle.BackColor = 顏色處理.GetRandomColor(value);
             }
         }

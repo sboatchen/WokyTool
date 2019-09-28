@@ -63,6 +63,7 @@
             this.button44 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.寄庫總覽 = new System.Windows.Forms.Button();
             this.盤點 = new System.Windows.Forms.Button();
             this.寄庫新增 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -74,7 +75,6 @@
             this.button34 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
-            this.寄庫總覽 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -452,6 +452,16 @@
             this.panel5.Size = new System.Drawing.Size(482, 105);
             this.panel5.TabIndex = 51;
             // 
+            // 寄庫總覽
+            // 
+            this.寄庫總覽.Location = new System.Drawing.Point(122, 69);
+            this.寄庫總覽.Name = "寄庫總覽";
+            this.寄庫總覽.Size = new System.Drawing.Size(100, 23);
+            this.寄庫總覽.TabIndex = 52;
+            this.寄庫總覽.Text = "寄庫總覽";
+            this.寄庫總覽.UseVisualStyleBackColor = true;
+            this.寄庫總覽.Click += new System.EventHandler(this.寄庫總覽_Click);
+            // 
             // 盤點
             // 
             this.盤點.Location = new System.Drawing.Point(237, 69);
@@ -565,16 +575,6 @@
             this.button46.UseVisualStyleBackColor = true;
             this.button46.Click += new System.EventHandler(this.button46_Click);
             // 
-            // 寄庫總覽
-            // 
-            this.寄庫總覽.Location = new System.Drawing.Point(122, 69);
-            this.寄庫總覽.Name = "寄庫總覽";
-            this.寄庫總覽.Size = new System.Drawing.Size(100, 23);
-            this.寄庫總覽.TabIndex = 52;
-            this.寄庫總覽.Text = "寄庫總覽";
-            this.寄庫總覽.UseVisualStyleBackColor = true;
-            this.寄庫總覽.Click += new System.EventHandler(this.寄庫總覽_Click);
-            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -590,7 +590,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "主視窗";
-            this.Text = "V 2.1.17";
+            this.Text = "V 2.1.18";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.主視窗_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

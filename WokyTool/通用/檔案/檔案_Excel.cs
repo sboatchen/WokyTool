@@ -198,7 +198,7 @@ namespace WokyTool.通用
             }
         }
 
-        public static IEnumerable<T> 詢問並讀出<T>(可讀出介面_EXCEL<T> 轉換_)
+        public static List<T> 詢問並讀出<T>(可讀出介面_EXCEL<T> 轉換_)
         {
             // 開啟存檔位置
             OpenFileDialog OFD_ = new OpenFileDialog();
@@ -244,7 +244,8 @@ namespace WokyTool.通用
                     throw new Exception("偵測到檔案列數超過200列，請確認");
 
                 var 資料暫存_ = 轉換_.處理(資料範圍_);
-                return 轉換_.讀出(資料暫存_);
+                List<T> 資料列_ = 轉換_.讀出(資料暫存_).ToList();
+                return 資料列_;
             }
             catch (Exception ex)
             {
@@ -269,31 +270,28 @@ namespace WokyTool.通用
         }
 
         // 警告 無法轉換列舉(會以double形式讀入，造成轉型失敗)
-        private static IEnumerable<T> 詢問並讀出_EXCEL<T>(string 路徑_) where T : 可初始化介面
+        private static List<T> 詢問並讀出_EXCEL<T>(string 路徑_) where T : 可初始化介面
         {
             ExcelQueryFactory 讀取工廠_ = null;
-            ExcelQueryable<T> 資料列_ = null;
+            ExcelQueryable<T> 資料列舉_ = null;
 
             try
             {
                 讀取工廠_ = new ExcelQueryFactory(路徑_);
-                資料列_ = 讀取工廠_.Worksheet<T>(0);   // 指定第一頁
+                資料列舉_ = 讀取工廠_.Worksheet<T>(0);   // 指定第一頁
+
+                List<T> 資料列_ = 資料列舉_.執行(Value => Value.初始化()).ToList();
+                return 資料列_;
             }
             catch (Exception ex)
             {
                 訊息管理器.獨體.錯誤("讀出檔案失敗: " + 路徑_, ex);
-                yield break;
+                return null;
             }
             finally
             {
                 if (讀取工廠_ != null)
                     讀取工廠_.Dispose();
-            }
-
-            foreach (var Item_ in 資料列_)
-            {
-                Item_.初始化();
-                yield return Item_;
             }
         }
     }

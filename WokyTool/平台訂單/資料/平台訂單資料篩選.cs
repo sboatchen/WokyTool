@@ -314,11 +314,11 @@ namespace WokyTool.平台訂單
                 目前列舉_ = 目前列舉_.Where(Value => Value.處理狀態 == _處理狀態);
 
             if (公司資料.不篩選 != _公司)
-                目前列舉_ = 目前列舉_.Where(Value => Value.公司 == _公司);
+                目前列舉_ = 目前列舉_.Where(Value => Value.公司名稱.Equals(_公司.名稱));
             if (客戶資料.不篩選 != _客戶)
-                目前列舉_ = 目前列舉_.Where(Value => Value.客戶 == _客戶);
+                目前列舉_ = 目前列舉_.Where(Value => Value.客戶名稱.Equals(_客戶.名稱));
             if (商品資料.不篩選 != _商品)
-                目前列舉_ = 目前列舉_.Where(Value => Value.商品 == _商品);
+                目前列舉_ = 目前列舉_.Where(Value => Value.商品名稱.Equals(_商品.名稱));
 
             if (null != _姓名)
                 目前列舉_ = 目前列舉_.Where(Value => Value.姓名.Contains(_姓名));

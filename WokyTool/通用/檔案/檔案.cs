@@ -380,7 +380,7 @@ namespace WokyTool.通用
                 return 讀出(路徑_, Encoding.UTF8);
         }
 
-        public static IEnumerable<T> 詢問並讀出<T>() where T : 可初始化介面
+        public static List<T> 詢問並讀出<T>() where T : 可初始化介面
         {
             // 開啟存檔位置
             OpenFileDialog OFD_ = new OpenFileDialog();
