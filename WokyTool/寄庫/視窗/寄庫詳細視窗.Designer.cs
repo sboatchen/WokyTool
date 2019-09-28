@@ -30,6 +30,11 @@ namespace WokyTool.寄庫
         /// </summary>
         private void InitializeComponent()
         {
+            this.商品 = new System.Windows.Forms.TextBox();
+            this.公司 = new System.Windows.Forms.TextBox();
+            this.客戶 = new System.Windows.Forms.TextBox();
+            this.處理者 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.入庫單號 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.備註 = new System.Windows.Forms.TextBox();
@@ -42,13 +47,52 @@ namespace WokyTool.寄庫
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.處理者 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.客戶 = new System.Windows.Forms.TextBox();
-            this.公司 = new System.Windows.Forms.TextBox();
-            this.商品 = new System.Windows.Forms.TextBox();
+            this.成本 = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.數量)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.成本)).BeginInit();
             this.SuspendLayout();
+            // 
+            // 商品
+            // 
+            this.商品.Location = new System.Drawing.Point(58, 80);
+            this.商品.Name = "商品";
+            this.商品.ReadOnly = true;
+            this.商品.Size = new System.Drawing.Size(400, 22);
+            this.商品.TabIndex = 86;
+            // 
+            // 公司
+            // 
+            this.公司.Location = new System.Drawing.Point(58, 53);
+            this.公司.Name = "公司";
+            this.公司.ReadOnly = true;
+            this.公司.Size = new System.Drawing.Size(165, 22);
+            this.公司.TabIndex = 85;
+            // 
+            // 客戶
+            // 
+            this.客戶.Location = new System.Drawing.Point(293, 53);
+            this.客戶.Name = "客戶";
+            this.客戶.ReadOnly = true;
+            this.客戶.Size = new System.Drawing.Size(165, 22);
+            this.客戶.TabIndex = 84;
+            // 
+            // 處理者
+            // 
+            this.處理者.Location = new System.Drawing.Point(293, 12);
+            this.處理者.Name = "處理者";
+            this.處理者.ReadOnly = true;
+            this.處理者.Size = new System.Drawing.Size(165, 22);
+            this.處理者.TabIndex = 83;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(243, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.TabIndex = 82;
+            this.label2.Text = "處理者";
             // 
             // 入庫單號
             // 
@@ -154,52 +198,34 @@ namespace WokyTool.寄庫
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(259, 57);
+            this.label1.Location = new System.Drawing.Point(248, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "客戶";
             // 
-            // 處理者
+            // 成本
             // 
-            this.處理者.Location = new System.Drawing.Point(293, 12);
-            this.處理者.Name = "處理者";
-            this.處理者.ReadOnly = true;
-            this.處理者.Size = new System.Drawing.Size(165, 22);
-            this.處理者.TabIndex = 83;
+            this.成本.DecimalPlaces = 3;
+            this.成本.Location = new System.Drawing.Point(293, 109);
+            this.成本.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.成本.Name = "成本";
+            this.成本.ReadOnly = true;
+            this.成本.Size = new System.Drawing.Size(165, 22);
+            this.成本.TabIndex = 88;
             // 
-            // label2
+            // label13
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(249, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
-            this.label2.TabIndex = 82;
-            this.label2.Text = "處理者";
-            // 
-            // 客戶
-            // 
-            this.客戶.Location = new System.Drawing.Point(293, 53);
-            this.客戶.Name = "客戶";
-            this.客戶.ReadOnly = true;
-            this.客戶.Size = new System.Drawing.Size(165, 22);
-            this.客戶.TabIndex = 84;
-            // 
-            // 公司
-            // 
-            this.公司.Location = new System.Drawing.Point(58, 53);
-            this.公司.Name = "公司";
-            this.公司.ReadOnly = true;
-            this.公司.Size = new System.Drawing.Size(165, 22);
-            this.公司.TabIndex = 85;
-            // 
-            // 商品
-            // 
-            this.商品.Location = new System.Drawing.Point(58, 80);
-            this.商品.Name = "商品";
-            this.商品.ReadOnly = true;
-            this.商品.Size = new System.Drawing.Size(400, 22);
-            this.商品.TabIndex = 86;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(248, 114);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(29, 12);
+            this.label13.TabIndex = 87;
+            this.label13.Text = "成本";
             // 
             // 寄庫詳細視窗
             // 
@@ -207,6 +233,8 @@ namespace WokyTool.寄庫
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(483, 254);
+            this.Controls.Add(this.成本);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.商品);
             this.Controls.Add(this.公司);
             this.Controls.Add(this.客戶);
@@ -227,6 +255,7 @@ namespace WokyTool.寄庫
             this.Name = "寄庫詳細視窗";
             this.Text = "寄庫詳細視窗";
             ((System.ComponentModel.ISupportInitialize)(this.數量)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.成本)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,5 +280,7 @@ namespace WokyTool.寄庫
         private System.Windows.Forms.TextBox 客戶;
         private System.Windows.Forms.TextBox 公司;
         private System.Windows.Forms.TextBox 商品;
+        private System.Windows.Forms.NumericUpDown 成本;
+        private System.Windows.Forms.Label label13;
     }
 }

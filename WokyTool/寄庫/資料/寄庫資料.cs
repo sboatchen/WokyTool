@@ -37,6 +37,10 @@ namespace WokyTool.寄庫
 
         [可匯出]
         [JsonProperty]
+        public decimal 成本 { get; set; }
+
+        [可匯出]
+        [JsonProperty]
         public string 入庫單號 { get; set; }
 
         [可匯出]
@@ -57,7 +61,9 @@ namespace WokyTool.寄庫
 
             商品編號 = 常數.空白資料編碼,
             商品 = 字串.空,
+
             數量 = 0,
+            成本 = 0,
 
             入庫單號 = 字串.空,
             備註 = 字串.空,
@@ -73,7 +79,9 @@ namespace WokyTool.寄庫
 
             商品編號 = 常數.錯誤資料編碼,
             商品 = 字串.錯誤,
+
             數量 = 0,
+            成本 = 0,
 
             入庫單號 = 字串.錯誤,
             備註 = 字串.錯誤,

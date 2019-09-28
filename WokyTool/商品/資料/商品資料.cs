@@ -145,7 +145,7 @@ namespace WokyTool.商品
         {
             get
             {
-                return 售價 - 成本;
+                return 進價 - 成本;
             }
         }
 

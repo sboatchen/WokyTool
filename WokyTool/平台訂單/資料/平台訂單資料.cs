@@ -47,6 +47,10 @@ namespace WokyTool.平台訂單
 
         [可匯出]
         [JsonProperty]
+        public decimal 成本 { get; set; }
+
+        [可匯出]
+        [JsonProperty]
         public decimal 單價 { get; set; }
 
         [可匯出]
@@ -113,6 +117,30 @@ namespace WokyTool.平台訂單
 
         /********************************/
 
+        public decimal 總成本
+        {
+            get { return 數量 * 成本; }
+        }
+
+
+        public decimal 利潤
+        {
+            get
+            {
+                return 單價 - 成本;
+            }
+        }
+
+        public decimal 總利潤
+        {
+            get
+            {
+                return 利潤 * 數量;
+            }
+        }
+
+        /********************************/
+
         public 平台訂單資料 Self { get { return this; } }
 
         public static readonly 平台訂單資料 空白 = new 平台訂單資料
@@ -131,6 +159,7 @@ namespace WokyTool.平台訂單
             數量 = 0,
             單價 = 0,
             含稅單價 = 0,
+            成本 = 0,
 
             姓名 = 字串.無,
             地址 = 字串.無,
@@ -170,6 +199,7 @@ namespace WokyTool.平台訂單
             數量 = 0,
             單價 = 0,
             含稅單價 = 0,
+            成本 = 0,
 
             姓名 = 字串.錯誤,
             地址 = 字串.錯誤,

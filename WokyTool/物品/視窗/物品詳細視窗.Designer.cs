@@ -153,7 +153,6 @@
             this.label13.Size = new System.Drawing.Size(53, 12);
             this.label13.TabIndex = 12;
             this.label13.Text = "庫存成本";
-            this.label13.Visible = false;
             // 
             // label14
             // 
@@ -163,7 +162,6 @@
             this.label14.Size = new System.Drawing.Size(53, 12);
             this.label14.TabIndex = 13;
             this.label14.Text = "平均成本";
-            this.label14.Visible = false;
             // 
             // label15
             // 

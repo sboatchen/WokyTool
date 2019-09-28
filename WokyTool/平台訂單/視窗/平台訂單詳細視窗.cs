@@ -19,31 +19,31 @@ namespace WokyTool.平台訂單
 
         public override void 初始化()
         {
-            公司.初始化();
-            客戶.初始化();
-            商品.初始化();
-
             base.初始化();
+
+            資料綁定(this.處理時間, "處理時間");
+            資料綁定(this.處理狀態, "處理狀態");
+            資料綁定(this.處理者, "處理者");
 
             資料綁定(this.訂單編號, "訂單編號");
             資料綁定(this.發票號碼, "發票號碼");
 
-            資料綁定(this.公司, "公司");
-            資料綁定(this.客戶, "客戶");
+            資料綁定(this.公司名稱, "公司名稱");
+            資料綁定(this.客戶名稱, "客戶名稱");
+            資料綁定(this.商品名稱, "商品名稱");
 
-            資料綁定(this.商品, "商品");
             資料綁定(this.數量, "數量");
             資料綁定(this.單價, "單價");
             資料綁定(this.含稅單價, "含稅單價");
+            資料綁定(this.成本, "成本");
+            資料綁定(this.利潤, "利潤");
+            資料綁定(this.總利潤, "總利潤");
 
             資料綁定(this.姓名, "姓名");
             資料綁定(this.地址, "地址");
             資料綁定(this.電話, "電話");
             資料綁定(this.手機, "手機");
             資料綁定(this.備註, "備註");
-
-            資料綁定(this.處理時間, "處理時間");
-            資料綁定(this.處理狀態, "處理狀態");
 
             資料綁定(this.配送公司, "配送公司");
             資料綁定(this.配送單號, "配送單號");
@@ -53,16 +53,6 @@ namespace WokyTool.平台訂單
 
             資料綁定(this.代收方式, "代收方式");
             資料綁定(this.代收金額, "代收金額");
-
-            this.公司.下拉選單.SelectedValueChanged += new EventHandler(this._on商品列表更新);
-            this.客戶.下拉選單.SelectedValueChanged += new EventHandler(this._on商品列表更新);
-        }
-
-        private void _on商品列表更新(object sender, EventArgs e)
-        {
-            //Console.WriteLine("_on商品列表更新");
-            this.商品.篩選器.公司 = (公司資料)this.公司.SelectedItem;
-            this.商品.篩選器.客戶 = (客戶資料)this.客戶.SelectedItem;
         }
     }
 }
