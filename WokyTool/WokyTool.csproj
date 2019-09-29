@@ -361,9 +361,8 @@
     </Compile>
     <Compile Include="盤點\資料\盤點更新資料.cs" />
     <Compile Include="盤點\資料\盤點更新資料篩選.cs" />
-    <Compile Include="盤點\資料\盤點封存資料.cs" />
+    <Compile Include="盤點\轉換\盤點封存轉換.cs" />
     <Compile Include="盤點\資料\盤點資料.cs" />
-    <Compile Include="盤點\資料\盤點封存資料篩選.cs" />
     <Compile Include="盤點\資料\盤點資料篩選.cs" />
     <Compile Include="盤點\轉換\盤點更新轉換_小料架.cs" />
     <Compile Include="盤點\轉換\盤點更新轉換_萬通.cs" />

@@ -57,7 +57,7 @@ namespace WokyTool.盤點
                 _目前資料書版本 = 資料版本;
 
                 // 紀錄盤點資料
-                var 盤點封存資料列_ = _資料書.Select(Pair => new 盤點封存資料(Pair.Value)).ToList();
+                var 盤點封存資料列_ = _資料書.Select(Pair => new 盤點封存轉換(Pair.Value)).ToList();
                 檔案.寫入(檔案路徑, JsonConvert.SerializeObject(盤點封存資料列_, Formatting.Indented), false);
 
                 // 更新庫存

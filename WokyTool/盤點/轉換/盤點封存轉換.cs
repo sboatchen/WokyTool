@@ -4,7 +4,7 @@ using WokyTool.通用;
 namespace WokyTool.盤點
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 盤點封存資料 : 可封存資料
+    public class 盤點封存轉換 : 可封存資料
     {
         [JsonProperty]
         public int 物品編號
@@ -66,7 +66,7 @@ namespace WokyTool.盤點
 
         /********************************/
 
-        public 盤點封存資料(盤點資料 資料_)
+        public 盤點封存轉換(盤點資料 資料_)
         {
             資料 = 資料_;
         }
