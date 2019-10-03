@@ -6,11 +6,15 @@ using WokyTool.通用;
 namespace WokyTool.配送
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 配送資料 : 新版可記錄資料
+    public class 配送資料 : 新版可記錄資料, 可處理介面
     {
         [可匯出]
         [JsonProperty]
         public DateTime 處理時間 { get; set; }
+
+        [可匯出]
+        [JsonProperty]
+        public string 處理者 { get; set; }
 
         [可匯出]
         [JsonProperty]
@@ -71,6 +75,7 @@ namespace WokyTool.配送
         public static readonly 配送資料 空白 = new 配送資料
         {
             處理時間 = default(DateTime),
+            處理者 = 字串.無,
 
             配送公司 = 列舉.配送公司.無,
             配送單號 = 字串.無,
@@ -95,6 +100,7 @@ namespace WokyTool.配送
         public static 配送資料 錯誤 = new 配送資料
         {
             處理時間 = default(DateTime),
+            處理者 = 字串.錯誤,
 
             配送公司 = 列舉.配送公司.錯誤,
             配送單號 = 字串.錯誤,

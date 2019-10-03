@@ -1091,6 +1091,7 @@
     <Compile Include="進貨\轉換\進貨新增錯誤匯出轉換.cs" />
     <Compile Include="進貨\轉換\進貨新增總覽匯出轉換.cs" />
     <Compile Include="進貨\轉換\進貨總覽匯出轉換.cs" />
+    <Compile Include="配送\控制\配送資料管理器.cs" />
     <Compile Include="配送\控制\配送轉換資料管理器.cs" />
     <Compile Include="配送\視窗\配送新增篩選視窗.cs">
       <SubType>Form</SubType>

@@ -46,6 +46,7 @@ namespace WokyTool.配送
                 }
 
                 轉換.處理時間 = DateTime.Now;   // 這個值會同時用來判斷是否為新配送的資料
+                轉換.處理者 = 系統參數.使用者名稱;
                 轉換.配送單號 = value;
             }
         }
@@ -140,6 +141,11 @@ namespace WokyTool.配送
 
         /********************************/
 
+        public bool 是否為新配送
+        {
+            get { return 轉換.處理時間.Ticks != 0; }
+        }
+
         public bool 已配送
         {
             get { return string.IsNullOrEmpty(轉換.配送單號) == false; }
@@ -183,7 +189,7 @@ namespace WokyTool.配送
 
         public virtual bool 更新來源() 
         {
-            if (轉換.處理時間.Ticks == 0)
+            if (是否為新配送 == false)
                 return false;
 
             // do something

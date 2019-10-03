@@ -51,7 +51,7 @@ namespace WokyTool.平台訂單
 
         public override bool 更新來源()
         {
-            if (轉換.處理時間.Ticks == 0)
+            if (是否為新配送 == false)
                 return false;
 
             來源資料.BeginEdit();
