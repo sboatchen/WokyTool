@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using WokyTool.通用;
 
@@ -24,6 +25,8 @@ namespace WokyTool.配送
             if (是否紀錄_)
             {
                 var 待封存資料列_ = 資料列.Where(Value => Value.更新來源()).ToList();
+                if (待封存資料列_.Count == 0)
+                    return;
 
                 例外檢查器 例外檢查器_ = new 例外檢查器();
                 待封存資料列_.執行(Value => Value.合法檢查(例外檢查器_));
@@ -33,9 +36,8 @@ namespace WokyTool.配送
                     資料_.紀錄編輯(true);
                 }
 
-                //@@ 庫存調整
-
-                檔案.寫入(檔案路徑, JsonConvert.SerializeObject(檔案路徑, Formatting.Indented), false);
+                List<配送資料> 完成資料列_ = 待封存資料列_.Select(Value => Value.轉換).ToList();
+                配送資料管理器.獨體.待整理(完成資料列_);
             }
         }
     }

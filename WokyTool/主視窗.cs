@@ -22,9 +22,34 @@ namespace WokyTool
         {
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void 使用者_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編號.編號, 列舉.視窗.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.使用者, 列舉.視窗.總覽);
+        }
+
+        private void 參數_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.參數, 列舉.視窗.總覽);
+        }
+
+        private void 公司_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.公司, 列舉.視窗.總覽);
+        }
+
+        private void 客戶_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.客戶, 列舉.視窗.總覽);
+        }
+
+        private void 子客戶_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.子客戶, 列舉.視窗.總覽);
+        }
+
+        private void 聯絡人_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.聯絡人, 列舉.視窗.總覽);
         }
 
         private void 物品大類_Click(object sender, EventArgs e)
@@ -37,6 +62,11 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編號.物品小類, 列舉.視窗.總覽);
         }
 
+        private void 物品品牌_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.物品品牌, 列舉.視窗.總覽);
+        }
+
         private void 物品_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.物品, 列舉.視窗.總覽);
@@ -47,9 +77,9 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編號.商品大類, 列舉.視窗.總覽);
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void 商品小類_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編號.商品小類, 列舉.視窗.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.商品大類, 列舉.視窗.總覽);
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -57,10 +87,16 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編號.商品, 列舉.視窗.總覽);
         }
 
-        private void 物品品牌_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.物品品牌, 列舉.視窗.總覽);
-        }
+
+
+
+
+
+
+
+
+
+
 
         private void button14_Click(object sender, EventArgs e)
         {
@@ -77,10 +113,7 @@ namespace WokyTool
             //視窗管理器.獨體.顯現(列舉.編號.配送, 列舉.視窗.總覽);
         }
 
-        private void 公司_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.公司, 列舉.視窗.總覽);
-        }
+
 
         private void button35_Click(object sender, EventArgs e)
         {
@@ -99,20 +132,7 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編號.月結帳, 列舉.視窗.總覽);
         }
 
-        private void 聯絡人_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.聯絡人, 列舉.視窗.總覽);
-        }
 
-        private void 客戶_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.客戶, 列舉.視窗.總覽);
-        }
-
-        private void 子客戶_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.子客戶, 列舉.視窗.總覽);
-        }
 
 
         private void button38_Click(object sender, EventArgs e)
@@ -368,11 +388,6 @@ namespace WokyTool
                 x.編號 = 常數.新建資料編碼;
 
             月結帳匯入設定資料管理器.獨體.新增(Map.Values);
-        }
-
-        private void 使用者_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.使用者, 列舉.視窗.總覽);
         }
 
         private void button1_Click_1(object sender, EventArgs e)

@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.使用者;
+using WokyTool.參數;
 
 namespace WokyTool.通用
 {
@@ -44,7 +45,10 @@ namespace WokyTool.通用
             if(String.IsNullOrEmpty(Name_))
                 Name_ = System.Environment.MachineName;
 
+            var 參數初始化 = 參數資料管理器.獨體;
+
             // 設定 log4net 參數
+            Environment.SetEnvironmentVariable("WokyLogPath", 系統參數.訊息路徑);
             Environment.SetEnvironmentVariable("WokyLog", Name_);
 
             logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
