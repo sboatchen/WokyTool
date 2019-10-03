@@ -129,6 +129,15 @@
     </Compile>
     <Compile Include="使用者\資料\使用者資料.cs" />
     <Compile Include="使用者\資料\使用者資料篩選.cs" />
+    <Compile Include="參數\控制\參數資料管理器.cs" />
+    <Compile Include="參數\視窗\參數總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="參數\視窗\參數總覽視窗.Designer.cs">
+      <DependentUpon>參數總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="參數\資料\參數資料篩選.cs" />
+    <Compile Include="參數\資料\參數資料.cs" />
     <Compile Include="公司\控制\公司資料管理器.cs" />
     <Compile Include="公司\視窗\公司總覽視窗.cs">
       <SubType>Form</SubType>
@@ -1181,6 +1190,9 @@
     <EmbeddedResource Include="使用者\視窗\登入視窗.resx">
       <DependentUpon>登入視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="參數\視窗\參數總覽視窗.resx">
+      <DependentUpon>參數總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="商品\視窗\商品小類總覽視窗.resx">
       <DependentUpon>商品小類總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1520,6 +1532,7 @@
     <None Include="Properties\DataSources\WokyTool.一般訂單.一般訂單資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.使用者.使用者資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.公司.公司資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.參數.參數資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品大類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品小類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品更新資料.datasource" />

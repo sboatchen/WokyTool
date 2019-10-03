@@ -7,6 +7,7 @@ using WokyTool.平台訂單;
 using WokyTool.使用者;
 using WokyTool.物品;
 using WokyTool.客戶;
+using WokyTool.參數;
 using WokyTool.商品;
 using WokyTool.寄庫;
 using WokyTool.進貨;
@@ -34,6 +35,8 @@ namespace WokyTool.通用
         private 視窗管理器()
         {
             _資料書.Add(取得編號(列舉.編號.使用者, 列舉.視窗.總覽), typeof(使用者總覽視窗));
+
+            _資料書.Add(取得編號(列舉.編號.參數, 列舉.視窗.總覽), typeof(參數總覽視窗));
 
             _資料書.Add(取得編號(列舉.編號.公司, 列舉.視窗.總覽), typeof(公司總覽視窗));
 

@@ -45,7 +45,7 @@ namespace WokyTool.通用
         public static string 取得備份資料夾(string 路徑_, string[] 額外資料夾_ = null)
         {
             List<string> list_ = new List<string>();
-            list_.Add("備份");
+            list_.Add(系統參數.備份路徑);
             list_.Add(時間.目前日期);
 
             string 資料夾_ = Path.GetDirectoryName(路徑_);

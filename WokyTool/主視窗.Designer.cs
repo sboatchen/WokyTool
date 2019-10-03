@@ -32,7 +32,7 @@
             this.物品小類 = new System.Windows.Forms.Button();
             this.物品 = new System.Windows.Forms.Button();
             this.商品大類 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.商品小類 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.物品品牌 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
@@ -75,6 +75,7 @@
             this.button34 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
+            this.參數 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -123,15 +124,15 @@
             this.商品大類.UseVisualStyleBackColor = true;
             this.商品大類.Click += new System.EventHandler(this.商品大類_Click);
             // 
-            // button8
+            // 商品小類
             // 
-            this.button8.Location = new System.Drawing.Point(122, 121);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(100, 23);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "商品小類";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.商品小類.Location = new System.Drawing.Point(122, 121);
+            this.商品小類.Name = "商品小類";
+            this.商品小類.Size = new System.Drawing.Size(100, 23);
+            this.商品小類.TabIndex = 7;
+            this.商品小類.Text = "商品小類";
+            this.商品小類.UseVisualStyleBackColor = true;
+            this.商品小類.Click += new System.EventHandler(this.商品小類_Click);
             // 
             // button9
             // 
@@ -305,6 +306,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.參數);
             this.panel2.Controls.Add(this.基本);
             this.panel2.Controls.Add(this.使用者);
             this.panel2.Location = new System.Drawing.Point(12, 13);
@@ -333,7 +335,7 @@
             this.panel3.Controls.Add(this.物品大類);
             this.panel3.Controls.Add(this.物品);
             this.panel3.Controls.Add(this.商品大類);
-            this.panel3.Controls.Add(this.button8);
+            this.panel3.Controls.Add(this.商品小類);
             this.panel3.Controls.Add(this.button9);
             this.panel3.Controls.Add(this.子客戶);
             this.panel3.Controls.Add(this.物品品牌);
@@ -575,6 +577,16 @@
             this.button46.UseVisualStyleBackColor = true;
             this.button46.Click += new System.EventHandler(this.button46_Click);
             // 
+            // 參數
+            // 
+            this.參數.Location = new System.Drawing.Point(122, 36);
+            this.參數.Name = "參數";
+            this.參數.Size = new System.Drawing.Size(100, 23);
+            this.參數.TabIndex = 46;
+            this.參數.Text = "參數";
+            this.參數.UseVisualStyleBackColor = true;
+            this.參數.Click += new System.EventHandler(this.參數_Click);
+            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -590,7 +602,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "主視窗";
-            this.Text = "V 2.1.19";
+            this.Text = "V 2.1.20";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.主視窗_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -614,7 +626,7 @@
         private System.Windows.Forms.Button 物品小類;
         private System.Windows.Forms.Button 物品;
         private System.Windows.Forms.Button 商品大類;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button 商品小類;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button 物品品牌;
         private System.Windows.Forms.Button button14;
@@ -657,6 +669,7 @@
         private System.Windows.Forms.Button 整理;
         private System.Windows.Forms.Button 訂單;
         private System.Windows.Forms.Button 寄庫總覽;
+        private System.Windows.Forms.Button 參數;
 
 
     }
