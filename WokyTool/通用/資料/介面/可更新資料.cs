@@ -18,7 +18,7 @@ namespace WokyTool.通用
         [JsonProperty]
         public string 錯誤訊息 { get; set; }
 
-        [可匯入(名稱 = "處理方式", 說明 = "更新/新增/刪除")]
+        [可匯入(優先級 = 0, 名稱 = "處理方式", 說明 = "更新/新增/刪除")]
         public string 處理方式識別
         {
             get
@@ -28,6 +28,13 @@ namespace WokyTool.通用
             set
             {
                 處理方式 = (更新處理方式)Enum.Parse(typeof(更新處理方式), value);
+                if (處理方式 == 更新處理方式.新增)
+                {
+                    參考 = (TValue)Activator.CreateInstance(typeof(TValue));
+                    修改 = (TValue)Activator.CreateInstance(typeof(TValue));
+
+                    修改.編號 = 常數.新建資料編碼;
+                }
             }
         }
 
