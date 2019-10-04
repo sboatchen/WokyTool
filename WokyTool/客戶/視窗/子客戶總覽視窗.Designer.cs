@@ -34,13 +34,15 @@ namespace WokyTool.客戶
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.子客戶資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new WokyTool.通用.MyDataGridView();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.客戶名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.聯絡人數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.新增ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.子客戶資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -51,7 +53,8 @@ namespace WokyTool.客戶
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.篩選ToolStripMenuItem,
             this.檢查ToolStripMenuItem,
-            this.匯出ToolStripMenuItem});
+            this.匯出ToolStripMenuItem,
+            this.更新ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(443, 24);
@@ -77,6 +80,12 @@ namespace WokyTool.客戶
             this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
             this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯出ToolStripMenuItem.Text = "匯出";
+            // 
+            // 自訂ToolStripMenuItem
+            // 
+            this.自訂ToolStripMenuItem.Name = "自訂ToolStripMenuItem";
+            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.自訂ToolStripMenuItem.Text = "自訂";
             // 
             // 子客戶資料BindingSource
             // 
@@ -126,11 +135,19 @@ namespace WokyTool.客戶
             this.聯絡人數量DataGridViewTextBoxColumn.Name = "聯絡人數量DataGridViewTextBoxColumn";
             this.聯絡人數量DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 自訂ToolStripMenuItem
+            // 更新ToolStripMenuItem
             // 
-            this.自訂ToolStripMenuItem.Name = "自訂ToolStripMenuItem";
-            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.自訂ToolStripMenuItem.Text = "自訂";
+            this.更新ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.新增ToolStripMenuItem});
+            this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
+            this.更新ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.更新ToolStripMenuItem.Text = "更新";
+            // 
+            // 新增ToolStripMenuItem
+            // 
+            this.新增ToolStripMenuItem.Name = "新增ToolStripMenuItem";
+            this.新增ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.新增ToolStripMenuItem.Text = "新增";
             // 
             // 子客戶總覽視窗
             // 
@@ -163,5 +180,7 @@ namespace WokyTool.客戶
         private System.Windows.Forms.DataGridViewTextBoxColumn 客戶名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 聯絡人數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem 自訂ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 更新ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 新增ToolStripMenuItem;
     }
 }

@@ -45,6 +45,7 @@ namespace WokyTool.聯絡人
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.新增ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.通用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.舊資料轉換ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -165,11 +166,18 @@ namespace WokyTool.聯絡人
             // 更新ToolStripMenuItem
             // 
             this.更新ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.新增ToolStripMenuItem,
             this.通用ToolStripMenuItem,
             this.舊資料轉換ToolStripMenuItem});
             this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
             this.更新ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.更新ToolStripMenuItem.Text = "更新";
+            // 
+            // 新增ToolStripMenuItem
+            // 
+            this.新增ToolStripMenuItem.Name = "新增ToolStripMenuItem";
+            this.新增ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.新增ToolStripMenuItem.Text = "新增";
             // 
             // 通用ToolStripMenuItem
             // 
@@ -224,5 +232,6 @@ namespace WokyTool.聯絡人
         private System.Windows.Forms.ToolStripMenuItem 更新ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 通用ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 舊資料轉換ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 新增ToolStripMenuItem;
     }
 }

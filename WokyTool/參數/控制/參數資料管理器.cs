@@ -29,17 +29,21 @@ namespace WokyTool.參數
         // 建構子
         private 參數資料管理器() : base()
         {
-            系統參數.訊息路徑 = 取得("訊息路徑").參數;
-            系統參數.備份路徑 = 取得("備份路徑").參數;
+            系統參數.訊息路徑 = 取得參數("訊息路徑", "訊息");
+            系統參數.備份路徑 = 取得參數("備份路徑", "備份");
         }
 
         // 取得資料
-        public 參數資料 取得(string 名稱_)
+        public string 取得參數(string 名稱_, string 預設參數_)
         {
             if (String.IsNullOrEmpty(名稱_) || 字串.無.Equals(名稱_))
-                return 空白資料;
+                return 空白資料.參數;
 
-            return _資料列.Where(Value => 名稱_.Equals(Value.名稱)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
+            參數資料 資料_ = _資料列.Where(Value => 名稱_.Equals(Value.名稱)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
+            if (資料_ == 錯誤資料)
+                return 預設參數_;
+
+            return 資料_.參數;
         }
     }
 }

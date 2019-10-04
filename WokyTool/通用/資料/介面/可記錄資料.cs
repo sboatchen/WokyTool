@@ -3,6 +3,8 @@ namespace WokyTool.通用
 {
     public abstract class 新版可記錄資料 : 可編輯資料
     {
+        private static string _新資料副本 = "";
+
         protected string _副本;
 
         public override void BeginEdit()
@@ -23,7 +25,7 @@ namespace WokyTool.通用
 
         public override void 取消編輯()
         {
-            if (是否編輯中)
+            if (是否編輯中 && _副本 != _新資料副本)
             {
                 object 資料_ = _副本.轉成物件(this.GetType());
                 this.完全拷貝(資料_);
@@ -56,6 +58,12 @@ namespace WokyTool.通用
                 return false;
             }
 
+            if(_副本 == _新資料副本)
+            {
+                是否編輯中 = true;
+                return true;
+            }
+
             string 資料_ = this.ToString(false);
             if (_副本.Equals(資料_))
             {
@@ -66,6 +74,11 @@ namespace WokyTool.通用
 
             是否編輯中 = true;
             return true;
+        }
+
+        public void 新增資料()
+        {
+            _副本 = _新資料副本;
         }
     }
 }

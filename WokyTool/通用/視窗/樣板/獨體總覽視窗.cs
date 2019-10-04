@@ -15,6 +15,7 @@ namespace WokyTool.通用
         public virtual ToolStripMenuItem 篩選MI { get { throw new Exception(this.GetType().Name + " 未設定篩選MI"); } }
         public virtual ToolStripMenuItem 檢查MI { get { throw new Exception(this.GetType().Name + " 未設定檢查MI"); } }
         public virtual ToolStripMenuItem 自訂MI { get { throw new Exception(this.GetType().Name + " 未設定自訂MI"); } }
+        public virtual ToolStripMenuItem 新增MI { get { return null; } }
 
         public BindingSource 資料BS { get { return 編輯管理器.公用BS; } }
 
@@ -38,7 +39,10 @@ namespace WokyTool.通用
             檢查MI.Click += new EventHandler(this._檢查);
             自訂MI.Click += new EventHandler(this._自訂);
 
-            資料GV.AllowUserToAddRows &= 編輯管理器.是否可編輯;
+            if (新增MI != null)
+                新增MI.Click += new EventHandler(this._新增);
+            
+            資料GV.AllowUserToAddRows = false;
 
             _預設是否可刪除資料 = 資料GV.AllowUserToDeleteRows;
             資料GV.AllowUserToDeleteRows &= 編輯管理器.是否可編輯;
@@ -184,6 +188,14 @@ namespace WokyTool.通用
             var i = new 錯誤總覽視窗(檢查器_, 編號類型.ToString());
             i.Show();
             i.BringToFront();
+        }
+
+        private void _新增(object sender, EventArgs e)
+        {
+            var 新資料_ = (資料BS.AddNew()) as 新版可記錄資料;
+            新資料_.新增資料();
+
+            _雙點擊資料(null, null);
         }
 
         private void _自訂(object sender, EventArgs e)

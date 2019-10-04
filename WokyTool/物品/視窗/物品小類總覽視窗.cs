@@ -14,6 +14,7 @@ namespace WokyTool.物品
         public override ToolStripMenuItem 篩選MI { get { return this.篩選ToolStripMenuItem; } }
         public override ToolStripMenuItem 檢查MI { get { return this.檢查ToolStripMenuItem; } }
         public override ToolStripMenuItem 自訂MI { get { return this.自訂ToolStripMenuItem; } }
+        public override ToolStripMenuItem 新增MI { get { return this.新增ToolStripMenuItem; } }
 
         public 物品小類總覽視窗()
         {
