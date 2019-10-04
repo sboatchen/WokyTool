@@ -2,7 +2,6 @@
 using System;
 using System.Linq;
 using WokyTool.Common;
-using WokyTool.商品;
 using WokyTool.通用;
 
 namespace WokyTool.參數

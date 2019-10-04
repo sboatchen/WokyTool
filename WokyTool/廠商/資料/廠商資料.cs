@@ -1,86 +1,72 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WokyTool.Common;
 using WokyTool.通用;
 
 namespace WokyTool.廠商
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 廠商資料 : 可記錄資料<廠商資料>
+    public class 廠商資料 : 可編號記錄資料
     {
-        [JsonProperty]
-        public override int 編號 { get; set; }
-
+        [可匯出]
         [JsonProperty]
         public string 名稱 { get; set; }
 
+        [可匯出]
+        [JsonProperty]
+        public string 電話 { get; set; }
+
+        [可匯出]
+        [JsonProperty]
+        public string 手機 { get; set; }
+
+        [可匯出]
+        [JsonProperty]
+        public string 地址 { get; set; }
+
         /********************************/
 
-        public 廠商資料 Self
-        {
-            get { return this; }
-        }
+        public 廠商資料 Self { get { return this; } }
 
-        private static readonly 廠商資料 _NULL = new 廠商資料
+        public static readonly 廠商資料 不篩選 = new 廠商資料
+        {
+            編號 = 常數.不篩選資料編碼,
+            名稱 = 字串.空,
+            電話 = 字串.空,
+            手機 = 字串.空,
+            地址 = 字串.空,
+        };
+
+        public static readonly 廠商資料 空白 = new 廠商資料
         {
             編號 = 常數.空白資料編碼,
             名稱 = 字串.無,
+            電話 = 字串.無,
+            手機 = 字串.無,
+            地址 = 字串.無,
         };
-        public static 廠商資料 NULL
-        {
-            get
-            {
-                return _NULL;
-            }
-        }
 
-        private static 廠商資料 _ERROR = new 廠商資料
+        public static 廠商資料 錯誤 = new 廠商資料
         {
             編號 = 常數.錯誤資料編碼,
             名稱 = 字串.錯誤,
+            電話 = 字串.錯誤,
+            手機 = 字串.錯誤,
+            地址 = 字串.錯誤,
         };
-        public static 廠商資料 ERROR
-        {
-            get
-            {
-                return _ERROR;
-            }
-        }
 
         /********************************/
 
-        public override 廠商資料 拷貝()
+        public override void 合法檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null, 基本資料 資料參考_ = null)
         {
-            廠商資料 Data_ = new 廠商資料
-            {
-                編號 = this.編號,
-                名稱 = this.名稱,
-            };
+            基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
+            基本資料 參考_ = (資料參考_ == null) ? this : 資料參考_;
 
-            return Data_;
-        }
-
-        public override void 覆蓋(廠商資料 Data_)
-        {
-            編號 = Data_.編號;
-            名稱 = Data_.名稱;
-        }
-
-        public override bool 是否一致(廠商資料 Data_)
-        {
-            return
-                編號 == Data_.編號 &&
-                名稱 == Data_.名稱;
-        }
-
-        public override void 檢查合法()
-        {
             if (String.IsNullOrEmpty(名稱))
-                throw new Exception("廠商資料:名稱不合法:" + this.ToString());
+                檢查器_.錯誤(資料_, "名稱不合法");
+            else if (廠商資料管理器.獨體.資料列舉2.Where(Value => Value != 參考_ && 名稱.Equals(Value.名稱)).Any())
+                檢查器_.錯誤(資料_, "名稱重複");
         }
     }
 }

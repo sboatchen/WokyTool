@@ -20,7 +20,9 @@ namespace WokyTool.進貨
         private 可清單列舉資料管理介面 _物品清單管理器 = 物品資料管理器.獨體.清單管理器;
         private int _物品資料版本 = -1;
 
+        private 可清單列舉資料管理介面 _廠商清單管理器 = 廠商資料管理器.獨體.清單管理器;
         private int _廠商資料版本 = -1;
+
         private int _幣值資料版本 = -1;
 
         public 進貨新增總覽視窗()
@@ -57,10 +59,10 @@ namespace WokyTool.進貨
 
         protected override void 視窗激活()
         {
-            if (_廠商資料版本 != 廠商資料管理器.獨體.可選取資料列版本)
+            if (_廠商資料版本 != _廠商清單管理器.資料版本)
             {
-                _廠商資料版本 = 廠商資料管理器.獨體.可選取資料列版本;
-                this.廠商資料BindingSource.DataSource = 廠商資料管理器.獨體.唯讀BList;
+                _廠商資料版本 = _廠商清單管理器.資料版本;
+                this.廠商資料BindingSource.DataSource = _廠商清單管理器.資料列舉;
             }
 
             if (_物品資料版本 != _物品清單管理器.資料版本)

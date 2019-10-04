@@ -19,23 +19,7 @@ namespace WokyTool.月結帳
         [JsonProperty]
         public string 廠商識別 { get; set; }
 
-        protected 廠商資料 _廠商;
-        public 廠商資料 廠商
-        {
-            get
-            {
-                if (_廠商 == null)
-                    _廠商 = 廠商資料.NULL;
-                else if (廠商資料管理器.獨體.唯讀BList.Contains(_廠商) == false)
-                    _廠商 = 廠商資料.ERROR;
-
-                return _廠商;
-            }
-            set
-            {
-                _廠商 = value;
-            }
-        }
+        public 廠商資料 廠商 { get; set; }
 
         [JsonProperty]
         public decimal 費用 { get; set; }
@@ -44,7 +28,7 @@ namespace WokyTool.月結帳
 
         public override void 初始化()
         {
-            廠商 = 廠商資料管理器.獨體.Get(廠商識別);
+            廠商 = 廠商資料管理器.獨體.取得(廠商識別);
         }
 
         public override void 檢查合法()

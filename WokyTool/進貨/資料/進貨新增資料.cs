@@ -35,27 +35,11 @@ namespace WokyTool.進貨
             }
             set
             {
-                _廠商 = 廠商資料管理器.獨體.Get(value);
+                廠商 = 廠商資料管理器.獨體.取得(value);
             }
         }
 
-        protected 廠商資料 _廠商;
-        public 廠商資料 廠商
-        {
-            get
-            {
-                if (_廠商 == null)
-                    _廠商 = 廠商資料.NULL;
-                else if (廠商資料管理器.獨體.唯讀BList.Contains(_廠商) == false)
-                    _廠商 = 廠商資料.ERROR;
-
-                return _廠商;
-            }
-            set
-            {
-                _廠商 = value;
-            }
-        }
+        public 廠商資料 廠商 { get; set; }
 
         [JsonProperty]
         public int 物品編號
@@ -145,7 +129,7 @@ namespace WokyTool.進貨
 
             類型 = 列舉.進貨.一般,
 
-            廠商 = 廠商資料.NULL,
+            廠商 = 廠商資料.空白,
 
             物品 = 物品資料.空白,
 
@@ -172,7 +156,7 @@ namespace WokyTool.進貨
 
             類型 = 列舉.進貨.錯誤,
 
-            廠商 = 廠商資料.ERROR,
+            廠商 = 廠商資料.錯誤,
 
             物品 = 物品資料.錯誤,
 

@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using WokyTool.Common;
 using WokyTool.公司;
+using WokyTool.平台訂單;
 using WokyTool.物品;
 using WokyTool.客戶;
+using WokyTool.寄庫;
 using WokyTool.通用;
 
 namespace WokyTool.商品
@@ -295,8 +297,17 @@ namespace WokyTool.商品
 
         public override void 刪除檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)
         {
-            //@@ 平台訂單新增資料 需考慮所有新增資料
-            //@@ 寄庫新增資料
+            基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
+
+            foreach (寄庫新增資料 寄庫新增資料_ in 寄庫新增資料管理器.獨體.資料列.Where(Value => Value.商品 == this))
+            {
+                檢查器_.錯誤(資料_, "資料綁定中:" + 寄庫新增資料_.ToString(false));
+            }
+
+            foreach (平台訂單新增資料 平台訂單新增資料_ in 平台訂單新增資料管理器.獨體.資料列舉2.Where(Value => Value.商品 == this))
+            {
+                檢查器_.錯誤(資料_, "資料綁定中:" + 平台訂單新增資料_.ToString(false));
+            }
         }
     }
 }

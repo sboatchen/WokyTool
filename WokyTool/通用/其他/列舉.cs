@@ -44,6 +44,8 @@ namespace WokyTool.通用
 
             盤點,
 
+            廠商,
+
             配送,
 
             平台訂單,
@@ -59,7 +61,6 @@ namespace WokyTool.通用
             一般訂單新增,
             一般訂單,
 
-            廠商,
             幣值,
 
             進貨新增,
