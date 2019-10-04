@@ -51,6 +51,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.以下功能還未處理完 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.參數 = new System.Windows.Forms.Button();
             this.基本 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.整理 = new System.Windows.Forms.Button();
@@ -75,7 +76,6 @@
             this.button34 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
-            this.參數 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -313,6 +313,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(482, 71);
             this.panel2.TabIndex = 49;
+            // 
+            // 參數
+            // 
+            this.參數.Location = new System.Drawing.Point(122, 36);
+            this.參數.Name = "參數";
+            this.參數.Size = new System.Drawing.Size(100, 23);
+            this.參數.TabIndex = 46;
+            this.參數.Text = "參數";
+            this.參數.UseVisualStyleBackColor = true;
+            this.參數.Click += new System.EventHandler(this.參數_Click);
             // 
             // 基本
             // 
@@ -577,16 +587,6 @@
             this.button46.UseVisualStyleBackColor = true;
             this.button46.Click += new System.EventHandler(this.button46_Click);
             // 
-            // 參數
-            // 
-            this.參數.Location = new System.Drawing.Point(122, 36);
-            this.參數.Name = "參數";
-            this.參數.Size = new System.Drawing.Size(100, 23);
-            this.參數.TabIndex = 46;
-            this.參數.Text = "參數";
-            this.參數.UseVisualStyleBackColor = true;
-            this.參數.Click += new System.EventHandler(this.參數_Click);
-            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -602,7 +602,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "主視窗";
-            this.Text = "V 2.1.20";
+            this.Text = "V 2.1.21";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.主視窗_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

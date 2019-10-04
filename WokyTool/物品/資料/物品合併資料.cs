@@ -168,60 +168,68 @@ namespace WokyTool.物品
             if (string.IsNullOrEmpty(組成字串_))
                 return null;
 
-            var 類別列_ = 組成字串_.Split(new string[]{" & "}, Int16.MaxValue, StringSplitOptions.None);
-
-            List<商品組成資料> 組成列_ = new List<商品組成資料>();
-            foreach (string 同類別資料_ in 類別列_)
+            try
             {
-                int 類別索引_ = 同類別資料_.IndexOf('-');
-                if (類別索引_ == -1)
-                {
-                    var 組成_ = 同類別資料_.Split('*');
-                    商品組成資料 商品組成資料_ = new 商品組成資料
-                    {
-                        數量 = Int16.Parse(組成_[1]),
-                        物品 = 物品資料管理器.獨體.取得(組成_[0])
-                    };
+                var 類別列_ = 組成字串_.Split(new string[] { " & ", "&" }, Int16.MaxValue, StringSplitOptions.None);
 
-                    組成列_.Add(商品組成資料_);
-                    continue;
-                }
-
-                if (同類別資料_.Contains(",") == false)
+                List<商品組成資料> 組成列_ = new List<商品組成資料>();
+                foreach (string 同類別資料_ in 類別列_)
                 {
-                    var 組成_ = 同類別資料_.Split('*');
-                    物品資料 物品資料_ = 物品資料管理器.獨體.取得(組成_[0]);
-                    if (物品資料_.編號是否有值())
+                    int 類別索引_ = 同類別資料_.IndexOf('-');
+                    if (類別索引_ == -1)
                     {
+                        var 組成_ = 同類別資料_.Split('*');
                         商品組成資料 商品組成資料_ = new 商品組成資料
                         {
                             數量 = Int16.Parse(組成_[1]),
-                            物品 = 物品資料_
+                            物品 = 物品資料管理器.獨體.取得(組成_[0])
                         };
 
                         組成列_.Add(商品組成資料_);
                         continue;
                     }
-                }
 
-                string 類別_ = 同類別資料_.Substring(0, 類別索引_);
-                string 顏色資料群_ = 同類別資料_.Substring(類別索引_ + 1);
-
-                var 顏色資料列_ = 顏色資料群_.Split(',');
-                foreach (string 顏色資料_ in 顏色資料列_)
-                {
-                    var 組成_ = 顏色資料_.Split('*');
-                    商品組成資料 商品組成資料_ = new 商品組成資料
+                    if (同類別資料_.Contains(",") == false)
                     {
-                        數量 = Int16.Parse(組成_[1]),
-                        物品 = 物品資料管理器.獨體.取得_類別(類別_, 組成_[0])
-                    };
+                        var 組成_ = 同類別資料_.Split('*');
+                        物品資料 物品資料_ = 物品資料管理器.獨體.取得(組成_[0]);
+                        if (物品資料_.編號是否有值())
+                        {
+                            商品組成資料 商品組成資料_ = new 商品組成資料
+                            {
+                                數量 = Int16.Parse(組成_[1]),
+                                物品 = 物品資料_
+                            };
 
-                    組成列_.Add(商品組成資料_);
+                            組成列_.Add(商品組成資料_);
+                            continue;
+                        }
+                    }
+
+                    string 類別_ = 同類別資料_.Substring(0, 類別索引_);
+                    string 顏色資料群_ = 同類別資料_.Substring(類別索引_ + 1);
+
+                    var 顏色資料列_ = 顏色資料群_.Split(',');
+                    foreach (string 顏色資料_ in 顏色資料列_)
+                    {
+                        var 組成_ = 顏色資料_.Split('*');
+                        商品組成資料 商品組成資料_ = new 商品組成資料
+                        {
+                            數量 = Int16.Parse(組成_[1]),
+                            物品 = 物品資料管理器.獨體.取得_類別(類別_, 組成_[0])
+                        };
+
+                        組成列_.Add(商品組成資料_);
+                    }
                 }
-            }
 
-            return 組成列_;
+                return 組成列_;
+            }
+            catch (Exception ex)
+            {
+                訊息管理器.獨體.通知("解析錯誤:" + 組成字串_);
+                throw ex;
+            }
         }
 
         public 列舉.配送公司 推薦配送公司 
