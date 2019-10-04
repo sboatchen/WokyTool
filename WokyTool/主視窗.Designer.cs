@@ -33,9 +33,9 @@
             this.物品 = new System.Windows.Forms.Button();
             this.商品大類 = new System.Windows.Forms.Button();
             this.商品小類 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.商品 = new System.Windows.Forms.Button();
             this.物品品牌 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.廠商 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.公司 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
@@ -134,15 +134,15 @@
             this.商品小類.UseVisualStyleBackColor = true;
             this.商品小類.Click += new System.EventHandler(this.商品小類_Click);
             // 
-            // button9
+            // 商品
             // 
-            this.button9.Location = new System.Drawing.Point(237, 121);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(100, 23);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "商品";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.商品.Location = new System.Drawing.Point(237, 121);
+            this.商品.Name = "商品";
+            this.商品.Size = new System.Drawing.Size(100, 23);
+            this.商品.TabIndex = 8;
+            this.商品.Text = "商品";
+            this.商品.UseVisualStyleBackColor = true;
+            this.商品.Click += new System.EventHandler(this.商品_Click);
             // 
             // 物品品牌
             // 
@@ -154,15 +154,15 @@
             this.物品品牌.UseVisualStyleBackColor = true;
             this.物品品牌.Click += new System.EventHandler(this.物品品牌_Click);
             // 
-            // button14
+            // 廠商
             // 
-            this.button14.Location = new System.Drawing.Point(6, 150);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(100, 23);
-            this.button14.TabIndex = 13;
-            this.button14.Text = "廠商";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.廠商.Location = new System.Drawing.Point(6, 150);
+            this.廠商.Name = "廠商";
+            this.廠商.Size = new System.Drawing.Size(100, 23);
+            this.廠商.TabIndex = 13;
+            this.廠商.Text = "廠商";
+            this.廠商.UseVisualStyleBackColor = true;
+            this.廠商.Click += new System.EventHandler(this.廠商_Click);
             // 
             // button15
             // 
@@ -341,12 +341,12 @@
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.物品小類);
-            this.panel3.Controls.Add(this.button14);
+            this.panel3.Controls.Add(this.廠商);
             this.panel3.Controls.Add(this.物品大類);
             this.panel3.Controls.Add(this.物品);
             this.panel3.Controls.Add(this.商品大類);
             this.panel3.Controls.Add(this.商品小類);
-            this.panel3.Controls.Add(this.button9);
+            this.panel3.Controls.Add(this.商品);
             this.panel3.Controls.Add(this.子客戶);
             this.panel3.Controls.Add(this.物品品牌);
             this.panel3.Controls.Add(this.客戶);
@@ -359,7 +359,7 @@
             // 
             // 整理
             // 
-            this.整理.Location = new System.Drawing.Point(357, 157);
+            this.整理.Location = new System.Drawing.Point(357, 149);
             this.整理.Name = "整理";
             this.整理.Size = new System.Drawing.Size(100, 23);
             this.整理.TabIndex = 55;
@@ -627,9 +627,9 @@
         private System.Windows.Forms.Button 物品;
         private System.Windows.Forms.Button 商品大類;
         private System.Windows.Forms.Button 商品小類;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button 商品;
         private System.Windows.Forms.Button 物品品牌;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button 廠商;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button 公司;
         private System.Windows.Forms.Button button27;

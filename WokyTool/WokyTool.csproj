@@ -328,6 +328,25 @@
     <Compile Include="庫存\資料\物品庫存封存資料.cs" />
     <Compile Include="庫存\資料\商品庫存封存資料篩選.cs" />
     <Compile Include="庫存\資料\物品庫存封存資料篩選.cs" />
+    <Compile Include="廠商\視窗\元件\廠商選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="廠商\視窗\元件\廠商選取元件.Designer.cs">
+      <DependentUpon>廠商選取元件.cs</DependentUpon>
+    </Compile>
+    <Compile Include="廠商\視窗\廠商總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="廠商\視窗\廠商總覽視窗.Designer.cs">
+      <DependentUpon>廠商總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="廠商\視窗\廠商篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="廠商\視窗\廠商篩選視窗.Designer.cs">
+      <DependentUpon>廠商篩選視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="廠商\資料\廠商資料篩選.cs" />
     <Compile Include="通用\介面\可整理介面.cs" />
     <Compile Include="通用\介面\可處理介面.cs" />
     <Compile Include="通用\檢查\視窗\錯誤總覽視窗.cs">
@@ -541,18 +560,6 @@
     <Compile Include="月結帳\轉換\月結帳物品銷售排行匯出轉換.cs" />
     <Compile Include="月結帳\轉換\月結帳物品品牌銷售排行匯出轉換.cs" />
     <Compile Include="廠商\控制\廠商資料管理器.cs" />
-    <Compile Include="廠商\視窗\元件\廠商選取元件.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="廠商\視窗\元件\廠商選取元件.Designer.cs">
-      <DependentUpon>廠商選取元件.cs</DependentUpon>
-    </Compile>
-    <Compile Include="廠商\視窗\廠商總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="廠商\視窗\廠商總覽視窗.Designer.cs">
-      <DependentUpon>廠商總覽視窗.cs</DependentUpon>
-    </Compile>
     <Compile Include="廠商\資料\廠商資料.cs" />
     <Compile Include="月結帳\控制\月結帳會計資料管理器.cs" />
     <Compile Include="月結帳\控制\月結帳匯入管理器.cs" />
@@ -1282,12 +1289,6 @@
     <EmbeddedResource Include="平台訂單\視窗\平台訂單新增匯入詳細視窗.resx">
       <DependentUpon>平台訂單新增匯入詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="廠商\視窗\元件\廠商選取元件.resx">
-      <DependentUpon>廠商選取元件.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="廠商\視窗\廠商總覽視窗.resx">
-      <DependentUpon>廠商總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -1323,6 +1324,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="客戶\視窗\客戶詳細視窗.resx">
       <DependentUpon>客戶詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="廠商\視窗\元件\廠商選取元件.resx">
+      <DependentUpon>廠商選取元件.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="廠商\視窗\廠商總覽視窗.resx">
+      <DependentUpon>廠商總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="廠商\視窗\廠商篩選視窗.resx">
+      <DependentUpon>廠商篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="月結帳\視窗\月結帳篩選視窗.resx">
       <DependentUpon>月結帳篩選視窗.cs</DependentUpon>

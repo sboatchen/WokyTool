@@ -32,6 +32,8 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編號.參數, 列舉.視窗.總覽);
         }
 
+        /*****************************/
+
         private void 公司_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.公司, 列舉.視窗.總覽);
@@ -82,26 +84,23 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編號.商品大類, 列舉.視窗.總覽);
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void 商品_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.商品, 列舉.視窗.總覽);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-        private void button14_Click(object sender, EventArgs e)
+        private void 廠商_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.廠商, 列舉.視窗.總覽);
         }
+
+        private void 整理_Click(object sender, EventArgs e)
+        {
+            可整理管理器.獨體.整理();
+        }
+
+        /*****************************/
+
 
         private void button15_Click(object sender, EventArgs e)
         {
@@ -493,11 +492,6 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.總覽);
         }
 
-        private void 整理_Click(object sender, EventArgs e)
-        {
-            可整理管理器.獨體.整理();
-        }
-
         private void 訂單_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.平台訂單, 列舉.視窗.總覽);
@@ -512,5 +506,7 @@ namespace WokyTool
         {
             視窗管理器.獨體.顯現(列舉.編號.寄庫新增, 列舉.視窗.總覽);
         }
+
+
     }
 }
