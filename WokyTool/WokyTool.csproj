@@ -511,20 +511,20 @@
     <Compile Include="平台訂單\配送\平台訂單配送轉換資料_生活市集_SEVEN.cs" />
     <Compile Include="平台訂單\配送\平台訂單配送轉換資料_松果_全家.cs" />
     <Compile Include="平台訂單\配送\平台訂單配送轉換資料_松果_SEVEN.cs" />
-    <Compile Include="幣值\控制\幣值資料管理器.cs" />
-    <Compile Include="幣值\視窗\元件\幣值選取元件.cs">
+    <Compile Include="廢棄\幣值\控制\幣值資料管理器.cs" />
+    <Compile Include="廢棄\幣值\視窗\元件\幣值選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="幣值\視窗\元件\幣值選取元件.Designer.cs">
+    <Compile Include="廢棄\幣值\視窗\元件\幣值選取元件.Designer.cs">
       <DependentUpon>幣值選取元件.cs</DependentUpon>
     </Compile>
-    <Compile Include="幣值\視窗\幣值總覽視窗.cs">
+    <Compile Include="廢棄\幣值\視窗\幣值總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="幣值\視窗\幣值總覽視窗.Designer.cs">
+    <Compile Include="廢棄\幣值\視窗\幣值總覽視窗.Designer.cs">
       <DependentUpon>幣值總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="幣值\資料\幣值資料.cs" />
+    <Compile Include="廢棄\幣值\資料\幣值資料.cs" />
     <Compile Include="平台訂單\控制\平台訂單新增資料管理器.cs" />
     <Compile Include="平台訂單\控制\平台訂單新增匯入資料管理器.cs" />
     <Compile Include="平台訂單\視窗\平台訂單新增匯入視窗.cs">
@@ -1256,10 +1256,10 @@
     <EmbeddedResource Include="寄庫\視窗\寄庫匯入篩選視窗.resx">
       <DependentUpon>寄庫匯入篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="幣值\視窗\元件\幣值選取元件.resx">
+    <EmbeddedResource Include="廢棄\幣值\視窗\元件\幣值選取元件.resx">
       <DependentUpon>幣值選取元件.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="幣值\視窗\幣值總覽視窗.resx">
+    <EmbeddedResource Include="廢棄\幣值\視窗\幣值總覽視窗.resx">
       <DependentUpon>幣值總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="平台訂單\視窗\平台訂單詳細視窗.resx">

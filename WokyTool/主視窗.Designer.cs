@@ -56,7 +56,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.整理 = new System.Windows.Forms.Button();
             this.客戶資料轉換 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.訂單 = new System.Windows.Forms.Button();
@@ -338,7 +337,6 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.整理);
             this.panel3.Controls.Add(this.客戶資料轉換);
-            this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.物品小類);
             this.panel3.Controls.Add(this.廠商);
@@ -378,16 +376,6 @@
             this.客戶資料轉換.UseVisualStyleBackColor = true;
             this.客戶資料轉換.Visible = false;
             this.客戶資料轉換.Click += new System.EventHandler(this.客戶資料轉換_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(122, 149);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 23);
-            this.button2.TabIndex = 43;
-            this.button2.Text = "幣值";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -655,7 +643,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button34;
         private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Button button42;

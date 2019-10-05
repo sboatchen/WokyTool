@@ -64,6 +64,8 @@ namespace WokyTool
          * 寄庫
          * 盤點
          * 
+         * 廠商
+         * 
          * 配送
          * 
          * 平台訂單
