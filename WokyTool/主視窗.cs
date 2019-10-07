@@ -101,17 +101,44 @@ namespace WokyTool
 
         /*****************************/
 
+        private void 平台_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.總覽);
+        }
 
-        private void button15_Click(object sender, EventArgs e)
+        private void 訂單_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.平台訂單, 列舉.視窗.總覽);
+        }
+
+        /*****************************/
+
+        private void 寄庫總覽_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.寄庫, 列舉.視窗.總覽);
+        }
+
+        private void 寄庫新增_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.寄庫新增, 列舉.視窗.總覽);
+        }
+
+        private void 進貨新增_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.進貨新增, 列舉.視窗.總覽);
+        }
+
+        private void 進貨總覽_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.進貨, 列舉.視窗.總覽);
         }
 
-        private void button20_Click(object sender, EventArgs e)
+        private void 盤點_Click(object sender, EventArgs e)
         {
-            //視窗管理器.獨體.顯現(列舉.編號.配送, 列舉.視窗.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.盤點, 列舉.視窗.總覽);
         }
 
+        /*****************************/
 
 
         private void button35_Click(object sender, EventArgs e)
@@ -389,11 +416,6 @@ namespace WokyTool
             月結帳匯入設定資料管理器.獨體.新增(Map.Values);
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.進貨新增, 列舉.視窗.總覽);
-        }
-
         private void button34_Click(object sender, EventArgs e)
         {
             var i = new 發票匯入視窗();
@@ -476,32 +498,5 @@ namespace WokyTool
             舊客戶資料轉換 轉換 = new 舊客戶資料轉換();
             轉換.轉換();
         }
-
-        private void 盤點_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.盤點, 列舉.視窗.總覽);
-        }
-
-        private void 平台_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.總覽);
-        }
-
-        private void 訂單_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.平台訂單, 列舉.視窗.總覽);
-        }
-
-        private void 寄庫總覽_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.寄庫, 列舉.視窗.總覽);
-        }
-
-        private void 寄庫新增_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.寄庫新增, 列舉.視窗.總覽);
-        }
-
-
     }
 }

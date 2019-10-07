@@ -36,7 +36,7 @@
             this.商品 = new System.Windows.Forms.Button();
             this.物品品牌 = new System.Windows.Forms.Button();
             this.廠商 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
+            this.進貨總覽 = new System.Windows.Forms.Button();
             this.公司 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
@@ -66,7 +66,7 @@
             this.寄庫總覽 = new System.Windows.Forms.Button();
             this.盤點 = new System.Windows.Forms.Button();
             this.寄庫新增 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.進貨新增 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button43 = new System.Windows.Forms.Button();
@@ -163,15 +163,15 @@
             this.廠商.UseVisualStyleBackColor = true;
             this.廠商.Click += new System.EventHandler(this.廠商_Click);
             // 
-            // button15
+            // 進貨總覽
             // 
-            this.button15.Location = new System.Drawing.Point(122, 38);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(100, 23);
-            this.button15.TabIndex = 14;
-            this.button15.Text = "總覽";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.進貨總覽.Location = new System.Drawing.Point(122, 38);
+            this.進貨總覽.Name = "進貨總覽";
+            this.進貨總覽.Size = new System.Drawing.Size(100, 23);
+            this.進貨總覽.TabIndex = 14;
+            this.進貨總覽.Text = "進貨總覽";
+            this.進貨總覽.UseVisualStyleBackColor = true;
+            this.進貨總覽.Click += new System.EventHandler(this.進貨總覽_Click);
             // 
             // 公司
             // 
@@ -444,9 +444,9 @@
             this.panel5.Controls.Add(this.寄庫總覽);
             this.panel5.Controls.Add(this.盤點);
             this.panel5.Controls.Add(this.寄庫新增);
-            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.進貨新增);
             this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.button15);
+            this.panel5.Controls.Add(this.進貨總覽);
             this.panel5.Location = new System.Drawing.Point(12, 373);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(482, 105);
@@ -482,15 +482,15 @@
             this.寄庫新增.UseVisualStyleBackColor = true;
             this.寄庫新增.Click += new System.EventHandler(this.寄庫新增_Click);
             // 
-            // button1
+            // 進貨新增
             // 
-            this.button1.Location = new System.Drawing.Point(6, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
-            this.button1.TabIndex = 48;
-            this.button1.Text = "新增";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.進貨新增.Location = new System.Drawing.Point(6, 38);
+            this.進貨新增.Name = "進貨新增";
+            this.進貨新增.Size = new System.Drawing.Size(100, 23);
+            this.進貨新增.TabIndex = 48;
+            this.進貨新增.Text = "進貨新增";
+            this.進貨新增.UseVisualStyleBackColor = true;
+            this.進貨新增.Click += new System.EventHandler(this.進貨新增_Click);
             // 
             // label3
             // 
@@ -618,7 +618,7 @@
         private System.Windows.Forms.Button 商品;
         private System.Windows.Forms.Button 物品品牌;
         private System.Windows.Forms.Button 廠商;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button 進貨總覽;
         private System.Windows.Forms.Button 公司;
         private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Button button35;
@@ -642,7 +642,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button 進貨新增;
         private System.Windows.Forms.Button button34;
         private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Button button42;

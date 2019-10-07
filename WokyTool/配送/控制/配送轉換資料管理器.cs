@@ -8,8 +8,6 @@ namespace WokyTool.配送
 {
     public class 配送轉換資料管理器 : 可暫存資料管理器<配送轉換資料>
     {
-        public string 檔案路徑 { get { return String.Format("進度/配送/{0}_{1}.json", 系統參數.使用者名稱, 時間.目前完整時間); } }
-
         protected override 新版可篩選介面<配送轉換資料> 取得篩選器實體()
         {
             return new 配送轉換資料篩選();

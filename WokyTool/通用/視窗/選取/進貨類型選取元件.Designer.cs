@@ -1,6 +1,6 @@
-﻿namespace WokyTool.廠商
+﻿namespace WokyTool.通用
 {
-    partial class 廠商選取元件
+    partial class 進貨類型選取元件
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,41 +29,52 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.label13 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.廠商資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).BeginInit();
+            this.進貨類型BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.進貨類型BindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(0, 3);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 12);
+            this.label13.TabIndex = 109;
+            this.label13.Text = "進貨類型";
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.廠商資料BindingSource;
-            this.comboBox1.DisplayMember = "名稱";
+            this.comboBox1.DataSource = this.進貨類型BindingSource;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 0);
+            this.comboBox1.Location = new System.Drawing.Point(55, 0);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(165, 20);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.ValueMember = "Self";
+            this.comboBox1.TabIndex = 112;
             // 
-            // 廠商資料BindingSource
+            // 進貨類型BindingSource
             // 
-            this.廠商資料BindingSource.DataSource = typeof(WokyTool.廠商.廠商資料);
+            this.進貨類型BindingSource.DataSource = typeof(WokyTool.通用.列舉.進貨類型);
             // 
-            // 廠商選取元件
+            // 進貨類型選取元件
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.comboBox1);
-            this.Name = "廠商選取元件";
-            this.Size = new System.Drawing.Size(172, 22);
-            ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).EndInit();
+            this.Controls.Add(this.label13);
+            this.Name = "進貨類型選取元件";
+            this.Size = new System.Drawing.Size(230, 22);
+            ((System.ComponentModel.ISupportInitialize)(this.進貨類型BindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.BindingSource 廠商資料BindingSource;
+        private System.Windows.Forms.BindingSource 進貨類型BindingSource;
     }
 }

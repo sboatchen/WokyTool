@@ -904,6 +904,12 @@
     <Compile Include="通用\視窗\選取\指配時段選取元件.Designer.cs">
       <DependentUpon>指配時段選取元件.cs</DependentUpon>
     </Compile>
+    <Compile Include="通用\視窗\選取\進貨類型選取元件.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="通用\視窗\選取\進貨類型選取元件.Designer.cs">
+      <DependentUpon>進貨類型選取元件.cs</DependentUpon>
+    </Compile>
     <Compile Include="通用\視窗\選取\配送公司選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1079,14 +1085,14 @@
     <Compile Include="客製\回單轉換\平台訂單回單轉換_摩天.cs" />
     <Compile Include="通用\資料99\管理\資料統合管理器99.cs" />
     <Compile Include="通用\轉換\匯出\字串匯出轉換.cs" />
-    <Compile Include="進貨\控制\進貨新增匯入管理器.cs" />
+    <Compile Include="進貨\控制\進貨新增匯入資料管理器.cs" />
     <Compile Include="進貨\控制\進貨新增資料管理器.cs" />
     <Compile Include="進貨\控制\進貨資料管理器.cs" />
-    <Compile Include="進貨\視窗\進貨新增匯入視窗.cs">
+    <Compile Include="進貨\視窗\進貨新增篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="進貨\視窗\進貨新增匯入視窗.Designer.cs">
-      <DependentUpon>進貨新增匯入視窗.cs</DependentUpon>
+    <Compile Include="進貨\視窗\進貨新增篩選視窗.Designer.cs">
+      <DependentUpon>進貨新增篩選視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="進貨\視窗\進貨新增總覽視窗.cs">
       <SubType>Form</SubType>
@@ -1094,18 +1100,54 @@
     <Compile Include="進貨\視窗\進貨新增總覽視窗.Designer.cs">
       <DependentUpon>進貨新增總覽視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="進貨\視窗\進貨新增詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="進貨\視窗\進貨新增詳細視窗.Designer.cs">
+      <DependentUpon>進貨新增詳細視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="進貨\視窗\進貨篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="進貨\視窗\進貨篩選視窗.Designer.cs">
+      <DependentUpon>進貨篩選視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="進貨\視窗\進貨總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="進貨\視窗\進貨總覽視窗.Designer.cs">
       <DependentUpon>進貨總覽視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="進貨\視窗\進貨詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="進貨\視窗\進貨詳細視窗.Designer.cs">
+      <DependentUpon>進貨詳細視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="進貨\視窗\進貨新增匯入篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="進貨\視窗\進貨新增匯入篩選視窗.Designer.cs">
+      <DependentUpon>進貨新增匯入篩選視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="進貨\視窗\進貨新增匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="進貨\視窗\進貨新增匯入視窗.Designer.cs">
+      <DependentUpon>進貨新增匯入視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="進貨\視窗\進貨新增匯入詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="進貨\視窗\進貨新增匯入詳細視窗.Designer.cs">
+      <DependentUpon>進貨新增匯入詳細視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="進貨\資料\進貨資料篩選.cs" />
+    <Compile Include="進貨\資料\進貨資料.cs" />
+    <Compile Include="進貨\資料\進貨新增匯入資料篩選.cs" />
+    <Compile Include="進貨\資料\進貨新增資料篩選.cs" />
     <Compile Include="進貨\資料\進貨新增匯入資料.cs" />
     <Compile Include="進貨\資料\進貨新增資料.cs" />
-    <Compile Include="進貨\資料\進貨資料.cs" />
-    <Compile Include="進貨\轉換\進貨新增錯誤匯出轉換.cs" />
-    <Compile Include="進貨\轉換\進貨新增總覽匯出轉換.cs" />
-    <Compile Include="進貨\轉換\進貨總覽匯出轉換.cs" />
     <Compile Include="配送\控制\配送資料管理器.cs" />
     <Compile Include="配送\控制\配送轉換資料管理器.cs" />
     <Compile Include="配送\視窗\配送新增篩選視窗.cs">
@@ -1496,6 +1538,9 @@
     <EmbeddedResource Include="通用\視窗\選取\指配時段選取元件.resx">
       <DependentUpon>指配時段選取元件.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="通用\視窗\選取\進貨類型選取元件.resx">
+      <DependentUpon>進貨類型選取元件.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="通用\視窗\選取\配送公司選取元件.resx">
       <DependentUpon>配送公司選取元件.cs</DependentUpon>
     </EmbeddedResource>
@@ -1514,14 +1559,32 @@
     <EmbeddedResource Include="通用\視窗\其他\新版頁索引元件.resx">
       <DependentUpon>新版頁索引元件.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="進貨\視窗\進貨新增匯入視窗.resx">
-      <DependentUpon>進貨新增匯入視窗.cs</DependentUpon>
+    <EmbeddedResource Include="進貨\視窗\進貨新增篩選視窗.resx">
+      <DependentUpon>進貨新增篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="進貨\視窗\進貨新增總覽視窗.resx">
       <DependentUpon>進貨新增總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="進貨\視窗\進貨新增詳細視窗.resx">
+      <DependentUpon>進貨新增詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="進貨\視窗\進貨篩選視窗.resx">
+      <DependentUpon>進貨篩選視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="進貨\視窗\進貨總覽視窗.resx">
       <DependentUpon>進貨總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="進貨\視窗\進貨詳細視窗.resx">
+      <DependentUpon>進貨詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="進貨\視窗\進貨新增匯入篩選視窗.resx">
+      <DependentUpon>進貨新增匯入篩選視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="進貨\視窗\進貨新增匯入視窗.resx">
+      <DependentUpon>進貨新增匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="進貨\視窗\進貨新增匯入詳細視窗.resx">
+      <DependentUpon>進貨新增匯入詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="配送\視窗\配送新增篩選視窗.resx">
       <DependentUpon>配送新增篩選視窗.cs</DependentUpon>
@@ -1584,8 +1647,8 @@
     <None Include="Properties\DataSources\WokyTool.通用.列舉+編號.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+訂單處理狀態.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+資料格式.datasource" />
-    <None Include="Properties\DataSources\WokyTool.通用.列舉+進貨.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+進貨處理狀態.datasource" />
+    <None Include="Properties\DataSources\WokyTool.通用.列舉+進貨類型.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.列舉+配送公司.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.欄位匯入設定資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.通用.通用匯出欄位設定資料.datasource" />

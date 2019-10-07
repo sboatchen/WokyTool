@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using WokyTool.平台訂單;
 using WokyTool.配送;
 using WokyTool.寄庫;
+using WokyTool.進貨;
 
 namespace WokyTool.通用
 {
@@ -27,6 +28,7 @@ namespace WokyTool.通用
             資料列.Add(平台訂單資料管理器.獨體);
             資料列.Add(寄庫資料管理器.獨體);
             資料列.Add(配送資料管理器.獨體);
+            資料列.Add(進貨資料管理器.獨體);
         }
 
         public bool 是否需整理()

@@ -1,118 +1,97 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WokyTool.Common;
-using WokyTool.公司;
-using WokyTool.物品;
-using WokyTool.客戶;
-using WokyTool.通用;
-using WokyTool.幣值;
 using WokyTool.廠商;
+using WokyTool.物品;
+using WokyTool.通用;
+using System;
 
 namespace WokyTool.進貨
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 進貨新增匯入資料 : 靜態匯入資料
+    public class 進貨新增匯入資料 : 可轉換資料<進貨新增資料>
     {
+        [可匯入(名稱 = "類型", 說明 = "必要:一般")]
         [JsonProperty]
-        public string 類型識別 { get; set; }
-
-        public 列舉.進貨 類型 { get; set; }
-
-        [JsonProperty]
-        public string 廠商識別 { get; set; }
-
-        public 廠商資料 廠商 { get; set; }
-
-        [JsonProperty]
-        public string 物品識別 { get; set; }
-
-        public 物品資料 物品 { get; set; }
-
-        [JsonProperty]
-        public int 數量 { get; set; }
-        [JsonProperty]
-        public decimal 單價 { get; set; }
-
-        public decimal 總金額
+        public string 類型識別
         {
-            get
-            {
-                return 數量 * 單價;
+            get { return _類型識別; }
+            set {
+                _類型識別 = value;
+                轉換.類型 = (列舉.進貨類型)Enum.Parse(typeof(列舉.進貨類型), value);
             }
         }
 
+        [可匯入(名稱 = "廠商", 說明 = "必要")]
         [JsonProperty]
-        public string 幣值識別 { get; set; }
-
-        protected 幣值資料 _幣值;
-        public 幣值資料 幣值
+        public string 廠商識別
         {
-            get
-            {
-                if (_幣值 == null)
-                    _幣值 = 幣值資料.NULL;
-                else if (幣值資料管理器.獨體.唯讀BList.Contains(_幣值) == false)
-                    _幣值 = 幣值資料.ERROR;
-
-                return _幣值;
-            }
-            set
-            {
-                _幣值 = value;
+            get { return _廠商識別; }
+            set { 
+                _廠商識別 = value;
+                廠商 = 廠商資料管理器.獨體.取得(_廠商識別);
             }
         }
 
+        [可匯入(名稱 = "物品", 說明 = "必要", 優先級 = 1, 識別 = true)]
         [JsonProperty]
-        public string 備註 { get; set; }
+        public string 物品識別
+        {
+            get { return _物品識別; }
+            set { 
+                _物品識別 = value;
+                物品 = 物品資料管理器.獨體.取得(_物品識別);
+            }
+        }
+
+        [可匯入(說明 = "必要")]
+        [JsonProperty]
+        public int 數量
+        {
+            get { return 轉換.數量; }
+            set { 轉換.數量 = value; }
+        }
+
+        [可匯入(說明 = "必要")]
+        [JsonProperty]
+        public decimal 單價
+        {
+            get { return 轉換.單價; }
+            set { 轉換.單價 = value; }
+        }
+
+        [可匯入]
+        [JsonProperty]
+        public string 備註
+        {
+            get { return 轉換.備註; }
+            set { 轉換.備註 = value; }
+        }
 
         /********************************/
 
-        public override void 初始化() 
+        private string _類型識別;
+        private string _廠商識別;
+        private string _物品識別;
+
+        public 列舉.進貨類型 類型
         {
-            廠商 = 廠商資料管理器.獨體.取得(廠商識別);
-            物品 = 物品資料管理器.獨體.取得(物品識別);
-            幣值 = 幣值資料管理器.獨體.Get(幣值識別);
-
-            類型 = 列舉.進貨.錯誤;
-            try
-            {
-                類型 = (列舉.進貨)Enum.Parse(typeof(列舉.進貨), 類型識別);
-            }
-            catch 
-            {
-                訊息管理器.獨體.追蹤("找不到進貨類型: " + 類型識別);
-            }
-
-            switch (類型)
-            {
-                case 列舉.進貨.退貨重進:
-                    單價 = 物品.成本;
-                    break;
-                default:
-                    break;
-            }
+            get { return 轉換.類型; }
+            set { 轉換.類型 = value; }
         }
 
-        public override void 檢查合法()
+        public 廠商資料 廠商
         {
-            if (廠商.編號是否合法() == false)
-                throw new Exception("進貨新增匯入資料:廠商不合法:" + 廠商識別);
-
-            if (物品.編號是否合法() == false)
-                throw new Exception("進貨新增匯入資料:物品不合法:" + 物品識別);
-
-            if (幣值.編號是否合法() == false)
-                throw new Exception("進貨新增匯入資料:幣值不合法:" + 幣值識別);
-
-            if (列舉.是否合法((int)類型) == false)
-                throw new Exception("進貨新增匯入資料:類型不合法:" + 類型);
-
-            if (數量 <= 0)
-                throw new Exception("進貨新增匯入資料:數量不合法:" + 數量);
+            get { return 轉換.廠商; }
+            set { 轉換.廠商 = value; }
         }
+
+        public 物品資料 物品
+        {
+            get { return 轉換.物品; }
+            set { 轉換.物品 = value; }
+        }
+
+        public string 廠商名稱 { get { return 轉換.廠商.名稱; } }
+        public string 物品名稱 { get { return 轉換.物品.名稱; } }
     }
 }
+

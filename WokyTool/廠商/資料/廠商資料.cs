@@ -32,7 +32,7 @@ namespace WokyTool.廠商
         public static readonly 廠商資料 不篩選 = new 廠商資料
         {
             編號 = 常數.不篩選資料編碼,
-            名稱 = 字串.空,
+            名稱 = 字串.不篩選,
             電話 = 字串.空,
             手機 = 字串.空,
             地址 = 字串.空,
@@ -47,7 +47,7 @@ namespace WokyTool.廠商
             地址 = 字串.無,
         };
 
-        public static 廠商資料 錯誤 = new 廠商資料
+        public static readonly 廠商資料 錯誤 = new 廠商資料
         {
             編號 = 常數.錯誤資料編碼,
             名稱 = 字串.錯誤,

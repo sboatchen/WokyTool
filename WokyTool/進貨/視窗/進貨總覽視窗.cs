@@ -1,83 +1,34 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
-using WokyTool.Common;
-using WokyTool.物品;
 using WokyTool.通用;
-using WokyTool.幣值;
-using WokyTool.廠商;
 
 namespace WokyTool.進貨
 {
-    public partial class 進貨總覽視窗 : 總覽視窗
+    public partial class 進貨總覽視窗: 獨體總覽視窗
     {
-        private 可清單列舉資料管理介面 _物品清單管理器 = 物品資料管理器.獨體.清單管理器;
-        private int _物品資料版本 = -1;
+        public override 列舉.編號 編號類型 { get { return 列舉.編號.進貨; } }
+        public override Type 資料類型 { get { return typeof(進貨資料); } }
 
-        private 可清單列舉資料管理介面 _廠商清單管理器 = 廠商資料管理器.獨體.清單管理器;
-        private int _廠商資料版本 = -1;
-
-        private int _幣值資料版本 = -1;
+        public override 可編輯列舉資料管理介面 編輯管理器 { get { return 進貨資料管理器.獨體.編輯管理器; } }
+        public override MyDataGridView 資料GV { get { return this.myDataGridView1; } }
+        public override ToolStripMenuItem 篩選MI { get { return this.篩選ToolStripMenuItem; } }
+        public override ToolStripMenuItem 檢查MI { get { return this.檢查ToolStripMenuItem; } }
+        public override ToolStripMenuItem 自訂MI { get { return this.自訂ToolStripMenuItem; } }
 
         public 進貨總覽視窗()
         {
             InitializeComponent();
-
-            this.初始化(this.進貨資料BindingSource, 進貨資料管理器.獨體);
-
-            this.進貨處理狀態BindingSource.DataSource = Enum.GetValues(typeof(列舉.進貨處理狀態));
-            this.進貨BindingSource.DataSource = Enum.GetValues(typeof(列舉.進貨));
         }
 
-        private void 篩選ToolStripMenuItem_Click(object sender, EventArgs e)
+        public override void 初始化()
         {
-            訊息管理器.獨體.通知("尚未實作");
-        }
+            base.初始化();
 
-        private void 匯出ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var 轉換_ = new 進貨總覽匯出轉換(進貨資料管理器.獨體.可編輯BList);
-
-            string 標題_ = String.Format("進貨總覽_{0}", 時間.目前日期);
-            if(檔案.詢問並寫入(標題_, 轉換_))
-                訊息管理器.獨體.通知("匯出完成");
-        }
-
-        private void 新增ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            進貨資料管理器.獨體.讀取();
-            this.OnActivated(null);
-        }
-
-        /********************************/
-
-        protected override void 視窗激活()
-        {
-            if (_廠商資料版本 != _廠商清單管理器.資料版本)
-            {
-                _廠商資料版本 = _廠商清單管理器.資料版本;
-                this.廠商資料BindingSource.DataSource = _廠商清單管理器.資料列舉;
-            }
-
-            if (_物品資料版本 != _物品清單管理器.資料版本)
-            {
-                _物品資料版本 = _物品清單管理器.資料版本;
-                this.物品資料BindingSource.DataSource = _物品清單管理器.資料列舉;
-            }
-
-            if (_幣值資料版本 != 幣值資料管理器.獨體.可選取資料列版本)
-            {
-                _幣值資料版本 = 幣值資料管理器.獨體.可選取資料列版本;
-                this.幣值資料BindingSource.DataSource = 幣值資料管理器.獨體.唯讀BList;
-            }
+            this.更新ToolStripMenuItem.Enabled = 編輯管理器.是否可編輯;
         }
     }
 }
+
+
+
+    
