@@ -8,7 +8,7 @@ namespace WokyTool.活動
     [JsonObject(MemberSerialization.OptIn)]
     public class 活動匯入資料 : 可轉換資料<活動資料>
     {
-        [可匯入(說明 = "必要")]
+        [可匯入(說明 = "必要,如:2019-10-9")]
         [JsonProperty]
         public DateTime 開始日期
         {
@@ -16,7 +16,7 @@ namespace WokyTool.活動
             set { 轉換.開始日期 = value; }
         }
 
-        [可匯入(說明 = "必要")]
+        [可匯入(說明 = "必要,如:2019-10-9")]
         [JsonProperty]
         public DateTime 結束日期
         {

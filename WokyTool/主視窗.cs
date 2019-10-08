@@ -133,7 +133,12 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編號.進貨, 列舉.視窗.總覽);
         }
 
-        private void 活動_Click(object sender, EventArgs e)
+        private void 活動新增_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.活動新增, 列舉.視窗.總覽);
+        }
+
+        private void 活動總覽_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.活動, 列舉.視窗.總覽);
         }

@@ -14,7 +14,6 @@ namespace WokyTool.活動
         public override ToolStripMenuItem 篩選MI { get { return this.篩選ToolStripMenuItem; } }
         public override ToolStripMenuItem 檢查MI { get { return this.檢查ToolStripMenuItem; } }
         public override ToolStripMenuItem 自訂MI { get { return this.自訂ToolStripMenuItem; } }
-        public override ToolStripMenuItem 新增MI { get { return this.新增ToolStripMenuItem; } }
 
         public 活動總覽視窗()
         {
@@ -24,16 +23,6 @@ namespace WokyTool.活動
         public override void 初始化()
         {
             base.初始化();
-
-            this.更新ToolStripMenuItem.Enabled = 編輯管理器.是否可編輯;
-        }
-
-        private void 通用ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var 視窗_ = new 活動匯入視窗();
-            視窗_.初始化();
-            視窗_.Show();
-            視窗_.BringToFront();
         }
     }
 }

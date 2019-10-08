@@ -46,9 +46,6 @@ namespace WokyTool.通用
                 };
 
                 string 類型_ = 欄位_.PropertyType.Name;
-                if (屬性_.類型 != 可匯入Attribute.匯入類型.無)
-                    類型_ = 屬性_.類型.ToString();
-
                 switch (類型_)
                 {
                     case "String":
@@ -106,17 +103,6 @@ namespace WokyTool.通用
 
                         };
                         break;
-                    /*case "日期":
-                        方法_.方法 = (TSource, TValue) =>
-                        {
-                            string 值_ = TValue[資料索引_];
-                            if (string.IsNullOrEmpty(值_))
-                                欄位_.SetValue(TSource, default(DateTime));
-                            else
-                                欄位_.SetValue(TSource, DateTime.Parse(值_));
-
-                        };
-                        break;*/
                     default:
                         訊息管理器.獨體.錯誤("不支援欄位類型轉換:" + 類型_);
                         break;

@@ -368,17 +368,35 @@
     <Compile Include="活動\視窗\活動匯入詳細視窗.Designer.cs">
       <DependentUpon>活動匯入詳細視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="活動\視窗\活動新增篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="活動\視窗\活動新增篩選視窗.Designer.cs">
+      <DependentUpon>活動新增篩選視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="活動\視窗\活動篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="活動\視窗\活動篩選視窗.Designer.cs">
       <DependentUpon>活動篩選視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="活動\視窗\活動新增總覽視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="活動\視窗\活動新增總覽視窗.Designer.cs">
+      <DependentUpon>活動新增總覽視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="活動\視窗\活動總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="活動\視窗\活動總覽視窗.Designer.cs">
       <DependentUpon>活動總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="活動\視窗\活動新增詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="活動\視窗\活動新增詳細視窗.Designer.cs">
+      <DependentUpon>活動新增詳細視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="活動\視窗\活動詳細視窗.cs">
       <SubType>Form</SubType>
@@ -1458,11 +1476,20 @@
     <EmbeddedResource Include="活動\視窗\活動匯入詳細視窗.resx">
       <DependentUpon>活動匯入詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="活動\視窗\活動新增篩選視窗.resx">
+      <DependentUpon>活動新增篩選視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="活動\視窗\活動篩選視窗.resx">
       <DependentUpon>活動篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="活動\視窗\活動新增總覽視窗.resx">
+      <DependentUpon>活動新增總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="活動\視窗\活動總覽視窗.resx">
       <DependentUpon>活動總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="活動\視窗\活動新增詳細視窗.resx">
+      <DependentUpon>活動新增詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="活動\視窗\活動詳細視窗.resx">
       <DependentUpon>活動詳細視窗.cs</DependentUpon>

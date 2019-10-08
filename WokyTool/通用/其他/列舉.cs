@@ -50,6 +50,7 @@ namespace WokyTool.通用
             進貨新增,
 
             活動,
+            活動新增,
 
             配送,
 

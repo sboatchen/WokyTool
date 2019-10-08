@@ -5,12 +5,6 @@ namespace WokyTool.通用
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
     public sealed class 可匯入Attribute : Attribute
     {
-        public enum 匯入類型
-        {
-            無,
-            日期,
-        }; 
-
         public string 名稱 { get; set; }
 
         public string 說明 { get; set; }
@@ -18,8 +12,6 @@ namespace WokyTool.通用
         public int 優先級 { get; set; }    // 越小越優先
 
         public bool 識別 { get; set; }
-
-        public 匯入類型 類型 { get; set; }
 
         public 可匯入Attribute()
         {

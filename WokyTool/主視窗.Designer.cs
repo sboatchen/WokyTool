@@ -63,7 +63,7 @@
             this.button44 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.活動 = new System.Windows.Forms.Button();
+            this.活動總覽 = new System.Windows.Forms.Button();
             this.寄庫總覽 = new System.Windows.Forms.Button();
             this.盤點 = new System.Windows.Forms.Button();
             this.寄庫新增 = new System.Windows.Forms.Button();
@@ -76,6 +76,7 @@
             this.button34 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
+            this.活動新增 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -442,7 +443,8 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.活動);
+            this.panel5.Controls.Add(this.活動新增);
+            this.panel5.Controls.Add(this.活動總覽);
             this.panel5.Controls.Add(this.寄庫總覽);
             this.panel5.Controls.Add(this.盤點);
             this.panel5.Controls.Add(this.寄庫新增);
@@ -454,15 +456,15 @@
             this.panel5.Size = new System.Drawing.Size(482, 126);
             this.panel5.TabIndex = 51;
             // 
-            // 活動
+            // 活動總覽
             // 
-            this.活動.Location = new System.Drawing.Point(6, 92);
-            this.活動.Name = "活動";
-            this.活動.Size = new System.Drawing.Size(100, 23);
-            this.活動.TabIndex = 53;
-            this.活動.Text = "活動";
-            this.活動.UseVisualStyleBackColor = true;
-            this.活動.Click += new System.EventHandler(this.活動_Click);
+            this.活動總覽.Location = new System.Drawing.Point(122, 92);
+            this.活動總覽.Name = "活動總覽";
+            this.活動總覽.Size = new System.Drawing.Size(100, 23);
+            this.活動總覽.TabIndex = 53;
+            this.活動總覽.Text = "活動總覽";
+            this.活動總覽.UseVisualStyleBackColor = true;
+            this.活動總覽.Click += new System.EventHandler(this.活動總覽_Click);
             // 
             // 寄庫總覽
             // 
@@ -587,6 +589,16 @@
             this.button46.UseVisualStyleBackColor = true;
             this.button46.Click += new System.EventHandler(this.button46_Click);
             // 
+            // 活動新增
+            // 
+            this.活動新增.Location = new System.Drawing.Point(6, 92);
+            this.活動新增.Name = "活動新增";
+            this.活動新增.Size = new System.Drawing.Size(100, 23);
+            this.活動新增.TabIndex = 54;
+            this.活動新增.Text = "活動新增";
+            this.活動新增.UseVisualStyleBackColor = true;
+            this.活動新增.Click += new System.EventHandler(this.活動新增_Click);
+            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -669,7 +681,8 @@
         private System.Windows.Forms.Button 訂單;
         private System.Windows.Forms.Button 寄庫總覽;
         private System.Windows.Forms.Button 參數;
-        private System.Windows.Forms.Button 活動;
+        private System.Windows.Forms.Button 活動總覽;
+        private System.Windows.Forms.Button 活動新增;
 
 
     }

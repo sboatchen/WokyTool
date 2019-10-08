@@ -23,8 +23,6 @@ namespace WokyTool.進貨
         public override void 初始化()
         {
             base.初始化();
-
-            this.更新ToolStripMenuItem.Enabled = 編輯管理器.是否可編輯;
         }
     }
 }
