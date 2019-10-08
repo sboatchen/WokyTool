@@ -117,7 +117,7 @@ namespace WokyTool.進貨
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Name = "進貨新增匯入篩選視窗";
-            this.Text = "寄庫匯入篩選視窗";
+            this.Text = "進貨新增匯入篩選視窗";
             this.ResumeLayout(false);
             this.PerformLayout();
 

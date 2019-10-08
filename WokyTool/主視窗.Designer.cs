@@ -63,6 +63,7 @@
             this.button44 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.活動 = new System.Windows.Forms.Button();
             this.寄庫總覽 = new System.Windows.Forms.Button();
             this.盤點 = new System.Windows.Forms.Button();
             this.寄庫新增 = new System.Windows.Forms.Button();
@@ -165,7 +166,7 @@
             // 
             // 進貨總覽
             // 
-            this.進貨總覽.Location = new System.Drawing.Point(122, 38);
+            this.進貨總覽.Location = new System.Drawing.Point(122, 32);
             this.進貨總覽.Name = "進貨總覽";
             this.進貨總覽.Size = new System.Drawing.Size(100, 23);
             this.進貨總覽.TabIndex = 14;
@@ -396,7 +397,7 @@
             this.panel4.Controls.Add(this.平台);
             this.panel4.Location = new System.Drawing.Point(12, 285);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(482, 79);
+            this.panel4.Size = new System.Drawing.Size(482, 70);
             this.panel4.TabIndex = 50;
             // 
             // 訂單
@@ -441,20 +442,31 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.活動);
             this.panel5.Controls.Add(this.寄庫總覽);
             this.panel5.Controls.Add(this.盤點);
             this.panel5.Controls.Add(this.寄庫新增);
             this.panel5.Controls.Add(this.進貨新增);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.進貨總覽);
-            this.panel5.Location = new System.Drawing.Point(12, 373);
+            this.panel5.Location = new System.Drawing.Point(12, 362);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(482, 105);
+            this.panel5.Size = new System.Drawing.Size(482, 126);
             this.panel5.TabIndex = 51;
+            // 
+            // 活動
+            // 
+            this.活動.Location = new System.Drawing.Point(6, 92);
+            this.活動.Name = "活動";
+            this.活動.Size = new System.Drawing.Size(100, 23);
+            this.活動.TabIndex = 53;
+            this.活動.Text = "活動";
+            this.活動.UseVisualStyleBackColor = true;
+            this.活動.Click += new System.EventHandler(this.活動_Click);
             // 
             // 寄庫總覽
             // 
-            this.寄庫總覽.Location = new System.Drawing.Point(122, 69);
+            this.寄庫總覽.Location = new System.Drawing.Point(122, 63);
             this.寄庫總覽.Name = "寄庫總覽";
             this.寄庫總覽.Size = new System.Drawing.Size(100, 23);
             this.寄庫總覽.TabIndex = 52;
@@ -464,7 +476,7 @@
             // 
             // 盤點
             // 
-            this.盤點.Location = new System.Drawing.Point(237, 69);
+            this.盤點.Location = new System.Drawing.Point(357, 92);
             this.盤點.Name = "盤點";
             this.盤點.Size = new System.Drawing.Size(100, 23);
             this.盤點.TabIndex = 51;
@@ -474,7 +486,7 @@
             // 
             // 寄庫新增
             // 
-            this.寄庫新增.Location = new System.Drawing.Point(6, 69);
+            this.寄庫新增.Location = new System.Drawing.Point(6, 63);
             this.寄庫新增.Name = "寄庫新增";
             this.寄庫新增.Size = new System.Drawing.Size(100, 23);
             this.寄庫新增.TabIndex = 50;
@@ -484,7 +496,7 @@
             // 
             // 進貨新增
             // 
-            this.進貨新增.Location = new System.Drawing.Point(6, 38);
+            this.進貨新增.Location = new System.Drawing.Point(6, 32);
             this.進貨新增.Name = "進貨新增";
             this.進貨新增.Size = new System.Drawing.Size(100, 23);
             this.進貨新增.TabIndex = 48;
@@ -510,7 +522,7 @@
             this.panel6.Controls.Add(this.button35);
             this.panel6.Controls.Add(this.button11);
             this.panel6.Controls.Add(this.button12);
-            this.panel6.Location = new System.Drawing.Point(12, 494);
+            this.panel6.Location = new System.Drawing.Point(12, 497);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(482, 71);
             this.panel6.TabIndex = 52;
@@ -547,7 +559,7 @@
             // 
             // button34
             // 
-            this.button34.Location = new System.Drawing.Point(19, 574);
+            this.button34.Location = new System.Drawing.Point(19, 577);
             this.button34.Name = "button34";
             this.button34.Size = new System.Drawing.Size(100, 23);
             this.button34.TabIndex = 49;
@@ -557,7 +569,7 @@
             // 
             // button42
             // 
-            this.button42.Location = new System.Drawing.Point(250, 574);
+            this.button42.Location = new System.Drawing.Point(250, 577);
             this.button42.Name = "button42";
             this.button42.Size = new System.Drawing.Size(100, 23);
             this.button42.TabIndex = 53;
@@ -567,7 +579,7 @@
             // 
             // button46
             // 
-            this.button46.Location = new System.Drawing.Point(370, 574);
+            this.button46.Location = new System.Drawing.Point(370, 577);
             this.button46.Name = "button46";
             this.button46.Size = new System.Drawing.Size(100, 23);
             this.button46.TabIndex = 45;
@@ -590,7 +602,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "主視窗";
-            this.Text = "V 2.1.21";
+            this.Text = "V 2.1.23";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.主視窗_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -657,6 +669,7 @@
         private System.Windows.Forms.Button 訂單;
         private System.Windows.Forms.Button 寄庫總覽;
         private System.Windows.Forms.Button 參數;
+        private System.Windows.Forms.Button 活動;
 
 
     }

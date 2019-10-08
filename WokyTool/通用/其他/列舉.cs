@@ -49,6 +49,8 @@ namespace WokyTool.通用
             進貨,
             進貨新增,
 
+            活動,
+
             配送,
 
             平台訂單,

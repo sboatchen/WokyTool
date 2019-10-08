@@ -7,6 +7,7 @@ using WokyTool.平台訂單;
 using WokyTool.使用者;
 using WokyTool.物品;
 using WokyTool.客戶;
+using WokyTool.活動;
 using WokyTool.參數;
 using WokyTool.商品;
 using WokyTool.寄庫;
@@ -86,6 +87,10 @@ namespace WokyTool.通用
             _資料書.Add(取得編號(列舉.編號.進貨, 列舉.視窗.總覽), typeof(進貨總覽視窗));
             _資料書.Add(取得編號(列舉.編號.進貨, 列舉.視窗.詳細), typeof(進貨詳細視窗));
             _資料書.Add(取得編號(列舉.編號.進貨, 列舉.視窗.篩選), typeof(進貨篩選視窗));
+
+            _資料書.Add(取得編號(列舉.編號.活動, 列舉.視窗.總覽), typeof(活動總覽視窗));
+            _資料書.Add(取得編號(列舉.編號.活動, 列舉.視窗.詳細), typeof(活動詳細視窗));
+            _資料書.Add(取得編號(列舉.編號.活動, 列舉.視窗.篩選), typeof(活動篩選視窗));
 
             _資料書.Add(取得編號(列舉.編號.平台訂單新增, 列舉.視窗.總覽), typeof(平台訂單新增總覽視窗));
             _資料書.Add(取得編號(列舉.編號.平台訂單新增, 列舉.視窗.詳細), typeof(平台訂單新增詳細視窗));

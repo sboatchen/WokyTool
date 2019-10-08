@@ -9,7 +9,7 @@ namespace WokyTool.進貨
     [JsonObject(MemberSerialization.OptIn)]
     public class 進貨新增匯入資料 : 可轉換資料<進貨新增資料>
     {
-        [可匯入(名稱 = "類型", 說明 = "必要:一般")]
+        [可匯入(名稱 = "類型", 說明 = "必要:一般/退貨重進")]
         [JsonProperty]
         public string 類型識別
         {
