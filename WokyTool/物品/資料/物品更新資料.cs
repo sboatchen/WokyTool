@@ -221,6 +221,20 @@ namespace WokyTool.物品
             }
         }
 
+        [可匯入]
+        [JsonProperty]
+        public string 儲位
+        {
+            get
+            {
+                return 修改.儲位;
+            }
+            set
+            {
+                修改.儲位 = value;
+            }
+        }
+
         /********************************/
 
         private string _大類識別;
@@ -265,6 +279,8 @@ namespace WokyTool.物品
             }
         }
 
+        public int 保留 { get { return 參考.保留; } }
+
         public string 參考名稱 { get { return 參考.名稱; } }
         public string 參考縮寫 { get { return 參考.縮寫; } }
 
@@ -279,9 +295,11 @@ namespace WokyTool.物品
 
         public int 參考體積 { get { return 參考.體積; } }
         public int 參考庫存 { get { return 參考.庫存; } }
+        public int 參考保留 { get { return 參考.保留; } }
         public decimal 參考庫存總成本 { get { return 參考.庫存總成本; } }
         public decimal 參考最後進貨成本 { get { return 參考.最後進貨成本; } }
         public decimal 參考成本 { get { return 參考.成本; } }
         public string 參考成本備註 { get { return 參考.成本備註; } }
+        public string 參考儲位 { get { return 參考.儲位; } }
     }
 }

@@ -53,6 +53,7 @@ namespace WokyTool.物品
             this.最後進貨成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.成本備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.儲位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -69,7 +70,7 @@ namespace WokyTool.物品
             this.檢查ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1857, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1949, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -120,13 +121,14 @@ namespace WokyTool.物品
             this.最後進貨成本DataGridViewTextBoxColumn,
             this.成本DataGridViewTextBoxColumn,
             this.成本備註DataGridViewTextBoxColumn,
+            this.儲位,
             this.錯誤訊息DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.物品更新資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1857, 400);
+            this.dataGridView1.Size = new System.Drawing.Size(1949, 400);
             this.dataGridView1.TabIndex = 2;
             // 
             // 物品更新資料BindingSource
@@ -233,6 +235,12 @@ namespace WokyTool.物品
             this.成本備註DataGridViewTextBoxColumn.HeaderText = "成本備註";
             this.成本備註DataGridViewTextBoxColumn.Name = "成本備註DataGridViewTextBoxColumn";
             // 
+            // 儲位
+            // 
+            this.儲位.DataPropertyName = "儲位";
+            this.儲位.HeaderText = "儲位";
+            this.儲位.Name = "儲位";
+            // 
             // 錯誤訊息DataGridViewTextBoxColumn
             // 
             this.錯誤訊息DataGridViewTextBoxColumn.DataPropertyName = "錯誤訊息";
@@ -244,7 +252,7 @@ namespace WokyTool.物品
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1857, 424);
+            this.ClientSize = new System.Drawing.Size(1949, 424);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -285,6 +293,7 @@ namespace WokyTool.物品
         private System.Windows.Forms.DataGridViewTextBoxColumn 最後進貨成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本備註DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 儲位;
         private System.Windows.Forms.DataGridViewTextBoxColumn 錯誤訊息DataGridViewTextBoxColumn;
     }
 }

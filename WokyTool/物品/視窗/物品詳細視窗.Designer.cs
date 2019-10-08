@@ -57,11 +57,16 @@
             this.類別 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.新版頁索引元件1 = new WokyTool.通用.新版頁索引元件();
+            this.儲位 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.保留 = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.體積)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.庫存總成本)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.最後進貨成本)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.成本)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.庫存)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.保留)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -347,17 +352,59 @@
             // 
             // 新版頁索引元件1
             // 
-            this.新版頁索引元件1.Location = new System.Drawing.Point(122, 320);
+            this.新版頁索引元件1.Location = new System.Drawing.Point(122, 354);
             this.新版頁索引元件1.Name = "新版頁索引元件1";
             this.新版頁索引元件1.Size = new System.Drawing.Size(234, 34);
             this.新版頁索引元件1.TabIndex = 57;
+            // 
+            // 儲位
+            // 
+            this.儲位.Location = new System.Drawing.Point(58, 318);
+            this.儲位.Name = "儲位";
+            this.儲位.Size = new System.Drawing.Size(165, 22);
+            this.儲位.TabIndex = 93;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 321);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.TabIndex = 92;
+            this.label5.Text = "儲位";
+            // 
+            // 保留
+            // 
+            this.保留.Location = new System.Drawing.Point(58, 242);
+            this.保留.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.保留.Name = "保留";
+            this.保留.ReadOnly = true;
+            this.保留.Size = new System.Drawing.Size(165, 22);
+            this.保留.TabIndex = 95;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 244);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 12);
+            this.label6.TabIndex = 94;
+            this.label6.Text = "保留";
             // 
             // 物品詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(478, 358);
+            this.ClientSize = new System.Drawing.Size(478, 394);
+            this.Controls.Add(this.保留);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.儲位);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.新版頁索引元件1);
             this.Controls.Add(this.類別);
             this.Controls.Add(this.label16);
@@ -394,6 +441,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.最後進貨成本)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.成本)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.庫存)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.保留)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,5 +478,9 @@
         private System.Windows.Forms.TextBox 類別;
         private System.Windows.Forms.Label label16;
         private 通用.新版頁索引元件 新版頁索引元件1;
+        private System.Windows.Forms.TextBox 儲位;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown 保留;
+        private System.Windows.Forms.Label label6;
     }
 }

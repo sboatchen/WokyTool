@@ -37,6 +37,7 @@ namespace WokyTool.物品
             this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.盤點ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.新增ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.通用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new WokyTool.通用.MyDataGridView();
@@ -55,7 +56,8 @@ namespace WokyTool.物品
             this.最後進貨成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.成本備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.新增ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.保留 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.儲位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -71,7 +73,7 @@ namespace WokyTool.物品
             this.更新ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1654, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1848, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -118,10 +120,16 @@ namespace WokyTool.物品
             this.更新ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.更新ToolStripMenuItem.Text = "更新";
             // 
+            // 新增ToolStripMenuItem
+            // 
+            this.新增ToolStripMenuItem.Name = "新增ToolStripMenuItem";
+            this.新增ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.新增ToolStripMenuItem.Text = "新增";
+            // 
             // 通用ToolStripMenuItem
             // 
             this.通用ToolStripMenuItem.Name = "通用ToolStripMenuItem";
-            this.通用ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.通用ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.通用ToolStripMenuItem.Text = "通用";
             this.通用ToolStripMenuItem.Click += new System.EventHandler(this.通用ToolStripMenuItem_Click);
             // 
@@ -148,13 +156,15 @@ namespace WokyTool.物品
             this.庫存總成本DataGridViewTextBoxColumn,
             this.最後進貨成本DataGridViewTextBoxColumn,
             this.成本DataGridViewTextBoxColumn,
-            this.成本備註DataGridViewTextBoxColumn});
+            this.成本備註DataGridViewTextBoxColumn,
+            this.保留,
+            this.儲位});
             this.dataGridView1.DataSource = this.物品資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1654, 487);
+            this.dataGridView1.Size = new System.Drawing.Size(1848, 487);
             this.dataGridView1.TabIndex = 2;
             // 
             // 編號DataGridViewTextBoxColumn
@@ -253,17 +263,24 @@ namespace WokyTool.物品
             this.成本備註DataGridViewTextBoxColumn.HeaderText = "成本備註";
             this.成本備註DataGridViewTextBoxColumn.Name = "成本備註DataGridViewTextBoxColumn";
             // 
-            // 新增ToolStripMenuItem
+            // 保留
             // 
-            this.新增ToolStripMenuItem.Name = "新增ToolStripMenuItem";
-            this.新增ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.新增ToolStripMenuItem.Text = "新增";
+            this.保留.DataPropertyName = "保留";
+            this.保留.HeaderText = "保留";
+            this.保留.Name = "保留";
+            this.保留.ReadOnly = true;
+            // 
+            // 儲位
+            // 
+            this.儲位.DataPropertyName = "儲位";
+            this.儲位.HeaderText = "儲位";
+            this.儲位.Name = "儲位";
             // 
             // 物品總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1654, 511);
+            this.ClientSize = new System.Drawing.Size(1848, 511);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -290,6 +307,7 @@ namespace WokyTool.物品
         private System.Windows.Forms.ToolStripMenuItem 更新ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 檢查ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 通用ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 新增ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 大類名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 小類名稱DataGridViewTextBoxColumn;
@@ -305,6 +323,7 @@ namespace WokyTool.物品
         private System.Windows.Forms.DataGridViewTextBoxColumn 最後進貨成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本備註DataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripMenuItem 新增ToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 保留;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 儲位;
     }
 }

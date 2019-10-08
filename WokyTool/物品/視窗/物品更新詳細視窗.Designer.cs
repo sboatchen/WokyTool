@@ -88,6 +88,14 @@
             this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
+            this.儲位 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.參考儲位 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.參考保留 = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.保留 = new System.Windows.Forms.NumericUpDown();
+            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.體積)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.庫存總成本)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.最後進貨成本)).BeginInit();
@@ -98,6 +106,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.參考最後進貨成本)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.參考庫存總成本)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.參考體積)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.參考保留)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.保留)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -577,7 +587,7 @@
             // 
             // 新版頁索引元件1
             // 
-            this.新版頁索引元件1.Location = new System.Drawing.Point(385, 363);
+            this.新版頁索引元件1.Location = new System.Drawing.Point(385, 390);
             this.新版頁索引元件1.Name = "新版頁索引元件1";
             this.新版頁索引元件1.Size = new System.Drawing.Size(234, 34);
             this.新版頁索引元件1.TabIndex = 150;
@@ -711,12 +721,97 @@
             this.label45.TabIndex = 155;
             this.label45.Text = "大類";
             // 
+            // 儲位
+            // 
+            this.儲位.Location = new System.Drawing.Point(58, 355);
+            this.儲位.Name = "儲位";
+            this.儲位.Size = new System.Drawing.Size(165, 22);
+            this.儲位.TabIndex = 183;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 358);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.TabIndex = 182;
+            this.label5.Text = "儲位";
+            // 
+            // 參考儲位
+            // 
+            this.參考儲位.Location = new System.Drawing.Point(570, 357);
+            this.參考儲位.Name = "參考儲位";
+            this.參考儲位.ReadOnly = true;
+            this.參考儲位.Size = new System.Drawing.Size(165, 22);
+            this.參考儲位.TabIndex = 185;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(525, 360);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 12);
+            this.label6.TabIndex = 184;
+            this.label6.Text = "儲位";
+            // 
+            // 參考保留
+            // 
+            this.參考保留.Location = new System.Drawing.Point(570, 283);
+            this.參考保留.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.參考保留.Name = "參考保留";
+            this.參考保留.ReadOnly = true;
+            this.參考保留.Size = new System.Drawing.Size(165, 22);
+            this.參考保留.TabIndex = 187;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(524, 285);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(29, 12);
+            this.label12.TabIndex = 186;
+            this.label12.Text = "保留";
+            // 
+            // 保留
+            // 
+            this.保留.Location = new System.Drawing.Point(58, 280);
+            this.保留.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.保留.Name = "保留";
+            this.保留.ReadOnly = true;
+            this.保留.Size = new System.Drawing.Size(165, 22);
+            this.保留.TabIndex = 189;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(12, 282);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(29, 12);
+            this.label19.TabIndex = 188;
+            this.label19.Text = "保留";
+            // 
             // 物品更新詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(990, 409);
+            this.ClientSize = new System.Drawing.Size(990, 439);
+            this.Controls.Add(this.保留);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.參考保留);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.參考儲位);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.儲位);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label34);
@@ -789,6 +884,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.參考最後進貨成本)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.參考庫存總成本)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.參考體積)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.參考保留)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.保留)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -856,5 +953,13 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox 儲位;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox 參考儲位;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown 參考保留;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown 保留;
+        private System.Windows.Forms.Label label19;
     }
 }

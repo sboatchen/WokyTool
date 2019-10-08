@@ -46,6 +46,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.最大庫存 = new System.Windows.Forms.NumericUpDown();
             this.更新狀態 = new WokyTool.通用.更新狀態選取元件();
+            this.儲位 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.最小庫存)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.最大庫存)).BeginInit();
             this.SuspendLayout();
@@ -228,11 +230,29 @@
             this.更新狀態.TabIndex = 119;
             this.更新狀態.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
+            // 儲位
+            // 
+            this.儲位.Location = new System.Drawing.Point(58, 231);
+            this.儲位.Name = "儲位";
+            this.儲位.Size = new System.Drawing.Size(165, 22);
+            this.儲位.TabIndex = 121;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 234);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.TabIndex = 120;
+            this.label5.Text = "儲位";
+            // 
             // 物品更新篩選視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(468, 238);
+            this.ClientSize = new System.Drawing.Size(468, 265);
+            this.Controls.Add(this.儲位);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.更新狀態);
             this.Controls.Add(this.最大庫存);
             this.Controls.Add(this.類別);
@@ -280,6 +300,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown 最大庫存;
         private 通用.更新狀態選取元件 更新狀態;
+        private System.Windows.Forms.TextBox 儲位;
+        private System.Windows.Forms.Label label5;
 
     }
 }

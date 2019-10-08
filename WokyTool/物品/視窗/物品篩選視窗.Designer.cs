@@ -45,6 +45,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.最大庫存 = new System.Windows.Forms.NumericUpDown();
+            this.儲位 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.最小庫存)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.最大庫存)).BeginInit();
             this.SuspendLayout();
@@ -216,11 +218,29 @@
             this.最大庫存.Size = new System.Drawing.Size(80, 22);
             this.最大庫存.TabIndex = 89;
             // 
+            // 儲位
+            // 
+            this.儲位.Location = new System.Drawing.Point(58, 208);
+            this.儲位.Name = "儲位";
+            this.儲位.Size = new System.Drawing.Size(165, 22);
+            this.儲位.TabIndex = 91;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 211);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.TabIndex = 90;
+            this.label5.Text = "儲位";
+            // 
             // 物品篩選視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 210);
+            this.ClientSize = new System.Drawing.Size(465, 241);
+            this.Controls.Add(this.儲位);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.最大庫存);
             this.Controls.Add(this.類別);
             this.Controls.Add(this.label16);
@@ -266,6 +286,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown 最大庫存;
+        private System.Windows.Forms.TextBox 儲位;
+        private System.Windows.Forms.Label label5;
 
     }
 }

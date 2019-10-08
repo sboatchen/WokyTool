@@ -136,6 +136,23 @@ namespace WokyTool.物品
             }
         }
 
+        private string _儲位 = null;
+        public string 儲位
+        {
+            get { return _儲位; }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    value = null;
+
+                if (_儲位 != value)
+                {
+                    _儲位 = value;
+                    篩選版本++;
+                }
+            }
+        }
+
         public override bool 是否篩選
         {
             get
@@ -149,7 +166,8 @@ namespace WokyTool.物品
                     null != _類別 ||
                     null != _顏色 ||
                     -1 != _最小庫存 ||
-                    -1 != _最大庫存;
+                    -1 != _最大庫存 ||
+                    null != _儲位;
             }
         }
 
@@ -174,13 +192,16 @@ namespace WokyTool.物品
 
             if (null != _類別)
                 目前列舉_ = 目前列舉_.Where(Value => Value.類別 != null && Value.類別.Contains(_類別));
-            if (null != 顏色)
+            if (null != _顏色)
                 目前列舉_ = 目前列舉_.Where(Value => Value.顏色 != null && Value.顏色.Contains(_顏色));
 
             if (-1 != _最小庫存)
                 目前列舉_ = 目前列舉_.Where(Value => Value.庫存 >= _最小庫存);
             if (-1 != _最大庫存)
                 目前列舉_ = 目前列舉_.Where(Value => Value.庫存 <= _最大庫存);
+
+            if (null != _儲位)
+                目前列舉_ = 目前列舉_.Where(Value => Value.儲位 != null && Value.儲位.Contains(_儲位));
 
             return 目前列舉_;
         }
