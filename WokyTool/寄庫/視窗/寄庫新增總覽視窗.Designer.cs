@@ -44,6 +44,7 @@
             this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.通用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.新增ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.寄庫新增資料BindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -155,6 +156,7 @@
             // 更新ToolStripMenuItem
             // 
             this.更新ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.新增ToolStripMenuItem,
             this.通用ToolStripMenuItem});
             this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
             this.更新ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
@@ -163,9 +165,15 @@
             // 通用ToolStripMenuItem
             // 
             this.通用ToolStripMenuItem.Name = "通用ToolStripMenuItem";
-            this.通用ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.通用ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.通用ToolStripMenuItem.Text = "通用";
             this.通用ToolStripMenuItem.Click += new System.EventHandler(this.通用ToolStripMenuItem_Click);
+            // 
+            // 新增ToolStripMenuItem
+            // 
+            this.新增ToolStripMenuItem.Name = "新增ToolStripMenuItem";
+            this.新增ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.新增ToolStripMenuItem.Text = "新增";
             // 
             // 寄庫新增總覽視窗
             // 
@@ -202,5 +210,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 入庫單號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 寄庫新增資料BindingSource;
+        private System.Windows.Forms.ToolStripMenuItem 新增ToolStripMenuItem;
     }
 }
