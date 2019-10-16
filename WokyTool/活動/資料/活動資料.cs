@@ -61,6 +61,14 @@ namespace WokyTool.活動
             }
         }
 
+        public string 合併識別
+        {
+            get
+            {
+                return String.Format("{0}_{1}_{2}_{3}", 開始日期, 結束日期, 名稱, 姓名);
+            }
+        }
+
         /********************************/
 
         public 活動資料 Self { get { return this; } }

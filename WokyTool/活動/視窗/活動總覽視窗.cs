@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using WokyTool.通用;
 
@@ -23,6 +25,21 @@ namespace WokyTool.活動
         public override void 初始化()
         {
             base.初始化();
+        }
+
+        private void 張貼ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IEnumerable<活動資料> 資料列舉_ = (IEnumerable<活動資料>)編輯管理器.資料列舉;
+
+            var 轉換列舉_ = 資料列舉_.GroupBy(Value => Value.合併識別).Select(Value => new 活動張貼匯出轉換(Value));
+
+            foreach (var 轉換_ in 轉換列舉_)
+            {
+                string 標題_ = String.Format("活動_{0}", 轉換_.參考.名稱);
+                檔案.詢問並寫入(標題_, 轉換_);
+            }
+
+            訊息管理器.獨體.通知("匯出完成");
         }
     }
 }

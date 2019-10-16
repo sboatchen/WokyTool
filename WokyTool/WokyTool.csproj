@@ -408,6 +408,7 @@
     <Compile Include="活動\資料\活動匯入資料篩選.cs" />
     <Compile Include="活動\資料\活動資料篩選.cs" />
     <Compile Include="活動\資料\活動匯入資料.cs" />
+    <Compile Include="活動\轉換\活動張貼匯出轉換.cs" />
     <Compile Include="通用\介面\可整理介面.cs" />
     <Compile Include="通用\介面\可處理介面.cs" />
     <Compile Include="通用\檢查\視窗\錯誤總覽視窗.cs">

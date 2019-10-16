@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.開始日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.結束日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,9 +39,15 @@
             this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.是否保留中DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.活動資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.張貼ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.活動資料BindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // myDataGridView1
@@ -69,45 +70,6 @@
             this.myDataGridView1.RowTemplate.Height = 24;
             this.myDataGridView1.Size = new System.Drawing.Size(1246, 432);
             this.myDataGridView1.TabIndex = 3;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.篩選ToolStripMenuItem,
-            this.檢查ToolStripMenuItem,
-            this.匯出ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1246, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // 篩選ToolStripMenuItem
-            // 
-            this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
-            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.篩選ToolStripMenuItem.Text = "篩選";
-            // 
-            // 檢查ToolStripMenuItem
-            // 
-            this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
-            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.檢查ToolStripMenuItem.Text = "檢查";
-            // 
-            // 匯出ToolStripMenuItem
-            // 
-            this.匯出ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.自訂ToolStripMenuItem});
-            this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
-            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.匯出ToolStripMenuItem.Text = "匯出";
-            // 
-            // 自訂ToolStripMenuItem
-            // 
-            this.自訂ToolStripMenuItem.Name = "自訂ToolStripMenuItem";
-            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.自訂ToolStripMenuItem.Text = "自訂";
             // 
             // 開始日期DataGridViewTextBoxColumn
             // 
@@ -165,6 +127,53 @@
             // 
             this.活動資料BindingSource.DataSource = typeof(WokyTool.活動.活動資料);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.篩選ToolStripMenuItem,
+            this.檢查ToolStripMenuItem,
+            this.匯出ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1246, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 篩選ToolStripMenuItem
+            // 
+            this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
+            this.篩選ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.篩選ToolStripMenuItem.Text = "篩選";
+            // 
+            // 檢查ToolStripMenuItem
+            // 
+            this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
+            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.檢查ToolStripMenuItem.Text = "檢查";
+            // 
+            // 匯出ToolStripMenuItem
+            // 
+            this.匯出ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.自訂ToolStripMenuItem,
+            this.張貼ToolStripMenuItem});
+            this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
+            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.匯出ToolStripMenuItem.Text = "匯出";
+            // 
+            // 自訂ToolStripMenuItem
+            // 
+            this.自訂ToolStripMenuItem.Name = "自訂ToolStripMenuItem";
+            this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.自訂ToolStripMenuItem.Text = "自訂";
+            // 
+            // 張貼ToolStripMenuItem
+            // 
+            this.張貼ToolStripMenuItem.Name = "張貼ToolStripMenuItem";
+            this.張貼ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.張貼ToolStripMenuItem.Text = "張貼";
+            this.張貼ToolStripMenuItem.Click += new System.EventHandler(this.張貼ToolStripMenuItem_Click);
+            // 
             // 活動總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -175,9 +184,9 @@
             this.Name = "活動總覽視窗";
             this.Text = "活動總覽視窗";
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.活動資料BindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.活動資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +209,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn 是否保留中DataGridViewCheckBoxColumn;
         private System.Windows.Forms.BindingSource 活動資料BindingSource;
+        private System.Windows.Forms.ToolStripMenuItem 張貼ToolStripMenuItem;
     }
 }
