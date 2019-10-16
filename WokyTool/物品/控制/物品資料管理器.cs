@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using WokyTool.Common;
 using WokyTool.平台訂單;
+using WokyTool.活動;
 using WokyTool.庫存;
 using WokyTool.商品;
 using WokyTool.寄庫;
@@ -339,6 +340,31 @@ namespace WokyTool.物品
             物品庫存封存資料管理器.獨體.新增(庫存列_);
 
             資料版本++;
+        }
+
+        public void 更新保留()
+        {
+            Dictionary<物品資料, int> 更新書_ = 活動資料管理器.獨體.資料列舉2
+                                    .Where(Value => Value.是否保留中)
+                                    .GroupBy(Value => Value.物品)
+                                    .ToDictionary(Value => Value.Key, Value => Value.Sum(Value2 => Value2.數量));
+
+            bool 是否有更新_ = false;
+            foreach (物品資料 資料_ in this.資料列舉2)
+            {
+                資料_.取消編輯();
+
+                int 更新保留_ = 0;
+                更新書_.TryGetValue(資料_, out 更新保留_);
+
+                if (資料_.保留 != 更新保留_)
+                    是否有更新_ = true;
+
+                資料_.保留 = 更新保留_;
+            }
+
+            if (是否有更新_)
+                資料版本++;
         }
     }
 }

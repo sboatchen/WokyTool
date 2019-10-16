@@ -13,7 +13,7 @@ namespace WokyTool.活動
 
         protected override 可新增介面<活動資料> 記錄器
         {
-            get { return 活動資料管理器.獨體; }
+            get { return 活動新增資料管理器.獨體; }
         }
 
         // 建構子

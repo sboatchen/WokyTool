@@ -112,7 +112,7 @@ namespace WokyTool.活動
             this.物品.SelectedItem = null;
             this.物品.Size = new System.Drawing.Size(420, 22);
             this.物品.TabIndex = 176;
-            this.物品.元件類型 = WokyTool.通用.選取元件類型.指定;
+            this.物品.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
             // 備註
             // 

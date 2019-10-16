@@ -93,6 +93,9 @@ namespace WokyTool.物品
         [JsonProperty]
         public string 儲位 { get; set; }
 
+        [可匯出]
+        public int 保留 { get; set; }
+
         /********************************/
 
         public 物品大類資料 大類 { get; set; }
@@ -119,16 +122,6 @@ namespace WokyTool.物品
                     return 最後進貨成本;
                 else
                     return 庫存總成本 / 庫存;
-            }
-        }
-
-        [可匯出]
-        public int 保留
-        {
-            get
-            {
-                return 0;
-                //@@
             }
         }
 
@@ -165,6 +158,7 @@ namespace WokyTool.物品
             最後進貨成本 = 0,
             成本備註 = 字串.空,
             儲位 = 字串.空,
+            保留= 0,
         };
 
         public static readonly 物品資料 空白 = new 物品資料
@@ -189,6 +183,7 @@ namespace WokyTool.物品
             最後進貨成本 = 0,
             成本備註 = 字串.無,
             儲位 = 字串.空,
+            保留 = 0,
         };
 
         public static 物品資料 錯誤 = new 物品資料
@@ -213,6 +208,7 @@ namespace WokyTool.物品
             最後進貨成本 = 0,
             成本備註 = 字串.錯誤,
             儲位 = 字串.錯誤,
+            保留 = 0,
         };
 
         /********************************/

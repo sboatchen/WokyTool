@@ -8,6 +8,7 @@ using WokyTool.月結帳;
 using WokyTool.發票;
 using WokyTool.測試;
 using WokyTool.廢棄;
+using WokyTool.活動;
 
 namespace WokyTool
 {
@@ -16,6 +17,8 @@ namespace WokyTool
         public 主視窗()
         {
             InitializeComponent();
+
+            活動資料管理器.獨體.更新();
         }
 
         private void 主視窗_FormClosing(object sender, FormClosingEventArgs e)

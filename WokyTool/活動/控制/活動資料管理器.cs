@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using WokyTool.物品;
 using WokyTool.通用;
 
 namespace WokyTool.活動
@@ -28,6 +30,25 @@ namespace WokyTool.活動
         // 建構子
         private 活動資料管理器()
         {
+        }
+
+        public override void 新增(活動資料 資料_)
+        {
+            base.新增(資料_);
+
+            更新();
+        }
+
+        public override void 新增(IEnumerable<活動資料> 資料列舉_)
+        {
+            base.新增(資料列舉_);
+
+            更新();
+        }
+
+        public void 更新()
+        {
+            物品資料管理器.獨體.更新保留();
         }
     }
 }

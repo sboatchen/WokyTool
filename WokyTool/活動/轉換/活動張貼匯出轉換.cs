@@ -75,7 +75,14 @@ namespace WokyTool.活動
             foreach (活動資料 資料_ in 群組)
             {
                 App_.Cells[物品細節開始列索引_, 物品細節開始欄索引_] = String.Format("{0}*{1}", 資料_.物品.名稱, 資料_.數量);
+
+                Range R1 = (Range)App_.Cells[物品細節開始列索引_, 物品細節開始欄索引_];
+                R1.Copy(Type.Missing);
+
                 物品細節開始列索引_++;
+
+                Range R2 = (Range)App_.Cells[物品細節開始列索引_, 物品細節開始欄索引_];
+                R2.PasteSpecial(XlPasteType.xlPasteFormats, XlPasteSpecialOperation.xlPasteSpecialOperationNone, false, false);
             }
         }
     }
