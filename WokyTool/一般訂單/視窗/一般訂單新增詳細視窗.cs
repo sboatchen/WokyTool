@@ -20,13 +20,13 @@ namespace WokyTool.一般訂單
 
     public partial class  一般訂單新增詳細視窗 : 詳細視窗
     {
-        private BindingList<一般訂單新增商品資料> _清單BList = new BindingList<一般訂單新增商品資料>();
+        //private BindingList<一般訂單新增商品資料> _清單BList = new BindingList<一般訂單新增商品資料>();
 
         public 一般訂單新增詳細視窗()
         {
             InitializeComponent();
 
-            this.初始化(this.頁索引元件1, 一般訂單新增資料管理器.獨體);
+            //this.初始化(this.頁索引元件1, 一般訂單新增資料管理器.獨體);
             this.一般訂單新增商品資料BindingSource.DataSource = _清單BList;
 
             bool 是否唯讀_ = 一般訂單新增資料管理器.獨體.是否可編輯 == false;
@@ -108,16 +108,16 @@ namespace WokyTool.一般訂單
             目前資料_.電話 = this.電話.Text;
             目前資料_.手機 = this.手機.Text;
 
-            目前資料_.列印單價 = this.列印單價.Checked;
+            //目前資料_.列印單價 = this.列印單價.Checked;
 
-            if(_清單BList.Count == 0 )
-                目前資料_.清單 = null;
-            else
-            {
-                目前資料_.清單 = new List<一般訂單新增商品資料>();
-                foreach (var Item_ in _清單BList)
-                    目前資料_.清單.Add(Item_);
-            }
+            //if(_清單BList.Count == 0 )
+            //    目前資料_.清單 = null;
+            //else
+            //{
+            //    目前資料_.清單 = new List<一般訂單新增商品資料>();
+            //    foreach (var Item_ in _清單BList)
+            //        目前資料_.清單.Add(Item_);
+            //}
         }
 
         public override void 索引切換_更新呈現()
@@ -133,19 +133,19 @@ namespace WokyTool.一般訂單
             this.電話.Text = 目前資料_.電話;
             this.手機.Text = 目前資料_.手機;
 
-            this.列印單價.Checked = 目前資料_.列印單價;
+            //this.列印單價.Checked = 目前資料_.列印單價;
 
-            _清單BList.RaiseListChangedEvents = false;
+            //_清單BList.RaiseListChangedEvents = false;
 
-            _清單BList.Clear();
-            if (目前資料_.清單 != null)
-            {
-                foreach (var Item_ in 目前資料_.清單)
-                     _清單BList.Add(Item_);
-            }
+            //_清單BList.Clear();
+            //if (目前資料_.清單 != null)
+            //{
+            //    foreach (var Item_ in 目前資料_.清單)
+            //         _清單BList.Add(Item_);
+            //}
 
-            _清單BList.RaiseListChangedEvents = true;
-            _清單BList.ResetBindings();
+            //_清單BList.RaiseListChangedEvents = true;
+            //_清單BList.ResetBindings();
         }
 
         private void 新增_Click(object sender, EventArgs e)
@@ -156,13 +156,13 @@ namespace WokyTool.一般訂單
                 return;
             }
 
-            一般訂單新增商品資料 newItem_ = new 一般訂單新增商品資料();
-            newItem_.商品 = 商品_;
-            newItem_.數量 = (int)this.數量.Value;
-            newItem_.單價 = this.單價.Value;
-            newItem_.備註 = this.備註.Text;
+            //一般訂單新增商品資料 newItem_ = new 一般訂單新增商品資料();
+            //newItem_.商品 = 商品_;
+            //newItem_.數量 = (int)this.數量.Value;
+            //newItem_.單價 = this.單價.Value;
+            //newItem_.備註 = this.備註.Text;
 
-            _清單BList.Add(newItem_);
+            //_清單BList.Add(newItem_);
         }
     }
 }

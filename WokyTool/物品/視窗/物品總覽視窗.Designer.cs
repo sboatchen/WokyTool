@@ -237,18 +237,21 @@ namespace WokyTool.物品
             this.庫存DataGridViewTextBoxColumn.DataPropertyName = "庫存";
             this.庫存DataGridViewTextBoxColumn.HeaderText = "庫存";
             this.庫存DataGridViewTextBoxColumn.Name = "庫存DataGridViewTextBoxColumn";
+            this.庫存DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 庫存總成本DataGridViewTextBoxColumn
             // 
             this.庫存總成本DataGridViewTextBoxColumn.DataPropertyName = "庫存總成本";
             this.庫存總成本DataGridViewTextBoxColumn.HeaderText = "庫存總成本";
             this.庫存總成本DataGridViewTextBoxColumn.Name = "庫存總成本DataGridViewTextBoxColumn";
+            this.庫存總成本DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 最後進貨成本DataGridViewTextBoxColumn
             // 
             this.最後進貨成本DataGridViewTextBoxColumn.DataPropertyName = "最後進貨成本";
             this.最後進貨成本DataGridViewTextBoxColumn.HeaderText = "最後進貨成本";
             this.最後進貨成本DataGridViewTextBoxColumn.Name = "最後進貨成本DataGridViewTextBoxColumn";
+            this.最後進貨成本DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 成本DataGridViewTextBoxColumn
             // 

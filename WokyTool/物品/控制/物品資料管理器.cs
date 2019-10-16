@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using WokyTool.Common;
+using WokyTool.一般訂單;
 using WokyTool.平台訂單;
 using WokyTool.活動;
 using WokyTool.庫存;
@@ -340,6 +341,12 @@ namespace WokyTool.物品
             物品庫存封存資料管理器.獨體.新增(庫存列_);
 
             資料版本++;
+        }
+
+        public void 更新庫存(IEnumerable<一般訂單資料> 資料列舉_)
+        {
+            throw new NotImplementedException();
+            //@@
         }
 
         public void 更新保留()

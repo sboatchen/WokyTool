@@ -8,7 +8,7 @@ using WokyTool.通用;
 
 namespace WokyTool.一般訂單
 {
-    public class 一般訂單資料篩選 : 通用可處理資料篩選介面<一般訂單資料>
+    public class 一般訂單新增資料篩選 : 通用可篩選介面<一般訂單新增資料>
     {
         private 列舉.訂單處理狀態 _處理狀態 = 列舉.訂單處理狀態.不篩選;
         public 列舉.訂單處理狀態 處理狀態
@@ -282,7 +282,8 @@ namespace WokyTool.一般訂單
         {
             get
             {
-                return base.是否篩選 ||
+                return
+                    null != _文字 ||  // 姓名
                     列舉.訂單處理狀態.不篩選 != _處理狀態 ||
                     公司資料.不篩選 != _公司 ||
                     客戶資料.不篩選 != _客戶 ||
@@ -303,9 +304,9 @@ namespace WokyTool.一般訂單
             }
         }
 
-        public override IEnumerable<一般訂單資料> 篩選(IEnumerable<一般訂單資料> 資料列舉_)
+        public override IEnumerable<一般訂單新增資料> 篩選(IEnumerable<一般訂單新增資料> 資料列舉_)
         {
-            IEnumerable<一般訂單資料> 目前列舉_ = base.篩選(資料列舉_);
+            IEnumerable<一般訂單新增資料> 目前列舉_ = 資料列舉_;
 
             if (null != _文字)    // 姓名
                 目前列舉_ = 目前列舉_.Where(Value => Value.姓名.Contains(_文字));
@@ -314,13 +315,14 @@ namespace WokyTool.一般訂單
                 目前列舉_ = 目前列舉_.Where(Value => Value.處理狀態 == _處理狀態);
 
             if (公司資料.不篩選 != _公司)
-                目前列舉_ = 目前列舉_.Where(Value => Value.公司名稱.Equals(_公司.名稱));
+                目前列舉_ = 目前列舉_.Where(Value => Value.公司 == _公司);
             if (客戶資料.不篩選 != _客戶)
-                目前列舉_ = 目前列舉_.Where(Value => Value.客戶名稱.Equals(_客戶.名稱));
+                目前列舉_ = 目前列舉_.Where(Value => Value.客戶 == _客戶);
             if (子客戶資料.不篩選 != _子客戶)
                 目前列舉_ = 目前列舉_.Where(Value => Value.子客戶名稱.Equals(_子客戶.名稱));
+
             if (商品資料.不篩選 != _商品)
-                目前列舉_ = 目前列舉_.Where(Value => Value.商品名稱.Equals(_商品.名稱));
+                目前列舉_ = 目前列舉_.Where(Value => Value.組成列.Where(Value2 => Value2.商品 == _商品).Any());
 
             if (null != _姓名)
                 目前列舉_ = 目前列舉_.Where(Value => Value.姓名.Contains(_姓名));

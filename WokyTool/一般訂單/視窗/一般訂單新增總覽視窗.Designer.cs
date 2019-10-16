@@ -37,30 +37,13 @@
             this.配送公司BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.指配時段BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.代收方式BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.列印單價 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.一般訂單新增資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.配送ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.完成ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.處理狀態DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.處理時間DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.客戶DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.子客戶DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.電話DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.手機DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.配送公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.配送單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.指配日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.指配時段DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.代收方式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.發票號碼DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.列印單價 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.訂單處理狀態BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.公司資料BindingSource)).BeginInit();
@@ -75,28 +58,9 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.處理狀態DataGridViewTextBoxColumn,
-            this.處理時間DataGridViewTextBoxColumn,
-            this.公司DataGridViewTextBoxColumn,
-            this.客戶DataGridViewTextBoxColumn,
-            this.子客戶DataGridViewTextBoxColumn,
-            this.姓名DataGridViewTextBoxColumn,
-            this.地址DataGridViewTextBoxColumn,
-            this.電話DataGridViewTextBoxColumn,
-            this.手機DataGridViewTextBoxColumn,
-            this.備註DataGridViewTextBoxColumn,
-            this.配送公司DataGridViewTextBoxColumn,
-            this.配送單號DataGridViewTextBoxColumn,
-            this.指配日期DataGridViewTextBoxColumn,
-            this.指配時段DataGridViewTextBoxColumn,
-            this.代收方式DataGridViewTextBoxColumn,
-            this.代收金額DataGridViewTextBoxColumn,
-            this.發票號碼DataGridViewTextBoxColumn,
             this.列印單價});
-            this.dataGridView1.DataSource = this.一般訂單新增資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
@@ -132,6 +96,12 @@
             // 代收方式BindingSource
             // 
             this.代收方式BindingSource.DataSource = typeof(WokyTool.通用.列舉.代收方式);
+            // 
+            // 列印單價
+            // 
+            this.列印單價.DataPropertyName = "列印單價";
+            this.列印單價.HeaderText = "列印單價";
+            this.列印單價.Name = "列印單價";
             // 
             // 一般訂單新增資料BindingSource
             // 
@@ -178,141 +148,6 @@
             this.完成ToolStripMenuItem.Text = "完成";
             this.完成ToolStripMenuItem.Click += new System.EventHandler(this.完成ToolStripMenuItem_Click);
             // 
-            // 處理狀態DataGridViewTextBoxColumn
-            // 
-            this.處理狀態DataGridViewTextBoxColumn.DataPropertyName = "處理狀態";
-            this.處理狀態DataGridViewTextBoxColumn.DataSource = this.訂單處理狀態BindingSource;
-            this.處理狀態DataGridViewTextBoxColumn.HeaderText = "處理狀態";
-            this.處理狀態DataGridViewTextBoxColumn.Name = "處理狀態DataGridViewTextBoxColumn";
-            this.處理狀態DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.處理狀態DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // 處理時間DataGridViewTextBoxColumn
-            // 
-            this.處理時間DataGridViewTextBoxColumn.DataPropertyName = "處理時間";
-            this.處理時間DataGridViewTextBoxColumn.HeaderText = "處理時間";
-            this.處理時間DataGridViewTextBoxColumn.Name = "處理時間DataGridViewTextBoxColumn";
-            // 
-            // 公司DataGridViewTextBoxColumn
-            // 
-            this.公司DataGridViewTextBoxColumn.DataPropertyName = "公司";
-            this.公司DataGridViewTextBoxColumn.DataSource = this.公司資料BindingSource;
-            this.公司DataGridViewTextBoxColumn.DisplayMember = "名稱";
-            this.公司DataGridViewTextBoxColumn.HeaderText = "公司";
-            this.公司DataGridViewTextBoxColumn.Name = "公司DataGridViewTextBoxColumn";
-            this.公司DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.公司DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.公司DataGridViewTextBoxColumn.ValueMember = "Self";
-            // 
-            // 客戶DataGridViewTextBoxColumn
-            // 
-            this.客戶DataGridViewTextBoxColumn.DataPropertyName = "客戶";
-            this.客戶DataGridViewTextBoxColumn.DataSource = this.客戶資料BindingSource;
-            this.客戶DataGridViewTextBoxColumn.DisplayMember = "名稱";
-            this.客戶DataGridViewTextBoxColumn.HeaderText = "客戶";
-            this.客戶DataGridViewTextBoxColumn.Name = "客戶DataGridViewTextBoxColumn";
-            this.客戶DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.客戶DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.客戶DataGridViewTextBoxColumn.ValueMember = "Self";
-            // 
-            // 子客戶DataGridViewTextBoxColumn
-            // 
-            this.子客戶DataGridViewTextBoxColumn.DataPropertyName = "子客戶";
-            this.子客戶DataGridViewTextBoxColumn.DataSource = this.子客戶資料BindingSource;
-            this.子客戶DataGridViewTextBoxColumn.DisplayMember = "名稱";
-            this.子客戶DataGridViewTextBoxColumn.HeaderText = "子客戶";
-            this.子客戶DataGridViewTextBoxColumn.Name = "子客戶DataGridViewTextBoxColumn";
-            this.子客戶DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.子客戶DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.子客戶DataGridViewTextBoxColumn.ValueMember = "Self";
-            // 
-            // 姓名DataGridViewTextBoxColumn
-            // 
-            this.姓名DataGridViewTextBoxColumn.DataPropertyName = "姓名";
-            this.姓名DataGridViewTextBoxColumn.HeaderText = "姓名";
-            this.姓名DataGridViewTextBoxColumn.Name = "姓名DataGridViewTextBoxColumn";
-            // 
-            // 地址DataGridViewTextBoxColumn
-            // 
-            this.地址DataGridViewTextBoxColumn.DataPropertyName = "地址";
-            this.地址DataGridViewTextBoxColumn.HeaderText = "地址";
-            this.地址DataGridViewTextBoxColumn.Name = "地址DataGridViewTextBoxColumn";
-            // 
-            // 電話DataGridViewTextBoxColumn
-            // 
-            this.電話DataGridViewTextBoxColumn.DataPropertyName = "電話";
-            this.電話DataGridViewTextBoxColumn.HeaderText = "電話";
-            this.電話DataGridViewTextBoxColumn.Name = "電話DataGridViewTextBoxColumn";
-            // 
-            // 手機DataGridViewTextBoxColumn
-            // 
-            this.手機DataGridViewTextBoxColumn.DataPropertyName = "手機";
-            this.手機DataGridViewTextBoxColumn.HeaderText = "手機";
-            this.手機DataGridViewTextBoxColumn.Name = "手機DataGridViewTextBoxColumn";
-            // 
-            // 備註DataGridViewTextBoxColumn
-            // 
-            this.備註DataGridViewTextBoxColumn.DataPropertyName = "備註";
-            this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
-            this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
-            // 
-            // 配送公司DataGridViewTextBoxColumn
-            // 
-            this.配送公司DataGridViewTextBoxColumn.DataPropertyName = "配送公司";
-            this.配送公司DataGridViewTextBoxColumn.DataSource = this.配送公司BindingSource;
-            this.配送公司DataGridViewTextBoxColumn.HeaderText = "配送公司";
-            this.配送公司DataGridViewTextBoxColumn.Name = "配送公司DataGridViewTextBoxColumn";
-            this.配送公司DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.配送公司DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // 配送單號DataGridViewTextBoxColumn
-            // 
-            this.配送單號DataGridViewTextBoxColumn.DataPropertyName = "配送單號";
-            this.配送單號DataGridViewTextBoxColumn.HeaderText = "配送單號";
-            this.配送單號DataGridViewTextBoxColumn.Name = "配送單號DataGridViewTextBoxColumn";
-            // 
-            // 指配日期DataGridViewTextBoxColumn
-            // 
-            this.指配日期DataGridViewTextBoxColumn.DataPropertyName = "指配日期";
-            this.指配日期DataGridViewTextBoxColumn.HeaderText = "指配日期";
-            this.指配日期DataGridViewTextBoxColumn.Name = "指配日期DataGridViewTextBoxColumn";
-            // 
-            // 指配時段DataGridViewTextBoxColumn
-            // 
-            this.指配時段DataGridViewTextBoxColumn.DataPropertyName = "指配時段";
-            this.指配時段DataGridViewTextBoxColumn.DataSource = this.指配時段BindingSource;
-            this.指配時段DataGridViewTextBoxColumn.HeaderText = "指配時段";
-            this.指配時段DataGridViewTextBoxColumn.Name = "指配時段DataGridViewTextBoxColumn";
-            this.指配時段DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.指配時段DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // 代收方式DataGridViewTextBoxColumn
-            // 
-            this.代收方式DataGridViewTextBoxColumn.DataPropertyName = "代收方式";
-            this.代收方式DataGridViewTextBoxColumn.DataSource = this.代收方式BindingSource;
-            this.代收方式DataGridViewTextBoxColumn.HeaderText = "代收方式";
-            this.代收方式DataGridViewTextBoxColumn.Name = "代收方式DataGridViewTextBoxColumn";
-            this.代收方式DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.代收方式DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // 代收金額DataGridViewTextBoxColumn
-            // 
-            this.代收金額DataGridViewTextBoxColumn.DataPropertyName = "代收金額";
-            this.代收金額DataGridViewTextBoxColumn.HeaderText = "代收金額";
-            this.代收金額DataGridViewTextBoxColumn.Name = "代收金額DataGridViewTextBoxColumn";
-            // 
-            // 發票號碼DataGridViewTextBoxColumn
-            // 
-            this.發票號碼DataGridViewTextBoxColumn.DataPropertyName = "發票號碼";
-            this.發票號碼DataGridViewTextBoxColumn.HeaderText = "發票號碼";
-            this.發票號碼DataGridViewTextBoxColumn.Name = "發票號碼DataGridViewTextBoxColumn";
-            // 
-            // 列印單價
-            // 
-            this.列印單價.DataPropertyName = "列印單價";
-            this.列印單價.HeaderText = "列印單價";
-            this.列印單價.Name = "列印單價";
-            // 
             // 一般訂單新增總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -355,23 +190,6 @@
         private System.Windows.Forms.BindingSource 配送公司BindingSource;
         private System.Windows.Forms.BindingSource 指配時段BindingSource;
         private System.Windows.Forms.BindingSource 代收方式BindingSource;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 處理狀態DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 處理時間DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 公司DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 客戶DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 子客戶DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 姓名DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 地址DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 電話DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 手機DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 配送公司DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 配送單號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 指配日期DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 指配時段DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 代收方式DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 代收金額DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 發票號碼DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn 列印單價;
     }
 }

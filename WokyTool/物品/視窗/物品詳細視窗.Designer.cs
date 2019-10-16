@@ -244,6 +244,7 @@
             0,
             -2147483648});
             this.庫存總成本.Name = "庫存總成本";
+            this.庫存總成本.ReadOnly = true;
             this.庫存總成本.Size = new System.Drawing.Size(165, 22);
             this.庫存總成本.TabIndex = 47;
             // 
@@ -262,6 +263,7 @@
             0,
             -2147483648});
             this.最後進貨成本.Name = "最後進貨成本";
+            this.最後進貨成本.ReadOnly = true;
             this.最後進貨成本.Size = new System.Drawing.Size(165, 22);
             this.最後進貨成本.TabIndex = 48;
             // 
@@ -298,6 +300,7 @@
             0,
             -2147483648});
             this.庫存.Name = "庫存";
+            this.庫存.ReadOnly = true;
             this.庫存.Size = new System.Drawing.Size(165, 22);
             this.庫存.TabIndex = 51;
             // 

@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using WokyTool.Common;
+using WokyTool.活動;
 using WokyTool.商品;
 using WokyTool.通用;
 
@@ -254,7 +255,10 @@ namespace WokyTool.物品
                 檢查器_.錯誤(資料_, "資料綁定中:" + 商品資料_.ToString(false));
             }
 
-            //@@ 活動資料
+            foreach (活動資料 活動資料_ in 活動資料管理器.獨體.資料列舉2.Where(Value => Value.物品 == this))
+            {
+                檢查器_.錯誤(資料_, "資料綁定中:" + 活動資料_.ToString(false));
+            }
         }
     }
 }

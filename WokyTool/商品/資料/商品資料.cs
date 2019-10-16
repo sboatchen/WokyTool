@@ -115,6 +115,10 @@ namespace WokyTool.商品
         [JsonProperty]
         public decimal 成本 { get; set; }
 
+        [可匯出]
+        [JsonProperty]
+        public Dictionary<string, decimal> 自訂售價書 { get; set; }
+
         /********************************/
 
         public 商品大類資料 大類 { get; set; }
@@ -149,6 +153,17 @@ namespace WokyTool.商品
             {
                 return 進價 - 成本;
             }
+        }
+
+        public decimal 取得自訂售價(string 自訂索引_)
+        {
+            if(自訂售價書 == null)
+                return 售價;
+
+            decimal 自訂售價_ = 0;
+            if(自訂售價書.TryGetValue(自訂索引_, out 自訂售價_))
+                return 自訂售價_;
+            return 售價;
         }
 
         /********************************/
