@@ -109,6 +109,11 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編號.平台訂單新增, 列舉.視窗.總覽);
         }
 
+        private void 一般_Click(object sender, EventArgs e)
+        {
+            視窗管理器.獨體.顯現(列舉.編號.一般訂單新增, 列舉.視窗.總覽);
+        }
+
         private void 訂單_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.平台訂單, 列舉.視窗.總覽);
@@ -487,11 +492,6 @@ namespace WokyTool
         private void button43_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.月結帳支出, 列舉.視窗.總覽);
-        }
-
-        private void button44_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.一般訂單新增, 列舉.視窗.總覽);
         }
 
         private void button45_Click(object sender, EventArgs e)

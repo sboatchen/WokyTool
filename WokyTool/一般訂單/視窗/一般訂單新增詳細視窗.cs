@@ -1,15 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WokyTool.Common;
 using WokyTool.公司;
-using WokyTool.物品;
 using WokyTool.客戶;
 using WokyTool.商品;
 using WokyTool.通用;
@@ -17,152 +9,136 @@ using WokyTool.聯絡人;
 
 namespace WokyTool.一般訂單
 {
-
-    public partial class  一般訂單新增詳細視窗 : 詳細視窗
+    public partial class 一般訂單新增詳細視窗 : 獨體詳細視窗
     {
-        //private BindingList<一般訂單新增商品資料> _清單BList = new BindingList<一般訂單新增商品資料>();
+        protected static 可檢查介面 物件檢查器 = new 例外檢查器();
+
+        public override 列舉.編號 編號類型 { get { return 列舉.編號.一般訂單新增; } }
+
+        public override 可編輯列舉資料管理介面 編輯管理器 { get { return 一般訂單新增資料管理器.獨體.編輯管理器; } }
+        public override 新版頁索引元件 頁索引 { get { return this.新版頁索引元件1; } }
+
+        private BindingSource _組合BS = new BindingSource();
+
+        private 一般訂單新增資料 _目前資料 = null;
 
         public 一般訂單新增詳細視窗()
         {
             InitializeComponent();
-
-            //this.初始化(this.頁索引元件1, 一般訂單新增資料管理器.獨體);
-            this.一般訂單新增商品資料BindingSource.DataSource = _清單BList;
-
-            bool 是否唯讀_ = 一般訂單新增資料管理器.獨體.是否可編輯 == false;
-
-            this.公司選取元件.ReadOnly = 是否唯讀_;
-            this.客戶選取元件.ReadOnly = 是否唯讀_;
-            this.子客戶選取元件.ReadOnly = 是否唯讀_;
-            this.聯絡人選取元件.ReadOnly = 是否唯讀_;
-
-            this.姓名.ReadOnly = 是否唯讀_;
-            this.地址.ReadOnly = 是否唯讀_;
-            this.電話.ReadOnly = 是否唯讀_;
-            this.手機.ReadOnly = 是否唯讀_;
-
-            this.列印單價.Enabled = !是否唯讀_;
-
-            this.商品選取元件.ReadOnly = 是否唯讀_;
-            this.數量.ReadOnly = 是否唯讀_;
-            this.單價.ReadOnly = 是否唯讀_;
-
-            this.客戶選取元件.下拉選單.SelectedIndexChanged += 客戶選擇改變;
-            this.子客戶選取元件.下拉選單.SelectedIndexChanged += 子客戶選擇改變;
-            this.聯絡人選取元件.下拉選單.SelectedIndexChanged += 聯絡人選擇改變;
         }
 
-        private void 客戶選擇改變(object sender, EventArgs e)
+        public override void 初始化()
         {
-            客戶資料 客戶_ = (客戶資料)(this.客戶選取元件.SelectedItem);
+            公司.初始化();
+            客戶.初始化();
+            子客戶.初始化();
+            聯絡人.初始化();
+            商品.初始化();
 
-            this.商品選取元件.篩選器.客戶 = (客戶資料)(this.客戶選取元件.下拉選單.SelectedValue);
+            base.初始化();
 
-            this.子客戶選取元件.SelectedItem = null;
-            this.聯絡人選取元件.SelectedItem = null;
+            資料綁定(this.公司, "公司");
+            資料綁定(this.客戶, "客戶");
+            資料綁定(this.子客戶, "子客戶");
 
-            this.子客戶選取元件.篩選器.客戶 = 客戶_;
-            this.聯絡人選取元件.篩選器.客戶 = 客戶_;
+            資料綁定(this.姓名, "姓名");
+            資料綁定(this.地址, "地址");
+            資料綁定(this.電話, "電話");
+            資料綁定(this.手機, "手機");
+
+            資料綁定(this.指配日期, "指配日期");
+            資料綁定(this.指配時段, "指配時段");
+
+            資料綁定(this.代收方式, "代收方式");
+            資料綁定(this.代收金額, "代收金額");
+
+            資料綁定(this.列印單價, "列印單價");
+
+            this.myDataGridView1.DataSource = _組合BS;
+
+            this.公司.下拉選單.SelectedValueChanged += _on公司改變;
+            this.客戶.下拉選單.SelectedIndexChanged += _on客戶改變;
+            this.子客戶.下拉選單.SelectedIndexChanged += _on子客戶改變;
+            this.聯絡人.下拉選單.SelectedIndexChanged += _on聯絡人改變;
         }
 
-        private void 子客戶選擇改變(object sender, EventArgs e)
+        private void _on公司改變(object sender, EventArgs e)
         {
-            子客戶資料 子客戶_ = (子客戶資料)(this.子客戶選取元件.SelectedItem);
-
-            this.聯絡人選取元件.SelectedItem = null;
-
-            this.聯絡人選取元件.篩選器.子客戶 = 子客戶_;
+            this.商品.篩選器.公司 = (公司資料)this.公司.SelectedItem;
         }
 
-        private void 聯絡人選擇改變(object sender, EventArgs e)
+        private void _on客戶改變(object sender, EventArgs e)
         {
-            聯絡人資料 聯絡人_ = (聯絡人資料)(this.聯絡人選取元件.SelectedItem);
-            if (聯絡人_ != null)
+            客戶資料 客戶_ = (客戶資料)(this.客戶.SelectedItem);
+            if (客戶_ == null || 客戶_ == 客戶資料.空白)
+                客戶_ = 客戶資料.不篩選;
+
+            this.子客戶.SelectedItem = 子客戶資料.空白;
+            this.聯絡人.SelectedItem = 聯絡人資料.空白;
+
+            this.子客戶.篩選器.客戶 = 客戶_;
+            this.聯絡人.篩選器.客戶 = 客戶_;
+            this.商品.篩選器.客戶 = 客戶_;
+        }
+
+        private void _on子客戶改變(object sender, EventArgs e)
+        {
+            子客戶資料 子客戶_ = (子客戶資料)(this.子客戶.SelectedItem);
+            if (子客戶_ == null || 子客戶_ == 子客戶資料.空白)
+                子客戶_ = 子客戶資料.不篩選;
+
+            this.聯絡人.SelectedItem = 聯絡人資料.空白;
+
+            this.聯絡人.篩選器.子客戶 = 子客戶_;
+        }
+
+        private void _on聯絡人改變(object sender, EventArgs e)
+        {
+            聯絡人資料 聯絡人_ = (聯絡人資料)(this.聯絡人.SelectedItem);
+            if (聯絡人_ == null || 聯絡人_.編號是否有值() == false)
+                return;
+
+            if (_目前資料 != null)
             {
                 this.姓名.Text = 聯絡人_.姓名;
                 this.地址.Text = 聯絡人_.地址;
                 this.電話.Text = 聯絡人_.電話;
                 this.手機.Text = 聯絡人_.手機;
+
+                _目前資料.姓名 = 聯絡人_.姓名;
+                _目前資料.地址 = 聯絡人_.地址;
+                _目前資料.電話 = 聯絡人_.電話;
+                _目前資料.手機 = 聯絡人_.手機;
             }
-        }
-
-        /********************************/
-
-        protected override void 視窗激活()
-        {
-        }
-
-        /********************************/
-        // 頁索引上層介面
-
-        public override void 索引切換_異動儲存()
-        {
-            一般訂單新增資料 目前資料_ = (一般訂單新增資料)(this.頁索引元件1.目前資料);
-
-            目前資料_.公司 = (公司資料)(this.公司選取元件.SelectedItem);
-            目前資料_.客戶 = (客戶資料)(this.客戶選取元件.SelectedItem);
-            目前資料_.子客戶 = (子客戶資料)(this.子客戶選取元件.SelectedItem);
-
-            目前資料_.姓名 = this.姓名.Text;
-            目前資料_.地址 = this.地址.Text;
-            目前資料_.電話 = this.電話.Text;
-            目前資料_.手機 = this.手機.Text;
-
-            //目前資料_.列印單價 = this.列印單價.Checked;
-
-            //if(_清單BList.Count == 0 )
-            //    目前資料_.清單 = null;
-            //else
-            //{
-            //    目前資料_.清單 = new List<一般訂單新增商品資料>();
-            //    foreach (var Item_ in _清單BList)
-            //        目前資料_.清單.Add(Item_);
-            //}
-        }
-
-        public override void 索引切換_更新呈現()
-        {
-            一般訂單新增資料 目前資料_ = (一般訂單新增資料)(this.頁索引元件1.目前資料);
-
-            this.公司選取元件.SelectedItem = 目前資料_.公司;
-            this.客戶選取元件.SelectedItem = 目前資料_.客戶;
-            this.子客戶選取元件.SelectedItem = 目前資料_.子客戶;
-
-            this.姓名.Text = 目前資料_.姓名;
-            this.地址.Text = 目前資料_.地址;
-            this.電話.Text = 目前資料_.電話;
-            this.手機.Text = 目前資料_.手機;
-
-            //this.列印單價.Checked = 目前資料_.列印單價;
-
-            //_清單BList.RaiseListChangedEvents = false;
-
-            //_清單BList.Clear();
-            //if (目前資料_.清單 != null)
-            //{
-            //    foreach (var Item_ in 目前資料_.清單)
-            //         _清單BList.Add(Item_);
-            //}
-
-            //_清單BList.RaiseListChangedEvents = true;
-            //_清單BList.ResetBindings();
         }
 
         private void 新增_Click(object sender, EventArgs e)
         {
-            商品資料 商品_ = (商品資料)(this.商品選取元件.SelectedItem);
-            if(商品_ == null || 商品_.編號是否有值() == false){
+            商品資料 商品_ = (商品資料)(this.商品.SelectedItem);
+            if (商品_ == null || 商品_.編號是否有值() == false)
+            {
                 訊息管理器.獨體.通知("商品不合法");
                 return;
             }
 
-            //一般訂單新增商品資料 newItem_ = new 一般訂單新增商品資料();
-            //newItem_.商品 = 商品_;
-            //newItem_.數量 = (int)this.數量.Value;
-            //newItem_.單價 = this.單價.Value;
-            //newItem_.備註 = this.備註.Text;
+            一般訂單新增組成資料 組成資料_ = new 一般訂單新增組成資料();
+            組成資料_.商品 = 商品_;
+            組成資料_.數量 = (int)this.數量.Value;
+            組成資料_.備註 = this.備註.Text;
 
-            //_清單BList.Add(newItem_);
+            _組合BS.Add(組成資料_);
+        }
+
+        protected override void 選擇改變()
+        {
+            if (_目前資料 != null)
+                _目前資料.合法檢查(物件檢查器);
+
+            _目前資料 = (一般訂單新增資料)(this.資料BS.Current);
+            if (_目前資料.組成列 == null)
+                _目前資料.組成列 = new List<一般訂單新增組成資料>();
+
+            _組合BS.DataSource = _目前資料.組成列;
         }
     }
 }

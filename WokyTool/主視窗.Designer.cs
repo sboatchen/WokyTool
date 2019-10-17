@@ -60,9 +60,10 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.訂單 = new System.Windows.Forms.Button();
             this.button45 = new System.Windows.Forms.Button();
-            this.button44 = new System.Windows.Forms.Button();
+            this.一般 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.活動新增 = new System.Windows.Forms.Button();
             this.活動總覽 = new System.Windows.Forms.Button();
             this.寄庫總覽 = new System.Windows.Forms.Button();
             this.盤點 = new System.Windows.Forms.Button();
@@ -76,7 +77,6 @@
             this.button34 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
-            this.活動新增 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -393,7 +393,7 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.訂單);
             this.panel4.Controls.Add(this.button45);
-            this.panel4.Controls.Add(this.button44);
+            this.panel4.Controls.Add(this.一般);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.平台);
             this.panel4.Location = new System.Drawing.Point(12, 285);
@@ -421,15 +421,15 @@
             this.button45.UseVisualStyleBackColor = true;
             this.button45.Click += new System.EventHandler(this.button45_Click);
             // 
-            // button44
+            // 一般
             // 
-            this.button44.Location = new System.Drawing.Point(122, 36);
-            this.button44.Name = "button44";
-            this.button44.Size = new System.Drawing.Size(100, 23);
-            this.button44.TabIndex = 48;
-            this.button44.Text = "一般訂單";
-            this.button44.UseVisualStyleBackColor = true;
-            this.button44.Click += new System.EventHandler(this.button44_Click);
+            this.一般.Location = new System.Drawing.Point(122, 36);
+            this.一般.Name = "一般";
+            this.一般.Size = new System.Drawing.Size(100, 23);
+            this.一般.TabIndex = 48;
+            this.一般.Text = "一般";
+            this.一般.UseVisualStyleBackColor = true;
+            this.一般.Click += new System.EventHandler(this.一般_Click);
             // 
             // label2
             // 
@@ -455,6 +455,16 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(482, 126);
             this.panel5.TabIndex = 51;
+            // 
+            // 活動新增
+            // 
+            this.活動新增.Location = new System.Drawing.Point(6, 92);
+            this.活動新增.Name = "活動新增";
+            this.活動新增.Size = new System.Drawing.Size(100, 23);
+            this.活動新增.TabIndex = 54;
+            this.活動新增.Text = "活動新增";
+            this.活動新增.UseVisualStyleBackColor = true;
+            this.活動新增.Click += new System.EventHandler(this.活動新增_Click);
             // 
             // 活動總覽
             // 
@@ -589,16 +599,6 @@
             this.button46.UseVisualStyleBackColor = true;
             this.button46.Click += new System.EventHandler(this.button46_Click);
             // 
-            // 活動新增
-            // 
-            this.活動新增.Location = new System.Drawing.Point(6, 92);
-            this.活動新增.Name = "活動新增";
-            this.活動新增.Size = new System.Drawing.Size(100, 23);
-            this.活動新增.TabIndex = 54;
-            this.活動新增.Text = "活動新增";
-            this.活動新增.UseVisualStyleBackColor = true;
-            this.活動新增.Click += new System.EventHandler(this.活動新增_Click);
-            // 
             // 主視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -671,7 +671,7 @@
         private System.Windows.Forms.Button button41;
         private System.Windows.Forms.Button button42;
         private System.Windows.Forms.Button button43;
-        private System.Windows.Forms.Button button44;
+        private System.Windows.Forms.Button 一般;
         private System.Windows.Forms.Button button45;
         private System.Windows.Forms.Button button46;
         private System.Windows.Forms.Button 客戶資料轉換;

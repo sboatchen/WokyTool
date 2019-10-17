@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using WokyTool.Common;
+using WokyTool.一般訂單;
 using WokyTool.平台訂單;
 using WokyTool.商品;
 using WokyTool.通用;
@@ -105,6 +106,12 @@ namespace WokyTool.物品
         public void 新增(平台訂單新增資料 資料_)
         {
             新增(資料_.商品, 資料_.數量);
+        }
+
+        public void 新增(一般訂單新增資料 資料_)
+        {
+            foreach (一般訂單新增組成資料 組成資料_ in 資料_.組成列)
+                新增(組成資料_.商品, 組成資料_.數量);
         }
 
         public void 清除()

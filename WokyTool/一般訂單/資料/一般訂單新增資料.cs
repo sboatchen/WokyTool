@@ -102,6 +102,9 @@ namespace WokyTool.一般訂單
         [JsonProperty]
         public List<一般訂單新增組成資料> 組成列 { get; set; }
 
+        [JsonProperty]
+        public bool 列印單價 { get; set; }
+
         /********************************/
 
         public 公司資料 公司 { get; set; }
@@ -182,6 +185,8 @@ namespace WokyTool.一般訂單
 
             代收方式 = 列舉.代收方式.無,
             代收金額 = 0,
+
+            列印單價 = false,
         };
 
         public static 一般訂單新增資料 錯誤 = new 一般訂單新增資料
@@ -207,6 +212,8 @@ namespace WokyTool.一般訂單
 
             代收方式 = 列舉.代收方式.錯誤,
             代收金額 = 0,
+
+            列印單價 = false,
         };
 
         /********************************/

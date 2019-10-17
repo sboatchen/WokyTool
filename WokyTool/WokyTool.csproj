@@ -78,11 +78,29 @@
   <ItemGroup>
     <Compile Include="一般訂單\控制\一般訂單資料管理器.cs" />
     <Compile Include="一般訂單\控制\一般訂單新增資料管理器.cs" />
+    <Compile Include="一般訂單\視窗\一般訂單篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="一般訂單\視窗\一般訂單篩選視窗.Designer.cs">
+      <DependentUpon>一般訂單篩選視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="一般訂單\視窗\一般訂單總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="一般訂單\視窗\一般訂單總覽視窗.Designer.cs">
       <DependentUpon>一般訂單總覽視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="一般訂單\視窗\一般訂單詳細視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="一般訂單\視窗\一般訂單詳細視窗.Designer.cs">
+      <DependentUpon>一般訂單詳細視窗.cs</DependentUpon>
+    </Compile>
+    <Compile Include="一般訂單\視窗\一般訂單新增篩選視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="一般訂單\視窗\一般訂單新增篩選視窗.Designer.cs">
+      <DependentUpon>一般訂單新增篩選視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="一般訂單\視窗\一般訂單新增總覽視窗.cs">
       <SubType>Form</SubType>
@@ -96,13 +114,13 @@
     <Compile Include="一般訂單\視窗\一般訂單新增詳細視窗.Designer.cs">
       <DependentUpon>一般訂單新增詳細視窗.cs</DependentUpon>
     </Compile>
+    <Compile Include="一般訂單\配送\一般訂單配送轉換資料.cs" />
     <Compile Include="一般訂單\資料\一般訂單新增組成資料.cs" />
     <Compile Include="一般訂單\資料\一般訂單資料.cs" />
     <Compile Include="一般訂單\資料\一般訂單新增資料.cs" />
     <Compile Include="一般訂單\資料\一般訂單資料篩選設定.cs" />
     <Compile Include="一般訂單\資料\一般訂單新增資料篩選.cs" />
     <Compile Include="一般訂單\轉換\一般訂單銷售匯出結構.cs" />
-    <Compile Include="一般訂單\轉換\一般訂單匯出轉換.cs" />
     <Compile Include="使用者\控制\使用者資料管理器.cs" />
     <Compile Include="使用者\視窗\使用者總覽視窗.cs">
       <SubType>Form</SubType>
@@ -1280,8 +1298,17 @@
     <Compile Include="平台訂單\配送\平台訂單合併配送轉換資料.cs" />
     <Compile Include="配送\資料\配送資料.cs" />
     <Compile Include="平台訂單\配送\平台訂單配送轉換資料.cs" />
+    <EmbeddedResource Include="一般訂單\視窗\一般訂單篩選視窗.resx">
+      <DependentUpon>一般訂單篩選視窗.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="一般訂單\視窗\一般訂單總覽視窗.resx">
       <DependentUpon>一般訂單總覽視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="一般訂單\視窗\一般訂單詳細視窗.resx">
+      <DependentUpon>一般訂單詳細視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="一般訂單\視窗\一般訂單新增篩選視窗.resx">
+      <DependentUpon>一般訂單新增篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="一般訂單\視窗\一般訂單新增總覽視窗.resx">
       <DependentUpon>一般訂單新增總覽視窗.cs</DependentUpon>
@@ -1689,7 +1716,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\WokyTool.一般訂單.一般訂單新增商品資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.一般訂單.一般訂單新增組成資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.一般訂單.一般訂單新增資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.一般訂單.一般訂單資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.使用者.使用者資料.datasource" />

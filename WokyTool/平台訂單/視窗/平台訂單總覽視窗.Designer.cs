@@ -174,21 +174,21 @@
             // 公司名稱DataGridViewTextBoxColumn
             // 
             this.公司名稱DataGridViewTextBoxColumn.DataPropertyName = "公司名稱";
-            this.公司名稱DataGridViewTextBoxColumn.HeaderText = "公司名稱";
+            this.公司名稱DataGridViewTextBoxColumn.HeaderText = "公司";
             this.公司名稱DataGridViewTextBoxColumn.Name = "公司名稱DataGridViewTextBoxColumn";
             this.公司名稱DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 客戶名稱DataGridViewTextBoxColumn
             // 
             this.客戶名稱DataGridViewTextBoxColumn.DataPropertyName = "客戶名稱";
-            this.客戶名稱DataGridViewTextBoxColumn.HeaderText = "客戶名稱";
+            this.客戶名稱DataGridViewTextBoxColumn.HeaderText = "客戶";
             this.客戶名稱DataGridViewTextBoxColumn.Name = "客戶名稱DataGridViewTextBoxColumn";
             this.客戶名稱DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 商品名稱DataGridViewTextBoxColumn
             // 
             this.商品名稱DataGridViewTextBoxColumn.DataPropertyName = "商品名稱";
-            this.商品名稱DataGridViewTextBoxColumn.HeaderText = "商品名稱";
+            this.商品名稱DataGridViewTextBoxColumn.HeaderText = "商品";
             this.商品名稱DataGridViewTextBoxColumn.Name = "商品名稱DataGridViewTextBoxColumn";
             this.商品名稱DataGridViewTextBoxColumn.ReadOnly = true;
             this.商品名稱DataGridViewTextBoxColumn.Width = 400;
