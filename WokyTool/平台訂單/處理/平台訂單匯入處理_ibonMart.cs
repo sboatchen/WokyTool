@@ -13,11 +13,15 @@ namespace WokyTool.平台訂單
 
         public string 分格號 { get { return ","; } }
 
-        public bool 是否有標頭 { get { return true; } }
-
         public string 密碼 { get { return null; } }
 
         public Encoding 編碼 { get { return Encoding.Default; } }
+
+        public int 標頭索引 { get { return 1; } }
+
+        public int 資料開始索引 { get { return 2; } }
+
+        public int 資料結尾忽略行數 { get { return 0; } }
 
         public 平台訂單匯入處理_ibonMart()
         {

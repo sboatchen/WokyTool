@@ -1,24 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using WokyTool.客戶;
 using WokyTool.商品;
 using WokyTool.通用;
 
 namespace WokyTool.平台訂單
 {
-    public class 平台訂單匯入處理_myfone : 平台訂單匯入處理介面, 可讀出介面_EXCEL<平台訂單新增匯入資料>
+    public class 平台訂單匯入處理_myfone : 平台訂單匯入處理介面, 可讀出介面_CSV<平台訂單新增匯入資料>
     {
-        public int 分頁索引 { get { return 1; } }
+        public string 分格號 { get { return ","; } }
 
-        public string 分頁名稱 { get { return null; } }
+        public string 密碼 { get { return null; } }
+
+        public Encoding 編碼 { get { return Encoding.Default; } }
 
         public int 標頭索引 { get { return 1; } }
 
         public int 資料開始索引 { get { return 2; } }
 
         public int 資料結尾忽略行數 { get { return 0; } }
-
-        public string 密碼 { get { return null; } }
 
         public 平台訂單匯入處理_myfone()
         {

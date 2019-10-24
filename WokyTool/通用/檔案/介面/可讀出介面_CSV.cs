@@ -9,9 +9,13 @@ namespace WokyTool.通用
 
         string 密碼 { get; }
 
-        bool 是否有標頭 { get; }
-
         Encoding 編碼 { get; }
+
+        int 標頭索引 { get; }
+
+        int 資料開始索引 { get; }
+
+        int 資料結尾忽略行數 { get; }
 
         void 讀出標頭(string[] 標頭列_);
 

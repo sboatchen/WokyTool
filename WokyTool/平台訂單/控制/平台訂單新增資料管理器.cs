@@ -146,6 +146,9 @@ namespace WokyTool.平台訂單
                 case "myfone":
                     處理器_ = new 平台訂單匯入處理_myfone();
                     break;
+                case "泛科市集":
+                    處理器_ = new 平台訂單匯入處理_泛科();
+                    break;
                 default:
                     訊息管理器.獨體.錯誤("平台訂單自定義工廠::不支援 " + 名稱_);
                     return null;

@@ -20,20 +20,21 @@ namespace WokyTool.通用
             string 欄位切割_ = string.Format(_CSV欄位切割, 轉換_.分格號);
             Regex 欄位解析_ = new Regex(欄位切割_);
 
-            bool 是否檢查標頭_ = 轉換_.是否有標頭;
-            foreach (string 資料_ in 內容_.Split(_CSV資料切割, StringSplitOptions.RemoveEmptyEntries))
+            string[] 行_ = 內容_.Split(_CSV資料切割, StringSplitOptions.RemoveEmptyEntries);
+            int 資料總數_ = 行_.Length - 轉換_.資料結尾忽略行數;
+
+            for (int 行數_ = 1 ; 行數_ <= 資料總數_ ; 行數_++)
             {
+                string 資料_ = 行_[行數_-1];
                 string[] 資料列_ = 欄位解析_.Split(資料_);
 
-                if (是否檢查標頭_)
-                {
+                if (行數_ == 轉換_.標頭索引)
                     轉換_.讀出標頭(資料列_);
-                    是否檢查標頭_ = false;
-                    continue;
+                else if (行數_ >= 轉換_.資料開始索引)
+                {
+                    foreach (T 子資料_ in 轉換_.讀出資料(資料列_))
+                        yield return 子資料_;
                 }
-
-                foreach (T 子資料_ in 轉換_.讀出資料(資料列_))
-                    yield return 子資料_;
             }
         }
 

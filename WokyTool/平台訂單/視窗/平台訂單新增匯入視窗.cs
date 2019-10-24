@@ -276,5 +276,12 @@ namespace WokyTool.平台訂單
             List<平台訂單新增匯入資料> 資料列_ = 檔案.詢問並讀出(轉換器_);
             匯入完成(轉換器_, 資料列_);
         }
+
+        private void 泛科ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單匯入處理_泛科 轉換器_ = new 平台訂單匯入處理_泛科();
+            List<平台訂單新增匯入資料> 資料列_ = 檔案.詢問並讀出(轉換器_);
+            匯入完成(轉換器_, 資料列_);
+        }
     }
 }
