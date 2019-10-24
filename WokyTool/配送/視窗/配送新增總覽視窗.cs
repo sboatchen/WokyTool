@@ -72,6 +72,7 @@ namespace WokyTool.配送
             if (處理列舉_ != null) 
             {
                 處理列舉_.Count();  // 強制處理
+                this.myDataGridView1.Refresh();
                 訊息管理器.獨體.通知("匯入完成");
             }
         }
@@ -117,6 +118,7 @@ namespace WokyTool.配送
             if (處理列舉_ != null)
             {
                 處理列舉_.Count();  // 強制處理
+                this.myDataGridView1.Refresh();
                 訊息管理器.獨體.通知("匯入完成");
             }
         }
@@ -292,6 +294,8 @@ namespace WokyTool.配送
             {
                 資料_.配送單號 = String.Format("宅配回單測試{0}", i++);
             }
+
+            this.myDataGridView1.Refresh();
 
             訊息管理器.獨體.通知("測試完成");
         }

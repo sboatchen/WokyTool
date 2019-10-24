@@ -32,7 +32,8 @@ namespace WokyTool.月結帳
             App_.Cells[1, 2] = "品牌";
             App_.Cells[1, 3] = "數量";
             App_.Cells[1, 4] = "營業額";
-
+            App_.Cells[1, 5] = "成本";
+            App_.Cells[1, 6] = "總成本";
 
             int 目前行數_ = 2;
             foreach (var 資料_ in Map_)
@@ -41,6 +42,8 @@ namespace WokyTool.月結帳
                 App_.Cells[目前行數_, 2] = 資料_.Key.品牌.名稱;
                 App_.Cells[目前行數_, 3] = 資料_.Value.數量;
                 App_.Cells[目前行數_, 4] = 資料_.Value.營業額;
+                App_.Cells[目前行數_, 5] = 資料_.Key.成本;
+                App_.Cells[目前行數_, 6] = 資料_.Key.成本 * 資料_.Value.數量;
 
                 目前行數_++;
             }

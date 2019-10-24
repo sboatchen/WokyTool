@@ -47,14 +47,14 @@ namespace WokyTool.平台訂單
                         發票讀出元件 = new PDF字串讀出元件(new Rectangle(80, 515, 130, 525)),
                         配送單號讀出元件 = new PDF字串讀出元件(new Rectangle(75, 695, 150, 710)),
                         消費者讀出元件 = new PDF字串讀出元件(new Rectangle(70, 640, 280, 680))
-                    }, new PDF字串寫入元件(new Rectangle(5, 430, 595, 457), 常數.通用字體));
+                    }, new PDF字串寫入元件(new Rectangle(30, 430, 595, 457), 常數.通用字體));
 
                     _設定資料書.Add(new 三方讀出元件組
                     {
                         發票讀出元件 = new PDF字串讀出元件(new Rectangle(80, 80, 130, 90)),
                         配送單號讀出元件 = new PDF字串讀出元件(new Rectangle(75, 265, 100, 280)),
                         消費者讀出元件 = new PDF字串讀出元件(new Rectangle(70, 200, 280, 250))
-                    }, new PDF字串寫入元件(new Rectangle(5, 0, 595, 27), 常數.通用字體));
+                    }, new PDF字串寫入元件(new Rectangle(30, 0, 595, 27), 常數.通用字體));
                 }
 
                 return _設定資料書;
