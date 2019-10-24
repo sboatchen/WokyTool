@@ -131,6 +131,9 @@ namespace WokyTool.平台訂單
                 case "citiesocial":
                     處理器_ = new 平台訂單匯入處理_citiesocial();
                     break;
+                case "WACA":
+                    處理器_ = new 平台訂單匯入處理_WACA();
+                    break;
                 default:
                     訊息管理器.獨體.錯誤("平台訂單自定義工廠::不支援 " + 名稱_);
                     return null;
