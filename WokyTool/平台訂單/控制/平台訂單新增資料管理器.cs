@@ -128,6 +128,9 @@ namespace WokyTool.平台訂單
                 case "payeasy":
                     處理器_ = new 平台訂單匯入處理_PayEasy();
                     break;
+                case "citiesocial":
+                    處理器_ = new 平台訂單匯入處理_citiesocial();
+                    break;
                 default:
                     訊息管理器.獨體.錯誤("平台訂單自定義工廠::不支援 " + 名稱_);
                     return null;

@@ -288,6 +288,7 @@
     <Compile Include="平台訂單\回單\平台訂單回單轉換_生活市集.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_博客來.cs" />
     <Compile Include="平台訂單\控制\平台訂單資料管理器.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_citiesocial.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_uDesign.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_神坊.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_博客來.cs" />
@@ -1261,7 +1262,6 @@
     <Compile Include="配送\轉換\配送撿貨轉換.cs" />
     <Compile Include="廢棄\出貨匯入結構_夠麻吉.cs" />
     <Compile Include="廢棄\出貨匯入結構_愛料理.cs" />
-    <Compile Include="廢棄\回單號結構_citiesocial.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_ibonMart.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_myfone.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_PC商店街.cs" />
@@ -1270,7 +1270,6 @@
     <Compile Include="廢棄\回單號結構_遠傳.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_遠傳加購.cs" />
     <Compile Include="廢棄\出貨匯入結構_ASAP.cs" />
-    <Compile Include="廢棄\出貨匯入結構_citiesocial.cs" />
     <Compile Include="廢棄\出貨匯入結構_遠傳.cs" />
     <Compile Include="通用\資料99\管理\資料管理器99.cs" />
     <Compile Include="通用\資料99\動態匯入\動態匯入檔案結構.cs" />
