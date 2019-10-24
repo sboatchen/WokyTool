@@ -55,6 +55,7 @@
             this.神坊ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.payEasyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.citiesocialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wACAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
@@ -81,7 +82,7 @@
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.平台訂單新增匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wACAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.摩天ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單新增匯入資料BindingSource)).BeginInit();
@@ -120,7 +121,8 @@
             this.神坊ToolStripMenuItem,
             this.payEasyToolStripMenuItem,
             this.citiesocialToolStripMenuItem,
-            this.wACAToolStripMenuItem});
+            this.wACAToolStripMenuItem,
+            this.摩天ToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
             this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "匯入";
@@ -299,6 +301,13 @@
             this.citiesocialToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.citiesocialToolStripMenuItem.Text = "citiesocial";
             this.citiesocialToolStripMenuItem.Click += new System.EventHandler(this.citiesocialToolStripMenuItem_Click);
+            // 
+            // wACAToolStripMenuItem
+            // 
+            this.wACAToolStripMenuItem.Name = "wACAToolStripMenuItem";
+            this.wACAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.wACAToolStripMenuItem.Text = "WACA";
+            this.wACAToolStripMenuItem.Click += new System.EventHandler(this.wACAToolStripMenuItem_Click);
             // 
             // 篩選ToolStripMenuItem
             // 
@@ -489,12 +498,12 @@
             // 
             this.平台訂單新增匯入資料BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單新增匯入資料);
             // 
-            // wACAToolStripMenuItem
+            // 摩天ToolStripMenuItem
             // 
-            this.wACAToolStripMenuItem.Name = "wACAToolStripMenuItem";
-            this.wACAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.wACAToolStripMenuItem.Text = "WACA";
-            this.wACAToolStripMenuItem.Click += new System.EventHandler(this.wACAToolStripMenuItem_Click);
+            this.摩天ToolStripMenuItem.Name = "摩天ToolStripMenuItem";
+            this.摩天ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.摩天ToolStripMenuItem.Text = "摩天";
+            this.摩天ToolStripMenuItem.Click += new System.EventHandler(this.摩天ToolStripMenuItem_Click);
             // 
             // 平台訂單新增匯入視窗
             // 
@@ -569,6 +578,7 @@
         private System.Windows.Forms.ToolStripMenuItem payEasyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem citiesocialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wACAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 摩天ToolStripMenuItem;
 
     }
 }
