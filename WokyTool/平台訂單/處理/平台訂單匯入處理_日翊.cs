@@ -10,7 +10,19 @@ namespace WokyTool.平台訂單
     {
         public int 分頁索引 { get { return 1; } }
 
-        public string 分頁名稱 { get { return null; } }
+        private string _分頁名稱 = null;
+        public string 分頁名稱
+        {
+            get 
+            {
+                if (_分頁名稱 == null)
+                {
+                    _分頁名稱 = DateTime.Now.ToString("MMdd");
+                }
+
+                return _分頁名稱; 
+            } 
+        }
 
         public int 標頭索引 { get { return 5; } }
 
@@ -27,23 +39,21 @@ namespace WokyTool.平台訂單
 
         public IEnumerable<平台訂單新增匯入資料> 讀出資料(string[] 資料列_)
         {
-            yield break;
-            string 訂單編號_ = 資料列_[1].轉成字串();
+            string 訂單編號_ = 資料列_[3].轉成字串();
+            if(string.IsNullOrEmpty(訂單編號_))
+                yield break;
 
-            string 姓名_ = 資料列_[9].轉成字串();
-            string 電話_ = 資料列_[10].轉成字串();
-            string 手機_ = 資料列_[11].轉成字串();
-            string 地址_ = 資料列_[12].轉成字串();
+            string 姓名_ = 資料列_[5].轉成字串();
+            string 電話_ = 資料列_[6].轉成字串();
+            //string 手機_ = 資料列_[11].轉成字串();
+            string 地址_ = 資料列_[7].轉成字串();
 
-            string 商品編號_ = 資料列_[14].轉成字串();
-            string 款式_ = 資料列_[16].轉成字串();
-            if ("單一規格".Equals(款式_)) 
-                款式_ = null;
-
+            string 商品編號_ = 資料列_[8].轉成字串();
+            string 款式_ = 資料列_[9].轉成字串();
             string 商品識別_ = 函式.取得商品識別(商品編號_, 款式_);
             商品資料 商品_ = 商品資料管理器.獨體.取得(客戶.編號, 商品識別_);
 
-            int 數量_ = 資料列_[17].轉成整數();
+            int 數量_ = 資料列_[11].轉成整數();
 
             //string 備註_ = 資料列_[4].轉成字串();
 
@@ -57,7 +67,7 @@ namespace WokyTool.平台訂單
 
                 姓名 = 姓名_,
                 電話 = 電話_,
-                手機 = 手機_,
+                //手機 = 手機_,
                 地址 = 地址_,
 
                 商品識別 = 商品識別_,
