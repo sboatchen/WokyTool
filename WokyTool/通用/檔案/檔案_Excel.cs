@@ -229,8 +229,26 @@ namespace WokyTool.通用
                     工作簿_ = 應用程式_.Workbooks.Open(OFD_.FileName, Type.Missing, true, Type.Missing, 轉換_.密碼);
 
                 // 取得分頁
-                int 分頁索引_ = (轉換_.分頁索引 >= 1) ? 轉換_.分頁索引 : 1;
-                分頁_ = 工作簿_.Worksheets[分頁索引_];
+                if (轉換_.分頁名稱 != null)
+                {
+                    foreach (var obj in 工作簿_.Worksheets)
+                    {
+                        Worksheet 暫時分頁_ = (Worksheet)obj;
+                        if (暫時分頁_.Name.Equals(轉換_.分頁名稱))
+                        {
+                            分頁_ = 暫時分頁_;
+                            break;
+                        }
+                    }
+
+                    if (分頁_ == null)
+                        throw new Exception("找不到指定頁名:" + 轉換_.分頁名稱);
+                }
+                else 
+                {
+                    int 分頁索引_ = (轉換_.分頁索引 >= 1) ? 轉換_.分頁索引 : 1;
+                    分頁_ = 工作簿_.Worksheets[分頁索引_];
+                }
 
                 // 取得資料範圍
                 Range 資料範圍_ = 分頁_.UsedRange;

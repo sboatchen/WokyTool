@@ -7,6 +7,8 @@ namespace WokyTool.盤點
     {
         public int 分頁索引 { get { return 1; } }
 
+        public string 分頁名稱 { get { return null; } }
+
         public int 標頭索引 { get { return 1; } }
 
         public int 資料開始索引 { get { return 3; } }

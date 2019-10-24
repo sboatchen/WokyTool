@@ -6,6 +6,8 @@ namespace WokyTool.通用
     {
         int 分頁索引 { get; }
 
+        string 分頁名稱 { get; }
+
         int 標頭索引 { get; }
 
         int 資料開始索引 { get; }

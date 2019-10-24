@@ -192,6 +192,12 @@ namespace WokyTool.通用
 
         private void _新增(object sender, EventArgs e)
         {
+            if(編輯管理器.視窗篩選器.是否篩選)
+            {
+                訊息管理器.獨體.通知("篩選中不能進行新增");
+                return;
+            }
+
             var 新資料_ = (資料BS.AddNew()) as 新版可記錄資料;
             新資料_.新增資料();
 
