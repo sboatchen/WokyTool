@@ -137,6 +137,9 @@ namespace WokyTool.平台訂單
                 case "摩天":
                     處理器_ = new 平台訂單匯入處理_摩天();
                     break;
+                case "奇摩":
+                    處理器_ = new 平台訂單匯入處理_奇摩();
+                    break;
                 default:
                     訊息管理器.獨體.錯誤("平台訂單自定義工廠::不支援 " + 名稱_);
                     return null;
