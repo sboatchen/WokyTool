@@ -281,6 +281,7 @@
     <Compile Include="寄庫\轉換\寄庫匯入轉換_料理123.cs" />
     <Compile Include="寄庫\轉換\寄庫匯入轉換_PCHome.cs" />
     <Compile Include="平台訂單\介面\平台訂單匯入處理介面.cs" />
+    <Compile Include="平台訂單\回單\平台訂單回單轉換_愛料理.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_PayEasy.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_myfone.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_摩天.cs" />
@@ -291,6 +292,7 @@
     <Compile Include="平台訂單\回單\平台訂單回單轉換_生活市集.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_博客來.cs" />
     <Compile Include="平台訂單\控制\平台訂單資料管理器.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_愛料理.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_泛科.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_奇摩.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_myfone.cs" />
@@ -1267,7 +1269,6 @@
     <Compile Include="配送\轉換\配送明細轉換.cs" />
     <Compile Include="配送\轉換\配送撿貨轉換.cs" />
     <Compile Include="廢棄\出貨匯入結構_夠麻吉.cs" />
-    <Compile Include="廢棄\出貨匯入結構_愛料理.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_ibonMart.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_PC商店街.cs" />
     <Compile Include="廢棄\回單號結構_創業家兄弟.cs" />
