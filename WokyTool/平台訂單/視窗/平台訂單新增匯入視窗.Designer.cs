@@ -58,6 +58,7 @@
             this.wACAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.摩天ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.奇摩ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.日翊ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
@@ -84,7 +85,7 @@
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.平台訂單新增匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.日翊ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.myfoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單新增匯入資料BindingSource)).BeginInit();
@@ -126,7 +127,8 @@
             this.wACAToolStripMenuItem,
             this.摩天ToolStripMenuItem,
             this.奇摩ToolStripMenuItem,
-            this.日翊ToolStripMenuItem});
+            this.日翊ToolStripMenuItem,
+            this.myfoneToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
             this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "匯入";
@@ -327,6 +329,13 @@
             this.奇摩ToolStripMenuItem.Text = "奇摩";
             this.奇摩ToolStripMenuItem.Click += new System.EventHandler(this.奇摩ToolStripMenuItem_Click);
             // 
+            // 日翊ToolStripMenuItem
+            // 
+            this.日翊ToolStripMenuItem.Name = "日翊ToolStripMenuItem";
+            this.日翊ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.日翊ToolStripMenuItem.Text = "日翊";
+            this.日翊ToolStripMenuItem.Click += new System.EventHandler(this.日翊ToolStripMenuItem_Click);
+            // 
             // 篩選ToolStripMenuItem
             // 
             this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
@@ -516,12 +525,12 @@
             // 
             this.平台訂單新增匯入資料BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單新增匯入資料);
             // 
-            // 日翊ToolStripMenuItem
+            // myfoneToolStripMenuItem
             // 
-            this.日翊ToolStripMenuItem.Name = "日翊ToolStripMenuItem";
-            this.日翊ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.日翊ToolStripMenuItem.Text = "日翊";
-            this.日翊ToolStripMenuItem.Click += new System.EventHandler(this.日翊ToolStripMenuItem_Click);
+            this.myfoneToolStripMenuItem.Name = "myfoneToolStripMenuItem";
+            this.myfoneToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.myfoneToolStripMenuItem.Text = "myfone";
+            this.myfoneToolStripMenuItem.Click += new System.EventHandler(this.myfoneToolStripMenuItem_Click);
             // 
             // 平台訂單新增匯入視窗
             // 
@@ -599,6 +608,7 @@
         private System.Windows.Forms.ToolStripMenuItem 摩天ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 奇摩ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 日翊ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem myfoneToolStripMenuItem;
 
     }
 }

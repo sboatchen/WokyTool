@@ -282,6 +282,7 @@
     <Compile Include="寄庫\轉換\寄庫匯入轉換_PCHome.cs" />
     <Compile Include="平台訂單\介面\平台訂單匯入處理介面.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_PayEasy.cs" />
+    <Compile Include="平台訂單\回單\平台訂單回單轉換_myfone.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_摩天.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_WACA.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_uDesign.cs" />
@@ -291,6 +292,7 @@
     <Compile Include="平台訂單\回單\平台訂單回單轉換_博客來.cs" />
     <Compile Include="平台訂單\控制\平台訂單資料管理器.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_奇摩.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_myfone.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_日翊.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_摩天.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_WACA.cs" />
@@ -577,7 +579,6 @@
     <Compile Include="廢棄\轉換\平台訂單自定義_一休.cs" />
     <Compile Include="廢棄\轉換\平台訂單自定義_Momo.cs" />
     <Compile Include="廢棄\轉換\平台訂單自定義_森森.cs" />
-    <Compile Include="廢棄\轉換\平台訂單自定義_myfone.cs" />
     <Compile Include="廢棄\轉換\平台訂單自定義_PC專櫃.cs" />
     <Compile Include="廢棄\轉換\平台訂單自定義_PC購物中心.cs" />
     <Compile Include="廢棄\轉換\平台訂單自定義_PC商店街.cs" />
@@ -1267,7 +1268,6 @@
     <Compile Include="廢棄\出貨匯入結構_夠麻吉.cs" />
     <Compile Include="廢棄\出貨匯入結構_愛料理.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_ibonMart.cs" />
-    <Compile Include="客製\回單轉換\平台訂單回單轉換_myfone.cs" />
     <Compile Include="客製\回單轉換\平台訂單回單轉換_PC商店街.cs" />
     <Compile Include="廢棄\回單號結構_創業家兄弟.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_百利市.cs" />
