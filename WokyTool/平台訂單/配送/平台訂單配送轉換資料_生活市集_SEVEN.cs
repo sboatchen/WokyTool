@@ -72,6 +72,10 @@ namespace WokyTool.平台訂單
                 if (string.IsNullOrEmpty(配送單號_))
                     return;
 
+                int 切割位置_ = 配送單號_.LastIndexOf(":");
+                if (切割位置_ != -1)
+                    配送單號_ = 配送單號_.Substring(切割位置_ + 1);
+
                 訊息管理器.獨體.訊息("讀出配送單號:" + 配送單號_);
 
                 var 符合資料列_ = 來源資料列.Where(Value => 配送單號_.Equals(Value.配送單號)).ToArray();
@@ -106,6 +110,10 @@ namespace WokyTool.平台訂單
                 string 配送單號_ = Pair_.Key.處理(PdfReader_, 頁索引_);
                 if (string.IsNullOrEmpty(配送單號_))
                     return;
+
+                int 切割位置_ = 配送單號_.LastIndexOf(":");
+                if (切割位置_ != -1)
+                    配送單號_ = 配送單號_.Substring(切割位置_ + 1);
 
                 訊息管理器.獨體.訊息("讀出配送單號:" + 配送單號_);
 
