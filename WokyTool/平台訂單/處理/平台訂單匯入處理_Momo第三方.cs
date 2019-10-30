@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using WokyTool.Common;
 using WokyTool.客戶;
 using WokyTool.客製;
 using WokyTool.配送;
@@ -11,8 +12,6 @@ namespace WokyTool.平台訂單
 {
     public class 平台訂單匯入處理_Momo第三方 : 平台訂單匯入處理介面, 可讀出介面_EXCEL<平台訂單新增匯入資料>
     {
-        private static string 尚未取得 = "尚未取得";
-
         public int 分頁索引 { get { return 1; } }
 
         public string 分頁名稱 { get { return null; } }
@@ -67,8 +66,8 @@ namespace WokyTool.平台訂單
                 客戶 = this.客戶,
 
                 姓名 = 姓名_,
-                手機 = 尚未取得,
-                電話 = 尚未取得,
+                手機 = 字串.尚未取得,
+                電話 = 字串.尚未取得,
                 地址 = 地址_,
 
                 商品識別 = 商品識別_,

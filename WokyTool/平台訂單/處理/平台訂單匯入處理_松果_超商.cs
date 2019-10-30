@@ -85,12 +85,13 @@ namespace WokyTool.平台訂單
 
         public override String 取得分組識別(平台訂單新增資料 資料_)
         {
-            return String.Format("{0}_{1}", this.GetType().Name, 資料_.配送公司);
+            throw new Exception("不該使用");
+            //return String.Format("{0}_{1}", this.GetType().Name, 資料_.配送公司);
         }
 
         public override IEnumerable<配送轉換資料> 配送轉換(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
-            var GroupQueue_ = 資料列舉_.GroupBy(Value => Value.配送分組);
+            var GroupQueue_ = 資料列舉_.GroupBy(Value => Value.配送公司);
 
             foreach (var Group_ in GroupQueue_)
             {

@@ -17,8 +17,8 @@ namespace WokyTool.平台訂單
 
         public 平台訂單配送轉換資料_超商(List<平台訂單新增資料> 來源資料列_)
         {
-            if (來源資料列_.Count == 0)
-                throw new Exception("併單數量為0");
+            //if (來源資料列_.Count == 0)
+            //    throw new Exception("併單數量為0");
 
             來源資料列 = 來源資料列_;
 
