@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -49,14 +50,19 @@ namespace WokyTool.通用
             list_.Add(時間.目前日期);
 
             string 資料夾_ = Path.GetDirectoryName(路徑_);
-            Boolean 是否為相對路徑_ = 資料夾_.Contains(':') == false;
+            Boolean 是否為相對路徑_ = 資料夾_.Contains(':') == false && 資料夾_.Contains("\\\\") == false;
             if (是否為相對路徑_)
                 list_.Add(資料夾_);
 
             if (null != 額外資料夾_ && 額外資料夾_.Length > 0)
                 list_.AddRange(額外資料夾_);
 
-            return System.IO.Path.Combine(list_.ToArray());
+            //訊息管理器.獨體.追蹤("備份路徑Source:" + JsonConvert.SerializeObject(list_, Formatting.Indented));
+
+            string 備份路徑_ = System.IO.Path.Combine(list_.ToArray());
+            //訊息管理器.獨體.追蹤("備份路徑:" + 備份路徑_);
+
+            return 備份路徑_;
         }
 
         public static bool 刪除(string 路徑_)
