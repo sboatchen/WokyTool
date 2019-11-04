@@ -61,6 +61,7 @@
             this.日翊ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myfoneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.泛科ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.愛料理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
@@ -87,7 +88,10 @@
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.平台訂單新增匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.愛料理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.蝦皮ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.蝦皮一般ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.蝦皮SEVENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.蝦皮全家ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單新增匯入資料BindingSource)).BeginInit();
@@ -132,7 +136,8 @@
             this.日翊ToolStripMenuItem,
             this.myfoneToolStripMenuItem,
             this.泛科ToolStripMenuItem,
-            this.愛料理ToolStripMenuItem});
+            this.愛料理ToolStripMenuItem,
+            this.蝦皮ToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
             this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "匯入";
@@ -169,7 +174,7 @@
             // Momo第三方ToolStripMenuItem
             // 
             this.Momo第三方ToolStripMenuItem.Name = "Momo第三方ToolStripMenuItem";
-            this.Momo第三方ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.Momo第三方ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.Momo第三方ToolStripMenuItem.Text = "第三方";
             this.Momo第三方ToolStripMenuItem.Click += new System.EventHandler(this.Momo第三方ToolStripMenuItem_Click);
             // 
@@ -235,21 +240,21 @@
             // 松果一般ToolStripMenuItem
             // 
             this.松果一般ToolStripMenuItem.Name = "松果一般ToolStripMenuItem";
-            this.松果一般ToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.松果一般ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.松果一般ToolStripMenuItem.Text = "一般";
             this.松果一般ToolStripMenuItem.Click += new System.EventHandler(this.松果一般ToolStripMenuItem_Click);
             // 
             // 松果sevenToolStripMenuItem
             // 
             this.松果sevenToolStripMenuItem.Name = "松果sevenToolStripMenuItem";
-            this.松果sevenToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.松果sevenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.松果sevenToolStripMenuItem.Text = "Seven";
             this.松果sevenToolStripMenuItem.Click += new System.EventHandler(this.松果sevenToolStripMenuItem_Click);
             // 
             // 松果全家ToolStripMenuItem
             // 
             this.松果全家ToolStripMenuItem.Name = "松果全家ToolStripMenuItem";
-            this.松果全家ToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.松果全家ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.松果全家ToolStripMenuItem.Text = "全家";
             this.松果全家ToolStripMenuItem.Click += new System.EventHandler(this.松果全家ToolStripMenuItem_Click);
             // 
@@ -266,21 +271,21 @@
             // 生活市集一般ToolStripMenuItem
             // 
             this.生活市集一般ToolStripMenuItem.Name = "生活市集一般ToolStripMenuItem";
-            this.生活市集一般ToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.生活市集一般ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.生活市集一般ToolStripMenuItem.Text = "一般";
             this.生活市集一般ToolStripMenuItem.Click += new System.EventHandler(this.生活市集一般ToolStripMenuItem_Click);
             // 
             // 生活市集SEVENToolStripMenuItem
             // 
             this.生活市集SEVENToolStripMenuItem.Name = "生活市集SEVENToolStripMenuItem";
-            this.生活市集SEVENToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.生活市集SEVENToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.生活市集SEVENToolStripMenuItem.Text = "SEVEN";
             this.生活市集SEVENToolStripMenuItem.Click += new System.EventHandler(this.生活市集SEVENToolStripMenuItem_Click);
             // 
             // 生活市集全家ToolStripMenuItem
             // 
             this.生活市集全家ToolStripMenuItem.Name = "生活市集全家ToolStripMenuItem";
-            this.生活市集全家ToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.生活市集全家ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.生活市集全家ToolStripMenuItem.Text = "全家";
             this.生活市集全家ToolStripMenuItem.Click += new System.EventHandler(this.生活市集全家ToolStripMenuItem_Click);
             // 
@@ -353,6 +358,13 @@
             this.泛科ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.泛科ToolStripMenuItem.Text = "泛科";
             this.泛科ToolStripMenuItem.Click += new System.EventHandler(this.泛科ToolStripMenuItem_Click);
+            // 
+            // 愛料理ToolStripMenuItem
+            // 
+            this.愛料理ToolStripMenuItem.Name = "愛料理ToolStripMenuItem";
+            this.愛料理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.愛料理ToolStripMenuItem.Text = "愛料理";
+            this.愛料理ToolStripMenuItem.Click += new System.EventHandler(this.愛料理ToolStripMenuItem_Click);
             // 
             // 篩選ToolStripMenuItem
             // 
@@ -543,12 +555,36 @@
             // 
             this.平台訂單新增匯入資料BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單新增匯入資料);
             // 
-            // 愛料理ToolStripMenuItem
+            // 蝦皮ToolStripMenuItem
             // 
-            this.愛料理ToolStripMenuItem.Name = "愛料理ToolStripMenuItem";
-            this.愛料理ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.愛料理ToolStripMenuItem.Text = "愛料理";
-            this.愛料理ToolStripMenuItem.Click += new System.EventHandler(this.愛料理ToolStripMenuItem_Click);
+            this.蝦皮ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.蝦皮一般ToolStripMenuItem,
+            this.蝦皮SEVENToolStripMenuItem,
+            this.蝦皮全家ToolStripMenuItem});
+            this.蝦皮ToolStripMenuItem.Name = "蝦皮ToolStripMenuItem";
+            this.蝦皮ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.蝦皮ToolStripMenuItem.Text = "蝦皮";
+            // 
+            // 蝦皮一般ToolStripMenuItem
+            // 
+            this.蝦皮一般ToolStripMenuItem.Name = "蝦皮一般ToolStripMenuItem";
+            this.蝦皮一般ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.蝦皮一般ToolStripMenuItem.Text = "一般";
+            this.蝦皮一般ToolStripMenuItem.Click += new System.EventHandler(this.蝦皮一般ToolStripMenuItem_Click);
+            // 
+            // 蝦皮SEVENToolStripMenuItem
+            // 
+            this.蝦皮SEVENToolStripMenuItem.Name = "蝦皮SEVENToolStripMenuItem";
+            this.蝦皮SEVENToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.蝦皮SEVENToolStripMenuItem.Text = "SEVEN";
+            this.蝦皮SEVENToolStripMenuItem.Click += new System.EventHandler(this.蝦皮SEVENToolStripMenuItem_Click);
+            // 
+            // 蝦皮全家ToolStripMenuItem
+            // 
+            this.蝦皮全家ToolStripMenuItem.Name = "蝦皮全家ToolStripMenuItem";
+            this.蝦皮全家ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.蝦皮全家ToolStripMenuItem.Text = "全家";
+            this.蝦皮全家ToolStripMenuItem.Click += new System.EventHandler(this.蝦皮全家ToolStripMenuItem_Click);
             // 
             // 平台訂單新增匯入視窗
             // 
@@ -629,6 +665,10 @@
         private System.Windows.Forms.ToolStripMenuItem myfoneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 泛科ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 愛料理ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 蝦皮ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 蝦皮一般ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 蝦皮SEVENToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 蝦皮全家ToolStripMenuItem;
 
     }
 }

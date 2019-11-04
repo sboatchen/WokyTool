@@ -69,7 +69,6 @@ namespace WokyTool.通用
                         {
                             return FindImageInPDFDictionary(tg);
                         }
-
                     }
                 }
             }

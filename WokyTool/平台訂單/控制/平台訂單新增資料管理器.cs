@@ -152,6 +152,18 @@ namespace WokyTool.平台訂單
                 case "愛料理":
                     處理器_ = new 平台訂單匯入處理_愛料理();
                     break;
+                case "蝦皮":
+                    switch (資料_.配送公司)
+                    {
+                        case 列舉.配送公司.全家:
+                        case 列舉.配送公司.SEVEN:
+                            處理器_ = new 平台訂單匯入處理_蝦皮_超商();
+                            break;
+                        default:
+                            處理器_ = new 平台訂單匯入處理_生活市集(); //@@
+                            break;
+                    }
+                    break;
                 default:
                     訊息管理器.獨體.錯誤("平台訂單自定義工廠::不支援 " + 名稱_);
                     return null;

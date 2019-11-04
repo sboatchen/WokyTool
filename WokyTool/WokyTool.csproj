@@ -301,6 +301,7 @@
     <Compile Include="平台訂單\處理\平台訂單匯入處理_WACA.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_citiesocial.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_uDesign.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_蝦皮_超商.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_神坊.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_博客來.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_PayEasy.cs" />
@@ -352,6 +353,7 @@
     <Compile Include="平台訂單\資料\平台訂單資料.cs" />
     <Compile Include="平台訂單\資料\平台訂單新增資料篩選.cs" />
     <Compile Include="平台訂單\配送\平台訂單配送轉換資料_Momo_三方.cs" />
+    <Compile Include="平台訂單\配送\平台訂單配送轉換資料_蝦皮_全家.cs" />
     <Compile Include="平台訂單\配送\平台訂單配送轉換資料_超商.cs" />
     <Compile Include="庫存\控制\商品庫存封存資料管理器.cs" />
     <Compile Include="庫存\控制\物品庫存封存資料管理器.cs" />
