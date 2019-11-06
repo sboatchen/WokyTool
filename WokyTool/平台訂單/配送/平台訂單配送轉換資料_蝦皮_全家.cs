@@ -11,7 +11,7 @@ namespace WokyTool.平台訂單
 {
     public class 平台訂單配送轉換資料_蝦皮_全家 : 平台訂單配送轉換資料_超商
     {
-        protected class 讀出元件組
+        private class 讀出元件組
         {
             public PDF圖片字串讀出元件 配送單號讀出元件;
             public PDF圖片字串讀出元件 消費者讀出元件;
@@ -40,7 +40,7 @@ namespace WokyTool.平台訂單
                     {
                         配送單號讀出元件 = new PDF字串讀出元件(new Rectangle(360, 595, 420, 610)),
                         消費者讀出元件 = new PDF字串讀出元件(new Rectangle(350, 625, 400, 645))
-                    }, new PDF字串寫入元件(new Rectangle(305, 785, 595, 830), 常數.通用字體));
+                    }, new PDF字串寫入元件(new Rectangle(305, 785, 595, 830), 常數.通用字體));*/
 
                     _設定資料書.Add(new 讀出元件組
                     {
@@ -48,7 +48,7 @@ namespace WokyTool.平台訂單
                         消費者讀出元件 = new PDF字串讀出元件(new Rectangle(80, 275, 130, 290))
                     }, new PDF字串寫入元件(new Rectangle(5, 0, 295, 45), 常數.通用字體));
 
-                    _設定資料書.Add(new 讀出元件組
+                    /*_設定資料書.Add(new 讀出元件組
                     {
                         配送單號讀出元件 = new PDF字串讀出元件(new Rectangle(360, 240, 420, 255)),
                         消費者讀出元件 = new PDF字串讀出元件(new Rectangle(350, 275, 400, 290))
