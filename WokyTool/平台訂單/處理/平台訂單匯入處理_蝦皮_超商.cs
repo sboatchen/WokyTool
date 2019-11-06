@@ -101,7 +101,7 @@ namespace WokyTool.平台訂單
 
         public override IEnumerable<配送轉換資料> 配送轉換(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
-            /*var GroupQueue_ = 資料列舉_.GroupBy(Value => Value.配送分組);
+            /*var GroupQueue_ = 資料列舉_.GroupBy(Value => Value.配送公司);
 
             foreach (var Group_ in GroupQueue_)
             {
