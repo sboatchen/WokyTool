@@ -293,7 +293,9 @@ namespace WokyTool.平台訂單
 
         private void 蝦皮一般ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            平台訂單匯入處理_蝦皮 轉換器_ = new 平台訂單匯入處理_蝦皮();
+            List<平台訂單新增匯入資料> 資料列_ = 檔案.詢問並讀出(轉換器_);
+            匯入完成(轉換器_, 資料列_);
         }
 
         private void 蝦皮SEVENToolStripMenuItem_Click(object sender, EventArgs e)

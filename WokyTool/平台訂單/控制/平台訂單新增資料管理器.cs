@@ -160,7 +160,7 @@ namespace WokyTool.平台訂單
                             處理器_ = new 平台訂單匯入處理_蝦皮_超商();
                             break;
                         default:
-                            處理器_ = new 平台訂單匯入處理_生活市集(); //@@
+                            處理器_ = new 平台訂單匯入處理_蝦皮();
                             break;
                     }
                     break;
