@@ -18,7 +18,20 @@ namespace WokyTool.平台訂單
 
         public int 資料結尾忽略行數 { get { return 0; } }
 
-        public string 密碼 { get { return "TLW1441791WZ9"; } }
+        public string 密碼 
+        { 
+            get {
+                switch (公司.名稱)
+                {
+                    case "田和豐":
+                        return "TLW1441791WZ9";
+                    case "午洋":
+                        return "TLW1445041WZ9";
+                    default:
+                        throw new Exception("平台訂單匯入處理_特力屋 不支援公司 " + 公司.名稱);
+                }
+            } 
+        }
 
         public 平台訂單匯入處理_特力屋()
         {
@@ -35,7 +48,7 @@ namespace WokyTool.平台訂單
             string 地址_ = 資料列_[16].轉成字串();
 
             string 商品識別_ = 資料列_[5].轉成字串();
-            商品資料 商品_ = 商品資料管理器.獨體.取得(客戶.編號, 商品識別_);
+            商品資料 商品_ = 商品資料管理器.獨體.取得(客戶.編號, 公司.編號, 商品識別_);
 
             int 數量_ = 資料列_[9].轉成整數();
 

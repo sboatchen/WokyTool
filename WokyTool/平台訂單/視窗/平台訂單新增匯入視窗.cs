@@ -143,13 +143,6 @@ namespace WokyTool.平台訂單
             匯入完成(轉換器_, 資料列_);
         }
 
-        private void 特力屋ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            平台訂單匯入處理_特力屋 轉換器_ = new 平台訂單匯入處理_特力屋();
-            List<平台訂單新增匯入資料> 資料列_ = 檔案.詢問並讀出(轉換器_);
-            匯入完成(轉換器_, 資料列_);
-        }
-
         private void 松果一般ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             平台訂單匯入處理_松果 轉換器_ = new 平台訂單匯入處理_松果();
@@ -311,6 +304,25 @@ namespace WokyTool.平台訂單
         {
             平台訂單匯入處理_蝦皮_超商 轉換器_ = new 平台訂單匯入處理_蝦皮_超商();
             轉換器_.配送公司 = 列舉.配送公司.全家;
+
+            List<平台訂單新增匯入資料> 資料列_ = 檔案.詢問並讀出(轉換器_);
+            匯入完成(轉換器_, 資料列_);
+        }
+
+        private void 特力屋田和豐ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單匯入處理_特力屋 轉換器_ = new 平台訂單匯入處理_特力屋();
+            轉換器_.公司 = 公司資料管理器.獨體.取得("田和豐");
+
+            List<平台訂單新增匯入資料> 資料列_ = 檔案.詢問並讀出(轉換器_);
+            匯入完成(轉換器_, 資料列_);
+
+        }
+
+        private void 特力屋午洋ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            平台訂單匯入處理_特力屋 轉換器_ = new 平台訂單匯入處理_特力屋();
+            轉換器_.公司 = 公司資料管理器.獨體.取得("午洋");
 
             List<平台訂單新增匯入資料> 資料列_ = 檔案.詢問並讀出(轉換器_);
             匯入完成(轉換器_, 資料列_);
