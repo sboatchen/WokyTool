@@ -15,29 +15,29 @@ namespace WokyTool.發票
 
         public string 密碼 { get { return null; } }
 
-        private List<發票匯入資料> _資料列;
+        public List<發票匯入資料> 資料列;
 
         public int 資料數量
         {
             get
             {
-                return _資料列.Count;
+                return 資料列.Count;
             }
         }
 
         public 發票匯出轉換()
         {
-            _資料列 = new List<發票匯入資料>();
+            資料列 = new List<發票匯入資料>();
         }
 
         public void 新增(發票匯入資料 資料_)
         {
-            _資料列.Add(資料_);
+            資料列.Add(資料_);
         }
 
         public void 清除()
         {
-            _資料列.Clear();
+            資料列.Clear();
         }
 
         public void 寫入(Application App_)
@@ -63,7 +63,7 @@ namespace WokyTool.發票
 
             int 目前行數_ = 2;
             decimal 總計_ = 0;
-            foreach (發票匯入資料 資料_ in _資料列)
+            foreach (發票匯入資料 資料_ in 資料列)
             {
                 App_.Cells[目前行數_, 1] = 資料_.發票號碼;
                 App_.Cells[目前行數_, 2] = 資料_.註記;

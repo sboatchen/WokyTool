@@ -60,6 +60,7 @@ namespace WokyTool.發票
             int 目標數值_ = -1;
             int 最大數值_ = -1;
             發票匯出轉換 轉換_ = new 發票匯出轉換();
+            發票總覽匯出轉換 總覽轉換_ = new 發票總覽匯出轉換();
             String 字軌_ = null;
             foreach (var Group_ in Groups_)
             {
@@ -86,6 +87,7 @@ namespace WokyTool.發票
                         string 標題_ = String.Format("{0}{1, 0:D4}_{0}{2, 0:D4}", 字軌_, 最小數值_, 最大數值_);  // 檔名為a欄第一個號碼-a欄最後一個號碼, 範例: FX40239300-FX40239349
 
                         檔案.詢問並寫入(標題_, 轉換_);
+                        總覽轉換_.新增(標題_, 轉換_);
 
                         最小數值_ = 最大數值_ + 1;
                         最大數值_ = 最小數值_ + 49;
@@ -119,19 +121,13 @@ namespace WokyTool.發票
                 {
                     string 標題_ = String.Format("{0}{1, 0:D4}_{0}{2, 0:D4}", 字軌_, 最小數值_, 目標數值_ - 1);  // 最後一個檔案尾數為檔案裡的最後一個號碼不一定為49或99
                     檔案.詢問並寫入(標題_, 轉換_);
+                    總覽轉換_.新增(標題_, 轉換_);
                 }
             }
 
+            檔案.詢問並寫入("發票總覽", 總覽轉換_);
+
             訊息管理器.獨體.通知("處理完畢");
-        }
-
-        private void 補空白()
-        {
- 
-        }
-
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
         }
 
         /********************************/

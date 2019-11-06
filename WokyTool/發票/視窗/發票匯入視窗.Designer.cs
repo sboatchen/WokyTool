@@ -30,12 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.樣板ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.匯入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.發票匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.發票號碼DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.註記DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.格式代號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,9 +49,15 @@
             this.載具號碼2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.總備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.發票匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.樣板ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.匯入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.發票匯入資料BindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -92,52 +92,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1514, 686);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.樣板ToolStripMenuItem,
-            this.匯入ToolStripMenuItem,
-            this.檢查ToolStripMenuItem,
-            this.匯出ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1514, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // 樣板ToolStripMenuItem
-            // 
-            this.樣板ToolStripMenuItem.Name = "樣板ToolStripMenuItem";
-            this.樣板ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.樣板ToolStripMenuItem.Text = "樣板";
-            this.樣板ToolStripMenuItem.Click += new System.EventHandler(this.樣板ToolStripMenuItem_Click);
-            // 
-            // 匯入ToolStripMenuItem
-            // 
-            this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
-            this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.匯入ToolStripMenuItem.Text = "匯入";
-            this.匯入ToolStripMenuItem.Click += new System.EventHandler(this.匯入ToolStripMenuItem_Click);
-            // 
-            // 檢查ToolStripMenuItem
-            // 
-            this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
-            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.檢查ToolStripMenuItem.Text = "檢查";
-            this.檢查ToolStripMenuItem.Click += new System.EventHandler(this.檢查ToolStripMenuItem_Click);
-            // 
-            // 匯出ToolStripMenuItem
-            // 
-            this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
-            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.匯出ToolStripMenuItem.Text = "匯出";
-            this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
-            // 
-            // 發票匯入資料BindingSource
-            // 
-            this.發票匯入資料BindingSource.DataSource = typeof(WokyTool.發票.發票匯入資料);
             // 
             // 發票號碼DataGridViewTextBoxColumn
             // 
@@ -253,6 +207,51 @@
             this.錯誤訊息DataGridViewTextBoxColumn.HeaderText = "錯誤訊息";
             this.錯誤訊息DataGridViewTextBoxColumn.Name = "錯誤訊息DataGridViewTextBoxColumn";
             // 
+            // 發票匯入資料BindingSource
+            // 
+            this.發票匯入資料BindingSource.DataSource = typeof(WokyTool.發票.發票匯入資料);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.樣板ToolStripMenuItem,
+            this.匯入ToolStripMenuItem,
+            this.檢查ToolStripMenuItem,
+            this.匯出ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1514, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 樣板ToolStripMenuItem
+            // 
+            this.樣板ToolStripMenuItem.Name = "樣板ToolStripMenuItem";
+            this.樣板ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.樣板ToolStripMenuItem.Text = "樣板";
+            this.樣板ToolStripMenuItem.Click += new System.EventHandler(this.樣板ToolStripMenuItem_Click);
+            // 
+            // 匯入ToolStripMenuItem
+            // 
+            this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
+            this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.匯入ToolStripMenuItem.Text = "匯入";
+            this.匯入ToolStripMenuItem.Click += new System.EventHandler(this.匯入ToolStripMenuItem_Click);
+            // 
+            // 檢查ToolStripMenuItem
+            // 
+            this.檢查ToolStripMenuItem.Name = "檢查ToolStripMenuItem";
+            this.檢查ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.檢查ToolStripMenuItem.Text = "檢查";
+            this.檢查ToolStripMenuItem.Click += new System.EventHandler(this.檢查ToolStripMenuItem_Click);
+            // 
+            // 匯出ToolStripMenuItem
+            // 
+            this.匯出ToolStripMenuItem.Name = "匯出ToolStripMenuItem";
+            this.匯出ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.匯出ToolStripMenuItem.Text = "匯出";
+            this.匯出ToolStripMenuItem.Click += new System.EventHandler(this.匯出ToolStripMenuItem_Click);
+            // 
             // 發票匯入視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -264,9 +263,9 @@
             this.Name = "發票匯入視窗";
             this.Text = "發票匯入視窗";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.發票匯入資料BindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.發票匯入資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

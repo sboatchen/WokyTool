@@ -77,10 +77,10 @@ namespace WokyTool.平台訂單
                 switch (資料_.配送公司)
                 {
                     case 列舉.配送公司.全速配:
-                        App_.Cells[目前行數_, 28] = 全速配;
+                        App_.Cells[目前行數_, 26] = 全速配;
                         break;
                     case 列舉.配送公司.宅配通:
-                        App_.Cells[目前行數_, 28] = 宅配通;
+                        App_.Cells[目前行數_, 26] = 宅配通;
                         break;
                     default:
                         throw new Exception("平台訂單回單轉換_UDN 不支援配送公司 " + 資料_.配送公司.ToString());
