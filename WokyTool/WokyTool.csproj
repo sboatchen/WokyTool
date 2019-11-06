@@ -354,6 +354,7 @@
     <Compile Include="平台訂單\資料\平台訂單資料.cs" />
     <Compile Include="平台訂單\資料\平台訂單新增資料篩選.cs" />
     <Compile Include="平台訂單\配送\平台訂單配送轉換資料_Momo_三方.cs" />
+    <Compile Include="平台訂單\配送\平台訂單配送轉換資料_蝦皮_SEVEN.cs" />
     <Compile Include="平台訂單\配送\平台訂單配送轉換資料_蝦皮_全家.cs" />
     <Compile Include="平台訂單\配送\平台訂單配送轉換資料_超商.cs" />
     <Compile Include="庫存\控制\商品庫存封存資料管理器.cs" />
@@ -443,6 +444,7 @@
     <Compile Include="活動\資料\活動資料篩選.cs" />
     <Compile Include="活動\資料\活動匯入資料.cs" />
     <Compile Include="活動\轉換\活動張貼匯出轉換.cs" />
+    <Compile Include="發票\轉換\發票總覽匯出轉換.cs" />
     <Compile Include="通用\介面\可整理介面.cs" />
     <Compile Include="通用\介面\可處理介面.cs" />
     <Compile Include="通用\檢查\視窗\錯誤總覽視窗.cs">
