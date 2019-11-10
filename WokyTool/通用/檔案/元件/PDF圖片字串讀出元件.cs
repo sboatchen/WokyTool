@@ -27,6 +27,7 @@ namespace WokyTool.通用
             PdfDictionary pg = PdfReader_.GetPageN(頁索引_);
 
             // recursively search pages, forms and groups for images.
+            //Console.WriteLine("圖片數量:" + FindImageInPDFDictionary(pg).Count());
             PdfObject obj = FindImageInPDFDictionary(pg).Skip(索引).DefaultIfEmpty(null).First();
             if (obj != null)
             {
