@@ -34,7 +34,9 @@ namespace WokyTool.盤點
             if (string.IsNullOrEmpty(物品識別_))
                 yield break;
 
-            int 數量_ = 資料列_[3].轉成整數();
+            int 數量_ = 資料列_[6].轉成整數();
+            if(數量_ == 0)
+                yield break;
 
             盤點更新資料 資料_ = new 盤點更新資料();
             資料_.物品識別 = 物品識別_;

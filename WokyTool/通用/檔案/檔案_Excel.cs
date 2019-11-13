@@ -253,13 +253,15 @@ namespace WokyTool.通用
                 // 取得資料範圍
                 Range 資料範圍_ = 分頁_.UsedRange;
 
-                //int 資料總數_ = 資料範圍_.Rows.Count;
+                int 資料總數_ = 資料範圍_.Rows.Count;
                 //if (資料總數_ >= 5000)
                 //    throw new Exception("偵測到檔案行數超過5000行，請確認");
 
                 int 欄位總數_ = 資料範圍_.Columns.Count;
                 if (欄位總數_ >= 200)
-                    throw new Exception("偵測到檔案列數超過200列，請確認");
+                    throw new Exception("偵測到檔案欄數超過200列，請確認");
+
+                訊息管理器.獨體.訊息("EXCEL檔案, 欄數:" + 欄位總數_ + ", 行數:" + 資料總數_);
 
                 var 資料暫存_ = 轉換_.處理(資料範圍_);
                 List<T> 資料列_ = 轉換_.讀出(資料暫存_).ToList();

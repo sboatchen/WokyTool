@@ -41,6 +41,8 @@ namespace WokyTool.盤點
                     continue;
 
                 int 數量_ = 資料列_[物品索引_+3].轉成整數();
+                if (數量_ == 0)
+                    continue;
 
                 盤點更新資料 資料_ = new 盤點更新資料();
                 資料_.物品識別 = 物品識別_;
@@ -49,7 +51,6 @@ namespace WokyTool.盤點
                 //Console.WriteLine(資料_.ToString(false));
 
                 yield return 資料_;
-
             }
         }
     }
