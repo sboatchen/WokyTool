@@ -3,6 +3,7 @@ using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Tesseract;
 using WokyTool.Common;
 using WokyTool.物品;
 using WokyTool.通用;
@@ -13,7 +14,8 @@ namespace WokyTool.平台訂單
     {
         private class 讀出元件組
         {
-            public PDF圖片字串讀出元件 配送單號讀出元件;
+            public PDF圖片數值讀出元件 配送單號讀出元件;
+            public PDF圖片字串讀出元件 消費者讀出元件;
         }
 
         private static PDF拷貝元件 拷貝資料 = new PDF拷貝元件(new Rectangle(0, 90, 595, 810), 0, -30);
@@ -31,22 +33,26 @@ namespace WokyTool.平台訂單
 
                     _設定資料書.Add(new 讀出元件組
                     {
-                        配送單號讀出元件 = new PDF圖片字串讀出元件(new System.Drawing.Rectangle(80, 280, 100, 15), 0),
+                        配送單號讀出元件 = new PDF圖片數值讀出元件(new Rect(80, 280, 100, 15), 0),
+                        消費者讀出元件 = new PDF圖片字串讀出元件(new Rect(70, 230, 60, 20), 0),
                     }, new PDF字串寫入元件(new Rectangle(5, 780, 295, 830), 常數.通用字體));
 
                    _設定資料書.Add(new 讀出元件組
                     {
-                        配送單號讀出元件 = new PDF圖片字串讀出元件(new System.Drawing.Rectangle(460, 280, 100, 15), 0),
+                        配送單號讀出元件 = new PDF圖片數值讀出元件(new Rect(460, 280, 100, 15), 0),
+                        消費者讀出元件 = new PDF圖片字串讀出元件(new Rect(445, 230, 60, 20), 0),
                     }, new PDF字串寫入元件(new Rectangle(305, 780, 595, 830), 常數.通用字體));
 
                    _設定資料書.Add(new 讀出元件組
                    {
-                       配送單號讀出元件 = new PDF圖片字串讀出元件(new System.Drawing.Rectangle(80, 280, 100, 15), 1),
+                       配送單號讀出元件 = new PDF圖片數值讀出元件(new Rect(80, 280, 100, 15), 1),
+                       消費者讀出元件 = new PDF圖片字串讀出元件(new Rect(70, 230, 60, 20), 1),
                    }, new PDF字串寫入元件(new Rectangle(5, 10, 295, 60), 常數.通用字體));
 
                    _設定資料書.Add(new 讀出元件組
                    {
-                       配送單號讀出元件 = new PDF圖片字串讀出元件(new System.Drawing.Rectangle(460, 280, 100, 15), 1),
+                       配送單號讀出元件 = new PDF圖片數值讀出元件(new Rect(460, 280, 100, 15), 1),
+                       消費者讀出元件 = new PDF圖片字串讀出元件(new Rect(445, 230, 60, 20), 1),
                    }, new PDF字串寫入元件(new Rectangle(305, 10, 595, 60), 常數.通用字體));
                 }
 
@@ -76,6 +82,9 @@ namespace WokyTool.平台訂單
 
                 訊息管理器.獨體.訊息("配送單號:" + 配送單號_);
 
+                string 消費者_ = Pair_.Key.消費者讀出元件.處理(PdfReader_, 頁索引_);
+                Console.WriteLine("消費者 " + 消費者_);
+
                 var 符合資料列_ = 來源資料列.Where(Value => 配送單號_.Equals(Value.配送單號)).ToArray();
                 if (符合資料列_.Length == 0)
                 {
@@ -86,7 +95,12 @@ namespace WokyTool.平台訂單
                 {
                     物品合併資料 物品合併資料_ = new 物品合併資料();
                     foreach (平台訂單新增資料 資料_ in 符合資料列_)
+                    {
                         物品合併資料_.新增(資料_);
+
+                        資料_.BeginEdit();
+                        資料_.姓名 = 消費者_;
+                    }
 
                     Pair_.Value.處理(PdfWriter_, 物品合併資料_.ToString());
                 }
@@ -102,8 +116,8 @@ namespace WokyTool.平台訂單
                 string 配送單號_ = Pair_.Key.配送單號讀出元件.處理(PdfReader_, 頁索引_);
                 Console.WriteLine("配送單號 " + 配送單號_);
 
-                //string 消費者_ = Pair_.Key.消費者讀出元件.處理(PdfReader_, 頁索引_);
-                //Console.WriteLine("消費者 " + 消費者_);
+                string 消費者_ = Pair_.Key.消費者讀出元件.處理(PdfReader_, 頁索引_);
+                Console.WriteLine("消費者 " + 消費者_);
 
                 Pair_.Value.處理(PdfWriter_, 字串.多字測試);
             }

@@ -2,6 +2,7 @@
 using iTextSharp.text.pdf;
 using System.Collections.Generic;
 using System.Linq;
+using Tesseract;
 using WokyTool.Common;
 using WokyTool.物品;
 using WokyTool.通用;
@@ -22,10 +23,10 @@ namespace WokyTool.平台訂單
                     // 讀出 訂單編號
                     // 寫入 物品組成
                     _設定資料書 = new Dictionary<PDF圖片字串讀出元件, PDF字串寫入元件>();
-                    _設定資料書.Add(new PDF圖片字串讀出元件(new System.Drawing.Rectangle(435, 200, 265, 50)), new PDF字串寫入元件(new Rectangle(5, 785, 295, 830), 常數.通用字體));
-                    _設定資料書.Add(new PDF圖片字串讀出元件(new System.Drawing.Rectangle(1685, 200, 265, 50)), new PDF字串寫入元件(new Rectangle(305, 785, 595, 830), 常數.通用字體));
-                    _設定資料書.Add(new PDF圖片字串讀出元件(new System.Drawing.Rectangle(435, 1940, 265, 50)), new PDF字串寫入元件(new Rectangle(5, 0, 295, 45), 常數.通用字體));
-                    _設定資料書.Add(new PDF圖片字串讀出元件(new System.Drawing.Rectangle(1685, 1940, 265, 50)), new PDF字串寫入元件(new Rectangle(305, 0, 595, 45), 常數.通用字體));
+                    _設定資料書.Add(new PDF圖片字串讀出元件(new Rect(435, 200, 265, 50)), new PDF字串寫入元件(new Rectangle(5, 785, 295, 830), 常數.通用字體));
+                    _設定資料書.Add(new PDF圖片字串讀出元件(new Rect(1685, 200, 265, 50)), new PDF字串寫入元件(new Rectangle(305, 785, 595, 830), 常數.通用字體));
+                    _設定資料書.Add(new PDF圖片字串讀出元件(new Rect(435, 1940, 265, 50)), new PDF字串寫入元件(new Rectangle(5, 0, 295, 45), 常數.通用字體));
+                    _設定資料書.Add(new PDF圖片字串讀出元件(new Rect(1685, 1940, 265, 50)), new PDF字串寫入元件(new Rectangle(305, 0, 595, 45), 常數.通用字體));
                 }
 
                 return _設定資料書;

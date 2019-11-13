@@ -1,7 +1,7 @@
-﻿using IronOcr;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Tesseract;
 
 namespace WokyTool.測試
 {
@@ -20,28 +20,20 @@ namespace WokyTool.測試
             if (OFD_.ShowDialog() != DialogResult.OK)
                 return;
 
-            var Ocr = new AutoOcr();
+            Bitmap bit = new Bitmap(Image.FromFile(OFD_.FileName));
 
+            using (TesseractEngine OCR_ = new TesseractEngine("./tessdata", "eng"))
             {
-                Rectangle 範圍_ = new Rectangle(435, 200, 265, 50);
-                var Result = Ocr.Read(OFD_.FileName, 範圍_);
-                Console.WriteLine(Result.Text);
+                OCR_.SetVariable("tessedit_char_whitelist", "0123456789");
+
+                using (Page page = OCR_.Process(bit))
+                {
+                    string str = page.GetText();//識別後的內容
+
+                    Console.WriteLine(str);
+                }
             }
-            {
-                Rectangle 範圍_ = new Rectangle(1685, 200, 265, 50);
-                var Result = Ocr.Read(OFD_.FileName, 範圍_);
-                Console.WriteLine(Result.Text);
-            }
-            {
-                Rectangle 範圍_ = new Rectangle(435, 1940, 265, 50);
-                var Result = Ocr.Read(OFD_.FileName, 範圍_);
-                Console.WriteLine(Result.Text);
-            }
-            {
-                Rectangle 範圍_ = new Rectangle(1685, 1940, 265, 50);
-                var Result = Ocr.Read(OFD_.FileName, 範圍_);
-                Console.WriteLine(Result.Text);
-            }
+
             Console.WriteLine("@@@");
         }
     }
