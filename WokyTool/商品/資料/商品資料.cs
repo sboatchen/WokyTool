@@ -155,15 +155,15 @@ namespace WokyTool.商品
             }
         }
 
-        public decimal 取得自訂售價(string 自訂索引_)
+        public decimal 取得售價(string 索引_)
         {
-            if(自訂售價書 == null)
-                return 售價;
+            if (自訂售價書 == null)
+                return 0;
 
-            decimal 自訂售價_ = 0;
-            if(自訂售價書.TryGetValue(自訂索引_, out 自訂售價_))
-                return 自訂售價_;
-            return 售價;
+            decimal 售價_ = 售價;
+            自訂售價書.TryGetValue(索引_, out 售價_);
+
+            return 售價_;
         }
 
         /********************************/
@@ -257,6 +257,7 @@ namespace WokyTool.商品
                 物品合併資料.共用.清除();
                 物品合併資料.共用.新增(this);
 
+                //@@
                 組成字串 = 物品合併資料.共用.ToString();
                 成本 = 物品合併資料.共用.成本;
                 體積 = 物品合併資料.共用.體積;

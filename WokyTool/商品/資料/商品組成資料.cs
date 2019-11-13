@@ -8,6 +8,12 @@ namespace WokyTool.商品
     public class 商品組成資料 : 基本資料
     {
         [JsonProperty]
+        public int 群組 { get; set; }
+
+        [JsonProperty]
+        public string 規格 { get; set; }
+
+        [JsonProperty]
         public int 物品編號
         {
             get

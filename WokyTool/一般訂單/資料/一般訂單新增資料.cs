@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using WokyTool.Common;
 using WokyTool.公司;
@@ -128,26 +129,7 @@ namespace WokyTool.一般訂單
         {
             get
             {
-                bool? Flag_ = null;
-
-                if (null == 組成列 || 0 == 組成列.Count)
-                    throw new Exception("組成列為0:");
-
-                foreach (一般訂單新增組成資料 組成資料_ in 組成列)
-                {
-                    if (Flag_ == null)
-                    {
-                        Flag_ = 組成資料_.數量 < 0;
-                    }
-                    else
-                    {
-                        bool Temp_ = 組成資料_.數量 < 0;
-                        if (Flag_ != Temp_)
-                            throw new Exception("數量不皆為正或負");
-                    }
-                }
-
-                return (bool)Flag_;
+                return 組成列.Where(Value => Value.數量 < 0).Count() > 0;
             }
         }
 

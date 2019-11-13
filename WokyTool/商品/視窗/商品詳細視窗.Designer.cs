@@ -54,8 +54,6 @@ namespace WokyTool.商品
             this.label1 = new System.Windows.Forms.Label();
             this.物品 = new WokyTool.物品.物品選取元件();
             this.dataGridView1 = new WokyTool.通用.MyDataGridView();
-            this.物品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品組成資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.新增 = new System.Windows.Forms.Button();
@@ -65,6 +63,12 @@ namespace WokyTool.商品
             this.新版頁索引元件1 = new WokyTool.通用.新版頁索引元件();
             this.label15 = new System.Windows.Forms.Label();
             this.品牌 = new WokyTool.物品.物品品牌選取元件();
+            this.群組DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.規格DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.物品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.體積DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.利潤)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.體積)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.成本)).BeginInit();
@@ -332,28 +336,18 @@ namespace WokyTool.商品
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.群組DataGridViewTextBoxColumn,
+            this.規格DataGridViewTextBoxColumn,
             this.物品名稱DataGridViewTextBoxColumn,
-            this.數量DataGridViewTextBoxColumn});
+            this.數量DataGridViewTextBoxColumn,
+            this.成本DataGridViewTextBoxColumn,
+            this.體積DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.商品組成資料BindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(15, 184);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(549, 248);
+            this.dataGridView1.Size = new System.Drawing.Size(945, 248);
             this.dataGridView1.TabIndex = 99;
-            // 
-            // 物品名稱DataGridViewTextBoxColumn
-            // 
-            this.物品名稱DataGridViewTextBoxColumn.DataPropertyName = "物品名稱";
-            this.物品名稱DataGridViewTextBoxColumn.HeaderText = "物品";
-            this.物品名稱DataGridViewTextBoxColumn.Name = "物品名稱DataGridViewTextBoxColumn";
-            this.物品名稱DataGridViewTextBoxColumn.ReadOnly = true;
-            this.物品名稱DataGridViewTextBoxColumn.Width = 400;
-            // 
-            // 數量DataGridViewTextBoxColumn
-            // 
-            this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
-            this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
-            this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
             // 
             // 商品組成資料BindingSource
             // 
@@ -444,11 +438,51 @@ namespace WokyTool.商品
             this.品牌.TabIndex = 104;
             this.品牌.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
+            // 群組DataGridViewTextBoxColumn
+            // 
+            this.群組DataGridViewTextBoxColumn.DataPropertyName = "群組";
+            this.群組DataGridViewTextBoxColumn.HeaderText = "群組";
+            this.群組DataGridViewTextBoxColumn.Name = "群組DataGridViewTextBoxColumn";
+            // 
+            // 規格DataGridViewTextBoxColumn
+            // 
+            this.規格DataGridViewTextBoxColumn.DataPropertyName = "規格";
+            this.規格DataGridViewTextBoxColumn.HeaderText = "規格";
+            this.規格DataGridViewTextBoxColumn.Name = "規格DataGridViewTextBoxColumn";
+            // 
+            // 物品名稱DataGridViewTextBoxColumn
+            // 
+            this.物品名稱DataGridViewTextBoxColumn.DataPropertyName = "物品名稱";
+            this.物品名稱DataGridViewTextBoxColumn.HeaderText = "物品";
+            this.物品名稱DataGridViewTextBoxColumn.Name = "物品名稱DataGridViewTextBoxColumn";
+            this.物品名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.物品名稱DataGridViewTextBoxColumn.Width = 400;
+            // 
+            // 數量DataGridViewTextBoxColumn
+            // 
+            this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
+            this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
+            this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
+            // 
+            // 成本DataGridViewTextBoxColumn
+            // 
+            this.成本DataGridViewTextBoxColumn.DataPropertyName = "成本";
+            this.成本DataGridViewTextBoxColumn.HeaderText = "成本";
+            this.成本DataGridViewTextBoxColumn.Name = "成本DataGridViewTextBoxColumn";
+            this.成本DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 體積DataGridViewTextBoxColumn
+            // 
+            this.體積DataGridViewTextBoxColumn.DataPropertyName = "體積";
+            this.體積DataGridViewTextBoxColumn.HeaderText = "體積";
+            this.體積DataGridViewTextBoxColumn.Name = "體積DataGridViewTextBoxColumn";
+            this.體積DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // 商品詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 583);
+            this.ClientSize = new System.Drawing.Size(1069, 583);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.品牌);
             this.Controls.Add(this.新版頁索引元件1);
@@ -530,9 +564,13 @@ namespace WokyTool.商品
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown 進價;
         private 新版頁索引元件 新版頁索引元件1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 物品名稱DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label15;
         private 物品.物品品牌選取元件 品牌;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 群組DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 規格DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 物品名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 成本DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 體積DataGridViewTextBoxColumn;
     }
 }
