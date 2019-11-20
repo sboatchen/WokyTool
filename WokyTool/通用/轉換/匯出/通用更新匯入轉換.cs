@@ -88,7 +88,7 @@ namespace WokyTool.通用
                         {
                             string 值_ = TValue[資料索引_];
                             if (string.IsNullOrEmpty(值_))
-                                欄位_.SetValue(TSource, 0);
+                                欄位_.SetValue(TSource, 0M);
                             else
                                 欄位_.SetValue(TSource, Decimal.Parse(值_));
 
