@@ -16,7 +16,14 @@ namespace WokyTool.進貨
             get { return _類型識別; }
             set {
                 _類型識別 = value;
-                轉換.類型 = (列舉.進貨類型)Enum.Parse(typeof(列舉.進貨類型), value);
+                try 
+                {
+                    轉換.類型 = (列舉.進貨類型)Enum.Parse(typeof(列舉.進貨類型), value);
+                }
+                catch
+                {
+                   轉換.類型 = 列舉.進貨類型.錯誤;
+                }
             }
         }
 

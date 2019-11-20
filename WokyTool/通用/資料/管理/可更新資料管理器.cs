@@ -58,5 +58,22 @@ namespace WokyTool.通用
             if (是否自動存檔)
                 記錄器.儲存();
         }
+
+        public override void 合法檢查(可檢查介面 檢查器_)
+        {
+            可檢查介面 錯誤訊息檢查器 = new 錯誤訊息檢查器();
+            foreach (TSource 資料_ in 資料列)
+            {
+                資料_.合法檢查(錯誤訊息檢查器);
+            }
+
+            if ((檢查器_ is 錯誤訊息檢查器) == false)
+            {
+                foreach (TSource 資料_ in 資料列)
+                {
+                    資料_.合法檢查(檢查器_);
+                }
+            }
+        }
     }
 }

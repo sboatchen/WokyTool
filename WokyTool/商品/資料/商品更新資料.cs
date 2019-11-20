@@ -10,6 +10,7 @@ namespace WokyTool.商品
     [JsonObject(MemberSerialization.OptIn)]
     public class 商品更新資料 : 可更新資料<商品更新資料, 商品資料>
     {
+        [可匯出]
         [可匯入(優先級 = 1, 識別 = true)]
         [JsonProperty]
         public int 編號
@@ -27,6 +28,7 @@ namespace WokyTool.商品
             }
         }
 
+        [可匯出(名稱 = "公司")]
         [可匯入(優先級 = 2, 識別 = true, 名稱 = "公司")]
         [JsonProperty]
         public string 公司識別
@@ -44,6 +46,7 @@ namespace WokyTool.商品
             }
         }
 
+        [可匯出(名稱 = "客戶")]
         [可匯入(優先級 = 3, 名稱 = "客戶", 說明 = "必填")]
         [JsonProperty]
         public string 客戶識別
@@ -61,6 +64,7 @@ namespace WokyTool.商品
             }
         }
 
+        [可匯出]
         [可匯入(優先級 = 4, 識別 = true)]
         [JsonProperty]
         public string 品號
@@ -94,6 +98,7 @@ namespace WokyTool.商品
             }
         }
 
+        [可匯出]
         [可匯入(優先級 = 5, 識別 = true)]
         [JsonProperty]
         public string 名稱
@@ -127,6 +132,7 @@ namespace WokyTool.商品
             }
         }
 
+        [可匯出(名稱 = "大類")]
         [可匯入(名稱 = "大類")]
         [JsonProperty]
         public string 大類識別
@@ -142,6 +148,7 @@ namespace WokyTool.商品
             }
         }
 
+        [可匯出(名稱 = "小類")]
         [可匯入(名稱 = "小類")]
         [JsonProperty]
         public string 小類識別
@@ -157,6 +164,7 @@ namespace WokyTool.商品
             }
         }
 
+        [可匯出]
         [可匯入]
         [JsonProperty]
         public decimal 進價
@@ -171,6 +179,7 @@ namespace WokyTool.商品
             }
         }
 
+        [可匯出]
         [可匯入]
         [JsonProperty]
         public decimal 售價
@@ -185,6 +194,7 @@ namespace WokyTool.商品
             }
         }
 
+        [可匯出]
         [可匯入]
         [JsonProperty]
         public int 寄庫數量
@@ -199,6 +209,7 @@ namespace WokyTool.商品
             }
         }
 
+        [可匯出(名稱 = "組成")]
         [可匯入(名稱 = "組成")]
         [JsonProperty]
         public string 組成字串識別
@@ -210,7 +221,7 @@ namespace WokyTool.商品
             set
             {
                 _組成字串識別 = value;
-                if (_組成字串識別.Equals(參考組成字串) == false)
+                if (參考組成字串.Equals(_組成字串識別) == false)
                 {
                     修改.組成 = 物品合併資料.共用.解構(_組成字串識別);
                     修改.更新組成();

@@ -295,7 +295,7 @@ namespace WokyTool.商品
                 檢查器_.錯誤(資料_, "客戶不合法");
 
             if (String.IsNullOrEmpty(名稱))
-                檢查器_.錯誤(this, "名稱不合法");
+                檢查器_.錯誤(資料_, "名稱不合法");
             //else if (商品資料管理器.獨體.資料列舉2.Where(Value => Value.公司 == 公司 && Value.客戶 == 客戶 && Value != 參考_ && 名稱.Equals(Value.名稱)).Any())
             //    檢查器_.錯誤(資料_, "名稱重複"); //@@ 名稱是否該唯一 顏色??
 
