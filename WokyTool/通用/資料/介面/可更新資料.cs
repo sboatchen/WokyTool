@@ -67,7 +67,6 @@ namespace WokyTool.通用
             {
                 if (參考.編號是否有值() == false)
                 {
-                    錯誤訊息 = "找不到指定的物件";
                     更新狀態 = 列舉.更新狀態.錯誤;
                     是否編輯中 = false;
                 }
@@ -86,7 +85,6 @@ namespace WokyTool.通用
             {
                 if (參考.編號是否有值() == false)
                 {
-                    錯誤訊息 = "找不到指定的物件";
                     更新狀態 = 列舉.更新狀態.錯誤;
                     是否編輯中 = false;
                 }
@@ -160,24 +158,24 @@ namespace WokyTool.通用
             基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
             基本資料 參考_ = (資料參考_ == null) ? 參考 : 資料參考_;
 
+            if (檢查器_ is 錯誤訊息檢查器)
+                錯誤訊息 = null;
+
             //Console.WriteLine("合法檢查:" + this.ToString(false));
             switch (更新狀態)
             {
                 case 列舉.更新狀態.相同:
-                    錯誤訊息 = null;
-                    break;
+                    return;
                 case 列舉.更新狀態.錯誤:
+                    檢查器_.錯誤(資料_, "找不到指定的物件");
                     return;
                 case 列舉.更新狀態.刪除:
-                    錯誤訊息 = null;
                     修改.刪除檢查(檢查器_, 資料_);
                     break;
                 case 列舉.更新狀態.新增:
-                    錯誤訊息 = null;
                     修改.合法檢查(檢查器_, 資料_);
                     break;
                 case 列舉.更新狀態.更新:
-                    錯誤訊息 = null;
                     修改.合法檢查(檢查器_, 資料_, 參考);
                     break;
                 default:

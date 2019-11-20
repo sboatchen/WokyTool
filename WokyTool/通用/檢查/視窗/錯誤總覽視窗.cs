@@ -47,6 +47,9 @@ namespace WokyTool.通用
                 if (false == string.IsNullOrEmpty(屬性_.名稱))
                     名稱_ = 屬性_.名稱;
 
+                if ("錯誤訊息".Equals(名稱_))
+                    continue;
+
                 通用匯出欄位方法資料 方法資料_ = new 通用匯出欄位方法資料
                 {
                     名稱 = 名稱_,
