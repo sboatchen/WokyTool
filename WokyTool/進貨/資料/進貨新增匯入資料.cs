@@ -20,7 +20,7 @@ namespace WokyTool.進貨
                 {
                     轉換.類型 = (列舉.進貨類型)Enum.Parse(typeof(列舉.進貨類型), value);
                 }
-                catch (Exception ex)
+                catch
                 {
                    轉換.類型 = 列舉.進貨類型.錯誤;
                 }

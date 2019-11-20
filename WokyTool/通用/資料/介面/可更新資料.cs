@@ -31,7 +31,7 @@ namespace WokyTool.通用
                 {
                     處理方式 = (更新處理方式)Enum.Parse(typeof(更新處理方式), value);
                 }
-                catch (Exception ex)
+                catch
                 {
                     訊息管理器.獨體.警告("不支援的處理方式:" + value + ", 調整為更新");
                     處理方式 = 更新處理方式.更新;
