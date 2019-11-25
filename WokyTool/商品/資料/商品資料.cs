@@ -91,9 +91,9 @@ namespace WokyTool.商品
         [JsonProperty]
         public List<商品組成資料> 組成 { get; set; }
 
-        [JsonProperty]
-        [可匯出(名稱 = "組成")]
-        public string 組成字串 { get; set; }
+        //[JsonProperty]
+        //[可匯出(名稱 = "組成")]
+        //public string 組成字串 { get; set; }
 
         [可匯出]
         [JsonProperty]
@@ -102,6 +102,10 @@ namespace WokyTool.商品
         [可匯出]
         [JsonProperty]
         public decimal 售價 { get; set; }
+
+        [可匯出]
+        [JsonProperty]
+        public Dictionary<string, decimal> 自訂售價書 { get; set; }
 
         [可匯出]
         [JsonProperty]
@@ -114,10 +118,6 @@ namespace WokyTool.商品
         [可匯出]
         [JsonProperty]
         public decimal 成本 { get; set; }
-
-        [可匯出]
-        [JsonProperty]
-        public Dictionary<string, decimal> 自訂售價書 { get; set; }
 
         /********************************/
 
@@ -158,7 +158,7 @@ namespace WokyTool.商品
         public decimal 取得售價(string 索引_)
         {
             if (自訂售價書 == null)
-                return 0;
+                return 售價;
 
             decimal 售價_ = 售價;
             自訂售價書.TryGetValue(索引_, out 售價_);
@@ -244,35 +244,45 @@ namespace WokyTool.商品
 
         public void 更新組成()
         {
+            成本 = 0;
+            體積 = 0;
+            品牌 = 物品品牌資料.空白;
+
             if (組成 == null || 組成.Count == 0)
             {
                 組成 = null;
-                組成字串 = 字串.空;
-                成本 = 0;
-                體積 = 0;
-                品牌 = 物品品牌資料.空白;
             }
             else
             {
-                物品合併資料.共用.清除();
-                物品合併資料.共用.新增(this);
-
-                //@@
-                組成字串 = 物品合併資料.共用.ToString();
-                成本 = 物品合併資料.共用.成本;
-                體積 = 物品合併資料.共用.體積;
-
-                品牌 = 物品品牌資料.空白;
-                foreach (商品組成資料 商品組成資料_ in 組成)
+                foreach (var Group_ in 組成.GroupBy(Value => Value.群組))
                 {
-                    物品品牌資料 Temp_ = 商品組成資料_.物品.品牌;
-                    if (Temp_.編號 <= 0 || Temp_ == 品牌)
-                        continue;
-
-                    if (品牌 == 物品品牌資料.空白)
-                        品牌 = Temp_;
+                    if (Group_.Key == 0)
+                    {
+                        foreach (商品組成資料 資料_ in Group_)
+                        {
+                            體積 += 資料_.物品.體積 * 資料_.數量;
+                            成本 += 資料_.物品.成本 * 資料_.數量;
+                        }
+                    }
                     else
+                    {
+                        體積 += Group_.Max(Value => Value.物品.體積 * Value.數量);
+                        成本 += Group_.Max(Value => Value.物品.成本 * Value.數量);
+                    }
+                }
+
+                HashSet<物品品牌資料> 品牌群_ = 組成.Select(Value => Value.物品.品牌).Where(Value => Value.編號是否有值()).ToSet();
+                switch(品牌群_.Count)
+                {
+                    case 0:
+                        品牌 = 物品品牌資料.空白;
+                        break;
+                    case 1:
+                        品牌 = 品牌群_.First();
+                        break;
+                    default:
                         品牌 = 物品品牌資料.混和;
+                        break;
                 }
             }
         }
