@@ -12,9 +12,9 @@ namespace WokyTool.平台訂單
 
         public string 分頁名稱 { get { return null; } }
 
-        public int 標頭索引 { get { return 2; } }
+        public int 標頭索引 { get { return 1; } }
 
-        public int 資料開始索引 { get { return 3; } }
+        public int 資料開始索引 { get { return 2; } }
 
         public int 資料結尾忽略行數 { get { return 0; } }
 
