@@ -213,6 +213,7 @@
     <Compile Include="商品\資料\商品更新資料.cs" />
     <Compile Include="商品\資料\商品更新資料篩選.cs" />
     <Compile Include="商品\轉換\商品組成轉換.cs" />
+    <Compile Include="商品\資料\自訂售價資料.cs" />
     <Compile Include="寄庫\控制\寄庫匯入資料管理器.cs" />
     <Compile Include="寄庫\控制\寄庫資料管理器.cs" />
     <Compile Include="寄庫\控制\寄庫新增資料管理器.cs" />
@@ -449,6 +450,7 @@
     <Compile Include="通用\介面\可整理介面.cs" />
     <Compile Include="通用\介面\可處理介面.cs" />
     <Compile Include="通用\檔案\元件\PDF圖片數值讀出元件.cs" />
+    <Compile Include="通用\檢查\實作\通知檢查器.cs" />
     <Compile Include="通用\檢查\視窗\錯誤總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1739,6 +1741,7 @@
     <None Include="Properties\DataSources\WokyTool.商品.商品更新資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品組成資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.商品.自訂售價資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.子客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.寄庫.寄庫匯入資料.datasource" />
