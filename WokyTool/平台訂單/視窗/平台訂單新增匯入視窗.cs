@@ -58,24 +58,24 @@ namespace WokyTool.平台訂單
 
             // 取得公司
             var Queue_ = 資料列_.Select(Value => Value.商品.公司).Where(Value => Value.編號是否有值()).Distinct();
-            if (Queue_.Count() == 0)
+            switch (Queue_.Count())
             {
-                訊息管理器.獨體.警告("資料中沒有公司資訊");
-                return;
-            }
-            if (Queue_.Count() > 1)
-            {
-                訊息管理器.獨體.警告("資料中包含複數個公司");
-                return;
+                case 0:
+                    訊息管理器.獨體.通知("資料中沒有公司資訊");
+                    處理器_.公司 = 公司資料.錯誤;
+                    break;
+                case 1:
+                    處理器_.公司 = Queue_.First();
+                    break;
+                default:
+                    訊息管理器.獨體.通知("資料中包含複數個公司");
+                    處理器_.公司 = 公司資料.錯誤;
+                    break;
+
             }
 
-            公司資料 公司_ = Queue_.First();
-
-            處理器_.公司 = 公司_;
             foreach (平台訂單新增匯入資料 資料_ in 資料列_)
-            {
-                資料_.公司 = 公司_;
-            }
+                資料_.公司 = 處理器_.公司;
 
             資料管理器.新增(資料列_);
 

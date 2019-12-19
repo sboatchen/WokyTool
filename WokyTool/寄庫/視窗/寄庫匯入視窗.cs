@@ -59,24 +59,24 @@ namespace WokyTool.寄庫
             }
 
             // 取得公司
+            公司資料 公司_ = 公司資料.錯誤;
             var Queue_ = 資料列_.Select(Value => Value.商品.公司).Where(Value => Value.編號是否有值()).Distinct();
-            if (Queue_.Count() == 0)
+            switch (Queue_.Count())
             {
-                訊息管理器.獨體.警告("資料中沒有公司資訊");
-                return;
-            }
-            if (Queue_.Count() > 1)
-            {
-                訊息管理器.獨體.警告("資料中包含複數個公司");
-                return;
-            }
+                case 0:
+                    訊息管理器.獨體.通知("資料中沒有公司資訊");
+                    break;
+                case 1:
+                    公司_ = Queue_.First();
+                    break;
+                default:
+                    訊息管理器.獨體.通知("資料中包含複數個公司");
+                    break;
 
-            公司資料 公司_ = Queue_.First();
+            }
 
             foreach (寄庫匯入資料 資料_ in 資料列_)
-            {
                 資料_.公司 = 公司_;
-            }
 
             資料管理器.新增(資料列_);
 
