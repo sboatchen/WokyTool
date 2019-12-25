@@ -382,68 +382,68 @@
       <DependentUpon>廠商篩選視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="廠商\資料\廠商資料篩選.cs" />
-    <Compile Include="活動\控制\活動匯入資料管理器.cs" />
-    <Compile Include="活動\控制\活動資料管理器.cs" />
-    <Compile Include="活動\控制\活動新增資料管理器.cs" />
-    <Compile Include="活動\視窗\活動匯入篩選視窗.cs">
+    <Compile Include="預留\控制\活動匯入資料管理器.cs" />
+    <Compile Include="預留\控制\活動資料管理器.cs" />
+    <Compile Include="預留\控制\活動新增資料管理器.cs" />
+    <Compile Include="預留\視窗\活動匯入篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="活動\視窗\活動匯入篩選視窗.Designer.cs">
+    <Compile Include="預留\視窗\活動匯入篩選視窗.Designer.cs">
       <DependentUpon>活動匯入篩選視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="活動\視窗\活動匯入視窗.cs">
+    <Compile Include="預留\視窗\活動匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="活動\視窗\活動匯入視窗.Designer.cs">
+    <Compile Include="預留\視窗\活動匯入視窗.Designer.cs">
       <DependentUpon>活動匯入視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="活動\視窗\活動匯入詳細視窗.cs">
+    <Compile Include="預留\視窗\活動匯入詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="活動\視窗\活動匯入詳細視窗.Designer.cs">
+    <Compile Include="預留\視窗\活動匯入詳細視窗.Designer.cs">
       <DependentUpon>活動匯入詳細視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="活動\視窗\活動新增篩選視窗.cs">
+    <Compile Include="預留\視窗\活動新增篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="活動\視窗\活動新增篩選視窗.Designer.cs">
+    <Compile Include="預留\視窗\活動新增篩選視窗.Designer.cs">
       <DependentUpon>活動新增篩選視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="活動\視窗\活動篩選視窗.cs">
+    <Compile Include="預留\視窗\活動篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="活動\視窗\活動篩選視窗.Designer.cs">
+    <Compile Include="預留\視窗\活動篩選視窗.Designer.cs">
       <DependentUpon>活動篩選視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="活動\視窗\活動新增總覽視窗.cs">
+    <Compile Include="預留\視窗\活動新增總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="活動\視窗\活動新增總覽視窗.Designer.cs">
+    <Compile Include="預留\視窗\活動新增總覽視窗.Designer.cs">
       <DependentUpon>活動新增總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="活動\視窗\活動總覽視窗.cs">
+    <Compile Include="預留\視窗\活動總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="活動\視窗\活動總覽視窗.Designer.cs">
+    <Compile Include="預留\視窗\活動總覽視窗.Designer.cs">
       <DependentUpon>活動總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="活動\視窗\活動新增詳細視窗.cs">
+    <Compile Include="預留\視窗\活動新增詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="活動\視窗\活動新增詳細視窗.Designer.cs">
+    <Compile Include="預留\視窗\活動新增詳細視窗.Designer.cs">
       <DependentUpon>活動新增詳細視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="活動\視窗\活動詳細視窗.cs">
+    <Compile Include="預留\視窗\活動詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="活動\視窗\活動詳細視窗.Designer.cs">
+    <Compile Include="預留\視窗\活動詳細視窗.Designer.cs">
       <DependentUpon>活動詳細視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="活動\資料\活動資料.cs" />
-    <Compile Include="活動\資料\活動匯入資料篩選.cs" />
-    <Compile Include="活動\資料\活動資料篩選.cs" />
-    <Compile Include="活動\資料\活動匯入資料.cs" />
-    <Compile Include="活動\轉換\活動張貼匯出轉換.cs" />
+    <Compile Include="預留\資料\活動資料.cs" />
+    <Compile Include="預留\資料\活動匯入資料篩選.cs" />
+    <Compile Include="預留\資料\活動資料篩選.cs" />
+    <Compile Include="預留\資料\活動匯入資料.cs" />
+    <Compile Include="預留\轉換\活動張貼匯出轉換.cs" />
     <Compile Include="發票\轉換\發票總覽匯出轉換.cs" />
     <Compile Include="通用\介面\可整理介面.cs" />
     <Compile Include="通用\介面\可處理介面.cs" />
@@ -1507,31 +1507,31 @@
     <EmbeddedResource Include="月結帳\視窗\月結帳支出新增匯入視窗.resx">
       <DependentUpon>月結帳支出新增匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="活動\視窗\活動匯入篩選視窗.resx">
+    <EmbeddedResource Include="預留\視窗\活動匯入篩選視窗.resx">
       <DependentUpon>活動匯入篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="活動\視窗\活動匯入視窗.resx">
+    <EmbeddedResource Include="預留\視窗\活動匯入視窗.resx">
       <DependentUpon>活動匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="活動\視窗\活動匯入詳細視窗.resx">
+    <EmbeddedResource Include="預留\視窗\活動匯入詳細視窗.resx">
       <DependentUpon>活動匯入詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="活動\視窗\活動新增篩選視窗.resx">
+    <EmbeddedResource Include="預留\視窗\活動新增篩選視窗.resx">
       <DependentUpon>活動新增篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="活動\視窗\活動篩選視窗.resx">
+    <EmbeddedResource Include="預留\視窗\活動篩選視窗.resx">
       <DependentUpon>活動篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="活動\視窗\活動新增總覽視窗.resx">
+    <EmbeddedResource Include="預留\視窗\活動新增總覽視窗.resx">
       <DependentUpon>活動新增總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="活動\視窗\活動總覽視窗.resx">
+    <EmbeddedResource Include="預留\視窗\活動總覽視窗.resx">
       <DependentUpon>活動總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="活動\視窗\活動新增詳細視窗.resx">
+    <EmbeddedResource Include="預留\視窗\活動新增詳細視窗.resx">
       <DependentUpon>活動新增詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="活動\視窗\活動詳細視窗.resx">
+    <EmbeddedResource Include="預留\視窗\活動詳細視窗.resx">
       <DependentUpon>活動詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="測試\視窗\Image測試視窗.resx">
