@@ -4,7 +4,7 @@ using System.Linq;
 using WokyTool.Common;
 using WokyTool.一般訂單;
 using WokyTool.平台訂單;
-using WokyTool.活動;
+using WokyTool.預留;
 using WokyTool.庫存;
 using WokyTool.商品;
 using WokyTool.寄庫;
@@ -351,7 +351,7 @@ namespace WokyTool.物品
 
         public void 更新保留()
         {
-            Dictionary<物品資料, int> 更新書_ = 活動資料管理器.獨體.資料列舉2
+            Dictionary<物品資料, int> 更新書_ = 預留資料管理器.獨體.資料列舉2
                                     .Where(Value => Value.是否保留中)
                                     .GroupBy(Value => Value.物品)
                                     .ToDictionary(Value => Value.Key, Value => Value.Sum(Value2 => Value2.數量));

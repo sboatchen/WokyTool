@@ -3,10 +3,10 @@ using WokyTool.物品;
 using WokyTool.通用;
 using System;
 
-namespace WokyTool.活動
+namespace WokyTool.預留
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 活動匯入資料 : 可轉換資料<活動資料>
+    public class 預留匯入資料 : 可轉換資料<預留資料>
     {
         [可匯入(說明 = "必要,如:2019-10-9")]
         [JsonProperty]

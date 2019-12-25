@@ -8,7 +8,7 @@ using WokyTool.月結帳;
 using WokyTool.發票;
 using WokyTool.測試;
 using WokyTool.廢棄;
-using WokyTool.活動;
+using WokyTool.預留;
 
 namespace WokyTool
 {
@@ -18,7 +18,7 @@ namespace WokyTool
         {
             InitializeComponent();
 
-            活動資料管理器.獨體.更新();
+            預留資料管理器.獨體.更新();
         }
 
         private void 主視窗_FormClosing(object sender, FormClosingEventArgs e)
@@ -141,14 +141,14 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編號.進貨, 列舉.視窗.總覽);
         }
 
-        private void 活動新增_Click(object sender, EventArgs e)
+        private void 預留新增_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編號.活動新增, 列舉.視窗.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.預留新增, 列舉.視窗.總覽);
         }
 
-        private void 活動總覽_Click(object sender, EventArgs e)
+        private void 預留總覽_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編號.活動, 列舉.視窗.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.預留, 列舉.視窗.總覽);
         }
 
         private void 盤點_Click(object sender, EventArgs e)

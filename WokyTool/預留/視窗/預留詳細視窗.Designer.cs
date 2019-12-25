@@ -1,8 +1,8 @@
 ﻿using WokyTool.物品;
 using WokyTool.通用;
-namespace WokyTool.活動
+namespace WokyTool.預留
 {
-    partial class 活動新增詳細視窗
+    partial class 預留詳細視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -181,7 +181,7 @@ namespace WokyTool.活動
             this.label17.TabIndex = 171;
             this.label17.Text = "備註";
             // 
-            // 活動新增詳細視窗
+            // 預留詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -202,8 +202,8 @@ namespace WokyTool.活動
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.新版頁索引元件1);
-            this.Name = "活動新增詳細視窗";
-            this.Text = "活動新增詳細視窗";
+            this.Name = "預留詳細視窗";
+            this.Text = "預留詳細視窗";
             ((System.ComponentModel.ISupportInitialize)(this.數量)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,17 +1,17 @@
 ﻿using WokyTool.通用;
 
-namespace WokyTool.活動
+namespace WokyTool.預留
 {
-    public partial class 活動匯入篩選視窗 : 新增篩選視窗
+    public partial class 預留匯入篩選視窗 : 新增篩選視窗
     {
         // 介面編輯呈現用
-        public 活動匯入篩選視窗()
+        public 預留匯入篩選視窗()
             : base()
         {
             InitializeComponent();
         }
 
-        public 活動匯入篩選視窗(視窗可篩選介面 視窗篩選器_)
+        public 預留匯入篩選視窗(視窗可篩選介面 視窗篩選器_)
             : base(視窗篩選器_)
         {
             InitializeComponent();
@@ -23,8 +23,8 @@ namespace WokyTool.活動
 
             base.初始化();
 
-            資料綁定(this.最小活動日期, "最小活動日期");
-            資料綁定(this.最大活動日期, "最大活動日期");
+            資料綁定(this.最小預留日期, "最小預留日期");
+            資料綁定(this.最大預留日期, "最大預留日期");
 
             資料綁定(this.名稱, "文字");
             資料綁定(this.姓名, "姓名");

@@ -4,22 +4,22 @@ using System.IO;
 using System.Linq;
 using WokyTool.通用;
 
-namespace WokyTool.活動
+namespace WokyTool.預留
 {
-    public class 活動張貼匯出轉換 : 可寫入介面_EXCEL
+    public class 預留張貼匯出轉換 : 可寫入介面_EXCEL
     {
         public string 分類 { get { return null; } }
 
-        public string 樣板 { get { return "樣板/活動張貼.xlsx"; } }
+        public string 樣板 { get { return "樣板/預留張貼.xlsx"; } }
 
         public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
 
         public string 密碼 { get { return null; } }
 
-        public IGrouping<string, 活動資料> 群組 { get; protected set; }
-        public 活動資料 參考 { get; protected set; }
+        public IGrouping<string, 預留資料> 群組 { get; protected set; }
+        public 預留資料 參考 { get; protected set; }
 
-        public 活動張貼匯出轉換(IGrouping<string, 活動資料> 群組_)
+        public 預留張貼匯出轉換(IGrouping<string, 預留資料> 群組_)
         {
             this.群組 = 群組_;
             this.參考 = 群組_.First();
@@ -72,7 +72,7 @@ namespace WokyTool.活動
             if (物品細節開始欄索引_ == -1 || 物品細節開始列索引_ == -1)
                 return;
 
-            foreach (活動資料 資料_ in 群組)
+            foreach (預留資料 資料_ in 群組)
             {
                 App_.Cells[物品細節開始列索引_, 物品細節開始欄索引_] = String.Format("{0}*{1}", 資料_.物品.名稱, 資料_.數量);
 

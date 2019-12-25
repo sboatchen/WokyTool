@@ -1,8 +1,8 @@
 ﻿using WokyTool.物品;
 using WokyTool.通用;
-namespace WokyTool.活動
+namespace WokyTool.預留
 {
-    partial class 活動新增篩選視窗
+    partial class 預留新增篩選視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -34,8 +34,8 @@ namespace WokyTool.活動
             this.label8 = new System.Windows.Forms.Label();
             this.名稱 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.最大活動日期 = new WokyTool.通用.MyDateTimePicker();
-            this.最小活動日期 = new WokyTool.通用.MyDateTimePicker();
+            this.最大預留日期 = new WokyTool.通用.MyDateTimePicker();
+            this.最小預留日期 = new WokyTool.通用.MyDateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.物品 = new WokyTool.物品.物品選取元件();
             this.備註 = new System.Windows.Forms.TextBox();
@@ -75,25 +75,25 @@ namespace WokyTool.活動
             this.label1.TabIndex = 180;
             this.label1.Text = "名稱";
             // 
-            // 最大活動日期
+            // 最大預留日期
             // 
-            this.最大活動日期.CustomFormat = "yyyy-MM-dd";
-            this.最大活動日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.最大活動日期.Location = new System.Drawing.Point(144, 8);
-            this.最大活動日期.Name = "最大活動日期";
-            this.最大活動日期.Size = new System.Drawing.Size(80, 22);
-            this.最大活動日期.TabIndex = 179;
-            this.最大活動日期.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 752);
+            this.最大預留日期.CustomFormat = "yyyy-MM-dd";
+            this.最大預留日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.最大預留日期.Location = new System.Drawing.Point(144, 8);
+            this.最大預留日期.Name = "最大預留日期";
+            this.最大預留日期.Size = new System.Drawing.Size(80, 22);
+            this.最大預留日期.TabIndex = 179;
+            this.最大預留日期.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 752);
             // 
-            // 最小活動日期
+            // 最小預留日期
             // 
-            this.最小活動日期.CustomFormat = "yyyy-MM-dd";
-            this.最小活動日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.最小活動日期.Location = new System.Drawing.Point(59, 8);
-            this.最小活動日期.Name = "最小活動日期";
-            this.最小活動日期.Size = new System.Drawing.Size(80, 22);
-            this.最小活動日期.TabIndex = 178;
-            this.最小活動日期.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 752);
+            this.最小預留日期.CustomFormat = "yyyy-MM-dd";
+            this.最小預留日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.最小預留日期.Location = new System.Drawing.Point(59, 8);
+            this.最小預留日期.Name = "最小預留日期";
+            this.最小預留日期.Size = new System.Drawing.Size(80, 22);
+            this.最小預留日期.TabIndex = 178;
+            this.最小預留日期.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 752);
             // 
             // label3
             // 
@@ -102,7 +102,7 @@ namespace WokyTool.活動
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 177;
-            this.label3.Text = "活動日期";
+            this.label3.Text = "預留日期";
             // 
             // 物品
             // 
@@ -139,7 +139,7 @@ namespace WokyTool.活動
             this.label4.TabIndex = 173;
             this.label4.Text = "物品";
             // 
-            // 活動新增篩選視窗
+            // 預留新增篩選視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -149,15 +149,15 @@ namespace WokyTool.活動
             this.Controls.Add(this.label8);
             this.Controls.Add(this.名稱);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.最大活動日期);
-            this.Controls.Add(this.最小活動日期);
+            this.Controls.Add(this.最大預留日期);
+            this.Controls.Add(this.最小預留日期);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.物品);
             this.Controls.Add(this.備註);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label4);
-            this.Name = "活動新增篩選視窗";
-            this.Text = "活動新增篩選視窗";
+            this.Name = "預留新增篩選視窗";
+            this.Text = "預留新增篩選視窗";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,8 +169,8 @@ namespace WokyTool.活動
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox 名稱;
         private System.Windows.Forms.Label label1;
-        private MyDateTimePicker 最大活動日期;
-        private MyDateTimePicker 最小活動日期;
+        private MyDateTimePicker 最大預留日期;
+        private MyDateTimePicker 最小預留日期;
         private System.Windows.Forms.Label label3;
         private 物品選取元件 物品;
         private System.Windows.Forms.TextBox 備註;

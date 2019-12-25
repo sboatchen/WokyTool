@@ -4,10 +4,10 @@ using WokyTool.物品;
 using WokyTool.通用;
 using System;
 
-namespace WokyTool.活動
+namespace WokyTool.預留
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 活動資料 : 新版可記錄資料
+    public class 預留資料 : 新版可記錄資料
     {
         [可匯出]
         [JsonProperty]
@@ -71,14 +71,14 @@ namespace WokyTool.活動
 
         /********************************/
 
-        public 活動資料 Self { get { return this; } }
+        public 預留資料 Self { get { return this; } }
 
-        public 活動資料()
+        public 預留資料()
         {
             物品 = 物品資料.空白;
         }
 
-        public static readonly 活動資料 空白 = new 活動資料
+        public static readonly 預留資料 空白 = new 預留資料
         {
             開始日期 = default(DateTime),
             結束日期 = default(DateTime),
@@ -92,7 +92,7 @@ namespace WokyTool.活動
             備註 = 字串.無,
         };
 
-        public static 活動資料 錯誤 = new 活動資料
+        public static 預留資料 錯誤 = new 預留資料
         {
             開始日期 = default(DateTime),
             結束日期 = default(DateTime),
@@ -114,7 +114,7 @@ namespace WokyTool.活動
             //基本資料 參考_ = (資料參考_ == null) ? this : 資料參考_;
 
             if (開始日期 > 結束日期)
-                檢查器_.錯誤(this, "活動日期不合法");
+                檢查器_.錯誤(this, "預留日期不合法");
 
             if (String.IsNullOrEmpty(名稱))
                 檢查器_.錯誤(this, "名稱不合法");

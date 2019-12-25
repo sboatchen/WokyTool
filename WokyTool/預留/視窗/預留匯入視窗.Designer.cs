@@ -1,6 +1,6 @@
-﻿namespace WokyTool.活動
+﻿namespace WokyTool.預留
 {
-    partial class 活動匯入視窗
+    partial class 預留匯入視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
-            this.活動匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.預留匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.開始日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.結束日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +46,7 @@
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.活動匯入資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.預留匯入資料BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip2
@@ -102,7 +102,7 @@
             this.數量DataGridViewTextBoxColumn,
             this.備註DataGridViewTextBoxColumn,
             this.錯誤訊息DataGridViewTextBoxColumn});
-            this.myDataGridView1.DataSource = this.活動匯入資料BindingSource;
+            this.myDataGridView1.DataSource = this.預留匯入資料BindingSource;
             this.myDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.myDataGridView1.Location = new System.Drawing.Point(0, 24);
             this.myDataGridView1.Name = "myDataGridView1";
@@ -110,9 +110,9 @@
             this.myDataGridView1.Size = new System.Drawing.Size(1251, 529);
             this.myDataGridView1.TabIndex = 3;
             // 
-            // 活動匯入資料BindingSource
+            // 預留匯入資料BindingSource
             // 
-            this.活動匯入資料BindingSource.DataSource = typeof(WokyTool.活動.活動匯入資料);
+            this.預留匯入資料BindingSource.DataSource = typeof(WokyTool.預留.預留匯入資料);
             // 
             // 開始日期DataGridViewTextBoxColumn
             // 
@@ -164,19 +164,19 @@
             this.錯誤訊息DataGridViewTextBoxColumn.HeaderText = "錯誤訊息";
             this.錯誤訊息DataGridViewTextBoxColumn.Name = "錯誤訊息DataGridViewTextBoxColumn";
             // 
-            // 活動匯入視窗
+            // 預留匯入視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1251, 553);
             this.Controls.Add(this.myDataGridView1);
             this.Controls.Add(this.menuStrip2);
-            this.Name = "活動匯入視窗";
-            this.Text = "活動匯入視窗";
+            this.Name = "預留匯入視窗";
+            this.Text = "預留匯入視窗";
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.活動匯入資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.預留匯入資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,7 +190,7 @@
         private System.Windows.Forms.ToolStripMenuItem 檢查ToolStripMenuItem;
         private 通用.MyDataGridView myDataGridView1;
         private System.Windows.Forms.ToolStripMenuItem 樣板ToolStripMenuItem;
-        private System.Windows.Forms.BindingSource 活動匯入資料BindingSource;
+        private System.Windows.Forms.BindingSource 預留匯入資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 開始日期DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 結束日期DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
