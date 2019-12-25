@@ -111,10 +111,5 @@ namespace WokyTool.平台訂單
         {
             yield return new 平台訂單配送轉換資料_Momo_三方(資料列舉_.ToList());
         }
-
-        public override void 後續處理(IEnumerable<平台訂單新增資料> 資料列舉_)
-        {
-
-        }
     }
 }

@@ -94,6 +94,7 @@
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.平台訂單新增匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.官網ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單新增匯入資料BindingSource)).BeginInit();
@@ -139,7 +140,8 @@
             this.myfoneToolStripMenuItem,
             this.泛科ToolStripMenuItem,
             this.愛料理ToolStripMenuItem,
-            this.蝦皮ToolStripMenuItem});
+            this.蝦皮ToolStripMenuItem,
+            this.官網ToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
             this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "匯入";
@@ -234,14 +236,14 @@
             // 特力屋田和豐ToolStripMenuItem
             // 
             this.特力屋田和豐ToolStripMenuItem.Name = "特力屋田和豐ToolStripMenuItem";
-            this.特力屋田和豐ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.特力屋田和豐ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.特力屋田和豐ToolStripMenuItem.Text = "田和豐";
             this.特力屋田和豐ToolStripMenuItem.Click += new System.EventHandler(this.特力屋田和豐ToolStripMenuItem_Click);
             // 
             // 特力屋午洋ToolStripMenuItem
             // 
             this.特力屋午洋ToolStripMenuItem.Name = "特力屋午洋ToolStripMenuItem";
-            this.特力屋午洋ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.特力屋午洋ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.特力屋午洋ToolStripMenuItem.Text = "午洋";
             this.特力屋午洋ToolStripMenuItem.Click += new System.EventHandler(this.特力屋午洋ToolStripMenuItem_Click);
             // 
@@ -604,6 +606,13 @@
             // 
             this.平台訂單新增匯入資料BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單新增匯入資料);
             // 
+            // 官網ToolStripMenuItem
+            // 
+            this.官網ToolStripMenuItem.Name = "官網ToolStripMenuItem";
+            this.官網ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.官網ToolStripMenuItem.Text = "官網";
+            this.官網ToolStripMenuItem.Click += new System.EventHandler(this.官網ToolStripMenuItem_Click);
+            // 
             // 平台訂單新增匯入視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -689,6 +698,7 @@
         private System.Windows.Forms.ToolStripMenuItem 蝦皮全家ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 特力屋田和豐ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 特力屋午洋ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 官網ToolStripMenuItem;
 
     }
 }

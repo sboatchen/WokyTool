@@ -81,9 +81,5 @@ namespace WokyTool.平台訂單
                 內容 = 資料列_,
             };
         }
-
-        public override void 後續處理(IEnumerable<平台訂單新增資料> 資料列舉_)
-        {
-        }
     }
 }
