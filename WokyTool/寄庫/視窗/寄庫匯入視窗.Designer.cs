@@ -40,6 +40,8 @@
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
+            this.寄庫匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.入庫時間 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.公司名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.客戶名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +50,6 @@
             this.入庫單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.寄庫匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.寄庫匯入資料BindingSource)).BeginInit();
@@ -63,7 +64,7 @@
             this.檢查ToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1249, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(1345, 24);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -140,6 +141,7 @@
             this.myDataGridView1.AutoGenerateColumns = false;
             this.myDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.myDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.入庫時間,
             this.公司名稱DataGridViewTextBoxColumn,
             this.客戶名稱DataGridViewTextBoxColumn,
             this.商品識別DataGridViewTextBoxColumn,
@@ -153,8 +155,18 @@
             this.myDataGridView1.Location = new System.Drawing.Point(0, 24);
             this.myDataGridView1.Name = "myDataGridView1";
             this.myDataGridView1.RowTemplate.Height = 24;
-            this.myDataGridView1.Size = new System.Drawing.Size(1249, 529);
+            this.myDataGridView1.Size = new System.Drawing.Size(1345, 529);
             this.myDataGridView1.TabIndex = 3;
+            // 
+            // 寄庫匯入資料BindingSource
+            // 
+            this.寄庫匯入資料BindingSource.DataSource = typeof(WokyTool.寄庫.寄庫匯入資料);
+            // 
+            // 入庫時間
+            // 
+            this.入庫時間.DataPropertyName = "入庫時間";
+            this.入庫時間.HeaderText = "入庫時間";
+            this.入庫時間.Name = "入庫時間";
             // 
             // 公司名稱DataGridViewTextBoxColumn
             // 
@@ -209,15 +221,11 @@
             this.錯誤訊息DataGridViewTextBoxColumn.HeaderText = "錯誤訊息";
             this.錯誤訊息DataGridViewTextBoxColumn.Name = "錯誤訊息DataGridViewTextBoxColumn";
             // 
-            // 寄庫匯入資料BindingSource
-            // 
-            this.寄庫匯入資料BindingSource.DataSource = typeof(WokyTool.寄庫.寄庫匯入資料);
-            // 
             // 寄庫匯入視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 553);
+            this.ClientSize = new System.Drawing.Size(1345, 553);
             this.Controls.Add(this.myDataGridView1);
             this.Controls.Add(this.menuStrip2);
             this.Name = "寄庫匯入視窗";
@@ -244,6 +252,8 @@
         private System.Windows.Forms.ToolStripMenuItem 蝦皮ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 料理123ToolStripMenuItem;
         private System.Windows.Forms.BindingSource 寄庫匯入資料BindingSource;
+        private System.Windows.Forms.ToolStripMenuItem 京站站前店ToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 入庫時間;
         private System.Windows.Forms.DataGridViewTextBoxColumn 公司名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 客戶名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 商品識別DataGridViewTextBoxColumn;
@@ -252,7 +262,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 入庫單號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 錯誤訊息DataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripMenuItem 京站站前店ToolStripMenuItem;
 
     }
 }

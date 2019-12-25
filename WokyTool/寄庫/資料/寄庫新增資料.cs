@@ -12,6 +12,9 @@ namespace WokyTool.寄庫
     public class 寄庫新增資料 : 新版可記錄資料
     {
         [JsonProperty]
+        public DateTime 入庫時間 { get; set; }
+
+        [JsonProperty]
         public int 公司編號
         {
             get
@@ -120,6 +123,9 @@ namespace WokyTool.寄庫
         {
             基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
             //基本資料 參考_ = (資料參考_ == null) ? this : 資料參考_;
+
+            if (0 == 入庫時間.Ticks)
+                檢查器_.錯誤(資料_, "入庫時間不合法");
 
             if (公司.編號是否合法() == false)
                 檢查器_.錯誤(資料_, "公司不合法");

@@ -123,6 +123,10 @@ namespace WokyTool.通用
             _方法資料列 = _方法資料列.OrderBy(Value => Value.優先級).ToList();
         }
 
+        public void 讀出額外資訊(int 索引_, string[] 資料列_)
+        {
+        }
+
         public IEnumerable<T> 讀出資料(string[] 資料列_)
         {
             T 物件_ = (T)Activator.CreateInstance(typeof(T));

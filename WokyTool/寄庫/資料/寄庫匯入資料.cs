@@ -10,6 +10,14 @@ namespace WokyTool.寄庫
     [JsonObject(MemberSerialization.OptIn)]
     public class 寄庫匯入資料 : 可轉換資料<寄庫新增資料>
     {
+         [可匯出]
+        [JsonProperty]
+        public DateTime 入庫時間
+        {
+            get { return 轉換.入庫時間; }
+            set { 轉換.入庫時間 = value; }
+        }
+
         [可匯出]
         [JsonProperty]
         public string 商品識別

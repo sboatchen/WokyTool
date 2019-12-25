@@ -34,6 +34,10 @@ namespace WokyTool.寄庫
             this._標頭列 = 標頭列_;
         }
 
+        public void 讀出額外資訊(int 索引_, string[] 資料列_)
+        {
+        }
+
         public IEnumerable<寄庫匯入資料> 讀出資料(string[] 資料列_)
         {
             string 商品識別_ = 資料列_[1].轉成字串();
@@ -49,6 +53,8 @@ namespace WokyTool.寄庫
                 商品識別 = 商品識別_,
                 商品 = 商品_,
                 數量 = 數量_,
+
+                入庫時間 = 時間.今天,
             };
         }
     }

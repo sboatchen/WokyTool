@@ -28,6 +28,10 @@ namespace WokyTool.盤點
             this._標頭列 = 標頭列_;
         }
 
+        public void 讀出額外資訊(int 索引_, string[] 資料列_)
+        {
+        }
+
         public IEnumerable<盤點更新資料> 讀出資料(string[] 資料列_)
         {
             string 貨架號_ = 資料列_[1];

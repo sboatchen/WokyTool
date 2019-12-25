@@ -40,42 +40,21 @@ namespace WokyTool.通用
 
         public static IEnumerable<string[]> 處理<T>(this 可讀出介面_EXCEL<T> 轉換_, Range 資料範圍_)
         {
-            int 資料總數_ = 資料範圍_.Rows.Count - 轉換_.資料結尾忽略行數;
-            int 欄位總數_ = 資料範圍_.Columns.Count;
-            if (資料總數_ == 0 || 欄位總數_ == 0)
+            int 行總數_ = 資料範圍_.Rows.Count;
+            int 欄總數_ = 資料範圍_.Columns.Count;
+            if (行總數_ == 0 || 欄總數_ == 0)
                 return null;
 
-            // 回傳標頭
-            if (轉換_.標頭索引 >= 1)
-            {
-                string[] 資料_ = new string[欄位總數_];
-
-                for (int 欄位索引_ = 1; 欄位索引_ <= 欄位總數_; 欄位索引_++)
-                {
-                    var 資料欄_ = 資料範圍_.Cells[轉換_.標頭索引, 欄位索引_];
-                    string 內容_ = (資料欄_.Value2 != null) ? 資料欄_.Value2.ToString() : null;
-
-                    if (內容_ == null && 資料欄_.MergeArea != null)
-                    {
-                        資料欄_ = 資料欄_.MergeArea.Cells[1, 1];
-                        內容_ = (資料欄_.Value2 != null) ? 資料欄_.Value2.ToString() : null;
-                    }
-
-                    資料_[欄位索引_ - 1] = 內容_;
-                }
-
-                轉換_.讀出標頭(資料_);
-            }
-
-            int 已處理行數_ = 0;
+            int 資料結束索引_ = 行總數_ - 轉換_.資料結尾忽略行數;
             List<string[]> 資料暫存_ = new List<string[]>();
-            for (int 資料索引_ = 轉換_.資料開始索引; 資料索引_ <= 資料總數_; 資料索引_++)
-            {
-                string[] 資料列_ = new string[欄位總數_];
 
-                for (int 欄位索引_ = 1; 欄位索引_ <= 欄位總數_; 欄位索引_++)
+            for (int 索引_ = 1; 索引_ <= 行總數_; 索引_++)
+            {
+                string[] 資料列_ = new string[欄總數_];
+
+                for (int 欄位索引_ = 1; 欄位索引_ <= 欄總數_; 欄位索引_++)
                 {
-                    var 資料欄_ = 資料範圍_.Cells[資料索引_, 欄位索引_];
+                    var 資料欄_ = 資料範圍_.Cells[索引_, 欄位索引_];
                     string 內容_ = (資料欄_.Value2 != null) ? 資料欄_.Value2.ToString() : null;
 
                     if (內容_ == null && 資料欄_.MergeArea != null)
@@ -87,12 +66,16 @@ namespace WokyTool.通用
                     資料列_[欄位索引_ - 1] = 內容_;
                 }
 
-                資料暫存_.Add(資料列_);
+                if (索引_ == 轉換_.標頭索引)
+                    轉換_.讀出標頭(資料列_);
+                else if (索引_ >= 轉換_.資料開始索引 && 索引_ <= 資料結束索引_)
+                    資料暫存_.Add(資料列_);
+                else
+                    轉換_.讀出額外資訊(索引_, 資料列_);
 
-                已處理行數_++;
-                if (已處理行數_ % 1000 == 0)
+                if (索引_ % 1000 == 0)
                 {
-                    bool 是否繼續_ = 訊息管理器.獨體.確認(字串.讀取確認, "目前已讀取 " + 已處理行數_ + " 行, 請確認是否繼續??");
+                    bool 是否繼續_ = 訊息管理器.獨體.確認(字串.讀取確認, "目前已讀取 " + 索引_ + " 行, 請確認是否繼續??");
                     if (是否繼續_ == false)
                         break;
                 }

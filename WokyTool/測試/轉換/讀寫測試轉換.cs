@@ -105,6 +105,10 @@ namespace WokyTool.測試
             Console.WriteLine("-----------");
         }
 
+        public void 讀出額外資訊(int 索引_, string[] 資料列_)
+        {
+        }
+
         public IEnumerable<讀寫測試資料> 讀出資料(string[] 資料列_)
         {
             讀寫測試資料 新資料 = new 讀寫測試資料

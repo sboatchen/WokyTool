@@ -19,6 +19,10 @@ namespace WokyTool.寄庫
         [JsonProperty]
         public string 處理者 { get; set; }
 
+        [可匯出]
+        [JsonProperty]
+        public DateTime 入庫時間 { get; set; }
+
         [JsonProperty]
         public string 公司 { get; set; }
 
@@ -56,6 +60,8 @@ namespace WokyTool.寄庫
             處理時間 = default(DateTime),
             處理者 = 字串.空,
 
+            入庫時間 = default(DateTime),
+
             公司 = 字串.空,
             客戶 = 字串.空,
 
@@ -73,6 +79,8 @@ namespace WokyTool.寄庫
         {
             處理時間 = default(DateTime),
             處理者 = 字串.錯誤,
+
+            入庫時間 = default(DateTime),
 
             公司 = 字串.錯誤,
             客戶 = 字串.錯誤,
@@ -93,6 +101,8 @@ namespace WokyTool.寄庫
             {
                 處理時間 = DateTime.Now,
                 處理者 = 系統參數.使用者名稱,
+
+                入庫時間 = 資料_.入庫時間,
 
                 公司 = 資料_.公司名稱,
                 客戶 = 資料_.客戶名稱,

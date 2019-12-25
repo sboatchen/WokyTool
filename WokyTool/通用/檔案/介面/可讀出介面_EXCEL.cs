@@ -19,5 +19,7 @@ namespace WokyTool.通用
         void 讀出標頭(string[] 標頭列_);
 
         IEnumerable<T> 讀出資料(string[] 資料列_);
+
+        void 讀出額外資訊(int 索引_, string[] 資料列_);
     }
 }

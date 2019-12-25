@@ -45,6 +45,8 @@ namespace WokyTool.寄庫
             this.新版頁索引元件1 = new WokyTool.通用.新版頁索引元件();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.入庫時間 = new WokyTool.通用.MyDateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.數量)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,12 +184,34 @@ namespace WokyTool.寄庫
             this.label1.TabIndex = 0;
             this.label1.Text = "客戶";
             // 
+            // 入庫時間
+            // 
+            this.入庫時間.CustomFormat = "yyyy-MM-dd HH:mm";
+            this.入庫時間.Enabled = false;
+            this.入庫時間.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.入庫時間.Location = new System.Drawing.Point(293, 107);
+            this.入庫時間.Name = "入庫時間";
+            this.入庫時間.Size = new System.Drawing.Size(165, 22);
+            this.入庫時間.TabIndex = 120;
+            this.入庫時間.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 752);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(237, 111);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 12);
+            this.label6.TabIndex = 119;
+            this.label6.Text = "入庫時間";
+            // 
             // 寄庫匯入詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(483, 252);
+            this.Controls.Add(this.入庫時間);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.錯誤訊息);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.入庫單號);
@@ -228,5 +252,7 @@ namespace WokyTool.寄庫
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox 錯誤訊息;
         private System.Windows.Forms.Label label15;
+        private MyDateTimePicker 入庫時間;
+        private System.Windows.Forms.Label label6;
     }
 }

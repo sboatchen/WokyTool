@@ -27,7 +27,10 @@ namespace WokyTool.配送
 
         public void 讀出標頭(string[] 標頭列_)
         {
-            ;
+        }
+
+        public void 讀出額外資訊(int 索引_, string[] 資料列_)
+        {
         }
 
         public IEnumerable<配送轉換資料> 讀出資料(string[] 資料列_)
