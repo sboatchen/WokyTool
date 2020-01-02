@@ -29,9 +29,9 @@ namespace WokyTool.通用
             {
                 object 資料_ = _副本.轉成物件(this.GetType());
                 this.完全拷貝(資料_);
-
-                _副本 = null;
             }
+
+            _副本 = null;
         }
 
         public override void 紀錄編輯(bool 是否列印_ = false)
@@ -48,16 +48,6 @@ namespace WokyTool.通用
             }
 
             _副本 = null;
-        }
-
-        public void 重新編輯()
-        {
-            if (是否編輯中 && _副本 != _新資料副本)
-            {
-                object 資料_ = _副本.轉成物件(this.GetType());
-                this.完全拷貝(資料_);
-            }
-            //else if()
         }
 
         public override bool 更新編輯狀態()
