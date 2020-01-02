@@ -66,7 +66,7 @@ namespace WokyTool
          * 
          * 廠商
          * 進貨
-         * 活動,
+         * 預留,
          * 
          * 配送
          * 

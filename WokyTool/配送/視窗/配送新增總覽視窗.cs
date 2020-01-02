@@ -79,7 +79,7 @@ namespace WokyTool.配送
 
         private void 全速配撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配 && Value.已配送);
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.全速配);
             
             配送撿貨轉換 轉換_ = new 配送撿貨轉換(資料列舉_);
             string 標題_ = String.Format("全速配撿貨_{0}", 時間.目前日期);
@@ -125,7 +125,7 @@ namespace WokyTool.配送
 
         private void 宅配通撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通 && Value.已配送);
+            IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通);
 
             配送撿貨轉換 轉換_ = new 配送撿貨轉換(資料列舉_);
             string 標題_ = String.Format("宅配通撿貨_{0}", 時間.目前日期);

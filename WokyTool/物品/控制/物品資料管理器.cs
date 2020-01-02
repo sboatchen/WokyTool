@@ -4,7 +4,7 @@ using System.Linq;
 using WokyTool.Common;
 using WokyTool.一般訂單;
 using WokyTool.平台訂單;
-using WokyTool.活動;
+using WokyTool.預留;
 using WokyTool.庫存;
 using WokyTool.商品;
 using WokyTool.寄庫;
@@ -296,22 +296,63 @@ namespace WokyTool.物品
 
                 物品_.取消編輯();
 
-                if (資料_.類型 == 列舉.進貨類型.一般)
-                    物品_.最後進貨成本 = 資料_.單價;
-
-                if (物品_.庫存 <= 0)
+                switch (資料_.類型)
                 {
-                    物品_.庫存 += 資料_.數量;
+                    case 列舉.進貨類型.一般:
+                    {
+                        物品_.最後進貨成本 = 資料_.單價;
 
-                    if (物品_.庫存 <= 0)
-                        物品_.庫存總成本 = 0;
-                    else
-                        物品_.庫存總成本 = 物品_.庫存 * 資料_.單價;
-                }
-                else
-                {
-                    物品_.庫存 += 資料_.數量;
-                    物品_.庫存總成本 += 資料_.數量 * 資料_.單價;
+                        if (物品_.庫存 <= 0)
+                        {
+                            物品_.庫存 += 資料_.數量;
+
+                            if (物品_.庫存 <= 0)
+                                物品_.庫存總成本 = 0;
+                            else
+                                物品_.庫存總成本 = 物品_.庫存 * 資料_.單價;
+                        }
+                        else
+                        {
+                            物品_.庫存 += 資料_.數量;
+                            物品_.庫存總成本 += 資料_.數量 * 資料_.單價;
+                        }
+
+                        break;
+                    }
+                    case 列舉.進貨類型.退貨重進:
+                    {
+                        if (物品_.庫存 <= 0)
+                        {
+                            物品_.庫存 += 資料_.數量;
+
+                            if (物品_.庫存 <= 0)
+                                物品_.庫存總成本 = 0;
+                            else
+                                物品_.庫存總成本 = 物品_.庫存 * 資料_.單價;
+                        }
+                        else
+                        {
+                            物品_.庫存 += 資料_.數量;
+                            物品_.庫存總成本 += 資料_.數量 * 資料_.單價;
+                        }
+
+                        break;
+                    }
+                    case 列舉.進貨類型.未開發平台:
+                    {
+                        decimal 目前成本_ = 物品_.成本;
+
+                        物品_.庫存 -= 資料_.數量;
+                        if (物品_.庫存 <= 0)
+                            物品_.庫存總成本 = 0;
+                        else
+                            物品_.庫存總成本 -= 資料_.數量 * 目前成本_;
+
+                        break;
+                    }
+                    default:
+                        訊息管理器.獨體.錯誤("不支援的進貨類型 " + 資料_.類型);
+                        break;
                 }
 
                 庫存列_.Add(new 物品庫存封存資料
@@ -351,7 +392,7 @@ namespace WokyTool.物品
 
         public void 更新保留()
         {
-            Dictionary<物品資料, int> 更新書_ = 活動資料管理器.獨體.資料列舉2
+            Dictionary<物品資料, int> 更新書_ = 預留資料管理器.獨體.資料列舉2
                                     .Where(Value => Value.是否保留中)
                                     .GroupBy(Value => Value.物品)
                                     .ToDictionary(Value => Value.Key, Value => Value.Sum(Value2 => Value2.數量));

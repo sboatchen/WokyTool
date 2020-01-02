@@ -49,8 +49,8 @@ namespace WokyTool.通用
             進貨,
             進貨新增,
 
-            活動,
-            活動新增,
+            預留,
+            預留新增,
 
             配送,
 
@@ -197,6 +197,7 @@ namespace WokyTool.通用
             一般 = 常數.空白列舉編碼,
 
             退貨重進,
+            未開發平台,
         };
 
         public enum 進貨處理狀態

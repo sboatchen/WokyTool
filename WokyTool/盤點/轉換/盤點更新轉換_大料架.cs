@@ -9,9 +9,9 @@ namespace WokyTool.盤點
 
         public string 分頁名稱 { get { return null; } }
 
-        public int 標頭索引 { get { return 1; } }
+        public int 標頭索引 { get { return 2; } }
 
-        public int 資料開始索引 { get { return 2; } }
+        public int 資料開始索引 { get { return 3; } }
 
         public int 資料結尾忽略行數 { get { return 0; } }
 
@@ -28,9 +28,13 @@ namespace WokyTool.盤點
             this._標頭列 = 標頭列_;
         }
 
+        public void 讀出額外資訊(int 索引_, string[] 資料列_)
+        {
+        }
+
         public IEnumerable<盤點更新資料> 讀出資料(string[] 資料列_)
         {
-            string 貨架號_ = 資料列_[1];
+            string 貨架號_ = 資料列_[0];
             if (string.IsNullOrEmpty(貨架號_))
                 yield break;
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using WokyTool.客戶;
 using WokyTool.商品;
@@ -52,6 +53,7 @@ namespace WokyTool.寄庫
                 數量 = 數量_,
 
                 入庫單號 = 入庫單號_,
+                入庫時間 = 時間.今天,
             };
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using WokyTool.客戶;
 using WokyTool.商品;
 using WokyTool.通用;
@@ -33,12 +34,18 @@ namespace WokyTool.寄庫
             this._標頭列 = 標頭列_;
         }
 
+        public void 讀出額外資訊(int 索引_, string[] 資料列_)
+        {
+        }
+
         public IEnumerable<寄庫匯入資料> 讀出資料(string[] 資料列_)
         {
             string 商品識別_ = 資料列_[1].轉成字串();
             商品資料 商品_ = 商品資料管理器.獨體.取得_名稱(客戶.編號, 商品識別_);
 
             int 數量_ = 資料列_[5].轉成整數();
+
+            DateTime 入庫時間_ = 資料列_[3].轉成時間();
 
             yield return new 寄庫匯入資料
             {
@@ -47,6 +54,8 @@ namespace WokyTool.寄庫
                 商品識別 = 商品識別_,
                 商品 = 商品_,
                 數量 = 數量_,
+
+                入庫時間 = 入庫時間_,
             };
         }
     }

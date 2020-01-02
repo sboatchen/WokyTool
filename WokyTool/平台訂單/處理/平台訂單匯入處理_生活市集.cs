@@ -69,6 +69,12 @@ namespace WokyTool.平台訂單
             }
         }
 
+        public override String 取得分組識別(平台訂單新增資料 資料_)
+        {
+            // + 檔次編號
+            return String.Format("{0}_{1}_{2}_{3}_{4}", 資料_.公司.名稱, 資料_.客戶.名稱, 資料_.姓名, 資料_.地址, 資料_.內容[0]);
+        }
+
         public override void 後續處理(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
             var 轉換_ = new 平台訂單回單轉換_生活市集(資料列舉_);

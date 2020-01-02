@@ -20,6 +20,10 @@ namespace WokyTool.平台訂單
             this._標頭列 = 標頭列_;
         }
 
+        public virtual void 讀出額外資訊(int 索引_, string[] 資料列_)
+        {
+        }
+
         public virtual String 取得分組識別(平台訂單新增資料 資料_)
         {
             return String.Format("{0}_{1}_{2}_{3}", 資料_.公司.名稱, 資料_.客戶.名稱, 資料_.姓名, 資料_.地址);

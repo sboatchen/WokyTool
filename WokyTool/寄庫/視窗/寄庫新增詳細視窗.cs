@@ -33,6 +33,7 @@ namespace WokyTool.寄庫
             資料綁定(this.數量, "數量");
 
             資料綁定(this.入庫單號, "入庫單號");
+            資料綁定(this.入庫時間, "入庫時間");
             資料綁定(this.備註, "備註");
 
             this.公司.下拉選單.SelectedValueChanged += new EventHandler(this._on商品列表更新);
