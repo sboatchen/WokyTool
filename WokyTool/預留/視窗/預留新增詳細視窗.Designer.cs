@@ -89,13 +89,14 @@ namespace WokyTool.預留
             // 
             // 結束日期
             // 
-            this.結束日期.CustomFormat = "yyyy-MM-dd";
+            this.結束日期.CustomFormat = " ";
             this.結束日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.結束日期.Location = new System.Drawing.Point(294, 10);
             this.結束日期.Name = "結束日期";
             this.結束日期.Size = new System.Drawing.Size(165, 22);
             this.結束日期.TabIndex = 166;
-            this.結束日期.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 752);
+            this.結束日期.Value = new System.DateTime(((long)(0)));
+            this.結束日期.類型 = WokyTool.通用.MyDateTimePicker.時間類型.最小值;
             // 
             // label2
             // 
@@ -108,13 +109,14 @@ namespace WokyTool.預留
             // 
             // 開始日期
             // 
-            this.開始日期.CustomFormat = "yyyy-MM-dd";
+            this.開始日期.CustomFormat = " ";
             this.開始日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.開始日期.Location = new System.Drawing.Point(59, 10);
             this.開始日期.Name = "開始日期";
             this.開始日期.Size = new System.Drawing.Size(165, 22);
             this.開始日期.TabIndex = 164;
-            this.開始日期.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 752);
+            this.開始日期.Value = new System.DateTime(((long)(0)));
+            this.開始日期.類型 = WokyTool.通用.MyDateTimePicker.時間類型.最小值;
             // 
             // label7
             // 

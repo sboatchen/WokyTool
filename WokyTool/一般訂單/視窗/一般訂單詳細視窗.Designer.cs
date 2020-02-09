@@ -178,14 +178,15 @@ namespace WokyTool.一般訂單
             // 
             // 處理時間
             // 
-            this.處理時間.CustomFormat = "yyyy-MM-dd HH:mm";
+            this.處理時間.CustomFormat = " ";
             this.處理時間.Enabled = false;
             this.處理時間.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.處理時間.Location = new System.Drawing.Point(60, 12);
             this.處理時間.Name = "處理時間";
             this.處理時間.Size = new System.Drawing.Size(165, 22);
             this.處理時間.TabIndex = 58;
-            this.處理時間.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 752);
+            this.處理時間.Value = new System.DateTime(((long)(0)));
+            this.處理時間.類型 = WokyTool.通用.MyDateTimePicker.時間類型.最小值;
             // 
             // label4
             // 
@@ -318,14 +319,15 @@ namespace WokyTool.一般訂單
             // 
             // 指配日期
             // 
-            this.指配日期.CustomFormat = "yyyy-MM-dd";
+            this.指配日期.CustomFormat = " ";
             this.指配日期.Enabled = false;
             this.指配日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.指配日期.Location = new System.Drawing.Point(292, 371);
             this.指配日期.Name = "指配日期";
             this.指配日期.Size = new System.Drawing.Size(165, 22);
             this.指配日期.TabIndex = 83;
-            this.指配日期.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 697);
+            this.指配日期.Value = new System.DateTime(((long)(0)));
+            this.指配日期.類型 = WokyTool.通用.MyDateTimePicker.時間類型.最小值;
             // 
             // label11
             // 

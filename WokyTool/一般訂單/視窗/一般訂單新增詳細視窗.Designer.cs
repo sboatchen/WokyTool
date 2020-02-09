@@ -55,13 +55,13 @@ namespace WokyTool.一般訂單
             this.聯絡人 = new WokyTool.聯絡人.聯絡人選取元件();
             this.label12 = new System.Windows.Forms.Label();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
+            this.商品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.一般訂單新增組成資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.新增 = new System.Windows.Forms.Button();
             this.數量 = new System.Windows.Forms.NumericUpDown();
             this.商品 = new WokyTool.商品.商品選取元件();
-            this.商品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備註 = new System.Windows.Forms.TextBox();
             this.列印單價 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.代收金額)).BeginInit();
@@ -121,13 +121,14 @@ namespace WokyTool.一般訂單
             // 
             // 指配日期
             // 
-            this.指配日期.CustomFormat = "yyyy-MM-dd";
+            this.指配日期.CustomFormat = " ";
             this.指配日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.指配日期.Location = new System.Drawing.Point(59, 331);
             this.指配日期.Name = "指配日期";
             this.指配日期.Size = new System.Drawing.Size(165, 22);
             this.指配日期.TabIndex = 154;
-            this.指配日期.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 697);
+            this.指配日期.Value = new System.DateTime(((long)(0)));
+            this.指配日期.類型 = WokyTool.通用.MyDateTimePicker.時間類型.最小值;
             // 
             // label11
             // 
@@ -294,6 +295,28 @@ namespace WokyTool.一般訂單
             this.myDataGridView1.Size = new System.Drawing.Size(648, 150);
             this.myDataGridView1.TabIndex = 168;
             // 
+            // 商品名稱DataGridViewTextBoxColumn
+            // 
+            this.商品名稱DataGridViewTextBoxColumn.DataPropertyName = "商品名稱";
+            this.商品名稱DataGridViewTextBoxColumn.HeaderText = "商品";
+            this.商品名稱DataGridViewTextBoxColumn.Name = "商品名稱DataGridViewTextBoxColumn";
+            this.商品名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.商品名稱DataGridViewTextBoxColumn.Width = 400;
+            // 
+            // 數量DataGridViewTextBoxColumn
+            // 
+            this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
+            this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
+            this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
+            this.數量DataGridViewTextBoxColumn.Width = 70;
+            // 
+            // 備註DataGridViewTextBoxColumn
+            // 
+            this.備註DataGridViewTextBoxColumn.DataPropertyName = "備註";
+            this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
+            this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
+            this.備註DataGridViewTextBoxColumn.Width = 130;
+            // 
             // 一般訂單新增組成資料BindingSource
             // 
             this.一般訂單新增組成資料BindingSource.DataSource = typeof(WokyTool.一般訂單.一般訂單新增組成資料);
@@ -339,28 +362,6 @@ namespace WokyTool.一般訂單
             this.商品.Size = new System.Drawing.Size(400, 22);
             this.商品.TabIndex = 171;
             this.商品.元件類型 = WokyTool.通用.選取元件類型.指定;
-            // 
-            // 商品名稱DataGridViewTextBoxColumn
-            // 
-            this.商品名稱DataGridViewTextBoxColumn.DataPropertyName = "商品名稱";
-            this.商品名稱DataGridViewTextBoxColumn.HeaderText = "商品";
-            this.商品名稱DataGridViewTextBoxColumn.Name = "商品名稱DataGridViewTextBoxColumn";
-            this.商品名稱DataGridViewTextBoxColumn.ReadOnly = true;
-            this.商品名稱DataGridViewTextBoxColumn.Width = 400;
-            // 
-            // 數量DataGridViewTextBoxColumn
-            // 
-            this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
-            this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
-            this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
-            this.數量DataGridViewTextBoxColumn.Width = 70;
-            // 
-            // 備註DataGridViewTextBoxColumn
-            // 
-            this.備註DataGridViewTextBoxColumn.DataPropertyName = "備註";
-            this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
-            this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
-            this.備註DataGridViewTextBoxColumn.Width = 130;
             // 
             // 備註
             // 

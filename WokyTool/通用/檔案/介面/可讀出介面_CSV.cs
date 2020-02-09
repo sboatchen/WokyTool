@@ -17,6 +17,8 @@ namespace WokyTool.通用
 
         int 資料結尾忽略行數 { get; }
 
+        void 讀出檔名(string 檔名_);
+
         void 讀出標頭(string[] 標頭列_);
 
         IEnumerable<T> 讀出資料(string[] 資料列_);

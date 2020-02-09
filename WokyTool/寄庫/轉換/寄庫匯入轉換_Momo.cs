@@ -29,6 +29,10 @@ namespace WokyTool.寄庫
             客戶 = 客戶資料管理器.獨體.取得("Momo");
         }
 
+        public void 讀出檔名(string 檔名_)
+        {
+        }
+
         public void 讀出標頭(string[] 標頭列_)
         {
             this._標頭列 = 標頭列_;

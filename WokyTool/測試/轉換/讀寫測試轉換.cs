@@ -98,6 +98,10 @@ namespace WokyTool.測試
             }
         }
 
+        public void 讀出檔名(string 檔名_)
+        {
+        }
+
         public void 讀出標頭(string[] 標頭列_)
         {
             foreach (string 標頭_ in 標頭列_)

@@ -15,6 +15,10 @@ namespace WokyTool.平台訂單
 
         protected string[] _標頭列;
 
+        public virtual void 讀出檔名(string 檔名_)
+        {
+        }
+
         public virtual void 讀出標頭(string[] 標頭列_)
         {
             this._標頭列 = 標頭列_;

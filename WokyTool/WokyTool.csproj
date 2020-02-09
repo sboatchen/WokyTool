@@ -385,6 +385,12 @@
       <DependentUpon>廠商篩選視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="廠商\資料\廠商資料篩選.cs" />
+    <Compile Include="配送\視窗\宅配通匯入視窗.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="配送\視窗\宅配通匯入視窗.Designer.cs">
+      <DependentUpon>宅配通匯入視窗.cs</DependentUpon>
+    </Compile>
     <Compile Include="預留\控制\預留匯入資料管理器.cs" />
     <Compile Include="預留\控制\預留資料管理器.cs" />
     <Compile Include="預留\控制\預留新增資料管理器.cs" />
@@ -1510,6 +1516,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="月結帳\視窗\月結帳支出新增匯入視窗.resx">
       <DependentUpon>月結帳支出新增匯入視窗.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="配送\視窗\宅配通匯入視窗.resx">
+      <DependentUpon>宅配通匯入視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="預留\視窗\預留匯入篩選視窗.resx">
       <DependentUpon>預留匯入篩選視窗.cs</DependentUpon>

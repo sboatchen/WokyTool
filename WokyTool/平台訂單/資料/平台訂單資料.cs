@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using WokyTool.Common;
+using WokyTool.商品;
 using WokyTool.通用;
 
 namespace WokyTool.平台訂單
@@ -23,18 +24,21 @@ namespace WokyTool.平台訂單
         [JsonProperty]
         public int 公司編號 { get; set; }
 
+        [可匯出]
         [JsonProperty]
         public string 公司名稱 { get; set; }
 
         [JsonProperty]
         public int 客戶編號 { get; set; }
 
+        [可匯出]
         [JsonProperty]
         public string 客戶名稱 { get; set; }
 
         [JsonProperty]
         public int 商品編號 { get; set; }
 
+        [可匯出]
         [JsonProperty]
         public string 商品名稱 { get; set; }
 
@@ -113,6 +117,17 @@ namespace WokyTool.平台訂單
         public string[] 內容 { get; set; }
 
         /********************************/
+
+        private 商品資料 _商品 = null; 
+        public 商品資料 商品 
+        {
+            get
+            {
+                if (_商品 == null)
+                    _商品 = 商品資料管理器.獨體.取得(商品編號);
+                return _商品;
+            }
+        }
 
         public decimal 總成本
         {

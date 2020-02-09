@@ -5,23 +5,33 @@ namespace WokyTool.通用
 {
     public class MyDateTimePicker : System.Windows.Forms.DateTimePicker   
 	{
-		private DateTimePickerFormat oldFormat = DateTimePickerFormat.Long;
+        public enum 時間類型
+        {
+            最小值,
+            最大值,
+        };
+
+        private DateTimePickerFormat oldFormat = DateTimePickerFormat.Long;
 		private string oldCustomFormat = null;
-		private bool bIsNull = false;
+		private bool bIsNull = true;
 
         public MyDateTimePicker()
             : base()
 		{
 		}
 
+        public 時間類型 類型 { get; set; }
+
 		public new DateTime Value 
 		{
 			get 
 			{
-				if (bIsNull)
-					return DateTime.MinValue;
-				else
-					return base.Value;
+                if (bIsNull)
+                    return DateTime.MinValue;
+                else if (類型 == 時間類型.最小值)
+                    return new DateTime(base.Value.Year, base.Value.Month, base.Value.Day, 0, 0, 0, 0);
+                else
+                    return new DateTime(base.Value.Year, base.Value.Month, base.Value.Day, 23, 59, 59, 999);
 			}
 			set 
 			{

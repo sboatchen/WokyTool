@@ -70,6 +70,8 @@ namespace WokyTool.通用
             if (false == 備份(OFD_.FileName, 轉換_.GetType().Name, "檔案讀出"))
                 return null;
 
+            轉換_.讀出檔名(OFD_.FileName);
+
             string 內容_ = 讀出(OFD_.FileName, 轉換_.密碼, 轉換_.編碼);
             if (String.IsNullOrEmpty(內容_))
                 return null;

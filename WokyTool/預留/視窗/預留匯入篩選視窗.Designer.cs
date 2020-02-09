@@ -45,7 +45,7 @@ namespace WokyTool.預留
             // 
             // 姓名
             // 
-            this.姓名.Location = new System.Drawing.Point(294, 50);
+            this.姓名.Location = new System.Drawing.Point(294, 74);
             this.姓名.Name = "姓名";
             this.姓名.Size = new System.Drawing.Size(165, 22);
             this.姓名.TabIndex = 172;
@@ -53,7 +53,7 @@ namespace WokyTool.預留
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(252, 55);
+            this.label8.Location = new System.Drawing.Point(252, 79);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 171;
@@ -61,7 +61,7 @@ namespace WokyTool.預留
             // 
             // 名稱
             // 
-            this.名稱.Location = new System.Drawing.Point(59, 50);
+            this.名稱.Location = new System.Drawing.Point(59, 74);
             this.名稱.Name = "名稱";
             this.名稱.Size = new System.Drawing.Size(165, 22);
             this.名稱.TabIndex = 170;
@@ -69,7 +69,7 @@ namespace WokyTool.預留
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 55);
+            this.label6.Location = new System.Drawing.Point(17, 79);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 12);
             this.label6.TabIndex = 169;
@@ -77,23 +77,25 @@ namespace WokyTool.預留
             // 
             // 最大預留日期
             // 
-            this.最大預留日期.CustomFormat = "yyyy-MM-dd";
+            this.最大預留日期.CustomFormat = " ";
             this.最大預留日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.最大預留日期.Location = new System.Drawing.Point(144, 11);
+            this.最大預留日期.Location = new System.Drawing.Point(59, 39);
             this.最大預留日期.Name = "最大預留日期";
-            this.最大預留日期.Size = new System.Drawing.Size(80, 22);
+            this.最大預留日期.Size = new System.Drawing.Size(165, 22);
             this.最大預留日期.TabIndex = 168;
-            this.最大預留日期.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 752);
+            this.最大預留日期.Value = new System.DateTime(((long)(0)));
+            this.最大預留日期.類型 = WokyTool.通用.MyDateTimePicker.時間類型.最大值;
             // 
             // 最小預留日期
             // 
-            this.最小預留日期.CustomFormat = "yyyy-MM-dd";
+            this.最小預留日期.CustomFormat = " ";
             this.最小預留日期.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.最小預留日期.Location = new System.Drawing.Point(59, 11);
             this.最小預留日期.Name = "最小預留日期";
-            this.最小預留日期.Size = new System.Drawing.Size(80, 22);
+            this.最小預留日期.Size = new System.Drawing.Size(165, 22);
             this.最小預留日期.TabIndex = 166;
-            this.最小預留日期.Value = new System.DateTime(2019, 9, 9, 11, 55, 19, 752);
+            this.最小預留日期.Value = new System.DateTime(((long)(0)));
+            this.最小預留日期.類型 = WokyTool.通用.MyDateTimePicker.時間類型.最小值;
             // 
             // label7
             // 
@@ -106,7 +108,7 @@ namespace WokyTool.預留
             // 
             // 物品
             // 
-            this.物品.Location = new System.Drawing.Point(59, 79);
+            this.物品.Location = new System.Drawing.Point(59, 103);
             this.物品.Name = "物品";
             this.物品.ReadOnly = false;
             this.物品.SelectedItem = null;
@@ -116,7 +118,7 @@ namespace WokyTool.預留
             // 
             // 備註
             // 
-            this.備註.Location = new System.Drawing.Point(59, 106);
+            this.備註.Location = new System.Drawing.Point(59, 130);
             this.備註.Name = "備註";
             this.備註.Size = new System.Drawing.Size(400, 22);
             this.備註.TabIndex = 163;
@@ -124,7 +126,7 @@ namespace WokyTool.預留
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(17, 111);
+            this.label17.Location = new System.Drawing.Point(17, 135);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(29, 12);
             this.label17.TabIndex = 162;
@@ -133,7 +135,7 @@ namespace WokyTool.預留
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 82);
+            this.label4.Location = new System.Drawing.Point(17, 106);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 159;
@@ -144,7 +146,7 @@ namespace WokyTool.預留
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(483, 141);
+            this.ClientSize = new System.Drawing.Size(483, 159);
             this.Controls.Add(this.姓名);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.名稱);
