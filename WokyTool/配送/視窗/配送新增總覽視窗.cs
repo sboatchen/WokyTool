@@ -112,7 +112,18 @@ namespace WokyTool.配送
         {
             IEnumerable<配送轉換資料> 資料列舉_ = 資料管理器.資料列.Where(Value => Value.配送公司 == 列舉.配送公司.宅配通);
 
-            宅配通匯入轉換 轉換器_ = new 宅配通匯入轉換(資料列舉_);
+            宅配通匯入視窗 宅配通匯入視窗_ = new 宅配通匯入視窗();
+
+            if (宅配通匯入視窗_.ShowDialog(this) == DialogResult.OK)
+            {
+                宅配通匯入轉換.轉換(資料列舉_, 宅配通匯入視窗_.資料);
+                訊息管理器.獨體.通知("匯入完成");
+            }
+
+            宅配通匯入視窗_.Dispose();
+
+
+            /*宅配通匯入轉換 轉換器_ = new 宅配通匯入轉換(資料列舉_);
 
             IEnumerable<配送轉換資料> 處理列舉_ = 檔案.詢問並讀出(轉換器_);
             if (處理列舉_ != null)
@@ -120,7 +131,7 @@ namespace WokyTool.配送
                 處理列舉_.Count();  // 強制處理
                 this.myDataGridView1.Refresh();
                 訊息管理器.獨體.通知("匯入完成");
-            }
+            }*/
         }
 
         private void 宅配通撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
