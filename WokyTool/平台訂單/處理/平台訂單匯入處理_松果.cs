@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using WokyTool.客戶;
 using WokyTool.商品;
 using WokyTool.通用;
@@ -20,9 +21,16 @@ namespace WokyTool.平台訂單
 
         public string 密碼 { get { return null; } }
 
+        private string 檔名 = null;
+
         public 平台訂單匯入處理_松果()
         {
             客戶 = 客戶資料管理器.獨體.取得("松果");
+        }
+
+        public override void 讀出檔名(string 檔名_)
+        {
+            檔名 = Path.GetFileName(檔名_);
         }
 
         public IEnumerable<平台訂單新增匯入資料> 讀出資料(string[] 資料列_)
@@ -73,7 +81,8 @@ namespace WokyTool.平台訂單
         {
             var 轉換_ = new 平台訂單回單轉換_松果(資料列舉_);
 
-            String 標題_ = String.Format("回單_{0}_{1}_{2}", 公司.名稱, 客戶.名稱, 時間.目前日期);
+            String 標題_ = string.IsNullOrEmpty(檔名) ? String.Format("回單_{0}_{1}_{2}", 公司.名稱, 客戶.名稱, 時間.目前日期) : 檔名;    //TODO 現在無法處理存檔後 又想回單的狀況
+
             檔案.詢問並寫入(標題_, 轉換_);
         }
     }

@@ -28,6 +28,10 @@ namespace WokyTool.通用
             資料類型 = typeof(T);
         }
 
+        public void 讀出檔名(string 檔名_)
+        {
+        }
+
         public void 讀出標頭(string[] 標頭列_)
         {
             bool 是否有識別欄位_ = false;

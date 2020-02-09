@@ -25,6 +25,10 @@ namespace WokyTool.配送
             _資料列舉 = 資料列舉_;
         }
 
+        public void 讀出檔名(string 檔名_)
+        {
+        }
+
         public void 讀出標頭(string[] 標頭列_)
         {
         }

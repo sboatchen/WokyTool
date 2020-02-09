@@ -211,6 +211,8 @@ namespace WokyTool.通用
             if (false == 備份(OFD_.FileName, 轉換_.GetType().Name, "檔案讀出"))
                 return null;
 
+            轉換_.讀出檔名(OFD_.FileName);
+
             Microsoft.Office.Interop.Excel.Application 應用程式_ = null;
             Workbook 工作簿_ = null;
             Worksheet 分頁_ = null;
