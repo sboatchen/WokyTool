@@ -117,6 +117,7 @@ namespace WokyTool.平台訂單
             this.最小處理時間.Size = new System.Drawing.Size(165, 22);
             this.最小處理時間.TabIndex = 58;
             this.最小處理時間.Value = new System.DateTime(((long)(0)));
+            this.最小處理時間.類型 = WokyTool.通用.MyDateTimePicker.時間類型.最小值;
             // 
             // 處理狀態
             // 
@@ -299,6 +300,7 @@ namespace WokyTool.平台訂單
             this.指配日期.Size = new System.Drawing.Size(165, 22);
             this.指配日期.TabIndex = 83;
             this.指配日期.Value = new System.DateTime(((long)(0)));
+            this.指配日期.類型 = WokyTool.通用.MyDateTimePicker.時間類型.最小值;
             // 
             // label11
             // 
@@ -361,6 +363,7 @@ namespace WokyTool.平台訂單
             this.最大處理時間.Size = new System.Drawing.Size(165, 22);
             this.最大處理時間.TabIndex = 119;
             this.最大處理時間.Value = new System.DateTime(((long)(0)));
+            this.最大處理時間.類型 = WokyTool.通用.MyDateTimePicker.時間類型.最大值;
             // 
             // 最大代收金額
             // 

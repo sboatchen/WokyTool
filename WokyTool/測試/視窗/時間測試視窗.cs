@@ -21,5 +21,10 @@ namespace WokyTool.測試
             Console.WriteLine(時間.目前時間);
             Console.WriteLine(時間.目前完整時間);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(this.myDateTimePicker1.Value);
+        }
     }
 }
