@@ -5,14 +5,14 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    class 平台訂單回單轉換_PC商店街 : 可格式化_Csv
+    class 平台訂單回單轉換_PC專櫃 //: 可格式化_Csv
     {
-        private static string 全速配編號 = "8";
+        /*private static string 全速配編號 = "8";
         private static string 宅配通編號 = "4";
 
         protected 平台訂單新增資料 _Data;
 
-        public 平台訂單回單轉換_PC商店街(平台訂單新增資料 Data_)
+        public 平台訂單回單轉換_PC專櫃(平台訂單新增資料 Data_)
         {
             _Data = Data_;
         }
@@ -47,7 +47,7 @@ namespace WokyTool.客製
                     case 列舉.配送公司.宅配通:
                         return 宅配通編號;
                     default:
-                        訊息管理器.獨體.錯誤("平台訂單回單轉換_PC商店街 不支援配送公司 " + _Data.配送公司.ToString());
+                        訊息管理器.獨體.錯誤("平台訂單回單轉換_PC專櫃 不支援配送公司 " + _Data.配送公司.ToString());
                         return 字串.空;
                 }
             }
@@ -60,6 +60,6 @@ namespace WokyTool.客製
             {
                 return _Data.配送單號;
             }
-        }
+        }*/
     }
 }

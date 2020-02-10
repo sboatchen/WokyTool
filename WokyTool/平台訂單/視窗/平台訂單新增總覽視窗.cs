@@ -126,7 +126,7 @@ namespace WokyTool.平台訂單
             foreach (DataGridViewRow Myrow in dataGridView1.Rows)
             {
                 int value = Convert.ToInt32(Myrow.Cells[1].Value);
-                Myrow.DefaultCellStyle.BackColor = 顏色處理.GetRandomColor(value);
+                Myrow.DefaultCellStyle.BackColor = 顏色.GetRandomColor(value);
             }
         }
     }
