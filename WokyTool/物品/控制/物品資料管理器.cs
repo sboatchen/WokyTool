@@ -78,6 +78,13 @@ namespace WokyTool.物品
             return _資料書.Values.Where(Value => 類別_.Equals(Value.類別) && 顏色_.Equals(Value.顏色)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
         }
 
+        public override void 更新資料(object 資料列obj_)
+        {
+            base.更新資料(資料列obj_);
+
+            商品資料管理器.獨體.更新組成();
+        }
+
         // 測試用
         public void 清除庫存()
         {

@@ -78,12 +78,11 @@ namespace WokyTool.商品{
 
         private void _組合異動(object sender, EventArgs e)
         {
-            Console.WriteLine("組合異動");
+            //Console.WriteLine("組合異動");
 
-            _目前資料.更新組成(true);
+            _目前資料.更新組成();
             this.組成.Text = _目前資料.組成字串;
             this.品牌.SelectedItem = _目前資料.品牌;
-            this.體積.Value = _目前資料.體積;
             this.成本.Value = _目前資料.成本;
             this.利潤.Value = _目前資料.利潤;
         }

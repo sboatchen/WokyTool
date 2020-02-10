@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using WokyTool.庫存;
 using WokyTool.寄庫;
@@ -33,6 +34,16 @@ namespace WokyTool.商品
         // 建構子
         private 商品資料管理器()
         {
+        }
+
+        protected override void 初始化資料()
+        {
+            base.初始化資料();
+
+            foreach (var 商品_ in _資料書.Values)
+            {
+                商品_.更新組成();
+            }
         }
 
         public override 商品資料 取得(int ID_)
@@ -100,10 +111,12 @@ namespace WokyTool.商品
 
         public void 舊資料轉換()
         {
-            _資料書.Clear();
+            if (File.Exists("設定/商品V 3.0.0.json") == false)
+                return;
+
 
             // V2.0.X -> V2.1.X
-            string json = 檔案.讀出("設定/商品.json");
+            string json = 檔案.讀出("設定/商品V2.1.1.json");
             Dictionary<int, 舊商品資料> 舊資料書_ = JsonConvert.DeserializeObject<Dictionary<int, 舊商品資料>>(json);
             foreach (var Item_ in 舊資料書_.Values)
             {
