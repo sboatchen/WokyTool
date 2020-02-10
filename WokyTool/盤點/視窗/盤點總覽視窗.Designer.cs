@@ -47,7 +47,6 @@
             this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.通用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.新增ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.盤點資料BindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -182,7 +181,6 @@
             // 更新ToolStripMenuItem
             // 
             this.更新ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.新增ToolStripMenuItem,
             this.通用ToolStripMenuItem});
             this.更新ToolStripMenuItem.Name = "更新ToolStripMenuItem";
             this.更新ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
@@ -194,12 +192,6 @@
             this.通用ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.通用ToolStripMenuItem.Text = "通用";
             this.通用ToolStripMenuItem.Click += new System.EventHandler(this.通用ToolStripMenuItem_Click);
-            // 
-            // 新增ToolStripMenuItem
-            // 
-            this.新增ToolStripMenuItem.Name = "新增ToolStripMenuItem";
-            this.新增ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.新增ToolStripMenuItem.Text = "新增";
             // 
             // 盤點總覽視窗
             // 
@@ -239,6 +231,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 更新庫存DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn 是否一致;
-        private System.Windows.Forms.ToolStripMenuItem 新增ToolStripMenuItem;
     }
 }
