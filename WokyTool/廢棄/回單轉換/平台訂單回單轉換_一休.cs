@@ -6,9 +6,9 @@ using WokyTool.通用;
 
 namespace WokyTool.客製
 {
-    public class 平台訂單回單轉換_陳沂 : 可寫入介面_EXCEL
+    public class 平台訂單回單轉換_一休 //: 可寫入介面_EXCEL
     {
-        public string 分類 { get { return null; } }
+        /*public string 分類 { get { return null; } }
 
         public string 樣板 { get { return null; } }
 
@@ -18,7 +18,7 @@ namespace WokyTool.客製
 
         private IEnumerable<平台訂單新增資料> _資料列舉;
 
-        public 平台訂單回單轉換_陳沂(IEnumerable<平台訂單新增資料> 資料列舉_)
+        public 平台訂單回單轉換_一休(IEnumerable<平台訂單新增資料> 資料列舉_)
         {
             _資料列舉 = 資料列舉_;
         }
@@ -49,12 +49,12 @@ namespace WokyTool.客製
                         break;
                     default:
                         if (資料_.處理狀態 != 列舉.訂單處理狀態.忽略)
-                            訊息管理器.獨體.錯誤("平台訂單回單轉換_陳沂_不支援配送公司 " + 資料_.配送公司.ToString());
+                            訊息管理器.獨體.錯誤("平台訂單回單轉換_一休_不支援配送公司 " + 資料_.配送公司.ToString());
                         break;
                 }
 
                 目前行數_++;
             }
-        }
+        }*/
     }
 }

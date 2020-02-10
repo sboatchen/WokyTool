@@ -3,7 +3,7 @@
 namespace WokyTool.通用
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public abstract class 可編號記錄資料 : 新版可記錄資料, 可編號介面, 可索引介面
+    public abstract class 可編號記錄資料 : 新版可記錄資料, 可編號介面
     {
         [可匯出]
         [JsonProperty]
@@ -18,7 +18,5 @@ namespace WokyTool.通用
         {
             return 編號 > 常數.新建資料編碼;
         }
-
-        public object 索引 { get { return 編號; } }
     }
 }

@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace WokyTool.Common
+namespace WokyTool.通用
 {
-    public class 顏色處理
+    public class 顏色
     {
         protected static List<Color> _RandomColorList = null;
 

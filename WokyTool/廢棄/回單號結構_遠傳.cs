@@ -11,10 +11,10 @@ using WokyTool.通用;
 
 namespace WokyTool.DataExport
 {
-    class 回單號結構_遠傳 : 可格式化_Excel
+    class 回單號結構_遠傳 //: 可格式化_Excel
     {
-        //private static string 全速配編號 = "02";
-        //private static string 宅配通編號 = "03";
+        /*private static string 全速配編號 = "02";
+        private static string 宅配通編號 = "03";
 
         //訂單編號	物流商代碼	貨運單號
 
@@ -38,24 +38,24 @@ namespace WokyTool.DataExport
         // 設定資料
         public int SetExcelData(Application App_, int Row_)
         {
-            //App_.Cells[Row_, 1] = _Data.訂單編號;
+            App_.Cells[Row_, 1] = _Data.訂單編號;
 
-            //switch (_Data.配送公司)
-            //{
-            //    case 列舉.配送公司.全速配:
-            //        App_.Cells[Row_, 2] = 全速配編號;
-            //        break;
-            //    case 列舉.配送公司.宅配通:
-            //        App_.Cells[Row_, 2] = 宅配通編號;
-            //        break;
-            //    default:
-            //        訊息管理器.獨體.通知("回單號結構_遠傳 can't find 配送公司 " + _Data.配送公司.ToString());
-            //        break;
-            //}
-            
-            //App_.Cells[Row_, 3] = _Data.配送單號;
+            switch (_Data.配送公司)
+            {
+                case 列舉.配送公司.全速配:
+                    App_.Cells[Row_, 2] = 全速配編號;
+                    break;
+                case 列舉.配送公司.宅配通:
+                    App_.Cells[Row_, 2] = 宅配通編號;
+                    break;
+                default:
+                    訊息管理器.獨體.通知("回單號結構_遠傳 can't find 配送公司 " + _Data.配送公司.ToString());
+                    break;
+            }
+
+            App_.Cells[Row_, 3] = _Data.配送單號;
 
             return Row_ + 1;
-        }
+        }*/
     }
 }
