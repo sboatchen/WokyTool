@@ -61,17 +61,17 @@ namespace WokyTool.配送
             for (int i = 1; i < 資料列_.Length; i++)
             {
                 string[] 欄位列_ = 資料列_[i].Split(' ', 'r').Where(Value => !string.IsNullOrEmpty(Value)).ToArray();
+                if(欄位列_.Length < 5)
+                    break;
 
                 string 姓名_ = 欄位列_[4];
                 string 配送單號_ = 欄位列_[1];
 
                 配送轉換資料 配送轉換資料_ = 資料列舉_.Where(Value => string.IsNullOrEmpty(Value.配送單號) && 姓名_.Equals(Value.姓名)).FirstOrDefault();
                 if (配送轉換資料_ == null)
-                {
                     訊息管理器.獨體.錯誤("找不到配送資料, 姓名:" + 姓名_);
-                }
-
-                配送轉換資料_.配送單號 = 配送單號_;
+                else
+                    配送轉換資料_.配送單號 = 配送單號_;
             }
         }
     }
