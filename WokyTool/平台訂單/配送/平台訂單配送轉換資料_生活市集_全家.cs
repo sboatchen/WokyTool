@@ -13,8 +13,8 @@ namespace WokyTool.平台訂單
     {
         private static PDF拷貝元件 拷貝資料 = new PDF拷貝元件(new Rectangle(0, 50, 595, 810), 0, -20);
 
-        private static Dictionary<PDF圖片字串讀出元件, PDF字串寫入元件> _設定資料書;
-        public static Dictionary<PDF圖片字串讀出元件, PDF字串寫入元件> 設定資料書
+        private static Dictionary<PDF圖片數值讀出元件, PDF字串寫入元件> _設定資料書;
+        public static Dictionary<PDF圖片數值讀出元件, PDF字串寫入元件> 設定資料書
         {
             get 
             {
@@ -22,11 +22,11 @@ namespace WokyTool.平台訂單
                 {
                     // 讀出 配送單號
                     // 寫入 物品組成
-                    _設定資料書 = new Dictionary<PDF圖片字串讀出元件, PDF字串寫入元件>();
-                    _設定資料書.Add(new PDF圖片字串讀出元件(new Rect(325, 200, 375, 50)), new PDF字串寫入元件(new Rectangle(5, 785, 295, 830), 常數.通用字體));
-                    _設定資料書.Add(new PDF圖片字串讀出元件(new Rect(1575, 200, 375, 50)), new PDF字串寫入元件(new Rectangle(305, 785, 595, 830), 常數.通用字體));
-                    _設定資料書.Add(new PDF圖片字串讀出元件(new Rect(325, 1940, 375, 50)), new PDF字串寫入元件(new Rectangle(5, 0, 295, 45), 常數.通用字體));
-                    _設定資料書.Add(new PDF圖片字串讀出元件(new Rect(1575, 1940, 375, 50)), new PDF字串寫入元件(new Rectangle(305, 0, 595, 45), 常數.通用字體));
+                    _設定資料書 = new Dictionary<PDF圖片數值讀出元件, PDF字串寫入元件>();
+                    _設定資料書.Add(new PDF圖片數值讀出元件(new Rect(325, 200, 375, 50)), new PDF字串寫入元件(new Rectangle(5, 785, 295, 830), 常數.通用字體));
+                    _設定資料書.Add(new PDF圖片數值讀出元件(new Rect(1575, 200, 375, 50)), new PDF字串寫入元件(new Rectangle(305, 785, 595, 830), 常數.通用字體));
+                    _設定資料書.Add(new PDF圖片數值讀出元件(new Rect(325, 1940, 375, 50)), new PDF字串寫入元件(new Rectangle(5, 0, 295, 45), 常數.通用字體));
+                    _設定資料書.Add(new PDF圖片數值讀出元件(new Rect(1575, 1940, 375, 50)), new PDF字串寫入元件(new Rectangle(305, 0, 595, 45), 常數.通用字體));
                 }
 
                 return _設定資料書;
@@ -52,8 +52,6 @@ namespace WokyTool.平台訂單
                 string 配送單號_ = Pair_.Key.處理(PdfReader_, 頁索引_);
                 if (string.IsNullOrEmpty(配送單號_))
                     return;
-
-                配送單號_ = 配送單號_.Replace("l", "1");
 
                 訊息管理器.獨體.訊息("讀出配送單號:" + 配送單號_);
 

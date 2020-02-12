@@ -12,6 +12,21 @@ namespace WokyTool.通用
 {
     public class PDF圖片數值讀出元件
     {
+        private static TesseractEngine _OCR = null;
+        protected static TesseractEngine OCR
+        {
+            get
+            {
+                if (_OCR == null)
+                {
+                    _OCR = new TesseractEngine("./tessdata", "eng");
+                    _OCR.SetVariable("tessedit_char_whitelist", "0123456789");
+                }
+
+                return _OCR;
+            }
+        }
+
         // 請注意 這邊的範圍 不是指圖片文字在PDF上的範圍，而是指文字在圖片上的範圍
         public Rect 範圍 { get; set; }
 
@@ -39,22 +54,21 @@ namespace WokyTool.通用
 
                 PRStream pst = (PRStream)pdfObj; //cast object to stream
                 PdfImageObject pio = new PdfImageObject(pst); //get the image
-                System.Drawing.Image img = pio.GetDrawingImage();
 
-                Bitmap bit = new Bitmap(img);
-                //bit = PreprocesImage(bit);//進行影象處理,如果識別率低可試試
-
-                using (TesseractEngine OCR_ = new TesseractEngine("./tessdata", "eng"))
+                using (System.Drawing.Image img = pio.GetDrawingImage())
                 {
-                    OCR_.SetVariable("tessedit_char_whitelist", "0123456789");
-
-                    using (Page page = OCR_.Process(bit))
+                    using (Bitmap bit = new Bitmap(img))
                     {
-                        page.RegionOfInterest = 範圍;
+                        //bit = PreprocesImage(bit);//進行影象處理,如果識別率低可試試
 
-                        string str = page.GetText();//識別後的內容
+                        using (Page page = OCR.Process(bit))
+                        {
+                            page.RegionOfInterest = 範圍;
 
-                        return str;
+                            string str = page.GetText();//識別後的內容
+
+                            return str.Replace("\n", "");
+                        }
                     }
                 }
 

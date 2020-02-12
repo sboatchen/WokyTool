@@ -10,18 +10,26 @@ namespace WokyTool.通用
 {
     public class PDF圖片字串讀出元件
     {
+        private static TesseractEngine _OCR = null;
+        protected static TesseractEngine OCR
+        {
+            get
+            {
+                if(_OCR == null)
+                    _OCR = new TesseractEngine("./tessdata", "chi_tra");
+                return _OCR;
+            }
+        }
+
         // 請注意 這邊的範圍 不是指圖片文字在PDF上的範圍，而是指文字在圖片上的範圍
         public Rect 範圍 { get; set; }
 
         public int 索引 { get; set; }
 
-        public string 語系 { get; set; }
-
         public PDF圖片字串讀出元件(Rect 範圍_, int 索引_ = 0, string 語系_ = "chi_tra")
         {
             this.範圍 = 範圍_;
             this.索引 = 索引_;
-            this.語系 = 語系_;
         }
 
         public string 處理(PdfReader PdfReader_, int 頁索引_)
@@ -38,25 +46,23 @@ namespace WokyTool.通用
 
                 PRStream pst = (PRStream)pdfObj; //cast object to stream
                 PdfImageObject pio = new PdfImageObject(pst); //get the image
-                System.Drawing.Image img = pio.GetDrawingImage();
 
-                Bitmap bit = new Bitmap(img);
-                //bit = PreprocesImage(bit);//進行影象處理,如果識別率低可試試
-
-                TesseractEngine OCR_ = new TesseractEngine("./tessdata", 語系);
-
-                using (Page page = OCR_.Process(bit))
+                using (System.Drawing.Image img = pio.GetDrawingImage())
                 {
-                    page.RegionOfInterest = 範圍;
+                    using (Bitmap bit = new Bitmap(img))
+                    {
+                        //bit = PreprocesImage(bit);//進行影象處理,如果識別率低可試試
 
-                    string str = page.GetText();//識別後的內容
+                        using (Page page = OCR.Process(bit))
+                        {
+                            page.RegionOfInterest = 範圍;
 
-                    return str.Trim();
+                            string str = page.GetText();//識別後的內容
+
+                            return str.Replace(" ", "");
+                        }
+                    }
                 }
-
-                // Old OCR
-                //var Result = OCR.Read(img, 範圍);
-                //return Result.Text;
             }
 
             return null;
