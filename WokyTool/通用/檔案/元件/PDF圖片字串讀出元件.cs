@@ -51,7 +51,7 @@ namespace WokyTool.通用
 
                     string str = page.GetText();//識別後的內容
 
-                    return str;
+                    return str.Trim();
                 }
 
                 // Old OCR

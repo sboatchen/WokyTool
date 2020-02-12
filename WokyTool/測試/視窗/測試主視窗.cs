@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
+using WokyTool.平台訂單;
 using WokyTool.物品;
 using WokyTool.商品;
+using WokyTool.通用;
 using WokyTool.聯絡人;
 
 namespace WokyTool.測試
@@ -78,9 +80,8 @@ namespace WokyTool.測試
 
         private void 快速_Click(object sender, EventArgs e)
         {
-            var i = new 時間測試視窗();
-            i.Show();
-            i.BringToFront();
+            var 轉換_ = new 平台訂單配送轉換資料_松果_全家(null);
+            檔案.詢問並修改(轉換_, true);
         }
 
         private void pDFToolStripMenuItem_Click(object sender, EventArgs e)

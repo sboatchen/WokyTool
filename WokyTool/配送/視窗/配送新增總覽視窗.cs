@@ -121,17 +121,7 @@ namespace WokyTool.配送
             }
 
             宅配通匯入視窗_.Dispose();
-
-
-            /*宅配通匯入轉換 轉換器_ = new 宅配通匯入轉換(資料列舉_);
-
-            IEnumerable<配送轉換資料> 處理列舉_ = 檔案.詢問並讀出(轉換器_);
-            if (處理列舉_ != null)
-            {
-                處理列舉_.Count();  // 強制處理
-                this.myDataGridView1.Refresh();
-                訊息管理器.獨體.通知("匯入完成");
-            }*/
+            this.myDataGridView1.Refresh();
         }
 
         private void 宅配通撿貨ToolStripMenuItem_Click(object sender, EventArgs e)
