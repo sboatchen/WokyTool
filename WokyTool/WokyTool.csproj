@@ -383,6 +383,11 @@
       <DependentUpon>廠商篩選視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="廠商\資料\廠商資料篩選.cs" />
+    <Compile Include="月結帳\匯入\月結帳統計轉換.cs" />
+    <Compile Include="月結帳\匯入\月結帳商品組成資料.cs" />
+    <Compile Include="月結帳\匯入\月結帳商品資料.cs" />
+    <Compile Include="月結帳\匯入\月結帳物品資料.cs" />
+    <Compile Include="月結帳\匯入\月結帳統計資料.cs" />
     <Compile Include="配送\視窗\宅配通匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
