@@ -17,7 +17,9 @@ namespace WokyTool.配送
                     continue;
 
                 string 姓名_ = 欄位列_[1];
-                string 配送單號_ = 欄位列_[0].Split(' ').Where(Value => String.IsNullOrEmpty(Value) == false).ToArray()[1];
+                string 配送單號_ = 欄位列_[0].Split(' ', '\t').Where(Value => String.IsNullOrEmpty(Value) == false).ToArray()[1];
+
+                訊息管理器.獨體.訊息(姓名_ + ":" + 配送單號_);
 
                 配送轉換資料 配送轉換資料_ = 資料列舉_.Where(Value => string.IsNullOrEmpty(Value.配送單號) && 姓名_.Equals(Value.姓名)).FirstOrDefault();
                 if (配送轉換資料_ == null)
