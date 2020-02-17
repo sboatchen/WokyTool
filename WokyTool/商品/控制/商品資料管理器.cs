@@ -15,7 +15,7 @@ namespace WokyTool.商品
 
         public override bool 是否可編輯 { get { return 系統參數.修改設定資料; } }
 
-        public override string 檔案路徑 { get { return "設定/商品V2.1.1.json"; } }
+        public override string 檔案路徑 { get { return "設定/商品V3.0.0.json"; } }
 
         public override 商品資料 不篩選資料 { get { return 商品資料.不篩選; } }
         public override 商品資料 空白資料 { get { return 商品資料.空白; } }
@@ -38,12 +38,24 @@ namespace WokyTool.商品
 
         protected override void 初始化資料()
         {
-            base.初始化資料();
+            if (File.Exists("設定/商品V3.0.0.json"))
+                base.初始化資料();
+            else {
+                string json = 檔案.讀出("設定/商品V2.1.1.json");
+                Dictionary<int, 舊商品資料> 舊資料書_ = JsonConvert.DeserializeObject<Dictionary<int, 舊商品資料>>(json);
+                _資料書 = 舊資料書_.ToDictionary(Pair => Pair.Key, Pair => 舊商品資料.轉換(Pair.Value));
+                
+                if (_資料書.Count == 0)
+                    _下個編號 = 1;
+                else
+                    _下個編號 = _資料書.Max(Value => Value.Key) + 1;
+
+                資料版本++;
+                儲存();
+            }
 
             foreach (var 商品_ in _資料書.Values)
-            {
                 商品_.更新組成();
-            }
         }
 
         public override 商品資料 取得(int ID_)
@@ -107,102 +119,6 @@ namespace WokyTool.商品
             }
 
             資料版本++;
-        }
-
-        public void 舊資料轉換()
-        {
-            if (File.Exists("設定/商品V 3.0.0.json") == false)
-                return;
-
-
-            // V2.0.X -> V2.1.X
-            string json = 檔案.讀出("設定/商品V2.1.1.json");
-            Dictionary<int, 舊商品資料> 舊資料書_ = JsonConvert.DeserializeObject<Dictionary<int, 舊商品資料>>(json);
-            foreach (var Item_ in 舊資料書_.Values)
-            {
-                商品資料 New_ = new 商品.商品資料
-                {
-                    編號 = Item_.編號,
-
-                    大類 = Item_.大類,
-                    小類 = Item_.小類,
-
-                    公司 = Item_.公司,
-                    客戶 = Item_.客戶,
-
-                    品號 = Item_.品號,
-                    名稱 = Item_.名稱,
-
-                    寄庫數量 = Item_.寄庫數量,
-                    售價 = Item_.售價,
-                };
-
-                New_.組成 = new List<商品組成資料>();
-                if (Item_.需求1.編號是否有值())
-                {
-                    商品組成資料 組成_ = new 商品組成資料
-                    {
-                        物品 = Item_.需求1,
-                        數量 = Item_.數量1,
-                    };
-
-                    New_.組成.Add(組成_);
-                }
-                if (Item_.需求2.編號是否有值())
-                {
-                    商品組成資料 組成_ = new 商品組成資料
-                    {
-                        物品 = Item_.需求2,
-                        數量 = Item_.數量2,
-                    };
-
-                    New_.組成.Add(組成_);
-                }
-                if (Item_.需求3.編號是否有值())
-                {
-                    商品組成資料 組成_ = new 商品組成資料
-                    {
-                        物品 = Item_.需求3,
-                        數量 = Item_.數量3,
-                    };
-
-                    New_.組成.Add(組成_);
-                }
-                if (Item_.需求4.編號是否有值())
-                {
-                    商品組成資料 組成_ = new 商品組成資料
-                    {
-                        物品 = Item_.需求4,
-                        數量 = Item_.數量4,
-                    };
-
-                    New_.組成.Add(組成_);
-                }
-                if (Item_.需求5.編號是否有值())
-                {
-                    商品組成資料 組成_ = new 商品組成資料
-                    {
-                        物品 = Item_.需求5,
-                        數量 = Item_.數量5,
-                    };
-
-                    New_.組成.Add(組成_);
-                }
-
-                New_.更新組成();
-
-                _資料書.Add(New_.編號, New_);
-            }
-
-            if (_資料書.Count == 0)
-                _下個編號 = 1;
-            else
-                _下個編號 = _資料書.Max(Value => Value.Key) + 1;
-
-            資料版本++;
-            儲存();
-
-            訊息管理器.獨體.通知("商品轉換完成");
         }
 
         public void 更新組成()

@@ -172,6 +172,7 @@
     </Compile>
     <Compile Include="公司\資料\公司資料篩選.cs" />
     <Compile Include="公司\資料\公司資料.cs" />
+    <Compile Include="商品\廢棄\舊商品組成資料.cs" />
     <Compile Include="商品\控制\商品大類資料管理器.cs" />
     <Compile Include="商品\控制\商品資料管理器.cs" />
     <Compile Include="商品\控制\商品小類資料管理器.cs" />
@@ -504,7 +505,7 @@
     <Compile Include="盤點\轉換\盤點更新轉換_小料架.cs" />
     <Compile Include="盤點\轉換\盤點更新轉換_萬通.cs" />
     <Compile Include="盤點\轉換\盤點更新轉換_大料架.cs" />
-    <Compile Include="廢棄\資料\舊商品資料.cs" />
+    <Compile Include="商品\廢棄\舊商品資料.cs" />
     <Compile Include="商品\視窗\商品總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
