@@ -2,6 +2,7 @@
 using iTextSharp.text.pdf;
 using System.Collections.Generic;
 using System.Linq;
+using Tesseract;
 using WokyTool.Common;
 using WokyTool.物品;
 using WokyTool.通用;
@@ -10,25 +11,10 @@ namespace WokyTool.平台訂單
 {
     public class 平台訂單配送轉換資料_松果_全家 : 平台訂單配送轉換資料_超商
     {
-        private static List<PDF拷貝元件> _拷貝資料列;
-        public static List<PDF拷貝元件> 拷貝資料列
-        {
-            get
-            {
-                if (_拷貝資料列 == null)
-                {
-                    _拷貝資料列 = new List<PDF拷貝元件>();
-                    _拷貝資料列.Add(new PDF拷貝元件(new Rectangle(0, 0, 595, 280), 0, 23));
-                    _拷貝資料列.Add(new PDF拷貝元件(new Rectangle(0, 280, 595, 560), 0, 23));
-                    _拷貝資料列.Add(new PDF拷貝元件(new Rectangle(0, 560, 595, 840), 0, 23));
-                }
+        private static PDF拷貝元件 拷貝資料 = new PDF拷貝元件(new Rectangle(0, 50, 595, 810), 0, 0);
 
-                return _拷貝資料列;
-            }
-        }
-
-        private static Dictionary<PDF字串讀出元件, PDF字串寫入元件> _設定資料書;
-        public static Dictionary<PDF字串讀出元件, PDF字串寫入元件> 設定資料書
+        private static Dictionary<PDF圖片數值讀出元件, PDF字串寫入元件> _設定資料書;
+        public static Dictionary<PDF圖片數值讀出元件, PDF字串寫入元件> 設定資料書
         {
             get 
             {
@@ -36,13 +22,11 @@ namespace WokyTool.平台訂單
                 {
                     // 讀出 配送單號
                     // 寫入 物品組成
-                    _設定資料書 = new Dictionary<PDF字串讀出元件, PDF字串寫入元件>();
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(130, 745, 260, 770)), new PDF字串寫入元件(new Rectangle(5, 562, 295, 605), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 745, 560, 770)), new PDF字串寫入元件(new Rectangle(305, 562, 595, 605), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(130, 465, 260, 485)), new PDF字串寫入元件(new Rectangle(5, 282, 295, 325), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 465, 560, 485)), new PDF字串寫入元件(new Rectangle(305, 282, 595, 325), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(130, 190, 260, 210)), new PDF字串寫入元件(new Rectangle(5, 0, 295, 45), 常數.通用字體));
-                    _設定資料書.Add(new PDF字串讀出元件(new Rectangle(430, 190, 560, 210)), new PDF字串寫入元件(new Rectangle(305, 0, 595, 45), 常數.通用字體));
+                    _設定資料書 = new Dictionary<PDF圖片數值讀出元件, PDF字串寫入元件>();
+                    _設定資料書.Add(new PDF圖片數值讀出元件(new Rect(575, 490, 400, 70)), new PDF字串寫入元件(new Rectangle(5, 785, 295, 830), 常數.通用字體));
+                    _設定資料書.Add(new PDF圖片數值讀出元件(new Rect(1995, 490, 400, 70)), new PDF字串寫入元件(new Rectangle(305, 785, 595, 830), 常數.通用字體));
+                    _設定資料書.Add(new PDF圖片數值讀出元件(new Rect(575, 2530, 400, 70)), new PDF字串寫入元件(new Rectangle(5, 0, 295, 45), 常數.通用字體));
+                    _設定資料書.Add(new PDF圖片數值讀出元件(new Rect(1995, 2530, 400, 70)), new PDF字串寫入元件(new Rectangle(305, 0, 595, 45), 常數.通用字體));
                 }
 
                 return _設定資料書;
@@ -61,10 +45,7 @@ namespace WokyTool.平台訂單
 
         public override void 寫入(PdfReader PdfReader_, int 頁索引_, PdfWriter PdfWriter_)
         {
-            foreach (PDF拷貝元件 拷貝資料_ in 拷貝資料列)
-            {
-                拷貝資料_.處理(PdfReader_, 頁索引_, PdfWriter_);
-            }
+            拷貝資料.處理(PdfReader_, 頁索引_, PdfWriter_);
 
             foreach (var Pair_ in 設定資料書)
             {
@@ -83,7 +64,7 @@ namespace WokyTool.平台訂單
                 else
                 {
                     物品合併資料 物品合併資料_ = new 物品合併資料();
-                    foreach(平台訂單新增資料 資料_ in 符合資料列_)
+                    foreach (平台訂單新增資料 資料_ in 符合資料列_)
                         物品合併資料_.新增(資料_);
 
                     Pair_.Value.處理(PdfWriter_, 物品合併資料_.ToString());
@@ -93,10 +74,7 @@ namespace WokyTool.平台訂單
 
         public override void 測試(PdfReader PdfReader_, int 頁索引_, PdfWriter PdfWriter_)
         {
-            foreach (PDF拷貝元件 拷貝資料_ in 拷貝資料列)
-            {
-                拷貝資料_.處理(PdfReader_, 頁索引_, PdfWriter_);
-            }
+            拷貝資料.處理(PdfReader_, 頁索引_, PdfWriter_);
 
             //PDF定位元件 PDF定位元件_ = new PDF定位元件();
             //PDF定位元件_.處理(PdfWriter_);

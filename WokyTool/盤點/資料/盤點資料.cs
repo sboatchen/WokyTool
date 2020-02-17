@@ -24,10 +24,6 @@ namespace WokyTool.盤點
 
         [可匯出]
         [JsonProperty]
-        public int 目前庫存 { get; set; }
-
-        [可匯出]
-        [JsonProperty]
         public int 大料架庫存 { get; set; }
 
         [可匯出]
@@ -48,6 +44,12 @@ namespace WokyTool.盤點
 
         [可匯出(名稱 = "物品")]
         public string 物品名稱 { get { return 物品.名稱; } }
+
+        [可匯出]
+        public int 目前庫存
+        {
+            get { return 物品.庫存; }
+        }
 
         [可匯出]
         [JsonProperty]
@@ -76,7 +78,6 @@ namespace WokyTool.盤點
         {
             物品 = 物品資料.空白,
 
-            目前庫存 = 0,
             大料架庫存 = 0,
             小料架庫存 = 0,
             萬通庫存 = 0,
@@ -88,7 +89,6 @@ namespace WokyTool.盤點
         {
             物品 = 物品資料.錯誤,
 
-            目前庫存 = 0,
             大料架庫存 = 0,
             小料架庫存 = 0,
             萬通庫存 = 0,
@@ -101,7 +101,6 @@ namespace WokyTool.盤點
             return new 盤點資料
             {
                 物品 = 資料_,
-                目前庫存 = 資料_.庫存,
 
                 大料架庫存 = 0,
                 小料架庫存 = 0,

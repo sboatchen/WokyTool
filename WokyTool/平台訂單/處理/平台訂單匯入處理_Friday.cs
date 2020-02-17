@@ -7,15 +7,18 @@ using WokyTool.通用;
 
 namespace WokyTool.平台訂單
 {
-    public class 平台訂單匯入處理_Friday : 平台訂單匯入處理介面, 可讀出介面_CSV<平台訂單新增匯入資料>
+    public class 平台訂單匯入處理_Friday : 平台訂單匯入處理介面, 可讀出介面_EXCEL<平台訂單新增匯入資料> // 可讀出介面_CSV<平台訂單新增匯入資料>
     {
         private static string 出貨處理中 = "出貨處理中";
 
-        public string 分格號 { get { return ","; } }
+        //public string 分格號 { get { return ","; } }
 
         public string 密碼 { get { return null; } }
+        //public Encoding 編碼 { get { return Encoding.Default; } }
 
-        public Encoding 編碼 { get { return Encoding.Default; } }
+        public int 分頁索引 { get { return 1; } }
+
+        public string 分頁名稱 { get { return null; } }
 
         public int 標頭索引 { get { return 1; } }
 

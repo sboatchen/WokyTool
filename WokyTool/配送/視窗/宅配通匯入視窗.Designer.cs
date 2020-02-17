@@ -39,7 +39,6 @@
             this.內容.Name = "內容";
             this.內容.Size = new System.Drawing.Size(371, 178);
             this.內容.TabIndex = 0;
-            this.內容.Text = "項次 宅配單號 件數 出貨單號 收件人 代收款 作廢\r\n 1 .....";
             // 
             // button1
             // 

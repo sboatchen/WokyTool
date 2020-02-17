@@ -131,7 +131,7 @@ namespace WokyTool.平台訂單
                 case "citiesocial":
                     處理器_ = new 平台訂單匯入處理_citiesocial();
                     break;
-                case "WACA":
+                case "waca":
                     處理器_ = new 平台訂單匯入處理_WACA();
                     break;
                 case "摩天":
