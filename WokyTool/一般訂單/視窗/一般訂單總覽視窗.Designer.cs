@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new WokyTool.通用.MyDataGridView();
+            this.一般訂單資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.自訂ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.一般訂單資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.處理時間DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.處理狀態DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.處理者DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,10 +44,8 @@
             this.子客戶名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.單價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.利潤DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.總利潤DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.單價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.電話DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,9 +57,12 @@
             this.指配時段DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.代收方式DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.總成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.利潤DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.總利潤DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.一般訂單資料BindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -79,10 +80,8 @@
             this.子客戶名稱DataGridViewTextBoxColumn,
             this.商品名稱DataGridViewTextBoxColumn,
             this.數量DataGridViewTextBoxColumn,
-            this.單價DataGridViewTextBoxColumn,
             this.成本DataGridViewTextBoxColumn,
-            this.利潤DataGridViewTextBoxColumn,
-            this.總利潤DataGridViewTextBoxColumn,
+            this.單價DataGridViewTextBoxColumn,
             this.姓名DataGridViewTextBoxColumn,
             this.地址DataGridViewTextBoxColumn,
             this.電話DataGridViewTextBoxColumn,
@@ -93,7 +92,10 @@
             this.指配日期DataGridViewTextBoxColumn,
             this.指配時段DataGridViewTextBoxColumn,
             this.代收方式DataGridViewTextBoxColumn,
-            this.代收金額DataGridViewTextBoxColumn});
+            this.代收金額DataGridViewTextBoxColumn,
+            this.總成本DataGridViewTextBoxColumn,
+            this.利潤DataGridViewTextBoxColumn,
+            this.總利潤DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.一般訂單資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
@@ -102,6 +104,10 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1484, 537);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // 一般訂單資料BindingSource
+            // 
+            this.一般訂單資料BindingSource.DataSource = typeof(WokyTool.一般訂單.一般訂單資料);
             // 
             // menuStrip1
             // 
@@ -141,10 +147,6 @@
             this.自訂ToolStripMenuItem.Name = "自訂ToolStripMenuItem";
             this.自訂ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.自訂ToolStripMenuItem.Text = "自訂";
-            // 
-            // 一般訂單資料BindingSource
-            // 
-            this.一般訂單資料BindingSource.DataSource = typeof(WokyTool.一般訂單.一般訂單資料);
             // 
             // 處理時間DataGridViewTextBoxColumn
             // 
@@ -203,13 +205,6 @@
             this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
             this.數量DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 單價DataGridViewTextBoxColumn
-            // 
-            this.單價DataGridViewTextBoxColumn.DataPropertyName = "單價";
-            this.單價DataGridViewTextBoxColumn.HeaderText = "單價";
-            this.單價DataGridViewTextBoxColumn.Name = "單價DataGridViewTextBoxColumn";
-            this.單價DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // 成本DataGridViewTextBoxColumn
             // 
             this.成本DataGridViewTextBoxColumn.DataPropertyName = "成本";
@@ -217,19 +212,12 @@
             this.成本DataGridViewTextBoxColumn.Name = "成本DataGridViewTextBoxColumn";
             this.成本DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 利潤DataGridViewTextBoxColumn
+            // 單價DataGridViewTextBoxColumn
             // 
-            this.利潤DataGridViewTextBoxColumn.DataPropertyName = "利潤";
-            this.利潤DataGridViewTextBoxColumn.HeaderText = "利潤";
-            this.利潤DataGridViewTextBoxColumn.Name = "利潤DataGridViewTextBoxColumn";
-            this.利潤DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 總利潤DataGridViewTextBoxColumn
-            // 
-            this.總利潤DataGridViewTextBoxColumn.DataPropertyName = "總利潤";
-            this.總利潤DataGridViewTextBoxColumn.HeaderText = "總利潤";
-            this.總利潤DataGridViewTextBoxColumn.Name = "總利潤DataGridViewTextBoxColumn";
-            this.總利潤DataGridViewTextBoxColumn.ReadOnly = true;
+            this.單價DataGridViewTextBoxColumn.DataPropertyName = "單價";
+            this.單價DataGridViewTextBoxColumn.HeaderText = "單價";
+            this.單價DataGridViewTextBoxColumn.Name = "單價DataGridViewTextBoxColumn";
+            this.單價DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 姓名DataGridViewTextBoxColumn
             // 
@@ -308,6 +296,27 @@
             this.代收金額DataGridViewTextBoxColumn.Name = "代收金額DataGridViewTextBoxColumn";
             this.代收金額DataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // 總成本DataGridViewTextBoxColumn
+            // 
+            this.總成本DataGridViewTextBoxColumn.DataPropertyName = "總成本";
+            this.總成本DataGridViewTextBoxColumn.HeaderText = "總成本";
+            this.總成本DataGridViewTextBoxColumn.Name = "總成本DataGridViewTextBoxColumn";
+            this.總成本DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 利潤DataGridViewTextBoxColumn
+            // 
+            this.利潤DataGridViewTextBoxColumn.DataPropertyName = "利潤";
+            this.利潤DataGridViewTextBoxColumn.HeaderText = "利潤";
+            this.利潤DataGridViewTextBoxColumn.Name = "利潤DataGridViewTextBoxColumn";
+            this.利潤DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 總利潤DataGridViewTextBoxColumn
+            // 
+            this.總利潤DataGridViewTextBoxColumn.DataPropertyName = "總利潤";
+            this.總利潤DataGridViewTextBoxColumn.HeaderText = "總利潤";
+            this.總利潤DataGridViewTextBoxColumn.Name = "總利潤DataGridViewTextBoxColumn";
+            this.總利潤DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // 一般訂單總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -319,9 +328,9 @@
             this.Name = "一般訂單總覽視窗";
             this.Text = "一般訂單總覽視窗";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.一般訂單資料BindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.一般訂單資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,10 +353,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 子客戶名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 商品名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 單價DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 利潤DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 總利潤DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 單價DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 姓名DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 地址DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 電話DataGridViewTextBoxColumn;
@@ -359,5 +366,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 指配時段DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 代收方式DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 代收金額DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 總成本DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 利潤DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 總利潤DataGridViewTextBoxColumn;
     }
 }

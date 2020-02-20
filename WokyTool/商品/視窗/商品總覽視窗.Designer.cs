@@ -286,7 +286,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 進價DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 售價DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 體積DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 利潤DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 寄庫數量DataGridViewTextBoxColumn;

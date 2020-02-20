@@ -38,7 +38,6 @@ namespace WokyTool.一般訂單
             this.處理狀態 = new WokyTool.通用.訂單處理狀態選取元件();
             this.公司 = new WokyTool.公司.公司選取元件();
             this.客戶 = new WokyTool.客戶.客戶選取元件();
-            this.label4 = new System.Windows.Forms.Label();
             this.姓名 = new System.Windows.Forms.TextBox();
             this.地址 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -59,11 +58,12 @@ namespace WokyTool.一般訂單
             this.最大處理時間 = new WokyTool.通用.MyDateTimePicker();
             this.最大代收金額 = new System.Windows.Forms.NumericUpDown();
             this.指配時段 = new WokyTool.通用.指配時段選取元件();
-            this.商品 = new WokyTool.商品.商品選取元件();
             this.處理者 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.子客戶 = new WokyTool.客戶.子客戶選取元件();
             this.label5 = new System.Windows.Forms.Label();
+            this.物品 = new WokyTool.物品.物品選取元件();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.最小代收金額)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.最大代收金額)).BeginInit();
             this.SuspendLayout();
@@ -147,15 +147,6 @@ namespace WokyTool.一般訂單
             this.客戶.Size = new System.Drawing.Size(186, 25);
             this.客戶.TabIndex = 61;
             this.客戶.元件類型 = WokyTool.通用.選取元件類型.篩選;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 171);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
-            this.label4.TabIndex = 62;
-            this.label4.Text = "商品";
             // 
             // 姓名
             // 
@@ -361,16 +352,6 @@ namespace WokyTool.一般訂單
             this.指配時段.TabIndex = 125;
             this.指配時段.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
-            // 商品
-            // 
-            this.商品.Location = new System.Drawing.Point(58, 167);
-            this.商品.Name = "商品";
-            this.商品.ReadOnly = false;
-            this.商品.SelectedItem = null;
-            this.商品.Size = new System.Drawing.Size(420, 22);
-            this.商品.TabIndex = 126;
-            this.商品.元件類型 = WokyTool.通用.選取元件類型.篩選;
-            // 
             // 處理者
             // 
             this.處理者.Location = new System.Drawing.Point(293, 10);
@@ -406,17 +387,38 @@ namespace WokyTool.一般訂單
             this.label5.TabIndex = 130;
             this.label5.Text = "子客戶";
             // 
+            // 物品
+            // 
+            this.物品.Location = new System.Drawing.Point(59, 166);
+            this.物品.Margin = new System.Windows.Forms.Padding(4);
+            this.物品.Name = "物品";
+            this.物品.ReadOnly = false;
+            this.物品.SelectedItem = null;
+            this.物品.Size = new System.Drawing.Size(420, 25);
+            this.物品.TabIndex = 168;
+            this.物品.元件類型 = WokyTool.通用.選取元件類型.篩選;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 170);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 12);
+            this.label4.TabIndex = 167;
+            this.label4.Text = "物品";
+            // 
             // 一般訂單篩選視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(478, 483);
+            this.Controls.Add(this.物品);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.子客戶);
             this.Controls.Add(this.處理者);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.商品);
             this.Controls.Add(this.指配時段);
             this.Controls.Add(this.最大代收金額);
             this.Controls.Add(this.最大處理時間);
@@ -437,7 +439,6 @@ namespace WokyTool.一般訂單
             this.Controls.Add(this.地址);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.姓名);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.客戶);
             this.Controls.Add(this.公司);
             this.Controls.Add(this.處理狀態);
@@ -465,7 +466,6 @@ namespace WokyTool.一般訂單
         private 通用.訂單處理狀態選取元件 處理狀態;
         private 公司.公司選取元件 公司;
         private 客戶.客戶選取元件 客戶;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox 姓名;
         private System.Windows.Forms.TextBox 地址;
         private System.Windows.Forms.Label label6;
@@ -486,10 +486,11 @@ namespace WokyTool.一般訂單
         private MyDateTimePicker 最大處理時間;
         private System.Windows.Forms.NumericUpDown 最大代收金額;
         private 指配時段選取元件 指配時段;
-        private 商品.商品選取元件 商品;
         private System.Windows.Forms.TextBox 處理者;
         private System.Windows.Forms.Label label15;
         private 客戶.子客戶選取元件 子客戶;
         private System.Windows.Forms.Label label5;
+        private 物品選取元件 物品;
+        private System.Windows.Forms.Label label4;
     }
 }

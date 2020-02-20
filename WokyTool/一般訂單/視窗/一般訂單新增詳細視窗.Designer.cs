@@ -55,19 +55,22 @@ namespace WokyTool.一般訂單
             this.聯絡人 = new WokyTool.聯絡人.聯絡人選取元件();
             this.label12 = new System.Windows.Forms.Label();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
-            this.商品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.一般訂單新增組成資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.新增 = new System.Windows.Forms.Button();
             this.數量 = new System.Windows.Forms.NumericUpDown();
-            this.商品 = new WokyTool.商品.商品選取元件();
             this.備註 = new System.Windows.Forms.TextBox();
             this.列印單價 = new System.Windows.Forms.CheckBox();
+            this.物品 = new WokyTool.物品.物品選取元件();
+            this.物品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.售價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.售價 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.代收金額)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.一般訂單新增組成資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.數量)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.售價)).BeginInit();
             this.SuspendLayout();
             // 
             // 新版頁索引元件1
@@ -285,37 +288,16 @@ namespace WokyTool.一般訂單
             this.myDataGridView1.AutoGenerateColumns = false;
             this.myDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.myDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.商品名稱DataGridViewTextBoxColumn,
+            this.物品名稱DataGridViewTextBoxColumn,
             this.數量DataGridViewTextBoxColumn,
+            this.售價DataGridViewTextBoxColumn,
             this.備註DataGridViewTextBoxColumn});
             this.myDataGridView1.DataSource = this.一般訂單新增組成資料BindingSource;
             this.myDataGridView1.Location = new System.Drawing.Point(14, 173);
             this.myDataGridView1.Name = "myDataGridView1";
             this.myDataGridView1.RowTemplate.Height = 24;
-            this.myDataGridView1.Size = new System.Drawing.Size(648, 150);
+            this.myDataGridView1.Size = new System.Drawing.Size(747, 150);
             this.myDataGridView1.TabIndex = 168;
-            // 
-            // 商品名稱DataGridViewTextBoxColumn
-            // 
-            this.商品名稱DataGridViewTextBoxColumn.DataPropertyName = "商品名稱";
-            this.商品名稱DataGridViewTextBoxColumn.HeaderText = "商品";
-            this.商品名稱DataGridViewTextBoxColumn.Name = "商品名稱DataGridViewTextBoxColumn";
-            this.商品名稱DataGridViewTextBoxColumn.ReadOnly = true;
-            this.商品名稱DataGridViewTextBoxColumn.Width = 400;
-            // 
-            // 數量DataGridViewTextBoxColumn
-            // 
-            this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
-            this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
-            this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
-            this.數量DataGridViewTextBoxColumn.Width = 70;
-            // 
-            // 備註DataGridViewTextBoxColumn
-            // 
-            this.備註DataGridViewTextBoxColumn.DataPropertyName = "備註";
-            this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
-            this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
-            this.備註DataGridViewTextBoxColumn.Width = 130;
             // 
             // 一般訂單新增組成資料BindingSource
             // 
@@ -345,7 +327,7 @@ namespace WokyTool.一般訂單
             0,
             -2147483648});
             this.數量.Name = "數量";
-            this.數量.Size = new System.Drawing.Size(64, 22);
+            this.數量.Size = new System.Drawing.Size(95, 22);
             this.數量.TabIndex = 169;
             this.數量.Value = new decimal(new int[] {
             1,
@@ -353,21 +335,11 @@ namespace WokyTool.一般訂單
             0,
             0});
             // 
-            // 商品
-            // 
-            this.商品.Location = new System.Drawing.Point(56, 146);
-            this.商品.Name = "商品";
-            this.商品.ReadOnly = false;
-            this.商品.SelectedItem = null;
-            this.商品.Size = new System.Drawing.Size(400, 22);
-            this.商品.TabIndex = 171;
-            this.商品.元件類型 = WokyTool.通用.選取元件類型.指定;
-            // 
             // 備註
             // 
-            this.備註.Location = new System.Drawing.Point(531, 146);
+            this.備註.Location = new System.Drawing.Point(655, 146);
             this.備註.Name = "備註";
-            this.備註.Size = new System.Drawing.Size(118, 22);
+            this.備註.Size = new System.Drawing.Size(106, 22);
             this.備註.TabIndex = 172;
             // 
             // 列印單價
@@ -380,15 +352,75 @@ namespace WokyTool.一般訂單
             this.列印單價.Text = "列印單價";
             this.列印單價.UseVisualStyleBackColor = true;
             // 
+            // 物品
+            // 
+            this.物品.Location = new System.Drawing.Point(57, 146);
+            this.物品.Margin = new System.Windows.Forms.Padding(4);
+            this.物品.Name = "物品";
+            this.物品.ReadOnly = false;
+            this.物品.SelectedItem = null;
+            this.物品.Size = new System.Drawing.Size(400, 24);
+            this.物品.TabIndex = 174;
+            this.物品.元件類型 = WokyTool.通用.選取元件類型.指定;
+            // 
+            // 物品名稱DataGridViewTextBoxColumn
+            // 
+            this.物品名稱DataGridViewTextBoxColumn.DataPropertyName = "物品名稱";
+            this.物品名稱DataGridViewTextBoxColumn.HeaderText = "物品";
+            this.物品名稱DataGridViewTextBoxColumn.Name = "物品名稱DataGridViewTextBoxColumn";
+            this.物品名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.物品名稱DataGridViewTextBoxColumn.Width = 400;
+            // 
+            // 數量DataGridViewTextBoxColumn
+            // 
+            this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
+            this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
+            this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
+            // 
+            // 售價DataGridViewTextBoxColumn
+            // 
+            this.售價DataGridViewTextBoxColumn.DataPropertyName = "售價";
+            this.售價DataGridViewTextBoxColumn.HeaderText = "售價";
+            this.售價DataGridViewTextBoxColumn.Name = "售價DataGridViewTextBoxColumn";
+            // 
+            // 備註DataGridViewTextBoxColumn
+            // 
+            this.備註DataGridViewTextBoxColumn.DataPropertyName = "備註";
+            this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
+            this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
+            // 
+            // 售價
+            // 
+            this.售價.Location = new System.Drawing.Point(559, 146);
+            this.售價.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
+            this.售價.Minimum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            -2147483648});
+            this.售價.Name = "售價";
+            this.售價.Size = new System.Drawing.Size(95, 22);
+            this.售價.TabIndex = 175;
+            this.售價.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // 一般訂單新增詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(676, 435);
+            this.ClientSize = new System.Drawing.Size(767, 435);
+            this.Controls.Add(this.售價);
+            this.Controls.Add(this.物品);
             this.Controls.Add(this.列印單價);
             this.Controls.Add(this.備註);
-            this.Controls.Add(this.商品);
             this.Controls.Add(this.新增);
             this.Controls.Add(this.數量);
             this.Controls.Add(this.myDataGridView1);
@@ -421,6 +453,7 @@ namespace WokyTool.一般訂單
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.一般訂單新增組成資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.數量)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.售價)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,13 +486,15 @@ namespace WokyTool.一般訂單
         private System.Windows.Forms.Label label12;
         private MyDataGridView myDataGridView1;
         private System.Windows.Forms.BindingSource 一般訂單新增組成資料BindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 商品名稱DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
         private System.Windows.Forms.Button 新增;
         private System.Windows.Forms.NumericUpDown 數量;
-        private 商品.商品選取元件 商品;
         private System.Windows.Forms.TextBox 備註;
         private System.Windows.Forms.CheckBox 列印單價;
+        private 物品選取元件 物品;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 物品名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 售價DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
+        private System.Windows.Forms.NumericUpDown 售價;
     }
 }

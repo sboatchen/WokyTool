@@ -20,14 +20,14 @@ namespace WokyTool.一般訂單
         {
             公司.初始化();
             客戶.初始化();
-            商品.初始化();
+            物品.初始化();
 
             base.初始化();
 
             資料綁定(this.公司, "公司");
             資料綁定(this.客戶, "客戶");
             資料綁定(this.子客戶, "子客戶");
-            資料綁定(this.商品, "商品");
+            資料綁定(this.物品, "物品");
 
             資料綁定(this.姓名, "姓名");
             資料綁定(this.地址, "地址");
@@ -46,16 +46,6 @@ namespace WokyTool.一般訂單
             資料綁定(this.代收方式, "代收方式");
             資料綁定(this.最小代收金額, "最小代收金額");
             資料綁定(this.最大代收金額, "最大代收金額");
-
-            this.公司.下拉選單.SelectedValueChanged += new EventHandler(this._on商品列表更新);
-            this.客戶.下拉選單.SelectedValueChanged += new EventHandler(this._on商品列表更新);
-        }
-
-        private void _on商品列表更新(object sender, EventArgs e)
-        {
-            //Console.WriteLine("_on商品列表更新");
-            this.商品.篩選器.公司 = (公司資料)this.公司.SelectedItem;
-            this.商品.篩選器.客戶 = (客戶資料)this.客戶.SelectedItem;
         }
     }
 }

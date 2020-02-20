@@ -70,7 +70,7 @@ namespace WokyTool.一般訂單
             this.label21 = new System.Windows.Forms.Label();
             this.客戶名稱 = new System.Windows.Forms.TextBox();
             this.公司名稱 = new System.Windows.Forms.TextBox();
-            this.商品名稱 = new System.Windows.Forms.TextBox();
+            this.物品名稱 = new System.Windows.Forms.TextBox();
             this.子客戶名稱 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.成本)).BeginInit();
@@ -195,7 +195,7 @@ namespace WokyTool.一般訂單
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 62;
-            this.label4.Text = "商品";
+            this.label4.Text = "物品";
             // 
             // 數量
             // 
@@ -477,13 +477,13 @@ namespace WokyTool.一般訂單
             this.公司名稱.Size = new System.Drawing.Size(165, 22);
             this.公司名稱.TabIndex = 130;
             // 
-            // 商品名稱
+            // 物品名稱
             // 
-            this.商品名稱.Location = new System.Drawing.Point(59, 137);
-            this.商品名稱.Name = "商品名稱";
-            this.商品名稱.ReadOnly = true;
-            this.商品名稱.Size = new System.Drawing.Size(400, 22);
-            this.商品名稱.TabIndex = 131;
+            this.物品名稱.Location = new System.Drawing.Point(59, 137);
+            this.物品名稱.Name = "物品名稱";
+            this.物品名稱.ReadOnly = true;
+            this.物品名稱.Size = new System.Drawing.Size(400, 22);
+            this.物品名稱.TabIndex = 131;
             // 
             // 子客戶名稱
             // 
@@ -510,7 +510,7 @@ namespace WokyTool.一般訂單
             this.ClientSize = new System.Drawing.Size(483, 552);
             this.Controls.Add(this.子客戶名稱);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.商品名稱);
+            this.Controls.Add(this.物品名稱);
             this.Controls.Add(this.公司名稱);
             this.Controls.Add(this.客戶名稱);
             this.Controls.Add(this.總利潤);
@@ -606,7 +606,7 @@ namespace WokyTool.一般訂單
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox 客戶名稱;
         private System.Windows.Forms.TextBox 公司名稱;
-        private System.Windows.Forms.TextBox 商品名稱;
+        private System.Windows.Forms.TextBox 物品名稱;
         private System.Windows.Forms.TextBox 子客戶名稱;
         private System.Windows.Forms.Label label12;
     }

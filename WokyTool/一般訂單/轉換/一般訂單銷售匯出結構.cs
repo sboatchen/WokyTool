@@ -53,19 +53,16 @@ namespace WokyTool.一般訂單
                 int Column_ = 0;
 
                 App_.Cells[Row_, ++Column_] = Row_ - 8;
-                App_.Cells[Row_, ++Column_] = Item_.商品編號;
-                App_.Cells[Row_, ++Column_] = Item_.商品名稱;
+                App_.Cells[Row_, ++Column_] = Item_.物品編號;
+                App_.Cells[Row_, ++Column_] = Item_.物品名稱;
                 App_.Cells[Row_, ++Column_] = Item_.數量;
 
                 if (資料.列印單價)
                 {
-                    decimal 售價_ = Item_.商品.取得售價(資料.子客戶名稱);
-                    decimal 總金額_ = 售價_ * Item_.數量;
+                    App_.Cells[Row_, ++Column_] = Item_.售價.ToString("0.###");
+                    App_.Cells[Row_, ++Column_] = Item_.總金額.ToString("0.###");
 
-                    App_.Cells[Row_, ++Column_] = 售價_.ToString("0.###");
-                    App_.Cells[Row_, ++Column_] = 總金額_.ToString("0.###");
-
-                    Total_ += 總金額_;
+                    Total_ += Item_.總金額;
                 }
 
                 App_.Cells[Row_, ++Column_] = Item_.備註;

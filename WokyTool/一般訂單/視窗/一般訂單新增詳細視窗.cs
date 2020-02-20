@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using WokyTool.公司;
 using WokyTool.客戶;
-using WokyTool.商品;
+using WokyTool.物品;
 using WokyTool.通用;
 using WokyTool.聯絡人;
 
@@ -33,7 +33,7 @@ namespace WokyTool.一般訂單
             客戶.初始化();
             子客戶.初始化();
             聯絡人.初始化();
-            商品.初始化();
+            物品.初始化();
 
             base.初始化();
 
@@ -56,15 +56,9 @@ namespace WokyTool.一般訂單
 
             this.myDataGridView1.DataSource = _組合BS;
 
-            this.公司.下拉選單.SelectedValueChanged += _on公司改變;
             this.客戶.下拉選單.SelectedIndexChanged += _on客戶改變;
             this.子客戶.下拉選單.SelectedIndexChanged += _on子客戶改變;
             this.聯絡人.下拉選單.SelectedIndexChanged += _on聯絡人改變;
-        }
-
-        private void _on公司改變(object sender, EventArgs e)
-        {
-            this.商品.篩選器.公司 = (公司資料)this.公司.SelectedItem;
         }
 
         private void _on客戶改變(object sender, EventArgs e)
@@ -78,7 +72,6 @@ namespace WokyTool.一般訂單
 
             this.子客戶.篩選器.客戶 = 客戶_;
             this.聯絡人.篩選器.客戶 = 客戶_;
-            this.商品.篩選器.客戶 = 客戶_;
         }
 
         private void _on子客戶改變(object sender, EventArgs e)
@@ -114,16 +107,17 @@ namespace WokyTool.一般訂單
 
         private void 新增_Click(object sender, EventArgs e)
         {
-            商品資料 商品_ = (商品資料)(this.商品.SelectedItem);
-            if (商品_ == null || 商品_.編號是否有值() == false)
+            物品資料 物品_ = (物品資料)(this.物品.SelectedItem);
+            if (物品_ == null || 物品_.編號是否有值() == false)
             {
-                訊息管理器.獨體.通知("商品不合法");
+                訊息管理器.獨體.通知("物品不合法");
                 return;
             }
 
             一般訂單新增組成資料 組成資料_ = new 一般訂單新增組成資料();
-            組成資料_.商品 = 商品_;
+            組成資料_.物品 = 物品_;
             組成資料_.數量 = (int)this.數量.Value;
+            組成資料_.售價 = (int)this.售價.Value;
             組成資料_.備註 = this.備註.Text;
 
             _組合BS.Add(組成資料_);
