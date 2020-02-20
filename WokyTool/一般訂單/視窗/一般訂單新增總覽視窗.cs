@@ -63,7 +63,13 @@ namespace WokyTool.一般訂單
 
         private void 銷售單ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //@@
+            IEnumerable<一般訂單銷售匯出結構> 資料列舉_ = ((IEnumerable<一般訂單新增資料>)編輯管理器.資料列舉).Select(Value => new 一般訂單銷售匯出結構(Value));
+
+            foreach (一般訂單銷售匯出結構 轉換_ in 資料列舉_)
+            {
+                String 標題_ = String.Format("銷售單_{0}_{1}", 轉換_.資料.姓名, 時間.目前日期);
+                檔案.詢問並寫入(標題_, 轉換_);
+            }
         }
     }
 }

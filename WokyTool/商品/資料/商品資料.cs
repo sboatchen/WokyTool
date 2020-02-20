@@ -139,7 +139,7 @@ namespace WokyTool.商品
 
         public decimal 取得售價(string 索引_)
         {
-            if (自訂售價列 == null)
+            if (自訂售價列 == null || string.IsNullOrEmpty(索引_))
                 return 售價;
 
             return 自訂售價列.Where(Value => Value.索引.Equals(索引_)).Select(Value => Value.售價).DefaultIfEmpty(售價).First();

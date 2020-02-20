@@ -6,6 +6,7 @@ using WokyTool.Common;
 using WokyTool.公司;
 using WokyTool.客戶;
 using WokyTool.通用;
+using WokyTool.商品;
 
 namespace WokyTool.一般訂單
 {
@@ -101,7 +102,7 @@ namespace WokyTool.一般訂單
 
         [可匯出]
         [JsonProperty]
-        public List<一般訂單新增組成資料> 組成列 { get; set; }
+        public List<一般訂單新增組成資料> 組成 { get; set; }
 
         [JsonProperty]
         public bool 列印單價 { get; set; }
@@ -129,7 +130,7 @@ namespace WokyTool.一般訂單
         {
             get
             {
-                return 組成列.Where(Value => Value.數量 < 0).Count() > 0;
+                return 組成.Where(Value => Value.數量 < 0).Count() > 0;
             }
         }
 
@@ -226,11 +227,11 @@ namespace WokyTool.一般訂單
             if (String.IsNullOrEmpty(電話) && String.IsNullOrEmpty(手機))
                 檢查器_.錯誤(資料_, "電話/手機不合法");
 
-            if (null == 組成列 || 0 == 組成列.Count)
+            if (null == 組成 || 0 == 組成.Count)
                 檢查器_.錯誤(資料_, "組成不合法");
             else 
             {
-                foreach (一般訂單新增組成資料 組成資料_ in 組成列)
+                foreach (一般訂單新增組成資料 組成資料_ in 組成)
                     組成資料_.檢查合法(檢查器_, 資料_, 參考_);
             }
         }
