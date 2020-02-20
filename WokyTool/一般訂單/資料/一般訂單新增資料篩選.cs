@@ -322,7 +322,7 @@ namespace WokyTool.一般訂單
                 目前列舉_ = 目前列舉_.Where(Value => Value.子客戶名稱.Equals(_子客戶.名稱));
 
             if (商品資料.不篩選 != _商品)
-                目前列舉_ = 目前列舉_.Where(Value => Value.組成列.Where(Value2 => Value2.商品 == _商品).Any());
+                目前列舉_ = 目前列舉_.Where(Value => Value.組成.Where(Value2 => Value2.商品 == _商品).Any());
 
             if (null != _姓名)
                 目前列舉_ = 目前列舉_.Where(Value => Value.姓名.Contains(_姓名));

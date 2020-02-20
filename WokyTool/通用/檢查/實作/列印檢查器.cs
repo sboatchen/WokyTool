@@ -17,6 +17,11 @@ namespace WokyTool.通用
             資料書 = new Dictionary<object, string>();
         }
 
+        public void 重置()
+        {
+            資料書.Clear();
+        }
+
         public void 錯誤(基本資料 資料_, string 訊息_)
         {
             if (資料書.ContainsKey(資料_))

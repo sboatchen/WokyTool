@@ -26,7 +26,7 @@ namespace WokyTool.商品{
 
         public override void 初始化()
         {
-            大類.初始化();
+            /*大類.初始化(); //TODO 暫時停止 商品更新功能
             小類.初始化();
             品牌.初始化();
             公司.初始化();
@@ -103,12 +103,12 @@ namespace WokyTool.商品{
             資料異動顯示綁定(this.組成字串, this.參考組成字串);
 
             this.dataGridView1.DataSource = _組合BS;
-            this.dataGridView2.DataSource = _組合BS2;
+            this.dataGridView2.DataSource = _組合BS2;*/
         }
 
         private void 新增_Click(object sender, EventArgs e)
         {
-            物品資料 物品_ = (物品資料)(this.物品.SelectedItem);
+            /*物品資料 物品_ = (物品資料)(this.物品.SelectedItem);    //TODO 暫時停止 商品更新功能
             if (物品_ == null || 物品_.編號是否有值() == false)
             {
                 訊息管理器.獨體.通知("物品不合法");
@@ -119,7 +119,7 @@ namespace WokyTool.商品{
             商品組成資料_.物品 = 物品_;
             商品組成資料_.數量 = (int)this.數量.Value;
 
-            _組合BS.Add(商品組成資料_);
+            _組合BS.Add(商品組成資料_);*/
         }
 
         private 商品更新資料 _目前資料 = null;

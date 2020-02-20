@@ -15,7 +15,7 @@ namespace WokyTool.平台訂單
 
         public string 樣板 { get { return null; } }
 
-        public XlFileFormat 格式 { get { return XlFileFormat.xlWorkbookNormal; } }
+        public XlFileFormat 格式 { get { return XlFileFormat.xlOpenXMLWorkbook; } }
 
         public string 密碼 { get { return null; } }
 

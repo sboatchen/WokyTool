@@ -142,5 +142,10 @@ namespace WokyTool.通用
         {
             yield return 物件_;
         }
+
+        public static HashSet<T> ToSet<T>(this IEnumerable<T> source, IEqualityComparer<T> comparer = null)
+        {
+            return new HashSet<T>(source, comparer);
+        }
     }
 }

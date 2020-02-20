@@ -12,16 +12,16 @@ namespace WokyTool.平台訂單
 {
     public class 平台訂單配送轉換資料_蝦皮_全家 : 平台訂單配送轉換資料_超商
     {
-        private class 讀出元件組
+        private static PDF拷貝元件 拷貝資料 = new PDF拷貝元件(new Rectangle(0, 0, 595, 840), 0, -14);
+
+        public class 讀出元件組
         {
             public PDF圖片數值讀出元件 配送單號讀出元件;
             public PDF圖片字串讀出元件 消費者讀出元件;
         }
 
-        private static PDF拷貝元件 拷貝資料 = new PDF拷貝元件(new Rectangle(0, 90, 595, 810), 0, -30);
-
         private static Dictionary<讀出元件組, PDF字串寫入元件> _設定資料書;
-        private static Dictionary<讀出元件組, PDF字串寫入元件> 設定資料書
+        public static Dictionary<讀出元件組, PDF字串寫入元件> 設定資料書
         {
             get 
             {
@@ -33,27 +33,27 @@ namespace WokyTool.平台訂單
 
                     _設定資料書.Add(new 讀出元件組
                     {
-                        配送單號讀出元件 = new PDF圖片數值讀出元件(new Rect(80, 280, 100, 15), 0),
-                        消費者讀出元件 = new PDF圖片字串讀出元件(new Rect(70, 230, 60, 20), 0),
-                    }, new PDF字串寫入元件(new Rectangle(5, 780, 295, 830), 常數.通用字體));
+                        配送單號讀出元件 = new PDF圖片數值讀出元件(new Rect(410, 365, 320, 60)),
+                        消費者讀出元件 = new PDF圖片字串讀出元件(new Rect(210, 1300, 640, 200)),
+                    }, new PDF字串寫入元件(new Rectangle(5, 785, 295, 830), 常數.通用字體));
 
                    _設定資料書.Add(new 讀出元件組
                     {
-                        配送單號讀出元件 = new PDF圖片數值讀出元件(new Rect(460, 280, 100, 15), 0),
-                        消費者讀出元件 = new PDF圖片字串讀出元件(new Rect(445, 230, 60, 20), 0),
-                    }, new PDF字串寫入元件(new Rectangle(305, 780, 595, 830), 常數.通用字體));
+                        配送單號讀出元件 = new PDF圖片數值讀出元件(new Rect(1720, 365, 320, 60)),
+                        消費者讀出元件 = new PDF圖片字串讀出元件(new Rect(1515, 1300, 640, 200)),
+                    }, new PDF字串寫入元件(new Rectangle(305, 785, 595, 830), 常數.通用字體));
 
                    _設定資料書.Add(new 讀出元件組
                    {
-                       配送單號讀出元件 = new PDF圖片數值讀出元件(new Rect(80, 280, 100, 15), 1),
-                       消費者讀出元件 = new PDF圖片字串讀出元件(new Rect(70, 230, 60, 20), 1),
-                   }, new PDF字串寫入元件(new Rectangle(5, 10, 295, 60), 常數.通用字體));
+                       配送單號讀出元件 = new PDF圖片數值讀出元件(new Rect(410, 2500, 320, 60)),
+                       消費者讀出元件 = new PDF圖片字串讀出元件(new Rect(210, 3440, 640, 200)),
+                   }, new PDF字串寫入元件(new Rectangle(5, 0, 295, 45), 常數.通用字體));
 
                    _設定資料書.Add(new 讀出元件組
                    {
-                       配送單號讀出元件 = new PDF圖片數值讀出元件(new Rect(460, 280, 100, 15), 1),
-                       消費者讀出元件 = new PDF圖片字串讀出元件(new Rect(445, 230, 60, 20), 1),
-                   }, new PDF字串寫入元件(new Rectangle(305, 10, 595, 60), 常數.通用字體));
+                       配送單號讀出元件 = new PDF圖片數值讀出元件(new Rect(1720, 2500, 320, 60)),
+                       消費者讀出元件 = new PDF圖片字串讀出元件(new Rect(1515, 3440, 640, 200)),
+                   }, new PDF字串寫入元件(new Rectangle(305, 0, 595, 45), 常數.通用字體));
                 }
 
                 return _設定資料書;

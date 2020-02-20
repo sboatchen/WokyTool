@@ -8,6 +8,12 @@ namespace WokyTool.商品
     public class 商品組成資料 : 基本資料
     {
         [JsonProperty]
+        public int 群組 { get; set; }
+
+        [JsonProperty]
+        public string 規格 { get; set; }
+
+        [JsonProperty]
         public int 物品編號
         {
             get
@@ -63,6 +69,12 @@ namespace WokyTool.商品
 
             if (false == 物品.編號是否合法())
                 檢查器_.錯誤(資料_, "物品不合法");
+
+            if (群組 < 0)
+                檢查器_.錯誤(資料_, "群組不合法");
+
+            if (群組 > 0 && string.IsNullOrEmpty(規格))
+                檢查器_.錯誤(資料_, "規格不合法");
 
             if (數量 <= 0)
                 檢查器_.錯誤(資料_, "數量不合法");

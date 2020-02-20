@@ -3,13 +3,13 @@ using System.Text;
 
 namespace WokyTool.通用
 {
-    public class 例外檢查器 : 可檢查介面
+    public class 通知檢查器 : 可檢查介面
     {
         public bool 是否合法 { get; protected set; }
 
         private StringBuilder _SB = new StringBuilder();
 
-        public 例外檢查器()
+        public 通知檢查器()
         {
             是否合法 = true;
         }
@@ -29,7 +29,7 @@ namespace WokyTool.通用
             _SB.Append(Type_.Name).Append(":").AppendLine(訊息_);
             _SB.Append(資料_.ToString());
 
-            throw new 合法性錯誤(_SB.ToString());
+            訊息管理器.獨體.通知(_SB.ToString());
         }
     }
 }

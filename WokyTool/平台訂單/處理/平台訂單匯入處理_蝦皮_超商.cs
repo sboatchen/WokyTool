@@ -53,19 +53,21 @@ namespace WokyTool.平台訂單
              *  [2] 商品名稱 (品):【美式-GOOST】316不鏽鋼輕量彈蓋式保溫保冷瓶500ML(6色可選); 商品選項名稱 (品):亮靓紅; 價格: $ 299; 數量: 1; 
              *  [3] 商品名稱 (品):【Reeves 維思】Rainbow日日真空保溫咖啡提手杯500ML(7色可選); 商品選項名稱 (品):粉色; 價格: $ 250; 數量: 1; 
              *  [4] 商品名稱 (品):【Reeves 維思】Rainbow日日真空保溫咖啡提手杯500ML(7色可選); 商品選項名稱 (品):綠色; 價格: $ 250; 數量: 2; "
+             *  
+             *  有可能沒有 商品選項名稱 (品)
              */
             string[] 出貨明細列_ = 資料列_[2].轉成字串().Split(_明細列切割, StringSplitOptions.RemoveEmptyEntries);
             foreach (string 出貨明細_ in 出貨明細列_)
             {
-                string[] 商品組成_ = 出貨明細_.Split(';');
+                string[] 商品組成_ = 出貨明細_.Split(';').Select(Value => Value.Trim()).Where(Value => String.IsNullOrEmpty(Value) == false).ToArray();
 
                 // 商品序號 = 商品名稱 + 選項
                 string 商品名稱_ = 商品組成_[0].Split(':')[1].Trim();
-                string 款式_ = 商品組成_[1].Split(':')[1].Trim();
+                string 款式_ = (商品組成_.Length == 4) ? 商品組成_[1].Split(':')[1].Trim() : null;
                 string 商品識別_ = 函式.取得商品識別(商品名稱_, 款式_);
                 商品資料 商品_ = 商品資料管理器.獨體.取得(客戶.編號, 商品識別_);
 
-                int 數量_ = 商品組成_[3].Split(':')[1].轉成整數();
+                int 數量_ = (商品組成_.Length == 4) ? 商品組成_[3].Split(':')[1].轉成整數() : 商品組成_[2].Split(':')[1].轉成整數();
 
                 yield return new 平台訂單新增匯入資料
                 {

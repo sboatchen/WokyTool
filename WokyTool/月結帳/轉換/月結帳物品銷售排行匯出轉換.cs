@@ -33,7 +33,7 @@ namespace WokyTool.月結帳
 
 
             int 目前行數_ = 2;
-            foreach (var 資料_ in 物品合併資料_.Map.OrderByDescending(Pair => Pair.Value).Take(10))
+            foreach (var 資料_ in 物品合併資料_.組成書.OrderByDescending(Pair => Pair.Value).Take(10))
             {
                 App_.Cells[目前行數_, 1] = 資料_.Key.名稱;
                 App_.Cells[目前行數_, 2] = 資料_.Value;

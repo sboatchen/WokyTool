@@ -11,6 +11,11 @@ namespace WokyTool.通用
             是否合法 = true;
         }
 
+        public void 重置()
+        {
+            是否合法 = true;
+        }
+
         public void 錯誤(基本資料 資料_, string 訊息_)
         {
             是否合法 = false;

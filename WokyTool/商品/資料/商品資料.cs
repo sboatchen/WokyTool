@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using WokyTool.Common;
 using WokyTool.公司;
 using WokyTool.平台訂單;
@@ -42,19 +43,6 @@ namespace WokyTool.商品
         }
 
         [JsonProperty]
-        public int 品牌編號
-        {
-            get
-            {
-                return 品牌.編號;
-            }
-            set
-            {
-                品牌 = 物品品牌資料管理器.獨體.取得(value);
-            }
-        }
-
-        [JsonProperty]
         public int 公司編號
         {
             get
@@ -91,33 +79,21 @@ namespace WokyTool.商品
         [JsonProperty]
         public List<商品組成資料> 組成 { get; set; }
 
-        [JsonProperty]
-        [可匯出(名稱 = "組成")]
-        public string 組成字串 { get; set; }
-
         [可匯出]
         [JsonProperty]
         public decimal 進價 { get; set; }
 
         [可匯出]
         [JsonProperty]
-        public decimal 售價 { get; set; }
+        public decimal 售價 { get; set; }     //TODO 合併至 自訂售價列
+
+        [可匯出]
+        [JsonProperty]
+        public List<自訂售價資料> 自訂售價列 { get; set; }
 
         [可匯出]
         [JsonProperty]
         public int 寄庫數量 { get; set; }
-
-        [可匯出]
-        [JsonProperty]
-        public int 體積 { get; set; }
-
-        [可匯出]
-        [JsonProperty]
-        public decimal 成本 { get; set; }
-
-        [可匯出]
-        [JsonProperty]
-        public Dictionary<string, decimal> 自訂售價書 { get; set; }
 
         /********************************/
 
@@ -125,7 +101,7 @@ namespace WokyTool.商品
 
         public 商品小類資料 小類 { get; set; }
 
-        public 物品品牌資料 品牌 { get; protected set; }
+        public 物品品牌資料 品牌 { get; private set; }
 
         public 公司資料 公司 { get; set; }
 
@@ -147,6 +123,12 @@ namespace WokyTool.商品
         public string 客戶名稱 { get { return 客戶.名稱; } }
 
         [可匯出]
+        public decimal 成本 { get; private set; }
+
+        [可匯出(名稱 = "組成")]
+        public string 組成字串 { get; private set; }
+
+        [可匯出]
         public decimal 利潤
         {
             get
@@ -155,15 +137,12 @@ namespace WokyTool.商品
             }
         }
 
-        public decimal 取得自訂售價(string 自訂索引_)
+        public decimal 取得售價(string 索引_)
         {
-            if(自訂售價書 == null)
+            if (自訂售價列 == null || string.IsNullOrEmpty(索引_))
                 return 售價;
 
-            decimal 自訂售價_ = 0;
-            if(自訂售價書.TryGetValue(自訂索引_, out 自訂售價_))
-                return 自訂售價_;
-            return 售價;
+            return 自訂售價列.Where(Value => Value.索引.Equals(索引_)).Select(Value => Value.售價).DefaultIfEmpty(售價).First();
         }
 
         /********************************/
@@ -174,7 +153,6 @@ namespace WokyTool.商品
         {
             大類 = 商品大類資料.空白;
             小類 = 商品小類資料.空白;
-            品牌 = 物品品牌資料.空白;
             公司 = 公司資料.空白;
             客戶 = 客戶資料.空白;
 
@@ -186,7 +164,6 @@ namespace WokyTool.商品
 
             大類 = 商品大類資料.不篩選,
             小類 = 商品小類資料.不篩選,
-            品牌 = 物品品牌資料.不篩選,
 
             公司 = 公司資料.不篩選,
             客戶 = 客戶資料.不篩選,
@@ -201,7 +178,6 @@ namespace WokyTool.商品
 
             大類 = 商品大類資料.空白,
             小類 = 商品小類資料.空白,
-            品牌 = 物品品牌資料.空白,
 
             公司 = 公司資料.空白,
             客戶 = 客戶資料.空白,
@@ -216,7 +192,6 @@ namespace WokyTool.商品
 
             大類 = 商品大類資料.錯誤,
             小類 = 商品小類資料.錯誤,
-            品牌 = 物品品牌資料.錯誤,
 
             公司 = 公司資料.錯誤,
             客戶 = 客戶資料.錯誤,
@@ -231,7 +206,6 @@ namespace WokyTool.商品
 
             大類 = 商品大類資料.空白,
             小類 = 商品小類資料.空白,
-            品牌 = 物品品牌資料.空白,
 
             公司 = 公司資料.空白,
             客戶 = 客戶資料.空白,
@@ -244,35 +218,77 @@ namespace WokyTool.商品
 
         public void 更新組成()
         {
+            成本 = 0;
+            品牌 = 物品品牌資料.空白;
+            組成字串 = 字串.空;
+
             if (組成 == null || 組成.Count == 0)
-            {
-                組成 = null;
-                組成字串 = 字串.空;
-                成本 = 0;
-                體積 = 0;
-                品牌 = 物品品牌資料.空白;
-            }
-            else
-            {
-                物品合併資料.共用.清除();
-                物品合併資料.共用.新增(this);
+                return;
 
-                組成字串 = 物品合併資料.共用.ToString();
-                成本 = 物品合併資料.共用.成本;
-                體積 = 物品合併資料.共用.體積;
-
-                品牌 = 物品品牌資料.空白;
-                foreach (商品組成資料 商品組成資料_ in 組成)
+            StringBuilder SB_ = new StringBuilder();
+            foreach (var Group_ in 組成.GroupBy(Value => Value.群組))
+            {
+                if (Group_.Key == 0)
                 {
-                    物品品牌資料 Temp_ = 商品組成資料_.物品.品牌;
-                    if (Temp_.編號 <= 0 || Temp_ == 品牌)
-                        continue;
+                    foreach (商品組成資料 資料_ in Group_)
+                    {
+                        成本 += 資料_.成本 * 資料_.數量;
 
-                    if (品牌 == 物品品牌資料.空白)
-                        品牌 = Temp_;
-                    else
-                        品牌 = 物品品牌資料.混和;
+                        if (SB_.Length != 0)
+                            SB_.Append("&");
+
+                        if (String.IsNullOrEmpty(資料_.物品.縮寫))
+                            SB_.Append(資料_.物品.名稱);
+                        else
+                            SB_.Append(資料_.物品.縮寫);
+
+                        if (資料_.數量 > 1)
+                            SB_.Append("*").Append(資料_.數量);
+                    }
                 }
+                else
+                {
+                    if (SB_.Length != 0)
+                        SB_.Append("&");
+
+                    decimal 最大成本_ = 0;
+                    bool 非第一筆_ = false;
+                    foreach (商品組成資料 資料_ in Group_)
+                    {
+                        if (非第一筆_)
+                            SB_.Append(",");
+                        非第一筆_ = true;
+
+                        decimal 目前成本_ = 資料_.成本 * 資料_.數量;
+                        if (目前成本_ > 最大成本_) 最大成本_ = 目前成本_;
+
+                        if (String.IsNullOrEmpty(資料_.物品.縮寫))
+                            SB_.Append(資料_.物品.名稱);
+                        else
+                            SB_.Append(資料_.物品.縮寫);
+
+                        if (資料_.數量 > 1)
+                            SB_.Append("*").Append(資料_.數量);
+                    }
+
+                    成本 += 最大成本_;
+                }
+            }
+
+            組成字串 = SB_.ToString();
+
+            HashSet<物品品牌資料> 品牌群_ = 組成.Select(Value => Value.物品.品牌).Where(Value => Value.編號是否有值()).ToSet();
+            switch (品牌群_.Count)
+            {
+                case 0:
+                    品牌 = 物品品牌資料.空白;
+                    break;
+                case 1:
+                    品牌 = 品牌群_.First();
+                    break;
+                default:
+                    品牌 = 物品品牌資料.混和;
+                    break;
             }
         }
 
@@ -323,6 +339,8 @@ namespace WokyTool.商品
             {
                 檢查器_.錯誤(資料_, "資料綁定中:" + 平台訂單新增資料_.ToString(false));
             }
+
+            //@@ 一般訂單
         }
     }
 }

@@ -33,7 +33,7 @@ namespace WokyTool.配送
             App_.Cells[1, 3] = "數量";
 
             int 目前行數_ = 2;
-            foreach (var 資料組_ in _物品合併資料.Map.OrderBy(Pair => Pair.Key.名稱))
+            foreach (var 資料組_ in _物品合併資料.組成書.OrderBy(Pair => Pair.Key.名稱))
             {
                 App_.Cells[目前行數_, 1] = 資料組_.Key.名稱;
                 App_.Cells[目前行數_, 2] = 資料組_.Key.縮寫;

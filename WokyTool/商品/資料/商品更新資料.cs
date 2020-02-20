@@ -291,8 +291,6 @@ namespace WokyTool.商品
         public decimal 成本 { get { return 修改.成本; } }
         public decimal 利潤 { get { return 修改.利潤; } }
 
-        public int 體積 { get { return 修改.體積; } }
-
         public string 組成字串 { get { return 修改.組成字串; } }
 
         public string 參考名稱 { get { return 參考.名稱; } }
@@ -310,7 +308,6 @@ namespace WokyTool.商品
         public int 參考寄庫數量 { get { return 參考.寄庫數量; } }
 
         public decimal 參考成本 { get { return 參考.成本; } }
-        public int 參考體積 { get { return 參考.體積; } }
         public decimal 參考利潤 { get { return 參考.利潤; } }
 
         public List<商品組成資料> 參考組成 { get { return 參考.組成; } }

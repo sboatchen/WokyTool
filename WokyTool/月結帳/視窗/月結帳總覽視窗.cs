@@ -88,7 +88,7 @@ namespace WokyTool.月結帳
 
             轉換列_.Add(new 月結帳物品銷售排行匯出轉換(物品合併資料_));
 
-            var GroupQueue_ = 物品合併資料_.Map.GroupBy(Value => Value.Key.品牌);
+            var GroupQueue_ = 物品合併資料_.組成書.GroupBy(Value => Value.Key.品牌);
 
             foreach (var Group_ in GroupQueue_)
             {

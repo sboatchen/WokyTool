@@ -172,6 +172,7 @@
     </Compile>
     <Compile Include="公司\資料\公司資料篩選.cs" />
     <Compile Include="公司\資料\公司資料.cs" />
+    <Compile Include="商品\廢棄\舊商品組成資料.cs" />
     <Compile Include="商品\控制\商品大類資料管理器.cs" />
     <Compile Include="商品\控制\商品資料管理器.cs" />
     <Compile Include="商品\控制\商品小類資料管理器.cs" />
@@ -212,6 +213,8 @@
     <Compile Include="商品\資料\商品資料篩選.cs" />
     <Compile Include="商品\資料\商品更新資料.cs" />
     <Compile Include="商品\資料\商品更新資料篩選.cs" />
+    <Compile Include="商品\轉換\商品組成轉換.cs" />
+    <Compile Include="商品\資料\自訂售價資料.cs" />
     <Compile Include="寄庫\控制\寄庫匯入資料管理器.cs" />
     <Compile Include="寄庫\控制\寄庫資料管理器.cs" />
     <Compile Include="寄庫\控制\寄庫新增資料管理器.cs" />
@@ -383,6 +386,11 @@
       <DependentUpon>廠商篩選視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="廠商\資料\廠商資料篩選.cs" />
+    <Compile Include="月結帳\匯入\月結帳統計轉換.cs" />
+    <Compile Include="月結帳\匯入\月結帳商品組成資料.cs" />
+    <Compile Include="月結帳\匯入\月結帳商品資料.cs" />
+    <Compile Include="月結帳\匯入\月結帳物品資料.cs" />
+    <Compile Include="月結帳\匯入\月結帳統計資料.cs" />
     <Compile Include="配送\視窗\宅配通匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -455,6 +463,7 @@
     <Compile Include="通用\介面\可整理介面.cs" />
     <Compile Include="通用\介面\可處理介面.cs" />
     <Compile Include="通用\檔案\元件\PDF圖片數值讀出元件.cs" />
+    <Compile Include="通用\檢查\實作\通知檢查器.cs" />
     <Compile Include="通用\檢查\視窗\錯誤總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -501,7 +510,7 @@
     <Compile Include="盤點\轉換\盤點更新轉換_小料架.cs" />
     <Compile Include="盤點\轉換\盤點更新轉換_萬通.cs" />
     <Compile Include="盤點\轉換\盤點更新轉換_大料架.cs" />
-    <Compile Include="廢棄\資料\舊商品資料.cs" />
+    <Compile Include="商品\廢棄\舊商品資料.cs" />
     <Compile Include="商品\視窗\商品總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1745,6 +1754,7 @@
     <None Include="Properties\DataSources\WokyTool.商品.商品更新資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品組成資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.商品.自訂售價資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.子客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.寄庫.寄庫匯入資料.datasource" />

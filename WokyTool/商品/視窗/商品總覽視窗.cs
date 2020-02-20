@@ -28,23 +28,12 @@ namespace WokyTool.商品
             this.更新ToolStripMenuItem.Enabled = 編輯管理器.是否可編輯;
         }
 
-        private void 舊資料轉換ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if(訊息管理器.獨體.確認("轉換確認", "是否用舊版資料覆蓋新資料?"))
-                商品資料管理器.獨體.舊資料轉換();
-        }
-
         private void 通用ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var 視窗_ = new 商品更新視窗();
             視窗_.初始化();
             視窗_.Show();
             視窗_.BringToFront();
-        }
-
-        private void 刷新ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            商品資料管理器.獨體.更新組成();
         }
     }
 }

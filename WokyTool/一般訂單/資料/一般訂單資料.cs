@@ -203,7 +203,7 @@ namespace WokyTool.一般訂單
 
         public static IEnumerable<一般訂單資料> 建立(一般訂單新增資料 資料_)
         {
-            foreach (一般訂單新增組成資料 組成資料_ in 資料_.組成列)
+            foreach (一般訂單新增組成資料 組成資料_ in 資料_.組成)
             {
                 yield return new 一般訂單資料
                 {

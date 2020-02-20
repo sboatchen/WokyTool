@@ -27,6 +27,10 @@ namespace WokyTool.通用
                     SFD_.DefaultExt = ".xls";
                     SFD_.Filter = "xls files (.xls)|*.xls";
                     break;
+                case XlFileFormat.xlCSV:
+                    SFD_.DefaultExt = ".csv";
+                    SFD_.Filter = "csv files (.csv)|*.csv";
+                    break;
                 default:
                     訊息管理器.獨體.錯誤("不支援輸出格式: " + 轉換_.格式);
                     return false;
@@ -125,6 +129,10 @@ namespace WokyTool.通用
                 case XlFileFormat.xlWorkbookNormal:
                     SFD_.DefaultExt = ".xls";
                     SFD_.Filter = "xls files (.xls)|*.xls";
+                    break;
+                case XlFileFormat.xlCSV:
+                    SFD_.DefaultExt = ".csv";
+                    SFD_.Filter = "csv files (.csv)|*.csv";
                     break;
                 default:
                     訊息管理器.獨體.錯誤("不支援輸出格式: " + 參考_.格式);
