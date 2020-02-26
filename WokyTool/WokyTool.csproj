@@ -1772,11 +1772,12 @@
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳支出資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳會計資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.物品.供應商資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.物品.品牌資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.物品.品類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.預留.預留匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.預留.預留資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.測試.讀寫測試資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.物品.物品品牌資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.物品.物品小類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品更新資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.物品.物品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.發票.發票匯入資料.datasource" />
