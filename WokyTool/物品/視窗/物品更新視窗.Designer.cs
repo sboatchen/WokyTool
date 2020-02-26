@@ -42,8 +42,8 @@ namespace WokyTool.物品
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.縮寫DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.國際條碼 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.大類識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.小類識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.品類識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.供應商識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.品牌識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.類別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.顏色DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,8 +110,8 @@ namespace WokyTool.物品
             this.名稱DataGridViewTextBoxColumn,
             this.縮寫DataGridViewTextBoxColumn,
             this.國際條碼,
-            this.大類識別DataGridViewTextBoxColumn,
-            this.小類識別DataGridViewTextBoxColumn,
+            this.品類識別DataGridViewTextBoxColumn,
+            this.供應商識別DataGridViewTextBoxColumn,
             this.品牌識別DataGridViewTextBoxColumn,
             this.類別DataGridViewTextBoxColumn,
             this.顏色DataGridViewTextBoxColumn,
@@ -168,17 +168,17 @@ namespace WokyTool.物品
             this.國際條碼.HeaderText = "國際條碼";
             this.國際條碼.Name = "國際條碼";
             // 
-            // 大類識別DataGridViewTextBoxColumn
+            // 品類識別DataGridViewTextBoxColumn
             // 
-            this.大類識別DataGridViewTextBoxColumn.DataPropertyName = "大類識別";
-            this.大類識別DataGridViewTextBoxColumn.HeaderText = "大類";
-            this.大類識別DataGridViewTextBoxColumn.Name = "大類識別DataGridViewTextBoxColumn";
+            this.品類識別DataGridViewTextBoxColumn.DataPropertyName = "品類識別";
+            this.品類識別DataGridViewTextBoxColumn.HeaderText = "品類";
+            this.品類識別DataGridViewTextBoxColumn.Name = "品類識別DataGridViewTextBoxColumn";
             // 
-            // 小類識別DataGridViewTextBoxColumn
+            // 供應商識別DataGridViewTextBoxColumn
             // 
-            this.小類識別DataGridViewTextBoxColumn.DataPropertyName = "小類識別";
-            this.小類識別DataGridViewTextBoxColumn.HeaderText = "小類";
-            this.小類識別DataGridViewTextBoxColumn.Name = "小類識別DataGridViewTextBoxColumn";
+            this.供應商識別DataGridViewTextBoxColumn.DataPropertyName = "供應商識別";
+            this.供應商識別DataGridViewTextBoxColumn.HeaderText = "供應商";
+            this.供應商識別DataGridViewTextBoxColumn.Name = "供應商識別DataGridViewTextBoxColumn";
             // 
             // 品牌識別DataGridViewTextBoxColumn
             // 
@@ -282,8 +282,8 @@ namespace WokyTool.物品
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 縮寫DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 國際條碼;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 大類識別DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 小類識別DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 品類識別DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 供應商識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 品牌識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 類別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 顏色DataGridViewTextBoxColumn;

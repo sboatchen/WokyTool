@@ -45,11 +45,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.品牌 = new WokyTool.物品.品牌選取元件();
-            this.小類 = new WokyTool.物品.供應商選取元件();
+            this.供應商 = new WokyTool.物品.供應商選取元件();
             this.物品 = new WokyTool.物品.物品選取元件();
             this.客戶 = new WokyTool.客戶.客戶選取元件();
             this.公司 = new WokyTool.公司.公司選取元件();
-            this.大類 = new WokyTool.物品.品類選取元件();
+            this.品類 = new WokyTool.物品.品類選取元件();
             this.更新狀態 = new WokyTool.通用.更新狀態選取元件();
             ((System.ComponentModel.ISupportInitialize)(this.最大利潤)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.最大寄庫數量)).BeginInit();
@@ -240,7 +240,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 1;
-            this.label2.Text = "小類";
+            this.label2.Text = "供應商";
             // 
             // label1
             // 
@@ -249,7 +249,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "大類";
+            this.label1.Text = "品類";
             // 
             // 品牌
             // 
@@ -262,16 +262,16 @@
             this.品牌.TabIndex = 93;
             this.品牌.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
-            // 小類
+            // 供應商
             // 
-            this.小類.Location = new System.Drawing.Point(58, 126);
-            this.小類.Margin = new System.Windows.Forms.Padding(4);
-            this.小類.Name = "小類";
-            this.小類.ReadOnly = false;
-            this.小類.SelectedItem = null;
-            this.小類.Size = new System.Drawing.Size(172, 25);
-            this.小類.TabIndex = 69;
-            this.小類.元件類型 = WokyTool.通用.選取元件類型.篩選;
+            this.供應商.Location = new System.Drawing.Point(58, 126);
+            this.供應商.Margin = new System.Windows.Forms.Padding(4);
+            this.供應商.Name = "供應商";
+            this.供應商.ReadOnly = false;
+            this.供應商.SelectedItem = null;
+            this.供應商.Size = new System.Drawing.Size(172, 25);
+            this.供應商.TabIndex = 69;
+            this.供應商.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
             // 物品
             // 
@@ -306,16 +306,16 @@
             this.公司.TabIndex = 54;
             this.公司.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
-            // 大類
+            // 品類
             // 
-            this.大類.Location = new System.Drawing.Point(58, 100);
-            this.大類.Margin = new System.Windows.Forms.Padding(4);
-            this.大類.Name = "大類";
-            this.大類.ReadOnly = false;
-            this.大類.SelectedItem = null;
-            this.大類.Size = new System.Drawing.Size(172, 25);
-            this.大類.TabIndex = 52;
-            this.大類.元件類型 = WokyTool.通用.選取元件類型.篩選;
+            this.品類.Location = new System.Drawing.Point(58, 100);
+            this.品類.Margin = new System.Windows.Forms.Padding(4);
+            this.品類.Name = "品類";
+            this.品類.ReadOnly = false;
+            this.品類.SelectedItem = null;
+            this.品類.Size = new System.Drawing.Size(172, 25);
+            this.品類.TabIndex = 52;
+            this.品類.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
             // 更新狀態
             // 
@@ -340,13 +340,13 @@
             this.Controls.Add(this.品牌);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.最小利潤);
-            this.Controls.Add(this.小類);
+            this.Controls.Add(this.供應商);
             this.Controls.Add(this.最小寄庫數量);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.物品);
             this.Controls.Add(this.客戶);
             this.Controls.Add(this.公司);
-            this.Controls.Add(this.大類);
+            this.Controls.Add(this.品類);
             this.Controls.Add(this.品號);
             this.Controls.Add(this.名稱);
             this.Controls.Add(this.label9);
@@ -378,13 +378,13 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox 名稱;
         private System.Windows.Forms.TextBox 品號;
-        private 物品.品類選取元件 大類;
+        private 物品.品類選取元件 品類;
         private 公司.公司選取元件 公司;
         private 客戶.客戶選取元件 客戶;
         private 物品.物品選取元件 物品;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown 最小寄庫數量;
-        private 物品.供應商選取元件 小類;
+        private 物品.供應商選取元件 供應商;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown 最小利潤;
         private 物品.品牌選取元件 品牌;

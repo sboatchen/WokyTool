@@ -51,8 +51,8 @@
             this.最後進貨成本 = new System.Windows.Forms.NumericUpDown();
             this.成本 = new System.Windows.Forms.NumericUpDown();
             this.庫存 = new System.Windows.Forms.NumericUpDown();
-            this.大類 = new WokyTool.物品.品類選取元件();
-            this.小類 = new WokyTool.物品.供應商選取元件();
+            this.品類 = new WokyTool.物品.品類選取元件();
+            this.供應商 = new WokyTool.物品.供應商選取元件();
             this.品牌 = new WokyTool.物品.品牌選取元件();
             this.類別 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "大類";
+            this.label1.Text = "品類";
             // 
             // label2
             // 
@@ -85,7 +85,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 1;
-            this.label2.Text = "小類";
+            this.label2.Text = "供應商";
             // 
             // label3
             // 
@@ -304,27 +304,27 @@
             this.庫存.Size = new System.Drawing.Size(165, 22);
             this.庫存.TabIndex = 51;
             // 
-            // 大類
+            // 品類
             // 
-            this.大類.Location = new System.Drawing.Point(58, 116);
-            this.大類.Margin = new System.Windows.Forms.Padding(4);
-            this.大類.Name = "大類";
-            this.大類.ReadOnly = false;
-            this.大類.SelectedItem = null;
-            this.大類.Size = new System.Drawing.Size(172, 25);
-            this.大類.TabIndex = 52;
-            this.大類.元件類型 = WokyTool.通用.選取元件類型.指定;
+            this.品類.Location = new System.Drawing.Point(58, 116);
+            this.品類.Margin = new System.Windows.Forms.Padding(4);
+            this.品類.Name = "品類";
+            this.品類.ReadOnly = false;
+            this.品類.SelectedItem = null;
+            this.品類.Size = new System.Drawing.Size(172, 25);
+            this.品類.TabIndex = 52;
+            this.品類.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
-            // 小類
+            // 供應商
             // 
-            this.小類.Location = new System.Drawing.Point(58, 144);
-            this.小類.Margin = new System.Windows.Forms.Padding(4);
-            this.小類.Name = "小類";
-            this.小類.ReadOnly = false;
-            this.小類.SelectedItem = null;
-            this.小類.Size = new System.Drawing.Size(172, 25);
-            this.小類.TabIndex = 53;
-            this.小類.元件類型 = WokyTool.通用.選取元件類型.指定;
+            this.供應商.Location = new System.Drawing.Point(58, 144);
+            this.供應商.Margin = new System.Windows.Forms.Padding(4);
+            this.供應商.Name = "供應商";
+            this.供應商.ReadOnly = false;
+            this.供應商.SelectedItem = null;
+            this.供應商.Size = new System.Drawing.Size(172, 25);
+            this.供應商.TabIndex = 53;
+            this.供應商.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
             // 品牌
             // 
@@ -412,8 +412,8 @@
             this.Controls.Add(this.類別);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.品牌);
-            this.Controls.Add(this.小類);
-            this.Controls.Add(this.大類);
+            this.Controls.Add(this.供應商);
+            this.Controls.Add(this.品類);
             this.Controls.Add(this.庫存);
             this.Controls.Add(this.成本);
             this.Controls.Add(this.最後進貨成本);
@@ -475,8 +475,8 @@
         private System.Windows.Forms.NumericUpDown 最後進貨成本;
         private System.Windows.Forms.NumericUpDown 成本;
         private System.Windows.Forms.NumericUpDown 庫存;
-        private 品類選取元件 大類;
-        private 供應商選取元件 小類;
+        private 品類選取元件 品類;
+        private 供應商選取元件 供應商;
         private 品牌選取元件 品牌;
         private System.Windows.Forms.TextBox 類別;
         private System.Windows.Forms.Label label16;

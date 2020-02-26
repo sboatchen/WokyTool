@@ -16,12 +16,6 @@ namespace WokyTool.商品
     public class 舊商品資料 : 可編號記錄資料
     {
         [JsonProperty]
-        public int 大類編號 { get; set; }
-
-        [JsonProperty]
-        public int 小類編號 { get; set; }
-
-        [JsonProperty]
         public int 公司編號 { get; set; }
 
         [JsonProperty]

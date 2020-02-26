@@ -42,8 +42,8 @@ namespace WokyTool.物品
             this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new WokyTool.通用.MyDataGridView();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.大類名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.小類名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.品類名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.供應商名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.品牌名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.縮寫DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -143,8 +143,8 @@ namespace WokyTool.物品
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.編號DataGridViewTextBoxColumn,
-            this.大類名稱DataGridViewTextBoxColumn,
-            this.小類名稱DataGridViewTextBoxColumn,
+            this.品類名稱DataGridViewTextBoxColumn,
+            this.供應商名稱DataGridViewTextBoxColumn,
             this.品牌名稱DataGridViewTextBoxColumn,
             this.名稱DataGridViewTextBoxColumn,
             this.縮寫DataGridViewTextBoxColumn,
@@ -174,19 +174,19 @@ namespace WokyTool.物品
             this.編號DataGridViewTextBoxColumn.Name = "編號DataGridViewTextBoxColumn";
             this.編號DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 大類名稱DataGridViewTextBoxColumn
+            // 品類名稱DataGridViewTextBoxColumn
             // 
-            this.大類名稱DataGridViewTextBoxColumn.DataPropertyName = "大類名稱";
-            this.大類名稱DataGridViewTextBoxColumn.HeaderText = "大類";
-            this.大類名稱DataGridViewTextBoxColumn.Name = "大類名稱DataGridViewTextBoxColumn";
-            this.大類名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.品類名稱DataGridViewTextBoxColumn.DataPropertyName = "品類名稱";
+            this.品類名稱DataGridViewTextBoxColumn.HeaderText = "品類";
+            this.品類名稱DataGridViewTextBoxColumn.Name = "品類名稱DataGridViewTextBoxColumn";
+            this.品類名稱DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 小類名稱DataGridViewTextBoxColumn
+            // 供應商名稱DataGridViewTextBoxColumn
             // 
-            this.小類名稱DataGridViewTextBoxColumn.DataPropertyName = "小類名稱";
-            this.小類名稱DataGridViewTextBoxColumn.HeaderText = "小類";
-            this.小類名稱DataGridViewTextBoxColumn.Name = "小類名稱DataGridViewTextBoxColumn";
-            this.小類名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.供應商名稱DataGridViewTextBoxColumn.DataPropertyName = "供應商名稱";
+            this.供應商名稱DataGridViewTextBoxColumn.HeaderText = "供應商";
+            this.供應商名稱DataGridViewTextBoxColumn.Name = "供應商名稱DataGridViewTextBoxColumn";
+            this.供應商名稱DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 品牌名稱DataGridViewTextBoxColumn
             // 
@@ -312,8 +312,8 @@ namespace WokyTool.物品
         private System.Windows.Forms.ToolStripMenuItem 通用ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 新增ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 大類名稱DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 小類名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 品類名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 供應商名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 品牌名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 縮寫DataGridViewTextBoxColumn;
