@@ -1,4 +1,4 @@
-﻿using WokyTool.物品;
+﻿using WokyTool.單品;
 using WokyTool.通用;
 namespace WokyTool.預留
 {
@@ -38,7 +38,7 @@ namespace WokyTool.預留
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.新版頁索引元件1 = new WokyTool.通用.新版頁索引元件();
-            this.物品 = new WokyTool.物品.物品選取元件();
+            this.單品 = new WokyTool.單品.單品選取元件();
             this.開始日期 = new WokyTool.通用.MyDateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.結束日期 = new WokyTool.通用.MyDateTimePicker();
@@ -111,7 +111,7 @@ namespace WokyTool.預留
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 62;
-            this.label4.Text = "物品";
+            this.label4.Text = "單品";
             // 
             // 新版頁索引元件1
             // 
@@ -120,15 +120,15 @@ namespace WokyTool.預留
             this.新版頁索引元件1.Size = new System.Drawing.Size(234, 34);
             this.新版頁索引元件1.TabIndex = 57;
             // 
-            // 物品
+            // 單品
             // 
-            this.物品.Location = new System.Drawing.Point(58, 78);
-            this.物品.Name = "物品";
-            this.物品.ReadOnly = false;
-            this.物品.SelectedItem = null;
-            this.物品.Size = new System.Drawing.Size(420, 22);
-            this.物品.TabIndex = 121;
-            this.物品.元件類型 = WokyTool.通用.選取元件類型.指定;
+            this.單品.Location = new System.Drawing.Point(58, 78);
+            this.單品.Name = "單品";
+            this.單品.ReadOnly = false;
+            this.單品.SelectedItem = null;
+            this.單品.Size = new System.Drawing.Size(420, 22);
+            this.單品.TabIndex = 121;
+            this.單品.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
             // 開始日期
             // 
@@ -216,7 +216,7 @@ namespace WokyTool.預留
             this.Controls.Add(this.label2);
             this.Controls.Add(this.開始日期);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.物品);
+            this.Controls.Add(this.單品);
             this.Controls.Add(this.錯誤訊息);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.備註);
@@ -243,7 +243,7 @@ namespace WokyTool.預留
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox 錯誤訊息;
         private System.Windows.Forms.Label label15;
-        private 物品選取元件 物品;
+        private 單品選取元件 單品;
         private MyDateTimePicker 開始日期;
         private System.Windows.Forms.Label label7;
         private MyDateTimePicker 結束日期;

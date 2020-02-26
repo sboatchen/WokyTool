@@ -1,16 +1,16 @@
 ﻿using WokyTool.通用;
 
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
-    public partial class 物品更新篩選視窗 : 新增篩選視窗
+    public partial class 單品更新篩選視窗 : 新增篩選視窗
     {
         // 介面編輯呈現用
-        public 物品更新篩選視窗() : base()
+        public 單品更新篩選視窗() : base()
         {
             InitializeComponent();
         }
 
-        public 物品更新篩選視窗(視窗可篩選介面 視窗篩選器_) : base(視窗篩選器_)
+        public 單品更新篩選視窗(視窗可篩選介面 視窗篩選器_) : base(視窗篩選器_)
         {
             InitializeComponent();
         }

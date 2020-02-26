@@ -1,7 +1,7 @@
 ﻿using WokyTool.通用;
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
-    partial class 物品更新視窗
+    partial class 單品更新視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@ namespace WokyTool.物品
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new WokyTool.通用.MyDataGridView();
-            this.物品更新資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.單品更新資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.更新狀態DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +57,7 @@ namespace WokyTool.物品
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.物品更新資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.單品更新資料BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -123,7 +123,7 @@ namespace WokyTool.物品
             this.成本備註DataGridViewTextBoxColumn,
             this.儲位,
             this.錯誤訊息DataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.物品更新資料BindingSource;
+            this.dataGridView1.DataSource = this.單品更新資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
@@ -131,9 +131,9 @@ namespace WokyTool.物品
             this.dataGridView1.Size = new System.Drawing.Size(1949, 400);
             this.dataGridView1.TabIndex = 2;
             // 
-            // 物品更新資料BindingSource
+            // 單品更新資料BindingSource
             // 
-            this.物品更新資料BindingSource.DataSource = typeof(WokyTool.物品.物品更新資料);
+            this.單品更新資料BindingSource.DataSource = typeof(WokyTool.單品.單品更新資料);
             // 
             // 更新狀態DataGridViewTextBoxColumn
             // 
@@ -248,7 +248,7 @@ namespace WokyTool.物品
             this.錯誤訊息DataGridViewTextBoxColumn.Name = "錯誤訊息DataGridViewTextBoxColumn";
             this.錯誤訊息DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 物品更新視窗
+            // 單品更新視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -257,12 +257,12 @@ namespace WokyTool.物品
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "物品更新視窗";
-            this.Text = "物品更新視窗";
+            this.Name = "單品更新視窗";
+            this.Text = "單品更新視窗";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.物品更新資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.單品更新資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,7 +276,7 @@ namespace WokyTool.物品
         private System.Windows.Forms.ToolStripMenuItem 樣板ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 匯入ToolStripMenuItem;
         private MyDataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource 物品更新資料BindingSource;
+        private System.Windows.Forms.BindingSource 單品更新資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 更新狀態DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;

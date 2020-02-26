@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 
 namespace WokyTool.測試
@@ -15,7 +15,7 @@ namespace WokyTool.測試
 
         private void 屬性取得_Click(object sender, EventArgs e)
         {
-            var 欄位列舉_ = typeof(物品資料).GetProperties();
+            var 欄位列舉_ = typeof(單品資料).GetProperties();
             foreach (var 欄位_ in 欄位列舉_)
             {
                 var 屬性列舉_ = 欄位_.GetCustomAttributes(typeof(可匯出Attribute), true).Cast<可匯出Attribute>();

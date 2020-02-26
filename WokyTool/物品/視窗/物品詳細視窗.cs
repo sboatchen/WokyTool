@@ -1,15 +1,15 @@
 ﻿using WokyTool.通用;
 
-namespace WokyTool.物品{
+namespace WokyTool.單品{
 
-    public partial class 物品詳細視窗 : 獨體詳細視窗
+    public partial class 單品詳細視窗 : 獨體詳細視窗
     {
-        public override 列舉.編號 編號類型 { get { return 列舉.編號.物品; } }
+        public override 列舉.編號 編號類型 { get { return 列舉.編號.單品; } }
 
-        public override 可編輯列舉資料管理介面 編輯管理器 { get { return 物品資料管理器.獨體.編輯管理器; } }
+        public override 可編輯列舉資料管理介面 編輯管理器 { get { return 單品資料管理器.獨體.編輯管理器; } }
         public override 新版頁索引元件 頁索引 { get { return this.新版頁索引元件1; } }
 
-        public 物品詳細視窗()
+        public 單品詳細視窗()
         {
             InitializeComponent();
         }

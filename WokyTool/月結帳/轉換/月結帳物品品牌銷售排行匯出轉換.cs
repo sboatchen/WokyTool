@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 
 namespace WokyTool.月結帳
@@ -22,7 +22,7 @@ namespace WokyTool.月結帳
         private Dictionary<string, int> Map_;
 
 
-        public 月結帳品牌銷售排行匯出轉換(IEnumerable<IGrouping<品牌資料, KeyValuePair<物品資料, int>>> GroupQueue_)
+        public 月結帳品牌銷售排行匯出轉換(IEnumerable<IGrouping<品牌資料, KeyValuePair<單品資料, int>>> GroupQueue_)
         {
             this.Map_ = GroupQueue_.ToDictionary(
                     Item => Item.Key.名稱,

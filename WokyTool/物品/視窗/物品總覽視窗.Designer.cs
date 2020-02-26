@@ -1,7 +1,7 @@
 ﻿using WokyTool.通用;
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
-    partial class 物品總覽視窗
+    partial class 單品總覽視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -39,7 +39,7 @@ namespace WokyTool.物品
             this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.新增ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.通用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.物品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.單品資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new WokyTool.通用.MyDataGridView();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.品類名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +59,7 @@ namespace WokyTool.物品
             this.保留 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.儲位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.單品資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,9 +133,9 @@ namespace WokyTool.物品
             this.通用ToolStripMenuItem.Text = "通用";
             this.通用ToolStripMenuItem.Click += new System.EventHandler(this.通用ToolStripMenuItem_Click);
             // 
-            // 物品資料BindingSource
+            // 單品資料BindingSource
             // 
-            this.物品資料BindingSource.DataSource = typeof(WokyTool.物品.物品資料);
+            this.單品資料BindingSource.DataSource = typeof(WokyTool.單品.單品資料);
             // 
             // dataGridView1
             // 
@@ -159,7 +159,7 @@ namespace WokyTool.物品
             this.成本備註DataGridViewTextBoxColumn,
             this.保留,
             this.儲位});
-            this.dataGridView1.DataSource = this.物品資料BindingSource;
+            this.dataGridView1.DataSource = this.單品資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
@@ -279,7 +279,7 @@ namespace WokyTool.物品
             this.儲位.HeaderText = "儲位";
             this.儲位.Name = "儲位";
             // 
-            // 物品總覽視窗
+            // 單品總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -287,11 +287,11 @@ namespace WokyTool.物品
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "物品總覽視窗";
-            this.Text = "物品總覽視窗";
+            this.Name = "單品總覽視窗";
+            this.Text = "單品總覽視窗";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.物品資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.單品資料BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -305,7 +305,7 @@ namespace WokyTool.物品
         private System.Windows.Forms.ToolStripMenuItem 匯出ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 盤點ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 自訂ToolStripMenuItem;
-        private System.Windows.Forms.BindingSource 物品資料BindingSource;
+        private System.Windows.Forms.BindingSource 單品資料BindingSource;
         private MyDataGridView dataGridView1;
         private System.Windows.Forms.ToolStripMenuItem 更新ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 檢查ToolStripMenuItem;

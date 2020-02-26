@@ -37,7 +37,7 @@
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
             this.類型DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.廠商識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.物品識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.單品識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.單價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,7 +95,7 @@
             this.myDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.類型DataGridViewTextBoxColumn,
             this.廠商識別DataGridViewTextBoxColumn,
-            this.物品識別DataGridViewTextBoxColumn,
+            this.單品識別DataGridViewTextBoxColumn,
             this.數量DataGridViewTextBoxColumn,
             this.單價DataGridViewTextBoxColumn,
             this.備註DataGridViewTextBoxColumn,
@@ -120,12 +120,12 @@
             this.廠商識別DataGridViewTextBoxColumn.HeaderText = "廠商";
             this.廠商識別DataGridViewTextBoxColumn.Name = "廠商識別DataGridViewTextBoxColumn";
             // 
-            // 物品識別DataGridViewTextBoxColumn
+            // 單品識別DataGridViewTextBoxColumn
             // 
-            this.物品識別DataGridViewTextBoxColumn.DataPropertyName = "物品識別";
-            this.物品識別DataGridViewTextBoxColumn.HeaderText = "物品";
-            this.物品識別DataGridViewTextBoxColumn.Name = "物品識別DataGridViewTextBoxColumn";
-            this.物品識別DataGridViewTextBoxColumn.Width = 400;
+            this.單品識別DataGridViewTextBoxColumn.DataPropertyName = "單品識別";
+            this.單品識別DataGridViewTextBoxColumn.HeaderText = "單品";
+            this.單品識別DataGridViewTextBoxColumn.Name = "單品識別DataGridViewTextBoxColumn";
+            this.單品識別DataGridViewTextBoxColumn.Width = 400;
             // 
             // 數量DataGridViewTextBoxColumn
             // 
@@ -184,7 +184,7 @@
         private System.Windows.Forms.BindingSource 進貨新增匯入資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 類型DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 廠商識別DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 物品識別DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 單品識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 單價DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;

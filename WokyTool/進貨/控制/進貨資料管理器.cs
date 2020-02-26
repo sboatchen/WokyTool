@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using WokyTool.通用;
-using WokyTool.物品;
+using WokyTool.單品;
 
 namespace WokyTool.進貨
 {
@@ -38,14 +38,14 @@ namespace WokyTool.進貨
             List<進貨資料> 資料列_ = new List<進貨資料>();
             資料列_.Add(資料_);
 
-            物品資料管理器.獨體.更新庫存(資料列_);
+            單品資料管理器.獨體.更新庫存(資料列_);
         }
 
         public override void 新增(IEnumerable<進貨資料> 資料列舉_)
         {
             base.新增(資料列舉_);
 
-            物品資料管理器.獨體.更新庫存(資料列舉_);
+            單品資料管理器.獨體.更新庫存(資料列舉_);
         }
     }
 }

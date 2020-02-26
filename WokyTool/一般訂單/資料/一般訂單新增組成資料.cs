@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 
 namespace WokyTool.一般訂單
@@ -9,15 +9,15 @@ namespace WokyTool.一般訂單
     public class 一般訂單新增組成資料 : 基本資料
     {
         [JsonProperty]
-        public int 物品編號
+        public int 單品編號
         {
             get
             {
-                return 物品.編號;
+                return 單品.編號;
             }
             set
             {
-                物品 = 物品資料管理器.獨體.取得(value);
+                單品 = 單品資料管理器.獨體.取得(value);
             }
         }
 
@@ -32,9 +32,9 @@ namespace WokyTool.一般訂單
 
         /********************************/
 
-        public 物品資料 物品 { get; set; }
+        public 單品資料 單品 { get; set; }
 
-        public string 物品名稱 { get { return 物品.名稱; } }
+        public string 單品名稱 { get { return 單品.名稱; } }
 
         public decimal 總金額
         {
@@ -50,7 +50,7 @@ namespace WokyTool.一般訂單
 
         public 一般訂單新增組成資料()
         {
-            物品 = 物品資料.空白;
+            單品 = 單品資料.空白;
         }
 
         /********************************/
@@ -60,8 +60,8 @@ namespace WokyTool.一般訂單
             一般訂單新增資料 資料_ = (一般訂單新增資料)資料上層_;
             //基本資料 參考_ = (資料參考_ == null) ? this : 資料參考_;
 
-            if (false == 物品.編號是否合法())
-                檢查器_.錯誤(資料_, "物品不合法");
+            if (false == 單品.編號是否合法())
+                檢查器_.錯誤(資料_, "單品不合法");
 
             if (數量 == 0)
                 檢查器_.錯誤(資料_, "數量不合法");

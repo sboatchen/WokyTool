@@ -40,7 +40,7 @@
             this.結束日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.物品識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.單品識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,7 +98,7 @@
             this.結束日期DataGridViewTextBoxColumn,
             this.名稱DataGridViewTextBoxColumn,
             this.姓名DataGridViewTextBoxColumn,
-            this.物品識別DataGridViewTextBoxColumn,
+            this.單品識別DataGridViewTextBoxColumn,
             this.數量DataGridViewTextBoxColumn,
             this.備註DataGridViewTextBoxColumn,
             this.錯誤訊息DataGridViewTextBoxColumn});
@@ -139,12 +139,12 @@
             this.姓名DataGridViewTextBoxColumn.HeaderText = "姓名";
             this.姓名DataGridViewTextBoxColumn.Name = "姓名DataGridViewTextBoxColumn";
             // 
-            // 物品識別DataGridViewTextBoxColumn
+            // 單品識別DataGridViewTextBoxColumn
             // 
-            this.物品識別DataGridViewTextBoxColumn.DataPropertyName = "物品識別";
-            this.物品識別DataGridViewTextBoxColumn.HeaderText = "物品";
-            this.物品識別DataGridViewTextBoxColumn.Name = "物品識別DataGridViewTextBoxColumn";
-            this.物品識別DataGridViewTextBoxColumn.Width = 400;
+            this.單品識別DataGridViewTextBoxColumn.DataPropertyName = "單品識別";
+            this.單品識別DataGridViewTextBoxColumn.HeaderText = "單品";
+            this.單品識別DataGridViewTextBoxColumn.Name = "單品識別DataGridViewTextBoxColumn";
+            this.單品識別DataGridViewTextBoxColumn.Width = 400;
             // 
             // 數量DataGridViewTextBoxColumn
             // 
@@ -195,7 +195,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 結束日期DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 姓名DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 物品識別DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 單品識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 錯誤訊息DataGridViewTextBoxColumn;

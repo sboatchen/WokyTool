@@ -33,7 +33,7 @@ namespace WokyTool.通用
             品牌,
             品類,
             供應商,
-            物品,
+            單品,
 
             商品,
 

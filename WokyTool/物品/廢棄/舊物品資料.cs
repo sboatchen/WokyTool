@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 using WokyTool.通用;
 
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 舊物品資料 : 可編號記錄資料
+    public class 舊單品資料 : 可編號記錄資料
     {
         [JsonProperty]
         public int 大類編號
@@ -98,16 +98,16 @@ namespace WokyTool.物品
 
         /********************************/
 
-        public 舊物品資料()
+        public 舊單品資料()
         {
             品類 = 品類資料.空白;
             供應商 = 供應商資料.空白;
             品牌 = 品牌資料.空白;
         }
 
-        public static 物品資料 轉換(舊物品資料 舊資料_)
+        public static 單品資料 轉換(舊單品資料 舊資料_)
         {
-            return new 物品資料
+            return new 單品資料
             {
                 編號 = 舊資料_.編號,
 

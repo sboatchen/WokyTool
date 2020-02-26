@@ -1,6 +1,6 @@
-﻿namespace WokyTool.物品
+﻿namespace WokyTool.單品
 {
-    partial class 物品更新篩選視窗
+    partial class 單品更新篩選視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,9 @@
         {
             this.類別 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.品牌 = new WokyTool.物品.品牌選取元件();
-            this.供應商 = new WokyTool.物品.供應商選取元件();
-            this.品類 = new WokyTool.物品.品類選取元件();
+            this.品牌 = new WokyTool.單品.品牌選取元件();
+            this.供應商 = new WokyTool.單品.供應商選取元件();
+            this.品類 = new WokyTool.單品.品類選取元件();
             this.最小庫存 = new System.Windows.Forms.NumericUpDown();
             this.國際條碼 = new System.Windows.Forms.TextBox();
             this.顏色 = new System.Windows.Forms.TextBox();
@@ -246,7 +246,7 @@
             this.label5.TabIndex = 120;
             this.label5.Text = "儲位";
             // 
-            // 物品更新篩選視窗
+            // 單品更新篩選視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -271,8 +271,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "物品更新篩選視窗";
-            this.Text = "物品更新篩選視窗";
+            this.Name = "單品更新篩選視窗";
+            this.Text = "單品更新篩選視窗";
             ((System.ComponentModel.ISupportInitialize)(this.最小庫存)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.最大庫存)).EndInit();
             this.ResumeLayout(false);

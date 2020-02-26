@@ -1,4 +1,4 @@
-﻿using WokyTool.物品;
+﻿using WokyTool.單品;
 using WokyTool.通用;
 namespace WokyTool.進貨
 {
@@ -40,7 +40,7 @@ namespace WokyTool.進貨
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.物品 = new System.Windows.Forms.TextBox();
+            this.單品 = new System.Windows.Forms.TextBox();
             this.廠商 = new System.Windows.Forms.TextBox();
             this.處理者 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -136,7 +136,7 @@ namespace WokyTool.進貨
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(29, 12);
             this.label11.TabIndex = 137;
-            this.label11.Text = "物品";
+            this.label11.Text = "單品";
             // 
             // label12
             // 
@@ -147,13 +147,13 @@ namespace WokyTool.進貨
             this.label12.TabIndex = 136;
             this.label12.Text = "廠商";
             // 
-            // 物品
+            // 單品
             // 
-            this.物品.Location = new System.Drawing.Point(59, 93);
-            this.物品.Name = "物品";
-            this.物品.ReadOnly = true;
-            this.物品.Size = new System.Drawing.Size(400, 22);
-            this.物品.TabIndex = 147;
+            this.單品.Location = new System.Drawing.Point(59, 93);
+            this.單品.Name = "單品";
+            this.單品.ReadOnly = true;
+            this.單品.Size = new System.Drawing.Size(400, 22);
+            this.單品.TabIndex = 147;
             // 
             // 廠商
             // 
@@ -211,7 +211,7 @@ namespace WokyTool.進貨
             this.Controls.Add(this.處理時間);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.廠商);
-            this.Controls.Add(this.物品);
+            this.Controls.Add(this.單品);
             this.Controls.Add(this.單價);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.類型);
@@ -243,7 +243,7 @@ namespace WokyTool.進貨
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox 物品;
+        private System.Windows.Forms.TextBox 單品;
         private System.Windows.Forms.TextBox 廠商;
         private System.Windows.Forms.TextBox 處理者;
         private System.Windows.Forms.Label label2;

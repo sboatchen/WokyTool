@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using WokyTool.公司;
 using WokyTool.客戶;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 
 namespace WokyTool.一般訂單
@@ -75,18 +75,18 @@ namespace WokyTool.一般訂單
             }
         }
 
-        private 物品資料 _物品 = 物品資料.不篩選;
-        public 物品資料 物品
+        private 單品資料 _單品 = 單品資料.不篩選;
+        public 單品資料 單品
         {
             get
             {
-                return _物品;
+                return _單品;
             }
             set
             {
-                if (_物品 != value)
+                if (_單品 != value)
                 {
-                    _物品 = value;
+                    _單品 = value;
                     篩選版本++;
                 }
             }
@@ -287,7 +287,7 @@ namespace WokyTool.一般訂單
                     公司資料.不篩選 != _公司 ||
                     客戶資料.不篩選 != _客戶 ||
                     子客戶資料.不篩選 != _子客戶 ||
-                    物品資料.不篩選 != _物品 ||
+                    單品資料.不篩選 != _單品 ||
                     null != _姓名 ||
                     null != _電話 ||
                     null != _手機 ||
@@ -319,8 +319,8 @@ namespace WokyTool.一般訂單
                 目前列舉_ = 目前列舉_.Where(Value => Value.客戶名稱.Equals(_客戶.名稱));
             if (子客戶資料.不篩選 != _子客戶)
                 目前列舉_ = 目前列舉_.Where(Value => Value.子客戶名稱.Equals(_子客戶.名稱));
-            if (物品資料.不篩選 != _物品)
-                目前列舉_ = 目前列舉_.Where(Value => Value.物品名稱.Equals(_物品.名稱));
+            if (單品資料.不篩選 != _單品)
+                目前列舉_ = 目前列舉_.Where(Value => Value.單品名稱.Equals(_單品.名稱));
 
             if (null != _姓名)
                 目前列舉_ = 目前列舉_.Where(Value => Value.姓名.Contains(_姓名));

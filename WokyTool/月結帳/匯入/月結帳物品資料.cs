@@ -4,7 +4,7 @@ using WokyTool.通用;
 namespace WokyTool.月結帳
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 月結帳物品資料 : 可編號記錄資料
+    public class 月結帳單品資料 : 可編號記錄資料
     {
         [可匯出]
         [JsonProperty]

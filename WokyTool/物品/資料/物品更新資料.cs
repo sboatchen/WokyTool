@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 using WokyTool.通用;
 
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 物品更新資料 : 可更新資料<物品更新資料, 物品資料>
+    public class 單品更新資料 : 可更新資料<單品更新資料, 單品資料>
     {
         [可匯入(優先級 = 1, 識別 = true)]
         [JsonProperty]
@@ -16,7 +16,7 @@ namespace WokyTool.物品
             }
             set
             {
-                參考 = 物品資料管理器.獨體.取得(value);
+                參考 = 單品資料管理器.獨體.取得(value);
                 修改 = 參考.深複製();
 
                 修改.編號 = value;
@@ -35,7 +35,7 @@ namespace WokyTool.物品
             {
                 if (參考 == null)
                 {
-                    參考 = 物品資料管理器.獨體.取得_名稱(value);
+                    參考 = 單品資料管理器.獨體.取得_名稱(value);
                     修改 = 參考.深複製();
                 }
 
@@ -55,7 +55,7 @@ namespace WokyTool.物品
             {
                 if (參考 == null)
                 {
-                    參考 = 物品資料管理器.獨體.取得_縮寫(value);
+                    參考 = 單品資料管理器.獨體.取得_縮寫(value);
                     修改 = 參考.深複製();
                 }
 

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using WokyTool.Common;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 
 namespace WokyTool.平台訂單
@@ -111,10 +111,10 @@ namespace WokyTool.平台訂單
                     if(分組群_.Count() > 1)
                         訊息管理器.獨體.警告("找到多個同發票號碼的組別，請注意: " + 姓名_);
 
-                    物品合併資料 物品合併資料_ = new 物品合併資料();
+                    單品合併資料 單品合併資料_ = new 單品合併資料();
                     foreach (平台訂單新增資料 資料_ in 符合資料列_)
                     {
-                        物品合併資料_.新增(資料_);
+                        單品合併資料_.新增(資料_);
 
                         資料_.BeginEdit();
                         資料_.姓名 = 姓名_;
@@ -125,7 +125,7 @@ namespace WokyTool.平台訂單
                         資料_.處理狀態 = 列舉.訂單處理狀態.配送;
                     }
 
-                    Pair_.Value.處理(PdfWriter_, 物品合併資料_.ToString());
+                    Pair_.Value.處理(PdfWriter_, 單品合併資料_.ToString());
                 }
             }
         }

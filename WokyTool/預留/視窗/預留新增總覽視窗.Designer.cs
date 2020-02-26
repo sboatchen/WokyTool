@@ -43,7 +43,7 @@
             this.結束日期DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.物品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.單品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.是否保留中DataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -61,7 +61,7 @@
             this.結束日期DataGridViewTextBoxColumn,
             this.名稱DataGridViewTextBoxColumn,
             this.姓名DataGridViewTextBoxColumn,
-            this.物品名稱DataGridViewTextBoxColumn,
+            this.單品名稱DataGridViewTextBoxColumn,
             this.數量DataGridViewTextBoxColumn,
             this.備註DataGridViewTextBoxColumn,
             this.是否保留中DataGridViewCheckBoxColumn});
@@ -164,13 +164,13 @@
             this.姓名DataGridViewTextBoxColumn.HeaderText = "姓名";
             this.姓名DataGridViewTextBoxColumn.Name = "姓名DataGridViewTextBoxColumn";
             // 
-            // 物品名稱DataGridViewTextBoxColumn
+            // 單品名稱DataGridViewTextBoxColumn
             // 
-            this.物品名稱DataGridViewTextBoxColumn.DataPropertyName = "物品名稱";
-            this.物品名稱DataGridViewTextBoxColumn.HeaderText = "物品";
-            this.物品名稱DataGridViewTextBoxColumn.Name = "物品名稱DataGridViewTextBoxColumn";
-            this.物品名稱DataGridViewTextBoxColumn.ReadOnly = true;
-            this.物品名稱DataGridViewTextBoxColumn.Width = 400;
+            this.單品名稱DataGridViewTextBoxColumn.DataPropertyName = "單品名稱";
+            this.單品名稱DataGridViewTextBoxColumn.HeaderText = "單品";
+            this.單品名稱DataGridViewTextBoxColumn.Name = "單品名稱DataGridViewTextBoxColumn";
+            this.單品名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.單品名稱DataGridViewTextBoxColumn.Width = 400;
             // 
             // 數量DataGridViewTextBoxColumn
             // 
@@ -224,7 +224,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 結束日期DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 姓名DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 物品名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 單品名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn 是否保留中DataGridViewCheckBoxColumn;

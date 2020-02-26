@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using WokyTool.通用;
 using Newtonsoft.Json;
 using System.IO;
-using WokyTool.物品;
+using WokyTool.單品;
 
 namespace WokyTool.配送
 {

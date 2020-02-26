@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.公司;
 using WokyTool.客戶;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 using WokyTool.廠商;
 

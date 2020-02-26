@@ -7,27 +7,27 @@ namespace WokyTool.盤點
     public class 盤點封存轉換 : 可封存資料
     {
         [JsonProperty]
-        public int 物品編號
+        public int 單品編號
         {
-            get { return 資料.物品.編號; }
+            get { return 資料.單品.編號; }
         }
 
         [JsonProperty]
-        public string 物品名稱
+        public string 單品名稱
         {
-            get { return 資料.物品.名稱; }
+            get { return 資料.單品.名稱; }
         }
 
         [JsonProperty]
-        public string 物品縮寫
+        public string 單品縮寫
         {
-            get { return 資料.物品.縮寫; }
+            get { return 資料.單品.縮寫; }
         }
 
         [JsonProperty]
         public int 盤點前庫存
         {
-            get { return 資料.物品.庫存; }
+            get { return 資料.單品.庫存; }
         }
 
         [JsonProperty]

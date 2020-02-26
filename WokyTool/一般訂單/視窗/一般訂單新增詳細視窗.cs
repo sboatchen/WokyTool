@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using WokyTool.公司;
 using WokyTool.客戶;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 using WokyTool.聯絡人;
 
@@ -33,7 +33,7 @@ namespace WokyTool.一般訂單
             客戶.初始化();
             子客戶.初始化();
             聯絡人.初始化();
-            物品.初始化();
+            單品.初始化();
 
             base.初始化();
 
@@ -107,15 +107,15 @@ namespace WokyTool.一般訂單
 
         private void 新增_Click(object sender, EventArgs e)
         {
-            物品資料 物品_ = (物品資料)(this.物品.SelectedItem);
-            if (物品_ == null || 物品_.編號是否有值() == false)
+            單品資料 單品_ = (單品資料)(this.單品.SelectedItem);
+            if (單品_ == null || 單品_.編號是否有值() == false)
             {
-                訊息管理器.獨體.通知("物品不合法");
+                訊息管理器.獨體.通知("單品不合法");
                 return;
             }
 
             一般訂單新增組成資料 組成資料_ = new 一般訂單新增組成資料();
-            組成資料_.物品 = 物品_;
+            組成資料_.單品 = 單品_;
             組成資料_.數量 = (int)this.數量.Value;
             組成資料_.售價 = (int)this.售價.Value;
             組成資料_.備註 = this.備註.Text;

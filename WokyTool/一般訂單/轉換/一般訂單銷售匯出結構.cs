@@ -53,8 +53,8 @@ namespace WokyTool.一般訂單
                 int Column_ = 0;
 
                 App_.Cells[Row_, ++Column_] = Row_ - 8;
-                App_.Cells[Row_, ++Column_] = Item_.物品編號;
-                App_.Cells[Row_, ++Column_] = Item_.物品名稱;
+                App_.Cells[Row_, ++Column_] = Item_.單品編號;
+                App_.Cells[Row_, ++Column_] = Item_.單品名稱;
                 App_.Cells[Row_, ++Column_] = Item_.數量;
 
                 if (資料.列印單價)

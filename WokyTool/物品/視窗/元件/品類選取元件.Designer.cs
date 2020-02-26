@@ -1,4 +1,4 @@
-﻿namespace WokyTool.物品
+﻿namespace WokyTool.單品
 {
     partial class 品類選取元件
     {
@@ -47,7 +47,7 @@
             // 
             // 品類資料BindingSource
             // 
-            this.品類資料BindingSource.DataSource = typeof(WokyTool.物品.品類資料);
+            this.品類資料BindingSource.DataSource = typeof(WokyTool.單品.品類資料);
             // 
             // 品類選取元件
             // 

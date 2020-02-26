@@ -1,4 +1,4 @@
-﻿using WokyTool.物品;
+﻿using WokyTool.單品;
 using WokyTool.通用;
 namespace WokyTool.寄庫
 {

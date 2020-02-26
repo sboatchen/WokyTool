@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 
 namespace WokyTool.預留
@@ -48,7 +48,7 @@ namespace WokyTool.預留
 
         public void 更新()
         {
-            物品資料管理器.獨體.更新保留();
+            單品資料管理器.獨體.更新保留();
         }
     }
 }

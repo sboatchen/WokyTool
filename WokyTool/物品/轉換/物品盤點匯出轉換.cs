@@ -3,11 +3,11 @@ using System.Linq;
 using System.Text;
 using WokyTool.通用;
 
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
     // 輸出
     // 條碼號, 商品描述, 0
-    public class 物品盤點匯出轉換 : 可寫入介面_CSV
+    public class 單品盤點匯出轉換 : 可寫入介面_CSV
     {
         public string 分類 { get { return null; } }
 
@@ -19,7 +19,7 @@ namespace WokyTool.物品
 
         //條碼號, 商品描述, 0
 
-        public 物品盤點匯出轉換()
+        public 單品盤點匯出轉換()
         {
         }
 
@@ -27,9 +27,9 @@ namespace WokyTool.物品
         {
             Builder_.加入標頭("條碼號", "商品描述", "類型");
 
-            var Queqe_ = 物品資料管理器.獨體.資料列舉2.Where(Value => (Value.編號 > 0) && (String.IsNullOrEmpty(Value.國際條碼) == false));
+            var Queqe_ = 單品資料管理器.獨體.資料列舉2.Where(Value => (Value.編號 > 0) && (String.IsNullOrEmpty(Value.國際條碼) == false));
 
-            foreach (物品資料 資料_ in Queqe_)
+            foreach (單品資料 資料_ in Queqe_)
             {
                 Builder_.加入(
                     String.Format("{0:0000000000000}", 資料_.國際條碼),

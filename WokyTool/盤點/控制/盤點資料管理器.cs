@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 using WokyTool.Common;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 
 namespace WokyTool.盤點
@@ -36,7 +36,7 @@ namespace WokyTool.盤點
 
         protected override void 初始化資料()
         {
-            _資料書 = 物品資料管理器.獨體.資料列舉2.ToDictionary(Value => Value.編號, Value => 盤點資料.建立(Value));
+            _資料書 = 單品資料管理器.獨體.資料列舉2.ToDictionary(Value => Value.編號, Value => 盤點資料.建立(Value));
             資料版本++;
         }
 
@@ -46,7 +46,7 @@ namespace WokyTool.盤點
             if (String.IsNullOrEmpty(名稱_) || 字串.無.Equals(名稱_))
                 return 空白資料;
 
-            return _資料書.Values.Where(Value => 名稱_.Equals(Value.物品.名稱) || 名稱_.Equals(Value.物品.縮寫)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
+            return _資料書.Values.Where(Value => 名稱_.Equals(Value.單品.名稱) || 名稱_.Equals(Value.單品.縮寫)).DefaultIfEmpty(錯誤資料).FirstOrDefault();
         }
 
         // 儲存檔案
@@ -61,7 +61,7 @@ namespace WokyTool.盤點
                 檔案.寫入(檔案路徑, JsonConvert.SerializeObject(盤點封存資料列_, Formatting.Indented), false);
 
                 // 更新庫存
-                物品資料管理器.獨體.更新庫存(_資料書.Select(Pair => Pair.Value));
+                單品資料管理器.獨體.更新庫存(_資料書.Select(Pair => Pair.Value));
             }
         }
     }

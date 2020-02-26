@@ -5,7 +5,7 @@ using WokyTool.通用;
 
 namespace WokyTool.庫存
 {
-    public class 物品庫存封存資料篩選 : 通用可處理資料篩選介面<物品庫存封存資料>
+    public class 單品庫存封存資料篩選 : 通用可處理資料篩選介面<單品庫存封存資料>
     {
         private string _備註 = null;
         public string 備註
@@ -33,9 +33,9 @@ namespace WokyTool.庫存
             }
         }
 
-        public override IEnumerable<物品庫存封存資料> 篩選(IEnumerable<物品庫存封存資料> 資料列舉_)
+        public override IEnumerable<單品庫存封存資料> 篩選(IEnumerable<單品庫存封存資料> 資料列舉_)
         {
-            IEnumerable<物品庫存封存資料> 目前列舉_ = base.篩選(資料列舉_);
+            IEnumerable<單品庫存封存資料> 目前列舉_ = base.篩選(資料列舉_);
 
             if (null != _文字)
                 目前列舉_ = 目前列舉_.Where(Value => Value.名稱.Contains(_文字) || Value.縮寫.Contains(_文字));

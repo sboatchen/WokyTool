@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 
 namespace WokyTool.月結帳
 {
-    public class 月結帳物品銷售排行匯出轉換 : 可寫入介面_EXCEL
+    public class 月結帳單品銷售排行匯出轉換 : 可寫入介面_EXCEL
     {
-        public string 分類 { get { return "物品銷售數量排行"; } }
+        public string 分類 { get { return "單品銷售數量排行"; } }
 
         public string 樣板 { get { return null; } }
 
@@ -19,11 +19,11 @@ namespace WokyTool.月結帳
 
         public string 密碼 { get { return null; } }
 
-        private 物品合併資料 物品合併資料_;
+        private 單品合併資料 單品合併資料_;
 
-        public 月結帳物品銷售排行匯出轉換(物品合併資料 物品合併資料_)
+        public 月結帳單品銷售排行匯出轉換(單品合併資料 單品合併資料_)
         {
-            this.物品合併資料_ = 物品合併資料_;
+            this.單品合併資料_ = 單品合併資料_;
         }
 
         public void 寫入(Application App_)
@@ -33,7 +33,7 @@ namespace WokyTool.月結帳
 
 
             int 目前行數_ = 2;
-            foreach (var 資料_ in 物品合併資料_.組成書.OrderByDescending(Pair => Pair.Value).Take(10))
+            foreach (var 資料_ in 單品合併資料_.組成書.OrderByDescending(Pair => Pair.Value).Take(10))
             {
                 App_.Cells[目前行數_, 1] = 資料_.Key.名稱;
                 App_.Cells[目前行數_, 2] = 資料_.Value;

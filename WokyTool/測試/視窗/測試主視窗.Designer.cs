@@ -44,7 +44,7 @@
             this.pDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.資料ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.物品合併ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.單品合併ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.快速 = new System.Windows.Forms.Button();
             this.快速清除庫存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -176,18 +176,18 @@
             // 資料ToolStripMenuItem
             // 
             this.資料ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.物品合併ToolStripMenuItem,
+            this.單品合併ToolStripMenuItem,
             this.快速清除庫存ToolStripMenuItem});
             this.資料ToolStripMenuItem.Name = "資料ToolStripMenuItem";
             this.資料ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.資料ToolStripMenuItem.Text = "資料";
             // 
-            // 物品合併ToolStripMenuItem
+            // 單品合併ToolStripMenuItem
             // 
-            this.物品合併ToolStripMenuItem.Name = "物品合併ToolStripMenuItem";
-            this.物品合併ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.物品合併ToolStripMenuItem.Text = "物品合併";
-            this.物品合併ToolStripMenuItem.Click += new System.EventHandler(this.物品合併ToolStripMenuItem_Click);
+            this.單品合併ToolStripMenuItem.Name = "單品合併ToolStripMenuItem";
+            this.單品合併ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.單品合併ToolStripMenuItem.Text = "單品合併";
+            this.單品合併ToolStripMenuItem.Click += new System.EventHandler(this.單品合併ToolStripMenuItem_Click);
             // 
             // 快速
             // 
@@ -242,7 +242,7 @@
         private System.Windows.Forms.ToolStripMenuItem pDFToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem imageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 資料ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 物品合併ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 單品合併ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 快速清除庫存ToolStripMenuItem;
     }
 }

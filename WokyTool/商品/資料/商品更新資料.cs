@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using WokyTool.公司;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.客戶;
 using WokyTool.通用;
 
@@ -191,7 +191,7 @@ namespace WokyTool.商品
                 _組成字串識別 = value;
                 if (參考組成字串.Equals(_組成字串識別) == false)
                 {
-                    修改.組成 = 物品合併資料.共用.解構(_組成字串識別);
+                    修改.組成 = 單品合併資料.共用.解構(_組成字串識別);
                     修改.更新組成();
                 }
             }

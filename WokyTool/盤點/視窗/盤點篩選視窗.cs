@@ -15,11 +15,11 @@ namespace WokyTool.盤點
 
         public override void 初始化()
         {
-            物品.初始化();
+            單品.初始化();
 
             base.初始化();
 
-            資料綁定(this.物品, "物品");
+            資料綁定(this.單品, "單品");
             資料綁定(this.備註, "備註");
             資料綁定(this.是否一致, "是否一致");
         }

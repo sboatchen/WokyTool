@@ -1,4 +1,4 @@
-﻿using WokyTool.物品;
+﻿using WokyTool.單品;
 using WokyTool.通用;
 namespace WokyTool.盤點
 {
@@ -33,7 +33,7 @@ namespace WokyTool.盤點
             this.label3 = new System.Windows.Forms.Label();
             this.備註 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.物品 = new WokyTool.物品.物品選取元件();
+            this.單品 = new WokyTool.單品.單品選取元件();
             this.是否一致 = new WokyTool.通用.布林狀態選取元件();
             this.SuspendLayout();
             // 
@@ -44,7 +44,7 @@ namespace WokyTool.盤點
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 2;
-            this.label3.Text = "物品";
+            this.label3.Text = "單品";
             // 
             // 備註
             // 
@@ -62,15 +62,15 @@ namespace WokyTool.盤點
             this.label17.TabIndex = 77;
             this.label17.Text = "備註";
             // 
-            // 物品
+            // 單品
             // 
-            this.物品.Location = new System.Drawing.Point(58, 10);
-            this.物品.Name = "物品";
-            this.物品.ReadOnly = false;
-            this.物品.SelectedItem = null;
-            this.物品.Size = new System.Drawing.Size(427, 30);
-            this.物品.TabIndex = 79;
-            this.物品.元件類型 = WokyTool.通用.選取元件類型.篩選;
+            this.單品.Location = new System.Drawing.Point(58, 10);
+            this.單品.Name = "單品";
+            this.單品.ReadOnly = false;
+            this.單品.SelectedItem = null;
+            this.單品.Size = new System.Drawing.Size(427, 30);
+            this.單品.TabIndex = 79;
+            this.單品.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
             // 是否一致
             // 
@@ -90,7 +90,7 @@ namespace WokyTool.盤點
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(480, 103);
             this.Controls.Add(this.是否一致);
-            this.Controls.Add(this.物品);
+            this.Controls.Add(this.單品);
             this.Controls.Add(this.備註);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label3);
@@ -106,7 +106,7 @@ namespace WokyTool.盤點
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox 備註;
         private System.Windows.Forms.Label label17;
-        private 物品選取元件 物品;
+        private 單品選取元件 單品;
         private 布林狀態選取元件 是否一致;
     }
 }

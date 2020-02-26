@@ -2,9 +2,9 @@
 using System.Linq;
 using WokyTool.通用;
 
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
-    public class 物品更新資料篩選 : 通用可篩選介面<物品更新資料>
+    public class 單品更新資料篩選 : 通用可篩選介面<單品更新資料>
     {
         private 列舉.更新狀態 _更新狀態 = 列舉.更新狀態.不篩選;
         public 列舉.更新狀態 更新狀態
@@ -189,11 +189,11 @@ namespace WokyTool.物品
             }
         }
 
-        public override IEnumerable<物品更新資料> 篩選(IEnumerable<物品更新資料> 資料列舉_)
+        public override IEnumerable<單品更新資料> 篩選(IEnumerable<單品更新資料> 資料列舉_)
         {
-            訊息管理器.獨體.訊息("物品篩選:" + this);
+            訊息管理器.獨體.訊息("單品篩選:" + this);
 
-            IEnumerable<物品更新資料> 目前列舉_ = 資料列舉_;
+            IEnumerable<單品更新資料> 目前列舉_ = 資料列舉_;
 
             if (列舉.更新狀態.不篩選 != _更新狀態)
                 目前列舉_ = 目前列舉_.Where(Value => Value.更新狀態 == _更新狀態);

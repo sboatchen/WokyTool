@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using WokyTool.Common;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 
 namespace WokyTool.配送
@@ -185,7 +185,7 @@ namespace WokyTool.配送
                 檢查器_.錯誤(資料_, "件數不合法");
         }
 
-        public virtual void 撿貨合併(物品合併資料 合併資料_) { ; }
+        public virtual void 撿貨合併(單品合併資料 合併資料_) { ; }
 
         public virtual bool 更新來源() 
         {

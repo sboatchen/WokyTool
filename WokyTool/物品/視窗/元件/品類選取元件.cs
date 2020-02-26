@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 using WokyTool.通用;
 
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
     public partial class 品類選取元件 : 抽象資料選取元件
     {

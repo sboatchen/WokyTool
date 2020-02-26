@@ -4,7 +4,7 @@ using WokyTool.通用;
 namespace WokyTool.庫存
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 物品庫存封存資料 : 可封存資料
+    public class 單品庫存封存資料 : 可封存資料
     {
         [JsonProperty]
         public string 類型 { get; set; }
@@ -13,7 +13,7 @@ namespace WokyTool.庫存
         public string 編號 { get; set; }
 
         [JsonProperty]
-        public int 物品編號 { get; set; }
+        public int 單品編號 { get; set; }
 
         [JsonProperty]
         public string 名稱 { get; set; }

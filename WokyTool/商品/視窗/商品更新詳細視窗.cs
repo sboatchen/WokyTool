@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 
 namespace WokyTool.商品{
@@ -31,7 +31,7 @@ namespace WokyTool.商品{
             品牌.初始化();
             公司.初始化();
             客戶.初始化();
-            物品.初始化();
+            單品.初始化();
 
             參考品類.初始化();
             參考供應商.初始化();
@@ -108,15 +108,15 @@ namespace WokyTool.商品{
 
         private void 新增_Click(object sender, EventArgs e)
         {
-            /*物品資料 物品_ = (物品資料)(this.物品.SelectedItem);    //TODO 暫時停止 商品更新功能
-            if (物品_ == null || 物品_.編號是否有值() == false)
+            /*單品資料 單品_ = (單品資料)(this.單品.SelectedItem);    //TODO 暫時停止 商品更新功能
+            if (單品_ == null || 單品_.編號是否有值() == false)
             {
-                訊息管理器.獨體.通知("物品不合法");
+                訊息管理器.獨體.通知("單品不合法");
                 return;
             }
 
             商品組成資料 商品組成資料_ = new 商品組成資料();
-            商品組成資料_.物品 = 物品_;
+            商品組成資料_.單品 = 單品_;
             商品組成資料_.數量 = (int)this.數量.Value;
 
             _組合BS.Add(商品組成資料_);*/

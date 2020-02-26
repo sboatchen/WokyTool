@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.商品;
 using WokyTool.通用;
 
@@ -37,7 +37,7 @@ namespace WokyTool.寄庫
             base.新增(資料_);
 
             商品資料管理器.獨體.更新庫存(資料_.取得列舉());
-            物品資料管理器.獨體.更新庫存(資料_.取得列舉());
+            單品資料管理器.獨體.更新庫存(資料_.取得列舉());
         }
 
         public override void 新增(IEnumerable<寄庫資料> 資料列舉_)
@@ -45,7 +45,7 @@ namespace WokyTool.寄庫
             base.新增(資料列舉_);
 
             商品資料管理器.獨體.更新庫存(資料列舉_);
-            物品資料管理器.獨體.更新庫存(資料列舉_);
+            單品資料管理器.獨體.更新庫存(資料列舉_);
         }
     }
 }

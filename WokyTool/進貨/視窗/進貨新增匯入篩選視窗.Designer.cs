@@ -1,4 +1,4 @@
-﻿using WokyTool.物品;
+﻿using WokyTool.單品;
 using WokyTool.通用;
 namespace WokyTool.進貨
 {
@@ -30,7 +30,7 @@ namespace WokyTool.進貨
         /// </summary>
         private void InitializeComponent()
         {
-            this.物品 = new WokyTool.物品.物品選取元件();
+            this.單品 = new WokyTool.單品.單品選取元件();
             this.廠商 = new WokyTool.廠商.廠商選取元件();
             this.類型 = new WokyTool.通用.進貨類型選取元件();
             this.備註 = new System.Windows.Forms.TextBox();
@@ -39,15 +39,15 @@ namespace WokyTool.進貨
             this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // 物品
+            // 單品
             // 
-            this.物品.Location = new System.Drawing.Point(59, 65);
-            this.物品.Name = "物品";
-            this.物品.ReadOnly = false;
-            this.物品.SelectedItem = null;
-            this.物品.Size = new System.Drawing.Size(420, 22);
-            this.物品.TabIndex = 135;
-            this.物品.元件類型 = WokyTool.通用.選取元件類型.篩選;
+            this.單品.Location = new System.Drawing.Point(59, 65);
+            this.單品.Name = "單品";
+            this.單品.ReadOnly = false;
+            this.單品.SelectedItem = null;
+            this.單品.Size = new System.Drawing.Size(420, 22);
+            this.單品.TabIndex = 135;
+            this.單品.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
             // 廠商
             // 
@@ -92,7 +92,7 @@ namespace WokyTool.進貨
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 12);
             this.label6.TabIndex = 126;
-            this.label6.Text = "物品";
+            this.label6.Text = "單品";
             // 
             // label7
             // 
@@ -109,7 +109,7 @@ namespace WokyTool.進貨
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(483, 126);
-            this.Controls.Add(this.物品);
+            this.Controls.Add(this.單品);
             this.Controls.Add(this.廠商);
             this.Controls.Add(this.類型);
             this.Controls.Add(this.備註);
@@ -125,7 +125,7 @@ namespace WokyTool.進貨
 
         #endregion
 
-        private 物品選取元件 物品;
+        private 單品選取元件 單品;
         private 廠商.廠商選取元件 廠商;
         private 進貨類型選取元件 類型;
         private System.Windows.Forms.TextBox 備註;

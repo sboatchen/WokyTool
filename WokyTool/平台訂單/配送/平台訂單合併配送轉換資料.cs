@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.配送;
 using WokyTool.通用;
 
@@ -44,8 +44,8 @@ namespace WokyTool.平台訂單
 
             轉換.件數 = 1;
 
-            物品合併資料.共用.清除();
-            物品合併資料.共用.新增(第一筆資料_);
+            單品合併資料.共用.清除();
+            單品合併資料.共用.新增(第一筆資料_);
 
             foreach (平台訂單新增資料 來源資料_ in 來源資料列.Skip(1))
             {
@@ -53,18 +53,18 @@ namespace WokyTool.平台訂單
 
                 轉換.代收金額 += 來源資料_.代收金額;
 
-                物品合併資料.共用.新增(來源資料_);
+                單品合併資料.共用.新增(來源資料_);
             }
 
-            轉換.內容 = 物品合併資料.共用.ToString();
+            轉換.內容 = 單品合併資料.共用.ToString();
 
             // 配送公司
             if (配送公司 != 列舉.配送公司.無)
                 return;
-            配送公司 = 物品合併資料.共用.推薦配送公司;
+            配送公司 = 單品合併資料.共用.推薦配送公司;
         }
 
-        public override void 撿貨合併(物品合併資料 合併資料_)
+        public override void 撿貨合併(單品合併資料 合併資料_)
         {
             foreach (平台訂單新增資料 來源資料_ in 來源資料列)
             {

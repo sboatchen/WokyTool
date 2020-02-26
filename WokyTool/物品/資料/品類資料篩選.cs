@@ -2,7 +2,7 @@
 using System.Linq;
 using WokyTool.通用;
 
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
     public class 品類資料篩選 : 通用可篩選介面<品類資料>
     {

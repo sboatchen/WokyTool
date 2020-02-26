@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.物品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.單品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.目前庫存DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.大料架庫存DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.小料架庫存DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +59,7 @@
             this.myDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.myDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.編號DataGridViewTextBoxColumn,
-            this.物品名稱DataGridViewTextBoxColumn,
+            this.單品名稱DataGridViewTextBoxColumn,
             this.目前庫存DataGridViewTextBoxColumn,
             this.大料架庫存DataGridViewTextBoxColumn,
             this.小料架庫存DataGridViewTextBoxColumn,
@@ -82,13 +82,13 @@
             this.編號DataGridViewTextBoxColumn.Name = "編號DataGridViewTextBoxColumn";
             this.編號DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 物品名稱DataGridViewTextBoxColumn
+            // 單品名稱DataGridViewTextBoxColumn
             // 
-            this.物品名稱DataGridViewTextBoxColumn.DataPropertyName = "物品名稱";
-            this.物品名稱DataGridViewTextBoxColumn.HeaderText = "物品名稱";
-            this.物品名稱DataGridViewTextBoxColumn.Name = "物品名稱DataGridViewTextBoxColumn";
-            this.物品名稱DataGridViewTextBoxColumn.ReadOnly = true;
-            this.物品名稱DataGridViewTextBoxColumn.Width = 400;
+            this.單品名稱DataGridViewTextBoxColumn.DataPropertyName = "單品名稱";
+            this.單品名稱DataGridViewTextBoxColumn.HeaderText = "單品名稱";
+            this.單品名稱DataGridViewTextBoxColumn.Name = "單品名稱DataGridViewTextBoxColumn";
+            this.單品名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.單品名稱DataGridViewTextBoxColumn.Width = 400;
             // 
             // 目前庫存DataGridViewTextBoxColumn
             // 
@@ -223,7 +223,7 @@
         private 通用.MyDataGridView myDataGridView1;
         private System.Windows.Forms.BindingSource 盤點資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 編號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 物品名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 單品名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 目前庫存DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 大料架庫存DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 小料架庫存DataGridViewTextBoxColumn;

@@ -1,6 +1,6 @@
 ﻿namespace WokyTool.測試
 {
-    partial class 物品合併測試視窗
+    partial class 單品合併測試視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -33,9 +33,9 @@
             this.數量 = new System.Windows.Forms.NumericUpDown();
             this.結果 = new System.Windows.Forms.TextBox();
             this.解構 = new System.Windows.Forms.Button();
-            this.物品 = new WokyTool.物品.物品選取元件();
+            this.單品 = new WokyTool.單品.單品選取元件();
             this.dataGridView1 = new WokyTool.通用.MyDataGridView();
-            this.物品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.單品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.商品組成資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.數量)).BeginInit();
@@ -81,23 +81,23 @@
             this.解構.UseVisualStyleBackColor = true;
             this.解構.Click += new System.EventHandler(this.解構_Click);
             // 
-            // 物品
+            // 單品
             // 
-            this.物品.Location = new System.Drawing.Point(91, 40);
-            this.物品.Margin = new System.Windows.Forms.Padding(5);
-            this.物品.Name = "物品";
-            this.物品.ReadOnly = false;
-            this.物品.SelectedItem = null;
-            this.物品.Size = new System.Drawing.Size(569, 29);
-            this.物品.TabIndex = 0;
-            this.物品.元件類型 = WokyTool.通用.選取元件類型.指定;
+            this.單品.Location = new System.Drawing.Point(91, 40);
+            this.單品.Margin = new System.Windows.Forms.Padding(5);
+            this.單品.Name = "單品";
+            this.單品.ReadOnly = false;
+            this.單品.SelectedItem = null;
+            this.單品.Size = new System.Drawing.Size(569, 29);
+            this.單品.TabIndex = 0;
+            this.單品.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.物品名稱DataGridViewTextBoxColumn,
+            this.單品名稱DataGridViewTextBoxColumn,
             this.數量DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.商品組成資料BindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(17, 197);
@@ -107,13 +107,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(745, 310);
             this.dataGridView1.TabIndex = 100;
             // 
-            // 物品名稱DataGridViewTextBoxColumn
+            // 單品名稱DataGridViewTextBoxColumn
             // 
-            this.物品名稱DataGridViewTextBoxColumn.DataPropertyName = "物品名稱";
-            this.物品名稱DataGridViewTextBoxColumn.HeaderText = "物品";
-            this.物品名稱DataGridViewTextBoxColumn.Name = "物品名稱DataGridViewTextBoxColumn";
-            this.物品名稱DataGridViewTextBoxColumn.ReadOnly = true;
-            this.物品名稱DataGridViewTextBoxColumn.Width = 500;
+            this.單品名稱DataGridViewTextBoxColumn.DataPropertyName = "單品名稱";
+            this.單品名稱DataGridViewTextBoxColumn.HeaderText = "單品";
+            this.單品名稱DataGridViewTextBoxColumn.Name = "單品名稱DataGridViewTextBoxColumn";
+            this.單品名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.單品名稱DataGridViewTextBoxColumn.Width = 500;
             // 
             // 數量DataGridViewTextBoxColumn
             // 
@@ -125,7 +125,7 @@
             // 
             this.商品組成資料BindingSource.DataSource = typeof(WokyTool.商品.商品組成資料);
             // 
-            // 物品合併測試視窗
+            // 單品合併測試視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -135,10 +135,10 @@
             this.Controls.Add(this.結果);
             this.Controls.Add(this.數量);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.物品);
+            this.Controls.Add(this.單品);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "物品合併測試視窗";
-            this.Text = "物品合併測試視窗";
+            this.Name = "單品合併測試視窗";
+            this.Text = "單品合併測試視窗";
             ((System.ComponentModel.ISupportInitialize)(this.數量)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.商品組成資料BindingSource)).EndInit();
@@ -149,13 +149,13 @@
 
         #endregion
 
-        private 物品.物品選取元件 物品;
+        private 單品.單品選取元件 單品;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.NumericUpDown 數量;
         private System.Windows.Forms.TextBox 結果;
         private System.Windows.Forms.Button 解構;
         private 通用.MyDataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 物品名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 單品名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 商品組成資料BindingSource;
     }

@@ -42,18 +42,18 @@ namespace WokyTool.盤點
             if (string.IsNullOrEmpty(貨架號_))
                 yield break;
 
-            for (int 物品索引_ = 1; 物品索引_ < 資料列_.Length; 物品索引_ += 4)
+            for (int 單品索引_ = 1; 單品索引_ < 資料列_.Length; 單品索引_ += 4)
             {
-                string 物品識別_ = 資料列_[物品索引_].轉成字串();
-                if (string.IsNullOrEmpty(物品識別_))
+                string 單品識別_ = 資料列_[單品索引_].轉成字串();
+                if (string.IsNullOrEmpty(單品識別_))
                     continue;
 
-                int 數量_ = 資料列_[物品索引_+3].轉成整數();
+                int 數量_ = 資料列_[單品索引_+3].轉成整數();
                 if (數量_ == 0)
                     continue;
 
                 盤點更新資料 資料_ = new 盤點更新資料();
-                資料_.物品識別 = 物品識別_;
+                資料_.單品識別 = 單品識別_;
                 資料_.大料架庫存 = 數量_;
 
                 //Console.WriteLine(資料_.ToString(false));

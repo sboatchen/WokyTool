@@ -46,7 +46,7 @@ namespace WokyTool.通用
             get { return _文字; }
             set
             {
-                //Console.WriteLine("@@" + this.GetType().Name + "更新文字:" + value);  //@@ 在 物品篩選視窗下測試 會發現呼叫非常多次
+                //Console.WriteLine("@@" + this.GetType().Name + "更新文字:" + value);  //@@ 在 單品篩選視窗下測試 會發現呼叫非常多次
                 //Console.WriteLine(Environment.StackTrace);
                 if (string.IsNullOrEmpty(value))
                     value = null;

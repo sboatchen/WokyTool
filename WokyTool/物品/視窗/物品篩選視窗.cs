@@ -1,14 +1,14 @@
 ﻿using WokyTool.通用;
 
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
-    public partial class 物品篩選視窗 : 獨體篩選視窗
+    public partial class 單品篩選視窗 : 獨體篩選視窗
     {
-        public override 列舉.編號 編號類型 { get { return 列舉.編號.物品; } }
+        public override 列舉.編號 編號類型 { get { return 列舉.編號.單品; } }
 
-        public override 視窗可篩選介面 視窗篩選器 { get { return 物品資料管理器.獨體.編輯管理器.視窗篩選器; } }
+        public override 視窗可篩選介面 視窗篩選器 { get { return 單品資料管理器.獨體.編輯管理器.視窗篩選器; } }
 
-        public 物品篩選視窗()
+        public 單品篩選視窗()
         {
             InitializeComponent();
         }

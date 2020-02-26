@@ -57,7 +57,7 @@ namespace WokyTool
          * 聯絡人
          * 客戶
          * 
-         * 物品
+         * 單品
          * 商品
          * 
          * 庫存

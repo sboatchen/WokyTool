@@ -20,7 +20,7 @@ namespace WokyTool.進貨
         public override void 初始化()
         {
             廠商.初始化();
-            物品.初始化();
+            單品.初始化();
 
             base.初始化();
 
@@ -28,7 +28,7 @@ namespace WokyTool.進貨
 
             資料綁定(this.廠商, "廠商");
 
-            資料綁定(this.物品, "物品");
+            資料綁定(this.單品, "單品");
 
             資料綁定(this.備註, "備註");
         }

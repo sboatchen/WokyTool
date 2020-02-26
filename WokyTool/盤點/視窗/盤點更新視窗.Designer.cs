@@ -39,7 +39,7 @@
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.盤點更新資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.更新狀態DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.物品識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.單品識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.大料架庫存DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.小料架庫存DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.萬通庫存DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +57,7 @@
             this.myDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.myDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.更新狀態DataGridViewTextBoxColumn,
-            this.物品識別DataGridViewTextBoxColumn,
+            this.單品識別DataGridViewTextBoxColumn,
             this.大料架庫存DataGridViewTextBoxColumn,
             this.小料架庫存DataGridViewTextBoxColumn,
             this.萬通庫存DataGridViewTextBoxColumn,
@@ -138,12 +138,12 @@
             this.更新狀態DataGridViewTextBoxColumn.Name = "更新狀態DataGridViewTextBoxColumn";
             this.更新狀態DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 物品識別DataGridViewTextBoxColumn
+            // 單品識別DataGridViewTextBoxColumn
             // 
-            this.物品識別DataGridViewTextBoxColumn.DataPropertyName = "物品識別";
-            this.物品識別DataGridViewTextBoxColumn.HeaderText = "物品識別";
-            this.物品識別DataGridViewTextBoxColumn.Name = "物品識別DataGridViewTextBoxColumn";
-            this.物品識別DataGridViewTextBoxColumn.Width = 400;
+            this.單品識別DataGridViewTextBoxColumn.DataPropertyName = "單品識別";
+            this.單品識別DataGridViewTextBoxColumn.HeaderText = "單品識別";
+            this.單品識別DataGridViewTextBoxColumn.Name = "單品識別DataGridViewTextBoxColumn";
+            this.單品識別DataGridViewTextBoxColumn.Width = 400;
             // 
             // 大料架庫存DataGridViewTextBoxColumn
             // 
@@ -204,7 +204,7 @@
         private System.Windows.Forms.ToolStripMenuItem 小料架ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 萬通ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn 更新狀態DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 物品識別DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 單品識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 大料架庫存DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 小料架庫存DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 萬通庫存DataGridViewTextBoxColumn;

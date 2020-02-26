@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.客戶;
 using WokyTool.通用;
 
@@ -34,7 +34,7 @@ namespace WokyTool.商品{
             供應商.初始化();
             品牌.初始化();
 
-            新增物品.初始化();
+            新增單品.初始化();
 
             base.初始化();
 
@@ -91,7 +91,7 @@ namespace WokyTool.商品{
             商品組成資料 商品組成資料_ = new 商品組成資料();
             商品組成資料_.群組 = (int)this.新增群組.Value;
             商品組成資料_.規格 = this.新增規格.Text;
-            商品組成資料_.物品 = (物品資料)(this.新增物品.SelectedItem);
+            商品組成資料_.單品 = (單品資料)(this.新增單品.SelectedItem);
             商品組成資料_.數量 = (int)this.新增數量.Value;
 
             _新增檢查.重置();

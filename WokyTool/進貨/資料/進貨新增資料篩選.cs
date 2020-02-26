@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using WokyTool.廠商;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 
 namespace WokyTool.進貨
@@ -39,18 +39,18 @@ namespace WokyTool.進貨
             }
         }
 
-        private 物品資料 _物品 = 物品資料.不篩選;
-        public 物品資料 物品
+        private 單品資料 _單品 = 單品資料.不篩選;
+        public 單品資料 單品
         {
             get
             {
-                return _物品;
+                return _單品;
             }
             set
             {
-                if (_物品 != value)
+                if (_單品 != value)
                 {
-                    _物品 = value;
+                    _單品 = value;
                     篩選版本++;
                 }
             }
@@ -78,10 +78,10 @@ namespace WokyTool.進貨
             get
             {
                 return
-                    null != _文字 ||  // 物品名稱
+                    null != _文字 ||  // 單品名稱
                     列舉.進貨類型.不篩選 != _類型 ||
                     廠商資料.不篩選 != _廠商 ||
-                    物品資料.不篩選 != _物品 ||
+                    單品資料.不篩選 != _單品 ||
                     null != _備註;
             }
         }
@@ -90,16 +90,16 @@ namespace WokyTool.進貨
         {
             IEnumerable<進貨新增資料> 目前列舉_ = 資料列舉_;
 
-            if (null != _文字)    // 物品名稱
-                目前列舉_ = 目前列舉_.Where(Value => Value.物品名稱.Contains(_文字));
+            if (null != _文字)    // 單品名稱
+                目前列舉_ = 目前列舉_.Where(Value => Value.單品名稱.Contains(_文字));
 
             if (列舉.進貨類型.不篩選 != _類型)
                 目前列舉_ = 目前列舉_.Where(Value => Value.類型 == _類型);
 
             if (廠商資料.不篩選 != _廠商)
                 目前列舉_ = 目前列舉_.Where(Value => Value.廠商 == _廠商);
-            if (物品資料.不篩選 != _物品)
-                目前列舉_ = 目前列舉_.Where(Value => Value.物品 == _物品);
+            if (單品資料.不篩選 != _單品)
+                目前列舉_ = 目前列舉_.Where(Value => Value.單品 == _單品);
 
             if (null != _備註)
                 目前列舉_ = 目前列舉_.Where(Value => Value.備註 != null && Value.備註.Contains(_備註));

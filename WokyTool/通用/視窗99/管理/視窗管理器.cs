@@ -5,7 +5,7 @@ using WokyTool.公司;
 using WokyTool.月結帳;
 using WokyTool.平台訂單;
 using WokyTool.使用者;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.客戶;
 using WokyTool.預留;
 using WokyTool.參數;
@@ -55,9 +55,9 @@ namespace WokyTool.通用
             _資料書.Add(取得編號(列舉.編號.供應商, 列舉.視窗.總覽), typeof(供應商總覽視窗));
             _資料書.Add(取得編號(列舉.編號.品牌, 列舉.視窗.總覽), typeof(品牌總覽視窗));
 
-            _資料書.Add(取得編號(列舉.編號.物品, 列舉.視窗.總覽), typeof(物品總覽視窗));
-            _資料書.Add(取得編號(列舉.編號.物品, 列舉.視窗.詳細), typeof(物品詳細視窗));
-            _資料書.Add(取得編號(列舉.編號.物品, 列舉.視窗.篩選), typeof(物品篩選視窗));
+            _資料書.Add(取得編號(列舉.編號.單品, 列舉.視窗.總覽), typeof(單品總覽視窗));
+            _資料書.Add(取得編號(列舉.編號.單品, 列舉.視窗.詳細), typeof(單品詳細視窗));
+            _資料書.Add(取得編號(列舉.編號.單品, 列舉.視窗.篩選), typeof(單品篩選視窗));
 
             _資料書.Add(取得編號(列舉.編號.商品, 列舉.視窗.總覽), typeof(商品總覽視窗));
             _資料書.Add(取得編號(列舉.編號.商品, 列舉.視窗.詳細), typeof(商品詳細視窗));

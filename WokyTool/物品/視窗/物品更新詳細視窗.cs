@@ -1,18 +1,18 @@
 ﻿using WokyTool.通用;
 
-namespace WokyTool.物品{
+namespace WokyTool.單品{
 
-    public partial class 物品更新詳細視窗 : 新增詳細視窗
+    public partial class 單品更新詳細視窗 : 新增詳細視窗
     {
         public override 新版頁索引元件 頁索引 { get { return this.新版頁索引元件1; } }
 
         // 介面編輯呈現用
-        public 物品更新詳細視窗() : base()
+        public 單品更新詳細視窗() : base()
         {
             InitializeComponent();
         }
 
-        public 物品更新詳細視窗(可編輯列舉資料管理介面 更新管理器_) : base(更新管理器_)
+        public 單品更新詳細視窗(可編輯列舉資料管理介面 更新管理器_) : base(更新管理器_)
         {
             InitializeComponent();
         }

@@ -1,4 +1,4 @@
-﻿using WokyTool.物品;
+﻿using WokyTool.單品;
 using WokyTool.通用;
 namespace WokyTool.一般訂單
 {
@@ -60,8 +60,8 @@ namespace WokyTool.一般訂單
             this.數量 = new System.Windows.Forms.NumericUpDown();
             this.備註 = new System.Windows.Forms.TextBox();
             this.列印單價 = new System.Windows.Forms.CheckBox();
-            this.物品 = new WokyTool.物品.物品選取元件();
-            this.物品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.單品 = new WokyTool.單品.單品選取元件();
+            this.單品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.售價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -288,7 +288,7 @@ namespace WokyTool.一般訂單
             this.myDataGridView1.AutoGenerateColumns = false;
             this.myDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.myDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.物品名稱DataGridViewTextBoxColumn,
+            this.單品名稱DataGridViewTextBoxColumn,
             this.數量DataGridViewTextBoxColumn,
             this.售價DataGridViewTextBoxColumn,
             this.備註DataGridViewTextBoxColumn});
@@ -352,24 +352,24 @@ namespace WokyTool.一般訂單
             this.列印單價.Text = "列印單價";
             this.列印單價.UseVisualStyleBackColor = true;
             // 
-            // 物品
+            // 單品
             // 
-            this.物品.Location = new System.Drawing.Point(57, 146);
-            this.物品.Margin = new System.Windows.Forms.Padding(4);
-            this.物品.Name = "物品";
-            this.物品.ReadOnly = false;
-            this.物品.SelectedItem = null;
-            this.物品.Size = new System.Drawing.Size(400, 24);
-            this.物品.TabIndex = 174;
-            this.物品.元件類型 = WokyTool.通用.選取元件類型.指定;
+            this.單品.Location = new System.Drawing.Point(57, 146);
+            this.單品.Margin = new System.Windows.Forms.Padding(4);
+            this.單品.Name = "單品";
+            this.單品.ReadOnly = false;
+            this.單品.SelectedItem = null;
+            this.單品.Size = new System.Drawing.Size(400, 24);
+            this.單品.TabIndex = 174;
+            this.單品.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
-            // 物品名稱DataGridViewTextBoxColumn
+            // 單品名稱DataGridViewTextBoxColumn
             // 
-            this.物品名稱DataGridViewTextBoxColumn.DataPropertyName = "物品名稱";
-            this.物品名稱DataGridViewTextBoxColumn.HeaderText = "物品";
-            this.物品名稱DataGridViewTextBoxColumn.Name = "物品名稱DataGridViewTextBoxColumn";
-            this.物品名稱DataGridViewTextBoxColumn.ReadOnly = true;
-            this.物品名稱DataGridViewTextBoxColumn.Width = 400;
+            this.單品名稱DataGridViewTextBoxColumn.DataPropertyName = "單品名稱";
+            this.單品名稱DataGridViewTextBoxColumn.HeaderText = "單品";
+            this.單品名稱DataGridViewTextBoxColumn.Name = "單品名稱DataGridViewTextBoxColumn";
+            this.單品名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.單品名稱DataGridViewTextBoxColumn.Width = 400;
             // 
             // 數量DataGridViewTextBoxColumn
             // 
@@ -418,7 +418,7 @@ namespace WokyTool.一般訂單
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(767, 435);
             this.Controls.Add(this.售價);
-            this.Controls.Add(this.物品);
+            this.Controls.Add(this.單品);
             this.Controls.Add(this.列印單價);
             this.Controls.Add(this.備註);
             this.Controls.Add(this.新增);
@@ -490,8 +490,8 @@ namespace WokyTool.一般訂單
         private System.Windows.Forms.NumericUpDown 數量;
         private System.Windows.Forms.TextBox 備註;
         private System.Windows.Forms.CheckBox 列印單價;
-        private 物品選取元件 物品;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 物品名稱DataGridViewTextBoxColumn;
+        private 單品選取元件 單品;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 單品名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 售價DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;

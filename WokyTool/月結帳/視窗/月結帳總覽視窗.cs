@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
 using WokyTool.公司;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.客戶;
 using WokyTool.商品;
 using WokyTool.通用;
@@ -74,34 +74,34 @@ namespace WokyTool.月結帳
             }
         }
 
-        private void 物品統計ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 單品統計ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.物品統計ToolStripMenuItem.Enabled = false;
+            this.單品統計ToolStripMenuItem.Enabled = false;
 
             List<可寫入介面_EXCEL> 轉換列_ = new List<可寫入介面_EXCEL>();
 
-            物品合併資料 物品合併資料_ = new 物品合併資料();
+            單品合併資料 單品合併資料_ = new 單品合併資料();
             foreach (月結帳資料 月結帳資料_ in 月結帳資料管理器.獨體.可編輯BList)
             {
-                物品合併資料_.新增_忽視錯誤(月結帳資料_.商品, 月結帳資料_.數量);
+                單品合併資料_.新增_忽視錯誤(月結帳資料_.商品, 月結帳資料_.數量);
             }
 
-            轉換列_.Add(new 月結帳物品銷售排行匯出轉換(物品合併資料_));
+            轉換列_.Add(new 月結帳單品銷售排行匯出轉換(單品合併資料_));
 
-            var GroupQueue_ = 物品合併資料_.組成書.GroupBy(Value => Value.Key.品牌);
+            var GroupQueue_ = 單品合併資料_.組成書.GroupBy(Value => Value.Key.品牌);
 
             foreach (var Group_ in GroupQueue_)
             {
-                轉換列_.Add(new 月結帳物品統計匯出轉換(Group_));
+                轉換列_.Add(new 月結帳單品統計匯出轉換(Group_));
             }
             轉換列_.Add(new 月結帳品牌銷售排行匯出轉換(GroupQueue_));
 
-            String 標題_ = String.Format("物品統計_{0}", 時間.目前日期);
+            String 標題_ = String.Format("單品統計_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換列_);
 
             訊息管理器.獨體.通知("已完成匯出");
 
-            this.物品統計ToolStripMenuItem.Enabled = true;
+            this.單品統計ToolStripMenuItem.Enabled = true;
         }
 
             

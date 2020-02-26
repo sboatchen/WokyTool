@@ -6,7 +6,7 @@ using System.Text;
 using WokyTool.Common;
 using WokyTool.公司;
 using WokyTool.平台訂單;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.客戶;
 using WokyTool.寄庫;
 using WokyTool.通用;
@@ -197,10 +197,10 @@ namespace WokyTool.商品
                         if (SB_.Length != 0)
                             SB_.Append("&");
 
-                        if (String.IsNullOrEmpty(資料_.物品.縮寫))
-                            SB_.Append(資料_.物品.名稱);
+                        if (String.IsNullOrEmpty(資料_.單品.縮寫))
+                            SB_.Append(資料_.單品.名稱);
                         else
-                            SB_.Append(資料_.物品.縮寫);
+                            SB_.Append(資料_.單品.縮寫);
 
                         if (資料_.數量 > 1)
                             SB_.Append("*").Append(資料_.數量);
@@ -222,10 +222,10 @@ namespace WokyTool.商品
                         decimal 目前成本_ = 資料_.成本 * 資料_.數量;
                         if (目前成本_ > 最大成本_) 最大成本_ = 目前成本_;
 
-                        if (String.IsNullOrEmpty(資料_.物品.縮寫))
-                            SB_.Append(資料_.物品.名稱);
+                        if (String.IsNullOrEmpty(資料_.單品.縮寫))
+                            SB_.Append(資料_.單品.名稱);
                         else
-                            SB_.Append(資料_.物品.縮寫);
+                            SB_.Append(資料_.單品.縮寫);
 
                         if (資料_.數量 > 1)
                             SB_.Append("*").Append(資料_.數量);
@@ -237,7 +237,7 @@ namespace WokyTool.商品
 
             組成字串 = SB_.ToString();
 
-            HashSet<品類資料> 品類群_ = 組成.Select(Value => Value.物品.品類).Where(Value => Value.編號是否有值()).ToSet();
+            HashSet<品類資料> 品類群_ = 組成.Select(Value => Value.單品.品類).Where(Value => Value.編號是否有值()).ToSet();
             switch (品類群_.Count)
             {
                 case 0:
@@ -251,7 +251,7 @@ namespace WokyTool.商品
                     break;
             }
 
-            HashSet<供應商資料> 供應商群_ = 組成.Select(Value => Value.物品.供應商).Where(Value => Value.編號是否有值()).ToSet();
+            HashSet<供應商資料> 供應商群_ = 組成.Select(Value => Value.單品.供應商).Where(Value => Value.編號是否有值()).ToSet();
             switch (供應商群_.Count)
             {
                 case 0:
@@ -265,7 +265,7 @@ namespace WokyTool.商品
                     break;
             }
 
-            HashSet<品牌資料> 品牌群_ = 組成.Select(Value => Value.物品.品牌).Where(Value => Value.編號是否有值()).ToSet();
+            HashSet<品牌資料> 品牌群_ = 組成.Select(Value => Value.單品.品牌).Where(Value => Value.編號是否有值()).ToSet();
             switch (品牌群_.Count)
             {
                 case 0:

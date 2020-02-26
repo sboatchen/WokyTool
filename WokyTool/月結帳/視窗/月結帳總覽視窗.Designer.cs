@@ -33,7 +33,7 @@
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.物品統計ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.單品統計ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.品牌營業額ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.訂單編號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,19 +90,19 @@
             // 匯出ToolStripMenuItem1
             // 
             this.匯出ToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.物品統計ToolStripMenuItem,
+            this.單品統計ToolStripMenuItem,
             this.品牌營業額ToolStripMenuItem,
             this.商品統計ToolStripMenuItem});
             this.匯出ToolStripMenuItem1.Name = "匯出ToolStripMenuItem1";
             this.匯出ToolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
             this.匯出ToolStripMenuItem1.Text = "匯出";
             // 
-            // 物品統計ToolStripMenuItem
+            // 單品統計ToolStripMenuItem
             // 
-            this.物品統計ToolStripMenuItem.Name = "物品統計ToolStripMenuItem";
-            this.物品統計ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.物品統計ToolStripMenuItem.Text = "物品統計";
-            this.物品統計ToolStripMenuItem.Click += new System.EventHandler(this.物品統計ToolStripMenuItem_Click);
+            this.單品統計ToolStripMenuItem.Name = "單品統計ToolStripMenuItem";
+            this.單品統計ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.單品統計ToolStripMenuItem.Text = "單品統計";
+            this.單品統計ToolStripMenuItem.Click += new System.EventHandler(this.單品統計ToolStripMenuItem_Click);
             // 
             // 品牌營業額ToolStripMenuItem
             // 
@@ -301,7 +301,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 利潤DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 總利潤DataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem 匯出ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 物品統計ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 單品統計ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 品牌營業額ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 商品統計ToolStripMenuItem;
     }

@@ -1,5 +1,5 @@
 ﻿using WokyTool.通用;
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
     partial class 品牌總覽視窗
     {
@@ -48,7 +48,7 @@ namespace WokyTool.物品
             // 
             // 品牌資料BindingSource
             // 
-            this.品牌資料BindingSource.DataSource = typeof(WokyTool.物品.品牌資料);
+            this.品牌資料BindingSource.DataSource = typeof(WokyTool.單品.品牌資料);
             // 
             // menuStrip1
             // 

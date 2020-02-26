@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Tesseract;
 using WokyTool.Common;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 
 namespace WokyTool.平台訂單
@@ -28,7 +28,7 @@ namespace WokyTool.平台訂單
                 if (_設定資料書 == null)
                 {
                     // 讀出 配送單號, 消費者
-                    // 寫入 物品組成
+                    // 寫入 單品組成
                     _設定資料書 = new Dictionary<讀出元件組, PDF字串寫入元件>();
 
                     _設定資料書.Add(new 讀出元件組
@@ -93,16 +93,16 @@ namespace WokyTool.平台訂單
                 }
                 else
                 {
-                    物品合併資料 物品合併資料_ = new 物品合併資料();
+                    單品合併資料 單品合併資料_ = new 單品合併資料();
                     foreach (平台訂單新增資料 資料_ in 符合資料列_)
                     {
-                        物品合併資料_.新增(資料_);
+                        單品合併資料_.新增(資料_);
 
                         資料_.BeginEdit();
                         資料_.姓名 = 消費者_;
                     }
 
-                    Pair_.Value.處理(PdfWriter_, 物品合併資料_.ToString());
+                    Pair_.Value.處理(PdfWriter_, 單品合併資料_.ToString());
                 }
             }
         }

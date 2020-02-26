@@ -1,4 +1,4 @@
-﻿using WokyTool.物品;
+﻿using WokyTool.單品;
 using WokyTool.通用;
 namespace WokyTool.平台訂單
 {
@@ -66,7 +66,7 @@ namespace WokyTool.平台訂單
             this.商品 = new WokyTool.商品.商品選取元件();
             this.處理者 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.物品 = new WokyTool.物品.物品選取元件();
+            this.單品 = new WokyTool.單品.單品選取元件();
             this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.最小代收金額)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.最大代收金額)).BeginInit();
@@ -423,16 +423,16 @@ namespace WokyTool.平台訂單
             this.label15.TabIndex = 127;
             this.label15.Text = "處理者";
             // 
-            // 物品
+            // 單品
             // 
-            this.物品.Location = new System.Drawing.Point(58, 213);
-            this.物品.Margin = new System.Windows.Forms.Padding(4);
-            this.物品.Name = "物品";
-            this.物品.ReadOnly = false;
-            this.物品.SelectedItem = null;
-            this.物品.Size = new System.Drawing.Size(420, 25);
-            this.物品.TabIndex = 130;
-            this.物品.元件類型 = WokyTool.通用.選取元件類型.篩選;
+            this.單品.Location = new System.Drawing.Point(58, 213);
+            this.單品.Margin = new System.Windows.Forms.Padding(4);
+            this.單品.Name = "單品";
+            this.單品.ReadOnly = false;
+            this.單品.SelectedItem = null;
+            this.單品.Size = new System.Drawing.Size(420, 25);
+            this.單品.TabIndex = 130;
+            this.單品.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
             // label5
             // 
@@ -441,7 +441,7 @@ namespace WokyTool.平台訂單
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 129;
-            this.label5.Text = "物品";
+            this.label5.Text = "單品";
             // 
             // 平台訂單篩選視窗
             // 
@@ -449,7 +449,7 @@ namespace WokyTool.平台訂單
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(478, 562);
-            this.Controls.Add(this.物品);
+            this.Controls.Add(this.單品);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.處理者);
             this.Controls.Add(this.label15);
@@ -534,7 +534,7 @@ namespace WokyTool.平台訂單
         private 商品.商品選取元件 商品;
         private System.Windows.Forms.TextBox 處理者;
         private System.Windows.Forms.Label label15;
-        private 物品選取元件 物品;
+        private 單品選取元件 單品;
         private System.Windows.Forms.Label label5;
     }
 }

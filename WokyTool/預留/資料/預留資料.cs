@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using WokyTool.Common;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 using System;
 
@@ -26,15 +26,15 @@ namespace WokyTool.預留
         public string 姓名 { get; set; }
 
         [JsonProperty]
-        public int 物品編號
+        public int 單品編號
         {
             get
             {
-                return 物品.編號;
+                return 單品.編號;
             }
             set
             {
-                物品 = 物品資料管理器.獨體.取得(value);
+                單品 = 單品資料管理器.獨體.取得(value);
             }
         }
 
@@ -48,10 +48,10 @@ namespace WokyTool.預留
 
         /********************************/
 
-        public 物品資料 物品 { get; set; }
+        public 單品資料 單品 { get; set; }
 
-        [可匯出(名稱 = "物品")]
-        public string 物品名稱 { get { return 物品.名稱; } }
+        [可匯出(名稱 = "單品")]
+        public string 單品名稱 { get { return 單品.名稱; } }
 
         public bool 是否保留中 
         { 
@@ -75,7 +75,7 @@ namespace WokyTool.預留
 
         public 預留資料()
         {
-            物品 = 物品資料.空白;
+            單品 = 單品資料.空白;
         }
 
         public static readonly 預留資料 空白 = new 預留資料
@@ -86,7 +86,7 @@ namespace WokyTool.預留
             名稱 = 字串.無,
             姓名 = 字串.無,
 
-            物品 = 物品資料.空白,
+            單品 = 單品資料.空白,
             數量 = 0,
            
             備註 = 字串.無,
@@ -100,7 +100,7 @@ namespace WokyTool.預留
             名稱 = 字串.錯誤,
             姓名 = 字串.錯誤,
 
-            物品 = 物品資料.錯誤,
+            單品 = 單品資料.錯誤,
             數量 = 0,
 
             備註 = 字串.錯誤,
@@ -122,8 +122,8 @@ namespace WokyTool.預留
             if (String.IsNullOrEmpty(姓名))
                 檢查器_.錯誤(this, "姓名不合法");
 
-            if (物品.編號是否合法() == false)
-                檢查器_.錯誤(資料_, "物品不合法");
+            if (單品.編號是否合法() == false)
+                檢查器_.錯誤(資料_, "單品不合法");
 
             if (數量 <= 0)
                 檢查器_.錯誤(資料_, "數量不合法");

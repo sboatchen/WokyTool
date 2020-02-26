@@ -4,7 +4,7 @@ using System.Linq;
 using WokyTool.Common;
 using WokyTool.通用;
 
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class 供應商資料 : 可編號記錄資料
@@ -58,9 +58,9 @@ namespace WokyTool.物品
         {
             基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
 
-            foreach (物品資料 物品資料_ in 物品資料管理器.獨體.資料列舉2.Where(Value => Value.供應商 == this))
+            foreach (單品資料 單品資料_ in 單品資料管理器.獨體.資料列舉2.Where(Value => Value.供應商 == this))
             {
-                檢查器_.錯誤(資料_, "資料綁定中:" + 物品資料_.ToString(false));
+                檢查器_.錯誤(資料_, "資料綁定中:" + 單品資料_.ToString(false));
             }
         }
     }

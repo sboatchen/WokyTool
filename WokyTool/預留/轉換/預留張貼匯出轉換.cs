@@ -27,7 +27,7 @@ namespace WokyTool.預留
 
         public void 寫入(Application App_)
         {
-            int 最大欄索引_ = 100, 最大列索引_ = 100, 物品細節開始欄索引_ = -1, 物品細節開始列索引_ = -1;
+            int 最大欄索引_ = 100, 最大列索引_ = 100, 單品細節開始欄索引_ = -1, 單品細節開始列索引_ = -1;
             for (int 列索引_ = 1; 列索引_ < 最大列索引_; 列索引_++)
             {
                 for (int 欄索引_ = 1; 欄索引_ < 最大欄索引_; 欄索引_++)
@@ -57,9 +57,9 @@ namespace WokyTool.預留
                             case "%姓名":
                                 App_.Cells[列索引_, 欄索引_] = 參考.姓名;
                                 break;
-                            case "%物品細節":
-                                物品細節開始列索引_ = 列索引_;
-                                物品細節開始欄索引_ = 欄索引_;
+                            case "%單品細節":
+                                單品細節開始列索引_ = 列索引_;
+                                單品細節開始欄索引_ = 欄索引_;
                                 break;
                             default:
                                 break;
@@ -69,19 +69,19 @@ namespace WokyTool.預留
                 }
             }
 
-            if (物品細節開始欄索引_ == -1 || 物品細節開始列索引_ == -1)
+            if (單品細節開始欄索引_ == -1 || 單品細節開始列索引_ == -1)
                 return;
 
             foreach (預留資料 資料_ in 群組)
             {
-                App_.Cells[物品細節開始列索引_, 物品細節開始欄索引_] = String.Format("{0}*{1}", 資料_.物品.名稱, 資料_.數量);
+                App_.Cells[單品細節開始列索引_, 單品細節開始欄索引_] = String.Format("{0}*{1}", 資料_.單品.名稱, 資料_.數量);
 
-                Range R1 = (Range)App_.Cells[物品細節開始列索引_, 物品細節開始欄索引_];
+                Range R1 = (Range)App_.Cells[單品細節開始列索引_, 單品細節開始欄索引_];
                 R1.Copy(Type.Missing);
 
-                物品細節開始列索引_++;
+                單品細節開始列索引_++;
 
-                Range R2 = (Range)App_.Cells[物品細節開始列索引_, 物品細節開始欄索引_];
+                Range R2 = (Range)App_.Cells[單品細節開始列索引_, 單品細節開始欄索引_];
                 R2.PasteSpecial(XlPasteType.xlPasteFormats, XlPasteSpecialOperation.xlPasteSpecialOperationNone, false, false);
             }
         }

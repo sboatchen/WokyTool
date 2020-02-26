@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 using System;
 
@@ -40,14 +40,14 @@ namespace WokyTool.預留
             set { 轉換.姓名 = value; }
         }
 
-        [可匯入(名稱 = "物品", 說明 = "必要", 優先級 = 1, 識別 = true)]
+        [可匯入(名稱 = "單品", 說明 = "必要", 優先級 = 1, 識別 = true)]
         [JsonProperty]
-        public string 物品識別
+        public string 單品識別
         {
-            get { return _物品識別; }
+            get { return _單品識別; }
             set { 
-                _物品識別 = value;
-                物品 = 物品資料管理器.獨體.取得(_物品識別);
+                _單品識別 = value;
+                單品 = 單品資料管理器.獨體.取得(_單品識別);
             }
         }
 
@@ -69,15 +69,15 @@ namespace WokyTool.預留
 
         /********************************/
 
-        private string _物品識別;
+        private string _單品識別;
 
-        public 物品資料 物品
+        public 單品資料 單品
         {
-            get { return 轉換.物品; }
-            set { 轉換.物品 = value; }
+            get { return 轉換.單品; }
+            set { 轉換.單品 = value; }
         }
 
-        public string 物品名稱 { get { return 轉換.物品.名稱; } }
+        public string 單品名稱 { get { return 轉換.單品.名稱; } }
     }
 }
 

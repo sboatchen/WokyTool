@@ -6,7 +6,7 @@ using System.Linq;
 using WokyTool.Common;
 using WokyTool.通用;
 
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
     public class 品類資料管理器 : 可編號記錄資料管理器<品類資料>
     {

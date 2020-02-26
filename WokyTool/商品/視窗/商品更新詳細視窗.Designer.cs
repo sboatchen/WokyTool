@@ -1,4 +1,4 @@
-﻿using WokyTool.物品;
+﻿using WokyTool.單品;
 namespace WokyTool.商品
 {
     partial class 商品更新詳細視窗
@@ -44,14 +44,14 @@ namespace WokyTool.商品
             this.新增規格 = new System.Windows.Forms.TextBox();
             this.自訂售價GV = new WokyTool.通用.MyDataGridView();
             this.label15 = new System.Windows.Forms.Label();
-            this.品牌 = new WokyTool.物品.品牌選取元件();
+            this.品牌 = new WokyTool.單品.品牌選取元件();
             this.label9 = new System.Windows.Forms.Label();
             this.進價 = new System.Windows.Forms.NumericUpDown();
-            this.新增物品 = new WokyTool.物品.物品選取元件();
+            this.新增單品 = new WokyTool.單品.單品選取元件();
             this.dataGridView1 = new WokyTool.通用.MyDataGridView();
             this.群組DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.規格DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.物品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.單品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.新增 = new System.Windows.Forms.Button();
             this.新增數量 = new System.Windows.Forms.NumericUpDown();
@@ -61,14 +61,14 @@ namespace WokyTool.商品
             this.體積 = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.成本 = new System.Windows.Forms.NumericUpDown();
-            this.供應商 = new WokyTool.物品.供應商選取元件();
+            this.供應商 = new WokyTool.單品.供應商選取元件();
             this.label6 = new System.Windows.Forms.Label();
             this.售價 = new System.Windows.Forms.NumericUpDown();
             this.寄庫數量 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.客戶 = new WokyTool.客戶.客戶選取元件();
             this.公司 = new WokyTool.公司.公司選取元件();
-            this.品類 = new WokyTool.物品.品類選取元件();
+            this.品類 = new WokyTool.單品.品類選取元件();
             this.品號 = new System.Windows.Forms.TextBox();
             this.名稱 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -249,16 +249,16 @@ namespace WokyTool.商品
             this.進價.Size = new System.Drawing.Size(165, 22);
             this.進價.TabIndex = 243;
             // 
-            // 新增物品
+            // 新增單品
             // 
-            this.新增物品.Location = new System.Drawing.Point(260, 155);
-            this.新增物品.Margin = new System.Windows.Forms.Padding(4);
-            this.新增物品.Name = "新增物品";
-            this.新增物品.ReadOnly = false;
-            this.新增物品.SelectedItem = null;
-            this.新增物品.Size = new System.Drawing.Size(423, 24);
-            this.新增物品.TabIndex = 242;
-            this.新增物品.元件類型 = WokyTool.通用.選取元件類型.指定;
+            this.新增單品.Location = new System.Drawing.Point(260, 155);
+            this.新增單品.Margin = new System.Windows.Forms.Padding(4);
+            this.新增單品.Name = "新增單品";
+            this.新增單品.ReadOnly = false;
+            this.新增單品.SelectedItem = null;
+            this.新增單品.Size = new System.Drawing.Size(423, 24);
+            this.新增單品.TabIndex = 242;
+            this.新增單品.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
             // dataGridView1
             // 
@@ -268,7 +268,7 @@ namespace WokyTool.商品
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.群組DataGridViewTextBoxColumn,
             this.規格DataGridViewTextBoxColumn,
-            this.物品名稱DataGridViewTextBoxColumn,
+            this.單品名稱DataGridViewTextBoxColumn,
             this.數量DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.商品組成資料BindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(18, 181);
@@ -289,13 +289,13 @@ namespace WokyTool.商品
             this.規格DataGridViewTextBoxColumn.HeaderText = "規格";
             this.規格DataGridViewTextBoxColumn.Name = "規格DataGridViewTextBoxColumn";
             // 
-            // 物品名稱DataGridViewTextBoxColumn
+            // 單品名稱DataGridViewTextBoxColumn
             // 
-            this.物品名稱DataGridViewTextBoxColumn.DataPropertyName = "物品名稱";
-            this.物品名稱DataGridViewTextBoxColumn.HeaderText = "物品";
-            this.物品名稱DataGridViewTextBoxColumn.Name = "物品名稱DataGridViewTextBoxColumn";
-            this.物品名稱DataGridViewTextBoxColumn.ReadOnly = true;
-            this.物品名稱DataGridViewTextBoxColumn.Width = 400;
+            this.單品名稱DataGridViewTextBoxColumn.DataPropertyName = "單品名稱";
+            this.單品名稱DataGridViewTextBoxColumn.HeaderText = "單品";
+            this.單品名稱DataGridViewTextBoxColumn.Name = "單品名稱DataGridViewTextBoxColumn";
+            this.單品名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.單品名稱DataGridViewTextBoxColumn.Width = 400;
             // 
             // 數量DataGridViewTextBoxColumn
             // 
@@ -590,7 +590,7 @@ namespace WokyTool.商品
             this.Controls.Add(this.品牌);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.進價);
-            this.Controls.Add(this.新增物品);
+            this.Controls.Add(this.新增單品);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.新增);
             this.Controls.Add(this.新增數量);
@@ -658,11 +658,11 @@ namespace WokyTool.商品
         private 品牌選取元件 品牌;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown 進價;
-        private 物品選取元件 新增物品;
+        private 單品選取元件 新增單品;
         private 通用.MyDataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 群組DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 規格DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 物品名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 單品名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.Button 新增;
         private System.Windows.Forms.NumericUpDown 新增數量;

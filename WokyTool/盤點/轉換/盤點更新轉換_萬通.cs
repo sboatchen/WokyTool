@@ -38,8 +38,8 @@ namespace WokyTool.盤點
 
         public IEnumerable<盤點更新資料> 讀出資料(string[] 資料列_)
         {
-            string 物品識別_ = 資料列_[1].轉成字串();
-            if (string.IsNullOrEmpty(物品識別_))
+            string 單品識別_ = 資料列_[1].轉成字串();
+            if (string.IsNullOrEmpty(單品識別_))
                 yield break;
 
             int 數量_ = 資料列_[6].轉成整數();
@@ -47,7 +47,7 @@ namespace WokyTool.盤點
                 yield break;
 
             盤點更新資料 資料_ = new 盤點更新資料();
-            資料_.物品識別 = 物品識別_;
+            資料_.單品識別 = 單品識別_;
             資料_.萬通庫存 = 數量_;
 
             //Console.WriteLine(資料_.ToString(false));

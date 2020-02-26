@@ -1,6 +1,6 @@
-﻿namespace WokyTool.物品
+﻿namespace WokyTool.單品
 {
-    partial class 物品更新詳細視窗
+    partial class 單品更新詳細視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -50,9 +50,9 @@
             this.最後進貨成本 = new System.Windows.Forms.NumericUpDown();
             this.成本 = new System.Windows.Forms.NumericUpDown();
             this.庫存 = new System.Windows.Forms.NumericUpDown();
-            this.品類 = new WokyTool.物品.品類選取元件();
-            this.供應商 = new WokyTool.物品.供應商選取元件();
-            this.品牌 = new WokyTool.物品.品牌選取元件();
+            this.品類 = new WokyTool.單品.品類選取元件();
+            this.供應商 = new WokyTool.單品.供應商選取元件();
+            this.品牌 = new WokyTool.單品.品牌選取元件();
             this.類別 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.更新狀態 = new WokyTool.通用.更新狀態選取元件();
@@ -60,9 +60,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.參考類別 = new System.Windows.Forms.TextBox();
-            this.參考品牌 = new WokyTool.物品.品牌選取元件();
-            this.參考供應商 = new WokyTool.物品.供應商選取元件();
-            this.參考品類 = new WokyTool.物品.品類選取元件();
+            this.參考品牌 = new WokyTool.單品.品牌選取元件();
+            this.參考供應商 = new WokyTool.單品.供應商選取元件();
+            this.參考品類 = new WokyTool.單品.品類選取元件();
             this.參考庫存 = new System.Windows.Forms.NumericUpDown();
             this.參考成本 = new System.Windows.Forms.NumericUpDown();
             this.參考最後進貨成本 = new System.Windows.Forms.NumericUpDown();
@@ -798,7 +798,7 @@
             this.label19.TabIndex = 188;
             this.label19.Text = "保留";
             // 
-            // 物品更新詳細視窗
+            // 單品更新詳細視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -872,8 +872,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "物品更新詳細視窗";
-            this.Text = "物品更新詳細視窗";
+            this.Name = "單品更新詳細視窗";
+            this.Text = "單品更新詳細視窗";
             ((System.ComponentModel.ISupportInitialize)(this.體積)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.庫存總成本)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.最後進貨成本)).EndInit();

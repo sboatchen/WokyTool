@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using WokyTool.通用;
 
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
     public partial class 品牌總覽視窗 : 獨體總覽視窗
     {

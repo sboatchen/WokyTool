@@ -6,10 +6,10 @@ using WokyTool.預留;
 using WokyTool.商品;
 using WokyTool.通用;
 
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 物品資料 : 可編號記錄資料
+    public class 單品資料 : 可編號記錄資料
     {
         [JsonProperty]
         public int 品類編號
@@ -124,16 +124,16 @@ namespace WokyTool.物品
 
         /********************************/
 
-        public 物品資料 Self { get { return this; } }
+        public 單品資料 Self { get { return this; } }
 
-        public 物品資料()
+        public 單品資料()
         {
             品類 = 品類資料.空白;
             供應商 = 供應商資料.空白;
             品牌 = 品牌資料.空白;
         }
 
-        public static readonly 物品資料 不篩選 = new 物品資料
+        public static readonly 單品資料 不篩選 = new 單品資料
         {
             編號 = 常數.不篩選資料編碼,
 
@@ -157,7 +157,7 @@ namespace WokyTool.物品
             保留= 0,
         };
 
-        public static readonly 物品資料 空白 = new 物品資料
+        public static readonly 單品資料 空白 = new 單品資料
         {
             編號 = 常數.空白資料編碼,
 
@@ -181,7 +181,7 @@ namespace WokyTool.物品
             保留 = 0,
         };
 
-        public static 物品資料 錯誤 = new 物品資料
+        public static 單品資料 錯誤 = new 單品資料
         {
             編號 = 常數.錯誤資料編碼,
 
@@ -224,12 +224,12 @@ namespace WokyTool.物品
 
             if (String.IsNullOrEmpty(名稱))
                 檢查器_.錯誤(this, "名稱不合法");
-            else if (物品資料管理器.獨體.資料列舉2.Where(Value => Value != 參考_ && (名稱.Equals(Value.名稱) || 名稱.Equals(Value.縮寫))).Any())
+            else if (單品資料管理器.獨體.資料列舉2.Where(Value => Value != 參考_ && (名稱.Equals(Value.名稱) || 名稱.Equals(Value.縮寫))).Any())
                 檢查器_.錯誤(資料_, "名稱重複");
 
             if (String.IsNullOrEmpty(縮寫))
                 檢查器_.錯誤(資料_, "縮寫不合法");
-            else if (物品資料管理器.獨體.資料列舉2.Where(Value => Value != 參考_ && (縮寫.Equals(Value.名稱) || 縮寫.Equals(Value.縮寫))).Any())
+            else if (單品資料管理器.獨體.資料列舉2.Where(Value => Value != 參考_ && (縮寫.Equals(Value.名稱) || 縮寫.Equals(Value.縮寫))).Any())
                 檢查器_.錯誤(資料_, "縮寫重複");
             else if (縮寫.IndexOfAny(縮寫保留字元列) != -1)
                 檢查器_.錯誤(資料_, "縮寫包含保留字元");
@@ -243,12 +243,12 @@ namespace WokyTool.物品
         {
             基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
 
-            foreach (商品資料 商品資料_ in 商品資料管理器.獨體.資料列舉2.Where(Value => Value.組成 != null && Value.組成.Where(Value2 => Value2.物品 == this).Any()))
+            foreach (商品資料 商品資料_ in 商品資料管理器.獨體.資料列舉2.Where(Value => Value.組成 != null && Value.組成.Where(Value2 => Value2.單品 == this).Any()))
             {
                 檢查器_.錯誤(資料_, "資料綁定中:" + 商品資料_.ToString(false));
             }
 
-            foreach (預留資料 預留資料_ in 預留資料管理器.獨體.資料列舉2.Where(Value => Value.物品 == this))
+            foreach (預留資料 預留資料_ in 預留資料管理器.獨體.資料列舉2.Where(Value => Value.單品 == this))
             {
                 檢查器_.錯誤(資料_, "資料綁定中:" + 預留資料_.ToString(false));
             }

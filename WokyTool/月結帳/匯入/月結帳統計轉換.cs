@@ -17,11 +17,11 @@ namespace WokyTool.月結帳
 
         public string 密碼 { get { return null; } }
 
-        public Dictionary<月結帳物品資料, int> 資料書 { get; set; }
+        public Dictionary<月結帳單品資料, int> 資料書 { get; set; }
 
         public 月結帳統計轉換()
         {
-            資料書 = new Dictionary<月結帳物品資料, int>();
+            資料書 = new Dictionary<月結帳單品資料, int>();
         }
 
         public void 寫入(Application App_)

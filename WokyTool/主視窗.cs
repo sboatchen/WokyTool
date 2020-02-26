@@ -72,9 +72,9 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編號.品牌, 列舉.視窗.總覽);
         }
 
-        private void 物品_Click(object sender, EventArgs e)
+        private void 單品_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編號.物品, 列舉.視窗.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.單品, 列舉.視窗.總覽);
         }
 
         private void 商品_Click(object sender, EventArgs e)

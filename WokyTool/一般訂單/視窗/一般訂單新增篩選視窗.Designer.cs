@@ -1,4 +1,4 @@
-﻿using WokyTool.物品;
+﻿using WokyTool.單品;
 using WokyTool.通用;
 namespace WokyTool.一般訂單
 {
@@ -58,7 +58,7 @@ namespace WokyTool.一般訂單
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.子客戶 = new WokyTool.客戶.子客戶選取元件();
-            this.物品 = new WokyTool.物品.物品選取元件();
+            this.單品 = new WokyTool.單品.單品選取元件();
             ((System.ComponentModel.ISupportInitialize)(this.最大代收金額)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.最小代收金額)).BeginInit();
             this.SuspendLayout();
@@ -263,7 +263,7 @@ namespace WokyTool.一般訂單
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 137;
-            this.label4.Text = "物品";
+            this.label4.Text = "單品";
             // 
             // 客戶
             // 
@@ -344,16 +344,16 @@ namespace WokyTool.一般訂單
             this.子客戶.TabIndex = 163;
             this.子客戶.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
-            // 物品
+            // 單品
             // 
-            this.物品.Location = new System.Drawing.Point(58, 107);
-            this.物品.Margin = new System.Windows.Forms.Padding(4);
-            this.物品.Name = "物品";
-            this.物品.ReadOnly = false;
-            this.物品.SelectedItem = null;
-            this.物品.Size = new System.Drawing.Size(420, 25);
-            this.物品.TabIndex = 166;
-            this.物品.元件類型 = WokyTool.通用.選取元件類型.篩選;
+            this.單品.Location = new System.Drawing.Point(58, 107);
+            this.單品.Margin = new System.Windows.Forms.Padding(4);
+            this.單品.Name = "單品";
+            this.單品.ReadOnly = false;
+            this.單品.SelectedItem = null;
+            this.單品.Size = new System.Drawing.Size(420, 25);
+            this.單品.TabIndex = 166;
+            this.單品.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
             // 一般訂單新增篩選視窗
             // 
@@ -361,7 +361,7 @@ namespace WokyTool.一般訂單
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(478, 428);
-            this.Controls.Add(this.物品);
+            this.Controls.Add(this.單品);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.子客戶);
             this.Controls.Add(this.指配時段);
@@ -429,7 +429,7 @@ namespace WokyTool.一般訂單
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private 客戶.子客戶選取元件 子客戶;
-        private 物品選取元件 物品;
+        private 單品選取元件 單品;
 
     }
 }

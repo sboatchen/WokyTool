@@ -42,7 +42,7 @@ namespace WokyTool.Common
         public static string 全速配 = "全速配";
 
         public static string 商品 = "商品";
-        public static string 物品 = "物品";
+        public static string 單品 = "單品";
 
         public static string 標頭_錯誤 = "(錯誤)";
 

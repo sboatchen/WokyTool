@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using WokyTool.月結帳;
 using WokyTool.平台訂單;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.商品;
 using WokyTool.通用;
 using WokyTool.聯絡人;
@@ -96,17 +96,17 @@ namespace WokyTool.測試
             i.BringToFront();
         }
 
-        private void 物品合併ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 單品合併ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var i = new 物品合併測試視窗();
+            var i = new 單品合併測試視窗();
             i.Show();
             i.BringToFront();
         }
 
         private void 快速清除庫存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            物品資料管理器.獨體.清除庫存();
-            物品資料管理器.獨體.儲存();
+            單品資料管理器.獨體.清除庫存();
+            單品資料管理器.獨體.儲存();
             商品資料管理器.獨體.清除庫存();
             商品資料管理器.獨體.儲存();
         }
@@ -119,9 +119,9 @@ namespace WokyTool.測試
             string 月分 = "09";
 
             string json = 檔案.讀出("歷史/" + 月分 + "/物品.json");
-            var 物品資料書_ = JsonConvert.DeserializeObject<Dictionary<int, 月結帳物品資料>>(json).Where(Value => Value.Value.縮寫.Contains("真瓷")).ToDictionary(Value => Value.Key, Value => Value.Value);
+            var 單品資料書_ = JsonConvert.DeserializeObject<Dictionary<int, 月結帳單品資料>>(json).Where(Value => Value.Value.縮寫.Contains("真瓷")).ToDictionary(Value => Value.Key, Value => Value.Value);
 
-            foreach (var x in 物品資料書_.Keys)
+            foreach (var x in 單品資料書_.Keys)
             {
                 訊息管理器.獨體.訊息(x);
             }
@@ -129,7 +129,7 @@ namespace WokyTool.測試
             訊息管理器.獨體.訊息("-----------");
 
             json = 檔案.讀出("歷史/" + 月分 + "/商品V2.1.1.json");
-            var 商品資料書_ = JsonConvert.DeserializeObject<Dictionary<int, 月結帳商品資料>>(json).Where(Value => Value.Value.初始化(物品資料書_)).ToDictionary(Value => Value.Key, Value => Value.Value);
+            var 商品資料書_ = JsonConvert.DeserializeObject<Dictionary<int, 月結帳商品資料>>(json).Where(Value => Value.Value.初始化(單品資料書_)).ToDictionary(Value => Value.Key, Value => Value.Value);
 
             foreach (var x in 商品資料書_.Keys)
             {

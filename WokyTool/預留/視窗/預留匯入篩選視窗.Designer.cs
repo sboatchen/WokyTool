@@ -1,4 +1,4 @@
-﻿using WokyTool.物品;
+﻿using WokyTool.單品;
 using WokyTool.通用;
 namespace WokyTool.預留
 {
@@ -37,7 +37,7 @@ namespace WokyTool.預留
             this.最大預留日期 = new WokyTool.通用.MyDateTimePicker();
             this.最小預留日期 = new WokyTool.通用.MyDateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.物品 = new WokyTool.物品.物品選取元件();
+            this.單品 = new WokyTool.單品.單品選取元件();
             this.備註 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -106,15 +106,15 @@ namespace WokyTool.預留
             this.label7.TabIndex = 165;
             this.label7.Text = "預留日期";
             // 
-            // 物品
+            // 單品
             // 
-            this.物品.Location = new System.Drawing.Point(59, 103);
-            this.物品.Name = "物品";
-            this.物品.ReadOnly = false;
-            this.物品.SelectedItem = null;
-            this.物品.Size = new System.Drawing.Size(420, 22);
-            this.物品.TabIndex = 164;
-            this.物品.元件類型 = WokyTool.通用.選取元件類型.指定;
+            this.單品.Location = new System.Drawing.Point(59, 103);
+            this.單品.Name = "單品";
+            this.單品.ReadOnly = false;
+            this.單品.SelectedItem = null;
+            this.單品.Size = new System.Drawing.Size(420, 22);
+            this.單品.TabIndex = 164;
+            this.單品.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
             // 備註
             // 
@@ -139,7 +139,7 @@ namespace WokyTool.預留
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 159;
-            this.label4.Text = "物品";
+            this.label4.Text = "單品";
             // 
             // 預留匯入篩選視窗
             // 
@@ -154,7 +154,7 @@ namespace WokyTool.預留
             this.Controls.Add(this.最大預留日期);
             this.Controls.Add(this.最小預留日期);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.物品);
+            this.Controls.Add(this.單品);
             this.Controls.Add(this.備註);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label4);
@@ -174,7 +174,7 @@ namespace WokyTool.預留
         private MyDateTimePicker 最大預留日期;
         private MyDateTimePicker 最小預留日期;
         private System.Windows.Forms.Label label7;
-        private 物品選取元件 物品;
+        private 單品選取元件 單品;
         private System.Windows.Forms.TextBox 備註;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label4;

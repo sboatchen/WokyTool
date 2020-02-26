@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using WokyTool.平台訂單;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 
 namespace WokyTool.配送
@@ -60,18 +60,18 @@ namespace WokyTool.配送
                     App_.Cells[目前行數_, 1] = 第一筆_.客戶名稱;
                     App_.Cells[目前行數_, 2] = 第一筆_.姓名;
 
-                    物品合併資料.共用.清除();
-                    物品合併資料.共用.新增(第一筆_);
+                    單品合併資料.共用.清除();
+                    單品合併資料.共用.新增(第一筆_);
 
                     foreach (平台訂單新增資料 資料_ in Group_.Skip(1))
                     {
                         if (第一筆_.姓名 != 資料_.姓名)
                             throw new Exception("併單姓名不統一 " + Group_.Key);
 
-                        物品合併資料.共用.新增(資料_);
+                        單品合併資料.共用.新增(資料_);
                     }
 
-                    App_.Cells[目前行數_, 3] = 物品合併資料.共用.ToString();
+                    App_.Cells[目前行數_, 3] = 單品合併資料.共用.ToString();
 
                     目前行數_++;
                 }

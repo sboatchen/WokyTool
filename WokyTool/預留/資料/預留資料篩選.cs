@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 using System;
 
@@ -53,18 +53,18 @@ namespace WokyTool.預留
             }
         }
         
-        private 物品資料 _物品 = 物品資料.不篩選;
-        public 物品資料 物品
+        private 單品資料 _單品 = 單品資料.不篩選;
+        public 單品資料 單品
         {
             get
             {
-                return _物品;
+                return _單品;
             }
             set
             {
-                if (_物品 != value)
+                if (_單品 != value)
                 {
-                    _物品 = value;
+                    _單品 = value;
                     篩選版本++;
                 }
             }
@@ -96,7 +96,7 @@ namespace WokyTool.預留
                     0 != _最小預留日期.Ticks ||
                     0 != _最大預留日期.Ticks ||
                     null != _姓名 ||
-                    物品資料.不篩選 != _物品 ||
+                    單品資料.不篩選 != _單品 ||
                     null != _備註;
             }
         }
@@ -116,8 +116,8 @@ namespace WokyTool.預留
             if (null != _姓名)
                 目前列舉_ = 目前列舉_.Where(Value => Value.姓名 != null && Value.姓名.Contains(_姓名));
 
-            if (物品資料.不篩選 != _物品)
-                目前列舉_ = 目前列舉_.Where(Value => Value.物品 == _物品);
+            if (單品資料.不篩選 != _單品)
+                目前列舉_ = 目前列舉_.Where(Value => Value.單品 == _單品);
 
             if (null != _備註)
                 目前列舉_ = 目前列舉_.Where(Value => Value.備註 != null && Value.備註.Contains(_備註));

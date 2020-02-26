@@ -9,46 +9,46 @@ using WokyTool.平台訂單;
 using WokyTool.商品;
 using WokyTool.通用;
 
-namespace WokyTool.物品
+namespace WokyTool.單品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 物品合併資料 : 基本資料
+    public class 單品合併資料 : 基本資料
     {
-        public static 物品合併資料 共用 = new 物品合併資料();
+        public static 單品合併資料 共用 = new 單品合併資料();
 
-        public Dictionary<物品資料, int> 組成書 { get; private set; }
+        public Dictionary<單品資料, int> 組成書 { get; private set; }
         public List<List<商品組成資料>> 群組列 { get; private set; }
 
         public int 體積 { get; private set; }
 
         public decimal 成本 { get; private set; }
 
-        public 物品合併資料()
+        public 單品合併資料()
         {
-            組成書 = new Dictionary<物品資料, int>();
+            組成書 = new Dictionary<單品資料, int>();
             群組列 = new List<List<商品組成資料>>();
             體積 = 0;
             成本 = 0;
         }
 
-        public void 新增(物品資料 物品資料_, int 數量_)
+        public void 新增(單品資料 單品資料_, int 數量_)
         {
-            if (物品資料_.編號是否有值() == false || 數量_ == 0)
+            if (單品資料_.編號是否有值() == false || 數量_ == 0)
                 return;
 
             if (數量_ < 0)
-                throw new Exception("物品合併資料::數量小於0" + 數量_);
+                throw new Exception("單品合併資料::數量小於0" + 數量_);
 
-            成本 += 物品資料_.成本 * 數量_;
+            成本 += 單品資料_.成本 * 數量_;
 
             int 目前數量_ = 0;
-            if (組成書.TryGetValue(物品資料_, out 目前數量_))
+            if (組成書.TryGetValue(單品資料_, out 目前數量_))
             {
-                組成書[物品資料_] = 目前數量_ + 數量_;
+                組成書[單品資料_] = 目前數量_ + 數量_;
             }
             else
             {
-                組成書.Add(物品資料_, 數量_);
+                組成書.Add(單品資料_, 數量_);
             }
         }
 
@@ -63,7 +63,7 @@ namespace WokyTool.物品
                 {
                     foreach (商品組成資料 商品組成資料_ in Group_)
                     {
-                        新增(商品組成資料_.物品, 商品組成資料_.數量);
+                        新增(商品組成資料_.單品, 商品組成資料_.數量);
                     }
                 }
                 else
@@ -71,7 +71,7 @@ namespace WokyTool.物品
                     List<商品組成資料> 新群組_ = Group_.ToList();
                     群組列.Add(新群組_);
 
-                    成本 += 新群組_.Max(Value => Value.物品.成本 * Value.數量);
+                    成本 += 新群組_.Max(Value => Value.單品.成本 * Value.數量);
                 }
             }
         }
@@ -84,7 +84,7 @@ namespace WokyTool.物品
 
             foreach (var Item_ in 商品資料_.組成)
             {
-                新增(Item_.物品, Item_.數量 * 數量_);
+                新增(Item_.單品, Item_.數量 * 數量_);
             }
         }
 
@@ -96,20 +96,20 @@ namespace WokyTool.物品
 
             foreach (var Item_ in 商品資料_.組成)
             {
-                物品資料 物品資料_ = Item_.物品;
+                單品資料 單品資料_ = Item_.單品;
                 int 總數量_ = Item_.數量 * 數量_;
 
-                if (物品資料_.編號是否有值() == false || 總數量_ <= 0)
+                if (單品資料_.編號是否有值() == false || 總數量_ <= 0)
                     return;
 
                 int 目前數量_ = 0;
-                if (組成書.TryGetValue(物品資料_, out 目前數量_))
+                if (組成書.TryGetValue(單品資料_, out 目前數量_))
                 {
-                    組成書[物品資料_] = 目前數量_ + 總數量_;
+                    組成書[單品資料_] = 目前數量_ + 總數量_;
                 }
                 else
                 {
-                    組成書.Add(物品資料_, 總數量_);
+                    組成書.Add(單品資料_, 總數量_);
                 }
             }
         }
@@ -124,7 +124,7 @@ namespace WokyTool.物品
         public void 新增(一般訂單新增資料 資料_)
         {
             foreach (一般訂單新增組成資料 組成資料_ in 資料_.組成)
-                新增(組成資料_.物品, 組成資料_.數量);
+                新增(組成資料_.單品, 組成資料_.數量);
         }
 
         public void 清除()
@@ -146,17 +146,17 @@ namespace WokyTool.物品
             {
                 if (Group_.Key == 字串.無)
                 {
-                    foreach (var 物品組成_ in Group_)
+                    foreach (var 單品組成_ in Group_)
                     {
                         if (SB_.Length > 0)
                             SB_.Append(" & ");
 
-                        if (String.IsNullOrEmpty(物品組成_.Key.縮寫))
-                            SB_.Append(物品組成_.Key.名稱);
+                        if (String.IsNullOrEmpty(單品組成_.Key.縮寫))
+                            SB_.Append(單品組成_.Key.名稱);
                         else
-                            SB_.Append(物品組成_.Key.縮寫);
+                            SB_.Append(單品組成_.Key.縮寫);
 
-                        SB_.Append("*").Append(物品組成_.Value);
+                        SB_.Append("*").Append(單品組成_.Value);
                     }
                 }
                 else
@@ -167,15 +167,15 @@ namespace WokyTool.物品
                     SB_.Append(Group_.Key).Append("-");
 
                     bool isNotFirst_ = false;
-                    foreach (var 物品組成_ in Group_)
+                    foreach (var 單品組成_ in Group_)
                     {
                         if (isNotFirst_)
                             SB_.Append(",");
                         isNotFirst_ = true;
 
-                        SB_.Append(物品組成_.Key.顏色);
+                        SB_.Append(單品組成_.Key.顏色);
 
-                        SB_.Append("*").Append(物品組成_.Value);
+                        SB_.Append("*").Append(單品組成_.Value);
                     }
                 }
             }
@@ -192,10 +192,10 @@ namespace WokyTool.物品
                         SB_.Append("|");
                     isNotFirst_ = true;
 
-                    if (String.IsNullOrEmpty(資料_.物品.縮寫))
-                        SB_.Append(資料_.物品.名稱);
+                    if (String.IsNullOrEmpty(資料_.單品.縮寫))
+                        SB_.Append(資料_.單品.名稱);
                     else
-                        SB_.Append(資料_.物品.縮寫);
+                        SB_.Append(資料_.單品.縮寫);
 
                     SB_.Append("*").Append(資料_.數量);
                 }
@@ -223,7 +223,7 @@ namespace WokyTool.物品
                         商品組成資料 商品組成資料_ = new 商品組成資料
                         {
                             數量 = Int16.Parse(組成_[1]),
-                            物品 = 物品資料管理器.獨體.取得(組成_[0])
+                            單品 = 單品資料管理器.獨體.取得(組成_[0])
                         };
 
                         組成列_.Add(商品組成資料_);
@@ -233,13 +233,13 @@ namespace WokyTool.物品
                     if (同類別資料_.Contains(",") == false)
                     {
                         var 組成_ = 同類別資料_.Split('*');
-                        物品資料 物品資料_ = 物品資料管理器.獨體.取得(組成_[0]);
-                        if (物品資料_.編號是否有值())
+                        單品資料 單品資料_ = 單品資料管理器.獨體.取得(組成_[0]);
+                        if (單品資料_.編號是否有值())
                         {
                             商品組成資料 商品組成資料_ = new 商品組成資料
                             {
                                 數量 = Int16.Parse(組成_[1]),
-                                物品 = 物品資料_
+                                單品 = 單品資料_
                             };
 
                             組成列_.Add(商品組成資料_);
@@ -257,7 +257,7 @@ namespace WokyTool.物品
                         商品組成資料 商品組成資料_ = new 商品組成資料
                         {
                             數量 = Int16.Parse(組成_[1]),
-                            物品 = 物品資料管理器.獨體.取得_類別(類別_, 組成_[0])
+                            單品 = 單品資料管理器.獨體.取得_類別(類別_, 組成_[0])
                         };
 
                         組成列_.Add(商品組成資料_);

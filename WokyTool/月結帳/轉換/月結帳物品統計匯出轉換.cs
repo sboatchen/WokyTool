@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WokyTool.物品;
+using WokyTool.單品;
 using WokyTool.通用;
 
 namespace WokyTool.月結帳
 {
-    public class 月結帳物品統計匯出轉換 : 可寫入介面_EXCEL
+    public class 月結帳單品統計匯出轉換 : 可寫入介面_EXCEL
     {
         public string 分類 { get; set; }
 
@@ -19,9 +19,9 @@ namespace WokyTool.月結帳
 
         public string 密碼 { get { return null; } }
 
-        private IEnumerable<KeyValuePair<物品.物品資料, int>> _資料列;
+        private IEnumerable<KeyValuePair<單品.單品資料, int>> _資料列;
 
-        public 月結帳物品統計匯出轉換(IGrouping<品牌資料, KeyValuePair<物品.物品資料, int>> Group_)
+        public 月結帳單品統計匯出轉換(IGrouping<品牌資料, KeyValuePair<單品.單品資料, int>> Group_)
         {
             分類 = Group_.Key.名稱;
             _資料列 = Group_;

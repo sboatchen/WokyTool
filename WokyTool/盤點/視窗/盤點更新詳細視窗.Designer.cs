@@ -1,4 +1,4 @@
-﻿using WokyTool.物品;
+﻿using WokyTool.單品;
 using WokyTool.通用;
 namespace WokyTool.盤點
 {
@@ -36,7 +36,7 @@ namespace WokyTool.盤點
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.物品 = new WokyTool.物品.物品選取元件();
+            this.單品 = new WokyTool.單品.單品選取元件();
             this.更新狀態 = new WokyTool.通用.更新狀態選取元件();
             this.錯誤訊息 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@ namespace WokyTool.盤點
             this.參考萬通庫存 = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.參考大料架庫存 = new System.Windows.Forms.NumericUpDown();
-            this.參考物品 = new WokyTool.物品.物品選取元件();
+            this.參考單品 = new WokyTool.單品.單品選取元件();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -111,17 +111,17 @@ namespace WokyTool.盤點
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 85;
-            this.label5.Text = "物品";
+            this.label5.Text = "單品";
             // 
-            // 物品
+            // 單品
             // 
-            this.物品.Location = new System.Drawing.Point(58, 43);
-            this.物品.Name = "物品";
-            this.物品.ReadOnly = false;
-            this.物品.SelectedItem = null;
-            this.物品.Size = new System.Drawing.Size(420, 22);
-            this.物品.TabIndex = 86;
-            this.物品.元件類型 = WokyTool.通用.選取元件類型.指定;
+            this.單品.Location = new System.Drawing.Point(58, 43);
+            this.單品.Name = "單品";
+            this.單品.ReadOnly = false;
+            this.單品.SelectedItem = null;
+            this.單品.Size = new System.Drawing.Size(420, 22);
+            this.單品.TabIndex = 86;
+            this.單品.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
             // 更新狀態
             // 
@@ -244,15 +244,15 @@ namespace WokyTool.盤點
             this.參考大料架庫存.Size = new System.Drawing.Size(165, 22);
             this.參考大料架庫存.TabIndex = 133;
             // 
-            // 參考物品
+            // 參考單品
             // 
-            this.參考物品.Location = new System.Drawing.Point(562, 43);
-            this.參考物品.Name = "參考物品";
-            this.參考物品.ReadOnly = true;
-            this.參考物品.SelectedItem = null;
-            this.參考物品.Size = new System.Drawing.Size(420, 22);
-            this.參考物品.TabIndex = 132;
-            this.參考物品.元件類型 = WokyTool.通用.選取元件類型.指定;
+            this.參考單品.Location = new System.Drawing.Point(562, 43);
+            this.參考單品.Name = "參考單品";
+            this.參考單品.ReadOnly = true;
+            this.參考單品.SelectedItem = null;
+            this.參考單品.Size = new System.Drawing.Size(420, 22);
+            this.參考單品.TabIndex = 132;
+            this.參考單品.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
             // label7
             // 
@@ -261,7 +261,7 @@ namespace WokyTool.盤點
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 131;
-            this.label7.Text = "物品";
+            this.label7.Text = "單品";
             // 
             // label8
             // 
@@ -308,7 +308,7 @@ namespace WokyTool.盤點
             this.Controls.Add(this.參考萬通庫存);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.參考大料架庫存);
-            this.Controls.Add(this.參考物品);
+            this.Controls.Add(this.參考單品);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
@@ -321,7 +321,7 @@ namespace WokyTool.盤點
             this.Controls.Add(this.更新狀態);
             this.Controls.Add(this.錯誤訊息);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.物品);
+            this.Controls.Add(this.單品);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -349,7 +349,7 @@ namespace WokyTool.盤點
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private 物品選取元件 物品;
+        private 單品選取元件 單品;
         private 更新狀態選取元件 更新狀態;
         private System.Windows.Forms.TextBox 錯誤訊息;
         private System.Windows.Forms.Label label17;
@@ -361,7 +361,7 @@ namespace WokyTool.盤點
         private System.Windows.Forms.NumericUpDown 參考萬通庫存;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown 參考大料架庫存;
-        private 物品選取元件 參考物品;
+        private 單品選取元件 參考單品;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
