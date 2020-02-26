@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.品類 = new System.Windows.Forms.Button();
-            this.物品小類 = new System.Windows.Forms.Button();
+            this.供應商 = new System.Windows.Forms.Button();
             this.物品 = new System.Windows.Forms.Button();
             this.商品大類 = new System.Windows.Forms.Button();
             this.商品小類 = new System.Windows.Forms.Button();
@@ -95,15 +95,15 @@
             this.品類.UseVisualStyleBackColor = true;
             this.品類.Click += new System.EventHandler(this.品類_Click);
             // 
-            // 物品小類
+            // 供應商
             // 
-            this.物品小類.Location = new System.Drawing.Point(122, 92);
-            this.物品小類.Name = "物品小類";
-            this.物品小類.Size = new System.Drawing.Size(100, 23);
-            this.物品小類.TabIndex = 3;
-            this.物品小類.Text = "物品小類";
-            this.物品小類.UseVisualStyleBackColor = true;
-            this.物品小類.Click += new System.EventHandler(this.物品小類_Click);
+            this.供應商.Location = new System.Drawing.Point(122, 92);
+            this.供應商.Name = "供應商";
+            this.供應商.Size = new System.Drawing.Size(100, 23);
+            this.供應商.TabIndex = 3;
+            this.供應商.Text = "供應商";
+            this.供應商.UseVisualStyleBackColor = true;
+            this.供應商.Click += new System.EventHandler(this.供應商_Click);
             // 
             // 物品
             // 
@@ -340,7 +340,7 @@
             this.panel3.Controls.Add(this.整理);
             this.panel3.Controls.Add(this.客戶資料轉換);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.物品小類);
+            this.panel3.Controls.Add(this.供應商);
             this.panel3.Controls.Add(this.廠商);
             this.panel3.Controls.Add(this.品類);
             this.panel3.Controls.Add(this.物品);
@@ -635,7 +635,7 @@
         #endregion
 
         private System.Windows.Forms.Button 品類;
-        private System.Windows.Forms.Button 物品小類;
+        private System.Windows.Forms.Button 供應商;
         private System.Windows.Forms.Button 物品;
         private System.Windows.Forms.Button 商品大類;
         private System.Windows.Forms.Button 商品小類;

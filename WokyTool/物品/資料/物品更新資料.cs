@@ -89,7 +89,7 @@ namespace WokyTool.物品
             set
             {
                 _小類識別 = value;
-                修改.小類 = 物品小類資料管理器.獨體.取得(value);
+                修改.小類 = 供應商資料管理器.獨體.取得(value);
             }
         }
 
@@ -251,7 +251,7 @@ namespace WokyTool.物品
             }
         }
 
-        public 物品小類資料 小類
+        public 供應商資料 小類
         {
             get { return 修改.小類; }
             set
@@ -285,7 +285,7 @@ namespace WokyTool.物品
         public string 參考縮寫 { get { return 參考.縮寫; } }
 
         public 品類資料 參考大類 { get { return 參考.大類; } }
-        public 物品小類資料 參考小類 { get { return 參考.小類; } }
+        public 供應商資料 參考小類 { get { return 參考.小類; } }
         public 物品品牌資料 參考品牌 { get { return 參考.品牌; } }
 
         public string 參考國際條碼 { get { return 參考.國際條碼; } }

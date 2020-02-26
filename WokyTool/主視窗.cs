@@ -62,9 +62,9 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編號.品類, 列舉.視窗.總覽);
         }
 
-        private void 物品小類_Click(object sender, EventArgs e)
+        private void 供應商_Click(object sender, EventArgs e)
         {
-            視窗管理器.獨體.顯現(列舉.編號.物品小類, 列舉.視窗.總覽);
+            視窗管理器.獨體.顯現(列舉.編號.供應商, 列舉.視窗.總覽);
         }
 
         private void 物品品牌_Click(object sender, EventArgs e)
@@ -241,22 +241,22 @@ namespace WokyTool
             //}
             //品類資料管理器.獨體.資料搬移();
 
-            //訊息管理器.獨體.訊息("物品小類資料轉換");
-            //物品小類資料管理器.獨體.Map.Clear();
-            //foreach (var Item_ in 物品小類管理器.Instance.Map.Values)
+            //訊息管理器.獨體.訊息("供應商資料轉換");
+            //供應商資料管理器.獨體.Map.Clear();
+            //foreach (var Item_ in 供應商管理器.Instance.Map.Values)
             //{
             //    if (Item_.編號 <= 0)
             //        continue;
 
-            //    物品.物品小類資料 New_ = new 物品.物品小類資料
+            //    物品.供應商資料 New_ = new 物品.供應商資料
             //    {
             //        編號 = Item_.編號,
             //        名稱 = Item_.名稱,
             //    };
 
-            //    物品小類資料管理器.獨體.Map.Add(New_.編號, New_);
+            //    供應商資料管理器.獨體.Map.Add(New_.編號, New_);
             //}
-            //物品小類資料管理器.獨體.資料搬移();
+            //供應商資料管理器.獨體.資料搬移();
 
             //訊息管理器.獨體.訊息("物品品牌資料轉換");
             //物品品牌資料管理器.獨體.Map.Clear();
