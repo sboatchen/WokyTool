@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.物品大類 = new System.Windows.Forms.Button();
+            this.品類 = new System.Windows.Forms.Button();
             this.物品小類 = new System.Windows.Forms.Button();
             this.物品 = new System.Windows.Forms.Button();
             this.商品大類 = new System.Windows.Forms.Button();
@@ -85,15 +85,15 @@
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
-            // 物品大類
+            // 品類
             // 
-            this.物品大類.Location = new System.Drawing.Point(6, 92);
-            this.物品大類.Name = "物品大類";
-            this.物品大類.Size = new System.Drawing.Size(100, 23);
-            this.物品大類.TabIndex = 2;
-            this.物品大類.Text = "物品大類";
-            this.物品大類.UseVisualStyleBackColor = true;
-            this.物品大類.Click += new System.EventHandler(this.物品大類_Click);
+            this.品類.Location = new System.Drawing.Point(6, 92);
+            this.品類.Name = "品類";
+            this.品類.Size = new System.Drawing.Size(100, 23);
+            this.品類.TabIndex = 2;
+            this.品類.Text = "品類";
+            this.品類.UseVisualStyleBackColor = true;
+            this.品類.Click += new System.EventHandler(this.品類_Click);
             // 
             // 物品小類
             // 
@@ -342,7 +342,7 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.物品小類);
             this.panel3.Controls.Add(this.廠商);
-            this.panel3.Controls.Add(this.物品大類);
+            this.panel3.Controls.Add(this.品類);
             this.panel3.Controls.Add(this.物品);
             this.panel3.Controls.Add(this.商品大類);
             this.panel3.Controls.Add(this.商品小類);
@@ -634,7 +634,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button 物品大類;
+        private System.Windows.Forms.Button 品類;
         private System.Windows.Forms.Button 物品小類;
         private System.Windows.Forms.Button 物品;
         private System.Windows.Forms.Button 商品大類;

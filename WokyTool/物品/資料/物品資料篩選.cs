@@ -6,8 +6,8 @@ namespace WokyTool.物品
 {
     public class 物品資料篩選 : 通用可篩選介面<物品資料>
     {
-        private 物品大類資料 _大類 = 物品大類資料.不篩選;
-        public 物品大類資料 大類
+        private 品類資料 _大類 = 品類資料.不篩選;
+        public 品類資料 大類
         {
             get
             {
@@ -158,7 +158,7 @@ namespace WokyTool.物品
             get
             {
                 return
-                    物品大類資料.不篩選 != _大類 ||
+                    品類資料.不篩選 != _大類 ||
                     物品小類資料.不篩選 != _小類 ||
                     物品品牌資料.不篩選 != _品牌 ||
                     null != _國際條碼 ||
@@ -177,7 +177,7 @@ namespace WokyTool.物品
 
             IEnumerable<物品資料> 目前列舉_ = 資料列舉_;
 
-            if (物品大類資料.不篩選 != _大類)
+            if (品類資料.不篩選 != _大類)
                 目前列舉_ = 目前列舉_.Where(Value => Value.大類 == _大類);
             if (物品小類資料.不篩選 != _小類)
                 目前列舉_ = 目前列舉_.Where(Value => Value.小類 == _小類);

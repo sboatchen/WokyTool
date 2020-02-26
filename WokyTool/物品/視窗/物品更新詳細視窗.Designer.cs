@@ -50,7 +50,7 @@
             this.最後進貨成本 = new System.Windows.Forms.NumericUpDown();
             this.成本 = new System.Windows.Forms.NumericUpDown();
             this.庫存 = new System.Windows.Forms.NumericUpDown();
-            this.大類 = new WokyTool.物品.物品大類選取元件();
+            this.大類 = new WokyTool.物品.品類選取元件();
             this.小類 = new WokyTool.物品.物品小類選取元件();
             this.品牌 = new WokyTool.物品.物品品牌選取元件();
             this.類別 = new System.Windows.Forms.TextBox();
@@ -62,7 +62,7 @@
             this.參考類別 = new System.Windows.Forms.TextBox();
             this.參考品牌 = new WokyTool.物品.物品品牌選取元件();
             this.參考小類 = new WokyTool.物品.物品小類選取元件();
-            this.參考大類 = new WokyTool.物品.物品大類選取元件();
+            this.參考大類 = new WokyTool.物品.品類選取元件();
             this.參考庫存 = new System.Windows.Forms.NumericUpDown();
             this.參考成本 = new System.Windows.Forms.NumericUpDown();
             this.參考最後進貨成本 = new System.Windows.Forms.NumericUpDown();
@@ -915,7 +915,7 @@
         private System.Windows.Forms.NumericUpDown 最後進貨成本;
         private System.Windows.Forms.NumericUpDown 成本;
         private System.Windows.Forms.NumericUpDown 庫存;
-        private 物品大類選取元件 大類;
+        private 品類選取元件 大類;
         private 物品小類選取元件 小類;
         private 物品品牌選取元件 品牌;
         private System.Windows.Forms.TextBox 類別;
@@ -927,7 +927,7 @@
         private System.Windows.Forms.TextBox 參考類別;
         private 物品品牌選取元件 參考品牌;
         private 物品小類選取元件 參考小類;
-        private 物品大類選取元件 參考大類;
+        private 品類選取元件 參考大類;
         private System.Windows.Forms.NumericUpDown 參考庫存;
         private System.Windows.Forms.NumericUpDown 參考成本;
         private System.Windows.Forms.NumericUpDown 參考最後進貨成本;

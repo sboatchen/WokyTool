@@ -7,7 +7,7 @@ using WokyTool.通用;
 namespace WokyTool.物品
 {
     [JsonObject(MemberSerialization.OptIn)]
-    public class 物品大類資料 : 可編號記錄資料
+    public class 品類資料 : 可編號記錄資料
     {
         [可匯出]
         [JsonProperty]
@@ -15,21 +15,21 @@ namespace WokyTool.物品
 
         /********************************/
 
-        public 物品大類資料 Self { get { return this; } }
+        public 品類資料 Self { get { return this; } }
 
-        public static readonly 物品大類資料 不篩選 = new 物品大類資料
+        public static readonly 品類資料 不篩選 = new 品類資料
         {
             編號 = 常數.不篩選資料編碼,
             名稱 = 字串.不篩選,
         };
 
-        public static readonly 物品大類資料 空白 = new 物品大類資料
+        public static readonly 品類資料 空白 = new 品類資料
         {
             編號 = 常數.空白資料編碼,
             名稱 = 字串.無,
         };
 
-        public static 物品大類資料 錯誤 = new 物品大類資料
+        public static 品類資料 錯誤 = new 品類資料
         {
             編號 = 常數.錯誤資料編碼,
             名稱 = 字串.錯誤,
@@ -44,7 +44,7 @@ namespace WokyTool.物品
 
             if (String.IsNullOrEmpty(名稱))
                 檢查器_.錯誤(資料_, "名稱不合法");
-            else if (物品大類資料管理器.獨體.資料列舉2.Where(Value => Value != 參考_ && 名稱.Equals(Value.名稱)).Any())
+            else if (品類資料管理器.獨體.資料列舉2.Where(Value => Value != 參考_ && 名稱.Equals(Value.名稱)).Any())
                 檢查器_.錯誤(資料_, "名稱重複");
         }
 
