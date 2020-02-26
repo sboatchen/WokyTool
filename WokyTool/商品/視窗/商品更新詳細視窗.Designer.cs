@@ -49,6 +49,10 @@ namespace WokyTool.商品
             this.進價 = new System.Windows.Forms.NumericUpDown();
             this.新增物品 = new WokyTool.物品.物品選取元件();
             this.dataGridView1 = new WokyTool.通用.MyDataGridView();
+            this.群組DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.規格DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.物品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.新增 = new System.Windows.Forms.Button();
             this.新增數量 = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
@@ -73,10 +77,6 @@ namespace WokyTool.商品
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.群組DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.規格DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.物品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.商品組成資料BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.新增群組)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.新增售價)).BeginInit();
@@ -277,6 +277,32 @@ namespace WokyTool.商品
             this.dataGridView1.Size = new System.Drawing.Size(778, 229);
             this.dataGridView1.TabIndex = 241;
             // 
+            // 群組DataGridViewTextBoxColumn
+            // 
+            this.群組DataGridViewTextBoxColumn.DataPropertyName = "群組";
+            this.群組DataGridViewTextBoxColumn.HeaderText = "群組";
+            this.群組DataGridViewTextBoxColumn.Name = "群組DataGridViewTextBoxColumn";
+            // 
+            // 規格DataGridViewTextBoxColumn
+            // 
+            this.規格DataGridViewTextBoxColumn.DataPropertyName = "規格";
+            this.規格DataGridViewTextBoxColumn.HeaderText = "規格";
+            this.規格DataGridViewTextBoxColumn.Name = "規格DataGridViewTextBoxColumn";
+            // 
+            // 物品名稱DataGridViewTextBoxColumn
+            // 
+            this.物品名稱DataGridViewTextBoxColumn.DataPropertyName = "物品名稱";
+            this.物品名稱DataGridViewTextBoxColumn.HeaderText = "物品";
+            this.物品名稱DataGridViewTextBoxColumn.Name = "物品名稱DataGridViewTextBoxColumn";
+            this.物品名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.物品名稱DataGridViewTextBoxColumn.Width = 400;
+            // 
+            // 數量DataGridViewTextBoxColumn
+            // 
+            this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
+            this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
+            this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
+            // 
             // 新增
             // 
             this.新增.Location = new System.Drawing.Point(18, 153);
@@ -391,7 +417,7 @@ namespace WokyTool.商品
             this.供應商.Location = new System.Drawing.Point(296, 78);
             this.供應商.Margin = new System.Windows.Forms.Padding(4);
             this.供應商.Name = "供應商";
-            this.供應商.ReadOnly = false;
+            this.供應商.ReadOnly = true;
             this.供應商.SelectedItem = null;
             this.供應商.Size = new System.Drawing.Size(172, 25);
             this.供應商.TabIndex = 232;
@@ -472,7 +498,7 @@ namespace WokyTool.商品
             this.品類.Location = new System.Drawing.Point(61, 78);
             this.品類.Margin = new System.Windows.Forms.Padding(4);
             this.品類.Name = "品類";
-            this.品類.ReadOnly = false;
+            this.品類.ReadOnly = true;
             this.品類.SelectedItem = null;
             this.品類.Size = new System.Drawing.Size(172, 25);
             this.品類.TabIndex = 225;
@@ -533,7 +559,7 @@ namespace WokyTool.商品
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(253, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 218;
             this.label2.Text = "供應商";
             // 
@@ -545,32 +571,6 @@ namespace WokyTool.商品
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 217;
             this.label1.Text = "品類";
-            // 
-            // 群組DataGridViewTextBoxColumn
-            // 
-            this.群組DataGridViewTextBoxColumn.DataPropertyName = "群組";
-            this.群組DataGridViewTextBoxColumn.HeaderText = "群組";
-            this.群組DataGridViewTextBoxColumn.Name = "群組DataGridViewTextBoxColumn";
-            // 
-            // 規格DataGridViewTextBoxColumn
-            // 
-            this.規格DataGridViewTextBoxColumn.DataPropertyName = "規格";
-            this.規格DataGridViewTextBoxColumn.HeaderText = "規格";
-            this.規格DataGridViewTextBoxColumn.Name = "規格DataGridViewTextBoxColumn";
-            // 
-            // 物品名稱DataGridViewTextBoxColumn
-            // 
-            this.物品名稱DataGridViewTextBoxColumn.DataPropertyName = "物品名稱";
-            this.物品名稱DataGridViewTextBoxColumn.HeaderText = "物品";
-            this.物品名稱DataGridViewTextBoxColumn.Name = "物品名稱DataGridViewTextBoxColumn";
-            this.物品名稱DataGridViewTextBoxColumn.ReadOnly = true;
-            this.物品名稱DataGridViewTextBoxColumn.Width = 400;
-            // 
-            // 數量DataGridViewTextBoxColumn
-            // 
-            this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
-            this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
-            this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
             // 
             // 商品更新詳細視窗
             // 

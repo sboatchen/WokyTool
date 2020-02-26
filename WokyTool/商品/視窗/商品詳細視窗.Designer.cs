@@ -153,7 +153,7 @@ namespace WokyTool.商品
             this.供應商.Location = new System.Drawing.Point(293, 42);
             this.供應商.Margin = new System.Windows.Forms.Padding(4);
             this.供應商.Name = "供應商";
-            this.供應商.ReadOnly = false;
+            this.供應商.ReadOnly = true;
             this.供應商.SelectedItem = null;
             this.供應商.Size = new System.Drawing.Size(172, 25);
             this.供應商.TabIndex = 69;
@@ -234,7 +234,7 @@ namespace WokyTool.商品
             this.品類.Location = new System.Drawing.Point(58, 42);
             this.品類.Margin = new System.Windows.Forms.Padding(4);
             this.品類.Name = "品類";
-            this.品類.ReadOnly = false;
+            this.品類.ReadOnly = true;
             this.品類.SelectedItem = null;
             this.品類.Size = new System.Drawing.Size(172, 25);
             this.品類.TabIndex = 52;
@@ -295,7 +295,7 @@ namespace WokyTool.商品
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(250, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 1;
             this.label2.Text = "供應商";
             // 
