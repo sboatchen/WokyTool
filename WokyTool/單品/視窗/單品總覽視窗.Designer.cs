@@ -72,7 +72,7 @@ namespace WokyTool.單品
             this.更新ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1848, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1749, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -162,7 +162,7 @@ namespace WokyTool.單品
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1848, 487);
+            this.dataGridView1.Size = new System.Drawing.Size(1749, 487);
             this.dataGridView1.TabIndex = 2;
             // 
             // 編號DataGridViewTextBoxColumn
@@ -275,7 +275,7 @@ namespace WokyTool.單品
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1848, 511);
+            this.ClientSize = new System.Drawing.Size(1749, 511);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

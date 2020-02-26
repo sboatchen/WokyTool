@@ -36,16 +36,16 @@
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.匯出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.月結帳支出新增匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.廠商資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.供應商資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.傳票號碼DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.廠商識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.廠商DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.供應商識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.供應商DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.費用DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.月結帳支出新增匯入資料BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.供應商資料BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -55,8 +55,8 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.傳票號碼DataGridViewTextBoxColumn,
-            this.廠商識別DataGridViewTextBoxColumn,
-            this.廠商DataGridViewTextBoxColumn,
+            this.供應商識別DataGridViewTextBoxColumn,
+            this.供應商DataGridViewTextBoxColumn,
             this.費用DataGridViewTextBoxColumn,
             this.錯誤訊息DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.月結帳支出新增匯入資料BindingSource;
@@ -112,9 +112,9 @@
             // 
             this.月結帳支出新增匯入資料BindingSource.DataSource = typeof(WokyTool.月結帳.月結帳支出新增匯入資料);
             // 
-            // 廠商資料BindingSource
+            // 供應商資料BindingSource
             // 
-            this.廠商資料BindingSource.DataSource = typeof(WokyTool.廠商.廠商資料);
+            this.供應商資料BindingSource.DataSource = typeof(WokyTool.單品.供應商資料);
             // 
             // 傳票號碼DataGridViewTextBoxColumn
             // 
@@ -122,24 +122,24 @@
             this.傳票號碼DataGridViewTextBoxColumn.HeaderText = "傳票號碼";
             this.傳票號碼DataGridViewTextBoxColumn.Name = "傳票號碼DataGridViewTextBoxColumn";
             // 
-            // 廠商識別DataGridViewTextBoxColumn
+            // 供應商識別DataGridViewTextBoxColumn
             // 
-            this.廠商識別DataGridViewTextBoxColumn.DataPropertyName = "廠商識別";
-            this.廠商識別DataGridViewTextBoxColumn.HeaderText = "廠商識別";
-            this.廠商識別DataGridViewTextBoxColumn.Name = "廠商識別DataGridViewTextBoxColumn";
-            this.廠商識別DataGridViewTextBoxColumn.Width = 200;
+            this.供應商識別DataGridViewTextBoxColumn.DataPropertyName = "供應商識別";
+            this.供應商識別DataGridViewTextBoxColumn.HeaderText = "供應商識別";
+            this.供應商識別DataGridViewTextBoxColumn.Name = "供應商識別DataGridViewTextBoxColumn";
+            this.供應商識別DataGridViewTextBoxColumn.Width = 200;
             // 
-            // 廠商DataGridViewTextBoxColumn
+            // 供應商DataGridViewTextBoxColumn
             // 
-            this.廠商DataGridViewTextBoxColumn.DataPropertyName = "廠商";
-            this.廠商DataGridViewTextBoxColumn.DataSource = this.廠商資料BindingSource;
-            this.廠商DataGridViewTextBoxColumn.DisplayMember = "名稱";
-            this.廠商DataGridViewTextBoxColumn.HeaderText = "廠商";
-            this.廠商DataGridViewTextBoxColumn.Name = "廠商DataGridViewTextBoxColumn";
-            this.廠商DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.廠商DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.廠商DataGridViewTextBoxColumn.ValueMember = "Self";
-            this.廠商DataGridViewTextBoxColumn.Width = 200;
+            this.供應商DataGridViewTextBoxColumn.DataPropertyName = "供應商";
+            this.供應商DataGridViewTextBoxColumn.DataSource = this.供應商資料BindingSource;
+            this.供應商DataGridViewTextBoxColumn.DisplayMember = "名稱";
+            this.供應商DataGridViewTextBoxColumn.HeaderText = "供應商";
+            this.供應商DataGridViewTextBoxColumn.Name = "供應商DataGridViewTextBoxColumn";
+            this.供應商DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.供應商DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.供應商DataGridViewTextBoxColumn.ValueMember = "Self";
+            this.供應商DataGridViewTextBoxColumn.Width = 200;
             // 
             // 費用DataGridViewTextBoxColumn
             // 
@@ -168,7 +168,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.月結帳支出新增匯入資料BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.廠商資料BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.供應商資料BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,9 +183,9 @@
         private System.Windows.Forms.ToolStripMenuItem 匯出ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 檢查ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn 傳票號碼DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 廠商識別DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 廠商DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource 廠商資料BindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 供應商識別DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn 供應商DataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource 供應商資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 費用DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 錯誤訊息DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 月結帳支出新增匯入資料BindingSource;

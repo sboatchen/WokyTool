@@ -2,7 +2,6 @@
 using System.Linq;
 using WokyTool.單品;
 using WokyTool.通用;
-using WokyTool.廠商;
 
 namespace WokyTool.進貨
 {
@@ -22,18 +21,18 @@ namespace WokyTool.進貨
             }
         }
 
-        private 廠商資料 _廠商 = 廠商資料.不篩選;
-        public 廠商資料 廠商
+        private 供應商資料 _供應商 = 供應商資料.不篩選;
+        public 供應商資料 供應商
         {
             get
             {
-                return _廠商;
+                return _供應商;
             }
             set
             {
-                if (_廠商 != value)
+                if (_供應商 != value)
                 {
-                    _廠商 = value;
+                    _供應商 = value;
                     篩選版本++;
                 }
             }
@@ -80,7 +79,7 @@ namespace WokyTool.進貨
                 return
                     null != _文字 ||  // 單品名稱
                     列舉.進貨類型.不篩選 != _類型 ||
-                    廠商資料.不篩選 != _廠商 ||
+                    供應商資料.不篩選 != _供應商 ||
                     單品資料.不篩選 != _單品 ||
                     null != _備註;
             }
@@ -96,8 +95,8 @@ namespace WokyTool.進貨
             if (列舉.進貨類型.不篩選 != _類型)
                 目前列舉_ = 目前列舉_.Where(Value => Value.類型 == _類型);
 
-            if (廠商資料.不篩選 != _廠商)
-                目前列舉_ = 目前列舉_.Where(Value => Value.廠商 == _廠商);
+            if (供應商資料.不篩選 != _供應商)
+                目前列舉_ = 目前列舉_.Where(Value => Value.供應商 == _供應商);
             if (單品資料.不篩選 != _單品)
                 目前列舉_ = 目前列舉_.Where(Value => Value.單品 == _單品);
 

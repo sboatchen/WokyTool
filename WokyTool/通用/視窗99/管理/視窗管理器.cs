@@ -13,7 +13,6 @@ using WokyTool.商品;
 using WokyTool.寄庫;
 using WokyTool.進貨;
 using WokyTool.幣值;
-using WokyTool.廠商;
 using WokyTool.盤點;
 using WokyTool.聯絡人;
 
@@ -73,9 +72,6 @@ namespace WokyTool.通用
             _資料書.Add(取得編號(列舉.編號.寄庫, 列舉.視窗.總覽), typeof(寄庫總覽視窗));
             _資料書.Add(取得編號(列舉.編號.寄庫, 列舉.視窗.詳細), typeof(寄庫詳細視窗));
             _資料書.Add(取得編號(列舉.編號.寄庫, 列舉.視窗.篩選), typeof(寄庫篩選視窗));
-
-            _資料書.Add(取得編號(列舉.編號.廠商, 列舉.視窗.總覽), typeof(廠商總覽視窗));
-            _資料書.Add(取得編號(列舉.編號.廠商, 列舉.視窗.篩選), typeof(廠商篩選視窗));
 
             _資料書.Add(取得編號(列舉.編號.進貨新增, 列舉.視窗.總覽), typeof(進貨新增總覽視窗));
             _資料書.Add(取得編號(列舉.編號.進貨新增, 列舉.視窗.詳細), typeof(進貨新增詳細視窗));

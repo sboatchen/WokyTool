@@ -31,7 +31,7 @@ namespace WokyTool.進貨
         private void InitializeComponent()
         {
             this.單品 = new WokyTool.單品.單品選取元件();
-            this.廠商 = new WokyTool.廠商.廠商選取元件();
+            this.供應商 = new WokyTool.單品.供應商選取元件();
             this.類型 = new WokyTool.通用.進貨類型選取元件();
             this.備註 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,15 +49,15 @@ namespace WokyTool.進貨
             this.單品.TabIndex = 142;
             this.單品.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
-            // 廠商
+            // 供應商
             // 
-            this.廠商.Location = new System.Drawing.Point(59, 39);
-            this.廠商.Name = "廠商";
-            this.廠商.ReadOnly = false;
-            this.廠商.SelectedItem = null;
-            this.廠商.Size = new System.Drawing.Size(172, 22);
-            this.廠商.TabIndex = 141;
-            this.廠商.元件類型 = WokyTool.通用.選取元件類型.篩選;
+            this.供應商.Location = new System.Drawing.Point(59, 39);
+            this.供應商.Name = "供應商";
+            this.供應商.ReadOnly = false;
+            this.供應商.SelectedItem = null;
+            this.供應商.Size = new System.Drawing.Size(172, 22);
+            this.供應商.TabIndex = 141;
+            this.供應商.元件類型 = WokyTool.通用.選取元件類型.篩選;
             // 
             // 類型
             // 
@@ -101,7 +101,7 @@ namespace WokyTool.進貨
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(29, 12);
             this.label7.TabIndex = 136;
-            this.label7.Text = "廠商";
+            this.label7.Text = "供應商";
             // 
             // 進貨新增篩選視窗
             // 
@@ -110,7 +110,7 @@ namespace WokyTool.進貨
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(483, 131);
             this.Controls.Add(this.單品);
-            this.Controls.Add(this.廠商);
+            this.Controls.Add(this.供應商);
             this.Controls.Add(this.類型);
             this.Controls.Add(this.備註);
             this.Controls.Add(this.label2);
@@ -126,7 +126,7 @@ namespace WokyTool.進貨
         #endregion
 
         private 單品選取元件 單品;
-        private 廠商.廠商選取元件 廠商;
+        private 單品.供應商選取元件 供應商;
         private 進貨類型選取元件 類型;
         private System.Windows.Forms.TextBox 備註;
         private System.Windows.Forms.Label label2;

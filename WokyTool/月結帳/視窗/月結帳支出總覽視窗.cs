@@ -8,17 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WokyTool.Common;
-using WokyTool.廠商;
 using WokyTool.客戶;
 using WokyTool.商品;
 using WokyTool.通用;
+using WokyTool.單品;
 
 namespace WokyTool.月結帳
 {
     public partial class 月結帳支出總覽視窗 : 總覽視窗
     {
-        private 可清單列舉資料管理介面 _廠商清單管理器 = 廠商資料管理器.獨體.清單管理器;
-        private int _廠商資料版本 = -1;
+        private 可清單列舉資料管理介面 _供應商清單管理器 = 供應商資料管理器.獨體.清單管理器;
+        private int _供應商資料版本 = -1;
 
         public 月結帳支出總覽視窗()
         {
@@ -48,10 +48,10 @@ namespace WokyTool.月結帳
 
         protected override void 視窗激活()
         {
-            if (_廠商資料版本 != _廠商清單管理器.資料版本)
+            if (_供應商資料版本 != _供應商清單管理器.資料版本)
             {
-                _廠商資料版本 = _廠商清單管理器.資料版本;
-                this.廠商資料BindingSource.DataSource = _廠商清單管理器.資料列舉;
+                _供應商資料版本 = _供應商清單管理器.資料版本;
+                this.供應商資料BindingSource.DataSource = _供應商清單管理器.資料列舉;
             }
         }
     }

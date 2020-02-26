@@ -33,7 +33,6 @@
             this.單品 = new System.Windows.Forms.Button();
             this.商品 = new System.Windows.Forms.Button();
             this.品牌 = new System.Windows.Forms.Button();
-            this.廠商 = new System.Windows.Forms.Button();
             this.進貨總覽 = new System.Windows.Forms.Button();
             this.公司 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
@@ -132,16 +131,6 @@
             this.品牌.Text = "品牌";
             this.品牌.UseVisualStyleBackColor = true;
             this.品牌.Click += new System.EventHandler(this.品牌_Click);
-            // 
-            // 廠商
-            // 
-            this.廠商.Location = new System.Drawing.Point(6, 150);
-            this.廠商.Name = "廠商";
-            this.廠商.Size = new System.Drawing.Size(100, 23);
-            this.廠商.TabIndex = 13;
-            this.廠商.Text = "廠商";
-            this.廠商.UseVisualStyleBackColor = true;
-            this.廠商.Click += new System.EventHandler(this.廠商_Click);
             // 
             // 進貨總覽
             // 
@@ -319,7 +308,6 @@
             this.panel3.Controls.Add(this.客戶資料轉換);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.供應商);
-            this.panel3.Controls.Add(this.廠商);
             this.panel3.Controls.Add(this.品類);
             this.panel3.Controls.Add(this.單品);
             this.panel3.Controls.Add(this.商品);
@@ -615,7 +603,6 @@
         private System.Windows.Forms.Button 單品;
         private System.Windows.Forms.Button 商品;
         private System.Windows.Forms.Button 品牌;
-        private System.Windows.Forms.Button 廠商;
         private System.Windows.Forms.Button 進貨總覽;
         private System.Windows.Forms.Button 公司;
         private System.Windows.Forms.Button button27;

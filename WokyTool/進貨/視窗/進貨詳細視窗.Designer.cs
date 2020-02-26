@@ -41,7 +41,7 @@ namespace WokyTool.進貨
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.單品 = new System.Windows.Forms.TextBox();
-            this.廠商 = new System.Windows.Forms.TextBox();
+            this.供應商 = new System.Windows.Forms.TextBox();
             this.處理者 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.處理時間 = new WokyTool.通用.MyDateTimePicker();
@@ -145,7 +145,7 @@ namespace WokyTool.進貨
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 12);
             this.label12.TabIndex = 136;
-            this.label12.Text = "廠商";
+            this.label12.Text = "供應商";
             // 
             // 單品
             // 
@@ -155,13 +155,13 @@ namespace WokyTool.進貨
             this.單品.Size = new System.Drawing.Size(400, 22);
             this.單品.TabIndex = 147;
             // 
-            // 廠商
+            // 供應商
             // 
-            this.廠商.Location = new System.Drawing.Point(59, 64);
-            this.廠商.Name = "廠商";
-            this.廠商.ReadOnly = true;
-            this.廠商.Size = new System.Drawing.Size(165, 22);
-            this.廠商.TabIndex = 148;
+            this.供應商.Location = new System.Drawing.Point(59, 64);
+            this.供應商.Name = "供應商";
+            this.供應商.ReadOnly = true;
+            this.供應商.Size = new System.Drawing.Size(165, 22);
+            this.供應商.TabIndex = 148;
             // 
             // 處理者
             // 
@@ -210,7 +210,7 @@ namespace WokyTool.進貨
             this.Controls.Add(this.label2);
             this.Controls.Add(this.處理時間);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.廠商);
+            this.Controls.Add(this.供應商);
             this.Controls.Add(this.單品);
             this.Controls.Add(this.單價);
             this.Controls.Add(this.label6);
@@ -244,7 +244,7 @@ namespace WokyTool.進貨
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox 單品;
-        private System.Windows.Forms.TextBox 廠商;
+        private System.Windows.Forms.TextBox 供應商;
         private System.Windows.Forms.TextBox 處理者;
         private System.Windows.Forms.Label label2;
         private MyDateTimePicker 處理時間;

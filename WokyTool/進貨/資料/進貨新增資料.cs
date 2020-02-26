@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using WokyTool.Common;
-using WokyTool.廠商;
 using WokyTool.單品;
 using WokyTool.通用;
 
@@ -13,15 +12,15 @@ namespace WokyTool.進貨
         public 列舉.進貨類型 類型 { get; set; }
 
         [JsonProperty]
-        public int 廠商編號
+        public int 供應商編號
         {
             get
             {
-                return 廠商.編號;
+                return 供應商.編號;
             }
             set
             {
-                廠商 = 廠商資料管理器.獨體.取得(value);
+                供應商 = 供應商資料管理器.獨體.取得(value);
             }
         }
 
@@ -52,12 +51,12 @@ namespace WokyTool.進貨
 
         /********************************/
 
-        public 廠商資料 廠商 { get; set; }
+        public 供應商資料 供應商 { get; set; }
 
         public 單品資料 單品 { get; set; }
 
-        [可匯出(名稱 = "廠商")]
-        public string 廠商名稱 { get { return 廠商.名稱; } }
+        [可匯出(名稱 = "供應商")]
+        public string 供應商名稱 { get { return 供應商.名稱; } }
 
         [可匯出(名稱 = "單品")]
         public string 單品名稱 { get { return 單品.名稱; } }
@@ -76,7 +75,7 @@ namespace WokyTool.進貨
 
         public 進貨新增資料()
         {
-            廠商 = 廠商資料.空白;
+            供應商 = 供應商資料.空白;
             單品 = 單品資料.空白;
         }
 
@@ -84,7 +83,7 @@ namespace WokyTool.進貨
         {
             類型 = 列舉.進貨類型.一般,
 
-            廠商 = 廠商資料.空白,
+            供應商 = 供應商資料.空白,
             單品 = 單品資料.空白,
 
             數量 = 0,
@@ -97,7 +96,7 @@ namespace WokyTool.進貨
         {
             類型 = 列舉.進貨類型.錯誤,
 
-            廠商 = 廠商資料.錯誤,
+            供應商 = 供應商資料.錯誤,
             單品 = 單品資料.錯誤,
 
             數量 = 0,
@@ -116,8 +115,8 @@ namespace WokyTool.進貨
             if (列舉.進貨類型.錯誤 == 類型)
                 檢查器_.錯誤(資料_, "類型錯誤");
 
-            if (廠商.編號是否合法() == false)
-                檢查器_.錯誤(資料_, "廠商不合法");
+            if (供應商.編號是否合法() == false)
+                檢查器_.錯誤(資料_, "供應商不合法");
 
             if (單品.編號是否合法() == false)
                 檢查器_.錯誤(資料_, "單品不合法");

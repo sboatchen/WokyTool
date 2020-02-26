@@ -15,14 +15,14 @@ namespace WokyTool.進貨
 
         public override void 初始化()
         {
-            廠商.初始化();
+            供應商.初始化();
             單品.初始化();
 
             base.初始化();
 
             資料綁定(this.類型, "類型");
 
-            資料綁定(this.廠商, "廠商");
+            資料綁定(this.供應商, "供應商");
 
             資料綁定(this.單品, "單品");
 

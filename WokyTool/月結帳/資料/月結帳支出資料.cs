@@ -9,7 +9,7 @@ using WokyTool.公司;
 using WokyTool.客戶;
 using WokyTool.商品;
 using WokyTool.通用;
-using WokyTool.廠商;
+using WokyTool.單品;
 
 namespace WokyTool.月結帳
 {
@@ -23,18 +23,18 @@ namespace WokyTool.月結帳
         public string 傳票號碼 { get; set; }
 
         [JsonProperty]
-        public int 廠商編號
+        public int 供應商編號
         {
             get
             {
-                return 廠商.編號;
+                return 供應商.編號;
             }
             set
             {
-                廠商 = 廠商資料管理器.獨體.取得(value);
+                供應商 = 供應商資料管理器.獨體.取得(value);
             }
         }
-        public 廠商資料 廠商 { get; set; }
+        public 供應商資料 供應商 { get; set; }
 
         [JsonProperty]
         public decimal 費用 { get; set; }
@@ -50,7 +50,7 @@ namespace WokyTool.月結帳
         {
             編號 = 常數.空白資料編碼,
 
-            廠商 = 廠商資料.空白,
+            供應商 = 供應商資料.空白,
 
             費用 = 0,
         };
@@ -66,7 +66,7 @@ namespace WokyTool.月結帳
         {
             編號 = 常數.錯誤資料編碼,
 
-            廠商 = 廠商資料.錯誤,
+            供應商 = 供應商資料.錯誤,
 
             費用 = 0,
         };
@@ -86,7 +86,7 @@ namespace WokyTool.月結帳
             {
                 編號 = this.編號,
 
-                廠商 = this.廠商,
+                供應商 = this.供應商,
 
                 費用 = this.費用,
             };
@@ -98,7 +98,7 @@ namespace WokyTool.月結帳
         {
             編號 = Data_.編號;
 
-            廠商 = Data_.廠商;
+            供應商 = Data_.供應商;
 
             費用 = Data_.費用;
         }
@@ -108,15 +108,15 @@ namespace WokyTool.月結帳
             return
                 編號 == Data_.編號 &&
 
-                廠商 == Data_.廠商 &&
+                供應商 == Data_.供應商 &&
 
                 費用 == Data_.費用;
         }
 
         public override void 檢查合法()
         {
-            if (廠商.編號是否合法() == false)
-                throw new Exception("月結帳支出資料:廠商不合法:" + 廠商編號);
+            if (供應商.編號是否合法() == false)
+                throw new Exception("月結帳支出資料:供應商不合法:" + 供應商編號);
         }
     }
 }

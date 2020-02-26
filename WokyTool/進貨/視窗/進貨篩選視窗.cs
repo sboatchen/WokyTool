@@ -1,5 +1,4 @@
 ﻿using System;
-using WokyTool.廠商;
 using WokyTool.客戶;
 using WokyTool.通用;
 
@@ -18,7 +17,7 @@ namespace WokyTool.進貨
 
         public override void 初始化()
         {
-            廠商.初始化();
+            供應商.初始化();
             單品.初始化();
 
             base.初始化();
@@ -29,7 +28,7 @@ namespace WokyTool.進貨
 
             資料綁定(this.類型, "類型");
 
-            資料綁定(this.廠商, "廠商");
+            資料綁定(this.供應商, "供應商");
             
             資料綁定(this.單品, "單品");
 

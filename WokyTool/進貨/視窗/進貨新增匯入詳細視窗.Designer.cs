@@ -40,7 +40,7 @@ namespace WokyTool.進貨
             this.新版頁索引元件1 = new WokyTool.通用.新版頁索引元件();
             this.label3 = new System.Windows.Forms.Label();
             this.類型 = new WokyTool.通用.進貨類型選取元件();
-            this.廠商 = new WokyTool.廠商.廠商選取元件();
+            this.供應商 = new WokyTool.單品.供應商選取元件();
             this.單品 = new WokyTool.單品.單品選取元件();
             this.單價 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -125,7 +125,7 @@ namespace WokyTool.進貨
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 2;
-            this.label3.Text = "廠商";
+            this.label3.Text = "供應商";
             // 
             // 類型
             // 
@@ -137,15 +137,15 @@ namespace WokyTool.進貨
             this.類型.TabIndex = 119;
             this.類型.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
-            // 廠商
+            // 供應商
             // 
-            this.廠商.Location = new System.Drawing.Point(58, 35);
-            this.廠商.Name = "廠商";
-            this.廠商.ReadOnly = false;
-            this.廠商.SelectedItem = null;
-            this.廠商.Size = new System.Drawing.Size(172, 22);
-            this.廠商.TabIndex = 120;
-            this.廠商.元件類型 = WokyTool.通用.選取元件類型.指定;
+            this.供應商.Location = new System.Drawing.Point(58, 35);
+            this.供應商.Name = "供應商";
+            this.供應商.ReadOnly = false;
+            this.供應商.SelectedItem = null;
+            this.供應商.Size = new System.Drawing.Size(172, 22);
+            this.供應商.TabIndex = 120;
+            this.供應商.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
             // 單品
             // 
@@ -188,7 +188,7 @@ namespace WokyTool.進貨
             this.Controls.Add(this.單價);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.單品);
-            this.Controls.Add(this.廠商);
+            this.Controls.Add(this.供應商);
             this.Controls.Add(this.類型);
             this.Controls.Add(this.錯誤訊息);
             this.Controls.Add(this.label15);
@@ -220,7 +220,7 @@ namespace WokyTool.進貨
         private System.Windows.Forms.TextBox 錯誤訊息;
         private System.Windows.Forms.Label label15;
         private 進貨類型選取元件 類型;
-        private 廠商.廠商選取元件 廠商;
+        private 單品.供應商選取元件 供應商;
         private 單品選取元件 單品;
         private System.Windows.Forms.NumericUpDown 單價;
         private System.Windows.Forms.Label label1;

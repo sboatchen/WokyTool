@@ -42,8 +42,6 @@ namespace WokyTool.通用
 
             盤點,
 
-            廠商,
-
             進貨,
             進貨新增,
 

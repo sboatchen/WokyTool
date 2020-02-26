@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using WokyTool.廠商;
 using WokyTool.單品;
 using WokyTool.通用;
 using System;
@@ -27,14 +26,14 @@ namespace WokyTool.進貨
             }
         }
 
-        [可匯入(名稱 = "廠商", 說明 = "必要")]
+        [可匯入(名稱 = "供應商", 說明 = "必要")]
         [JsonProperty]
-        public string 廠商識別
+        public string 供應商識別
         {
-            get { return _廠商識別; }
+            get { return _供應商識別; }
             set { 
-                _廠商識別 = value;
-                廠商 = 廠商資料管理器.獨體.取得(_廠商識別);
+                _供應商識別 = value;
+                供應商 = 供應商資料管理器.獨體.取得(_供應商識別);
             }
         }
 
@@ -76,7 +75,7 @@ namespace WokyTool.進貨
         /********************************/
 
         private string _類型識別;
-        private string _廠商識別;
+        private string _供應商識別;
         private string _單品識別;
 
         public 列舉.進貨類型 類型
@@ -85,10 +84,10 @@ namespace WokyTool.進貨
             set { 轉換.類型 = value; }
         }
 
-        public 廠商資料 廠商
+        public 供應商資料 供應商
         {
-            get { return 轉換.廠商; }
-            set { 轉換.廠商 = value; }
+            get { return 轉換.供應商; }
+            set { 轉換.供應商 = value; }
         }
 
         public 單品資料 單品
@@ -97,7 +96,7 @@ namespace WokyTool.進貨
             set { 轉換.單品 = value; }
         }
 
-        public string 廠商名稱 { get { return 轉換.廠商.名稱; } }
+        public string 供應商名稱 { get { return 轉換.供應商.名稱; } }
         public string 單品名稱 { get { return 轉換.單品.名稱; } }
     }
 }

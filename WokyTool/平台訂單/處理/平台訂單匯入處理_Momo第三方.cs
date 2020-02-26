@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using WokyTool.Common;
 using WokyTool.客戶;
-using WokyTool.客製;
 using WokyTool.配送;
 using WokyTool.商品;
 using WokyTool.通用;

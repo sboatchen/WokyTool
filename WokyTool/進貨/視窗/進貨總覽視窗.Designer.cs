@@ -33,7 +33,7 @@
             this.處理時間DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.處理者DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.類型DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.廠商名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.供應商名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.單品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.單價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +60,7 @@
             this.處理時間DataGridViewTextBoxColumn,
             this.處理者DataGridViewTextBoxColumn,
             this.類型DataGridViewTextBoxColumn,
-            this.廠商名稱DataGridViewTextBoxColumn,
+            this.供應商名稱DataGridViewTextBoxColumn,
             this.單品名稱DataGridViewTextBoxColumn,
             this.數量DataGridViewTextBoxColumn,
             this.單價DataGridViewTextBoxColumn,
@@ -96,12 +96,12 @@
             this.類型DataGridViewTextBoxColumn.Name = "類型DataGridViewTextBoxColumn";
             this.類型DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 廠商名稱DataGridViewTextBoxColumn
+            // 供應商名稱DataGridViewTextBoxColumn
             // 
-            this.廠商名稱DataGridViewTextBoxColumn.DataPropertyName = "廠商名稱";
-            this.廠商名稱DataGridViewTextBoxColumn.HeaderText = "廠商名稱";
-            this.廠商名稱DataGridViewTextBoxColumn.Name = "廠商名稱DataGridViewTextBoxColumn";
-            this.廠商名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.供應商名稱DataGridViewTextBoxColumn.DataPropertyName = "供應商名稱";
+            this.供應商名稱DataGridViewTextBoxColumn.HeaderText = "供應商名稱";
+            this.供應商名稱DataGridViewTextBoxColumn.Name = "供應商名稱DataGridViewTextBoxColumn";
+            this.供應商名稱DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 單品名稱DataGridViewTextBoxColumn
             // 
@@ -212,7 +212,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 處理時間DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 處理者DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 類型DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 廠商名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 供應商名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 單品名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 單價DataGridViewTextBoxColumn;

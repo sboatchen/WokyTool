@@ -21,10 +21,10 @@ namespace WokyTool.進貨
         public 列舉.進貨類型 類型 { get; set; }
 
         [JsonProperty]
-        public int 廠商編號 { get; set; }
+        public int 供應商編號 { get; set; }
 
         [JsonProperty]
-        public string 廠商名稱 { get; set; }
+        public string 供應商名稱 { get; set; }
 
         [JsonProperty]
         public int 單品編號 { get; set; }
@@ -65,8 +65,8 @@ namespace WokyTool.進貨
 
             類型 = 列舉.進貨類型.一般,
 
-            廠商編號 = 常數.空白資料編碼,
-            廠商名稱 = 字串.無,
+            供應商編號 = 常數.空白資料編碼,
+            供應商名稱 = 字串.無,
             單品編號 = 常數.空白資料編碼,
             單品名稱 = 字串.無,
 
@@ -83,8 +83,8 @@ namespace WokyTool.進貨
 
             類型 = 列舉.進貨類型.錯誤,
 
-            廠商編號 = 常數.錯誤資料編碼,
-            廠商名稱 = 字串.錯誤,
+            供應商編號 = 常數.錯誤資料編碼,
+            供應商名稱 = 字串.錯誤,
             單品編號 = 常數.錯誤資料編碼,
             單品名稱 = 字串.錯誤,
 
@@ -103,8 +103,8 @@ namespace WokyTool.進貨
 
                 類型 = 資料_.類型,
 
-                廠商編號 = 資料_.廠商編號,
-                廠商名稱 = 資料_.廠商名稱,
+                供應商編號 = 資料_.供應商編號,
+                供應商名稱 = 資料_.供應商名稱,
                 單品編號 = 資料_.單品編號,
                 單品名稱 = 資料_.單品名稱,
 

@@ -64,7 +64,6 @@ namespace WokyTool
          * 寄庫
          * 盤點
          * 
-         * 廠商
          * 進貨
          * 預留,
          * 
