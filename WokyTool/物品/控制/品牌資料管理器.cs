@@ -14,7 +14,7 @@ namespace WokyTool.物品
 
         public override bool 是否可編輯 { get { return 系統參數.修改設定資料; } }
 
-        public override string 檔案路徑 { get { return "設定/品牌.json"; } }
+        public override string 檔案路徑 { get { return "設定/品牌V3.0.0.json"; } }
 
         public override 品牌資料 不篩選資料 { get { return 品牌資料.不篩選; } }
         public override 品牌資料 空白資料 { get { return 品牌資料.空白; } }
@@ -51,7 +51,7 @@ namespace WokyTool.物品
 
         protected override void 初始化資料()
         {
-            if (File.Exists("設定/品牌.json"))
+            if (File.Exists("設定/品牌V3.0.0.json"))
                 base.初始化資料();
             else
             {

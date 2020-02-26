@@ -26,40 +26,6 @@ namespace WokyTool.商品
             }
         }
 
-        private 品類資料 _大類 = 品類資料.不篩選;
-        public 品類資料 大類
-        {
-            get
-            {
-                return _大類;
-            }
-            set
-            {
-                if (_大類 != value)
-                {
-                    _大類 = value;
-                    篩選版本++;
-                }
-            }
-        }
-
-        private 供應商資料 _小類 = 供應商資料.不篩選;
-        public 供應商資料 小類
-        {
-            get
-            {
-                return _小類;
-            }
-            set
-            {
-                if (_小類 != value)
-                {
-                    _小類 = value;
-                    篩選版本++;
-                }
-            }
-        }
-
         private 公司資料 _公司 = 公司資料.不篩選;
         public 公司資料 公司
         {
@@ -89,6 +55,40 @@ namespace WokyTool.商品
                 if (_客戶 != value)
                 {
                     _客戶 = value;
+                    篩選版本++;
+                }
+            }
+        }
+
+        private 品類資料 _品類 = 品類資料.不篩選;
+        public 品類資料 品類
+        {
+            get
+            {
+                return _品類;
+            }
+            set
+            {
+                if (_品類 != value)
+                {
+                    _品類 = value;
+                    篩選版本++;
+                }
+            }
+        }
+
+        private 供應商資料 _供應商 = 供應商資料.不篩選;
+        public 供應商資料 供應商
+        {
+            get
+            {
+                return _供應商;
+            }
+            set
+            {
+                if (_供應商 != value)
+                {
+                    _供應商 = value;
                     篩選版本++;
                 }
             }
@@ -209,10 +209,10 @@ namespace WokyTool.商品
                 return
                     null != _文字 ||
                     列舉.更新狀態.不篩選 != _更新狀態 ||
-                    品類資料.不篩選 != _大類 ||
-                    供應商資料.不篩選 != _小類 ||
                     公司資料.不篩選 != _公司 ||
                     客戶資料.不篩選 != _客戶 ||
+                    品類資料.不篩選 != _品類 ||
+                    供應商資料.不篩選 != _供應商 ||
                     品牌資料.不篩選 != _品牌 ||
                     物品資料.不篩選 != _物品 ||
                     null != _品號 ||
@@ -232,18 +232,18 @@ namespace WokyTool.商品
             if (列舉.更新狀態.不篩選 != _更新狀態)
                 目前列舉_ = 目前列舉_.Where(Value => Value.更新狀態 == _更新狀態);
 
-            if (品類資料.不篩選 != _大類)
-                目前列舉_ = 目前列舉_.Where(Value => Value.大類 == _大類);
-            if (供應商資料.不篩選 != _小類)
-                目前列舉_ = 目前列舉_.Where(Value => Value.小類 == _小類);
-
             if (公司資料.不篩選 != _公司)
                 目前列舉_ = 目前列舉_.Where(Value => Value.公司 == _公司);
             if (客戶資料.不篩選 != _客戶)
                 目前列舉_ = 目前列舉_.Where(Value => Value.客戶 == _客戶);
 
+            if (品類資料.不篩選 != _品類)
+                目前列舉_ = 目前列舉_.Where(Value => Value.品類 == _品類);
+            if (供應商資料.不篩選 != _供應商)
+                目前列舉_ = 目前列舉_.Where(Value => Value.供應商 == _供應商);
             if (品牌資料.不篩選 != _品牌)
                 目前列舉_ = 目前列舉_.Where(Value => Value.品牌 == _品牌);
+
             if (物品資料.不篩選 != _物品)
                 目前列舉_ = 目前列舉_.Where(Value => Value.組成 != null && Value.組成.Where(Value2 => Value2.物品 == _物品).Any());
 

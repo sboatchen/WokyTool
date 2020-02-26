@@ -17,32 +17,6 @@ namespace WokyTool.商品
     public class 商品資料 : 可編號記錄資料
     {
         [JsonProperty]
-        public int 大類編號
-        {
-            get
-            {
-                return 大類.編號;
-            }
-            set
-            {
-                大類 = 品類資料管理器.獨體.取得(value);
-            }
-        }
-
-        [JsonProperty]
-        public int 小類編號
-        {
-            get
-            {
-                return 小類.編號;
-            }
-            set
-            {
-                小類 = 供應商資料管理器.獨體.取得(value);
-            }
-        }
-
-        [JsonProperty]
         public int 公司編號
         {
             get
@@ -97,9 +71,9 @@ namespace WokyTool.商品
 
         /********************************/
 
-        public 品類資料 大類 { get; set; }
+        public 品類資料 品類 { get; private set; }
 
-        public 供應商資料 小類 { get; set; }
+        public 供應商資料 供應商 { get; private set; }
 
         public 品牌資料 品牌 { get; private set; }
 
@@ -107,11 +81,11 @@ namespace WokyTool.商品
 
         public 客戶資料 客戶 { get; set; }
 
-        [可匯出(名稱 = "大類")]
-        public string 大類名稱 { get { return 大類.名稱; } }
+        [可匯出(名稱 = "品類")]
+        public string 品類名稱 { get { return 品類.名稱; } }
 
-        [可匯出(名稱 = "小類")]
-        public string 小類名稱 { get { return 小類.名稱; } }
+        [可匯出(名稱 = "供應商")]
+        public string 供應商名稱 { get { return 供應商.名稱; } }
 
         [可匯出(名稱 = "品牌")]
         public string 品牌名稱 { get { return 品牌.名稱; } }
@@ -151,8 +125,6 @@ namespace WokyTool.商品
 
         public 商品資料()
         {
-            大類 = 品類資料.空白;
-            小類 = 供應商資料.空白;
             公司 = 公司資料.空白;
             客戶 = 客戶資料.空白;
 
@@ -161,9 +133,6 @@ namespace WokyTool.商品
         public static readonly 商品資料 不篩選 = new 商品資料
         {
             編號 = 常數.不篩選資料編碼,
-
-            大類 = 品類資料.不篩選,
-            小類 = 供應商資料.不篩選,
 
             公司 = 公司資料.不篩選,
             客戶 = 客戶資料.不篩選,
@@ -176,9 +145,6 @@ namespace WokyTool.商品
         {
             編號 = 常數.空白資料編碼,
 
-            大類 = 品類資料.空白,
-            小類 = 供應商資料.空白,
-
             公司 = 公司資料.空白,
             客戶 = 客戶資料.空白,
 
@@ -190,9 +156,6 @@ namespace WokyTool.商品
         {
             編號 = 常數.錯誤資料編碼,
 
-            大類 = 品類資料.錯誤,
-            小類 = 供應商資料.錯誤,
-
             公司 = 公司資料.錯誤,
             客戶 = 客戶資料.錯誤,
 
@@ -203,9 +166,6 @@ namespace WokyTool.商品
         public static 商品資料 折扣 = new 商品資料    //@@ check use
         {
             編號 = 常數.商品折扣資料編碼,
-
-            大類 = 品類資料.空白,
-            小類 = 供應商資料.空白,
 
             公司 = 公司資料.空白,
             客戶 = 客戶資料.空白,
@@ -277,6 +237,34 @@ namespace WokyTool.商品
 
             組成字串 = SB_.ToString();
 
+            HashSet<品類資料> 品類群_ = 組成.Select(Value => Value.物品.品類).Where(Value => Value.編號是否有值()).ToSet();
+            switch (品類群_.Count)
+            {
+                case 0:
+                    品類 = 品類資料.空白;
+                    break;
+                case 1:
+                    品類 = 品類群_.First();
+                    break;
+                default:
+                    品類 = 品類資料.混和;
+                    break;
+            }
+
+            HashSet<供應商資料> 供應商群_ = 組成.Select(Value => Value.物品.供應商).Where(Value => Value.編號是否有值()).ToSet();
+            switch (供應商群_.Count)
+            {
+                case 0:
+                    供應商 = 供應商資料.空白;
+                    break;
+                case 1:
+                    供應商 = 供應商群_.First();
+                    break;
+                default:
+                    供應商 = 供應商資料.混和;
+                    break;
+            }
+
             HashSet<品牌資料> 品牌群_ = 組成.Select(Value => Value.物品.品牌).Where(Value => Value.編號是否有值()).ToSet();
             switch (品牌群_.Count)
             {
@@ -296,12 +284,6 @@ namespace WokyTool.商品
         {
             基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
             基本資料 參考_ = (資料參考_ == null) ? this : 資料參考_;
-
-            if (false == 大類.編號是否合法())
-                檢查器_.錯誤(資料_, "大類不合法");
-
-            if (false == 小類.編號是否合法())
-                檢查器_.錯誤(資料_, "小類不合法");
 
             if (false == 公司.編號是否合法())
                 檢查器_.錯誤(資料_, "公司不合法");

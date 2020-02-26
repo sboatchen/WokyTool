@@ -132,38 +132,6 @@ namespace WokyTool.商品
             }
         }
 
-        [可匯出(名稱 = "大類")]
-        [可匯入(名稱 = "大類")]
-        [JsonProperty]
-        public string 大類識別
-        {
-            get
-            {
-                return _大類識別;
-            }
-            set
-            {
-                _大類識別 = value;
-                修改.大類 = 品類資料管理器.獨體.取得(value);
-            }
-        }
-
-        [可匯出(名稱 = "小類")]
-        [可匯入(名稱 = "小類")]
-        [JsonProperty]
-        public string 小類識別
-        {
-            get
-            {
-                return _小類識別;
-            }
-            set
-            {
-                _小類識別 = value;
-                修改.小類 = 供應商資料管理器.獨體.取得(value);
-            }
-        }
-
         [可匯出]
         [可匯入]
         [JsonProperty]
@@ -234,9 +202,6 @@ namespace WokyTool.商品
         private string _公司識別;
         private string _客戶識別;
 
-        private string _大類識別;
-        private string _小類識別;
-
         private string _組成字串識別;
 
         public 公司資料 公司
@@ -259,31 +224,17 @@ namespace WokyTool.商品
             }
         }
 
-        public 品類資料 大類
-        {
-            get { return 修改.大類; }
-            set
-            {
-                修改.大類 = value;
-                _大類識別 = value.名稱;
-            }
-        }
-
-        public 供應商資料 小類
-        {
-            get { return 修改.小類; }
-            set
-            {
-                修改.小類 = value;
-                _小類識別 = value.名稱;
-            }
-        }
-
         public List<商品組成資料> 組成
         {
             get { return 修改.組成; }
             set { 修改.組成 = value; }
         }
+
+        public 品類資料 品類 { get { return 修改.品類; } }
+        public string 品類名稱 { get { return 修改.品類.名稱; } }
+
+        public 供應商資料 供應商 { get { return 修改.供應商; } }
+        public string 供應商名稱 { get { return 修改.供應商.名稱; } }
 
         public 品牌資料 品牌 { get {return 修改.品牌; } }
         public string 品牌名稱 { get { return 修改.品牌.名稱; } }
@@ -296,8 +247,8 @@ namespace WokyTool.商品
         public string 參考名稱 { get { return 參考.名稱; } }
         public string 參考品號 { get { return 參考.品號; } }
 
-        public 品類資料 參考大類 { get { return 參考.大類; } }
-        public 供應商資料 參考小類 { get { return 參考.小類; } }
+        public 品類資料 參考品類 { get { return 參考.品類; } }
+        public 供應商資料 參考供應商 { get { return 參考.供應商; } }
         public 品牌資料 參考品牌 { get { return 參考.品牌; } }
 
         public 公司資料 參考公司 { get { return 參考.公司; } }
