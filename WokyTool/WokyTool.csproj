@@ -375,7 +375,7 @@
     <Compile Include="月結帳\匯入\月結帳商品資料.cs" />
     <Compile Include="月結帳\匯入\月結帳物品資料.cs" />
     <Compile Include="月結帳\匯入\月結帳統計資料.cs" />
-    <Compile Include="物品\廢棄\舊物品資料.cs" />
+    <Compile Include="單品\廢棄\舊單品資料.cs" />
     <Compile Include="配送\視窗\宅配通匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -802,21 +802,21 @@
     <Compile Include="測試\資料\讀寫測試資料篩選.cs" />
     <Compile Include="測試\資料\讀寫測試資料.cs" />
     <Compile Include="測試\轉換\讀寫測試轉換.cs" />
-    <Compile Include="物品\控制\物品資料管理器.cs" />
-    <Compile Include="物品\控制\品牌資料管理器.cs" />
-    <Compile Include="物品\控制\供應商資料管理器.cs" />
-    <Compile Include="物品\控制\品類資料管理器.cs" />
-    <Compile Include="物品\控制\物品更新資料管理器.cs" />
-    <Compile Include="物品\視窗\品牌總覽視窗.cs">
+    <Compile Include="單品\控制\單品資料管理器.cs" />
+    <Compile Include="單品\控制\品牌資料管理器.cs" />
+    <Compile Include="單品\控制\供應商資料管理器.cs" />
+    <Compile Include="單品\控制\品類資料管理器.cs" />
+    <Compile Include="單品\控制\單品更新資料管理器.cs" />
+    <Compile Include="單品\視窗\品牌總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\品牌總覽視窗.Designer.cs">
+    <Compile Include="單品\視窗\品牌總覽視窗.Designer.cs">
       <DependentUpon>品牌總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\品類總覽視窗.cs">
+    <Compile Include="單品\視窗\品類總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\品類總覽視窗.Designer.cs">
+    <Compile Include="單品\視窗\品類總覽視窗.Designer.cs">
       <DependentUpon>品類總覽視窗.cs</DependentUpon>
     </Compile>
     <Compile Include="商品\視窗\元件\商品選取元件.cs">
@@ -825,79 +825,79 @@
     <Compile Include="商品\視窗\元件\商品選取元件.Designer.cs">
       <DependentUpon>商品選取元件.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\元件\物品選取元件.cs">
+    <Compile Include="單品\視窗\元件\物品選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="物品\視窗\元件\物品選取元件.Designer.cs">
+    <Compile Include="單品\視窗\元件\物品選取元件.Designer.cs">
       <DependentUpon>物品選取元件.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\元件\供應商選取元件.cs">
+    <Compile Include="單品\視窗\元件\供應商選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="物品\視窗\元件\供應商選取元件.Designer.cs">
+    <Compile Include="單品\視窗\元件\供應商選取元件.Designer.cs">
       <DependentUpon>供應商選取元件.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\元件\品牌選取元件.cs">
+    <Compile Include="單品\視窗\元件\品牌選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="物品\視窗\元件\品牌選取元件.Designer.cs">
+    <Compile Include="單品\視窗\元件\品牌選取元件.Designer.cs">
       <DependentUpon>品牌選取元件.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\元件\品類選取元件.cs">
+    <Compile Include="單品\視窗\元件\品類選取元件.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="物品\視窗\元件\品類選取元件.Designer.cs">
+    <Compile Include="單品\視窗\元件\品類選取元件.Designer.cs">
       <DependentUpon>品類選取元件.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\供應商總覽視窗.cs">
+    <Compile Include="單品\視窗\供應商總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\供應商總覽視窗.Designer.cs">
+    <Compile Include="單品\視窗\供應商總覽視窗.Designer.cs">
       <DependentUpon>供應商總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\物品更新篩選視窗.cs">
+    <Compile Include="單品\視窗\單品更新篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\物品更新篩選視窗.Designer.cs">
-      <DependentUpon>物品更新篩選視窗.cs</DependentUpon>
+    <Compile Include="單品\視窗\單品更新篩選視窗.Designer.cs">
+      <DependentUpon>單品更新篩選視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\物品總覽視窗.cs">
+    <Compile Include="單品\視窗\單品總覽視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\物品總覽視窗.Designer.cs">
-      <DependentUpon>物品總覽視窗.cs</DependentUpon>
+    <Compile Include="單品\視窗\單品總覽視窗.Designer.cs">
+      <DependentUpon>單品總覽視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\物品篩選視窗.cs">
+    <Compile Include="單品\視窗\單品篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\物品篩選視窗.Designer.cs">
-      <DependentUpon>物品篩選視窗.cs</DependentUpon>
+    <Compile Include="單品\視窗\單品篩選視窗.Designer.cs">
+      <DependentUpon>單品篩選視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\物品更新詳細視窗.cs">
+    <Compile Include="單品\視窗\單品更新詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\物品更新詳細視窗.Designer.cs">
-      <DependentUpon>物品更新詳細視窗.cs</DependentUpon>
+    <Compile Include="單品\視窗\單品更新詳細視窗.Designer.cs">
+      <DependentUpon>單品更新詳細視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\物品詳細視窗.cs">
+    <Compile Include="單品\視窗\單品詳細視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\物品詳細視窗.Designer.cs">
-      <DependentUpon>物品詳細視窗.cs</DependentUpon>
+    <Compile Include="單品\視窗\單品詳細視窗.Designer.cs">
+      <DependentUpon>單品詳細視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\視窗\物品更新視窗.cs">
+    <Compile Include="單品\視窗\單品更新視窗.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="物品\視窗\物品更新視窗.Designer.cs">
-      <DependentUpon>物品更新視窗.cs</DependentUpon>
+    <Compile Include="單品\視窗\單品更新視窗.Designer.cs">
+      <DependentUpon>單品更新視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="物品\資料\物品合併資料.cs" />
-    <Compile Include="物品\資料\供應商資料篩選.cs" />
-    <Compile Include="物品\資料\品牌資料篩選.cs" />
-    <Compile Include="物品\資料\品類資料篩選.cs" />
-    <Compile Include="物品\資料\物品更新資料.cs" />
-    <Compile Include="物品\資料\物品更新資料篩選.cs" />
-    <Compile Include="物品\資料\物品資料篩選.cs" />
+    <Compile Include="單品\資料\單品合併資料.cs" />
+    <Compile Include="單品\資料\供應商資料篩選.cs" />
+    <Compile Include="單品\資料\品牌資料篩選.cs" />
+    <Compile Include="單品\資料\品類資料篩選.cs" />
+    <Compile Include="單品\資料\單品更新資料.cs" />
+    <Compile Include="單品\資料\單品更新資料篩選.cs" />
+    <Compile Include="單品\資料\單品資料篩選.cs" />
     <Compile Include="發票\控制\發票匯入管理器.cs" />
     <Compile Include="發票\視窗\發票匯入視窗.cs">
       <SubType>Form</SubType>
@@ -1128,11 +1128,11 @@
     </Compile>
     <Compile Include="通用\資料99\管理\匯入資料管理器99.cs" />
     <Compile Include="通用\資料99\靜態匯入資料99.cs" />
-    <Compile Include="物品\資料\品牌資料.cs" />
-    <Compile Include="物品\資料\供應商資料.cs" />
-    <Compile Include="物品\資料\品類資料.cs" />
-    <Compile Include="物品\資料\物品資料.cs" />
-    <Compile Include="物品\轉換\物品盤點匯出轉換.cs" />
+    <Compile Include="單品\資料\品牌資料.cs" />
+    <Compile Include="單品\資料\供應商資料.cs" />
+    <Compile Include="單品\資料\品類資料.cs" />
+    <Compile Include="單品\資料\單品資料.cs" />
+    <Compile Include="單品\轉換\單品盤點匯出轉換.cs" />
     <Compile Include="通用\視窗99\其他\選取元件介面.cs" />
     <Compile Include="通用\視窗99\其他\頁索引上層介面.cs" />
     <Compile Include="通用\視窗99\樣板\總覽視窗.cs">
@@ -1551,47 +1551,47 @@
     <EmbeddedResource Include="測試\視窗\資料編輯詳細測試視窗.resx">
       <DependentUpon>資料編輯詳細測試視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\品牌總覽視窗.resx">
+    <EmbeddedResource Include="單品\視窗\品牌總覽視窗.resx">
       <DependentUpon>品牌總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\品類總覽視窗.resx">
+    <EmbeddedResource Include="單品\視窗\品類總覽視窗.resx">
       <DependentUpon>品類總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="商品\視窗\元件\商品選取元件.resx">
       <DependentUpon>商品選取元件.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\元件\物品選取元件.resx">
+    <EmbeddedResource Include="單品\視窗\元件\物品選取元件.resx">
       <DependentUpon>物品選取元件.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\元件\供應商選取元件.resx">
+    <EmbeddedResource Include="單品\視窗\元件\供應商選取元件.resx">
       <DependentUpon>供應商選取元件.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\元件\品牌選取元件.resx">
+    <EmbeddedResource Include="單品\視窗\元件\品牌選取元件.resx">
       <DependentUpon>品牌選取元件.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\元件\品類選取元件.resx">
+    <EmbeddedResource Include="單品\視窗\元件\品類選取元件.resx">
       <DependentUpon>品類選取元件.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\供應商總覽視窗.resx">
+    <EmbeddedResource Include="單品\視窗\供應商總覽視窗.resx">
       <DependentUpon>供應商總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\物品更新篩選視窗.resx">
-      <DependentUpon>物品更新篩選視窗.cs</DependentUpon>
+    <EmbeddedResource Include="單品\視窗\單品更新篩選視窗.resx">
+      <DependentUpon>單品更新篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\物品總覽視窗.resx">
-      <DependentUpon>物品總覽視窗.cs</DependentUpon>
+    <EmbeddedResource Include="單品\視窗\單品總覽視窗.resx">
+      <DependentUpon>單品總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\物品篩選視窗.resx">
-      <DependentUpon>物品篩選視窗.cs</DependentUpon>
+    <EmbeddedResource Include="單品\視窗\單品篩選視窗.resx">
+      <DependentUpon>單品篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\物品更新詳細視窗.resx">
-      <DependentUpon>物品更新詳細視窗.cs</DependentUpon>
+    <EmbeddedResource Include="單品\視窗\單品更新詳細視窗.resx">
+      <DependentUpon>單品更新詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\物品詳細視窗.resx">
-      <DependentUpon>物品詳細視窗.cs</DependentUpon>
+    <EmbeddedResource Include="單品\視窗\單品詳細視窗.resx">
+      <DependentUpon>單品詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="物品\視窗\物品更新視窗.resx">
-      <DependentUpon>物品更新視窗.cs</DependentUpon>
+    <EmbeddedResource Include="單品\視窗\單品更新視窗.resx">
+      <DependentUpon>單品更新視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="發票\視窗\發票匯入視窗.resx">
       <DependentUpon>發票匯入視窗.cs</DependentUpon>
@@ -1712,6 +1712,11 @@
     <None Include="Properties\DataSources\WokyTool.商品.商品組成資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.自訂售價資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.單品.供應商資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.單品.品牌資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.單品.品類資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.單品.單品更新資料.datasource" />
+    <None Include="Properties\DataSources\WokyTool.單品.單品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.子客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.客戶.客戶資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.寄庫.寄庫匯入資料.datasource" />
@@ -1729,14 +1734,9 @@
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳支出資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳會計資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.月結帳.月結帳資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.物品.供應商資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.物品.品牌資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.物品.品類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.預留.預留匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.預留.預留資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.測試.讀寫測試資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.物品.物品更新資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.物品.物品資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.發票.發票匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.盤點.盤點更新資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.盤點.盤點資料.datasource" />
