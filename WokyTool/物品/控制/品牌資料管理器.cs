@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using WokyTool.Common;
 using WokyTool.通用;
@@ -47,6 +49,28 @@ namespace WokyTool.物品
         {
         }
 
+        protected override void 初始化資料()
+        {
+            if (File.Exists("設定/品牌.json"))
+                base.初始化資料();
+            else
+            {
+                string json = 檔案.讀出("設定/物品品牌.json");
+                if (String.IsNullOrEmpty(json))
+                    _資料書 = new Dictionary<int, 品牌資料>();
+                else
+                    _資料書 = JsonConvert.DeserializeObject<Dictionary<int, 品牌資料>>(json);
+
+                if (_資料書.Count == 0)
+                    _下個編號 = 1;
+                else
+                    _下個編號 = _資料書.Max(Value => Value.Key) + 1;
+
+                資料版本++;
+                儲存();
+            }
+        }
+
         public override 品牌資料 取得(int ID_)
         {
             if (ID_ == 常數.空白資料編碼)
@@ -55,7 +79,7 @@ namespace WokyTool.物品
             if (ID_ == 常數.錯誤資料編碼)
                 return 錯誤資料;
 
-            if (ID_ == 常數.品牌混和資料編碼)
+            if (ID_ == 常數.混和資料編碼)
                 return 品牌資料.混和;
 
             品牌資料 Item_;

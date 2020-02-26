@@ -17,7 +17,7 @@ namespace WokyTool.通用
         public const int 不篩選資料編碼 = -5;
 
         public const int 商品折扣資料編碼 = -3; //@@
-        public const int 品牌混和資料編碼 = -4; //@@
+        public const int 混和資料編碼 = -4; //@@
 
         public const int 空白列舉編碼 = 0;
         public const int 錯誤列舉編碼 = -2;

@@ -20,6 +20,21 @@ namespace WokyTool.物品
         public override 品類資料 空白資料 { get { return 品類資料.空白; } }
         public override 品類資料 錯誤資料 { get { return 品類資料.錯誤; } }
 
+        protected override IEnumerable<品類資料> 取得清單特殊選項()
+        {
+            yield return 品類資料.混和;
+            yield return 空白資料;
+            yield return 錯誤資料;
+        }
+
+        protected override IEnumerable<品類資料> 取得篩選特殊選項()
+        {
+            yield return 不篩選資料;
+            yield return 品類資料.混和;
+            yield return 空白資料;
+            yield return 錯誤資料;
+        }
+
         protected override 新版可篩選介面<品類資料> 取得篩選器實體()
         {
             return new 品類資料篩選();
@@ -54,6 +69,26 @@ namespace WokyTool.物品
                 資料版本++;
                 儲存();
             }
+        }
+
+        public override 品類資料 取得(int ID_)
+        {
+            if (ID_ == 常數.空白資料編碼)
+                return 空白資料;
+
+            if (ID_ == 常數.錯誤資料編碼)
+                return 錯誤資料;
+
+            if (ID_ == 常數.混和資料編碼)
+                return 品類資料.混和;
+
+            品類資料 Item_;
+            if (_資料書.TryGetValue(ID_, out Item_))
+            {
+                return Item_;
+            }
+
+            return 錯誤資料;
         }
 
         // 取得資料

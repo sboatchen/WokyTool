@@ -173,22 +173,8 @@
     <Compile Include="公司\資料\公司資料篩選.cs" />
     <Compile Include="公司\資料\公司資料.cs" />
     <Compile Include="商品\廢棄\舊商品組成資料.cs" />
-    <Compile Include="商品\控制\商品大類資料管理器.cs" />
-    <Compile Include="商品\控制\商品資料管理器.cs" />
-    <Compile Include="商品\控制\商品小類資料管理器.cs" />
     <Compile Include="商品\控制\商品更新資料管理器.cs" />
-    <Compile Include="商品\視窗\商品小類總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="商品\視窗\商品小類總覽視窗.Designer.cs">
-      <DependentUpon>商品小類總覽視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="商品\視窗\商品大類總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="商品\視窗\商品大類總覽視窗.Designer.cs">
-      <DependentUpon>商品大類總覽視窗.cs</DependentUpon>
-    </Compile>
+    <Compile Include="商品\控制\商品資料管理器.cs" />
     <Compile Include="商品\視窗\商品更新視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,9 +193,7 @@
     <Compile Include="商品\視窗\商品更新篩選視窗.Designer.cs">
       <DependentUpon>商品更新篩選視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="商品\資料\商品小類資料篩選.cs" />
     <Compile Include="商品\資料\商品組成資料.cs" />
-    <Compile Include="商品\資料\商品大類資料篩選.cs" />
     <Compile Include="商品\資料\商品資料篩選.cs" />
     <Compile Include="商品\資料\商品更新資料.cs" />
     <Compile Include="商品\資料\商品更新資料篩選.cs" />
@@ -391,6 +375,7 @@
     <Compile Include="月結帳\匯入\月結帳商品資料.cs" />
     <Compile Include="月結帳\匯入\月結帳物品資料.cs" />
     <Compile Include="月結帳\匯入\月結帳統計資料.cs" />
+    <Compile Include="物品\廢棄\舊物品資料.cs" />
     <Compile Include="配送\視窗\宅配通匯入視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -529,20 +514,6 @@
     <Compile Include="商品\視窗\商品詳細視窗.Designer.cs">
       <DependentUpon>商品詳細視窗.cs</DependentUpon>
     </Compile>
-    <Compile Include="商品\視窗\元件\商品大類選取元件.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="商品\視窗\元件\商品大類選取元件.Designer.cs">
-      <DependentUpon>商品大類選取元件.cs</DependentUpon>
-    </Compile>
-    <Compile Include="商品\視窗\元件\商品小類選取元件.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="商品\視窗\元件\商品小類選取元件.Designer.cs">
-      <DependentUpon>商品小類選取元件.cs</DependentUpon>
-    </Compile>
-    <Compile Include="商品\資料\商品大類資料.cs" />
-    <Compile Include="商品\資料\商品小類資料.cs" />
     <Compile Include="商品\資料\商品資料.cs" />
     <Compile Include="客戶\控制\子客戶資料管理器.cs" />
     <Compile Include="客戶\控制\客戶資料管理器.cs" />
@@ -1355,9 +1326,6 @@
     <EmbeddedResource Include="參數\視窗\參數總覽視窗.resx">
       <DependentUpon>參數總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="商品\視窗\商品小類總覽視窗.resx">
-      <DependentUpon>商品小類總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="商品\視窗\商品更新篩選視窗.resx">
       <DependentUpon>商品更新篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1369,9 +1337,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="商品\視窗\商品詳細視窗.resx">
       <DependentUpon>商品詳細視窗.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="商品\視窗\商品大類總覽視窗.resx">
-      <DependentUpon>商品大類總覽視窗.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="商品\視窗\商品更新視窗.resx">
       <DependentUpon>商品更新視窗.cs</DependentUpon>
@@ -1462,12 +1427,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="公司\視窗\元件\公司選取元件.resx">
       <DependentUpon>公司選取元件.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="商品\視窗\元件\商品大類選取元件.resx">
-      <DependentUpon>商品大類選取元件.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="商品\視窗\元件\商品小類選取元件.resx">
-      <DependentUpon>商品小類選取元件.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="客戶\視窗\子客戶詳細視窗.resx">
       <DependentUpon>子客戶詳細視窗.cs</DependentUpon>
@@ -1749,8 +1708,6 @@
     <None Include="Properties\DataSources\WokyTool.使用者.使用者資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.公司.公司資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.參數.參數資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.商品.商品大類資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.商品.商品小類資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品更新資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品組成資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.商品.商品資料.datasource" />

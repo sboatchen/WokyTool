@@ -37,7 +37,7 @@ namespace WokyTool.物品
 
         public static 品牌資料 混和 = new 品牌資料
         {
-            編號 = 常數.品牌混和資料編碼,
+            編號 = 常數.混和資料編碼,
             名稱 = 字串.混和,
         };
 

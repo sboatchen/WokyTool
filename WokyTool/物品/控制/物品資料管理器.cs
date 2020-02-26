@@ -11,6 +11,8 @@ using WokyTool.寄庫;
 using WokyTool.通用;
 using WokyTool.進貨;
 using WokyTool.盤點;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace WokyTool.物品
 {
@@ -20,7 +22,7 @@ namespace WokyTool.物品
 
         public override bool 是否可編輯 { get { return 系統參數.修改設定資料; } }
 
-        public override string 檔案路徑 { get { return "設定/物品.json"; } }
+        public override string 檔案路徑 { get { return "設定/物品V3.0.0.json"; } }
 
         public override 物品資料 不篩選資料 { get { return 物品資料.不篩選; } }
         public override 物品資料 空白資料 { get { return 物品資料.空白; } }
@@ -38,6 +40,28 @@ namespace WokyTool.物品
         // 建構子
         private 物品資料管理器()
         {
+        }
+
+        protected override void 初始化資料()
+        {
+            if (File.Exists("設定/物品V3.0.0.json"))
+                base.初始化資料();
+            else
+            {
+                string json = 檔案.讀出("設定/物品.json");
+                if (String.IsNullOrEmpty(json))
+                    _資料書 = new Dictionary<int, 物品資料>();
+                else
+                    _資料書 = JsonConvert.DeserializeObject<Dictionary<int, 舊物品資料>>(json).ToDictionary(Pair => Pair.Key, Pair => 舊物品資料.轉換(Pair.Value));
+
+                if (_資料書.Count == 0)
+                    _下個編號 = 1;
+                else
+                    _下個編號 = _資料書.Max(Value => Value.Key) + 1;
+
+                資料版本++;
+                儲存();
+            }
         }
 
         // 取得資料
