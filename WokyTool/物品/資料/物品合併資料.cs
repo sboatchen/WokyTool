@@ -39,7 +39,6 @@ namespace WokyTool.物品
             if (數量_ < 0)
                 throw new Exception("物品合併資料::數量小於0" + 數量_);
 
-            體積 += 物品資料_.體積 * 數量_;
             成本 += 物品資料_.成本 * 數量_;
 
             int 目前數量_ = 0;
@@ -72,7 +71,6 @@ namespace WokyTool.物品
                     List<商品組成資料> 新群組_ = Group_.ToList();
                     群組列.Add(新群組_);
 
-                    體積 += 新群組_.Max(Value => Value.物品.體積 * Value.數量);
                     成本 += 新群組_.Max(Value => Value.物品.成本 * Value.數量);
                 }
             }

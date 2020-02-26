@@ -31,8 +31,6 @@
             this.品類 = new System.Windows.Forms.Button();
             this.供應商 = new System.Windows.Forms.Button();
             this.物品 = new System.Windows.Forms.Button();
-            this.商品大類 = new System.Windows.Forms.Button();
-            this.商品小類 = new System.Windows.Forms.Button();
             this.商品 = new System.Windows.Forms.Button();
             this.品牌 = new System.Windows.Forms.Button();
             this.廠商 = new System.Windows.Forms.Button();
@@ -114,26 +112,6 @@
             this.物品.Text = "物品";
             this.物品.UseVisualStyleBackColor = true;
             this.物品.Click += new System.EventHandler(this.物品_Click);
-            // 
-            // 商品大類
-            // 
-            this.商品大類.Location = new System.Drawing.Point(6, 121);
-            this.商品大類.Name = "商品大類";
-            this.商品大類.Size = new System.Drawing.Size(100, 23);
-            this.商品大類.TabIndex = 6;
-            this.商品大類.Text = "商品大類";
-            this.商品大類.UseVisualStyleBackColor = true;
-            this.商品大類.Click += new System.EventHandler(this.商品大類_Click);
-            // 
-            // 商品小類
-            // 
-            this.商品小類.Location = new System.Drawing.Point(122, 121);
-            this.商品小類.Name = "商品小類";
-            this.商品小類.Size = new System.Drawing.Size(100, 23);
-            this.商品小類.TabIndex = 7;
-            this.商品小類.Text = "商品小類";
-            this.商品小類.UseVisualStyleBackColor = true;
-            this.商品小類.Click += new System.EventHandler(this.商品小類_Click);
             // 
             // 商品
             // 
@@ -344,8 +322,6 @@
             this.panel3.Controls.Add(this.廠商);
             this.panel3.Controls.Add(this.品類);
             this.panel3.Controls.Add(this.物品);
-            this.panel3.Controls.Add(this.商品大類);
-            this.panel3.Controls.Add(this.商品小類);
             this.panel3.Controls.Add(this.商品);
             this.panel3.Controls.Add(this.子客戶);
             this.panel3.Controls.Add(this.品牌);
@@ -637,8 +613,6 @@
         private System.Windows.Forms.Button 品類;
         private System.Windows.Forms.Button 供應商;
         private System.Windows.Forms.Button 物品;
-        private System.Windows.Forms.Button 商品大類;
-        private System.Windows.Forms.Button 商品小類;
         private System.Windows.Forms.Button 商品;
         private System.Windows.Forms.Button 品牌;
         private System.Windows.Forms.Button 廠商;

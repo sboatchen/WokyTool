@@ -6,35 +6,35 @@ namespace WokyTool.物品
 {
     public class 物品資料篩選 : 通用可篩選介面<物品資料>
     {
-        private 品類資料 _大類 = 品類資料.不篩選;
-        public 品類資料 大類
+        private 品類資料 _品類 = 品類資料.不篩選;
+        public 品類資料 品類
         {
             get
             {
-                return _大類;
+                return _品類;
             }
             set
             {
-                if (_大類 != value)
+                if (_品類 != value)
                 {
-                    _大類 = value;
+                    _品類 = value;
                     篩選版本++;
                 }
             }
         }
 
-        private 供應商資料 _小類 = 供應商資料.不篩選;
-        public 供應商資料 小類
+        private 供應商資料 _供應商 = 供應商資料.不篩選;
+        public 供應商資料 供應商
         {
             get
             {
-                return _小類;
+                return _供應商;
             }
             set
             {
-                if (_小類 != value)
+                if (_供應商 != value)
                 {
-                    _小類 = value;
+                    _供應商 = value;
                     篩選版本++;
                 }
             }
@@ -158,8 +158,8 @@ namespace WokyTool.物品
             get
             {
                 return
-                    品類資料.不篩選 != _大類 ||
-                    供應商資料.不篩選 != _小類 ||
+                    品類資料.不篩選 != _品類 ||
+                    供應商資料.不篩選 != _供應商 ||
                     品牌資料.不篩選 != _品牌 ||
                     null != _國際條碼 ||
                     null != _文字 ||
@@ -177,10 +177,10 @@ namespace WokyTool.物品
 
             IEnumerable<物品資料> 目前列舉_ = 資料列舉_;
 
-            if (品類資料.不篩選 != _大類)
-                目前列舉_ = 目前列舉_.Where(Value => Value.大類 == _大類);
-            if (供應商資料.不篩選 != _小類)
-                目前列舉_ = 目前列舉_.Where(Value => Value.小類 == _小類);
+            if (品類資料.不篩選 != _品類)
+                目前列舉_ = 目前列舉_.Where(Value => Value.品類 == _品類);
+            if (供應商資料.不篩選 != _供應商)
+                目前列舉_ = 目前列舉_.Where(Value => Value.供應商 == _供應商);
             if (品牌資料.不篩選 != _品牌)
                 目前列舉_ = 目前列舉_.Where(Value => Value.品牌 == _品牌);
 

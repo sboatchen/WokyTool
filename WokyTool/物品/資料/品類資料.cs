@@ -52,7 +52,7 @@ namespace WokyTool.物品
         {
             基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
 
-            foreach (物品資料 物品資料_ in 物品資料管理器.獨體.資料列舉2.Where(Value => Value.大類 == this))
+            foreach (物品資料 物品資料_ in 物品資料管理器.獨體.資料列舉2.Where(Value => Value.品類 == this))
             {
                 檢查器_.錯誤(資料_, "資料綁定中:" + 物品資料_.ToString(false));
             }

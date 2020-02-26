@@ -12,28 +12,28 @@ namespace WokyTool.物品
     public class 物品資料 : 可編號記錄資料
     {
         [JsonProperty]
-        public int 大類編號
+        public int 品類編號
         {
             get
             {
-                return 大類.編號;
+                return 品類.編號;
             }
             set
             {
-                大類 = 品類資料管理器.獨體.取得(value);
+                品類 = 品類資料管理器.獨體.取得(value);
             }
         }
 
         [JsonProperty]
-        public int 小類編號
+        public int 供應商編號
         {
             get
             {
-                return 小類.編號;
+                return 供應商.編號;
             }
             set
             {
-                小類 = 供應商資料管理器.獨體.取得(value);
+                供應商 = 供應商資料管理器.獨體.取得(value);
             }
         }
 
@@ -72,10 +72,6 @@ namespace WokyTool.物品
 
         [可匯出]
         [JsonProperty]
-        public int 體積 { get; set; }
-
-        [可匯出]
-        [JsonProperty]
         public int 庫存 { get; set; }
 
         [可匯出]
@@ -99,17 +95,17 @@ namespace WokyTool.物品
 
         /********************************/
 
-        public 品類資料 大類 { get; set; }
+        public 品類資料 品類 { get; set; }
 
-        public 供應商資料 小類 { get; set; }
+        public 供應商資料 供應商 { get; set; }
 
         public 品牌資料 品牌 { get; set; }
 
-        [可匯出(名稱 = "大類")]
-        public string 大類名稱 { get { return 大類.名稱; } }
+        [可匯出(名稱 = "品類")]
+        public string 品類名稱 { get { return 品類.名稱; } }
 
-        [可匯出(名稱 = "小類")]
-        public string 小類名稱 { get { return 小類.名稱; } }
+        [可匯出(名稱 = "供應商")]
+        public string 供應商名稱 { get { return 供應商.名稱; } }
 
         [可匯出(名稱 = "品牌")]
         public string 品牌名稱 { get { return 品牌.名稱; } }
@@ -132,8 +128,8 @@ namespace WokyTool.物品
 
         public 物品資料()
         {
-            大類 = 品類資料.空白;
-            小類 = 供應商資料.空白;
+            品類 = 品類資料.空白;
+            供應商 = 供應商資料.空白;
             品牌 = 品牌資料.空白;
         }
 
@@ -141,8 +137,8 @@ namespace WokyTool.物品
         {
             編號 = 常數.不篩選資料編碼,
 
-            大類 = 品類資料.不篩選,
-            小類 = 供應商資料.不篩選,
+            品類 = 品類資料.不篩選,
+            供應商 = 供應商資料.不篩選,
             品牌 = 品牌資料.不篩選,
 
             國際條碼 = 字串.空,
@@ -152,7 +148,6 @@ namespace WokyTool.物品
             類別 = 字串.空,
             顏色 = 字串.空,
 
-            體積 = 0,
             庫存 = 0,
 
             庫存總成本 = 0,
@@ -166,8 +161,8 @@ namespace WokyTool.物品
         {
             編號 = 常數.空白資料編碼,
 
-            大類 = 品類資料.空白,
-            小類 = 供應商資料.空白,
+            品類 = 品類資料.空白,
+            供應商 = 供應商資料.空白,
             品牌 = 品牌資料.空白,
 
             國際條碼 = 字串.無,
@@ -177,7 +172,6 @@ namespace WokyTool.物品
             類別 = 字串.無,
             顏色 = 字串.無,
 
-            體積 = 0,
             庫存 = 0,
 
             庫存總成本 = 0,
@@ -191,8 +185,8 @@ namespace WokyTool.物品
         {
             編號 = 常數.錯誤資料編碼,
 
-            大類 = 品類資料.錯誤,
-            小類 = 供應商資料.錯誤,
+            品類 = 品類資料.錯誤,
+            供應商 = 供應商資料.錯誤,
             品牌 = 品牌資料.錯誤,
 
             國際條碼 = 字串.錯誤,
@@ -202,7 +196,6 @@ namespace WokyTool.物品
             類別 = 字串.錯誤,
             顏色 = 字串.錯誤,
 
-            體積 = 0,
             庫存 = 0,
 
             庫存總成本 = 0,
@@ -220,11 +213,11 @@ namespace WokyTool.物品
             基本資料 資料_ = (資料上層_ == null) ? this : 資料上層_;
             基本資料 參考_ = (資料參考_ == null) ? this : 資料參考_;
 
-            if (false == 大類.編號是否合法())
-                檢查器_.錯誤(資料_, "大類不合法");
+            if (false == 品類.編號是否合法())
+                檢查器_.錯誤(資料_, "品類不合法");
 
-            if (false == 小類.編號是否合法())
-                檢查器_.錯誤(資料_, "小類不合法");
+            if (false == 供應商.編號是否合法())
+                檢查器_.錯誤(資料_, "供應商不合法");
 
             if (false == 品牌.編號是否合法())
                 檢查器_.錯誤(資料_, "品牌不合法");

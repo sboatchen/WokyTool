@@ -43,14 +43,6 @@ namespace WokyTool.商品
             }
         }
 
-        public int 體積
-        {
-            get
-            {
-                return 物品.體積 * 數量;
-            }
-        }
-
         /********************************/
 
         public 商品組成資料 Self { get { return this; } }

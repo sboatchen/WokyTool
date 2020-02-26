@@ -77,16 +77,6 @@ namespace WokyTool
             視窗管理器.獨體.顯現(列舉.編號.物品, 列舉.視窗.總覽);
         }
 
-        private void 商品大類_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.商品大類, 列舉.視窗.總覽);
-        }
-
-        private void 商品小類_Click(object sender, EventArgs e)
-        {
-            視窗管理器.獨體.顯現(列舉.編號.商品大類, 列舉.視窗.總覽);
-        }
-
         private void 商品_Click(object sender, EventArgs e)
         {
             視窗管理器.獨體.顯現(列舉.編號.商品, 列舉.視窗.總覽);
@@ -310,40 +300,6 @@ namespace WokyTool
             //    物品資料管理器.獨體.Map.Add(New_.編號, New_);
             //}
             //物品資料管理器.獨體.資料搬移();
-
-            //訊息管理器.獨體.訊息("商品大類資料轉換");
-            //商品大類資料管理器.獨體.Map.Clear();
-            //foreach (var Item_ in 商品大類管理器.Instance.Map.Values)
-            //{
-            //    if (Item_.編號 <= 0)
-            //        continue;
-
-            //    商品.商品大類資料 New_ = new 商品.商品大類資料
-            //    {
-            //        編號 = Item_.編號,
-            //        名稱 = Item_.名稱,
-            //    };
-
-            //    商品大類資料管理器.獨體.Map.Add(New_.編號, New_);
-            //}
-            //商品大類資料管理器.獨體.資料搬移();
-
-            //訊息管理器.獨體.訊息("商品小類資料轉換");
-            //商品小類資料管理器.獨體.Map.Clear();
-            //foreach (var Item_ in 商品小類管理器.Instance.Map.Values)
-            //{
-            //    if (Item_.編號 <= 0)
-            //        continue;
-
-            //    商品.商品小類資料 New_ = new 商品.商品小類資料
-            //    {
-            //        編號 = Item_.編號,
-            //        名稱 = Item_.名稱,
-            //    };
-
-            //    商品小類資料管理器.獨體.Map.Add(New_.編號, New_);
-            //}
-            //商品小類資料管理器.獨體.資料搬移();
 
             //訊息管理器.獨體.訊息("商品資料轉換");
             //商品資料管理器.獨體.Map.Clear();

@@ -63,33 +63,33 @@ namespace WokyTool.物品
             }
         }
 
-        [可匯入(名稱 = "大類")]
+        [可匯入(名稱 = "品類")]
         [JsonProperty]
-        public string 大類識別
+        public string 品類識別
         {
             get
             {
-                return _大類識別;
+                return _品類識別;
             }
             set
             {
-                _大類識別 = value;
-                修改.大類 = 品類資料管理器.獨體.取得(value);
+                _品類識別 = value;
+                修改.品類 = 品類資料管理器.獨體.取得(value);
             }
         }
 
-        [可匯入(名稱 = "小類")]
+        [可匯入(名稱 = "供應商")]
         [JsonProperty]
-        public string 小類識別
+        public string 供應商識別
         {
             get
             {
-                return _小類識別;
+                return _供應商識別;
             }
             set
             {
-                _小類識別 = value;
-                修改.小類 = 供應商資料管理器.獨體.取得(value);
+                _供應商識別 = value;
+                修改.供應商 = 供應商資料管理器.獨體.取得(value);
             }
         }
 
@@ -149,21 +149,6 @@ namespace WokyTool.物品
                 修改.顏色 = value;
             }
         }
-
-        [可匯入]
-        [JsonProperty]
-        public int 體積
-        {
-            get
-            {
-                return 修改.體積;
-            }
-            set
-            {
-                修改.體積 = value;
-            }
-        }
-
 
         [可匯入]
         [JsonProperty]
@@ -237,27 +222,27 @@ namespace WokyTool.物品
 
         /********************************/
 
-        private string _大類識別;
-        private string _小類識別;
+        private string _品類識別;
+        private string _供應商識別;
         private string _品牌識別;
 
-        public 品類資料 大類
+        public 品類資料 品類
         {
-            get { return 修改.大類; }
+            get { return 修改.品類; }
             set
             {
-                修改.大類 = value;
-                _大類識別 = value.名稱;
+                修改.品類 = value;
+                _品類識別 = value.名稱;
             }
         }
 
-        public 供應商資料 小類
+        public 供應商資料 供應商
         {
-            get { return 修改.小類; }
+            get { return 修改.供應商; }
             set
             {
-                修改.小類 = value;
-                _小類識別 = value.名稱;
+                修改.供應商 = value;
+                _供應商識別 = value.名稱;
             }
         }
 
@@ -284,8 +269,8 @@ namespace WokyTool.物品
         public string 參考名稱 { get { return 參考.名稱; } }
         public string 參考縮寫 { get { return 參考.縮寫; } }
 
-        public 品類資料 參考大類 { get { return 參考.大類; } }
-        public 供應商資料 參考小類 { get { return 參考.小類; } }
+        public 品類資料 參考品類 { get { return 參考.品類; } }
+        public 供應商資料 參考供應商 { get { return 參考.供應商; } }
         public 品牌資料 參考品牌 { get { return 參考.品牌; } }
 
         public string 參考國際條碼 { get { return 參考.國際條碼; } }
@@ -293,7 +278,6 @@ namespace WokyTool.物品
         public string 參考類別 { get { return 參考.類別; } }
         public string 參考顏色 { get { return 參考.顏色; } }
 
-        public int 參考體積 { get { return 參考.體積; } }
         public int 參考庫存 { get { return 參考.庫存; } }
         public int 參考保留 { get { return 參考.保留; } }
         public decimal 參考庫存總成本 { get { return 參考.庫存總成本; } }
