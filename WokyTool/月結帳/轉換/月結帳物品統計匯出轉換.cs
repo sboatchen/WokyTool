@@ -21,7 +21,7 @@ namespace WokyTool.月結帳
 
         private IEnumerable<KeyValuePair<物品.物品資料, int>> _資料列;
 
-        public 月結帳物品統計匯出轉換(IGrouping<物品品牌資料, KeyValuePair<物品.物品資料, int>> Group_)
+        public 月結帳物品統計匯出轉換(IGrouping<品牌資料, KeyValuePair<物品.物品資料, int>> Group_)
         {
             分類 = Group_.Key.名稱;
             _資料列 = Group_;

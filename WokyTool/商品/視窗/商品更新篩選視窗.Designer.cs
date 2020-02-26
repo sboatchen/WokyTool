@@ -44,7 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.品牌 = new WokyTool.物品.物品品牌選取元件();
+            this.品牌 = new WokyTool.物品.品牌選取元件();
             this.小類 = new WokyTool.商品.商品小類選取元件();
             this.物品 = new WokyTool.物品.物品選取元件();
             this.客戶 = new WokyTool.客戶.客戶選取元件();
@@ -387,7 +387,7 @@
         private 商品小類選取元件 小類;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown 最小利潤;
-        private 物品.物品品牌選取元件 品牌;
+        private 物品.品牌選取元件 品牌;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.NumericUpDown 最大寄庫數量;
         private System.Windows.Forms.NumericUpDown 最大利潤;

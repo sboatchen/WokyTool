@@ -30,7 +30,7 @@
         {
             this.類別 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.品牌 = new WokyTool.物品.物品品牌選取元件();
+            this.品牌 = new WokyTool.物品.品牌選取元件();
             this.小類 = new WokyTool.物品.供應商選取元件();
             this.大類 = new WokyTool.物品.品類選取元件();
             this.最小庫存 = new System.Windows.Forms.NumericUpDown();
@@ -284,7 +284,7 @@
 
         private System.Windows.Forms.TextBox 類別;
         private System.Windows.Forms.Label label16;
-        private 物品品牌選取元件 品牌;
+        private 品牌選取元件 品牌;
         private 供應商選取元件 小類;
         private 品類選取元件 大類;
         private System.Windows.Forms.NumericUpDown 最小庫存;

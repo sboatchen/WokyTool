@@ -285,7 +285,7 @@ namespace WokyTool.商品
             set { 修改.組成 = value; }
         }
 
-        public 物品品牌資料 品牌 { get {return 修改.品牌; } }
+        public 品牌資料 品牌 { get {return 修改.品牌; } }
         public string 品牌名稱 { get { return 修改.品牌.名稱; } }
 
         public decimal 成本 { get { return 修改.成本; } }
@@ -298,7 +298,7 @@ namespace WokyTool.商品
 
         public 商品大類資料 參考大類 { get { return 參考.大類; } }
         public 商品小類資料 參考小類 { get { return 參考.小類; } }
-        public 物品品牌資料 參考品牌 { get { return 參考.品牌; } }
+        public 品牌資料 參考品牌 { get { return 參考.品牌; } }
 
         public 公司資料 參考公司 { get { return 參考.公司; } }
         public 客戶資料 參考客戶 { get { return 參考.客戶; } }

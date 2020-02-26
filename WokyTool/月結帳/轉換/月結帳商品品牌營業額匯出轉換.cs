@@ -19,10 +19,10 @@ namespace WokyTool.月結帳
 
         public string 密碼 { get { return null; } }
 
-        private Dictionary<物品品牌資料, decimal> _資料書;
+        private Dictionary<品牌資料, decimal> _資料書;
 
 
-        public 月結帳商品品牌營業額匯出轉換(Dictionary<物品品牌資料, decimal> 資料書_)
+        public 月結帳商品品牌營業額匯出轉換(Dictionary<品牌資料, decimal> 資料書_)
         {
             this._資料書 = 資料書_;
         }

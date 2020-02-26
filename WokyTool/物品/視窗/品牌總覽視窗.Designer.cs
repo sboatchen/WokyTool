@@ -1,7 +1,7 @@
 ﻿using WokyTool.通用;
 namespace WokyTool.物品
 {
-    partial class 物品品牌總覽視窗
+    partial class 品牌總覽視窗
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace WokyTool.物品
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.物品品牌資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.品牌資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,14 +41,14 @@ namespace WokyTool.物品
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.新增ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.物品品牌資料BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.品牌資料BindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // 物品品牌資料BindingSource
+            // 品牌資料BindingSource
             // 
-            this.物品品牌資料BindingSource.DataSource = typeof(WokyTool.物品.物品品牌資料);
+            this.品牌資料BindingSource.DataSource = typeof(WokyTool.物品.品牌資料);
             // 
             // menuStrip1
             // 
@@ -96,7 +96,7 @@ namespace WokyTool.物品
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.編號DataGridViewTextBoxColumn,
             this.名稱DataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.物品品牌資料BindingSource;
+            this.dataGridView1.DataSource = this.品牌資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
@@ -132,16 +132,16 @@ namespace WokyTool.物品
             this.新增ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.新增ToolStripMenuItem.Text = "新增";
             // 
-            // 物品品牌總覽視窗
+            // 品牌總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 279);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "物品品牌總覽視窗";
-            this.Text = "物品品牌總覽視窗";
-            ((System.ComponentModel.ISupportInitialize)(this.物品品牌資料BindingSource)).EndInit();
+            this.Name = "品牌總覽視窗";
+            this.Text = "品牌總覽視窗";
+            ((System.ComponentModel.ISupportInitialize)(this.品牌資料BindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -152,7 +152,7 @@ namespace WokyTool.物品
 
         #endregion
 
-        private System.Windows.Forms.BindingSource 物品品牌資料BindingSource;
+        private System.Windows.Forms.BindingSource 品牌資料BindingSource;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 篩選ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 檢查ToolStripMenuItem;

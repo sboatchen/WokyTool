@@ -65,7 +65,7 @@ namespace WokyTool.商品
             this.進價 = new System.Windows.Forms.NumericUpDown();
             this.新版頁索引元件1 = new WokyTool.通用.新版頁索引元件();
             this.label15 = new System.Windows.Forms.Label();
-            this.品牌 = new WokyTool.物品.物品品牌選取元件();
+            this.品牌 = new WokyTool.物品.品牌選取元件();
             this.自訂售價GV = new WokyTool.通用.MyDataGridView();
             this.索引DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.售價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -653,7 +653,7 @@ namespace WokyTool.商品
         private System.Windows.Forms.NumericUpDown 進價;
         private 新版頁索引元件 新版頁索引元件1;
         private System.Windows.Forms.Label label15;
-        private 物品.物品品牌選取元件 品牌;
+        private 物品.品牌選取元件 品牌;
         private MyDataGridView 自訂售價GV;
         private System.Windows.Forms.TextBox 新增規格;
         private System.Windows.Forms.BindingSource 自訂售價資料BindingSource;

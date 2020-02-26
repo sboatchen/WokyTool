@@ -9,9 +9,9 @@ using WokyTool.通用;
 
 namespace WokyTool.月結帳
 {
-    public class 月結帳物品品牌銷售排行匯出轉換 : 可寫入介面_EXCEL
+    public class 月結帳品牌銷售排行匯出轉換 : 可寫入介面_EXCEL
     {
-        public string 分類 { get { return "物品品牌銷售排行"; } }
+        public string 分類 { get { return "品牌銷售排行"; } }
 
         public string 樣板 { get { return null; } }
 
@@ -22,7 +22,7 @@ namespace WokyTool.月結帳
         private Dictionary<string, int> Map_;
 
 
-        public 月結帳物品品牌銷售排行匯出轉換(IEnumerable<IGrouping<物品品牌資料, KeyValuePair<物品資料, int>>> GroupQueue_)
+        public 月結帳品牌銷售排行匯出轉換(IEnumerable<IGrouping<品牌資料, KeyValuePair<物品資料, int>>> GroupQueue_)
         {
             this.Map_ = GroupQueue_.ToDictionary(
                     Item => Item.Key.名稱,

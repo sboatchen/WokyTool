@@ -101,7 +101,7 @@ namespace WokyTool.商品
 
         public 商品小類資料 小類 { get; set; }
 
-        public 物品品牌資料 品牌 { get; private set; }
+        public 品牌資料 品牌 { get; private set; }
 
         public 公司資料 公司 { get; set; }
 
@@ -219,7 +219,7 @@ namespace WokyTool.商品
         public void 更新組成()
         {
             成本 = 0;
-            品牌 = 物品品牌資料.空白;
+            品牌 = 品牌資料.空白;
             組成字串 = 字串.空;
 
             if (組成 == null || 組成.Count == 0)
@@ -277,17 +277,17 @@ namespace WokyTool.商品
 
             組成字串 = SB_.ToString();
 
-            HashSet<物品品牌資料> 品牌群_ = 組成.Select(Value => Value.物品.品牌).Where(Value => Value.編號是否有值()).ToSet();
+            HashSet<品牌資料> 品牌群_ = 組成.Select(Value => Value.物品.品牌).Where(Value => Value.編號是否有值()).ToSet();
             switch (品牌群_.Count)
             {
                 case 0:
-                    品牌 = 物品品牌資料.空白;
+                    品牌 = 品牌資料.空白;
                     break;
                 case 1:
                     品牌 = 品牌群_.First();
                     break;
                 default:
-                    品牌 = 物品品牌資料.混和;
+                    品牌 = 品牌資料.混和;
                     break;
             }
         }

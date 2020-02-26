@@ -94,7 +94,7 @@ namespace WokyTool.月結帳
             {
                 轉換列_.Add(new 月結帳物品統計匯出轉換(Group_));
             }
-            轉換列_.Add(new 月結帳物品品牌銷售排行匯出轉換(GroupQueue_));
+            轉換列_.Add(new 月結帳品牌銷售排行匯出轉換(GroupQueue_));
 
             String 標題_ = String.Format("物品統計_{0}", 時間.目前日期);
             檔案.詢問並寫入(標題_, 轉換列_);
@@ -110,10 +110,10 @@ namespace WokyTool.月結帳
         {
             this.品牌營業額ToolStripMenuItem.Enabled = false;
 
-            Dictionary<物品品牌資料, decimal> Map_ = new Dictionary<物品品牌資料, decimal>();
+            Dictionary<品牌資料, decimal> Map_ = new Dictionary<品牌資料, decimal>();
             foreach (月結帳資料 月結帳資料_ in 月結帳資料管理器.獨體.可編輯BList)
             {
-                物品品牌資料 品牌_ = 月結帳資料_.商品.品牌;
+                品牌資料 品牌_ = 月結帳資料_.商品.品牌;
 
                 decimal 目前金額_ = 0;
                 if (Map_.TryGetValue(品牌_, out 目前金額_))
