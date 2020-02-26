@@ -50,7 +50,6 @@ namespace WokyTool.單品
             this.國際條碼 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.類別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.顏色DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.體積DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.庫存DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.庫存總成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.最後進貨成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -151,7 +150,6 @@ namespace WokyTool.單品
             this.國際條碼,
             this.類別DataGridViewTextBoxColumn,
             this.顏色DataGridViewTextBoxColumn,
-            this.體積DataGridViewTextBoxColumn,
             this.庫存DataGridViewTextBoxColumn,
             this.庫存總成本DataGridViewTextBoxColumn,
             this.最後進貨成本DataGridViewTextBoxColumn,
@@ -225,12 +223,6 @@ namespace WokyTool.單品
             this.顏色DataGridViewTextBoxColumn.DataPropertyName = "顏色";
             this.顏色DataGridViewTextBoxColumn.HeaderText = "顏色";
             this.顏色DataGridViewTextBoxColumn.Name = "顏色DataGridViewTextBoxColumn";
-            // 
-            // 體積DataGridViewTextBoxColumn
-            // 
-            this.體積DataGridViewTextBoxColumn.DataPropertyName = "體積";
-            this.體積DataGridViewTextBoxColumn.HeaderText = "體積";
-            this.體積DataGridViewTextBoxColumn.Name = "體積DataGridViewTextBoxColumn";
             // 
             // 庫存DataGridViewTextBoxColumn
             // 
@@ -320,7 +312,6 @@ namespace WokyTool.單品
         private System.Windows.Forms.DataGridViewTextBoxColumn 國際條碼;
         private System.Windows.Forms.DataGridViewTextBoxColumn 類別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 顏色DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 體積DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 庫存DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 庫存總成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 最後進貨成本DataGridViewTextBoxColumn;

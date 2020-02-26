@@ -40,9 +40,6 @@ namespace WokyTool.商品
         public int 寄庫數量 { get; set; }
         
         [JsonProperty]
-        public int 體積 { get; set; }
-        
-        [JsonProperty]
         public decimal 成本 { get; set; }
         
         [JsonProperty]

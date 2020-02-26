@@ -36,7 +36,6 @@ namespace WokyTool.單品
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new WokyTool.通用.MyDataGridView();
-            this.單品更新資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.更新狀態DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.編號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +46,6 @@ namespace WokyTool.單品
             this.品牌識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.類別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.顏色DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.體積DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.庫存DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.庫存總成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.最後進貨成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +53,7 @@ namespace WokyTool.單品
             this.成本備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.儲位 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.單品更新資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.單品更新資料BindingSource)).BeginInit();
@@ -70,7 +69,7 @@ namespace WokyTool.單品
             this.檢查ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1949, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1854, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -115,7 +114,6 @@ namespace WokyTool.單品
             this.品牌識別DataGridViewTextBoxColumn,
             this.類別DataGridViewTextBoxColumn,
             this.顏色DataGridViewTextBoxColumn,
-            this.體積DataGridViewTextBoxColumn,
             this.庫存DataGridViewTextBoxColumn,
             this.庫存總成本DataGridViewTextBoxColumn,
             this.最後進貨成本DataGridViewTextBoxColumn,
@@ -128,12 +126,8 @@ namespace WokyTool.單品
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1949, 400);
+            this.dataGridView1.Size = new System.Drawing.Size(1854, 400);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // 單品更新資料BindingSource
-            // 
-            this.單品更新資料BindingSource.DataSource = typeof(WokyTool.單品.單品更新資料);
             // 
             // 更新狀態DataGridViewTextBoxColumn
             // 
@@ -198,12 +192,6 @@ namespace WokyTool.單品
             this.顏色DataGridViewTextBoxColumn.HeaderText = "顏色";
             this.顏色DataGridViewTextBoxColumn.Name = "顏色DataGridViewTextBoxColumn";
             // 
-            // 體積DataGridViewTextBoxColumn
-            // 
-            this.體積DataGridViewTextBoxColumn.DataPropertyName = "體積";
-            this.體積DataGridViewTextBoxColumn.HeaderText = "體積";
-            this.體積DataGridViewTextBoxColumn.Name = "體積DataGridViewTextBoxColumn";
-            // 
             // 庫存DataGridViewTextBoxColumn
             // 
             this.庫存DataGridViewTextBoxColumn.DataPropertyName = "庫存";
@@ -248,11 +236,15 @@ namespace WokyTool.單品
             this.錯誤訊息DataGridViewTextBoxColumn.Name = "錯誤訊息DataGridViewTextBoxColumn";
             this.錯誤訊息DataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // 單品更新資料BindingSource
+            // 
+            this.單品更新資料BindingSource.DataSource = typeof(WokyTool.單品.單品更新資料);
+            // 
             // 單品更新視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1949, 424);
+            this.ClientSize = new System.Drawing.Size(1854, 424);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -287,7 +279,6 @@ namespace WokyTool.單品
         private System.Windows.Forms.DataGridViewTextBoxColumn 品牌識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 類別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 顏色DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 體積DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 庫存DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 庫存總成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 最後進貨成本DataGridViewTextBoxColumn;

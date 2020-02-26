@@ -23,8 +23,6 @@ namespace WokyTool.通用
         public const int 錯誤列舉編碼 = -2;
         public const int 不篩選列舉編碼 = -5;
 
-        public static int 宅配通配送最小體積 = 0;
-
         public static BaseFont 通用字體設定 = BaseFont.CreateFont(
             Environment.GetFolderPath(Environment.SpecialFolder.System) + @"\..\Fonts\kaiu.ttf",
             BaseFont.IDENTITY_H, //橫式中文

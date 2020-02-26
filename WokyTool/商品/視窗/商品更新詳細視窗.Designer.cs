@@ -57,8 +57,6 @@ namespace WokyTool.商品
             this.新增數量 = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.利潤 = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
-            this.體積 = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.成本 = new System.Windows.Forms.NumericUpDown();
             this.供應商 = new WokyTool.單品.供應商選取元件();
@@ -85,7 +83,6 @@ namespace WokyTool.商品
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.新增數量)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.利潤)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.體積)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.成本)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.售價)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.寄庫數量)).BeginInit();
@@ -362,28 +359,6 @@ namespace WokyTool.商品
             this.利潤.Size = new System.Drawing.Size(165, 22);
             this.利潤.TabIndex = 237;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(363, 514);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(29, 12);
-            this.label13.TabIndex = 236;
-            this.label13.Text = "體積";
-            // 
-            // 體積
-            // 
-            this.體積.Location = new System.Drawing.Point(406, 511);
-            this.體積.Maximum = new decimal(new int[] {
-            99999999,
-            0,
-            0,
-            0});
-            this.體積.Name = "體積";
-            this.體積.ReadOnly = true;
-            this.體積.Size = new System.Drawing.Size(165, 22);
-            this.體積.TabIndex = 235;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -596,8 +571,6 @@ namespace WokyTool.商品
             this.Controls.Add(this.新增數量);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.利潤);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.體積);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.成本);
             this.Controls.Add(this.供應商);
@@ -630,7 +603,6 @@ namespace WokyTool.商品
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.新增數量)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.利潤)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.體積)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.成本)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.售價)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.寄庫數量)).EndInit();
@@ -668,8 +640,6 @@ namespace WokyTool.商品
         private System.Windows.Forms.NumericUpDown 新增數量;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown 利潤;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.NumericUpDown 體積;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown 成本;
         private 供應商選取元件 供應商;

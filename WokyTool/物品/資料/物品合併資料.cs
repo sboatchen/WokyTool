@@ -19,15 +19,12 @@ namespace WokyTool.單品
         public Dictionary<單品資料, int> 組成書 { get; private set; }
         public List<List<商品組成資料>> 群組列 { get; private set; }
 
-        public int 體積 { get; private set; }
-
         public decimal 成本 { get; private set; }
 
         public 單品合併資料()
         {
             組成書 = new Dictionary<單品資料, int>();
             群組列 = new List<List<商品組成資料>>();
-            體積 = 0;
             成本 = 0;
         }
 
@@ -130,7 +127,6 @@ namespace WokyTool.單品
         public void 清除()
         {
             組成書.Clear();
-            體積 = 0;
             成本 = 0;
         }
 
@@ -278,10 +274,6 @@ namespace WokyTool.單品
             get
             {
                 return 列舉.配送公司.宅配通;
-                /*if (體積 >= 常數.宅配通配送最小體積)
-                    return 列舉.配送公司.宅配通;
-                else
-                    return 列舉.配送公司.全速配;*/
             }
         }
     }
