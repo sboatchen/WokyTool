@@ -107,7 +107,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 157);
+            this.label1.Location = new System.Drawing.Point(11, 130);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
@@ -116,7 +116,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 183);
+            this.label2.Location = new System.Drawing.Point(11, 156);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 1;
@@ -125,7 +125,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 131);
+            this.label3.Location = new System.Drawing.Point(11, 183);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 2;
@@ -315,7 +315,7 @@
             // 
             // 品類
             // 
-            this.品類.Location = new System.Drawing.Point(58, 153);
+            this.品類.Location = new System.Drawing.Point(57, 126);
             this.品類.Margin = new System.Windows.Forms.Padding(4);
             this.品類.Name = "品類";
             this.品類.ReadOnly = false;
@@ -326,7 +326,7 @@
             // 
             // 供應商
             // 
-            this.供應商.Location = new System.Drawing.Point(58, 179);
+            this.供應商.Location = new System.Drawing.Point(57, 152);
             this.供應商.Margin = new System.Windows.Forms.Padding(4);
             this.供應商.Name = "供應商";
             this.供應商.ReadOnly = false;
@@ -337,7 +337,7 @@
             // 
             // 品牌
             // 
-            this.品牌.Location = new System.Drawing.Point(58, 127);
+            this.品牌.Location = new System.Drawing.Point(57, 179);
             this.品牌.Margin = new System.Windows.Forms.Padding(4);
             this.品牌.Name = "品牌";
             this.品牌.ReadOnly = false;
@@ -409,7 +409,7 @@
             // 
             // 參考品牌
             // 
-            this.參考品牌.Location = new System.Drawing.Point(570, 126);
+            this.參考品牌.Location = new System.Drawing.Point(570, 180);
             this.參考品牌.Margin = new System.Windows.Forms.Padding(4);
             this.參考品牌.Name = "參考品牌";
             this.參考品牌.ReadOnly = true;
@@ -420,7 +420,7 @@
             // 
             // 參考供應商
             // 
-            this.參考供應商.Location = new System.Drawing.Point(570, 179);
+            this.參考供應商.Location = new System.Drawing.Point(570, 152);
             this.參考供應商.Margin = new System.Windows.Forms.Padding(4);
             this.參考供應商.Name = "參考供應商";
             this.參考供應商.ReadOnly = true;
@@ -431,7 +431,7 @@
             // 
             // 參考品類
             // 
-            this.參考品類.Location = new System.Drawing.Point(570, 153);
+            this.參考品類.Location = new System.Drawing.Point(570, 126);
             this.參考品類.Margin = new System.Windows.Forms.Padding(4);
             this.參考品類.Name = "參考品類";
             this.參考品類.ReadOnly = true;
@@ -658,7 +658,7 @@
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(524, 131);
+            this.label43.Location = new System.Drawing.Point(524, 185);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(29, 12);
             this.label43.TabIndex = 157;
@@ -667,7 +667,7 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(524, 183);
+            this.label44.Location = new System.Drawing.Point(524, 156);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(41, 12);
             this.label44.TabIndex = 156;
@@ -676,7 +676,7 @@
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(524, 157);
+            this.label45.Location = new System.Drawing.Point(524, 130);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(29, 12);
             this.label45.TabIndex = 155;

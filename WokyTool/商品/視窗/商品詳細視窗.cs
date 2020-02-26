@@ -81,6 +81,8 @@ namespace WokyTool.商品{
 
             _目前資料.更新組成();
             this.組成.Text = _目前資料.組成字串;
+            this.品類.SelectedItem = _目前資料.品類;
+            this.供應商.SelectedItem = _目前資料.供應商;
             this.品牌.SelectedItem = _目前資料.品牌;
             this.成本.Value = _目前資料.成本;
             this.利潤.Value = _目前資料.利潤;

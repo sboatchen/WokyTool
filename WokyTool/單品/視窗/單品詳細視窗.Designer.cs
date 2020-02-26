@@ -69,7 +69,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 121);
+            this.label1.Location = new System.Drawing.Point(12, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
@@ -78,7 +78,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 149);
+            this.label2.Location = new System.Drawing.Point(12, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 1;
@@ -87,7 +87,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 93);
+            this.label3.Location = new System.Drawing.Point(12, 151);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 2;
@@ -287,7 +287,7 @@
             // 
             // 品類
             // 
-            this.品類.Location = new System.Drawing.Point(58, 116);
+            this.品類.Location = new System.Drawing.Point(58, 91);
             this.品類.Margin = new System.Windows.Forms.Padding(4);
             this.品類.Name = "品類";
             this.品類.ReadOnly = false;
@@ -298,7 +298,7 @@
             // 
             // 供應商
             // 
-            this.供應商.Location = new System.Drawing.Point(58, 144);
+            this.供應商.Location = new System.Drawing.Point(58, 119);
             this.供應商.Margin = new System.Windows.Forms.Padding(4);
             this.供應商.Name = "供應商";
             this.供應商.ReadOnly = false;
@@ -309,7 +309,7 @@
             // 
             // 品牌
             // 
-            this.品牌.Location = new System.Drawing.Point(58, 90);
+            this.品牌.Location = new System.Drawing.Point(58, 148);
             this.品牌.Margin = new System.Windows.Forms.Padding(4);
             this.品牌.Name = "品牌";
             this.品牌.ReadOnly = false;

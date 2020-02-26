@@ -70,7 +70,7 @@
             // 
             // 品牌
             // 
-            this.品牌.Location = new System.Drawing.Point(58, 107);
+            this.品牌.Location = new System.Drawing.Point(58, 164);
             this.品牌.Margin = new System.Windows.Forms.Padding(4);
             this.品牌.Name = "品牌";
             this.品牌.ReadOnly = false;
@@ -81,7 +81,7 @@
             // 
             // 供應商
             // 
-            this.供應商.Location = new System.Drawing.Point(58, 161);
+            this.供應商.Location = new System.Drawing.Point(58, 135);
             this.供應商.Margin = new System.Windows.Forms.Padding(4);
             this.供應商.Name = "供應商";
             this.供應商.ReadOnly = false;
@@ -92,7 +92,7 @@
             // 
             // 品類
             // 
-            this.品類.Location = new System.Drawing.Point(58, 133);
+            this.品類.Location = new System.Drawing.Point(58, 107);
             this.品類.Margin = new System.Windows.Forms.Padding(4);
             this.品類.Name = "品類";
             this.品類.ReadOnly = false;
@@ -178,7 +178,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 110);
+            this.label3.Location = new System.Drawing.Point(12, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 59;
@@ -187,16 +187,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 166);
+            this.label2.Location = new System.Drawing.Point(12, 140);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 58;
             this.label2.Text = "供應商";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 138);
+            this.label1.Location = new System.Drawing.Point(12, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 57;
