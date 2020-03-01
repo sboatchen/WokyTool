@@ -166,6 +166,8 @@ namespace WokyTool.測試
 
         private void 快速_Click(object sender, EventArgs e)
         {
+            var 轉換_ = new 平台訂單配送轉換資料_蝦皮_全家(null);
+            檔案.詢問並修改(轉換_, true);
         }
     }
 }
