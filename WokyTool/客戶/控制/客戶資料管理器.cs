@@ -11,7 +11,7 @@ namespace WokyTool.客戶
 
         public override bool 是否可編輯 { get { return 系統參數.修改設定資料; } }
 
-        public override string 檔案路徑 { get { return "設定/客戶V2_1_7.json"; } }
+        public override string 檔案路徑 { get { return "設定/客戶V3.0.0.json"; } }
 
         public override 客戶資料 不篩選資料 { get { return 客戶資料.不篩選; } }
         public override 客戶資料 空白資料 { get { return 客戶資料.空白; } }

@@ -1,15 +1,7 @@
-﻿using LINQtoCSV;
-using Newtonsoft.Json;
-using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WokyTool.Common;
-using WokyTool.通用;
-using WokyTool.客戶;
 
-namespace WokyTool.廢棄
+namespace WokyTool.客戶
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class 舊客戶資料

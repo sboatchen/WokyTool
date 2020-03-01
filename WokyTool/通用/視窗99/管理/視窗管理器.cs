@@ -12,7 +12,6 @@ using WokyTool.參數;
 using WokyTool.商品;
 using WokyTool.寄庫;
 using WokyTool.進貨;
-using WokyTool.幣值;
 using WokyTool.盤點;
 using WokyTool.聯絡人;
 

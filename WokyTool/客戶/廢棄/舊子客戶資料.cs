@@ -1,14 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WokyTool.Common;
-using WokyTool.客戶;
-using WokyTool.通用;
 
-namespace WokyTool.廢棄
+namespace WokyTool.客戶
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class 舊子客戶資料

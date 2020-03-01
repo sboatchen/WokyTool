@@ -2,7 +2,7 @@
 using WokyTool.客戶;
 using WokyTool.聯絡人;
 
-namespace WokyTool.捨棄
+namespace WokyTool.客戶
 {
     [JsonObject(MemberSerialization.OptIn)]
     public class 舊聯絡人資料

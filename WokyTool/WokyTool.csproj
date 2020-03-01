@@ -561,20 +561,6 @@
     <Compile Include="平台訂單\配送\平台訂單配送轉換資料_生活市集_SEVEN.cs" />
     <Compile Include="平台訂單\配送\平台訂單配送轉換資料_松果_全家.cs" />
     <Compile Include="平台訂單\配送\平台訂單配送轉換資料_松果_SEVEN.cs" />
-    <Compile Include="廢棄\幣值\控制\幣值資料管理器.cs" />
-    <Compile Include="廢棄\幣值\視窗\元件\幣值選取元件.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="廢棄\幣值\視窗\元件\幣值選取元件.Designer.cs">
-      <DependentUpon>幣值選取元件.cs</DependentUpon>
-    </Compile>
-    <Compile Include="廢棄\幣值\視窗\幣值總覽視窗.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="廢棄\幣值\視窗\幣值總覽視窗.Designer.cs">
-      <DependentUpon>幣值總覽視窗.cs</DependentUpon>
-    </Compile>
-    <Compile Include="廢棄\幣值\資料\幣值資料.cs" />
     <Compile Include="平台訂單\控制\平台訂單新增資料管理器.cs" />
     <Compile Include="平台訂單\控制\平台訂單新增匯入資料管理器.cs" />
     <Compile Include="平台訂單\視窗\平台訂單新增匯入視窗.cs">
@@ -591,10 +577,10 @@
     </Compile>
     <Compile Include="平台訂單\資料\平台訂單新增匯入資料.cs" />
     <Compile Include="平台訂單\資料\平台訂單新增資料.cs" />
-    <Compile Include="廢棄\資料\舊子客戶資料.cs" />
-    <Compile Include="廢棄\資料\舊客戶資料.cs" />
-    <Compile Include="廢棄\資料\舊聯絡人資料.cs" />
-    <Compile Include="廢棄\資料\舊客戶資料轉換.cs" />
+    <Compile Include="客戶\廢棄\舊子客戶資料.cs" />
+    <Compile Include="客戶\廢棄\舊客戶資料.cs" />
+    <Compile Include="客戶\廢棄\舊聯絡人資料.cs" />
+    <Compile Include="客戶\廢棄\舊客戶資料轉換.cs" />
     <Compile Include="月結帳\視窗\月結帳篩選視窗.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1331,12 +1317,6 @@
     <EmbeddedResource Include="寄庫\視窗\寄庫匯入篩選視窗.resx">
       <DependentUpon>寄庫匯入篩選視窗.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="廢棄\幣值\視窗\元件\幣值選取元件.resx">
-      <DependentUpon>幣值選取元件.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="廢棄\幣值\視窗\幣值總覽視窗.resx">
-      <DependentUpon>幣值總覽視窗.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="平台訂單\視窗\平台訂單詳細視窗.resx">
       <DependentUpon>平台訂單詳細視窗.cs</DependentUpon>
     </EmbeddedResource>
@@ -1669,7 +1649,6 @@
     <None Include="Properties\DataSources\WokyTool.寄庫.寄庫匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.寄庫.寄庫新增資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.寄庫.寄庫資料.datasource" />
-    <None Include="Properties\DataSources\WokyTool.幣值.幣值資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.平台訂單.平台訂單新增匯入資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.平台訂單.平台訂單新增資料.datasource" />
     <None Include="Properties\DataSources\WokyTool.平台訂單.平台訂單資料.datasource" />

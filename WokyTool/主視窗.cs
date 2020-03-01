@@ -7,7 +7,6 @@ using WokyTool.通用;
 using WokyTool.月結帳;
 using WokyTool.發票;
 using WokyTool.測試;
-using WokyTool.廢棄;
 using WokyTool.預留;
 
 namespace WokyTool
@@ -272,12 +271,6 @@ namespace WokyTool
             var i = new 測試主視窗();
             i.Show();
             i.BringToFront();
-        }
-
-        private void 客戶資料轉換_Click(object sender, EventArgs e)
-        {
-            舊客戶資料轉換 轉換 = new 舊客戶資料轉換();
-            轉換.轉換();
         }
     }
 }

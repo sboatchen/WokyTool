@@ -5,9 +5,7 @@ using System.IO;
 using System.Linq;
 using WokyTool.Common;
 using WokyTool.客戶;
-using WokyTool.捨棄;
 using WokyTool.通用;
-using WokyTool.廢棄;
 
 namespace WokyTool.聯絡人
 {
@@ -17,7 +15,7 @@ namespace WokyTool.聯絡人
 
         public override bool 是否可編輯 { get { return 系統參數.修改設定資料; } }
 
-        public override string 檔案路徑 { get { return "設定/聯絡人V2_1_7.json"; } }
+        public override string 檔案路徑 { get { return "設定/聯絡人V3.0.0.json"; } }
 
         public override 聯絡人資料 不篩選資料 { get { return 聯絡人資料.不篩選; } }
         public override 聯絡人資料 空白資料 { get { return 聯絡人資料.空白; } }

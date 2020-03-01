@@ -52,7 +52,6 @@
             this.基本 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.整理 = new System.Windows.Forms.Button();
-            this.客戶資料轉換 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.訂單 = new System.Windows.Forms.Button();
@@ -305,7 +304,6 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.整理);
-            this.panel3.Controls.Add(this.客戶資料轉換);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.供應商);
             this.panel3.Controls.Add(this.品類);
@@ -330,18 +328,6 @@
             this.整理.Text = "整理";
             this.整理.UseVisualStyleBackColor = true;
             this.整理.Click += new System.EventHandler(this.整理_Click);
-            // 
-            // 客戶資料轉換
-            // 
-            this.客戶資料轉換.ForeColor = System.Drawing.Color.Red;
-            this.客戶資料轉換.Location = new System.Drawing.Point(357, 62);
-            this.客戶資料轉換.Name = "客戶資料轉換";
-            this.客戶資料轉換.Size = new System.Drawing.Size(100, 23);
-            this.客戶資料轉換.TabIndex = 54;
-            this.客戶資料轉換.Text = "客戶資料轉換";
-            this.客戶資料轉換.UseVisualStyleBackColor = true;
-            this.客戶資料轉換.Visible = false;
-            this.客戶資料轉換.Click += new System.EventHandler(this.客戶資料轉換_Click);
             // 
             // label1
             // 
@@ -635,7 +621,6 @@
         private System.Windows.Forms.Button 一般;
         private System.Windows.Forms.Button button45;
         private System.Windows.Forms.Button button46;
-        private System.Windows.Forms.Button 客戶資料轉換;
         private System.Windows.Forms.Button 寄庫新增;
         private System.Windows.Forms.Button 盤點;
         private System.Windows.Forms.Button 整理;

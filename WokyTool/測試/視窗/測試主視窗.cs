@@ -9,6 +9,8 @@ using WokyTool.商品;
 using WokyTool.通用;
 using WokyTool.聯絡人;
 using System.Linq;
+using WokyTool.客戶;
+using WokyTool.一般訂單;
 
 namespace WokyTool.測試
 {
@@ -111,11 +113,8 @@ namespace WokyTool.測試
             商品資料管理器.獨體.儲存();
         }
 
-        private void 快速_Click(object sender, EventArgs e)
+        /*private void 月結帳匯出(object sender, EventArgs e)
         {
-            /*var 轉換_ = new 平台訂單配送轉換資料_松果_全家(null);
-            檔案.詢問並修改(轉換_, true);*/
-
             string 月分 = "09";
 
             string json = 檔案.讀出("歷史/" + 月分 + "/物品.json");
@@ -163,6 +162,10 @@ namespace WokyTool.測試
 
             String 標題_ = String.Format("真瓷統計_{0}", 月分);
             檔案.詢問並寫入(標題_, 月結帳統計轉換_);
+        }*/
+
+        private void 快速_Click(object sender, EventArgs e)
+        {
         }
     }
 }
