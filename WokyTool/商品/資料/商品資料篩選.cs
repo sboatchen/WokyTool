@@ -242,6 +242,8 @@ namespace WokyTool.商品
             if (-1 != _最大利潤)
                 目前列舉_ = 目前列舉_.Where(Value => Value.利潤 <= _最大利潤);
 
+            if (目前列舉_ != 資料列舉_)
+                return 目前列舉_.DefaultIfEmpty(商品資料.空白);
             return 目前列舉_;
         }
     }

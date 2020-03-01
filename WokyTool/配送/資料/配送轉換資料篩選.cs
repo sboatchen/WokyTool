@@ -286,6 +286,8 @@ namespace WokyTool.配送
             if (-1 != _最大件數)
                 目前列舉_ = 目前列舉_.Where(Value => Value.件數 <= _最大件數);
 
+            if (目前列舉_ != 資料列舉_)
+                return 目前列舉_.DefaultIfEmpty(配送轉換資料.空白);
             return 目前列舉_;
         }
     }

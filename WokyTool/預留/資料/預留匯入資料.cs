@@ -78,6 +78,13 @@ namespace WokyTool.預留
         }
 
         public string 單品名稱 { get { return 轉換.單品.名稱; } }
+
+        /********************************/
+
+        public static readonly 預留匯入資料 空白 = new 預留匯入資料
+        {
+            轉換 = 預留資料.空白
+        };
     }
 }
 

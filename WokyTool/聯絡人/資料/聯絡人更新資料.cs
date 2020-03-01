@@ -148,5 +148,13 @@ namespace WokyTool.聯絡人
 
         public 客戶資料 參考客戶 { get { return 參考.客戶; } }
         public 子客戶資料 參考子客戶 { get { return 參考.子客戶; } }
+
+        /********************************/
+
+        public static readonly 聯絡人更新資料 空白 = new 聯絡人更新資料
+        {
+            修改 = 聯絡人資料.空白,
+            參考 = 聯絡人資料.空白,
+        };
     }
 }

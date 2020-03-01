@@ -43,6 +43,8 @@ namespace WokyTool.客戶
             if (客戶資料.不篩選 != _客戶)
                 目前列舉_ = 目前列舉_.Where(Value => Value.客戶 == _客戶);
 
+            if (目前列舉_ != 資料列舉_)
+                return 目前列舉_.DefaultIfEmpty(子客戶資料.空白);
             return 目前列舉_;
         }
     }

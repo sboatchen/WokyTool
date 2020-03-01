@@ -203,6 +203,8 @@ namespace WokyTool.單品
             if (null != _儲位)
                 目前列舉_ = 目前列舉_.Where(Value => Value.儲位 != null && Value.儲位.Contains(_儲位));
 
+            if (目前列舉_ != 資料列舉_)
+                return 目前列舉_.DefaultIfEmpty(單品資料.空白);
             return 目前列舉_;
         }
     }

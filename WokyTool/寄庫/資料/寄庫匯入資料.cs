@@ -76,6 +76,12 @@ namespace WokyTool.寄庫
         public string 客戶名稱 { get { return 轉換.客戶.名稱; } }
         public string 商品名稱 { get { return 轉換.商品.名稱; } }
 
+        /********************************/
+
+        public static readonly 寄庫匯入資料 空白 = new 寄庫匯入資料
+        {
+            轉換 = 寄庫新增資料.空白
+        };
     }
 }
 

@@ -44,6 +44,12 @@ namespace WokyTool.庫存
 
         [JsonProperty]
         public string 備註 { get; set; }
+
+        /********************************/
+
+        public static readonly 商品庫存封存資料 空白 = new 商品庫存封存資料
+        {
+        };
     }
 }
 

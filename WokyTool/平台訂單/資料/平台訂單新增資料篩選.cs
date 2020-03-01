@@ -352,6 +352,8 @@ namespace WokyTool.平台訂單
             if (-1 != _最大代收金額)
                 目前列舉_ = 目前列舉_.Where(Value => Value.代收金額 <= _最大代收金額);
 
+            if (目前列舉_ != 資料列舉_)
+                return 目前列舉_.DefaultIfEmpty(平台訂單新增資料.空白);
             return 目前列舉_;
         }
     }

@@ -118,7 +118,7 @@
     <Compile Include="一般訂單\資料\一般訂單新增組成資料.cs" />
     <Compile Include="一般訂單\資料\一般訂單資料.cs" />
     <Compile Include="一般訂單\資料\一般訂單新增資料.cs" />
-    <Compile Include="一般訂單\資料\一般訂單資料篩選設定.cs" />
+    <Compile Include="一般訂單\資料\一般訂單資料篩選.cs" />
     <Compile Include="一般訂單\資料\一般訂單新增資料篩選.cs" />
     <Compile Include="一般訂單\轉換\一般訂單銷售匯出結構.cs" />
     <Compile Include="使用者\控制\使用者資料管理器.cs" />

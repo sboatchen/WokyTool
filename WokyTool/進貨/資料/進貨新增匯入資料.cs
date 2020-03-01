@@ -98,6 +98,13 @@ namespace WokyTool.進貨
 
         public string 供應商名稱 { get { return 轉換.供應商.名稱; } }
         public string 單品名稱 { get { return 轉換.單品.名稱; } }
+
+        /********************************/
+
+        public static readonly 進貨新增匯入資料 空白 = new 進貨新增匯入資料
+        {
+            轉換 = 進貨新增資料.空白
+        };
     }
 }
 

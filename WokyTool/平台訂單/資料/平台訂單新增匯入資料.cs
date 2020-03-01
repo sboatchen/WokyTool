@@ -202,6 +202,13 @@ namespace WokyTool.平台訂單
             get { return 轉換.處理器; }
             set { 轉換.處理器 = value; }
         }
+
+        /********************************/
+
+        public static readonly 平台訂單新增匯入資料 空白 = new 平台訂單新增匯入資料
+        {
+            轉換 = 平台訂單新增資料.空白
+        };
     }
 }
 

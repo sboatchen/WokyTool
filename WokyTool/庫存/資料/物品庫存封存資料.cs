@@ -54,6 +54,12 @@ namespace WokyTool.庫存
                     return 庫存總成本 / 庫存;
             }
         }
+
+        /********************************/
+
+        public static readonly 單品庫存封存資料 空白 = new 單品庫存封存資料
+        {
+        };
     }
 }
 

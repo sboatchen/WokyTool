@@ -13,6 +13,8 @@ namespace WokyTool.使用者
             if (null != _文字)
                 目前列舉_ = 目前列舉_.Where(Value => Value.名稱.Contains(_文字));
 
+            if (目前列舉_ != 資料列舉_)
+                return 目前列舉_.DefaultIfEmpty(使用者資料.空白);
             return 目前列舉_;
         }
     }

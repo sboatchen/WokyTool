@@ -43,6 +43,8 @@ namespace WokyTool.庫存
             if (null != _備註)
                 目前列舉_ = 目前列舉_.Where(Value => Value.備註 != null && Value.備註.Contains(_備註));
 
+            if (目前列舉_ != 資料列舉_)
+                return 目前列舉_.DefaultIfEmpty(單品庫存封存資料.空白);
             return 目前列舉_;
         }
     }

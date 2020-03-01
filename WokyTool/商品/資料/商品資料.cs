@@ -319,12 +319,12 @@ namespace WokyTool.商品
                     商品資料管理器.獨體.資料列舉2.Where(Value => Value.公司 == 公司 && Value.客戶 == 客戶 && Value != 參考_ && 品號.Equals(Value.品號)).Any())
                 檢查器_.錯誤(資料_, "品號重複");
 
-            if (組成 != null)
+            if (組成 != null && 組成.Count > 0)
             {
                 foreach (商品組成資料 商品組成資料_ in 組成)
                     商品組成資料_.檢查合法(檢查器_, 資料_, 參考_);
-            }  
-            //@@ 是否允許組合為空
+            } else
+                檢查器_.錯誤(資料_, "組成為空");
         }
 
         public override void 刪除檢查(可檢查介面 檢查器_, 基本資料 資料上層_ = null)

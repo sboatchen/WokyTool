@@ -285,5 +285,13 @@ namespace WokyTool.單品
         public decimal 參考成本 { get { return 參考.成本; } }
         public string 參考成本備註 { get { return 參考.成本備註; } }
         public string 參考儲位 { get { return 參考.儲位; } }
+
+        /********************************/
+
+        public static readonly 單品更新資料 空白 = new 單品更新資料
+        {
+            修改 = 單品資料.空白,
+            參考 = 單品資料.空白,
+        };
     }
 }

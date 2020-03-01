@@ -88,6 +88,8 @@ namespace WokyTool.盤點
                     目前列舉_ = 目前列舉_.Where(Value => Value.是否一致 == false);
             }
 
+            if (目前列舉_ != 資料列舉_)
+                return 目前列舉_.DefaultIfEmpty(盤點資料.空白);
             return 目前列舉_;
         }
     }
