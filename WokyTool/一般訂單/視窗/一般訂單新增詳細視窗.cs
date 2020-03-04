@@ -117,7 +117,7 @@ namespace WokyTool.一般訂單
             一般訂單新增組成資料 組成資料_ = new 一般訂單新增組成資料();
             組成資料_.單品 = 單品_;
             組成資料_.數量 = (int)this.數量.Value;
-            組成資料_.售價 = (int)this.售價.Value;
+            組成資料_.售價 = (decimal)this.售價.Value;
             組成資料_.備註 = this.備註.Text;
 
             _組合BS.Add(組成資料_);

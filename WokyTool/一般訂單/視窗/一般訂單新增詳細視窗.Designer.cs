@@ -55,16 +55,16 @@ namespace WokyTool.一般訂單
             this.聯絡人 = new WokyTool.聯絡人.聯絡人選取元件();
             this.label12 = new System.Windows.Forms.Label();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
+            this.單品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.售價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.一般訂單新增組成資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.新增 = new System.Windows.Forms.Button();
             this.數量 = new System.Windows.Forms.NumericUpDown();
             this.備註 = new System.Windows.Forms.TextBox();
             this.列印單價 = new System.Windows.Forms.CheckBox();
             this.單品 = new WokyTool.單品.單品選取元件();
-            this.單品名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.售價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.售價 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.代收金額)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
@@ -299,6 +299,32 @@ namespace WokyTool.一般訂單
             this.myDataGridView1.Size = new System.Drawing.Size(747, 150);
             this.myDataGridView1.TabIndex = 168;
             // 
+            // 單品名稱DataGridViewTextBoxColumn
+            // 
+            this.單品名稱DataGridViewTextBoxColumn.DataPropertyName = "單品名稱";
+            this.單品名稱DataGridViewTextBoxColumn.HeaderText = "單品";
+            this.單品名稱DataGridViewTextBoxColumn.Name = "單品名稱DataGridViewTextBoxColumn";
+            this.單品名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            this.單品名稱DataGridViewTextBoxColumn.Width = 400;
+            // 
+            // 數量DataGridViewTextBoxColumn
+            // 
+            this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
+            this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
+            this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
+            // 
+            // 售價DataGridViewTextBoxColumn
+            // 
+            this.售價DataGridViewTextBoxColumn.DataPropertyName = "售價";
+            this.售價DataGridViewTextBoxColumn.HeaderText = "售價";
+            this.售價DataGridViewTextBoxColumn.Name = "售價DataGridViewTextBoxColumn";
+            // 
+            // 備註DataGridViewTextBoxColumn
+            // 
+            this.備註DataGridViewTextBoxColumn.DataPropertyName = "備註";
+            this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
+            this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
+            // 
             // 一般訂單新增組成資料BindingSource
             // 
             this.一般訂單新增組成資料BindingSource.DataSource = typeof(WokyTool.一般訂單.一般訂單新增組成資料);
@@ -363,34 +389,9 @@ namespace WokyTool.一般訂單
             this.單品.TabIndex = 174;
             this.單品.元件類型 = WokyTool.通用.選取元件類型.指定;
             // 
-            // 單品名稱DataGridViewTextBoxColumn
-            // 
-            this.單品名稱DataGridViewTextBoxColumn.DataPropertyName = "單品名稱";
-            this.單品名稱DataGridViewTextBoxColumn.HeaderText = "單品";
-            this.單品名稱DataGridViewTextBoxColumn.Name = "單品名稱DataGridViewTextBoxColumn";
-            this.單品名稱DataGridViewTextBoxColumn.ReadOnly = true;
-            this.單品名稱DataGridViewTextBoxColumn.Width = 400;
-            // 
-            // 數量DataGridViewTextBoxColumn
-            // 
-            this.數量DataGridViewTextBoxColumn.DataPropertyName = "數量";
-            this.數量DataGridViewTextBoxColumn.HeaderText = "數量";
-            this.數量DataGridViewTextBoxColumn.Name = "數量DataGridViewTextBoxColumn";
-            // 
-            // 售價DataGridViewTextBoxColumn
-            // 
-            this.售價DataGridViewTextBoxColumn.DataPropertyName = "售價";
-            this.售價DataGridViewTextBoxColumn.HeaderText = "售價";
-            this.售價DataGridViewTextBoxColumn.Name = "售價DataGridViewTextBoxColumn";
-            // 
-            // 備註DataGridViewTextBoxColumn
-            // 
-            this.備註DataGridViewTextBoxColumn.DataPropertyName = "備註";
-            this.備註DataGridViewTextBoxColumn.HeaderText = "備註";
-            this.備註DataGridViewTextBoxColumn.Name = "備註DataGridViewTextBoxColumn";
-            // 
             // 售價
             // 
+            this.售價.DecimalPlaces = 3;
             this.售價.Location = new System.Drawing.Point(559, 146);
             this.售價.Maximum = new decimal(new int[] {
             99999999,
