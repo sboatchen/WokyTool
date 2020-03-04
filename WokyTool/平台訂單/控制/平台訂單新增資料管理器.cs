@@ -167,6 +167,9 @@ namespace WokyTool.平台訂單
                 case "官網":
                     處理器_ = new 平台訂單匯入處理_官網();
                     break;
+                case "PINKOI":
+                    處理器_ = new 平台訂單匯入處理_PINKOI();
+                    break;
                 default:
                     訊息管理器.獨體.錯誤("平台訂單自定義工廠::不支援 " + 名稱_);
                     return null;
