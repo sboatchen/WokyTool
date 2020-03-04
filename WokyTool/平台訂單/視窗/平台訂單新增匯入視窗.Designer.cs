@@ -69,6 +69,7 @@
             this.蝦皮SEVENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.蝦皮全家ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.官網ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pINKOIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
@@ -95,7 +96,7 @@
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.平台訂單新增匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pINKOIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.瑪黑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單新增匯入資料BindingSource)).BeginInit();
@@ -143,7 +144,8 @@
             this.愛料理ToolStripMenuItem,
             this.蝦皮ToolStripMenuItem,
             this.官網ToolStripMenuItem,
-            this.pINKOIToolStripMenuItem});
+            this.pINKOIToolStripMenuItem,
+            this.瑪黑ToolStripMenuItem});
             this.匯入ToolStripMenuItem.Name = "匯入ToolStripMenuItem";
             this.匯入ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.匯入ToolStripMenuItem.Text = "匯入";
@@ -426,6 +428,13 @@
             this.官網ToolStripMenuItem.Text = "官網";
             this.官網ToolStripMenuItem.Click += new System.EventHandler(this.官網ToolStripMenuItem_Click);
             // 
+            // pINKOIToolStripMenuItem
+            // 
+            this.pINKOIToolStripMenuItem.Name = "pINKOIToolStripMenuItem";
+            this.pINKOIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pINKOIToolStripMenuItem.Text = "PINKOI";
+            this.pINKOIToolStripMenuItem.Click += new System.EventHandler(this.pINKOIToolStripMenuItem_Click);
+            // 
             // 篩選ToolStripMenuItem
             // 
             this.篩選ToolStripMenuItem.Name = "篩選ToolStripMenuItem";
@@ -615,12 +624,12 @@
             // 
             this.平台訂單新增匯入資料BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單新增匯入資料);
             // 
-            // pINKOIToolStripMenuItem
+            // 瑪黑ToolStripMenuItem
             // 
-            this.pINKOIToolStripMenuItem.Name = "pINKOIToolStripMenuItem";
-            this.pINKOIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.pINKOIToolStripMenuItem.Text = "PINKOI";
-            this.pINKOIToolStripMenuItem.Click += new System.EventHandler(this.pINKOIToolStripMenuItem_Click);
+            this.瑪黑ToolStripMenuItem.Name = "瑪黑ToolStripMenuItem";
+            this.瑪黑ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.瑪黑ToolStripMenuItem.Text = "瑪黑";
+            this.瑪黑ToolStripMenuItem.Click += new System.EventHandler(this.瑪黑ToolStripMenuItem_Click);
             // 
             // 平台訂單新增匯入視窗
             // 
@@ -709,6 +718,7 @@
         private System.Windows.Forms.ToolStripMenuItem 特力屋午洋ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 官網ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pINKOIToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 瑪黑ToolStripMenuItem;
 
     }
 }

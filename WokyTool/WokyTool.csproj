@@ -279,6 +279,7 @@
     <Compile Include="平台訂單\回單\平台訂單回單轉換_生活市集.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_博客來.cs" />
     <Compile Include="平台訂單\控制\平台訂單資料管理器.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_瑪黑.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_PINKOI.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_愛料理.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_官網.cs" />
