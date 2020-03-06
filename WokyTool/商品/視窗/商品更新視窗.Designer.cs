@@ -38,19 +38,17 @@ namespace WokyTool.商品
             this.dataGridView1 = new WokyTool.通用.MyDataGridView();
             this.商品更新資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.更新狀態DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.品類名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.供應商名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.品牌名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.公司識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.客戶識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.品號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.品類名稱 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.供應商名稱 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.品牌名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名稱DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.進價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.售價DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.寄庫數量DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.成本DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.利潤DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.組成字串識別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.組成 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -67,7 +65,7 @@ namespace WokyTool.商品
             this.檢查ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1753, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1549, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -103,26 +101,24 @@ namespace WokyTool.商品
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.更新狀態DataGridViewTextBoxColumn,
+            this.品類名稱DataGridViewTextBoxColumn,
+            this.供應商名稱DataGridViewTextBoxColumn,
+            this.品牌名稱DataGridViewTextBoxColumn,
             this.公司識別DataGridViewTextBoxColumn,
             this.客戶識別DataGridViewTextBoxColumn,
             this.品號DataGridViewTextBoxColumn,
-            this.品類名稱,
-            this.供應商名稱,
-            this.品牌名稱DataGridViewTextBoxColumn,
             this.名稱DataGridViewTextBoxColumn,
-            this.進價DataGridViewTextBoxColumn,
-            this.售價DataGridViewTextBoxColumn,
             this.寄庫數量DataGridViewTextBoxColumn,
             this.成本DataGridViewTextBoxColumn,
             this.利潤DataGridViewTextBoxColumn,
-            this.組成字串識別DataGridViewTextBoxColumn,
+            this.組成,
             this.錯誤訊息DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.商品更新資料BindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1753, 400);
+            this.dataGridView1.Size = new System.Drawing.Size(1549, 400);
             this.dataGridView1.TabIndex = 2;
             // 
             // 商品更新資料BindingSource
@@ -135,6 +131,27 @@ namespace WokyTool.商品
             this.更新狀態DataGridViewTextBoxColumn.HeaderText = "更新狀態";
             this.更新狀態DataGridViewTextBoxColumn.Name = "更新狀態DataGridViewTextBoxColumn";
             this.更新狀態DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 品類名稱DataGridViewTextBoxColumn
+            // 
+            this.品類名稱DataGridViewTextBoxColumn.DataPropertyName = "品類名稱";
+            this.品類名稱DataGridViewTextBoxColumn.HeaderText = "品類";
+            this.品類名稱DataGridViewTextBoxColumn.Name = "品類名稱DataGridViewTextBoxColumn";
+            this.品類名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 供應商名稱DataGridViewTextBoxColumn
+            // 
+            this.供應商名稱DataGridViewTextBoxColumn.DataPropertyName = "供應商名稱";
+            this.供應商名稱DataGridViewTextBoxColumn.HeaderText = "供應商";
+            this.供應商名稱DataGridViewTextBoxColumn.Name = "供應商名稱DataGridViewTextBoxColumn";
+            this.供應商名稱DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 品牌名稱DataGridViewTextBoxColumn
+            // 
+            this.品牌名稱DataGridViewTextBoxColumn.DataPropertyName = "品牌名稱";
+            this.品牌名稱DataGridViewTextBoxColumn.HeaderText = "品牌";
+            this.品牌名稱DataGridViewTextBoxColumn.Name = "品牌名稱DataGridViewTextBoxColumn";
+            this.品牌名稱DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 公司識別DataGridViewTextBoxColumn
             // 
@@ -154,45 +171,12 @@ namespace WokyTool.商品
             this.品號DataGridViewTextBoxColumn.HeaderText = "品號";
             this.品號DataGridViewTextBoxColumn.Name = "品號DataGridViewTextBoxColumn";
             // 
-            // 品類名稱
-            // 
-            this.品類名稱.DataPropertyName = "品類名稱";
-            this.品類名稱.HeaderText = "品類";
-            this.品類名稱.Name = "品類名稱";
-            this.品類名稱.ReadOnly = true;
-            // 
-            // 供應商名稱
-            // 
-            this.供應商名稱.DataPropertyName = "供應商名稱";
-            this.供應商名稱.HeaderText = "供應商";
-            this.供應商名稱.Name = "供應商名稱";
-            this.供應商名稱.ReadOnly = true;
-            // 
-            // 品牌名稱DataGridViewTextBoxColumn
-            // 
-            this.品牌名稱DataGridViewTextBoxColumn.DataPropertyName = "品牌名稱";
-            this.品牌名稱DataGridViewTextBoxColumn.HeaderText = "品牌";
-            this.品牌名稱DataGridViewTextBoxColumn.Name = "品牌名稱DataGridViewTextBoxColumn";
-            this.品牌名稱DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // 名稱DataGridViewTextBoxColumn
             // 
             this.名稱DataGridViewTextBoxColumn.DataPropertyName = "名稱";
             this.名稱DataGridViewTextBoxColumn.HeaderText = "名稱";
             this.名稱DataGridViewTextBoxColumn.Name = "名稱DataGridViewTextBoxColumn";
             this.名稱DataGridViewTextBoxColumn.Width = 200;
-            // 
-            // 進價DataGridViewTextBoxColumn
-            // 
-            this.進價DataGridViewTextBoxColumn.DataPropertyName = "進價";
-            this.進價DataGridViewTextBoxColumn.HeaderText = "進價";
-            this.進價DataGridViewTextBoxColumn.Name = "進價DataGridViewTextBoxColumn";
-            // 
-            // 售價DataGridViewTextBoxColumn
-            // 
-            this.售價DataGridViewTextBoxColumn.DataPropertyName = "售價";
-            this.售價DataGridViewTextBoxColumn.HeaderText = "售價";
-            this.售價DataGridViewTextBoxColumn.Name = "售價DataGridViewTextBoxColumn";
             // 
             // 寄庫數量DataGridViewTextBoxColumn
             // 
@@ -214,12 +198,12 @@ namespace WokyTool.商品
             this.利潤DataGridViewTextBoxColumn.Name = "利潤DataGridViewTextBoxColumn";
             this.利潤DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 組成字串識別DataGridViewTextBoxColumn
+            // 組成
             // 
-            this.組成字串識別DataGridViewTextBoxColumn.DataPropertyName = "組成字串識別";
-            this.組成字串識別DataGridViewTextBoxColumn.HeaderText = "組成";
-            this.組成字串識別DataGridViewTextBoxColumn.Name = "組成字串識別DataGridViewTextBoxColumn";
-            this.組成字串識別DataGridViewTextBoxColumn.ReadOnly = true;
+            this.組成.DataPropertyName = "組成字串";
+            this.組成.HeaderText = "組成";
+            this.組成.Name = "組成";
+            this.組成.ReadOnly = true;
             // 
             // 錯誤訊息DataGridViewTextBoxColumn
             // 
@@ -232,7 +216,7 @@ namespace WokyTool.商品
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1753, 424);
+            this.ClientSize = new System.Drawing.Size(1549, 424);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -258,19 +242,17 @@ namespace WokyTool.商品
         private MyDataGridView dataGridView1;
         private System.Windows.Forms.BindingSource 商品更新資料BindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 更新狀態DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 品類名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 供應商名稱DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 品牌名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 公司識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 客戶識別DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 品號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 品類名稱;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 供應商名稱;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 品牌名稱DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名稱DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 進價DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 售價DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 寄庫數量DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 成本DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 利潤DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 組成字串識別DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 組成;
         private System.Windows.Forms.DataGridViewTextBoxColumn 錯誤訊息DataGridViewTextBoxColumn;
     }
 }

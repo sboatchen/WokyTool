@@ -13,6 +13,8 @@ namespace WokyTool.商品{
         private BindingSource _組合BS = new BindingSource();
         private BindingSource _組合BS2 = new BindingSource();
 
+        private static 可檢查介面 _新增檢查 = new 通知檢查器();
+
         // 介面編輯呈現用
         public 商品更新詳細視窗() : base()
         {
@@ -26,12 +28,12 @@ namespace WokyTool.商品{
 
         public override void 初始化()
         {
-            /*品類.初始化(); //TODO 暫時停止 商品更新功能
+            品類.初始化();
             供應商.初始化();
             品牌.初始化();
             公司.初始化();
             客戶.初始化();
-            單品.初始化();
+            新增單品.初始化();
 
             參考品類.初始化();
             參考供應商.初始化();
@@ -54,8 +56,6 @@ namespace WokyTool.商品{
             資料綁定(this.公司, "公司");
             資料綁定(this.客戶, "客戶");
 
-            資料綁定(this.進價, "進價");
-            資料綁定(this.售價, "售價");
             資料綁定(this.寄庫數量, "寄庫數量");
             資料綁定(this.成本, "成本");
             資料綁定(this.利潤, "利潤");
@@ -72,14 +72,11 @@ namespace WokyTool.商品{
             資料綁定(this.參考公司, "參考公司");
             資料綁定(this.參考客戶, "參考客戶");
 
-            資料綁定(this.參考進價, "參考進價");
-            資料綁定(this.參考售價, "參考售價");
             資料綁定(this.參考寄庫數量, "參考寄庫數量");
             資料綁定(this.參考成本, "參考成本");
             資料綁定(this.參考利潤, "參考利潤");
 
             資料綁定(this.參考組成字串, "參考組成字串");
-
 
             資料異動顯示綁定(this.名稱, this.參考名稱);
             資料異動顯示綁定(this.品號, this.品號);
@@ -91,8 +88,6 @@ namespace WokyTool.商品{
             資料異動顯示綁定(this.公司, this.參考公司);
             資料異動顯示綁定(this.客戶, this.參考客戶);
 
-            資料異動顯示綁定(this.進價, this.參考進價);
-            資料異動顯示綁定(this.售價, this.參考售價);
             資料異動顯示綁定(this.寄庫數量, this.參考寄庫數量);
             資料異動顯示綁定(this.成本, this.參考成本);
             資料異動顯示綁定(this.利潤, this.參考利潤);
@@ -100,47 +95,53 @@ namespace WokyTool.商品{
             資料異動顯示綁定(this.組成字串, this.參考組成字串);
 
             this.dataGridView1.DataSource = _組合BS;
-            this.dataGridView2.DataSource = _組合BS2;*/
+            this.dataGridView2.DataSource = _組合BS2;
+
+            this._組合BS.CurrentItemChanged += _組合異動;
+        }
+
+        private void _組合異動(object sender, EventArgs e)
+        {
+            Console.WriteLine("組合異動");
+
+            _目前資料.更新組成();
+            this.組成字串.Text = _目前資料.組成字串;
+            this.品類.SelectedItem = _目前資料.品類;
+            this.供應商.SelectedItem = _目前資料.供應商;
+            this.品牌.SelectedItem = _目前資料.品牌;
+            this.成本.Value = _目前資料.成本;
+            this.利潤.Value = _目前資料.利潤;
         }
 
         private void 新增_Click(object sender, EventArgs e)
         {
-            /*單品資料 單品_ = (單品資料)(this.單品.SelectedItem);    //TODO 暫時停止 商品更新功能
-            if (單品_ == null || 單品_.編號是否有值() == false)
-            {
-                訊息管理器.獨體.通知("單品不合法");
-                return;
-            }
-
             商品組成資料 商品組成資料_ = new 商品組成資料();
-            商品組成資料_.單品 = 單品_;
-            商品組成資料_.數量 = (int)this.數量.Value;
+            商品組成資料_.群組 = (int)this.新增群組.Value;
+            商品組成資料_.規格 = this.新增規格.Text;
+            商品組成資料_.單品 = (單品資料)(this.新增單品.SelectedItem);
+            商品組成資料_.數量 = (int)this.新增數量.Value;
 
-            _組合BS.Add(商品組成資料_);*/
+            _新增檢查.重置();
+            商品組成資料_.檢查合法(_新增檢查);
+
+            if (_新增檢查.是否合法 == false)
+                return;
+
+            _組合BS.Add(商品組成資料_);
+
+            _組合異動(null, null);
         }
 
         private 商品更新資料 _目前資料 = null;
         protected override void 選擇改變()
         {
-            if (_目前資料 != null)
-                _目前資料.更新組成();   //@@ 優化更新方式 不要每次更新, 還有商品詳細視窗
-
             _目前資料 = (商品更新資料)(this.資料BS.Current);
+
             if (_目前資料.組成 == null)
                 _目前資料.組成 = new List<商品組成資料>();
 
             _組合BS.DataSource = _目前資料.組成;
-
-            if (_目前資料.參考組成 == null)
-                _組合BS2.DataSource = new List<商品組成資料>();
-            else
-                _組合BS2.DataSource = _目前資料.參考組成;
-        }
-
-        protected override void 視窗關閉()
-        {
-            if (_目前資料 != null)
-                _目前資料.更新組成();
+            _組合BS2.DataSource = _目前資料.參考組成;
         }
     }
 }

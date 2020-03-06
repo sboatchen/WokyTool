@@ -244,7 +244,6 @@
             this.通用ToolStripMenuItem.Name = "通用ToolStripMenuItem";
             this.通用ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.通用ToolStripMenuItem.Text = "通用";
-            this.通用ToolStripMenuItem.Visible = false;
             this.通用ToolStripMenuItem.Click += new System.EventHandler(this.通用ToolStripMenuItem_Click);
             // 
             // 商品總覽視窗

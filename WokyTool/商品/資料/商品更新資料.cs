@@ -135,36 +135,6 @@ namespace WokyTool.商品
         [可匯出]
         [可匯入]
         [JsonProperty]
-        public decimal 進價
-        {
-            get
-            {
-                return 修改.進價;
-            }
-            set
-            {
-                修改.進價 = value;
-            }
-        }
-
-        [可匯出]
-        [可匯入]
-        [JsonProperty]
-        public decimal 售價
-        {
-            get
-            {
-                return 修改.售價;
-            }
-            set
-            {
-                修改.售價 = value;
-            }
-        }
-
-        [可匯出]
-        [可匯入]
-        [JsonProperty]
         public int 寄庫數量
         {
             get
@@ -189,7 +159,7 @@ namespace WokyTool.商品
             set
             {
                 _組成字串識別 = value;
-                if (參考組成字串.Equals(_組成字串識別) == false)
+                if (string.IsNullOrEmpty(參考組成字串) || 參考組成字串.Equals(_組成字串識別) == false)
                 {
                     修改.組成 = 單品合併資料.共用.解構(_組成字串識別);
                     修改.更新組成();
@@ -242,7 +212,7 @@ namespace WokyTool.商品
         public decimal 成本 { get { return 修改.成本; } }
         public decimal 利潤 { get { return 修改.利潤; } }
 
-        public string 組成字串 { get { return 修改.組成字串; } }
+        public string 組成字串 { get { return _組成字串識別; } }
 
         public string 參考名稱 { get { return 參考.名稱; } }
         public string 參考品號 { get { return 參考.品號; } }
@@ -254,8 +224,6 @@ namespace WokyTool.商品
         public 公司資料 參考公司 { get { return 參考.公司; } }
         public 客戶資料 參考客戶 { get { return 參考.客戶; } }
 
-        public decimal 參考進價 { get { return 參考.進價; } }
-        public decimal 參考售價 { get { return 參考.售價; } }
         public int 參考寄庫數量 { get { return 參考.寄庫數量; } }
 
         public decimal 參考成本 { get { return 參考.成本; } }
@@ -269,7 +237,6 @@ namespace WokyTool.商品
         public void 更新組成()
         {
             修改.更新組成();
-            _組成字串識別 = 修改.組成字串;
         }
 
         /********************************/

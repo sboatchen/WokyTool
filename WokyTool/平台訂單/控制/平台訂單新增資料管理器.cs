@@ -167,7 +167,7 @@ namespace WokyTool.平台訂單
                 case "官網":
                     處理器_ = new 平台訂單匯入處理_官網();
                     break;
-                case "PINKOI":
+                case "pinkoi":
                     處理器_ = new 平台訂單匯入處理_PINKOI();
                     break;
                 case "瑪黑":
