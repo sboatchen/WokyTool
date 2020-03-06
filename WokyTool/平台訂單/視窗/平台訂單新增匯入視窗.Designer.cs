@@ -70,6 +70,7 @@
             this.蝦皮全家ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.官網ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pINKOIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.瑪黑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.篩選ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.檢查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
@@ -96,7 +97,9 @@
             this.代收金額DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.錯誤訊息DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.平台訂單新增匯入資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.瑪黑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.芳儀蝦皮ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.芳儀蝦皮SEVENToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.芳儀蝦皮全家ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.平台訂單新增匯入資料BindingSource)).BeginInit();
@@ -143,6 +146,7 @@
             this.泛科ToolStripMenuItem,
             this.愛料理ToolStripMenuItem,
             this.蝦皮ToolStripMenuItem,
+            this.芳儀蝦皮ToolStripMenuItem,
             this.官網ToolStripMenuItem,
             this.pINKOIToolStripMenuItem,
             this.瑪黑ToolStripMenuItem});
@@ -403,21 +407,21 @@
             // 蝦皮一般ToolStripMenuItem
             // 
             this.蝦皮一般ToolStripMenuItem.Name = "蝦皮一般ToolStripMenuItem";
-            this.蝦皮一般ToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.蝦皮一般ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.蝦皮一般ToolStripMenuItem.Text = "一般";
             this.蝦皮一般ToolStripMenuItem.Click += new System.EventHandler(this.蝦皮一般ToolStripMenuItem_Click);
             // 
             // 蝦皮SEVENToolStripMenuItem
             // 
             this.蝦皮SEVENToolStripMenuItem.Name = "蝦皮SEVENToolStripMenuItem";
-            this.蝦皮SEVENToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.蝦皮SEVENToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.蝦皮SEVENToolStripMenuItem.Text = "SEVEN";
             this.蝦皮SEVENToolStripMenuItem.Click += new System.EventHandler(this.蝦皮SEVENToolStripMenuItem_Click);
             // 
             // 蝦皮全家ToolStripMenuItem
             // 
             this.蝦皮全家ToolStripMenuItem.Name = "蝦皮全家ToolStripMenuItem";
-            this.蝦皮全家ToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.蝦皮全家ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.蝦皮全家ToolStripMenuItem.Text = "全家";
             this.蝦皮全家ToolStripMenuItem.Click += new System.EventHandler(this.蝦皮全家ToolStripMenuItem_Click);
             // 
@@ -434,6 +438,13 @@
             this.pINKOIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pINKOIToolStripMenuItem.Text = "PINKOI";
             this.pINKOIToolStripMenuItem.Click += new System.EventHandler(this.pINKOIToolStripMenuItem_Click);
+            // 
+            // 瑪黑ToolStripMenuItem
+            // 
+            this.瑪黑ToolStripMenuItem.Name = "瑪黑ToolStripMenuItem";
+            this.瑪黑ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.瑪黑ToolStripMenuItem.Text = "瑪黑";
+            this.瑪黑ToolStripMenuItem.Click += new System.EventHandler(this.瑪黑ToolStripMenuItem_Click);
             // 
             // 篩選ToolStripMenuItem
             // 
@@ -624,12 +635,28 @@
             // 
             this.平台訂單新增匯入資料BindingSource.DataSource = typeof(WokyTool.平台訂單.平台訂單新增匯入資料);
             // 
-            // 瑪黑ToolStripMenuItem
+            // 芳儀蝦皮ToolStripMenuItem
             // 
-            this.瑪黑ToolStripMenuItem.Name = "瑪黑ToolStripMenuItem";
-            this.瑪黑ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.瑪黑ToolStripMenuItem.Text = "瑪黑";
-            this.瑪黑ToolStripMenuItem.Click += new System.EventHandler(this.瑪黑ToolStripMenuItem_Click);
+            this.芳儀蝦皮ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.芳儀蝦皮SEVENToolStripMenuItem,
+            this.芳儀蝦皮全家ToolStripMenuItem});
+            this.芳儀蝦皮ToolStripMenuItem.Name = "芳儀蝦皮ToolStripMenuItem";
+            this.芳儀蝦皮ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.芳儀蝦皮ToolStripMenuItem.Text = "芳儀蝦皮";
+            // 
+            // 芳儀蝦皮SEVENToolStripMenuItem
+            // 
+            this.芳儀蝦皮SEVENToolStripMenuItem.Name = "芳儀蝦皮SEVENToolStripMenuItem";
+            this.芳儀蝦皮SEVENToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.芳儀蝦皮SEVENToolStripMenuItem.Text = "SEVEN";
+            this.芳儀蝦皮SEVENToolStripMenuItem.Click += new System.EventHandler(this.芳儀蝦皮SEVENToolStripMenuItem_Click);
+            // 
+            // 芳儀蝦皮全家ToolStripMenuItem
+            // 
+            this.芳儀蝦皮全家ToolStripMenuItem.Name = "芳儀蝦皮全家ToolStripMenuItem";
+            this.芳儀蝦皮全家ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.芳儀蝦皮全家ToolStripMenuItem.Text = "全家";
+            this.芳儀蝦皮全家ToolStripMenuItem.Click += new System.EventHandler(this.芳儀蝦皮全家ToolStripMenuItem_Click);
             // 
             // 平台訂單新增匯入視窗
             // 
@@ -719,6 +746,9 @@
         private System.Windows.Forms.ToolStripMenuItem 官網ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pINKOIToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 瑪黑ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 芳儀蝦皮ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 芳儀蝦皮SEVENToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 芳儀蝦皮全家ToolStripMenuItem;
 
     }
 }

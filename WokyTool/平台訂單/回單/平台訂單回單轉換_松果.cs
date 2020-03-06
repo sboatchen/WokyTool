@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 using WokyTool.Common;
@@ -27,7 +28,7 @@ namespace WokyTool.平台訂單
         {
             Builder_.加入標頭("訂單編號", "收件人", "收件地址", "電話", "訂購內容", "物流商", "物流單號");
 
-            foreach (平台訂單新增資料 資料_ in _資料列舉)
+            foreach (平台訂單新增資料 資料_ in _資料列舉.GroupBy(Value => Value.配送單號).Select(Value => Value.First()))
             {
                 Builder_.SB.Append(" ' ").Append(資料_.訂單編號).Append(" ,");
                 Builder_.SB.Append(資料_.姓名).Append(",");

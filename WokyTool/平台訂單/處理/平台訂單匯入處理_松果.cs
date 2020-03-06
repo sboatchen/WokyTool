@@ -30,7 +30,7 @@ namespace WokyTool.平台訂單
 
         public override void 讀出檔名(string 檔名_)
         {
-            檔名 = Path.GetFileName(檔名_);
+            檔名 = Path.GetFileName(檔名_).Replace("出貨單.xls", "物流單.csv");
         }
 
         public IEnumerable<平台訂單新增匯入資料> 讀出資料(string[] 資料列_)

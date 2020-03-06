@@ -164,6 +164,9 @@ namespace WokyTool.平台訂單
                             break;
                     }
                     break;
+                case "芳儀蝦皮":
+                    處理器_ = new 平台訂單匯入處理_芳儀蝦皮_超商();
+                    break;
                 case "官網":
                     處理器_ = new 平台訂單匯入處理_官網();
                     break;

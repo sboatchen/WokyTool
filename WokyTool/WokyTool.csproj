@@ -292,6 +292,7 @@
     <Compile Include="平台訂單\處理\平台訂單匯入處理_citiesocial.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_uDesign.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_蝦皮.cs" />
+    <Compile Include="平台訂單\處理\平台訂單匯入處理_芳儀蝦皮_超商.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_蝦皮_超商.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_神坊.cs" />
     <Compile Include="平台訂單\處理\平台訂單匯入處理_博客來.cs" />
