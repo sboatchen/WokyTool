@@ -43,7 +43,7 @@ namespace WokyTool.平台訂單
                 yield break;
             }
 
-            string 訂單編號_ = 資料列_[6].轉成字串().Replace("\'", "");
+            string 訂單編號_ = 資料列_[6].轉成字串();
 
             string 姓名_ = 資料列_[18].轉成字串();
             string 手機_ = 資料列_[22].轉成字串();

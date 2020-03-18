@@ -107,15 +107,39 @@ namespace WokyTool.通用
             }   
         }
 
+        public static string 移除前後引號(this string 內容_)
+        {
+            if (string.IsNullOrEmpty(內容_))
+                return 內容_;
+
+            int 開始位置 = 0;
+            int 移除數量 = 0;
+
+            if (內容_.StartsWith("\"") || 內容_.StartsWith("'"))
+            {
+                開始位置 = 1;
+                移除數量 += 1;
+            }
+
+            if (內容_.EndsWith("\"") || 內容_.EndsWith("'"))
+            {
+                移除數量 += 1;
+            }
+
+            if (移除數量 > 0)
+            {
+                return 內容_.Substring(開始位置, 內容_.Length - 移除數量);
+            }
+
+            return 內容_;
+        }
+
         public static string 轉成字串(this string 內容_)
         {
             if (string.IsNullOrEmpty(內容_))
                 return null;
 
-            if (內容_.StartsWith("\"") || 內容_.StartsWith("'"))
-                return 內容_.Substring(1, 內容_.Length - 2);    //@@ 需測試 字串裡面有""的狀況
-            else
-                return 內容_;
+            return 內容_.移除前後引號();
         }
 
         public static int 轉成整數(this string 內容_)
@@ -123,8 +147,7 @@ namespace WokyTool.通用
             if (string.IsNullOrEmpty(內容_))
                 return 0;
 
-            if (內容_.StartsWith("\"") || 內容_.StartsWith("'"))
-                內容_ = 內容_.Substring(1, 內容_.Length - 2);
+            內容_ = 內容_.移除前後引號();
 
             return Int32.Parse(內容_);
         }
@@ -134,8 +157,7 @@ namespace WokyTool.通用
             if (string.IsNullOrEmpty(內容_))
                 return 0f;
 
-            if (內容_.StartsWith("\"") || 內容_.StartsWith("'"))
-                內容_ = 內容_.Substring(1, 內容_.Length - 2);
+            內容_ = 內容_.移除前後引號();
 
             return float.Parse(內容_);
         }
@@ -145,8 +167,7 @@ namespace WokyTool.通用
             if (string.IsNullOrEmpty(內容_))
                 return 0d;
 
-            if (內容_.StartsWith("\"") || 內容_.StartsWith("'"))
-                內容_ = 內容_.Substring(1, 內容_.Length - 2);
+            內容_ = 內容_.移除前後引號();
 
             return Double.Parse(內容_);
         }
@@ -156,8 +177,7 @@ namespace WokyTool.通用
             if (string.IsNullOrEmpty(內容_))
                 return DateTime.MinValue;
 
-            if (內容_.StartsWith("\"") || 內容_.StartsWith("'"))
-                內容_ = 內容_.Substring(1, 內容_.Length - 2);
+            內容_ = 內容_.移除前後引號();
 
             double d;
             if (double.TryParse(內容_, out d))

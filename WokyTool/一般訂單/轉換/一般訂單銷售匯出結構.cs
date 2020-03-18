@@ -24,15 +24,18 @@ namespace WokyTool.一般訂單
         public string 密碼 { get { return null; } }
 
         public 一般訂單新增資料 資料 { get; set; }
+        public int 編號 { get; set; }
 
-        public 一般訂單銷售匯出結構(一般訂單新增資料 資料_)
+        public 一般訂單銷售匯出結構(一般訂單新增資料 資料_, int 編號_)
         {
             資料 = 資料_;
+            編號 = 編號_;
         }
 
         public void 寫入(Application App_)
         {
-            //App_.Cells[1, 2] = 資料.編號;
+            App_.Cells[1, 2] = 編號;
+            App_.Cells[1, 3] = (資料.子客戶編號 > 0) ? 資料.客戶名稱 + " - " + 資料.子客戶名稱 : 資料.客戶名稱;
             App_.Cells[2, 2] = 時間.目前日期_斜線;
             App_.Cells[3, 2] = 資料.姓名;
             App_.Cells[4, 2] = 資料.電話;

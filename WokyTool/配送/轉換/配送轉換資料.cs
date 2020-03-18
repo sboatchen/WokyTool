@@ -16,6 +16,9 @@ namespace WokyTool.配送
             get { return 轉換.配送公司; }
             set
             {
+                if (String.Equals(轉換.配送公司, value))
+                    return;
+
                 if (String.IsNullOrEmpty(轉換.配送單號) == false)
                 {
                     訊息管理器.獨體.警告("已配送目標無法充新配送 " + this.ToString(false));
@@ -38,6 +41,9 @@ namespace WokyTool.配送
                     訊息管理器.獨體.警告("配送單號不可設定為空");
                     return;
                 }
+
+                if (String.Equals(轉換.配送單號, value))
+                    return;
 
                 if (String.IsNullOrEmpty(轉換.配送單號) == false)
                 {
