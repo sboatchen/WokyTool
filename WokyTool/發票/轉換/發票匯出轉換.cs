@@ -56,10 +56,6 @@ namespace WokyTool.發票
             App_.Cells[1, 12] = "營業稅";
             App_.Cells[1, 13] = "總計";
             App_.Cells[1, 14] = "課稅別";
-            App_.Cells[1, 15] = "匯率";
-            App_.Cells[1, 16] = "載具號碼1";
-            App_.Cells[1, 17] = "載具號碼2";
-            App_.Cells[1, 18] = "總備註";
 
             int 目前行數_ = 2;
             decimal 總計_ = 0;
