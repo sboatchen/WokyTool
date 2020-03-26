@@ -35,7 +35,7 @@ namespace WokyTool.一般訂單
         public void 寫入(Application App_)
         {
             App_.Cells[1, 2] = 編號;
-            App_.Cells[1, 3] = (資料.子客戶編號 > 0) ? 資料.客戶名稱 + " - " + 資料.子客戶名稱 : 資料.客戶名稱;
+            //App_.Cells[1, 3] = (資料.子客戶編號 > 0) ? 資料.客戶名稱 + " - " + 資料.子客戶名稱 : 資料.客戶名稱;
             App_.Cells[2, 2] = 時間.目前日期_斜線;
             App_.Cells[3, 2] = 資料.姓名;
             App_.Cells[4, 2] = 資料.電話;
