@@ -285,7 +285,7 @@ namespace WokyTool.通用
             finally
             {
                 if (工作簿_ != null)
-                    工作簿_.Close();
+                    工作簿_.Close(false);
 
                 if (應用程式_ != null)
                     應用程式_.Quit();
