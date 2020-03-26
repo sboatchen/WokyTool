@@ -7,7 +7,7 @@ using WokyTool.通用;
 
 namespace WokyTool.平台訂單
 {
-    public class 平台訂單匯入處理_PINKOI : 平台訂單匯入處理介面, /*可讀出介面_EXCEL<平台訂單新增匯入資料>*/ 可讀出介面_CSV<平台訂單新增匯入資料>
+    public class 平台訂單匯入處理_PINKOI : 平台訂單匯入處理介面, 可讀出介面_EXCEL<平台訂單新增匯入資料> //可讀出介面_CSV<平台訂單新增匯入資料>
     {
         public string 分格號 { get { return "\t"; } }
 

@@ -48,14 +48,16 @@ namespace WokyTool.平台訂單
             App_.Cells[1, 18] = "dsr";
             App_.Cells[1, 19] = "spslgn";
             App_.Cells[1, 20] = "qty";
-            App_.Cells[1, 21] = "orgup";
-            App_.Cells[1, 22] = "sumorgup";
-            App_.Cells[1, 23] = "instockpr";
-            App_.Cells[1, 24] = "suminstockpr";
-            App_.Cells[1, 25] = "sstockdat";
-            App_.Cells[1, 26] = "logco";
-            App_.Cells[1, 27] = "shipno";
-            App_.Cells[1, 28] = "shipco";
+            App_.Cells[1, 21] = "up";
+            App_.Cells[1, 22] = "sumup";
+            App_.Cells[1, 23] = "orgup";
+            App_.Cells[1, 24] = "sumorgup";
+            App_.Cells[1, 25] = "instockpr";
+            App_.Cells[1, 26] = "suminstockpr";
+            App_.Cells[1, 27] = "sstockdat";
+            App_.Cells[1, 28] = "logco";
+            App_.Cells[1, 29] = "shipno";
+            App_.Cells[1, 30] = "shipco";
 
             int 欄位索引_ = 1;
             foreach (string 標頭_ in _資料列舉.First().標頭)
@@ -72,15 +74,15 @@ namespace WokyTool.平台訂單
                     App_.Cells[目前行數_, 欄位索引_++] = 欄位內容_;
                 }
 
-                App_.Cells[目前行數_, 27] = 資料_.配送單號;
+                App_.Cells[目前行數_, 29] = 資料_.配送單號;
 
                 switch (資料_.配送公司)
                 {
                     case 列舉.配送公司.全速配:
-                        App_.Cells[目前行數_, 26] = 全速配;
+                        App_.Cells[目前行數_, 28] = 全速配;
                         break;
                     case 列舉.配送公司.宅配通:
-                        App_.Cells[目前行數_, 26] = 宅配通;
+                        App_.Cells[目前行數_, 28] = 宅配通;
                         break;
                     default:
                         throw new Exception("平台訂單回單轉換_UDN 不支援配送公司 " + 資料_.配送公司.ToString());

@@ -28,13 +28,9 @@ namespace WokyTool.發票
                     賣方名稱 = 動態資料_.GetFromDetail(9),
                     寄送日期 = 動態資料_.GetFromDetail(10),
                     銷售額合計 = 動態資料_.GetDecimalFromDetail(11),
-                    營業稅 = 動態資料_.GetDecimalFromDetail(12),
-                    總計 = 動態資料_.GetDecimalFromDetail(13),
-                    課稅別 = 動態資料_.GetFromDetail(14),
-                    匯率 = 動態資料_.GetDecimalFromDetail(15),
-                    載具號碼1 = 動態資料_.GetFromDetail(16),
-                    載具號碼2 = 動態資料_.GetFromDetail(17),
-                    總備註 = 動態資料_.GetFromDetail(18),
+                    營業稅 = 動態資料_.GetDecimalFromDetail(14),
+                    總計 = 動態資料_.GetDecimalFromDetail(15),
+                    課稅別 = 動態資料_.GetFromDetail(16),
                 };
 
                 if (String.IsNullOrEmpty(發票匯入資料_.發票號碼) == false)

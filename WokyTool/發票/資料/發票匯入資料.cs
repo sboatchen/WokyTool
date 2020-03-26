@@ -56,18 +56,6 @@ namespace WokyTool.發票
         [JsonProperty]
         public string 課稅別 { get; set; }
 
-        [JsonProperty]
-        public decimal 匯率 { get; set; }
-
-        [JsonProperty]
-        public string 載具號碼1 { get; set; }
-
-        [JsonProperty]
-        public string 載具號碼2 { get; set; }
-
-        [JsonProperty]
-        public string 總備註 { get; set; }
-
         /********************************/
 
         public override void 檢查合法()
