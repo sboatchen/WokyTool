@@ -26,6 +26,10 @@ namespace WokyTool.配送
 
         [可匯出]
         [JsonProperty]
+        public string 訂單編號 { get; set; }
+
+        [可匯出]
+        [JsonProperty]
         public string 姓名 { get; set; }
 
         [可匯出]

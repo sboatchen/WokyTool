@@ -30,6 +30,7 @@ namespace WokyTool.配送
             foreach (配送轉換資料 資料_ in _資料列舉)
             {
                 App_.Cells[目前行數_, 5] = 資料_.件數;
+                App_.Cells[目前行數_, 12] = 資料_.訂單編號;
                 App_.Cells[目前行數_, 13] = 資料_.姓名;
 
                 // 優先使用手機資料 沒有才用電話資料

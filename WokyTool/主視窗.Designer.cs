@@ -520,7 +520,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Name = "主視窗";
-            this.Text = "V 3.0.5";
+            this.Text = "V 3.0.8";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.主視窗_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

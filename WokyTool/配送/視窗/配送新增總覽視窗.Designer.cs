@@ -52,10 +52,16 @@ namespace WokyTool.配送
             this.全家轉換ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.全家撿貨ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.全家明細ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.三方ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.三方轉換ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.三方撿貨ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.三方明細ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.測試用ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myDataGridView1 = new WokyTool.通用.MyDataGridView();
+            this.配送轉換資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.配送公司DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.配送單號DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.訂單編號 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.姓名DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.地址DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.電話DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,11 +73,6 @@ namespace WokyTool.配送
             this.備註DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.件數DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.內容DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.配送轉換資料BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.三方ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.三方轉換ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.三方撿貨ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.三方明細ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.配送轉換資料BindingSource)).BeginInit();
@@ -91,7 +92,7 @@ namespace WokyTool.配送
             this.測試用ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1547, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1647, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -229,23 +230,54 @@ namespace WokyTool.配送
             // 全家轉換ToolStripMenuItem
             // 
             this.全家轉換ToolStripMenuItem.Name = "全家轉換ToolStripMenuItem";
-            this.全家轉換ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.全家轉換ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.全家轉換ToolStripMenuItem.Text = "轉換";
             this.全家轉換ToolStripMenuItem.Click += new System.EventHandler(this.全家轉換ToolStripMenuItem_Click);
             // 
             // 全家撿貨ToolStripMenuItem
             // 
             this.全家撿貨ToolStripMenuItem.Name = "全家撿貨ToolStripMenuItem";
-            this.全家撿貨ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.全家撿貨ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.全家撿貨ToolStripMenuItem.Text = "撿貨";
             this.全家撿貨ToolStripMenuItem.Click += new System.EventHandler(this.全家撿貨ToolStripMenuItem_Click);
             // 
             // 全家明細ToolStripMenuItem
             // 
             this.全家明細ToolStripMenuItem.Name = "全家明細ToolStripMenuItem";
-            this.全家明細ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.全家明細ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
             this.全家明細ToolStripMenuItem.Text = "明細";
             this.全家明細ToolStripMenuItem.Click += new System.EventHandler(this.全家明細ToolStripMenuItem_Click);
+            // 
+            // 三方ToolStripMenuItem
+            // 
+            this.三方ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.三方轉換ToolStripMenuItem,
+            this.三方撿貨ToolStripMenuItem,
+            this.三方明細ToolStripMenuItem});
+            this.三方ToolStripMenuItem.Name = "三方ToolStripMenuItem";
+            this.三方ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.三方ToolStripMenuItem.Text = "三方";
+            // 
+            // 三方轉換ToolStripMenuItem
+            // 
+            this.三方轉換ToolStripMenuItem.Name = "三方轉換ToolStripMenuItem";
+            this.三方轉換ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.三方轉換ToolStripMenuItem.Text = "轉換";
+            this.三方轉換ToolStripMenuItem.Click += new System.EventHandler(this.三方轉換ToolStripMenuItem_Click);
+            // 
+            // 三方撿貨ToolStripMenuItem
+            // 
+            this.三方撿貨ToolStripMenuItem.Name = "三方撿貨ToolStripMenuItem";
+            this.三方撿貨ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.三方撿貨ToolStripMenuItem.Text = "撿貨";
+            this.三方撿貨ToolStripMenuItem.Click += new System.EventHandler(this.三方撿貨ToolStripMenuItem_Click);
+            // 
+            // 三方明細ToolStripMenuItem
+            // 
+            this.三方明細ToolStripMenuItem.Name = "三方明細ToolStripMenuItem";
+            this.三方明細ToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.三方明細ToolStripMenuItem.Text = "明細";
+            this.三方明細ToolStripMenuItem.Click += new System.EventHandler(this.三方明細ToolStripMenuItem_Click);
             // 
             // 測試用ToolStripMenuItem
             // 
@@ -261,6 +293,7 @@ namespace WokyTool.配送
             this.myDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.配送公司DataGridViewTextBoxColumn,
             this.配送單號DataGridViewTextBoxColumn,
+            this.訂單編號,
             this.姓名DataGridViewTextBoxColumn,
             this.地址DataGridViewTextBoxColumn,
             this.電話DataGridViewTextBoxColumn,
@@ -277,8 +310,12 @@ namespace WokyTool.配送
             this.myDataGridView1.Location = new System.Drawing.Point(0, 24);
             this.myDataGridView1.Name = "myDataGridView1";
             this.myDataGridView1.RowTemplate.Height = 24;
-            this.myDataGridView1.Size = new System.Drawing.Size(1547, 445);
+            this.myDataGridView1.Size = new System.Drawing.Size(1647, 445);
             this.myDataGridView1.TabIndex = 1;
+            // 
+            // 配送轉換資料BindingSource
+            // 
+            this.配送轉換資料BindingSource.DataSource = typeof(WokyTool.配送.配送轉換資料);
             // 
             // 配送公司DataGridViewTextBoxColumn
             // 
@@ -291,6 +328,12 @@ namespace WokyTool.配送
             this.配送單號DataGridViewTextBoxColumn.DataPropertyName = "配送單號";
             this.配送單號DataGridViewTextBoxColumn.HeaderText = "配送單號";
             this.配送單號DataGridViewTextBoxColumn.Name = "配送單號DataGridViewTextBoxColumn";
+            // 
+            // 訂單編號
+            // 
+            this.訂單編號.DataPropertyName = "訂單編號";
+            this.訂單編號.HeaderText = "訂單編號";
+            this.訂單編號.Name = "訂單編號";
             // 
             // 姓名DataGridViewTextBoxColumn
             // 
@@ -359,46 +402,11 @@ namespace WokyTool.配送
             this.內容DataGridViewTextBoxColumn.Name = "內容DataGridViewTextBoxColumn";
             this.內容DataGridViewTextBoxColumn.Width = 300;
             // 
-            // 配送轉換資料BindingSource
-            // 
-            this.配送轉換資料BindingSource.DataSource = typeof(WokyTool.配送.配送轉換資料);
-            // 
-            // 三方ToolStripMenuItem
-            // 
-            this.三方ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.三方轉換ToolStripMenuItem,
-            this.三方撿貨ToolStripMenuItem,
-            this.三方明細ToolStripMenuItem});
-            this.三方ToolStripMenuItem.Name = "三方ToolStripMenuItem";
-            this.三方ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.三方ToolStripMenuItem.Text = "三方";
-            // 
-            // 三方轉換ToolStripMenuItem
-            // 
-            this.三方轉換ToolStripMenuItem.Name = "三方轉換ToolStripMenuItem";
-            this.三方轉換ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.三方轉換ToolStripMenuItem.Text = "轉換";
-            this.三方轉換ToolStripMenuItem.Click += new System.EventHandler(this.三方轉換ToolStripMenuItem_Click);
-            // 
-            // 三方撿貨ToolStripMenuItem
-            // 
-            this.三方撿貨ToolStripMenuItem.Name = "三方撿貨ToolStripMenuItem";
-            this.三方撿貨ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.三方撿貨ToolStripMenuItem.Text = "撿貨";
-            this.三方撿貨ToolStripMenuItem.Click += new System.EventHandler(this.三方撿貨ToolStripMenuItem_Click);
-            // 
-            // 三方明細ToolStripMenuItem
-            // 
-            this.三方明細ToolStripMenuItem.Name = "三方明細ToolStripMenuItem";
-            this.三方明細ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.三方明細ToolStripMenuItem.Text = "明細";
-            this.三方明細ToolStripMenuItem.Click += new System.EventHandler(this.三方明細ToolStripMenuItem_Click);
-            // 
             // 配送新增總覽視窗
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1547, 469);
+            this.ClientSize = new System.Drawing.Size(1647, 469);
             this.Controls.Add(this.myDataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -420,19 +428,6 @@ namespace WokyTool.配送
         private System.Windows.Forms.ToolStripMenuItem 檢查ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 篩選ToolStripMenuItem;
         private MyDataGridView myDataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 配送公司DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 配送單號DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 姓名DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 地址DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 電話DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 手機DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 指配日期DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 指配時段DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 代收方式DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 代收金額DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 件數DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 內容DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource 配送轉換資料BindingSource;
         private System.Windows.Forms.ToolStripMenuItem 全速配ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 全速配匯出ToolStripMenuItem;
@@ -456,5 +451,19 @@ namespace WokyTool.配送
         private System.Windows.Forms.ToolStripMenuItem 三方轉換ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 三方撿貨ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 三方明細ToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 配送公司DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 配送單號DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 訂單編號;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 姓名DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 地址DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 電話DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 手機DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 指配日期DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 指配時段DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 代收方式DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 代收金額DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 備註DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 件數DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 內容DataGridViewTextBoxColumn;
     }
 }
