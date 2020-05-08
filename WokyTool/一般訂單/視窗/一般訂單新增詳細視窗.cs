@@ -125,9 +125,6 @@ namespace WokyTool.一般訂單
 
         protected override void 選擇改變()
         {
-            if (_目前資料 != null)
-                _目前資料.合法檢查(物件檢查器);
-
             _目前資料 = (一般訂單新增資料)(this.資料BS.Current);
             if (_目前資料.組成 == null)
                 _目前資料.組成 = new List<一般訂單新增組成資料>();
