@@ -46,14 +46,14 @@ namespace WokyTool.平台訂單
                     {
                         發票讀出元件 = new PDF字串讀出元件(new Rectangle(80, 515, 130, 525)),
                         配送單號讀出元件 = new PDF字串讀出元件(new Rectangle(75, 695, 150, 710)),
-                        消費者讀出元件 = new PDF字串讀出元件(new Rectangle(70, 640, 280, 680))
+                        消費者讀出元件 = new PDF字串讀出元件(new Rectangle(315, 670, 505, 720))
                     }, new PDF字串寫入元件(new Rectangle(30, 430, 595, 457), 常數.通用字體));
 
                     _設定資料書.Add(new 三方讀出元件組
                     {
                         發票讀出元件 = new PDF字串讀出元件(new Rectangle(80, 80, 130, 90)),
                         配送單號讀出元件 = new PDF字串讀出元件(new Rectangle(75, 265, 100, 280)),
-                        消費者讀出元件 = new PDF字串讀出元件(new Rectangle(70, 200, 280, 250))
+                        消費者讀出元件 = new PDF字串讀出元件(new Rectangle(315, 245, 505, 285))
                     }, new PDF字串寫入元件(new Rectangle(30, 0, 595, 27), 常數.通用字體));
                 }
 
@@ -92,7 +92,7 @@ namespace WokyTool.平台訂單
 
                 // 取得消費者資料
                 string 消費者資料字串_ = Pair_.Key.消費者讀出元件.處理(PdfReader_, 頁索引_);
-                string[] 消費者資料_ = 消費者資料字串_.ToString().Split(消費者資料拆分字元組);
+                string[] 消費者資料_ = 消費者資料字串_.ToString().Split(消費者資料拆分字元組, StringSplitOptions.RemoveEmptyEntries);//.Where(Value => String.IsNullOrEmpty(Value) == false).();
                 string 地址_ = 消費者資料_[0];
                 string 電話_ = 消費者資料_[1];
                 string 手機_ = 消費者資料_[2];

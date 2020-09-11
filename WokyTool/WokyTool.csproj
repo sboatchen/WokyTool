@@ -275,6 +275,7 @@
     <Compile Include="平台訂單\回單\平台訂單回單轉換_WACA.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_uDesign.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_松果.cs" />
+    <Compile Include="平台訂單\回單\平台訂單回單轉換_官網.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_神坊.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_生活市集.cs" />
     <Compile Include="平台訂單\回單\平台訂單回單轉換_博客來.cs" />

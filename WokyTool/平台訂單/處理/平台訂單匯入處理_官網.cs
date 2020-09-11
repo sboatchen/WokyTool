@@ -61,5 +61,13 @@ namespace WokyTool.平台訂單
                 內容 = 資料列_,
             };
         }
+
+        public override void 後續處理(IEnumerable<平台訂單新增資料> 資料列舉_)
+        {
+            var 轉換_ = new 平台訂單回單轉換_官網(資料列舉_);
+
+            String 標題_ = String.Format("回單_{0}_{1}_{2}", 公司.名稱, 客戶.名稱, 時間.目前日期);
+            檔案.詢問並寫入(標題_, 轉換_);
+        }
     }
 }
